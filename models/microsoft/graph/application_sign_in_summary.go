@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplicationSignInSummary 
+// ApplicationSignInSummary provides operations to call the getAzureADApplicationSignInSummary method.
 type ApplicationSignInSummary struct {
     Entity
     // Name of the application that the user signed into.
@@ -16,12 +16,16 @@ type ApplicationSignInSummary struct {
     // Percentage of successful sign-ins made by the application.
     successPercentage *float64;
 }
-// NewApplicationSignInSummary instantiates a new ApplicationSignInSummary and sets the default values.
+// NewApplicationSignInSummary instantiates a new applicationSignInSummary and sets the default values.
 func NewApplicationSignInSummary()(*ApplicationSignInSummary) {
     m := &ApplicationSignInSummary{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateApplicationSignInSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApplicationSignInSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApplicationSignInSummary(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed into.
 func (m *ApplicationSignInSummary) GetAppDisplayName()(*string) {
@@ -37,22 +41,6 @@ func (m *ApplicationSignInSummary) GetFailedSignInCount()(*int64) {
         return nil
     } else {
         return m.failedSignInCount
-    }
-}
-// GetSuccessfulSignInCount gets the successfulSignInCount property value. Count of successful sign-ins made by the application.
-func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulSignInCount
-    }
-}
-// GetSuccessPercentage gets the successPercentage property value. Percentage of successful sign-ins made by the application.
-func (m *ApplicationSignInSummary) GetSuccessPercentage()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successPercentage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetSuccessfulSignInCount gets the successfulSignInCount property value. Count of successful sign-ins made by the application.
+func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successfulSignInCount
+    }
+}
+// GetSuccessPercentage gets the successPercentage property value. Percentage of successful sign-ins made by the application.
+func (m *ApplicationSignInSummary) GetSuccessPercentage()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successPercentage
+    }
 }
 func (m *ApplicationSignInSummary) IsNil()(bool) {
     return m == nil

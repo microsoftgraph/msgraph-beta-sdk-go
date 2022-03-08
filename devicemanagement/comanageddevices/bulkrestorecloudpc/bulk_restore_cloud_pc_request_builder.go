@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// BulkRestoreCloudPcRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\microsoft.graph.bulkRestoreCloudPc
+// BulkRestoreCloudPcRequestBuilder provides operations to call the bulkRestoreCloudPc method.
 type BulkRestoreCloudPcRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type BulkRestoreCloudPcRequestBuilder struct {
 // BulkRestoreCloudPcRequestBuilderPostOptions options for Post
 type BulkRestoreCloudPcRequestBuilderPostOptions struct {
     // 
-    Body *BulkRestoreCloudPcRequestBody;
+    Body BulkRestoreCloudPcRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type BulkRestoreCloudPcRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // BulkRestoreCloudPcResponse union type wrapper for classes cloudPcBulkRemoteActionResult
 type BulkRestoreCloudPcResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type cloudPcBulkRemoteActionResult
-    cloudPcBulkRemoteActionResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResult;
+    cloudPcBulkRemoteActionResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResultable;
 }
 // NewBulkRestoreCloudPcResponse instantiates a new bulkRestoreCloudPcResponse and sets the default values.
 func NewBulkRestoreCloudPcResponse()(*BulkRestoreCloudPcResponse) {
@@ -39,6 +44,9 @@ func NewBulkRestoreCloudPcResponse()(*BulkRestoreCloudPcResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateBulkRestoreCloudPcResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBulkRestoreCloudPcResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkRestoreCloudPcResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +57,7 @@ func (m *BulkRestoreCloudPcResponse) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetCloudPcBulkRemoteActionResult gets the cloudPcBulkRemoteActionResult property value. Union type representation for type cloudPcBulkRemoteActionResult
-func (m *BulkRestoreCloudPcResponse) GetCloudPcBulkRemoteActionResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResult) {
+func (m *BulkRestoreCloudPcResponse) GetCloudPcBulkRemoteActionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +68,12 @@ func (m *BulkRestoreCloudPcResponse) GetCloudPcBulkRemoteActionResult()(*i535684
 func (m *BulkRestoreCloudPcResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cloudPcBulkRemoteActionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcBulkRemoteActionResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCloudPcBulkRemoteActionResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudPcBulkRemoteActionResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResult))
+            m.SetCloudPcBulkRemoteActionResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResultable))
         }
         return nil
     }
@@ -97,7 +105,7 @@ func (m *BulkRestoreCloudPcResponse) SetAdditionalData(value map[string]interfac
     }
 }
 // SetCloudPcBulkRemoteActionResult sets the cloudPcBulkRemoteActionResult property value. Union type representation for type cloudPcBulkRemoteActionResult
-func (m *BulkRestoreCloudPcResponse) SetCloudPcBulkRemoteActionResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResult)() {
+func (m *BulkRestoreCloudPcResponse) SetCloudPcBulkRemoteActionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcBulkRemoteActionResultable)() {
     if m != nil {
         m.cloudPcBulkRemoteActionResult = value
     }
@@ -111,7 +119,7 @@ func NewBulkRestoreCloudPcRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Post invoke action bulkRestoreCloudPc
-func (m *BulkRestoreCloudPcRequestBuilder) Post(options *BulkRestoreCloudPcRequestBuilderPostOptions)(*BulkRestoreCloudPcResponse, error) {
+func (m *BulkRestoreCloudPcRequestBuilder) Post(options *BulkRestoreCloudPcRequestBuilderPostOptions)(BulkRestoreCloudPcResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBulkRestoreCloudPcResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateBulkRestoreCloudPcResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*BulkRestoreCloudPcResponse), nil
+    return res.(BulkRestoreCloudPcResponseable), nil
 }

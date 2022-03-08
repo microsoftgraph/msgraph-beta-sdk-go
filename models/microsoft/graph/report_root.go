@@ -4,33 +4,33 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ReportRoot 
+// ReportRoot provides operations to manage the print singleton.
 type ReportRoot struct {
     Entity
     // Represents a detailed summary of an application sign-in.
-    applicationSignInDetailedSummary []ApplicationSignInDetailedSummary;
+    applicationSignInDetailedSummary []ApplicationSignInDetailedSummaryable;
     // Container for navigation properties for Azure AD authentication methods resources.
-    authenticationMethods *AuthenticationMethodsRoot;
+    authenticationMethods AuthenticationMethodsRootable;
     // Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-    credentialUserRegistrationDetails []CredentialUserRegistrationDetails;
+    credentialUserRegistrationDetails []CredentialUserRegistrationDetailsable;
     // 
-    dailyPrintUsageByPrinter []PrintUsageByPrinter;
+    dailyPrintUsageByPrinter []PrintUsageByPrinterable;
     // 
-    dailyPrintUsageByUser []PrintUsageByUser;
+    dailyPrintUsageByUser []PrintUsageByUserable;
     // 
-    dailyPrintUsageSummariesByPrinter []PrintUsageByPrinter;
+    dailyPrintUsageSummariesByPrinter []PrintUsageByPrinterable;
     // 
-    dailyPrintUsageSummariesByUser []PrintUsageByUser;
+    dailyPrintUsageSummariesByUser []PrintUsageByUserable;
     // 
-    monthlyPrintUsageByPrinter []PrintUsageByPrinter;
+    monthlyPrintUsageByPrinter []PrintUsageByPrinterable;
     // 
-    monthlyPrintUsageByUser []PrintUsageByUser;
+    monthlyPrintUsageByUser []PrintUsageByUserable;
     // 
-    monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinter;
+    monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinterable;
     // 
-    monthlyPrintUsageSummariesByUser []PrintUsageByUser;
+    monthlyPrintUsageSummariesByUser []PrintUsageByUserable;
     // Represents the self-service password reset (SSPR) usage for a given tenant.
-    userCredentialUsageDetails []UserCredentialUsageDetails;
+    userCredentialUsageDetails []UserCredentialUsageDetailsable;
 }
 // NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
@@ -39,8 +39,12 @@ func NewReportRoot()(*ReportRoot) {
     }
     return m
 }
+// CreateReportRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReportRootFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReportRoot(), nil
+}
 // GetApplicationSignInDetailedSummary gets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
-func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummary) {
+func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +52,7 @@ func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDe
     }
 }
 // GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
-func (m *ReportRoot) GetAuthenticationMethods()(*AuthenticationMethodsRoot) {
+func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     if m == nil {
         return nil
     } else {
@@ -56,7 +60,7 @@ func (m *ReportRoot) GetAuthenticationMethods()(*AuthenticationMethodsRoot) {
     }
 }
 // GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetails) {
+func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
     if m == nil {
         return nil
     } else {
@@ -64,7 +68,7 @@ func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegi
     }
 }
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. 
-func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinter) {
+func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     if m == nil {
         return nil
     } else {
@@ -72,7 +76,7 @@ func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinter) {
     }
 }
 // GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. 
-func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUser) {
+func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +84,7 @@ func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUser) {
     }
 }
 // GetDailyPrintUsageSummariesByPrinter gets the dailyPrintUsageSummariesByPrinter property value. 
-func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinter) {
+func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
     if m == nil {
         return nil
     } else {
@@ -88,15 +92,184 @@ func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinte
     }
 }
 // GetDailyPrintUsageSummariesByUser gets the dailyPrintUsageSummariesByUser property value. 
-func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUser) {
+func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
     if m == nil {
         return nil
     } else {
         return m.dailyPrintUsageSummariesByUser
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["applicationSignInDetailedSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateApplicationSignInDetailedSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ApplicationSignInDetailedSummaryable, len(val))
+            for i, v := range val {
+                res[i] = v.(ApplicationSignInDetailedSummaryable)
+            }
+            m.SetApplicationSignInDetailedSummary(res)
+        }
+        return nil
+    }
+    res["authenticationMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationMethodsRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationMethods(val.(AuthenticationMethodsRootable))
+        }
+        return nil
+    }
+    res["credentialUserRegistrationDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCredentialUserRegistrationDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CredentialUserRegistrationDetailsable, len(val))
+            for i, v := range val {
+                res[i] = v.(CredentialUserRegistrationDetailsable)
+            }
+            m.SetCredentialUserRegistrationDetails(res)
+        }
+        return nil
+    }
+    res["dailyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByPrinterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByPrinterable)
+            }
+            m.SetDailyPrintUsageByPrinter(res)
+        }
+        return nil
+    }
+    res["dailyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByUserable)
+            }
+            m.SetDailyPrintUsageByUser(res)
+        }
+        return nil
+    }
+    res["dailyPrintUsageSummariesByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByPrinterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByPrinterable)
+            }
+            m.SetDailyPrintUsageSummariesByPrinter(res)
+        }
+        return nil
+    }
+    res["dailyPrintUsageSummariesByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByUserable)
+            }
+            m.SetDailyPrintUsageSummariesByUser(res)
+        }
+        return nil
+    }
+    res["monthlyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByPrinterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByPrinterable)
+            }
+            m.SetMonthlyPrintUsageByPrinter(res)
+        }
+        return nil
+    }
+    res["monthlyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByUserable)
+            }
+            m.SetMonthlyPrintUsageByUser(res)
+        }
+        return nil
+    }
+    res["monthlyPrintUsageSummariesByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByPrinterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByPrinterable)
+            }
+            m.SetMonthlyPrintUsageSummariesByPrinter(res)
+        }
+        return nil
+    }
+    res["monthlyPrintUsageSummariesByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrintUsageByUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrintUsageByUserable)
+            }
+            m.SetMonthlyPrintUsageSummariesByUser(res)
+        }
+        return nil
+    }
+    res["userCredentialUsageDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserCredentialUsageDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserCredentialUsageDetailsable, len(val))
+            for i, v := range val {
+                res[i] = v.(UserCredentialUsageDetailsable)
+            }
+            m.SetUserCredentialUsageDetails(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. 
-func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinter) {
+func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     if m == nil {
         return nil
     } else {
@@ -104,7 +277,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinter) {
     }
 }
 // GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. 
-func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUser) {
+func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     if m == nil {
         return nil
     } else {
@@ -112,7 +285,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUser) {
     }
 }
 // GetMonthlyPrintUsageSummariesByPrinter gets the monthlyPrintUsageSummariesByPrinter property value. 
-func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinter) {
+func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
     if m == nil {
         return nil
     } else {
@@ -120,7 +293,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrin
     }
 }
 // GetMonthlyPrintUsageSummariesByUser gets the monthlyPrintUsageSummariesByUser property value. 
-func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUser) {
+func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
     if m == nil {
         return nil
     } else {
@@ -128,181 +301,12 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUser) {
     }
 }
 // GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
-func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetails) {
+func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable) {
     if m == nil {
         return nil
     } else {
         return m.userCredentialUsageDetails
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["applicationSignInDetailedSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApplicationSignInDetailedSummary() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ApplicationSignInDetailedSummary, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ApplicationSignInDetailedSummary))
-            }
-            m.SetApplicationSignInDetailedSummary(res)
-        }
-        return nil
-    }
-    res["authenticationMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationMethodsRoot() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationMethods(val.(*AuthenticationMethodsRoot))
-        }
-        return nil
-    }
-    res["credentialUserRegistrationDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCredentialUserRegistrationDetails() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CredentialUserRegistrationDetails, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*CredentialUserRegistrationDetails))
-            }
-            m.SetCredentialUserRegistrationDetails(res)
-        }
-        return nil
-    }
-    res["dailyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByPrinter, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByPrinter))
-            }
-            m.SetDailyPrintUsageByPrinter(res)
-        }
-        return nil
-    }
-    res["dailyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByUser))
-            }
-            m.SetDailyPrintUsageByUser(res)
-        }
-        return nil
-    }
-    res["dailyPrintUsageSummariesByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByPrinter, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByPrinter))
-            }
-            m.SetDailyPrintUsageSummariesByPrinter(res)
-        }
-        return nil
-    }
-    res["dailyPrintUsageSummariesByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByUser))
-            }
-            m.SetDailyPrintUsageSummariesByUser(res)
-        }
-        return nil
-    }
-    res["monthlyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByPrinter, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByPrinter))
-            }
-            m.SetMonthlyPrintUsageByPrinter(res)
-        }
-        return nil
-    }
-    res["monthlyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByUser))
-            }
-            m.SetMonthlyPrintUsageByUser(res)
-        }
-        return nil
-    }
-    res["monthlyPrintUsageSummariesByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByPrinter() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByPrinter, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByPrinter))
-            }
-            m.SetMonthlyPrintUsageSummariesByPrinter(res)
-        }
-        return nil
-    }
-    res["monthlyPrintUsageSummariesByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintUsageByUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintUsageByUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PrintUsageByUser))
-            }
-            m.SetMonthlyPrintUsageSummariesByUser(res)
-        }
-        return nil
-    }
-    res["userCredentialUsageDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserCredentialUsageDetails() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserCredentialUsageDetails, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UserCredentialUsageDetails))
-            }
-            m.SetUserCredentialUsageDetails(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *ReportRoot) IsNil()(bool) {
     return m == nil
@@ -316,8 +320,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetApplicationSignInDetailedSummary() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApplicationSignInDetailedSummary()))
         for i, v := range m.GetApplicationSignInDetailedSummary() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("applicationSignInDetailedSummary", cast)
         if err != nil {
@@ -333,8 +336,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetCredentialUserRegistrationDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCredentialUserRegistrationDetails()))
         for i, v := range m.GetCredentialUserRegistrationDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("credentialUserRegistrationDetails", cast)
         if err != nil {
@@ -344,8 +346,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetDailyPrintUsageByPrinter() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDailyPrintUsageByPrinter()))
         for i, v := range m.GetDailyPrintUsageByPrinter() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageByPrinter", cast)
         if err != nil {
@@ -355,8 +356,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetDailyPrintUsageByUser() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDailyPrintUsageByUser()))
         for i, v := range m.GetDailyPrintUsageByUser() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageByUser", cast)
         if err != nil {
@@ -366,8 +366,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetDailyPrintUsageSummariesByPrinter() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDailyPrintUsageSummariesByPrinter()))
         for i, v := range m.GetDailyPrintUsageSummariesByPrinter() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageSummariesByPrinter", cast)
         if err != nil {
@@ -377,8 +376,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetDailyPrintUsageSummariesByUser() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDailyPrintUsageSummariesByUser()))
         for i, v := range m.GetDailyPrintUsageSummariesByUser() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageSummariesByUser", cast)
         if err != nil {
@@ -388,8 +386,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetMonthlyPrintUsageByPrinter() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMonthlyPrintUsageByPrinter()))
         for i, v := range m.GetMonthlyPrintUsageByPrinter() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageByPrinter", cast)
         if err != nil {
@@ -399,8 +396,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetMonthlyPrintUsageByUser() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMonthlyPrintUsageByUser()))
         for i, v := range m.GetMonthlyPrintUsageByUser() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageByUser", cast)
         if err != nil {
@@ -410,8 +406,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetMonthlyPrintUsageSummariesByPrinter() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMonthlyPrintUsageSummariesByPrinter()))
         for i, v := range m.GetMonthlyPrintUsageSummariesByPrinter() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageSummariesByPrinter", cast)
         if err != nil {
@@ -421,8 +416,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetMonthlyPrintUsageSummariesByUser() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMonthlyPrintUsageSummariesByUser()))
         for i, v := range m.GetMonthlyPrintUsageSummariesByUser() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("monthlyPrintUsageSummariesByUser", cast)
         if err != nil {
@@ -432,8 +426,7 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetUserCredentialUsageDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserCredentialUsageDetails()))
         for i, v := range m.GetUserCredentialUsageDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userCredentialUsageDetails", cast)
         if err != nil {
@@ -443,73 +436,73 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     return nil
 }
 // SetApplicationSignInDetailedSummary sets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
-func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummary)() {
+func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)() {
     if m != nil {
         m.applicationSignInDetailedSummary = value
     }
 }
 // SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
-func (m *ReportRoot) SetAuthenticationMethods(value *AuthenticationMethodsRoot)() {
+func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootable)() {
     if m != nil {
         m.authenticationMethods = value
     }
 }
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetails)() {
+func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
     if m != nil {
         m.credentialUserRegistrationDetails = value
     }
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. 
-func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
+func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     if m != nil {
         m.dailyPrintUsageByPrinter = value
     }
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. 
-func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUser)() {
+func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.dailyPrintUsageByUser = value
     }
 }
 // SetDailyPrintUsageSummariesByPrinter sets the dailyPrintUsageSummariesByPrinter property value. 
-func (m *ReportRoot) SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinter)() {
+func (m *ReportRoot) SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)() {
     if m != nil {
         m.dailyPrintUsageSummariesByPrinter = value
     }
 }
 // SetDailyPrintUsageSummariesByUser sets the dailyPrintUsageSummariesByUser property value. 
-func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUser)() {
+func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.dailyPrintUsageSummariesByUser = value
     }
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. 
-func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
+func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     if m != nil {
         m.monthlyPrintUsageByPrinter = value
     }
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. 
-func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUser)() {
+func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.monthlyPrintUsageByUser = value
     }
 }
 // SetMonthlyPrintUsageSummariesByPrinter sets the monthlyPrintUsageSummariesByPrinter property value. 
-func (m *ReportRoot) SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinter)() {
+func (m *ReportRoot) SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)() {
     if m != nil {
         m.monthlyPrintUsageSummariesByPrinter = value
     }
 }
 // SetMonthlyPrintUsageSummariesByUser sets the monthlyPrintUsageSummariesByUser property value. 
-func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUser)() {
+func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.monthlyPrintUsageSummariesByUser = value
     }
 }
 // SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
-func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetails)() {
+func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)() {
     if m != nil {
         m.userCredentialUsageDetails = value
     }

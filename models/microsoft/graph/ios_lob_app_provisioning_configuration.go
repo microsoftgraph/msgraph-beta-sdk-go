@@ -5,23 +5,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IosLobAppProvisioningConfiguration 
+// IosLobAppProvisioningConfiguration provides operations to manage the deviceAppManagement singleton.
 type IosLobAppProvisioningConfiguration struct {
     Entity
     // The associated group assignments for IosLobAppProvisioningConfiguration.
-    assignments []IosLobAppProvisioningConfigurationAssignment;
+    assignments []IosLobAppProvisioningConfigurationAssignmentable;
     // DateTime the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Admin provided description of the Device Configuration.
     description *string;
     // The list of device installation states for this mobile app configuration.
-    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatus;
+    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatusable;
     // Admin provided name of the device configuration.
     displayName *string;
     // Optional profile expiration date and time.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The associated group assignments.
-    groupAssignments []MobileAppProvisioningConfigGroupAssignment;
+    groupAssignments []MobileAppProvisioningConfigGroupAssignmentable;
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Payload. (UTF8 encoded byte array)
@@ -31,7 +31,7 @@ type IosLobAppProvisioningConfiguration struct {
     // List of Scope Tags for this iOS LOB app provisioning configuration entity.
     roleScopeTagIds []string;
     // The list of user installation states for this mobile app configuration.
-    userStatuses []ManagedDeviceMobileAppConfigurationUserStatus;
+    userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable;
     // Version of the device configuration.
     version *int32;
 }
@@ -42,8 +42,12 @@ func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration
     }
     return m
 }
+// CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIosLobAppProvisioningConfiguration(), nil
+}
 // GetAssignments gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
-func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisioningConfigurationAssignment) {
+func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisioningConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -67,7 +71,7 @@ func (m *IosLobAppProvisioningConfiguration) GetDescription()(*string) {
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The list of device installation states for this mobile app configuration.
-func (m *IosLobAppProvisioningConfiguration) GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatus) {
+func (m *IosLobAppProvisioningConfiguration) GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatusable) {
     if m == nil {
         return nil
     } else {
@@ -90,74 +94,18 @@ func (m *IosLobAppProvisioningConfiguration) GetExpirationDateTime()(*i336074805
         return m.expirationDateTime
     }
 }
-// GetGroupAssignments gets the groupAssignments property value. The associated group assignments.
-func (m *IosLobAppProvisioningConfiguration) GetGroupAssignments()([]MobileAppProvisioningConfigGroupAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupAssignments
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *IosLobAppProvisioningConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
-func (m *IosLobAppProvisioningConfiguration) GetPayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
-}
-// GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileprovision
-func (m *IosLobAppProvisioningConfiguration) GetPayloadFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadFileName
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this iOS LOB app provisioning configuration entity.
-func (m *IosLobAppProvisioningConfiguration) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetUserStatuses gets the userStatuses property value. The list of user installation states for this mobile app configuration.
-func (m *IosLobAppProvisioningConfiguration) GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
-}
-// GetVersion gets the version property value. Version of the device configuration.
-func (m *IosLobAppProvisioningConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIosLobAppProvisioningConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateIosLobAppProvisioningConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IosLobAppProvisioningConfigurationAssignment, len(val))
+            res := make([]IosLobAppProvisioningConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IosLobAppProvisioningConfigurationAssignment))
+                res[i] = v.(IosLobAppProvisioningConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -184,14 +132,14 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceMobileAppConfigurationDeviceStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDeviceMobileAppConfigurationDeviceStatus, len(val))
+            res := make([]ManagedDeviceMobileAppConfigurationDeviceStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDeviceMobileAppConfigurationDeviceStatus))
+                res[i] = v.(ManagedDeviceMobileAppConfigurationDeviceStatusable)
             }
             m.SetDeviceStatuses(res)
         }
@@ -218,14 +166,14 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     res["groupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppProvisioningConfigGroupAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppProvisioningConfigGroupAssignment, len(val))
+            res := make([]MobileAppProvisioningConfigGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppProvisioningConfigGroupAssignment))
+                res[i] = v.(MobileAppProvisioningConfigGroupAssignmentable)
             }
             m.SetGroupAssignments(res)
         }
@@ -276,14 +224,14 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceMobileAppConfigurationUserStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationUserStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDeviceMobileAppConfigurationUserStatus, len(val))
+            res := make([]ManagedDeviceMobileAppConfigurationUserStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDeviceMobileAppConfigurationUserStatus))
+                res[i] = v.(ManagedDeviceMobileAppConfigurationUserStatusable)
             }
             m.SetUserStatuses(res)
         }
@@ -301,6 +249,62 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
     }
     return res
 }
+// GetGroupAssignments gets the groupAssignments property value. The associated group assignments.
+func (m *IosLobAppProvisioningConfiguration) GetGroupAssignments()([]MobileAppProvisioningConfigGroupAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupAssignments
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *IosLobAppProvisioningConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
+func (m *IosLobAppProvisioningConfiguration) GetPayload()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payload
+    }
+}
+// GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileprovision
+func (m *IosLobAppProvisioningConfiguration) GetPayloadFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payloadFileName
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this iOS LOB app provisioning configuration entity.
+func (m *IosLobAppProvisioningConfiguration) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetUserStatuses gets the userStatuses property value. The list of user installation states for this mobile app configuration.
+func (m *IosLobAppProvisioningConfiguration) GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatuses
+    }
+}
+// GetVersion gets the version property value. Version of the device configuration.
+func (m *IosLobAppProvisioningConfiguration) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *IosLobAppProvisioningConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -313,8 +317,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -336,8 +339,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -359,8 +361,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
     if m.GetGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
         if err != nil {
@@ -394,8 +395,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
     if m.GetUserStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
         if err != nil {
@@ -411,7 +411,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
     return nil
 }
 // SetAssignments sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
-func (m *IosLobAppProvisioningConfiguration) SetAssignments(value []IosLobAppProvisioningConfigurationAssignment)() {
+func (m *IosLobAppProvisioningConfiguration) SetAssignments(value []IosLobAppProvisioningConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -429,7 +429,7 @@ func (m *IosLobAppProvisioningConfiguration) SetDescription(value *string)() {
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The list of device installation states for this mobile app configuration.
-func (m *IosLobAppProvisioningConfiguration) SetDeviceStatuses(value []ManagedDeviceMobileAppConfigurationDeviceStatus)() {
+func (m *IosLobAppProvisioningConfiguration) SetDeviceStatuses(value []ManagedDeviceMobileAppConfigurationDeviceStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }
@@ -447,7 +447,7 @@ func (m *IosLobAppProvisioningConfiguration) SetExpirationDateTime(value *i33607
     }
 }
 // SetGroupAssignments sets the groupAssignments property value. The associated group assignments.
-func (m *IosLobAppProvisioningConfiguration) SetGroupAssignments(value []MobileAppProvisioningConfigGroupAssignment)() {
+func (m *IosLobAppProvisioningConfiguration) SetGroupAssignments(value []MobileAppProvisioningConfigGroupAssignmentable)() {
     if m != nil {
         m.groupAssignments = value
     }
@@ -477,7 +477,7 @@ func (m *IosLobAppProvisioningConfiguration) SetRoleScopeTagIds(value []string)(
     }
 }
 // SetUserStatuses sets the userStatuses property value. The list of user installation states for this mobile app configuration.
-func (m *IosLobAppProvisioningConfiguration) SetUserStatuses(value []ManagedDeviceMobileAppConfigurationUserStatus)() {
+func (m *IosLobAppProvisioningConfiguration) SetUserStatuses(value []ManagedDeviceMobileAppConfigurationUserStatusable)() {
     if m != nil {
         m.userStatuses = value
     }

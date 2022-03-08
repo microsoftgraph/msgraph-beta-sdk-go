@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRbacResourceScope 
+// UnifiedRbacResourceScope provides operations to manage the roleManagement singleton.
 type UnifiedRbacResourceScope struct {
     Entity
     // 
@@ -21,28 +21,16 @@ func NewUnifiedRbacResourceScope()(*UnifiedRbacResourceScope) {
     }
     return m
 }
+// CreateUnifiedRbacResourceScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRbacResourceScopeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRbacResourceScope(), nil
+}
 // GetDisplayName gets the displayName property value. 
 func (m *UnifiedRbacResourceScope) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetScope gets the scope property value. 
-func (m *UnifiedRbacResourceScope) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
-}
-// GetType gets the type property value. 
-func (m *UnifiedRbacResourceScope) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +67,22 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetScope gets the scope property value. 
+func (m *UnifiedRbacResourceScope) GetScope()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
+}
+// GetType gets the type property value. 
+func (m *UnifiedRbacResourceScope) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *UnifiedRbacResourceScope) IsNil()(bool) {
     return m == nil

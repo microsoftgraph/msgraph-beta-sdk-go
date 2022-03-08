@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Tenant 
+// Tenant provides operations to manage the tenantRelationship singleton.
 type Tenant struct {
     Entity
     // The relationship details for the tenant with the managing entity.
-    contract *TenantContract;
+    contract TenantContractable;
     // The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The display name for the tenant. Required. Read-only.
@@ -19,7 +19,7 @@ type Tenant struct {
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
     tenantId *string;
     // The onboarding status information for the tenant. Optional. Read-only.
-    tenantStatusInformation *TenantStatusInformation;
+    tenantStatusInformation TenantStatusInformationable;
 }
 // NewTenant instantiates a new tenant and sets the default values.
 func NewTenant()(*Tenant) {
@@ -28,8 +28,12 @@ func NewTenant()(*Tenant) {
     }
     return m
 }
+// CreateTenantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTenantFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTenant(), nil
+}
 // GetContract gets the contract property value. The relationship details for the tenant with the managing entity.
-func (m *Tenant) GetContract()(*TenantContract) {
+func (m *Tenant) GetContract()(TenantContractable) {
     if m == nil {
         return nil
     } else {
@@ -52,40 +56,16 @@ func (m *Tenant) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
-func (m *Tenant) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-func (m *Tenant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetTenantStatusInformation gets the tenantStatusInformation property value. The onboarding status information for the tenant. Optional. Read-only.
-func (m *Tenant) GetTenantStatusInformation()(*TenantStatusInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantStatusInformation
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Tenant) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contract"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTenantContract() })
+        val, err := n.GetObjectValue(CreateTenantContractFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContract(val.(*TenantContract))
+            m.SetContract(val.(TenantContractable))
         }
         return nil
     }
@@ -130,16 +110,40 @@ func (m *Tenant) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["tenantStatusInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTenantStatusInformation() })
+        val, err := n.GetObjectValue(CreateTenantStatusInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTenantStatusInformation(val.(*TenantStatusInformation))
+            m.SetTenantStatusInformation(val.(TenantStatusInformationable))
         }
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
+func (m *Tenant) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+func (m *Tenant) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetTenantStatusInformation gets the tenantStatusInformation property value. The onboarding status information for the tenant. Optional. Read-only.
+func (m *Tenant) GetTenantStatusInformation()(TenantStatusInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantStatusInformation
+    }
 }
 func (m *Tenant) IsNil()(bool) {
     return m == nil
@@ -189,7 +193,7 @@ func (m *Tenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     return nil
 }
 // SetContract sets the contract property value. The relationship details for the tenant with the managing entity.
-func (m *Tenant) SetContract(value *TenantContract)() {
+func (m *Tenant) SetContract(value TenantContractable)() {
     if m != nil {
         m.contract = value
     }
@@ -219,7 +223,7 @@ func (m *Tenant) SetTenantId(value *string)() {
     }
 }
 // SetTenantStatusInformation sets the tenantStatusInformation property value. The onboarding status information for the tenant. Optional. Read-only.
-func (m *Tenant) SetTenantStatusInformation(value *TenantStatusInformation)() {
+func (m *Tenant) SetTenantStatusInformation(value TenantStatusInformationable)() {
     if m != nil {
         m.tenantStatusInformation = value
     }

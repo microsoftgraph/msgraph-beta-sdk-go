@@ -5,14 +5,14 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// TentativelyAcceptRequestBody 
+// TentativelyAcceptRequestBody provides operations to call the tentativelyAccept method.
 type TentativelyAcceptRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     comment *string;
     // 
-    proposedNewTime *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlot;
+    proposedNewTime i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlotable;
     // 
     sendResponse *bool;
 }
@@ -22,6 +22,10 @@ func NewTentativelyAcceptRequestBody()(*TentativelyAcceptRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTentativelyAcceptRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTentativelyAcceptRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTentativelyAcceptRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TentativelyAcceptRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -39,22 +43,6 @@ func (m *TentativelyAcceptRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetProposedNewTime gets the proposedNewTime property value. 
-func (m *TentativelyAcceptRequestBody) GetProposedNewTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlot) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proposedNewTime
-    }
-}
-// GetSendResponse gets the sendResponse property value. 
-func (m *TentativelyAcceptRequestBody) GetSendResponse()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendResponse
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TentativelyAcceptRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -69,12 +57,12 @@ func (m *TentativelyAcceptRequestBody) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["proposedNewTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTimeSlot() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProposedNewTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlot))
+            m.SetProposedNewTime(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlotable))
         }
         return nil
     }
@@ -89,6 +77,22 @@ func (m *TentativelyAcceptRequestBody) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetProposedNewTime gets the proposedNewTime property value. 
+func (m *TentativelyAcceptRequestBody) GetProposedNewTime()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlotable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.proposedNewTime
+    }
+}
+// GetSendResponse gets the sendResponse property value. 
+func (m *TentativelyAcceptRequestBody) GetSendResponse()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendResponse
+    }
 }
 func (m *TentativelyAcceptRequestBody) IsNil()(bool) {
     return m == nil
@@ -134,7 +138,7 @@ func (m *TentativelyAcceptRequestBody) SetComment(value *string)() {
     }
 }
 // SetProposedNewTime sets the proposedNewTime property value. 
-func (m *TentativelyAcceptRequestBody) SetProposedNewTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlot)() {
+func (m *TentativelyAcceptRequestBody) SetProposedNewTime(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlotable)() {
     if m != nil {
         m.proposedNewTime = value
     }

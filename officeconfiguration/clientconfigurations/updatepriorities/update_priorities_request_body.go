@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdatePrioritiesRequestBody 
+// UpdatePrioritiesRequestBody provides operations to call the updatePriorities method.
 type UpdatePrioritiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewUpdatePrioritiesRequestBody()(*UpdatePrioritiesRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUpdatePrioritiesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdatePrioritiesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdatePrioritiesRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdatePrioritiesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetOfficeConfigurationPolicyIds gets the officeConfigurationPolicyIds property value. 
-func (m *UpdatePrioritiesRequestBody) GetOfficeConfigurationPolicyIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeConfigurationPolicyIds
-    }
-}
-// GetOfficeConfigurationPriorities gets the officeConfigurationPriorities property value. 
-func (m *UpdatePrioritiesRequestBody) GetOfficeConfigurationPriorities()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeConfigurationPriorities
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -76,6 +64,22 @@ func (m *UpdatePrioritiesRequestBody) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetOfficeConfigurationPolicyIds gets the officeConfigurationPolicyIds property value. 
+func (m *UpdatePrioritiesRequestBody) GetOfficeConfigurationPolicyIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeConfigurationPolicyIds
+    }
+}
+// GetOfficeConfigurationPriorities gets the officeConfigurationPriorities property value. 
+func (m *UpdatePrioritiesRequestBody) GetOfficeConfigurationPriorities()([]int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeConfigurationPriorities
+    }
 }
 func (m *UpdatePrioritiesRequestBody) IsNil()(bool) {
     return m == nil

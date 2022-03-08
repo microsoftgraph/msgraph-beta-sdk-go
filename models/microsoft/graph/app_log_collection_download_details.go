@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppLogCollectionDownloadDetails 
+// AppLogCollectionDownloadDetails provides operations to call the createDownloadUrl method.
 type AppLogCollectionDownloadDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppLogCollectionDownloadDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]interface{}) {

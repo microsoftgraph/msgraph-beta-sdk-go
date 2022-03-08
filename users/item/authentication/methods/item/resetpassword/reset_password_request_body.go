@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResetPasswordRequestBody 
+// ResetPasswordRequestBody provides operations to call the resetPassword method.
 type ResetPasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewResetPasswordRequestBody()(*ResetPasswordRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateResetPasswordRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResetPasswordRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResetPasswordRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResetPasswordRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetNewPassword gets the newPassword property value. 
-func (m *ResetPasswordRequestBody) GetNewPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newPassword
-    }
-}
-// GetRequireChangeOnNextSignIn gets the requireChangeOnNextSignIn property value. 
-func (m *ResetPasswordRequestBody) GetRequireChangeOnNextSignIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireChangeOnNextSignIn
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *ResetPasswordRequestBody) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetNewPassword gets the newPassword property value. 
+func (m *ResetPasswordRequestBody) GetNewPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newPassword
+    }
+}
+// GetRequireChangeOnNextSignIn gets the requireChangeOnNextSignIn property value. 
+func (m *ResetPasswordRequestBody) GetRequireChangeOnNextSignIn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requireChangeOnNextSignIn
+    }
 }
 func (m *ResetPasswordRequestBody) IsNil()(bool) {
     return m == nil

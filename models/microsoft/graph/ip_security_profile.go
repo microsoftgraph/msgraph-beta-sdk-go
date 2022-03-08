@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IpSecurityProfile 
+// IpSecurityProfile provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
 type IpSecurityProfile struct {
     Entity
     // 
@@ -23,9 +23,9 @@ type IpSecurityProfile struct {
     // 
     firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    ipCategories []IpCategory;
+    ipCategories []IpCategoryable;
     // 
-    ipReferenceData []IpReferenceData;
+    ipReferenceData []IpReferenceDataable;
     // 
     lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -33,7 +33,7 @@ type IpSecurityProfile struct {
     // 
     tags []string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
@@ -41,6 +41,10 @@ func NewIpSecurityProfile()(*IpSecurityProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateIpSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIpSecurityProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIpSecurityProfile(), nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. 
 func (m *IpSecurityProfile) GetActivityGroupNames()([]string) {
@@ -88,62 +92,6 @@ func (m *IpSecurityProfile) GetCountHosts()(*int32) {
         return nil
     } else {
         return m.countHosts
-    }
-}
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
-func (m *IpSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
-}
-// GetIpCategories gets the ipCategories property value. 
-func (m *IpSecurityProfile) GetIpCategories()([]IpCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipCategories
-    }
-}
-// GetIpReferenceData gets the ipReferenceData property value. 
-func (m *IpSecurityProfile) GetIpReferenceData()([]IpReferenceData) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipReferenceData
-    }
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. 
-func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *IpSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetTags gets the tags property value. 
-func (m *IpSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *IpSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -224,28 +172,28 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["ipCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIpCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateIpCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IpCategory, len(val))
+            res := make([]IpCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IpCategory))
+                res[i] = v.(IpCategoryable)
             }
             m.SetIpCategories(res)
         }
         return nil
     }
     res["ipReferenceData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIpReferenceData() })
+        val, err := n.GetCollectionOfObjectValues(CreateIpReferenceDataFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IpReferenceData, len(val))
+            res := make([]IpReferenceDataable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IpReferenceData))
+                res[i] = v.(IpReferenceDataable)
             }
             m.SetIpReferenceData(res)
         }
@@ -286,16 +234,72 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
+func (m *IpSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstSeenDateTime
+    }
+}
+// GetIpCategories gets the ipCategories property value. 
+func (m *IpSecurityProfile) GetIpCategories()([]IpCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipCategories
+    }
+}
+// GetIpReferenceData gets the ipReferenceData property value. 
+func (m *IpSecurityProfile) GetIpReferenceData()([]IpReferenceDataable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipReferenceData
+    }
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. 
+func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSeenDateTime
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *IpSecurityProfile) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetTags gets the tags property value. 
+func (m *IpSecurityProfile) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *IpSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *IpSecurityProfile) IsNil()(bool) {
     return m == nil
@@ -351,8 +355,7 @@ func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetIpCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIpCategories()))
         for i, v := range m.GetIpCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("ipCategories", cast)
         if err != nil {
@@ -362,8 +365,7 @@ func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetIpReferenceData() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIpReferenceData()))
         for i, v := range m.GetIpReferenceData() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("ipReferenceData", cast)
         if err != nil {
@@ -439,13 +441,13 @@ func (m *IpSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7
     }
 }
 // SetIpCategories sets the ipCategories property value. 
-func (m *IpSecurityProfile) SetIpCategories(value []IpCategory)() {
+func (m *IpSecurityProfile) SetIpCategories(value []IpCategoryable)() {
     if m != nil {
         m.ipCategories = value
     }
 }
 // SetIpReferenceData sets the ipReferenceData property value. 
-func (m *IpSecurityProfile) SetIpReferenceData(value []IpReferenceData)() {
+func (m *IpSecurityProfile) SetIpReferenceData(value []IpReferenceDataable)() {
     if m != nil {
         m.ipReferenceData = value
     }
@@ -469,7 +471,7 @@ func (m *IpSecurityProfile) SetTags(value []string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *IpSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *IpSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

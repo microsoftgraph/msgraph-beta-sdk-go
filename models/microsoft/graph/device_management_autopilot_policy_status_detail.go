@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementAutopilotPolicyStatusDetail 
+// DeviceManagementAutopilotPolicyStatusDetail provides operations to manage the deviceManagement singleton.
 type DeviceManagementAutopilotPolicyStatusDetail struct {
     Entity
     // The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
@@ -27,6 +27,10 @@ func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilot
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementAutopilotPolicyStatusDetail(), nil
 }
 // GetComplianceStatus gets the complianceStatus property value. The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetComplianceStatus()(*DeviceManagementAutopilotPolicyComplianceStatus) {
@@ -50,30 +54,6 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetErrorCode()(*int32) {
         return nil
     } else {
         return m.errorCode
-    }
-}
-// GetLastReportedDateTime gets the lastReportedDateTime property value. Timestamp of the reported policy status
-func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
-}
-// GetPolicyType gets the policyType property value. The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
-func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceManagementAutopilotPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyType
-    }
-}
-// GetTrackedOnEnrollmentStatus gets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
-func (m *DeviceManagementAutopilotPolicyStatusDetail) GetTrackedOnEnrollmentStatus()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trackedOnEnrollmentStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +120,30 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Timestamp of the reported policy status
+func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastReportedDateTime
+    }
+}
+// GetPolicyType gets the policyType property value. The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
+func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceManagementAutopilotPolicyType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyType
+    }
+}
+// GetTrackedOnEnrollmentStatus gets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+func (m *DeviceManagementAutopilotPolicyStatusDetail) GetTrackedOnEnrollmentStatus()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trackedOnEnrollmentStatus
+    }
 }
 func (m *DeviceManagementAutopilotPolicyStatusDetail) IsNil()(bool) {
     return m == nil

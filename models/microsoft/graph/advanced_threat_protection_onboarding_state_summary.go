@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AdvancedThreatProtectionOnboardingStateSummary 
+// AdvancedThreatProtectionOnboardingStateSummary provides operations to manage the deviceManagement singleton.
 type AdvancedThreatProtectionOnboardingStateSummary struct {
     Entity
     // Not yet documented
-    advancedThreatProtectionOnboardingDeviceSettingStates []AdvancedThreatProtectionOnboardingDeviceSettingState;
+    advancedThreatProtectionOnboardingDeviceSettingStates []AdvancedThreatProtectionOnboardingDeviceSettingStateable;
     // Number of compliant devices
     compliantDeviceCount *int32;
     // Number of conflict devices
@@ -33,8 +33,12 @@ func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtecti
     }
     return m
 }
+// CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAdvancedThreatProtectionOnboardingStateSummary(), nil
+}
 // GetAdvancedThreatProtectionOnboardingDeviceSettingStates gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetAdvancedThreatProtectionOnboardingDeviceSettingStates()([]AdvancedThreatProtectionOnboardingDeviceSettingState) {
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetAdvancedThreatProtectionOnboardingDeviceSettingStates()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable) {
     if m == nil {
         return nil
     } else {
@@ -65,58 +69,18 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetErrorDeviceCount()(*
         return m.errorDeviceCount
     }
 }
-// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNonCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantDeviceCount
-    }
-}
-// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
-}
-// GetNotAssignedDeviceCount gets the notAssignedDeviceCount property value. Number of not assigned devices
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotAssignedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notAssignedDeviceCount
-    }
-}
-// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
-}
-// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["advancedThreatProtectionOnboardingDeviceSettingStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAdvancedThreatProtectionOnboardingDeviceSettingState() })
+        val, err := n.GetCollectionOfObjectValues(CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AdvancedThreatProtectionOnboardingDeviceSettingState, len(val))
+            res := make([]AdvancedThreatProtectionOnboardingDeviceSettingStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AdvancedThreatProtectionOnboardingDeviceSettingState))
+                res[i] = v.(AdvancedThreatProtectionOnboardingDeviceSettingStateable)
             }
             m.SetAdvancedThreatProtectionOnboardingDeviceSettingStates(res)
         }
@@ -204,6 +168,46 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
     }
     return res
 }
+// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNonCompliantDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nonCompliantDeviceCount
+    }
+}
+// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotApplicableDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableDeviceCount
+    }
+}
+// GetNotAssignedDeviceCount gets the notAssignedDeviceCount property value. Number of not assigned devices
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotAssignedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notAssignedDeviceCount
+    }
+}
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetRemediatedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedDeviceCount
+    }
+}
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetUnknownDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownDeviceCount
+    }
+}
 func (m *AdvancedThreatProtectionOnboardingStateSummary) IsNil()(bool) {
     return m == nil
 }
@@ -216,8 +220,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i04eb5
     if m.GetAdvancedThreatProtectionOnboardingDeviceSettingStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdvancedThreatProtectionOnboardingDeviceSettingStates()))
         for i, v := range m.GetAdvancedThreatProtectionOnboardingDeviceSettingStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("advancedThreatProtectionOnboardingDeviceSettingStates", cast)
         if err != nil {
@@ -275,7 +278,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i04eb5
     return nil
 }
 // SetAdvancedThreatProtectionOnboardingDeviceSettingStates sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
-func (m *AdvancedThreatProtectionOnboardingStateSummary) SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingState)() {
+func (m *AdvancedThreatProtectionOnboardingStateSummary) SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingStateable)() {
     if m != nil {
         m.advancedThreatProtectionOnboardingDeviceSettingStates = value
     }

@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Dimension 
+// Dimension provides operations to manage the financials singleton.
 type Dimension struct {
     Entity
     // 
     code *string;
     // 
-    dimensionValues []DimensionValue;
+    dimensionValues []DimensionValueable;
     // 
     displayName *string;
     // 
@@ -24,6 +24,10 @@ func NewDimension()(*Dimension) {
     }
     return m
 }
+// CreateDimensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDimensionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDimension(), nil
+}
 // GetCode gets the code property value. 
 func (m *Dimension) GetCode()(*string) {
     if m == nil {
@@ -33,7 +37,7 @@ func (m *Dimension) GetCode()(*string) {
     }
 }
 // GetDimensionValues gets the dimensionValues property value. 
-func (m *Dimension) GetDimensionValues()([]DimensionValue) {
+func (m *Dimension) GetDimensionValues()([]DimensionValueable) {
     if m == nil {
         return nil
     } else {
@@ -46,14 +50,6 @@ func (m *Dimension) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Dimension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -70,14 +66,14 @@ func (m *Dimension) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["dimensionValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDimensionValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateDimensionValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DimensionValue, len(val))
+            res := make([]DimensionValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DimensionValue))
+                res[i] = v.(DimensionValueable)
             }
             m.SetDimensionValues(res)
         }
@@ -105,6 +101,14 @@ func (m *Dimension) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Dimension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
 func (m *Dimension) IsNil()(bool) {
     return m == nil
 }
@@ -123,8 +127,7 @@ func (m *Dimension) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetDimensionValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDimensionValues()))
         for i, v := range m.GetDimensionValues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dimensionValues", cast)
         if err != nil {
@@ -152,7 +155,7 @@ func (m *Dimension) SetCode(value *string)() {
     }
 }
 // SetDimensionValues sets the dimensionValues property value. 
-func (m *Dimension) SetDimensionValues(value []DimensionValue)() {
+func (m *Dimension) SetDimensionValues(value []DimensionValueable)() {
     if m != nil {
         m.dimensionValues = value
     }

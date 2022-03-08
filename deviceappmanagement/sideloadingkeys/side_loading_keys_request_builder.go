@@ -2,11 +2,11 @@ package sideloadingkeys
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/sideloadingkeys/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SideLoadingKeysRequestBuilder builds and executes requests for operations under \deviceAppManagement\sideLoadingKeys
+// SideLoadingKeysRequestBuilder provides operations to manage the sideLoadingKeys property of the microsoft.graph.deviceAppManagement entity.
 type SideLoadingKeysRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SideLoadingKeysRequestBuilderGetQueryParameters struct {
 // SideLoadingKeysRequestBuilderPostOptions options for Post
 type SideLoadingKeysRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKey;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKeyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSideLoadingKeysRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSideLoadingKeysRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSideLoadingKeysRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SideLoadingKeysRequestBuilder) Count()(*i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f.CountRequestBuilder) {
+    return i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeysRequestBuilder) CreateGetRequestInformation(options *SideLoadingKeysRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *SideLoadingKeysRequestBuilder) CreateGetRequestInformation(options *Sid
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+// CreatePostRequestInformation create new navigation property to sideLoadingKeys for deviceAppManagement
 func (m *SideLoadingKeysRequestBuilder) CreatePostRequestInformation(options *SideLoadingKeysRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *SideLoadingKeysRequestBuilder) CreatePostRequestInformation(options *Si
     return requestInfo, nil
 }
 // Get side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *SideLoadingKeysRequestBuilder) Get(options *SideLoadingKeysRequestBuilderGetOptions)(*SideLoadingKeysResponse, error) {
+func (m *SideLoadingKeysRequestBuilder) Get(options *SideLoadingKeysRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKeyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSideLoadingKeysResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSideLoadingKeyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SideLoadingKeysResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKeyCollectionResponseable), nil
 }
-// Post side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *SideLoadingKeysRequestBuilder) Post(options *SideLoadingKeysRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKey, error) {
+// Post create new navigation property to sideLoadingKeys for deviceAppManagement
+func (m *SideLoadingKeysRequestBuilder) Post(options *SideLoadingKeysRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSideLoadingKey() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSideLoadingKeyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKey), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKeyable), nil
 }

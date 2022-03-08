@@ -2,11 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i0df9e09dedb93427085b8f717a2d19597d98ddc7e314368fb8d889bbe0089158 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/item/roleassignmentrequests/item/subject"
+    i1dcd875ccfc758b11e7d760783a1c12b03ff94976b9ee1c22c642cc4d752ffb4 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/item/roleassignmentrequests/item/resource"
+    if9348df0d6b082fea017a9f9ffc4f816b29bfc6073529c6e8d38cf1a0c0ffb6a "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/item/roleassignmentrequests/item/roledefinition"
 )
 
-// GovernanceRoleAssignmentRequestItemRequestBuilder builds and executes requests for operations under \governanceResources\{governanceResource-id}\roleAssignmentRequests\{governanceRoleAssignmentRequest-id}
+// GovernanceRoleAssignmentRequestItemRequestBuilder provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
 type GovernanceRoleAssignmentRequestItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +47,7 @@ type GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters struct 
 // GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions options for Patch
 type GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +64,7 @@ func NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +74,7 @@ func NewGovernanceRoleAssignmentRequestItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the collection of role assignment requests for the resource.
+// CreateDeleteRequestInformation delete navigation property roleAssignmentRequests for governanceResources
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) CreateDeleteRequestInformation(options *GovernanceRoleAssignmentRequestItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +111,7 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of role assignment requests for the resource.
+// CreatePatchRequestInformation update the navigation property roleAssignmentRequests in governanceResources
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) CreatePatchRequestInformation(options *GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,39 +129,60 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// Delete the collection of role assignment requests for the resource.
+// Delete delete navigation property roleAssignmentRequests for governanceResources
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Delete(options *GovernanceRoleAssignmentRequestItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the collection of role assignment requests for the resource.
-func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Get(options *GovernanceRoleAssignmentRequestItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest, error) {
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Get(options *GovernanceRoleAssignmentRequestItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceRoleAssignmentRequest() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable), nil
 }
-// Patch the collection of role assignment requests for the resource.
+// Patch update the navigation property roleAssignmentRequests in governanceResources
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Patch(options *GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Resource()(*i1dcd875ccfc758b11e7d760783a1c12b03ff94976b9ee1c22c642cc4d752ffb4.ResourceRequestBuilder) {
+    return i1dcd875ccfc758b11e7d760783a1c12b03ff94976b9ee1c22c642cc4d752ffb4.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*if9348df0d6b082fea017a9f9ffc4f816b29bfc6073529c6e8d38cf1a0c0ffb6a.RoleDefinitionRequestBuilder) {
+    return if9348df0d6b082fea017a9f9ffc4f816b29bfc6073529c6e8d38cf1a0c0ffb6a.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Subject()(*i0df9e09dedb93427085b8f717a2d19597d98ddc7e314368fb8d889bbe0089158.SubjectRequestBuilder) {
+    return i0df9e09dedb93427085b8f717a2d19597d98ddc7e314368fb8d889bbe0089158.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// SetScheduledRetireStateRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\microsoft.graph.setScheduledRetireState
+// SetScheduledRetireStateRequestBuilder provides operations to call the setScheduledRetireState method.
 type SetScheduledRetireStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SetScheduledRetireStateRequestBuilder struct {
 // SetScheduledRetireStateRequestBuilderPostOptions options for Post
 type SetScheduledRetireStateRequestBuilderPostOptions struct {
     // 
-    Body *SetScheduledRetireStateRequestBody;
+    Body SetScheduledRetireStateRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewSetScheduledRetireStateRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *SetScheduledRetireStateRequestBuilder) Post(options *SetScheduledRetire
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

@@ -2,12 +2,12 @@ package clientconfigurations
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5b05cfeb81737764b1b449f41eb8fb567b64805ba33849ab4222a56ae58eb02d "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration/clientconfigurations/updatepriorities"
+    if29faf001b603fa8aa22a6114cacf638e8e9ef0052023c9d636614374f5d88d4 "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration/clientconfigurations/count"
 )
 
-// ClientConfigurationsRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations
+// ClientConfigurationsRequestBuilder provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
 type ClientConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type ClientConfigurationsRequestBuilderGetQueryParameters struct {
 // ClientConfigurationsRequestBuilderPostOptions options for Post
 type ClientConfigurationsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfiguration;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewClientConfigurationsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewClientConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClientConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ClientConfigurationsRequestBuilder) Count()(*if29faf001b603fa8aa22a6114cacf638e8e9ef0052023c9d636614374f5d88d4.CountRequestBuilder) {
+    return if29faf001b603fa8aa22a6114cacf638e8e9ef0052023c9d636614374f5d88d4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of office Client configuration.
 func (m *ClientConfigurationsRequestBuilder) CreateGetRequestInformation(options *ClientConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *ClientConfigurationsRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation list of office Client configuration.
+// CreatePostRequestInformation create new navigation property to clientConfigurations for officeConfiguration
 func (m *ClientConfigurationsRequestBuilder) CreatePostRequestInformation(options *ClientConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,28 +118,36 @@ func (m *ClientConfigurationsRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Get list of office Client configuration.
-func (m *ClientConfigurationsRequestBuilder) Get(options *ClientConfigurationsRequestBuilderGetOptions)(*ClientConfigurationsResponse, error) {
+func (m *ClientConfigurationsRequestBuilder) Get(options *ClientConfigurationsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClientConfigurationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOfficeClientConfigurationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ClientConfigurationsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationCollectionResponseable), nil
 }
-// Post list of office Client configuration.
-func (m *ClientConfigurationsRequestBuilder) Post(options *ClientConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfiguration, error) {
+// Post create new navigation property to clientConfigurations for officeConfiguration
+func (m *ClientConfigurationsRequestBuilder) Post(options *ClientConfigurationsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOfficeClientConfiguration() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOfficeClientConfigurationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfiguration), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationable), nil
 }
 func (m *ClientConfigurationsRequestBuilder) UpdatePriorities()(*i5b05cfeb81737764b1b449f41eb8fb567b64805ba33849ab4222a56ae58eb02d.UpdatePrioritiesRequestBuilder) {
     return i5b05cfeb81737764b1b449f41eb8fb567b64805ba33849ab4222a56ae58eb02d.NewUpdatePrioritiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

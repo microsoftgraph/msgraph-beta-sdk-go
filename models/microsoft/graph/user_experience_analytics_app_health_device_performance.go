@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformance 
+// UserExperienceAnalyticsAppHealthDevicePerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     Entity
     // The number of app crashes for the device. Valid values -2147483648 to 2147483647
@@ -39,6 +39,10 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnaly
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsAppHealthDevicePerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAppHealthDevicePerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAppHealthDevicePerformance(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of app crashes for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppCrashCount()(*int32) {
@@ -110,30 +114,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceModel()(*st
         return nil
     } else {
         return m.deviceModel
-    }
-}
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
-}
-// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meanTimeToFailureInMinutes
-    }
-}
-// GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed.
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -260,6 +240,30 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         return nil
     }
     return res
+}
+// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatus
+    }
+}
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailureInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meanTimeToFailureInMinutes
+    }
+}
+// GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processedDateTime
+    }
 }
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) IsNil()(bool) {
     return m == nil

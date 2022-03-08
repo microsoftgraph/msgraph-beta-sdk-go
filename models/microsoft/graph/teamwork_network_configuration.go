@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkNetworkConfiguration 
+// TeamworkNetworkConfiguration provides operations to manage the teamwork singleton.
 type TeamworkNetworkConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,6 +34,10 @@ func NewTeamworkNetworkConfiguration()(*TeamworkNetworkConfiguration) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkNetworkConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkNetworkConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkNetworkConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -56,62 +60,6 @@ func (m *TeamworkNetworkConfiguration) GetDomainName()(*string) {
         return nil
     } else {
         return m.domainName
-    }
-}
-// GetHostName gets the hostName property value. The device name on a network.
-func (m *TeamworkNetworkConfiguration) GetHostName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostName
-    }
-}
-// GetIpAddress gets the ipAddress property value. The IP address is a numerical label that uniquely identifies every device connected to the internet.
-func (m *TeamworkNetworkConfiguration) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetIsDhcpEnabled gets the isDhcpEnabled property value. True if DHCP is enabled.
-func (m *TeamworkNetworkConfiguration) GetIsDhcpEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDhcpEnabled
-    }
-}
-// GetIsPCPortEnabled gets the isPCPortEnabled property value. True if the PC port is enabled.
-func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPCPortEnabled
-    }
-}
-// GetPrimaryDns gets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
-func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryDns
-    }
-}
-// GetSecondaryDns gets the secondaryDns property value. A secondary DNS is used when the primary DNS is not available.
-func (m *TeamworkNetworkConfiguration) GetSecondaryDns()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secondaryDns
-    }
-}
-// GetSubnetMask gets the subnetMask property value. A subnet mask is a number that distinguishes the network address and the host address within an IP address.
-func (m *TeamworkNetworkConfiguration) GetSubnetMask()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subnetMask
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -208,6 +156,62 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetHostName gets the hostName property value. The device name on a network.
+func (m *TeamworkNetworkConfiguration) GetHostName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hostName
+    }
+}
+// GetIpAddress gets the ipAddress property value. The IP address is a numerical label that uniquely identifies every device connected to the internet.
+func (m *TeamworkNetworkConfiguration) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetIsDhcpEnabled gets the isDhcpEnabled property value. True if DHCP is enabled.
+func (m *TeamworkNetworkConfiguration) GetIsDhcpEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDhcpEnabled
+    }
+}
+// GetIsPCPortEnabled gets the isPCPortEnabled property value. True if the PC port is enabled.
+func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPCPortEnabled
+    }
+}
+// GetPrimaryDns gets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
+func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.primaryDns
+    }
+}
+// GetSecondaryDns gets the secondaryDns property value. A secondary DNS is used when the primary DNS is not available.
+func (m *TeamworkNetworkConfiguration) GetSecondaryDns()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secondaryDns
+    }
+}
+// GetSubnetMask gets the subnetMask property value. A subnet mask is a number that distinguishes the network address and the host address within an IP address.
+func (m *TeamworkNetworkConfiguration) GetSubnetMask()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subnetMask
+    }
 }
 func (m *TeamworkNetworkConfiguration) IsNil()(bool) {
     return m == nil

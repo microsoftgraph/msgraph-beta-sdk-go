@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDriverUpdateProfile 
+// WindowsDriverUpdateProfile provides operations to manage the deviceManagement singleton.
 type WindowsDriverUpdateProfile struct {
     Entity
     // Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
     approvalType *DriverUpdateProfileApprovalType;
     // The list of group assignments of the profile.
-    assignments []WindowsDriverUpdateProfileAssignment;
+    assignments []WindowsDriverUpdateProfileAssignmentable;
     // The date time that the profile was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.
@@ -23,7 +23,7 @@ type WindowsDriverUpdateProfile struct {
     // The display name for the profile.
     displayName *string;
     // Driver inventories for this profile.
-    driverInventories []WindowsDriverUpdateInventory;
+    driverInventories []WindowsDriverUpdateInventoryable;
     // The date time that the profile was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Number of new driver updates available for this profile.
@@ -38,6 +38,10 @@ func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
     }
     return m
 }
+// CreateWindowsDriverUpdateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsDriverUpdateProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsDriverUpdateProfile(), nil
+}
 // GetApprovalType gets the approvalType property value. Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
 func (m *WindowsDriverUpdateProfile) GetApprovalType()(*DriverUpdateProfileApprovalType) {
     if m == nil {
@@ -47,7 +51,7 @@ func (m *WindowsDriverUpdateProfile) GetApprovalType()(*DriverUpdateProfileAppro
     }
 }
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
-func (m *WindowsDriverUpdateProfile) GetAssignments()([]WindowsDriverUpdateProfileAssignment) {
+func (m *WindowsDriverUpdateProfile) GetAssignments()([]WindowsDriverUpdateProfileAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -95,35 +99,11 @@ func (m *WindowsDriverUpdateProfile) GetDisplayName()(*string) {
     }
 }
 // GetDriverInventories gets the driverInventories property value. Driver inventories for this profile.
-func (m *WindowsDriverUpdateProfile) GetDriverInventories()([]WindowsDriverUpdateInventory) {
+func (m *WindowsDriverUpdateProfile) GetDriverInventories()([]WindowsDriverUpdateInventoryable) {
     if m == nil {
         return nil
     } else {
         return m.driverInventories
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
-func (m *WindowsDriverUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNewUpdates gets the newUpdates property value. Number of new driver updates available for this profile.
-func (m *WindowsDriverUpdateProfile) GetNewUpdates()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newUpdates
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Driver Update entity.
-func (m *WindowsDriverUpdateProfile) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,14 +120,14 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDriverUpdateProfileAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsDriverUpdateProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsDriverUpdateProfileAssignment, len(val))
+            res := make([]WindowsDriverUpdateProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsDriverUpdateProfileAssignment))
+                res[i] = v.(WindowsDriverUpdateProfileAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -204,14 +184,14 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["driverInventories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDriverUpdateInventory() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsDriverUpdateInventoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsDriverUpdateInventory, len(val))
+            res := make([]WindowsDriverUpdateInventoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsDriverUpdateInventory))
+                res[i] = v.(WindowsDriverUpdateInventoryable)
             }
             m.SetDriverInventories(res)
         }
@@ -253,6 +233,30 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
+func (m *WindowsDriverUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNewUpdates gets the newUpdates property value. Number of new driver updates available for this profile.
+func (m *WindowsDriverUpdateProfile) GetNewUpdates()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newUpdates
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Driver Update entity.
+func (m *WindowsDriverUpdateProfile) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
 func (m *WindowsDriverUpdateProfile) IsNil()(bool) {
     return m == nil
 }
@@ -272,8 +276,7 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -313,8 +316,7 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetDriverInventories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDriverInventories()))
         for i, v := range m.GetDriverInventories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("driverInventories", cast)
         if err != nil {
@@ -348,7 +350,7 @@ func (m *WindowsDriverUpdateProfile) SetApprovalType(value *DriverUpdateProfileA
     }
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
-func (m *WindowsDriverUpdateProfile) SetAssignments(value []WindowsDriverUpdateProfileAssignment)() {
+func (m *WindowsDriverUpdateProfile) SetAssignments(value []WindowsDriverUpdateProfileAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -384,7 +386,7 @@ func (m *WindowsDriverUpdateProfile) SetDisplayName(value *string)() {
     }
 }
 // SetDriverInventories sets the driverInventories property value. Driver inventories for this profile.
-func (m *WindowsDriverUpdateProfile) SetDriverInventories(value []WindowsDriverUpdateInventory)() {
+func (m *WindowsDriverUpdateProfile) SetDriverInventories(value []WindowsDriverUpdateInventoryable)() {
     if m != nil {
         m.driverInventories = value
     }

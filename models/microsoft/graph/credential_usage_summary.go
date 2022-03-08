@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CredentialUsageSummary 
+// CredentialUsageSummary provides operations to call the getCredentialUsageSummary method.
 type CredentialUsageSummary struct {
     Entity
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
@@ -16,12 +16,16 @@ type CredentialUsageSummary struct {
     // Provides the count of successful registrations or resets.
     successfulActivityCount *int64;
 }
-// NewCredentialUsageSummary instantiates a new CredentialUsageSummary and sets the default values.
+// NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCredentialUsageSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCredentialUsageSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCredentialUsageSummary(), nil
 }
 // GetAuthMethod gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
 func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
@@ -45,14 +49,6 @@ func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
         return nil
     } else {
         return m.feature
-    }
-}
-// GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.
-func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulActivityCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +95,14 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.
+func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successfulActivityCount
+    }
 }
 func (m *CredentialUsageSummary) IsNil()(bool) {
     return m == nil

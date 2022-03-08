@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomExtensionHandler 
+// CustomExtensionHandler provides operations to manage the identityGovernance singleton.
 type CustomExtensionHandler struct {
     Entity
     // Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-    customExtension *CustomAccessPackageWorkflowExtension;
+    customExtension CustomAccessPackageWorkflowExtensionable;
     // Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
     stage *AccessPackageCustomExtensionStage;
 }
@@ -19,32 +19,28 @@ func NewCustomExtensionHandler()(*CustomExtensionHandler) {
     }
     return m
 }
+// CreateCustomExtensionHandlerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomExtensionHandlerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomExtensionHandler(), nil
+}
 // GetCustomExtension gets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-func (m *CustomExtensionHandler) GetCustomExtension()(*CustomAccessPackageWorkflowExtension) {
+func (m *CustomExtensionHandler) GetCustomExtension()(CustomAccessPackageWorkflowExtensionable) {
     if m == nil {
         return nil
     } else {
         return m.customExtension
     }
 }
-// GetStage gets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *CustomExtensionHandler) GetStage()(*AccessPackageCustomExtensionStage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stage
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customExtension"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomAccessPackageWorkflowExtension() })
+        val, err := n.GetObjectValue(CreateCustomAccessPackageWorkflowExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCustomExtension(val.(*CustomAccessPackageWorkflowExtension))
+            m.SetCustomExtension(val.(CustomAccessPackageWorkflowExtensionable))
         }
         return nil
     }
@@ -59,6 +55,14 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetStage gets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+func (m *CustomExtensionHandler) GetStage()(*AccessPackageCustomExtensionStage) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stage
+    }
 }
 func (m *CustomExtensionHandler) IsNil()(bool) {
     return m == nil
@@ -85,7 +89,7 @@ func (m *CustomExtensionHandler) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetCustomExtension sets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-func (m *CustomExtensionHandler) SetCustomExtension(value *CustomAccessPackageWorkflowExtension)() {
+func (m *CustomExtensionHandler) SetCustomExtension(value CustomAccessPackageWorkflowExtensionable)() {
     if m != nil {
         m.customExtension = value
     }

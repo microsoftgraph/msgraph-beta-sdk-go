@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SimulationAutomationRun 
+// SimulationAutomationRun provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type SimulationAutomationRun struct {
     Entity
     // 
@@ -24,36 +24,16 @@ func NewSimulationAutomationRun()(*SimulationAutomationRun) {
     }
     return m
 }
+// CreateSimulationAutomationRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSimulationAutomationRunFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSimulationAutomationRun(), nil
+}
 // GetEndDateTime gets the endDateTime property value. 
 func (m *SimulationAutomationRun) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetSimulationId gets the simulationId property value. 
-func (m *SimulationAutomationRun) GetSimulationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationId
-    }
-}
-// GetStartDateTime gets the startDateTime property value. 
-func (m *SimulationAutomationRun) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatus gets the status property value. 
-func (m *SimulationAutomationRun) GetStatus()(*SimulationAutomationRunStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +80,30 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetSimulationId gets the simulationId property value. 
+func (m *SimulationAutomationRun) GetSimulationId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.simulationId
+    }
+}
+// GetStartDateTime gets the startDateTime property value. 
+func (m *SimulationAutomationRun) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatus gets the status property value. 
+func (m *SimulationAutomationRun) GetStatus()(*SimulationAutomationRunStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *SimulationAutomationRun) IsNil()(bool) {
     return m == nil

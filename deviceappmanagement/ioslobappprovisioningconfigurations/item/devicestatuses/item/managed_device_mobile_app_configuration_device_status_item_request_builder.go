@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}\deviceStatuses\{managedDeviceMobileAppConfigurationDeviceStatus-id}
+// ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder provides operations to manage the deviceStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 type ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderGetQueryPa
 // ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderPatchOptions options for Patch
 type ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationDeviceStatus;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationDeviceStatusable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the list of device installation states for this mobile app configuration.
+// CreateDeleteRequestInformation delete navigation property deviceStatuses for deviceAppManagement
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of device installation states for this mobile app configuration.
+// CreatePatchRequestInformation update the navigation property deviceStatuses in deviceAppManagement
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// Delete the list of device installation states for this mobile app configuration.
+// Delete delete navigation property deviceStatuses for deviceAppManagement
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) Delete(options *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the list of device installation states for this mobile app configuration.
-func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) Get(options *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationDeviceStatus, error) {
+func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) Get(options *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationDeviceStatusable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagedDeviceMobileAppConfigurationDeviceStatus() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceMobileAppConfigurationDeviceStatusFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationDeviceStatus), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationDeviceStatusable), nil
 }
-// Patch the list of device installation states for this mobile app configuration.
+// Patch update the navigation property deviceStatuses in deviceAppManagement
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) Patch(options *ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

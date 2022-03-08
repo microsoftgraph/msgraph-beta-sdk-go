@@ -2,11 +2,11 @@ package classifyfilejobs
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/classifyfilejobs/count"
 )
 
-// ClassifyFileJobsRequestBuilder builds and executes requests for operations under \dataClassification\classifyFileJobs
+// ClassifyFileJobsRequestBuilder provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.
 type ClassifyFileJobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ClassifyFileJobsRequestBuilderGetQueryParameters struct {
 // ClassifyFileJobsRequestBuilderPostOptions options for Post
 type ClassifyFileJobsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBaseable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewClassifyFileJobsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewClassifyFileJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassifyFileJobsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ClassifyFileJobsRequestBuilder) Count()(*i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b.CountRequestBuilder) {
+    return i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get classifyFileJobs from dataClassification
 func (m *ClassifyFileJobsRequestBuilder) CreateGetRequestInformation(options *ClassifyFileJobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *ClassifyFileJobsRequestBuilder) CreatePostRequestInformation(options *C
     return requestInfo, nil
 }
 // Get get classifyFileJobs from dataClassification
-func (m *ClassifyFileJobsRequestBuilder) Get(options *ClassifyFileJobsRequestBuilderGetOptions)(*ClassifyFileJobsResponse, error) {
+func (m *ClassifyFileJobsRequestBuilder) Get(options *ClassifyFileJobsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassifyFileJobsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateJobResponseBaseCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ClassifyFileJobsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBaseCollectionResponseable), nil
 }
 // Post create new navigation property to classifyFileJobs for dataClassification
-func (m *ClassifyFileJobsRequestBuilder) Post(options *ClassifyFileJobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase, error) {
+func (m *ClassifyFileJobsRequestBuilder) Post(options *ClassifyFileJobsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBaseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJobResponseBase() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateJobResponseBaseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBaseable), nil
 }

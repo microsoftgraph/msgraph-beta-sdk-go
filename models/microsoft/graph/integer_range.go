@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IntegerRange 
+// IntegerRange provides operations to manage the print singleton.
 type IntegerRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewIntegerRange()(*IntegerRange) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateIntegerRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIntegerRangeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIntegerRange(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntegerRange) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *IntegerRange) GetEnd()(*int64) {
         return nil
     } else {
         return m.end
-    }
-}
-// GetMaximum gets the maximum property value. 
-func (m *IntegerRange) GetMaximum()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximum
-    }
-}
-// GetMinimum gets the minimum property value. 
-func (m *IntegerRange) GetMinimum()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimum
-    }
-}
-// GetStart gets the start property value. The inclusive lower bound of the integer range.
-func (m *IntegerRange) GetStart()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetMaximum gets the maximum property value. 
+func (m *IntegerRange) GetMaximum()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximum
+    }
+}
+// GetMinimum gets the minimum property value. 
+func (m *IntegerRange) GetMinimum()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimum
+    }
+}
+// GetStart gets the start property value. The inclusive lower bound of the integer range.
+func (m *IntegerRange) GetStart()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.start
+    }
 }
 func (m *IntegerRange) IsNil()(bool) {
     return m == nil

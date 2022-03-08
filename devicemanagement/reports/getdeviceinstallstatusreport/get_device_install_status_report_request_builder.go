@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetDeviceInstallStatusReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceInstallStatusReport
+// GetDeviceInstallStatusReportRequestBuilder provides operations to call the getDeviceInstallStatusReport method.
 type GetDeviceInstallStatusReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetDeviceInstallStatusReportRequestBuilder struct {
 // GetDeviceInstallStatusReportRequestBuilderPostOptions options for Post
 type GetDeviceInstallStatusReportRequestBuilderPostOptions struct {
     // 
-    Body *GetDeviceInstallStatusReportRequestBody;
+    Body GetDeviceInstallStatusReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetDeviceInstallStatusReportRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetDeviceInstallStatusReportRequestBuilder) CreatePostRequestInformatio
     return requestInfo, nil
 }
 // Post invoke action getDeviceInstallStatusReport
-func (m *GetDeviceInstallStatusReportRequestBuilder) Post(options *GetDeviceInstallStatusReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetDeviceInstallStatusReportRequestBuilder) Post(options *GetDeviceInstallStatusReportRequestBuilderPostOptions)(GetDeviceInstallStatusReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDeviceInstallStatusReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetDeviceInstallStatusReportResponseable), nil
 }

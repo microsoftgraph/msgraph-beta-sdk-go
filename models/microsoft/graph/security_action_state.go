@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityActionState 
+// SecurityActionState provides operations to manage the securityActions property of the microsoft.graph.security entity.
 type SecurityActionState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewSecurityActionState()(*SecurityActionState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSecurityActionStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityActionStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityActionState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityActionState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *SecurityActionState) GetAppId()(*string) {
         return nil
     } else {
         return m.appId
-    }
-}
-// GetStatus gets the status property value. Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
-func (m *SecurityActionState) GetStatus()(*OperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUpdatedDateTime gets the updatedDateTime property value. Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *SecurityActionState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedDateTime
-    }
-}
-// GetUser gets the user property value. The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
-func (m *SecurityActionState) GetUser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +89,30 @@ func (m *SecurityActionState) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
+func (m *SecurityActionState) GetStatus()(*OperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUpdatedDateTime gets the updatedDateTime property value. Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *SecurityActionState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updatedDateTime
+    }
+}
+// GetUser gets the user property value. The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
+func (m *SecurityActionState) GetUser()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.user
+    }
 }
 func (m *SecurityActionState) IsNil()(bool) {
     return m == nil

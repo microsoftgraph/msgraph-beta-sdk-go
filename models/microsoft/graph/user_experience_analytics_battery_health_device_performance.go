@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDevicePerformance 
+// UserExperienceAnalyticsBatteryHealthDevicePerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
     // Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
@@ -32,6 +32,10 @@ func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceA
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBatteryHealthDevicePerformance(), nil
 }
 // GetBatteryAgeInDays gets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetBatteryAgeInDays()(*int32) {
@@ -71,38 +75,6 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRunt
         return nil
     } else {
         return m.estimatedRuntimeInMinutes
-    }
-}
-// GetHealthStatus gets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
-}
-// GetManufacturer gets the manufacturer property value. The manufacturer name of the device.
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetMaxCapacityPercentage gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxCapacityPercentage
-    }
-}
-// GetModel gets the model property value. The model name of the device.
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -199,6 +171,38 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         return nil
     }
     return res
+}
+// GetHealthStatus gets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatus
+    }
+}
+// GetManufacturer gets the manufacturer property value. The manufacturer name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetMaxCapacityPercentage gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPercentage()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxCapacityPercentage
+    }
+}
+// GetModel gets the model property value. The model name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
 }
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) IsNil()(bool) {
     return m == nil

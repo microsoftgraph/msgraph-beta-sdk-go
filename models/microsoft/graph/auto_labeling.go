@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AutoLabeling 
+// AutoLabeling provides operations to manage the compliance singleton.
 type AutoLabeling struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewAutoLabeling()(*AutoLabeling) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAutoLabelingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAutoLabelingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAutoLabeling(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutoLabeling) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMessage gets the message property value. 
-func (m *AutoLabeling) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
-func (m *AutoLabeling) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +60,22 @@ func (m *AutoLabeling) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. 
+func (m *AutoLabeling) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
+func (m *AutoLabeling) GetSensitiveTypeIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitiveTypeIds
+    }
 }
 func (m *AutoLabeling) IsNil()(bool) {
     return m == nil

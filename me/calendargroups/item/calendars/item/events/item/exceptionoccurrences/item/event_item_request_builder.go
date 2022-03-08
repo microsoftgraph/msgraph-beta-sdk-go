@@ -2,18 +2,28 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i25c258057200bb0f49fe695e4a04b563a49a78ea1b8d683224229ecc2216f2a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/instances"
     i48852bc54e98648603615f21e8fe236e812e000865f7f4c50233739217e4d1e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/tentativelyaccept"
     i55f0917eabd722c0b1a208a3899d358fa90ca8d177365df27f6e8b3741b91b11 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/cancel"
     i6ac110054bf4866ebd4c71125f70f8ed4944d4e5a1e4a4f60ec33866136a21dc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/dismissreminder"
     i77dbc8b0b312e9997d696a64628fb76fbd74dca2b57dad9b55a8aaeac2226883 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/snoozereminder"
+    i7cb1b521cdcddebe65f30672b8c67221c12155ef96f0ce5cb7f15ba40d2b53b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/attachments"
+    i8fc8df027938e6c57d6a20fed58f975aff99e1b08ccd8cd6d0155b73942df792 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/singlevalueextendedproperties"
+    i91ef35b5ec9cae5a9c036e761d8e2be8be1d20a8e9150854611f0bf715cf73d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/calendar"
     i93edb1ee8f13a1618935932133f24016779d6669f623b4490fbbdd678515d191 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/forward"
+    iaebfa9415ee51c6dc7a11bd735bcb48cc6d59a447064f4ad81c5d165950b3e8e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/extensions"
     ibdc76841b079a0f188daa2353850e249b532969e1cb0485c6094353bdc5f3930 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/accept"
     icc729204df03f40d1aa2f95863ea112bb68d4be2c94ca964621c4a7014a3ac33 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/decline"
+    id6ca25b6555ad7c56f58e1bf21643fa0cfd6ef1dc4e6414360aa3b916d23d32d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/multivalueextendedproperties"
+    i291a6f0c68faa3f60f8ebad637c88cff44b789be9064d3c42c7af21f0c1041a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/singlevalueextendedproperties/item"
+    i2d93095d60bcd79483609d3222e456dda61fc9ca8bb9109b27f24e904d333421 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/attachments/item"
+    i39a537deb3ece6da6f5c941a4a6c877fafe08898d46300e4a18dd7b209d2752e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/multivalueextendedproperties/item"
+    i9e21713a2ffb327ba755e9e84494cca171566fabae8c73f12284ce0b5ea1710e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/instances/item"
+    ia35ae6531a2d15573b6ddbc296f2787be67a3cd79e5e7eec7365225122114987 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/item/events/item/exceptionoccurrences/item/extensions/item"
 )
 
-// EventItemRequestBuilder builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\events\{event-id}\exceptionOccurrences\{event-id1}
+// EventItemRequestBuilder provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
 type EventItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +62,7 @@ type EventItemRequestBuilderGetQueryParameters struct {
 // EventItemRequestBuilderPatchOptions options for Patch
 type EventItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Eventable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,6 +72,23 @@ type EventItemRequestBuilderPatchOptions struct {
 }
 func (m *EventItemRequestBuilder) Accept()(*ibdc76841b079a0f188daa2353850e249b532969e1cb0485c6094353bdc5f3930.AcceptRequestBuilder) {
     return ibdc76841b079a0f188daa2353850e249b532969e1cb0485c6094353bdc5f3930.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *EventItemRequestBuilder) Attachments()(*i7cb1b521cdcddebe65f30672b8c67221c12155ef96f0ce5cb7f15ba40d2b53b4.AttachmentsRequestBuilder) {
+    return i7cb1b521cdcddebe65f30672b8c67221c12155ef96f0ce5cb7f15ba40d2b53b4.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendarGroups.item.calendars.item.events.item.exceptionOccurrences.item.attachments.item collection
+func (m *EventItemRequestBuilder) AttachmentsById(id string)(*i2d93095d60bcd79483609d3222e456dda61fc9ca8bb9109b27f24e904d333421.AttachmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["attachment_id"] = id
+    }
+    return i2d93095d60bcd79483609d3222e456dda61fc9ca8bb9109b27f24e904d333421.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *EventItemRequestBuilder) Calendar()(*i91ef35b5ec9cae5a9c036e761d8e2be8be1d20a8e9150854611f0bf715cf73d3.CalendarRequestBuilder) {
+    return i91ef35b5ec9cae5a9c036e761d8e2be8be1d20a8e9150854611f0bf715cf73d3.NewCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *EventItemRequestBuilder) Cancel()(*i55f0917eabd722c0b1a208a3899d358fa90ca8d177365df27f6e8b3741b91b11.CancelRequestBuilder) {
     return i55f0917eabd722c0b1a208a3899d358fa90ca8d177365df27f6e8b3741b91b11.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -75,7 +102,7 @@ func NewEventItemRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -149,7 +176,11 @@ func (m *EventItemRequestBuilder) Delete(options *EventItemRequestBuilderDeleteO
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -158,20 +189,66 @@ func (m *EventItemRequestBuilder) Delete(options *EventItemRequestBuilderDeleteO
 func (m *EventItemRequestBuilder) DismissReminder()(*i6ac110054bf4866ebd4c71125f70f8ed4944d4e5a1e4a4f60ec33866136a21dc.DismissReminderRequestBuilder) {
     return i6ac110054bf4866ebd4c71125f70f8ed4944d4e5a1e4a4f60ec33866136a21dc.NewDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+func (m *EventItemRequestBuilder) Extensions()(*iaebfa9415ee51c6dc7a11bd735bcb48cc6d59a447064f4ad81c5d165950b3e8e.ExtensionsRequestBuilder) {
+    return iaebfa9415ee51c6dc7a11bd735bcb48cc6d59a447064f4ad81c5d165950b3e8e.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendarGroups.item.calendars.item.events.item.exceptionOccurrences.item.extensions.item collection
+func (m *EventItemRequestBuilder) ExtensionsById(id string)(*ia35ae6531a2d15573b6ddbc296f2787be67a3cd79e5e7eec7365225122114987.ExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["extension_id"] = id
+    }
+    return ia35ae6531a2d15573b6ddbc296f2787be67a3cd79e5e7eec7365225122114987.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *EventItemRequestBuilder) Forward()(*i93edb1ee8f13a1618935932133f24016779d6669f623b4490fbbdd678515d191.ForwardRequestBuilder) {
     return i93edb1ee8f13a1618935932133f24016779d6669f623b4490fbbdd678515d191.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get exceptionOccurrences from me
-func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
+func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Eventable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEvent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Eventable), nil
+}
+func (m *EventItemRequestBuilder) Instances()(*i25c258057200bb0f49fe695e4a04b563a49a78ea1b8d683224229ecc2216f2a3.InstancesRequestBuilder) {
+    return i25c258057200bb0f49fe695e4a04b563a49a78ea1b8d683224229ecc2216f2a3.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// InstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendarGroups.item.calendars.item.events.item.exceptionOccurrences.item.instances.item collection
+func (m *EventItemRequestBuilder) InstancesById(id string)(*i9e21713a2ffb327ba755e9e84494cca171566fabae8c73f12284ce0b5ea1710e.EventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["event_id2"] = id
+    }
+    return i9e21713a2ffb327ba755e9e84494cca171566fabae8c73f12284ce0b5ea1710e.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *EventItemRequestBuilder) MultiValueExtendedProperties()(*id6ca25b6555ad7c56f58e1bf21643fa0cfd6ef1dc4e6414360aa3b916d23d32d.MultiValueExtendedPropertiesRequestBuilder) {
+    return id6ca25b6555ad7c56f58e1bf21643fa0cfd6ef1dc4e6414360aa3b916d23d32d.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendarGroups.item.calendars.item.events.item.exceptionOccurrences.item.multiValueExtendedProperties.item collection
+func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i39a537deb3ece6da6f5c941a4a6c877fafe08898d46300e4a18dd7b209d2752e.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["multiValueLegacyExtendedProperty_id"] = id
+    }
+    return i39a537deb3ece6da6f5c941a4a6c877fafe08898d46300e4a18dd7b209d2752e.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property exceptionOccurrences in me
 func (m *EventItemRequestBuilder) Patch(options *EventItemRequestBuilderPatchOptions)(error) {
@@ -179,11 +256,29 @@ func (m *EventItemRequestBuilder) Patch(options *EventItemRequestBuilderPatchOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *EventItemRequestBuilder) SingleValueExtendedProperties()(*i8fc8df027938e6c57d6a20fed58f975aff99e1b08ccd8cd6d0155b73942df792.SingleValueExtendedPropertiesRequestBuilder) {
+    return i8fc8df027938e6c57d6a20fed58f975aff99e1b08ccd8cd6d0155b73942df792.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendarGroups.item.calendars.item.events.item.exceptionOccurrences.item.singleValueExtendedProperties.item collection
+func (m *EventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i291a6f0c68faa3f60f8ebad637c88cff44b789be9064d3c42c7af21f0c1041a7.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["singleValueLegacyExtendedProperty_id"] = id
+    }
+    return i291a6f0c68faa3f60f8ebad637c88cff44b789be9064d3c42c7af21f0c1041a7.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *EventItemRequestBuilder) SnoozeReminder()(*i77dbc8b0b312e9997d696a64628fb76fbd74dca2b57dad9b55a8aaeac2226883.SnoozeReminderRequestBuilder) {
     return i77dbc8b0b312e9997d696a64628fb76fbd74dca2b57dad9b55a8aaeac2226883.NewSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);

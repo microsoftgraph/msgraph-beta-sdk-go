@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemActivityTimeSet 
+// ItemActivityTimeSet provides operations to manage the compliance singleton.
 type ItemActivityTimeSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,36 +23,16 @@ func NewItemActivityTimeSet()(*ItemActivityTimeSet) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateItemActivityTimeSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemActivityTimeSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemActivityTimeSet(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActivityTimeSet) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastRecordedDateTime gets the lastRecordedDateTime property value. 
-func (m *ItemActivityTimeSet) GetLastRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRecordedDateTime
-    }
-}
-// GetObservedDateTime gets the observedDateTime property value. When the activity was observed to take place.
-func (m *ItemActivityTimeSet) GetObservedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.observedDateTime
-    }
-}
-// GetRecordedDateTime gets the recordedDateTime property value. When the observation was recorded on the service.
-func (m *ItemActivityTimeSet) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +69,30 @@ func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetLastRecordedDateTime gets the lastRecordedDateTime property value. 
+func (m *ItemActivityTimeSet) GetLastRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRecordedDateTime
+    }
+}
+// GetObservedDateTime gets the observedDateTime property value. When the activity was observed to take place.
+func (m *ItemActivityTimeSet) GetObservedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.observedDateTime
+    }
+}
+// GetRecordedDateTime gets the recordedDateTime property value. When the observation was recorded on the service.
+func (m *ItemActivityTimeSet) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recordedDateTime
+    }
 }
 func (m *ItemActivityTimeSet) IsNil()(bool) {
     return m == nil

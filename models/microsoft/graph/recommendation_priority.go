@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the directory singleton.
 type RecommendationPriority int
 
 const (

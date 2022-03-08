@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LinkedResource_v2 
+// LinkedResource_v2 provides operations to manage the compliance singleton.
 type LinkedResource_v2 struct {
     Entity
     // Field indicating the app name of the source that is sending the linkedResource.
@@ -22,6 +22,10 @@ func NewLinkedResource_v2()(*LinkedResource_v2) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateLinkedResource_v2FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLinkedResource_v2FromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLinkedResource_v2(), nil
 }
 // GetApplicationName gets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
 func (m *LinkedResource_v2) GetApplicationName()(*string) {
@@ -45,14 +49,6 @@ func (m *LinkedResource_v2) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetWebUrl gets the webUrl property value. Deep link to the linkedResource.
-func (m *LinkedResource_v2) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +95,14 @@ func (m *LinkedResource_v2) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetWebUrl gets the webUrl property value. Deep link to the linkedResource.
+func (m *LinkedResource_v2) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *LinkedResource_v2) IsNil()(bool) {
     return m == nil

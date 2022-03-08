@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicySet 
+// PolicySet provides operations to manage the deviceAppManagement singleton.
 type PolicySet struct {
     Entity
     // Assignments of the PolicySet.
-    assignments []PolicySetAssignment;
+    assignments []PolicySetAssignmentable;
     // Creation time of the PolicySet.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description of the PolicySet.
@@ -21,7 +21,7 @@ type PolicySet struct {
     // Tags of the guided deployment
     guidedDeploymentTags []string;
     // Items of the PolicySet with maximum count 100.
-    items []PolicySetItem;
+    items []PolicySetItemable;
     // Last modified time of the PolicySet.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // RoleScopeTags of the PolicySet
@@ -36,8 +36,12 @@ func NewPolicySet()(*PolicySet) {
     }
     return m
 }
+// CreatePolicySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePolicySetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPolicySet(), nil
+}
 // GetAssignments gets the assignments property value. Assignments of the PolicySet.
-func (m *PolicySet) GetAssignments()([]PolicySetAssignment) {
+func (m *PolicySet) GetAssignments()([]PolicySetAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -76,58 +80,18 @@ func (m *PolicySet) GetErrorCode()(*ErrorCode) {
         return m.errorCode
     }
 }
-// GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
-func (m *PolicySet) GetGuidedDeploymentTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guidedDeploymentTags
-    }
-}
-// GetItems gets the items property value. Items of the PolicySet with maximum count 100.
-func (m *PolicySet) GetItems()([]PolicySetItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySet.
-func (m *PolicySet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the PolicySet
-func (m *PolicySet) GetRoleScopeTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTags
-    }
-}
-// GetStatus gets the status property value. Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
-func (m *PolicySet) GetStatus()(*PolicySetStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PolicySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPolicySetAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreatePolicySetAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PolicySetAssignment, len(val))
+            res := make([]PolicySetAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PolicySetAssignment))
+                res[i] = v.(PolicySetAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -188,14 +152,14 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPolicySetItem() })
+        val, err := n.GetCollectionOfObjectValues(CreatePolicySetItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PolicySetItem, len(val))
+            res := make([]PolicySetItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PolicySetItem))
+                res[i] = v.(PolicySetItemable)
             }
             m.SetItems(res)
         }
@@ -237,6 +201,46 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
     }
     return res
 }
+// GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
+func (m *PolicySet) GetGuidedDeploymentTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.guidedDeploymentTags
+    }
+}
+// GetItems gets the items property value. Items of the PolicySet with maximum count 100.
+func (m *PolicySet) GetItems()([]PolicySetItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.items
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySet.
+func (m *PolicySet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the PolicySet
+func (m *PolicySet) GetRoleScopeTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTags
+    }
+}
+// GetStatus gets the status property value. Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+func (m *PolicySet) GetStatus()(*PolicySetStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *PolicySet) IsNil()(bool) {
     return m == nil
 }
@@ -249,8 +253,7 @@ func (m *PolicySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -291,8 +294,7 @@ func (m *PolicySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -321,7 +323,7 @@ func (m *PolicySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetAssignments sets the assignments property value. Assignments of the PolicySet.
-func (m *PolicySet) SetAssignments(value []PolicySetAssignment)() {
+func (m *PolicySet) SetAssignments(value []PolicySetAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -357,7 +359,7 @@ func (m *PolicySet) SetGuidedDeploymentTags(value []string)() {
     }
 }
 // SetItems sets the items property value. Items of the PolicySet with maximum count 100.
-func (m *PolicySet) SetItems(value []PolicySetItem)() {
+func (m *PolicySet) SetItems(value []PolicySetItemable)() {
     if m != nil {
         m.items = value
     }

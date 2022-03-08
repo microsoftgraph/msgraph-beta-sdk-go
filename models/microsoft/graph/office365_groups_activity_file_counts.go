@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityFileCounts 
+// Office365GroupsActivityFileCounts provides operations to call the getOffice365GroupsActivityFileCounts method.
 type Office365GroupsActivityFileCounts struct {
     Entity
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
@@ -18,12 +18,16 @@ type Office365GroupsActivityFileCounts struct {
     // The total number of files in the group's SharePoint document library.
     total *int64;
 }
-// NewOffice365GroupsActivityFileCounts instantiates a new Office365GroupsActivityFileCounts and sets the default values.
+// NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
     m := &Office365GroupsActivityFileCounts{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOffice365GroupsActivityFileCounts(), nil
 }
 // GetActive gets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
@@ -31,38 +35,6 @@ func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
         return nil
     } else {
         return m.active
-    }
-}
-// GetReportDate gets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
-func (m *Office365GroupsActivityFileCounts) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportDate
-    }
-}
-// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
-func (m *Office365GroupsActivityFileCounts) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
-}
-// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *Office365GroupsActivityFileCounts) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
-}
-// GetTotal gets the total property value. The total number of files in the group's SharePoint document library.
-func (m *Office365GroupsActivityFileCounts) GetTotal()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.total
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -119,6 +91,38 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetReportDate gets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
+func (m *Office365GroupsActivityFileCounts) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportDate
+    }
+}
+// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+func (m *Office365GroupsActivityFileCounts) GetReportPeriod()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportPeriod
+    }
+}
+// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+func (m *Office365GroupsActivityFileCounts) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportRefreshDate
+    }
+}
+// GetTotal gets the total property value. The total number of files in the group's SharePoint document library.
+func (m *Office365GroupsActivityFileCounts) GetTotal()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.total
+    }
 }
 func (m *Office365GroupsActivityFileCounts) IsNil()(bool) {
     return m == nil

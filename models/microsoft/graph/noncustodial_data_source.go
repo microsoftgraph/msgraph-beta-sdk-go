@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NoncustodialDataSource 
+// NoncustodialDataSource provides operations to manage the compliance singleton.
 type NoncustodialDataSource struct {
     DataSourceContainer
     // Indicates if hold is applied to non-custodial data source (such as mailbox or site).
     applyHoldToSource *bool;
     // User source or SharePoint site data source as non-custodial data source.
-    dataSource *DataSource;
+    dataSource DataSourceable;
 }
 // NewNoncustodialDataSource instantiates a new noncustodialDataSource and sets the default values.
 func NewNoncustodialDataSource()(*NoncustodialDataSource) {
@@ -18,6 +18,10 @@ func NewNoncustodialDataSource()(*NoncustodialDataSource) {
         DataSourceContainer: *NewDataSourceContainer(),
     }
     return m
+}
+// CreateNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNoncustodialDataSourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNoncustodialDataSource(), nil
 }
 // GetApplyHoldToSource gets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
 func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
@@ -28,7 +32,7 @@ func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
     }
 }
 // GetDataSource gets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
-func (m *NoncustodialDataSource) GetDataSource()(*DataSource) {
+func (m *NoncustodialDataSource) GetDataSource()(DataSourceable) {
     if m == nil {
         return nil
     } else {
@@ -49,12 +53,12 @@ func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["dataSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDataSource() })
+        val, err := n.GetObjectValue(CreateDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDataSource(val.(*DataSource))
+            m.SetDataSource(val.(DataSourceable))
         }
         return nil
     }
@@ -90,7 +94,7 @@ func (m *NoncustodialDataSource) SetApplyHoldToSource(value *bool)() {
     }
 }
 // SetDataSource sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
-func (m *NoncustodialDataSource) SetDataSource(value *DataSource)() {
+func (m *NoncustodialDataSource) SetDataSource(value DataSourceable)() {
     if m != nil {
         m.dataSource = value
     }

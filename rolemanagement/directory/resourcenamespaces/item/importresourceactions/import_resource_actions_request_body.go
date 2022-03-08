@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ImportResourceActionsRequestBody 
+// ImportResourceActionsRequestBody provides operations to call the importResourceActions method.
 type ImportResourceActionsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewImportResourceActionsRequestBody()(*ImportResourceActionsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateImportResourceActionsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateImportResourceActionsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewImportResourceActionsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportResourceActionsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFormat gets the format property value. 
-func (m *ImportResourceActionsRequestBody) GetFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
-}
-// GetOverwriteResourceNamespace gets the overwriteResourceNamespace property value. 
-func (m *ImportResourceActionsRequestBody) GetOverwriteResourceNamespace()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overwriteResourceNamespace
-    }
-}
-// GetValue gets the value property value. 
-func (m *ImportResourceActionsRequestBody) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *ImportResourceActionsRequestBody) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetFormat gets the format property value. 
+func (m *ImportResourceActionsRequestBody) GetFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.format
+    }
+}
+// GetOverwriteResourceNamespace gets the overwriteResourceNamespace property value. 
+func (m *ImportResourceActionsRequestBody) GetOverwriteResourceNamespace()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.overwriteResourceNamespace
+    }
+}
+// GetValue gets the value property value. 
+func (m *ImportResourceActionsRequestBody) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *ImportResourceActionsRequestBody) IsNil()(bool) {
     return m == nil

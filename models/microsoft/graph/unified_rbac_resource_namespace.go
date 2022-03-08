@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRbacResourceNamespace 
+// UnifiedRbacResourceNamespace provides operations to manage the roleManagement singleton.
 type UnifiedRbacResourceNamespace struct {
     Entity
     // Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
     name *string;
     // Operations that an authorized principal are allowed to perform.
-    resourceActions []UnifiedRbacResourceAction;
+    resourceActions []UnifiedRbacResourceActionable;
 }
 // NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
 func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
@@ -19,21 +19,9 @@ func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
     }
     return m
 }
-// GetName gets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetResourceActions gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
-func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceActions
-    }
+// CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRbacResourceNamespace(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,20 +37,36 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["resourceActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRbacResourceAction() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedRbacResourceAction, len(val))
+            res := make([]UnifiedRbacResourceActionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedRbacResourceAction))
+                res[i] = v.(UnifiedRbacResourceActionable)
             }
             m.SetResourceActions(res)
         }
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
+func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetResourceActions gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
+func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceActionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceActions
+    }
 }
 func (m *UnifiedRbacResourceNamespace) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetResourceActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceActions()))
         for i, v := range m.GetResourceActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resourceActions", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
     }
 }
 // SetResourceActions sets the resourceActions property value. Operations that an authorized principal are allowed to perform.
-func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceAction)() {
+func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceActionable)() {
     if m != nil {
         m.resourceActions = value
     }

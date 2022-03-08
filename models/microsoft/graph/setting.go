@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// Setting 
+// Setting provides operations to manage the tenantRelationship singleton.
 type Setting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewSetting()(*Setting) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSetting(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Setting) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *Setting) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetJsonValue gets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
-func (m *Setting) GetJsonValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jsonValue
-    }
-}
-// GetOverwriteAllowed gets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
-func (m *Setting) GetOverwriteAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overwriteAllowed
-    }
-}
-// GetSettingId gets the settingId property value. 
-func (m *Setting) GetSettingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingId
-    }
-}
-// GetValueType gets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
-func (m *Setting) GetValueType()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +101,38 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetJsonValue gets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
+func (m *Setting) GetJsonValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jsonValue
+    }
+}
+// GetOverwriteAllowed gets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
+func (m *Setting) GetOverwriteAllowed()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.overwriteAllowed
+    }
+}
+// GetSettingId gets the settingId property value. 
+func (m *Setting) GetSettingId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingId
+    }
+}
+// GetValueType gets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+func (m *Setting) GetValueType()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueType
+    }
 }
 func (m *Setting) IsNil()(bool) {
     return m == nil

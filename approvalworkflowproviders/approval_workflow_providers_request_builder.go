@@ -1,12 +1,12 @@
 package approvalworkflowproviders
 
 import (
+    i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83 "github.com/microsoftgraph/msgraph-beta-sdk-go/approvalworkflowproviders/count"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ApprovalWorkflowProvidersRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders
+// ApprovalWorkflowProvidersRequestBuilder provides operations to manage the collection of approvalWorkflowProvider entities.
 type ApprovalWorkflowProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ApprovalWorkflowProvidersRequestBuilderGetQueryParameters struct {
 // ApprovalWorkflowProvidersRequestBuilderPostOptions options for Post
 type ApprovalWorkflowProvidersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProvider;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProviderable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewApprovalWorkflowProvidersRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewApprovalWorkflowProvidersRequestBuilder(rawUrl string, requestAdapter id
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalWorkflowProvidersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ApprovalWorkflowProvidersRequestBuilder) Count()(*i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83.CountRequestBuilder) {
+    return i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from approvalWorkflowProviders
 func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformation(options *ApprovalWorkflowProvidersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Get get entities from approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) Get(options *ApprovalWorkflowProvidersRequestBuilderGetOptions)(*ApprovalWorkflowProvidersResponse, error) {
+func (m *ApprovalWorkflowProvidersRequestBuilder) Get(options *ApprovalWorkflowProvidersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProviderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApprovalWorkflowProvidersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApprovalWorkflowProviderCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ApprovalWorkflowProvidersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProviderCollectionResponseable), nil
 }
 // Post add new entity to approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) Post(options *ApprovalWorkflowProvidersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProvider, error) {
+func (m *ApprovalWorkflowProvidersRequestBuilder) Post(options *ApprovalWorkflowProvidersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProviderable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewApprovalWorkflowProvider() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApprovalWorkflowProviderFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProvider), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProviderable), nil
 }

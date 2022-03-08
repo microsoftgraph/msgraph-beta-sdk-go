@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedSignupStatus 
+// PrivilegedSignupStatus provides operations to manage the collection of privilegedSignupStatus entities.
 type PrivilegedSignupStatus struct {
     Entity
     // 
@@ -19,21 +19,9 @@ func NewPrivilegedSignupStatus()(*PrivilegedSignupStatus) {
     }
     return m
 }
-// GetIsRegistered gets the isRegistered property value. 
-func (m *PrivilegedSignupStatus) GetIsRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRegistered
-    }
-}
-// GetStatus gets the status property value. 
-func (m *PrivilegedSignupStatus) GetStatus()(*SetupStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+// CreatePrivilegedSignupStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedSignupStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedSignupStatus(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedSignupStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *PrivilegedSignupStatus) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetIsRegistered gets the isRegistered property value. 
+func (m *PrivilegedSignupStatus) GetIsRegistered()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRegistered
+    }
+}
+// GetStatus gets the status property value. 
+func (m *PrivilegedSignupStatus) GetStatus()(*SetupStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *PrivilegedSignupStatus) IsNil()(bool) {
     return m == nil

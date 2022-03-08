@@ -2,11 +2,11 @@ package historyitems
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ie7edea97a1691ef1365c1ac293fb2fd5e2853118f5f7bd0ac2ee884d635c95ba "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activities/item/historyitems/count"
 )
 
-// HistoryItemsRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems
+// HistoryItemsRequestBuilder provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
 type HistoryItemsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type HistoryItemsRequestBuilderGetQueryParameters struct {
 // HistoryItemsRequestBuilderPostOptions options for Post
 type HistoryItemsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItem;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewHistoryItemsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewHistoryItemsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHistoryItemsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *HistoryItemsRequestBuilder) Count()(*ie7edea97a1691ef1365c1ac293fb2fd5e2853118f5f7bd0ac2ee884d635c95ba.CountRequestBuilder) {
+    return ie7edea97a1691ef1365c1ac293fb2fd5e2853118f5f7bd0ac2ee884d635c95ba.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *HistoryItemsRequestBuilder) CreateGetRequestInformation(options *HistoryItemsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *HistoryItemsRequestBuilder) CreateGetRequestInformation(options *Histor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// CreatePostRequestInformation create new navigation property to historyItems for users
 func (m *HistoryItemsRequestBuilder) CreatePostRequestInformation(options *HistoryItemsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *HistoryItemsRequestBuilder) CreatePostRequestInformation(options *Histo
     return requestInfo, nil
 }
 // Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-func (m *HistoryItemsRequestBuilder) Get(options *HistoryItemsRequestBuilderGetOptions)(*HistoryItemsResponse, error) {
+func (m *HistoryItemsRequestBuilder) Get(options *HistoryItemsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewHistoryItemsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateActivityHistoryItemCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*HistoryItemsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItemCollectionResponseable), nil
 }
-// Post optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-func (m *HistoryItemsRequestBuilder) Post(options *HistoryItemsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItem, error) {
+// Post create new navigation property to historyItems for users
+func (m *HistoryItemsRequestBuilder) Post(options *HistoryItemsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItemable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewActivityHistoryItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateActivityHistoryItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItem), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityHistoryItemable), nil
 }

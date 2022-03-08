@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Shift 
+// Shift provides operations to manage the compliance singleton.
 type Shift struct {
     ChangeTrackedEntity
     // The draft version of this shift that is viewable by managers. Required.
-    draftShift *ShiftItem;
+    draftShift ShiftItemable;
     // 
     isStagedForDeletion *bool;
     // ID of the scheduling group the shift is part of. Required.
     schedulingGroupId *string;
     // The shared version of this shift that is viewable by both employees and managers. Required.
-    sharedShift *ShiftItem;
+    sharedShift ShiftItemable;
     // ID of the user assigned to the shift. Required.
     userId *string;
 }
@@ -25,56 +25,28 @@ func NewShift()(*Shift) {
     }
     return m
 }
+// CreateShiftFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateShiftFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewShift(), nil
+}
 // GetDraftShift gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
-func (m *Shift) GetDraftShift()(*ShiftItem) {
+func (m *Shift) GetDraftShift()(ShiftItemable) {
     if m == nil {
         return nil
     } else {
         return m.draftShift
     }
 }
-// GetIsStagedForDeletion gets the isStagedForDeletion property value. 
-func (m *Shift) GetIsStagedForDeletion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isStagedForDeletion
-    }
-}
-// GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
-func (m *Shift) GetSchedulingGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingGroupId
-    }
-}
-// GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
-func (m *Shift) GetSharedShift()(*ShiftItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedShift
-    }
-}
-// GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
-func (m *Shift) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Shift) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["draftShift"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShiftItem() })
+        val, err := n.GetObjectValue(CreateShiftItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDraftShift(val.(*ShiftItem))
+            m.SetDraftShift(val.(ShiftItemable))
         }
         return nil
     }
@@ -99,12 +71,12 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["sharedShift"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShiftItem() })
+        val, err := n.GetObjectValue(CreateShiftItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharedShift(val.(*ShiftItem))
+            m.SetSharedShift(val.(ShiftItemable))
         }
         return nil
     }
@@ -119,6 +91,38 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     return res
+}
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. 
+func (m *Shift) GetIsStagedForDeletion()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isStagedForDeletion
+    }
+}
+// GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
+func (m *Shift) GetSchedulingGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedulingGroupId
+    }
+}
+// GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
+func (m *Shift) GetSharedShift()(ShiftItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharedShift
+    }
+}
+// GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
+func (m *Shift) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *Shift) IsNil()(bool) {
     return m == nil
@@ -162,7 +166,7 @@ func (m *Shift) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     return nil
 }
 // SetDraftShift sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
-func (m *Shift) SetDraftShift(value *ShiftItem)() {
+func (m *Shift) SetDraftShift(value ShiftItemable)() {
     if m != nil {
         m.draftShift = value
     }
@@ -180,7 +184,7 @@ func (m *Shift) SetSchedulingGroupId(value *string)() {
     }
 }
 // SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
-func (m *Shift) SetSharedShift(value *ShiftItem)() {
+func (m *Shift) SetSharedShift(value ShiftItemable)() {
     if m != nil {
         m.sharedShift = value
     }

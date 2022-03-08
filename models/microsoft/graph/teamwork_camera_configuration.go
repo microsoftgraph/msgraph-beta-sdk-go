@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkCameraConfiguration 
+// TeamworkCameraConfiguration provides operations to manage the teamwork singleton.
 type TeamworkCameraConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    cameras []TeamworkPeripheral;
+    cameras []TeamworkPeripheralable;
     // The configuration for the content camera.
-    contentCameraConfiguration *TeamworkContentCameraConfiguration;
+    contentCameraConfiguration TeamworkContentCameraConfigurationable;
     // 
-    defaultContentCamera *TeamworkPeripheral;
+    defaultContentCamera TeamworkPeripheralable;
 }
 // NewTeamworkCameraConfiguration instantiates a new teamworkCameraConfiguration and sets the default values.
 func NewTeamworkCameraConfiguration()(*TeamworkCameraConfiguration) {
@@ -21,6 +21,10 @@ func NewTeamworkCameraConfiguration()(*TeamworkCameraConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkCameraConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkCameraConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkCameraConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkCameraConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -31,7 +35,7 @@ func (m *TeamworkCameraConfiguration) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetCameras gets the cameras property value. 
-func (m *TeamworkCameraConfiguration) GetCameras()([]TeamworkPeripheral) {
+func (m *TeamworkCameraConfiguration) GetCameras()([]TeamworkPeripheralable) {
     if m == nil {
         return nil
     } else {
@@ -39,7 +43,7 @@ func (m *TeamworkCameraConfiguration) GetCameras()([]TeamworkPeripheral) {
     }
 }
 // GetContentCameraConfiguration gets the contentCameraConfiguration property value. The configuration for the content camera.
-func (m *TeamworkCameraConfiguration) GetContentCameraConfiguration()(*TeamworkContentCameraConfiguration) {
+func (m *TeamworkCameraConfiguration) GetContentCameraConfiguration()(TeamworkContentCameraConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *TeamworkCameraConfiguration) GetContentCameraConfiguration()(*TeamworkC
     }
 }
 // GetDefaultContentCamera gets the defaultContentCamera property value. 
-func (m *TeamworkCameraConfiguration) GetDefaultContentCamera()(*TeamworkPeripheral) {
+func (m *TeamworkCameraConfiguration) GetDefaultContentCamera()(TeamworkPeripheralable) {
     if m == nil {
         return nil
     } else {
@@ -58,36 +62,36 @@ func (m *TeamworkCameraConfiguration) GetDefaultContentCamera()(*TeamworkPeriphe
 func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cameras"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamworkPeripheral, len(val))
+            res := make([]TeamworkPeripheralable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamworkPeripheral))
+                res[i] = v.(TeamworkPeripheralable)
             }
             m.SetCameras(res)
         }
         return nil
     }
     res["contentCameraConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkContentCameraConfiguration() })
+        val, err := n.GetObjectValue(CreateTeamworkContentCameraConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentCameraConfiguration(val.(*TeamworkContentCameraConfiguration))
+            m.SetContentCameraConfiguration(val.(TeamworkContentCameraConfigurationable))
         }
         return nil
     }
     res["defaultContentCamera"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultContentCamera(val.(*TeamworkPeripheral))
+            m.SetDefaultContentCamera(val.(TeamworkPeripheralable))
         }
         return nil
     }
@@ -101,8 +105,7 @@ func (m *TeamworkCameraConfiguration) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetCameras() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCameras()))
         for i, v := range m.GetCameras() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("cameras", cast)
         if err != nil {
@@ -136,19 +139,19 @@ func (m *TeamworkCameraConfiguration) SetAdditionalData(value map[string]interfa
     }
 }
 // SetCameras sets the cameras property value. 
-func (m *TeamworkCameraConfiguration) SetCameras(value []TeamworkPeripheral)() {
+func (m *TeamworkCameraConfiguration) SetCameras(value []TeamworkPeripheralable)() {
     if m != nil {
         m.cameras = value
     }
 }
 // SetContentCameraConfiguration sets the contentCameraConfiguration property value. The configuration for the content camera.
-func (m *TeamworkCameraConfiguration) SetContentCameraConfiguration(value *TeamworkContentCameraConfiguration)() {
+func (m *TeamworkCameraConfiguration) SetContentCameraConfiguration(value TeamworkContentCameraConfigurationable)() {
     if m != nil {
         m.contentCameraConfiguration = value
     }
 }
 // SetDefaultContentCamera sets the defaultContentCamera property value. 
-func (m *TeamworkCameraConfiguration) SetDefaultContentCamera(value *TeamworkPeripheral)() {
+func (m *TeamworkCameraConfiguration) SetDefaultContentCamera(value TeamworkPeripheralable)() {
     if m != nil {
         m.defaultContentCamera = value
     }

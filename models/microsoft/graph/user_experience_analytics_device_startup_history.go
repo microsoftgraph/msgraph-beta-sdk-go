@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupHistory 
+// UserExperienceAnalyticsDeviceStartupHistory provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsDeviceStartupHistory struct {
     Entity
     // The user experience analytics device core boot time in milliseconds.
@@ -48,6 +48,10 @@ func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDe
     }
     return m
 }
+// CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsDeviceStartupHistory(), nil
+}
 // GetCoreBootTimeInMs gets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetCoreBootTimeInMs()(*int32) {
     if m == nil {
@@ -78,102 +82,6 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFeatureUpdateBootTimeIn
         return nil
     } else {
         return m.featureUpdateBootTimeInMs
-    }
-}
-// GetGroupPolicyBootTimeInMs gets the groupPolicyBootTimeInMs property value. The User experience analytics Device group policy boot time in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyBootTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyBootTimeInMs
-    }
-}
-// GetGroupPolicyLoginTimeInMs gets the groupPolicyLoginTimeInMs property value. The User experience analytics Device group policy login time in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyLoginTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyLoginTimeInMs
-    }
-}
-// GetIsFeatureUpdate gets the isFeatureUpdate property value. The user experience analytics device boot record is a feature update.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFeatureUpdate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFeatureUpdate
-    }
-}
-// GetIsFirstLogin gets the isFirstLogin property value. The user experience analytics device first login.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFirstLogin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFirstLogin
-    }
-}
-// GetOperatingSystemVersion gets the operatingSystemVersion property value. The user experience analytics device boot record's operating system version.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetOperatingSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemVersion
-    }
-}
-// GetResponsiveDesktopTimeInMs gets the responsiveDesktopTimeInMs property value. The user experience analytics responsive desktop time in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsiveDesktopTimeInMs
-    }
-}
-// GetRestartCategory gets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartCategory
-    }
-}
-// GetRestartFaultBucket gets the restartFaultBucket property value. OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartFaultBucket()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartFaultBucket
-    }
-}
-// GetRestartStopCode gets the restartStopCode property value. OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartStopCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartStopCode
-    }
-}
-// GetStartTime gets the startTime property value. The user experience analytics device boot start time.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetStartTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startTime
-    }
-}
-// GetTotalBootTimeInMs gets the totalBootTimeInMs property value. The user experience analytics device total boot time in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalBootTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalBootTimeInMs
-    }
-}
-// GetTotalLoginTimeInMs gets the totalLoginTimeInMs property value. The user experience analytics device total login time in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalLoginTimeInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLoginTimeInMs
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -340,6 +248,102 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetGroupPolicyBootTimeInMs gets the groupPolicyBootTimeInMs property value. The User experience analytics Device group policy boot time in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyBootTimeInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyBootTimeInMs
+    }
+}
+// GetGroupPolicyLoginTimeInMs gets the groupPolicyLoginTimeInMs property value. The User experience analytics Device group policy login time in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyLoginTimeInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyLoginTimeInMs
+    }
+}
+// GetIsFeatureUpdate gets the isFeatureUpdate property value. The user experience analytics device boot record is a feature update.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFeatureUpdate()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFeatureUpdate
+    }
+}
+// GetIsFirstLogin gets the isFirstLogin property value. The user experience analytics device first login.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFirstLogin()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFirstLogin
+    }
+}
+// GetOperatingSystemVersion gets the operatingSystemVersion property value. The user experience analytics device boot record's operating system version.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetOperatingSystemVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemVersion
+    }
+}
+// GetResponsiveDesktopTimeInMs gets the responsiveDesktopTimeInMs property value. The user experience analytics responsive desktop time in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.responsiveDesktopTimeInMs
+    }
+}
+// GetRestartCategory gets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restartCategory
+    }
+}
+// GetRestartFaultBucket gets the restartFaultBucket property value. OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartFaultBucket()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restartFaultBucket
+    }
+}
+// GetRestartStopCode gets the restartStopCode property value. OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartStopCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restartStopCode
+    }
+}
+// GetStartTime gets the startTime property value. The user experience analytics device boot start time.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetStartTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startTime
+    }
+}
+// GetTotalBootTimeInMs gets the totalBootTimeInMs property value. The user experience analytics device total boot time in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalBootTimeInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalBootTimeInMs
+    }
+}
+// GetTotalLoginTimeInMs gets the totalLoginTimeInMs property value. The user experience analytics device total login time in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalLoginTimeInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalLoginTimeInMs
+    }
 }
 func (m *UserExperienceAnalyticsDeviceStartupHistory) IsNil()(bool) {
     return m == nil

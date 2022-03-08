@@ -4,23 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingBusiness 
+// BookingBusiness provides operations to manage the collection of bookingBusiness entities.
 type BookingBusiness struct {
     BookingNamedEntity
     // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
-    address *PhysicalAddress;
+    address PhysicalAddressable;
     // All the appointments of this business. Read-only. Nullable.
-    appointments []BookingAppointment;
+    appointments []BookingAppointmentable;
     // The hours of operation for the business.
-    businessHours []BookingWorkHours;
+    businessHours []BookingWorkHoursable;
     // The type of business.
     businessType *string;
     // The set of appointments of this business in a specified date range. Read-only. Nullable.
-    calendarView []BookingAppointment;
+    calendarView []BookingAppointmentable;
     // All the customers of this business. Read-only. Nullable.
-    customers []BookingCustomer;
+    customers []BookingCustomerable;
     // All the custom questions of this business. Read-only. Nullable.
-    customQuestions []BookingCustomQuestion;
+    customQuestions []BookingCustomQuestionable;
     // The code for the currency that the business operates in on Microsoft Bookings.
     defaultCurrencyIso *string;
     // The email address for the business.
@@ -32,11 +32,11 @@ type BookingBusiness struct {
     // The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
     publicUrl *string;
     // Specifies how bookings can be created for this business.
-    schedulingPolicy *BookingSchedulingPolicy;
+    schedulingPolicy BookingSchedulingPolicyable;
     // All the services offered by this business. Read-only. Nullable.
-    services []BookingService;
+    services []BookingServiceable;
     // All the staff members that provide services in this business. Read-only. Nullable.
-    staffMembers []BookingStaffMember;
+    staffMembers []BookingStaffMemberable;
     // The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
     webSiteUrl *string;
 }
@@ -47,8 +47,12 @@ func NewBookingBusiness()(*BookingBusiness) {
     }
     return m
 }
+// CreateBookingBusinessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingBusinessFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingBusiness(), nil
+}
 // GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
-func (m *BookingBusiness) GetAddress()(*PhysicalAddress) {
+func (m *BookingBusiness) GetAddress()(PhysicalAddressable) {
     if m == nil {
         return nil
     } else {
@@ -56,7 +60,7 @@ func (m *BookingBusiness) GetAddress()(*PhysicalAddress) {
     }
 }
 // GetAppointments gets the appointments property value. All the appointments of this business. Read-only. Nullable.
-func (m *BookingBusiness) GetAppointments()([]BookingAppointment) {
+func (m *BookingBusiness) GetAppointments()([]BookingAppointmentable) {
     if m == nil {
         return nil
     } else {
@@ -64,7 +68,7 @@ func (m *BookingBusiness) GetAppointments()([]BookingAppointment) {
     }
 }
 // GetBusinessHours gets the businessHours property value. The hours of operation for the business.
-func (m *BookingBusiness) GetBusinessHours()([]BookingWorkHours) {
+func (m *BookingBusiness) GetBusinessHours()([]BookingWorkHoursable) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +84,7 @@ func (m *BookingBusiness) GetBusinessType()(*string) {
     }
 }
 // GetCalendarView gets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
-func (m *BookingBusiness) GetCalendarView()([]BookingAppointment) {
+func (m *BookingBusiness) GetCalendarView()([]BookingAppointmentable) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +92,7 @@ func (m *BookingBusiness) GetCalendarView()([]BookingAppointment) {
     }
 }
 // GetCustomers gets the customers property value. All the customers of this business. Read-only. Nullable.
-func (m *BookingBusiness) GetCustomers()([]BookingCustomer) {
+func (m *BookingBusiness) GetCustomers()([]BookingCustomerable) {
     if m == nil {
         return nil
     } else {
@@ -96,7 +100,7 @@ func (m *BookingBusiness) GetCustomers()([]BookingCustomer) {
     }
 }
 // GetCustomQuestions gets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
-func (m *BookingBusiness) GetCustomQuestions()([]BookingCustomQuestion) {
+func (m *BookingBusiness) GetCustomQuestions()([]BookingCustomQuestionable) {
     if m == nil {
         return nil
     } else {
@@ -119,98 +123,42 @@ func (m *BookingBusiness) GetEmail()(*string) {
         return m.email
     }
 }
-// GetIsPublished gets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
-func (m *BookingBusiness) GetIsPublished()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPublished
-    }
-}
-// GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
-func (m *BookingBusiness) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
-}
-// GetPublicUrl gets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
-func (m *BookingBusiness) GetPublicUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicUrl
-    }
-}
-// GetSchedulingPolicy gets the schedulingPolicy property value. Specifies how bookings can be created for this business.
-func (m *BookingBusiness) GetSchedulingPolicy()(*BookingSchedulingPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedulingPolicy
-    }
-}
-// GetServices gets the services property value. All the services offered by this business. Read-only. Nullable.
-func (m *BookingBusiness) GetServices()([]BookingService) {
-    if m == nil {
-        return nil
-    } else {
-        return m.services
-    }
-}
-// GetStaffMembers gets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
-func (m *BookingBusiness) GetStaffMembers()([]BookingStaffMember) {
-    if m == nil {
-        return nil
-    } else {
-        return m.staffMembers
-    }
-}
-// GetWebSiteUrl gets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
-func (m *BookingBusiness) GetWebSiteUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webSiteUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BookingNamedEntity.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PhysicalAddress))
+            m.SetAddress(val.(PhysicalAddressable))
         }
         return nil
     }
     res["appointments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingAppointment() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingAppointmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingAppointment, len(val))
+            res := make([]BookingAppointmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingAppointment))
+                res[i] = v.(BookingAppointmentable)
             }
             m.SetAppointments(res)
         }
         return nil
     }
     res["businessHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingWorkHours() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingWorkHours, len(val))
+            res := make([]BookingWorkHoursable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingWorkHours))
+                res[i] = v.(BookingWorkHoursable)
             }
             m.SetBusinessHours(res)
         }
@@ -227,42 +175,42 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingAppointment() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingAppointmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingAppointment, len(val))
+            res := make([]BookingAppointmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingAppointment))
+                res[i] = v.(BookingAppointmentable)
             }
             m.SetCalendarView(res)
         }
         return nil
     }
     res["customers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingCustomer() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingCustomerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingCustomer, len(val))
+            res := make([]BookingCustomerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingCustomer))
+                res[i] = v.(BookingCustomerable)
             }
             m.SetCustomers(res)
         }
         return nil
     }
     res["customQuestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingCustomQuestion() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingCustomQuestionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingCustomQuestion, len(val))
+            res := make([]BookingCustomQuestionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingCustomQuestion))
+                res[i] = v.(BookingCustomQuestionable)
             }
             m.SetCustomQuestions(res)
         }
@@ -319,38 +267,38 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["schedulingPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingSchedulingPolicy() })
+        val, err := n.GetObjectValue(CreateBookingSchedulingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedulingPolicy(val.(*BookingSchedulingPolicy))
+            m.SetSchedulingPolicy(val.(BookingSchedulingPolicyable))
         }
         return nil
     }
     res["services"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingService() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingServiceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingService, len(val))
+            res := make([]BookingServiceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingService))
+                res[i] = v.(BookingServiceable)
             }
             m.SetServices(res)
         }
         return nil
     }
     res["staffMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingStaffMember() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingStaffMemberFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingStaffMember, len(val))
+            res := make([]BookingStaffMemberable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingStaffMember))
+                res[i] = v.(BookingStaffMemberable)
             }
             m.SetStaffMembers(res)
         }
@@ -367,6 +315,62 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetIsPublished gets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
+func (m *BookingBusiness) GetIsPublished()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPublished
+    }
+}
+// GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
+func (m *BookingBusiness) GetPhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phone
+    }
+}
+// GetPublicUrl gets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
+func (m *BookingBusiness) GetPublicUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publicUrl
+    }
+}
+// GetSchedulingPolicy gets the schedulingPolicy property value. Specifies how bookings can be created for this business.
+func (m *BookingBusiness) GetSchedulingPolicy()(BookingSchedulingPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedulingPolicy
+    }
+}
+// GetServices gets the services property value. All the services offered by this business. Read-only. Nullable.
+func (m *BookingBusiness) GetServices()([]BookingServiceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.services
+    }
+}
+// GetStaffMembers gets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
+func (m *BookingBusiness) GetStaffMembers()([]BookingStaffMemberable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.staffMembers
+    }
+}
+// GetWebSiteUrl gets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
+func (m *BookingBusiness) GetWebSiteUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webSiteUrl
+    }
 }
 func (m *BookingBusiness) IsNil()(bool) {
     return m == nil
@@ -386,8 +390,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetAppointments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppointments()))
         for i, v := range m.GetAppointments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appointments", cast)
         if err != nil {
@@ -397,8 +400,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetBusinessHours() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBusinessHours()))
         for i, v := range m.GetBusinessHours() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("businessHours", cast)
         if err != nil {
@@ -414,8 +416,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetCalendarView() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
         if err != nil {
@@ -425,8 +426,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetCustomers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customers", cast)
         if err != nil {
@@ -436,8 +436,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetCustomQuestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
         if err != nil {
@@ -483,8 +482,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetServices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("services", cast)
         if err != nil {
@@ -494,8 +492,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetStaffMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStaffMembers()))
         for i, v := range m.GetStaffMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("staffMembers", cast)
         if err != nil {
@@ -511,19 +508,19 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
-func (m *BookingBusiness) SetAddress(value *PhysicalAddress)() {
+func (m *BookingBusiness) SetAddress(value PhysicalAddressable)() {
     if m != nil {
         m.address = value
     }
 }
 // SetAppointments sets the appointments property value. All the appointments of this business. Read-only. Nullable.
-func (m *BookingBusiness) SetAppointments(value []BookingAppointment)() {
+func (m *BookingBusiness) SetAppointments(value []BookingAppointmentable)() {
     if m != nil {
         m.appointments = value
     }
 }
 // SetBusinessHours sets the businessHours property value. The hours of operation for the business.
-func (m *BookingBusiness) SetBusinessHours(value []BookingWorkHours)() {
+func (m *BookingBusiness) SetBusinessHours(value []BookingWorkHoursable)() {
     if m != nil {
         m.businessHours = value
     }
@@ -535,19 +532,19 @@ func (m *BookingBusiness) SetBusinessType(value *string)() {
     }
 }
 // SetCalendarView sets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
-func (m *BookingBusiness) SetCalendarView(value []BookingAppointment)() {
+func (m *BookingBusiness) SetCalendarView(value []BookingAppointmentable)() {
     if m != nil {
         m.calendarView = value
     }
 }
 // SetCustomers sets the customers property value. All the customers of this business. Read-only. Nullable.
-func (m *BookingBusiness) SetCustomers(value []BookingCustomer)() {
+func (m *BookingBusiness) SetCustomers(value []BookingCustomerable)() {
     if m != nil {
         m.customers = value
     }
 }
 // SetCustomQuestions sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
-func (m *BookingBusiness) SetCustomQuestions(value []BookingCustomQuestion)() {
+func (m *BookingBusiness) SetCustomQuestions(value []BookingCustomQuestionable)() {
     if m != nil {
         m.customQuestions = value
     }
@@ -583,19 +580,19 @@ func (m *BookingBusiness) SetPublicUrl(value *string)() {
     }
 }
 // SetSchedulingPolicy sets the schedulingPolicy property value. Specifies how bookings can be created for this business.
-func (m *BookingBusiness) SetSchedulingPolicy(value *BookingSchedulingPolicy)() {
+func (m *BookingBusiness) SetSchedulingPolicy(value BookingSchedulingPolicyable)() {
     if m != nil {
         m.schedulingPolicy = value
     }
 }
 // SetServices sets the services property value. All the services offered by this business. Read-only. Nullable.
-func (m *BookingBusiness) SetServices(value []BookingService)() {
+func (m *BookingBusiness) SetServices(value []BookingServiceable)() {
     if m != nil {
         m.services = value
     }
 }
 // SetStaffMembers sets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
-func (m *BookingBusiness) SetStaffMembers(value []BookingStaffMember)() {
+func (m *BookingBusiness) SetStaffMembers(value []BookingStaffMemberable)() {
     if m != nil {
         m.staffMembers = value
     }

@@ -2,11 +2,11 @@ package activitystatistics
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i7706b57fc99e697f672df7e7dec32c554f1c959791a03830d060973bf71a41e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/analytics/activitystatistics/count"
 )
 
-// ActivityStatisticsRequestBuilder builds and executes requests for operations under \users\{user-id}\analytics\activityStatistics
+// ActivityStatisticsRequestBuilder provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
 type ActivityStatisticsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ActivityStatisticsRequestBuilderGetQueryParameters struct {
 // ActivityStatisticsRequestBuilderPostOptions options for Post
 type ActivityStatisticsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatisticsable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewActivityStatisticsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewActivityStatisticsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivityStatisticsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ActivityStatisticsRequestBuilder) Count()(*i7706b57fc99e697f672df7e7dec32c554f1c959791a03830d060973bf71a41e8.CountRequestBuilder) {
+    return i7706b57fc99e697f672df7e7dec32c554f1c959791a03830d060973bf71a41e8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *ActivityStatisticsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to activityStatistics for users
 func (m *ActivityStatisticsRequestBuilder) CreatePostRequestInformation(options *ActivityStatisticsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ActivityStatisticsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-func (m *ActivityStatisticsRequestBuilder) Get(options *ActivityStatisticsRequestBuilderGetOptions)(*ActivityStatisticsResponse, error) {
+func (m *ActivityStatisticsRequestBuilder) Get(options *ActivityStatisticsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatisticsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActivityStatisticsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateActivityStatisticsCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ActivityStatisticsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatisticsCollectionResponseable), nil
 }
-// Post the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-func (m *ActivityStatisticsRequestBuilder) Post(options *ActivityStatisticsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics, error) {
+// Post create new navigation property to activityStatistics for users
+func (m *ActivityStatisticsRequestBuilder) Post(options *ActivityStatisticsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatisticsable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewActivityStatistics() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateActivityStatisticsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatisticsable), nil
 }

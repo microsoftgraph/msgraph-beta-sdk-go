@@ -2,11 +2,11 @@ package customextensionhandlers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i2bdcb8269258b47541fc26993322f422cb99bcd881f6d0f4a48dd744a0abc738 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackageassignmentpolicy/customextensionhandlers/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ie8149c7771d5a7ebcefe81b87e7287af6468ecd0ff8e4b70796d3a97d0f5001c "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackageassignmentpolicy/customextensionhandlers/count"
 )
 
-// CustomExtensionHandlersRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackageAssignmentPolicy\customExtensionHandlers
+// CustomExtensionHandlersRequestBuilder provides operations to manage the customExtensionHandlers property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 type CustomExtensionHandlersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,6 +45,17 @@ type CustomExtensionHandlersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
+// CustomExtensionHandlersRequestBuilderPostOptions options for Post
+type CustomExtensionHandlersRequestBuilderPostOptions struct {
+    // 
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomExtensionHandlerable;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
 // NewCustomExtensionHandlersRequestBuilderInternal instantiates a new CustomExtensionHandlersRequestBuilder and sets the default values.
 func NewCustomExtensionHandlersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomExtensionHandlersRequestBuilder) {
     m := &CustomExtensionHandlersRequestBuilder{
@@ -54,7 +65,7 @@ func NewCustomExtensionHandlersRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +74,9 @@ func NewCustomExtensionHandlersRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomExtensionHandlersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CustomExtensionHandlersRequestBuilder) Count()(*ie8149c7771d5a7ebcefe81b87e7287af6468ecd0ff8e4b70796d3a97d0f5001c.CountRequestBuilder) {
+    return ie8149c7771d5a7ebcefe81b87e7287af6468ecd0ff8e4b70796d3a97d0f5001c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *CustomExtensionHandlersRequestBuilder) CreateGetRequestInformation(options *CustomExtensionHandlersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -84,18 +98,53 @@ func (m *CustomExtensionHandlersRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
+// CreatePostRequestInformation create new navigation property to customExtensionHandlers for identityGovernance
+func (m *CustomExtensionHandlersRequestBuilder) CreatePostRequestInformation(options *CustomExtensionHandlersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
 // Get the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-func (m *CustomExtensionHandlersRequestBuilder) Get(options *CustomExtensionHandlersRequestBuilderGetOptions)(*CustomExtensionHandlersResponse, error) {
+func (m *CustomExtensionHandlersRequestBuilder) Get(options *CustomExtensionHandlersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomExtensionHandlerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionHandlersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCustomExtensionHandlerCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CustomExtensionHandlersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomExtensionHandlerCollectionResponseable), nil
 }
-func (m *CustomExtensionHandlersRequestBuilder) Ref()(*i2bdcb8269258b47541fc26993322f422cb99bcd881f6d0f4a48dd744a0abc738.RefRequestBuilder) {
-    return i2bdcb8269258b47541fc26993322f422cb99bcd881f6d0f4a48dd744a0abc738.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// Post create new navigation property to customExtensionHandlers for identityGovernance
+func (m *CustomExtensionHandlersRequestBuilder) Post(options *CustomExtensionHandlersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomExtensionHandlerable, error) {
+    requestInfo, err := m.CreatePostRequestInformation(options);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCustomExtensionHandlerFromDiscriminatorValue, nil, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomExtensionHandlerable), nil
 }

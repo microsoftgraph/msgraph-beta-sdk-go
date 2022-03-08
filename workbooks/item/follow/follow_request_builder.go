@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// FollowRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.follow
+// FollowRequestBuilder provides operations to call the follow method.
 type FollowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type FollowRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // FollowResponse union type wrapper for classes driveItem
 type FollowResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type driveItem
-    driveItem *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem;
+    driveItem i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable;
 }
 // NewFollowResponse instantiates a new followResponse and sets the default values.
 func NewFollowResponse()(*FollowResponse) {
@@ -37,6 +42,9 @@ func NewFollowResponse()(*FollowResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateFollowResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFollowResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +55,7 @@ func (m *FollowResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDriveItem gets the driveItem property value. Union type representation for type driveItem
-func (m *FollowResponse) GetDriveItem()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem) {
+func (m *FollowResponse) GetDriveItem()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +66,12 @@ func (m *FollowResponse) GetDriveItem()(*i535684e11b5500196ecb4b5c6634e0651fe2c2
 func (m *FollowResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDriveItem() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDriveItem(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem))
+            m.SetDriveItem(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable))
         }
         return nil
     }
@@ -95,7 +103,7 @@ func (m *FollowResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDriveItem sets the driveItem property value. Union type representation for type driveItem
-func (m *FollowResponse) SetDriveItem(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem)() {
+func (m *FollowResponse) SetDriveItem(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable)() {
     if m != nil {
         m.driveItem = value
     }
@@ -109,7 +117,7 @@ func NewFollowRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *FollowRequestBuilder) CreatePostRequestInformation(options *FollowReque
     return requestInfo, nil
 }
 // Post invoke action follow
-func (m *FollowRequestBuilder) Post(options *FollowRequestBuilderPostOptions)(*FollowResponse, error) {
+func (m *FollowRequestBuilder) Post(options *FollowRequestBuilderPostOptions)(FollowResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFollowResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateFollowResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*FollowResponse), nil
+    return res.(FollowResponseable), nil
 }

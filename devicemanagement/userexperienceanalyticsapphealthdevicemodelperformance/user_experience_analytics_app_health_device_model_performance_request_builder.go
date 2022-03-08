@@ -2,11 +2,11 @@ package userexperienceanalyticsapphealthdevicemodelperformance
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i97cf995f0ffd215e8806fe447761f0e1677c02677795c1c9022e0dffedc709a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthdevicemodelperformance/count"
 )
 
-// UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthDeviceModelPerformance
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetQuer
 // UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformance;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformanceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder(raw
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Count()(*i97cf995f0ffd215e8806fe447761f0e1677c02677795c1c9022e0dffedc709a7.CountRequestBuilder) {
+    return i97cf995f0ffd215e8806fe447761f0e1677c02677795c1c9022e0dffedc709a7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics appHealth Model Performance
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) C
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics appHealth Model Performance
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsAppHealthDeviceModelPerformance for deviceManagement
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) C
     return requestInfo, nil
 }
 // Get user experience analytics appHealth Model Performance
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceResponse, error) {
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformanceCollectionResponseable), nil
 }
-// Post user experience analytics appHealth Model Performance
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformance, error) {
+// Post create new navigation property to userExperienceAnalyticsAppHealthDeviceModelPerformance for deviceManagement
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformanceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsAppHealthDeviceModelPerformance() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformance), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthDeviceModelPerformanceable), nil
 }

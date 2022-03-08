@@ -4,10 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterEvaluateRequest 
+// AssignmentFilterEvaluateRequest provides operations to call the evaluateAssignmentFilter method.
 type AssignmentFilterEvaluateRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Order the devices should be sorted in. Default is ascending on device name.
+    orderBy []string;
     // Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
     platform *DevicePlatformType;
     // Rule definition of the Assignment Filter.
@@ -24,6 +26,10 @@ func NewAssignmentFilterEvaluateRequest()(*AssignmentFilterEvaluateRequest) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAssignmentFilterEvaluateRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentFilterEvaluateRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentFilterEvaluateRequest(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterEvaluateRequest) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -32,41 +38,23 @@ func (m *AssignmentFilterEvaluateRequest) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// GetPlatform gets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
-func (m *AssignmentFilterEvaluateRequest) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
-}
-// GetRule gets the rule property value. Rule definition of the Assignment Filter.
-func (m *AssignmentFilterEvaluateRequest) GetRule()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rule
-    }
-}
-// GetSkip gets the skip property value. Number of records to skip. Default value is 0
-func (m *AssignmentFilterEvaluateRequest) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
-}
-// GetTop gets the top property value. Limit of records per request. Default value is 100, if provided less than 0 or greater than 100
-func (m *AssignmentFilterEvaluateRequest) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["orderBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOrderBy(res)
+        }
+        return nil
+    }
     res["platform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseDevicePlatformType)
         if err != nil {
@@ -109,11 +97,57 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
+// GetOrderBy gets the orderBy property value. Order the devices should be sorted in. Default is ascending on device name.
+func (m *AssignmentFilterEvaluateRequest) GetOrderBy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderBy
+    }
+}
+// GetPlatform gets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+func (m *AssignmentFilterEvaluateRequest) GetPlatform()(*DevicePlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
+}
+// GetRule gets the rule property value. Rule definition of the Assignment Filter.
+func (m *AssignmentFilterEvaluateRequest) GetRule()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rule
+    }
+}
+// GetSkip gets the skip property value. Number of records to skip. Default value is 0
+func (m *AssignmentFilterEvaluateRequest) GetSkip()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skip
+    }
+}
+// GetTop gets the top property value. Limit of records per request. Default value is 100, if provided less than 0 or greater than 100
+func (m *AssignmentFilterEvaluateRequest) GetTop()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.top
+    }
+}
 func (m *AssignmentFilterEvaluateRequest) IsNil()(bool) {
     return m == nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluateRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+    if m.GetOrderBy() != nil {
+        err := writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatform() != nil {
         cast := (*m.GetPlatform()).String()
         err := writer.WriteStringValue("platform", &cast)
@@ -151,6 +185,12 @@ func (m *AssignmentFilterEvaluateRequest) Serialize(writer i04eb5309aeaafadd2837
 func (m *AssignmentFilterEvaluateRequest) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOrderBy sets the orderBy property value. Order the devices should be sorted in. Default is ascending on device name.
+func (m *AssignmentFilterEvaluateRequest) SetOrderBy(value []string)() {
+    if m != nil {
+        m.orderBy = value
     }
 }
 // SetPlatform sets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.

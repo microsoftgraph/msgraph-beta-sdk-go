@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the overrideComplianceState method.
 type AdministratorConfiguredDeviceComplianceState int
 
 const (

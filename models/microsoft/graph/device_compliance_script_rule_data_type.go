@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the validateComplianceScript method.
 type DeviceComplianceScriptRuleDataType int
 
 const (

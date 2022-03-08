@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// KerberosSignOnSettings 
+// KerberosSignOnSettings provides operations to manage the collection of application entities.
 type KerberosSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewKerberosSignOnSettings()(*KerberosSignOnSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateKerberosSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateKerberosSignOnSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewKerberosSignOnSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetKerberosServicePrincipalName gets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
-func (m *KerberosSignOnSettings) GetKerberosServicePrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosServicePrincipalName
-    }
-}
-// GetKerberosSignOnMappingAttributeType gets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
-func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*KerberosSignOnMappingAttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosSignOnMappingAttributeType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetKerberosServicePrincipalName gets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
+func (m *KerberosSignOnSettings) GetKerberosServicePrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.kerberosServicePrincipalName
+    }
+}
+// GetKerberosSignOnMappingAttributeType gets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
+func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*KerberosSignOnMappingAttributeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.kerberosSignOnMappingAttributeType
+    }
 }
 func (m *KerberosSignOnSettings) IsNil()(bool) {
     return m == nil

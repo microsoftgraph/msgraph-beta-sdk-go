@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IpReferenceData 
+// IpReferenceData provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
 type IpReferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewIpReferenceData()(*IpReferenceData) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateIpReferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIpReferenceDataFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIpReferenceData(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpReferenceData) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *IpReferenceData) GetCountryOrRegionCode()(*string) {
         return nil
     } else {
         return m.countryOrRegionCode
-    }
-}
-// GetOrganization gets the organization property value. 
-func (m *IpReferenceData) GetOrganization()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organization
-    }
-}
-// GetState gets the state property value. 
-func (m *IpReferenceData) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetVendor gets the vendor property value. 
-func (m *IpReferenceData) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +128,30 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetOrganization gets the organization property value. 
+func (m *IpReferenceData) GetOrganization()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organization
+    }
+}
+// GetState gets the state property value. 
+func (m *IpReferenceData) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetVendor gets the vendor property value. 
+func (m *IpReferenceData) GetVendor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendor_escaped
+    }
 }
 func (m *IpReferenceData) IsNil()(bool) {
     return m == nil

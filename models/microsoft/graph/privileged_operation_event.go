@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedOperationEvent 
+// PrivilegedOperationEvent provides operations to manage the collection of privilegedOperationEvent entities.
 type PrivilegedOperationEvent struct {
     Entity
     // Detailed human readable information for the event.
@@ -44,6 +44,10 @@ func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     }
     return m
 }
+// CreatePrivilegedOperationEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedOperationEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedOperationEvent(), nil
+}
 // GetAdditionalInformation gets the additionalInformation property value. Detailed human readable information for the event.
 func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
     if m == nil {
@@ -66,94 +70,6 @@ func (m *PrivilegedOperationEvent) GetExpirationDateTime()(*i336074805fc853987ab
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetReferenceKey gets the referenceKey property value. Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
-func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceKey
-    }
-}
-// GetReferenceSystem gets the referenceSystem property value. Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
-func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceSystem
-    }
-}
-// GetRequestorId gets the requestorId property value. The user id of the requestor who initiates the operation.
-func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorId
-    }
-}
-// GetRequestorName gets the requestorName property value. The user name of the requestor who initiates the operation.
-func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorName
-    }
-}
-// GetRequestType gets the requestType property value. The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
-func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestType
-    }
-}
-// GetRoleId gets the roleId property value. The id of the role that is associated with the operation.
-func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
-}
-// GetRoleName gets the roleName property value. The name of the role.
-func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleName
-    }
-}
-// GetTenantId gets the tenantId property value. The tenant (organization) id.
-func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetUserId gets the userId property value. The id of the user that is associated with the operation.
-func (m *PrivilegedOperationEvent) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserMail gets the userMail property value. The user's email.
-func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userMail
-    }
-}
-// GetUserName gets the userName property value. The user's display name.
-func (m *PrivilegedOperationEvent) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -300,6 +216,94 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetReferenceKey gets the referenceKey property value. Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
+func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referenceKey
+    }
+}
+// GetReferenceSystem gets the referenceSystem property value. Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
+func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referenceSystem
+    }
+}
+// GetRequestorId gets the requestorId property value. The user id of the requestor who initiates the operation.
+func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestorId
+    }
+}
+// GetRequestorName gets the requestorName property value. The user name of the requestor who initiates the operation.
+func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestorName
+    }
+}
+// GetRequestType gets the requestType property value. The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
+func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestType
+    }
+}
+// GetRoleId gets the roleId property value. The id of the role that is associated with the operation.
+func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleId
+    }
+}
+// GetRoleName gets the roleName property value. The name of the role.
+func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleName
+    }
+}
+// GetTenantId gets the tenantId property value. The tenant (organization) id.
+func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetUserId gets the userId property value. The id of the user that is associated with the operation.
+func (m *PrivilegedOperationEvent) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserMail gets the userMail property value. The user's email.
+func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userMail
+    }
+}
+// GetUserName gets the userName property value. The user's display name.
+func (m *PrivilegedOperationEvent) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
 }
 func (m *PrivilegedOperationEvent) IsNil()(bool) {
     return m == nil

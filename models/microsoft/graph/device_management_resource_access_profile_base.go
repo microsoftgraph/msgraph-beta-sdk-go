@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileBase 
+// DeviceManagementResourceAccessProfileBase provides operations to manage the deviceManagement singleton.
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
     // The list of assignments for the device configuration profile.
-    assignments []DeviceManagementResourceAccessProfileAssignment;
+    assignments []DeviceManagementResourceAccessProfileAssignmentable;
     // DateTime profile was created
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Profile description
@@ -30,8 +30,12 @@ func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAcc
     }
     return m
 }
+// CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementResourceAccessProfileBase(), nil
+}
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
-func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceManagementResourceAccessProfileAssignment) {
+func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceManagementResourceAccessProfileAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -62,42 +66,18 @@ func (m *DeviceManagementResourceAccessProfileBase) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime profile was last modified
-func (m *DeviceManagementResourceAccessProfileBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope Tags
-func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetVersion gets the version property value. Version of the profile
-func (m *DeviceManagementResourceAccessProfileBase) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementResourceAccessProfileAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementResourceAccessProfileAssignment, len(val))
+            res := make([]DeviceManagementResourceAccessProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementResourceAccessProfileAssignment))
+                res[i] = v.(DeviceManagementResourceAccessProfileAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -169,6 +149,30 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime profile was last modified
+func (m *DeviceManagementResourceAccessProfileBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope Tags
+func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetVersion gets the version property value. Version of the profile
+func (m *DeviceManagementResourceAccessProfileBase) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DeviceManagementResourceAccessProfileBase) IsNil()(bool) {
     return m == nil
 }
@@ -181,8 +185,7 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i04eb5309ae
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -228,7 +231,7 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i04eb5309ae
     return nil
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
-func (m *DeviceManagementResourceAccessProfileBase) SetAssignments(value []DeviceManagementResourceAccessProfileAssignment)() {
+func (m *DeviceManagementResourceAccessProfileBase) SetAssignments(value []DeviceManagementResourceAccessProfileAssignmentable)() {
     if m != nil {
         m.assignments = value
     }

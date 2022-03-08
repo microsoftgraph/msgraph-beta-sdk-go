@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VppToken 
+// VppToken provides operations to manage the deviceAppManagement singleton.
 type VppToken struct {
     Entity
     // The apple Id associated with the given Apple Volume Purchase Program Token.
@@ -39,7 +39,7 @@ type VppToken struct {
     // The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
     token *string;
     // The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.
-    tokenActionResults []VppTokenActionResult;
+    tokenActionResults []VppTokenActionResultable;
     // The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
     vppTokenAccountType *VppTokenAccountType;
 }
@@ -49,6 +49,10 @@ func NewVppToken()(*VppToken) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateVppTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVppTokenFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVppToken(), nil
 }
 // GetAppleId gets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *VppToken) GetAppleId()(*string) {
@@ -104,86 +108,6 @@ func (m *VppToken) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification date time associated with the Apple Volume Purchase Program Token.
-func (m *VppToken) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
-func (m *VppToken) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetLastSyncStatus gets the lastSyncStatus property value. Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.
-func (m *VppToken) GetLastSyncStatus()(*VppTokenSyncStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncStatus
-    }
-}
-// GetLocationName gets the locationName property value. Token location returned from Apple VPP.
-func (m *VppToken) GetLocationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationName
-    }
-}
-// GetOrganizationName gets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token
-func (m *VppToken) GetOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationName
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. Role Scope Tags IDs assigned to this entity.
-func (m *VppToken) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
-func (m *VppToken) GetState()(*VppTokenState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetToken gets the token property value. The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
-func (m *VppToken) GetToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.token
-    }
-}
-// GetTokenActionResults gets the tokenActionResults property value. The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.
-func (m *VppToken) GetTokenActionResults()([]VppTokenActionResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenActionResults
-    }
-}
-// GetVppTokenAccountType gets the vppTokenAccountType property value. The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
-func (m *VppToken) GetVppTokenAccountType()(*VppTokenAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenAccountType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -344,14 +268,14 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["tokenActionResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVppTokenActionResult() })
+        val, err := n.GetCollectionOfObjectValues(CreateVppTokenActionResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]VppTokenActionResult, len(val))
+            res := make([]VppTokenActionResultable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*VppTokenActionResult))
+                res[i] = v.(VppTokenActionResultable)
             }
             m.SetTokenActionResults(res)
         }
@@ -368,6 +292,86 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification date time associated with the Apple Volume Purchase Program Token.
+func (m *VppToken) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
+func (m *VppToken) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetLastSyncStatus gets the lastSyncStatus property value. Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.
+func (m *VppToken) GetLastSyncStatus()(*VppTokenSyncStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncStatus
+    }
+}
+// GetLocationName gets the locationName property value. Token location returned from Apple VPP.
+func (m *VppToken) GetLocationName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locationName
+    }
+}
+// GetOrganizationName gets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token
+func (m *VppToken) GetOrganizationName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationName
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. Role Scope Tags IDs assigned to this entity.
+func (m *VppToken) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+func (m *VppToken) GetState()(*VppTokenState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetToken gets the token property value. The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
+func (m *VppToken) GetToken()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.token
+    }
+}
+// GetTokenActionResults gets the tokenActionResults property value. The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.
+func (m *VppToken) GetTokenActionResults()([]VppTokenActionResultable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tokenActionResults
+    }
+}
+// GetVppTokenAccountType gets the vppTokenAccountType property value. The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+func (m *VppToken) GetVppTokenAccountType()(*VppTokenAccountType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vppTokenAccountType
+    }
 }
 func (m *VppToken) IsNil()(bool) {
     return m == nil
@@ -473,8 +477,7 @@ func (m *VppToken) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetTokenActionResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTokenActionResults()))
         for i, v := range m.GetTokenActionResults() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tokenActionResults", cast)
         if err != nil {
@@ -581,7 +584,7 @@ func (m *VppToken) SetToken(value *string)() {
     }
 }
 // SetTokenActionResults sets the tokenActionResults property value. The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.
-func (m *VppToken) SetTokenActionResults(value []VppTokenActionResult)() {
+func (m *VppToken) SetTokenActionResults(value []VppTokenActionResultable)() {
     if m != nil {
         m.tokenActionResults = value
     }

@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LabelingOptions 
+// LabelingOptions provides operations to call the evaluateApplication method.
 type LabelingOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Possible values are: standard, privileged, auto.
     assignmentMethod *AssignmentMethod;
     // The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
-    downgradeJustification *DowngradeJustification;
+    downgradeJustification DowngradeJustificationable;
     // Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
-    extendedProperties []KeyValuePair;
+    extendedProperties []KeyValuePairable;
     // The GUID of the label that should be applied to the information.
     labelId *string;
 }
@@ -23,6 +23,10 @@ func NewLabelingOptions()(*LabelingOptions) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateLabelingOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLabelingOptionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLabelingOptions(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LabelingOptions) GetAdditionalData()(map[string]interface{}) {
@@ -41,7 +45,7 @@ func (m *LabelingOptions) GetAssignmentMethod()(*AssignmentMethod) {
     }
 }
 // GetDowngradeJustification gets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
-func (m *LabelingOptions) GetDowngradeJustification()(*DowngradeJustification) {
+func (m *LabelingOptions) GetDowngradeJustification()(DowngradeJustificationable) {
     if m == nil {
         return nil
     } else {
@@ -49,19 +53,11 @@ func (m *LabelingOptions) GetDowngradeJustification()(*DowngradeJustification) {
     }
 }
 // GetExtendedProperties gets the extendedProperties property value. Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
-func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePair) {
+func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
         return m.extendedProperties
-    }
-}
-// GetLabelId gets the labelId property value. The GUID of the label that should be applied to the information.
-func (m *LabelingOptions) GetLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,24 +74,24 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["downgradeJustification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDowngradeJustification() })
+        val, err := n.GetObjectValue(CreateDowngradeJustificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDowngradeJustification(val.(*DowngradeJustification))
+            m.SetDowngradeJustification(val.(DowngradeJustificationable))
         }
         return nil
     }
     res["extendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetExtendedProperties(res)
         }
@@ -112,6 +108,14 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetLabelId gets the labelId property value. The GUID of the label that should be applied to the information.
+func (m *LabelingOptions) GetLabelId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labelId
+    }
 }
 func (m *LabelingOptions) IsNil()(bool) {
     return m == nil
@@ -134,8 +138,7 @@ func (m *LabelingOptions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtendedProperties()))
         for i, v := range m.GetExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("extendedProperties", cast)
         if err != nil {
@@ -169,13 +172,13 @@ func (m *LabelingOptions) SetAssignmentMethod(value *AssignmentMethod)() {
     }
 }
 // SetDowngradeJustification sets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
-func (m *LabelingOptions) SetDowngradeJustification(value *DowngradeJustification)() {
+func (m *LabelingOptions) SetDowngradeJustification(value DowngradeJustificationable)() {
     if m != nil {
         m.downgradeJustification = value
     }
 }
 // SetExtendedProperties sets the extendedProperties property value. Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
-func (m *LabelingOptions) SetExtendedProperties(value []KeyValuePair)() {
+func (m *LabelingOptions) SetExtendedProperties(value []KeyValuePairable)() {
     if m != nil {
         m.extendedProperties = value
     }

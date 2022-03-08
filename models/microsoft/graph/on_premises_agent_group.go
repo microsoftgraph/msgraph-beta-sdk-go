@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesAgentGroup 
+// OnPremisesAgentGroup provides operations to manage the collection of onPremisesPublishingProfile entities.
 type OnPremisesAgentGroup struct {
     Entity
     // List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-    agents []OnPremisesAgent;
+    agents []OnPremisesAgentable;
     // Display name of the onPremisesAgentGroup.
     displayName *string;
     // Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
     isDefault *bool;
     // List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-    publishedResources []PublishedResource;
+    publishedResources []PublishedResourceable;
     // Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
     publishingType *OnPremisesPublishingType;
 }
@@ -25,8 +25,12 @@ func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
     }
     return m
 }
+// CreateOnPremisesAgentGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesAgentGroupFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesAgentGroup(), nil
+}
 // GetAgents gets the agents property value. List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-func (m *OnPremisesAgentGroup) GetAgents()([]OnPremisesAgent) {
+func (m *OnPremisesAgentGroup) GetAgents()([]OnPremisesAgentable) {
     if m == nil {
         return nil
     } else {
@@ -41,42 +45,18 @@ func (m *OnPremisesAgentGroup) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsDefault gets the isDefault property value. Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
-func (m *OnPremisesAgentGroup) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetPublishedResources gets the publishedResources property value. List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-func (m *OnPremisesAgentGroup) GetPublishedResources()([]PublishedResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedResources
-    }
-}
-// GetPublishingType gets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
-func (m *OnPremisesAgentGroup) GetPublishingType()(*OnPremisesPublishingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingType
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesAgent() })
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnPremisesAgent, len(val))
+            res := make([]OnPremisesAgentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnPremisesAgent))
+                res[i] = v.(OnPremisesAgentable)
             }
             m.SetAgents(res)
         }
@@ -103,14 +83,14 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["publishedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublishedResource() })
+        val, err := n.GetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PublishedResource, len(val))
+            res := make([]PublishedResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PublishedResource))
+                res[i] = v.(PublishedResourceable)
             }
             m.SetPublishedResources(res)
         }
@@ -128,6 +108,30 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
+// GetIsDefault gets the isDefault property value. Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
+func (m *OnPremisesAgentGroup) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetPublishedResources gets the publishedResources property value. List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+func (m *OnPremisesAgentGroup) GetPublishedResources()([]PublishedResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishedResources
+    }
+}
+// GetPublishingType gets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+func (m *OnPremisesAgentGroup) GetPublishingType()(*OnPremisesPublishingType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishingType
+    }
+}
 func (m *OnPremisesAgentGroup) IsNil()(bool) {
     return m == nil
 }
@@ -140,8 +144,7 @@ func (m *OnPremisesAgentGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetAgents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgents()))
         for i, v := range m.GetAgents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("agents", cast)
         if err != nil {
@@ -163,8 +166,7 @@ func (m *OnPremisesAgentGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetPublishedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPublishedResources()))
         for i, v := range m.GetPublishedResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("publishedResources", cast)
         if err != nil {
@@ -181,7 +183,7 @@ func (m *OnPremisesAgentGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetAgents sets the agents property value. List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-func (m *OnPremisesAgentGroup) SetAgents(value []OnPremisesAgent)() {
+func (m *OnPremisesAgentGroup) SetAgents(value []OnPremisesAgentable)() {
     if m != nil {
         m.agents = value
     }
@@ -199,7 +201,7 @@ func (m *OnPremisesAgentGroup) SetIsDefault(value *bool)() {
     }
 }
 // SetPublishedResources sets the publishedResources property value. List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-func (m *OnPremisesAgentGroup) SetPublishedResources(value []PublishedResource)() {
+func (m *OnPremisesAgentGroup) SetPublishedResources(value []PublishedResourceable)() {
     if m != nil {
         m.publishedResources = value
     }

@@ -2,11 +2,11 @@ package comanagementeligibledevices
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i87063f42c0f588365586c95ca2c2af862950c819d1bb0211097800240c7d6d35 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanagementeligibledevices/count"
 )
 
-// ComanagementEligibleDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\comanagementEligibleDevices
+// ComanagementEligibleDevicesRequestBuilder provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
 type ComanagementEligibleDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ComanagementEligibleDevicesRequestBuilderGetQueryParameters struct {
 // ComanagementEligibleDevicesRequestBuilderPostOptions options for Post
 type ComanagementEligibleDevicesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDeviceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewComanagementEligibleDevicesRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewComanagementEligibleDevicesRequestBuilder(rawUrl string, requestAdapter 
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagementEligibleDevicesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ComanagementEligibleDevicesRequestBuilder) Count()(*i87063f42c0f588365586c95ca2c2af862950c819d1bb0211097800240c7d6d35.CountRequestBuilder) {
+    return i87063f42c0f588365586c95ca2c2af862950c819d1bb0211097800240c7d6d35.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of co-management eligible devices report
 func (m *ComanagementEligibleDevicesRequestBuilder) CreateGetRequestInformation(options *ComanagementEligibleDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ComanagementEligibleDevicesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of co-management eligible devices report
+// CreatePostRequestInformation create new navigation property to comanagementEligibleDevices for deviceManagement
 func (m *ComanagementEligibleDevicesRequestBuilder) CreatePostRequestInformation(options *ComanagementEligibleDevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ComanagementEligibleDevicesRequestBuilder) CreatePostRequestInformation
     return requestInfo, nil
 }
 // Get the list of co-management eligible devices report
-func (m *ComanagementEligibleDevicesRequestBuilder) Get(options *ComanagementEligibleDevicesRequestBuilderGetOptions)(*ComanagementEligibleDevicesResponse, error) {
+func (m *ComanagementEligibleDevicesRequestBuilder) Get(options *ComanagementEligibleDevicesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDeviceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComanagementEligibleDevicesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateComanagementEligibleDeviceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ComanagementEligibleDevicesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDeviceCollectionResponseable), nil
 }
-// Post the list of co-management eligible devices report
-func (m *ComanagementEligibleDevicesRequestBuilder) Post(options *ComanagementEligibleDevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice, error) {
+// Post create new navigation property to comanagementEligibleDevices for deviceManagement
+func (m *ComanagementEligibleDevicesRequestBuilder) Post(options *ComanagementEligibleDevicesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDeviceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewComanagementEligibleDevice() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateComanagementEligibleDeviceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevice), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDeviceable), nil
 }

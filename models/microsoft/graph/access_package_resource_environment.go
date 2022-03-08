@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageResourceEnvironment 
+// AccessPackageResourceEnvironment provides operations to manage the identityGovernance singleton.
 type AccessPackageResourceEnvironment struct {
     Entity
     // Read-only. Required.
-    accessPackageResources []AccessPackageResource;
+    accessPackageResources []AccessPackageResourceable;
     // Connection information of an environment used to connect to a resource.
-    connectionInfo *ConnectionInfo;
+    connectionInfo ConnectionInfoable;
     // The display name of the user that created this object.
     createdBy *string;
     // The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -38,8 +38,12 @@ func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
     }
     return m
 }
+// CreateAccessPackageResourceEnvironmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageResourceEnvironmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageResourceEnvironment(), nil
+}
 // GetAccessPackageResources gets the accessPackageResources property value. Read-only. Required.
-func (m *AccessPackageResourceEnvironment) GetAccessPackageResources()([]AccessPackageResource) {
+func (m *AccessPackageResourceEnvironment) GetAccessPackageResources()([]AccessPackageResourceable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *AccessPackageResourceEnvironment) GetAccessPackageResources()([]AccessP
     }
 }
 // GetConnectionInfo gets the connectionInfo property value. Connection information of an environment used to connect to a resource.
-func (m *AccessPackageResourceEnvironment) GetConnectionInfo()(*ConnectionInfo) {
+func (m *AccessPackageResourceEnvironment) GetConnectionInfo()(ConnectionInfoable) {
     if m == nil {
         return nil
     } else {
@@ -86,70 +90,30 @@ func (m *AccessPackageResourceEnvironment) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsDefaultEnvironment gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
-func (m *AccessPackageResourceEnvironment) GetIsDefaultEnvironment()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultEnvironment
-    }
-}
-// GetModifiedBy gets the modifiedBy property value. The display name of the entity that last modified this object.
-func (m *AccessPackageResourceEnvironment) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *AccessPackageResourceEnvironment) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetOriginId gets the originId property value. The unique identifier of this environment in the origin system.
-func (m *AccessPackageResourceEnvironment) GetOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originId
-    }
-}
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
-func (m *AccessPackageResourceEnvironment) GetOriginSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originSystem
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageResource, len(val))
+            res := make([]AccessPackageResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageResource))
+                res[i] = v.(AccessPackageResourceable)
             }
             m.SetAccessPackageResources(res)
         }
         return nil
     }
     res["connectionInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectionInfo() })
+        val, err := n.GetObjectValue(CreateConnectionInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConnectionInfo(val.(*ConnectionInfo))
+            m.SetConnectionInfo(val.(ConnectionInfoable))
         }
         return nil
     }
@@ -245,6 +209,46 @@ func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
+// GetIsDefaultEnvironment gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+func (m *AccessPackageResourceEnvironment) GetIsDefaultEnvironment()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefaultEnvironment
+    }
+}
+// GetModifiedBy gets the modifiedBy property value. The display name of the entity that last modified this object.
+func (m *AccessPackageResourceEnvironment) GetModifiedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedBy
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *AccessPackageResourceEnvironment) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetOriginId gets the originId property value. The unique identifier of this environment in the origin system.
+func (m *AccessPackageResourceEnvironment) GetOriginId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originId
+    }
+}
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
+func (m *AccessPackageResourceEnvironment) GetOriginSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originSystem
+    }
+}
 func (m *AccessPackageResourceEnvironment) IsNil()(bool) {
     return m == nil
 }
@@ -257,8 +261,7 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i04eb5309aeaafadd283
     if m.GetAccessPackageResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResources()))
         for i, v := range m.GetAccessPackageResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResources", cast)
         if err != nil {
@@ -328,13 +331,13 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i04eb5309aeaafadd283
     return nil
 }
 // SetAccessPackageResources sets the accessPackageResources property value. Read-only. Required.
-func (m *AccessPackageResourceEnvironment) SetAccessPackageResources(value []AccessPackageResource)() {
+func (m *AccessPackageResourceEnvironment) SetAccessPackageResources(value []AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResources = value
     }
 }
 // SetConnectionInfo sets the connectionInfo property value. Connection information of an environment used to connect to a resource.
-func (m *AccessPackageResourceEnvironment) SetConnectionInfo(value *ConnectionInfo)() {
+func (m *AccessPackageResourceEnvironment) SetConnectionInfo(value ConnectionInfoable)() {
     if m != nil {
         m.connectionInfo = value
     }

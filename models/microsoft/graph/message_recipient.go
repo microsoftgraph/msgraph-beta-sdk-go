@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MessageRecipient 
+// MessageRecipient provides operations to manage the collection of messageTrace entities.
 type MessageRecipient struct {
     Entity
     // 
     deliveryStatus *MessageStatus;
     // 
-    events []MessageEvent;
+    events []MessageEventable;
     // 
     recipientEmail *string;
 }
@@ -21,6 +21,10 @@ func NewMessageRecipient()(*MessageRecipient) {
     }
     return m
 }
+// CreateMessageRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMessageRecipientFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMessageRecipient(), nil
+}
 // GetDeliveryStatus gets the deliveryStatus property value. 
 func (m *MessageRecipient) GetDeliveryStatus()(*MessageStatus) {
     if m == nil {
@@ -30,19 +34,11 @@ func (m *MessageRecipient) GetDeliveryStatus()(*MessageStatus) {
     }
 }
 // GetEvents gets the events property value. 
-func (m *MessageRecipient) GetEvents()([]MessageEvent) {
+func (m *MessageRecipient) GetEvents()([]MessageEventable) {
     if m == nil {
         return nil
     } else {
         return m.events
-    }
-}
-// GetRecipientEmail gets the recipientEmail property value. 
-func (m *MessageRecipient) GetRecipientEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientEmail
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,14 +55,14 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessageEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateMessageEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MessageEvent, len(val))
+            res := make([]MessageEventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MessageEvent))
+                res[i] = v.(MessageEventable)
             }
             m.SetEvents(res)
         }
@@ -83,6 +79,14 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetRecipientEmail gets the recipientEmail property value. 
+func (m *MessageRecipient) GetRecipientEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipientEmail
+    }
 }
 func (m *MessageRecipient) IsNil()(bool) {
     return m == nil
@@ -103,8 +107,7 @@ func (m *MessageRecipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {
@@ -126,7 +129,7 @@ func (m *MessageRecipient) SetDeliveryStatus(value *MessageStatus)() {
     }
 }
 // SetEvents sets the events property value. 
-func (m *MessageRecipient) SetEvents(value []MessageEvent)() {
+func (m *MessageRecipient) SetEvents(value []MessageEventable)() {
     if m != nil {
         m.events = value
     }

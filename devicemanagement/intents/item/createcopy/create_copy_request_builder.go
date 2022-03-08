@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateCopyRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\microsoft.graph.createCopy
+// CreateCopyRequestBuilder provides operations to call the createCopy method.
 type CreateCopyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CreateCopyRequestBuilder struct {
 // CreateCopyRequestBuilderPostOptions options for Post
 type CreateCopyRequestBuilderPostOptions struct {
     // 
-    Body *CreateCopyRequestBody;
+    Body CreateCopyRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type CreateCopyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // CreateCopyResponse union type wrapper for classes deviceManagementIntent
 type CreateCopyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type deviceManagementIntent
-    deviceManagementIntent *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent;
+    deviceManagementIntent i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentable;
 }
 // NewCreateCopyResponse instantiates a new createCopyResponse and sets the default values.
 func NewCreateCopyResponse()(*CreateCopyResponse) {
@@ -39,6 +44,9 @@ func NewCreateCopyResponse()(*CreateCopyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCreateCopyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateCopyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateCopyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +57,7 @@ func (m *CreateCopyResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDeviceManagementIntent gets the deviceManagementIntent property value. Union type representation for type deviceManagementIntent
-func (m *CreateCopyResponse) GetDeviceManagementIntent()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent) {
+func (m *CreateCopyResponse) GetDeviceManagementIntent()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +68,12 @@ func (m *CreateCopyResponse) GetDeviceManagementIntent()(*i535684e11b5500196ecb4
 func (m *CreateCopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceManagementIntent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementIntent() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementIntentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceManagementIntent(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent))
+            m.SetDeviceManagementIntent(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentable))
         }
         return nil
     }
@@ -97,7 +105,7 @@ func (m *CreateCopyResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDeviceManagementIntent sets the deviceManagementIntent property value. Union type representation for type deviceManagementIntent
-func (m *CreateCopyResponse) SetDeviceManagementIntent(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntent)() {
+func (m *CreateCopyResponse) SetDeviceManagementIntent(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentable)() {
     if m != nil {
         m.deviceManagementIntent = value
     }
@@ -111,7 +119,7 @@ func NewCreateCopyRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *CreateCopyRequestBuilder) CreatePostRequestInformation(options *CreateC
     return requestInfo, nil
 }
 // Post invoke action createCopy
-func (m *CreateCopyRequestBuilder) Post(options *CreateCopyRequestBuilderPostOptions)(*CreateCopyResponse, error) {
+func (m *CreateCopyRequestBuilder) Post(options *CreateCopyRequestBuilderPostOptions)(CreateCopyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreateCopyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateCopyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CreateCopyResponse), nil
+    return res.(CreateCopyResponseable), nil
 }

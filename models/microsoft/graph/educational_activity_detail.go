@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationalActivityDetail 
+// EducationalActivityDetail provides operations to manage the compliance singleton.
 type EducationalActivityDetail struct {
     // Shortened name of the degree or program (example: PhD, MBA)
     abbreviation *string;
@@ -33,6 +33,10 @@ func NewEducationalActivityDetail()(*EducationalActivityDetail) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEducationalActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationalActivityDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationalActivityDetail(), nil
 }
 // GetAbbreviation gets the abbreviation property value. Shortened name of the degree or program (example: PhD, MBA)
 func (m *EducationalActivityDetail) GetAbbreviation()(*string) {
@@ -80,38 +84,6 @@ func (m *EducationalActivityDetail) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetFieldsOfStudy gets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
-func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fieldsOfStudy
-    }
-}
-// GetGrade gets the grade property value. The final grade, class, GPA or score.
-func (m *EducationalActivityDetail) GetGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grade
-    }
-}
-// GetNotes gets the notes property value. Additional notes the user has provided.
-func (m *EducationalActivityDetail) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetWebUrl gets the webUrl property value. Link to the degree or program page.
-func (m *EducationalActivityDetail) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +192,38 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetFieldsOfStudy gets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
+func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fieldsOfStudy
+    }
+}
+// GetGrade gets the grade property value. The final grade, class, GPA or score.
+func (m *EducationalActivityDetail) GetGrade()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grade
+    }
+}
+// GetNotes gets the notes property value. Additional notes the user has provided.
+func (m *EducationalActivityDetail) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetWebUrl gets the webUrl property value. Link to the degree or program page.
+func (m *EducationalActivityDetail) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *EducationalActivityDetail) IsNil()(bool) {
     return m == nil

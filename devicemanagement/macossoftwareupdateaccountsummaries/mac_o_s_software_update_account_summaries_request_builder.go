@@ -2,11 +2,11 @@ package macossoftwareupdateaccountsummaries
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i489cc74bef3004f249dde5c4a556d17b17597e69965458cdcc4754179c41709b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/macossoftwareupdateaccountsummaries/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// MacOSSoftwareUpdateAccountSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries
+// MacOSSoftwareUpdateAccountSummariesRequestBuilder provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
 type MacOSSoftwareUpdateAccountSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MacOSSoftwareUpdateAccountSummariesRequestBuilderGetQueryParameters struct 
 // MacOSSoftwareUpdateAccountSummariesRequestBuilderPostOptions options for Post
 type MacOSSoftwareUpdateAccountSummariesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummary;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummaryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMacOSSoftwareUpdateAccountSummariesRequestBuilder(rawUrl string, request
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) Count()(*i489cc74bef3004f249dde5c4a556d17b17597e69965458cdcc4754179c41709b.CountRequestBuilder) {
+    return i489cc74bef3004f249dde5c4a556d17b17597e69965458cdcc4754179c41709b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) CreateGetRequestInformation(options *MacOSSoftwareUpdateAccountSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the MacOS software update account summaries for this account.
+// CreatePostRequestInformation create new navigation property to macOSSoftwareUpdateAccountSummaries for deviceManagement
 func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) CreatePostRequestInformation(options *MacOSSoftwareUpdateAccountSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) CreatePostRequestInf
     return requestInfo, nil
 }
 // Get the MacOS software update account summaries for this account.
-func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) Get(options *MacOSSoftwareUpdateAccountSummariesRequestBuilderGetOptions)(*MacOSSoftwareUpdateAccountSummariesResponse, error) {
+func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) Get(options *MacOSSoftwareUpdateAccountSummariesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMacOSSoftwareUpdateAccountSummariesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMacOSSoftwareUpdateAccountSummaryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MacOSSoftwareUpdateAccountSummariesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummaryCollectionResponseable), nil
 }
-// Post the MacOS software update account summaries for this account.
-func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) Post(options *MacOSSoftwareUpdateAccountSummariesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummary, error) {
+// Post create new navigation property to macOSSoftwareUpdateAccountSummaries for deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) Post(options *MacOSSoftwareUpdateAccountSummariesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMacOSSoftwareUpdateAccountSummary() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMacOSSoftwareUpdateAccountSummaryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummary), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummaryable), nil
 }

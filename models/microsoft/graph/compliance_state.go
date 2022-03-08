@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the compliance singleton.
 type ComplianceState int
 
 const (

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobilityManagementPolicy 
+// MobilityManagementPolicy provides operations to manage the collection of mobilityManagementPolicy entities.
 type MobilityManagementPolicy struct {
     Entity
     // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
@@ -18,7 +18,7 @@ type MobilityManagementPolicy struct {
     // Display name of the mobility management application.
     displayName *string;
     // Azure AD groups under the scope of the mobility management application if appliesTo is selected
-    includedGroups []Group;
+    includedGroups []Groupable;
     // Whether policy is valid. Invalid policies may not be updated and should be deleted.
     isValid *bool;
     // Terms of Use URL of the mobility management application.
@@ -30,6 +30,10 @@ func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateMobilityManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobilityManagementPolicy(), nil
 }
 // GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
@@ -69,30 +73,6 @@ func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIncludedGroups gets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
-func (m *MobilityManagementPolicy) GetIncludedGroups()([]Group) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includedGroups
-    }
-}
-// GetIsValid gets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
-func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValid
-    }
-}
-// GetTermsOfUseUrl gets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
-func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsOfUseUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,14 +129,14 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["includedGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Group, len(val))
+            res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Group))
+                res[i] = v.(Groupable)
             }
             m.SetIncludedGroups(res)
         }
@@ -183,6 +163,30 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIncludedGroups gets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
+func (m *MobilityManagementPolicy) GetIncludedGroups()([]Groupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includedGroups
+    }
+}
+// GetIsValid gets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
+func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isValid
+    }
+}
+// GetTermsOfUseUrl gets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
+func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsOfUseUrl
+    }
 }
 func (m *MobilityManagementPolicy) IsNil()(bool) {
     return m == nil
@@ -227,8 +231,7 @@ func (m *MobilityManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetIncludedGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncludedGroups()))
         for i, v := range m.GetIncludedGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("includedGroups", cast)
         if err != nil {
@@ -280,7 +283,7 @@ func (m *MobilityManagementPolicy) SetDisplayName(value *string)() {
     }
 }
 // SetIncludedGroups sets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
-func (m *MobilityManagementPolicy) SetIncludedGroups(value []Group)() {
+func (m *MobilityManagementPolicy) SetIncludedGroups(value []Groupable)() {
     if m != nil {
         m.includedGroups = value
     }

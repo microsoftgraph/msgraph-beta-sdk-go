@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UsageRight 
+// UsageRight provides operations to manage the compliance singleton.
 type UsageRight struct {
     Entity
     // Product id corresponding to the usage right.
@@ -21,28 +21,16 @@ func NewUsageRight()(*UsageRight) {
     }
     return m
 }
+// CreateUsageRightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUsageRightFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUsageRight(), nil
+}
 // GetCatalogId gets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) GetCatalogId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.catalogId
-    }
-}
-// GetServiceIdentifier gets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
-func (m *UsageRight) GetServiceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceIdentifier
-    }
-}
-// GetState gets the state property value. The state of the usage right. Possible values are: active, inactive, warning, suspended.
-func (m *UsageRight) GetState()(*UsageRightState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +67,22 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetServiceIdentifier gets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
+func (m *UsageRight) GetServiceIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceIdentifier
+    }
+}
+// GetState gets the state property value. The state of the usage right. Possible values are: active, inactive, warning, suspended.
+func (m *UsageRight) GetState()(*UsageRightState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *UsageRight) IsNil()(bool) {
     return m == nil

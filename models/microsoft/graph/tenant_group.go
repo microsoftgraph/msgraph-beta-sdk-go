@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TenantGroup 
+// TenantGroup provides operations to manage the tenantRelationship singleton.
 type TenantGroup struct {
     Entity
     // A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
@@ -12,9 +12,9 @@ type TenantGroup struct {
     // The display name for the tenant group. Optional. Read-only.
     displayName *string;
     // The collection of management action associated with the tenant group. Optional. Read-only.
-    managementActions []ManagementActionInfo;
+    managementActions []ManagementActionInfoable;
     // The collection of management intents associated with the tenant group. Optional. Read-only.
-    managementIntents []ManagementIntentInfo;
+    managementIntents []ManagementIntentInfoable;
     // The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
     tenantIds []string;
 }
@@ -24,6 +24,10 @@ func NewTenantGroup()(*TenantGroup) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTenantGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTenantGroupFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTenantGroup(), nil
 }
 // GetAllTenantsIncluded gets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
 func (m *TenantGroup) GetAllTenantsIncluded()(*bool) {
@@ -39,30 +43,6 @@ func (m *TenantGroup) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetManagementActions gets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
-func (m *TenantGroup) GetManagementActions()([]ManagementActionInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementActions
-    }
-}
-// GetManagementIntents gets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
-func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementIntents
-    }
-}
-// GetTenantIds gets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
-func (m *TenantGroup) GetTenantIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,28 +69,28 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["managementActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementActionInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementActionInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementActionInfo, len(val))
+            res := make([]ManagementActionInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementActionInfo))
+                res[i] = v.(ManagementActionInfoable)
             }
             m.SetManagementActions(res)
         }
         return nil
     }
     res["managementIntents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementIntentInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementIntentInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementIntentInfo, len(val))
+            res := make([]ManagementIntentInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementIntentInfo))
+                res[i] = v.(ManagementIntentInfoable)
             }
             m.SetManagementIntents(res)
         }
@@ -131,6 +111,30 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetManagementActions gets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
+func (m *TenantGroup) GetManagementActions()([]ManagementActionInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementActions
+    }
+}
+// GetManagementIntents gets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
+func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementIntents
+    }
+}
+// GetTenantIds gets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
+func (m *TenantGroup) GetTenantIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantIds
+    }
 }
 func (m *TenantGroup) IsNil()(bool) {
     return m == nil
@@ -156,8 +160,7 @@ func (m *TenantGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetManagementActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementActions()))
         for i, v := range m.GetManagementActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementActions", cast)
         if err != nil {
@@ -167,8 +170,7 @@ func (m *TenantGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetManagementIntents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementIntents()))
         for i, v := range m.GetManagementIntents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementIntents", cast)
         if err != nil {
@@ -196,13 +198,13 @@ func (m *TenantGroup) SetDisplayName(value *string)() {
     }
 }
 // SetManagementActions sets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
-func (m *TenantGroup) SetManagementActions(value []ManagementActionInfo)() {
+func (m *TenantGroup) SetManagementActions(value []ManagementActionInfoable)() {
     if m != nil {
         m.managementActions = value
     }
 }
 // SetManagementIntents sets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
-func (m *TenantGroup) SetManagementIntents(value []ManagementIntentInfo)() {
+func (m *TenantGroup) SetManagementIntents(value []ManagementIntentInfoable)() {
     if m != nil {
         m.managementIntents = value
     }

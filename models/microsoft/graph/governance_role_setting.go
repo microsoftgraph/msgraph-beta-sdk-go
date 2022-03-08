@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceRoleSetting 
+// GovernanceRoleSetting provides operations to manage the collection of governanceResource entities.
 type GovernanceRoleSetting struct {
     Entity
     // The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
-    adminEligibleSettings []GovernanceRuleSetting;
+    adminEligibleSettings []GovernanceRuleSettingable;
     // The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
-    adminMemberSettings []GovernanceRuleSetting;
+    adminMemberSettings []GovernanceRuleSettingable;
     // Read-only. Indicate if the roleSetting is a default roleSetting
     isDefault *bool;
     // Read-only. The display name of the administrator who last updated the roleSetting.
@@ -19,17 +19,17 @@ type GovernanceRoleSetting struct {
     // Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only. The associated resource for this role setting.
-    resource *GovernanceResource;
+    resource GovernanceResourceable;
     // Required. The id of the resource that the role setting is associated with.
     resourceId *string;
     // Read-only. The role definition that is enforced with this role setting.
-    roleDefinition *GovernanceRoleDefinition;
+    roleDefinition GovernanceRoleDefinitionable;
     // Required. The id of the role definition that the role setting is associated with.
     roleDefinitionId *string;
     // The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
-    userEligibleSettings []GovernanceRuleSetting;
+    userEligibleSettings []GovernanceRuleSettingable;
     // The rule settings that are evaluated when a user tries to activate his role assignment.
-    userMemberSettings []GovernanceRuleSetting;
+    userMemberSettings []GovernanceRuleSettingable;
 }
 // NewGovernanceRoleSetting instantiates a new governanceRoleSetting and sets the default values.
 func NewGovernanceRoleSetting()(*GovernanceRoleSetting) {
@@ -38,8 +38,12 @@ func NewGovernanceRoleSetting()(*GovernanceRoleSetting) {
     }
     return m
 }
+// CreateGovernanceRoleSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceRoleSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceRoleSetting(), nil
+}
 // GetAdminEligibleSettings gets the adminEligibleSettings property value. The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
-func (m *GovernanceRoleSetting) GetAdminEligibleSettings()([]GovernanceRuleSetting) {
+func (m *GovernanceRoleSetting) GetAdminEligibleSettings()([]GovernanceRuleSettingable) {
     if m == nil {
         return nil
     } else {
@@ -47,111 +51,39 @@ func (m *GovernanceRoleSetting) GetAdminEligibleSettings()([]GovernanceRuleSetti
     }
 }
 // GetAdminMemberSettings gets the adminMemberSettings property value. The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
-func (m *GovernanceRoleSetting) GetAdminMemberSettings()([]GovernanceRuleSetting) {
+func (m *GovernanceRoleSetting) GetAdminMemberSettings()([]GovernanceRuleSettingable) {
     if m == nil {
         return nil
     } else {
         return m.adminMemberSettings
     }
 }
-// GetIsDefault gets the isDefault property value. Read-only. Indicate if the roleSetting is a default roleSetting
-func (m *GovernanceRoleSetting) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetLastUpdatedBy gets the lastUpdatedBy property value. Read-only. The display name of the administrator who last updated the roleSetting.
-func (m *GovernanceRoleSetting) GetLastUpdatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedBy
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *GovernanceRoleSetting) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetResource gets the resource property value. Read-only. The associated resource for this role setting.
-func (m *GovernanceRoleSetting) GetResource()(*GovernanceResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
-}
-// GetResourceId gets the resourceId property value. Required. The id of the resource that the role setting is associated with.
-func (m *GovernanceRoleSetting) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
-}
-// GetRoleDefinition gets the roleDefinition property value. Read-only. The role definition that is enforced with this role setting.
-func (m *GovernanceRoleSetting) GetRoleDefinition()(*GovernanceRoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
-}
-// GetRoleDefinitionId gets the roleDefinitionId property value. Required. The id of the role definition that the role setting is associated with.
-func (m *GovernanceRoleSetting) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
-}
-// GetUserEligibleSettings gets the userEligibleSettings property value. The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
-func (m *GovernanceRoleSetting) GetUserEligibleSettings()([]GovernanceRuleSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEligibleSettings
-    }
-}
-// GetUserMemberSettings gets the userMemberSettings property value. The rule settings that are evaluated when a user tries to activate his role assignment.
-func (m *GovernanceRoleSetting) GetUserMemberSettings()([]GovernanceRuleSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userMemberSettings
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["adminEligibleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRuleSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRuleSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRuleSetting, len(val))
+            res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRuleSetting))
+                res[i] = v.(GovernanceRuleSettingable)
             }
             m.SetAdminEligibleSettings(res)
         }
         return nil
     }
     res["adminMemberSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRuleSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRuleSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRuleSetting, len(val))
+            res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRuleSetting))
+                res[i] = v.(GovernanceRuleSettingable)
             }
             m.SetAdminMemberSettings(res)
         }
@@ -188,12 +120,12 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceResource() })
+        val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResource(val.(*GovernanceResource))
+            m.SetResource(val.(GovernanceResourceable))
         }
         return nil
     }
@@ -208,12 +140,12 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["roleDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleDefinition() })
+        val, err := n.GetObjectValue(CreateGovernanceRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleDefinition(val.(*GovernanceRoleDefinition))
+            m.SetRoleDefinition(val.(GovernanceRoleDefinitionable))
         }
         return nil
     }
@@ -228,34 +160,106 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["userEligibleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRuleSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRuleSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRuleSetting, len(val))
+            res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRuleSetting))
+                res[i] = v.(GovernanceRuleSettingable)
             }
             m.SetUserEligibleSettings(res)
         }
         return nil
     }
     res["userMemberSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRuleSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRuleSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRuleSetting, len(val))
+            res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRuleSetting))
+                res[i] = v.(GovernanceRuleSettingable)
             }
             m.SetUserMemberSettings(res)
         }
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. Read-only. Indicate if the roleSetting is a default roleSetting
+func (m *GovernanceRoleSetting) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetLastUpdatedBy gets the lastUpdatedBy property value. Read-only. The display name of the administrator who last updated the roleSetting.
+func (m *GovernanceRoleSetting) GetLastUpdatedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedBy
+    }
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *GovernanceRoleSetting) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetResource gets the resource property value. Read-only. The associated resource for this role setting.
+func (m *GovernanceRoleSetting) GetResource()(GovernanceResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resource
+    }
+}
+// GetResourceId gets the resourceId property value. Required. The id of the resource that the role setting is associated with.
+func (m *GovernanceRoleSetting) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
+}
+// GetRoleDefinition gets the roleDefinition property value. Read-only. The role definition that is enforced with this role setting.
+func (m *GovernanceRoleSetting) GetRoleDefinition()(GovernanceRoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinition
+    }
+}
+// GetRoleDefinitionId gets the roleDefinitionId property value. Required. The id of the role definition that the role setting is associated with.
+func (m *GovernanceRoleSetting) GetRoleDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitionId
+    }
+}
+// GetUserEligibleSettings gets the userEligibleSettings property value. The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+func (m *GovernanceRoleSetting) GetUserEligibleSettings()([]GovernanceRuleSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userEligibleSettings
+    }
+}
+// GetUserMemberSettings gets the userMemberSettings property value. The rule settings that are evaluated when a user tries to activate his role assignment.
+func (m *GovernanceRoleSetting) GetUserMemberSettings()([]GovernanceRuleSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userMemberSettings
+    }
 }
 func (m *GovernanceRoleSetting) IsNil()(bool) {
     return m == nil
@@ -269,8 +273,7 @@ func (m *GovernanceRoleSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAdminEligibleSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdminEligibleSettings()))
         for i, v := range m.GetAdminEligibleSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("adminEligibleSettings", cast)
         if err != nil {
@@ -280,8 +283,7 @@ func (m *GovernanceRoleSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAdminMemberSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdminMemberSettings()))
         for i, v := range m.GetAdminMemberSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("adminMemberSettings", cast)
         if err != nil {
@@ -333,8 +335,7 @@ func (m *GovernanceRoleSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetUserEligibleSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserEligibleSettings()))
         for i, v := range m.GetUserEligibleSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userEligibleSettings", cast)
         if err != nil {
@@ -344,8 +345,7 @@ func (m *GovernanceRoleSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetUserMemberSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserMemberSettings()))
         for i, v := range m.GetUserMemberSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userMemberSettings", cast)
         if err != nil {
@@ -355,13 +355,13 @@ func (m *GovernanceRoleSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     return nil
 }
 // SetAdminEligibleSettings sets the adminEligibleSettings property value. The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
-func (m *GovernanceRoleSetting) SetAdminEligibleSettings(value []GovernanceRuleSetting)() {
+func (m *GovernanceRoleSetting) SetAdminEligibleSettings(value []GovernanceRuleSettingable)() {
     if m != nil {
         m.adminEligibleSettings = value
     }
 }
 // SetAdminMemberSettings sets the adminMemberSettings property value. The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
-func (m *GovernanceRoleSetting) SetAdminMemberSettings(value []GovernanceRuleSetting)() {
+func (m *GovernanceRoleSetting) SetAdminMemberSettings(value []GovernanceRuleSettingable)() {
     if m != nil {
         m.adminMemberSettings = value
     }
@@ -385,7 +385,7 @@ func (m *GovernanceRoleSetting) SetLastUpdatedDateTime(value *i336074805fc853987
     }
 }
 // SetResource sets the resource property value. Read-only. The associated resource for this role setting.
-func (m *GovernanceRoleSetting) SetResource(value *GovernanceResource)() {
+func (m *GovernanceRoleSetting) SetResource(value GovernanceResourceable)() {
     if m != nil {
         m.resource = value
     }
@@ -397,7 +397,7 @@ func (m *GovernanceRoleSetting) SetResourceId(value *string)() {
     }
 }
 // SetRoleDefinition sets the roleDefinition property value. Read-only. The role definition that is enforced with this role setting.
-func (m *GovernanceRoleSetting) SetRoleDefinition(value *GovernanceRoleDefinition)() {
+func (m *GovernanceRoleSetting) SetRoleDefinition(value GovernanceRoleDefinitionable)() {
     if m != nil {
         m.roleDefinition = value
     }
@@ -409,13 +409,13 @@ func (m *GovernanceRoleSetting) SetRoleDefinitionId(value *string)() {
     }
 }
 // SetUserEligibleSettings sets the userEligibleSettings property value. The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
-func (m *GovernanceRoleSetting) SetUserEligibleSettings(value []GovernanceRuleSetting)() {
+func (m *GovernanceRoleSetting) SetUserEligibleSettings(value []GovernanceRuleSettingable)() {
     if m != nil {
         m.userEligibleSettings = value
     }
 }
 // SetUserMemberSettings sets the userMemberSettings property value. The rule settings that are evaluated when a user tries to activate his role assignment.
-func (m *GovernanceRoleSetting) SetUserMemberSettings(value []GovernanceRuleSetting)() {
+func (m *GovernanceRoleSetting) SetUserMemberSettings(value []GovernanceRuleSettingable)() {
     if m != nil {
         m.userMemberSettings = value
     }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InformationProtectionPolicy 
+// InformationProtectionPolicy provides operations to manage the compliance singleton.
 type InformationProtectionPolicy struct {
     Entity
     // 
-    labels []InformationProtectionLabel;
+    labels []InformationProtectionLabelable;
 }
 // NewInformationProtectionPolicy instantiates a new informationProtectionPolicy and sets the default values.
 func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
@@ -17,32 +17,36 @@ func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
     }
     return m
 }
-// GetLabels gets the labels property value. 
-func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labels
-    }
+// CreateInformationProtectionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInformationProtectionPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInformationProtectionPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["labels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInformationProtectionLabel() })
+        val, err := n.GetCollectionOfObjectValues(CreateInformationProtectionLabelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]InformationProtectionLabel, len(val))
+            res := make([]InformationProtectionLabelable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*InformationProtectionLabel))
+                res[i] = v.(InformationProtectionLabelable)
             }
             m.SetLabels(res)
         }
         return nil
     }
     return res
+}
+// GetLabels gets the labels property value. 
+func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabelable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labels
+    }
 }
 func (m *InformationProtectionPolicy) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *InformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetLabels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLabels()))
         for i, v := range m.GetLabels() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("labels", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *InformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetLabels sets the labels property value. 
-func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabel)() {
+func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabelable)() {
     if m != nil {
         m.labels = value
     }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TenantCustomizedInformation 
+// TenantCustomizedInformation provides operations to manage the tenantRelationship singleton.
 type TenantCustomizedInformation struct {
     Entity
     // The collection of contacts for the managed tenant. Optional.
-    contacts []TenantContactInformation;
+    contacts []TenantContactInformationable;
     // The display name for the managed tenant. Required. Read-only.
     displayName *string;
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
@@ -23,8 +23,12 @@ func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
     }
     return m
 }
+// CreateTenantCustomizedInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTenantCustomizedInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTenantCustomizedInformation(), nil
+}
 // GetContacts gets the contacts property value. The collection of contacts for the managed tenant. Optional.
-func (m *TenantCustomizedInformation) GetContacts()([]TenantContactInformation) {
+func (m *TenantCustomizedInformation) GetContacts()([]TenantContactInformationable) {
     if m == nil {
         return nil
     } else {
@@ -39,34 +43,18 @@ func (m *TenantCustomizedInformation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-func (m *TenantCustomizedInformation) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetWebsite gets the website property value. The website for the managed tenant. Required.
-func (m *TenantCustomizedInformation) GetWebsite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.website
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTenantContactInformation() })
+        val, err := n.GetCollectionOfObjectValues(CreateTenantContactInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TenantContactInformation, len(val))
+            res := make([]TenantContactInformationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TenantContactInformation))
+                res[i] = v.(TenantContactInformationable)
             }
             m.SetContacts(res)
         }
@@ -104,6 +92,22 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+func (m *TenantCustomizedInformation) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetWebsite gets the website property value. The website for the managed tenant. Required.
+func (m *TenantCustomizedInformation) GetWebsite()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.website
+    }
+}
 func (m *TenantCustomizedInformation) IsNil()(bool) {
     return m == nil
 }
@@ -116,8 +120,7 @@ func (m *TenantCustomizedInformation) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetContacts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContacts()))
         for i, v := range m.GetContacts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("contacts", cast)
         if err != nil {
@@ -145,7 +148,7 @@ func (m *TenantCustomizedInformation) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetContacts sets the contacts property value. The collection of contacts for the managed tenant. Optional.
-func (m *TenantCustomizedInformation) SetContacts(value []TenantContactInformation)() {
+func (m *TenantCustomizedInformation) SetContacts(value []TenantContactInformationable)() {
     if m != nil {
         m.contacts = value
     }

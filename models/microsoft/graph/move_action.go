@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MoveAction 
+// MoveAction provides operations to manage the compliance singleton.
 type MoveAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewMoveAction()(*MoveAction) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMoveActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMoveActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMoveAction(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MoveAction) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFrom gets the from property value. The name of the location the item was moved from.
-func (m *MoveAction) GetFrom()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
-}
-// GetTo gets the to property value. The name of the location the item was moved to.
-func (m *MoveAction) GetTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.to
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *MoveAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetFrom gets the from property value. The name of the location the item was moved from.
+func (m *MoveAction) GetFrom()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.from
+    }
+}
+// GetTo gets the to property value. The name of the location the item was moved to.
+func (m *MoveAction) GetTo()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.to
+    }
 }
 func (m *MoveAction) IsNil()(bool) {
     return m == nil

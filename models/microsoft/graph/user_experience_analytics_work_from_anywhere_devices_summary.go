@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereDevicesSummary 
+// UserExperienceAnalyticsWorkFromAnywhereDevicesSummary provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
 type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The value of work from anywhere autopilot devices summary.
-    autopilotDevicesSummary *UserExperienceAnalyticsAutopilotDevicesSummary;
+    autopilotDevicesSummary UserExperienceAnalyticsAutopilotDevicesSummaryable;
     // The user experience analytics work from anywhere Cloud Identity devices summary.
-    cloudIdentityDevicesSummary *UserExperienceAnalyticsCloudIdentityDevicesSummary;
+    cloudIdentityDevicesSummary UserExperienceAnalyticsCloudIdentityDevicesSummaryable;
     // The user experience work from anywhere Cloud management devices summary.
-    cloudManagementDevicesSummary *UserExperienceAnalyticsCloudManagementDevicesSummary;
+    cloudManagementDevicesSummary UserExperienceAnalyticsCloudManagementDevicesSummaryable;
     // Total number of co-managed devices. Valid values -2147483648 to 2147483647
     coManagedDevices *int32;
     // The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
@@ -33,7 +33,7 @@ type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
     // The count of windows 10 devices. Valid values -2147483648 to 2147483647
     windows10Devices *int32;
     // The user experience analytics work from anywhere Windows 10 devices summary.
-    windows10DevicesSummary *UserExperienceAnalyticsWindows10DevicesSummary;
+    windows10DevicesSummary UserExperienceAnalyticsWindows10DevicesSummaryable;
     // The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
     windows10DevicesWithoutTenantAttach *int32;
 }
@@ -44,6 +44,10 @@ func NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*UserExperienceA
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserExperienceAnalyticsWorkFromAnywhereDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsWorkFromAnywhereDevicesSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -53,7 +57,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAdditionalDat
     }
 }
 // GetAutopilotDevicesSummary gets the autopilotDevicesSummary property value. The value of work from anywhere autopilot devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAutopilotDevicesSummary()(*UserExperienceAnalyticsAutopilotDevicesSummary) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAutopilotDevicesSummary()(UserExperienceAnalyticsAutopilotDevicesSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +65,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAutopilotDevi
     }
 }
 // GetCloudIdentityDevicesSummary gets the cloudIdentityDevicesSummary property value. The user experience analytics work from anywhere Cloud Identity devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetCloudIdentityDevicesSummary()(*UserExperienceAnalyticsCloudIdentityDevicesSummary) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetCloudIdentityDevicesSummary()(UserExperienceAnalyticsCloudIdentityDevicesSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +73,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetCloudIdentity
     }
 }
 // GetCloudManagementDevicesSummary gets the cloudManagementDevicesSummary property value. The user experience work from anywhere Cloud management devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetCloudManagementDevicesSummary()(*UserExperienceAnalyticsCloudManagementDevicesSummary) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetCloudManagementDevicesSummary()(UserExperienceAnalyticsCloudManagementDevicesSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -108,92 +112,36 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetDevicesWithou
         return m.devicesWithoutCloudIdentity
     }
 }
-// GetIntuneDevices gets the intuneDevices property value. The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetIntuneDevices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneDevices
-    }
-}
-// GetTenantAttachDevices gets the tenantAttachDevices property value. Total count of tenant attach devices. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetTenantAttachDevices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantAttachDevices
-    }
-}
-// GetTotalDevices gets the totalDevices property value. The total count of devices. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetTotalDevices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalDevices
-    }
-}
-// GetUnsupportedOSversionDevices gets the unsupportedOSversionDevices property value. The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetUnsupportedOSversionDevices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unsupportedOSversionDevices
-    }
-}
-// GetWindows10Devices gets the windows10Devices property value. The count of windows 10 devices. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetWindows10Devices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows10Devices
-    }
-}
-// GetWindows10DevicesSummary gets the windows10DevicesSummary property value. The user experience analytics work from anywhere Windows 10 devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetWindows10DevicesSummary()(*UserExperienceAnalyticsWindows10DevicesSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows10DevicesSummary
-    }
-}
-// GetWindows10DevicesWithoutTenantAttach gets the windows10DevicesWithoutTenantAttach property value. The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetWindows10DevicesWithoutTenantAttach()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows10DevicesWithoutTenantAttach
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["autopilotDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsAutopilotDevicesSummary() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAutopilotDevicesSummary(val.(*UserExperienceAnalyticsAutopilotDevicesSummary))
+            m.SetAutopilotDevicesSummary(val.(UserExperienceAnalyticsAutopilotDevicesSummaryable))
         }
         return nil
     }
     res["cloudIdentityDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCloudIdentityDevicesSummary() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudIdentityDevicesSummary(val.(*UserExperienceAnalyticsCloudIdentityDevicesSummary))
+            m.SetCloudIdentityDevicesSummary(val.(UserExperienceAnalyticsCloudIdentityDevicesSummaryable))
         }
         return nil
     }
     res["cloudManagementDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCloudManagementDevicesSummary() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudManagementDevicesSummary(val.(*UserExperienceAnalyticsCloudManagementDevicesSummary))
+            m.SetCloudManagementDevicesSummary(val.(UserExperienceAnalyticsCloudManagementDevicesSummaryable))
         }
         return nil
     }
@@ -288,12 +236,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         return nil
     }
     res["windows10DevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsWindows10DevicesSummary() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWindows10DevicesSummary(val.(*UserExperienceAnalyticsWindows10DevicesSummary))
+            m.SetWindows10DevicesSummary(val.(UserExperienceAnalyticsWindows10DevicesSummaryable))
         }
         return nil
     }
@@ -308,6 +256,62 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         return nil
     }
     return res
+}
+// GetIntuneDevices gets the intuneDevices property value. The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetIntuneDevices()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intuneDevices
+    }
+}
+// GetTenantAttachDevices gets the tenantAttachDevices property value. Total count of tenant attach devices. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetTenantAttachDevices()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantAttachDevices
+    }
+}
+// GetTotalDevices gets the totalDevices property value. The total count of devices. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetTotalDevices()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalDevices
+    }
+}
+// GetUnsupportedOSversionDevices gets the unsupportedOSversionDevices property value. The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetUnsupportedOSversionDevices()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unsupportedOSversionDevices
+    }
+}
+// GetWindows10Devices gets the windows10Devices property value. The count of windows 10 devices. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetWindows10Devices()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows10Devices
+    }
+}
+// GetWindows10DevicesSummary gets the windows10DevicesSummary property value. The user experience analytics work from anywhere Windows 10 devices summary.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetWindows10DevicesSummary()(UserExperienceAnalyticsWindows10DevicesSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows10DevicesSummary
+    }
+}
+// GetWindows10DevicesWithoutTenantAttach gets the windows10DevicesWithoutTenantAttach property value. The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetWindows10DevicesWithoutTenantAttach()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows10DevicesWithoutTenantAttach
+    }
 }
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) IsNil()(bool) {
     return m == nil
@@ -413,19 +417,19 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetAdditionalDat
     }
 }
 // SetAutopilotDevicesSummary sets the autopilotDevicesSummary property value. The value of work from anywhere autopilot devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetAutopilotDevicesSummary(value *UserExperienceAnalyticsAutopilotDevicesSummary)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetAutopilotDevicesSummary(value UserExperienceAnalyticsAutopilotDevicesSummaryable)() {
     if m != nil {
         m.autopilotDevicesSummary = value
     }
 }
 // SetCloudIdentityDevicesSummary sets the cloudIdentityDevicesSummary property value. The user experience analytics work from anywhere Cloud Identity devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetCloudIdentityDevicesSummary(value *UserExperienceAnalyticsCloudIdentityDevicesSummary)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetCloudIdentityDevicesSummary(value UserExperienceAnalyticsCloudIdentityDevicesSummaryable)() {
     if m != nil {
         m.cloudIdentityDevicesSummary = value
     }
 }
 // SetCloudManagementDevicesSummary sets the cloudManagementDevicesSummary property value. The user experience work from anywhere Cloud management devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetCloudManagementDevicesSummary(value *UserExperienceAnalyticsCloudManagementDevicesSummary)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetCloudManagementDevicesSummary(value UserExperienceAnalyticsCloudManagementDevicesSummaryable)() {
     if m != nil {
         m.cloudManagementDevicesSummary = value
     }
@@ -485,7 +489,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetWindows10Devi
     }
 }
 // SetWindows10DevicesSummary sets the windows10DevicesSummary property value. The user experience analytics work from anywhere Windows 10 devices summary.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetWindows10DevicesSummary(value *UserExperienceAnalyticsWindows10DevicesSummary)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetWindows10DevicesSummary(value UserExperienceAnalyticsWindows10DevicesSummaryable)() {
     if m != nil {
         m.windows10DevicesSummary = value
     }

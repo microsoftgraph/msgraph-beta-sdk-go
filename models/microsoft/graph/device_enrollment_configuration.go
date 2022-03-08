@@ -5,15 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceEnrollmentConfiguration 
+// DeviceEnrollmentConfiguration provides operations to manage the compliance singleton.
 type DeviceEnrollmentConfiguration struct {
     Entity
     // The list of group assignments for the device configuration profile
-    assignments []EnrollmentConfigurationAssignment;
+    assignments []EnrollmentConfigurationAssignmentable;
     // Created date time in UTC of the device enrollment configuration
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the device enrollment configuration
     description *string;
+    // Support for Enrollment Configuration Type
+    deviceEnrollmentConfigurationType *DeviceEnrollmentConfigurationType;
     // The display name of the device enrollment configuration
     displayName *string;
     // Last modified date time in UTC of the device enrollment configuration
@@ -32,8 +34,12 @@ func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     }
     return m
 }
+// CreateDeviceEnrollmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceEnrollmentConfiguration(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments for the device configuration profile
-func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurationAssignment) {
+func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -56,6 +62,14 @@ func (m *DeviceEnrollmentConfiguration) GetDescription()(*string) {
         return m.description
     }
 }
+// GetDeviceEnrollmentConfigurationType gets the deviceEnrollmentConfigurationType property value. Support for Enrollment Configuration Type
+func (m *DeviceEnrollmentConfiguration) GetDeviceEnrollmentConfigurationType()(*DeviceEnrollmentConfigurationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceEnrollmentConfigurationType
+    }
+}
 // GetDisplayName gets the displayName property value. The display name of the device enrollment configuration
 func (m *DeviceEnrollmentConfiguration) GetDisplayName()(*string) {
     if m == nil {
@@ -64,50 +78,18 @@ func (m *DeviceEnrollmentConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date time in UTC of the device enrollment configuration
-func (m *DeviceEnrollmentConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPriority gets the priority property value. Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
-func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. Optional role scope tags for the enrollment restrictions.
-func (m *DeviceEnrollmentConfiguration) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetVersion gets the version property value. The version of the device enrollment configuration
-func (m *DeviceEnrollmentConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEnrollmentConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateEnrollmentConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EnrollmentConfigurationAssignment, len(val))
+            res := make([]EnrollmentConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EnrollmentConfigurationAssignment))
+                res[i] = v.(EnrollmentConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -130,6 +112,16 @@ func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["deviceEnrollmentConfigurationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceEnrollmentConfigurationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceEnrollmentConfigurationType(val.(*DeviceEnrollmentConfigurationType))
         }
         return nil
     }
@@ -189,6 +181,38 @@ func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date time in UTC of the device enrollment configuration
+func (m *DeviceEnrollmentConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPriority gets the priority property value. Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. Optional role scope tags for the enrollment restrictions.
+func (m *DeviceEnrollmentConfiguration) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetVersion gets the version property value. The version of the device enrollment configuration
+func (m *DeviceEnrollmentConfiguration) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DeviceEnrollmentConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -201,8 +225,7 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -217,6 +240,13 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i04eb5309aeaafadd28374d
     }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceEnrollmentConfigurationType() != nil {
+        cast := (*m.GetDeviceEnrollmentConfigurationType()).String()
+        err = writer.WriteStringValue("deviceEnrollmentConfigurationType", &cast)
         if err != nil {
             return err
         }
@@ -254,7 +284,7 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device configuration profile
-func (m *DeviceEnrollmentConfiguration) SetAssignments(value []EnrollmentConfigurationAssignment)() {
+func (m *DeviceEnrollmentConfiguration) SetAssignments(value []EnrollmentConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -269,6 +299,12 @@ func (m *DeviceEnrollmentConfiguration) SetCreatedDateTime(value *i336074805fc85
 func (m *DeviceEnrollmentConfiguration) SetDescription(value *string)() {
     if m != nil {
         m.description = value
+    }
+}
+// SetDeviceEnrollmentConfigurationType sets the deviceEnrollmentConfigurationType property value. Support for Enrollment Configuration Type
+func (m *DeviceEnrollmentConfiguration) SetDeviceEnrollmentConfigurationType(value *DeviceEnrollmentConfigurationType)() {
+    if m != nil {
+        m.deviceEnrollmentConfigurationType = value
     }
 }
 // SetDisplayName sets the displayName property value. The display name of the device enrollment configuration

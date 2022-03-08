@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScript 
+// DeviceComplianceScript provides operations to manage the deviceManagement singleton.
 type DeviceComplianceScript struct {
     Entity
     // The list of group assignments for the device compliance script
-    assignments []DeviceHealthScriptAssignment;
+    assignments []DeviceHealthScriptAssignmentable;
     // The timestamp of when the device compliance script was created. This property is read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description of the device compliance script
@@ -17,7 +17,7 @@ type DeviceComplianceScript struct {
     // The entire content of the detection powershell script
     detectionScriptContent []byte;
     // List of run states for the device compliance script across all devices
-    deviceRunStates []DeviceComplianceScriptDeviceState;
+    deviceRunStates []DeviceComplianceScriptDeviceStateable;
     // Name of the device compliance script
     displayName *string;
     // Indicate whether the script signature needs be checked
@@ -33,7 +33,7 @@ type DeviceComplianceScript struct {
     // Indicates the type of execution context. Possible values are: system, user.
     runAsAccount *RunAsAccountType;
     // High level run summary for device compliance script.
-    runSummary *DeviceComplianceScriptRunSummary;
+    runSummary DeviceComplianceScriptRunSummaryable;
     // Version of the device compliance script
     version *string;
 }
@@ -44,8 +44,12 @@ func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     }
     return m
 }
+// CreateDeviceComplianceScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceScriptFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceScript(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments for the device compliance script
-func (m *DeviceComplianceScript) GetAssignments()([]DeviceHealthScriptAssignment) {
+func (m *DeviceComplianceScript) GetAssignments()([]DeviceHealthScriptAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -77,7 +81,7 @@ func (m *DeviceComplianceScript) GetDetectionScriptContent()([]byte) {
     }
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for the device compliance script across all devices
-func (m *DeviceComplianceScript) GetDeviceRunStates()([]DeviceComplianceScriptDeviceState) {
+func (m *DeviceComplianceScript) GetDeviceRunStates()([]DeviceComplianceScriptDeviceStateable) {
     if m == nil {
         return nil
     } else {
@@ -100,74 +104,18 @@ func (m *DeviceComplianceScript) GetEnforceSignatureCheck()(*bool) {
         return m.enforceSignatureCheck
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp of when the device compliance script was modified. This property is read-only.
-func (m *DeviceComplianceScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPublisher gets the publisher property value. Name of the device compliance script publisher
-func (m *DeviceComplianceScript) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the device compliance script
-func (m *DeviceComplianceScript) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetRunAs32Bit gets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
-func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAs32Bit
-    }
-}
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
-func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
-}
-// GetRunSummary gets the runSummary property value. High level run summary for device compliance script.
-func (m *DeviceComplianceScript) GetRunSummary()(*DeviceComplianceScriptRunSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runSummary
-    }
-}
-// GetVersion gets the version property value. Version of the device compliance script
-func (m *DeviceComplianceScript) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceHealthScriptAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthScriptAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceHealthScriptAssignment, len(val))
+            res := make([]DeviceHealthScriptAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceHealthScriptAssignment))
+                res[i] = v.(DeviceHealthScriptAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -204,14 +152,14 @@ func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["deviceRunStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceScriptDeviceState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceComplianceScriptDeviceState, len(val))
+            res := make([]DeviceComplianceScriptDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceComplianceScriptDeviceState))
+                res[i] = v.(DeviceComplianceScriptDeviceStateable)
             }
             m.SetDeviceRunStates(res)
         }
@@ -292,12 +240,12 @@ func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["runSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceComplianceScriptRunSummary() })
+        val, err := n.GetObjectValue(CreateDeviceComplianceScriptRunSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRunSummary(val.(*DeviceComplianceScriptRunSummary))
+            m.SetRunSummary(val.(DeviceComplianceScriptRunSummaryable))
         }
         return nil
     }
@@ -313,6 +261,62 @@ func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp of when the device compliance script was modified. This property is read-only.
+func (m *DeviceComplianceScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPublisher gets the publisher property value. Name of the device compliance script publisher
+func (m *DeviceComplianceScript) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the device compliance script
+func (m *DeviceComplianceScript) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetRunAs32Bit gets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
+func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runAs32Bit
+    }
+}
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runAsAccount
+    }
+}
+// GetRunSummary gets the runSummary property value. High level run summary for device compliance script.
+func (m *DeviceComplianceScript) GetRunSummary()(DeviceComplianceScriptRunSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runSummary
+    }
+}
+// GetVersion gets the version property value. Version of the device compliance script
+func (m *DeviceComplianceScript) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DeviceComplianceScript) IsNil()(bool) {
     return m == nil
 }
@@ -325,8 +329,7 @@ func (m *DeviceComplianceScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -354,8 +357,7 @@ func (m *DeviceComplianceScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetDeviceRunStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {
@@ -420,7 +422,7 @@ func (m *DeviceComplianceScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device compliance script
-func (m *DeviceComplianceScript) SetAssignments(value []DeviceHealthScriptAssignment)() {
+func (m *DeviceComplianceScript) SetAssignments(value []DeviceHealthScriptAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -444,7 +446,7 @@ func (m *DeviceComplianceScript) SetDetectionScriptContent(value []byte)() {
     }
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for the device compliance script across all devices
-func (m *DeviceComplianceScript) SetDeviceRunStates(value []DeviceComplianceScriptDeviceState)() {
+func (m *DeviceComplianceScript) SetDeviceRunStates(value []DeviceComplianceScriptDeviceStateable)() {
     if m != nil {
         m.deviceRunStates = value
     }
@@ -492,7 +494,7 @@ func (m *DeviceComplianceScript) SetRunAsAccount(value *RunAsAccountType)() {
     }
 }
 // SetRunSummary sets the runSummary property value. High level run summary for device compliance script.
-func (m *DeviceComplianceScript) SetRunSummary(value *DeviceComplianceScriptRunSummary)() {
+func (m *DeviceComplianceScript) SetRunSummary(value DeviceComplianceScriptRunSummaryable)() {
     if m != nil {
         m.runSummary = value
     }

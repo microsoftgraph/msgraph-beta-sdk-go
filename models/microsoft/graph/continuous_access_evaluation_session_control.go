@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContinuousAccessEvaluationSessionControl 
+// ContinuousAccessEvaluationSessionControl provides operations to manage the policyRoot singleton.
 type ContinuousAccessEvaluationSessionControl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSe
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContinuousAccessEvaluationSessionControl(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContinuousAccessEvaluationSessionControl) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMode gets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
-func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEvaluationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mode
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetMode gets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
+func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEvaluationMode) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mode
+    }
 }
 func (m *ContinuousAccessEvaluationSessionControl) IsNil()(bool) {
     return m == nil

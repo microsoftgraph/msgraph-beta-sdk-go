@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AddCopyRequestBuilder builds and executes requests for operations under \sites\{site-id}\contentTypes\microsoft.graph.addCopy
+// AddCopyRequestBuilder provides operations to call the addCopy method.
 type AddCopyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type AddCopyRequestBuilder struct {
 // AddCopyRequestBuilderPostOptions options for Post
 type AddCopyRequestBuilderPostOptions struct {
     // 
-    Body *AddCopyRequestBody;
+    Body AddCopyRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type AddCopyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // AddCopyResponse union type wrapper for classes contentType
 type AddCopyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type contentType
-    contentType *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType;
+    contentType i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable;
 }
 // NewAddCopyResponse instantiates a new addCopyResponse and sets the default values.
 func NewAddCopyResponse()(*AddCopyResponse) {
@@ -39,6 +44,9 @@ func NewAddCopyResponse()(*AddCopyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateAddCopyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAddCopyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddCopyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +57,7 @@ func (m *AddCopyResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetContentType gets the contentType property value. Union type representation for type contentType
-func (m *AddCopyResponse) GetContentType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType) {
+func (m *AddCopyResponse) GetContentType()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +68,12 @@ func (m *AddCopyResponse) GetContentType()(*i535684e11b5500196ecb4b5c6634e0651fe
 func (m *AddCopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewContentType() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType))
+            m.SetContentType(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable))
         }
         return nil
     }
@@ -97,7 +105,7 @@ func (m *AddCopyResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetContentType sets the contentType property value. Union type representation for type contentType
-func (m *AddCopyResponse) SetContentType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType)() {
+func (m *AddCopyResponse) SetContentType(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable)() {
     if m != nil {
         m.contentType = value
     }
@@ -111,7 +119,7 @@ func NewAddCopyRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *AddCopyRequestBuilder) CreatePostRequestInformation(options *AddCopyReq
     return requestInfo, nil
 }
 // Post invoke action addCopy
-func (m *AddCopyRequestBuilder) Post(options *AddCopyRequestBuilderPostOptions)(*AddCopyResponse, error) {
+func (m *AddCopyRequestBuilder) Post(options *AddCopyRequestBuilderPostOptions)(AddCopyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAddCopyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAddCopyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*AddCopyResponse), nil
+    return res.(AddCopyResponseable), nil
 }

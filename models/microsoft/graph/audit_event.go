@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuditEvent 
+// AuditEvent provides operations to manage the deviceManagement singleton.
 type AuditEvent struct {
     Entity
     // Friendly name of the activity.
@@ -19,7 +19,7 @@ type AuditEvent struct {
     // The type of activity that was being performed.
     activityType *string;
     // AAD user and application that are associated with the audit event.
-    actor *AuditActor;
+    actor AuditActorable;
     // Audit category.
     category *string;
     // Component name.
@@ -29,7 +29,7 @@ type AuditEvent struct {
     // Event display name.
     displayName *string;
     // Resources being modified.
-    resources []AuditResource;
+    resources []AuditResourceable;
 }
 // NewAuditEvent instantiates a new auditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
@@ -37,6 +37,10 @@ func NewAuditEvent()(*AuditEvent) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuditEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuditEvent(), nil
 }
 // GetActivity gets the activity property value. Friendly name of the activity.
 func (m *AuditEvent) GetActivity()(*string) {
@@ -79,7 +83,7 @@ func (m *AuditEvent) GetActivityType()(*string) {
     }
 }
 // GetActor gets the actor property value. AAD user and application that are associated with the audit event.
-func (m *AuditEvent) GetActor()(*AuditActor) {
+func (m *AuditEvent) GetActor()(AuditActorable) {
     if m == nil {
         return nil
     } else {
@@ -116,14 +120,6 @@ func (m *AuditEvent) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetResources gets the resources property value. Resources being modified.
-func (m *AuditEvent) GetResources()([]AuditResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,12 +176,12 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["actor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuditActor() })
+        val, err := n.GetObjectValue(CreateAuditActorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActor(val.(*AuditActor))
+            m.SetActor(val.(AuditActorable))
         }
         return nil
     }
@@ -230,20 +226,28 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuditResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateAuditResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AuditResource, len(val))
+            res := make([]AuditResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuditResource))
+                res[i] = v.(AuditResourceable)
             }
             m.SetResources(res)
         }
         return nil
     }
     return res
+}
+// GetResources gets the resources property value. Resources being modified.
+func (m *AuditEvent) GetResources()([]AuditResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resources
+    }
 }
 func (m *AuditEvent) IsNil()(bool) {
     return m == nil
@@ -317,8 +321,7 @@ func (m *AuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -358,7 +361,7 @@ func (m *AuditEvent) SetActivityType(value *string)() {
     }
 }
 // SetActor sets the actor property value. AAD user and application that are associated with the audit event.
-func (m *AuditEvent) SetActor(value *AuditActor)() {
+func (m *AuditEvent) SetActor(value AuditActorable)() {
     if m != nil {
         m.actor = value
     }
@@ -388,7 +391,7 @@ func (m *AuditEvent) SetDisplayName(value *string)() {
     }
 }
 // SetResources sets the resources property value. Resources being modified.
-func (m *AuditEvent) SetResources(value []AuditResource)() {
+func (m *AuditEvent) SetResources(value []AuditResourceable)() {
     if m != nil {
         m.resources = value
     }

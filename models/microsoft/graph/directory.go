@@ -4,31 +4,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Directory 
+// Directory provides operations to manage the directory singleton.
 type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
-    administrativeUnits []AdministrativeUnit;
+    administrativeUnits []AdministrativeUnitable;
     // Group of related custom security attribute definitions.
-    attributeSets []AttributeSet;
+    attributeSets []AttributeSetable;
     // Schema of a custom security attributes (key-value pairs).
-    customSecurityAttributeDefinitions []CustomSecurityAttributeDefinition;
+    customSecurityAttributeDefinitions []CustomSecurityAttributeDefinitionable;
     // Recently deleted items. Read-only. Nullable.
-    deletedItems []DirectoryObject;
+    deletedItems []DirectoryObjectable;
     // Nullable.
-    featureRolloutPolicies []FeatureRolloutPolicy;
+    featureRolloutPolicies []FeatureRolloutPolicyable;
     // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-    federationConfigurations []IdentityProviderBase;
+    federationConfigurations []IdentityProviderBaseable;
     // 
-    impactedResources []RecommendationResource;
+    impactedResources []RecommendationResourceable;
     // 
-    inboundSharedUserProfiles []InboundSharedUserProfile;
+    inboundSharedUserProfiles []InboundSharedUserProfileable;
     // 
-    outboundSharedUserProfiles []OutboundSharedUserProfile;
+    outboundSharedUserProfiles []OutboundSharedUserProfileable;
     // 
-    recommendations []Recommendation;
+    recommendations []Recommendationable;
     // 
-    sharedEmailDomains []SharedEmailDomain;
+    sharedEmailDomains []SharedEmailDomainable;
 }
 // NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
@@ -37,8 +37,12 @@ func NewDirectory()(*Directory) {
     }
     return m
 }
+// CreateDirectoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDirectoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDirectory(), nil
+}
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
-func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnit) {
+func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +50,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnit) {
     }
 }
 // GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
-func (m *Directory) GetAttributeSets()([]AttributeSet) {
+func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     if m == nil {
         return nil
     } else {
@@ -54,7 +58,7 @@ func (m *Directory) GetAttributeSets()([]AttributeSet) {
     }
 }
 // GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
-func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinition) {
+func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -62,7 +66,7 @@ func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttr
     }
 }
 // GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
-func (m *Directory) GetDeletedItems()([]DirectoryObject) {
+func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -70,7 +74,7 @@ func (m *Directory) GetDeletedItems()([]DirectoryObject) {
     }
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. Nullable.
-func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicy) {
+func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
     if m == nil {
         return nil
     } else {
@@ -78,15 +82,174 @@ func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicy) {
     }
 }
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-func (m *Directory) GetFederationConfigurations()([]IdentityProviderBase) {
+func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     if m == nil {
         return nil
     } else {
         return m.federationConfigurations
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["administrativeUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAdministrativeUnitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdministrativeUnitable, len(val))
+            for i, v := range val {
+                res[i] = v.(AdministrativeUnitable)
+            }
+            m.SetAdministrativeUnits(res)
+        }
+        return nil
+    }
+    res["attributeSets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttributeSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttributeSetable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttributeSetable)
+            }
+            m.SetAttributeSets(res)
+        }
+        return nil
+    }
+    res["customSecurityAttributeDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomSecurityAttributeDefinitionable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomSecurityAttributeDefinitionable)
+            }
+            m.SetCustomSecurityAttributeDefinitions(res)
+        }
+        return nil
+    }
+    res["deletedItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                res[i] = v.(DirectoryObjectable)
+            }
+            m.SetDeletedItems(res)
+        }
+        return nil
+    }
+    res["featureRolloutPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFeatureRolloutPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]FeatureRolloutPolicyable, len(val))
+            for i, v := range val {
+                res[i] = v.(FeatureRolloutPolicyable)
+            }
+            m.SetFeatureRolloutPolicies(res)
+        }
+        return nil
+    }
+    res["federationConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IdentityProviderBaseable, len(val))
+            for i, v := range val {
+                res[i] = v.(IdentityProviderBaseable)
+            }
+            m.SetFederationConfigurations(res)
+        }
+        return nil
+    }
+    res["impactedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRecommendationResourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RecommendationResourceable, len(val))
+            for i, v := range val {
+                res[i] = v.(RecommendationResourceable)
+            }
+            m.SetImpactedResources(res)
+        }
+        return nil
+    }
+    res["inboundSharedUserProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateInboundSharedUserProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]InboundSharedUserProfileable, len(val))
+            for i, v := range val {
+                res[i] = v.(InboundSharedUserProfileable)
+            }
+            m.SetInboundSharedUserProfiles(res)
+        }
+        return nil
+    }
+    res["outboundSharedUserProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOutboundSharedUserProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OutboundSharedUserProfileable, len(val))
+            for i, v := range val {
+                res[i] = v.(OutboundSharedUserProfileable)
+            }
+            m.SetOutboundSharedUserProfiles(res)
+        }
+        return nil
+    }
+    res["recommendations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRecommendationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Recommendationable, len(val))
+            for i, v := range val {
+                res[i] = v.(Recommendationable)
+            }
+            m.SetRecommendations(res)
+        }
+        return nil
+    }
+    res["sharedEmailDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharedEmailDomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharedEmailDomainable, len(val))
+            for i, v := range val {
+                res[i] = v.(SharedEmailDomainable)
+            }
+            m.SetSharedEmailDomains(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetImpactedResources gets the impactedResources property value. 
-func (m *Directory) GetImpactedResources()([]RecommendationResource) {
+func (m *Directory) GetImpactedResources()([]RecommendationResourceable) {
     if m == nil {
         return nil
     } else {
@@ -94,7 +257,7 @@ func (m *Directory) GetImpactedResources()([]RecommendationResource) {
     }
 }
 // GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. 
-func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfile) {
+func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
     if m == nil {
         return nil
     } else {
@@ -102,7 +265,7 @@ func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfile) {
     }
 }
 // GetOutboundSharedUserProfiles gets the outboundSharedUserProfiles property value. 
-func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfile) {
+func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable) {
     if m == nil {
         return nil
     } else {
@@ -110,7 +273,7 @@ func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfile)
     }
 }
 // GetRecommendations gets the recommendations property value. 
-func (m *Directory) GetRecommendations()([]Recommendation) {
+func (m *Directory) GetRecommendations()([]Recommendationable) {
     if m == nil {
         return nil
     } else {
@@ -118,171 +281,12 @@ func (m *Directory) GetRecommendations()([]Recommendation) {
     }
 }
 // GetSharedEmailDomains gets the sharedEmailDomains property value. 
-func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomain) {
+func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
     if m == nil {
         return nil
     } else {
         return m.sharedEmailDomains
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["administrativeUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAdministrativeUnit() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AdministrativeUnit, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AdministrativeUnit))
-            }
-            m.SetAdministrativeUnits(res)
-        }
-        return nil
-    }
-    res["attributeSets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttributeSet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AttributeSet, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AttributeSet))
-            }
-            m.SetAttributeSets(res)
-        }
-        return nil
-    }
-    res["customSecurityAttributeDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomSecurityAttributeDefinition() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CustomSecurityAttributeDefinition, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*CustomSecurityAttributeDefinition))
-            }
-            m.SetCustomSecurityAttributeDefinitions(res)
-        }
-        return nil
-    }
-    res["deletedItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryObject, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
-            }
-            m.SetDeletedItems(res)
-        }
-        return nil
-    }
-    res["featureRolloutPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFeatureRolloutPolicy() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FeatureRolloutPolicy, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*FeatureRolloutPolicy))
-            }
-            m.SetFeatureRolloutPolicies(res)
-        }
-        return nil
-    }
-    res["federationConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentityProviderBase() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityProviderBase, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*IdentityProviderBase))
-            }
-            m.SetFederationConfigurations(res)
-        }
-        return nil
-    }
-    res["impactedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecommendationResource() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RecommendationResource, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*RecommendationResource))
-            }
-            m.SetImpactedResources(res)
-        }
-        return nil
-    }
-    res["inboundSharedUserProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInboundSharedUserProfile() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]InboundSharedUserProfile, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*InboundSharedUserProfile))
-            }
-            m.SetInboundSharedUserProfiles(res)
-        }
-        return nil
-    }
-    res["outboundSharedUserProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutboundSharedUserProfile() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OutboundSharedUserProfile, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OutboundSharedUserProfile))
-            }
-            m.SetOutboundSharedUserProfiles(res)
-        }
-        return nil
-    }
-    res["recommendations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecommendation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Recommendation, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Recommendation))
-            }
-            m.SetRecommendations(res)
-        }
-        return nil
-    }
-    res["sharedEmailDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharedEmailDomain() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SharedEmailDomain, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*SharedEmailDomain))
-            }
-            m.SetSharedEmailDomains(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Directory) IsNil()(bool) {
     return m == nil
@@ -296,8 +300,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetAdministrativeUnits() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdministrativeUnits()))
         for i, v := range m.GetAdministrativeUnits() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("administrativeUnits", cast)
         if err != nil {
@@ -307,8 +310,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetAttributeSets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttributeSets()))
         for i, v := range m.GetAttributeSets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attributeSets", cast)
         if err != nil {
@@ -318,8 +320,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetCustomSecurityAttributeDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomSecurityAttributeDefinitions()))
         for i, v := range m.GetCustomSecurityAttributeDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customSecurityAttributeDefinitions", cast)
         if err != nil {
@@ -329,8 +330,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetDeletedItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeletedItems()))
         for i, v := range m.GetDeletedItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deletedItems", cast)
         if err != nil {
@@ -340,8 +340,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
         if err != nil {
@@ -351,8 +350,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetFederationConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederationConfigurations()))
         for i, v := range m.GetFederationConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("federationConfigurations", cast)
         if err != nil {
@@ -362,8 +360,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetImpactedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImpactedResources()))
         for i, v := range m.GetImpactedResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("impactedResources", cast)
         if err != nil {
@@ -373,8 +370,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetInboundSharedUserProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInboundSharedUserProfiles()))
         for i, v := range m.GetInboundSharedUserProfiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("inboundSharedUserProfiles", cast)
         if err != nil {
@@ -384,8 +380,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetOutboundSharedUserProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOutboundSharedUserProfiles()))
         for i, v := range m.GetOutboundSharedUserProfiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("outboundSharedUserProfiles", cast)
         if err != nil {
@@ -395,8 +390,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetRecommendations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendations()))
         for i, v := range m.GetRecommendations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("recommendations", cast)
         if err != nil {
@@ -406,8 +400,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetSharedEmailDomains() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedEmailDomains()))
         for i, v := range m.GetSharedEmailDomains() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sharedEmailDomains", cast)
         if err != nil {
@@ -417,67 +410,67 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
-func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnit)() {
+func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
     if m != nil {
         m.administrativeUnits = value
     }
 }
 // SetAttributeSets sets the attributeSets property value. Group of related custom security attribute definitions.
-func (m *Directory) SetAttributeSets(value []AttributeSet)() {
+func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
     if m != nil {
         m.attributeSets = value
     }
 }
 // SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
-func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinition)() {
+func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)() {
     if m != nil {
         m.customSecurityAttributeDefinitions = value
     }
 }
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
-func (m *Directory) SetDeletedItems(value []DirectoryObject)() {
+func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
     if m != nil {
         m.deletedItems = value
     }
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. Nullable.
-func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicy)() {
+func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
     if m != nil {
         m.featureRolloutPolicies = value
     }
 }
 // SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-func (m *Directory) SetFederationConfigurations(value []IdentityProviderBase)() {
+func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable)() {
     if m != nil {
         m.federationConfigurations = value
     }
 }
 // SetImpactedResources sets the impactedResources property value. 
-func (m *Directory) SetImpactedResources(value []RecommendationResource)() {
+func (m *Directory) SetImpactedResources(value []RecommendationResourceable)() {
     if m != nil {
         m.impactedResources = value
     }
 }
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. 
-func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfile)() {
+func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
     if m != nil {
         m.inboundSharedUserProfiles = value
     }
 }
 // SetOutboundSharedUserProfiles sets the outboundSharedUserProfiles property value. 
-func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfile)() {
+func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)() {
     if m != nil {
         m.outboundSharedUserProfiles = value
     }
 }
 // SetRecommendations sets the recommendations property value. 
-func (m *Directory) SetRecommendations(value []Recommendation)() {
+func (m *Directory) SetRecommendations(value []Recommendationable)() {
     if m != nil {
         m.recommendations = value
     }
 }
 // SetSharedEmailDomains sets the sharedEmailDomains property value. 
-func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomain)() {
+func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
     if m != nil {
         m.sharedEmailDomains = value
     }

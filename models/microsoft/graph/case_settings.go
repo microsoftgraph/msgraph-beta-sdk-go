@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CaseSettings 
+// CaseSettings provides operations to manage the compliance singleton.
 type CaseSettings struct {
     Entity
     // The OCR (Optical Character Recognition) settings for the case.
-    ocr *OcrSettings;
+    ocr OcrSettingsable;
     // The redundancy (near duplicate and email threading) detection settings for the case.
-    redundancyDetection *RedundancyDetectionSettings;
+    redundancyDetection RedundancyDetectionSettingsable;
     // The Topic Modeling (Themes) settings for the case.
-    topicModeling *TopicModelingSettings;
+    topicModeling TopicModelingSettingsable;
 }
 // NewCaseSettings instantiates a new caseSettings and sets the default values.
 func NewCaseSettings()(*CaseSettings) {
@@ -21,8 +21,47 @@ func NewCaseSettings()(*CaseSettings) {
     }
     return m
 }
+// CreateCaseSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCaseSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCaseSettings(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["ocr"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOcrSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOcr(val.(OcrSettingsable))
+        }
+        return nil
+    }
+    res["redundancyDetection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRedundancyDetectionSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRedundancyDetection(val.(RedundancyDetectionSettingsable))
+        }
+        return nil
+    }
+    res["topicModeling"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTopicModelingSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTopicModeling(val.(TopicModelingSettingsable))
+        }
+        return nil
+    }
+    return res
+}
 // GetOcr gets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
-func (m *CaseSettings) GetOcr()(*OcrSettings) {
+func (m *CaseSettings) GetOcr()(OcrSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -30,7 +69,7 @@ func (m *CaseSettings) GetOcr()(*OcrSettings) {
     }
 }
 // GetRedundancyDetection gets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
-func (m *CaseSettings) GetRedundancyDetection()(*RedundancyDetectionSettings) {
+func (m *CaseSettings) GetRedundancyDetection()(RedundancyDetectionSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -38,47 +77,12 @@ func (m *CaseSettings) GetRedundancyDetection()(*RedundancyDetectionSettings) {
     }
 }
 // GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
-func (m *CaseSettings) GetTopicModeling()(*TopicModelingSettings) {
+func (m *CaseSettings) GetTopicModeling()(TopicModelingSettingsable) {
     if m == nil {
         return nil
     } else {
         return m.topicModeling
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["ocr"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOcrSettings() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOcr(val.(*OcrSettings))
-        }
-        return nil
-    }
-    res["redundancyDetection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRedundancyDetectionSettings() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRedundancyDetection(val.(*RedundancyDetectionSettings))
-        }
-        return nil
-    }
-    res["topicModeling"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTopicModelingSettings() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTopicModeling(val.(*TopicModelingSettings))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CaseSettings) IsNil()(bool) {
     return m == nil
@@ -110,19 +114,19 @@ func (m *CaseSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
-func (m *CaseSettings) SetOcr(value *OcrSettings)() {
+func (m *CaseSettings) SetOcr(value OcrSettingsable)() {
     if m != nil {
         m.ocr = value
     }
 }
 // SetRedundancyDetection sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
-func (m *CaseSettings) SetRedundancyDetection(value *RedundancyDetectionSettings)() {
+func (m *CaseSettings) SetRedundancyDetection(value RedundancyDetectionSettingsable)() {
     if m != nil {
         m.redundancyDetection = value
     }
 }
 // SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
-func (m *CaseSettings) SetTopicModeling(value *TopicModelingSettings)() {
+func (m *CaseSettings) SetTopicModeling(value TopicModelingSettingsable)() {
     if m != nil {
         m.topicModeling = value
     }

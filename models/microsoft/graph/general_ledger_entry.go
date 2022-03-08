@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GeneralLedgerEntry 
+// GeneralLedgerEntry provides operations to manage the financials singleton.
 type GeneralLedgerEntry struct {
     Entity
     // 
-    account *Account;
+    account Accountable;
     // 
     accountId *string;
     // 
@@ -36,8 +36,12 @@ func NewGeneralLedgerEntry()(*GeneralLedgerEntry) {
     }
     return m
 }
+// CreateGeneralLedgerEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGeneralLedgerEntryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGeneralLedgerEntry(), nil
+}
 // GetAccount gets the account property value. 
-func (m *GeneralLedgerEntry) GetAccount()(*Account) {
+func (m *GeneralLedgerEntry) GetAccount()(Accountable) {
     if m == nil {
         return nil
     } else {
@@ -100,32 +104,16 @@ func (m *GeneralLedgerEntry) GetDocumentType()(*string) {
         return m.documentType
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *GeneralLedgerEntry) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPostingDate gets the postingDate property value. 
-func (m *GeneralLedgerEntry) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postingDate
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccount() })
+        val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccount(val.(*Account))
+            m.SetAccount(val.(Accountable))
         }
         return nil
     }
@@ -221,6 +209,22 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *GeneralLedgerEntry) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPostingDate gets the postingDate property value. 
+func (m *GeneralLedgerEntry) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postingDate
+    }
+}
 func (m *GeneralLedgerEntry) IsNil()(bool) {
     return m == nil
 }
@@ -293,7 +297,7 @@ func (m *GeneralLedgerEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     return nil
 }
 // SetAccount sets the account property value. 
-func (m *GeneralLedgerEntry) SetAccount(value *Account)() {
+func (m *GeneralLedgerEntry) SetAccount(value Accountable)() {
     if m != nil {
         m.account = value
     }

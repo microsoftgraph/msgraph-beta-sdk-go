@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VerifiedCustomDomainCertificatesMetadata 
+// VerifiedCustomDomainCertificatesMetadata provides operations to manage the collection of application entities.
 type VerifiedCustomDomainCertificatesMetadata struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewVerifiedCustomDomainCertificatesMetadata()(*VerifiedCustomDomainCertific
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVerifiedCustomDomainCertificatesMetadata(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetExpiryDate()(*i336074805fc
         return nil
     } else {
         return m.expiryDate
-    }
-}
-// GetIssueDate gets the issueDate property value. The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *VerifiedCustomDomainCertificatesMetadata) GetIssueDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issueDate
-    }
-}
-// GetIssuerName gets the issuerName property value. The issuer name of the custom domain certificate.
-func (m *VerifiedCustomDomainCertificatesMetadata) GetIssuerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerName
-    }
-}
-// GetSubjectName gets the subjectName property value. The subject name of the custom domain certificate.
-func (m *VerifiedCustomDomainCertificatesMetadata) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
-    }
-}
-// GetThumbprint gets the thumbprint property value. The thumbprint associated with the custom domain certificate.
-func (m *VerifiedCustomDomainCertificatesMetadata) GetThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbprint
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +101,38 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetIssueDate gets the issueDate property value. The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *VerifiedCustomDomainCertificatesMetadata) GetIssueDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issueDate
+    }
+}
+// GetIssuerName gets the issuerName property value. The issuer name of the custom domain certificate.
+func (m *VerifiedCustomDomainCertificatesMetadata) GetIssuerName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuerName
+    }
+}
+// GetSubjectName gets the subjectName property value. The subject name of the custom domain certificate.
+func (m *VerifiedCustomDomainCertificatesMetadata) GetSubjectName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjectName
+    }
+}
+// GetThumbprint gets the thumbprint property value. The thumbprint associated with the custom domain certificate.
+func (m *VerifiedCustomDomainCertificatesMetadata) GetThumbprint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbprint
+    }
 }
 func (m *VerifiedCustomDomainCertificatesMetadata) IsNil()(bool) {
     return m == nil

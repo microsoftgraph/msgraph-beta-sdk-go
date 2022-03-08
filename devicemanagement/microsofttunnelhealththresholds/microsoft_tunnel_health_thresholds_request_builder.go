@@ -2,11 +2,11 @@ package microsofttunnelhealththresholds
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    if5dd70834f288da0d7a62697463f30b96e4b9a47578bb341b3876211f6e5b8f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelhealththresholds/count"
 )
 
-// MicrosoftTunnelHealthThresholdsRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelHealthThresholds
+// MicrosoftTunnelHealthThresholdsRequestBuilder provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.
 type MicrosoftTunnelHealthThresholdsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MicrosoftTunnelHealthThresholdsRequestBuilderGetQueryParameters struct {
 // MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions options for Post
 type MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThreshold;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThresholdable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMicrosoftTunnelHealthThresholdsRequestBuilder(rawUrl string, requestAdap
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Count()(*if5dd70834f288da0d7a62697463f30b96e4b9a47578bb341b3876211f6e5b8f1.CountRequestBuilder) {
+    return if5dd70834f288da0d7a62697463f30b96e4b9a47578bb341b3876211f6e5b8f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of MicrosoftTunnelHealthThreshold settings associated with account.
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation collection of MicrosoftTunnelHealthThreshold settings associated with account.
+// CreatePostRequestInformation create new navigation property to microsoftTunnelHealthThresholds for deviceManagement
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreatePostRequestInformation(options *MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) CreatePostRequestInforma
     return requestInfo, nil
 }
 // Get collection of MicrosoftTunnelHealthThreshold settings associated with account.
-func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Get(options *MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions)(*MicrosoftTunnelHealthThresholdsResponse, error) {
+func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Get(options *MicrosoftTunnelHealthThresholdsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThresholdCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftTunnelHealthThresholdsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftTunnelHealthThresholdCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MicrosoftTunnelHealthThresholdsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThresholdCollectionResponseable), nil
 }
-// Post collection of MicrosoftTunnelHealthThreshold settings associated with account.
-func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Post(options *MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThreshold, error) {
+// Post create new navigation property to microsoftTunnelHealthThresholds for deviceManagement
+func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Post(options *MicrosoftTunnelHealthThresholdsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThresholdable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMicrosoftTunnelHealthThreshold() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThreshold), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelHealthThresholdable), nil
 }

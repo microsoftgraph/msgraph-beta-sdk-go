@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationContextClassReference 
+// AuthenticationContextClassReference provides operations to manage the identityContainer singleton.
 type AuthenticationContextClassReference struct {
     Entity
     // A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
@@ -21,6 +21,10 @@ func NewAuthenticationContextClassReference()(*AuthenticationContextClassReferen
     }
     return m
 }
+// CreateAuthenticationContextClassReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationContextClassReferenceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationContextClassReference(), nil
+}
 // GetDescription gets the description property value. A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
 func (m *AuthenticationContextClassReference) GetDescription()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *AuthenticationContextClassReference) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsAvailable gets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false it should not be shown in admin UX experiences because the value is not currently available for selection.
-func (m *AuthenticationContextClassReference) GetIsAvailable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAvailable
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *AuthenticationContextClassReference) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetIsAvailable gets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false it should not be shown in admin UX experiences because the value is not currently available for selection.
+func (m *AuthenticationContextClassReference) GetIsAvailable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAvailable
+    }
 }
 func (m *AuthenticationContextClassReference) IsNil()(bool) {
     return m == nil

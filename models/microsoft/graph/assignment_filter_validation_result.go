@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterValidationResult 
+// AssignmentFilterValidationResult provides operations to call the validateFilter method.
 type AssignmentFilterValidationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewAssignmentFilterValidationResult()(*AssignmentFilterValidationResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAssignmentFilterValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentFilterValidationResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentFilterValidationResult(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterValidationResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsValidRule gets the isValidRule property value. Indicator to valid or invalid rule.
-func (m *AssignmentFilterValidationResult) GetIsValidRule()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValidRule
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *AssignmentFilterValidationResult) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetIsValidRule gets the isValidRule property value. Indicator to valid or invalid rule.
+func (m *AssignmentFilterValidationResult) GetIsValidRule()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isValidRule
+    }
 }
 func (m *AssignmentFilterValidationResult) IsNil()(bool) {
     return m == nil

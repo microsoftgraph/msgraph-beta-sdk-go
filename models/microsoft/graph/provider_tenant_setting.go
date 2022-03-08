@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProviderTenantSetting 
+// ProviderTenantSetting provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
 type ProviderTenantSetting struct {
     Entity
     // 
@@ -26,6 +26,10 @@ func NewProviderTenantSetting()(*ProviderTenantSetting) {
     }
     return m
 }
+// CreateProviderTenantSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProviderTenantSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProviderTenantSetting(), nil
+}
 // GetAzureTenantId gets the azureTenantId property value. 
 func (m *ProviderTenantSetting) GetAzureTenantId()(*string) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *ProviderTenantSetting) GetEnabled()(*bool) {
         return nil
     } else {
         return m.enabled
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *ProviderTenantSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetProvider gets the provider property value. 
-func (m *ProviderTenantSetting) GetProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provider
-    }
-}
-// GetVendor gets the vendor property value. 
-func (m *ProviderTenantSetting) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +100,30 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *ProviderTenantSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetProvider gets the provider property value. 
+func (m *ProviderTenantSetting) GetProvider()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provider
+    }
+}
+// GetVendor gets the vendor property value. 
+func (m *ProviderTenantSetting) GetVendor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendor_escaped
+    }
 }
 func (m *ProviderTenantSetting) IsNil()(bool) {
     return m == nil

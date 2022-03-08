@@ -2,11 +2,11 @@ package activitybasedtimeoutpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/activitybasedtimeoutpolicies/count"
 )
 
-// ActivityBasedTimeoutPoliciesRequestBuilder builds and executes requests for operations under \policies\activityBasedTimeoutPolicies
+// ActivityBasedTimeoutPoliciesRequestBuilder provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.
 type ActivityBasedTimeoutPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ActivityBasedTimeoutPoliciesRequestBuilderGetQueryParameters struct {
 // ActivityBasedTimeoutPoliciesRequestBuilderPostOptions options for Post
 type ActivityBasedTimeoutPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewActivityBasedTimeoutPoliciesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewActivityBasedTimeoutPoliciesRequestBuilder(rawUrl string, requestAdapter
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivityBasedTimeoutPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Count()(*icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.CountRequestBuilder) {
+    return icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the policy that controls the idle time out for web sessions for applications.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation(options *ActivityBasedTimeoutPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the policy that controls the idle time out for web sessions for applications.
+// CreatePostRequestInformation create new navigation property to activityBasedTimeoutPolicies for policies
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformation(options *ActivityBasedTimeoutPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformatio
     return requestInfo, nil
 }
 // Get the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get(options *ActivityBasedTimeoutPoliciesRequestBuilderGetOptions)(*ActivityBasedTimeoutPoliciesResponse, error) {
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get(options *ActivityBasedTimeoutPoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActivityBasedTimeoutPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateActivityBasedTimeoutPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ActivityBasedTimeoutPoliciesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicyCollectionResponseable), nil
 }
-// Post the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Post(options *ActivityBasedTimeoutPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicy, error) {
+// Post create new navigation property to activityBasedTimeoutPolicies for policies
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Post(options *ActivityBasedTimeoutPoliciesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewActivityBasedTimeoutPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateActivityBasedTimeoutPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityBasedTimeoutPolicyable), nil
 }

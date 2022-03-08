@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementComplianceScheduledActionForRule 
+// DeviceManagementComplianceScheduledActionForRule provides operations to manage the deviceManagement singleton.
 type DeviceManagementComplianceScheduledActionForRule struct {
     Entity
     // Name of the rule which this scheduled action applies to.
     ruleName *string;
     // The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-    scheduledActionConfigurations []DeviceManagementComplianceActionItem;
+    scheduledActionConfigurations []DeviceManagementComplianceActionItemable;
 }
 // NewDeviceManagementComplianceScheduledActionForRule instantiates a new deviceManagementComplianceScheduledActionForRule and sets the default values.
 func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComplianceScheduledActionForRule) {
@@ -19,21 +19,9 @@ func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComp
     }
     return m
 }
-// GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to.
-func (m *DeviceManagementComplianceScheduledActionForRule) GetRuleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleName
-    }
-}
-// GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-func (m *DeviceManagementComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceManagementComplianceActionItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledActionConfigurations
-    }
+// CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementComplianceScheduledActionForRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,20 +37,36 @@ func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers
         return nil
     }
     res["scheduledActionConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementComplianceActionItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementComplianceActionItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementComplianceActionItem, len(val))
+            res := make([]DeviceManagementComplianceActionItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementComplianceActionItem))
+                res[i] = v.(DeviceManagementComplianceActionItemable)
             }
             m.SetScheduledActionConfigurations(res)
         }
         return nil
     }
     return res
+}
+// GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to.
+func (m *DeviceManagementComplianceScheduledActionForRule) GetRuleName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleName
+    }
+}
+// GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+func (m *DeviceManagementComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceManagementComplianceActionItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduledActionConfigurations
+    }
 }
 func (m *DeviceManagementComplianceScheduledActionForRule) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i04e
     if m.GetScheduledActionConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScheduledActionConfigurations()))
         for i, v := range m.GetScheduledActionConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scheduledActionConfigurations", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *DeviceManagementComplianceScheduledActionForRule) SetRuleName(value *st
     }
 }
 // SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-func (m *DeviceManagementComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceManagementComplianceActionItem)() {
+func (m *DeviceManagementComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceManagementComplianceActionItemable)() {
     if m != nil {
         m.scheduledActionConfigurations = value
     }

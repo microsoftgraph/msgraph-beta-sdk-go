@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsWindows10DevicesSummary 
+// UserExperienceAnalyticsWindows10DevicesSummary provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
 type UserExperienceAnalyticsWindows10DevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewUserExperienceAnalyticsWindows10DevicesSummary()(*UserExperienceAnalytic
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsWindows10DevicesSummary(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetUnsupportedOSversionDeviceCount gets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions.
-func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetUnsupportedOSversionDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unsupportedOSversionDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetUnsupportedOSversionDeviceCount gets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions.
+func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetUnsupportedOSversionDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unsupportedOSversionDeviceCount
+    }
 }
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) IsNil()(bool) {
     return m == nil

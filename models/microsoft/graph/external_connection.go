@@ -5,31 +5,31 @@ import (
     i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// ExternalConnection 
+// ExternalConnection provides operations to manage the collection of externalConnection entities.
 type ExternalConnection struct {
     Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
-    configuration *Configuration;
+    configuration Configurationable;
     // The Teams App ID. Optional.
     connectorId *string;
     // Description of the connection displayed in the Microsoft 365 admin center. Optional.
     description *string;
     // Read-only. Nullable.
-    groups []ExternalGroup;
+    groups []ExternalGroupable;
     // 
     ingestedItemsCount *int64;
     // Read-only. Nullable.
-    items []ExternalItem;
+    items []ExternalItemable;
     // The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
     name *string;
     // Read-only. Nullable.
-    operations []ConnectionOperation;
+    operations []ConnectionOperationable;
     // 
-    quota *ConnectionQuota;
+    quota ConnectionQuotaable;
     // Read-only. Nullable.
-    schema *Schema;
+    schema Schemaable;
     // The settings configuring the search experience for content in this connection, such as the display templates for search results.
-    searchSettings *SearchSettings;
+    searchSettings SearchSettingsable;
     // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     state *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState;
 }
@@ -40,8 +40,12 @@ func NewExternalConnection()(*ExternalConnection) {
     }
     return m
 }
+// CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExternalConnectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExternalConnection(), nil
+}
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
-func (m *ExternalConnection) GetConfiguration()(*Configuration) {
+func (m *ExternalConnection) GetConfiguration()(Configurationable) {
     if m == nil {
         return nil
     } else {
@@ -64,88 +68,16 @@ func (m *ExternalConnection) GetDescription()(*string) {
         return m.description
     }
 }
-// GetGroups gets the groups property value. Read-only. Nullable.
-func (m *ExternalConnection) GetGroups()([]ExternalGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groups
-    }
-}
-// GetIngestedItemsCount gets the ingestedItemsCount property value. 
-func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ingestedItemsCount
-    }
-}
-// GetItems gets the items property value. Read-only. Nullable.
-func (m *ExternalConnection) GetItems()([]ExternalItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
-}
-// GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
-func (m *ExternalConnection) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOperations gets the operations property value. Read-only. Nullable.
-func (m *ExternalConnection) GetOperations()([]ConnectionOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
-}
-// GetQuota gets the quota property value. 
-func (m *ExternalConnection) GetQuota()(*ConnectionQuota) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quota
-    }
-}
-// GetSchema gets the schema property value. Read-only. Nullable.
-func (m *ExternalConnection) GetSchema()(*Schema) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schema
-    }
-}
-// GetSearchSettings gets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
-func (m *ExternalConnection) GetSearchSettings()(*SearchSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.searchSettings
-    }
-}
-// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
-func (m *ExternalConnection) GetState()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConfiguration() })
+        val, err := n.GetObjectValue(CreateConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfiguration(val.(*Configuration))
+            m.SetConfiguration(val.(Configurationable))
         }
         return nil
     }
@@ -170,14 +102,14 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["groups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExternalGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateExternalGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExternalGroup, len(val))
+            res := make([]ExternalGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExternalGroup))
+                res[i] = v.(ExternalGroupable)
             }
             m.SetGroups(res)
         }
@@ -194,14 +126,14 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExternalItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateExternalItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExternalItem, len(val))
+            res := make([]ExternalItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExternalItem))
+                res[i] = v.(ExternalItemable)
             }
             m.SetItems(res)
         }
@@ -218,46 +150,46 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectionOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateConnectionOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConnectionOperation, len(val))
+            res := make([]ConnectionOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConnectionOperation))
+                res[i] = v.(ConnectionOperationable)
             }
             m.SetOperations(res)
         }
         return nil
     }
     res["quota"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectionQuota() })
+        val, err := n.GetObjectValue(CreateConnectionQuotaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQuota(val.(*ConnectionQuota))
+            m.SetQuota(val.(ConnectionQuotaable))
         }
         return nil
     }
     res["schema"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSchema() })
+        val, err := n.GetObjectValue(CreateSchemaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchema(val.(*Schema))
+            m.SetSchema(val.(Schemaable))
         }
         return nil
     }
     res["searchSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchSettings() })
+        val, err := n.GetObjectValue(CreateSearchSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSearchSettings(val.(*SearchSettings))
+            m.SetSearchSettings(val.(SearchSettingsable))
         }
         return nil
     }
@@ -272,6 +204,78 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetGroups gets the groups property value. Read-only. Nullable.
+func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groups
+    }
+}
+// GetIngestedItemsCount gets the ingestedItemsCount property value. 
+func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ingestedItemsCount
+    }
+}
+// GetItems gets the items property value. Read-only. Nullable.
+func (m *ExternalConnection) GetItems()([]ExternalItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.items
+    }
+}
+// GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
+func (m *ExternalConnection) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOperations gets the operations property value. Read-only. Nullable.
+func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetQuota gets the quota property value. 
+func (m *ExternalConnection) GetQuota()(ConnectionQuotaable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quota
+    }
+}
+// GetSchema gets the schema property value. Read-only. Nullable.
+func (m *ExternalConnection) GetSchema()(Schemaable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schema
+    }
+}
+// GetSearchSettings gets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
+func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.searchSettings
+    }
+}
+// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+func (m *ExternalConnection) GetState()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *ExternalConnection) IsNil()(bool) {
     return m == nil
@@ -303,8 +307,7 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroups()))
         for i, v := range m.GetGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groups", cast)
         if err != nil {
@@ -320,8 +323,7 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -337,8 +339,7 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -373,7 +374,7 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     return nil
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
-func (m *ExternalConnection) SetConfiguration(value *Configuration)() {
+func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
     if m != nil {
         m.configuration = value
     }
@@ -391,7 +392,7 @@ func (m *ExternalConnection) SetDescription(value *string)() {
     }
 }
 // SetGroups sets the groups property value. Read-only. Nullable.
-func (m *ExternalConnection) SetGroups(value []ExternalGroup)() {
+func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
     if m != nil {
         m.groups = value
     }
@@ -403,7 +404,7 @@ func (m *ExternalConnection) SetIngestedItemsCount(value *int64)() {
     }
 }
 // SetItems sets the items property value. Read-only. Nullable.
-func (m *ExternalConnection) SetItems(value []ExternalItem)() {
+func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
     if m != nil {
         m.items = value
     }
@@ -415,25 +416,25 @@ func (m *ExternalConnection) SetName(value *string)() {
     }
 }
 // SetOperations sets the operations property value. Read-only. Nullable.
-func (m *ExternalConnection) SetOperations(value []ConnectionOperation)() {
+func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
 // SetQuota sets the quota property value. 
-func (m *ExternalConnection) SetQuota(value *ConnectionQuota)() {
+func (m *ExternalConnection) SetQuota(value ConnectionQuotaable)() {
     if m != nil {
         m.quota = value
     }
 }
 // SetSchema sets the schema property value. Read-only. Nullable.
-func (m *ExternalConnection) SetSchema(value *Schema)() {
+func (m *ExternalConnection) SetSchema(value Schemaable)() {
     if m != nil {
         m.schema = value
     }
 }
 // SetSearchSettings sets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
-func (m *ExternalConnection) SetSearchSettings(value *SearchSettings)() {
+func (m *ExternalConnection) SetSearchSettings(value SearchSettingsable)() {
     if m != nil {
         m.searchSettings = value
     }

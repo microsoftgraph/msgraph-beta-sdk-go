@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// OverrideComplianceStateRequestBody 
+// OverrideComplianceStateRequestBody provides operations to call the overrideComplianceState method.
 type OverrideComplianceStateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewOverrideComplianceStateRequestBody()(*OverrideComplianceStateRequestBody
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOverrideComplianceStateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOverrideComplianceStateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOverrideComplianceStateRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OverrideComplianceStateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *OverrideComplianceStateRequestBody) GetComplianceState()(*i535684e11b55
         return nil
     } else {
         return m.complianceState
-    }
-}
-// GetRemediationUrl gets the remediationUrl property value. 
-func (m *OverrideComplianceStateRequestBody) GetRemediationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +65,14 @@ func (m *OverrideComplianceStateRequestBody) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetRemediationUrl gets the remediationUrl property value. 
+func (m *OverrideComplianceStateRequestBody) GetRemediationUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationUrl
+    }
 }
 func (m *OverrideComplianceStateRequestBody) IsNil()(bool) {
     return m == nil

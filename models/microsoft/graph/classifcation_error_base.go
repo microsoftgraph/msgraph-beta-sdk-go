@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClassifcationErrorBase 
+// ClassifcationErrorBase provides operations to manage the dataClassificationService singleton.
 type ClassifcationErrorBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     code *string;
     // 
-    innerError *ClassificationInnerError;
+    innerError ClassificationInnerErrorable;
     // 
     message *string;
     // 
@@ -23,6 +23,10 @@ func NewClassifcationErrorBase()(*ClassifcationErrorBase) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateClassifcationErrorBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateClassifcationErrorBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassifcationErrorBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifcationErrorBase) GetAdditionalData()(map[string]interface{}) {
@@ -40,30 +44,6 @@ func (m *ClassifcationErrorBase) GetCode()(*string) {
         return m.code
     }
 }
-// GetInnerError gets the innerError property value. 
-func (m *ClassifcationErrorBase) GetInnerError()(*ClassificationInnerError) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innerError
-    }
-}
-// GetMessage gets the message property value. 
-func (m *ClassifcationErrorBase) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetTarget gets the target property value. 
-func (m *ClassifcationErrorBase) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -78,12 +58,12 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["innerError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassificationInnerError() })
+        val, err := n.GetObjectValue(CreateClassificationInnerErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnerError(val.(*ClassificationInnerError))
+            m.SetInnerError(val.(ClassificationInnerErrorable))
         }
         return nil
     }
@@ -108,6 +88,30 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetInnerError gets the innerError property value. 
+func (m *ClassifcationErrorBase) GetInnerError()(ClassificationInnerErrorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.innerError
+    }
+}
+// GetMessage gets the message property value. 
+func (m *ClassifcationErrorBase) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetTarget gets the target property value. 
+func (m *ClassifcationErrorBase) GetTarget()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *ClassifcationErrorBase) IsNil()(bool) {
     return m == nil
@@ -159,7 +163,7 @@ func (m *ClassifcationErrorBase) SetCode(value *string)() {
     }
 }
 // SetInnerError sets the innerError property value. 
-func (m *ClassifcationErrorBase) SetInnerError(value *ClassificationInnerError)() {
+func (m *ClassifcationErrorBase) SetInnerError(value ClassificationInnerErrorable)() {
     if m != nil {
         m.innerError = value
     }

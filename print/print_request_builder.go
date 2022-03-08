@@ -11,7 +11,6 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     ie0ee21308c5a5876efdcb565ab54dddf497480052514698aa5df8076282afb54 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/connectors"
     i041fa93b1b8c4c6acaa44fa25a4bab5b60619191120dc3943102fdec799fca39 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i20c82299a583bf997be8654a60766afa3b225e0e8b54ab661cb734c46c2add9b "github.com/microsoftgraph/msgraph-beta-sdk-go/print/operations/item"
     i21ad7a37923a403c8172690e362e15a8a0298e4a82eecbedee9e691ff99bdde3 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
@@ -21,7 +20,7 @@ import (
     id93d2fbcff2a13af1a3388fed5faf01351e12efec3ce632d2152e37f5ad29d99 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/connectors/item"
 )
 
-// PrintRequestBuilder builds and executes requests for operations under \print
+// PrintRequestBuilder provides operations to manage the print singleton.
 type PrintRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -51,7 +50,7 @@ type PrintRequestBuilderGetQueryParameters struct {
 // PrintRequestBuilderPatchOptions options for Patch
 type PrintRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Print;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printable;
     // Request headers
     H map[string]string;
     // Request options
@@ -82,7 +81,7 @@ func NewPrintRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -131,16 +130,20 @@ func (m *PrintRequestBuilder) CreatePatchRequestInformation(options *PrintReques
     return requestInfo, nil
 }
 // Get get print
-func (m *PrintRequestBuilder) Get(options *PrintRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Print, error) {
+func (m *PrintRequestBuilder) Get(options *PrintRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrint() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrintFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Print), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printable), nil
 }
 func (m *PrintRequestBuilder) Operations()(*i844ad4158981a129d54aa4a317c17dc8b56ba989d7b7cfa3ffe6aebbb129c245.OperationsRequestBuilder) {
     return i844ad4158981a129d54aa4a317c17dc8b56ba989d7b7cfa3ffe6aebbb129c245.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -162,7 +165,11 @@ func (m *PrintRequestBuilder) Patch(options *PrintRequestBuilderPatchOptions)(er
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

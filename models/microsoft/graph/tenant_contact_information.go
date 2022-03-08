@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TenantContactInformation 
+// TenantContactInformation provides operations to manage the tenantRelationship singleton.
 type TenantContactInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewTenantContactInformation()(*TenantContactInformation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTenantContactInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTenantContactInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTenantContactInformation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContactInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *TenantContactInformation) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetName gets the name property value. The name for the contact. Required.
-func (m *TenantContactInformation) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetNotes gets the notes property value. The notes associated with the contact. Optional
-func (m *TenantContactInformation) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetPhone gets the phone property value. The phone number for the contact. Optional.
-func (m *TenantContactInformation) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
-}
-// GetTitle gets the title property value. The title for the contact. Required.
-func (m *TenantContactInformation) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetName gets the name property value. The name for the contact. Required.
+func (m *TenantContactInformation) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetNotes gets the notes property value. The notes associated with the contact. Optional
+func (m *TenantContactInformation) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetPhone gets the phone property value. The phone number for the contact. Optional.
+func (m *TenantContactInformation) GetPhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phone
+    }
+}
+// GetTitle gets the title property value. The title for the contact. Required.
+func (m *TenantContactInformation) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
 }
 func (m *TenantContactInformation) IsNil()(bool) {
     return m == nil

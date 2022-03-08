@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ImportedDeviceIdentity 
+// ImportedDeviceIdentity provides operations to manage the deviceManagement singleton.
 type ImportedDeviceIdentity struct {
     Entity
     // Created Date Time of the device
@@ -32,6 +32,10 @@ func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     }
     return m
 }
+// CreateImportedDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateImportedDeviceIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewImportedDeviceIdentity(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Created Date Time of the device
 func (m *ImportedDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -54,46 +58,6 @@ func (m *ImportedDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
         return nil
     } else {
         return m.enrollmentState
-    }
-}
-// GetImportedDeviceIdentifier gets the importedDeviceIdentifier property value. Imported Device Identifier
-func (m *ImportedDeviceIdentity) GetImportedDeviceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedDeviceIdentifier
-    }
-}
-// GetImportedDeviceIdentityType gets the importedDeviceIdentityType property value. Type of Imported Device Identity. Possible values are: unknown, imei, serialNumber.
-func (m *ImportedDeviceIdentity) GetImportedDeviceIdentityType()(*ImportedDeviceIdentityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedDeviceIdentityType
-    }
-}
-// GetLastContactedDateTime gets the lastContactedDateTime property value. Last Contacted Date Time of the device
-func (m *ImportedDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastContactedDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last Modified DateTime of the description
-func (m *ImportedDeviceIdentity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPlatform gets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
-func (m *ImportedDeviceIdentity) GetPlatform()(*Platform) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,6 +144,46 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetImportedDeviceIdentifier gets the importedDeviceIdentifier property value. Imported Device Identifier
+func (m *ImportedDeviceIdentity) GetImportedDeviceIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importedDeviceIdentifier
+    }
+}
+// GetImportedDeviceIdentityType gets the importedDeviceIdentityType property value. Type of Imported Device Identity. Possible values are: unknown, imei, serialNumber.
+func (m *ImportedDeviceIdentity) GetImportedDeviceIdentityType()(*ImportedDeviceIdentityType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importedDeviceIdentityType
+    }
+}
+// GetLastContactedDateTime gets the lastContactedDateTime property value. Last Contacted Date Time of the device
+func (m *ImportedDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastContactedDateTime
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last Modified DateTime of the description
+func (m *ImportedDeviceIdentity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPlatform gets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
+func (m *ImportedDeviceIdentity) GetPlatform()(*Platform) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
 }
 func (m *ImportedDeviceIdentity) IsNil()(bool) {
     return m == nil

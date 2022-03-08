@@ -6,7 +6,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// WorkloadActionDeploymentStatus 
+// WorkloadActionDeploymentStatus provides operations to manage the tenantRelationship singleton.
 type WorkloadActionDeploymentStatus struct {
     // The unique identifier for the workload action. Required. Read-only.
     actionId *string;
@@ -15,7 +15,7 @@ type WorkloadActionDeploymentStatus struct {
     // The identifier of any policy that was created by applying the workload action. Optional. Read-only.
     deployedPolicyId *string;
     // The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
-    error *GenericError;
+    error GenericErrorable;
     // 
     excludeGroups []string;
     // 
@@ -33,6 +33,10 @@ func NewWorkloadActionDeploymentStatus()(*WorkloadActionDeploymentStatus) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWorkloadActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkloadActionDeploymentStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkloadActionDeploymentStatus(), nil
 }
 // GetActionId gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadActionDeploymentStatus) GetActionId()(*string) {
@@ -59,7 +63,7 @@ func (m *WorkloadActionDeploymentStatus) GetDeployedPolicyId()(*string) {
     }
 }
 // GetError gets the error property value. The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
-func (m *WorkloadActionDeploymentStatus) GetError()(*GenericError) {
+func (m *WorkloadActionDeploymentStatus) GetError()(GenericErrorable) {
     if m == nil {
         return nil
     } else {
@@ -72,38 +76,6 @@ func (m *WorkloadActionDeploymentStatus) GetExcludeGroups()([]string) {
         return nil
     } else {
         return m.excludeGroups
-    }
-}
-// GetIncludeAllUsers gets the includeAllUsers property value. 
-func (m *WorkloadActionDeploymentStatus) GetIncludeAllUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAllUsers
-    }
-}
-// GetIncludeGroups gets the includeGroups property value. 
-func (m *WorkloadActionDeploymentStatus) GetIncludeGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeGroups
-    }
-}
-// GetLastDeploymentDateTime gets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
-func (m *WorkloadActionDeploymentStatus) GetLastDeploymentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastDeploymentDateTime
-    }
-}
-// GetStatus gets the status property value. The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
-func (m *WorkloadActionDeploymentStatus) GetStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,12 +102,12 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGenericError() })
+        val, err := n.GetObjectValue(CreateGenericErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*GenericError))
+            m.SetError(val.(GenericErrorable))
         }
         return nil
     }
@@ -198,6 +170,38 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetIncludeAllUsers gets the includeAllUsers property value. 
+func (m *WorkloadActionDeploymentStatus) GetIncludeAllUsers()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeAllUsers
+    }
+}
+// GetIncludeGroups gets the includeGroups property value. 
+func (m *WorkloadActionDeploymentStatus) GetIncludeGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeGroups
+    }
+}
+// GetLastDeploymentDateTime gets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
+func (m *WorkloadActionDeploymentStatus) GetLastDeploymentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastDeploymentDateTime
+    }
+}
+// GetStatus gets the status property value. The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
+func (m *WorkloadActionDeploymentStatus) GetStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *WorkloadActionDeploymentStatus) IsNil()(bool) {
     return m == nil
@@ -280,7 +284,7 @@ func (m *WorkloadActionDeploymentStatus) SetDeployedPolicyId(value *string)() {
     }
 }
 // SetError sets the error property value. The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
-func (m *WorkloadActionDeploymentStatus) SetError(value *GenericError)() {
+func (m *WorkloadActionDeploymentStatus) SetError(value GenericErrorable)() {
     if m != nil {
         m.error = value
     }

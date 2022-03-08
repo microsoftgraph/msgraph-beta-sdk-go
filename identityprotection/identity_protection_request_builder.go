@@ -6,7 +6,6 @@ import (
     i98ea4cb17d390592303b9e25c8f92ccaf566e5d10c2cabc9f160512904151e07 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskyserviceprincipals"
     ic7b59228365548f0fce94cdce65ae97f7b560a35a266ece91414c55ca4e5c249 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/serviceprincipalriskdetections"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i294f460d075f1fad271e61484dbf4976eb35e90151e8cbeea5c33955169dbb83 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskdetections/item"
     i3b4ddc0707ce5dc4f8bc784d8e4305e5ba05b0af6b7287ebf1b1abc4f5796032 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/serviceprincipalriskdetections/item"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
@@ -14,7 +13,7 @@ import (
     i93ffa285a6083330a0c11899f97deea0e0a67ea5245ac02339ac77d9f35ce82b "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskyserviceprincipals/item"
 )
 
-// IdentityProtectionRequestBuilder builds and executes requests for operations under \identityProtection
+// IdentityProtectionRequestBuilder provides operations to manage the identityProtectionRoot singleton.
 type IdentityProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +43,7 @@ type IdentityProtectionRequestBuilderGetQueryParameters struct {
 // IdentityProtectionRequestBuilderPatchOptions options for Patch
 type IdentityProtectionRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProtectionRoot;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProtectionRootable;
     // Request headers
     H map[string]string;
     // Request options
@@ -61,7 +60,7 @@ func NewIdentityProtectionRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -110,16 +109,20 @@ func (m *IdentityProtectionRequestBuilder) CreatePatchRequestInformation(options
     return requestInfo, nil
 }
 // Get get identityProtection
-func (m *IdentityProtectionRequestBuilder) Get(options *IdentityProtectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProtectionRoot, error) {
+func (m *IdentityProtectionRequestBuilder) Get(options *IdentityProtectionRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProtectionRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIdentityProtectionRoot() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIdentityProtectionRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProtectionRoot), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProtectionRootable), nil
 }
 // Patch update identityProtection
 func (m *IdentityProtectionRequestBuilder) Patch(options *IdentityProtectionRequestBuilderPatchOptions)(error) {
@@ -127,7 +130,11 @@ func (m *IdentityProtectionRequestBuilder) Patch(options *IdentityProtectionRequ
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

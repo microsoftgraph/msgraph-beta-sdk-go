@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterEvaluationSummary 
+// AssignmentFilterEvaluationSummary provides operations to call the getAssignmentFiltersStatusDetails method.
 type AssignmentFilterEvaluationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,7 +20,7 @@ type AssignmentFilterEvaluationSummary struct {
     // Indicate filter type either include or exclude. Possible values are: none, include, exclude.
     assignmentFilterType *DeviceAndAppManagementAssignmentFilterType;
     // A collection of filter types and their corresponding evaluation results.
-    assignmentFilterTypeAndEvaluationResults []AssignmentFilterTypeAndEvaluationResult;
+    assignmentFilterTypeAndEvaluationResults []AssignmentFilterTypeAndEvaluationResultable;
     // The time assignment filter was evaluated.
     evaluationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
@@ -32,6 +32,10 @@ func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentFilterEvaluationSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]interface{}) {
@@ -82,7 +86,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterType()(*DeviceAnd
     }
 }
 // GetAssignmentFilterTypeAndEvaluationResults gets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
-func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterTypeAndEvaluationResults()([]AssignmentFilterTypeAndEvaluationResult) {
+func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterTypeAndEvaluationResults()([]AssignmentFilterTypeAndEvaluationResultable) {
     if m == nil {
         return nil
     } else {
@@ -159,14 +163,14 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["assignmentFilterTypeAndEvaluationResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignmentFilterTypeAndEvaluationResult() })
+        val, err := n.GetCollectionOfObjectValues(CreateAssignmentFilterTypeAndEvaluationResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AssignmentFilterTypeAndEvaluationResult, len(val))
+            res := make([]AssignmentFilterTypeAndEvaluationResultable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignmentFilterTypeAndEvaluationResult))
+                res[i] = v.(AssignmentFilterTypeAndEvaluationResultable)
             }
             m.SetAssignmentFilterTypeAndEvaluationResults(res)
         }
@@ -234,8 +238,7 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28
     if m.GetAssignmentFilterTypeAndEvaluationResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentFilterTypeAndEvaluationResults()))
         for i, v := range m.GetAssignmentFilterTypeAndEvaluationResults() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("assignmentFilterTypeAndEvaluationResults", cast)
         if err != nil {
@@ -300,7 +303,7 @@ func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterType(value *Devic
     }
 }
 // SetAssignmentFilterTypeAndEvaluationResults sets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
-func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterTypeAndEvaluationResults(value []AssignmentFilterTypeAndEvaluationResult)() {
+func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterTypeAndEvaluationResults(value []AssignmentFilterTypeAndEvaluationResultable)() {
     if m != nil {
         m.assignmentFilterTypeAndEvaluationResults = value
     }

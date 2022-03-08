@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageMentionedIdentitySet 
+// ChatMessageMentionedIdentitySet provides operations to manage the collection of chat entities.
 type ChatMessageMentionedIdentitySet struct {
     IdentitySet
     // If present, represents a conversation (for example, team or channel) @mentioned in a message.
-    conversation *TeamworkConversationIdentity;
+    conversation TeamworkConversationIdentityable;
     // If present, represents a tag @mentioned in a team message.
-    tag *TeamworkTagIdentity;
+    tag TeamworkTagIdentityable;
 }
 // NewChatMessageMentionedIdentitySet instantiates a new chatMessageMentionedIdentitySet and sets the default values.
 func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
@@ -19,46 +19,50 @@ func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
     }
     return m
 }
+// CreateChatMessageMentionedIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessageMentionedIdentitySetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessageMentionedIdentitySet(), nil
+}
 // GetConversation gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
-func (m *ChatMessageMentionedIdentitySet) GetConversation()(*TeamworkConversationIdentity) {
+func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
     if m == nil {
         return nil
     } else {
         return m.conversation
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.IdentitySet.GetFieldDeserializers()
+    res["conversation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkConversationIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConversation(val.(TeamworkConversationIdentityable))
+        }
+        return nil
+    }
+    res["tag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkTagIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTag(val.(TeamworkTagIdentityable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTag gets the tag property value. If present, represents a tag @mentioned in a team message.
-func (m *ChatMessageMentionedIdentitySet) GetTag()(*TeamworkTagIdentity) {
+func (m *ChatMessageMentionedIdentitySet) GetTag()(TeamworkTagIdentityable) {
     if m == nil {
         return nil
     } else {
         return m.tag
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.IdentitySet.GetFieldDeserializers()
-    res["conversation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkConversationIdentity() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConversation(val.(*TeamworkConversationIdentity))
-        }
-        return nil
-    }
-    res["tag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkTagIdentity() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTag(val.(*TeamworkTagIdentity))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ChatMessageMentionedIdentitySet) IsNil()(bool) {
     return m == nil
@@ -84,13 +88,13 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i04eb5309aeaafadd2837
     return nil
 }
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
-func (m *ChatMessageMentionedIdentitySet) SetConversation(value *TeamworkConversationIdentity)() {
+func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
     if m != nil {
         m.conversation = value
     }
 }
 // SetTag sets the tag property value. If present, represents a tag @mentioned in a team message.
-func (m *ChatMessageMentionedIdentitySet) SetTag(value *TeamworkTagIdentity)() {
+func (m *ChatMessageMentionedIdentitySet) SetTag(value TeamworkTagIdentityable)() {
     if m != nil {
         m.tag = value
     }

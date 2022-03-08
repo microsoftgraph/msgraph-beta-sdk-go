@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TargetPolicyEndpoints 
+// TargetPolicyEndpoints provides operations to manage the compliance singleton.
 type TargetPolicyEndpoints struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewTargetPolicyEndpoints()(*TargetPolicyEndpoints) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTargetPolicyEndpointsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTargetPolicyEndpointsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTargetPolicyEndpoints(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetPolicyEndpoints) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPlatformTypes gets the platformTypes property value. Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
-func (m *TargetPolicyEndpoints) GetPlatformTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *TargetPolicyEndpoints) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetPlatformTypes gets the platformTypes property value. Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
+func (m *TargetPolicyEndpoints) GetPlatformTypes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platformTypes
+    }
 }
 func (m *TargetPolicyEndpoints) IsNil()(bool) {
     return m == nil

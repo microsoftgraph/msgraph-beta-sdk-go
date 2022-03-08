@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// OffboardTenantRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}\microsoft.graph.managedTenants.offboardTenant
+// OffboardTenantRequestBuilder provides operations to call the offboardTenant method.
 type OffboardTenantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type OffboardTenantRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // OffboardTenantResponse union type wrapper for classes tenant
 type OffboardTenantResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type tenant
-    tenant *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant;
+    tenant i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable;
 }
 // NewOffboardTenantResponse instantiates a new offboardTenantResponse and sets the default values.
 func NewOffboardTenantResponse()(*OffboardTenantResponse) {
@@ -37,6 +42,9 @@ func NewOffboardTenantResponse()(*OffboardTenantResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateOffboardTenantResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOffboardTenantResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OffboardTenantResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +54,28 @@ func (m *OffboardTenantResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *OffboardTenantResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["tenant"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTenantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenant(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTenant gets the tenant property value. Union type representation for type tenant
-func (m *OffboardTenantResponse) GetTenant()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant) {
+func (m *OffboardTenantResponse) GetTenant()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable) {
     if m == nil {
         return nil
     } else {
         return m.tenant
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *OffboardTenantResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["tenant"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTenant() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenant(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant))
-        }
-        return nil
-    }
-    return res
 }
 func (m *OffboardTenantResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +103,7 @@ func (m *OffboardTenantResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetTenant sets the tenant property value. Union type representation for type tenant
-func (m *OffboardTenantResponse) SetTenant(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant)() {
+func (m *OffboardTenantResponse) SetTenant(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable)() {
     if m != nil {
         m.tenant = value
     }
@@ -109,7 +117,7 @@ func NewOffboardTenantRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *OffboardTenantRequestBuilder) CreatePostRequestInformation(options *Off
     return requestInfo, nil
 }
 // Post invoke action offboardTenant
-func (m *OffboardTenantRequestBuilder) Post(options *OffboardTenantRequestBuilderPostOptions)(*OffboardTenantResponse, error) {
+func (m *OffboardTenantRequestBuilder) Post(options *OffboardTenantRequestBuilderPostOptions)(OffboardTenantResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOffboardTenantResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateOffboardTenantResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*OffboardTenantResponse), nil
+    return res.(OffboardTenantResponseable), nil
 }

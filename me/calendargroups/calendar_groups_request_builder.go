@@ -2,11 +2,11 @@ package calendargroups
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i3c75b8e0c7114623ba0b45e99beb0e86e8dd6caa30622f3cbd2c0868e5d7ed2c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CalendarGroupsRequestBuilder builds and executes requests for operations under \me\calendarGroups
+// CalendarGroupsRequestBuilder provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
 type CalendarGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type CalendarGroupsRequestBuilderGetQueryParameters struct {
 // CalendarGroupsRequestBuilderPostOptions options for Post
 type CalendarGroupsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroup;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroupable;
     // Request headers
     H map[string]string;
     // Request options
@@ -61,7 +61,7 @@ func NewCalendarGroupsRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -70,6 +70,9 @@ func NewCalendarGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarGroupsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CalendarGroupsRequestBuilder) Count()(*i3c75b8e0c7114623ba0b45e99beb0e86e8dd6caa30622f3cbd2c0868e5d7ed2c.CountRequestBuilder) {
+    return i3c75b8e0c7114623ba0b45e99beb0e86e8dd6caa30622f3cbd2c0868e5d7ed2c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupsRequestBuilder) CreateGetRequestInformation(options *CalendarGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -91,7 +94,7 @@ func (m *CalendarGroupsRequestBuilder) CreateGetRequestInformation(options *Cale
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the user's calendar groups. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to calendarGroups for me
 func (m *CalendarGroupsRequestBuilder) CreatePostRequestInformation(options *CalendarGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,26 +113,34 @@ func (m *CalendarGroupsRequestBuilder) CreatePostRequestInformation(options *Cal
     return requestInfo, nil
 }
 // Get the user's calendar groups. Read-only. Nullable.
-func (m *CalendarGroupsRequestBuilder) Get(options *CalendarGroupsRequestBuilderGetOptions)(*CalendarGroupsResponse, error) {
+func (m *CalendarGroupsRequestBuilder) Get(options *CalendarGroupsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendarGroupsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCalendarGroupCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CalendarGroupsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroupCollectionResponseable), nil
 }
-// Post the user's calendar groups. Read-only. Nullable.
-func (m *CalendarGroupsRequestBuilder) Post(options *CalendarGroupsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroup, error) {
+// Post create new navigation property to calendarGroups for me
+func (m *CalendarGroupsRequestBuilder) Post(options *CalendarGroupsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroupable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCalendarGroup() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCalendarGroupFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroup), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarGroupable), nil
 }

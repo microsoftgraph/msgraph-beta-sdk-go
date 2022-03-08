@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// IsSignedUpRequestBuilder builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
+// IsSignedUpRequestBuilder provides operations to call the isSignedUp method.
 type IsSignedUpRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewIsSignedUpRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *IsSignedUpRequestBuilder) CreateGetRequestInformation(options *IsSigned
     return requestInfo, nil
 }
 // Get invoke function isSignedUp
-func (m *IsSignedUpRequestBuilder) Get(options *IsSignedUpRequestBuilderGetOptions)(*bool, error) {
+func (m *IsSignedUpRequestBuilder) Get(options *IsSignedUpRequestBuilderGetOptions)(IsSignedUpResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateIsSignedUpResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(IsSignedUpResponseable), nil
 }

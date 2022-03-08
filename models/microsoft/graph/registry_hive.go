@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the alerts property of the microsoft.graph.security entity.
 type RegistryHive int
 
 const (

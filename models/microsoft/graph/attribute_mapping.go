@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeMapping 
+// AttributeMapping provides operations to call the instantiate method.
 type AttributeMapping struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,7 +19,7 @@ type AttributeMapping struct {
     // If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
     matchingPriority *int32;
     // Defines how a value should be extracted (or transformed) from the source object.
-    source *AttributeMappingSource;
+    source AttributeMappingSourceable;
     // Name of the attribute on the target object.
     targetAttributeName *string;
 }
@@ -29,6 +29,10 @@ func NewAttributeMapping()(*AttributeMapping) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAttributeMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttributeMappingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttributeMapping(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMapping) GetAdditionalData()(map[string]interface{}) {
@@ -52,46 +56,6 @@ func (m *AttributeMapping) GetExportMissingReferences()(*bool) {
         return nil
     } else {
         return m.exportMissingReferences
-    }
-}
-// GetFlowBehavior gets the flowBehavior property value. Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.
-func (m *AttributeMapping) GetFlowBehavior()(*AttributeFlowBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flowBehavior
-    }
-}
-// GetFlowType gets the flowType property value. Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
-func (m *AttributeMapping) GetFlowType()(*AttributeFlowType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flowType
-    }
-}
-// GetMatchingPriority gets the matchingPriority property value. If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
-func (m *AttributeMapping) GetMatchingPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchingPriority
-    }
-}
-// GetSource gets the source property value. Defines how a value should be extracted (or transformed) from the source object.
-func (m *AttributeMapping) GetSource()(*AttributeMappingSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
-}
-// GetTargetAttributeName gets the targetAttributeName property value. Name of the attribute on the target object.
-func (m *AttributeMapping) GetTargetAttributeName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetAttributeName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,12 +112,12 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttributeMappingSource() })
+        val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*AttributeMappingSource))
+            m.SetSource(val.(AttributeMappingSourceable))
         }
         return nil
     }
@@ -168,6 +132,46 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetFlowBehavior gets the flowBehavior property value. Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.
+func (m *AttributeMapping) GetFlowBehavior()(*AttributeFlowBehavior) {
+    if m == nil {
+        return nil
+    } else {
+        return m.flowBehavior
+    }
+}
+// GetFlowType gets the flowType property value. Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
+func (m *AttributeMapping) GetFlowType()(*AttributeFlowType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.flowType
+    }
+}
+// GetMatchingPriority gets the matchingPriority property value. If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
+func (m *AttributeMapping) GetMatchingPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matchingPriority
+    }
+}
+// GetSource gets the source property value. Defines how a value should be extracted (or transformed) from the source object.
+func (m *AttributeMapping) GetSource()(AttributeMappingSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.source
+    }
+}
+// GetTargetAttributeName gets the targetAttributeName property value. Name of the attribute on the target object.
+func (m *AttributeMapping) GetTargetAttributeName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetAttributeName
+    }
 }
 func (m *AttributeMapping) IsNil()(bool) {
     return m == nil
@@ -263,7 +267,7 @@ func (m *AttributeMapping) SetMatchingPriority(value *int32)() {
     }
 }
 // SetSource sets the source property value. Defines how a value should be extracted (or transformed) from the source object.
-func (m *AttributeMapping) SetSource(value *AttributeMappingSource)() {
+func (m *AttributeMapping) SetSource(value AttributeMappingSourceable)() {
     if m != nil {
         m.source = value
     }

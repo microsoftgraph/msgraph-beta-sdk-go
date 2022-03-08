@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppCatalogs 
+// AppCatalogs provides operations to manage the appCatalogs singleton.
 type AppCatalogs struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    teamsApps []TeamsApp;
+    teamsApps []TeamsAppable;
 }
 // NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
@@ -17,6 +17,10 @@ func NewAppCatalogs()(*AppCatalogs) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAppCatalogsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppCatalogsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppCatalogs(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppCatalogs) GetAdditionalData()(map[string]interface{}) {
@@ -26,32 +30,32 @@ func (m *AppCatalogs) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetTeamsApps gets the teamsApps property value. 
-func (m *AppCatalogs) GetTeamsApps()([]TeamsApp) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsApps
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppCatalogs) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["teamsApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsApp, len(val))
+            res := make([]TeamsAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsApp))
+                res[i] = v.(TeamsAppable)
             }
             m.SetTeamsApps(res)
         }
         return nil
     }
     return res
+}
+// GetTeamsApps gets the teamsApps property value. 
+func (m *AppCatalogs) GetTeamsApps()([]TeamsAppable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsApps
+    }
 }
 func (m *AppCatalogs) IsNil()(bool) {
     return m == nil
@@ -61,8 +65,7 @@ func (m *AppCatalogs) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetTeamsApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTeamsApps()))
         for i, v := range m.GetTeamsApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("teamsApps", cast)
         if err != nil {
@@ -84,7 +87,7 @@ func (m *AppCatalogs) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetTeamsApps sets the teamsApps property value. 
-func (m *AppCatalogs) SetTeamsApps(value []TeamsApp)() {
+func (m *AppCatalogs) SetTeamsApps(value []TeamsAppable)() {
     if m != nil {
         m.teamsApps = value
     }

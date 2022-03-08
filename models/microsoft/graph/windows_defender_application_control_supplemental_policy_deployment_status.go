@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus 
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus provides operations to manage the deviceAppManagement singleton.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
     // The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
@@ -21,7 +21,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct 
     // Windows OS Version.
     osVersion *string;
     // The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-    policy *WindowsDefenderApplicationControlSupplementalPolicy;
+    policy WindowsDefenderApplicationControlSupplementalPolicyable;
     // Human readable version of the WindowsDefenderApplicationControl supplemental policy.
     policyVersion *string;
     // The name of the user of this device.
@@ -35,6 +35,10 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*W
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(), nil
 }
 // GetDeploymentStatus gets the deploymentStatus property value. The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyStatuses) {
@@ -58,62 +62,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date time.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetOsDescription gets the osDescription property value. Windows OS Version Description.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
-}
-// GetOsVersion gets the osVersion property value. Windows OS Version.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetPolicy gets the policy property value. The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policy
-    }
-}
-// GetPolicyVersion gets the policyVersion property value. Human readable version of the WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetPolicyVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyVersion
-    }
-}
-// GetUserName gets the userName property value. The name of the user of this device.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,12 +128,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDefenderApplicationControlSupplementalPolicy() })
+        val, err := n.GetObjectValue(CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPolicy(val.(*WindowsDefenderApplicationControlSupplementalPolicy))
+            m.SetPolicy(val.(WindowsDefenderApplicationControlSupplementalPolicyable))
         }
         return nil
     }
@@ -220,6 +168,62 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         return nil
     }
     return res
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date time.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetOsDescription gets the osDescription property value. Windows OS Version Description.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetOsDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osDescription
+    }
+}
+// GetOsVersion gets the osVersion property value. Windows OS Version.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetPolicy gets the policy property value. The navigation link to the WindowsDefenderApplicationControl supplemental policy.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetPolicy()(WindowsDefenderApplicationControlSupplementalPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policy
+    }
+}
+// GetPolicyVersion gets the policyVersion property value. Human readable version of the WindowsDefenderApplicationControl supplemental policy.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetPolicyVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyVersion
+    }
+}
+// GetUserName gets the userName property value. The name of the user of this device.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) IsNil()(bool) {
     return m == nil
@@ -330,7 +334,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Se
     }
 }
 // SetPolicy sets the policy property value. The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetPolicy(value *WindowsDefenderApplicationControlSupplementalPolicy)() {
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetPolicy(value WindowsDefenderApplicationControlSupplementalPolicyable)() {
     if m != nil {
         m.policy = value
     }

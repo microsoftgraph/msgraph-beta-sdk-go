@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDeviceSoftwareVersions 
+// TeamworkDeviceSoftwareVersions provides operations to manage the teamwork singleton.
 type TeamworkDeviceSoftwareVersions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewTeamworkDeviceSoftwareVersions()(*TeamworkDeviceSoftwareVersions) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkDeviceSoftwareVersions(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDeviceSoftwareVersions) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *TeamworkDeviceSoftwareVersions) GetAdminAgentSoftwareVersion()(*string)
         return nil
     } else {
         return m.adminAgentSoftwareVersion
-    }
-}
-// GetFirmwareSoftwareVersion gets the firmwareSoftwareVersion property value. The software version for the firmware running on the device.
-func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firmwareSoftwareVersion
-    }
-}
-// GetOperatingSystemSoftwareVersion gets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.
-func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemSoftwareVersion
-    }
-}
-// GetPartnerAgentSoftwareVersion gets the partnerAgentSoftwareVersion property value. The software version for the partner agent running on the device.
-func (m *TeamworkDeviceSoftwareVersions) GetPartnerAgentSoftwareVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerAgentSoftwareVersion
-    }
-}
-// GetTeamsClientSoftwareVersion gets the teamsClientSoftwareVersion property value. The software version for the Teams client running on the device.
-func (m *TeamworkDeviceSoftwareVersions) GetTeamsClientSoftwareVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsClientSoftwareVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetFirmwareSoftwareVersion gets the firmwareSoftwareVersion property value. The software version for the firmware running on the device.
+func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firmwareSoftwareVersion
+    }
+}
+// GetOperatingSystemSoftwareVersion gets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.
+func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemSoftwareVersion
+    }
+}
+// GetPartnerAgentSoftwareVersion gets the partnerAgentSoftwareVersion property value. The software version for the partner agent running on the device.
+func (m *TeamworkDeviceSoftwareVersions) GetPartnerAgentSoftwareVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerAgentSoftwareVersion
+    }
+}
+// GetTeamsClientSoftwareVersion gets the teamsClientSoftwareVersion property value. The software version for the Teams client running on the device.
+func (m *TeamworkDeviceSoftwareVersions) GetTeamsClientSoftwareVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsClientSoftwareVersion
+    }
 }
 func (m *TeamworkDeviceSoftwareVersions) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintJobStatus 
+// PrintJobStatus provides operations to manage the print singleton.
 type PrintJobStatus struct {
     // 
     acquiredByPrinter *bool;
@@ -29,6 +29,10 @@ func NewPrintJobStatus()(*PrintJobStatus) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrintJobStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintJobStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintJobStatus(), nil
 }
 // GetAcquiredByPrinter gets the acquiredByPrinter property value. 
 func (m *PrintJobStatus) GetAcquiredByPrinter()(*bool) {
@@ -60,38 +64,6 @@ func (m *PrintJobStatus) GetDetails()([]PrintJobStateDetail) {
         return nil
     } else {
         return m.details
-    }
-}
-// GetIsAcquiredByPrinter gets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
-func (m *PrintJobStatus) GetIsAcquiredByPrinter()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAcquiredByPrinter
-    }
-}
-// GetProcessingState gets the processingState property value. 
-func (m *PrintJobStatus) GetProcessingState()(*PrintJobProcessingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processingState
-    }
-}
-// GetProcessingStateDescription gets the processingStateDescription property value. 
-func (m *PrintJobStatus) GetProcessingStateDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processingStateDescription
-    }
-}
-// GetState gets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
-func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -172,6 +144,38 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetIsAcquiredByPrinter gets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
+func (m *PrintJobStatus) GetIsAcquiredByPrinter()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAcquiredByPrinter
+    }
+}
+// GetProcessingState gets the processingState property value. 
+func (m *PrintJobStatus) GetProcessingState()(*PrintJobProcessingState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processingState
+    }
+}
+// GetProcessingStateDescription gets the processingStateDescription property value. 
+func (m *PrintJobStatus) GetProcessingStateDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processingStateDescription
+    }
+}
+// GetState gets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
+func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *PrintJobStatus) IsNil()(bool) {
     return m == nil

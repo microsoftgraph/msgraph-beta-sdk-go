@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365ServicesUserCounts 
+// Office365ServicesUserCounts provides operations to call the getOffice365ServicesUserCounts method.
 type Office365ServicesUserCounts struct {
     Entity
     // The number of active users on Exchange. Any user who can read and send email is considered an active user.
@@ -40,12 +40,16 @@ type Office365ServicesUserCounts struct {
     // The number of inactive users on Yammer.
     yammerInactive *int64;
 }
-// NewOffice365ServicesUserCounts instantiates a new Office365ServicesUserCounts and sets the default values.
+// NewOffice365ServicesUserCounts instantiates a new office365ServicesUserCounts and sets the default values.
 func NewOffice365ServicesUserCounts()(*Office365ServicesUserCounts) {
     m := &Office365ServicesUserCounts{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOffice365ServicesUserCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOffice365ServicesUserCountsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOffice365ServicesUserCounts(), nil
 }
 // GetExchangeActive gets the exchangeActive property value. The number of active users on Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ServicesUserCounts) GetExchangeActive()(*int64) {
@@ -61,118 +65,6 @@ func (m *Office365ServicesUserCounts) GetExchangeInactive()(*int64) {
         return nil
     } else {
         return m.exchangeInactive
-    }
-}
-// GetOffice365Active gets the office365Active property value. The number of active users on Microsoft 365.
-func (m *Office365ServicesUserCounts) GetOffice365Active()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.office365Active
-    }
-}
-// GetOffice365Inactive gets the office365Inactive property value. The number of inactive users on Microsoft 365.
-func (m *Office365ServicesUserCounts) GetOffice365Inactive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.office365Inactive
-    }
-}
-// GetOneDriveActive gets the oneDriveActive property value. The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
-func (m *Office365ServicesUserCounts) GetOneDriveActive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneDriveActive
-    }
-}
-// GetOneDriveInactive gets the oneDriveInactive property value. The number of inactive users on OneDrive.
-func (m *Office365ServicesUserCounts) GetOneDriveInactive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneDriveInactive
-    }
-}
-// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
-func (m *Office365ServicesUserCounts) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
-}
-// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *Office365ServicesUserCounts) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
-}
-// GetSharePointActive gets the sharePointActive property value. The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
-func (m *Office365ServicesUserCounts) GetSharePointActive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePointActive
-    }
-}
-// GetSharePointInactive gets the sharePointInactive property value. The number of inactive users on SharePoint.
-func (m *Office365ServicesUserCounts) GetSharePointInactive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePointInactive
-    }
-}
-// GetSkypeForBusinessActive gets the skypeForBusinessActive property value. The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
-func (m *Office365ServicesUserCounts) GetSkypeForBusinessActive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skypeForBusinessActive
-    }
-}
-// GetSkypeForBusinessInactive gets the skypeForBusinessInactive property value. The number of inactive users on Skype For Business.
-func (m *Office365ServicesUserCounts) GetSkypeForBusinessInactive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skypeForBusinessInactive
-    }
-}
-// GetTeamsActive gets the teamsActive property value. The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
-func (m *Office365ServicesUserCounts) GetTeamsActive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsActive
-    }
-}
-// GetTeamsInactive gets the teamsInactive property value. The number of inactive users on Microsoft Teams.
-func (m *Office365ServicesUserCounts) GetTeamsInactive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsInactive
-    }
-}
-// GetYammerActive gets the yammerActive property value. The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
-func (m *Office365ServicesUserCounts) GetYammerActive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerActive
-    }
-}
-// GetYammerInactive gets the yammerInactive property value. The number of inactive users on Yammer.
-func (m *Office365ServicesUserCounts) GetYammerInactive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerInactive
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -339,6 +231,118 @@ func (m *Office365ServicesUserCounts) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetOffice365Active gets the office365Active property value. The number of active users on Microsoft 365.
+func (m *Office365ServicesUserCounts) GetOffice365Active()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.office365Active
+    }
+}
+// GetOffice365Inactive gets the office365Inactive property value. The number of inactive users on Microsoft 365.
+func (m *Office365ServicesUserCounts) GetOffice365Inactive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.office365Inactive
+    }
+}
+// GetOneDriveActive gets the oneDriveActive property value. The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
+func (m *Office365ServicesUserCounts) GetOneDriveActive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oneDriveActive
+    }
+}
+// GetOneDriveInactive gets the oneDriveInactive property value. The number of inactive users on OneDrive.
+func (m *Office365ServicesUserCounts) GetOneDriveInactive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oneDriveInactive
+    }
+}
+// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+func (m *Office365ServicesUserCounts) GetReportPeriod()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportPeriod
+    }
+}
+// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+func (m *Office365ServicesUserCounts) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportRefreshDate
+    }
+}
+// GetSharePointActive gets the sharePointActive property value. The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
+func (m *Office365ServicesUserCounts) GetSharePointActive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharePointActive
+    }
+}
+// GetSharePointInactive gets the sharePointInactive property value. The number of inactive users on SharePoint.
+func (m *Office365ServicesUserCounts) GetSharePointInactive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharePointInactive
+    }
+}
+// GetSkypeForBusinessActive gets the skypeForBusinessActive property value. The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
+func (m *Office365ServicesUserCounts) GetSkypeForBusinessActive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skypeForBusinessActive
+    }
+}
+// GetSkypeForBusinessInactive gets the skypeForBusinessInactive property value. The number of inactive users on Skype For Business.
+func (m *Office365ServicesUserCounts) GetSkypeForBusinessInactive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skypeForBusinessInactive
+    }
+}
+// GetTeamsActive gets the teamsActive property value. The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
+func (m *Office365ServicesUserCounts) GetTeamsActive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsActive
+    }
+}
+// GetTeamsInactive gets the teamsInactive property value. The number of inactive users on Microsoft Teams.
+func (m *Office365ServicesUserCounts) GetTeamsInactive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsInactive
+    }
+}
+// GetYammerActive gets the yammerActive property value. The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
+func (m *Office365ServicesUserCounts) GetYammerActive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerActive
+    }
+}
+// GetYammerInactive gets the yammerInactive property value. The number of inactive users on Yammer.
+func (m *Office365ServicesUserCounts) GetYammerInactive()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerInactive
+    }
 }
 func (m *Office365ServicesUserCounts) IsNil()(bool) {
     return m == nil

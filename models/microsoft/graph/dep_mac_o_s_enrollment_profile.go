@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DepMacOSEnrollmentProfile 
+// DepMacOSEnrollmentProfile provides operations to manage the deviceManagement singleton.
 type DepMacOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
     // Indicates if Accessibility screen is disabled
@@ -31,6 +31,10 @@ func NewDepMacOSEnrollmentProfile()(*DepMacOSEnrollmentProfile) {
     }
     return m
 }
+// CreateDepMacOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDepMacOSEnrollmentProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDepMacOSEnrollmentProfile(), nil
+}
 // GetAccessibilityScreenDisabled gets the accessibilityScreenDisabled property value. Indicates if Accessibility screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetAccessibilityScreenDisabled()(*bool) {
     if m == nil {
@@ -45,54 +49,6 @@ func (m *DepMacOSEnrollmentProfile) GetChooseYourLockScreenDisabled()(*bool) {
         return nil
     } else {
         return m.chooseYourLockScreenDisabled
-    }
-}
-// GetFileVaultDisabled gets the fileVaultDisabled property value. Indicates if file vault is disabled
-func (m *DepMacOSEnrollmentProfile) GetFileVaultDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultDisabled
-    }
-}
-// GetICloudDiagnosticsDisabled gets the iCloudDiagnosticsDisabled property value. Indicates if iCloud Analytics screen is disabled
-func (m *DepMacOSEnrollmentProfile) GetICloudDiagnosticsDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudDiagnosticsDisabled
-    }
-}
-// GetICloudStorageDisabled gets the iCloudStorageDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
-func (m *DepMacOSEnrollmentProfile) GetICloudStorageDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iCloudStorageDisabled
-    }
-}
-// GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
-func (m *DepMacOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passCodeDisabled
-    }
-}
-// GetRegistrationDisabled gets the registrationDisabled property value. Indicates if registration is disabled
-func (m *DepMacOSEnrollmentProfile) GetRegistrationDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationDisabled
-    }
-}
-// GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
-func (m *DepMacOSEnrollmentProfile) GetZoomDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.zoomDisabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,6 +135,54 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetFileVaultDisabled gets the fileVaultDisabled property value. Indicates if file vault is disabled
+func (m *DepMacOSEnrollmentProfile) GetFileVaultDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileVaultDisabled
+    }
+}
+// GetICloudDiagnosticsDisabled gets the iCloudDiagnosticsDisabled property value. Indicates if iCloud Analytics screen is disabled
+func (m *DepMacOSEnrollmentProfile) GetICloudDiagnosticsDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iCloudDiagnosticsDisabled
+    }
+}
+// GetICloudStorageDisabled gets the iCloudStorageDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
+func (m *DepMacOSEnrollmentProfile) GetICloudStorageDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iCloudStorageDisabled
+    }
+}
+// GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
+func (m *DepMacOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passCodeDisabled
+    }
+}
+// GetRegistrationDisabled gets the registrationDisabled property value. Indicates if registration is disabled
+func (m *DepMacOSEnrollmentProfile) GetRegistrationDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationDisabled
+    }
+}
+// GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
+func (m *DepMacOSEnrollmentProfile) GetZoomDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.zoomDisabled
+    }
 }
 func (m *DepMacOSEnrollmentProfile) IsNil()(bool) {
     return m == nil

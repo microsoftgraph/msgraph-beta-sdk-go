@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityGroupCounts(period='{period}')
+// GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder provides operations to call the getYammerGroupsActivityGroupCounts method.
 type GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(pathP
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) CreateGetRe
     return requestInfo, nil
 }
 // Get invoke function getYammerGroupsActivityGroupCounts
-func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) Get(options *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
+func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) Get(options *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions)(GetYammerGroupsActivityGroupCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetYammerGroupsActivityGroupCountsWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetYammerGroupsActivityGroupCountsWithPeriodResponseable), nil
 }

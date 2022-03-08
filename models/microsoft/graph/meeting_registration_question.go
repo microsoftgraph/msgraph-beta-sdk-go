@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingRegistrationQuestion 
+// MeetingRegistrationQuestion provides operations to manage the commsApplication singleton.
 type MeetingRegistrationQuestion struct {
     Entity
     // Answer input type of the custom registration question.
@@ -22,6 +22,10 @@ func NewMeetingRegistrationQuestion()(*MeetingRegistrationQuestion) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateMeetingRegistrationQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMeetingRegistrationQuestion(), nil
 }
 // GetAnswerInputType gets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*AnswerInputType) {
@@ -45,14 +49,6 @@ func (m *MeetingRegistrationQuestion) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsRequired gets the isRequired property value. Indicates whether the question is required. Default value is false.
-func (m *MeetingRegistrationQuestion) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -103,6 +99,14 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetIsRequired gets the isRequired property value. Indicates whether the question is required. Default value is false.
+func (m *MeetingRegistrationQuestion) GetIsRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRequired
+    }
 }
 func (m *MeetingRegistrationQuestion) IsNil()(bool) {
     return m == nil

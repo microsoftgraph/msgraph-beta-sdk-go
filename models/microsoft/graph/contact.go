@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Contact 
+// Contact provides operations to manage the compliance singleton.
 type Contact struct {
     OutlookItem
     // The name of the contact's assistant.
@@ -21,13 +21,13 @@ type Contact struct {
     // The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
     displayName *string;
     // The contact's email addresses.
-    emailAddresses []TypedEmailAddress;
+    emailAddresses []TypedEmailAddressable;
     // The collection of open extensions defined for the contact. Read-only. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // The name the contact is filed under.
     fileAs *string;
     // The flag value that indicates the status, start date, due date, or completion date for the contact.
-    flag *FollowupFlag;
+    flag FollowupFlagable;
     // The contact's gender.
     gender *string;
     // The contact's generation.
@@ -47,7 +47,7 @@ type Contact struct {
     // 
     middleName *string;
     // The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // 
     nickName *string;
     // 
@@ -57,15 +57,15 @@ type Contact struct {
     // 
     personalNotes *string;
     // 
-    phones []Phone;
+    phones []Phoneable;
     // Optional contact picture. You can get or set a photo for a contact.
-    photo *ProfilePhoto;
+    photo ProfilePhotoable;
     // 
-    postalAddresses []PhysicalAddress;
+    postalAddresses []PhysicalAddressable;
     // 
     profession *string;
     // The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
     // 
     spouseName *string;
     // 
@@ -73,7 +73,7 @@ type Contact struct {
     // 
     title *string;
     // 
-    websites []Website;
+    websites []Websiteable;
     // 
     weddingAnniversary *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
@@ -89,6 +89,10 @@ func NewContact()(*Contact) {
         OutlookItem: *NewOutlookItem(),
     }
     return m
+}
+// CreateContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContactFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContact(), nil
 }
 // GetAssistantName gets the assistantName property value. The name of the contact's assistant.
 func (m *Contact) GetAssistantName()(*string) {
@@ -139,7 +143,7 @@ func (m *Contact) GetDisplayName()(*string) {
     }
 }
 // GetEmailAddresses gets the emailAddresses property value. The contact's email addresses.
-func (m *Contact) GetEmailAddresses()([]TypedEmailAddress) {
+func (m *Contact) GetEmailAddresses()([]TypedEmailAddressable) {
     if m == nil {
         return nil
     } else {
@@ -147,243 +151,11 @@ func (m *Contact) GetEmailAddresses()([]TypedEmailAddress) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
-func (m *Contact) GetExtensions()([]Extension) {
+func (m *Contact) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetFileAs gets the fileAs property value. The name the contact is filed under.
-func (m *Contact) GetFileAs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileAs
-    }
-}
-// GetFlag gets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the contact.
-func (m *Contact) GetFlag()(*FollowupFlag) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flag
-    }
-}
-// GetGender gets the gender property value. The contact's gender.
-func (m *Contact) GetGender()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gender
-    }
-}
-// GetGeneration gets the generation property value. The contact's generation.
-func (m *Contact) GetGeneration()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.generation
-    }
-}
-// GetGivenName gets the givenName property value. The contact's given name.
-func (m *Contact) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
-}
-// GetImAddresses gets the imAddresses property value. 
-func (m *Contact) GetImAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imAddresses
-    }
-}
-// GetInitials gets the initials property value. 
-func (m *Contact) GetInitials()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initials
-    }
-}
-// GetIsFavorite gets the isFavorite property value. 
-func (m *Contact) GetIsFavorite()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFavorite
-    }
-}
-// GetJobTitle gets the jobTitle property value. 
-func (m *Contact) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
-}
-// GetManager gets the manager property value. 
-func (m *Contact) GetManager()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
-}
-// GetMiddleName gets the middleName property value. 
-func (m *Contact) GetMiddleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middleName
-    }
-}
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetNickName gets the nickName property value. 
-func (m *Contact) GetNickName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nickName
-    }
-}
-// GetOfficeLocation gets the officeLocation property value. 
-func (m *Contact) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
-}
-// GetParentFolderId gets the parentFolderId property value. 
-func (m *Contact) GetParentFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentFolderId
-    }
-}
-// GetPersonalNotes gets the personalNotes property value. 
-func (m *Contact) GetPersonalNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalNotes
-    }
-}
-// GetPhones gets the phones property value. 
-func (m *Contact) GetPhones()([]Phone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phones
-    }
-}
-// GetPhoto gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
-func (m *Contact) GetPhoto()(*ProfilePhoto) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photo
-    }
-}
-// GetPostalAddresses gets the postalAddresses property value. 
-func (m *Contact) GetPostalAddresses()([]PhysicalAddress) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalAddresses
-    }
-}
-// GetProfession gets the profession property value. 
-func (m *Contact) GetProfession()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profession
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
-}
-// GetSpouseName gets the spouseName property value. 
-func (m *Contact) GetSpouseName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spouseName
-    }
-}
-// GetSurname gets the surname property value. 
-func (m *Contact) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
-}
-// GetTitle gets the title property value. 
-func (m *Contact) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
-// GetWebsites gets the websites property value. 
-func (m *Contact) GetWebsites()([]Website) {
-    if m == nil {
-        return nil
-    } else {
-        return m.websites
-    }
-}
-// GetWeddingAnniversary gets the weddingAnniversary property value. 
-func (m *Contact) GetWeddingAnniversary()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.weddingAnniversary
-    }
-}
-// GetYomiCompanyName gets the yomiCompanyName property value. 
-func (m *Contact) GetYomiCompanyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiCompanyName
-    }
-}
-// GetYomiGivenName gets the yomiGivenName property value. 
-func (m *Contact) GetYomiGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiGivenName
-    }
-}
-// GetYomiSurname gets the yomiSurname property value. 
-func (m *Contact) GetYomiSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yomiSurname
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -454,28 +226,28 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["emailAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTypedEmailAddress() })
+        val, err := n.GetCollectionOfObjectValues(CreateTypedEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TypedEmailAddress, len(val))
+            res := make([]TypedEmailAddressable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TypedEmailAddress))
+                res[i] = v.(TypedEmailAddressable)
             }
             m.SetEmailAddresses(res)
         }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -492,12 +264,12 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["flag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFollowupFlag() })
+        val, err := n.GetObjectValue(CreateFollowupFlagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFlag(val.(*FollowupFlag))
+            m.SetFlag(val.(FollowupFlagable))
         }
         return nil
     }
@@ -596,14 +368,14 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -650,38 +422,38 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["phones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhone() })
+        val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Phone, len(val))
+            res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Phone))
+                res[i] = v.(Phoneable)
             }
             m.SetPhones(res)
         }
         return nil
     }
     res["photo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProfilePhoto() })
+        val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPhoto(val.(*ProfilePhoto))
+            m.SetPhoto(val.(ProfilePhotoable))
         }
         return nil
     }
     res["postalAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetCollectionOfObjectValues(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PhysicalAddress, len(val))
+            res := make([]PhysicalAddressable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PhysicalAddress))
+                res[i] = v.(PhysicalAddressable)
             }
             m.SetPostalAddresses(res)
         }
@@ -698,14 +470,14 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
@@ -742,14 +514,14 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["websites"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWebsite() })
+        val, err := n.GetCollectionOfObjectValues(CreateWebsiteFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Website, len(val))
+            res := make([]Websiteable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Website))
+                res[i] = v.(Websiteable)
             }
             m.SetWebsites(res)
         }
@@ -796,6 +568,238 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetFileAs gets the fileAs property value. The name the contact is filed under.
+func (m *Contact) GetFileAs()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileAs
+    }
+}
+// GetFlag gets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the contact.
+func (m *Contact) GetFlag()(FollowupFlagable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.flag
+    }
+}
+// GetGender gets the gender property value. The contact's gender.
+func (m *Contact) GetGender()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.gender
+    }
+}
+// GetGeneration gets the generation property value. The contact's generation.
+func (m *Contact) GetGeneration()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.generation
+    }
+}
+// GetGivenName gets the givenName property value. The contact's given name.
+func (m *Contact) GetGivenName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.givenName
+    }
+}
+// GetImAddresses gets the imAddresses property value. 
+func (m *Contact) GetImAddresses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imAddresses
+    }
+}
+// GetInitials gets the initials property value. 
+func (m *Contact) GetInitials()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initials
+    }
+}
+// GetIsFavorite gets the isFavorite property value. 
+func (m *Contact) GetIsFavorite()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFavorite
+    }
+}
+// GetJobTitle gets the jobTitle property value. 
+func (m *Contact) GetJobTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jobTitle
+    }
+}
+// GetManager gets the manager property value. 
+func (m *Contact) GetManager()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manager
+    }
+}
+// GetMiddleName gets the middleName property value. 
+func (m *Contact) GetMiddleName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.middleName
+    }
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetNickName gets the nickName property value. 
+func (m *Contact) GetNickName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nickName
+    }
+}
+// GetOfficeLocation gets the officeLocation property value. 
+func (m *Contact) GetOfficeLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeLocation
+    }
+}
+// GetParentFolderId gets the parentFolderId property value. 
+func (m *Contact) GetParentFolderId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentFolderId
+    }
+}
+// GetPersonalNotes gets the personalNotes property value. 
+func (m *Contact) GetPersonalNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.personalNotes
+    }
+}
+// GetPhones gets the phones property value. 
+func (m *Contact) GetPhones()([]Phoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phones
+    }
+}
+// GetPhoto gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
+func (m *Contact) GetPhoto()(ProfilePhotoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.photo
+    }
+}
+// GetPostalAddresses gets the postalAddresses property value. 
+func (m *Contact) GetPostalAddresses()([]PhysicalAddressable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postalAddresses
+    }
+}
+// GetProfession gets the profession property value. 
+func (m *Contact) GetProfession()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.profession
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
+}
+// GetSpouseName gets the spouseName property value. 
+func (m *Contact) GetSpouseName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.spouseName
+    }
+}
+// GetSurname gets the surname property value. 
+func (m *Contact) GetSurname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.surname
+    }
+}
+// GetTitle gets the title property value. 
+func (m *Contact) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
+}
+// GetWebsites gets the websites property value. 
+func (m *Contact) GetWebsites()([]Websiteable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.websites
+    }
+}
+// GetWeddingAnniversary gets the weddingAnniversary property value. 
+func (m *Contact) GetWeddingAnniversary()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.weddingAnniversary
+    }
+}
+// GetYomiCompanyName gets the yomiCompanyName property value. 
+func (m *Contact) GetYomiCompanyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yomiCompanyName
+    }
+}
+// GetYomiGivenName gets the yomiGivenName property value. 
+func (m *Contact) GetYomiGivenName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yomiGivenName
+    }
+}
+// GetYomiSurname gets the yomiSurname property value. 
+func (m *Contact) GetYomiSurname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yomiSurname
+    }
 }
 func (m *Contact) IsNil()(bool) {
     return m == nil
@@ -845,8 +849,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetEmailAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEmailAddresses()))
         for i, v := range m.GetEmailAddresses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("emailAddresses", cast)
         if err != nil {
@@ -856,8 +859,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -933,8 +935,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -968,8 +969,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPhones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {
@@ -985,8 +985,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPostalAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPostalAddresses()))
         for i, v := range m.GetPostalAddresses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("postalAddresses", cast)
         if err != nil {
@@ -1002,8 +1001,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -1031,8 +1029,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetWebsites() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWebsites()))
         for i, v := range m.GetWebsites() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("websites", cast)
         if err != nil {
@@ -1102,13 +1099,13 @@ func (m *Contact) SetDisplayName(value *string)() {
     }
 }
 // SetEmailAddresses sets the emailAddresses property value. The contact's email addresses.
-func (m *Contact) SetEmailAddresses(value []TypedEmailAddress)() {
+func (m *Contact) SetEmailAddresses(value []TypedEmailAddressable)() {
     if m != nil {
         m.emailAddresses = value
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
-func (m *Contact) SetExtensions(value []Extension)() {
+func (m *Contact) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -1120,7 +1117,7 @@ func (m *Contact) SetFileAs(value *string)() {
     }
 }
 // SetFlag sets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the contact.
-func (m *Contact) SetFlag(value *FollowupFlag)() {
+func (m *Contact) SetFlag(value FollowupFlagable)() {
     if m != nil {
         m.flag = value
     }
@@ -1180,7 +1177,7 @@ func (m *Contact) SetMiddleName(value *string)() {
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-func (m *Contact) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *Contact) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
@@ -1210,19 +1207,19 @@ func (m *Contact) SetPersonalNotes(value *string)() {
     }
 }
 // SetPhones sets the phones property value. 
-func (m *Contact) SetPhones(value []Phone)() {
+func (m *Contact) SetPhones(value []Phoneable)() {
     if m != nil {
         m.phones = value
     }
 }
 // SetPhoto sets the photo property value. Optional contact picture. You can get or set a photo for a contact.
-func (m *Contact) SetPhoto(value *ProfilePhoto)() {
+func (m *Contact) SetPhoto(value ProfilePhotoable)() {
     if m != nil {
         m.photo = value
     }
 }
 // SetPostalAddresses sets the postalAddresses property value. 
-func (m *Contact) SetPostalAddresses(value []PhysicalAddress)() {
+func (m *Contact) SetPostalAddresses(value []PhysicalAddressable)() {
     if m != nil {
         m.postalAddresses = value
     }
@@ -1234,7 +1231,7 @@ func (m *Contact) SetProfession(value *string)() {
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-func (m *Contact) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *Contact) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }
@@ -1258,7 +1255,7 @@ func (m *Contact) SetTitle(value *string)() {
     }
 }
 // SetWebsites sets the websites property value. 
-func (m *Contact) SetWebsites(value []Website)() {
+func (m *Contact) SetWebsites(value []Websiteable)() {
     if m != nil {
         m.websites = value
     }

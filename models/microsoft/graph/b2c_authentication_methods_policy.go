@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// B2cAuthenticationMethodsPolicy 
+// B2cAuthenticationMethodsPolicy provides operations to manage the policyRoot singleton.
 type B2cAuthenticationMethodsPolicy struct {
     Entity
     // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
@@ -21,29 +21,9 @@ func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
     }
     return m
 }
-// GetIsEmailPasswordAuthenticationEnabled gets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
-func (m *B2cAuthenticationMethodsPolicy) GetIsEmailPasswordAuthenticationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEmailPasswordAuthenticationEnabled
-    }
-}
-// GetIsPhoneOneTimePasswordAuthenticationEnabled gets the isPhoneOneTimePasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
-func (m *B2cAuthenticationMethodsPolicy) GetIsPhoneOneTimePasswordAuthenticationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPhoneOneTimePasswordAuthenticationEnabled
-    }
-}
-// GetIsUserNameAuthenticationEnabled gets the isUserNameAuthenticationEnabled property value. The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
-func (m *B2cAuthenticationMethodsPolicy) GetIsUserNameAuthenticationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isUserNameAuthenticationEnabled
-    }
+// CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewB2cAuthenticationMethodsPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -79,6 +59,30 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetIsEmailPasswordAuthenticationEnabled gets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
+func (m *B2cAuthenticationMethodsPolicy) GetIsEmailPasswordAuthenticationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEmailPasswordAuthenticationEnabled
+    }
+}
+// GetIsPhoneOneTimePasswordAuthenticationEnabled gets the isPhoneOneTimePasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
+func (m *B2cAuthenticationMethodsPolicy) GetIsPhoneOneTimePasswordAuthenticationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPhoneOneTimePasswordAuthenticationEnabled
+    }
+}
+// GetIsUserNameAuthenticationEnabled gets the isUserNameAuthenticationEnabled property value. The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
+func (m *B2cAuthenticationMethodsPolicy) GetIsUserNameAuthenticationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isUserNameAuthenticationEnabled
+    }
 }
 func (m *B2cAuthenticationMethodsPolicy) IsNil()(bool) {
     return m == nil

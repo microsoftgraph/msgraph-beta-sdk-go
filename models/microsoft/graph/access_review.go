@@ -5,15 +5,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReview 
+// AccessReview provides operations to manage the collection of accessReview entities.
 type AccessReview struct {
     Entity
     // The business flow template identifier. Required on create.  This value is case sensitive.
     businessFlowTemplateId *string;
     // The user who created this review.
-    createdBy *UserIdentity;
+    createdBy UserIdentityable;
     // The collection of decisions for this access review.
-    decisions []AccessReviewDecision;
+    decisions []AccessReviewDecisionable;
     // The description provided by the access review creator, to show to the reviewers.
     description *string;
     // The access review name. Required on create.
@@ -21,17 +21,17 @@ type AccessReview struct {
     // The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The collection of access reviews instances past, present and future, if this object is a recurring access review.
-    instances []AccessReview;
+    instances []AccessReviewable;
     // The collection of decisions for the caller, if the caller is a reviewer.
-    myDecisions []AccessReviewDecision;
+    myDecisions []AccessReviewDecisionable;
     // The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
-    reviewedEntity *Identity;
+    reviewedEntity Identityable;
     // The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-    reviewers []AccessReviewReviewer;
+    reviewers []AccessReviewReviewerable;
     // The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
     reviewerType *string;
     // The settings of an accessReview, see type definition below.
-    settings *AccessReviewSettings;
+    settings AccessReviewSettingsable;
     // The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
@@ -44,6 +44,10 @@ func NewAccessReview()(*AccessReview) {
     }
     return m
 }
+// CreateAccessReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReview(), nil
+}
 // GetBusinessFlowTemplateId gets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
 func (m *AccessReview) GetBusinessFlowTemplateId()(*string) {
     if m == nil {
@@ -53,7 +57,7 @@ func (m *AccessReview) GetBusinessFlowTemplateId()(*string) {
     }
 }
 // GetCreatedBy gets the createdBy property value. The user who created this review.
-func (m *AccessReview) GetCreatedBy()(*UserIdentity) {
+func (m *AccessReview) GetCreatedBy()(UserIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +65,7 @@ func (m *AccessReview) GetCreatedBy()(*UserIdentity) {
     }
 }
 // GetDecisions gets the decisions property value. The collection of decisions for this access review.
-func (m *AccessReview) GetDecisions()([]AccessReviewDecision) {
+func (m *AccessReview) GetDecisions()([]AccessReviewDecisionable) {
     if m == nil {
         return nil
     } else {
@@ -92,70 +96,6 @@ func (m *AccessReview) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.endDateTime
     }
 }
-// GetInstances gets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
-func (m *AccessReview) GetInstances()([]AccessReview) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instances
-    }
-}
-// GetMyDecisions gets the myDecisions property value. The collection of decisions for the caller, if the caller is a reviewer.
-func (m *AccessReview) GetMyDecisions()([]AccessReviewDecision) {
-    if m == nil {
-        return nil
-    } else {
-        return m.myDecisions
-    }
-}
-// GetReviewedEntity gets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
-func (m *AccessReview) GetReviewedEntity()(*Identity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedEntity
-    }
-}
-// GetReviewers gets the reviewers property value. The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-func (m *AccessReview) GetReviewers()([]AccessReviewReviewer) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
-}
-// GetReviewerType gets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
-func (m *AccessReview) GetReviewerType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewerType
-    }
-}
-// GetSettings gets the settings property value. The settings of an accessReview, see type definition below.
-func (m *AccessReview) GetSettings()(*AccessReviewSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
-func (m *AccessReview) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatus gets the status property value. This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
-func (m *AccessReview) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -170,24 +110,24 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*UserIdentity))
+            m.SetCreatedBy(val.(UserIdentityable))
         }
         return nil
     }
     res["decisions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewDecision() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewDecisionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewDecision, len(val))
+            res := make([]AccessReviewDecisionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewDecision))
+                res[i] = v.(AccessReviewDecisionable)
             }
             m.SetDecisions(res)
         }
@@ -224,52 +164,52 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReview() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReview, len(val))
+            res := make([]AccessReviewable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReview))
+                res[i] = v.(AccessReviewable)
             }
             m.SetInstances(res)
         }
         return nil
     }
     res["myDecisions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewDecision() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewDecisionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewDecision, len(val))
+            res := make([]AccessReviewDecisionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewDecision))
+                res[i] = v.(AccessReviewDecisionable)
             }
             m.SetMyDecisions(res)
         }
         return nil
     }
     res["reviewedEntity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentity() })
+        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReviewedEntity(val.(*Identity))
+            m.SetReviewedEntity(val.(Identityable))
         }
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewer() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewReviewer, len(val))
+            res := make([]AccessReviewReviewerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewReviewer))
+                res[i] = v.(AccessReviewReviewerable)
             }
             m.SetReviewers(res)
         }
@@ -286,12 +226,12 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewSettings() })
+        val, err := n.GetObjectValue(CreateAccessReviewSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*AccessReviewSettings))
+            m.SetSettings(val.(AccessReviewSettingsable))
         }
         return nil
     }
@@ -317,6 +257,70 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i04e
     }
     return res
 }
+// GetInstances gets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
+func (m *AccessReview) GetInstances()([]AccessReviewable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instances
+    }
+}
+// GetMyDecisions gets the myDecisions property value. The collection of decisions for the caller, if the caller is a reviewer.
+func (m *AccessReview) GetMyDecisions()([]AccessReviewDecisionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.myDecisions
+    }
+}
+// GetReviewedEntity gets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+func (m *AccessReview) GetReviewedEntity()(Identityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewedEntity
+    }
+}
+// GetReviewers gets the reviewers property value. The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+func (m *AccessReview) GetReviewers()([]AccessReviewReviewerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewers
+    }
+}
+// GetReviewerType gets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+func (m *AccessReview) GetReviewerType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewerType
+    }
+}
+// GetSettings gets the settings property value. The settings of an accessReview, see type definition below.
+func (m *AccessReview) GetSettings()(AccessReviewSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+func (m *AccessReview) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatus gets the status property value. This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
+func (m *AccessReview) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *AccessReview) IsNil()(bool) {
     return m == nil
 }
@@ -341,8 +345,7 @@ func (m *AccessReview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetDecisions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDecisions()))
         for i, v := range m.GetDecisions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("decisions", cast)
         if err != nil {
@@ -370,8 +373,7 @@ func (m *AccessReview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -381,8 +383,7 @@ func (m *AccessReview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetMyDecisions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMyDecisions()))
         for i, v := range m.GetMyDecisions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("myDecisions", cast)
         if err != nil {
@@ -398,8 +399,7 @@ func (m *AccessReview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
@@ -439,13 +439,13 @@ func (m *AccessReview) SetBusinessFlowTemplateId(value *string)() {
     }
 }
 // SetCreatedBy sets the createdBy property value. The user who created this review.
-func (m *AccessReview) SetCreatedBy(value *UserIdentity)() {
+func (m *AccessReview) SetCreatedBy(value UserIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
 }
 // SetDecisions sets the decisions property value. The collection of decisions for this access review.
-func (m *AccessReview) SetDecisions(value []AccessReviewDecision)() {
+func (m *AccessReview) SetDecisions(value []AccessReviewDecisionable)() {
     if m != nil {
         m.decisions = value
     }
@@ -469,25 +469,25 @@ func (m *AccessReview) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetInstances sets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
-func (m *AccessReview) SetInstances(value []AccessReview)() {
+func (m *AccessReview) SetInstances(value []AccessReviewable)() {
     if m != nil {
         m.instances = value
     }
 }
 // SetMyDecisions sets the myDecisions property value. The collection of decisions for the caller, if the caller is a reviewer.
-func (m *AccessReview) SetMyDecisions(value []AccessReviewDecision)() {
+func (m *AccessReview) SetMyDecisions(value []AccessReviewDecisionable)() {
     if m != nil {
         m.myDecisions = value
     }
 }
 // SetReviewedEntity sets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
-func (m *AccessReview) SetReviewedEntity(value *Identity)() {
+func (m *AccessReview) SetReviewedEntity(value Identityable)() {
     if m != nil {
         m.reviewedEntity = value
     }
 }
 // SetReviewers sets the reviewers property value. The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-func (m *AccessReview) SetReviewers(value []AccessReviewReviewer)() {
+func (m *AccessReview) SetReviewers(value []AccessReviewReviewerable)() {
     if m != nil {
         m.reviewers = value
     }
@@ -499,7 +499,7 @@ func (m *AccessReview) SetReviewerType(value *string)() {
     }
 }
 // SetSettings sets the settings property value. The settings of an accessReview, see type definition below.
-func (m *AccessReview) SetSettings(value *AccessReviewSettings)() {
+func (m *AccessReview) SetSettings(value AccessReviewSettingsable)() {
     if m != nil {
         m.settings = value
     }

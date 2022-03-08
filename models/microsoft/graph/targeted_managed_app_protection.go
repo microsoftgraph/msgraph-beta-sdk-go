@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TargetedManagedAppProtection 
+// TargetedManagedAppProtection provides operations to manage the deviceAppManagement singleton.
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
     // Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
     appGroupType *TargetedManagedAppGroupType;
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    assignments []TargetedManagedAppPolicyAssignment;
+    assignments []TargetedManagedAppPolicyAssignmentable;
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool;
     // The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
@@ -23,6 +23,10 @@ func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     }
     return m
 }
+// CreateTargetedManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTargetedManagedAppProtection(), nil
+}
 // GetAppGroupType gets the appGroupType property value. Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
 func (m *TargetedManagedAppProtection) GetAppGroupType()(*TargetedManagedAppGroupType) {
     if m == nil {
@@ -32,27 +36,11 @@ func (m *TargetedManagedAppProtection) GetAppGroupType()(*TargetedManagedAppGrou
     }
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-func (m *TargetedManagedAppProtection) GetAssignments()([]TargetedManagedAppPolicyAssignment) {
+func (m *TargetedManagedAppProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
     if m == nil {
         return nil
     } else {
         return m.assignments
-    }
-}
-// GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
-func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
-    }
-}
-// GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
-func (m *TargetedManagedAppProtection) GetTargetedAppManagementLevels()(*AppManagementLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedAppManagementLevels
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,14 +57,14 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTargetedManagedAppPolicyAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TargetedManagedAppPolicyAssignment, len(val))
+            res := make([]TargetedManagedAppPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TargetedManagedAppPolicyAssignment))
+                res[i] = v.(TargetedManagedAppPolicyAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -104,6 +92,22 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
+func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAssigned
+    }
+}
+// GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
+func (m *TargetedManagedAppProtection) GetTargetedAppManagementLevels()(*AppManagementLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedAppManagementLevels
+    }
+}
 func (m *TargetedManagedAppProtection) IsNil()(bool) {
     return m == nil
 }
@@ -123,8 +127,7 @@ func (m *TargetedManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -153,7 +156,7 @@ func (m *TargetedManagedAppProtection) SetAppGroupType(value *TargetedManagedApp
     }
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-func (m *TargetedManagedAppProtection) SetAssignments(value []TargetedManagedAppPolicyAssignment)() {
+func (m *TargetedManagedAppProtection) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
     if m != nil {
         m.assignments = value
     }

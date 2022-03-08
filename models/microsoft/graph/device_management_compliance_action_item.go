@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementComplianceActionItem 
+// DeviceManagementComplianceActionItem provides operations to manage the deviceManagement singleton.
 type DeviceManagementComplianceActionItem struct {
     Entity
     // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
@@ -23,36 +23,16 @@ func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceAction
     }
     return m
 }
+// CreateDeviceManagementComplianceActionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementComplianceActionItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementComplianceActionItem(), nil
+}
 // GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
 func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagementComplianceActionType) {
     if m == nil {
         return nil
     } else {
         return m.actionType
-    }
-}
-// GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
-func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gracePeriodHours
-    }
-}
-// GetNotificationMessageCCList gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
-func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationMessageCCList
-    }
-}
-// GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
-func (m *DeviceManagementComplianceActionItem) GetNotificationTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTemplateId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -103,6 +83,30 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
+func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.gracePeriodHours
+    }
+}
+// GetNotificationMessageCCList gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
+func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationMessageCCList
+    }
+}
+// GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
+func (m *DeviceManagementComplianceActionItem) GetNotificationTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationTemplateId
+    }
 }
 func (m *DeviceManagementComplianceActionItem) IsNil()(bool) {
     return m == nil

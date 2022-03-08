@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyDefinitionFile 
+// GroupPolicyDefinitionFile provides operations to manage the deviceManagement singleton.
 type GroupPolicyDefinitionFile struct {
     Entity
     // The group policy definitions associated with the file.
-    definitions []GroupPolicyDefinition;
+    definitions []GroupPolicyDefinitionable;
     // The localized description of the policy settings in the ADMX file. The default value is empty.
     description *string;
     // The localized friendly name of the ADMX file.
@@ -36,8 +36,12 @@ func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
     }
     return m
 }
+// CreateGroupPolicyDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyDefinitionFileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyDefinitionFile(), nil
+}
 // GetDefinitions gets the definitions property value. The group policy definitions associated with the file.
-func (m *GroupPolicyDefinitionFile) GetDefinitions()([]GroupPolicyDefinition) {
+func (m *GroupPolicyDefinitionFile) GetDefinitions()([]GroupPolicyDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -60,74 +64,18 @@ func (m *GroupPolicyDefinitionFile) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx
-func (m *GroupPolicyDefinitionFile) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetLanguageCodes gets the languageCodes property value. The supported language codes for the ADMX file.
-func (m *GroupPolicyDefinitionFile) GetLanguageCodes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageCodes
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyDefinitionFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPolicyType gets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
-func (m *GroupPolicyDefinitionFile) GetPolicyType()(*GroupPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyType
-    }
-}
-// GetRevision gets the revision property value. The revision version associated with the file.
-func (m *GroupPolicyDefinitionFile) GetRevision()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.revision
-    }
-}
-// GetTargetNamespace gets the targetNamespace property value. Specifies the URI used to identify the namespace within the ADMX file.
-func (m *GroupPolicyDefinitionFile) GetTargetNamespace()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetNamespace
-    }
-}
-// GetTargetPrefix gets the targetPrefix property value. Specifies the logical name that refers to the namespace within the ADMX file.
-func (m *GroupPolicyDefinitionFile) GetTargetPrefix()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetPrefix
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyDefinition, len(val))
+            res := make([]GroupPolicyDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyDefinition))
+                res[i] = v.(GroupPolicyDefinitionable)
             }
             m.SetDefinitions(res)
         }
@@ -229,6 +177,62 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
+// GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx
+func (m *GroupPolicyDefinitionFile) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetLanguageCodes gets the languageCodes property value. The supported language codes for the ADMX file.
+func (m *GroupPolicyDefinitionFile) GetLanguageCodes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageCodes
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyDefinitionFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPolicyType gets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+func (m *GroupPolicyDefinitionFile) GetPolicyType()(*GroupPolicyType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyType
+    }
+}
+// GetRevision gets the revision property value. The revision version associated with the file.
+func (m *GroupPolicyDefinitionFile) GetRevision()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.revision
+    }
+}
+// GetTargetNamespace gets the targetNamespace property value. Specifies the URI used to identify the namespace within the ADMX file.
+func (m *GroupPolicyDefinitionFile) GetTargetNamespace()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetNamespace
+    }
+}
+// GetTargetPrefix gets the targetPrefix property value. Specifies the logical name that refers to the namespace within the ADMX file.
+func (m *GroupPolicyDefinitionFile) GetTargetPrefix()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetPrefix
+    }
+}
 func (m *GroupPolicyDefinitionFile) IsNil()(bool) {
     return m == nil
 }
@@ -241,8 +245,7 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("definitions", cast)
         if err != nil {
@@ -307,7 +310,7 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetDefinitions sets the definitions property value. The group policy definitions associated with the file.
-func (m *GroupPolicyDefinitionFile) SetDefinitions(value []GroupPolicyDefinition)() {
+func (m *GroupPolicyDefinitionFile) SetDefinitions(value []GroupPolicyDefinitionable)() {
     if m != nil {
         m.definitions = value
     }

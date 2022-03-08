@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewPolicy 
+// AccessReviewPolicy provides operations to manage the identityGovernance singleton.
 type AccessReviewPolicy struct {
     Entity
     // Description for this policy. Read-only.
@@ -21,6 +21,10 @@ func NewAccessReviewPolicy()(*AccessReviewPolicy) {
     }
     return m
 }
+// CreateAccessReviewPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewPolicy(), nil
+}
 // GetDescription gets the description property value. Description for this policy. Read-only.
 func (m *AccessReviewPolicy) GetDescription()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *AccessReviewPolicy) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsGroupOwnerManagementEnabled gets the isGroupOwnerManagementEnabled property value. If true, group owners can create and manage access reviews on groups they own.
-func (m *AccessReviewPolicy) GetIsGroupOwnerManagementEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isGroupOwnerManagementEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetIsGroupOwnerManagementEnabled gets the isGroupOwnerManagementEnabled property value. If true, group owners can create and manage access reviews on groups they own.
+func (m *AccessReviewPolicy) GetIsGroupOwnerManagementEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isGroupOwnerManagementEnabled
+    }
 }
 func (m *AccessReviewPolicy) IsNil()(bool) {
     return m == nil

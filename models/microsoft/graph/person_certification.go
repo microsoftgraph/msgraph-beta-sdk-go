@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonCertification 
+// PersonCertification provides operations to manage the compliance singleton.
 type PersonCertification struct {
     ItemFacet
     // The referenceable identifier for the certification.
@@ -34,6 +34,10 @@ func NewPersonCertification()(*PersonCertification) {
         ItemFacet: *NewItemFacet(),
     }
     return m
+}
+// CreatePersonCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonCertificationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonCertification(), nil
 }
 // GetCertificationId gets the certificationId property value. The referenceable identifier for the certification.
 func (m *PersonCertification) GetCertificationId()(*string) {
@@ -65,54 +69,6 @@ func (m *PersonCertification) GetEndDate()(*i04eb5309aeaafadd28374d79c8471df9b26
         return nil
     } else {
         return m.endDate
-    }
-}
-// GetIssuedDate gets the issuedDate property value. The date that the certification was issued.
-func (m *PersonCertification) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuedDate
-    }
-}
-// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the certification.
-func (m *PersonCertification) GetIssuingAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuingAuthority
-    }
-}
-// GetIssuingCompany gets the issuingCompany property value. Company which granted the certification.
-func (m *PersonCertification) GetIssuingCompany()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuingCompany
-    }
-}
-// GetStartDate gets the startDate property value. The date that the certification became valid.
-func (m *PersonCertification) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDate
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
-func (m *PersonCertification) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
-}
-// GetWebUrl gets the webUrl property value. URL referencing the certification.
-func (m *PersonCertification) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -219,6 +175,54 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetIssuedDate gets the issuedDate property value. The date that the certification was issued.
+func (m *PersonCertification) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuedDate
+    }
+}
+// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the certification.
+func (m *PersonCertification) GetIssuingAuthority()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuingAuthority
+    }
+}
+// GetIssuingCompany gets the issuingCompany property value. Company which granted the certification.
+func (m *PersonCertification) GetIssuingCompany()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuingCompany
+    }
+}
+// GetStartDate gets the startDate property value. The date that the certification became valid.
+func (m *PersonCertification) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDate
+    }
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
+func (m *PersonCertification) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
+}
+// GetWebUrl gets the webUrl property value. URL referencing the certification.
+func (m *PersonCertification) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *PersonCertification) IsNil()(bool) {
     return m == nil

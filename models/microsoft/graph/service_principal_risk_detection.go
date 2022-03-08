@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServicePrincipalRiskDetection 
+// ServicePrincipalRiskDetection provides operations to manage the identityProtectionRoot singleton.
 type ServicePrincipalRiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
@@ -29,7 +29,7 @@ type ServicePrincipalRiskDetection struct {
     // Date and time when the risk detection was last updated.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Location from where the sign-in was initiated.
-    location *SignInLocation;
+    location SignInLocationable;
     // Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
     requestId *string;
     // Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
@@ -55,6 +55,10 @@ func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateServicePrincipalRiskDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateServicePrincipalRiskDetectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewServicePrincipalRiskDetection(), nil
 }
 // GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
 func (m *ServicePrincipalRiskDetection) GetActivity()(*ActivityType) {
@@ -110,110 +114,6 @@ func (m *ServicePrincipalRiskDetection) GetDetectionTimingType()(*RiskDetectionT
         return nil
     } else {
         return m.detectionTimingType
-    }
-}
-// GetIpAddress gets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
-func (m *ServicePrincipalRiskDetection) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetKeyIds gets the keyIds property value. The unique identifier (GUID) for the key credential associated with the risk detection.
-func (m *ServicePrincipalRiskDetection) GetKeyIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyIds
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the risk detection was last updated.
-func (m *ServicePrincipalRiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetLocation gets the location property value. Location from where the sign-in was initiated.
-func (m *ServicePrincipalRiskDetection) GetLocation()(*SignInLocation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
-}
-// GetRequestId gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
-func (m *ServicePrincipalRiskDetection) GetRequestId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestId
-    }
-}
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-func (m *ServicePrincipalRiskDetection) GetRiskDetail()(*RiskDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskDetail
-    }
-}
-// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).
-func (m *ServicePrincipalRiskDetection) GetRiskEventType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskEventType
-    }
-}
-// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
-func (m *ServicePrincipalRiskDetection) GetRiskLevel()(*RiskLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskLevel
-    }
-}
-// GetRiskState gets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *ServicePrincipalRiskDetection) GetRiskState()(*RiskState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskState
-    }
-}
-// GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name for the service principal.
-func (m *ServicePrincipalRiskDetection) GetServicePrincipalDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalDisplayName
-    }
-}
-// GetServicePrincipalId gets the servicePrincipalId property value. The unique identifier for the service principal. Supports $filter (eq).
-func (m *ServicePrincipalRiskDetection) GetServicePrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalId
-    }
-}
-// GetSource gets the source property value. Source of the risk detection. For example, identityProtection.
-func (m *ServicePrincipalRiskDetection) GetSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
-}
-// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
-func (m *ServicePrincipalRiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenIssuerType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -324,12 +224,12 @@ func (m *ServicePrincipalRiskDetection) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSignInLocation() })
+        val, err := n.GetObjectValue(CreateSignInLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocation(val.(*SignInLocation))
+            m.SetLocation(val.(SignInLocationable))
         }
         return nil
     }
@@ -424,6 +324,110 @@ func (m *ServicePrincipalRiskDetection) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetIpAddress gets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
+func (m *ServicePrincipalRiskDetection) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetKeyIds gets the keyIds property value. The unique identifier (GUID) for the key credential associated with the risk detection.
+func (m *ServicePrincipalRiskDetection) GetKeyIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyIds
+    }
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the risk detection was last updated.
+func (m *ServicePrincipalRiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetLocation gets the location property value. Location from where the sign-in was initiated.
+func (m *ServicePrincipalRiskDetection) GetLocation()(SignInLocationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.location
+    }
+}
+// GetRequestId gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
+func (m *ServicePrincipalRiskDetection) GetRequestId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestId
+    }
+}
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+func (m *ServicePrincipalRiskDetection) GetRiskDetail()(*RiskDetail) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskDetail
+    }
+}
+// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).
+func (m *ServicePrincipalRiskDetection) GetRiskEventType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskEventType
+    }
+}
+// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
+func (m *ServicePrincipalRiskDetection) GetRiskLevel()(*RiskLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskLevel
+    }
+}
+// GetRiskState gets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+func (m *ServicePrincipalRiskDetection) GetRiskState()(*RiskState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskState
+    }
+}
+// GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name for the service principal.
+func (m *ServicePrincipalRiskDetection) GetServicePrincipalDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePrincipalDisplayName
+    }
+}
+// GetServicePrincipalId gets the servicePrincipalId property value. The unique identifier for the service principal. Supports $filter (eq).
+func (m *ServicePrincipalRiskDetection) GetServicePrincipalId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePrincipalId
+    }
+}
+// GetSource gets the source property value. Source of the risk detection. For example, identityProtection.
+func (m *ServicePrincipalRiskDetection) GetSource()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.source
+    }
+}
+// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
+func (m *ServicePrincipalRiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tokenIssuerType
+    }
 }
 func (m *ServicePrincipalRiskDetection) IsNil()(bool) {
     return m == nil
@@ -623,7 +627,7 @@ func (m *ServicePrincipalRiskDetection) SetLastUpdatedDateTime(value *i336074805
     }
 }
 // SetLocation sets the location property value. Location from where the sign-in was initiated.
-func (m *ServicePrincipalRiskDetection) SetLocation(value *SignInLocation)() {
+func (m *ServicePrincipalRiskDetection) SetLocation(value SignInLocationable)() {
     if m != nil {
         m.location = value
     }

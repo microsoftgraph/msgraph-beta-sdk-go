@@ -6,21 +6,21 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// SourceCollection 
+// SourceCollection provides operations to manage the compliance singleton.
 type SourceCollection struct {
     Entity
     // Adds an additional source to the sourceCollection.
-    additionalSources []DataSource;
+    additionalSources []DataSourceable;
     // Adds the results of the sourceCollection to the specified reviewSet.
-    addToReviewSetOperation *AddToReviewSetOperation;
+    addToReviewSetOperation AddToReviewSetOperationable;
     // The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
     contentQuery *string;
     // The user who created the sourceCollection.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The date and time the sourceCollection was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Custodian sources that are included in the sourceCollection.
-    custodianSources []DataSource;
+    custodianSources []DataSourceable;
     // When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
     dataSourceScopes *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes;
     // The description of the sourceCollection.
@@ -28,13 +28,13 @@ type SourceCollection struct {
     // The display name of the sourceCollection.
     displayName *string;
     // The last estimate operation associated with the sourceCollection.
-    lastEstimateStatisticsOperation *EstimateStatisticsOperation;
+    lastEstimateStatisticsOperation EstimateStatisticsOperationable;
     // The last user who modified the sourceCollection.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // The last date and time the sourceCollection was modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // noncustodialDataSource sources that are included in the sourceCollection
-    noncustodialSources []NoncustodialDataSource;
+    noncustodialSources []NoncustodialDataSourceable;
 }
 // NewSourceCollection instantiates a new sourceCollection and sets the default values.
 func NewSourceCollection()(*SourceCollection) {
@@ -43,8 +43,12 @@ func NewSourceCollection()(*SourceCollection) {
     }
     return m
 }
+// CreateSourceCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSourceCollectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSourceCollection(), nil
+}
 // GetAdditionalSources gets the additionalSources property value. Adds an additional source to the sourceCollection.
-func (m *SourceCollection) GetAdditionalSources()([]DataSource) {
+func (m *SourceCollection) GetAdditionalSources()([]DataSourceable) {
     if m == nil {
         return nil
     } else {
@@ -52,7 +56,7 @@ func (m *SourceCollection) GetAdditionalSources()([]DataSource) {
     }
 }
 // GetAddToReviewSetOperation gets the addToReviewSetOperation property value. Adds the results of the sourceCollection to the specified reviewSet.
-func (m *SourceCollection) GetAddToReviewSetOperation()(*AddToReviewSetOperation) {
+func (m *SourceCollection) GetAddToReviewSetOperation()(AddToReviewSetOperationable) {
     if m == nil {
         return nil
     } else {
@@ -68,7 +72,7 @@ func (m *SourceCollection) GetContentQuery()(*string) {
     }
 }
 // GetCreatedBy gets the createdBy property value. The user who created the sourceCollection.
-func (m *SourceCollection) GetCreatedBy()(*IdentitySet) {
+func (m *SourceCollection) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -84,7 +88,7 @@ func (m *SourceCollection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
 }
 // GetCustodianSources gets the custodianSources property value. Custodian sources that are included in the sourceCollection.
-func (m *SourceCollection) GetCustodianSources()([]DataSource) {
+func (m *SourceCollection) GetCustodianSources()([]DataSourceable) {
     if m == nil {
         return nil
     } else {
@@ -115,62 +119,30 @@ func (m *SourceCollection) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastEstimateStatisticsOperation gets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the sourceCollection.
-func (m *SourceCollection) GetLastEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastEstimateStatisticsOperation
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. The last user who modified the sourceCollection.
-func (m *SourceCollection) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the sourceCollection was modified.
-func (m *SourceCollection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNoncustodialSources gets the noncustodialSources property value. noncustodialDataSource sources that are included in the sourceCollection
-func (m *SourceCollection) GetNoncustodialSources()([]NoncustodialDataSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noncustodialSources
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDataSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DataSource, len(val))
+            res := make([]DataSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DataSource))
+                res[i] = v.(DataSourceable)
             }
             m.SetAdditionalSources(res)
         }
         return nil
     }
     res["addToReviewSetOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAddToReviewSetOperation() })
+        val, err := n.GetObjectValue(CreateAddToReviewSetOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddToReviewSetOperation(val.(*AddToReviewSetOperation))
+            m.SetAddToReviewSetOperation(val.(AddToReviewSetOperationable))
         }
         return nil
     }
@@ -185,12 +157,12 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -205,14 +177,14 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["custodianSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDataSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DataSource, len(val))
+            res := make([]DataSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DataSource))
+                res[i] = v.(DataSourceable)
             }
             m.SetCustodianSources(res)
         }
@@ -249,22 +221,22 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["lastEstimateStatisticsOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEstimateStatisticsOperation() })
+        val, err := n.GetObjectValue(CreateEstimateStatisticsOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastEstimateStatisticsOperation(val.(*EstimateStatisticsOperation))
+            m.SetLastEstimateStatisticsOperation(val.(EstimateStatisticsOperationable))
         }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -279,20 +251,52 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["noncustodialSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNoncustodialDataSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateNoncustodialDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]NoncustodialDataSource, len(val))
+            res := make([]NoncustodialDataSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*NoncustodialDataSource))
+                res[i] = v.(NoncustodialDataSourceable)
             }
             m.SetNoncustodialSources(res)
         }
         return nil
     }
     return res
+}
+// GetLastEstimateStatisticsOperation gets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the sourceCollection.
+func (m *SourceCollection) GetLastEstimateStatisticsOperation()(EstimateStatisticsOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastEstimateStatisticsOperation
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The last user who modified the sourceCollection.
+func (m *SourceCollection) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the sourceCollection was modified.
+func (m *SourceCollection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNoncustodialSources gets the noncustodialSources property value. noncustodialDataSource sources that are included in the sourceCollection
+func (m *SourceCollection) GetNoncustodialSources()([]NoncustodialDataSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.noncustodialSources
+    }
 }
 func (m *SourceCollection) IsNil()(bool) {
     return m == nil
@@ -306,8 +310,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetAdditionalSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalSources()))
         for i, v := range m.GetAdditionalSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("additionalSources", cast)
         if err != nil {
@@ -341,8 +344,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetCustodianSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustodianSources()))
         for i, v := range m.GetCustodianSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("custodianSources", cast)
         if err != nil {
@@ -389,8 +391,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetNoncustodialSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNoncustodialSources()))
         for i, v := range m.GetNoncustodialSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("noncustodialSources", cast)
         if err != nil {
@@ -400,13 +401,13 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     return nil
 }
 // SetAdditionalSources sets the additionalSources property value. Adds an additional source to the sourceCollection.
-func (m *SourceCollection) SetAdditionalSources(value []DataSource)() {
+func (m *SourceCollection) SetAdditionalSources(value []DataSourceable)() {
     if m != nil {
         m.additionalSources = value
     }
 }
 // SetAddToReviewSetOperation sets the addToReviewSetOperation property value. Adds the results of the sourceCollection to the specified reviewSet.
-func (m *SourceCollection) SetAddToReviewSetOperation(value *AddToReviewSetOperation)() {
+func (m *SourceCollection) SetAddToReviewSetOperation(value AddToReviewSetOperationable)() {
     if m != nil {
         m.addToReviewSetOperation = value
     }
@@ -418,7 +419,7 @@ func (m *SourceCollection) SetContentQuery(value *string)() {
     }
 }
 // SetCreatedBy sets the createdBy property value. The user who created the sourceCollection.
-func (m *SourceCollection) SetCreatedBy(value *IdentitySet)() {
+func (m *SourceCollection) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -430,7 +431,7 @@ func (m *SourceCollection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3
     }
 }
 // SetCustodianSources sets the custodianSources property value. Custodian sources that are included in the sourceCollection.
-func (m *SourceCollection) SetCustodianSources(value []DataSource)() {
+func (m *SourceCollection) SetCustodianSources(value []DataSourceable)() {
     if m != nil {
         m.custodianSources = value
     }
@@ -454,13 +455,13 @@ func (m *SourceCollection) SetDisplayName(value *string)() {
     }
 }
 // SetLastEstimateStatisticsOperation sets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the sourceCollection.
-func (m *SourceCollection) SetLastEstimateStatisticsOperation(value *EstimateStatisticsOperation)() {
+func (m *SourceCollection) SetLastEstimateStatisticsOperation(value EstimateStatisticsOperationable)() {
     if m != nil {
         m.lastEstimateStatisticsOperation = value
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user who modified the sourceCollection.
-func (m *SourceCollection) SetLastModifiedBy(value *IdentitySet)() {
+func (m *SourceCollection) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -472,7 +473,7 @@ func (m *SourceCollection) SetLastModifiedDateTime(value *i336074805fc853987abe6
     }
 }
 // SetNoncustodialSources sets the noncustodialSources property value. noncustodialDataSource sources that are included in the sourceCollection
-func (m *SourceCollection) SetNoncustodialSources(value []NoncustodialDataSource)() {
+func (m *SourceCollection) SetNoncustodialSources(value []NoncustodialDataSourceable)() {
     if m != nil {
         m.noncustodialSources = value
     }

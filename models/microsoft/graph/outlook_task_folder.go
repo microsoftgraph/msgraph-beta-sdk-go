@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookTaskFolder 
+// OutlookTaskFolder provides operations to manage the compliance singleton.
 type OutlookTaskFolder struct {
     Entity
     // The version of the task folder.
@@ -12,15 +12,15 @@ type OutlookTaskFolder struct {
     // True if the folder is the default task folder.
     isDefaultFolder *bool;
     // The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // The name of the task folder.
     name *string;
     // The unique GUID identifier for the task folder's parent group.
     parentGroupKey *string;
     // The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
     // The tasks in this task folder. Read-only. Nullable.
-    tasks []OutlookTask;
+    tasks []OutlookTaskable;
 }
 // NewOutlookTaskFolder instantiates a new outlookTaskFolder and sets the default values.
 func NewOutlookTaskFolder()(*OutlookTaskFolder) {
@@ -29,60 +29,16 @@ func NewOutlookTaskFolder()(*OutlookTaskFolder) {
     }
     return m
 }
+// CreateOutlookTaskFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutlookTaskFolderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutlookTaskFolder(), nil
+}
 // GetChangeKey gets the changeKey property value. The version of the task folder.
 func (m *OutlookTaskFolder) GetChangeKey()(*string) {
     if m == nil {
         return nil
     } else {
         return m.changeKey
-    }
-}
-// GetIsDefaultFolder gets the isDefaultFolder property value. True if the folder is the default task folder.
-func (m *OutlookTaskFolder) GetIsDefaultFolder()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultFolder
-    }
-}
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetName gets the name property value. The name of the task folder.
-func (m *OutlookTaskFolder) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParentGroupKey gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
-func (m *OutlookTaskFolder) GetParentGroupKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentGroupKey
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-func (m *OutlookTaskFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
-}
-// GetTasks gets the tasks property value. The tasks in this task folder. Read-only. Nullable.
-func (m *OutlookTaskFolder) GetTasks()([]OutlookTask) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,14 +65,14 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -143,34 +99,82 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutlookTask() })
+        val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OutlookTask, len(val))
+            res := make([]OutlookTaskable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OutlookTask))
+                res[i] = v.(OutlookTaskable)
             }
             m.SetTasks(res)
         }
         return nil
     }
     return res
+}
+// GetIsDefaultFolder gets the isDefaultFolder property value. True if the folder is the default task folder.
+func (m *OutlookTaskFolder) GetIsDefaultFolder()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefaultFolder
+    }
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
+func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetName gets the name property value. The name of the task folder.
+func (m *OutlookTaskFolder) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParentGroupKey gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
+func (m *OutlookTaskFolder) GetParentGroupKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentGroupKey
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
+func (m *OutlookTaskFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
+}
+// GetTasks gets the tasks property value. The tasks in this task folder. Read-only. Nullable.
+func (m *OutlookTaskFolder) GetTasks()([]OutlookTaskable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
+    }
 }
 func (m *OutlookTaskFolder) IsNil()(bool) {
     return m == nil
@@ -196,8 +200,7 @@ func (m *OutlookTaskFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -219,8 +222,7 @@ func (m *OutlookTaskFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -230,8 +232,7 @@ func (m *OutlookTaskFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
@@ -253,7 +254,7 @@ func (m *OutlookTaskFolder) SetIsDefaultFolder(value *bool)() {
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-func (m *OutlookTaskFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *OutlookTaskFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
@@ -271,13 +272,13 @@ func (m *OutlookTaskFolder) SetParentGroupKey(value *string)() {
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-func (m *OutlookTaskFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *OutlookTaskFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }
 }
 // SetTasks sets the tasks property value. The tasks in this task folder. Read-only. Nullable.
-func (m *OutlookTaskFolder) SetTasks(value []OutlookTask)() {
+func (m *OutlookTaskFolder) SetTasks(value []OutlookTaskable)() {
     if m != nil {
         m.tasks = value
     }

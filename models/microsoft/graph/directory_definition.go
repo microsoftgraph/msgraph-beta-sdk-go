@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DirectoryDefinition 
+// DirectoryDefinition provides operations to call the instantiate method.
 type DirectoryDefinition struct {
     Entity
     // Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
@@ -15,7 +15,7 @@ type DirectoryDefinition struct {
     // Name of the directory. Must be unique within the synchronization schema. Not nullable.
     name *string;
     // Collection of objects supported by the directory.
-    objects []ObjectDefinition;
+    objects []ObjectDefinitionable;
     // 
     readOnly *bool;
     // Read only value that indicates version discovered. null if discovery has not yet occurred.
@@ -27,6 +27,10 @@ func NewDirectoryDefinition()(*DirectoryDefinition) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDirectoryDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDirectoryDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDirectoryDefinition(), nil
 }
 // GetDiscoverabilities gets the discoverabilities property value. Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
 func (m *DirectoryDefinition) GetDiscoverabilities()(*DirectoryDefinitionDiscoverabilities) {
@@ -42,38 +46,6 @@ func (m *DirectoryDefinition) GetDiscoveryDateTime()(*i336074805fc853987abe6f7fe
         return nil
     } else {
         return m.discoveryDateTime
-    }
-}
-// GetName gets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
-func (m *DirectoryDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetObjects gets the objects property value. Collection of objects supported by the directory.
-func (m *DirectoryDefinition) GetObjects()([]ObjectDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objects
-    }
-}
-// GetReadOnly gets the readOnly property value. 
-func (m *DirectoryDefinition) GetReadOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.readOnly
-    }
-}
-// GetVersion gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
-func (m *DirectoryDefinition) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,14 +82,14 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["objects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewObjectDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateObjectDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ObjectDefinition, len(val))
+            res := make([]ObjectDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ObjectDefinition))
+                res[i] = v.(ObjectDefinitionable)
             }
             m.SetObjects(res)
         }
@@ -144,6 +116,38 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
+func (m *DirectoryDefinition) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetObjects gets the objects property value. Collection of objects supported by the directory.
+func (m *DirectoryDefinition) GetObjects()([]ObjectDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.objects
+    }
+}
+// GetReadOnly gets the readOnly property value. 
+func (m *DirectoryDefinition) GetReadOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.readOnly
+    }
+}
+// GetVersion gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
+func (m *DirectoryDefinition) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *DirectoryDefinition) IsNil()(bool) {
     return m == nil
@@ -176,8 +180,7 @@ func (m *DirectoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetObjects()))
         for i, v := range m.GetObjects() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("objects", cast)
         if err != nil {
@@ -217,7 +220,7 @@ func (m *DirectoryDefinition) SetName(value *string)() {
     }
 }
 // SetObjects sets the objects property value. Collection of objects supported by the directory.
-func (m *DirectoryDefinition) SetObjects(value []ObjectDefinition)() {
+func (m *DirectoryDefinition) SetObjects(value []ObjectDefinitionable)() {
     if m != nil {
         m.objects = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RecommendedAction 
+// RecommendedAction provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type RecommendedAction struct {
     // Web URL to the recommended action.
     actionWebUrl *string;
@@ -22,6 +22,10 @@ func NewRecommendedAction()(*RecommendedAction) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRecommendedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecommendedActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecommendedAction(), nil
+}
 // GetActionWebUrl gets the actionWebUrl property value. Web URL to the recommended action.
 func (m *RecommendedAction) GetActionWebUrl()(*string) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *RecommendedAction) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
-func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.potentialScoreImpact
-    }
-}
-// GetTitle gets the title property value. Title of the recommended action.
-func (m *RecommendedAction) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
+func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.potentialScoreImpact
+    }
+}
+// GetTitle gets the title property value. Title of the recommended action.
+func (m *RecommendedAction) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
 }
 func (m *RecommendedAction) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptRunSummary 
+// DeviceManagementScriptRunSummary provides operations to manage the deviceManagement singleton.
 type DeviceManagementScriptRunSummary struct {
     Entity
     // Error device count.
@@ -23,6 +23,10 @@ func NewDeviceManagementScriptRunSummary()(*DeviceManagementScriptRunSummary) {
     }
     return m
 }
+// CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementScriptRunSummary(), nil
+}
 // GetErrorDeviceCount gets the errorDeviceCount property value. Error device count.
 func (m *DeviceManagementScriptRunSummary) GetErrorDeviceCount()(*int32) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *DeviceManagementScriptRunSummary) GetErrorUserCount()(*int32) {
         return nil
     } else {
         return m.errorUserCount
-    }
-}
-// GetSuccessDeviceCount gets the successDeviceCount property value. Success device count.
-func (m *DeviceManagementScriptRunSummary) GetSuccessDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successDeviceCount
-    }
-}
-// GetSuccessUserCount gets the successUserCount property value. Success user count.
-func (m *DeviceManagementScriptRunSummary) GetSuccessUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successUserCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *DeviceManagementScriptRunSummary) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetSuccessDeviceCount gets the successDeviceCount property value. Success device count.
+func (m *DeviceManagementScriptRunSummary) GetSuccessDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successDeviceCount
+    }
+}
+// GetSuccessUserCount gets the successUserCount property value. Success user count.
+func (m *DeviceManagementScriptRunSummary) GetSuccessUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successUserCount
+    }
 }
 func (m *DeviceManagementScriptRunSummary) IsNil()(bool) {
     return m == nil

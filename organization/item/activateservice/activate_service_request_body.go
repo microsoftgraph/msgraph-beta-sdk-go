@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ActivateServiceRequestBody 
+// ActivateServiceRequestBody provides operations to call the activateService method.
 type ActivateServiceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewActivateServiceRequestBody()(*ActivateServiceRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateActivateServiceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateActivateServiceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewActivateServiceRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServiceRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetService gets the service property value. 
-func (m *ActivateServiceRequestBody) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetServicePlanId gets the servicePlanId property value. 
-func (m *ActivateServiceRequestBody) GetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanId
-    }
-}
-// GetSkuId gets the skuId property value. 
-func (m *ActivateServiceRequestBody) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetService gets the service property value. 
+func (m *ActivateServiceRequestBody) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetServicePlanId gets the servicePlanId property value. 
+func (m *ActivateServiceRequestBody) GetServicePlanId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePlanId
+    }
+}
+// GetSkuId gets the skuId property value. 
+func (m *ActivateServiceRequestBody) GetSkuId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skuId
+    }
 }
 func (m *ActivateServiceRequestBody) IsNil()(bool) {
     return m == nil

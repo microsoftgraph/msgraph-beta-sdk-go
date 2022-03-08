@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserRegistrationFeatureSummary 
+// UserRegistrationFeatureSummary provides operations to call the usersRegisteredByFeature method.
 type UserRegistrationFeatureSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Total number of users accounts, excluding those that are blocked
     totalUserCount *int64;
     // Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
-    userRegistrationFeatureCounts []UserRegistrationFeatureCount;
+    userRegistrationFeatureCounts []UserRegistrationFeatureCountable;
     // User role type. Possible values are: all, privilegedAdmin, admin, user.
     userRoles *IncludedUserRoles;
     // User type. Possible values are: all, member, guest.
@@ -24,44 +24,16 @@ func NewUserRegistrationFeatureSummary()(*UserRegistrationFeatureSummary) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserRegistrationFeatureSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserRegistrationFeatureSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserRegistrationFeatureSummary(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationFeatureSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTotalUserCount gets the totalUserCount property value. Total number of users accounts, excluding those that are blocked
-func (m *UserRegistrationFeatureSummary) GetTotalUserCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUserCount
-    }
-}
-// GetUserRegistrationFeatureCounts gets the userRegistrationFeatureCounts property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
-func (m *UserRegistrationFeatureSummary) GetUserRegistrationFeatureCounts()([]UserRegistrationFeatureCount) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRegistrationFeatureCounts
-    }
-}
-// GetUserRoles gets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
-func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRoles
-    }
-}
-// GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest.
-func (m *UserRegistrationFeatureSummary) GetUserTypes()(*IncludedUserTypes) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,14 +50,14 @@ func (m *UserRegistrationFeatureSummary) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["userRegistrationFeatureCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserRegistrationFeatureCount() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationFeatureCountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserRegistrationFeatureCount, len(val))
+            res := make([]UserRegistrationFeatureCountable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserRegistrationFeatureCount))
+                res[i] = v.(UserRegistrationFeatureCountable)
             }
             m.SetUserRegistrationFeatureCounts(res)
         }
@@ -113,6 +85,38 @@ func (m *UserRegistrationFeatureSummary) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetTotalUserCount gets the totalUserCount property value. Total number of users accounts, excluding those that are blocked
+func (m *UserRegistrationFeatureSummary) GetTotalUserCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalUserCount
+    }
+}
+// GetUserRegistrationFeatureCounts gets the userRegistrationFeatureCounts property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
+func (m *UserRegistrationFeatureSummary) GetUserRegistrationFeatureCounts()([]UserRegistrationFeatureCountable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRegistrationFeatureCounts
+    }
+}
+// GetUserRoles gets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
+func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRoles
+    }
+}
+// GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest.
+func (m *UserRegistrationFeatureSummary) GetUserTypes()(*IncludedUserTypes) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userTypes
+    }
+}
 func (m *UserRegistrationFeatureSummary) IsNil()(bool) {
     return m == nil
 }
@@ -127,8 +131,7 @@ func (m *UserRegistrationFeatureSummary) Serialize(writer i04eb5309aeaafadd28374
     if m.GetUserRegistrationFeatureCounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserRegistrationFeatureCounts()))
         for i, v := range m.GetUserRegistrationFeatureCounts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("userRegistrationFeatureCounts", cast)
         if err != nil {
@@ -170,7 +173,7 @@ func (m *UserRegistrationFeatureSummary) SetTotalUserCount(value *int64)() {
     }
 }
 // SetUserRegistrationFeatureCounts sets the userRegistrationFeatureCounts property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
-func (m *UserRegistrationFeatureSummary) SetUserRegistrationFeatureCounts(value []UserRegistrationFeatureCount)() {
+func (m *UserRegistrationFeatureSummary) SetUserRegistrationFeatureCounts(value []UserRegistrationFeatureCountable)() {
     if m != nil {
         m.userRegistrationFeatureCounts = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ReputationCategory 
+// ReputationCategory provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
 type ReputationCategory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewReputationCategory()(*ReputationCategory) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateReputationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReputationCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReputationCategory(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReputationCategory) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *ReputationCategory) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetName gets the name property value. 
-func (m *ReputationCategory) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetVendor gets the vendor property value. 
-func (m *ReputationCategory) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *ReputationCategory) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetName gets the name property value. 
+func (m *ReputationCategory) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetVendor gets the vendor property value. 
+func (m *ReputationCategory) GetVendor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendor_escaped
+    }
 }
 func (m *ReputationCategory) IsNil()(bool) {
     return m == nil

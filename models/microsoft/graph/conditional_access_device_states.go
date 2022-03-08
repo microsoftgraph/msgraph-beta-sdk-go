@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessDeviceStates 
+// ConditionalAccessDeviceStates provides operations to manage the policyRoot singleton.
 type ConditionalAccessDeviceStates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewConditionalAccessDeviceStates()(*ConditionalAccessDeviceStates) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConditionalAccessDeviceStatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessDeviceStatesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessDeviceStates(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDeviceStates) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ConditionalAccessDeviceStates) GetExcludeStates()([]string) {
         return nil
     } else {
         return m.excludeStates
-    }
-}
-// GetIncludeStates gets the includeStates property value. States in the scope of the policy. All is the only allowed value.
-func (m *ConditionalAccessDeviceStates) GetIncludeStates()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeStates
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -76,6 +72,14 @@ func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetIncludeStates gets the includeStates property value. States in the scope of the policy. All is the only allowed value.
+func (m *ConditionalAccessDeviceStates) GetIncludeStates()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeStates
+    }
 }
 func (m *ConditionalAccessDeviceStates) IsNil()(bool) {
     return m == nil

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the dataClassificationService singleton.
 type SensitiveTypeScope int
 
 const (

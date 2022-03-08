@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleScheduleBase 
+// UnifiedRoleScheduleBase provides operations to manage the roleManagement singleton.
 type UnifiedRoleScheduleBase struct {
     Entity
     // Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-    appScope *AppScope;
+    appScope AppScopeable;
     // Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units or all users.
     appScopeId *string;
     // Time that the schedule was created.
@@ -17,17 +17,17 @@ type UnifiedRoleScheduleBase struct {
     // Identifier of the roleAssignmentScheduleRequest that created this schedule.
     createdUsing *string;
     // Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-    directoryScope *DirectoryObject;
+    directoryScope DirectoryObjectable;
     // Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
     directoryScopeId *string;
     // Last time the schedule was updated.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-    principal *DirectoryObject;
+    principal DirectoryObjectable;
     // Identifier of the principal to which the assignment is being granted to. Supports $filter (eq).
     principalId *string;
     // Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-    roleDefinition *UnifiedRoleDefinition;
+    roleDefinition UnifiedRoleDefinitionable;
     // Identifier of the unifiedRoleDefinition the assignment is for. Read only. Supports $filter (eq).
     roleDefinitionId *string;
     // Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).
@@ -40,8 +40,12 @@ func NewUnifiedRoleScheduleBase()(*UnifiedRoleScheduleBase) {
     }
     return m
 }
+// CreateUnifiedRoleScheduleBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleScheduleBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleScheduleBase(), nil
+}
 // GetAppScope gets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-func (m *UnifiedRoleScheduleBase) GetAppScope()(*AppScope) {
+func (m *UnifiedRoleScheduleBase) GetAppScope()(AppScopeable) {
     if m == nil {
         return nil
     } else {
@@ -73,7 +77,7 @@ func (m *UnifiedRoleScheduleBase) GetCreatedUsing()(*string) {
     }
 }
 // GetDirectoryScope gets the directoryScope property value. Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-func (m *UnifiedRoleScheduleBase) GetDirectoryScope()(*DirectoryObject) {
+func (m *UnifiedRoleScheduleBase) GetDirectoryScope()(DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -88,64 +92,16 @@ func (m *UnifiedRoleScheduleBase) GetDirectoryScopeId()(*string) {
         return m.directoryScopeId
     }
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. Last time the schedule was updated.
-func (m *UnifiedRoleScheduleBase) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetPrincipal gets the principal property value. Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-func (m *UnifiedRoleScheduleBase) GetPrincipal()(*DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principal
-    }
-}
-// GetPrincipalId gets the principalId property value. Identifier of the principal to which the assignment is being granted to. Supports $filter (eq).
-func (m *UnifiedRoleScheduleBase) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
-}
-// GetRoleDefinition gets the roleDefinition property value. Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-func (m *UnifiedRoleScheduleBase) GetRoleDefinition()(*UnifiedRoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
-}
-// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read only. Supports $filter (eq).
-func (m *UnifiedRoleScheduleBase) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
-}
-// GetStatus gets the status property value. Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).
-func (m *UnifiedRoleScheduleBase) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppScope() })
+        val, err := n.GetObjectValue(CreateAppScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppScope(val.(*AppScope))
+            m.SetAppScope(val.(AppScopeable))
         }
         return nil
     }
@@ -180,12 +136,12 @@ func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["directoryScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectoryScope(val.(*DirectoryObject))
+            m.SetDirectoryScope(val.(DirectoryObjectable))
         }
         return nil
     }
@@ -210,12 +166,12 @@ func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["principal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPrincipal(val.(*DirectoryObject))
+            m.SetPrincipal(val.(DirectoryObjectable))
         }
         return nil
     }
@@ -230,12 +186,12 @@ func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["roleDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleDefinition() })
+        val, err := n.GetObjectValue(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleDefinition(val.(*UnifiedRoleDefinition))
+            m.SetRoleDefinition(val.(UnifiedRoleDefinitionable))
         }
         return nil
     }
@@ -260,6 +216,54 @@ func (m *UnifiedRoleScheduleBase) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. Last time the schedule was updated.
+func (m *UnifiedRoleScheduleBase) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetPrincipal gets the principal property value. Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
+func (m *UnifiedRoleScheduleBase) GetPrincipal()(DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principal
+    }
+}
+// GetPrincipalId gets the principalId property value. Identifier of the principal to which the assignment is being granted to. Supports $filter (eq).
+func (m *UnifiedRoleScheduleBase) GetPrincipalId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalId
+    }
+}
+// GetRoleDefinition gets the roleDefinition property value. Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+func (m *UnifiedRoleScheduleBase) GetRoleDefinition()(UnifiedRoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinition
+    }
+}
+// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read only. Supports $filter (eq).
+func (m *UnifiedRoleScheduleBase) GetRoleDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitionId
+    }
+}
+// GetStatus gets the status property value. Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).
+func (m *UnifiedRoleScheduleBase) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *UnifiedRoleScheduleBase) IsNil()(bool) {
     return m == nil
@@ -345,7 +349,7 @@ func (m *UnifiedRoleScheduleBase) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-func (m *UnifiedRoleScheduleBase) SetAppScope(value *AppScope)() {
+func (m *UnifiedRoleScheduleBase) SetAppScope(value AppScopeable)() {
     if m != nil {
         m.appScope = value
     }
@@ -369,7 +373,7 @@ func (m *UnifiedRoleScheduleBase) SetCreatedUsing(value *string)() {
     }
 }
 // SetDirectoryScope sets the directoryScope property value. Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-func (m *UnifiedRoleScheduleBase) SetDirectoryScope(value *DirectoryObject)() {
+func (m *UnifiedRoleScheduleBase) SetDirectoryScope(value DirectoryObjectable)() {
     if m != nil {
         m.directoryScope = value
     }
@@ -387,7 +391,7 @@ func (m *UnifiedRoleScheduleBase) SetModifiedDateTime(value *i336074805fc853987a
     }
 }
 // SetPrincipal sets the principal property value. Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-func (m *UnifiedRoleScheduleBase) SetPrincipal(value *DirectoryObject)() {
+func (m *UnifiedRoleScheduleBase) SetPrincipal(value DirectoryObjectable)() {
     if m != nil {
         m.principal = value
     }
@@ -399,7 +403,7 @@ func (m *UnifiedRoleScheduleBase) SetPrincipalId(value *string)() {
     }
 }
 // SetRoleDefinition sets the roleDefinition property value. Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-func (m *UnifiedRoleScheduleBase) SetRoleDefinition(value *UnifiedRoleDefinition)() {
+func (m *UnifiedRoleScheduleBase) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
     if m != nil {
         m.roleDefinition = value
     }

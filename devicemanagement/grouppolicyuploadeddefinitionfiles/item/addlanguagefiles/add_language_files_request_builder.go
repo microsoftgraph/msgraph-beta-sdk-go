@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// AddLanguageFilesRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}\microsoft.graph.addLanguageFiles
+// AddLanguageFilesRequestBuilder provides operations to call the addLanguageFiles method.
 type AddLanguageFilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AddLanguageFilesRequestBuilder struct {
 // AddLanguageFilesRequestBuilderPostOptions options for Post
 type AddLanguageFilesRequestBuilderPostOptions struct {
     // 
-    Body *AddLanguageFilesRequestBody;
+    Body AddLanguageFilesRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewAddLanguageFilesRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *AddLanguageFilesRequestBuilder) Post(options *AddLanguageFilesRequestBu
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

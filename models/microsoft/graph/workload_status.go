@@ -6,7 +6,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// WorkloadStatus 
+// WorkloadStatus provides operations to manage the tenantRelationship singleton.
 type WorkloadStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewWorkloadStatus()(*WorkloadStatus) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateWorkloadStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkloadStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkloadStatus(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *WorkloadStatus) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetOffboardedDateTime gets the offboardedDateTime property value. The date and time the workload was offboarded. Optional. Read-only.
-func (m *WorkloadStatus) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offboardedDateTime
-    }
-}
-// GetOnboardedDateTime gets the onboardedDateTime property value. The date and time the workload was onboarded. Optional. Read-only.
-func (m *WorkloadStatus) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardedDateTime
-    }
-}
-// GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
-func (m *WorkloadStatus) GetOnboardingStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadOnboardingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardingStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,6 +90,30 @@ func (m *WorkloadStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetOffboardedDateTime gets the offboardedDateTime property value. The date and time the workload was offboarded. Optional. Read-only.
+func (m *WorkloadStatus) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offboardedDateTime
+    }
+}
+// GetOnboardedDateTime gets the onboardedDateTime property value. The date and time the workload was onboarded. Optional. Read-only.
+func (m *WorkloadStatus) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onboardedDateTime
+    }
+}
+// GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
+func (m *WorkloadStatus) GetOnboardingStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadOnboardingStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onboardingStatus
+    }
 }
 func (m *WorkloadStatus) IsNil()(bool) {
     return m == nil

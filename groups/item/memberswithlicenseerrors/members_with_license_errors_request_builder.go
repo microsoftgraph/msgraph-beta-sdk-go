@@ -2,11 +2,11 @@ package memberswithlicenseerrors
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ie9f6c5de7460d06ee8154b22ef41338f1eaec9a2908946e959ed4e207564ff0a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/memberswithlicenseerrors/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/memberswithlicenseerrors/count"
 )
 
-// MembersWithLicenseErrorsRequestBuilder builds and executes requests for operations under \groups\{group-id}\membersWithLicenseErrors
+// MembersWithLicenseErrorsRequestBuilder provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
 type MembersWithLicenseErrorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewMembersWithLicenseErrorsRequestBuilder(rawUrl string, requestAdapter ida
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembersWithLicenseErrorsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MembersWithLicenseErrorsRequestBuilder) Count()(*i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12.CountRequestBuilder) {
+    return i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation(options *MembersWithLicenseErrorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation(opt
     return requestInfo, nil
 }
 // Get a list of group members with license errors from this group-based license assignment. Read-only.
-func (m *MembersWithLicenseErrorsRequestBuilder) Get(options *MembersWithLicenseErrorsRequestBuilderGetOptions)(*MembersWithLicenseErrorsResponse, error) {
+func (m *MembersWithLicenseErrorsRequestBuilder) Get(options *MembersWithLicenseErrorsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMembersWithLicenseErrorsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MembersWithLicenseErrorsResponse), nil
-}
-func (m *MembersWithLicenseErrorsRequestBuilder) Ref()(*ie9f6c5de7460d06ee8154b22ef41338f1eaec9a2908946e959ed4e207564ff0a.RefRequestBuilder) {
-    return ie9f6c5de7460d06ee8154b22ef41338f1eaec9a2908946e959ed4e207564ff0a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

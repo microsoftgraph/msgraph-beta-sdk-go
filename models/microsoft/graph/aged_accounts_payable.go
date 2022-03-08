@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgedAccountsPayable 
+// AgedAccountsPayable provides operations to manage the financials singleton.
 type AgedAccountsPayable struct {
     Entity
     // 
@@ -34,6 +34,10 @@ func NewAgedAccountsPayable()(*AgedAccountsPayable) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAgedAccountsPayableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAgedAccountsPayableFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAgedAccountsPayable(), nil
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. 
 func (m *AgedAccountsPayable) GetAgedAsOfDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
@@ -65,54 +69,6 @@ func (m *AgedAccountsPayable) GetCurrentAmount()(*float64) {
         return nil
     } else {
         return m.currentAmount
-    }
-}
-// GetName gets the name property value. 
-func (m *AgedAccountsPayable) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPeriod1Amount gets the period1Amount property value. 
-func (m *AgedAccountsPayable) GetPeriod1Amount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.period1Amount
-    }
-}
-// GetPeriod2Amount gets the period2Amount property value. 
-func (m *AgedAccountsPayable) GetPeriod2Amount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.period2Amount
-    }
-}
-// GetPeriod3Amount gets the period3Amount property value. 
-func (m *AgedAccountsPayable) GetPeriod3Amount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.period3Amount
-    }
-}
-// GetPeriodLengthFilter gets the periodLengthFilter property value. 
-func (m *AgedAccountsPayable) GetPeriodLengthFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodLengthFilter
-    }
-}
-// GetVendorNumber gets the vendorNumber property value. 
-func (m *AgedAccountsPayable) GetVendorNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -219,6 +175,54 @@ func (m *AgedAccountsPayable) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetName gets the name property value. 
+func (m *AgedAccountsPayable) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPeriod1Amount gets the period1Amount property value. 
+func (m *AgedAccountsPayable) GetPeriod1Amount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.period1Amount
+    }
+}
+// GetPeriod2Amount gets the period2Amount property value. 
+func (m *AgedAccountsPayable) GetPeriod2Amount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.period2Amount
+    }
+}
+// GetPeriod3Amount gets the period3Amount property value. 
+func (m *AgedAccountsPayable) GetPeriod3Amount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.period3Amount
+    }
+}
+// GetPeriodLengthFilter gets the periodLengthFilter property value. 
+func (m *AgedAccountsPayable) GetPeriodLengthFilter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.periodLengthFilter
+    }
+}
+// GetVendorNumber gets the vendorNumber property value. 
+func (m *AgedAccountsPayable) GetVendorNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorNumber
+    }
 }
 func (m *AgedAccountsPayable) IsNil()(bool) {
     return m == nil

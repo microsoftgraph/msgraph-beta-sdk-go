@@ -2,11 +2,11 @@ package calendarview
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i81123414904bcf01ece8a34bd14ccc5b37dbb8e8812b46f3c0c477bccd7c3f1d "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/calendarview/count"
 )
 
-// CalendarViewRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\calendarView
+// CalendarViewRequestBuilder provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
 type CalendarViewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +52,7 @@ type CalendarViewRequestBuilderGetQueryParameters struct {
 // CalendarViewRequestBuilderPostOptions options for Post
 type CalendarViewRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -69,7 +69,7 @@ func NewCalendarViewRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,6 +78,9 @@ func NewCalendarViewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CalendarViewRequestBuilder) Count()(*i81123414904bcf01ece8a34bd14ccc5b37dbb8e8812b46f3c0c477bccd7c3f1d.CountRequestBuilder) {
+    return i81123414904bcf01ece8a34bd14ccc5b37dbb8e8812b46f3c0c477bccd7c3f1d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *CalendarViewRequestBuilder) CreateGetRequestInformation(options *CalendarViewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -99,7 +102,7 @@ func (m *CalendarViewRequestBuilder) CreateGetRequestInformation(options *Calend
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to calendarView for bookingBusinesses
 func (m *CalendarViewRequestBuilder) CreatePostRequestInformation(options *CalendarViewRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,26 +121,34 @@ func (m *CalendarViewRequestBuilder) CreatePostRequestInformation(options *Calen
     return requestInfo, nil
 }
 // Get the set of appointments of this business in a specified date range. Read-only. Nullable.
-func (m *CalendarViewRequestBuilder) Get(options *CalendarViewRequestBuilderGetOptions)(*CalendarViewResponse, error) {
+func (m *CalendarViewRequestBuilder) Get(options *CalendarViewRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendarViewResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBookingAppointmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CalendarViewResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointmentCollectionResponseable), nil
 }
-// Post the set of appointments of this business in a specified date range. Read-only. Nullable.
-func (m *CalendarViewRequestBuilder) Post(options *CalendarViewRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment, error) {
+// Post create new navigation property to calendarView for bookingBusinesses
+func (m *CalendarViewRequestBuilder) Post(options *CalendarViewRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBookingAppointment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBookingAppointmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointmentable), nil
 }

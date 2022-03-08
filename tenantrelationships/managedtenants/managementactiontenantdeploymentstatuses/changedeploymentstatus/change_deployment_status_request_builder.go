@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ChangeDeploymentStatusRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses\microsoft.graph.managedTenants.changeDeploymentStatus
+// ChangeDeploymentStatusRequestBuilder provides operations to call the changeDeploymentStatus method.
 type ChangeDeploymentStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ChangeDeploymentStatusRequestBuilder struct {
 // ChangeDeploymentStatusRequestBuilderPostOptions options for Post
 type ChangeDeploymentStatusRequestBuilderPostOptions struct {
     // 
-    Body *ChangeDeploymentStatusRequestBody;
+    Body ChangeDeploymentStatusRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type ChangeDeploymentStatusRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // ChangeDeploymentStatusResponse union type wrapper for classes managementActionDeploymentStatus
 type ChangeDeploymentStatusResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type managementActionDeploymentStatus
-    managementActionDeploymentStatus *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatus;
+    managementActionDeploymentStatus i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable;
 }
 // NewChangeDeploymentStatusResponse instantiates a new changeDeploymentStatusResponse and sets the default values.
 func NewChangeDeploymentStatusResponse()(*ChangeDeploymentStatusResponse) {
@@ -39,6 +44,9 @@ func NewChangeDeploymentStatusResponse()(*ChangeDeploymentStatusResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateChangeDeploymentStatusResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChangeDeploymentStatusResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +56,28 @@ func (m *ChangeDeploymentStatusResponse) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ChangeDeploymentStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["managementActionDeploymentStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagementActionDeploymentStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagementActionDeploymentStatus(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable))
+        }
+        return nil
+    }
+    return res
+}
 // GetManagementActionDeploymentStatus gets the managementActionDeploymentStatus property value. Union type representation for type managementActionDeploymentStatus
-func (m *ChangeDeploymentStatusResponse) GetManagementActionDeploymentStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatus) {
+func (m *ChangeDeploymentStatusResponse) GetManagementActionDeploymentStatus()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable) {
     if m == nil {
         return nil
     } else {
         return m.managementActionDeploymentStatus
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ChangeDeploymentStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["managementActionDeploymentStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagementActionDeploymentStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagementActionDeploymentStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatus))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ChangeDeploymentStatusResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +105,7 @@ func (m *ChangeDeploymentStatusResponse) SetAdditionalData(value map[string]inte
     }
 }
 // SetManagementActionDeploymentStatus sets the managementActionDeploymentStatus property value. Union type representation for type managementActionDeploymentStatus
-func (m *ChangeDeploymentStatusResponse) SetManagementActionDeploymentStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatus)() {
+func (m *ChangeDeploymentStatusResponse) SetManagementActionDeploymentStatus(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable)() {
     if m != nil {
         m.managementActionDeploymentStatus = value
     }
@@ -111,7 +119,7 @@ func NewChangeDeploymentStatusRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformation(opti
     return requestInfo, nil
 }
 // Post invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) Post(options *ChangeDeploymentStatusRequestBuilderPostOptions)(*ChangeDeploymentStatusResponse, error) {
+func (m *ChangeDeploymentStatusRequestBuilder) Post(options *ChangeDeploymentStatusRequestBuilderPostOptions)(ChangeDeploymentStatusResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChangeDeploymentStatusResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateChangeDeploymentStatusResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ChangeDeploymentStatusResponse), nil
+    return res.(ChangeDeploymentStatusResponseable), nil
 }

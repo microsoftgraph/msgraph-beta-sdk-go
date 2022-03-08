@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClassificationError 
+// ClassificationError provides operations to manage the dataClassificationService singleton.
 type ClassificationError struct {
     ClassifcationErrorBase
     // 
-    details []ClassifcationErrorBase;
+    details []ClassifcationErrorBaseable;
 }
 // NewClassificationError instantiates a new classificationError and sets the default values.
 func NewClassificationError()(*ClassificationError) {
@@ -17,8 +17,12 @@ func NewClassificationError()(*ClassificationError) {
     }
     return m
 }
+// CreateClassificationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateClassificationErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassificationError(), nil
+}
 // GetDetails gets the details property value. 
-func (m *ClassificationError) GetDetails()([]ClassifcationErrorBase) {
+func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
     if m == nil {
         return nil
     } else {
@@ -29,14 +33,14 @@ func (m *ClassificationError) GetDetails()([]ClassifcationErrorBase) {
 func (m *ClassificationError) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ClassifcationErrorBase.GetFieldDeserializers()
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassifcationErrorBase() })
+        val, err := n.GetCollectionOfObjectValues(CreateClassifcationErrorBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ClassifcationErrorBase, len(val))
+            res := make([]ClassifcationErrorBaseable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ClassifcationErrorBase))
+                res[i] = v.(ClassifcationErrorBaseable)
             }
             m.SetDetails(res)
         }
@@ -56,8 +60,7 @@ func (m *ClassificationError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetails()))
         for i, v := range m.GetDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *ClassificationError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetDetails sets the details property value. 
-func (m *ClassificationError) SetDetails(value []ClassifcationErrorBase)() {
+func (m *ClassificationError) SetDetails(value []ClassifcationErrorBaseable)() {
     if m != nil {
         m.details = value
     }

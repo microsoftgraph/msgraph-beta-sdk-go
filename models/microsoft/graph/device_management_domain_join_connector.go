@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementDomainJoinConnector 
+// DeviceManagementDomainJoinConnector provides operations to manage the deviceManagement singleton.
 type DeviceManagementDomainJoinConnector struct {
     Entity
     // The connector display name.
@@ -24,36 +24,16 @@ func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnect
     }
     return m
 }
+// CreateDeviceManagementDomainJoinConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementDomainJoinConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementDomainJoinConnector(), nil
+}
 // GetDisplayName gets the displayName property value. The connector display name.
 func (m *DeviceManagementDomainJoinConnector) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last time connector contacted Intune.
-func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionDateTime
-    }
-}
-// GetState gets the state property value. The connector state. Possible values are: active, error, inactive.
-func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomainJoinConnectorState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetVersion gets the version property value. The version of the connector.
-func (m *DeviceManagementDomainJoinConnector) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +80,30 @@ func (m *DeviceManagementDomainJoinConnector) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last time connector contacted Intune.
+func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastConnectionDateTime
+    }
+}
+// GetState gets the state property value. The connector state. Possible values are: active, error, inactive.
+func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomainJoinConnectorState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetVersion gets the version property value. The version of the connector.
+func (m *DeviceManagementDomainJoinConnector) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *DeviceManagementDomainJoinConnector) IsNil()(bool) {
     return m == nil

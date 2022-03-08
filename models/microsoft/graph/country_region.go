@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CountryRegion 
+// CountryRegion provides operations to manage the financials singleton.
 type CountryRegion struct {
     Entity
     // 
@@ -23,6 +23,10 @@ func NewCountryRegion()(*CountryRegion) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCountryRegionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCountryRegionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCountryRegion(), nil
 }
 // GetAddressFormat gets the addressFormat property value. 
 func (m *CountryRegion) GetAddressFormat()(*string) {
@@ -46,14 +50,6 @@ func (m *CountryRegion) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *CountryRegion) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +96,14 @@ func (m *CountryRegion) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *CountryRegion) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *CountryRegion) IsNil()(bool) {
     return m == nil

@@ -2,11 +2,11 @@ package owneddevices
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i5885b4be8bd5ba6066cfff91c19edbb0b18a0663ef99762b9c1fe8d0098b5880 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/owneddevices/ref"
+    i42321f15232b855c72a134551dbe7a72e2682885077ae1665d5f4eff5840bc04 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/owneddevices/count"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// OwnedDevicesRequestBuilder builds and executes requests for operations under \me\ownedDevices
+// OwnedDevicesRequestBuilder provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
 type OwnedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedDevicesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *OwnedDevicesRequestBuilder) Count()(*i42321f15232b855c72a134551dbe7a72e2682885077ae1665d5f4eff5840bc04.CountRequestBuilder) {
+    return i42321f15232b855c72a134551dbe7a72e2682885077ae1665d5f4eff5840bc04.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(options *OwnedDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(options *OwnedD
     return requestInfo, nil
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedDevicesRequestBuilder) Get(options *OwnedDevicesRequestBuilderGetOptions)(*OwnedDevicesResponse, error) {
+func (m *OwnedDevicesRequestBuilder) Get(options *OwnedDevicesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOwnedDevicesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*OwnedDevicesResponse), nil
-}
-func (m *OwnedDevicesRequestBuilder) Ref()(*i5885b4be8bd5ba6066cfff91c19edbb0b18a0663ef99762b9c1fe8d0098b5880.RefRequestBuilder) {
-    return i5885b4be8bd5ba6066cfff91c19edbb0b18a0663ef99762b9c1fe8d0098b5880.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

@@ -2,12 +2,11 @@ package managementconditions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i11ae1dda1cc3d4e637b3bde035204c5e03a394e8ce52ebcae5e9f6c3a09e32ed "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditionstatements/item/managementconditions/ref"
-    ifac04764f62467483ae92e2f881527331a818498994808d123def46d76dec96c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditionstatements/item/managementconditions/getmanagementconditionsforplatformwithplatform"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iafb1db9d779f3d6579c5aa8ed3850989e5c4f99f5b219e40235918ab43ce8e35 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditionstatements/item/managementconditions/count"
 )
 
-// ManagementConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\managementConditions
+// ManagementConditionsRequestBuilder provides operations to manage the managementConditions property of the microsoft.graph.managementConditionStatement entity.
 type ManagementConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +54,7 @@ func NewManagementConditionsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,6 +63,9 @@ func NewManagementConditionsRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementConditionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagementConditionsRequestBuilder) Count()(*iafb1db9d779f3d6579c5aa8ed3850989e5c4f99f5b219e40235918ab43ce8e35.CountRequestBuilder) {
+    return iafb1db9d779f3d6579c5aa8ed3850989e5c4f99f5b219e40235918ab43ce8e35.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the management conditions associated to the management condition statement.
 func (m *ManagementConditionsRequestBuilder) CreateGetRequestInformation(options *ManagementConditionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -86,21 +88,18 @@ func (m *ManagementConditionsRequestBuilder) CreateGetRequestInformation(options
     return requestInfo, nil
 }
 // Get the management conditions associated to the management condition statement.
-func (m *ManagementConditionsRequestBuilder) Get(options *ManagementConditionsRequestBuilderGetOptions)(*ManagementConditionsResponse, error) {
+func (m *ManagementConditionsRequestBuilder) Get(options *ManagementConditionsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementConditionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagementConditionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagementConditionsResponse), nil
-}
-// GetManagementConditionsForPlatformWithPlatform builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\managementConditions\microsoft.graph.getManagementConditionsForPlatform(platform={platform})
-func (m *ManagementConditionsRequestBuilder) GetManagementConditionsForPlatformWithPlatform(platform *string)(*ifac04764f62467483ae92e2f881527331a818498994808d123def46d76dec96c.GetManagementConditionsForPlatformWithPlatformRequestBuilder) {
-    return ifac04764f62467483ae92e2f881527331a818498994808d123def46d76dec96c.NewGetManagementConditionsForPlatformWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform);
-}
-func (m *ManagementConditionsRequestBuilder) Ref()(*i11ae1dda1cc3d4e637b3bde035204c5e03a394e8ce52ebcae5e9f6c3a09e32ed.RefRequestBuilder) {
-    return i11ae1dda1cc3d4e637b3bde035204c5e03a394e8ce52ebcae5e9f6c3a09e32ed.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionCollectionResponseable), nil
 }

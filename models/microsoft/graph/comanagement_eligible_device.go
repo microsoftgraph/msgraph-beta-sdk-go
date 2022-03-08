@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ComanagementEligibleDevice 
+// ComanagementEligibleDevice provides operations to manage the deviceManagement singleton.
 type ComanagementEligibleDevice struct {
     Entity
     // ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
@@ -53,6 +53,10 @@ func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
     }
     return m
 }
+// CreateComanagementEligibleDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateComanagementEligibleDeviceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewComanagementEligibleDevice(), nil
+}
 // GetClientRegistrationStatus gets the clientRegistrationStatus property value. ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
 func (m *ComanagementEligibleDevice) GetClientRegistrationStatus()(*DeviceRegistrationState) {
     if m == nil {
@@ -83,126 +87,6 @@ func (m *ComanagementEligibleDevice) GetEntitySource()(*int32) {
         return nil
     } else {
         return m.entitySource
-    }
-}
-// GetManagementAgents gets the managementAgents property value. ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
-func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementAgents
-    }
-}
-// GetManagementState gets the managementState property value. ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
-func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementState
-    }
-}
-// GetManufacturer gets the manufacturer property value. Manufacturer
-func (m *ComanagementEligibleDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetMdmStatus gets the mdmStatus property value. MDMStatus
-func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmStatus
-    }
-}
-// GetModel gets the model property value. Model
-func (m *ComanagementEligibleDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetOsDescription gets the osDescription property value. OSDescription
-func (m *ComanagementEligibleDevice) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
-}
-// GetOsVersion gets the osVersion property value. OSVersion
-func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetOwnerType gets the ownerType property value. OwnerType. Possible values are: unknown, company, personal.
-func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerType
-    }
-}
-// GetReferenceId gets the referenceId property value. ReferenceId
-func (m *ComanagementEligibleDevice) GetReferenceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceId
-    }
-}
-// GetSerialNumber gets the serialNumber property value. SerialNumber
-func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
-}
-// GetStatus gets the status property value. ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.
-func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUpn gets the upn property value. UPN
-func (m *ComanagementEligibleDevice) GetUpn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upn
-    }
-}
-// GetUserEmail gets the userEmail property value. UserEmail
-func (m *ComanagementEligibleDevice) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
-}
-// GetUserId gets the userId property value. UserId
-func (m *ComanagementEligibleDevice) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserName gets the userName property value. UserName
-func (m *ComanagementEligibleDevice) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -399,6 +283,126 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetManagementAgents gets the managementAgents property value. ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementAgents
+    }
+}
+// GetManagementState gets the managementState property value. ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
+func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementState
+    }
+}
+// GetManufacturer gets the manufacturer property value. Manufacturer
+func (m *ComanagementEligibleDevice) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetMdmStatus gets the mdmStatus property value. MDMStatus
+func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmStatus
+    }
+}
+// GetModel gets the model property value. Model
+func (m *ComanagementEligibleDevice) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetOsDescription gets the osDescription property value. OSDescription
+func (m *ComanagementEligibleDevice) GetOsDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osDescription
+    }
+}
+// GetOsVersion gets the osVersion property value. OSVersion
+func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetOwnerType gets the ownerType property value. OwnerType. Possible values are: unknown, company, personal.
+func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerType
+    }
+}
+// GetReferenceId gets the referenceId property value. ReferenceId
+func (m *ComanagementEligibleDevice) GetReferenceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referenceId
+    }
+}
+// GetSerialNumber gets the serialNumber property value. SerialNumber
+func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
+}
+// GetStatus gets the status property value. ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.
+func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUpn gets the upn property value. UPN
+func (m *ComanagementEligibleDevice) GetUpn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.upn
+    }
+}
+// GetUserEmail gets the userEmail property value. UserEmail
+func (m *ComanagementEligibleDevice) GetUserEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userEmail
+    }
+}
+// GetUserId gets the userId property value. UserId
+func (m *ComanagementEligibleDevice) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserName gets the userName property value. UserName
+func (m *ComanagementEligibleDevice) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
 }
 func (m *ComanagementEligibleDevice) IsNil()(bool) {
     return m == nil

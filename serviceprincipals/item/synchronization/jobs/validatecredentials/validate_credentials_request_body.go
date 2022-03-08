@@ -5,14 +5,14 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ValidateCredentialsRequestBody 
+// ValidateCredentialsRequestBody provides operations to call the validateCredentials method.
 type ValidateCredentialsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     applicationIdentifier *string;
     // 
-    credentials []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair;
+    credentials []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable;
     // 
     templateId *string;
     // 
@@ -24,6 +24,10 @@ func NewValidateCredentialsRequestBody()(*ValidateCredentialsRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateValidateCredentialsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateValidateCredentialsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewValidateCredentialsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateCredentialsRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -42,27 +46,11 @@ func (m *ValidateCredentialsRequestBody) GetApplicationIdentifier()(*string) {
     }
 }
 // GetCredentials gets the credentials property value. 
-func (m *ValidateCredentialsRequestBody) GetCredentials()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair) {
+func (m *ValidateCredentialsRequestBody) GetCredentials()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable) {
     if m == nil {
         return nil
     } else {
         return m.credentials
-    }
-}
-// GetTemplateId gets the templateId property value. 
-func (m *ValidateCredentialsRequestBody) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
-}
-// GetUseSavedCredentials gets the useSavedCredentials property value. 
-func (m *ValidateCredentialsRequestBody) GetUseSavedCredentials()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useSavedCredentials
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,14 +67,14 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["credentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSynchronizationSecretKeyStringValuePair() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable)
             }
             m.SetCredentials(res)
         }
@@ -114,6 +102,22 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetTemplateId gets the templateId property value. 
+func (m *ValidateCredentialsRequestBody) GetTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateId
+    }
+}
+// GetUseSavedCredentials gets the useSavedCredentials property value. 
+func (m *ValidateCredentialsRequestBody) GetUseSavedCredentials()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.useSavedCredentials
+    }
+}
 func (m *ValidateCredentialsRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -128,8 +132,7 @@ func (m *ValidateCredentialsRequestBody) Serialize(writer i04eb5309aeaafadd28374
     if m.GetCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCredentials()))
         for i, v := range m.GetCredentials() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("credentials", cast)
         if err != nil {
@@ -169,7 +172,7 @@ func (m *ValidateCredentialsRequestBody) SetApplicationIdentifier(value *string)
     }
 }
 // SetCredentials sets the credentials property value. 
-func (m *ValidateCredentialsRequestBody) SetCredentials(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair)() {
+func (m *ValidateCredentialsRequestBody) SetCredentials(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable)() {
     if m != nil {
         m.credentials = value
     }

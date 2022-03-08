@@ -2,11 +2,11 @@ package userexperienceanalyticsbatteryhealthmodelperformance
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i1d4a1827f8eba915716811fd1b3df7b9eed898846b29204a6de7221fd1d01a54 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthmodelperformance/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthModelPerformance
+// UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder provides operations to manage the userExperienceAnalyticsBatteryHealthModelPerformance property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetQueryP
 // UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformance;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformanceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder(rawUr
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Count()(*i1d4a1827f8eba915716811fd1b3df7b9eed898846b29204a6de7221fd1d01a54.CountRequestBuilder) {
+    return i1d4a1827f8eba915716811fd1b3df7b9eed898846b29204a6de7221fd1d01a54.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user Experience Analytics Battery Health Model Performance
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user Experience Analytics Battery Health Model Performance
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsBatteryHealthModelPerformance for deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Cre
     return requestInfo, nil
 }
 // Get user Experience Analytics Battery Health Model Performance
-func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsBatteryHealthModelPerformanceResponse, error) {
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBatteryHealthModelPerformanceResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsBatteryHealthModelPerformanceResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformanceCollectionResponseable), nil
 }
-// Post user Experience Analytics Battery Health Model Performance
-func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformance, error) {
+// Post create new navigation property to userExperienceAnalyticsBatteryHealthModelPerformance for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformanceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsBatteryHealthModelPerformance() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsBatteryHealthModelPerformanceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformance), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthModelPerformanceable), nil
 }

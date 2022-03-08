@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetActiveKeyRequestBuilder builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}\microsoft.graph.getActiveKey()
+// GetActiveKeyRequestBuilder provides operations to call the getActiveKey method.
 type GetActiveKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type GetActiveKeyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // GetActiveKeyResponse union type wrapper for classes trustFrameworkKey
 type GetActiveKeyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type trustFrameworkKey
-    trustFrameworkKey *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey;
+    trustFrameworkKey i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable;
 }
 // NewGetActiveKeyResponse instantiates a new getActiveKeyResponse and sets the default values.
 func NewGetActiveKeyResponse()(*GetActiveKeyResponse) {
@@ -37,6 +42,9 @@ func NewGetActiveKeyResponse()(*GetActiveKeyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetActiveKeyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetActiveKeyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetActiveKeyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +54,28 @@ func (m *GetActiveKeyResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *GetActiveKeyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["trustFrameworkKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTrustFrameworkKeyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrustFrameworkKey(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTrustFrameworkKey gets the trustFrameworkKey property value. Union type representation for type trustFrameworkKey
-func (m *GetActiveKeyResponse) GetTrustFrameworkKey()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey) {
+func (m *GetActiveKeyResponse) GetTrustFrameworkKey()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable) {
     if m == nil {
         return nil
     } else {
         return m.trustFrameworkKey
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GetActiveKeyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["trustFrameworkKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTrustFrameworkKey() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTrustFrameworkKey(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey))
-        }
-        return nil
-    }
-    return res
 }
 func (m *GetActiveKeyResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +103,7 @@ func (m *GetActiveKeyResponse) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetTrustFrameworkKey sets the trustFrameworkKey property value. Union type representation for type trustFrameworkKey
-func (m *GetActiveKeyResponse) SetTrustFrameworkKey(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey)() {
+func (m *GetActiveKeyResponse) SetTrustFrameworkKey(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable)() {
     if m != nil {
         m.trustFrameworkKey = value
     }
@@ -109,7 +117,7 @@ func NewGetActiveKeyRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *GetActiveKeyRequestBuilder) CreateGetRequestInformation(options *GetAct
     return requestInfo, nil
 }
 // Get invoke function getActiveKey
-func (m *GetActiveKeyRequestBuilder) Get(options *GetActiveKeyRequestBuilderGetOptions)(*GetActiveKeyResponse, error) {
+func (m *GetActiveKeyRequestBuilder) Get(options *GetActiveKeyRequestBuilderGetOptions)(GetActiveKeyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetActiveKeyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetActiveKeyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetActiveKeyResponse), nil
+    return res.(GetActiveKeyResponseable), nil
 }

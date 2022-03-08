@@ -2,11 +2,11 @@ package userexperienceanalyticsimpactingprocess
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i935c140bdda15c3c74d5f0b1b4f3247c0b976aeaf671766bb294d4cf9df5bc4e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsimpactingprocess/count"
 )
 
-// UserExperienceAnalyticsImpactingProcessRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsImpactingProcess
+// UserExperienceAnalyticsImpactingProcessRequestBuilder provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsImpactingProcessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilderGetQueryParameters str
 // UserExperienceAnalyticsImpactingProcessRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsImpactingProcessRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcess;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcessable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserExperienceAnalyticsImpactingProcessRequestBuilder(rawUrl string, req
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Count()(*i935c140bdda15c3c74d5f0b1b4f3247c0b976aeaf671766bb294d4cf9df5bc4e.CountRequestBuilder) {
+    return i935c140bdda15c3c74d5f0b1b4f3247c0b976aeaf671766bb294d4cf9df5bc4e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics impacting process
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsImpactingProcess for deviceManagement
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsImpactingProcessRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreatePostReques
     return requestInfo, nil
 }
 // Get user experience analytics impacting process
-func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Get(options *UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions)(*UserExperienceAnalyticsImpactingProcessResponse, error) {
+func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Get(options *UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcessCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsImpactingProcessResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsImpactingProcessCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsImpactingProcessResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcessCollectionResponseable), nil
 }
-// Post user experience analytics impacting process
-func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Post(options *UserExperienceAnalyticsImpactingProcessRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcess, error) {
+// Post create new navigation property to userExperienceAnalyticsImpactingProcess for deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Post(options *UserExperienceAnalyticsImpactingProcessRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcessable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsImpactingProcess() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcess), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcessable), nil
 }

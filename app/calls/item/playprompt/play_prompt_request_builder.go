@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// PlayPromptRequestBuilder builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.playPrompt
+// PlayPromptRequestBuilder provides operations to call the playPrompt method.
 type PlayPromptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PlayPromptRequestBuilder struct {
 // PlayPromptRequestBuilderPostOptions options for Post
 type PlayPromptRequestBuilderPostOptions struct {
     // 
-    Body *PlayPromptRequestBody;
+    Body PlayPromptRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type PlayPromptRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // PlayPromptResponse union type wrapper for classes playPromptOperation
 type PlayPromptResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type playPromptOperation
-    playPromptOperation *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperation;
+    playPromptOperation i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperationable;
 }
 // NewPlayPromptResponse instantiates a new playPromptResponse and sets the default values.
 func NewPlayPromptResponse()(*PlayPromptResponse) {
@@ -39,6 +44,9 @@ func NewPlayPromptResponse()(*PlayPromptResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreatePlayPromptResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlayPromptResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlayPromptResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +56,28 @@ func (m *PlayPromptResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *PlayPromptResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["playPromptOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePlayPromptOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlayPromptOperation(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPlayPromptOperation gets the playPromptOperation property value. Union type representation for type playPromptOperation
-func (m *PlayPromptResponse) GetPlayPromptOperation()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperation) {
+func (m *PlayPromptResponse) GetPlayPromptOperation()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperationable) {
     if m == nil {
         return nil
     } else {
         return m.playPromptOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *PlayPromptResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["playPromptOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPlayPromptOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlayPromptOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *PlayPromptResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +105,7 @@ func (m *PlayPromptResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetPlayPromptOperation sets the playPromptOperation property value. Union type representation for type playPromptOperation
-func (m *PlayPromptResponse) SetPlayPromptOperation(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperation)() {
+func (m *PlayPromptResponse) SetPlayPromptOperation(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlayPromptOperationable)() {
     if m != nil {
         m.playPromptOperation = value
     }
@@ -111,7 +119,7 @@ func NewPlayPromptRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *PlayPromptRequestBuilder) CreatePostRequestInformation(options *PlayPro
     return requestInfo, nil
 }
 // Post invoke action playPrompt
-func (m *PlayPromptRequestBuilder) Post(options *PlayPromptRequestBuilderPostOptions)(*PlayPromptResponse, error) {
+func (m *PlayPromptRequestBuilder) Post(options *PlayPromptRequestBuilderPostOptions)(PlayPromptResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlayPromptResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreatePlayPromptResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*PlayPromptResponse), nil
+    return res.(PlayPromptResponseable), nil
 }

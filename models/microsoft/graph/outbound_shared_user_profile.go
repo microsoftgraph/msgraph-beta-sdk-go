@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutboundSharedUserProfile 
+// OutboundSharedUserProfile provides operations to manage the directory singleton.
 type OutboundSharedUserProfile struct {
     DirectoryObject
     // 
-    tenants []TenantReference;
+    tenants []TenantReferenceable;
     // 
     userId *string;
 }
@@ -19,34 +19,22 @@ func NewOutboundSharedUserProfile()(*OutboundSharedUserProfile) {
     }
     return m
 }
-// GetTenants gets the tenants property value. 
-func (m *OutboundSharedUserProfile) GetTenants()([]TenantReference) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenants
-    }
-}
-// GetUserId gets the userId property value. 
-func (m *OutboundSharedUserProfile) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+// CreateOutboundSharedUserProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutboundSharedUserProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutboundSharedUserProfile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["tenants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTenantReference() })
+        val, err := n.GetCollectionOfObjectValues(CreateTenantReferenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TenantReference, len(val))
+            res := make([]TenantReferenceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TenantReference))
+                res[i] = v.(TenantReferenceable)
             }
             m.SetTenants(res)
         }
@@ -64,6 +52,22 @@ func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
+// GetTenants gets the tenants property value. 
+func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenants
+    }
+}
+// GetUserId gets the userId property value. 
+func (m *OutboundSharedUserProfile) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
 func (m *OutboundSharedUserProfile) IsNil()(bool) {
     return m == nil
 }
@@ -76,8 +80,7 @@ func (m *OutboundSharedUserProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetTenants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenants()))
         for i, v := range m.GetTenants() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tenants", cast)
         if err != nil {
@@ -93,7 +96,7 @@ func (m *OutboundSharedUserProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetTenants sets the tenants property value. 
-func (m *OutboundSharedUserProfile) SetTenants(value []TenantReference)() {
+func (m *OutboundSharedUserProfile) SetTenants(value []TenantReferenceable)() {
     if m != nil {
         m.tenants = value
     }

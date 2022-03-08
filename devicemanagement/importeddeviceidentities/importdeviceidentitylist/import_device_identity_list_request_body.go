@@ -5,12 +5,12 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ImportDeviceIdentityListRequestBody 
+// ImportDeviceIdentityListRequestBody provides operations to call the importDeviceIdentityList method.
 type ImportDeviceIdentityListRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    importedDeviceIdentities []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity;
+    importedDeviceIdentities []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentityable;
     // 
     overwriteImportedDeviceIdentities *bool;
 }
@@ -21,6 +21,10 @@ func NewImportDeviceIdentityListRequestBody()(*ImportDeviceIdentityListRequestBo
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateImportDeviceIdentityListRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateImportDeviceIdentityListRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewImportDeviceIdentityListRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportDeviceIdentityListRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,34 +33,18 @@ func (m *ImportDeviceIdentityListRequestBody) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
-// GetImportedDeviceIdentities gets the importedDeviceIdentities property value. 
-func (m *ImportDeviceIdentityListRequestBody) GetImportedDeviceIdentities()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedDeviceIdentities
-    }
-}
-// GetOverwriteImportedDeviceIdentities gets the overwriteImportedDeviceIdentities property value. 
-func (m *ImportDeviceIdentityListRequestBody) GetOverwriteImportedDeviceIdentities()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overwriteImportedDeviceIdentities
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImportDeviceIdentityListRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["importedDeviceIdentities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewImportedDeviceIdentity() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateImportedDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentityable)
             }
             m.SetImportedDeviceIdentities(res)
         }
@@ -74,6 +62,22 @@ func (m *ImportDeviceIdentityListRequestBody) GetFieldDeserializers()(map[string
     }
     return res
 }
+// GetImportedDeviceIdentities gets the importedDeviceIdentities property value. 
+func (m *ImportDeviceIdentityListRequestBody) GetImportedDeviceIdentities()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importedDeviceIdentities
+    }
+}
+// GetOverwriteImportedDeviceIdentities gets the overwriteImportedDeviceIdentities property value. 
+func (m *ImportDeviceIdentityListRequestBody) GetOverwriteImportedDeviceIdentities()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.overwriteImportedDeviceIdentities
+    }
+}
 func (m *ImportDeviceIdentityListRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -82,8 +86,7 @@ func (m *ImportDeviceIdentityListRequestBody) Serialize(writer i04eb5309aeaafadd
     if m.GetImportedDeviceIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImportedDeviceIdentities()))
         for i, v := range m.GetImportedDeviceIdentities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("importedDeviceIdentities", cast)
         if err != nil {
@@ -111,7 +114,7 @@ func (m *ImportDeviceIdentityListRequestBody) SetAdditionalData(value map[string
     }
 }
 // SetImportedDeviceIdentities sets the importedDeviceIdentities property value. 
-func (m *ImportDeviceIdentityListRequestBody) SetImportedDeviceIdentities(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity)() {
+func (m *ImportDeviceIdentityListRequestBody) SetImportedDeviceIdentities(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentityable)() {
     if m != nil {
         m.importedDeviceIdentities = value
     }

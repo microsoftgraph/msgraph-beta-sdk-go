@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyObjectFile 
+// GroupPolicyObjectFile provides operations to manage the deviceManagement singleton.
 type GroupPolicyObjectFile struct {
     Entity
     // The Group Policy Object file content.
@@ -26,6 +26,10 @@ func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {
     }
     return m
 }
+// CreateGroupPolicyObjectFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyObjectFileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyObjectFile(), nil
+}
 // GetContent gets the content property value. The Group Policy Object file content.
 func (m *GroupPolicyObjectFile) GetContent()(*string) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *GroupPolicyObjectFile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetGroupPolicyObjectId gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
-func (m *GroupPolicyObjectFile) GetGroupPolicyObjectId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyObjectId
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyObjectFile was last modified.
-func (m *GroupPolicyObjectFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
-func (m *GroupPolicyObjectFile) GetOuDistinguishedName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ouDistinguishedName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +100,30 @@ func (m *GroupPolicyObjectFile) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetGroupPolicyObjectId gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
+func (m *GroupPolicyObjectFile) GetGroupPolicyObjectId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyObjectId
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyObjectFile was last modified.
+func (m *GroupPolicyObjectFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
+func (m *GroupPolicyObjectFile) GetOuDistinguishedName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ouDistinguishedName
+    }
 }
 func (m *GroupPolicyObjectFile) IsNil()(bool) {
     return m == nil

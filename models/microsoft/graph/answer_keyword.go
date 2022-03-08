@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AnswerKeyword 
+// AnswerKeyword provides operations to manage the searchEntity singleton.
 type AnswerKeyword struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewAnswerKeyword()(*AnswerKeyword) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAnswerKeywordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAnswerKeywordFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAnswerKeyword(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetKeywords gets the keywords property value. A collection of keywords used to trigger the search answer.
-func (m *AnswerKeyword) GetKeywords()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keywords
-    }
-}
-// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
-func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchSimilarKeywords
-    }
-}
-// GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
-func (m *AnswerKeyword) GetReservedKeywords()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reservedKeywords
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -96,6 +76,30 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetKeywords gets the keywords property value. A collection of keywords used to trigger the search answer.
+func (m *AnswerKeyword) GetKeywords()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keywords
+    }
+}
+// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
+func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matchSimilarKeywords
+    }
+}
+// GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
+func (m *AnswerKeyword) GetReservedKeywords()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reservedKeywords
+    }
 }
 func (m *AnswerKeyword) IsNil()(bool) {
     return m == nil

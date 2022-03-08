@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementTemplateCollection 
+// ManagementTemplateCollection provides operations to manage the tenantRelationship singleton.
 type ManagementTemplateCollection struct {
     Entity
     // 
@@ -21,7 +21,7 @@ type ManagementTemplateCollection struct {
     // 
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    managementTemplates []ManagementTemplate;
+    managementTemplates []ManagementTemplateable;
 }
 // NewManagementTemplateCollection instantiates a new managementTemplateCollection and sets the default values.
 func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
@@ -29,6 +29,10 @@ func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagementTemplateCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementTemplateCollectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementTemplateCollection(), nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. 
 func (m *ManagementTemplateCollection) GetCreatedByUserId()(*string) {
@@ -60,30 +64,6 @@ func (m *ManagementTemplateCollection) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastActionByUserId gets the lastActionByUserId property value. 
-func (m *ManagementTemplateCollection) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. 
-func (m *ManagementTemplateCollection) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetManagementTemplates gets the managementTemplates property value. 
-func (m *ManagementTemplateCollection) GetManagementTemplates()([]ManagementTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplates
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,20 +130,44 @@ func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["managementTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplate() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementTemplate, len(val))
+            res := make([]ManagementTemplateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementTemplate))
+                res[i] = v.(ManagementTemplateable)
             }
             m.SetManagementTemplates(res)
         }
         return nil
     }
     return res
+}
+// GetLastActionByUserId gets the lastActionByUserId property value. 
+func (m *ManagementTemplateCollection) GetLastActionByUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionByUserId
+    }
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. 
+func (m *ManagementTemplateCollection) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetManagementTemplates gets the managementTemplates property value. 
+func (m *ManagementTemplateCollection) GetManagementTemplates()([]ManagementTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplates
+    }
 }
 func (m *ManagementTemplateCollection) IsNil()(bool) {
     return m == nil
@@ -213,8 +217,7 @@ func (m *ManagementTemplateCollection) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetManagementTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplates()))
         for i, v := range m.GetManagementTemplates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementTemplates", cast)
         if err != nil {
@@ -260,7 +263,7 @@ func (m *ManagementTemplateCollection) SetLastActionDateTime(value *i336074805fc
     }
 }
 // SetManagementTemplates sets the managementTemplates property value. 
-func (m *ManagementTemplateCollection) SetManagementTemplates(value []ManagementTemplate)() {
+func (m *ManagementTemplateCollection) SetManagementTemplates(value []ManagementTemplateable)() {
     if m != nil {
         m.managementTemplates = value
     }

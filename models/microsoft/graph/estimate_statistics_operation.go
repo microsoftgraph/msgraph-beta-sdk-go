@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EstimateStatisticsOperation 
+// EstimateStatisticsOperation provides operations to manage the compliance singleton.
 type EstimateStatisticsOperation struct {
     CaseOperation
     // The estimated count of items for the sourceCollection that matched the content query.
@@ -16,7 +16,7 @@ type EstimateStatisticsOperation struct {
     // The number of mailboxes that had search hits.
     siteCount *int32;
     // eDiscovery collection, commonly known as a search.
-    sourceCollection *SourceCollection;
+    sourceCollection SourceCollectionable;
     // The estimated count of unindexed items for the collection.
     unindexedItemCount *int64;
     // The estimated size of unindexed items for the collection.
@@ -29,61 +29,9 @@ func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     }
     return m
 }
-// GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
-func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.indexedItemCount
-    }
-}
-// GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
-func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.indexedItemsSize
-    }
-}
-// GetMailboxCount gets the mailboxCount property value. The number of mailboxes that had search hits.
-func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailboxCount
-    }
-}
-// GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
-func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCount
-    }
-}
-// GetSourceCollection gets the sourceCollection property value. eDiscovery collection, commonly known as a search.
-func (m *EstimateStatisticsOperation) GetSourceCollection()(*SourceCollection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceCollection
-    }
-}
-// GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
-func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unindexedItemCount
-    }
-}
-// GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
-func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unindexedItemsSize
-    }
+// CreateEstimateStatisticsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEstimateStatisticsOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEstimateStatisticsOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -129,12 +77,12 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["sourceCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSourceCollection() })
+        val, err := n.GetObjectValue(CreateSourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceCollection(val.(*SourceCollection))
+            m.SetSourceCollection(val.(SourceCollectionable))
         }
         return nil
     }
@@ -159,6 +107,62 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
+func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.indexedItemCount
+    }
+}
+// GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
+func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.indexedItemsSize
+    }
+}
+// GetMailboxCount gets the mailboxCount property value. The number of mailboxes that had search hits.
+func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailboxCount
+    }
+}
+// GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
+func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteCount
+    }
+}
+// GetSourceCollection gets the sourceCollection property value. eDiscovery collection, commonly known as a search.
+func (m *EstimateStatisticsOperation) GetSourceCollection()(SourceCollectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceCollection
+    }
+}
+// GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
+func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unindexedItemCount
+    }
+}
+// GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
+func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unindexedItemsSize
+    }
 }
 func (m *EstimateStatisticsOperation) IsNil()(bool) {
     return m == nil
@@ -238,7 +242,7 @@ func (m *EstimateStatisticsOperation) SetSiteCount(value *int32)() {
     }
 }
 // SetSourceCollection sets the sourceCollection property value. eDiscovery collection, commonly known as a search.
-func (m *EstimateStatisticsOperation) SetSourceCollection(value *SourceCollection)() {
+func (m *EstimateStatisticsOperation) SetSourceCollection(value SourceCollectionable)() {
     if m != nil {
         m.sourceCollection = value
     }

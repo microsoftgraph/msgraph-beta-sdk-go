@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthScriptDeviceState 
+// DeviceHealthScriptDeviceState provides operations to manage the deviceManagement singleton.
 type DeviceHealthScriptDeviceState struct {
     Entity
     // A list of the assignment filter ids used for health script applicability evaluation
@@ -19,7 +19,7 @@ type DeviceHealthScriptDeviceState struct {
     // The last time that Intune Managment Extension synced with Intune
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The managed device on which the device health script executed
-    managedDevice *ManagedDevice;
+    managedDevice ManagedDeviceable;
     // Error from the detection script after remediation
     postRemediationDetectionScriptError *string;
     // Detection script output after remediation
@@ -39,6 +39,10 @@ func NewDeviceHealthScriptDeviceState()(*DeviceHealthScriptDeviceState) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceHealthScriptDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceHealthScriptDeviceStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceHealthScriptDeviceState(), nil
 }
 // GetAssignmentFilterIds gets the assignmentFilterIds property value. A list of the assignment filter ids used for health script applicability evaluation
 func (m *DeviceHealthScriptDeviceState) GetAssignmentFilterIds()([]string) {
@@ -62,78 +66,6 @@ func (m *DeviceHealthScriptDeviceState) GetExpectedStateUpdateDateTime()(*i33607
         return nil
     } else {
         return m.expectedStateUpdateDateTime
-    }
-}
-// GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device health script executed
-func (m *DeviceHealthScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastStateUpdateDateTime
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
-func (m *DeviceHealthScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetManagedDevice gets the managedDevice property value. The managed device on which the device health script executed
-func (m *DeviceHealthScriptDeviceState) GetManagedDevice()(*ManagedDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevice
-    }
-}
-// GetPostRemediationDetectionScriptError gets the postRemediationDetectionScriptError property value. Error from the detection script after remediation
-func (m *DeviceHealthScriptDeviceState) GetPostRemediationDetectionScriptError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postRemediationDetectionScriptError
-    }
-}
-// GetPostRemediationDetectionScriptOutput gets the postRemediationDetectionScriptOutput property value. Detection script output after remediation
-func (m *DeviceHealthScriptDeviceState) GetPostRemediationDetectionScriptOutput()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postRemediationDetectionScriptOutput
-    }
-}
-// GetPreRemediationDetectionScriptError gets the preRemediationDetectionScriptError property value. Error from the detection script before remediation
-func (m *DeviceHealthScriptDeviceState) GetPreRemediationDetectionScriptError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preRemediationDetectionScriptError
-    }
-}
-// GetPreRemediationDetectionScriptOutput gets the preRemediationDetectionScriptOutput property value. Output of the detection script before remediation
-func (m *DeviceHealthScriptDeviceState) GetPreRemediationDetectionScriptOutput()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preRemediationDetectionScriptOutput
-    }
-}
-// GetRemediationScriptError gets the remediationScriptError property value. Error output of the remediation script
-func (m *DeviceHealthScriptDeviceState) GetRemediationScriptError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationScriptError
-    }
-}
-// GetRemediationState gets the remediationState property value. Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
-func (m *DeviceHealthScriptDeviceState) GetRemediationState()(*RemediationState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationState
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -194,12 +126,12 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["managedDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevice() })
+        val, err := n.GetObjectValue(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManagedDevice(val.(*ManagedDevice))
+            m.SetManagedDevice(val.(ManagedDeviceable))
         }
         return nil
     }
@@ -264,6 +196,78 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device health script executed
+func (m *DeviceHealthScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastStateUpdateDateTime
+    }
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
+func (m *DeviceHealthScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetManagedDevice gets the managedDevice property value. The managed device on which the device health script executed
+func (m *DeviceHealthScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDevice
+    }
+}
+// GetPostRemediationDetectionScriptError gets the postRemediationDetectionScriptError property value. Error from the detection script after remediation
+func (m *DeviceHealthScriptDeviceState) GetPostRemediationDetectionScriptError()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postRemediationDetectionScriptError
+    }
+}
+// GetPostRemediationDetectionScriptOutput gets the postRemediationDetectionScriptOutput property value. Detection script output after remediation
+func (m *DeviceHealthScriptDeviceState) GetPostRemediationDetectionScriptOutput()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postRemediationDetectionScriptOutput
+    }
+}
+// GetPreRemediationDetectionScriptError gets the preRemediationDetectionScriptError property value. Error from the detection script before remediation
+func (m *DeviceHealthScriptDeviceState) GetPreRemediationDetectionScriptError()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preRemediationDetectionScriptError
+    }
+}
+// GetPreRemediationDetectionScriptOutput gets the preRemediationDetectionScriptOutput property value. Output of the detection script before remediation
+func (m *DeviceHealthScriptDeviceState) GetPreRemediationDetectionScriptOutput()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preRemediationDetectionScriptOutput
+    }
+}
+// GetRemediationScriptError gets the remediationScriptError property value. Error output of the remediation script
+func (m *DeviceHealthScriptDeviceState) GetRemediationScriptError()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationScriptError
+    }
+}
+// GetRemediationState gets the remediationState property value. Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
+func (m *DeviceHealthScriptDeviceState) GetRemediationState()(*RemediationState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationState
+    }
 }
 func (m *DeviceHealthScriptDeviceState) IsNil()(bool) {
     return m == nil
@@ -381,7 +385,7 @@ func (m *DeviceHealthScriptDeviceState) SetLastSyncDateTime(value *i336074805fc8
     }
 }
 // SetManagedDevice sets the managedDevice property value. The managed device on which the device health script executed
-func (m *DeviceHealthScriptDeviceState) SetManagedDevice(value *ManagedDevice)() {
+func (m *DeviceHealthScriptDeviceState) SetManagedDevice(value ManagedDeviceable)() {
     if m != nil {
         m.managedDevice = value
     }

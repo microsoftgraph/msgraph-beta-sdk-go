@@ -2,11 +2,11 @@ package scopedrolememberof
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i9f2423853763529daaad24631baa11b7712bdfd0c2a355f176424b1168fb093d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/scopedrolememberof/count"
 )
 
-// ScopedRoleMemberOfRequestBuilder builds and executes requests for operations under \me\scopedRoleMemberOf
+// ScopedRoleMemberOfRequestBuilder provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.
 type ScopedRoleMemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ScopedRoleMemberOfRequestBuilderGetQueryParameters struct {
 // ScopedRoleMemberOfRequestBuilderPostOptions options for Post
 type ScopedRoleMemberOfRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembership;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembershipable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewScopedRoleMemberOfRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewScopedRoleMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScopedRoleMemberOfRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ScopedRoleMemberOfRequestBuilder) Count()(*i9f2423853763529daaad24631baa11b7712bdfd0c2a355f176424b1168fb093d.CountRequestBuilder) {
+    return i9f2423853763529daaad24631baa11b7712bdfd0c2a355f176424b1168fb093d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *ScopedRoleMemberOfRequestBuilder) CreateGetRequestInformation(options *ScopedRoleMemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ScopedRoleMemberOfRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to scopedRoleMemberOf for me
 func (m *ScopedRoleMemberOfRequestBuilder) CreatePostRequestInformation(options *ScopedRoleMemberOfRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ScopedRoleMemberOfRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get the scoped-role administrative unit memberships for this user. Read-only. Nullable.
-func (m *ScopedRoleMemberOfRequestBuilder) Get(options *ScopedRoleMemberOfRequestBuilderGetOptions)(*ScopedRoleMemberOfResponse, error) {
+func (m *ScopedRoleMemberOfRequestBuilder) Get(options *ScopedRoleMemberOfRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembershipCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewScopedRoleMemberOfResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateScopedRoleMembershipCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ScopedRoleMemberOfResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembershipCollectionResponseable), nil
 }
-// Post the scoped-role administrative unit memberships for this user. Read-only. Nullable.
-func (m *ScopedRoleMemberOfRequestBuilder) Post(options *ScopedRoleMemberOfRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembership, error) {
+// Post create new navigation property to scopedRoleMemberOf for me
+func (m *ScopedRoleMemberOfRequestBuilder) Post(options *ScopedRoleMemberOfRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembershipable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewScopedRoleMembership() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateScopedRoleMembershipFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembership), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScopedRoleMembershipable), nil
 }

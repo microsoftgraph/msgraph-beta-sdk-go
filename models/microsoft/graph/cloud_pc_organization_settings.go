@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcOrganizationSettings 
+// CloudPcOrganizationSettings provides operations to manage the deviceManagement singleton.
 type CloudPcOrganizationSettings struct {
     Entity
     // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
@@ -19,21 +19,9 @@ func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     }
     return m
 }
-// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
-func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
-func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccountType
-    }
+// CreateCloudPcOrganizationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcOrganizationSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcOrganizationSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
+func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
+func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userAccountType
+    }
 }
 func (m *CloudPcOrganizationSettings) IsNil()(bool) {
     return m == nil

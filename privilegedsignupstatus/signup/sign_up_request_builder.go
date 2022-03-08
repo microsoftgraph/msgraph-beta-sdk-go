@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SignUpRequestBuilder builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.signUp
+// SignUpRequestBuilder provides operations to call the signUp method.
 type SignUpRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type SignUpRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // SignUpResponse union type wrapper for classes privilegedSignupStatus
 type SignUpResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type privilegedSignupStatus
-    privilegedSignupStatus *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus;
+    privilegedSignupStatus i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatusable;
 }
 // NewSignUpResponse instantiates a new signUpResponse and sets the default values.
 func NewSignUpResponse()(*SignUpResponse) {
@@ -37,6 +42,9 @@ func NewSignUpResponse()(*SignUpResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSignUpResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSignUpResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignUpResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +54,28 @@ func (m *SignUpResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *SignUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["privilegedSignupStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedSignupStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegedSignupStatus(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatusable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPrivilegedSignupStatus gets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
-func (m *SignUpResponse) GetPrivilegedSignupStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus) {
+func (m *SignUpResponse) GetPrivilegedSignupStatus()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatusable) {
     if m == nil {
         return nil
     } else {
         return m.privilegedSignupStatus
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *SignUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["privilegedSignupStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedSignupStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrivilegedSignupStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus))
-        }
-        return nil
-    }
-    return res
 }
 func (m *SignUpResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +103,7 @@ func (m *SignUpResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetPrivilegedSignupStatus sets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
-func (m *SignUpResponse) SetPrivilegedSignupStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus)() {
+func (m *SignUpResponse) SetPrivilegedSignupStatus(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatusable)() {
     if m != nil {
         m.privilegedSignupStatus = value
     }
@@ -109,7 +117,7 @@ func NewSignUpRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *SignUpRequestBuilder) CreatePostRequestInformation(options *SignUpReque
     return requestInfo, nil
 }
 // Post invoke action signUp
-func (m *SignUpRequestBuilder) Post(options *SignUpRequestBuilderPostOptions)(*SignUpResponse, error) {
+func (m *SignUpRequestBuilder) Post(options *SignUpRequestBuilderPostOptions)(SignUpResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSignUpResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSignUpResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SignUpResponse), nil
+    return res.(SignUpResponseable), nil
 }

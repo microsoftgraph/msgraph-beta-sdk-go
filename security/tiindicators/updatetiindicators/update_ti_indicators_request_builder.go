@@ -2,10 +2,9 @@ package updatetiindicators
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdateTiIndicatorsRequestBuilder builds and executes requests for operations under \security\tiIndicators\microsoft.graph.updateTiIndicators
+// UpdateTiIndicatorsRequestBuilder provides operations to call the updateTiIndicators method.
 type UpdateTiIndicatorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +16,7 @@ type UpdateTiIndicatorsRequestBuilder struct {
 // UpdateTiIndicatorsRequestBuilderPostOptions options for Post
 type UpdateTiIndicatorsRequestBuilderPostOptions struct {
     // 
-    Body *UpdateTiIndicatorsRequestBody;
+    Body UpdateTiIndicatorsRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -34,7 +33,7 @@ func NewUpdateTiIndicatorsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Post invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) Post(options *UpdateTiIndicatorsRequestBuilderPostOptions)([]UpdateTiIndicators, error) {
+func (m *UpdateTiIndicatorsRequestBuilder) Post(options *UpdateTiIndicatorsRequestBuilderPostOptions)(UpdateTiIndicatorsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUpdateTiIndicators() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUpdateTiIndicatorsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]UpdateTiIndicators, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*UpdateTiIndicators))
-    }
-    return val, nil
+    return res.(UpdateTiIndicatorsResponseable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetUserOwnedObjectsRequestBody 
+// GetUserOwnedObjectsRequestBody provides operations to call the getUserOwnedObjects method.
 type GetUserOwnedObjectsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewGetUserOwnedObjectsRequestBody()(*GetUserOwnedObjectsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetUserOwnedObjectsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetUserOwnedObjectsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetUserOwnedObjectsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetUserOwnedObjectsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetType gets the type property value. 
-func (m *GetUserOwnedObjectsRequestBody) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUserId gets the userId property value. 
-func (m *GetUserOwnedObjectsRequestBody) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *GetUserOwnedObjectsRequestBody) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetType gets the type property value. 
+func (m *GetUserOwnedObjectsRequestBody) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUserId gets the userId property value. 
+func (m *GetUserOwnedObjectsRequestBody) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *GetUserOwnedObjectsRequestBody) IsNil()(bool) {
     return m == nil

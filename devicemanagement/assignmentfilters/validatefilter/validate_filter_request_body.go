@@ -5,12 +5,12 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ValidateFilterRequestBody 
+// ValidateFilterRequestBody provides operations to call the validateFilter method.
 type ValidateFilterRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    deviceAndAppManagementAssignmentFilter *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter;
+    deviceAndAppManagementAssignmentFilter i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable;
 }
 // NewValidateFilterRequestBody instantiates a new validateFilterRequestBody and sets the default values.
 func NewValidateFilterRequestBody()(*ValidateFilterRequestBody) {
@@ -18,6 +18,10 @@ func NewValidateFilterRequestBody()(*ValidateFilterRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateValidateFilterRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateValidateFilterRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewValidateFilterRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateFilterRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -28,7 +32,7 @@ func (m *ValidateFilterRequestBody) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetDeviceAndAppManagementAssignmentFilter gets the deviceAndAppManagementAssignmentFilter property value. 
-func (m *ValidateFilterRequestBody) GetDeviceAndAppManagementAssignmentFilter()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter) {
+func (m *ValidateFilterRequestBody) GetDeviceAndAppManagementAssignmentFilter()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable) {
     if m == nil {
         return nil
     } else {
@@ -39,12 +43,12 @@ func (m *ValidateFilterRequestBody) GetDeviceAndAppManagementAssignmentFilter()(
 func (m *ValidateFilterRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceAndAppManagementAssignmentFilter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceAndAppManagementAssignmentFilter() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceAndAppManagementAssignmentFilter(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter))
+            m.SetDeviceAndAppManagementAssignmentFilter(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable))
         }
         return nil
     }
@@ -76,7 +80,7 @@ func (m *ValidateFilterRequestBody) SetAdditionalData(value map[string]interface
     }
 }
 // SetDeviceAndAppManagementAssignmentFilter sets the deviceAndAppManagementAssignmentFilter property value. 
-func (m *ValidateFilterRequestBody) SetDeviceAndAppManagementAssignmentFilter(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter)() {
+func (m *ValidateFilterRequestBody) SetDeviceAndAppManagementAssignmentFilter(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable)() {
     if m != nil {
         m.deviceAndAppManagementAssignmentFilter = value
     }

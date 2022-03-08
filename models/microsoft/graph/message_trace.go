@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MessageTrace 
+// MessageTrace provides operations to manage the collection of messageTrace entities.
 type MessageTrace struct {
     Entity
     // 
@@ -15,7 +15,7 @@ type MessageTrace struct {
     // 
     receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    recipients []MessageRecipient;
+    recipients []MessageRecipientable;
     // 
     senderEmail *string;
     // 
@@ -32,68 +32,16 @@ func NewMessageTrace()(*MessageTrace) {
     }
     return m
 }
+// CreateMessageTraceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMessageTraceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMessageTrace(), nil
+}
 // GetDestinationIPAddress gets the destinationIPAddress property value. 
 func (m *MessageTrace) GetDestinationIPAddress()(*string) {
     if m == nil {
         return nil
     } else {
         return m.destinationIPAddress
-    }
-}
-// GetMessageId gets the messageId property value. 
-func (m *MessageTrace) GetMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageId
-    }
-}
-// GetReceivedDateTime gets the receivedDateTime property value. 
-func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedDateTime
-    }
-}
-// GetRecipients gets the recipients property value. 
-func (m *MessageTrace) GetRecipients()([]MessageRecipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
-}
-// GetSenderEmail gets the senderEmail property value. 
-func (m *MessageTrace) GetSenderEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderEmail
-    }
-}
-// GetSize gets the size property value. 
-func (m *MessageTrace) GetSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
-// GetSourceIPAddress gets the sourceIPAddress property value. 
-func (m *MessageTrace) GetSourceIPAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceIPAddress
-    }
-}
-// GetSubject gets the subject property value. 
-func (m *MessageTrace) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,14 +78,14 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["recipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessageRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateMessageRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MessageRecipient, len(val))
+            res := make([]MessageRecipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MessageRecipient))
+                res[i] = v.(MessageRecipientable)
             }
             m.SetRecipients(res)
         }
@@ -185,6 +133,62 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i04e
     }
     return res
 }
+// GetMessageId gets the messageId property value. 
+func (m *MessageTrace) GetMessageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageId
+    }
+}
+// GetReceivedDateTime gets the receivedDateTime property value. 
+func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.receivedDateTime
+    }
+}
+// GetRecipients gets the recipients property value. 
+func (m *MessageTrace) GetRecipients()([]MessageRecipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipients
+    }
+}
+// GetSenderEmail gets the senderEmail property value. 
+func (m *MessageTrace) GetSenderEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.senderEmail
+    }
+}
+// GetSize gets the size property value. 
+func (m *MessageTrace) GetSize()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
+}
+// GetSourceIPAddress gets the sourceIPAddress property value. 
+func (m *MessageTrace) GetSourceIPAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceIPAddress
+    }
+}
+// GetSubject gets the subject property value. 
+func (m *MessageTrace) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
+}
 func (m *MessageTrace) IsNil()(bool) {
     return m == nil
 }
@@ -215,8 +219,7 @@ func (m *MessageTrace) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecipients()))
         for i, v := range m.GetRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("recipients", cast)
         if err != nil {
@@ -268,7 +271,7 @@ func (m *MessageTrace) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetRecipients sets the recipients property value. 
-func (m *MessageTrace) SetRecipients(value []MessageRecipient)() {
+func (m *MessageTrace) SetRecipients(value []MessageRecipientable)() {
     if m != nil {
         m.recipients = value
     }

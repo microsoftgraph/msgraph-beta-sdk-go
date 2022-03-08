@@ -2,12 +2,12 @@ package governanceresources
 
 import (
     i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/register"
+    i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/count"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GovernanceResourcesRequestBuilder builds and executes requests for operations under \governanceResources
+// GovernanceResourcesRequestBuilder provides operations to manage the collection of governanceResource entities.
 type GovernanceResourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type GovernanceResourcesRequestBuilderGetQueryParameters struct {
 // GovernanceResourcesRequestBuilderPostOptions options for Post
 type GovernanceResourcesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResourceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewGovernanceResourcesRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewGovernanceResourcesRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceResourcesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *GovernanceResourcesRequestBuilder) Count()(*i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.CountRequestBuilder) {
+    return i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceResources
 func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformation(options *GovernanceResourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -115,28 +118,36 @@ func (m *GovernanceResourcesRequestBuilder) CreatePostRequestInformation(options
     return requestInfo, nil
 }
 // Get get entities from governanceResources
-func (m *GovernanceResourcesRequestBuilder) Get(options *GovernanceResourcesRequestBuilderGetOptions)(*GovernanceResourcesResponse, error) {
+func (m *GovernanceResourcesRequestBuilder) Get(options *GovernanceResourcesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceResourcesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceResourceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*GovernanceResourcesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResourceCollectionResponseable), nil
 }
 // Post add new entity to governanceResources
-func (m *GovernanceResourcesRequestBuilder) Post(options *GovernanceResourcesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource, error) {
+func (m *GovernanceResourcesRequestBuilder) Post(options *GovernanceResourcesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResourceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceResource() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceResourceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResourceable), nil
 }
 func (m *GovernanceResourcesRequestBuilder) Register()(*i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3.RegisterRequestBuilder) {
     return i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3.NewRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);

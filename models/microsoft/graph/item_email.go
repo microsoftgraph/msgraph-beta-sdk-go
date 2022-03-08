@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemEmail 
+// ItemEmail provides operations to manage the compliance singleton.
 type ItemEmail struct {
     ItemFacet
     // The email address itself.
@@ -21,6 +21,10 @@ func NewItemEmail()(*ItemEmail) {
     }
     return m
 }
+// CreateItemEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemEmailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemEmail(), nil
+}
 // GetAddress gets the address property value. The email address itself.
 func (m *ItemEmail) GetAddress()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *ItemEmail) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other.
-func (m *ItemEmail) GetType()(*EmailType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other.
+func (m *ItemEmail) GetType()(*EmailType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *ItemEmail) IsNil()(bool) {
     return m == nil

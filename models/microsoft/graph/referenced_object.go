@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ReferencedObject 
+// ReferencedObject provides operations to call the instantiate method.
 type ReferencedObject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewReferencedObject()(*ReferencedObject) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateReferencedObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReferencedObjectFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReferencedObject(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReferencedObject) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetReferencedObjectName gets the referencedObjectName property value. Name of the referenced object. Must match one of the objects in the directory definition.
-func (m *ReferencedObject) GetReferencedObjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referencedObjectName
-    }
-}
-// GetReferencedProperty gets the referencedProperty property value. Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
-func (m *ReferencedObject) GetReferencedProperty()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referencedProperty
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *ReferencedObject) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetReferencedObjectName gets the referencedObjectName property value. Name of the referenced object. Must match one of the objects in the directory definition.
+func (m *ReferencedObject) GetReferencedObjectName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referencedObjectName
+    }
+}
+// GetReferencedProperty gets the referencedProperty property value. Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+func (m *ReferencedObject) GetReferencedProperty()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referencedProperty
+    }
 }
 func (m *ReferencedObject) IsNil()(bool) {
     return m == nil

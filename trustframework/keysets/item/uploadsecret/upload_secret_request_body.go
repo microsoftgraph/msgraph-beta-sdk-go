@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UploadSecretRequestBody 
+// UploadSecretRequestBody provides operations to call the uploadSecret method.
 type UploadSecretRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewUploadSecretRequestBody()(*UploadSecretRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUploadSecretRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUploadSecretRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUploadSecretRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSecretRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *UploadSecretRequestBody) GetExp()(*int64) {
         return nil
     } else {
         return m.exp
-    }
-}
-// GetK gets the k property value. 
-func (m *UploadSecretRequestBody) GetK()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.k
-    }
-}
-// GetNbf gets the nbf property value. 
-func (m *UploadSecretRequestBody) GetNbf()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nbf
-    }
-}
-// GetUse gets the use property value. 
-func (m *UploadSecretRequestBody) GetUse()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.use
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *UploadSecretRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetK gets the k property value. 
+func (m *UploadSecretRequestBody) GetK()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.k
+    }
+}
+// GetNbf gets the nbf property value. 
+func (m *UploadSecretRequestBody) GetNbf()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nbf
+    }
+}
+// GetUse gets the use property value. 
+func (m *UploadSecretRequestBody) GetUse()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.use
+    }
 }
 func (m *UploadSecretRequestBody) IsNil()(bool) {
     return m == nil

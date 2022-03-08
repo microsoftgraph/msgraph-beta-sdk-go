@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyOperation 
+// GroupPolicyOperation provides operations to manage the deviceManagement singleton.
 type GroupPolicyOperation struct {
     Entity
     // The date and time the entity was last modified.
@@ -24,37 +24,9 @@ func NewGroupPolicyOperation()(*GroupPolicyOperation) {
     }
     return m
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOperationStatus gets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
-func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationStatus
-    }
-}
-// GetOperationType gets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
-func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
-}
-// GetStatusDetails gets the statusDetails property value. The group policy operation status detail.
-func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
-    }
+// CreateGroupPolicyOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -100,6 +72,38 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOperationStatus gets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
+func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operationStatus
+    }
+}
+// GetOperationType gets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
+func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operationType
+    }
+}
+// GetStatusDetails gets the statusDetails property value. The group policy operation status detail.
+func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statusDetails
+    }
 }
 func (m *GroupPolicyOperation) IsNil()(bool) {
     return m == nil

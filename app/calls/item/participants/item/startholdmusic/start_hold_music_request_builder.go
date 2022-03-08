@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// StartHoldMusicRequestBuilder builds and executes requests for operations under \app\calls\{call-id}\participants\{participant-id}\microsoft.graph.startHoldMusic
+// StartHoldMusicRequestBuilder provides operations to call the startHoldMusic method.
 type StartHoldMusicRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type StartHoldMusicRequestBuilder struct {
 // StartHoldMusicRequestBuilderPostOptions options for Post
 type StartHoldMusicRequestBuilderPostOptions struct {
     // 
-    Body *StartHoldMusicRequestBody;
+    Body StartHoldMusicRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type StartHoldMusicRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // StartHoldMusicResponse union type wrapper for classes startHoldMusicOperation
 type StartHoldMusicResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type startHoldMusicOperation
-    startHoldMusicOperation *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperation;
+    startHoldMusicOperation i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperationable;
 }
 // NewStartHoldMusicResponse instantiates a new startHoldMusicResponse and sets the default values.
 func NewStartHoldMusicResponse()(*StartHoldMusicResponse) {
@@ -39,6 +44,9 @@ func NewStartHoldMusicResponse()(*StartHoldMusicResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateStartHoldMusicResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewStartHoldMusicResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartHoldMusicResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +56,28 @@ func (m *StartHoldMusicResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *StartHoldMusicResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["startHoldMusicOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateStartHoldMusicOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartHoldMusicOperation(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetStartHoldMusicOperation gets the startHoldMusicOperation property value. Union type representation for type startHoldMusicOperation
-func (m *StartHoldMusicResponse) GetStartHoldMusicOperation()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperation) {
+func (m *StartHoldMusicResponse) GetStartHoldMusicOperation()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperationable) {
     if m == nil {
         return nil
     } else {
         return m.startHoldMusicOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *StartHoldMusicResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["startHoldMusicOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewStartHoldMusicOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartHoldMusicOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *StartHoldMusicResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +105,7 @@ func (m *StartHoldMusicResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetStartHoldMusicOperation sets the startHoldMusicOperation property value. Union type representation for type startHoldMusicOperation
-func (m *StartHoldMusicResponse) SetStartHoldMusicOperation(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperation)() {
+func (m *StartHoldMusicResponse) SetStartHoldMusicOperation(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.StartHoldMusicOperationable)() {
     if m != nil {
         m.startHoldMusicOperation = value
     }
@@ -111,7 +119,7 @@ func NewStartHoldMusicRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *StartHoldMusicRequestBuilder) CreatePostRequestInformation(options *Sta
     return requestInfo, nil
 }
 // Post invoke action startHoldMusic
-func (m *StartHoldMusicRequestBuilder) Post(options *StartHoldMusicRequestBuilderPostOptions)(*StartHoldMusicResponse, error) {
+func (m *StartHoldMusicRequestBuilder) Post(options *StartHoldMusicRequestBuilderPostOptions)(StartHoldMusicResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStartHoldMusicResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateStartHoldMusicResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*StartHoldMusicResponse), nil
+    return res.(StartHoldMusicResponseable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Chat 
+// Chat provides operations to manage the collection of chat entities.
 type Chat struct {
     Entity
     // Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
@@ -13,29 +13,29 @@ type Chat struct {
     // Date and time at which the chat was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of all the apps in the chat. Nullable.
-    installedApps []TeamsAppInstallation;
+    installedApps []TeamsAppInstallationable;
     // Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
-    lastMessagePreview *ChatMessageInfo;
+    lastMessagePreview ChatMessageInfoable;
     // Date and time at which the chat was renamed or list of members were last changed. Read-only.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of all the members in the chat. Nullable.
-    members []ConversationMember;
+    members []ConversationMemberable;
     // A collection of all the messages in the chat. Nullable.
-    messages []ChatMessage;
+    messages []ChatMessageable;
     // Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-    onlineMeetingInfo *TeamworkOnlineMeetingInfo;
+    onlineMeetingInfo TeamworkOnlineMeetingInfoable;
     // A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-    operations []TeamsAsyncOperation;
+    operations []TeamsAsyncOperationable;
     // A collection of permissions granted to apps for the chat.
-    permissionGrants []ResourceSpecificPermissionGrant;
+    permissionGrants []ResourceSpecificPermissionGrantable;
     // A collection of all the tabs in the chat. Nullable.
-    tabs []TeamsTab;
+    tabs []TeamsTabable;
     // The identifier of the tenant in which the chat was created. Read-only.
     tenantId *string;
     // (Optional) Subject or topic for the chat. Only available for group chats.
     topic *string;
     // Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
-    viewpoint *ChatViewpoint;
+    viewpoint ChatViewpointable;
     // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
     webUrl *string;
 }
@@ -45,6 +45,10 @@ func NewChat()(*Chat) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateChatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChat(), nil
 }
 // GetChatType gets the chatType property value. Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
 func (m *Chat) GetChatType()(*ChatType) {
@@ -60,110 +64,6 @@ func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetInstalledApps gets the installedApps property value. A collection of all the apps in the chat. Nullable.
-func (m *Chat) GetInstalledApps()([]TeamsAppInstallation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedApps
-    }
-}
-// GetLastMessagePreview gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
-func (m *Chat) GetLastMessagePreview()(*ChatMessageInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastMessagePreview
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
-func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetMembers gets the members property value. A collection of all the members in the chat. Nullable.
-func (m *Chat) GetMembers()([]ConversationMember) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetMessages gets the messages property value. A collection of all the messages in the chat. Nullable.
-func (m *Chat) GetMessages()([]ChatMessage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messages
-    }
-}
-// GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-func (m *Chat) GetOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetingInfo
-    }
-}
-// GetOperations gets the operations property value. A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-func (m *Chat) GetOperations()([]TeamsAsyncOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
-}
-// GetPermissionGrants gets the permissionGrants property value. A collection of permissions granted to apps for the chat.
-func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrant) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionGrants
-    }
-}
-// GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
-func (m *Chat) GetTabs()([]TeamsTab) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tabs
-    }
-}
-// GetTenantId gets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
-func (m *Chat) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetTopic gets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
-func (m *Chat) GetTopic()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topic
-    }
-}
-// GetViewpoint gets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
-func (m *Chat) GetViewpoint()(*ChatViewpoint) {
-    if m == nil {
-        return nil
-    } else {
-        return m.viewpoint
-    }
-}
-// GetWebUrl gets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
-func (m *Chat) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -190,26 +90,26 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["installedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsAppInstallation() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppInstallationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsAppInstallation, len(val))
+            res := make([]TeamsAppInstallationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsAppInstallation))
+                res[i] = v.(TeamsAppInstallationable)
             }
             m.SetInstalledApps(res)
         }
         return nil
     }
     res["lastMessagePreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessageInfo() })
+        val, err := n.GetObjectValue(CreateChatMessageInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastMessagePreview(val.(*ChatMessageInfo))
+            m.SetLastMessagePreview(val.(ChatMessageInfoable))
         }
         return nil
     }
@@ -224,80 +124,80 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversationMember() })
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConversationMember, len(val))
+            res := make([]ConversationMemberable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConversationMember))
+                res[i] = v.(ConversationMemberable)
             }
             m.SetMembers(res)
         }
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessage() })
+        val, err := n.GetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ChatMessage, len(val))
+            res := make([]ChatMessageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ChatMessage))
+                res[i] = v.(ChatMessageable)
             }
             m.SetMessages(res)
         }
         return nil
     }
     res["onlineMeetingInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkOnlineMeetingInfo() })
+        val, err := n.GetObjectValue(CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnlineMeetingInfo(val.(*TeamworkOnlineMeetingInfo))
+            m.SetOnlineMeetingInfo(val.(TeamworkOnlineMeetingInfoable))
         }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsAsyncOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAsyncOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsAsyncOperation, len(val))
+            res := make([]TeamsAsyncOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsAsyncOperation))
+                res[i] = v.(TeamsAsyncOperationable)
             }
             m.SetOperations(res)
         }
         return nil
     }
     res["permissionGrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResourceSpecificPermissionGrant() })
+        val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ResourceSpecificPermissionGrant, len(val))
+            res := make([]ResourceSpecificPermissionGrantable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ResourceSpecificPermissionGrant))
+                res[i] = v.(ResourceSpecificPermissionGrantable)
             }
             m.SetPermissionGrants(res)
         }
         return nil
     }
     res["tabs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsTab() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamsTab, len(val))
+            res := make([]TeamsTabable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamsTab))
+                res[i] = v.(TeamsTabable)
             }
             m.SetTabs(res)
         }
@@ -324,12 +224,12 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["viewpoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatViewpoint() })
+        val, err := n.GetObjectValue(CreateChatViewpointFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetViewpoint(val.(*ChatViewpoint))
+            m.SetViewpoint(val.(ChatViewpointable))
         }
         return nil
     }
@@ -344,6 +244,110 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     return res
+}
+// GetInstalledApps gets the installedApps property value. A collection of all the apps in the chat. Nullable.
+func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedApps
+    }
+}
+// GetLastMessagePreview gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+func (m *Chat) GetLastMessagePreview()(ChatMessageInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastMessagePreview
+    }
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetMembers gets the members property value. A collection of all the members in the chat. Nullable.
+func (m *Chat) GetMembers()([]ConversationMemberable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetMessages gets the messages property value. A collection of all the messages in the chat. Nullable.
+func (m *Chat) GetMessages()([]ChatMessageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messages
+    }
+}
+// GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
+func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineMeetingInfo
+    }
+}
+// GetOperations gets the operations property value. A collection of all the Teams async operations that ran or are running on the chat. Nullable.
+func (m *Chat) GetOperations()([]TeamsAsyncOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetPermissionGrants gets the permissionGrants property value. A collection of permissions granted to apps for the chat.
+func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionGrants
+    }
+}
+// GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
+func (m *Chat) GetTabs()([]TeamsTabable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tabs
+    }
+}
+// GetTenantId gets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
+func (m *Chat) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetTopic gets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
+func (m *Chat) GetTopic()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.topic
+    }
+}
+// GetViewpoint gets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+func (m *Chat) GetViewpoint()(ChatViewpointable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.viewpoint
+    }
+}
+// GetWebUrl gets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
+func (m *Chat) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *Chat) IsNil()(bool) {
     return m == nil
@@ -370,8 +374,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetInstalledApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstalledApps()))
         for i, v := range m.GetInstalledApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("installedApps", cast)
         if err != nil {
@@ -393,8 +396,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -404,8 +406,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMessages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
         if err != nil {
@@ -421,8 +422,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -432,8 +432,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetPermissionGrants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPermissionGrants()))
         for i, v := range m.GetPermissionGrants() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("permissionGrants", cast)
         if err != nil {
@@ -443,8 +442,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetTabs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tabs", cast)
         if err != nil {
@@ -490,13 +488,13 @@ func (m *Chat) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // SetInstalledApps sets the installedApps property value. A collection of all the apps in the chat. Nullable.
-func (m *Chat) SetInstalledApps(value []TeamsAppInstallation)() {
+func (m *Chat) SetInstalledApps(value []TeamsAppInstallationable)() {
     if m != nil {
         m.installedApps = value
     }
 }
 // SetLastMessagePreview sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
-func (m *Chat) SetLastMessagePreview(value *ChatMessageInfo)() {
+func (m *Chat) SetLastMessagePreview(value ChatMessageInfoable)() {
     if m != nil {
         m.lastMessagePreview = value
     }
@@ -508,37 +506,37 @@ func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetMembers sets the members property value. A collection of all the members in the chat. Nullable.
-func (m *Chat) SetMembers(value []ConversationMember)() {
+func (m *Chat) SetMembers(value []ConversationMemberable)() {
     if m != nil {
         m.members = value
     }
 }
 // SetMessages sets the messages property value. A collection of all the messages in the chat. Nullable.
-func (m *Chat) SetMessages(value []ChatMessage)() {
+func (m *Chat) SetMessages(value []ChatMessageable)() {
     if m != nil {
         m.messages = value
     }
 }
 // SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-func (m *Chat) SetOnlineMeetingInfo(value *TeamworkOnlineMeetingInfo)() {
+func (m *Chat) SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)() {
     if m != nil {
         m.onlineMeetingInfo = value
     }
 }
 // SetOperations sets the operations property value. A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-func (m *Chat) SetOperations(value []TeamsAsyncOperation)() {
+func (m *Chat) SetOperations(value []TeamsAsyncOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
 // SetPermissionGrants sets the permissionGrants property value. A collection of permissions granted to apps for the chat.
-func (m *Chat) SetPermissionGrants(value []ResourceSpecificPermissionGrant)() {
+func (m *Chat) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
     if m != nil {
         m.permissionGrants = value
     }
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the chat. Nullable.
-func (m *Chat) SetTabs(value []TeamsTab)() {
+func (m *Chat) SetTabs(value []TeamsTabable)() {
     if m != nil {
         m.tabs = value
     }
@@ -556,7 +554,7 @@ func (m *Chat) SetTopic(value *string)() {
     }
 }
 // SetViewpoint sets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
-func (m *Chat) SetViewpoint(value *ChatViewpoint)() {
+func (m *Chat) SetViewpoint(value ChatViewpointable)() {
     if m != nil {
         m.viewpoint = value
     }

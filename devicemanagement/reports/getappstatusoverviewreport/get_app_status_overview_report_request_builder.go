@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetAppStatusOverviewReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getAppStatusOverviewReport
+// GetAppStatusOverviewReportRequestBuilder provides operations to call the getAppStatusOverviewReport method.
 type GetAppStatusOverviewReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetAppStatusOverviewReportRequestBuilder struct {
 // GetAppStatusOverviewReportRequestBuilderPostOptions options for Post
 type GetAppStatusOverviewReportRequestBuilderPostOptions struct {
     // 
-    Body *GetAppStatusOverviewReportRequestBody;
+    Body GetAppStatusOverviewReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetAppStatusOverviewReportRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetAppStatusOverviewReportRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Post invoke action getAppStatusOverviewReport
-func (m *GetAppStatusOverviewReportRequestBuilder) Post(options *GetAppStatusOverviewReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetAppStatusOverviewReportRequestBuilder) Post(options *GetAppStatusOverviewReportRequestBuilderPostOptions)(GetAppStatusOverviewReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAppStatusOverviewReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetAppStatusOverviewReportResponseable), nil
 }

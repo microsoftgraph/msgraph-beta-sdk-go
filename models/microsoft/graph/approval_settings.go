@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApprovalSettings 
+// ApprovalSettings provides operations to manage the identityGovernance singleton.
 type ApprovalSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
     approvalMode *string;
     // If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
-    approvalStages []ApprovalStage;
+    approvalStages []ApprovalStageable;
     // If false, then approval is not required for requests in this policy.
     isApprovalRequired *bool;
     // If false, then approval is not required for a user who already has an assignment to extend their assignment.
@@ -25,6 +25,10 @@ func NewApprovalSettings()(*ApprovalSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateApprovalSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApprovalSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApprovalSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalSettings) GetAdditionalData()(map[string]interface{}) {
@@ -43,35 +47,11 @@ func (m *ApprovalSettings) GetApprovalMode()(*string) {
     }
 }
 // GetApprovalStages gets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
-func (m *ApprovalSettings) GetApprovalStages()([]ApprovalStage) {
+func (m *ApprovalSettings) GetApprovalStages()([]ApprovalStageable) {
     if m == nil {
         return nil
     } else {
         return m.approvalStages
-    }
-}
-// GetIsApprovalRequired gets the isApprovalRequired property value. If false, then approval is not required for requests in this policy.
-func (m *ApprovalSettings) GetIsApprovalRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequired
-    }
-}
-// GetIsApprovalRequiredForExtension gets the isApprovalRequiredForExtension property value. If false, then approval is not required for a user who already has an assignment to extend their assignment.
-func (m *ApprovalSettings) GetIsApprovalRequiredForExtension()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalRequiredForExtension
-    }
-}
-// GetIsRequestorJustificationRequired gets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
-func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequestorJustificationRequired
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,14 +68,14 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["approvalStages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApprovalStage() })
+        val, err := n.GetCollectionOfObjectValues(CreateApprovalStageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ApprovalStage, len(val))
+            res := make([]ApprovalStageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ApprovalStage))
+                res[i] = v.(ApprovalStageable)
             }
             m.SetApprovalStages(res)
         }
@@ -133,6 +113,30 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
     }
     return res
 }
+// GetIsApprovalRequired gets the isApprovalRequired property value. If false, then approval is not required for requests in this policy.
+func (m *ApprovalSettings) GetIsApprovalRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isApprovalRequired
+    }
+}
+// GetIsApprovalRequiredForExtension gets the isApprovalRequiredForExtension property value. If false, then approval is not required for a user who already has an assignment to extend their assignment.
+func (m *ApprovalSettings) GetIsApprovalRequiredForExtension()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isApprovalRequiredForExtension
+    }
+}
+// GetIsRequestorJustificationRequired gets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
+func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRequestorJustificationRequired
+    }
+}
 func (m *ApprovalSettings) IsNil()(bool) {
     return m == nil
 }
@@ -147,8 +151,7 @@ func (m *ApprovalSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetApprovalStages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApprovalStages()))
         for i, v := range m.GetApprovalStages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("approvalStages", cast)
         if err != nil {
@@ -194,7 +197,7 @@ func (m *ApprovalSettings) SetApprovalMode(value *string)() {
     }
 }
 // SetApprovalStages sets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
-func (m *ApprovalSettings) SetApprovalStages(value []ApprovalStage)() {
+func (m *ApprovalSettings) SetApprovalStages(value []ApprovalStageable)() {
     if m != nil {
         m.approvalStages = value
     }

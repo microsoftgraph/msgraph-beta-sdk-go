@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConnectionInfo 
+// ConnectionInfo provides operations to manage the identityGovernance singleton.
 type ConnectionInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewConnectionInfo()(*ConnectionInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConnectionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConnectionInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnectionInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConnectionInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetUrl gets the url property value. The endpoint that is used by Entitlement Management to communicate with the access package resource.
-func (m *ConnectionInfo) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *ConnectionInfo) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetUrl gets the url property value. The endpoint that is used by Entitlement Management to communicate with the access package resource.
+func (m *ConnectionInfo) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
 }
 func (m *ConnectionInfo) IsNil()(bool) {
     return m == nil

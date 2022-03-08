@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSettings 
+// UserSettings provides operations to manage the compliance singleton.
 type UserSettings struct {
     Entity
-    // 
-    contactMergeSuggestions *ContactMergeSuggestions;
+    // The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+    contactMergeSuggestions ContactMergeSuggestionsable;
     // Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
     contributionToContentDiscoveryAsOrganizationDisabled *bool;
     // When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
     contributionToContentDiscoveryDisabled *bool;
     // The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
-    itemInsights *UserInsightsSettings;
+    itemInsights UserInsightsSettingsable;
     // The user's preferences for languages, regional locale and date/time formatting.
-    regionalAndLanguageSettings *RegionalAndLanguageSettings;
+    regionalAndLanguageSettings RegionalAndLanguageSettingsable;
     // The shift preferences for the user.
-    shiftPreferences *ShiftPreferences;
+    shiftPreferences ShiftPreferencesable;
 }
 // NewUserSettings instantiates a new userSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
@@ -27,8 +27,12 @@ func NewUserSettings()(*UserSettings) {
     }
     return m
 }
-// GetContactMergeSuggestions gets the contactMergeSuggestions property value. 
-func (m *UserSettings) GetContactMergeSuggestions()(*ContactMergeSuggestions) {
+// CreateUserSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserSettings(), nil
+}
+// GetContactMergeSuggestions gets the contactMergeSuggestions property value. The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+func (m *UserSettings) GetContactMergeSuggestions()(ContactMergeSuggestionsable) {
     if m == nil {
         return nil
     } else {
@@ -51,40 +55,16 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
         return m.contributionToContentDiscoveryDisabled
     }
 }
-// GetItemInsights gets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
-func (m *UserSettings) GetItemInsights()(*UserInsightsSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemInsights
-    }
-}
-// GetRegionalAndLanguageSettings gets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
-func (m *UserSettings) GetRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.regionalAndLanguageSettings
-    }
-}
-// GetShiftPreferences gets the shiftPreferences property value. The shift preferences for the user.
-func (m *UserSettings) GetShiftPreferences()(*ShiftPreferences) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shiftPreferences
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contactMergeSuggestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContactMergeSuggestions() })
+        val, err := n.GetObjectValue(CreateContactMergeSuggestionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContactMergeSuggestions(val.(*ContactMergeSuggestions))
+            m.SetContactMergeSuggestions(val.(ContactMergeSuggestionsable))
         }
         return nil
     }
@@ -109,36 +89,60 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["itemInsights"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserInsightsSettings() })
+        val, err := n.GetObjectValue(CreateUserInsightsSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetItemInsights(val.(*UserInsightsSettings))
+            m.SetItemInsights(val.(UserInsightsSettingsable))
         }
         return nil
     }
     res["regionalAndLanguageSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRegionalAndLanguageSettings() })
+        val, err := n.GetObjectValue(CreateRegionalAndLanguageSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRegionalAndLanguageSettings(val.(*RegionalAndLanguageSettings))
+            m.SetRegionalAndLanguageSettings(val.(RegionalAndLanguageSettingsable))
         }
         return nil
     }
     res["shiftPreferences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShiftPreferences() })
+        val, err := n.GetObjectValue(CreateShiftPreferencesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetShiftPreferences(val.(*ShiftPreferences))
+            m.SetShiftPreferences(val.(ShiftPreferencesable))
         }
         return nil
     }
     return res
+}
+// GetItemInsights gets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
+func (m *UserSettings) GetItemInsights()(UserInsightsSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemInsights
+    }
+}
+// GetRegionalAndLanguageSettings gets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
+func (m *UserSettings) GetRegionalAndLanguageSettings()(RegionalAndLanguageSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.regionalAndLanguageSettings
+    }
+}
+// GetShiftPreferences gets the shiftPreferences property value. The shift preferences for the user.
+func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shiftPreferences
+    }
 }
 func (m *UserSettings) IsNil()(bool) {
     return m == nil
@@ -187,8 +191,8 @@ func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// SetContactMergeSuggestions sets the contactMergeSuggestions property value. 
-func (m *UserSettings) SetContactMergeSuggestions(value *ContactMergeSuggestions)() {
+// SetContactMergeSuggestions sets the contactMergeSuggestions property value. The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+func (m *UserSettings) SetContactMergeSuggestions(value ContactMergeSuggestionsable)() {
     if m != nil {
         m.contactMergeSuggestions = value
     }
@@ -206,19 +210,19 @@ func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() 
     }
 }
 // SetItemInsights sets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
-func (m *UserSettings) SetItemInsights(value *UserInsightsSettings)() {
+func (m *UserSettings) SetItemInsights(value UserInsightsSettingsable)() {
     if m != nil {
         m.itemInsights = value
     }
 }
 // SetRegionalAndLanguageSettings sets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
-func (m *UserSettings) SetRegionalAndLanguageSettings(value *RegionalAndLanguageSettings)() {
+func (m *UserSettings) SetRegionalAndLanguageSettings(value RegionalAndLanguageSettingsable)() {
     if m != nil {
         m.regionalAndLanguageSettings = value
     }
 }
 // SetShiftPreferences sets the shiftPreferences property value. The shift preferences for the user.
-func (m *UserSettings) SetShiftPreferences(value *ShiftPreferences)() {
+func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
     if m != nil {
         m.shiftPreferences = value
     }

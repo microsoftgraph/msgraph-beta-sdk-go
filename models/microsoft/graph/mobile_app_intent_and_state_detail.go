@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppIntentAndStateDetail 
+// MobileAppIntentAndStateDetail provides operations to manage the compliance singleton.
 type MobileAppIntentAndStateDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,7 +19,7 @@ type MobileAppIntentAndStateDetail struct {
     // Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
     mobileAppIntent *MobileAppIntent;
     // The supported platforms for the app.
-    supportedDeviceTypes []MobileAppSupportedDeviceType;
+    supportedDeviceTypes []MobileAppSupportedDeviceTypeable;
 }
 // NewMobileAppIntentAndStateDetail instantiates a new mobileAppIntentAndStateDetail and sets the default values.
 func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
@@ -27,6 +27,10 @@ func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMobileAppIntentAndStateDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppIntentAndStateDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppIntentAndStateDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
         return nil
     } else {
         return m.displayVersion
-    }
-}
-// GetInstallState gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
-func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
-}
-// GetMobileAppIntent gets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
-func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppIntent
-    }
-}
-// GetSupportedDeviceTypes gets the supportedDeviceTypes property value. The supported platforms for the app.
-func (m *MobileAppIntentAndStateDetail) GetSupportedDeviceTypes()([]MobileAppSupportedDeviceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedDeviceTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -138,20 +118,44 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["supportedDeviceTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppSupportedDeviceType() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppSupportedDeviceType, len(val))
+            res := make([]MobileAppSupportedDeviceTypeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppSupportedDeviceType))
+                res[i] = v.(MobileAppSupportedDeviceTypeable)
             }
             m.SetSupportedDeviceTypes(res)
         }
         return nil
     }
     return res
+}
+// GetInstallState gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installState
+    }
+}
+// GetMobileAppIntent gets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
+func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileAppIntent
+    }
+}
+// GetSupportedDeviceTypes gets the supportedDeviceTypes property value. The supported platforms for the app.
+func (m *MobileAppIntentAndStateDetail) GetSupportedDeviceTypes()([]MobileAppSupportedDeviceTypeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedDeviceTypes
+    }
 }
 func (m *MobileAppIntentAndStateDetail) IsNil()(bool) {
     return m == nil
@@ -193,8 +197,7 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetSupportedDeviceTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSupportedDeviceTypes()))
         for i, v := range m.GetSupportedDeviceTypes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("supportedDeviceTypes", cast)
         if err != nil {
@@ -246,7 +249,7 @@ func (m *MobileAppIntentAndStateDetail) SetMobileAppIntent(value *MobileAppInten
     }
 }
 // SetSupportedDeviceTypes sets the supportedDeviceTypes property value. The supported platforms for the app.
-func (m *MobileAppIntentAndStateDetail) SetSupportedDeviceTypes(value []MobileAppSupportedDeviceType)() {
+func (m *MobileAppIntentAndStateDetail) SetSupportedDeviceTypes(value []MobileAppSupportedDeviceTypeable)() {
     if m != nil {
         m.supportedDeviceTypes = value
     }

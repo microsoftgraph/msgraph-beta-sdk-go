@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsAppIcon 
+// TeamsAppIcon provides operations to manage the appCatalogs singleton.
 type TeamsAppIcon struct {
     Entity
     // The contents of the app icon if the icon is hosted within the Teams infrastructure.
-    hostedContent *TeamworkHostedContent;
+    hostedContent TeamworkHostedContentable;
     // The web URL that can be used for downloading the image.
     webUrl *string;
 }
@@ -19,32 +19,20 @@ func NewTeamsAppIcon()(*TeamsAppIcon) {
     }
     return m
 }
-// GetHostedContent gets the hostedContent property value. The contents of the app icon if the icon is hosted within the Teams infrastructure.
-func (m *TeamsAppIcon) GetHostedContent()(*TeamworkHostedContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostedContent
-    }
-}
-// GetWebUrl gets the webUrl property value. The web URL that can be used for downloading the image.
-func (m *TeamsAppIcon) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+// CreateTeamsAppIconFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamsAppIconFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamsAppIcon(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsAppIcon) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["hostedContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkHostedContent() })
+        val, err := n.GetObjectValue(CreateTeamworkHostedContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHostedContent(val.(*TeamworkHostedContent))
+            m.SetHostedContent(val.(TeamworkHostedContentable))
         }
         return nil
     }
@@ -59,6 +47,22 @@ func (m *TeamsAppIcon) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetHostedContent gets the hostedContent property value. The contents of the app icon if the icon is hosted within the Teams infrastructure.
+func (m *TeamsAppIcon) GetHostedContent()(TeamworkHostedContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hostedContent
+    }
+}
+// GetWebUrl gets the webUrl property value. The web URL that can be used for downloading the image.
+func (m *TeamsAppIcon) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *TeamsAppIcon) IsNil()(bool) {
     return m == nil
@@ -84,7 +88,7 @@ func (m *TeamsAppIcon) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetHostedContent sets the hostedContent property value. The contents of the app icon if the icon is hosted within the Teams infrastructure.
-func (m *TeamsAppIcon) SetHostedContent(value *TeamworkHostedContent)() {
+func (m *TeamsAppIcon) SetHostedContent(value TeamworkHostedContentable)() {
     if m != nil {
         m.hostedContent = value
     }

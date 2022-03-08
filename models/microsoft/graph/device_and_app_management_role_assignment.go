@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceAndAppManagementRoleAssignment 
+// DeviceAndAppManagementRoleAssignment provides operations to manage the deviceManagement singleton.
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
     // The list of ids of role member security groups. These are IDs from Azure Active Directory.
     members []string;
     // The set of Role Scope Tags defined on the Role Assignment.
-    roleScopeTags []RoleScopeTag;
+    roleScopeTags []RoleScopeTagable;
 }
 // NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {
@@ -19,21 +19,9 @@ func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssign
     }
     return m
 }
-// GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
-func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetRoleScopeTags gets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
-func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTags()([]RoleScopeTag) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTags
-    }
+// CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceAndAppManagementRoleAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -53,20 +41,36 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         return nil
     }
     res["roleScopeTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleScopeTag() })
+        val, err := n.GetCollectionOfObjectValues(CreateRoleScopeTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RoleScopeTag, len(val))
+            res := make([]RoleScopeTagable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RoleScopeTag))
+                res[i] = v.(RoleScopeTagable)
             }
             m.SetRoleScopeTags(res)
         }
         return nil
     }
     return res
+}
+// GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
+func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetRoleScopeTags gets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
+func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTags()([]RoleScopeTagable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTags
+    }
 }
 func (m *DeviceAndAppManagementRoleAssignment) IsNil()(bool) {
     return m == nil
@@ -86,8 +90,7 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i04eb5309aeaafad
     if m.GetRoleScopeTags() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleScopeTags()))
         for i, v := range m.GetRoleScopeTags() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleScopeTags", cast)
         if err != nil {
@@ -103,7 +106,7 @@ func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
     }
 }
 // SetRoleScopeTags sets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
-func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTag)() {
+func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTagable)() {
     if m != nil {
         m.roleScopeTags = value
     }

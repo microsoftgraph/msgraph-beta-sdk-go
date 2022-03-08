@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPCConnectivityIssue 
+// CloudPCConnectivityIssue provides operations to manage the deviceManagement singleton.
 type CloudPCConnectivityIssue struct {
     Entity
     // The Intune DeviceId of the device the connection is associated with.
@@ -27,6 +27,10 @@ func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCloudPCConnectivityIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPCConnectivityIssueFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPCConnectivityIssue(), nil
 }
 // GetDeviceId gets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
 func (m *CloudPCConnectivityIssue) GetDeviceId()(*string) {
@@ -58,22 +62,6 @@ func (m *CloudPCConnectivityIssue) GetErrorDescription()(*string) {
         return nil
     } else {
         return m.errorDescription
-    }
-}
-// GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
-func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedAction
-    }
-}
-// GetUserId gets the userId property value. The unique id of user who initialize the connection.
-func (m *CloudPCConnectivityIssue) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +128,22 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
+func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendedAction
+    }
+}
+// GetUserId gets the userId property value. The unique id of user who initialize the connection.
+func (m *CloudPCConnectivityIssue) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *CloudPCConnectivityIssue) IsNil()(bool) {
     return m == nil

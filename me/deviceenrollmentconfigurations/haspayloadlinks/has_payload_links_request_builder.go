@@ -2,10 +2,9 @@ package haspayloadlinks
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HasPayloadLinksRequestBuilder builds and executes requests for operations under \me\deviceEnrollmentConfigurations\microsoft.graph.hasPayloadLinks
+// HasPayloadLinksRequestBuilder provides operations to call the hasPayloadLinks method.
 type HasPayloadLinksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +16,7 @@ type HasPayloadLinksRequestBuilder struct {
 // HasPayloadLinksRequestBuilderPostOptions options for Post
 type HasPayloadLinksRequestBuilderPostOptions struct {
     // 
-    Body *HasPayloadLinksRequestBody;
+    Body HasPayloadLinksRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -34,7 +33,7 @@ func NewHasPayloadLinksRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *HasPayloadLinksRequestBuilder) CreatePostRequestInformation(options *Ha
     return requestInfo, nil
 }
 // Post invoke action hasPayloadLinks
-func (m *HasPayloadLinksRequestBuilder) Post(options *HasPayloadLinksRequestBuilderPostOptions)([]HasPayloadLinks, error) {
+func (m *HasPayloadLinksRequestBuilder) Post(options *HasPayloadLinksRequestBuilderPostOptions)(HasPayloadLinksResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewHasPayloadLinks() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateHasPayloadLinksResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]HasPayloadLinks, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*HasPayloadLinks))
-    }
-    return val, nil
+    return res.(HasPayloadLinksResponseable), nil
 }

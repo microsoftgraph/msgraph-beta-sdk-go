@@ -2,11 +2,11 @@ package partners
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i37bf7c2ad648ffe2b5a27e7e067066385f24d44c793b3b8e12fe4a429b66d345 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/crosstenantaccesspolicy/partners/count"
 )
 
-// PartnersRequestBuilder builds and executes requests for operations under \policies\crossTenantAccessPolicy\partners
+// PartnersRequestBuilder provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
 type PartnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type PartnersRequestBuilderGetQueryParameters struct {
 // PartnersRequestBuilderPostOptions options for Post
 type PartnersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartner;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartnerable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewPartnersRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewPartnersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPartnersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PartnersRequestBuilder) Count()(*i37bf7c2ad648ffe2b5a27e7e067066385f24d44c793b3b8e12fe4a429b66d345.CountRequestBuilder) {
+    return i37bf7c2ad648ffe2b5a27e7e067066385f24d44c793b3b8e12fe4a429b66d345.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation defines partner-specific configurations for external Azure Active Directory organizations.
 func (m *PartnersRequestBuilder) CreateGetRequestInformation(options *PartnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *PartnersRequestBuilder) CreateGetRequestInformation(options *PartnersRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation defines partner-specific configurations for external Azure Active Directory organizations.
+// CreatePostRequestInformation create new navigation property to partners for policies
 func (m *PartnersRequestBuilder) CreatePostRequestInformation(options *PartnersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *PartnersRequestBuilder) CreatePostRequestInformation(options *PartnersR
     return requestInfo, nil
 }
 // Get defines partner-specific configurations for external Azure Active Directory organizations.
-func (m *PartnersRequestBuilder) Get(options *PartnersRequestBuilderGetOptions)(*PartnersResponse, error) {
+func (m *PartnersRequestBuilder) Get(options *PartnersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartnerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPartnersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCrossTenantAccessPolicyConfigurationPartnerCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PartnersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartnerCollectionResponseable), nil
 }
-// Post defines partner-specific configurations for external Azure Active Directory organizations.
-func (m *PartnersRequestBuilder) Post(options *PartnersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartner, error) {
+// Post create new navigation property to partners for policies
+func (m *PartnersRequestBuilder) Post(options *PartnersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartnerable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCrossTenantAccessPolicyConfigurationPartner() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartner), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CrossTenantAccessPolicyConfigurationPartnerable), nil
 }

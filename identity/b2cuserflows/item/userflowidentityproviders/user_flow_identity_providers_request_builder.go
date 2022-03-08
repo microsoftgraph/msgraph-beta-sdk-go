@@ -2,12 +2,11 @@ package userflowidentityproviders
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i70f436469490863988a889d70e14c401468a62c692956cd713796e412d3d6b4e "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userflowidentityproviders/ref"
-    i8ab7bf9c75474f49faf98dbb1be0651a168ad02f853ea1051c2d43fba4af072b "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userflowidentityproviders/availableprovidertypes"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2e0031004f99e17a51597e59268a910e7b7c312818d2d7b6f98ab33bc926834f "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userflowidentityproviders/count"
 )
 
-// UserFlowIdentityProvidersRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userFlowIdentityProviders
+// UserFlowIdentityProvidersRequestBuilder provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
 type UserFlowIdentityProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,10 +45,6 @@ type UserFlowIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// AvailableProviderTypes builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userFlowIdentityProviders\microsoft.graph.availableProviderTypes()
-func (m *UserFlowIdentityProvidersRequestBuilder) AvailableProviderTypes()(*i8ab7bf9c75474f49faf98dbb1be0651a168ad02f853ea1051c2d43fba4af072b.AvailableProviderTypesRequestBuilder) {
-    return i8ab7bf9c75474f49faf98dbb1be0651a168ad02f853ea1051c2d43fba4af072b.NewAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewUserFlowIdentityProvidersRequestBuilderInternal instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
 func NewUserFlowIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowIdentityProvidersRequestBuilder) {
     m := &UserFlowIdentityProvidersRequestBuilder{
@@ -59,7 +54,7 @@ func NewUserFlowIdentityProvidersRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -68,6 +63,9 @@ func NewUserFlowIdentityProvidersRequestBuilder(rawUrl string, requestAdapter id
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserFlowIdentityProvidersRequestBuilder) Count()(*i2e0031004f99e17a51597e59268a910e7b7c312818d2d7b6f98ab33bc926834f.CountRequestBuilder) {
+    return i2e0031004f99e17a51597e59268a910e7b7c312818d2d7b6f98ab33bc926834f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get userFlowIdentityProviders from identity
 func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation(options *UserFlowIdentityProvidersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -90,17 +88,18 @@ func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation(op
     return requestInfo, nil
 }
 // Get get userFlowIdentityProviders from identity
-func (m *UserFlowIdentityProvidersRequestBuilder) Get(options *UserFlowIdentityProvidersRequestBuilderGetOptions)(*UserFlowIdentityProvidersResponse, error) {
+func (m *UserFlowIdentityProvidersRequestBuilder) Get(options *UserFlowIdentityProvidersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProviderBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserFlowIdentityProvidersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIdentityProviderBaseCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserFlowIdentityProvidersResponse), nil
-}
-func (m *UserFlowIdentityProvidersRequestBuilder) Ref()(*i70f436469490863988a889d70e14c401468a62c692956cd713796e412d3d6b4e.RefRequestBuilder) {
-    return i70f436469490863988a889d70e14c401468a62c692956cd713796e412d3d6b4e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityProviderBaseCollectionResponseable), nil
 }

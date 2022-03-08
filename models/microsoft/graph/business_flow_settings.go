@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BusinessFlowSettings 
+// BusinessFlowSettings provides operations to manage the collection of approvalWorkflowProvider entities.
 type BusinessFlowSettings struct {
     AccessReviewSettings
     // 
@@ -16,6 +16,10 @@ func NewBusinessFlowSettings()(*BusinessFlowSettings) {
         AccessReviewSettings: *NewAccessReviewSettings(),
     }
     return m
+}
+// CreateBusinessFlowSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBusinessFlowSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBusinessFlowSettings(), nil
 }
 // GetDurationInDays gets the durationInDays property value. 
 func (m *BusinessFlowSettings) GetDurationInDays()(*int32) {

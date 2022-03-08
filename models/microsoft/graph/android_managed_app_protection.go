@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidManagedAppProtection 
+// AndroidManagedAppProtection provides operations to manage the deviceAppManagement singleton.
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
     // Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
@@ -22,9 +22,9 @@ type AndroidManagedAppProtection struct {
     // Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.
     appActionIfDeviceLockNotSet *ManagedAppRemediationAction;
     // If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-    approvedKeyboards []KeyValuePair;
+    approvedKeyboards []KeyValuePairable;
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileApp;
+    apps []ManagedMobileAppable;
     // Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
     biometricAuthenticationBlocked *bool;
     // Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
@@ -42,7 +42,7 @@ type AndroidManagedAppProtection struct {
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32;
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary *ManagedAppPolicyDeploymentSummary;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
     // Defines if any kind of lock must be required on android device
     deviceLockRequired *bool;
     // When this setting is enabled, app level encryption is disabled if device level encryption is enabled
@@ -50,7 +50,7 @@ type AndroidManagedAppProtection struct {
     // Indicates whether application data for managed apps should be encrypted
     encryptAppData *bool;
     // App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-    exemptedAppPackages []KeyValuePair;
+    exemptedAppPackages []KeyValuePairable;
     // Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
     keyboardsRestricted *bool;
     // Minimum version of the Company portal that must be installed on the device or app access will be blocked
@@ -84,6 +84,10 @@ func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),
     }
     return m
+}
+// CreateAndroidManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidManagedAppProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidManagedAppProtection(), nil
 }
 // GetAllowedAndroidDeviceManufacturers gets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
 func (m *AndroidManagedAppProtection) GetAllowedAndroidDeviceManufacturers()(*string) {
@@ -142,7 +146,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedA
     }
 }
 // GetApprovedKeyboards gets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-func (m *AndroidManagedAppProtection) GetApprovedKeyboards()([]KeyValuePair) {
+func (m *AndroidManagedAppProtection) GetApprovedKeyboards()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +154,7 @@ func (m *AndroidManagedAppProtection) GetApprovedKeyboards()([]KeyValuePair) {
     }
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
-func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileApp) {
+func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -222,7 +226,7 @@ func (m *AndroidManagedAppProtection) GetDeployedAppCount()(*int32) {
     }
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *AndroidManagedAppProtection) GetDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
+func (m *AndroidManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -254,115 +258,11 @@ func (m *AndroidManagedAppProtection) GetEncryptAppData()(*bool) {
     }
 }
 // GetExemptedAppPackages gets the exemptedAppPackages property value. App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-func (m *AndroidManagedAppProtection) GetExemptedAppPackages()([]KeyValuePair) {
+func (m *AndroidManagedAppProtection) GetExemptedAppPackages()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
         return m.exemptedAppPackages
-    }
-}
-// GetKeyboardsRestricted gets the keyboardsRestricted property value. Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
-func (m *AndroidManagedAppProtection) GetKeyboardsRestricted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyboardsRestricted
-    }
-}
-// GetMinimumRequiredCompanyPortalVersion gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
-func (m *AndroidManagedAppProtection) GetMinimumRequiredCompanyPortalVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredCompanyPortalVersion
-    }
-}
-// GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
-func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredPatchVersion
-    }
-}
-// GetMinimumWarningCompanyPortalVersion gets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
-func (m *AndroidManagedAppProtection) GetMinimumWarningCompanyPortalVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningCompanyPortalVersion
-    }
-}
-// GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
-func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningPatchVersion
-    }
-}
-// GetMinimumWipeCompanyPortalVersion gets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
-func (m *AndroidManagedAppProtection) GetMinimumWipeCompanyPortalVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipeCompanyPortalVersion
-    }
-}
-// GetMinimumWipePatchVersion gets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
-func (m *AndroidManagedAppProtection) GetMinimumWipePatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipePatchVersion
-    }
-}
-// GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
-func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredAndroidSafetyNetAppsVerificationType
-    }
-}
-// GetRequiredAndroidSafetyNetDeviceAttestationType gets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
-func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestationType()(*AndroidManagedAppSafetyNetDeviceAttestationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredAndroidSafetyNetDeviceAttestationType
-    }
-}
-// GetRequiredAndroidSafetyNetEvaluationType gets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work.
-func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType()(*AndroidManagedAppSafetyNetEvaluationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredAndroidSafetyNetEvaluationType
-    }
-}
-// GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
-func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
-}
-// GetWarnAfterCompanyPortalUpdateDeferralInDays gets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
-func (m *AndroidManagedAppProtection) GetWarnAfterCompanyPortalUpdateDeferralInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.warnAfterCompanyPortalUpdateDeferralInDays
-    }
-}
-// GetWipeAfterCompanyPortalUpdateDeferralInDays gets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
-func (m *AndroidManagedAppProtection) GetWipeAfterCompanyPortalUpdateDeferralInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wipeAfterCompanyPortalUpdateDeferralInDays
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -443,28 +343,28 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["approvedKeyboards"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetApprovedKeyboards(res)
         }
         return nil
     }
     res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedMobileApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedMobileApp, len(val))
+            res := make([]ManagedMobileAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedMobileApp))
+                res[i] = v.(ManagedMobileAppable)
             }
             m.SetApps(res)
         }
@@ -551,12 +451,12 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppPolicyDeploymentSummary() })
+        val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+            m.SetDeploymentSummary(val.(ManagedAppPolicyDeploymentSummaryable))
         }
         return nil
     }
@@ -591,14 +491,14 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["exemptedAppPackages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetExemptedAppPackages(res)
         }
@@ -736,6 +636,110 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetKeyboardsRestricted gets the keyboardsRestricted property value. Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
+func (m *AndroidManagedAppProtection) GetKeyboardsRestricted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyboardsRestricted
+    }
+}
+// GetMinimumRequiredCompanyPortalVersion gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
+func (m *AndroidManagedAppProtection) GetMinimumRequiredCompanyPortalVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumRequiredCompanyPortalVersion
+    }
+}
+// GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
+func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumRequiredPatchVersion
+    }
+}
+// GetMinimumWarningCompanyPortalVersion gets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
+func (m *AndroidManagedAppProtection) GetMinimumWarningCompanyPortalVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWarningCompanyPortalVersion
+    }
+}
+// GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
+func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWarningPatchVersion
+    }
+}
+// GetMinimumWipeCompanyPortalVersion gets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
+func (m *AndroidManagedAppProtection) GetMinimumWipeCompanyPortalVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWipeCompanyPortalVersion
+    }
+}
+// GetMinimumWipePatchVersion gets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
+func (m *AndroidManagedAppProtection) GetMinimumWipePatchVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWipePatchVersion
+    }
+}
+// GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
+func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requiredAndroidSafetyNetAppsVerificationType
+    }
+}
+// GetRequiredAndroidSafetyNetDeviceAttestationType gets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
+func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestationType()(*AndroidManagedAppSafetyNetDeviceAttestationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requiredAndroidSafetyNetDeviceAttestationType
+    }
+}
+// GetRequiredAndroidSafetyNetEvaluationType gets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work.
+func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType()(*AndroidManagedAppSafetyNetEvaluationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requiredAndroidSafetyNetEvaluationType
+    }
+}
+// GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
+func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.screenCaptureBlocked
+    }
+}
+// GetWarnAfterCompanyPortalUpdateDeferralInDays gets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+func (m *AndroidManagedAppProtection) GetWarnAfterCompanyPortalUpdateDeferralInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.warnAfterCompanyPortalUpdateDeferralInDays
+    }
+}
+// GetWipeAfterCompanyPortalUpdateDeferralInDays gets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+func (m *AndroidManagedAppProtection) GetWipeAfterCompanyPortalUpdateDeferralInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wipeAfterCompanyPortalUpdateDeferralInDays
+    }
+}
 func (m *AndroidManagedAppProtection) IsNil()(bool) {
     return m == nil
 }
@@ -795,8 +799,7 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetApprovedKeyboards() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApprovedKeyboards()))
         for i, v := range m.GetApprovedKeyboards() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("approvedKeyboards", cast)
         if err != nil {
@@ -806,8 +809,7 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
@@ -889,8 +891,7 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetExemptedAppPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExemptedAppPackages()))
         for i, v := range m.GetExemptedAppPackages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("exemptedAppPackages", cast)
         if err != nil {
@@ -1023,13 +1024,13 @@ func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *Mana
     }
 }
 // SetApprovedKeyboards sets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-func (m *AndroidManagedAppProtection) SetApprovedKeyboards(value []KeyValuePair)() {
+func (m *AndroidManagedAppProtection) SetApprovedKeyboards(value []KeyValuePairable)() {
     if m != nil {
         m.approvedKeyboards = value
     }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
-func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileApp)() {
+func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
     if m != nil {
         m.apps = value
     }
@@ -1083,7 +1084,7 @@ func (m *AndroidManagedAppProtection) SetDeployedAppCount(value *int32)() {
     }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *AndroidManagedAppProtection) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
+func (m *AndroidManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
     if m != nil {
         m.deploymentSummary = value
     }
@@ -1107,7 +1108,7 @@ func (m *AndroidManagedAppProtection) SetEncryptAppData(value *bool)() {
     }
 }
 // SetExemptedAppPackages sets the exemptedAppPackages property value. App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-func (m *AndroidManagedAppProtection) SetExemptedAppPackages(value []KeyValuePair)() {
+func (m *AndroidManagedAppProtection) SetExemptedAppPackages(value []KeyValuePairable)() {
     if m != nil {
         m.exemptedAppPackages = value
     }

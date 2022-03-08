@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserPFXCertificate 
+// UserPFXCertificate provides operations to manage the deviceManagement singleton.
 type UserPFXCertificate struct {
     Entity
     // Date/time when this PFX certificate was imported.
@@ -40,6 +40,10 @@ func NewUserPFXCertificate()(*UserPFXCertificate) {
     }
     return m
 }
+// CreateUserPFXCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserPFXCertificateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserPFXCertificate(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Date/time when this PFX certificate was imported.
 func (m *UserPFXCertificate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -70,70 +74,6 @@ func (m *UserPFXCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetIntendedPurpose gets the intendedPurpose property value. Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
-func (m *UserPFXCertificate) GetIntendedPurpose()(*UserPfxIntendedPurpose) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intendedPurpose
-    }
-}
-// GetKeyName gets the keyName property value. Name of the key (within the provider) used to encrypt the blob.
-func (m *UserPFXCertificate) GetKeyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date/time when this PFX certificate was last modified.
-func (m *UserPFXCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPaddingScheme gets the paddingScheme property value. Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
-func (m *UserPFXCertificate) GetPaddingScheme()(*UserPfxPaddingScheme) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paddingScheme
-    }
-}
-// GetProviderName gets the providerName property value. Crypto provider used to encrypt this blob.
-func (m *UserPFXCertificate) GetProviderName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerName
-    }
-}
-// GetStartDateTime gets the startDateTime property value. Certificate's validity start date/time.
-func (m *UserPFXCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetThumbprint gets the thumbprint property value. SHA-1 thumbprint of the PFX certificate.
-func (m *UserPFXCertificate) GetThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbprint
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name of the PFX certificate.
-func (m *UserPFXCertificate) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -260,6 +200,70 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetIntendedPurpose gets the intendedPurpose property value. Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+func (m *UserPFXCertificate) GetIntendedPurpose()(*UserPfxIntendedPurpose) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intendedPurpose
+    }
+}
+// GetKeyName gets the keyName property value. Name of the key (within the provider) used to encrypt the blob.
+func (m *UserPFXCertificate) GetKeyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyName
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date/time when this PFX certificate was last modified.
+func (m *UserPFXCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPaddingScheme gets the paddingScheme property value. Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
+func (m *UserPFXCertificate) GetPaddingScheme()(*UserPfxPaddingScheme) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paddingScheme
+    }
+}
+// GetProviderName gets the providerName property value. Crypto provider used to encrypt this blob.
+func (m *UserPFXCertificate) GetProviderName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.providerName
+    }
+}
+// GetStartDateTime gets the startDateTime property value. Certificate's validity start date/time.
+func (m *UserPFXCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetThumbprint gets the thumbprint property value. SHA-1 thumbprint of the PFX certificate.
+func (m *UserPFXCertificate) GetThumbprint()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbprint
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name of the PFX certificate.
+func (m *UserPFXCertificate) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *UserPFXCertificate) IsNil()(bool) {
     return m == nil

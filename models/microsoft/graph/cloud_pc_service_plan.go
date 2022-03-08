@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcServicePlan 
+// CloudPcServicePlan provides operations to manage the deviceManagement singleton.
 type CloudPcServicePlan struct {
     Entity
     // The name for the service plan. Read-only.
@@ -27,52 +27,16 @@ func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     }
     return m
 }
+// CreateCloudPcServicePlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcServicePlanFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcServicePlan(), nil
+}
 // GetDisplayName gets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetRamInGB gets the ramInGB property value. The size of the RAM in GB. Read-only.
-func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ramInGB
-    }
-}
-// GetStorageInGB gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
-func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageInGB
-    }
-}
-// GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
-func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userProfileInGB
-    }
-}
-// GetVCpuCount gets the vCpuCount property value. The number of vCPUs. Read-only.
-func (m *CloudPcServicePlan) GetVCpuCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vCpuCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +103,46 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetRamInGB gets the ramInGB property value. The size of the RAM in GB. Read-only.
+func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ramInGB
+    }
+}
+// GetStorageInGB gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
+func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.storageInGB
+    }
+}
+// GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
+func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userProfileInGB
+    }
+}
+// GetVCpuCount gets the vCpuCount property value. The number of vCPUs. Read-only.
+func (m *CloudPcServicePlan) GetVCpuCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vCpuCount
+    }
 }
 func (m *CloudPcServicePlan) IsNil()(bool) {
     return m == nil

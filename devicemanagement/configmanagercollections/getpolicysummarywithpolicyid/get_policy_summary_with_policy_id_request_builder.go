@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetPolicySummaryWithPolicyIdRequestBuilder builds and executes requests for operations under \deviceManagement\configManagerCollections\microsoft.graph.getPolicySummary(policyId='{policyId}')
+// GetPolicySummaryWithPolicyIdRequestBuilder provides operations to call the getPolicySummary method.
 type GetPolicySummaryWithPolicyIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type GetPolicySummaryWithPolicyIdRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // GetPolicySummaryWithPolicyIdResponse union type wrapper for classes configManagerPolicySummary
 type GetPolicySummaryWithPolicyIdResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type configManagerPolicySummary
-    configManagerPolicySummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummary;
+    configManagerPolicySummary i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummaryable;
 }
 // NewGetPolicySummaryWithPolicyIdResponse instantiates a new getPolicySummaryWithPolicyIdResponse and sets the default values.
 func NewGetPolicySummaryWithPolicyIdResponse()(*GetPolicySummaryWithPolicyIdResponse) {
@@ -37,6 +42,9 @@ func NewGetPolicySummaryWithPolicyIdResponse()(*GetPolicySummaryWithPolicyIdResp
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetPolicySummaryWithPolicyIdResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetPolicySummaryWithPolicyIdResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetPolicySummaryWithPolicyIdResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +55,7 @@ func (m *GetPolicySummaryWithPolicyIdResponse) GetAdditionalData()(map[string]in
     }
 }
 // GetConfigManagerPolicySummary gets the configManagerPolicySummary property value. Union type representation for type configManagerPolicySummary
-func (m *GetPolicySummaryWithPolicyIdResponse) GetConfigManagerPolicySummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummary) {
+func (m *GetPolicySummaryWithPolicyIdResponse) GetConfigManagerPolicySummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummaryable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +66,12 @@ func (m *GetPolicySummaryWithPolicyIdResponse) GetConfigManagerPolicySummary()(*
 func (m *GetPolicySummaryWithPolicyIdResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["configManagerPolicySummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewConfigManagerPolicySummary() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateConfigManagerPolicySummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfigManagerPolicySummary(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummary))
+            m.SetConfigManagerPolicySummary(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummaryable))
         }
         return nil
     }
@@ -95,7 +103,7 @@ func (m *GetPolicySummaryWithPolicyIdResponse) SetAdditionalData(value map[strin
     }
 }
 // SetConfigManagerPolicySummary sets the configManagerPolicySummary property value. Union type representation for type configManagerPolicySummary
-func (m *GetPolicySummaryWithPolicyIdResponse) SetConfigManagerPolicySummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummary)() {
+func (m *GetPolicySummaryWithPolicyIdResponse) SetConfigManagerPolicySummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummaryable)() {
     if m != nil {
         m.configManagerPolicySummary = value
     }
@@ -112,7 +120,7 @@ func NewGetPolicySummaryWithPolicyIdRequestBuilderInternal(pathParameters map[st
     if policyId != nil {
         urlTplParams["policyId"] = *policyId
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *GetPolicySummaryWithPolicyIdRequestBuilder) CreateGetRequestInformation
     return requestInfo, nil
 }
 // Get invoke function getPolicySummary
-func (m *GetPolicySummaryWithPolicyIdRequestBuilder) Get(options *GetPolicySummaryWithPolicyIdRequestBuilderGetOptions)(*GetPolicySummaryWithPolicyIdResponse, error) {
+func (m *GetPolicySummaryWithPolicyIdRequestBuilder) Get(options *GetPolicySummaryWithPolicyIdRequestBuilderGetOptions)(GetPolicySummaryWithPolicyIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetPolicySummaryWithPolicyIdResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPolicySummaryWithPolicyIdResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetPolicySummaryWithPolicyIdResponse), nil
+    return res.(GetPolicySummaryWithPolicyIdResponseable), nil
 }

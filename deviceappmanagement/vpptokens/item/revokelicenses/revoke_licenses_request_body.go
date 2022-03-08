@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RevokeLicensesRequestBody 
+// RevokeLicensesRequestBody provides operations to call the revokeLicenses method.
 type RevokeLicensesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewRevokeLicensesRequestBody()(*RevokeLicensesRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRevokeLicensesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRevokeLicensesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRevokeLicensesRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RevokeLicensesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetNotifyManagedDevices gets the notifyManagedDevices property value. 
-func (m *RevokeLicensesRequestBody) GetNotifyManagedDevices()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifyManagedDevices
-    }
-}
-// GetRevokeUntrackedLicenses gets the revokeUntrackedLicenses property value. 
-func (m *RevokeLicensesRequestBody) GetRevokeUntrackedLicenses()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.revokeUntrackedLicenses
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *RevokeLicensesRequestBody) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetNotifyManagedDevices gets the notifyManagedDevices property value. 
+func (m *RevokeLicensesRequestBody) GetNotifyManagedDevices()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notifyManagedDevices
+    }
+}
+// GetRevokeUntrackedLicenses gets the revokeUntrackedLicenses property value. 
+func (m *RevokeLicensesRequestBody) GetRevokeUntrackedLicenses()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.revokeUntrackedLicenses
+    }
 }
 func (m *RevokeLicensesRequestBody) IsNil()(bool) {
     return m == nil

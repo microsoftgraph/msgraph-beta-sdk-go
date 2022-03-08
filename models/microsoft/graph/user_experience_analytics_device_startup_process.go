@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcess 
+// UserExperienceAnalyticsDeviceStartupProcess provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsDeviceStartupProcess struct {
     Entity
     // The user experience analytics device id.
@@ -25,45 +25,9 @@ func NewUserExperienceAnalyticsDeviceStartupProcess()(*UserExperienceAnalyticsDe
     }
     return m
 }
-// GetManagedDeviceId gets the managedDeviceId property value. The user experience analytics device id.
-func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetProcessName gets the processName property value. User experience analytics device startup process name.
-func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processName
-    }
-}
-// GetProductName gets the productName property value. The user experience analytics device startup process product name.
-func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productName
-    }
-}
-// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
-func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetStartupImpactInMs gets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupImpactInMs
-    }
+// CreateUserExperienceAnalyticsDeviceStartupProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsDeviceStartupProcessFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsDeviceStartupProcess(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -119,6 +83,46 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetManagedDeviceId gets the managedDeviceId property value. The user experience analytics device id.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetProcessName gets the processName property value. User experience analytics device startup process name.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processName
+    }
+}
+// GetProductName gets the productName property value. The user experience analytics device startup process product name.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productName
+    }
+}
+// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetStartupImpactInMs gets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startupImpactInMs
+    }
 }
 func (m *UserExperienceAnalyticsDeviceStartupProcess) IsNil()(bool) {
     return m == nil

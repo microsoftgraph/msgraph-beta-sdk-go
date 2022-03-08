@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonAnnualEvent 
+// PersonAnnualEvent provides operations to manage the compliance singleton.
 type PersonAnnualEvent struct {
     ItemFacet
     // 
@@ -21,6 +21,10 @@ func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     }
     return m
 }
+// CreatePersonAnnualEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonAnnualEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonAnnualEvent(), nil
+}
 // GetDate gets the date property value. 
 func (m *PersonAnnualEvent) GetDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *PersonAnnualEvent) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetType gets the type property value. 
-func (m *PersonAnnualEvent) GetType()(*PersonAnnualEventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetType gets the type property value. 
+func (m *PersonAnnualEvent) GetType()(*PersonAnnualEventType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *PersonAnnualEvent) IsNil()(bool) {
     return m == nil

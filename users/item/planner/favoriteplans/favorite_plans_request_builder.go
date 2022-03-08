@@ -2,11 +2,11 @@ package favoriteplans
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ic123b10aaeed7f9ca1dd45407cc1fcc4fa72c511ff6d25f4e2b568a80be947be "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/favoriteplans/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/favoriteplans/count"
 )
 
-// FavoritePlansRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\favoritePlans
+// FavoritePlansRequestBuilder provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
 type FavoritePlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewFavoritePlansRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewFavoritePlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFavoritePlansRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *FavoritePlansRequestBuilder) Count()(*i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1.CountRequestBuilder) {
+    return i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *FavoritePlansRequestBuilder) CreateGetRequestInformation(options *FavoritePlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *FavoritePlansRequestBuilder) CreateGetRequestInformation(options *Favor
     return requestInfo, nil
 }
 // Get read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-func (m *FavoritePlansRequestBuilder) Get(options *FavoritePlansRequestBuilderGetOptions)(*FavoritePlansResponse, error) {
+func (m *FavoritePlansRequestBuilder) Get(options *FavoritePlansRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFavoritePlansResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePlannerPlanCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*FavoritePlansResponse), nil
-}
-func (m *FavoritePlansRequestBuilder) Ref()(*ic123b10aaeed7f9ca1dd45407cc1fcc4fa72c511ff6d25f4e2b568a80be947be.RefRequestBuilder) {
-    return ic123b10aaeed7f9ca1dd45407cc1fcc4fa72c511ff6d25f4e2b568a80be947be.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlanCollectionResponseable), nil
 }

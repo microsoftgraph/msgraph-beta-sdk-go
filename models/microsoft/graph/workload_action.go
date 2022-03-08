@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// WorkloadAction 
+// WorkloadAction provides operations to manage the tenantRelationship singleton.
 type WorkloadAction struct {
     // The unique identifier for the workload action. Required. Read-only.
     actionId *string;
@@ -22,7 +22,7 @@ type WorkloadAction struct {
     // The service associated with workload action. Optional. Read-only.
     service *string;
     // The collection of settings associated with the workload action. Optional. Read-only.
-    settings []Setting;
+    settings []Settingable;
 }
 // NewWorkloadAction instantiates a new workloadAction and sets the default values.
 func NewWorkloadAction()(*WorkloadAction) {
@@ -30,6 +30,10 @@ func NewWorkloadAction()(*WorkloadAction) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWorkloadActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWorkloadActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWorkloadAction(), nil
 }
 // GetActionId gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadAction) GetActionId()(*string) {
@@ -69,30 +73,6 @@ func (m *WorkloadAction) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLicenses gets the licenses property value. 
-func (m *WorkloadAction) GetLicenses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenses
-    }
-}
-// GetService gets the service property value. The service associated with workload action. Optional. Read-only.
-func (m *WorkloadAction) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetSettings gets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
-func (m *WorkloadAction) GetSettings()([]Setting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -163,20 +143,44 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Setting, len(val))
+            res := make([]Settingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Setting))
+                res[i] = v.(Settingable)
             }
             m.SetSettings(res)
         }
         return nil
     }
     return res
+}
+// GetLicenses gets the licenses property value. 
+func (m *WorkloadAction) GetLicenses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.licenses
+    }
+}
+// GetService gets the service property value. The service associated with workload action. Optional. Read-only.
+func (m *WorkloadAction) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetSettings gets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
+func (m *WorkloadAction) GetSettings()([]Settingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
 }
 func (m *WorkloadAction) IsNil()(bool) {
     return m == nil
@@ -223,8 +227,7 @@ func (m *WorkloadAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("settings", cast)
         if err != nil {
@@ -282,7 +285,7 @@ func (m *WorkloadAction) SetService(value *string)() {
     }
 }
 // SetSettings sets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
-func (m *WorkloadAction) SetSettings(value []Setting)() {
+func (m *WorkloadAction) SetSettings(value []Settingable)() {
     if m != nil {
         m.settings = value
     }

@@ -2,11 +2,11 @@ package unsupportedgrouppolicyextensions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicymigrationreports/item/unsupportedgrouppolicyextensions/count"
 )
 
-// UnsupportedGroupPolicyExtensionsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\unsupportedGroupPolicyExtensions
+// UnsupportedGroupPolicyExtensionsRequestBuilder provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
 type UnsupportedGroupPolicyExtensionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameters struct {
 // UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions options for Post
 type UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtension;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtensionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUnsupportedGroupPolicyExtensionsRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Count()(*i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a.CountRequestBuilder) {
+    return i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a list of unsupported group policy extensions inside the Group Policy Object.
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInformation(options *UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a list of unsupported group policy extensions inside the Group Policy Object.
+// CreatePostRequestInformation create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInformation(options *UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get a list of unsupported group policy extensions inside the Group Policy Object.
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Get(options *UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions)(*UnsupportedGroupPolicyExtensionsResponse, error) {
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Get(options *UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtensionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnsupportedGroupPolicyExtensionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnsupportedGroupPolicyExtensionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UnsupportedGroupPolicyExtensionsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtensionCollectionResponseable), nil
 }
-// Post a list of unsupported group policy extensions inside the Group Policy Object.
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Post(options *UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtension, error) {
+// Post create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Post(options *UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtensionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUnsupportedGroupPolicyExtension() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtension), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtensionable), nil
 }

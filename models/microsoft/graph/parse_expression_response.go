@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ParseExpressionResponse 
+// ParseExpressionResponse provides operations to call the parseExpression method.
 type ParseExpressionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Error details, if expression evaluation resulted in an error.
-    error *PublicError;
+    error PublicErrorable;
     // A collection of values produced by the evaluation of the expression.
     evaluationResult []string;
     // true if the evaluation was successful.
     evaluationSucceeded *bool;
     // An attributeMappingSource object representing the parsed expression.
-    parsedExpression *AttributeMappingSource;
+    parsedExpression AttributeMappingSourceable;
     // true if the expression was parsed successfully.
     parsingSucceeded *bool;
 }
@@ -26,6 +26,10 @@ func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateParseExpressionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateParseExpressionResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewParseExpressionResponse(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,7 +39,7 @@ func (m *ParseExpressionResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetError gets the error property value. Error details, if expression evaluation resulted in an error.
-func (m *ParseExpressionResponse) GetError()(*PublicError) {
+func (m *ParseExpressionResponse) GetError()(PublicErrorable) {
     if m == nil {
         return nil
     } else {
@@ -58,32 +62,16 @@ func (m *ParseExpressionResponse) GetEvaluationSucceeded()(*bool) {
         return m.evaluationSucceeded
     }
 }
-// GetParsedExpression gets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
-func (m *ParseExpressionResponse) GetParsedExpression()(*AttributeMappingSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parsedExpression
-    }
-}
-// GetParsingSucceeded gets the parsingSucceeded property value. true if the expression was parsed successfully.
-func (m *ParseExpressionResponse) GetParsingSucceeded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parsingSucceeded
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublicError() })
+        val, err := n.GetObjectValue(CreatePublicErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*PublicError))
+            m.SetError(val.(PublicErrorable))
         }
         return nil
     }
@@ -112,12 +100,12 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["parsedExpression"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttributeMappingSource() })
+        val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParsedExpression(val.(*AttributeMappingSource))
+            m.SetParsedExpression(val.(AttributeMappingSourceable))
         }
         return nil
     }
@@ -132,6 +120,22 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetParsedExpression gets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
+func (m *ParseExpressionResponse) GetParsedExpression()(AttributeMappingSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parsedExpression
+    }
+}
+// GetParsingSucceeded gets the parsingSucceeded property value. true if the expression was parsed successfully.
+func (m *ParseExpressionResponse) GetParsingSucceeded()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parsingSucceeded
+    }
 }
 func (m *ParseExpressionResponse) IsNil()(bool) {
     return m == nil
@@ -183,7 +187,7 @@ func (m *ParseExpressionResponse) SetAdditionalData(value map[string]interface{}
     }
 }
 // SetError sets the error property value. Error details, if expression evaluation resulted in an error.
-func (m *ParseExpressionResponse) SetError(value *PublicError)() {
+func (m *ParseExpressionResponse) SetError(value PublicErrorable)() {
     if m != nil {
         m.error = value
     }
@@ -201,7 +205,7 @@ func (m *ParseExpressionResponse) SetEvaluationSucceeded(value *bool)() {
     }
 }
 // SetParsedExpression sets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
-func (m *ParseExpressionResponse) SetParsedExpression(value *AttributeMappingSource)() {
+func (m *ParseExpressionResponse) SetParsedExpression(value AttributeMappingSourceable)() {
     if m != nil {
         m.parsedExpression = value
     }

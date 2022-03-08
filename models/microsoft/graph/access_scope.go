@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the evaluate method.
 type AccessScope int
 
 const (

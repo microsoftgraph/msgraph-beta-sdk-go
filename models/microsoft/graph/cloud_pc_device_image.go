@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcDeviceImage 
+// CloudPcDeviceImage provides operations to manage the deviceManagement singleton.
 type CloudPcDeviceImage struct {
     Entity
     // The image's display name.
@@ -36,6 +36,10 @@ func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
     }
     return m
 }
+// CreateCloudPcDeviceImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcDeviceImageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcDeviceImage(), nil
+}
 // GetDisplayName gets the displayName property value. The image's display name.
 func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     if m == nil {
@@ -50,70 +54,6 @@ func (m *CloudPcDeviceImage) GetExpirationDate()(*i04eb5309aeaafadd28374d79c8471
         return nil
     } else {
         return m.expirationDate
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-func (m *CloudPcDeviceImage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOperatingSystem gets the operatingSystem property value. The image's operating system. For example: Windows 10 Enterprise.
-func (m *CloudPcDeviceImage) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
-}
-// GetOsBuildNumber gets the osBuildNumber property value. The image's OS build version. For example: 1909.
-func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osBuildNumber
-    }
-}
-// GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
-func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osStatus
-    }
-}
-// GetSourceImageResourceId gets the sourceImageResourceId property value. The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
-func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceImageResourceId
-    }
-}
-// GetStatus gets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
-func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetStatusDetails gets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
-func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
-    }
-}
-// GetVersion gets the version property value. The image version. For example: 0.0.1, 1.5.13.
-func (m *CloudPcDeviceImage) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +160,70 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+func (m *CloudPcDeviceImage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOperatingSystem gets the operatingSystem property value. The image's operating system. For example: Windows 10 Enterprise.
+func (m *CloudPcDeviceImage) GetOperatingSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystem
+    }
+}
+// GetOsBuildNumber gets the osBuildNumber property value. The image's OS build version. For example: 1909.
+func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osBuildNumber
+    }
+}
+// GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
+func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osStatus
+    }
+}
+// GetSourceImageResourceId gets the sourceImageResourceId property value. The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
+func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceImageResourceId
+    }
+}
+// GetStatus gets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
+func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetStatusDetails gets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
+func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statusDetails
+    }
+}
+// GetVersion gets the version property value. The image version. For example: 0.0.1, 1.5.13.
+func (m *CloudPcDeviceImage) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *CloudPcDeviceImage) IsNil()(bool) {
     return m == nil

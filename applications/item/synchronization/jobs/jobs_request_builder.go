@@ -2,12 +2,12 @@ package jobs
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     idabdbd0ce7782af2dce85605bd2f1cfa204eefa118389d0ac6b33b8d7c7e9ead "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/synchronization/jobs/validatecredentials"
+    idd98eb362d57b8c73de7b38ab7898b713f8ee8b9046079723ecf4671bbd7d27e "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/synchronization/jobs/count"
 )
 
-// JobsRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\jobs
+// JobsRequestBuilder provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
 type JobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type JobsRequestBuilderGetQueryParameters struct {
 // JobsRequestBuilderPostOptions options for Post
 type JobsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJobable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewJobsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJobsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *JobsRequestBuilder) Count()(*idd98eb362d57b8c73de7b38ab7898b713f8ee8b9046079723ecf4671bbd7d27e.CountRequestBuilder) {
+    return idd98eb362d57b8c73de7b38ab7898b713f8ee8b9046079723ecf4671bbd7d27e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *JobsRequestBuilder) CreateGetRequestInformation(options *JobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *JobsRequestBuilder) CreateGetRequestInformation(options *JobsRequestBui
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+// CreatePostRequestInformation create new navigation property to jobs for applications
 func (m *JobsRequestBuilder) CreatePostRequestInformation(options *JobsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,28 +118,36 @@ func (m *JobsRequestBuilder) CreatePostRequestInformation(options *JobsRequestBu
     return requestInfo, nil
 }
 // Get performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *JobsRequestBuilder) Get(options *JobsRequestBuilderGetOptions)(*JobsResponse, error) {
+func (m *JobsRequestBuilder) Get(options *JobsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJobCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJobsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSynchronizationJobCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*JobsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJobCollectionResponseable), nil
 }
-// Post performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *JobsRequestBuilder) Post(options *JobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob, error) {
+// Post create new navigation property to jobs for applications
+func (m *JobsRequestBuilder) Post(options *JobsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJobable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSynchronizationJob() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSynchronizationJobFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJobable), nil
 }
 func (m *JobsRequestBuilder) ValidateCredentials()(*idabdbd0ce7782af2dce85605bd2f1cfa204eefa118389d0ac6b33b8d7c7e9ead.ValidateCredentialsRequestBuilder) {
     return idabdbd0ce7782af2dce85605bd2f1cfa204eefa118389d0ac6b33b8d7c7e9ead.NewValidateCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

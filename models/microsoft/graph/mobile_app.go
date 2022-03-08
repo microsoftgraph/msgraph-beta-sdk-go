@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileApp 
+// MobileApp provides operations to manage the deviceAppManagement singleton.
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
-    assignments []MobileAppAssignment;
+    assignments []MobileAppAssignmentable;
     // The list of categories for this app.
-    categories []MobileAppCategory;
+    categories []MobileAppCategoryable;
     // The date and time the app was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The total number of dependencies the child app has.
@@ -21,19 +21,19 @@ type MobileApp struct {
     // The developer of the app.
     developer *string;
     // The list of installation states for this mobile app.
-    deviceStatuses []MobileAppInstallStatus;
+    deviceStatuses []MobileAppInstallStatusable;
     // The admin provided or imported title of the app.
     displayName *string;
     // The more information Url.
     informationUrl *string;
     // Mobile App Install Summary.
-    installSummary *MobileAppInstallSummary;
+    installSummary MobileAppInstallSummaryable;
     // The value indicating whether the app is assigned to at least one group.
     isAssigned *bool;
     // The value indicating whether the app is marked as featured by the admin.
     isFeatured *bool;
     // The large icon, to be displayed in the app details and used for upload of the icon.
-    largeIcon *MimeContent;
+    largeIcon MimeContentable;
     // The date and time the app was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Notes for the app.
@@ -47,7 +47,7 @@ type MobileApp struct {
     // The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
     publishingState *MobileAppPublishingState;
     // List of relationships for this mobile app.
-    relationships []MobileAppRelationship;
+    relationships []MobileAppRelationshipable;
     // List of scope tag ids for this mobile app.
     roleScopeTagIds []string;
     // The total number of apps this app is directly or indirectly superseded by.
@@ -57,7 +57,7 @@ type MobileApp struct {
     // The upload state.
     uploadState *int32;
     // The list of installation states for this mobile app.
-    userStatuses []UserAppInstallStatus;
+    userStatuses []UserAppInstallStatusable;
 }
 // NewMobileApp instantiates a new mobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
@@ -66,8 +66,12 @@ func NewMobileApp()(*MobileApp) {
     }
     return m
 }
+// CreateMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileApp(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments for this mobile app.
-func (m *MobileApp) GetAssignments()([]MobileAppAssignment) {
+func (m *MobileApp) GetAssignments()([]MobileAppAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +79,7 @@ func (m *MobileApp) GetAssignments()([]MobileAppAssignment) {
     }
 }
 // GetCategories gets the categories property value. The list of categories for this app.
-func (m *MobileApp) GetCategories()([]MobileAppCategory) {
+func (m *MobileApp) GetCategories()([]MobileAppCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -115,7 +119,7 @@ func (m *MobileApp) GetDeveloper()(*string) {
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) GetDeviceStatuses()([]MobileAppInstallStatus) {
+func (m *MobileApp) GetDeviceStatuses()([]MobileAppInstallStatusable) {
     if m == nil {
         return nil
     } else {
@@ -130,168 +134,32 @@ func (m *MobileApp) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetInformationUrl gets the informationUrl property value. The more information Url.
-func (m *MobileApp) GetInformationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.informationUrl
-    }
-}
-// GetInstallSummary gets the installSummary property value. Mobile App Install Summary.
-func (m *MobileApp) GetInstallSummary()(*MobileAppInstallSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installSummary
-    }
-}
-// GetIsAssigned gets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
-func (m *MobileApp) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
-    }
-}
-// GetIsFeatured gets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
-func (m *MobileApp) GetIsFeatured()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFeatured
-    }
-}
-// GetLargeIcon gets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
-func (m *MobileApp) GetLargeIcon()(*MimeContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.largeIcon
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified.
-func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNotes gets the notes property value. Notes for the app.
-func (m *MobileApp) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetOwner gets the owner property value. The owner of the app.
-func (m *MobileApp) GetOwner()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
-}
-// GetPrivacyInformationUrl gets the privacyInformationUrl property value. The privacy statement Url.
-func (m *MobileApp) GetPrivacyInformationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacyInformationUrl
-    }
-}
-// GetPublisher gets the publisher property value. The publisher of the app.
-func (m *MobileApp) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetPublishingState gets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
-func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingState
-    }
-}
-// GetRelationships gets the relationships property value. List of relationships for this mobile app.
-func (m *MobileApp) GetRelationships()([]MobileAppRelationship) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relationships
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of scope tag ids for this mobile app.
-func (m *MobileApp) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
-func (m *MobileApp) GetSupersededAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supersededAppCount
-    }
-}
-// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
-func (m *MobileApp) GetSupersedingAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supersedingAppCount
-    }
-}
-// GetUploadState gets the uploadState property value. The upload state.
-func (m *MobileApp) GetUploadState()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadState
-    }
-}
-// GetUserStatuses gets the userStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) GetUserStatuses()([]UserAppInstallStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppAssignment, len(val))
+            res := make([]MobileAppAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppAssignment))
+                res[i] = v.(MobileAppAssignmentable)
             }
             m.SetAssignments(res)
         }
         return nil
     }
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppCategory, len(val))
+            res := make([]MobileAppCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppCategory))
+                res[i] = v.(MobileAppCategoryable)
             }
             m.SetCategories(res)
         }
@@ -338,14 +206,14 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppInstallStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppInstallStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppInstallStatus, len(val))
+            res := make([]MobileAppInstallStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppInstallStatus))
+                res[i] = v.(MobileAppInstallStatusable)
             }
             m.SetDeviceStatuses(res)
         }
@@ -372,12 +240,12 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["installSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppInstallSummary() })
+        val, err := n.GetObjectValue(CreateMobileAppInstallSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInstallSummary(val.(*MobileAppInstallSummary))
+            m.SetInstallSummary(val.(MobileAppInstallSummaryable))
         }
         return nil
     }
@@ -402,12 +270,12 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["largeIcon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLargeIcon(val.(*MimeContent))
+            m.SetLargeIcon(val.(MimeContentable))
         }
         return nil
     }
@@ -472,14 +340,14 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["relationships"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppRelationship() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppRelationshipFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppRelationship, len(val))
+            res := make([]MobileAppRelationshipable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppRelationship))
+                res[i] = v.(MobileAppRelationshipable)
             }
             m.SetRelationships(res)
         }
@@ -530,20 +398,156 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserAppInstallStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserAppInstallStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserAppInstallStatus, len(val))
+            res := make([]UserAppInstallStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserAppInstallStatus))
+                res[i] = v.(UserAppInstallStatusable)
             }
             m.SetUserStatuses(res)
         }
         return nil
     }
     return res
+}
+// GetInformationUrl gets the informationUrl property value. The more information Url.
+func (m *MobileApp) GetInformationUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.informationUrl
+    }
+}
+// GetInstallSummary gets the installSummary property value. Mobile App Install Summary.
+func (m *MobileApp) GetInstallSummary()(MobileAppInstallSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installSummary
+    }
+}
+// GetIsAssigned gets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
+func (m *MobileApp) GetIsAssigned()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAssigned
+    }
+}
+// GetIsFeatured gets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
+func (m *MobileApp) GetIsFeatured()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFeatured
+    }
+}
+// GetLargeIcon gets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
+func (m *MobileApp) GetLargeIcon()(MimeContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.largeIcon
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified.
+func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNotes gets the notes property value. Notes for the app.
+func (m *MobileApp) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetOwner gets the owner property value. The owner of the app.
+func (m *MobileApp) GetOwner()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.owner
+    }
+}
+// GetPrivacyInformationUrl gets the privacyInformationUrl property value. The privacy statement Url.
+func (m *MobileApp) GetPrivacyInformationUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.privacyInformationUrl
+    }
+}
+// GetPublisher gets the publisher property value. The publisher of the app.
+func (m *MobileApp) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetPublishingState gets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishingState
+    }
+}
+// GetRelationships gets the relationships property value. List of relationships for this mobile app.
+func (m *MobileApp) GetRelationships()([]MobileAppRelationshipable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relationships
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of scope tag ids for this mobile app.
+func (m *MobileApp) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+func (m *MobileApp) GetSupersededAppCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supersededAppCount
+    }
+}
+// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+func (m *MobileApp) GetSupersedingAppCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supersedingAppCount
+    }
+}
+// GetUploadState gets the uploadState property value. The upload state.
+func (m *MobileApp) GetUploadState()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadState
+    }
+}
+// GetUserStatuses gets the userStatuses property value. The list of installation states for this mobile app.
+func (m *MobileApp) GetUserStatuses()([]UserAppInstallStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatuses
+    }
 }
 func (m *MobileApp) IsNil()(bool) {
     return m == nil
@@ -557,8 +561,7 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -568,8 +571,7 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCategories()))
         for i, v := range m.GetCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("categories", cast)
         if err != nil {
@@ -603,8 +605,7 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -687,8 +688,7 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetRelationships() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRelationships()))
         for i, v := range m.GetRelationships() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("relationships", cast)
         if err != nil {
@@ -722,8 +722,7 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetUserStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
         if err != nil {
@@ -733,13 +732,13 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
-func (m *MobileApp) SetAssignments(value []MobileAppAssignment)() {
+func (m *MobileApp) SetAssignments(value []MobileAppAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
 // SetCategories sets the categories property value. The list of categories for this app.
-func (m *MobileApp) SetCategories(value []MobileAppCategory)() {
+func (m *MobileApp) SetCategories(value []MobileAppCategoryable)() {
     if m != nil {
         m.categories = value
     }
@@ -769,7 +768,7 @@ func (m *MobileApp) SetDeveloper(value *string)() {
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) SetDeviceStatuses(value []MobileAppInstallStatus)() {
+func (m *MobileApp) SetDeviceStatuses(value []MobileAppInstallStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }
@@ -787,7 +786,7 @@ func (m *MobileApp) SetInformationUrl(value *string)() {
     }
 }
 // SetInstallSummary sets the installSummary property value. Mobile App Install Summary.
-func (m *MobileApp) SetInstallSummary(value *MobileAppInstallSummary)() {
+func (m *MobileApp) SetInstallSummary(value MobileAppInstallSummaryable)() {
     if m != nil {
         m.installSummary = value
     }
@@ -805,7 +804,7 @@ func (m *MobileApp) SetIsFeatured(value *bool)() {
     }
 }
 // SetLargeIcon sets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
-func (m *MobileApp) SetLargeIcon(value *MimeContent)() {
+func (m *MobileApp) SetLargeIcon(value MimeContentable)() {
     if m != nil {
         m.largeIcon = value
     }
@@ -847,7 +846,7 @@ func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
     }
 }
 // SetRelationships sets the relationships property value. List of relationships for this mobile app.
-func (m *MobileApp) SetRelationships(value []MobileAppRelationship)() {
+func (m *MobileApp) SetRelationships(value []MobileAppRelationshipable)() {
     if m != nil {
         m.relationships = value
     }
@@ -877,7 +876,7 @@ func (m *MobileApp) SetUploadState(value *int32)() {
     }
 }
 // SetUserStatuses sets the userStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) SetUserStatuses(value []UserAppInstallStatus)() {
+func (m *MobileApp) SetUserStatuses(value []UserAppInstallStatusable)() {
     if m != nil {
         m.userStatuses = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NetworkLocationDetail 
+// NetworkLocationDetail provides operations to manage the auditLogRoot singleton.
 type NetworkLocationDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewNetworkLocationDetail()(*NetworkLocationDetail) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateNetworkLocationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNetworkLocationDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNetworkLocationDetail(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkLocationDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetNetworkNames gets the networkNames property value. Provides the name of the network used when signing in.
-func (m *NetworkLocationDetail) GetNetworkNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkNames
-    }
-}
-// GetNetworkType gets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
-func (m *NetworkLocationDetail) GetNetworkType()(*NetworkType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +60,22 @@ func (m *NetworkLocationDetail) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetNetworkNames gets the networkNames property value. Provides the name of the network used when signing in.
+func (m *NetworkLocationDetail) GetNetworkNames()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkNames
+    }
+}
+// GetNetworkType gets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
+func (m *NetworkLocationDetail) GetNetworkType()(*NetworkType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkType
+    }
 }
 func (m *NetworkLocationDetail) IsNil()(bool) {
     return m == nil

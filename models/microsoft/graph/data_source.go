@@ -6,11 +6,11 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// DataSource 
+// DataSource provides operations to manage the compliance singleton.
 type DataSource struct {
     Entity
     // The user who created the dataSource.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The date and time the dataSource was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The display name of the dataSource. This will be the name of the SharePoint site.
@@ -25,8 +25,12 @@ func NewDataSource()(*DataSource) {
     }
     return m
 }
+// CreateDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDataSourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDataSource(), nil
+}
 // GetCreatedBy gets the createdBy property value. The user who created the dataSource.
-func (m *DataSource) GetCreatedBy()(*IdentitySet) {
+func (m *DataSource) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -49,24 +53,16 @@ func (m *DataSource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetHoldStatus gets the holdStatus property value. 
-func (m *DataSource) GetHoldStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.holdStatus
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -101,6 +97,14 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetHoldStatus gets the holdStatus property value. 
+func (m *DataSource) GetHoldStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.holdStatus
+    }
 }
 func (m *DataSource) IsNil()(bool) {
     return m == nil
@@ -139,7 +143,7 @@ func (m *DataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     return nil
 }
 // SetCreatedBy sets the createdBy property value. The user who created the dataSource.
-func (m *DataSource) SetCreatedBy(value *IdentitySet)() {
+func (m *DataSource) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }

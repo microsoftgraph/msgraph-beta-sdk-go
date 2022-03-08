@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Media 
+// Media provides operations to manage the compliance singleton.
 type Media struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
     isTranscriptionShown *bool;
     // Information about the source of media. Read-only.
-    mediaSource *MediaSource;
+    mediaSource MediaSourceable;
 }
 // NewMedia instantiates a new media and sets the default values.
 func NewMedia()(*Media) {
@@ -20,28 +20,16 @@ func NewMedia()(*Media) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMediaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMediaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMedia(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsTranscriptionShown gets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
-func (m *Media) GetIsTranscriptionShown()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTranscriptionShown
-    }
-}
-// GetMediaSource gets the mediaSource property value. Information about the source of media. Read-only.
-func (m *Media) GetMediaSource()(*MediaSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSource
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -58,16 +46,32 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["mediaSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMediaSource() })
+        val, err := n.GetObjectValue(CreateMediaSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMediaSource(val.(*MediaSource))
+            m.SetMediaSource(val.(MediaSourceable))
         }
         return nil
     }
     return res
+}
+// GetIsTranscriptionShown gets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
+func (m *Media) GetIsTranscriptionShown()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isTranscriptionShown
+    }
+}
+// GetMediaSource gets the mediaSource property value. Information about the source of media. Read-only.
+func (m *Media) GetMediaSource()(MediaSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaSource
+    }
 }
 func (m *Media) IsNil()(bool) {
     return m == nil
@@ -107,7 +111,7 @@ func (m *Media) SetIsTranscriptionShown(value *bool)() {
     }
 }
 // SetMediaSource sets the mediaSource property value. Information about the source of media. Read-only.
-func (m *Media) SetMediaSource(value *MediaSource)() {
+func (m *Media) SetMediaSource(value MediaSourceable)() {
     if m != nil {
         m.mediaSource = value
     }

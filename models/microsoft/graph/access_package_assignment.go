@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageAssignment 
+// AccessPackageAssignment provides operations to manage the identityGovernance singleton.
 type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-    accessPackage *AccessPackage;
+    accessPackage AccessPackageable;
     // Read-only. Nullable. Supports $filter (eq) on the id property
-    accessPackageAssignmentPolicy *AccessPackageAssignmentPolicy;
+    accessPackageAssignmentPolicy AccessPackageAssignmentPolicyable;
     // 
-    accessPackageAssignmentRequests []AccessPackageAssignmentRequest;
+    accessPackageAssignmentRequests []AccessPackageAssignmentRequestable;
     // The resource roles delivered to the target user for this assignment. Read-only. Nullable.
-    accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRole;
+    accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable;
     // The identifier of the access package. Read-only.
     accessPackageId *string;
     // The identifier of the access package assignment policy. Read-only.
@@ -31,9 +31,9 @@ type AccessPackageAssignment struct {
     // Indicates whether the access package assignment is extended. Read-only.
     isExtended *bool;
     // When the access assignment is to be in place. Read-only.
-    schedule *RequestSchedule;
+    schedule RequestScheduleable;
     // The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-    target *AccessPackageSubject;
+    target AccessPackageSubjectable;
     // The ID of the subject with the assignment. Read-only.
     targetId *string;
 }
@@ -44,8 +44,12 @@ func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     }
     return m
 }
+// CreateAccessPackageAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageAssignment(), nil
+}
 // GetAccessPackage gets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AccessPackageAssignment) GetAccessPackage()(*AccessPackage) {
+func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
     if m == nil {
         return nil
     } else {
@@ -53,7 +57,7 @@ func (m *AccessPackageAssignment) GetAccessPackage()(*AccessPackage) {
     }
 }
 // GetAccessPackageAssignmentPolicy gets the accessPackageAssignmentPolicy property value. Read-only. Nullable. Supports $filter (eq) on the id property
-func (m *AccessPackageAssignment) GetAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
+func (m *AccessPackageAssignment) GetAccessPackageAssignmentPolicy()(AccessPackageAssignmentPolicyable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +65,7 @@ func (m *AccessPackageAssignment) GetAccessPackageAssignmentPolicy()(*AccessPack
     }
 }
 // GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. 
-func (m *AccessPackageAssignment) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequest) {
+func (m *AccessPackageAssignment) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequestable) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +73,7 @@ func (m *AccessPackageAssignment) GetAccessPackageAssignmentRequests()([]AccessP
     }
 }
 // GetAccessPackageAssignmentResourceRoles gets the accessPackageAssignmentResourceRoles property value. The resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignment) GetAccessPackageAssignmentResourceRoles()([]AccessPackageAssignmentResourceRole) {
+func (m *AccessPackageAssignment) GetAccessPackageAssignmentResourceRoles()([]AccessPackageAssignmentResourceRoleable) {
     if m == nil {
         return nil
     } else {
@@ -124,84 +128,52 @@ func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7
         return m.expiredDateTime
     }
 }
-// GetIsExtended gets the isExtended property value. Indicates whether the access package assignment is extended. Read-only.
-func (m *AccessPackageAssignment) GetIsExtended()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExtended
-    }
-}
-// GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
-func (m *AccessPackageAssignment) GetSchedule()(*RequestSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
-}
-// GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-func (m *AccessPackageAssignment) GetTarget()(*AccessPackageSubject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
-}
-// GetTargetId gets the targetId property value. The ID of the subject with the assignment. Read-only.
-func (m *AccessPackageAssignment) GetTargetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetObjectValue(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackage(val.(*AccessPackage))
+            m.SetAccessPackage(val.(AccessPackageable))
         }
         return nil
     }
     res["accessPackageAssignmentPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentPolicy() })
+        val, err := n.GetObjectValue(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageAssignmentPolicy(val.(*AccessPackageAssignmentPolicy))
+            m.SetAccessPackageAssignmentPolicy(val.(AccessPackageAssignmentPolicyable))
         }
         return nil
     }
     res["accessPackageAssignmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageAssignmentRequest, len(val))
+            res := make([]AccessPackageAssignmentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageAssignmentRequest))
+                res[i] = v.(AccessPackageAssignmentRequestable)
             }
             m.SetAccessPackageAssignmentRequests(res)
         }
         return nil
     }
     res["accessPackageAssignmentResourceRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentResourceRole() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageAssignmentResourceRole, len(val))
+            res := make([]AccessPackageAssignmentResourceRoleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageAssignmentResourceRole))
+                res[i] = v.(AccessPackageAssignmentResourceRoleable)
             }
             m.SetAccessPackageAssignmentResourceRoles(res)
         }
@@ -278,22 +250,22 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRequestSchedule() })
+        val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedule(val.(*RequestSchedule))
+            m.SetSchedule(val.(RequestScheduleable))
         }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageSubject() })
+        val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*AccessPackageSubject))
+            m.SetTarget(val.(AccessPackageSubjectable))
         }
         return nil
     }
@@ -308,6 +280,38 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetIsExtended gets the isExtended property value. Indicates whether the access package assignment is extended. Read-only.
+func (m *AccessPackageAssignment) GetIsExtended()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isExtended
+    }
+}
+// GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
+func (m *AccessPackageAssignment) GetSchedule()(RequestScheduleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedule
+    }
+}
+// GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
+func (m *AccessPackageAssignment) GetTarget()(AccessPackageSubjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
+}
+// GetTargetId gets the targetId property value. The ID of the subject with the assignment. Read-only.
+func (m *AccessPackageAssignment) GetTargetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetId
+    }
 }
 func (m *AccessPackageAssignment) IsNil()(bool) {
     return m == nil
@@ -333,8 +337,7 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetAccessPackageAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentRequests()))
         for i, v := range m.GetAccessPackageAssignmentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentRequests", cast)
         if err != nil {
@@ -344,8 +347,7 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetAccessPackageAssignmentResourceRoles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentResourceRoles()))
         for i, v := range m.GetAccessPackageAssignmentResourceRoles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentResourceRoles", cast)
         if err != nil {
@@ -415,25 +417,25 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetAccessPackage sets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-func (m *AccessPackageAssignment) SetAccessPackage(value *AccessPackage)() {
+func (m *AccessPackageAssignment) SetAccessPackage(value AccessPackageable)() {
     if m != nil {
         m.accessPackage = value
     }
 }
 // SetAccessPackageAssignmentPolicy sets the accessPackageAssignmentPolicy property value. Read-only. Nullable. Supports $filter (eq) on the id property
-func (m *AccessPackageAssignment) SetAccessPackageAssignmentPolicy(value *AccessPackageAssignmentPolicy)() {
+func (m *AccessPackageAssignment) SetAccessPackageAssignmentPolicy(value AccessPackageAssignmentPolicyable)() {
     if m != nil {
         m.accessPackageAssignmentPolicy = value
     }
 }
 // SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. 
-func (m *AccessPackageAssignment) SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequest)() {
+func (m *AccessPackageAssignment) SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
     if m != nil {
         m.accessPackageAssignmentRequests = value
     }
 }
 // SetAccessPackageAssignmentResourceRoles sets the accessPackageAssignmentResourceRoles property value. The resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignment) SetAccessPackageAssignmentResourceRoles(value []AccessPackageAssignmentResourceRole)() {
+func (m *AccessPackageAssignment) SetAccessPackageAssignmentResourceRoles(value []AccessPackageAssignmentResourceRoleable)() {
     if m != nil {
         m.accessPackageAssignmentResourceRoles = value
     }
@@ -481,13 +483,13 @@ func (m *AccessPackageAssignment) SetIsExtended(value *bool)() {
     }
 }
 // SetSchedule sets the schedule property value. When the access assignment is to be in place. Read-only.
-func (m *AccessPackageAssignment) SetSchedule(value *RequestSchedule)() {
+func (m *AccessPackageAssignment) SetSchedule(value RequestScheduleable)() {
     if m != nil {
         m.schedule = value
     }
 }
 // SetTarget sets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-func (m *AccessPackageAssignment) SetTarget(value *AccessPackageSubject)() {
+func (m *AccessPackageAssignment) SetTarget(value AccessPackageSubjectable)() {
     if m != nil {
         m.target = value
     }

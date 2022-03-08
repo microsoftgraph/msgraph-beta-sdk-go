@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageResourceRequest 
+// AccessPackageResourceRequest provides operations to manage the identityGovernance singleton.
 type AccessPackageResourceRequest struct {
     Entity
     // Nullable.
-    accessPackageResource *AccessPackageResource;
+    accessPackageResource AccessPackageResourceable;
     // The unique ID of the access package catalog.
     catalogId *string;
     // 
@@ -21,7 +21,7 @@ type AccessPackageResourceRequest struct {
     // The requestor's justification for adding or removing the resource.
     justification *string;
     // Read-only. Nullable. Supports $expand.
-    requestor *AccessPackageSubject;
+    requestor AccessPackageSubjectable;
     // The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
     requestState *string;
     // Read-only.
@@ -36,8 +36,12 @@ func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
     }
     return m
 }
+// CreateAccessPackageResourceRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageResourceRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageResourceRequest(), nil
+}
 // GetAccessPackageResource gets the accessPackageResource property value. Nullable.
-func (m *AccessPackageResourceRequest) GetAccessPackageResource()(*AccessPackageResource) {
+func (m *AccessPackageResourceRequest) GetAccessPackageResource()(AccessPackageResourceable) {
     if m == nil {
         return nil
     } else {
@@ -68,64 +72,16 @@ func (m *AccessPackageResourceRequest) GetExpirationDateTime()(*i336074805fc8539
         return m.expirationDateTime
     }
 }
-// GetIsValidationOnly gets the isValidationOnly property value. If set, does not add the resource.
-func (m *AccessPackageResourceRequest) GetIsValidationOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValidationOnly
-    }
-}
-// GetJustification gets the justification property value. The requestor's justification for adding or removing the resource.
-func (m *AccessPackageResourceRequest) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
-}
-// GetRequestor gets the requestor property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageResourceRequest) GetRequestor()(*AccessPackageSubject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestor
-    }
-}
-// GetRequestState gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
-func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestState
-    }
-}
-// GetRequestStatus gets the requestStatus property value. Read-only.
-func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestStatus
-    }
-}
-// GetRequestType gets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
-func (m *AccessPackageResourceRequest) GetRequestType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestType
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResource() })
+        val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageResource(val.(*AccessPackageResource))
+            m.SetAccessPackageResource(val.(AccessPackageResourceable))
         }
         return nil
     }
@@ -180,12 +136,12 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["requestor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageSubject() })
+        val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestor(val.(*AccessPackageSubject))
+            m.SetRequestor(val.(AccessPackageSubjectable))
         }
         return nil
     }
@@ -220,6 +176,54 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIsValidationOnly gets the isValidationOnly property value. If set, does not add the resource.
+func (m *AccessPackageResourceRequest) GetIsValidationOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isValidationOnly
+    }
+}
+// GetJustification gets the justification property value. The requestor's justification for adding or removing the resource.
+func (m *AccessPackageResourceRequest) GetJustification()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justification
+    }
+}
+// GetRequestor gets the requestor property value. Read-only. Nullable. Supports $expand.
+func (m *AccessPackageResourceRequest) GetRequestor()(AccessPackageSubjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestor
+    }
+}
+// GetRequestState gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestState
+    }
+}
+// GetRequestStatus gets the requestStatus property value. Read-only.
+func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestStatus
+    }
+}
+// GetRequestType gets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
+func (m *AccessPackageResourceRequest) GetRequestType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestType
+    }
 }
 func (m *AccessPackageResourceRequest) IsNil()(bool) {
     return m == nil
@@ -293,7 +297,7 @@ func (m *AccessPackageResourceRequest) Serialize(writer i04eb5309aeaafadd28374d7
     return nil
 }
 // SetAccessPackageResource sets the accessPackageResource property value. Nullable.
-func (m *AccessPackageResourceRequest) SetAccessPackageResource(value *AccessPackageResource)() {
+func (m *AccessPackageResourceRequest) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
     }
@@ -329,7 +333,7 @@ func (m *AccessPackageResourceRequest) SetJustification(value *string)() {
     }
 }
 // SetRequestor sets the requestor property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageResourceRequest) SetRequestor(value *AccessPackageSubject)() {
+func (m *AccessPackageResourceRequest) SetRequestor(value AccessPackageSubjectable)() {
     if m != nil {
         m.requestor = value
     }

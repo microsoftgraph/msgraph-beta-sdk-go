@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ClassifyExactMatchesRequestBuilder builds and executes requests for operations under \dataClassification\microsoft.graph.classifyExactMatches
+// ClassifyExactMatchesRequestBuilder provides operations to call the classifyExactMatches method.
 type ClassifyExactMatchesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ClassifyExactMatchesRequestBuilder struct {
 // ClassifyExactMatchesRequestBuilderPostOptions options for Post
 type ClassifyExactMatchesRequestBuilderPostOptions struct {
     // 
-    Body *ClassifyExactMatchesRequestBody;
+    Body ClassifyExactMatchesRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type ClassifyExactMatchesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // ClassifyExactMatchesResponse union type wrapper for classes exactMatchClassificationResult
 type ClassifyExactMatchesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type exactMatchClassificationResult
-    exactMatchClassificationResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResult;
+    exactMatchClassificationResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResultable;
 }
 // NewClassifyExactMatchesResponse instantiates a new classifyExactMatchesResponse and sets the default values.
 func NewClassifyExactMatchesResponse()(*ClassifyExactMatchesResponse) {
@@ -39,6 +44,9 @@ func NewClassifyExactMatchesResponse()(*ClassifyExactMatchesResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateClassifyExactMatchesResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassifyExactMatchesResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyExactMatchesResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +57,7 @@ func (m *ClassifyExactMatchesResponse) GetAdditionalData()(map[string]interface{
     }
 }
 // GetExactMatchClassificationResult gets the exactMatchClassificationResult property value. Union type representation for type exactMatchClassificationResult
-func (m *ClassifyExactMatchesResponse) GetExactMatchClassificationResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResult) {
+func (m *ClassifyExactMatchesResponse) GetExactMatchClassificationResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +68,12 @@ func (m *ClassifyExactMatchesResponse) GetExactMatchClassificationResult()(*i535
 func (m *ClassifyExactMatchesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["exactMatchClassificationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewExactMatchClassificationResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateExactMatchClassificationResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExactMatchClassificationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResult))
+            m.SetExactMatchClassificationResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResultable))
         }
         return nil
     }
@@ -97,7 +105,7 @@ func (m *ClassifyExactMatchesResponse) SetAdditionalData(value map[string]interf
     }
 }
 // SetExactMatchClassificationResult sets the exactMatchClassificationResult property value. Union type representation for type exactMatchClassificationResult
-func (m *ClassifyExactMatchesResponse) SetExactMatchClassificationResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResult)() {
+func (m *ClassifyExactMatchesResponse) SetExactMatchClassificationResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchClassificationResultable)() {
     if m != nil {
         m.exactMatchClassificationResult = value
     }
@@ -111,7 +119,7 @@ func NewClassifyExactMatchesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Post invoke action classifyExactMatches
-func (m *ClassifyExactMatchesRequestBuilder) Post(options *ClassifyExactMatchesRequestBuilderPostOptions)(*ClassifyExactMatchesResponse, error) {
+func (m *ClassifyExactMatchesRequestBuilder) Post(options *ClassifyExactMatchesRequestBuilderPostOptions)(ClassifyExactMatchesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassifyExactMatchesResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateClassifyExactMatchesResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ClassifyExactMatchesResponse), nil
+    return res.(ClassifyExactMatchesResponseable), nil
 }

@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeCardBreak 
+// TimeCardBreak provides operations to manage the compliance singleton.
 type TimeCardBreak struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // ID of the timeCardBreak.
     breakId *string;
     // The start event of the timeCardBreak.
-    end *TimeCardEvent;
+    end TimeCardEventable;
     // Notes about the timeCardBreak.
-    notes *ItemBody;
+    notes ItemBodyable;
     // 
-    start *TimeCardEvent;
+    start TimeCardEventable;
 }
 // NewTimeCardBreak instantiates a new timeCardBreak and sets the default values.
 func NewTimeCardBreak()(*TimeCardBreak) {
@@ -23,6 +23,10 @@ func NewTimeCardBreak()(*TimeCardBreak) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTimeCardBreakFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeCardBreakFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeCardBreak(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardBreak) GetAdditionalData()(map[string]interface{}) {
@@ -41,27 +45,11 @@ func (m *TimeCardBreak) GetBreakId()(*string) {
     }
 }
 // GetEnd gets the end property value. The start event of the timeCardBreak.
-func (m *TimeCardBreak) GetEnd()(*TimeCardEvent) {
+func (m *TimeCardBreak) GetEnd()(TimeCardEventable) {
     if m == nil {
         return nil
     } else {
         return m.end
-    }
-}
-// GetNotes gets the notes property value. Notes about the timeCardBreak.
-func (m *TimeCardBreak) GetNotes()(*ItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetStart gets the start property value. 
-func (m *TimeCardBreak) GetStart()(*TimeCardEvent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,36 +66,52 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["end"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeCardEvent() })
+        val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEnd(val.(*TimeCardEvent))
+            m.SetEnd(val.(TimeCardEventable))
         }
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotes(val.(*ItemBody))
+            m.SetNotes(val.(ItemBodyable))
         }
         return nil
     }
     res["start"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeCardEvent() })
+        val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStart(val.(*TimeCardEvent))
+            m.SetStart(val.(TimeCardEventable))
         }
         return nil
     }
     return res
+}
+// GetNotes gets the notes property value. Notes about the timeCardBreak.
+func (m *TimeCardBreak) GetNotes()(ItemBodyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetStart gets the start property value. 
+func (m *TimeCardBreak) GetStart()(TimeCardEventable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.start
+    }
 }
 func (m *TimeCardBreak) IsNil()(bool) {
     return m == nil
@@ -159,19 +163,19 @@ func (m *TimeCardBreak) SetBreakId(value *string)() {
     }
 }
 // SetEnd sets the end property value. The start event of the timeCardBreak.
-func (m *TimeCardBreak) SetEnd(value *TimeCardEvent)() {
+func (m *TimeCardBreak) SetEnd(value TimeCardEventable)() {
     if m != nil {
         m.end = value
     }
 }
 // SetNotes sets the notes property value. Notes about the timeCardBreak.
-func (m *TimeCardBreak) SetNotes(value *ItemBody)() {
+func (m *TimeCardBreak) SetNotes(value ItemBodyable)() {
     if m != nil {
         m.notes = value
     }
 }
 // SetStart sets the start property value. 
-func (m *TimeCardBreak) SetStart(value *TimeCardEvent)() {
+func (m *TimeCardBreak) SetStart(value TimeCardEventable)() {
     if m != nil {
         m.start = value
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InformationProtectionContentLabel 
+// InformationProtectionContentLabel provides operations to call the extractLabel method.
 type InformationProtectionContentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,7 +14,7 @@ type InformationProtectionContentLabel struct {
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Details on the label that is currently applied to the file.
-    label *LabelDetails;
+    label LabelDetailsable;
 }
 // NewInformationProtectionContentLabel instantiates a new informationProtectionContentLabel and sets the default values.
 func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) {
@@ -22,6 +22,10 @@ func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateInformationProtectionContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInformationProtectionContentLabelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInformationProtectionContentLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]interface{}) {
@@ -45,14 +49,6 @@ func (m *InformationProtectionContentLabel) GetCreationDateTime()(*i336074805fc8
         return nil
     } else {
         return m.creationDateTime
-    }
-}
-// GetLabel gets the label property value. Details on the label that is currently applied to the file.
-func (m *InformationProtectionContentLabel) GetLabel()(*LabelDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,16 +75,24 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["label"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLabelDetails() })
+        val, err := n.GetObjectValue(CreateLabelDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLabel(val.(*LabelDetails))
+            m.SetLabel(val.(LabelDetailsable))
         }
         return nil
     }
     return res
+}
+// GetLabel gets the label property value. Details on the label that is currently applied to the file.
+func (m *InformationProtectionContentLabel) GetLabel()(LabelDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.label
+    }
 }
 func (m *InformationProtectionContentLabel) IsNil()(bool) {
     return m == nil
@@ -141,7 +145,7 @@ func (m *InformationProtectionContentLabel) SetCreationDateTime(value *i33607480
     }
 }
 // SetLabel sets the label property value. Details on the label that is currently applied to the file.
-func (m *InformationProtectionContentLabel) SetLabel(value *LabelDetails)() {
+func (m *InformationProtectionContentLabel) SetLabel(value LabelDetailsable)() {
     if m != nil {
         m.label = value
     }

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the collection of messageTrace entities.
 type MessageEventType int
 
 const (

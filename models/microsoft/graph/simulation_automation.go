@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SimulationAutomation 
+// SimulationAutomation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type SimulationAutomation struct {
     Entity
     // 
-    createdBy *EmailIdentity;
+    createdBy EmailIdentityable;
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -17,7 +17,7 @@ type SimulationAutomation struct {
     // 
     displayName *string;
     // 
-    lastModifiedBy *EmailIdentity;
+    lastModifiedBy EmailIdentityable;
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -25,7 +25,7 @@ type SimulationAutomation struct {
     // 
     nextRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    runs []SimulationAutomationRun;
+    runs []SimulationAutomationRunable;
     // 
     status *SimulationAutomationStatus;
 }
@@ -36,8 +36,12 @@ func NewSimulationAutomation()(*SimulationAutomation) {
     }
     return m
 }
+// CreateSimulationAutomationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSimulationAutomationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSimulationAutomation(), nil
+}
 // GetCreatedBy gets the createdBy property value. 
-func (m *SimulationAutomation) GetCreatedBy()(*EmailIdentity) {
+func (m *SimulationAutomation) GetCreatedBy()(EmailIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -68,64 +72,16 @@ func (m *SimulationAutomation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. 
-func (m *SimulationAutomation) GetLastModifiedBy()(*EmailIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *SimulationAutomation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLastRunDateTime gets the lastRunDateTime property value. 
-func (m *SimulationAutomation) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRunDateTime
-    }
-}
-// GetNextRunDateTime gets the nextRunDateTime property value. 
-func (m *SimulationAutomation) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nextRunDateTime
-    }
-}
-// GetRuns gets the runs property value. 
-func (m *SimulationAutomation) GetRuns()([]SimulationAutomationRun) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runs
-    }
-}
-// GetStatus gets the status property value. 
-func (m *SimulationAutomation) GetStatus()(*SimulationAutomationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailIdentity() })
+        val, err := n.GetObjectValue(CreateEmailIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*EmailIdentity))
+            m.SetCreatedBy(val.(EmailIdentityable))
         }
         return nil
     }
@@ -160,12 +116,12 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailIdentity() })
+        val, err := n.GetObjectValue(CreateEmailIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*EmailIdentity))
+            m.SetLastModifiedBy(val.(EmailIdentityable))
         }
         return nil
     }
@@ -200,14 +156,14 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["runs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSimulationAutomationRun() })
+        val, err := n.GetCollectionOfObjectValues(CreateSimulationAutomationRunFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SimulationAutomationRun, len(val))
+            res := make([]SimulationAutomationRunable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SimulationAutomationRun))
+                res[i] = v.(SimulationAutomationRunable)
             }
             m.SetRuns(res)
         }
@@ -224,6 +180,54 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. 
+func (m *SimulationAutomation) GetLastModifiedBy()(EmailIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *SimulationAutomation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLastRunDateTime gets the lastRunDateTime property value. 
+func (m *SimulationAutomation) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRunDateTime
+    }
+}
+// GetNextRunDateTime gets the nextRunDateTime property value. 
+func (m *SimulationAutomation) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nextRunDateTime
+    }
+}
+// GetRuns gets the runs property value. 
+func (m *SimulationAutomation) GetRuns()([]SimulationAutomationRunable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runs
+    }
+}
+// GetStatus gets the status property value. 
+func (m *SimulationAutomation) GetStatus()(*SimulationAutomationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *SimulationAutomation) IsNil()(bool) {
     return m == nil
@@ -285,8 +289,7 @@ func (m *SimulationAutomation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetRuns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRuns()))
         for i, v := range m.GetRuns() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("runs", cast)
         if err != nil {
@@ -303,7 +306,7 @@ func (m *SimulationAutomation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetCreatedBy sets the createdBy property value. 
-func (m *SimulationAutomation) SetCreatedBy(value *EmailIdentity)() {
+func (m *SimulationAutomation) SetCreatedBy(value EmailIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -327,7 +330,7 @@ func (m *SimulationAutomation) SetDisplayName(value *string)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. 
-func (m *SimulationAutomation) SetLastModifiedBy(value *EmailIdentity)() {
+func (m *SimulationAutomation) SetLastModifiedBy(value EmailIdentityable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -351,7 +354,7 @@ func (m *SimulationAutomation) SetNextRunDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetRuns sets the runs property value. 
-func (m *SimulationAutomation) SetRuns(value []SimulationAutomationRun)() {
+func (m *SimulationAutomation) SetRuns(value []SimulationAutomationRunable)() {
     if m != nil {
         m.runs = value
     }

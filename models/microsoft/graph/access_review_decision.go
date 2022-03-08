@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewDecision 
+// AccessReviewDecision provides operations to manage the collection of accessReviewDecision entities.
 type AccessReviewDecision struct {
     Entity
     // The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
@@ -13,7 +13,7 @@ type AccessReviewDecision struct {
     // The feature-generated id of the access review.
     accessReviewId *string;
     // When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
-    appliedBy *UserIdentity;
+    appliedBy UserIdentityable;
     // The date and time when the review decision was applied.
     appliedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
@@ -21,7 +21,7 @@ type AccessReviewDecision struct {
     // The reviewer's business justification, if supplied.
     justification *string;
     // The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
-    reviewedBy *UserIdentity;
+    reviewedBy UserIdentityable;
     // 
     reviewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
@@ -33,6 +33,10 @@ func NewAccessReviewDecision()(*AccessReviewDecision) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAccessReviewDecisionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewDecisionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewDecision(), nil
 }
 // GetAccessRecommendation gets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
 func (m *AccessReviewDecision) GetAccessRecommendation()(*string) {
@@ -51,7 +55,7 @@ func (m *AccessReviewDecision) GetAccessReviewId()(*string) {
     }
 }
 // GetAppliedBy gets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
-func (m *AccessReviewDecision) GetAppliedBy()(*UserIdentity) {
+func (m *AccessReviewDecision) GetAppliedBy()(UserIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -72,38 +76,6 @@ func (m *AccessReviewDecision) GetApplyResult()(*string) {
         return nil
     } else {
         return m.applyResult
-    }
-}
-// GetJustification gets the justification property value. The reviewer's business justification, if supplied.
-func (m *AccessReviewDecision) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
-}
-// GetReviewedBy gets the reviewedBy property value. The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
-func (m *AccessReviewDecision) GetReviewedBy()(*UserIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedBy
-    }
-}
-// GetReviewedDateTime gets the reviewedDateTime property value. 
-func (m *AccessReviewDecision) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedDateTime
-    }
-}
-// GetReviewResult gets the reviewResult property value. The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
-func (m *AccessReviewDecision) GetReviewResult()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewResult
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,12 +102,12 @@ func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["appliedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppliedBy(val.(*UserIdentity))
+            m.SetAppliedBy(val.(UserIdentityable))
         }
         return nil
     }
@@ -170,12 +142,12 @@ func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["reviewedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReviewedBy(val.(*UserIdentity))
+            m.SetReviewedBy(val.(UserIdentityable))
         }
         return nil
     }
@@ -200,6 +172,38 @@ func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetJustification gets the justification property value. The reviewer's business justification, if supplied.
+func (m *AccessReviewDecision) GetJustification()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justification
+    }
+}
+// GetReviewedBy gets the reviewedBy property value. The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
+func (m *AccessReviewDecision) GetReviewedBy()(UserIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewedBy
+    }
+}
+// GetReviewedDateTime gets the reviewedDateTime property value. 
+func (m *AccessReviewDecision) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewedDateTime
+    }
+}
+// GetReviewResult gets the reviewResult property value. The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
+func (m *AccessReviewDecision) GetReviewResult()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewResult
+    }
 }
 func (m *AccessReviewDecision) IsNil()(bool) {
     return m == nil
@@ -279,7 +283,7 @@ func (m *AccessReviewDecision) SetAccessReviewId(value *string)() {
     }
 }
 // SetAppliedBy sets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
-func (m *AccessReviewDecision) SetAppliedBy(value *UserIdentity)() {
+func (m *AccessReviewDecision) SetAppliedBy(value UserIdentityable)() {
     if m != nil {
         m.appliedBy = value
     }
@@ -303,7 +307,7 @@ func (m *AccessReviewDecision) SetJustification(value *string)() {
     }
 }
 // SetReviewedBy sets the reviewedBy property value. The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
-func (m *AccessReviewDecision) SetReviewedBy(value *UserIdentity)() {
+func (m *AccessReviewDecision) SetReviewedBy(value UserIdentityable)() {
     if m != nil {
         m.reviewedBy = value
     }

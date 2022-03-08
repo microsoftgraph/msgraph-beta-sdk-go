@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TrustFrameworkPolicy 
+// TrustFrameworkPolicy provides operations to manage the trustFramework singleton.
 type TrustFrameworkPolicy struct {
     Entity
 }
@@ -14,6 +14,10 @@ func NewTrustFrameworkPolicy()(*TrustFrameworkPolicy) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTrustFrameworkPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTrustFrameworkPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTrustFrameworkPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TrustFrameworkPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {

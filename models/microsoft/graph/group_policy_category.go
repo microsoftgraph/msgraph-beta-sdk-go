@@ -5,15 +5,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyCategory 
+// GroupPolicyCategory provides operations to manage the deviceManagement singleton.
 type GroupPolicyCategory struct {
     Entity
     // The children categories
-    children []GroupPolicyCategory;
+    children []GroupPolicyCategoryable;
     // The id of the definition file the category came from
-    definitionFile *GroupPolicyDefinitionFile;
+    definitionFile GroupPolicyDefinitionFileable;
     // The immediate GroupPolicyDefinition children of the category
-    definitions []GroupPolicyDefinition;
+    definitions []GroupPolicyDefinitionable;
     // The string id of the category's display name
     displayName *string;
     // Defines if the category is a root category
@@ -21,7 +21,7 @@ type GroupPolicyCategory struct {
     // The date and time the entity was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The parent category
-    parent *GroupPolicyCategory;
+    parent GroupPolicyCategoryable;
 }
 // NewGroupPolicyCategory instantiates a new groupPolicyCategory and sets the default values.
 func NewGroupPolicyCategory()(*GroupPolicyCategory) {
@@ -30,8 +30,12 @@ func NewGroupPolicyCategory()(*GroupPolicyCategory) {
     }
     return m
 }
+// CreateGroupPolicyCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyCategory(), nil
+}
 // GetChildren gets the children property value. The children categories
-func (m *GroupPolicyCategory) GetChildren()([]GroupPolicyCategory) {
+func (m *GroupPolicyCategory) GetChildren()([]GroupPolicyCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -39,7 +43,7 @@ func (m *GroupPolicyCategory) GetChildren()([]GroupPolicyCategory) {
     }
 }
 // GetDefinitionFile gets the definitionFile property value. The id of the definition file the category came from
-func (m *GroupPolicyCategory) GetDefinitionFile()(*GroupPolicyDefinitionFile) {
+func (m *GroupPolicyCategory) GetDefinitionFile()(GroupPolicyDefinitionFileable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *GroupPolicyCategory) GetDefinitionFile()(*GroupPolicyDefinitionFile) {
     }
 }
 // GetDefinitions gets the definitions property value. The immediate GroupPolicyDefinition children of the category
-func (m *GroupPolicyCategory) GetDefinitions()([]GroupPolicyDefinition) {
+func (m *GroupPolicyCategory) GetDefinitions()([]GroupPolicyDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -62,66 +66,42 @@ func (m *GroupPolicyCategory) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsRoot gets the isRoot property value. Defines if the category is a root category
-func (m *GroupPolicyCategory) GetIsRoot()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRoot
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetParent gets the parent property value. The parent category
-func (m *GroupPolicyCategory) GetParent()(*GroupPolicyCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parent
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyCategory, len(val))
+            res := make([]GroupPolicyCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyCategory))
+                res[i] = v.(GroupPolicyCategoryable)
             }
             m.SetChildren(res)
         }
         return nil
     }
     res["definitionFile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinitionFile() })
+        val, err := n.GetObjectValue(CreateGroupPolicyDefinitionFileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefinitionFile(val.(*GroupPolicyDefinitionFile))
+            m.SetDefinitionFile(val.(GroupPolicyDefinitionFileable))
         }
         return nil
     }
     res["definitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyDefinition, len(val))
+            res := make([]GroupPolicyDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyDefinition))
+                res[i] = v.(GroupPolicyDefinitionable)
             }
             m.SetDefinitions(res)
         }
@@ -158,16 +138,40 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["parent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyCategory() })
+        val, err := n.GetObjectValue(CreateGroupPolicyCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParent(val.(*GroupPolicyCategory))
+            m.SetParent(val.(GroupPolicyCategoryable))
         }
         return nil
     }
     return res
+}
+// GetIsRoot gets the isRoot property value. Defines if the category is a root category
+func (m *GroupPolicyCategory) GetIsRoot()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRoot
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetParent gets the parent property value. The parent category
+func (m *GroupPolicyCategory) GetParent()(GroupPolicyCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parent
+    }
 }
 func (m *GroupPolicyCategory) IsNil()(bool) {
     return m == nil
@@ -181,8 +185,7 @@ func (m *GroupPolicyCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetChildren() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
@@ -198,8 +201,7 @@ func (m *GroupPolicyCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("definitions", cast)
         if err != nil {
@@ -233,19 +235,19 @@ func (m *GroupPolicyCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetChildren sets the children property value. The children categories
-func (m *GroupPolicyCategory) SetChildren(value []GroupPolicyCategory)() {
+func (m *GroupPolicyCategory) SetChildren(value []GroupPolicyCategoryable)() {
     if m != nil {
         m.children = value
     }
 }
 // SetDefinitionFile sets the definitionFile property value. The id of the definition file the category came from
-func (m *GroupPolicyCategory) SetDefinitionFile(value *GroupPolicyDefinitionFile)() {
+func (m *GroupPolicyCategory) SetDefinitionFile(value GroupPolicyDefinitionFileable)() {
     if m != nil {
         m.definitionFile = value
     }
 }
 // SetDefinitions sets the definitions property value. The immediate GroupPolicyDefinition children of the category
-func (m *GroupPolicyCategory) SetDefinitions(value []GroupPolicyDefinition)() {
+func (m *GroupPolicyCategory) SetDefinitions(value []GroupPolicyDefinitionable)() {
     if m != nil {
         m.definitions = value
     }
@@ -269,7 +271,7 @@ func (m *GroupPolicyCategory) SetLastModifiedDateTime(value *i336074805fc853987a
     }
 }
 // SetParent sets the parent property value. The parent category
-func (m *GroupPolicyCategory) SetParent(value *GroupPolicyCategory)() {
+func (m *GroupPolicyCategory) SetParent(value GroupPolicyCategoryable)() {
     if m != nil {
         m.parent = value
     }

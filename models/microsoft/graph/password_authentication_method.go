@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PasswordAuthenticationMethod 
+// PasswordAuthenticationMethod provides operations to manage the compliance singleton.
 type PasswordAuthenticationMethod struct {
     AuthenticationMethod
     // 
@@ -22,6 +22,10 @@ func NewPasswordAuthenticationMethod()(*PasswordAuthenticationMethod) {
     }
     return m
 }
+// CreatePasswordAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePasswordAuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPasswordAuthenticationMethod(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. 
 func (m *PasswordAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -36,14 +40,6 @@ func (m *PasswordAuthenticationMethod) GetCreationDateTime()(*i336074805fc853987
         return nil
     } else {
         return m.creationDateTime
-    }
-}
-// GetPassword gets the password property value. For security, the password is always returned as null from a LIST or GET operation.
-func (m *PasswordAuthenticationMethod) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +76,14 @@ func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetPassword gets the password property value. For security, the password is always returned as null from a LIST or GET operation.
+func (m *PasswordAuthenticationMethod) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
 }
 func (m *PasswordAuthenticationMethod) IsNil()(bool) {
     return m == nil

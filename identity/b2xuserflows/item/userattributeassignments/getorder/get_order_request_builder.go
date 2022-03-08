@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetOrderRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.getOrder()
+// GetOrderRequestBuilder provides operations to call the getOrder method.
 type GetOrderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type GetOrderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // GetOrderResponse union type wrapper for classes assignmentOrder
 type GetOrderResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type assignmentOrder
-    assignmentOrder *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrder;
+    assignmentOrder i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrderable;
 }
 // NewGetOrderResponse instantiates a new getOrderResponse and sets the default values.
 func NewGetOrderResponse()(*GetOrderResponse) {
@@ -37,6 +42,9 @@ func NewGetOrderResponse()(*GetOrderResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetOrderResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetOrderResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetOrderResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +55,7 @@ func (m *GetOrderResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAssignmentOrder gets the assignmentOrder property value. Union type representation for type assignmentOrder
-func (m *GetOrderResponse) GetAssignmentOrder()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrder) {
+func (m *GetOrderResponse) GetAssignmentOrder()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrderable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +66,12 @@ func (m *GetOrderResponse) GetAssignmentOrder()(*i535684e11b5500196ecb4b5c6634e0
 func (m *GetOrderResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentOrder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAssignmentOrder() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAssignmentOrderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignmentOrder(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrder))
+            m.SetAssignmentOrder(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrderable))
         }
         return nil
     }
@@ -95,7 +103,7 @@ func (m *GetOrderResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAssignmentOrder sets the assignmentOrder property value. Union type representation for type assignmentOrder
-func (m *GetOrderResponse) SetAssignmentOrder(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrder)() {
+func (m *GetOrderResponse) SetAssignmentOrder(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentOrderable)() {
     if m != nil {
         m.assignmentOrder = value
     }
@@ -109,7 +117,7 @@ func NewGetOrderRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *GetOrderRequestBuilder) CreateGetRequestInformation(options *GetOrderRe
     return requestInfo, nil
 }
 // Get invoke function getOrder
-func (m *GetOrderRequestBuilder) Get(options *GetOrderRequestBuilderGetOptions)(*GetOrderResponse, error) {
+func (m *GetOrderRequestBuilder) Get(options *GetOrderRequestBuilderGetOptions)(GetOrderResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetOrderResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOrderResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetOrderResponse), nil
+    return res.(GetOrderResponseable), nil
 }

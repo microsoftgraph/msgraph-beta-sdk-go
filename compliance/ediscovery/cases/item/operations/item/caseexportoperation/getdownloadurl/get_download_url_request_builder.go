@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetDownloadUrlRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation\microsoft.graph.ediscovery.getDownloadUrl()
+// GetDownloadUrlRequestBuilder provides operations to call the getDownloadUrl method.
 type GetDownloadUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetDownloadUrlRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *GetDownloadUrlRequestBuilder) CreateGetRequestInformation(options *GetD
     return requestInfo, nil
 }
 // Get invoke function getDownloadUrl
-func (m *GetDownloadUrlRequestBuilder) Get(options *GetDownloadUrlRequestBuilderGetOptions)(*string, error) {
+func (m *GetDownloadUrlRequestBuilder) Get(options *GetDownloadUrlRequestBuilderGetOptions)(GetDownloadUrlResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDownloadUrlResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(GetDownloadUrlResponseable), nil
 }

@@ -2,13 +2,11 @@ package noncustodialsources
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i127ed970f4cf70dae4e3a9bc9ae48112e65996c5d47c39e609c0b55f44fc2ecb "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/removehold"
-    i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/ref"
-    ia78d53705d4e84211433969df7a4fd05268f2735ae29bd62c0e068728055ed5f "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/applyhold"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i0722e783ca51bb6f74dbc59fa13d1f0c31f7ca586213c42764ea12604bf0dea8 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/count"
 )
 
-// NoncustodialSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources
+// NoncustodialSourcesRequestBuilder provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 type NoncustodialSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,9 +45,6 @@ type NoncustodialSourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-func (m *NoncustodialSourcesRequestBuilder) ApplyHold()(*ia78d53705d4e84211433969df7a4fd05268f2735ae29bd62c0e068728055ed5f.ApplyHoldRequestBuilder) {
-    return ia78d53705d4e84211433969df7a4fd05268f2735ae29bd62c0e068728055ed5f.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewNoncustodialSourcesRequestBuilderInternal instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
 func NewNoncustodialSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NoncustodialSourcesRequestBuilder) {
     m := &NoncustodialSourcesRequestBuilder{
@@ -59,7 +54,7 @@ func NewNoncustodialSourcesRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -68,6 +63,9 @@ func NewNoncustodialSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNoncustodialSourcesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *NoncustodialSourcesRequestBuilder) Count()(*i0722e783ca51bb6f74dbc59fa13d1f0c31f7ca586213c42764ea12604bf0dea8.CountRequestBuilder) {
+    return i0722e783ca51bb6f74dbc59fa13d1f0c31f7ca586213c42764ea12604bf0dea8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation noncustodialDataSource sources that are included in the sourceCollection
 func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation(options *NoncustodialSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -90,20 +88,18 @@ func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation(options 
     return requestInfo, nil
 }
 // Get noncustodialDataSource sources that are included in the sourceCollection
-func (m *NoncustodialSourcesRequestBuilder) Get(options *NoncustodialSourcesRequestBuilderGetOptions)(*NoncustodialSourcesResponse, error) {
+func (m *NoncustodialSourcesRequestBuilder) Get(options *NoncustodialSourcesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NoncustodialDataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNoncustodialSourcesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateNoncustodialDataSourceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*NoncustodialSourcesResponse), nil
-}
-func (m *NoncustodialSourcesRequestBuilder) Ref()(*i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372.RefRequestBuilder) {
-    return i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *NoncustodialSourcesRequestBuilder) RemoveHold()(*i127ed970f4cf70dae4e3a9bc9ae48112e65996c5d47c39e609c0b55f44fc2ecb.RemoveHoldRequestBuilder) {
-    return i127ed970f4cf70dae4e3a9bc9ae48112e65996c5d47c39e609c0b55f44fc2ecb.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NoncustodialDataSourceCollectionResponseable), nil
 }

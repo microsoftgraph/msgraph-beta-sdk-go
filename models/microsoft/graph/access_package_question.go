@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageQuestion 
+// AccessPackageQuestion provides operations to manage the identityGovernance singleton.
 type AccessPackageQuestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,7 +17,7 @@ type AccessPackageQuestion struct {
     // Relative position of this question when displaying a list of questions to the requestor.
     sequence *int32;
     // The text of the question to show to the requestor.
-    text *AccessPackageLocalizedContent;
+    text AccessPackageLocalizedContentable;
 }
 // NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
@@ -26,52 +26,16 @@ func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageQuestion(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageQuestion) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetId gets the id property value. ID of the question.
-func (m *AccessPackageQuestion) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
-func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAnswerEditable
-    }
-}
-// GetIsRequired gets the isRequired property value. Whether the requestor is required to supply an answer or not.
-func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
-}
-// GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
-func (m *AccessPackageQuestion) GetSequence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sequence
-    }
-}
-// GetText gets the text property value. The text of the question to show to the requestor.
-func (m *AccessPackageQuestion) GetText()(*AccessPackageLocalizedContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -118,16 +82,56 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageLocalizedContent() })
+        val, err := n.GetObjectValue(CreateAccessPackageLocalizedContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetText(val.(*AccessPackageLocalizedContent))
+            m.SetText(val.(AccessPackageLocalizedContentable))
         }
         return nil
     }
     return res
+}
+// GetId gets the id property value. ID of the question.
+func (m *AccessPackageQuestion) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
+func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAnswerEditable
+    }
+}
+// GetIsRequired gets the isRequired property value. Whether the requestor is required to supply an answer or not.
+func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRequired
+    }
+}
+// GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
+func (m *AccessPackageQuestion) GetSequence()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sequence
+    }
+}
+// GetText gets the text property value. The text of the question to show to the requestor.
+func (m *AccessPackageQuestion) GetText()(AccessPackageLocalizedContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.text
+    }
 }
 func (m *AccessPackageQuestion) IsNil()(bool) {
     return m == nil
@@ -203,7 +207,7 @@ func (m *AccessPackageQuestion) SetSequence(value *int32)() {
     }
 }
 // SetText sets the text property value. The text of the question to show to the requestor.
-func (m *AccessPackageQuestion) SetText(value *AccessPackageLocalizedContent)() {
+func (m *AccessPackageQuestion) SetText(value AccessPackageLocalizedContentable)() {
     if m != nil {
         m.text = value
     }

@@ -2,11 +2,11 @@ package registereddevices
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i1714927d5538181aff2b0058a82631a9992fb6c51efc1595f64c223639573529 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    icc2c9ed085aed4af5333f00888f47851a6efc61442b13587eed6798a7ffffe79 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices/count"
 )
 
-// RegisteredDevicesRequestBuilder builds and executes requests for operations under \users\{user-id}\registeredDevices
+// RegisteredDevicesRequestBuilder provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
 type RegisteredDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewRegisteredDevicesRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewRegisteredDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRegisteredDevicesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RegisteredDevicesRequestBuilder) Count()(*icc2c9ed085aed4af5333f00888f47851a6efc61442b13587eed6798a7ffffe79.CountRequestBuilder) {
+    return icc2c9ed085aed4af5333f00888f47851a6efc61442b13587eed6798a7ffffe79.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformation(options *RegisteredDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformation(options *R
     return requestInfo, nil
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *RegisteredDevicesRequestBuilder) Get(options *RegisteredDevicesRequestBuilderGetOptions)(*RegisteredDevicesResponse, error) {
+func (m *RegisteredDevicesRequestBuilder) Get(options *RegisteredDevicesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRegisteredDevicesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RegisteredDevicesResponse), nil
-}
-func (m *RegisteredDevicesRequestBuilder) Ref()(*i1714927d5538181aff2b0058a82631a9992fb6c51efc1595f64c223639573529.RefRequestBuilder) {
-    return i1714927d5538181aff2b0058a82631a9992fb6c51efc1595f64c223639573529.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

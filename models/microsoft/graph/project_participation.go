@@ -4,23 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProjectParticipation 
+// ProjectParticipation provides operations to manage the compliance singleton.
 type ProjectParticipation struct {
     ItemFacet
     // Contains categories a user has associated with the project (for example, digital transformation, oil rig).
     categories []string;
     // Contains detailed information about the client the project was for.
-    client *CompanyDetail;
+    client CompanyDetailable;
     // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
     collaborationTags []string;
     // Lists people that also worked on the project.
-    colleagues []RelatedPerson;
+    colleagues []RelatedPersonable;
     // Contains detail about the user's role on the project.
-    detail *PositionDetail;
+    detail PositionDetailable;
     // Contains a friendly name for the project.
     displayName *string;
     // The Person or people who sponsored the project.
-    sponsors []RelatedPerson;
+    sponsors []RelatedPersonable;
     // 
     thumbnailUrl *string;
 }
@@ -31,6 +31,10 @@ func NewProjectParticipation()(*ProjectParticipation) {
     }
     return m
 }
+// CreateProjectParticipationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProjectParticipationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProjectParticipation(), nil
+}
 // GetCategories gets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 func (m *ProjectParticipation) GetCategories()([]string) {
     if m == nil {
@@ -40,7 +44,7 @@ func (m *ProjectParticipation) GetCategories()([]string) {
     }
 }
 // GetClient gets the client property value. Contains detailed information about the client the project was for.
-func (m *ProjectParticipation) GetClient()(*CompanyDetail) {
+func (m *ProjectParticipation) GetClient()(CompanyDetailable) {
     if m == nil {
         return nil
     } else {
@@ -56,7 +60,7 @@ func (m *ProjectParticipation) GetCollaborationTags()([]string) {
     }
 }
 // GetColleagues gets the colleagues property value. Lists people that also worked on the project.
-func (m *ProjectParticipation) GetColleagues()([]RelatedPerson) {
+func (m *ProjectParticipation) GetColleagues()([]RelatedPersonable) {
     if m == nil {
         return nil
     } else {
@@ -64,7 +68,7 @@ func (m *ProjectParticipation) GetColleagues()([]RelatedPerson) {
     }
 }
 // GetDetail gets the detail property value. Contains detail about the user's role on the project.
-func (m *ProjectParticipation) GetDetail()(*PositionDetail) {
+func (m *ProjectParticipation) GetDetail()(PositionDetailable) {
     if m == nil {
         return nil
     } else {
@@ -77,22 +81,6 @@ func (m *ProjectParticipation) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetSponsors gets the sponsors property value. The Person or people who sponsored the project.
-func (m *ProjectParticipation) GetSponsors()([]RelatedPerson) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sponsors
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. 
-func (m *ProjectParticipation) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -113,12 +101,12 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["client"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCompanyDetail() })
+        val, err := n.GetObjectValue(CreateCompanyDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClient(val.(*CompanyDetail))
+            m.SetClient(val.(CompanyDetailable))
         }
         return nil
     }
@@ -137,26 +125,26 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["colleagues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRelatedPerson() })
+        val, err := n.GetCollectionOfObjectValues(CreateRelatedPersonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RelatedPerson, len(val))
+            res := make([]RelatedPersonable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RelatedPerson))
+                res[i] = v.(RelatedPersonable)
             }
             m.SetColleagues(res)
         }
         return nil
     }
     res["detail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPositionDetail() })
+        val, err := n.GetObjectValue(CreatePositionDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*PositionDetail))
+            m.SetDetail(val.(PositionDetailable))
         }
         return nil
     }
@@ -171,14 +159,14 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["sponsors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRelatedPerson() })
+        val, err := n.GetCollectionOfObjectValues(CreateRelatedPersonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RelatedPerson, len(val))
+            res := make([]RelatedPersonable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RelatedPerson))
+                res[i] = v.(RelatedPersonable)
             }
             m.SetSponsors(res)
         }
@@ -195,6 +183,22 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetSponsors gets the sponsors property value. The Person or people who sponsored the project.
+func (m *ProjectParticipation) GetSponsors()([]RelatedPersonable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sponsors
+    }
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. 
+func (m *ProjectParticipation) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
 }
 func (m *ProjectParticipation) IsNil()(bool) {
     return m == nil
@@ -226,8 +230,7 @@ func (m *ProjectParticipation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetColleagues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColleagues()))
         for i, v := range m.GetColleagues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("colleagues", cast)
         if err != nil {
@@ -249,8 +252,7 @@ func (m *ProjectParticipation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetSponsors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSponsors()))
         for i, v := range m.GetSponsors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sponsors", cast)
         if err != nil {
@@ -272,7 +274,7 @@ func (m *ProjectParticipation) SetCategories(value []string)() {
     }
 }
 // SetClient sets the client property value. Contains detailed information about the client the project was for.
-func (m *ProjectParticipation) SetClient(value *CompanyDetail)() {
+func (m *ProjectParticipation) SetClient(value CompanyDetailable)() {
     if m != nil {
         m.client = value
     }
@@ -284,13 +286,13 @@ func (m *ProjectParticipation) SetCollaborationTags(value []string)() {
     }
 }
 // SetColleagues sets the colleagues property value. Lists people that also worked on the project.
-func (m *ProjectParticipation) SetColleagues(value []RelatedPerson)() {
+func (m *ProjectParticipation) SetColleagues(value []RelatedPersonable)() {
     if m != nil {
         m.colleagues = value
     }
 }
 // SetDetail sets the detail property value. Contains detail about the user's role on the project.
-func (m *ProjectParticipation) SetDetail(value *PositionDetail)() {
+func (m *ProjectParticipation) SetDetail(value PositionDetailable)() {
     if m != nil {
         m.detail = value
     }
@@ -302,7 +304,7 @@ func (m *ProjectParticipation) SetDisplayName(value *string)() {
     }
 }
 // SetSponsors sets the sponsors property value. The Person or people who sponsored the project.
-func (m *ProjectParticipation) SetSponsors(value []RelatedPerson)() {
+func (m *ProjectParticipation) SetSponsors(value []RelatedPersonable)() {
     if m != nil {
         m.sponsors = value
     }

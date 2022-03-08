@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// EvaluateAssignmentFilterRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.evaluateAssignmentFilter
+// EvaluateAssignmentFilterRequestBuilder provides operations to call the evaluateAssignmentFilter method.
 type EvaluateAssignmentFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type EvaluateAssignmentFilterRequestBuilder struct {
 // EvaluateAssignmentFilterRequestBuilderPostOptions options for Post
 type EvaluateAssignmentFilterRequestBuilderPostOptions struct {
     // 
-    Body *EvaluateAssignmentFilterRequestBody;
+    Body EvaluateAssignmentFilterRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewEvaluateAssignmentFilterRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformation(op
     return requestInfo, nil
 }
 // Post invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) Post(options *EvaluateAssignmentFilterRequestBuilderPostOptions)([]byte, error) {
+func (m *EvaluateAssignmentFilterRequestBuilder) Post(options *EvaluateAssignmentFilterRequestBuilderPostOptions)(EvaluateAssignmentFilterResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEvaluateAssignmentFilterResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(EvaluateAssignmentFilterResponseable), nil
 }

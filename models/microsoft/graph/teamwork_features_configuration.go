@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkFeaturesConfiguration 
+// TeamworkFeaturesConfiguration provides operations to manage the teamwork singleton.
 type TeamworkFeaturesConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewTeamworkFeaturesConfiguration()(*TeamworkFeaturesConfiguration) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkFeaturesConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkFeaturesConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkFeaturesConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *TeamworkFeaturesConfiguration) GetEmailToSendLogsAndFeedback()(*string)
         return nil
     } else {
         return m.emailToSendLogsAndFeedback
-    }
-}
-// GetIsAutoScreenShareEnabled gets the isAutoScreenShareEnabled property value. True if auto screen shared is enabled.
-func (m *TeamworkFeaturesConfiguration) GetIsAutoScreenShareEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAutoScreenShareEnabled
-    }
-}
-// GetIsBluetoothBeaconingEnabled gets the isBluetoothBeaconingEnabled property value. True if Bluetooth beaconing is enabled.
-func (m *TeamworkFeaturesConfiguration) GetIsBluetoothBeaconingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBluetoothBeaconingEnabled
-    }
-}
-// GetIsHideMeetingNamesEnabled gets the isHideMeetingNamesEnabled property value. True if hiding meeting names is enabled.
-func (m *TeamworkFeaturesConfiguration) GetIsHideMeetingNamesEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHideMeetingNamesEnabled
-    }
-}
-// GetIsSendLogsAndFeedbackEnabled gets the isSendLogsAndFeedbackEnabled property value. True if sending logs and feedback is enabled.
-func (m *TeamworkFeaturesConfiguration) GetIsSendLogsAndFeedbackEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSendLogsAndFeedbackEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetIsAutoScreenShareEnabled gets the isAutoScreenShareEnabled property value. True if auto screen shared is enabled.
+func (m *TeamworkFeaturesConfiguration) GetIsAutoScreenShareEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAutoScreenShareEnabled
+    }
+}
+// GetIsBluetoothBeaconingEnabled gets the isBluetoothBeaconingEnabled property value. True if Bluetooth beaconing is enabled.
+func (m *TeamworkFeaturesConfiguration) GetIsBluetoothBeaconingEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isBluetoothBeaconingEnabled
+    }
+}
+// GetIsHideMeetingNamesEnabled gets the isHideMeetingNamesEnabled property value. True if hiding meeting names is enabled.
+func (m *TeamworkFeaturesConfiguration) GetIsHideMeetingNamesEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHideMeetingNamesEnabled
+    }
+}
+// GetIsSendLogsAndFeedbackEnabled gets the isSendLogsAndFeedbackEnabled property value. True if sending logs and feedback is enabled.
+func (m *TeamworkFeaturesConfiguration) GetIsSendLogsAndFeedbackEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSendLogsAndFeedbackEnabled
+    }
 }
 func (m *TeamworkFeaturesConfiguration) IsNil()(bool) {
     return m == nil

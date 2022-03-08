@@ -2,11 +2,11 @@ package categories
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    iaaed25efda4d843cfc13eb63aa83b2e1fd7ba77dc5ef45700e767abfd3f80c47 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/categories/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iaf8a7dbebe9379333383e429b4beb2812bf8ab9c1712fc535767a2c7f61fe615 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/categories/count"
 )
 
-// CategoriesRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\categories
+// CategoriesRequestBuilder provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
 type CategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategoriesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CategoriesRequestBuilder) Count()(*iaf8a7dbebe9379333383e429b4beb2812bf8ab9c1712fc535767a2c7f61fe615.CountRequestBuilder) {
+    return iaf8a7dbebe9379333383e429b4beb2812bf8ab9c1712fc535767a2c7f61fe615.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of categories for this app.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *CategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *Categori
     return requestInfo, nil
 }
 // Get the list of categories for this app.
-func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(*CategoriesResponse, error) {
+func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileAppCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCategoriesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMobileAppCategoryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CategoriesResponse), nil
-}
-func (m *CategoriesRequestBuilder) Ref()(*iaaed25efda4d843cfc13eb63aa83b2e1fd7ba77dc5ef45700e767abfd3f80c47.RefRequestBuilder) {
-    return iaaed25efda4d843cfc13eb63aa83b2e1fd7ba77dc5ef45700e767abfd3f80c47.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileAppCategoryCollectionResponseable), nil
 }

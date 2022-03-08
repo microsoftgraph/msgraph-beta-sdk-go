@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedApproval 
+// PrivilegedApproval provides operations to manage the collection of privilegedApproval entities.
 type PrivilegedApproval struct {
     Entity
     // 
@@ -19,13 +19,13 @@ type PrivilegedApproval struct {
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only. The role assignment request for this approval object
-    request *PrivilegedRoleAssignmentRequest;
+    request PrivilegedRoleAssignmentRequestable;
     // 
     requestorReason *string;
     // 
     roleId *string;
     // Read-only. Nullable.
-    roleInfo *PrivilegedRole;
+    roleInfo PrivilegedRoleable;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -37,6 +37,10 @@ func NewPrivilegedApproval()(*PrivilegedApproval) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreatePrivilegedApprovalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedApprovalFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedApproval(), nil
 }
 // GetApprovalDuration gets the approvalDuration property value. 
 func (m *PrivilegedApproval) GetApprovalDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
@@ -76,54 +80,6 @@ func (m *PrivilegedApproval) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetRequest gets the request property value. Read-only. The role assignment request for this approval object
-func (m *PrivilegedApproval) GetRequest()(*PrivilegedRoleAssignmentRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.request
-    }
-}
-// GetRequestorReason gets the requestorReason property value. 
-func (m *PrivilegedApproval) GetRequestorReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorReason
-    }
-}
-// GetRoleId gets the roleId property value. 
-func (m *PrivilegedApproval) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
-}
-// GetRoleInfo gets the roleInfo property value. Read-only. Nullable.
-func (m *PrivilegedApproval) GetRoleInfo()(*PrivilegedRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleInfo
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *PrivilegedApproval) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetUserId gets the userId property value. 
-func (m *PrivilegedApproval) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,12 +136,12 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["request"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedRoleAssignmentRequest() })
+        val, err := n.GetObjectValue(CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequest(val.(*PrivilegedRoleAssignmentRequest))
+            m.SetRequest(val.(PrivilegedRoleAssignmentRequestable))
         }
         return nil
     }
@@ -210,12 +166,12 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["roleInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedRole() })
+        val, err := n.GetObjectValue(CreatePrivilegedRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleInfo(val.(*PrivilegedRole))
+            m.SetRoleInfo(val.(PrivilegedRoleable))
         }
         return nil
     }
@@ -240,6 +196,54 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetRequest gets the request property value. Read-only. The role assignment request for this approval object
+func (m *PrivilegedApproval) GetRequest()(PrivilegedRoleAssignmentRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.request
+    }
+}
+// GetRequestorReason gets the requestorReason property value. 
+func (m *PrivilegedApproval) GetRequestorReason()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestorReason
+    }
+}
+// GetRoleId gets the roleId property value. 
+func (m *PrivilegedApproval) GetRoleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleId
+    }
+}
+// GetRoleInfo gets the roleInfo property value. Read-only. Nullable.
+func (m *PrivilegedApproval) GetRoleInfo()(PrivilegedRoleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleInfo
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *PrivilegedApproval) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetUserId gets the userId property value. 
+func (m *PrivilegedApproval) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *PrivilegedApproval) IsNil()(bool) {
     return m == nil
@@ -350,7 +354,7 @@ func (m *PrivilegedApproval) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad
     }
 }
 // SetRequest sets the request property value. Read-only. The role assignment request for this approval object
-func (m *PrivilegedApproval) SetRequest(value *PrivilegedRoleAssignmentRequest)() {
+func (m *PrivilegedApproval) SetRequest(value PrivilegedRoleAssignmentRequestable)() {
     if m != nil {
         m.request = value
     }
@@ -368,7 +372,7 @@ func (m *PrivilegedApproval) SetRoleId(value *string)() {
     }
 }
 // SetRoleInfo sets the roleInfo property value. Read-only. Nullable.
-func (m *PrivilegedApproval) SetRoleInfo(value *PrivilegedRole)() {
+func (m *PrivilegedApproval) SetRoleInfo(value PrivilegedRoleable)() {
     if m != nil {
         m.roleInfo = value
     }

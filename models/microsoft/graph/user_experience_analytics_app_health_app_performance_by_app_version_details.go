@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails 
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -30,6 +30,10 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*Use
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppCrashCount()(*int32) {
@@ -77,22 +81,6 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetD
         return nil
     } else {
         return m.deviceCountWithCrashes
-    }
-}
-// GetIsLatestUsedVersion gets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsLatestUsedVersion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLatestUsedVersion
-    }
-}
-// GetIsMostUsedVersion gets the isMostUsedVersion property value. Is the version of application the most used version for that app.
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsMostUsedVersion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMostUsedVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,6 +167,22 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetF
         return nil
     }
     return res
+}
+// GetIsLatestUsedVersion gets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsLatestUsedVersion()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isLatestUsedVersion
+    }
+}
+// GetIsMostUsedVersion gets the isMostUsedVersion property value. Is the version of application the most used version for that app.
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsMostUsedVersion()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMostUsedVersion
+    }
 }
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) IsNil()(bool) {
     return m == nil

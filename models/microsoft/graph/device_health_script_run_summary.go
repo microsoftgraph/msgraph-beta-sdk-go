@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthScriptRunSummary 
+// DeviceHealthScriptRunSummary provides operations to manage the deviceManagement singleton.
 type DeviceHealthScriptRunSummary struct {
     Entity
     // Number of devices on which the detection script execution encountered an error and did not complete
@@ -38,6 +38,10 @@ func NewDeviceHealthScriptRunSummary()(*DeviceHealthScriptRunSummary) {
     }
     return m
 }
+// CreateDeviceHealthScriptRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceHealthScriptRunSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceHealthScriptRunSummary(), nil
+}
 // GetDetectionScriptErrorDeviceCount gets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete
 func (m *DeviceHealthScriptRunSummary) GetDetectionScriptErrorDeviceCount()(*int32) {
     if m == nil {
@@ -60,70 +64,6 @@ func (m *DeviceHealthScriptRunSummary) GetDetectionScriptPendingDeviceCount()(*i
         return nil
     } else {
         return m.detectionScriptPendingDeviceCount
-    }
-}
-// GetIssueDetectedDeviceCount gets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue
-func (m *DeviceHealthScriptRunSummary) GetIssueDetectedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issueDetectedDeviceCount
-    }
-}
-// GetIssueRemediatedCumulativeDeviceCount gets the issueRemediatedCumulativeDeviceCount property value. Number of devices that were remediated over the last 30 days
-func (m *DeviceHealthScriptRunSummary) GetIssueRemediatedCumulativeDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issueRemediatedCumulativeDeviceCount
-    }
-}
-// GetIssueRemediatedDeviceCount gets the issueRemediatedDeviceCount property value. Number of devices for which the remediation script was able to resolve the detected issue
-func (m *DeviceHealthScriptRunSummary) GetIssueRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issueRemediatedDeviceCount
-    }
-}
-// GetIssueReoccurredDeviceCount gets the issueReoccurredDeviceCount property value. Number of devices for which the remediation script executed successfully but failed to resolve the detected issue
-func (m *DeviceHealthScriptRunSummary) GetIssueReoccurredDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issueReoccurredDeviceCount
-    }
-}
-// GetLastScriptRunDateTime gets the lastScriptRunDateTime property value. Last run time for the script across all devices
-func (m *DeviceHealthScriptRunSummary) GetLastScriptRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastScriptRunDateTime
-    }
-}
-// GetNoIssueDetectedDeviceCount gets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy
-func (m *DeviceHealthScriptRunSummary) GetNoIssueDetectedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noIssueDetectedDeviceCount
-    }
-}
-// GetRemediationScriptErrorDeviceCount gets the remediationScriptErrorDeviceCount property value. Number of devices for which the remediation script execution encountered an error and did not complete
-func (m *DeviceHealthScriptRunSummary) GetRemediationScriptErrorDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationScriptErrorDeviceCount
-    }
-}
-// GetRemediationSkippedDeviceCount gets the remediationSkippedDeviceCount property value. Number of devices for which remediation was skipped
-func (m *DeviceHealthScriptRunSummary) GetRemediationSkippedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationSkippedDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -240,6 +180,70 @@ func (m *DeviceHealthScriptRunSummary) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIssueDetectedDeviceCount gets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue
+func (m *DeviceHealthScriptRunSummary) GetIssueDetectedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issueDetectedDeviceCount
+    }
+}
+// GetIssueRemediatedCumulativeDeviceCount gets the issueRemediatedCumulativeDeviceCount property value. Number of devices that were remediated over the last 30 days
+func (m *DeviceHealthScriptRunSummary) GetIssueRemediatedCumulativeDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issueRemediatedCumulativeDeviceCount
+    }
+}
+// GetIssueRemediatedDeviceCount gets the issueRemediatedDeviceCount property value. Number of devices for which the remediation script was able to resolve the detected issue
+func (m *DeviceHealthScriptRunSummary) GetIssueRemediatedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issueRemediatedDeviceCount
+    }
+}
+// GetIssueReoccurredDeviceCount gets the issueReoccurredDeviceCount property value. Number of devices for which the remediation script executed successfully but failed to resolve the detected issue
+func (m *DeviceHealthScriptRunSummary) GetIssueReoccurredDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issueReoccurredDeviceCount
+    }
+}
+// GetLastScriptRunDateTime gets the lastScriptRunDateTime property value. Last run time for the script across all devices
+func (m *DeviceHealthScriptRunSummary) GetLastScriptRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastScriptRunDateTime
+    }
+}
+// GetNoIssueDetectedDeviceCount gets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy
+func (m *DeviceHealthScriptRunSummary) GetNoIssueDetectedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.noIssueDetectedDeviceCount
+    }
+}
+// GetRemediationScriptErrorDeviceCount gets the remediationScriptErrorDeviceCount property value. Number of devices for which the remediation script execution encountered an error and did not complete
+func (m *DeviceHealthScriptRunSummary) GetRemediationScriptErrorDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationScriptErrorDeviceCount
+    }
+}
+// GetRemediationSkippedDeviceCount gets the remediationSkippedDeviceCount property value. Number of devices for which remediation was skipped
+func (m *DeviceHealthScriptRunSummary) GetRemediationSkippedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationSkippedDeviceCount
+    }
 }
 func (m *DeviceHealthScriptRunSummary) IsNil()(bool) {
     return m == nil

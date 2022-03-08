@@ -2,14 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i599f577b7cc2b4c7ec4cac4c88c7a0ac038b8dd35e1dd9006d8902495994d7a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/printer"
     i83d84a5570e033ee2154c9058ba94b73e02d2477c15f7f62129d78cf94bf25e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedusers"
     ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedgroups"
+    i1b0dc3d82dc74991ad8da4b7860c60dd3dc1a8f7519f5cb192f56c71e52f1fe2 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedgroups/item"
+    i442e536706eebe7e2649a22cf48fdf106d189b67458b6679331fb39abed6ab94 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedusers/item"
 )
 
-// PrinterShareItemRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}
+// PrinterShareItemRequestBuilder provides operations to manage the shares property of the microsoft.graph.print entity.
 type PrinterShareItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type PrinterShareItemRequestBuilderGetQueryParameters struct {
 // PrinterShareItemRequestBuilderPatchOptions options for Patch
 type PrinterShareItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShare;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShareable;
     // Request headers
     H map[string]string;
     // Request options
@@ -59,8 +60,30 @@ type PrinterShareItemRequestBuilderPatchOptions struct {
 func (m *PrinterShareItemRequestBuilder) AllowedGroups()(*ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c.AllowedGroupsRequestBuilder) {
     return ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c.NewAllowedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AllowedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.shares.item.allowedGroups.item collection
+func (m *PrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*i1b0dc3d82dc74991ad8da4b7860c60dd3dc1a8f7519f5cb192f56c71e52f1fe2.GroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["group_id"] = id
+    }
+    return i1b0dc3d82dc74991ad8da4b7860c60dd3dc1a8f7519f5cb192f56c71e52f1fe2.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *PrinterShareItemRequestBuilder) AllowedUsers()(*i83d84a5570e033ee2154c9058ba94b73e02d2477c15f7f62129d78cf94bf25e1.AllowedUsersRequestBuilder) {
     return i83d84a5570e033ee2154c9058ba94b73e02d2477c15f7f62129d78cf94bf25e1.NewAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AllowedUsersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.shares.item.allowedUsers.item collection
+func (m *PrinterShareItemRequestBuilder) AllowedUsersById(id string)(*i442e536706eebe7e2649a22cf48fdf106d189b67458b6679331fb39abed6ab94.UserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["user_id"] = id
+    }
+    return i442e536706eebe7e2649a22cf48fdf106d189b67458b6679331fb39abed6ab94.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPrinterShareItemRequestBuilderInternal instantiates a new PrinterShareItemRequestBuilder and sets the default values.
 func NewPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterShareItemRequestBuilder) {
@@ -71,7 +94,7 @@ func NewPrinterShareItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -81,7 +104,7 @@ func NewPrinterShareItemRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterShareItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the list of printer shares registered in the tenant.
+// CreateDeleteRequestInformation delete navigation property shares for print
 func (m *PrinterShareItemRequestBuilder) CreateDeleteRequestInformation(options *PrinterShareItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +141,7 @@ func (m *PrinterShareItemRequestBuilder) CreateGetRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of printer shares registered in the tenant.
+// CreatePatchRequestInformation update the navigation property shares in print
 func (m *PrinterShareItemRequestBuilder) CreatePatchRequestInformation(options *PrinterShareItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,37 +159,49 @@ func (m *PrinterShareItemRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete the list of printer shares registered in the tenant.
+// Delete delete navigation property shares for print
 func (m *PrinterShareItemRequestBuilder) Delete(options *PrinterShareItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the list of printer shares registered in the tenant.
-func (m *PrinterShareItemRequestBuilder) Get(options *PrinterShareItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShare, error) {
+func (m *PrinterShareItemRequestBuilder) Get(options *PrinterShareItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShareable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrinterShare() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterShareFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShare), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShareable), nil
 }
-// Patch the list of printer shares registered in the tenant.
+// Patch update the navigation property shares in print
 func (m *PrinterShareItemRequestBuilder) Patch(options *PrinterShareItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

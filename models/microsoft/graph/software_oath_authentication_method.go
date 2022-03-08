@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SoftwareOathAuthenticationMethod 
+// SoftwareOathAuthenticationMethod provides operations to manage the compliance singleton.
 type SoftwareOathAuthenticationMethod struct {
     AuthenticationMethod
     // The secret key of the method. Always returns null.
@@ -17,13 +17,9 @@ func NewSoftwareOathAuthenticationMethod()(*SoftwareOathAuthenticationMethod) {
     }
     return m
 }
-// GetSecretKey gets the secretKey property value. The secret key of the method. Always returns null.
-func (m *SoftwareOathAuthenticationMethod) GetSecretKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secretKey
-    }
+// CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSoftwareOathAuthenticationMethod(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SoftwareOathAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *SoftwareOathAuthenticationMethod) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetSecretKey gets the secretKey property value. The secret key of the method. Always returns null.
+func (m *SoftwareOathAuthenticationMethod) GetSecretKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secretKey
+    }
 }
 func (m *SoftwareOathAuthenticationMethod) IsNil()(bool) {
     return m == nil

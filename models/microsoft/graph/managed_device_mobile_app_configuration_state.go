@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceMobileAppConfigurationState 
+// ManagedDeviceMobileAppConfigurationState provides operations to manage the compliance singleton.
 type ManagedDeviceMobileAppConfigurationState struct {
     Entity
     // The name of the policy for this policyBase
@@ -14,7 +14,7 @@ type ManagedDeviceMobileAppConfigurationState struct {
     // Count of how many setting a policy holds
     settingCount *int32;
     // 
-    settingStates []ManagedDeviceMobileAppConfigurationSettingState;
+    settingStates []ManagedDeviceMobileAppConfigurationSettingStateable;
     // The compliance state of the policy
     state *ComplianceStatus;
     // User unique identifier, must be Guid
@@ -31,68 +31,16 @@ func NewManagedDeviceMobileAppConfigurationState()(*ManagedDeviceMobileAppConfig
     }
     return m
 }
+// CreateManagedDeviceMobileAppConfigurationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedDeviceMobileAppConfigurationStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDeviceMobileAppConfigurationState(), nil
+}
 // GetDisplayName gets the displayName property value. The name of the policy for this policyBase
 func (m *ManagedDeviceMobileAppConfigurationState) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetPlatformType gets the platformType property value. Platform type that the policy applies to
-func (m *ManagedDeviceMobileAppConfigurationState) GetPlatformType()(*PolicyPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
-}
-// GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
-func (m *ManagedDeviceMobileAppConfigurationState) GetSettingCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCount
-    }
-}
-// GetSettingStates gets the settingStates property value. 
-func (m *ManagedDeviceMobileAppConfigurationState) GetSettingStates()([]ManagedDeviceMobileAppConfigurationSettingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingStates
-    }
-}
-// GetState gets the state property value. The compliance state of the policy
-func (m *ManagedDeviceMobileAppConfigurationState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUserId gets the userId property value. User unique identifier, must be Guid
-func (m *ManagedDeviceMobileAppConfigurationState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
-func (m *ManagedDeviceMobileAppConfigurationState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetVersion gets the version property value. The version of the policy
-func (m *ManagedDeviceMobileAppConfigurationState) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,14 +77,14 @@ func (m *ManagedDeviceMobileAppConfigurationState) GetFieldDeserializers()(map[s
         return nil
     }
     res["settingStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceMobileAppConfigurationSettingState() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDeviceMobileAppConfigurationSettingState, len(val))
+            res := make([]ManagedDeviceMobileAppConfigurationSettingStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDeviceMobileAppConfigurationSettingState))
+                res[i] = v.(ManagedDeviceMobileAppConfigurationSettingStateable)
             }
             m.SetSettingStates(res)
         }
@@ -184,6 +132,62 @@ func (m *ManagedDeviceMobileAppConfigurationState) GetFieldDeserializers()(map[s
     }
     return res
 }
+// GetPlatformType gets the platformType property value. Platform type that the policy applies to
+func (m *ManagedDeviceMobileAppConfigurationState) GetPlatformType()(*PolicyPlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platformType
+    }
+}
+// GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
+func (m *ManagedDeviceMobileAppConfigurationState) GetSettingCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingCount
+    }
+}
+// GetSettingStates gets the settingStates property value. 
+func (m *ManagedDeviceMobileAppConfigurationState) GetSettingStates()([]ManagedDeviceMobileAppConfigurationSettingStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingStates
+    }
+}
+// GetState gets the state property value. The compliance state of the policy
+func (m *ManagedDeviceMobileAppConfigurationState) GetState()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUserId gets the userId property value. User unique identifier, must be Guid
+func (m *ManagedDeviceMobileAppConfigurationState) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
+func (m *ManagedDeviceMobileAppConfigurationState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetVersion gets the version property value. The version of the policy
+func (m *ManagedDeviceMobileAppConfigurationState) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *ManagedDeviceMobileAppConfigurationState) IsNil()(bool) {
     return m == nil
 }
@@ -215,8 +219,7 @@ func (m *ManagedDeviceMobileAppConfigurationState) Serialize(writer i04eb5309aea
     if m.GetSettingStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettingStates()))
         for i, v := range m.GetSettingStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("settingStates", cast)
         if err != nil {
@@ -269,7 +272,7 @@ func (m *ManagedDeviceMobileAppConfigurationState) SetSettingCount(value *int32)
     }
 }
 // SetSettingStates sets the settingStates property value. 
-func (m *ManagedDeviceMobileAppConfigurationState) SetSettingStates(value []ManagedDeviceMobileAppConfigurationSettingState)() {
+func (m *ManagedDeviceMobileAppConfigurationState) SetSettingStates(value []ManagedDeviceMobileAppConfigurationSettingStateable)() {
     if m != nil {
         m.settingStates = value
     }

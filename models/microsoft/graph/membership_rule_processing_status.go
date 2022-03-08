@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MembershipRuleProcessingStatus 
+// MembershipRuleProcessingStatus provides operations to manage the compliance singleton.
 type MembershipRuleProcessingStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewMembershipRuleProcessingStatus()(*MembershipRuleProcessingStatus) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMembershipRuleProcessingStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMembershipRuleProcessingStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMembershipRuleProcessingStatus(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MembershipRuleProcessingStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *MembershipRuleProcessingStatus) GetErrorMessage()(*string) {
         return nil
     } else {
         return m.errorMessage
-    }
-}
-// GetLastMembershipUpdated gets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
-func (m *MembershipRuleProcessingStatus) GetLastMembershipUpdated()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastMembershipUpdated
-    }
-}
-// GetStatus gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
-func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingStatusDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetLastMembershipUpdated gets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
+func (m *MembershipRuleProcessingStatus) GetLastMembershipUpdated()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastMembershipUpdated
+    }
+}
+// GetStatus gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
+func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingStatusDetails) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *MembershipRuleProcessingStatus) IsNil()(bool) {
     return m == nil

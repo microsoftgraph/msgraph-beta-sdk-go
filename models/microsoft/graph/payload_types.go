@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PayloadTypes 
+// PayloadTypes provides operations to manage the compliance singleton.
 type PayloadTypes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
     rawContent *string;
     // The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
-    visualContent *VisualProperties;
+    visualContent VisualPropertiesable;
 }
 // NewPayloadTypes instantiates a new payloadTypes and sets the default values.
 func NewPayloadTypes()(*PayloadTypes) {
@@ -20,28 +20,16 @@ func NewPayloadTypes()(*PayloadTypes) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePayloadTypesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePayloadTypesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPayloadTypes(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PayloadTypes) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRawContent gets the rawContent property value. The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
-func (m *PayloadTypes) GetRawContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rawContent
-    }
-}
-// GetVisualContent gets the visualContent property value. The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
-func (m *PayloadTypes) GetVisualContent()(*VisualProperties) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visualContent
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -58,16 +46,32 @@ func (m *PayloadTypes) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["visualContent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVisualProperties() })
+        val, err := n.GetObjectValue(CreateVisualPropertiesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVisualContent(val.(*VisualProperties))
+            m.SetVisualContent(val.(VisualPropertiesable))
         }
         return nil
     }
     return res
+}
+// GetRawContent gets the rawContent property value. The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
+func (m *PayloadTypes) GetRawContent()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rawContent
+    }
+}
+// GetVisualContent gets the visualContent property value. The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
+func (m *PayloadTypes) GetVisualContent()(VisualPropertiesable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visualContent
+    }
 }
 func (m *PayloadTypes) IsNil()(bool) {
     return m == nil
@@ -107,7 +111,7 @@ func (m *PayloadTypes) SetRawContent(value *string)() {
     }
 }
 // SetVisualContent sets the visualContent property value. The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
-func (m *PayloadTypes) SetVisualContent(value *VisualProperties)() {
+func (m *PayloadTypes) SetVisualContent(value VisualPropertiesable)() {
     if m != nil {
         m.visualContent = value
     }

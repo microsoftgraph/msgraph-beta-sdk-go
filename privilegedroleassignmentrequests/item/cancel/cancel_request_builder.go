@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CancelRequestBuilder builds and executes requests for operations under \privilegedRoleAssignmentRequests\{privilegedRoleAssignmentRequest-id}\microsoft.graph.cancel
+// CancelRequestBuilder provides operations to call the cancel method.
 type CancelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type CancelRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // CancelResponse union type wrapper for classes privilegedRoleAssignmentRequest
 type CancelResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type privilegedRoleAssignmentRequest
-    privilegedRoleAssignmentRequest *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest;
+    privilegedRoleAssignmentRequest i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable;
 }
 // NewCancelResponse instantiates a new cancelResponse and sets the default values.
 func NewCancelResponse()(*CancelResponse) {
@@ -37,6 +42,9 @@ func NewCancelResponse()(*CancelResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCancelResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCancelResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CancelResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +54,28 @@ func (m *CancelResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CancelResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["privilegedRoleAssignmentRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegedRoleAssignmentRequest(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPrivilegedRoleAssignmentRequest gets the privilegedRoleAssignmentRequest property value. Union type representation for type privilegedRoleAssignmentRequest
-func (m *CancelResponse) GetPrivilegedRoleAssignmentRequest()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest) {
+func (m *CancelResponse) GetPrivilegedRoleAssignmentRequest()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable) {
     if m == nil {
         return nil
     } else {
         return m.privilegedRoleAssignmentRequest
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CancelResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["privilegedRoleAssignmentRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedRoleAssignmentRequest() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrivilegedRoleAssignmentRequest(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CancelResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +103,7 @@ func (m *CancelResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetPrivilegedRoleAssignmentRequest sets the privilegedRoleAssignmentRequest property value. Union type representation for type privilegedRoleAssignmentRequest
-func (m *CancelResponse) SetPrivilegedRoleAssignmentRequest(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest)() {
+func (m *CancelResponse) SetPrivilegedRoleAssignmentRequest(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable)() {
     if m != nil {
         m.privilegedRoleAssignmentRequest = value
     }
@@ -109,7 +117,7 @@ func NewCancelRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *CancelRequestBuilder) CreatePostRequestInformation(options *CancelReque
     return requestInfo, nil
 }
 // Post invoke action cancel
-func (m *CancelRequestBuilder) Post(options *CancelRequestBuilderPostOptions)(*CancelResponse, error) {
+func (m *CancelRequestBuilder) Post(options *CancelRequestBuilderPostOptions)(CancelResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCancelResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCancelResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CancelResponse), nil
+    return res.(CancelResponseable), nil
 }

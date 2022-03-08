@@ -2,11 +2,11 @@ package joinedteams
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i9a58c41a05aa841dd115880d295734f19a9989d1632c9cb86ca9c4135577bf51 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i9a38fee1963cbc3b8e85034ee4b9d2bec530c454aac6f0c8b6004e31347f3bf0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams/count"
 )
 
-// JoinedTeamsRequestBuilder builds and executes requests for operations under \users\{user-id}\joinedTeams
+// JoinedTeamsRequestBuilder provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
 type JoinedTeamsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewJoinedTeamsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewJoinedTeamsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedTeamsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *JoinedTeamsRequestBuilder) Count()(*i9a38fee1963cbc3b8e85034ee4b9d2bec530c454aac6f0c8b6004e31347f3bf0.CountRequestBuilder) {
+    return i9a38fee1963cbc3b8e85034ee4b9d2bec530c454aac6f0c8b6004e31347f3bf0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation(options *JoinedTeamsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation(options *JoinedT
     return requestInfo, nil
 }
 // Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-func (m *JoinedTeamsRequestBuilder) Get(options *JoinedTeamsRequestBuilderGetOptions)(*JoinedTeamsResponse, error) {
+func (m *JoinedTeamsRequestBuilder) Get(options *JoinedTeamsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJoinedTeamsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*JoinedTeamsResponse), nil
-}
-func (m *JoinedTeamsRequestBuilder) Ref()(*i9a58c41a05aa841dd115880d295734f19a9989d1632c9cb86ca9c4135577bf51.RefRequestBuilder) {
-    return i9a58c41a05aa841dd115880d295734f19a9989d1632c9cb86ca9c4135577bf51.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamCollectionResponseable), nil
 }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EvaluateLabelJobResponse 
+// EvaluateLabelJobResponse provides operations to call the evaluate method.
 type EvaluateLabelJobResponse struct {
     JobResponseBase
     // 
-    result *EvaluateLabelJobResultGroup;
+    result EvaluateLabelJobResultGroupable;
 }
 // NewEvaluateLabelJobResponse instantiates a new evaluateLabelJobResponse and sets the default values.
 func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
@@ -17,28 +17,32 @@ func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
     }
     return m
 }
-// GetResult gets the result property value. 
-func (m *EvaluateLabelJobResponse) GetResult()(*EvaluateLabelJobResultGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.result
-    }
+// CreateEvaluateLabelJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEvaluateLabelJobResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEvaluateLabelJobResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.JobResponseBase.GetFieldDeserializers()
     res["result"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvaluateLabelJobResultGroup() })
+        val, err := n.GetObjectValue(CreateEvaluateLabelJobResultGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResult(val.(*EvaluateLabelJobResultGroup))
+            m.SetResult(val.(EvaluateLabelJobResultGroupable))
         }
         return nil
     }
     return res
+}
+// GetResult gets the result property value. 
+func (m *EvaluateLabelJobResponse) GetResult()(EvaluateLabelJobResultGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.result
+    }
 }
 func (m *EvaluateLabelJobResponse) IsNil()(bool) {
     return m == nil
@@ -58,7 +62,7 @@ func (m *EvaluateLabelJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c84
     return nil
 }
 // SetResult sets the result property value. 
-func (m *EvaluateLabelJobResponse) SetResult(value *EvaluateLabelJobResultGroup)() {
+func (m *EvaluateLabelJobResponse) SetResult(value EvaluateLabelJobResultGroupable)() {
     if m != nil {
         m.result = value
     }

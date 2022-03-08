@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CopyToNotebookRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\microsoft.graph.copyToNotebook
+// CopyToNotebookRequestBuilder provides operations to call the copyToNotebook method.
 type CopyToNotebookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CopyToNotebookRequestBuilder struct {
 // CopyToNotebookRequestBuilderPostOptions options for Post
 type CopyToNotebookRequestBuilderPostOptions struct {
     // 
-    Body *CopyToNotebookRequestBody;
+    Body CopyToNotebookRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type CopyToNotebookRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // CopyToNotebookResponse union type wrapper for classes onenoteOperation
 type CopyToNotebookResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type onenoteOperation
-    onenoteOperation *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperation;
+    onenoteOperation i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperationable;
 }
 // NewCopyToNotebookResponse instantiates a new copyToNotebookResponse and sets the default values.
 func NewCopyToNotebookResponse()(*CopyToNotebookResponse) {
@@ -39,6 +44,9 @@ func NewCopyToNotebookResponse()(*CopyToNotebookResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCopyToNotebookResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCopyToNotebookResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToNotebookResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +56,28 @@ func (m *CopyToNotebookResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CopyToNotebookResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["onenoteOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOnenoteOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnenoteOperation(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetOnenoteOperation gets the onenoteOperation property value. Union type representation for type onenoteOperation
-func (m *CopyToNotebookResponse) GetOnenoteOperation()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperation) {
+func (m *CopyToNotebookResponse) GetOnenoteOperation()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperationable) {
     if m == nil {
         return nil
     } else {
         return m.onenoteOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CopyToNotebookResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["onenoteOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOnenoteOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnenoteOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CopyToNotebookResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +105,7 @@ func (m *CopyToNotebookResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetOnenoteOperation sets the onenoteOperation property value. Union type representation for type onenoteOperation
-func (m *CopyToNotebookResponse) SetOnenoteOperation(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperation)() {
+func (m *CopyToNotebookResponse) SetOnenoteOperation(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteOperationable)() {
     if m != nil {
         m.onenoteOperation = value
     }
@@ -111,7 +119,7 @@ func NewCopyToNotebookRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *CopyToNotebookRequestBuilder) CreatePostRequestInformation(options *Cop
     return requestInfo, nil
 }
 // Post invoke action copyToNotebook
-func (m *CopyToNotebookRequestBuilder) Post(options *CopyToNotebookRequestBuilderPostOptions)(*CopyToNotebookResponse, error) {
+func (m *CopyToNotebookRequestBuilder) Post(options *CopyToNotebookRequestBuilderPostOptions)(CopyToNotebookResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCopyToNotebookResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCopyToNotebookResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CopyToNotebookResponse), nil
+    return res.(CopyToNotebookResponseable), nil
 }

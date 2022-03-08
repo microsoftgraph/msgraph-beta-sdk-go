@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingNamedEntity 
+// BookingNamedEntity provides operations to manage the collection of bookingBusiness entities.
 type BookingNamedEntity struct {
     Entity
     // A name for the derived entity, which interfaces with customers.
@@ -16,6 +16,10 @@ func NewBookingNamedEntity()(*BookingNamedEntity) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateBookingNamedEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingNamedEntityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingNamedEntity(), nil
 }
 // GetDisplayName gets the displayName property value. A name for the derived entity, which interfaces with customers.
 func (m *BookingNamedEntity) GetDisplayName()(*string) {

@@ -2,12 +2,12 @@ package categories
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i3763f7fb40f769bee352290d06fc5f6417d9d8b68c835e450c2dcace68515282 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/assignments/item/categories/delta"
+    i50bbadab96e8927fedce8eafabe1bd3a768e751762710f4fa10ebc131364a263 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/assignments/item/categories/count"
 )
 
-// CategoriesRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\categories
+// CategoriesRequestBuilder provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
 type CategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type CategoriesRequestBuilderGetQueryParameters struct {
 // CategoriesRequestBuilderPostOptions options for Post
 type CategoriesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategory;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategoryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategoriesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CategoriesRequestBuilder) Count()(*i50bbadab96e8927fedce8eafabe1bd3a768e751762710f4fa10ebc131364a263.CountRequestBuilder) {
+    return i50bbadab96e8927fedce8eafabe1bd3a768e751762710f4fa10ebc131364a263.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *CategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *Categori
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to categories for education
 func (m *CategoriesRequestBuilder) CreatePostRequestInformation(options *CategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +117,39 @@ func (m *CategoriesRequestBuilder) CreatePostRequestInformation(options *Categor
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\categories\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *CategoriesRequestBuilder) Delta()(*i3763f7fb40f769bee352290d06fc5f6417d9d8b68c835e450c2dcace68515282.DeltaRequestBuilder) {
     return i3763f7fb40f769bee352290d06fc5f6417d9d8b68c835e450c2dcace68515282.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(*CategoriesResponse, error) {
+func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCategoriesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationCategoryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CategoriesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategoryCollectionResponseable), nil
 }
-// Post when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-func (m *CategoriesRequestBuilder) Post(options *CategoriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategory, error) {
+// Post create new navigation property to categories for education
+func (m *CategoriesRequestBuilder) Post(options *CategoriesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategoryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationCategory() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationCategoryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategory), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationCategoryable), nil
 }

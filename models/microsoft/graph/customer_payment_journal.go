@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomerPaymentJournal 
+// CustomerPaymentJournal provides operations to manage the financials singleton.
 type CustomerPaymentJournal struct {
     Entity
     // 
-    account *Account;
+    account Accountable;
     // 
     balancingAccountId *string;
     // 
@@ -17,7 +17,7 @@ type CustomerPaymentJournal struct {
     // 
     code *string;
     // 
-    customerPayments []CustomerPayment;
+    customerPayments []CustomerPaymentable;
     // 
     displayName *string;
     // 
@@ -30,8 +30,12 @@ func NewCustomerPaymentJournal()(*CustomerPaymentJournal) {
     }
     return m
 }
+// CreateCustomerPaymentJournalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomerPaymentJournalFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomerPaymentJournal(), nil
+}
 // GetAccount gets the account property value. 
-func (m *CustomerPaymentJournal) GetAccount()(*Account) {
+func (m *CustomerPaymentJournal) GetAccount()(Accountable) {
     if m == nil {
         return nil
     } else {
@@ -63,7 +67,7 @@ func (m *CustomerPaymentJournal) GetCode()(*string) {
     }
 }
 // GetCustomerPayments gets the customerPayments property value. 
-func (m *CustomerPaymentJournal) GetCustomerPayments()([]CustomerPayment) {
+func (m *CustomerPaymentJournal) GetCustomerPayments()([]CustomerPaymentable) {
     if m == nil {
         return nil
     } else {
@@ -78,24 +82,16 @@ func (m *CustomerPaymentJournal) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *CustomerPaymentJournal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccount() })
+        val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccount(val.(*Account))
+            m.SetAccount(val.(Accountable))
         }
         return nil
     }
@@ -130,14 +126,14 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["customerPayments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomerPayment() })
+        val, err := n.GetCollectionOfObjectValues(CreateCustomerPaymentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CustomerPayment, len(val))
+            res := make([]CustomerPaymentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CustomerPayment))
+                res[i] = v.(CustomerPaymentable)
             }
             m.SetCustomerPayments(res)
         }
@@ -164,6 +160,14 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *CustomerPaymentJournal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *CustomerPaymentJournal) IsNil()(bool) {
     return m == nil
@@ -201,8 +205,7 @@ func (m *CustomerPaymentJournal) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetCustomerPayments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomerPayments()))
         for i, v := range m.GetCustomerPayments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customerPayments", cast)
         if err != nil {
@@ -224,7 +227,7 @@ func (m *CustomerPaymentJournal) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAccount sets the account property value. 
-func (m *CustomerPaymentJournal) SetAccount(value *Account)() {
+func (m *CustomerPaymentJournal) SetAccount(value Accountable)() {
     if m != nil {
         m.account = value
     }
@@ -248,7 +251,7 @@ func (m *CustomerPaymentJournal) SetCode(value *string)() {
     }
 }
 // SetCustomerPayments sets the customerPayments property value. 
-func (m *CustomerPaymentJournal) SetCustomerPayments(value []CustomerPayment)() {
+func (m *CustomerPaymentJournal) SetCustomerPayments(value []CustomerPaymentable)() {
     if m != nil {
         m.customerPayments = value
     }

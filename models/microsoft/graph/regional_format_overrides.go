@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RegionalFormatOverrides 
+// RegionalFormatOverrides provides operations to manage the compliance singleton.
 type RegionalFormatOverrides struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -30,6 +30,10 @@ func NewRegionalFormatOverrides()(*RegionalFormatOverrides) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRegionalFormatOverridesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRegionalFormatOverridesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRegionalFormatOverrides(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RegionalFormatOverrides) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -44,54 +48,6 @@ func (m *RegionalFormatOverrides) GetCalendar()(*string) {
         return nil
     } else {
         return m.calendar
-    }
-}
-// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week to use, e.g., Sunday.Returned by default.
-func (m *RegionalFormatOverrides) GetFirstDayOfWeek()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstDayOfWeek
-    }
-}
-// GetLongDateFormat gets the longDateFormat property value. The long date time format to be used for displaying dates.Returned by default.
-func (m *RegionalFormatOverrides) GetLongDateFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.longDateFormat
-    }
-}
-// GetLongTimeFormat gets the longTimeFormat property value. The long time format to be used for displaying time.Returned by default.
-func (m *RegionalFormatOverrides) GetLongTimeFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.longTimeFormat
-    }
-}
-// GetShortDateFormat gets the shortDateFormat property value. The short date time format to be used for displaying dates.Returned by default.
-func (m *RegionalFormatOverrides) GetShortDateFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shortDateFormat
-    }
-}
-// GetShortTimeFormat gets the shortTimeFormat property value. The short time format to be used for displaying time.Returned by default.
-func (m *RegionalFormatOverrides) GetShortTimeFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shortTimeFormat
-    }
-}
-// GetTimeZone gets the timeZone property value. The timezone to be used for displaying time.Returned by default.
-func (m *RegionalFormatOverrides) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -168,6 +124,54 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week to use, e.g., Sunday.Returned by default.
+func (m *RegionalFormatOverrides) GetFirstDayOfWeek()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstDayOfWeek
+    }
+}
+// GetLongDateFormat gets the longDateFormat property value. The long date time format to be used for displaying dates.Returned by default.
+func (m *RegionalFormatOverrides) GetLongDateFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.longDateFormat
+    }
+}
+// GetLongTimeFormat gets the longTimeFormat property value. The long time format to be used for displaying time.Returned by default.
+func (m *RegionalFormatOverrides) GetLongTimeFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.longTimeFormat
+    }
+}
+// GetShortDateFormat gets the shortDateFormat property value. The short date time format to be used for displaying dates.Returned by default.
+func (m *RegionalFormatOverrides) GetShortDateFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shortDateFormat
+    }
+}
+// GetShortTimeFormat gets the shortTimeFormat property value. The short time format to be used for displaying time.Returned by default.
+func (m *RegionalFormatOverrides) GetShortTimeFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shortTimeFormat
+    }
+}
+// GetTimeZone gets the timeZone property value. The timezone to be used for displaying time.Returned by default.
+func (m *RegionalFormatOverrides) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
 }
 func (m *RegionalFormatOverrides) IsNil()(bool) {
     return m == nil

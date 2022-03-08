@@ -2,12 +2,12 @@ package alltasks
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i362e78128711f14fcdc9aac3cd5f44d4b80475c33fa753bd1fa25a5d1935f0ef "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks/alltasks/count"
     i3f51d03f85d88573fb6f4b4e4d8dd2715df639be46e465f568e796188fda9437 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks/alltasks/delta"
 )
 
-// AlltasksRequestBuilder builds and executes requests for operations under \users\{user-id}\tasks\alltasks
+// AlltasksRequestBuilder provides operations to manage the alltasks property of the microsoft.graph.tasks entity.
 type AlltasksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type AlltasksRequestBuilderGetQueryParameters struct {
 // AlltasksRequestBuilderPostOptions options for Post
 type AlltasksRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTask;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewAlltasksRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewAlltasksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAlltasksRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AlltasksRequestBuilder) Count()(*i362e78128711f14fcdc9aac3cd5f44d4b80475c33fa753bd1fa25a5d1935f0ef.CountRequestBuilder) {
+    return i362e78128711f14fcdc9aac3cd5f44d4b80475c33fa753bd1fa25a5d1935f0ef.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation all tasks in the users mailbox.
 func (m *AlltasksRequestBuilder) CreateGetRequestInformation(options *AlltasksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *AlltasksRequestBuilder) CreateGetRequestInformation(options *AlltasksRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation all tasks in the users mailbox.
+// CreatePostRequestInformation create new navigation property to alltasks for users
 func (m *AlltasksRequestBuilder) CreatePostRequestInformation(options *AlltasksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +117,39 @@ func (m *AlltasksRequestBuilder) CreatePostRequestInformation(options *AlltasksR
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \users\{user-id}\tasks\alltasks\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *AlltasksRequestBuilder) Delta()(*i3f51d03f85d88573fb6f4b4e4d8dd2715df639be46e465f568e796188fda9437.DeltaRequestBuilder) {
     return i3f51d03f85d88573fb6f4b4e4d8dd2715df639be46e465f568e796188fda9437.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get all tasks in the users mailbox.
-func (m *AlltasksRequestBuilder) Get(options *AlltasksRequestBuilderGetOptions)(*AlltasksResponse, error) {
+func (m *AlltasksRequestBuilder) Get(options *AlltasksRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlltasksResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBaseTaskCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AlltasksResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskCollectionResponseable), nil
 }
-// Post all tasks in the users mailbox.
-func (m *AlltasksRequestBuilder) Post(options *AlltasksRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTask, error) {
+// Post create new navigation property to alltasks for users
+func (m *AlltasksRequestBuilder) Post(options *AlltasksRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBaseTask() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBaseTaskFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTask), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskable), nil
 }

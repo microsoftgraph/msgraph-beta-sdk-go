@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SensitiveContentLocation 
+// SensitiveContentLocation provides operations to call the classifyExactMatches method.
 type SensitiveContentLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     confidence *int32;
     // 
-    evidences []SensitiveContentEvidence;
+    evidences []SensitiveContentEvidenceable;
     // 
     idMatch *string;
     // 
@@ -25,6 +25,10 @@ func NewSensitiveContentLocation()(*SensitiveContentLocation) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSensitiveContentLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSensitiveContentLocationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSensitiveContentLocation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) GetAdditionalData()(map[string]interface{}) {
@@ -43,35 +47,11 @@ func (m *SensitiveContentLocation) GetConfidence()(*int32) {
     }
 }
 // GetEvidences gets the evidences property value. 
-func (m *SensitiveContentLocation) GetEvidences()([]SensitiveContentEvidence) {
+func (m *SensitiveContentLocation) GetEvidences()([]SensitiveContentEvidenceable) {
     if m == nil {
         return nil
     } else {
         return m.evidences
-    }
-}
-// GetIdMatch gets the idMatch property value. 
-func (m *SensitiveContentLocation) GetIdMatch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.idMatch
-    }
-}
-// GetLength gets the length property value. 
-func (m *SensitiveContentLocation) GetLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.length
-    }
-}
-// GetOffset gets the offset property value. 
-func (m *SensitiveContentLocation) GetOffset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offset
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,14 +68,14 @@ func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["evidences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSensitiveContentEvidence() })
+        val, err := n.GetCollectionOfObjectValues(CreateSensitiveContentEvidenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SensitiveContentEvidence, len(val))
+            res := make([]SensitiveContentEvidenceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SensitiveContentEvidence))
+                res[i] = v.(SensitiveContentEvidenceable)
             }
             m.SetEvidences(res)
         }
@@ -133,6 +113,30 @@ func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
+// GetIdMatch gets the idMatch property value. 
+func (m *SensitiveContentLocation) GetIdMatch()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.idMatch
+    }
+}
+// GetLength gets the length property value. 
+func (m *SensitiveContentLocation) GetLength()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.length
+    }
+}
+// GetOffset gets the offset property value. 
+func (m *SensitiveContentLocation) GetOffset()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offset
+    }
+}
 func (m *SensitiveContentLocation) IsNil()(bool) {
     return m == nil
 }
@@ -147,8 +151,7 @@ func (m *SensitiveContentLocation) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetEvidences() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvidences()))
         for i, v := range m.GetEvidences() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("evidences", cast)
         if err != nil {
@@ -194,7 +197,7 @@ func (m *SensitiveContentLocation) SetConfidence(value *int32)() {
     }
 }
 // SetEvidences sets the evidences property value. 
-func (m *SensitiveContentLocation) SetEvidences(value []SensitiveContentEvidence)() {
+func (m *SensitiveContentLocation) SetEvidences(value []SensitiveContentEvidenceable)() {
     if m != nil {
         m.evidences = value
     }

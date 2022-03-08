@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the usersRegisteredByFeature method.
 type IncludedUserTypes int
 
 const (

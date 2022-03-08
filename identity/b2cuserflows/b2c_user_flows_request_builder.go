@@ -2,11 +2,11 @@ package b2cuserflows
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    icd47097135bcca395817a5c2b9d08b49e086edf7046f19b128e8e2c45afc6dcc "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/count"
 )
 
-// B2cUserFlowsRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows
+// B2cUserFlowsRequestBuilder provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
 type B2cUserFlowsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type B2cUserFlowsRequestBuilderGetQueryParameters struct {
 // B2cUserFlowsRequestBuilderPostOptions options for Post
 type B2cUserFlowsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlow;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlowable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewB2cUserFlowsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewB2cUserFlowsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *B2cUserFlowsRequestBuilder) Count()(*icd47097135bcca395817a5c2b9d08b49e086edf7046f19b128e8e2c45afc6dcc.CountRequestBuilder) {
+    return icd47097135bcca395817a5c2b9d08b49e086edf7046f19b128e8e2c45afc6dcc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents entry point for B2C identity userflows.
 func (m *B2cUserFlowsRequestBuilder) CreateGetRequestInformation(options *B2cUserFlowsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *B2cUserFlowsRequestBuilder) CreateGetRequestInformation(options *B2cUse
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents entry point for B2C identity userflows.
+// CreatePostRequestInformation create new navigation property to b2cUserFlows for identity
 func (m *B2cUserFlowsRequestBuilder) CreatePostRequestInformation(options *B2cUserFlowsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *B2cUserFlowsRequestBuilder) CreatePostRequestInformation(options *B2cUs
     return requestInfo, nil
 }
 // Get represents entry point for B2C identity userflows.
-func (m *B2cUserFlowsRequestBuilder) Get(options *B2cUserFlowsRequestBuilderGetOptions)(*B2cUserFlowsResponse, error) {
+func (m *B2cUserFlowsRequestBuilder) Get(options *B2cUserFlowsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlowCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewB2cUserFlowsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateB2cIdentityUserFlowCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*B2cUserFlowsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlowCollectionResponseable), nil
 }
-// Post represents entry point for B2C identity userflows.
-func (m *B2cUserFlowsRequestBuilder) Post(options *B2cUserFlowsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlow, error) {
+// Post create new navigation property to b2cUserFlows for identity
+func (m *B2cUserFlowsRequestBuilder) Post(options *B2cUserFlowsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlowable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewB2cIdentityUserFlow() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateB2cIdentityUserFlowFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlow), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2cIdentityUserFlowable), nil
 }

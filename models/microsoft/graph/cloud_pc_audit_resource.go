@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcAuditResource 
+// CloudPcAuditResource provides operations to manage the deviceManagement singleton.
 type CloudPcAuditResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The resource entity display name.
     displayName *string;
     // A list of modified properties.
-    modifiedProperties []CloudPcAuditProperty;
+    modifiedProperties []CloudPcAuditPropertyable;
     // The ID of the audit resource.
     resourceId *string;
     // The type of the audit resource.
@@ -23,6 +23,10 @@ func NewCloudPcAuditResource()(*CloudPcAuditResource) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCloudPcAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcAuditResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcAuditResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditResource) GetAdditionalData()(map[string]interface{}) {
@@ -40,30 +44,6 @@ func (m *CloudPcAuditResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetModifiedProperties gets the modifiedProperties property value. A list of modified properties.
-func (m *CloudPcAuditResource) GetModifiedProperties()([]CloudPcAuditProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedProperties
-    }
-}
-// GetResourceId gets the resourceId property value. The ID of the audit resource.
-func (m *CloudPcAuditResource) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
-}
-// GetType gets the type property value. The type of the audit resource.
-func (m *CloudPcAuditResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -78,14 +58,14 @@ func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["modifiedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcAuditProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcAuditPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CloudPcAuditProperty, len(val))
+            res := make([]CloudPcAuditPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CloudPcAuditProperty))
+                res[i] = v.(CloudPcAuditPropertyable)
             }
             m.SetModifiedProperties(res)
         }
@@ -113,6 +93,30 @@ func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
+// GetModifiedProperties gets the modifiedProperties property value. A list of modified properties.
+func (m *CloudPcAuditResource) GetModifiedProperties()([]CloudPcAuditPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedProperties
+    }
+}
+// GetResourceId gets the resourceId property value. The ID of the audit resource.
+func (m *CloudPcAuditResource) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
+}
+// GetType gets the type property value. The type of the audit resource.
+func (m *CloudPcAuditResource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 func (m *CloudPcAuditResource) IsNil()(bool) {
     return m == nil
 }
@@ -127,8 +131,7 @@ func (m *CloudPcAuditResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetModifiedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {
@@ -168,7 +171,7 @@ func (m *CloudPcAuditResource) SetDisplayName(value *string)() {
     }
 }
 // SetModifiedProperties sets the modifiedProperties property value. A list of modified properties.
-func (m *CloudPcAuditResource) SetModifiedProperties(value []CloudPcAuditProperty)() {
+func (m *CloudPcAuditResource) SetModifiedProperties(value []CloudPcAuditPropertyable)() {
     if m != nil {
         m.modifiedProperties = value
     }

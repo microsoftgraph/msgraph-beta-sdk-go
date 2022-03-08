@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
 type AccountStatus int
 
 const (

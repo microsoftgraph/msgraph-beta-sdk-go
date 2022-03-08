@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Custodian 
+// Custodian provides operations to manage the compliance singleton.
 type Custodian struct {
     DataSourceContainer
     // Date and time the custodian acknowledged a hold notification.
@@ -15,11 +15,11 @@ type Custodian struct {
     // Email address of the custodian.
     email *string;
     // Data source entity for SharePoint sites associated with the custodian.
-    siteSources []SiteSource;
+    siteSources []SiteSourceable;
     // Data source entity for groups associated with the custodian.
-    unifiedGroupSources []UnifiedGroupSource;
+    unifiedGroupSources []UnifiedGroupSourceable;
     // Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-    userSources []UserSource;
+    userSources []UserSourceable;
 }
 // NewCustodian instantiates a new custodian and sets the default values.
 func NewCustodian()(*Custodian) {
@@ -27,6 +27,10 @@ func NewCustodian()(*Custodian) {
         DataSourceContainer: *NewDataSourceContainer(),
     }
     return m
+}
+// CreateCustodianFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustodianFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustodian(), nil
 }
 // GetAcknowledgedDateTime gets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
 func (m *Custodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -50,30 +54,6 @@ func (m *Custodian) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
-func (m *Custodian) GetSiteSources()([]SiteSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteSources
-    }
-}
-// GetUnifiedGroupSources gets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
-func (m *Custodian) GetUnifiedGroupSources()([]UnifiedGroupSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unifiedGroupSources
-    }
-}
-// GetUserSources gets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-func (m *Custodian) GetUserSources()([]UserSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSources
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,48 +90,72 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["siteSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSiteSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SiteSource, len(val))
+            res := make([]SiteSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SiteSource))
+                res[i] = v.(SiteSourceable)
             }
             m.SetSiteSources(res)
         }
         return nil
     }
     res["unifiedGroupSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedGroupSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedGroupSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedGroupSource, len(val))
+            res := make([]UnifiedGroupSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedGroupSource))
+                res[i] = v.(UnifiedGroupSourceable)
             }
             m.SetUnifiedGroupSources(res)
         }
         return nil
     }
     res["userSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserSource, len(val))
+            res := make([]UserSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserSource))
+                res[i] = v.(UserSourceable)
             }
             m.SetUserSources(res)
         }
         return nil
     }
     return res
+}
+// GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
+func (m *Custodian) GetSiteSources()([]SiteSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteSources
+    }
+}
+// GetUnifiedGroupSources gets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
+func (m *Custodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unifiedGroupSources
+    }
+}
+// GetUserSources gets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+func (m *Custodian) GetUserSources()([]UserSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userSources
+    }
 }
 func (m *Custodian) IsNil()(bool) {
     return m == nil
@@ -183,8 +187,7 @@ func (m *Custodian) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetSiteSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSiteSources()))
         for i, v := range m.GetSiteSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("siteSources", cast)
         if err != nil {
@@ -194,8 +197,7 @@ func (m *Custodian) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetUnifiedGroupSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUnifiedGroupSources()))
         for i, v := range m.GetUnifiedGroupSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("unifiedGroupSources", cast)
         if err != nil {
@@ -205,8 +207,7 @@ func (m *Custodian) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetUserSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserSources()))
         for i, v := range m.GetUserSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userSources", cast)
         if err != nil {
@@ -234,19 +235,19 @@ func (m *Custodian) SetEmail(value *string)() {
     }
 }
 // SetSiteSources sets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
-func (m *Custodian) SetSiteSources(value []SiteSource)() {
+func (m *Custodian) SetSiteSources(value []SiteSourceable)() {
     if m != nil {
         m.siteSources = value
     }
 }
 // SetUnifiedGroupSources sets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
-func (m *Custodian) SetUnifiedGroupSources(value []UnifiedGroupSource)() {
+func (m *Custodian) SetUnifiedGroupSources(value []UnifiedGroupSourceable)() {
     if m != nil {
         m.unifiedGroupSources = value
     }
 }
 // SetUserSources sets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-func (m *Custodian) SetUserSources(value []UserSource)() {
+func (m *Custodian) SetUserSources(value []UserSourceable)() {
     if m != nil {
         m.userSources = value
     }

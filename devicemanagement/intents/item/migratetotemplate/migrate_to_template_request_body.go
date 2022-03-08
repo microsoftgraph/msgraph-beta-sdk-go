@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MigrateToTemplateRequestBody 
+// MigrateToTemplateRequestBody provides operations to call the migrateToTemplate method.
 type MigrateToTemplateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewMigrateToTemplateRequestBody()(*MigrateToTemplateRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMigrateToTemplateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMigrateToTemplateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMigrateToTemplateRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MigrateToTemplateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetNewTemplateId gets the newTemplateId property value. 
-func (m *MigrateToTemplateRequestBody) GetNewTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newTemplateId
-    }
-}
-// GetPreserveCustomValues gets the preserveCustomValues property value. 
-func (m *MigrateToTemplateRequestBody) GetPreserveCustomValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preserveCustomValues
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *MigrateToTemplateRequestBody) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetNewTemplateId gets the newTemplateId property value. 
+func (m *MigrateToTemplateRequestBody) GetNewTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newTemplateId
+    }
+}
+// GetPreserveCustomValues gets the preserveCustomValues property value. 
+func (m *MigrateToTemplateRequestBody) GetPreserveCustomValues()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preserveCustomValues
+    }
 }
 func (m *MigrateToTemplateRequestBody) IsNil()(bool) {
     return m == nil

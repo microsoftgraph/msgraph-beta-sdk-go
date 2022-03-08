@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementCachedReportConfiguration 
+// DeviceManagementCachedReportConfiguration provides operations to manage the deviceManagement singleton.
 type DeviceManagementCachedReportConfiguration struct {
     Entity
     // Time that the cached report expires
@@ -32,68 +32,16 @@ func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedRepor
     }
     return m
 }
+// CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementCachedReportConfiguration(), nil
+}
 // GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires
 func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetFilter gets the filter property value. Filters applied on report creation.
-func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
-}
-// GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed
-func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshDateTime
-    }
-}
-// GetMetadata gets the metadata property value. Caller-managed metadata associated with the report
-func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
-}
-// GetOrderBy gets the orderBy property value. Ordering of columns in the report
-func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
-}
-// GetReportName gets the reportName property value. Name of the report
-func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportName
-    }
-}
-// GetSelect gets the select property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
-}
-// GetStatus gets the status property value. Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
-func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -188,6 +136,62 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetFilter gets the filter property value. Filters applied on report creation.
+func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filter
+    }
+}
+// GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshDateTime
+    }
+}
+// GetMetadata gets the metadata property value. Caller-managed metadata associated with the report
+func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metadata
+    }
+}
+// GetOrderBy gets the orderBy property value. Ordering of columns in the report
+func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderBy
+    }
+}
+// GetReportName gets the reportName property value. Name of the report
+func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportName
+    }
+}
+// GetSelect gets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.select_escaped
+    }
+}
+// GetStatus gets the status property value. Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
+func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DeviceManagementCachedReportConfiguration) IsNil()(bool) {
     return m == nil

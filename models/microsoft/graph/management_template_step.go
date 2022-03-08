@@ -6,11 +6,11 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// ManagementTemplateStep 
+// ManagementTemplateStep provides operations to manage the tenantRelationship singleton.
 type ManagementTemplateStep struct {
     Entity
     // 
-    acceptedVersion *ManagementTemplateStepVersion;
+    acceptedVersion ManagementTemplateStepVersionable;
     // 
     category *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory;
     // 
@@ -26,13 +26,13 @@ type ManagementTemplateStep struct {
     // 
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    managementTemplate *ManagementTemplate;
+    managementTemplate ManagementTemplateable;
     // 
-    portalLink *ActionUrl;
+    portalLink ActionUrlable;
     // 
     priority *int32;
     // 
-    versions []ManagementTemplateStepVersion;
+    versions []ManagementTemplateStepVersionable;
 }
 // NewManagementTemplateStep instantiates a new managementTemplateStep and sets the default values.
 func NewManagementTemplateStep()(*ManagementTemplateStep) {
@@ -41,8 +41,12 @@ func NewManagementTemplateStep()(*ManagementTemplateStep) {
     }
     return m
 }
+// CreateManagementTemplateStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementTemplateStepFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementTemplateStep(), nil
+}
 // GetAcceptedVersion gets the acceptedVersion property value. 
-func (m *ManagementTemplateStep) GetAcceptedVersion()(*ManagementTemplateStepVersion) {
+func (m *ManagementTemplateStep) GetAcceptedVersion()(ManagementTemplateStepVersionable) {
     if m == nil {
         return nil
     } else {
@@ -89,64 +93,16 @@ func (m *ManagementTemplateStep) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastActionByUserId gets the lastActionByUserId property value. 
-func (m *ManagementTemplateStep) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. 
-func (m *ManagementTemplateStep) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetManagementTemplate gets the managementTemplate property value. 
-func (m *ManagementTemplateStep) GetManagementTemplate()(*ManagementTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplate
-    }
-}
-// GetPortalLink gets the portalLink property value. 
-func (m *ManagementTemplateStep) GetPortalLink()(*ActionUrl) {
-    if m == nil {
-        return nil
-    } else {
-        return m.portalLink
-    }
-}
-// GetPriority gets the priority property value. 
-func (m *ManagementTemplateStep) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetVersions gets the versions property value. 
-func (m *ManagementTemplateStep) GetVersions()([]ManagementTemplateStepVersion) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versions
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acceptedVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStepVersion() })
+        val, err := n.GetObjectValue(CreateManagementTemplateStepVersionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAcceptedVersion(val.(*ManagementTemplateStepVersion))
+            m.SetAcceptedVersion(val.(ManagementTemplateStepVersionable))
         }
         return nil
     }
@@ -221,22 +177,22 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["managementTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplate() })
+        val, err := n.GetObjectValue(CreateManagementTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManagementTemplate(val.(*ManagementTemplate))
+            m.SetManagementTemplate(val.(ManagementTemplateable))
         }
         return nil
     }
     res["portalLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActionUrl() })
+        val, err := n.GetObjectValue(CreateActionUrlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPortalLink(val.(*ActionUrl))
+            m.SetPortalLink(val.(ActionUrlable))
         }
         return nil
     }
@@ -251,20 +207,68 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["versions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStepVersion() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepVersionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementTemplateStepVersion, len(val))
+            res := make([]ManagementTemplateStepVersionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementTemplateStepVersion))
+                res[i] = v.(ManagementTemplateStepVersionable)
             }
             m.SetVersions(res)
         }
         return nil
     }
     return res
+}
+// GetLastActionByUserId gets the lastActionByUserId property value. 
+func (m *ManagementTemplateStep) GetLastActionByUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionByUserId
+    }
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. 
+func (m *ManagementTemplateStep) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetManagementTemplate gets the managementTemplate property value. 
+func (m *ManagementTemplateStep) GetManagementTemplate()(ManagementTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplate
+    }
+}
+// GetPortalLink gets the portalLink property value. 
+func (m *ManagementTemplateStep) GetPortalLink()(ActionUrlable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.portalLink
+    }
+}
+// GetPriority gets the priority property value. 
+func (m *ManagementTemplateStep) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetVersions gets the versions property value. 
+func (m *ManagementTemplateStep) GetVersions()([]ManagementTemplateStepVersionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.versions
+    }
 }
 func (m *ManagementTemplateStep) IsNil()(bool) {
     return m == nil
@@ -345,8 +349,7 @@ func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetVersions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {
@@ -356,7 +359,7 @@ func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAcceptedVersion sets the acceptedVersion property value. 
-func (m *ManagementTemplateStep) SetAcceptedVersion(value *ManagementTemplateStepVersion)() {
+func (m *ManagementTemplateStep) SetAcceptedVersion(value ManagementTemplateStepVersionable)() {
     if m != nil {
         m.acceptedVersion = value
     }
@@ -404,13 +407,13 @@ func (m *ManagementTemplateStep) SetLastActionDateTime(value *i336074805fc853987
     }
 }
 // SetManagementTemplate sets the managementTemplate property value. 
-func (m *ManagementTemplateStep) SetManagementTemplate(value *ManagementTemplate)() {
+func (m *ManagementTemplateStep) SetManagementTemplate(value ManagementTemplateable)() {
     if m != nil {
         m.managementTemplate = value
     }
 }
 // SetPortalLink sets the portalLink property value. 
-func (m *ManagementTemplateStep) SetPortalLink(value *ActionUrl)() {
+func (m *ManagementTemplateStep) SetPortalLink(value ActionUrlable)() {
     if m != nil {
         m.portalLink = value
     }
@@ -422,7 +425,7 @@ func (m *ManagementTemplateStep) SetPriority(value *int32)() {
     }
 }
 // SetVersions sets the versions property value. 
-func (m *ManagementTemplateStep) SetVersions(value []ManagementTemplateStepVersion)() {
+func (m *ManagementTemplateStep) SetVersions(value []ManagementTemplateStepVersionable)() {
     if m != nil {
         m.versions = value
     }

@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UpdateRequestRequestBody 
+// UpdateRequestRequestBody provides operations to call the updateRequest method.
 type UpdateRequestRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,7 +16,7 @@ type UpdateRequestRequestBody struct {
     // 
     reason *string;
     // 
-    schedule *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceSchedule;
+    schedule i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable;
 }
 // NewUpdateRequestRequestBody instantiates a new updateRequestRequestBody and sets the default values.
 func NewUpdateRequestRequestBody()(*UpdateRequestRequestBody) {
@@ -24,6 +24,10 @@ func NewUpdateRequestRequestBody()(*UpdateRequestRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUpdateRequestRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateRequestRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateRequestRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRequestRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -47,22 +51,6 @@ func (m *UpdateRequestRequestBody) GetDecision()(*string) {
         return nil
     } else {
         return m.decision
-    }
-}
-// GetReason gets the reason property value. 
-func (m *UpdateRequestRequestBody) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
-}
-// GetSchedule gets the schedule property value. 
-func (m *UpdateRequestRequestBody) GetSchedule()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,16 +87,32 @@ func (m *UpdateRequestRequestBody) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceSchedule() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceScheduleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedule(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceSchedule))
+            m.SetSchedule(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable))
         }
         return nil
     }
     return res
+}
+// GetReason gets the reason property value. 
+func (m *UpdateRequestRequestBody) GetReason()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reason
+    }
+}
+// GetSchedule gets the schedule property value. 
+func (m *UpdateRequestRequestBody) GetSchedule()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedule
+    }
 }
 func (m *UpdateRequestRequestBody) IsNil()(bool) {
     return m == nil
@@ -172,7 +176,7 @@ func (m *UpdateRequestRequestBody) SetReason(value *string)() {
     }
 }
 // SetSchedule sets the schedule property value. 
-func (m *UpdateRequestRequestBody) SetSchedule(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceSchedule)() {
+func (m *UpdateRequestRequestBody) SetSchedule(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable)() {
     if m != nil {
         m.schedule = value
     }

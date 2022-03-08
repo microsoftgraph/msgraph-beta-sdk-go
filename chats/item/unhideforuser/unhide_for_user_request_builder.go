@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// UnhideForUserRequestBuilder builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.unhideForUser
+// UnhideForUserRequestBuilder provides operations to call the unhideForUser method.
 type UnhideForUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UnhideForUserRequestBuilder struct {
 // UnhideForUserRequestBuilderPostOptions options for Post
 type UnhideForUserRequestBuilderPostOptions struct {
     // 
-    Body *UnhideForUserRequestBody;
+    Body UnhideForUserRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewUnhideForUserRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *UnhideForUserRequestBuilder) Post(options *UnhideForUserRequestBuilderP
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

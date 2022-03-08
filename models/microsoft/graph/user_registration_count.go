@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserRegistrationCount 
+// UserRegistrationCount provides operations to call the getCredentialUserRegistrationCount method.
 type UserRegistrationCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewUserRegistrationCount()(*UserRegistrationCount) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserRegistrationCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserRegistrationCountFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserRegistrationCount(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationCount) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRegistrationCount gets the registrationCount property value. Provides the registration count for your tenant.
-func (m *UserRegistrationCount) GetRegistrationCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationCount
-    }
-}
-// GetRegistrationStatus gets the registrationStatus property value. Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
-func (m *UserRegistrationCount) GetRegistrationStatus()(*RegistrationStatusType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetRegistrationCount gets the registrationCount property value. Provides the registration count for your tenant.
+func (m *UserRegistrationCount) GetRegistrationCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationCount
+    }
+}
+// GetRegistrationStatus gets the registrationStatus property value. Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
+func (m *UserRegistrationCount) GetRegistrationStatus()(*RegistrationStatusType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationStatus
+    }
 }
 func (m *UserRegistrationCount) IsNil()(bool) {
     return m == nil

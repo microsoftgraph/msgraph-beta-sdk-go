@@ -5,19 +5,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintConnector 
+// PrintConnector provides operations to manage the print singleton.
 type PrintConnector struct {
     Entity
     // The connector's version.
     appVersion *string;
     // The connector's device health.
-    deviceHealth *DeviceHealth;
+    deviceHealth DeviceHealthable;
     // The name of the connector.
     displayName *string;
     // The connector machine's hostname.
     fullyQualifiedDomainName *string;
     // The physical and/or organizational location of the connector.
-    location *PrinterLocation;
+    location PrinterLocationable;
     // 
     name *string;
     // The connector machine's operating system version.
@@ -32,6 +32,10 @@ func NewPrintConnector()(*PrintConnector) {
     }
     return m
 }
+// CreatePrintConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintConnector(), nil
+}
 // GetAppVersion gets the appVersion property value. The connector's version.
 func (m *PrintConnector) GetAppVersion()(*string) {
     if m == nil {
@@ -41,7 +45,7 @@ func (m *PrintConnector) GetAppVersion()(*string) {
     }
 }
 // GetDeviceHealth gets the deviceHealth property value. The connector's device health.
-func (m *PrintConnector) GetDeviceHealth()(*DeviceHealth) {
+func (m *PrintConnector) GetDeviceHealth()(DeviceHealthable) {
     if m == nil {
         return nil
     } else {
@@ -54,46 +58,6 @@ func (m *PrintConnector) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetFullyQualifiedDomainName gets the fullyQualifiedDomainName property value. The connector machine's hostname.
-func (m *PrintConnector) GetFullyQualifiedDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fullyQualifiedDomainName
-    }
-}
-// GetLocation gets the location property value. The physical and/or organizational location of the connector.
-func (m *PrintConnector) GetLocation()(*PrinterLocation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
-}
-// GetName gets the name property value. 
-func (m *PrintConnector) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOperatingSystem gets the operatingSystem property value. The connector machine's operating system version.
-func (m *PrintConnector) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
-}
-// GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
-func (m *PrintConnector) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,12 +74,12 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["deviceHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceHealth() })
+        val, err := n.GetObjectValue(CreateDeviceHealthFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceHealth(val.(*DeviceHealth))
+            m.SetDeviceHealth(val.(DeviceHealthable))
         }
         return nil
     }
@@ -140,12 +104,12 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrinterLocation() })
+        val, err := n.GetObjectValue(CreatePrinterLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocation(val.(*PrinterLocation))
+            m.SetLocation(val.(PrinterLocationable))
         }
         return nil
     }
@@ -180,6 +144,46 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetFullyQualifiedDomainName gets the fullyQualifiedDomainName property value. The connector machine's hostname.
+func (m *PrintConnector) GetFullyQualifiedDomainName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fullyQualifiedDomainName
+    }
+}
+// GetLocation gets the location property value. The physical and/or organizational location of the connector.
+func (m *PrintConnector) GetLocation()(PrinterLocationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.location
+    }
+}
+// GetName gets the name property value. 
+func (m *PrintConnector) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOperatingSystem gets the operatingSystem property value. The connector machine's operating system version.
+func (m *PrintConnector) GetOperatingSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystem
+    }
+}
+// GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
+func (m *PrintConnector) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registeredDateTime
+    }
 }
 func (m *PrintConnector) IsNil()(bool) {
     return m == nil
@@ -247,7 +251,7 @@ func (m *PrintConnector) SetAppVersion(value *string)() {
     }
 }
 // SetDeviceHealth sets the deviceHealth property value. The connector's device health.
-func (m *PrintConnector) SetDeviceHealth(value *DeviceHealth)() {
+func (m *PrintConnector) SetDeviceHealth(value DeviceHealthable)() {
     if m != nil {
         m.deviceHealth = value
     }
@@ -265,7 +269,7 @@ func (m *PrintConnector) SetFullyQualifiedDomainName(value *string)() {
     }
 }
 // SetLocation sets the location property value. The physical and/or organizational location of the connector.
-func (m *PrintConnector) SetLocation(value *PrinterLocation)() {
+func (m *PrintConnector) SetLocation(value PrinterLocationable)() {
     if m != nil {
         m.location = value
     }

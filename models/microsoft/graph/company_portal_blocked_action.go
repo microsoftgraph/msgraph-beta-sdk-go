@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CompanyPortalBlockedAction 
+// CompanyPortalBlockedAction provides operations to manage the deviceManagement singleton.
 type CompanyPortalBlockedAction struct {
     // Device Action. Possible values are: unknown, remove, reset.
     action *CompanyPortalAction;
@@ -22,6 +22,10 @@ func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCompanyPortalBlockedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCompanyPortalBlockedActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCompanyPortalBlockedAction(), nil
+}
 // GetAction gets the action property value. Device Action. Possible values are: unknown, remove, reset.
 func (m *CompanyPortalBlockedAction) GetAction()(*CompanyPortalAction) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]interface{})
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetOwnerType gets the ownerType property value. Device ownership type. Possible values are: unknown, company, personal.
-func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerType
-    }
-}
-// GetPlatform gets the platform property value. Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
-func (m *CompanyPortalBlockedAction) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetOwnerType gets the ownerType property value. Device ownership type. Possible values are: unknown, company, personal.
+func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerType
+    }
+}
+// GetPlatform gets the platform property value. Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+func (m *CompanyPortalBlockedAction) GetPlatform()(*DevicePlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
 }
 func (m *CompanyPortalBlockedAction) IsNil()(bool) {
     return m == nil

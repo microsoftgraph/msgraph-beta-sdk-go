@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BroadcastMeetingCaptionSettings 
+// BroadcastMeetingCaptionSettings provides operations to manage the commsApplication singleton.
 type BroadcastMeetingCaptionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewBroadcastMeetingCaptionSettings()(*BroadcastMeetingCaptionSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBroadcastMeetingCaptionSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingCaptionSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsCaptionEnabled gets the isCaptionEnabled property value. Indicates whether caption is enabled for this Teams live event.
-func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCaptionEnabled
-    }
-}
-// GetSpokenLanguage gets the spokenLanguage property value. The spoken language.
-func (m *BroadcastMeetingCaptionSettings) GetSpokenLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spokenLanguage
-    }
-}
-// GetTranslationLanguages gets the translationLanguages property value. The translation languages (choose up to 6).
-func (m *BroadcastMeetingCaptionSettings) GetTranslationLanguages()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.translationLanguages
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -92,6 +72,30 @@ func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetIsCaptionEnabled gets the isCaptionEnabled property value. Indicates whether caption is enabled for this Teams live event.
+func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCaptionEnabled
+    }
+}
+// GetSpokenLanguage gets the spokenLanguage property value. The spoken language.
+func (m *BroadcastMeetingCaptionSettings) GetSpokenLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.spokenLanguage
+    }
+}
+// GetTranslationLanguages gets the translationLanguages property value. The translation languages (choose up to 6).
+func (m *BroadcastMeetingCaptionSettings) GetTranslationLanguages()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.translationLanguages
+    }
 }
 func (m *BroadcastMeetingCaptionSettings) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MacOSSoftwareUpdateStateSummary 
+// MacOSSoftwareUpdateStateSummary provides operations to manage the deviceManagement singleton.
 type MacOSSoftwareUpdateStateSummary struct {
     Entity
     // Human readable name of the software update
@@ -28,52 +28,16 @@ func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {
     }
     return m
 }
+// CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMacOSSoftwareUpdateStateSummary(), nil
+}
 // GetDisplayName gets the displayName property value. Human readable name of the software update
 func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
-func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetProductKey gets the productKey property value. Product key of the software update.
-func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productKey
-    }
-}
-// GetState gets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
-func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUpdateCategory gets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
-func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateCategory
-    }
-}
-// GetUpdateVersion gets the updateVersion property value. Version of the software update
-func (m *MacOSSoftwareUpdateStateSummary) GetUpdateVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +104,46 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
+func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetProductKey gets the productKey property value. Product key of the software update.
+func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productKey
+    }
+}
+// GetState gets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
+func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUpdateCategory gets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
+func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateCategory
+    }
+}
+// GetUpdateVersion gets the updateVersion property value. Version of the software update
+func (m *MacOSSoftwareUpdateStateSummary) GetUpdateVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateVersion
+    }
 }
 func (m *MacOSSoftwareUpdateStateSummary) IsNil()(bool) {
     return m == nil

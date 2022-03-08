@@ -2,11 +2,11 @@ package androiddeviceownerenrollmentprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    if3e47a4c3ed1fc4dfebf9b74086292143f3656394a7e39f4245c54036c423cec "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androiddeviceownerenrollmentprofiles/count"
 )
 
-// AndroidDeviceOwnerEnrollmentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles
+// AndroidDeviceOwnerEnrollmentProfilesRequestBuilder provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 type AndroidDeviceOwnerEnrollmentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParameters struct
 // AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostOptions options for Post
 type AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilder(rawUrl string, reques
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) Count()(*if3e47a4c3ed1fc4dfebf9b74086292143f3656394a7e39f4245c54036c423cec.CountRequestBuilder) {
+    return if3e47a4c3ed1fc4dfebf9b74086292143f3656394a7e39f4245c54036c423cec.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation android device owner enrollment profile entities.
 func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) CreateGetRequestInformation(options *AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation android device owner enrollment profile entities.
+// CreatePostRequestInformation create new navigation property to androidDeviceOwnerEnrollmentProfiles for deviceManagement
 func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) CreatePostRequestInformation(options *AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) CreatePostRequestIn
     return requestInfo, nil
 }
 // Get android device owner enrollment profile entities.
-func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) Get(options *AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetOptions)(*AndroidDeviceOwnerEnrollmentProfilesResponse, error) {
+func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) Get(options *AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAndroidDeviceOwnerEnrollmentProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAndroidDeviceOwnerEnrollmentProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AndroidDeviceOwnerEnrollmentProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfileCollectionResponseable), nil
 }
-// Post android device owner enrollment profile entities.
-func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) Post(options *AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfile, error) {
+// Post create new navigation property to androidDeviceOwnerEnrollmentProfiles for deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) Post(options *AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAndroidDeviceOwnerEnrollmentProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidDeviceOwnerEnrollmentProfileable), nil
 }

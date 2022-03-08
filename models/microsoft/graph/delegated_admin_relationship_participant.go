@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminRelationshipParticipant 
+// DelegatedAdminRelationshipParticipant provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationshipParticipant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewDelegatedAdminRelationshipParticipant()(*DelegatedAdminRelationshipParti
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDelegatedAdminRelationshipParticipantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminRelationshipParticipantFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminRelationshipParticipant(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminRelationshipParticipant) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *DelegatedAdminRelationshipParticipant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *DelegatedAdminRelationshipParticipant) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetTenantId gets the tenantId property value. 
+func (m *DelegatedAdminRelationshipParticipant) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *DelegatedAdminRelationshipParticipant) IsNil()(bool) {
     return m == nil

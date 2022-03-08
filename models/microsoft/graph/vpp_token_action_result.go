@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VppTokenActionResult 
+// VppTokenActionResult provides operations to manage the deviceAppManagement singleton.
 type VppTokenActionResult struct {
     // Action name
     actionName *string;
@@ -24,6 +24,10 @@ func NewVppTokenActionResult()(*VppTokenActionResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateVppTokenActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVppTokenActionResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVppTokenActionResult(), nil
 }
 // GetActionName gets the actionName property value. Action name
 func (m *VppTokenActionResult) GetActionName()(*string) {
@@ -47,22 +51,6 @@ func (m *VppTokenActionResult) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
-func (m *VppTokenActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetStartDateTime gets the startDateTime property value. Time the action was initiated
-func (m *VppTokenActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +97,22 @@ func (m *VppTokenActionResult) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
+func (m *VppTokenActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetStartDateTime gets the startDateTime property value. Time the action was initiated
+func (m *VppTokenActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *VppTokenActionResult) IsNil()(bool) {
     return m == nil

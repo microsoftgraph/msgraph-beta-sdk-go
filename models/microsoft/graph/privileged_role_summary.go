@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedRoleSummary 
+// PrivilegedRoleSummary provides operations to manage the collection of privilegedApproval entities.
 type PrivilegedRoleSummary struct {
     Entity
     // The number of users that have the role assigned and the role is activated.
@@ -25,44 +25,16 @@ func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
     }
     return m
 }
+// CreatePrivilegedRoleSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedRoleSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedRoleSummary(), nil
+}
 // GetElevatedCount gets the elevatedCount property value. The number of users that have the role assigned and the role is activated.
 func (m *PrivilegedRoleSummary) GetElevatedCount()(*int32) {
     if m == nil {
         return nil
     } else {
         return m.elevatedCount
-    }
-}
-// GetManagedCount gets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
-func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedCount
-    }
-}
-// GetMfaEnabled gets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
-func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mfaEnabled
-    }
-}
-// GetStatus gets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
-func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUsersCount gets the usersCount property value. The number of users that are assigned with the role.
-func (m *PrivilegedRoleSummary) GetUsersCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usersCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -119,6 +91,38 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetManagedCount gets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
+func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedCount
+    }
+}
+// GetMfaEnabled gets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
+func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mfaEnabled
+    }
+}
+// GetStatus gets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
+func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUsersCount gets the usersCount property value. The number of users that are assigned with the role.
+func (m *PrivilegedRoleSummary) GetUsersCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usersCount
+    }
 }
 func (m *PrivilegedRoleSummary) IsNil()(bool) {
     return m == nil

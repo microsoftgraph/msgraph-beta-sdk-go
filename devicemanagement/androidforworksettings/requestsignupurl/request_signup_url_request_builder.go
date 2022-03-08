@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// RequestSignupUrlRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkSettings\microsoft.graph.requestSignupUrl
+// RequestSignupUrlRequestBuilder provides operations to call the requestSignupUrl method.
 type RequestSignupUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RequestSignupUrlRequestBuilder struct {
 // RequestSignupUrlRequestBuilderPostOptions options for Post
 type RequestSignupUrlRequestBuilderPostOptions struct {
     // 
-    Body *RequestSignupUrlRequestBody;
+    Body RequestSignupUrlRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewRequestSignupUrlRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *RequestSignupUrlRequestBuilder) CreatePostRequestInformation(options *R
     return requestInfo, nil
 }
 // Post invoke action requestSignupUrl
-func (m *RequestSignupUrlRequestBuilder) Post(options *RequestSignupUrlRequestBuilderPostOptions)(*string, error) {
+func (m *RequestSignupUrlRequestBuilder) Post(options *RequestSignupUrlRequestBuilderPostOptions)(RequestSignupUrlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRequestSignupUrlResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(RequestSignupUrlResponseable), nil
 }

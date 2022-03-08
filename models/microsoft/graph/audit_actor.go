@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuditActor 
+// AuditActor provides operations to manage the deviceManagement singleton.
 type AuditActor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,7 +29,7 @@ type AuditActor struct {
     // User Principal Name (UPN).
     userPrincipalName *string;
     // List of user scope tags when the audit was performed.
-    userRoleScopeTags []RoleScopeTagInfo;
+    userRoleScopeTags []RoleScopeTagInfoable;
 }
 // NewAuditActor instantiates a new auditActor and sets the default values.
 func NewAuditActor()(*AuditActor) {
@@ -37,6 +37,10 @@ func NewAuditActor()(*AuditActor) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuditActorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuditActor(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditActor) GetAdditionalData()(map[string]interface{}) {
@@ -60,78 +64,6 @@ func (m *AuditActor) GetApplicationId()(*string) {
         return nil
     } else {
         return m.applicationId
-    }
-}
-// GetIpAddress gets the ipAddress property value. IPAddress.
-func (m *AuditActor) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetRemoteTenantId gets the remoteTenantId property value. Remote Tenant Id
-func (m *AuditActor) GetRemoteTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteTenantId
-    }
-}
-// GetRemoteUserId gets the remoteUserId property value. Remote User Id
-func (m *AuditActor) GetRemoteUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteUserId
-    }
-}
-// GetServicePrincipalName gets the servicePrincipalName property value. Service Principal Name (SPN).
-func (m *AuditActor) GetServicePrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalName
-    }
-}
-// GetType gets the type property value. Actor Type.
-func (m *AuditActor) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUserId gets the userId property value. User Id.
-func (m *AuditActor) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPermissions gets the userPermissions property value. List of user permissions when the audit was performed.
-func (m *AuditActor) GetUserPermissions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPermissions
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name (UPN).
-func (m *AuditActor) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetUserRoleScopeTags gets the userRoleScopeTags property value. List of user scope tags when the audit was performed.
-func (m *AuditActor) GetUserRoleScopeTags()([]RoleScopeTagInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRoleScopeTags
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -242,20 +174,92 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["userRoleScopeTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleScopeTagInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateRoleScopeTagInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RoleScopeTagInfo, len(val))
+            res := make([]RoleScopeTagInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RoleScopeTagInfo))
+                res[i] = v.(RoleScopeTagInfoable)
             }
             m.SetUserRoleScopeTags(res)
         }
         return nil
     }
     return res
+}
+// GetIpAddress gets the ipAddress property value. IPAddress.
+func (m *AuditActor) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetRemoteTenantId gets the remoteTenantId property value. Remote Tenant Id
+func (m *AuditActor) GetRemoteTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteTenantId
+    }
+}
+// GetRemoteUserId gets the remoteUserId property value. Remote User Id
+func (m *AuditActor) GetRemoteUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteUserId
+    }
+}
+// GetServicePrincipalName gets the servicePrincipalName property value. Service Principal Name (SPN).
+func (m *AuditActor) GetServicePrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePrincipalName
+    }
+}
+// GetType gets the type property value. Actor Type.
+func (m *AuditActor) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUserId gets the userId property value. User Id.
+func (m *AuditActor) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPermissions gets the userPermissions property value. List of user permissions when the audit was performed.
+func (m *AuditActor) GetUserPermissions()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPermissions
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name (UPN).
+func (m *AuditActor) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetUserRoleScopeTags gets the userRoleScopeTags property value. List of user scope tags when the audit was performed.
+func (m *AuditActor) GetUserRoleScopeTags()([]RoleScopeTagInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRoleScopeTags
+    }
 }
 func (m *AuditActor) IsNil()(bool) {
     return m == nil
@@ -325,8 +329,7 @@ func (m *AuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetUserRoleScopeTags() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserRoleScopeTags()))
         for i, v := range m.GetUserRoleScopeTags() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("userRoleScopeTags", cast)
         if err != nil {
@@ -408,7 +411,7 @@ func (m *AuditActor) SetUserPrincipalName(value *string)() {
     }
 }
 // SetUserRoleScopeTags sets the userRoleScopeTags property value. List of user scope tags when the audit was performed.
-func (m *AuditActor) SetUserRoleScopeTags(value []RoleScopeTagInfo)() {
+func (m *AuditActor) SetUserRoleScopeTags(value []RoleScopeTagInfoable)() {
     if m != nil {
         m.userRoleScopeTags = value
     }

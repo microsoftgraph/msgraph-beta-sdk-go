@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CredentialUserRegistrationDetails 
+// CredentialUserRegistrationDetails provides operations to manage the print singleton.
 type CredentialUserRegistrationDetails struct {
     Entity
     // Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
@@ -29,60 +29,16 @@ func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) 
     }
     return m
 }
+// CreateCredentialUserRegistrationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCredentialUserRegistrationDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCredentialUserRegistrationDetails(), nil
+}
 // GetAuthMethods gets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
 func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthMethod) {
     if m == nil {
         return nil
     } else {
         return m.authMethods
-    }
-}
-// GetIsCapable gets the isCapable property value. Indicates whether the user is ready to perform self-service password reset or MFA.
-func (m *CredentialUserRegistrationDetails) GetIsCapable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCapable
-    }
-}
-// GetIsEnabled gets the isEnabled property value. Indicates whether the user enabled to perform self-service password reset.
-func (m *CredentialUserRegistrationDetails) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetIsMfaRegistered gets the isMfaRegistered property value. Indicates whether the user is registered for MFA.
-func (m *CredentialUserRegistrationDetails) GetIsMfaRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMfaRegistered
-    }
-}
-// GetIsRegistered gets the isRegistered property value. Indicates whether the user has registered any authentication methods for self-service password reset.
-func (m *CredentialUserRegistrationDetails) GetIsRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRegistered
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. Provides the user name of the corresponding user.
-func (m *CredentialUserRegistrationDetails) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. Provides the user principal name of the corresponding user.
-func (m *CredentialUserRegistrationDetails) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -163,6 +119,54 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetIsCapable gets the isCapable property value. Indicates whether the user is ready to perform self-service password reset or MFA.
+func (m *CredentialUserRegistrationDetails) GetIsCapable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCapable
+    }
+}
+// GetIsEnabled gets the isEnabled property value. Indicates whether the user enabled to perform self-service password reset.
+func (m *CredentialUserRegistrationDetails) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetIsMfaRegistered gets the isMfaRegistered property value. Indicates whether the user is registered for MFA.
+func (m *CredentialUserRegistrationDetails) GetIsMfaRegistered()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMfaRegistered
+    }
+}
+// GetIsRegistered gets the isRegistered property value. Indicates whether the user has registered any authentication methods for self-service password reset.
+func (m *CredentialUserRegistrationDetails) GetIsRegistered()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRegistered
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. Provides the user name of the corresponding user.
+func (m *CredentialUserRegistrationDetails) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. Provides the user principal name of the corresponding user.
+func (m *CredentialUserRegistrationDetails) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *CredentialUserRegistrationDetails) IsNil()(bool) {
     return m == nil

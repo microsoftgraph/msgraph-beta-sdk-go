@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PreAuthorizedApplication 
+// PreAuthorizedApplication provides operations to manage the collection of application entities.
 type PreAuthorizedApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewPreAuthorizedApplication()(*PreAuthorizedApplication) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePreAuthorizedApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePreAuthorizedApplicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPreAuthorizedApplication(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreAuthorizedApplication) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *PreAuthorizedApplication) GetAppId()(*string) {
         return nil
     } else {
         return m.appId
-    }
-}
-// GetPermissionIds gets the permissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
-func (m *PreAuthorizedApplication) GetPermissionIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +68,14 @@ func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetPermissionIds gets the permissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
+func (m *PreAuthorizedApplication) GetPermissionIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionIds
+    }
 }
 func (m *PreAuthorizedApplication) IsNil()(bool) {
     return m == nil

@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsQualityUpdateProfile 
+// WindowsQualityUpdateProfile provides operations to manage the deviceManagement singleton.
 type WindowsQualityUpdateProfile struct {
     Entity
     // The list of group assignments of the profile.
-    assignments []WindowsQualityUpdateProfileAssignment;
+    assignments []WindowsQualityUpdateProfileAssignmentable;
     // The date time that the profile was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Friendly display name of the quality update profile deployable content
@@ -19,7 +19,7 @@ type WindowsQualityUpdateProfile struct {
     // The display name for the profile.
     displayName *string;
     // Expedited update settings.
-    expeditedUpdateSettings *ExpeditedWindowsQualityUpdateSettings;
+    expeditedUpdateSettings ExpeditedWindowsQualityUpdateSettingsable;
     // The date time that the profile was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Friendly release date to display for a Quality Update release
@@ -34,8 +34,12 @@ func NewWindowsQualityUpdateProfile()(*WindowsQualityUpdateProfile) {
     }
     return m
 }
+// CreateWindowsQualityUpdateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsQualityUpdateProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsQualityUpdateProfile(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
-func (m *WindowsQualityUpdateProfile) GetAssignments()([]WindowsQualityUpdateProfileAssignment) {
+func (m *WindowsQualityUpdateProfile) GetAssignments()([]WindowsQualityUpdateProfileAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -75,49 +79,25 @@ func (m *WindowsQualityUpdateProfile) GetDisplayName()(*string) {
     }
 }
 // GetExpeditedUpdateSettings gets the expeditedUpdateSettings property value. Expedited update settings.
-func (m *WindowsQualityUpdateProfile) GetExpeditedUpdateSettings()(*ExpeditedWindowsQualityUpdateSettings) {
+func (m *WindowsQualityUpdateProfile) GetExpeditedUpdateSettings()(ExpeditedWindowsQualityUpdateSettingsable) {
     if m == nil {
         return nil
     } else {
         return m.expeditedUpdateSettings
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
-func (m *WindowsQualityUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetReleaseDateDisplayName gets the releaseDateDisplayName property value. Friendly release date to display for a Quality Update release
-func (m *WindowsQualityUpdateProfile) GetReleaseDateDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateDisplayName
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Quality Update entity.
-func (m *WindowsQualityUpdateProfile) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsQualityUpdateProfileAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdateProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsQualityUpdateProfileAssignment, len(val))
+            res := make([]WindowsQualityUpdateProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsQualityUpdateProfileAssignment))
+                res[i] = v.(WindowsQualityUpdateProfileAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -164,12 +144,12 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["expeditedUpdateSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExpeditedWindowsQualityUpdateSettings() })
+        val, err := n.GetObjectValue(CreateExpeditedWindowsQualityUpdateSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExpeditedUpdateSettings(val.(*ExpeditedWindowsQualityUpdateSettings))
+            m.SetExpeditedUpdateSettings(val.(ExpeditedWindowsQualityUpdateSettingsable))
         }
         return nil
     }
@@ -209,6 +189,30 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
+func (m *WindowsQualityUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetReleaseDateDisplayName gets the releaseDateDisplayName property value. Friendly release date to display for a Quality Update release
+func (m *WindowsQualityUpdateProfile) GetReleaseDateDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.releaseDateDisplayName
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Quality Update entity.
+func (m *WindowsQualityUpdateProfile) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
 func (m *WindowsQualityUpdateProfile) IsNil()(bool) {
     return m == nil
 }
@@ -221,8 +225,7 @@ func (m *WindowsQualityUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -280,7 +283,7 @@ func (m *WindowsQualityUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
-func (m *WindowsQualityUpdateProfile) SetAssignments(value []WindowsQualityUpdateProfileAssignment)() {
+func (m *WindowsQualityUpdateProfile) SetAssignments(value []WindowsQualityUpdateProfileAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -310,7 +313,7 @@ func (m *WindowsQualityUpdateProfile) SetDisplayName(value *string)() {
     }
 }
 // SetExpeditedUpdateSettings sets the expeditedUpdateSettings property value. Expedited update settings.
-func (m *WindowsQualityUpdateProfile) SetExpeditedUpdateSettings(value *ExpeditedWindowsQualityUpdateSettings)() {
+func (m *WindowsQualityUpdateProfile) SetExpeditedUpdateSettings(value ExpeditedWindowsQualityUpdateSettingsable)() {
     if m != nil {
         m.expeditedUpdateSettings = value
     }

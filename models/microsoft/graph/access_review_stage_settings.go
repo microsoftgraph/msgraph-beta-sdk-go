@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewStageSettings 
+// AccessReviewStageSettings provides operations to manage the compliance singleton.
 type AccessReviewStageSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,15 +15,15 @@ type AccessReviewStageSettings struct {
     // The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.
     durationInDays *int32;
     // If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
-    fallbackReviewers []AccessReviewReviewerScope;
+    fallbackReviewers []AccessReviewReviewerScopeable;
     // 
-    recommendationInsightSettings []AccessReviewRecommendationInsightSetting;
+    recommendationInsightSettings []AccessReviewRecommendationInsightSettingable;
     // Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
     recommendationLookBackDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
     recommendationsEnabled *bool;
     // Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
-    reviewers []AccessReviewReviewerScope;
+    reviewers []AccessReviewReviewerScopeable;
     // Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
     stageId *string;
 }
@@ -33,6 +33,10 @@ func NewAccessReviewStageSettings()(*AccessReviewStageSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAccessReviewStageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewStageSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewStageSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewStageSettings) GetAdditionalData()(map[string]interface{}) {
@@ -67,51 +71,11 @@ func (m *AccessReviewStageSettings) GetDurationInDays()(*int32) {
     }
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
-func (m *AccessReviewStageSettings) GetFallbackReviewers()([]AccessReviewReviewerScope) {
+func (m *AccessReviewStageSettings) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     if m == nil {
         return nil
     } else {
         return m.fallbackReviewers
-    }
-}
-// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. 
-func (m *AccessReviewStageSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationInsightSettings
-    }
-}
-// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
-func (m *AccessReviewStageSettings) GetRecommendationLookBackDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationLookBackDuration
-    }
-}
-// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
-func (m *AccessReviewStageSettings) GetRecommendationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationsEnabled
-    }
-}
-// GetReviewers gets the reviewers property value. Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
-func (m *AccessReviewStageSettings) GetReviewers()([]AccessReviewReviewerScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
-}
-// GetStageId gets the stageId property value. Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
-func (m *AccessReviewStageSettings) GetStageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stageId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -156,28 +120,28 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["fallbackReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewerScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewReviewerScope, len(val))
+            res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewReviewerScope))
+                res[i] = v.(AccessReviewReviewerScopeable)
             }
             m.SetFallbackReviewers(res)
         }
         return nil
     }
     res["recommendationInsightSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewRecommendationInsightSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewRecommendationInsightSetting, len(val))
+            res := make([]AccessReviewRecommendationInsightSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewRecommendationInsightSetting))
+                res[i] = v.(AccessReviewRecommendationInsightSettingable)
             }
             m.SetRecommendationInsightSettings(res)
         }
@@ -204,14 +168,14 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewerScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewReviewerScope, len(val))
+            res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewReviewerScope))
+                res[i] = v.(AccessReviewReviewerScopeable)
             }
             m.SetReviewers(res)
         }
@@ -228,6 +192,46 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. 
+func (m *AccessReviewStageSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationInsightSettings
+    }
+}
+// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
+func (m *AccessReviewStageSettings) GetRecommendationLookBackDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationLookBackDuration
+    }
+}
+// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
+func (m *AccessReviewStageSettings) GetRecommendationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationsEnabled
+    }
+}
+// GetReviewers gets the reviewers property value. Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
+func (m *AccessReviewStageSettings) GetReviewers()([]AccessReviewReviewerScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewers
+    }
+}
+// GetStageId gets the stageId property value. Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+func (m *AccessReviewStageSettings) GetStageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stageId
+    }
 }
 func (m *AccessReviewStageSettings) IsNil()(bool) {
     return m == nil
@@ -255,8 +259,7 @@ func (m *AccessReviewStageSettings) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetFallbackReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFallbackReviewers()))
         for i, v := range m.GetFallbackReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("fallbackReviewers", cast)
         if err != nil {
@@ -266,8 +269,7 @@ func (m *AccessReviewStageSettings) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetRecommendationInsightSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendationInsightSettings()))
         for i, v := range m.GetRecommendationInsightSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("recommendationInsightSettings", cast)
         if err != nil {
@@ -289,8 +291,7 @@ func (m *AccessReviewStageSettings) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
@@ -336,13 +337,13 @@ func (m *AccessReviewStageSettings) SetDurationInDays(value *int32)() {
     }
 }
 // SetFallbackReviewers sets the fallbackReviewers property value. If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
-func (m *AccessReviewStageSettings) SetFallbackReviewers(value []AccessReviewReviewerScope)() {
+func (m *AccessReviewStageSettings) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.fallbackReviewers = value
     }
 }
 // SetRecommendationInsightSettings sets the recommendationInsightSettings property value. 
-func (m *AccessReviewStageSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSetting)() {
+func (m *AccessReviewStageSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSettingable)() {
     if m != nil {
         m.recommendationInsightSettings = value
     }
@@ -360,7 +361,7 @@ func (m *AccessReviewStageSettings) SetRecommendationsEnabled(value *bool)() {
     }
 }
 // SetReviewers sets the reviewers property value. Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.
-func (m *AccessReviewStageSettings) SetReviewers(value []AccessReviewReviewerScope)() {
+func (m *AccessReviewStageSettings) SetReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.reviewers = value
     }

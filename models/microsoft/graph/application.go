@@ -5,25 +5,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Application 
+// Application provides operations to manage the collection of application entities.
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
-    api *ApiApplication;
+    api ApiApplicationable;
     // The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
     appId *string;
     // The appManagementPolicy applied to this application.
-    appManagementPolicies []AppManagementPolicy;
+    appManagementPolicies []AppManagementPolicyable;
     // The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
-    appRoles []AppRole;
+    appRoles []AppRoleable;
     // Specifies the certification status of the application.
-    certification *Certification;
+    certification Certificationable;
     // The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-    connectorGroup *ConnectorGroup;
+    connectorGroup ConnectorGroupable;
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.
-    createdOnBehalfOf *DirectoryObject;
+    createdOnBehalfOf DirectoryObjectable;
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
     defaultRedirectUri *string;
     // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
@@ -33,65 +33,65 @@ type Application struct {
     // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // Read-only. Nullable.
-    extensionProperties []ExtensionProperty;
+    extensionProperties []ExtensionPropertyable;
     // Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-    federatedIdentityCredentials []FederatedIdentityCredential;
+    federatedIdentityCredentials []FederatedIdentityCredentialable;
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string;
     // 
-    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
+    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable;
     // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
     identifierUris []string;
     // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
-    info *InformationalUrl;
+    info InformationalUrlable;
     // Specifies whether this application supports device authentication without a user. The default is false.
     isDeviceOnlyAuthSupported *bool;
     // Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
     isFallbackPublicClient *bool;
     // The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-    keyCredentials []KeyCredential;
+    keyCredentials []KeyCredentialable;
     // The main logo for the application. Not nullable.
     logo []byte;
     // Notes relevant for the management of the application.
     notes *string;
     // Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
-    onPremisesPublishing *OnPremisesPublishing;
+    onPremisesPublishing OnPremisesPublishingable;
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
-    optionalClaims *OptionalClaims;
+    optionalClaims OptionalClaimsable;
     // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-    owners []DirectoryObject;
+    owners []DirectoryObjectable;
     // Specifies parental control settings for an application.
-    parentalControlSettings *ParentalControlSettings;
+    parentalControlSettings ParentalControlSettingsable;
     // The collection of password credentials associated with the application. Not nullable.
-    passwordCredentials []PasswordCredential;
+    passwordCredentials []PasswordCredentialable;
     // Specifies settings for installed clients such as desktop or mobile devices.
-    publicClient *PublicClientApplication;
+    publicClient PublicClientApplicationable;
     // The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string;
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
-    requiredResourceAccess []RequiredResourceAccess;
+    requiredResourceAccess []RequiredResourceAccessable;
     // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
     signInAudience *string;
     // Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
-    spa *SpaApplication;
+    spa SpaApplicationable;
     // 
-    synchronization *Synchronization;
+    synchronization Synchronizationable;
     // Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     tags []string;
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     tokenEncryptionKeyId *string;
     // 
-    tokenIssuancePolicies []TokenIssuancePolicy;
+    tokenIssuancePolicies []TokenIssuancePolicyable;
     // The tokenLifetimePolicies assigned to this application. Supports $expand.
-    tokenLifetimePolicies []TokenLifetimePolicy;
+    tokenLifetimePolicies []TokenLifetimePolicyable;
     // The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
     uniqueName *string;
     // Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
-    verifiedPublisher *VerifiedPublisher;
+    verifiedPublisher VerifiedPublisherable;
     // Specifies settings for a web application.
-    web *WebApplication;
+    web WebApplicationable;
     // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
-    windows *WindowsApplication;
+    windows WindowsApplicationable;
 }
 // NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
@@ -100,8 +100,12 @@ func NewApplication()(*Application) {
     }
     return m
 }
+// CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApplicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApplication(), nil
+}
 // GetApi gets the api property value. Specifies settings for an application that implements a web API.
-func (m *Application) GetApi()(*ApiApplication) {
+func (m *Application) GetApi()(ApiApplicationable) {
     if m == nil {
         return nil
     } else {
@@ -117,7 +121,7 @@ func (m *Application) GetAppId()(*string) {
     }
 }
 // GetAppManagementPolicies gets the appManagementPolicies property value. The appManagementPolicy applied to this application.
-func (m *Application) GetAppManagementPolicies()([]AppManagementPolicy) {
+func (m *Application) GetAppManagementPolicies()([]AppManagementPolicyable) {
     if m == nil {
         return nil
     } else {
@@ -125,7 +129,7 @@ func (m *Application) GetAppManagementPolicies()([]AppManagementPolicy) {
     }
 }
 // GetAppRoles gets the appRoles property value. The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
-func (m *Application) GetAppRoles()([]AppRole) {
+func (m *Application) GetAppRoles()([]AppRoleable) {
     if m == nil {
         return nil
     } else {
@@ -133,7 +137,7 @@ func (m *Application) GetAppRoles()([]AppRole) {
     }
 }
 // GetCertification gets the certification property value. Specifies the certification status of the application.
-func (m *Application) GetCertification()(*Certification) {
+func (m *Application) GetCertification()(Certificationable) {
     if m == nil {
         return nil
     } else {
@@ -141,7 +145,7 @@ func (m *Application) GetCertification()(*Certification) {
     }
 }
 // GetConnectorGroup gets the connectorGroup property value. The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *Application) GetConnectorGroup()(*ConnectorGroup) {
+func (m *Application) GetConnectorGroup()(ConnectorGroupable) {
     if m == nil {
         return nil
     } else {
@@ -157,7 +161,7 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
 }
 // GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Read-only.
-func (m *Application) GetCreatedOnBehalfOf()(*DirectoryObject) {
+func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -197,7 +201,7 @@ func (m *Application) GetDisplayName()(*string) {
     }
 }
 // GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable.
-func (m *Application) GetExtensionProperties()([]ExtensionProperty) {
+func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     if m == nil {
         return nil
     } else {
@@ -205,247 +209,23 @@ func (m *Application) GetExtensionProperties()([]ExtensionProperty) {
     }
 }
 // GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredential) {
+func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     if m == nil {
         return nil
     } else {
         return m.federatedIdentityCredentials
     }
 }
-// GetGroupMembershipClaims gets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
-func (m *Application) GetGroupMembershipClaims()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupMembershipClaims
-    }
-}
-// GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. 
-func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeRealmDiscoveryPolicies
-    }
-}
-// GetIdentifierUris gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
-func (m *Application) GetIdentifierUris()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identifierUris
-    }
-}
-// GetInfo gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
-func (m *Application) GetInfo()(*InformationalUrl) {
-    if m == nil {
-        return nil
-    } else {
-        return m.info
-    }
-}
-// GetIsDeviceOnlyAuthSupported gets the isDeviceOnlyAuthSupported property value. Specifies whether this application supports device authentication without a user. The default is false.
-func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeviceOnlyAuthSupported
-    }
-}
-// GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
-func (m *Application) GetIsFallbackPublicClient()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFallbackPublicClient
-    }
-}
-// GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-func (m *Application) GetKeyCredentials()([]KeyCredential) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyCredentials
-    }
-}
-// GetLogo gets the logo property value. The main logo for the application. Not nullable.
-func (m *Application) GetLogo()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logo
-    }
-}
-// GetNotes gets the notes property value. Notes relevant for the management of the application.
-func (m *Application) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetOnPremisesPublishing gets the onPremisesPublishing property value. Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
-func (m *Application) GetOnPremisesPublishing()(*OnPremisesPublishing) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesPublishing
-    }
-}
-// GetOptionalClaims gets the optionalClaims property value. Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
-func (m *Application) GetOptionalClaims()(*OptionalClaims) {
-    if m == nil {
-        return nil
-    } else {
-        return m.optionalClaims
-    }
-}
-// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-func (m *Application) GetOwners()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owners
-    }
-}
-// GetParentalControlSettings gets the parentalControlSettings property value. Specifies parental control settings for an application.
-func (m *Application) GetParentalControlSettings()(*ParentalControlSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentalControlSettings
-    }
-}
-// GetPasswordCredentials gets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
-func (m *Application) GetPasswordCredentials()([]PasswordCredential) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordCredentials
-    }
-}
-// GetPublicClient gets the publicClient property value. Specifies settings for installed clients such as desktop or mobile devices.
-func (m *Application) GetPublicClient()(*PublicClientApplication) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicClient
-    }
-}
-// GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
-func (m *Application) GetPublisherDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisherDomain
-    }
-}
-// GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
-func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccess) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredResourceAccess
-    }
-}
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
-func (m *Application) GetSignInAudience()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInAudience
-    }
-}
-// GetSpa gets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
-func (m *Application) GetSpa()(*SpaApplication) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spa
-    }
-}
-// GetSynchronization gets the synchronization property value. 
-func (m *Application) GetSynchronization()(*Synchronization) {
-    if m == nil {
-        return nil
-    } else {
-        return m.synchronization
-    }
-}
-// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
-func (m *Application) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-func (m *Application) GetTokenEncryptionKeyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenEncryptionKeyId
-    }
-}
-// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. 
-func (m *Application) GetTokenIssuancePolicies()([]TokenIssuancePolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenIssuancePolicies
-    }
-}
-// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenLifetimePolicies
-    }
-}
-// GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
-func (m *Application) GetUniqueName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueName
-    }
-}
-// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
-func (m *Application) GetVerifiedPublisher()(*VerifiedPublisher) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedPublisher
-    }
-}
-// GetWeb gets the web property value. Specifies settings for a web application.
-func (m *Application) GetWeb()(*WebApplication) {
-    if m == nil {
-        return nil
-    } else {
-        return m.web
-    }
-}
-// GetWindows gets the windows property value. Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
-func (m *Application) GetWindows()(*WindowsApplication) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["api"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApiApplication() })
+        val, err := n.GetObjectValue(CreateApiApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApi(val.(*ApiApplication))
+            m.SetApi(val.(ApiApplicationable))
         }
         return nil
     }
@@ -460,50 +240,50 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["appManagementPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppManagementPolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppManagementPolicy, len(val))
+            res := make([]AppManagementPolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppManagementPolicy))
+                res[i] = v.(AppManagementPolicyable)
             }
             m.SetAppManagementPolicies(res)
         }
         return nil
     }
     res["appRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppRole() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppRole, len(val))
+            res := make([]AppRoleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppRole))
+                res[i] = v.(AppRoleable)
             }
             m.SetAppRoles(res)
         }
         return nil
     }
     res["certification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertification() })
+        val, err := n.GetObjectValue(CreateCertificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertification(val.(*Certification))
+            m.SetCertification(val.(Certificationable))
         }
         return nil
     }
     res["connectorGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectorGroup() })
+        val, err := n.GetObjectValue(CreateConnectorGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConnectorGroup(val.(*ConnectorGroup))
+            m.SetConnectorGroup(val.(ConnectorGroupable))
         }
         return nil
     }
@@ -518,12 +298,12 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["createdOnBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedOnBehalfOf(val.(*DirectoryObject))
+            m.SetCreatedOnBehalfOf(val.(DirectoryObjectable))
         }
         return nil
     }
@@ -568,28 +348,28 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["extensionProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtensionProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExtensionProperty, len(val))
+            res := make([]ExtensionPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExtensionProperty))
+                res[i] = v.(ExtensionPropertyable)
             }
             m.SetExtensionProperties(res)
         }
         return nil
     }
     res["federatedIdentityCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFederatedIdentityCredential() })
+        val, err := n.GetCollectionOfObjectValues(CreateFederatedIdentityCredentialFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]FederatedIdentityCredential, len(val))
+            res := make([]FederatedIdentityCredentialable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*FederatedIdentityCredential))
+                res[i] = v.(FederatedIdentityCredentialable)
             }
             m.SetFederatedIdentityCredentials(res)
         }
@@ -606,14 +386,14 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["homeRealmDiscoveryPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewHomeRealmDiscoveryPolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]HomeRealmDiscoveryPolicy, len(val))
+            res := make([]HomeRealmDiscoveryPolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*HomeRealmDiscoveryPolicy))
+                res[i] = v.(HomeRealmDiscoveryPolicyable)
             }
             m.SetHomeRealmDiscoveryPolicies(res)
         }
@@ -634,12 +414,12 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["info"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInformationalUrl() })
+        val, err := n.GetObjectValue(CreateInformationalUrlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInfo(val.(*InformationalUrl))
+            m.SetInfo(val.(InformationalUrlable))
         }
         return nil
     }
@@ -664,14 +444,14 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["keyCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyCredential() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyCredentialFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyCredential, len(val))
+            res := make([]KeyCredentialable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyCredential))
+                res[i] = v.(KeyCredentialable)
             }
             m.SetKeyCredentials(res)
         }
@@ -698,70 +478,70 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["onPremisesPublishing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesPublishing() })
+        val, err := n.GetObjectValue(CreateOnPremisesPublishingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnPremisesPublishing(val.(*OnPremisesPublishing))
+            m.SetOnPremisesPublishing(val.(OnPremisesPublishingable))
         }
         return nil
     }
     res["optionalClaims"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOptionalClaims() })
+        val, err := n.GetObjectValue(CreateOptionalClaimsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOptionalClaims(val.(*OptionalClaims))
+            m.SetOptionalClaims(val.(OptionalClaimsable))
         }
         return nil
     }
     res["owners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetOwners(res)
         }
         return nil
     }
     res["parentalControlSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewParentalControlSettings() })
+        val, err := n.GetObjectValue(CreateParentalControlSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentalControlSettings(val.(*ParentalControlSettings))
+            m.SetParentalControlSettings(val.(ParentalControlSettingsable))
         }
         return nil
     }
     res["passwordCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPasswordCredential() })
+        val, err := n.GetCollectionOfObjectValues(CreatePasswordCredentialFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PasswordCredential, len(val))
+            res := make([]PasswordCredentialable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PasswordCredential))
+                res[i] = v.(PasswordCredentialable)
             }
             m.SetPasswordCredentials(res)
         }
         return nil
     }
     res["publicClient"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublicClientApplication() })
+        val, err := n.GetObjectValue(CreatePublicClientApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPublicClient(val.(*PublicClientApplication))
+            m.SetPublicClient(val.(PublicClientApplicationable))
         }
         return nil
     }
@@ -776,14 +556,14 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["requiredResourceAccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRequiredResourceAccess() })
+        val, err := n.GetCollectionOfObjectValues(CreateRequiredResourceAccessFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RequiredResourceAccess, len(val))
+            res := make([]RequiredResourceAccessable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RequiredResourceAccess))
+                res[i] = v.(RequiredResourceAccessable)
             }
             m.SetRequiredResourceAccess(res)
         }
@@ -800,22 +580,22 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["spa"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSpaApplication() })
+        val, err := n.GetObjectValue(CreateSpaApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSpa(val.(*SpaApplication))
+            m.SetSpa(val.(SpaApplicationable))
         }
         return nil
     }
     res["synchronization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronization() })
+        val, err := n.GetObjectValue(CreateSynchronizationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSynchronization(val.(*Synchronization))
+            m.SetSynchronization(val.(Synchronizationable))
         }
         return nil
     }
@@ -844,28 +624,28 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["tokenIssuancePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTokenIssuancePolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateTokenIssuancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TokenIssuancePolicy, len(val))
+            res := make([]TokenIssuancePolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TokenIssuancePolicy))
+                res[i] = v.(TokenIssuancePolicyable)
             }
             m.SetTokenIssuancePolicies(res)
         }
         return nil
     }
     res["tokenLifetimePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTokenLifetimePolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateTokenLifetimePolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TokenLifetimePolicy, len(val))
+            res := make([]TokenLifetimePolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TokenLifetimePolicy))
+                res[i] = v.(TokenLifetimePolicyable)
             }
             m.SetTokenLifetimePolicies(res)
         }
@@ -882,36 +662,260 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["verifiedPublisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVerifiedPublisher() })
+        val, err := n.GetObjectValue(CreateVerifiedPublisherFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVerifiedPublisher(val.(*VerifiedPublisher))
+            m.SetVerifiedPublisher(val.(VerifiedPublisherable))
         }
         return nil
     }
     res["web"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWebApplication() })
+        val, err := n.GetObjectValue(CreateWebApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWeb(val.(*WebApplication))
+            m.SetWeb(val.(WebApplicationable))
         }
         return nil
     }
     res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsApplication() })
+        val, err := n.GetObjectValue(CreateWindowsApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWindows(val.(*WindowsApplication))
+            m.SetWindows(val.(WindowsApplicationable))
         }
         return nil
     }
     return res
+}
+// GetGroupMembershipClaims gets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
+func (m *Application) GetGroupMembershipClaims()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupMembershipClaims
+    }
+}
+// GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. 
+func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.homeRealmDiscoveryPolicies
+    }
+}
+// GetIdentifierUris gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+func (m *Application) GetIdentifierUris()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.identifierUris
+    }
+}
+// GetInfo gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+func (m *Application) GetInfo()(InformationalUrlable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.info
+    }
+}
+// GetIsDeviceOnlyAuthSupported gets the isDeviceOnlyAuthSupported property value. Specifies whether this application supports device authentication without a user. The default is false.
+func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDeviceOnlyAuthSupported
+    }
+}
+// GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
+func (m *Application) GetIsFallbackPublicClient()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFallbackPublicClient
+    }
+}
+// GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
+func (m *Application) GetKeyCredentials()([]KeyCredentialable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyCredentials
+    }
+}
+// GetLogo gets the logo property value. The main logo for the application. Not nullable.
+func (m *Application) GetLogo()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logo
+    }
+}
+// GetNotes gets the notes property value. Notes relevant for the management of the application.
+func (m *Application) GetNotes()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetOnPremisesPublishing gets the onPremisesPublishing property value. Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
+func (m *Application) GetOnPremisesPublishing()(OnPremisesPublishingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesPublishing
+    }
+}
+// GetOptionalClaims gets the optionalClaims property value. Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
+func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.optionalClaims
+    }
+}
+// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+func (m *Application) GetOwners()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.owners
+    }
+}
+// GetParentalControlSettings gets the parentalControlSettings property value. Specifies parental control settings for an application.
+func (m *Application) GetParentalControlSettings()(ParentalControlSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentalControlSettings
+    }
+}
+// GetPasswordCredentials gets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
+func (m *Application) GetPasswordCredentials()([]PasswordCredentialable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passwordCredentials
+    }
+}
+// GetPublicClient gets the publicClient property value. Specifies settings for installed clients such as desktop or mobile devices.
+func (m *Application) GetPublicClient()(PublicClientApplicationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publicClient
+    }
+}
+// GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
+func (m *Application) GetPublisherDomain()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisherDomain
+    }
+}
+// GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
+func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requiredResourceAccess
+    }
+}
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
+func (m *Application) GetSignInAudience()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInAudience
+    }
+}
+// GetSpa gets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
+func (m *Application) GetSpa()(SpaApplicationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.spa
+    }
+}
+// GetSynchronization gets the synchronization property value. 
+func (m *Application) GetSynchronization()(Synchronizationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.synchronization
+    }
+}
+// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+func (m *Application) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+func (m *Application) GetTokenEncryptionKeyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tokenEncryptionKeyId
+    }
+}
+// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. 
+func (m *Application) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tokenIssuancePolicies
+    }
+}
+// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this application. Supports $expand.
+func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tokenLifetimePolicies
+    }
+}
+// GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
+func (m *Application) GetUniqueName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueName
+    }
+}
+// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
+func (m *Application) GetVerifiedPublisher()(VerifiedPublisherable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.verifiedPublisher
+    }
+}
+// GetWeb gets the web property value. Specifies settings for a web application.
+func (m *Application) GetWeb()(WebApplicationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.web
+    }
+}
+// GetWindows gets the windows property value. Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
+func (m *Application) GetWindows()(WindowsApplicationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows
+    }
 }
 func (m *Application) IsNil()(bool) {
     return m == nil
@@ -937,8 +941,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetAppManagementPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppManagementPolicies()))
         for i, v := range m.GetAppManagementPolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
         if err != nil {
@@ -948,8 +951,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetAppRoles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppRoles()))
         for i, v := range m.GetAppRoles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appRoles", cast)
         if err != nil {
@@ -1007,8 +1009,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetExtensionProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensionProperties()))
         for i, v := range m.GetExtensionProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensionProperties", cast)
         if err != nil {
@@ -1018,8 +1019,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetFederatedIdentityCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederatedIdentityCredentials()))
         for i, v := range m.GetFederatedIdentityCredentials() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("federatedIdentityCredentials", cast)
         if err != nil {
@@ -1035,8 +1035,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetHomeRealmDiscoveryPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
         for i, v := range m.GetHomeRealmDiscoveryPolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
         if err != nil {
@@ -1070,8 +1069,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetKeyCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("keyCredentials", cast)
         if err != nil {
@@ -1105,8 +1103,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetOwners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOwners()))
         for i, v := range m.GetOwners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("owners", cast)
         if err != nil {
@@ -1122,8 +1119,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetPasswordCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPasswordCredentials()))
         for i, v := range m.GetPasswordCredentials() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("passwordCredentials", cast)
         if err != nil {
@@ -1145,8 +1141,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetRequiredResourceAccess() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRequiredResourceAccess()))
         for i, v := range m.GetRequiredResourceAccess() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("requiredResourceAccess", cast)
         if err != nil {
@@ -1186,8 +1181,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetTokenIssuancePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTokenIssuancePolicies()))
         for i, v := range m.GetTokenIssuancePolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
         if err != nil {
@@ -1197,8 +1191,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetTokenLifetimePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTokenLifetimePolicies()))
         for i, v := range m.GetTokenLifetimePolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
         if err != nil {
@@ -1232,7 +1225,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     return nil
 }
 // SetApi sets the api property value. Specifies settings for an application that implements a web API.
-func (m *Application) SetApi(value *ApiApplication)() {
+func (m *Application) SetApi(value ApiApplicationable)() {
     if m != nil {
         m.api = value
     }
@@ -1244,25 +1237,25 @@ func (m *Application) SetAppId(value *string)() {
     }
 }
 // SetAppManagementPolicies sets the appManagementPolicies property value. The appManagementPolicy applied to this application.
-func (m *Application) SetAppManagementPolicies(value []AppManagementPolicy)() {
+func (m *Application) SetAppManagementPolicies(value []AppManagementPolicyable)() {
     if m != nil {
         m.appManagementPolicies = value
     }
 }
 // SetAppRoles sets the appRoles property value. The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
-func (m *Application) SetAppRoles(value []AppRole)() {
+func (m *Application) SetAppRoles(value []AppRoleable)() {
     if m != nil {
         m.appRoles = value
     }
 }
 // SetCertification sets the certification property value. Specifies the certification status of the application.
-func (m *Application) SetCertification(value *Certification)() {
+func (m *Application) SetCertification(value Certificationable)() {
     if m != nil {
         m.certification = value
     }
 }
 // SetConnectorGroup sets the connectorGroup property value. The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *Application) SetConnectorGroup(value *ConnectorGroup)() {
+func (m *Application) SetConnectorGroup(value ConnectorGroupable)() {
     if m != nil {
         m.connectorGroup = value
     }
@@ -1274,7 +1267,7 @@ func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
     }
 }
 // SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Read-only.
-func (m *Application) SetCreatedOnBehalfOf(value *DirectoryObject)() {
+func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     if m != nil {
         m.createdOnBehalfOf = value
     }
@@ -1304,13 +1297,13 @@ func (m *Application) SetDisplayName(value *string)() {
     }
 }
 // SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable.
-func (m *Application) SetExtensionProperties(value []ExtensionProperty)() {
+func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     if m != nil {
         m.extensionProperties = value
     }
 }
 // SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredential)() {
+func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     if m != nil {
         m.federatedIdentityCredentials = value
     }
@@ -1322,7 +1315,7 @@ func (m *Application) SetGroupMembershipClaims(value *string)() {
     }
 }
 // SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. 
-func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
+func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)() {
     if m != nil {
         m.homeRealmDiscoveryPolicies = value
     }
@@ -1334,7 +1327,7 @@ func (m *Application) SetIdentifierUris(value []string)() {
     }
 }
 // SetInfo sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
-func (m *Application) SetInfo(value *InformationalUrl)() {
+func (m *Application) SetInfo(value InformationalUrlable)() {
     if m != nil {
         m.info = value
     }
@@ -1352,7 +1345,7 @@ func (m *Application) SetIsFallbackPublicClient(value *bool)() {
     }
 }
 // SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-func (m *Application) SetKeyCredentials(value []KeyCredential)() {
+func (m *Application) SetKeyCredentials(value []KeyCredentialable)() {
     if m != nil {
         m.keyCredentials = value
     }
@@ -1370,37 +1363,37 @@ func (m *Application) SetNotes(value *string)() {
     }
 }
 // SetOnPremisesPublishing sets the onPremisesPublishing property value. Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
-func (m *Application) SetOnPremisesPublishing(value *OnPremisesPublishing)() {
+func (m *Application) SetOnPremisesPublishing(value OnPremisesPublishingable)() {
     if m != nil {
         m.onPremisesPublishing = value
     }
 }
 // SetOptionalClaims sets the optionalClaims property value. Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
-func (m *Application) SetOptionalClaims(value *OptionalClaims)() {
+func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
     if m != nil {
         m.optionalClaims = value
     }
 }
 // SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-func (m *Application) SetOwners(value []DirectoryObject)() {
+func (m *Application) SetOwners(value []DirectoryObjectable)() {
     if m != nil {
         m.owners = value
     }
 }
 // SetParentalControlSettings sets the parentalControlSettings property value. Specifies parental control settings for an application.
-func (m *Application) SetParentalControlSettings(value *ParentalControlSettings)() {
+func (m *Application) SetParentalControlSettings(value ParentalControlSettingsable)() {
     if m != nil {
         m.parentalControlSettings = value
     }
 }
 // SetPasswordCredentials sets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
-func (m *Application) SetPasswordCredentials(value []PasswordCredential)() {
+func (m *Application) SetPasswordCredentials(value []PasswordCredentialable)() {
     if m != nil {
         m.passwordCredentials = value
     }
 }
 // SetPublicClient sets the publicClient property value. Specifies settings for installed clients such as desktop or mobile devices.
-func (m *Application) SetPublicClient(value *PublicClientApplication)() {
+func (m *Application) SetPublicClient(value PublicClientApplicationable)() {
     if m != nil {
         m.publicClient = value
     }
@@ -1412,7 +1405,7 @@ func (m *Application) SetPublisherDomain(value *string)() {
     }
 }
 // SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
-func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccess)() {
+func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccessable)() {
     if m != nil {
         m.requiredResourceAccess = value
     }
@@ -1424,13 +1417,13 @@ func (m *Application) SetSignInAudience(value *string)() {
     }
 }
 // SetSpa sets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
-func (m *Application) SetSpa(value *SpaApplication)() {
+func (m *Application) SetSpa(value SpaApplicationable)() {
     if m != nil {
         m.spa = value
     }
 }
 // SetSynchronization sets the synchronization property value. 
-func (m *Application) SetSynchronization(value *Synchronization)() {
+func (m *Application) SetSynchronization(value Synchronizationable)() {
     if m != nil {
         m.synchronization = value
     }
@@ -1448,13 +1441,13 @@ func (m *Application) SetTokenEncryptionKeyId(value *string)() {
     }
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. 
-func (m *Application) SetTokenIssuancePolicies(value []TokenIssuancePolicy)() {
+func (m *Application) SetTokenIssuancePolicies(value []TokenIssuancePolicyable)() {
     if m != nil {
         m.tokenIssuancePolicies = value
     }
 }
 // SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicy)() {
+func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)() {
     if m != nil {
         m.tokenLifetimePolicies = value
     }
@@ -1466,19 +1459,19 @@ func (m *Application) SetUniqueName(value *string)() {
     }
 }
 // SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
-func (m *Application) SetVerifiedPublisher(value *VerifiedPublisher)() {
+func (m *Application) SetVerifiedPublisher(value VerifiedPublisherable)() {
     if m != nil {
         m.verifiedPublisher = value
     }
 }
 // SetWeb sets the web property value. Specifies settings for a web application.
-func (m *Application) SetWeb(value *WebApplication)() {
+func (m *Application) SetWeb(value WebApplicationable)() {
     if m != nil {
         m.web = value
     }
 }
 // SetWindows sets the windows property value. Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
-func (m *Application) SetWindows(value *WindowsApplication)() {
+func (m *Application) SetWindows(value WindowsApplicationable)() {
     if m != nil {
         m.windows = value
     }

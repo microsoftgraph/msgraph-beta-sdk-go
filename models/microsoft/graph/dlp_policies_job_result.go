@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DlpPoliciesJobResult 
+// DlpPoliciesJobResult provides operations to call the evaluate method.
 type DlpPoliciesJobResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,7 +14,7 @@ type DlpPoliciesJobResult struct {
     // 
     evaluationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    matchingRules []MatchingDlpRule;
+    matchingRules []MatchingDlpRuleable;
 }
 // NewDlpPoliciesJobResult instantiates a new dlpPoliciesJobResult and sets the default values.
 func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
@@ -22,6 +22,10 @@ func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDlpPoliciesJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDlpPoliciesJobResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDlpPoliciesJobResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]interface{}) {
@@ -45,14 +49,6 @@ func (m *DlpPoliciesJobResult) GetEvaluationDateTime()(*i336074805fc853987abe6f7
         return nil
     } else {
         return m.evaluationDateTime
-    }
-}
-// GetMatchingRules gets the matchingRules property value. 
-func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchingRules
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,20 +75,28 @@ func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["matchingRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMatchingDlpRule() })
+        val, err := n.GetCollectionOfObjectValues(CreateMatchingDlpRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MatchingDlpRule, len(val))
+            res := make([]MatchingDlpRuleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MatchingDlpRule))
+                res[i] = v.(MatchingDlpRuleable)
             }
             m.SetMatchingRules(res)
         }
         return nil
     }
     return res
+}
+// GetMatchingRules gets the matchingRules property value. 
+func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRuleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matchingRules
+    }
 }
 func (m *DlpPoliciesJobResult) IsNil()(bool) {
     return m == nil
@@ -114,8 +118,7 @@ func (m *DlpPoliciesJobResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetMatchingRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMatchingRules()))
         for i, v := range m.GetMatchingRules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("matchingRules", cast)
         if err != nil {
@@ -149,7 +152,7 @@ func (m *DlpPoliciesJobResult) SetEvaluationDateTime(value *i336074805fc853987ab
     }
 }
 // SetMatchingRules sets the matchingRules property value. 
-func (m *DlpPoliciesJobResult) SetMatchingRules(value []MatchingDlpRule)() {
+func (m *DlpPoliciesJobResult) SetMatchingRules(value []MatchingDlpRuleable)() {
     if m != nil {
         m.matchingRules = value
     }

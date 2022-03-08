@@ -2,15 +2,10 @@ package printer
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    ia53388d107d18b7b6bb184c54c9838943c88235b68da03e9af1b4e749213daf5 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/printer/restorefactorydefaults"
-    ia9b6d39e72654f16838c410d763d10cd685546e047c1c1c5a67e6795b5e8d139 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/printer/ref"
-    ib474284d9436e6f8551d47f035e654aaf3e942509725bfec074dd0021c828bd5 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/printer/resetdefaults"
-    ic395d901ea47de5e1da0e5f094da0bf591159f680b75575381d6eb9712c3ab17 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printershares/item/printer/getcapabilities"
 )
 
-// PrinterRequestBuilder builds and executes requests for operations under \print\printerShares\{printerShare-id}\printer
+// PrinterRequestBuilder provides operations to manage the printer property of the microsoft.graph.printerShare entity.
 type PrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +41,7 @@ func NewPrinterRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,27 +72,18 @@ func (m *PrinterRequestBuilder) CreateGetRequestInformation(options *PrinterRequ
     return requestInfo, nil
 }
 // Get the printer that this printer share is related to.
-func (m *PrinterRequestBuilder) Get(options *PrinterRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer, error) {
+func (m *PrinterRequestBuilder) Get(options *PrinterRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printerable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrinter() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer), nil
-}
-// GetCapabilities builds and executes requests for operations under \print\printerShares\{printerShare-id}\printer\microsoft.graph.getCapabilities()
-func (m *PrinterRequestBuilder) GetCapabilities()(*ic395d901ea47de5e1da0e5f094da0bf591159f680b75575381d6eb9712c3ab17.GetCapabilitiesRequestBuilder) {
-    return ic395d901ea47de5e1da0e5f094da0bf591159f680b75575381d6eb9712c3ab17.NewGetCapabilitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *PrinterRequestBuilder) Ref()(*ia9b6d39e72654f16838c410d763d10cd685546e047c1c1c5a67e6795b5e8d139.RefRequestBuilder) {
-    return ia9b6d39e72654f16838c410d763d10cd685546e047c1c1c5a67e6795b5e8d139.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *PrinterRequestBuilder) ResetDefaults()(*ib474284d9436e6f8551d47f035e654aaf3e942509725bfec074dd0021c828bd5.ResetDefaultsRequestBuilder) {
-    return ib474284d9436e6f8551d47f035e654aaf3e942509725bfec074dd0021c828bd5.NewResetDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *PrinterRequestBuilder) RestoreFactoryDefaults()(*ia53388d107d18b7b6bb184c54c9838943c88235b68da03e9af1b4e749213daf5.RestoreFactoryDefaultsRequestBuilder) {
-    return ia53388d107d18b7b6bb184c54c9838943c88235b68da03e9af1b4e749213daf5.NewRestoreFactoryDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printerable), nil
 }

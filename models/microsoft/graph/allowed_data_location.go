@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AllowedDataLocation 
+// AllowedDataLocation provides operations to manage the collection of allowedDataLocation entities.
 type AllowedDataLocation struct {
     Entity
     // 
@@ -23,6 +23,10 @@ func NewAllowedDataLocation()(*AllowedDataLocation) {
     }
     return m
 }
+// CreateAllowedDataLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAllowedDataLocationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAllowedDataLocation(), nil
+}
 // GetAppId gets the appId property value. 
 func (m *AllowedDataLocation) GetAppId()(*string) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *AllowedDataLocation) GetDomain()(*string) {
         return nil
     } else {
         return m.domain
-    }
-}
-// GetIsDefault gets the isDefault property value. 
-func (m *AllowedDataLocation) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetLocation gets the location property value. 
-func (m *AllowedDataLocation) GetLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. 
+func (m *AllowedDataLocation) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetLocation gets the location property value. 
+func (m *AllowedDataLocation) GetLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.location
+    }
 }
 func (m *AllowedDataLocation) IsNil()(bool) {
     return m == nil

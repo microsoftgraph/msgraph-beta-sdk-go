@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationSchedule 
+// SynchronizationSchedule provides operations to call the instantiate method.
 type SynchronizationSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewSynchronizationSchedule()(*SynchronizationSchedule) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSynchronizationScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationScheduleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationSchedule(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSchedule) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *SynchronizationSchedule) GetExpiration()(*i336074805fc853987abe6f7fe3ad
         return nil
     } else {
         return m.expiration
-    }
-}
-// GetInterval gets the interval property value. The interval between synchronization iterations.
-func (m *SynchronizationSchedule) GetInterval()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.interval
-    }
-}
-// GetState gets the state property value. Possible values are: Active, Disabled.
-func (m *SynchronizationSchedule) GetState()(*SynchronizationScheduleState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *SynchronizationSchedule) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetInterval gets the interval property value. The interval between synchronization iterations.
+func (m *SynchronizationSchedule) GetInterval()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.interval
+    }
+}
+// GetState gets the state property value. Possible values are: Active, Disabled.
+func (m *SynchronizationSchedule) GetState()(*SynchronizationScheduleState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *SynchronizationSchedule) IsNil()(bool) {
     return m == nil

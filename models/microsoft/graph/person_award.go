@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonAward 
+// PersonAward provides operations to manage the compliance singleton.
 type PersonAward struct {
     ItemFacet
     // Descpription of the award or honor.
@@ -27,6 +27,10 @@ func NewPersonAward()(*PersonAward) {
     }
     return m
 }
+// CreatePersonAwardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonAwardFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonAward(), nil
+}
 // GetDescription gets the description property value. Descpription of the award or honor.
 func (m *PersonAward) GetDescription()(*string) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *PersonAward) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIssuedDate gets the issuedDate property value. The date that the award or honor was granted.
-func (m *PersonAward) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuedDate
-    }
-}
-// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the award or honor.
-func (m *PersonAward) GetIssuingAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuingAuthority
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
-func (m *PersonAward) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
-}
-// GetWebUrl gets the webUrl property value. URL referencing the award or honor.
-func (m *PersonAward) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +111,38 @@ func (m *PersonAward) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetIssuedDate gets the issuedDate property value. The date that the award or honor was granted.
+func (m *PersonAward) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuedDate
+    }
+}
+// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the award or honor.
+func (m *PersonAward) GetIssuingAuthority()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuingAuthority
+    }
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
+func (m *PersonAward) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
+}
+// GetWebUrl gets the webUrl property value. URL referencing the award or honor.
+func (m *PersonAward) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *PersonAward) IsNil()(bool) {
     return m == nil

@@ -2,11 +2,14 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i1a50ff3dd302c604b985d0374bb47387abddd017a6b0ab9cb2172bd489320e21 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/bannerlogo"
+    i265d482fd8a0fbcbd2146179615b8b362ca76edaacfdc3d28b99118c36f153cf "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/squarelogo"
+    i340773e20b6413210d35749d04d3b107621c008f2c1fd973f5619ba97b856c66 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/favicon"
+    i4ae048953822cae862c6d34d42f91e75a88a9088ea27c42144c633d498f29818 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/backgroundimage"
 )
 
-// OrganizationalBrandingLocalizationItemRequestBuilder builds and executes requests for operations under \branding\localizations\{organizationalBrandingLocalization-id}
+// OrganizationalBrandingLocalizationItemRequestBuilder provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 type OrganizationalBrandingLocalizationItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,13 +48,19 @@ type OrganizationalBrandingLocalizationItemRequestBuilderGetQueryParameters stru
 // OrganizationalBrandingLocalizationItemRequestBuilderPatchOptions options for Patch
 type OrganizationalBrandingLocalizationItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationalBrandingLocalization;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationalBrandingLocalizationable;
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) BackgroundImage()(*i4ae048953822cae862c6d34d42f91e75a88a9088ea27c42144c633d498f29818.BackgroundImageRequestBuilder) {
+    return i4ae048953822cae862c6d34d42f91e75a88a9088ea27c42144c633d498f29818.NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) BannerLogo()(*i1a50ff3dd302c604b985d0374bb47387abddd017a6b0ab9cb2172bd489320e21.BannerLogoRequestBuilder) {
+    return i1a50ff3dd302c604b985d0374bb47387abddd017a6b0ab9cb2172bd489320e21.NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewOrganizationalBrandingLocalizationItemRequestBuilderInternal instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
 func NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrganizationalBrandingLocalizationItemRequestBuilder) {
@@ -62,7 +71,7 @@ func NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +81,7 @@ func NewOrganizationalBrandingLocalizationItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation add different branding based on a locale.
+// CreateDeleteRequestInformation delete navigation property localizations for branding
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateDeleteRequestInformation(options *OrganizationalBrandingLocalizationItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +118,7 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation add different branding based on a locale.
+// CreatePatchRequestInformation update the navigation property localizations in branding
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreatePatchRequestInformation(options *OrganizationalBrandingLocalizationItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,39 +136,57 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// Delete add different branding based on a locale.
+// Delete delete navigation property localizations for branding
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Delete(options *OrganizationalBrandingLocalizationItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Favicon()(*i340773e20b6413210d35749d04d3b107621c008f2c1fd973f5619ba97b856c66.FaviconRequestBuilder) {
+    return i340773e20b6413210d35749d04d3b107621c008f2c1fd973f5619ba97b856c66.NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get add different branding based on a locale.
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Get(options *OrganizationalBrandingLocalizationItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationalBrandingLocalization, error) {
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Get(options *OrganizationalBrandingLocalizationItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationalBrandingLocalizationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOrganizationalBrandingLocalization() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOrganizationalBrandingLocalizationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationalBrandingLocalization), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationalBrandingLocalizationable), nil
 }
-// Patch add different branding based on a locale.
+// Patch update the navigation property localizations in branding
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(options *OrganizationalBrandingLocalizationItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*i265d482fd8a0fbcbd2146179615b8b362ca76edaacfdc3d28b99118c36f153cf.SquareLogoRequestBuilder) {
+    return i265d482fd8a0fbcbd2146179615b8b362ca76edaacfdc3d28b99118c36f153cf.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

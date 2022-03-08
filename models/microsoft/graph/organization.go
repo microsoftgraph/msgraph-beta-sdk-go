@@ -5,19 +5,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Organization 
+// Organization provides operations to manage the collection of organization entities.
 type Organization struct {
     DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
-    assignedPlans []AssignedPlan;
+    assignedPlans []AssignedPlanable;
     // 
-    branding *OrganizationalBranding;
+    branding OrganizationalBrandingable;
     // Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
     businessPhones []string;
     // Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-    certificateBasedAuthConfiguration []CertificateBasedAuthConfiguration;
+    certificateBasedAuthConfiguration []CertificateBasedAuthConfigurationable;
     // Certificate connector setting.
-    certificateConnectorSetting *CertificateConnectorSetting;
+    certificateConnectorSetting CertificateConnectorSettingable;
     // City name of the address for the organization.
     city *string;
     // Country/region name of the address for the organization.
@@ -27,11 +27,11 @@ type Organization struct {
     // Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The directory size quota information of an organization.
-    directorySizeQuota *DirectorySizeQuota;
+    directorySizeQuota DirectorySizeQuotaable;
     // The display name for the tenant.
     displayName *string;
     // The collection of open extensions defined for the organization. Read-only. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
     isMultipleDataLocationsForServicesEnabled *bool;
     // Not nullable.
@@ -47,15 +47,15 @@ type Organization struct {
     // The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
     preferredLanguage *string;
     // The privacy profile of an organization.
-    privacyProfile *PrivacyProfile;
+    privacyProfile PrivacyProfileable;
     // Not nullable.
-    provisionedPlans []ProvisionedPlan;
+    provisionedPlans []ProvisionedPlanable;
     // 
     securityComplianceNotificationMails []string;
     // 
     securityComplianceNotificationPhones []string;
     // Retrieve the properties and relationships of organizationSettings object. Nullable.
-    settings *OrganizationSettings;
+    settings OrganizationSettingsable;
     // State name of the address for the organization.
     state *string;
     // Street name of the address for organization.
@@ -63,7 +63,7 @@ type Organization struct {
     // Not nullable.
     technicalNotificationMails []string;
     // The collection of domains associated with this tenant. Not nullable.
-    verifiedDomains []VerifiedDomain;
+    verifiedDomains []VerifiedDomainable;
 }
 // NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {
@@ -72,8 +72,12 @@ func NewOrganization()(*Organization) {
     }
     return m
 }
+// CreateOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOrganizationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOrganization(), nil
+}
 // GetAssignedPlans gets the assignedPlans property value. The collection of service plans associated with the tenant. Not nullable.
-func (m *Organization) GetAssignedPlans()([]AssignedPlan) {
+func (m *Organization) GetAssignedPlans()([]AssignedPlanable) {
     if m == nil {
         return nil
     } else {
@@ -81,7 +85,7 @@ func (m *Organization) GetAssignedPlans()([]AssignedPlan) {
     }
 }
 // GetBranding gets the branding property value. 
-func (m *Organization) GetBranding()(*OrganizationalBranding) {
+func (m *Organization) GetBranding()(OrganizationalBrandingable) {
     if m == nil {
         return nil
     } else {
@@ -97,7 +101,7 @@ func (m *Organization) GetBusinessPhones()([]string) {
     }
 }
 // GetCertificateBasedAuthConfiguration gets the certificateBasedAuthConfiguration property value. Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *Organization) GetCertificateBasedAuthConfiguration()([]CertificateBasedAuthConfiguration) {
+func (m *Organization) GetCertificateBasedAuthConfiguration()([]CertificateBasedAuthConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -105,7 +109,7 @@ func (m *Organization) GetCertificateBasedAuthConfiguration()([]CertificateBased
     }
 }
 // GetCertificateConnectorSetting gets the certificateConnectorSetting property value. Certificate connector setting.
-func (m *Organization) GetCertificateConnectorSetting()(*CertificateConnectorSetting) {
+func (m *Organization) GetCertificateConnectorSetting()(CertificateConnectorSettingable) {
     if m == nil {
         return nil
     } else {
@@ -145,7 +149,7 @@ func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // GetDirectorySizeQuota gets the directorySizeQuota property value. The directory size quota information of an organization.
-func (m *Organization) GetDirectorySizeQuota()(*DirectorySizeQuota) {
+func (m *Organization) GetDirectorySizeQuota()(DirectorySizeQuotaable) {
     if m == nil {
         return nil
     } else {
@@ -161,165 +165,37 @@ func (m *Organization) GetDisplayName()(*string) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the organization. Read-only. Nullable.
-func (m *Organization) GetExtensions()([]Extension) {
+func (m *Organization) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
     }
 }
-// GetIsMultipleDataLocationsForServicesEnabled gets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
-func (m *Organization) GetIsMultipleDataLocationsForServicesEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMultipleDataLocationsForServicesEnabled
-    }
-}
-// GetMarketingNotificationEmails gets the marketingNotificationEmails property value. Not nullable.
-func (m *Organization) GetMarketingNotificationEmails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.marketingNotificationEmails
-    }
-}
-// GetMobileDeviceManagementAuthority gets the mobileDeviceManagementAuthority property value. Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
-func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileDeviceManagementAuthority
-    }
-}
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesLastSyncDateTime
-    }
-}
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
-func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSyncEnabled
-    }
-}
-// GetPostalCode gets the postalCode property value. Postal code of the address for the organization.
-func (m *Organization) GetPostalCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalCode
-    }
-}
-// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
-func (m *Organization) GetPreferredLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredLanguage
-    }
-}
-// GetPrivacyProfile gets the privacyProfile property value. The privacy profile of an organization.
-func (m *Organization) GetPrivacyProfile()(*PrivacyProfile) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacyProfile
-    }
-}
-// GetProvisionedPlans gets the provisionedPlans property value. Not nullable.
-func (m *Organization) GetProvisionedPlans()([]ProvisionedPlan) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisionedPlans
-    }
-}
-// GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. 
-func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityComplianceNotificationMails
-    }
-}
-// GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. 
-func (m *Organization) GetSecurityComplianceNotificationPhones()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityComplianceNotificationPhones
-    }
-}
-// GetSettings gets the settings property value. Retrieve the properties and relationships of organizationSettings object. Nullable.
-func (m *Organization) GetSettings()(*OrganizationSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetState gets the state property value. State name of the address for the organization.
-func (m *Organization) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetStreet gets the street property value. Street name of the address for organization.
-func (m *Organization) GetStreet()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.street
-    }
-}
-// GetTechnicalNotificationMails gets the technicalNotificationMails property value. Not nullable.
-func (m *Organization) GetTechnicalNotificationMails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.technicalNotificationMails
-    }
-}
-// GetVerifiedDomains gets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
-func (m *Organization) GetVerifiedDomains()([]VerifiedDomain) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedDomains
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["assignedPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignedPlan() })
+        val, err := n.GetCollectionOfObjectValues(CreateAssignedPlanFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AssignedPlan, len(val))
+            res := make([]AssignedPlanable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignedPlan))
+                res[i] = v.(AssignedPlanable)
             }
             m.SetAssignedPlans(res)
         }
         return nil
     }
     res["branding"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOrganizationalBranding() })
+        val, err := n.GetObjectValue(CreateOrganizationalBrandingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBranding(val.(*OrganizationalBranding))
+            m.SetBranding(val.(OrganizationalBrandingable))
         }
         return nil
     }
@@ -338,26 +214,26 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["certificateBasedAuthConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertificateBasedAuthConfiguration() })
+        val, err := n.GetCollectionOfObjectValues(CreateCertificateBasedAuthConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CertificateBasedAuthConfiguration, len(val))
+            res := make([]CertificateBasedAuthConfigurationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CertificateBasedAuthConfiguration))
+                res[i] = v.(CertificateBasedAuthConfigurationable)
             }
             m.SetCertificateBasedAuthConfiguration(res)
         }
         return nil
     }
     res["certificateConnectorSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertificateConnectorSetting() })
+        val, err := n.GetObjectValue(CreateCertificateConnectorSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCertificateConnectorSetting(val.(*CertificateConnectorSetting))
+            m.SetCertificateConnectorSetting(val.(CertificateConnectorSettingable))
         }
         return nil
     }
@@ -402,12 +278,12 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["directorySizeQuota"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectorySizeQuota() })
+        val, err := n.GetObjectValue(CreateDirectorySizeQuotaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectorySizeQuota(val.(*DirectorySizeQuota))
+            m.SetDirectorySizeQuota(val.(DirectorySizeQuotaable))
         }
         return nil
     }
@@ -422,14 +298,14 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -510,24 +386,24 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["privacyProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivacyProfile() })
+        val, err := n.GetObjectValue(CreatePrivacyProfileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPrivacyProfile(val.(*PrivacyProfile))
+            m.SetPrivacyProfile(val.(PrivacyProfileable))
         }
         return nil
     }
     res["provisionedPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisionedPlan() })
+        val, err := n.GetCollectionOfObjectValues(CreateProvisionedPlanFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ProvisionedPlan, len(val))
+            res := make([]ProvisionedPlanable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ProvisionedPlan))
+                res[i] = v.(ProvisionedPlanable)
             }
             m.SetProvisionedPlans(res)
         }
@@ -562,12 +438,12 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOrganizationSettings() })
+        val, err := n.GetObjectValue(CreateOrganizationSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*OrganizationSettings))
+            m.SetSettings(val.(OrganizationSettingsable))
         }
         return nil
     }
@@ -606,20 +482,148 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["verifiedDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVerifiedDomain() })
+        val, err := n.GetCollectionOfObjectValues(CreateVerifiedDomainFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]VerifiedDomain, len(val))
+            res := make([]VerifiedDomainable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*VerifiedDomain))
+                res[i] = v.(VerifiedDomainable)
             }
             m.SetVerifiedDomains(res)
         }
         return nil
     }
     return res
+}
+// GetIsMultipleDataLocationsForServicesEnabled gets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+func (m *Organization) GetIsMultipleDataLocationsForServicesEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMultipleDataLocationsForServicesEnabled
+    }
+}
+// GetMarketingNotificationEmails gets the marketingNotificationEmails property value. Not nullable.
+func (m *Organization) GetMarketingNotificationEmails()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.marketingNotificationEmails
+    }
+}
+// GetMobileDeviceManagementAuthority gets the mobileDeviceManagementAuthority property value. Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
+func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileDeviceManagementAuthority
+    }
+}
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesLastSyncDateTime
+    }
+}
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesSyncEnabled
+    }
+}
+// GetPostalCode gets the postalCode property value. Postal code of the address for the organization.
+func (m *Organization) GetPostalCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postalCode
+    }
+}
+// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
+func (m *Organization) GetPreferredLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preferredLanguage
+    }
+}
+// GetPrivacyProfile gets the privacyProfile property value. The privacy profile of an organization.
+func (m *Organization) GetPrivacyProfile()(PrivacyProfileable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.privacyProfile
+    }
+}
+// GetProvisionedPlans gets the provisionedPlans property value. Not nullable.
+func (m *Organization) GetProvisionedPlans()([]ProvisionedPlanable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisionedPlans
+    }
+}
+// GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. 
+func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityComplianceNotificationMails
+    }
+}
+// GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. 
+func (m *Organization) GetSecurityComplianceNotificationPhones()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityComplianceNotificationPhones
+    }
+}
+// GetSettings gets the settings property value. Retrieve the properties and relationships of organizationSettings object. Nullable.
+func (m *Organization) GetSettings()(OrganizationSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetState gets the state property value. State name of the address for the organization.
+func (m *Organization) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetStreet gets the street property value. Street name of the address for organization.
+func (m *Organization) GetStreet()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.street
+    }
+}
+// GetTechnicalNotificationMails gets the technicalNotificationMails property value. Not nullable.
+func (m *Organization) GetTechnicalNotificationMails()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.technicalNotificationMails
+    }
+}
+// GetVerifiedDomains gets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
+func (m *Organization) GetVerifiedDomains()([]VerifiedDomainable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.verifiedDomains
+    }
 }
 func (m *Organization) IsNil()(bool) {
     return m == nil
@@ -633,8 +637,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetAssignedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedPlans()))
         for i, v := range m.GetAssignedPlans() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignedPlans", cast)
         if err != nil {
@@ -656,8 +659,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetCertificateBasedAuthConfiguration() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCertificateBasedAuthConfiguration()))
         for i, v := range m.GetCertificateBasedAuthConfiguration() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("certificateBasedAuthConfiguration", cast)
         if err != nil {
@@ -709,8 +711,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -769,8 +770,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetProvisionedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisionedPlans()))
         for i, v := range m.GetProvisionedPlans() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("provisionedPlans", cast)
         if err != nil {
@@ -816,8 +816,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetVerifiedDomains() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVerifiedDomains()))
         for i, v := range m.GetVerifiedDomains() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("verifiedDomains", cast)
         if err != nil {
@@ -827,13 +826,13 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetAssignedPlans sets the assignedPlans property value. The collection of service plans associated with the tenant. Not nullable.
-func (m *Organization) SetAssignedPlans(value []AssignedPlan)() {
+func (m *Organization) SetAssignedPlans(value []AssignedPlanable)() {
     if m != nil {
         m.assignedPlans = value
     }
 }
 // SetBranding sets the branding property value. 
-func (m *Organization) SetBranding(value *OrganizationalBranding)() {
+func (m *Organization) SetBranding(value OrganizationalBrandingable)() {
     if m != nil {
         m.branding = value
     }
@@ -845,13 +844,13 @@ func (m *Organization) SetBusinessPhones(value []string)() {
     }
 }
 // SetCertificateBasedAuthConfiguration sets the certificateBasedAuthConfiguration property value. Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *Organization) SetCertificateBasedAuthConfiguration(value []CertificateBasedAuthConfiguration)() {
+func (m *Organization) SetCertificateBasedAuthConfiguration(value []CertificateBasedAuthConfigurationable)() {
     if m != nil {
         m.certificateBasedAuthConfiguration = value
     }
 }
 // SetCertificateConnectorSetting sets the certificateConnectorSetting property value. Certificate connector setting.
-func (m *Organization) SetCertificateConnectorSetting(value *CertificateConnectorSetting)() {
+func (m *Organization) SetCertificateConnectorSetting(value CertificateConnectorSettingable)() {
     if m != nil {
         m.certificateConnectorSetting = value
     }
@@ -881,7 +880,7 @@ func (m *Organization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97
     }
 }
 // SetDirectorySizeQuota sets the directorySizeQuota property value. The directory size quota information of an organization.
-func (m *Organization) SetDirectorySizeQuota(value *DirectorySizeQuota)() {
+func (m *Organization) SetDirectorySizeQuota(value DirectorySizeQuotaable)() {
     if m != nil {
         m.directorySizeQuota = value
     }
@@ -893,7 +892,7 @@ func (m *Organization) SetDisplayName(value *string)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the organization. Read-only. Nullable.
-func (m *Organization) SetExtensions(value []Extension)() {
+func (m *Organization) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -941,13 +940,13 @@ func (m *Organization) SetPreferredLanguage(value *string)() {
     }
 }
 // SetPrivacyProfile sets the privacyProfile property value. The privacy profile of an organization.
-func (m *Organization) SetPrivacyProfile(value *PrivacyProfile)() {
+func (m *Organization) SetPrivacyProfile(value PrivacyProfileable)() {
     if m != nil {
         m.privacyProfile = value
     }
 }
 // SetProvisionedPlans sets the provisionedPlans property value. Not nullable.
-func (m *Organization) SetProvisionedPlans(value []ProvisionedPlan)() {
+func (m *Organization) SetProvisionedPlans(value []ProvisionedPlanable)() {
     if m != nil {
         m.provisionedPlans = value
     }
@@ -965,7 +964,7 @@ func (m *Organization) SetSecurityComplianceNotificationPhones(value []string)()
     }
 }
 // SetSettings sets the settings property value. Retrieve the properties and relationships of organizationSettings object. Nullable.
-func (m *Organization) SetSettings(value *OrganizationSettings)() {
+func (m *Organization) SetSettings(value OrganizationSettingsable)() {
     if m != nil {
         m.settings = value
     }
@@ -989,7 +988,7 @@ func (m *Organization) SetTechnicalNotificationMails(value []string)() {
     }
 }
 // SetVerifiedDomains sets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
-func (m *Organization) SetVerifiedDomains(value []VerifiedDomain)() {
+func (m *Organization) SetVerifiedDomains(value []VerifiedDomainable)() {
     if m != nil {
         m.verifiedDomains = value
     }

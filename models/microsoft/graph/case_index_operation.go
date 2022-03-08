@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CaseIndexOperation 
+// CaseIndexOperation provides operations to manage the compliance singleton.
 type CaseIndexOperation struct {
     CaseOperation
 }
@@ -14,6 +14,10 @@ func NewCaseIndexOperation()(*CaseIndexOperation) {
         CaseOperation: *NewCaseOperation(),
     }
     return m
+}
+// CreateCaseIndexOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCaseIndexOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCaseIndexOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CaseIndexOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {

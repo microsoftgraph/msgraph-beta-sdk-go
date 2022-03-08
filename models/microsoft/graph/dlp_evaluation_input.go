@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DlpEvaluationInput 
+// DlpEvaluationInput provides operations to call the evaluate method.
 type DlpEvaluationInput struct {
     // 
     accessScope *AccessScope;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    currentLabel *CurrentLabel;
+    currentLabel CurrentLabelable;
     // 
-    discoveredSensitiveTypes []DiscoveredSensitiveType;
+    discoveredSensitiveTypes []DiscoveredSensitiveTypeable;
 }
 // NewDlpEvaluationInput instantiates a new dlpEvaluationInput and sets the default values.
 func NewDlpEvaluationInput()(*DlpEvaluationInput) {
@@ -21,6 +21,10 @@ func NewDlpEvaluationInput()(*DlpEvaluationInput) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDlpEvaluationInputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDlpEvaluationInputFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDlpEvaluationInput(), nil
 }
 // GetAccessScope gets the accessScope property value. 
 func (m *DlpEvaluationInput) GetAccessScope()(*AccessScope) {
@@ -39,7 +43,7 @@ func (m *DlpEvaluationInput) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCurrentLabel gets the currentLabel property value. 
-func (m *DlpEvaluationInput) GetCurrentLabel()(*CurrentLabel) {
+func (m *DlpEvaluationInput) GetCurrentLabel()(CurrentLabelable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *DlpEvaluationInput) GetCurrentLabel()(*CurrentLabel) {
     }
 }
 // GetDiscoveredSensitiveTypes gets the discoveredSensitiveTypes property value. 
-func (m *DlpEvaluationInput) GetDiscoveredSensitiveTypes()([]DiscoveredSensitiveType) {
+func (m *DlpEvaluationInput) GetDiscoveredSensitiveTypes()([]DiscoveredSensitiveTypeable) {
     if m == nil {
         return nil
     } else {
@@ -68,24 +72,24 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["currentLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCurrentLabel() })
+        val, err := n.GetObjectValue(CreateCurrentLabelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCurrentLabel(val.(*CurrentLabel))
+            m.SetCurrentLabel(val.(CurrentLabelable))
         }
         return nil
     }
     res["discoveredSensitiveTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDiscoveredSensitiveType() })
+        val, err := n.GetCollectionOfObjectValues(CreateDiscoveredSensitiveTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DiscoveredSensitiveType, len(val))
+            res := make([]DiscoveredSensitiveTypeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DiscoveredSensitiveType))
+                res[i] = v.(DiscoveredSensitiveTypeable)
             }
             m.SetDiscoveredSensitiveTypes(res)
         }
@@ -114,8 +118,7 @@ func (m *DlpEvaluationInput) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetDiscoveredSensitiveTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDiscoveredSensitiveTypes()))
         for i, v := range m.GetDiscoveredSensitiveTypes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("discoveredSensitiveTypes", cast)
         if err != nil {
@@ -143,13 +146,13 @@ func (m *DlpEvaluationInput) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetCurrentLabel sets the currentLabel property value. 
-func (m *DlpEvaluationInput) SetCurrentLabel(value *CurrentLabel)() {
+func (m *DlpEvaluationInput) SetCurrentLabel(value CurrentLabelable)() {
     if m != nil {
         m.currentLabel = value
     }
 }
 // SetDiscoveredSensitiveTypes sets the discoveredSensitiveTypes property value. 
-func (m *DlpEvaluationInput) SetDiscoveredSensitiveTypes(value []DiscoveredSensitiveType)() {
+func (m *DlpEvaluationInput) SetDiscoveredSensitiveTypes(value []DiscoveredSensitiveTypeable)() {
     if m != nil {
         m.discoveredSensitiveTypes = value
     }

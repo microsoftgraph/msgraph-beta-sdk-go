@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerPlanContainer 
+// PlannerPlanContainer provides operations to manage the compliance singleton.
 type PlannerPlanContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewPlannerPlanContainer()(*PlannerPlanContainer) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePlannerPlanContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlannerPlanContainerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlannerPlanContainer(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *PlannerPlanContainer) GetContainerId()(*string) {
         return nil
     } else {
         return m.containerId
-    }
-}
-// GetType gets the type property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
-func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUrl gets the url property value. The full canonical URL of the container.
-func (m *PlannerPlanContainer) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
+func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUrl gets the url property value. The full canonical URL of the container.
+func (m *PlannerPlanContainer) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
 }
 func (m *PlannerPlanContainer) IsNil()(bool) {
     return m == nil

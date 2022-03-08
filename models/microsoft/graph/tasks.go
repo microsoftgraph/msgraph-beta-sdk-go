@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Tasks 
+// Tasks provides operations to manage the compliance singleton.
 type Tasks struct {
     Entity
     // All tasks in the users mailbox.
-    alltasks []BaseTask;
+    alltasks []BaseTaskable;
     // The task lists in the users mailbox.
-    lists []BaseTaskList;
+    lists []BaseTaskListable;
 }
 // NewTasks instantiates a new tasks and sets the default values.
 func NewTasks()(*Tasks) {
@@ -19,54 +19,58 @@ func NewTasks()(*Tasks) {
     }
     return m
 }
+// CreateTasksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTasksFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTasks(), nil
+}
 // GetAlltasks gets the alltasks property value. All tasks in the users mailbox.
-func (m *Tasks) GetAlltasks()([]BaseTask) {
+func (m *Tasks) GetAlltasks()([]BaseTaskable) {
     if m == nil {
         return nil
     } else {
         return m.alltasks
     }
 }
-// GetLists gets the lists property value. The task lists in the users mailbox.
-func (m *Tasks) GetLists()([]BaseTaskList) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lists
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Tasks) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alltasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBaseTask() })
+        val, err := n.GetCollectionOfObjectValues(CreateBaseTaskFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BaseTask, len(val))
+            res := make([]BaseTaskable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BaseTask))
+                res[i] = v.(BaseTaskable)
             }
             m.SetAlltasks(res)
         }
         return nil
     }
     res["lists"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBaseTaskList() })
+        val, err := n.GetCollectionOfObjectValues(CreateBaseTaskListFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BaseTaskList, len(val))
+            res := make([]BaseTaskListable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BaseTaskList))
+                res[i] = v.(BaseTaskListable)
             }
             m.SetLists(res)
         }
         return nil
     }
     return res
+}
+// GetLists gets the lists property value. The task lists in the users mailbox.
+func (m *Tasks) GetLists()([]BaseTaskListable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lists
+    }
 }
 func (m *Tasks) IsNil()(bool) {
     return m == nil
@@ -80,8 +84,7 @@ func (m *Tasks) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetAlltasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlltasks()))
         for i, v := range m.GetAlltasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("alltasks", cast)
         if err != nil {
@@ -91,8 +94,7 @@ func (m *Tasks) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetLists() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLists()))
         for i, v := range m.GetLists() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("lists", cast)
         if err != nil {
@@ -102,13 +104,13 @@ func (m *Tasks) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     return nil
 }
 // SetAlltasks sets the alltasks property value. All tasks in the users mailbox.
-func (m *Tasks) SetAlltasks(value []BaseTask)() {
+func (m *Tasks) SetAlltasks(value []BaseTaskable)() {
     if m != nil {
         m.alltasks = value
     }
 }
 // SetLists sets the lists property value. The task lists in the users mailbox.
-func (m *Tasks) SetLists(value []BaseTaskList)() {
+func (m *Tasks) SetLists(value []BaseTaskListable)() {
     if m != nil {
         m.lists = value
     }

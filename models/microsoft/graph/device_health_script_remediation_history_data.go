@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthScriptRemediationHistoryData 
+// DeviceHealthScriptRemediationHistoryData provides operations to call the getRemediationHistory method.
 type DeviceHealthScriptRemediationHistoryData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewDeviceHealthScriptRemediationHistoryData()(*DeviceHealthScriptRemediatio
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceHealthScriptRemediationHistoryDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceHealthScriptRemediationHistoryDataFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceHealthScriptRemediationHistoryData(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationHistoryData) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetDate()(*i04eb5309aeaafadd2
         return nil
     } else {
         return m.date
-    }
-}
-// GetNoIssueDeviceCount gets the noIssueDeviceCount property value. The number of devices that were found to have no issue by the device health script.
-func (m *DeviceHealthScriptRemediationHistoryData) GetNoIssueDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noIssueDeviceCount
-    }
-}
-// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by the device health script.
-func (m *DeviceHealthScriptRemediationHistoryData) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetNoIssueDeviceCount gets the noIssueDeviceCount property value. The number of devices that were found to have no issue by the device health script.
+func (m *DeviceHealthScriptRemediationHistoryData) GetNoIssueDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.noIssueDeviceCount
+    }
+}
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by the device health script.
+func (m *DeviceHealthScriptRemediationHistoryData) GetRemediatedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedDeviceCount
+    }
 }
 func (m *DeviceHealthScriptRemediationHistoryData) IsNil()(bool) {
     return m == nil

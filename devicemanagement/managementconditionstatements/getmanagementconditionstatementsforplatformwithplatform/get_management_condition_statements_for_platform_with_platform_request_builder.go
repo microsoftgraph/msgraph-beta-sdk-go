@@ -2,10 +2,9 @@ package getmanagementconditionstatementsforplatformwithplatform
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
+// GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder provides operations to call the getManagementConditionStatementsForPlatform method.
 type GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +26,7 @@ type GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOpt
 func NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, platform *string)(*GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) {
     m := &GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})";
+    m.urlTemplate = "{+baseurl}/deviceManagement/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform='{platform}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,7 +34,7 @@ func NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInt
     if platform != nil {
         urlTplParams["platform"] = *platform
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) 
     return requestInfo, nil
 }
 // Get invoke function getManagementConditionStatementsForPlatform
-func (m *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) Get(options *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOptions)([]GetManagementConditionStatementsForPlatformWithPlatform, error) {
+func (m *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) Get(options *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOptions)(GetManagementConditionStatementsForPlatformWithPlatformResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetManagementConditionStatementsForPlatformWithPlatform() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagementConditionStatementsForPlatformWithPlatformResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetManagementConditionStatementsForPlatformWithPlatform, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetManagementConditionStatementsForPlatformWithPlatform))
-    }
-    return val, nil
+    return res.(GetManagementConditionStatementsForPlatformWithPlatformResponseable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppSupportedDeviceType 
+// MobileAppSupportedDeviceType provides operations to manage the compliance singleton.
 type MobileAppSupportedDeviceType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppSupportedDeviceType(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppSupportedDeviceType) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMaximumOperatingSystemVersion gets the maximumOperatingSystemVersion property value. Maximum OS version
-func (m *MobileAppSupportedDeviceType) GetMaximumOperatingSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumOperatingSystemVersion
-    }
-}
-// GetMinimumOperatingSystemVersion gets the minimumOperatingSystemVersion property value. Minimum OS version
-func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumOperatingSystemVersion
-    }
-}
-// GetType gets the type property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
-func (m *MobileAppSupportedDeviceType) GetType()(*DeviceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetMaximumOperatingSystemVersion gets the maximumOperatingSystemVersion property value. Maximum OS version
+func (m *MobileAppSupportedDeviceType) GetMaximumOperatingSystemVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumOperatingSystemVersion
+    }
+}
+// GetMinimumOperatingSystemVersion gets the minimumOperatingSystemVersion property value. Minimum OS version
+func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumOperatingSystemVersion
+    }
+}
+// GetType gets the type property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+func (m *MobileAppSupportedDeviceType) GetType()(*DeviceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *MobileAppSupportedDeviceType) IsNil()(bool) {
     return m == nil

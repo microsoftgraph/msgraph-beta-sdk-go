@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyConfigurationPartner 
+// CrossTenantAccessPolicyConfigurationPartner provides operations to manage the policyRoot singleton.
 type CrossTenantAccessPolicyConfigurationPartner struct {
     CrossTenantAccessPolicyConfigurationBase
     // Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
@@ -19,21 +19,9 @@ func NewCrossTenantAccessPolicyConfigurationPartner()(*CrossTenantAccessPolicyCo
     }
     return m
 }
-// GetIsServiceProvider gets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
-func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isServiceProvider
-    }
-}
-// GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only.
-func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+// CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCrossTenantAccessPolicyConfigurationPartner(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetIsServiceProvider gets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isServiceProvider
+    }
+}
+// GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only.
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *CrossTenantAccessPolicyConfigurationPartner) IsNil()(bool) {
     return m == nil

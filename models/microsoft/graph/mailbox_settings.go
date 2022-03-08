@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MailboxSettings 
+// MailboxSettings provides operations to manage the compliance singleton.
 type MailboxSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Folder ID of an archive folder for the user.
     archiveFolder *string;
     // Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-    automaticRepliesSetting *AutomaticRepliesSetting;
+    automaticRepliesSetting AutomaticRepliesSettingable;
     // The date format for the user's mailbox.
     dateFormat *string;
     // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
     delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions;
     // The locale information for the user, including the preferred language and country/region.
-    language *LocaleInfo;
+    language LocaleInfoable;
     // The time format for the user's mailbox.
     timeFormat *string;
     // The default time zone for the user's mailbox.
@@ -27,7 +27,7 @@ type MailboxSettings struct {
     // 
     userPurposeV2 *MailboxRecipientType;
     // The days of the week and hours in a specific time zone that the user works.
-    workingHours *WorkingHours;
+    workingHours WorkingHoursable;
 }
 // NewMailboxSettings instantiates a new mailboxSettings and sets the default values.
 func NewMailboxSettings()(*MailboxSettings) {
@@ -35,6 +35,10 @@ func NewMailboxSettings()(*MailboxSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMailboxSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMailboxSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMailboxSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MailboxSettings) GetAdditionalData()(map[string]interface{}) {
@@ -53,7 +57,7 @@ func (m *MailboxSettings) GetArchiveFolder()(*string) {
     }
 }
 // GetAutomaticRepliesSetting gets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-func (m *MailboxSettings) GetAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
+func (m *MailboxSettings) GetAutomaticRepliesSetting()(AutomaticRepliesSettingable) {
     if m == nil {
         return nil
     } else {
@@ -76,54 +80,6 @@ func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMe
         return m.delegateMeetingMessageDeliveryOptions
     }
 }
-// GetLanguage gets the language property value. The locale information for the user, including the preferred language and country/region.
-func (m *MailboxSettings) GetLanguage()(*LocaleInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
-}
-// GetTimeFormat gets the timeFormat property value. The time format for the user's mailbox.
-func (m *MailboxSettings) GetTimeFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeFormat
-    }
-}
-// GetTimeZone gets the timeZone property value. The default time zone for the user's mailbox.
-func (m *MailboxSettings) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
-}
-// GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
-func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPurpose
-    }
-}
-// GetUserPurposeV2 gets the userPurposeV2 property value. 
-func (m *MailboxSettings) GetUserPurposeV2()(*MailboxRecipientType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPurposeV2
-    }
-}
-// GetWorkingHours gets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
-func (m *MailboxSettings) GetWorkingHours()(*WorkingHours) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workingHours
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -138,12 +94,12 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["automaticRepliesSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAutomaticRepliesSetting() })
+        val, err := n.GetObjectValue(CreateAutomaticRepliesSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAutomaticRepliesSetting(val.(*AutomaticRepliesSetting))
+            m.SetAutomaticRepliesSetting(val.(AutomaticRepliesSettingable))
         }
         return nil
     }
@@ -168,12 +124,12 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["language"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocaleInfo() })
+        val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLanguage(val.(*LocaleInfo))
+            m.SetLanguage(val.(LocaleInfoable))
         }
         return nil
     }
@@ -218,16 +174,64 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["workingHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkingHours() })
+        val, err := n.GetObjectValue(CreateWorkingHoursFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWorkingHours(val.(*WorkingHours))
+            m.SetWorkingHours(val.(WorkingHoursable))
         }
         return nil
     }
     return res
+}
+// GetLanguage gets the language property value. The locale information for the user, including the preferred language and country/region.
+func (m *MailboxSettings) GetLanguage()(LocaleInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.language
+    }
+}
+// GetTimeFormat gets the timeFormat property value. The time format for the user's mailbox.
+func (m *MailboxSettings) GetTimeFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeFormat
+    }
+}
+// GetTimeZone gets the timeZone property value. The default time zone for the user's mailbox.
+func (m *MailboxSettings) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
+}
+// GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
+func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPurpose
+    }
+}
+// GetUserPurposeV2 gets the userPurposeV2 property value. 
+func (m *MailboxSettings) GetUserPurposeV2()(*MailboxRecipientType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPurposeV2
+    }
+}
+// GetWorkingHours gets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
+func (m *MailboxSettings) GetWorkingHours()(WorkingHoursable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workingHours
+    }
 }
 func (m *MailboxSettings) IsNil()(bool) {
     return m == nil
@@ -318,7 +322,7 @@ func (m *MailboxSettings) SetArchiveFolder(value *string)() {
     }
 }
 // SetAutomaticRepliesSetting sets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-func (m *MailboxSettings) SetAutomaticRepliesSetting(value *AutomaticRepliesSetting)() {
+func (m *MailboxSettings) SetAutomaticRepliesSetting(value AutomaticRepliesSettingable)() {
     if m != nil {
         m.automaticRepliesSetting = value
     }
@@ -336,7 +340,7 @@ func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *Delega
     }
 }
 // SetLanguage sets the language property value. The locale information for the user, including the preferred language and country/region.
-func (m *MailboxSettings) SetLanguage(value *LocaleInfo)() {
+func (m *MailboxSettings) SetLanguage(value LocaleInfoable)() {
     if m != nil {
         m.language = value
     }
@@ -366,7 +370,7 @@ func (m *MailboxSettings) SetUserPurposeV2(value *MailboxRecipientType)() {
     }
 }
 // SetWorkingHours sets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
-func (m *MailboxSettings) SetWorkingHours(value *WorkingHours)() {
+func (m *MailboxSettings) SetWorkingHours(value WorkingHoursable)() {
     if m != nil {
         m.workingHours = value
     }

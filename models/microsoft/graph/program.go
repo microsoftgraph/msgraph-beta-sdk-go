@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Program 
+// Program provides operations to manage the collection of programControl entities.
 type Program struct {
     Entity
     // Controls associated with the program.
-    controls []ProgramControl;
+    controls []ProgramControlable;
     // The description of the program.
     description *string;
     // The name of the program.  Required on create.
@@ -21,8 +21,12 @@ func NewProgram()(*Program) {
     }
     return m
 }
+// CreateProgramFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProgramFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProgram(), nil
+}
 // GetControls gets the controls property value. Controls associated with the program.
-func (m *Program) GetControls()([]ProgramControl) {
+func (m *Program) GetControls()([]ProgramControlable) {
     if m == nil {
         return nil
     } else {
@@ -49,14 +53,14 @@ func (m *Program) GetDisplayName()(*string) {
 func (m *Program) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["controls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProgramControl() })
+        val, err := n.GetCollectionOfObjectValues(CreateProgramControlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ProgramControl, len(val))
+            res := make([]ProgramControlable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ProgramControl))
+                res[i] = v.(ProgramControlable)
             }
             m.SetControls(res)
         }
@@ -96,8 +100,7 @@ func (m *Program) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetControls() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetControls()))
         for i, v := range m.GetControls() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("controls", cast)
         if err != nil {
@@ -119,7 +122,7 @@ func (m *Program) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetControls sets the controls property value. Controls associated with the program.
-func (m *Program) SetControls(value []ProgramControl)() {
+func (m *Program) SetControls(value []ProgramControlable)() {
     if m != nil {
         m.controls = value
     }

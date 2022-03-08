@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomerPayment 
+// CustomerPayment provides operations to manage the financials singleton.
 type CustomerPayment struct {
     Entity
     // 
@@ -19,7 +19,7 @@ type CustomerPayment struct {
     // 
     contactId *string;
     // 
-    customer *Customer;
+    customer Customerable;
     // 
     customerId *string;
     // 
@@ -45,6 +45,10 @@ func NewCustomerPayment()(*CustomerPayment) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCustomerPaymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomerPaymentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomerPayment(), nil
 }
 // GetAmount gets the amount property value. 
 func (m *CustomerPayment) GetAmount()(*float64) {
@@ -87,7 +91,7 @@ func (m *CustomerPayment) GetContactId()(*string) {
     }
 }
 // GetCustomer gets the customer property value. 
-func (m *CustomerPayment) GetCustomer()(*Customer) {
+func (m *CustomerPayment) GetCustomer()(Customerable) {
     if m == nil {
         return nil
     } else {
@@ -132,38 +136,6 @@ func (m *CustomerPayment) GetExternalDocumentNumber()(*string) {
         return nil
     } else {
         return m.externalDocumentNumber
-    }
-}
-// GetJournalDisplayName gets the journalDisplayName property value. 
-func (m *CustomerPayment) GetJournalDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journalDisplayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *CustomerPayment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLineNumber gets the lineNumber property value. 
-func (m *CustomerPayment) GetLineNumber()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lineNumber
-    }
-}
-// GetPostingDate gets the postingDate property value. 
-func (m *CustomerPayment) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postingDate
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,12 +192,12 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["customer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomer() })
+        val, err := n.GetObjectValue(CreateCustomerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCustomer(val.(*Customer))
+            m.SetCustomer(val.(Customerable))
         }
         return nil
     }
@@ -320,6 +292,38 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetJournalDisplayName gets the journalDisplayName property value. 
+func (m *CustomerPayment) GetJournalDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.journalDisplayName
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *CustomerPayment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLineNumber gets the lineNumber property value. 
+func (m *CustomerPayment) GetLineNumber()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lineNumber
+    }
+}
+// GetPostingDate gets the postingDate property value. 
+func (m *CustomerPayment) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postingDate
+    }
 }
 func (m *CustomerPayment) IsNil()(bool) {
     return m == nil
@@ -453,7 +457,7 @@ func (m *CustomerPayment) SetContactId(value *string)() {
     }
 }
 // SetCustomer sets the customer property value. 
-func (m *CustomerPayment) SetCustomer(value *Customer)() {
+func (m *CustomerPayment) SetCustomer(value Customerable)() {
     if m != nil {
         m.customer = value
     }

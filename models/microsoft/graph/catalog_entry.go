@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CatalogEntry 
+// CatalogEntry provides operations to manage the admin singleton.
 type CatalogEntry struct {
     Entity
     // The date on which the content is no longer available to deploy using the service. Read-only.
@@ -22,6 +22,10 @@ func NewCatalogEntry()(*CatalogEntry) {
     }
     return m
 }
+// CreateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCatalogEntryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCatalogEntry(), nil
+}
 // GetDeployableUntilDateTime gets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. Read-only.
 func (m *CatalogEntry) GetDeployableUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -36,14 +40,6 @@ func (m *CatalogEntry) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetReleaseDateTime gets the releaseDateTime property value. The release date for the content. Read-only.
-func (m *CatalogEntry) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +76,14 @@ func (m *CatalogEntry) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetReleaseDateTime gets the releaseDateTime property value. The release date for the content. Read-only.
+func (m *CatalogEntry) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.releaseDateTime
+    }
 }
 func (m *CatalogEntry) IsNil()(bool) {
     return m == nil

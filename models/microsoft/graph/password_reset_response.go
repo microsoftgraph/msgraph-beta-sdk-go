@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PasswordResetResponse 
+// PasswordResetResponse provides operations to call the resetPassword method.
 type PasswordResetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewPasswordResetResponse()(*PasswordResetResponse) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePasswordResetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePasswordResetResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPasswordResetResponse(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordResetResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetNewPassword gets the newPassword property value. 
-func (m *PasswordResetResponse) GetNewPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newPassword
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *PasswordResetResponse) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetNewPassword gets the newPassword property value. 
+func (m *PasswordResetResponse) GetNewPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newPassword
+    }
 }
 func (m *PasswordResetResponse) IsNil()(bool) {
     return m == nil

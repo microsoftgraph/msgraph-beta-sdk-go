@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchAnswer 
+// SearchAnswer provides operations to manage the searchEntity singleton.
 type SearchAnswer struct {
     Entity
     // Search answer description shown on search results page.
@@ -13,7 +13,7 @@ type SearchAnswer struct {
     // Search answer name displayed in search results.
     displayName *string;
     // Details of the user that created or last modified the search answer. Read-only.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // Timestamp of when the search answer is created or edited. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Search answer URL link. When users click this search answer in search results, they will go to this URL.
@@ -25,6 +25,10 @@ func NewSearchAnswer()(*SearchAnswer) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSearchAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchAnswerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchAnswer(), nil
 }
 // GetDescription gets the description property value. Search answer description shown on search results page.
 func (m *SearchAnswer) GetDescription()(*string) {
@@ -40,30 +44,6 @@ func (m *SearchAnswer) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
-func (m *SearchAnswer) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
-func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
-func (m *SearchAnswer) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -90,12 +70,12 @@ func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -120,6 +100,30 @@ func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
+func (m *SearchAnswer) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
+func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+func (m *SearchAnswer) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *SearchAnswer) IsNil()(bool) {
     return m == nil
@@ -175,7 +179,7 @@ func (m *SearchAnswer) SetDisplayName(value *string)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
-func (m *SearchAnswer) SetLastModifiedBy(value *IdentitySet)() {
+func (m *SearchAnswer) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }

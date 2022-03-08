@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConfigurationManagerClientHealthState 
+// ConfigurationManagerClientHealthState provides operations to manage the compliance singleton.
 type ConfigurationManagerClientHealthState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewConfigurationManagerClientHealthState()(*ConfigurationManagerClientHealt
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConfigurationManagerClientHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConfigurationManagerClientHealthStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConfigurationManagerClientHealthState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientHealthState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *ConfigurationManagerClientHealthState) GetErrorCode()(*int32) {
         return nil
     } else {
         return m.errorCode
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. Datetime for last sync with configuration manager management point.
-func (m *ConfigurationManagerClientHealthState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetState gets the state property value. Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
-func (m *ConfigurationManagerClientHealthState) GetState()(*ConfigurationManagerClientState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Datetime for last sync with configuration manager management point.
+func (m *ConfigurationManagerClientHealthState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetState gets the state property value. Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
+func (m *ConfigurationManagerClientHealthState) GetState()(*ConfigurationManagerClientState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *ConfigurationManagerClientHealthState) IsNil()(bool) {
     return m == nil

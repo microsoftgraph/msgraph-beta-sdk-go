@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RestoreRequestBuilder builds and executes requests for operations under \directorySettingTemplates\{directorySettingTemplate-id}\microsoft.graph.restore
+// RestoreRequestBuilder provides operations to call the restore method.
 type RestoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type RestoreRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // RestoreResponse union type wrapper for classes directoryObject
 type RestoreResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type directoryObject
-    directoryObject *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject;
+    directoryObject i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable;
 }
 // NewRestoreResponse instantiates a new restoreResponse and sets the default values.
 func NewRestoreResponse()(*RestoreResponse) {
@@ -37,6 +42,9 @@ func NewRestoreResponse()(*RestoreResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateRestoreResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRestoreResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RestoreResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +55,7 @@ func (m *RestoreResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDirectoryObject gets the directoryObject property value. Union type representation for type directoryObject
-func (m *RestoreResponse) GetDirectoryObject()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject) {
+func (m *RestoreResponse) GetDirectoryObject()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +66,12 @@ func (m *RestoreResponse) GetDirectoryObject()(*i535684e11b5500196ecb4b5c6634e06
 func (m *RestoreResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["directoryObject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDirectoryObject() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectoryObject(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject))
+            m.SetDirectoryObject(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable))
         }
         return nil
     }
@@ -95,7 +103,7 @@ func (m *RestoreResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDirectoryObject sets the directoryObject property value. Union type representation for type directoryObject
-func (m *RestoreResponse) SetDirectoryObject(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject)() {
+func (m *RestoreResponse) SetDirectoryObject(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable)() {
     if m != nil {
         m.directoryObject = value
     }
@@ -109,7 +117,7 @@ func NewRestoreRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *RestoreRequestBuilder) CreatePostRequestInformation(options *RestoreReq
     return requestInfo, nil
 }
 // Post invoke action restore
-func (m *RestoreRequestBuilder) Post(options *RestoreRequestBuilderPostOptions)(*RestoreResponse, error) {
+func (m *RestoreRequestBuilder) Post(options *RestoreRequestBuilderPostOptions)(RestoreResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRestoreResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRestoreResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RestoreResponse), nil
+    return res.(RestoreResponseable), nil
 }

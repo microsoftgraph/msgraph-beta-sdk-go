@@ -2,11 +2,11 @@ package custodiansources
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i016cdc841da321df87a610d6d28946c91e7f54e0d34ef26597a57074b9a7b341 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/custodiansources/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i539132aff03bd07c90f1ae65e7353e42b785dc0839746a24c0947eee05521354 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/custodiansources/count"
 )
 
-// CustodianSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\custodianSources
+// CustodianSourcesRequestBuilder provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 type CustodianSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewCustodianSourcesRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewCustodianSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustodianSourcesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CustodianSourcesRequestBuilder) Count()(*i539132aff03bd07c90f1ae65e7353e42b785dc0839746a24c0947eee05521354.CountRequestBuilder) {
+    return i539132aff03bd07c90f1ae65e7353e42b785dc0839746a24c0947eee05521354.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation custodian sources that are included in the sourceCollection.
 func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation(options *CustodianSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation(options *Cu
     return requestInfo, nil
 }
 // Get custodian sources that are included in the sourceCollection.
-func (m *CustodianSourcesRequestBuilder) Get(options *CustodianSourcesRequestBuilderGetOptions)(*CustodianSourcesResponse, error) {
+func (m *CustodianSourcesRequestBuilder) Get(options *CustodianSourcesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustodianSourcesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDataSourceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CustodianSourcesResponse), nil
-}
-func (m *CustodianSourcesRequestBuilder) Ref()(*i016cdc841da321df87a610d6d28946c91e7f54e0d34ef26597a57074b9a7b341.RefRequestBuilder) {
-    return i016cdc841da321df87a610d6d28946c91e7f54e0d34ef26597a57074b9a7b341.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataSourceCollectionResponseable), nil
 }

@@ -4,22 +4,22 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkSoftwareUpdateHealth 
+// TeamworkSoftwareUpdateHealth provides operations to manage the teamwork singleton.
 type TeamworkSoftwareUpdateHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The software update available for the admin agent.
-    adminAgentSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
+    adminAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
     // The software update available for the company portal.
-    companyPortalSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
+    companyPortalSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
     // The software update available for the firmware.
-    firmwareSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
+    firmwareSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
     // The software update available for the operating system.
-    operatingSystemSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
+    operatingSystemSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
     // The software update available for the partner agent.
-    partnerAgentSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
+    partnerAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
     // The software update available for the Teams client.
-    teamsClientSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
+    teamsClientSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
 }
 // NewTeamworkSoftwareUpdateHealth instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
 func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
@@ -27,6 +27,10 @@ func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkSoftwareUpdateHealth(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]interface{}) {
@@ -37,7 +41,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]interface{
     }
 }
 // GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
-func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
+func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     if m == nil {
         return nil
     } else {
@@ -45,15 +49,80 @@ func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(*Team
     }
 }
 // GetCompanyPortalSoftwareUpdateStatus gets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
-func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
+func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     if m == nil {
         return nil
     } else {
         return m.companyPortalSoftwareUpdateStatus
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["adminAgentSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdminAgentSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
+        }
+        return nil
+    }
+    res["companyPortalSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompanyPortalSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
+        }
+        return nil
+    }
+    res["firmwareSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFirmwareSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
+        }
+        return nil
+    }
+    res["operatingSystemSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOperatingSystemSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
+        }
+        return nil
+    }
+    res["partnerAgentSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPartnerAgentSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
+        }
+        return nil
+    }
+    res["teamsClientSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsClientSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
+        }
+        return nil
+    }
+    return res
+}
 // GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
-func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
+func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +130,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(*Teamwo
     }
 }
 // GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
-func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
+func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +138,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(
     }
 }
 // GetPartnerAgentSoftwareUpdateStatus gets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
-func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
+func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     if m == nil {
         return nil
     } else {
@@ -77,77 +146,12 @@ func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(*Te
     }
 }
 // GetTeamsClientSoftwareUpdateStatus gets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
-func (m *TeamworkSoftwareUpdateHealth) GetTeamsClientSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
+func (m *TeamworkSoftwareUpdateHealth) GetTeamsClientSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     if m == nil {
         return nil
     } else {
         return m.teamsClientSoftwareUpdateStatus
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["adminAgentSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdminAgentSoftwareUpdateStatus(val.(*TeamworkSoftwareUpdateStatus))
-        }
-        return nil
-    }
-    res["companyPortalSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCompanyPortalSoftwareUpdateStatus(val.(*TeamworkSoftwareUpdateStatus))
-        }
-        return nil
-    }
-    res["firmwareSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirmwareSoftwareUpdateStatus(val.(*TeamworkSoftwareUpdateStatus))
-        }
-        return nil
-    }
-    res["operatingSystemSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOperatingSystemSoftwareUpdateStatus(val.(*TeamworkSoftwareUpdateStatus))
-        }
-        return nil
-    }
-    res["partnerAgentSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerAgentSoftwareUpdateStatus(val.(*TeamworkSoftwareUpdateStatus))
-        }
-        return nil
-    }
-    res["teamsClientSoftwareUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTeamsClientSoftwareUpdateStatus(val.(*TeamworkSoftwareUpdateStatus))
-        }
-        return nil
-    }
-    return res
 }
 func (m *TeamworkSoftwareUpdateHealth) IsNil()(bool) {
     return m == nil
@@ -205,37 +209,37 @@ func (m *TeamworkSoftwareUpdateHealth) SetAdditionalData(value map[string]interf
     }
 }
 // SetAdminAgentSoftwareUpdateStatus sets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
-func (m *TeamworkSoftwareUpdateHealth) SetAdminAgentSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
+func (m *TeamworkSoftwareUpdateHealth) SetAdminAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.adminAgentSoftwareUpdateStatus = value
     }
 }
 // SetCompanyPortalSoftwareUpdateStatus sets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
-func (m *TeamworkSoftwareUpdateHealth) SetCompanyPortalSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
+func (m *TeamworkSoftwareUpdateHealth) SetCompanyPortalSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.companyPortalSoftwareUpdateStatus = value
     }
 }
 // SetFirmwareSoftwareUpdateStatus sets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
-func (m *TeamworkSoftwareUpdateHealth) SetFirmwareSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
+func (m *TeamworkSoftwareUpdateHealth) SetFirmwareSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.firmwareSoftwareUpdateStatus = value
     }
 }
 // SetOperatingSystemSoftwareUpdateStatus sets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
-func (m *TeamworkSoftwareUpdateHealth) SetOperatingSystemSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
+func (m *TeamworkSoftwareUpdateHealth) SetOperatingSystemSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.operatingSystemSoftwareUpdateStatus = value
     }
 }
 // SetPartnerAgentSoftwareUpdateStatus sets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
-func (m *TeamworkSoftwareUpdateHealth) SetPartnerAgentSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
+func (m *TeamworkSoftwareUpdateHealth) SetPartnerAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.partnerAgentSoftwareUpdateStatus = value
     }
 }
 // SetTeamsClientSoftwareUpdateStatus sets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
-func (m *TeamworkSoftwareUpdateHealth) SetTeamsClientSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
+func (m *TeamworkSoftwareUpdateHealth) SetTeamsClientSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.teamsClientSoftwareUpdateStatus = value
     }

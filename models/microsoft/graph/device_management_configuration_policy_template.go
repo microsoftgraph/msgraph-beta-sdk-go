@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationPolicyTemplate 
+// DeviceManagementConfigurationPolicyTemplate provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
     // Allow unmanaged setting templates
@@ -24,7 +24,7 @@ type DeviceManagementConfigurationPolicyTemplate struct {
     // Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
     settingTemplateCount *int32;
     // Setting templates
-    settingTemplates []DeviceManagementConfigurationSettingTemplate;
+    settingTemplates []DeviceManagementConfigurationSettingTemplateable;
     // Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies;
     // TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
@@ -38,6 +38,10 @@ func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigura
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementConfigurationPolicyTemplate(), nil
 }
 // GetAllowUnmanagedSettings gets the allowUnmanagedSettings property value. Allow unmanaged setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) GetAllowUnmanagedSettings()(*bool) {
@@ -77,62 +81,6 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetDisplayVersion()(*strin
         return nil
     } else {
         return m.displayVersion
-    }
-}
-// GetLifecycleState gets the lifecycleState property value. Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
-func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*DeviceManagementTemplateLifecycleState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lifecycleState
-    }
-}
-// GetPlatforms gets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
-func (m *DeviceManagementConfigurationPolicyTemplate) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platforms
-    }
-}
-// GetSettingTemplateCount gets the settingTemplateCount property value. Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
-func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingTemplateCount
-    }
-}
-// GetSettingTemplates gets the settingTemplates property value. Setting templates
-func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplates()([]DeviceManagementConfigurationSettingTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingTemplates
-    }
-}
-// GetTechnologies gets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
-func (m *DeviceManagementConfigurationPolicyTemplate) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
-    if m == nil {
-        return nil
-    } else {
-        return m.technologies
-    }
-}
-// GetTemplateFamily gets the templateFamily property value. TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
-func (m *DeviceManagementConfigurationPolicyTemplate) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateFamily
-    }
-}
-// GetVersion gets the version property value. Template version. Valid values 1 to 2147483647. This property is read-only.
-func (m *DeviceManagementConfigurationPolicyTemplate) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -219,14 +167,14 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         return nil
     }
     res["settingTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConfigurationSettingTemplate() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementConfigurationSettingTemplate, len(val))
+            res := make([]DeviceManagementConfigurationSettingTemplateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementConfigurationSettingTemplate))
+                res[i] = v.(DeviceManagementConfigurationSettingTemplateable)
             }
             m.SetSettingTemplates(res)
         }
@@ -263,6 +211,62 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetLifecycleState gets the lifecycleState property value. Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*DeviceManagementTemplateLifecycleState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lifecycleState
+    }
+}
+// GetPlatforms gets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platforms
+    }
+}
+// GetSettingTemplateCount gets the settingTemplateCount property value. Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplateCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingTemplateCount
+    }
+}
+// GetSettingTemplates gets the settingTemplates property value. Setting templates
+func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplates()([]DeviceManagementConfigurationSettingTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingTemplates
+    }
+}
+// GetTechnologies gets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
+    if m == nil {
+        return nil
+    } else {
+        return m.technologies
+    }
+}
+// GetTemplateFamily gets the templateFamily property value. TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateFamily
+    }
+}
+// GetVersion gets the version property value. Template version. Valid values 1 to 2147483647. This property is read-only.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *DeviceManagementConfigurationPolicyTemplate) IsNil()(bool) {
     return m == nil
@@ -326,8 +330,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i04eb5309
     if m.GetSettingTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettingTemplates()))
         for i, v := range m.GetSettingTemplates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("settingTemplates", cast)
         if err != nil {
@@ -405,7 +408,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplateCount(va
     }
 }
 // SetSettingTemplates sets the settingTemplates property value. Setting templates
-func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplate)() {
+func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplateable)() {
     if m != nil {
         m.settingTemplates = value
     }

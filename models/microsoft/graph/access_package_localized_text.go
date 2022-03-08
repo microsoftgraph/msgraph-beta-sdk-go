@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageLocalizedText 
+// AccessPackageLocalizedText provides operations to manage the identityGovernance singleton.
 type AccessPackageLocalizedText struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewAccessPackageLocalizedText()(*AccessPackageLocalizedText) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessPackageLocalizedTextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageLocalizedTextFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageLocalizedText(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageLocalizedText) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLanguageCode gets the languageCode property value. The ISO code for the intended language. Required.
-func (m *AccessPackageLocalizedText) GetLanguageCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageCode
-    }
-}
-// GetText gets the text property value. The text in the specific language. Required.
-func (m *AccessPackageLocalizedText) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetLanguageCode gets the languageCode property value. The ISO code for the intended language. Required.
+func (m *AccessPackageLocalizedText) GetLanguageCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageCode
+    }
+}
+// GetText gets the text property value. The text in the specific language. Required.
+func (m *AccessPackageLocalizedText) GetText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.text
+    }
 }
 func (m *AccessPackageLocalizedText) IsNil()(bool) {
     return m == nil

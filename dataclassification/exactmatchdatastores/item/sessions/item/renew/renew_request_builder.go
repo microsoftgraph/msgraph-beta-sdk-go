@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RenewRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}\microsoft.graph.renew
+// RenewRequestBuilder provides operations to call the renew method.
 type RenewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type RenewRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // RenewResponse union type wrapper for classes exactMatchSession
 type RenewResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type exactMatchSession
-    exactMatchSession *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession;
+    exactMatchSession i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSessionable;
 }
 // NewRenewResponse instantiates a new renewResponse and sets the default values.
 func NewRenewResponse()(*RenewResponse) {
@@ -37,6 +42,9 @@ func NewRenewResponse()(*RenewResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateRenewResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRenewResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RenewResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +55,7 @@ func (m *RenewResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetExactMatchSession gets the exactMatchSession property value. Union type representation for type exactMatchSession
-func (m *RenewResponse) GetExactMatchSession()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession) {
+func (m *RenewResponse) GetExactMatchSession()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSessionable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +66,12 @@ func (m *RenewResponse) GetExactMatchSession()(*i535684e11b5500196ecb4b5c6634e06
 func (m *RenewResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["exactMatchSession"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewExactMatchSession() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateExactMatchSessionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExactMatchSession(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession))
+            m.SetExactMatchSession(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSessionable))
         }
         return nil
     }
@@ -95,7 +103,7 @@ func (m *RenewResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetExactMatchSession sets the exactMatchSession property value. Union type representation for type exactMatchSession
-func (m *RenewResponse) SetExactMatchSession(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession)() {
+func (m *RenewResponse) SetExactMatchSession(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSessionable)() {
     if m != nil {
         m.exactMatchSession = value
     }
@@ -109,7 +117,7 @@ func NewRenewRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *RenewRequestBuilder) CreatePostRequestInformation(options *RenewRequest
     return requestInfo, nil
 }
 // Post invoke action renew
-func (m *RenewRequestBuilder) Post(options *RenewRequestBuilderPostOptions)(*RenewResponse, error) {
+func (m *RenewRequestBuilder) Post(options *RenewRequestBuilderPostOptions)(RenewResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRenewResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRenewResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RenewResponse), nil
+    return res.(RenewResponseable), nil
 }

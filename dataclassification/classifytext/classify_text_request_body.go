@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ClassifyTextRequestBody 
+// ClassifyTextRequestBody provides operations to call the classifyText method.
 type ClassifyTextRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,52 +27,16 @@ func NewClassifyTextRequestBody()(*ClassifyTextRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateClassifyTextRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateClassifyTextRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassifyTextRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyTextRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFileExtension gets the fileExtension property value. 
-func (m *ClassifyTextRequestBody) GetFileExtension()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileExtension
-    }
-}
-// GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. 
-func (m *ClassifyTextRequestBody) GetMatchTolerancesToInclude()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchTolerancesToInclude
-    }
-}
-// GetScopesToRun gets the scopesToRun property value. 
-func (m *ClassifyTextRequestBody) GetScopesToRun()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopesToRun
-    }
-}
-// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
-func (m *ClassifyTextRequestBody) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
-    }
-}
-// GetText gets the text property value. 
-func (m *ClassifyTextRequestBody) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -133,6 +97,46 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetFileExtension gets the fileExtension property value. 
+func (m *ClassifyTextRequestBody) GetFileExtension()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileExtension
+    }
+}
+// GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. 
+func (m *ClassifyTextRequestBody) GetMatchTolerancesToInclude()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matchTolerancesToInclude
+    }
+}
+// GetScopesToRun gets the scopesToRun property value. 
+func (m *ClassifyTextRequestBody) GetScopesToRun()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopesToRun
+    }
+}
+// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
+func (m *ClassifyTextRequestBody) GetSensitiveTypeIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitiveTypeIds
+    }
+}
+// GetText gets the text property value. 
+func (m *ClassifyTextRequestBody) GetText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.text
+    }
 }
 func (m *ClassifyTextRequestBody) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterEvaluationStatusDetails 
+// AssignmentFilterEvaluationStatusDetails provides operations to manage the compliance singleton.
 type AssignmentFilterEvaluationStatusDetails struct {
     Entity
     // PayloadId on which filter has been applied.
@@ -17,13 +17,9 @@ func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationSta
     }
     return m
 }
-// GetPayloadId gets the payloadId property value. PayloadId on which filter has been applied.
-func (m *AssignmentFilterEvaluationStatusDetails) GetPayloadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadId
-    }
+// CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentFilterEvaluationStatusDetails(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetPayloadId gets the payloadId property value. PayloadId on which filter has been applied.
+func (m *AssignmentFilterEvaluationStatusDetails) GetPayloadId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payloadId
+    }
 }
 func (m *AssignmentFilterEvaluationStatusDetails) IsNil()(bool) {
     return m == nil

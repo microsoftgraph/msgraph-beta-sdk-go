@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the collection of privilegedSignupStatus entities.
 type SetupStatus int
 
 const (

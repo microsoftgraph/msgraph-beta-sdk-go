@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceAppManagementTask 
+// DeviceAppManagementTask provides operations to manage the deviceAppManagement singleton.
 type DeviceAppManagementTask struct {
     Entity
     // The name or email of the admin this task is assigned to.
@@ -35,6 +35,10 @@ func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceAppManagementTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceAppManagementTaskFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceAppManagementTask(), nil
 }
 // GetAssignedTo gets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
@@ -98,22 +102,6 @@ func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3a
         return nil
     } else {
         return m.dueDateTime
-    }
-}
-// GetPriority gets the priority property value. The priority. Possible values are: none, high, low.
-func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetStatus gets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
-func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +208,22 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetPriority gets the priority property value. The priority. Possible values are: none, high, low.
+func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetStatus gets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
+func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DeviceAppManagementTask) IsNil()(bool) {
     return m == nil

@@ -5,12 +5,12 @@ import (
     ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
-// DeploymentState 
+// DeploymentState provides operations to manage the admin singleton.
 type DeploymentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Specifies the reasons the deployment has its state value. Read-only.
-    reasons []DeploymentStateReason;
+    reasons []DeploymentStateReasonable;
     // Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
     requestedValue *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.RequestedDeploymentStateValue;
     // Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
@@ -23,6 +23,10 @@ func NewDeploymentState()(*DeploymentState) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeploymentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeploymentStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeploymentState(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -31,42 +35,18 @@ func (m *DeploymentState) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetReasons gets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.
-func (m *DeploymentState) GetReasons()([]DeploymentStateReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reasons
-    }
-}
-// GetRequestedValue gets the requestedValue property value. Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
-func (m *DeploymentState) GetRequestedValue()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.RequestedDeploymentStateValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestedValue
-    }
-}
-// GetValue gets the value property value. Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
-func (m *DeploymentState) GetValue()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["reasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeploymentStateReason() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeploymentStateReasonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeploymentStateReason, len(val))
+            res := make([]DeploymentStateReasonable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeploymentStateReason))
+                res[i] = v.(DeploymentStateReasonable)
             }
             m.SetReasons(res)
         }
@@ -94,6 +74,30 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i
     }
     return res
 }
+// GetReasons gets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.
+func (m *DeploymentState) GetReasons()([]DeploymentStateReasonable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reasons
+    }
+}
+// GetRequestedValue gets the requestedValue property value. Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
+func (m *DeploymentState) GetRequestedValue()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.RequestedDeploymentStateValue) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestedValue
+    }
+}
+// GetValue gets the value property value. Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
+func (m *DeploymentState) GetValue()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateValue) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
+}
 func (m *DeploymentState) IsNil()(bool) {
     return m == nil
 }
@@ -102,8 +106,7 @@ func (m *DeploymentState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetReasons() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReasons()))
         for i, v := range m.GetReasons() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("reasons", cast)
         if err != nil {
@@ -139,7 +142,7 @@ func (m *DeploymentState) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetReasons sets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.
-func (m *DeploymentState) SetReasons(value []DeploymentStateReason)() {
+func (m *DeploymentState) SetReasons(value []DeploymentStateReasonable)() {
     if m != nil {
         m.reasons = value
     }

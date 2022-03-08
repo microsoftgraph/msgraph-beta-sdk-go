@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementTemplateStepVersion 
+// ManagementTemplateStepVersion provides operations to manage the tenantRelationship singleton.
 type ManagementTemplateStepVersion struct {
     Entity
     // 
-    acceptedFor *ManagementTemplateStep;
+    acceptedFor ManagementTemplateStepable;
     // 
     contentMarkdown *string;
     // 
@@ -17,7 +17,7 @@ type ManagementTemplateStepVersion struct {
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    deployments []ManagementTemplateStepDeployment;
+    deployments []ManagementTemplateStepDeploymentable;
     // 
     lastActionByUserId *string;
     // 
@@ -25,7 +25,7 @@ type ManagementTemplateStepVersion struct {
     // 
     name *string;
     // 
-    templateStep *ManagementTemplateStep;
+    templateStep ManagementTemplateStepable;
     // 
     version *int32;
     // 
@@ -38,8 +38,12 @@ func NewManagementTemplateStepVersion()(*ManagementTemplateStepVersion) {
     }
     return m
 }
+// CreateManagementTemplateStepVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementTemplateStepVersionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementTemplateStepVersion(), nil
+}
 // GetAcceptedFor gets the acceptedFor property value. 
-func (m *ManagementTemplateStepVersion) GetAcceptedFor()(*ManagementTemplateStep) {
+func (m *ManagementTemplateStepVersion) GetAcceptedFor()(ManagementTemplateStepable) {
     if m == nil {
         return nil
     } else {
@@ -71,71 +75,23 @@ func (m *ManagementTemplateStepVersion) GetCreatedDateTime()(*i336074805fc853987
     }
 }
 // GetDeployments gets the deployments property value. 
-func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateStepDeployment) {
+func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateStepDeploymentable) {
     if m == nil {
         return nil
     } else {
         return m.deployments
     }
 }
-// GetLastActionByUserId gets the lastActionByUserId property value. 
-func (m *ManagementTemplateStepVersion) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. 
-func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetName gets the name property value. 
-func (m *ManagementTemplateStepVersion) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetTemplateStep gets the templateStep property value. 
-func (m *ManagementTemplateStepVersion) GetTemplateStep()(*ManagementTemplateStep) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateStep
-    }
-}
-// GetVersion gets the version property value. 
-func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
-// GetVersionInformation gets the versionInformation property value. 
-func (m *ManagementTemplateStepVersion) GetVersionInformation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionInformation
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acceptedFor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStep() })
+        val, err := n.GetObjectValue(CreateManagementTemplateStepFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAcceptedFor(val.(*ManagementTemplateStep))
+            m.SetAcceptedFor(val.(ManagementTemplateStepable))
         }
         return nil
     }
@@ -170,14 +126,14 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["deployments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStepDeployment() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepDeploymentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementTemplateStepDeployment, len(val))
+            res := make([]ManagementTemplateStepDeploymentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementTemplateStepDeployment))
+                res[i] = v.(ManagementTemplateStepDeploymentable)
             }
             m.SetDeployments(res)
         }
@@ -214,12 +170,12 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["templateStep"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStep() })
+        val, err := n.GetObjectValue(CreateManagementTemplateStepFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTemplateStep(val.(*ManagementTemplateStep))
+            m.SetTemplateStep(val.(ManagementTemplateStepable))
         }
         return nil
     }
@@ -244,6 +200,54 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetLastActionByUserId gets the lastActionByUserId property value. 
+func (m *ManagementTemplateStepVersion) GetLastActionByUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionByUserId
+    }
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. 
+func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetName gets the name property value. 
+func (m *ManagementTemplateStepVersion) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetTemplateStep gets the templateStep property value. 
+func (m *ManagementTemplateStepVersion) GetTemplateStep()(ManagementTemplateStepable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateStep
+    }
+}
+// GetVersion gets the version property value. 
+func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
+// GetVersionInformation gets the versionInformation property value. 
+func (m *ManagementTemplateStepVersion) GetVersionInformation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.versionInformation
+    }
 }
 func (m *ManagementTemplateStepVersion) IsNil()(bool) {
     return m == nil
@@ -281,8 +285,7 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetDeployments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeployments()))
         for i, v := range m.GetDeployments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deployments", cast)
         if err != nil {
@@ -328,7 +331,7 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetAcceptedFor sets the acceptedFor property value. 
-func (m *ManagementTemplateStepVersion) SetAcceptedFor(value *ManagementTemplateStep)() {
+func (m *ManagementTemplateStepVersion) SetAcceptedFor(value ManagementTemplateStepable)() {
     if m != nil {
         m.acceptedFor = value
     }
@@ -352,7 +355,7 @@ func (m *ManagementTemplateStepVersion) SetCreatedDateTime(value *i336074805fc85
     }
 }
 // SetDeployments sets the deployments property value. 
-func (m *ManagementTemplateStepVersion) SetDeployments(value []ManagementTemplateStepDeployment)() {
+func (m *ManagementTemplateStepVersion) SetDeployments(value []ManagementTemplateStepDeploymentable)() {
     if m != nil {
         m.deployments = value
     }
@@ -376,7 +379,7 @@ func (m *ManagementTemplateStepVersion) SetName(value *string)() {
     }
 }
 // SetTemplateStep sets the templateStep property value. 
-func (m *ManagementTemplateStepVersion) SetTemplateStep(value *ManagementTemplateStep)() {
+func (m *ManagementTemplateStepVersion) SetTemplateStep(value ManagementTemplateStepable)() {
     if m != nil {
         m.templateStep = value
     }

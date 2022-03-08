@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsAutopilotDeploymentProfile 
+// WindowsAutopilotDeploymentProfile provides operations to manage the deviceManagement singleton.
 type WindowsAutopilotDeploymentProfile struct {
     Entity
     // The list of assigned devices for the profile.
-    assignedDevices []WindowsAutopilotDeviceIdentity;
+    assignedDevices []WindowsAutopilotDeviceIdentityable;
     // The list of group assignments for the profile.
-    assignments []WindowsAutopilotDeploymentProfileAssignment;
+    assignments []WindowsAutopilotDeploymentProfileAssignmentable;
     // Profile creation time
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description of the profile
@@ -25,7 +25,7 @@ type WindowsAutopilotDeploymentProfile struct {
     // Enable Autopilot White Glove for the profile.
     enableWhiteGlove *bool;
     // Enrollment status screen setting
-    enrollmentStatusScreenSettings *WindowsEnrollmentStatusScreenSettings;
+    enrollmentStatusScreenSettings WindowsEnrollmentStatusScreenSettingsable;
     // HardwareHash Extraction for the profile
     extractHardwareHash *bool;
     // Language configured on the device
@@ -35,7 +35,7 @@ type WindowsAutopilotDeploymentProfile struct {
     // AzureAD management app ID used during client device-based enrollment discovery
     managementServiceAppId *string;
     // Out of box experience setting
-    outOfBoxExperienceSettings *OutOfBoxExperienceSettings;
+    outOfBoxExperienceSettings OutOfBoxExperienceSettingsable;
     // Scope tags for the profile.
     roleScopeTagIds []string;
 }
@@ -46,8 +46,12 @@ func NewWindowsAutopilotDeploymentProfile()(*WindowsAutopilotDeploymentProfile) 
     }
     return m
 }
+// CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsAutopilotDeploymentProfile(), nil
+}
 // GetAssignedDevices gets the assignedDevices property value. The list of assigned devices for the profile.
-func (m *WindowsAutopilotDeploymentProfile) GetAssignedDevices()([]WindowsAutopilotDeviceIdentity) {
+func (m *WindowsAutopilotDeploymentProfile) GetAssignedDevices()([]WindowsAutopilotDeviceIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +59,7 @@ func (m *WindowsAutopilotDeploymentProfile) GetAssignedDevices()([]WindowsAutopi
     }
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the profile.
-func (m *WindowsAutopilotDeploymentProfile) GetAssignments()([]WindowsAutopilotDeploymentProfileAssignment) {
+func (m *WindowsAutopilotDeploymentProfile) GetAssignments()([]WindowsAutopilotDeploymentProfileAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -111,7 +115,7 @@ func (m *WindowsAutopilotDeploymentProfile) GetEnableWhiteGlove()(*bool) {
     }
 }
 // GetEnrollmentStatusScreenSettings gets the enrollmentStatusScreenSettings property value. Enrollment status screen setting
-func (m *WindowsAutopilotDeploymentProfile) GetEnrollmentStatusScreenSettings()(*WindowsEnrollmentStatusScreenSettings) {
+func (m *WindowsAutopilotDeploymentProfile) GetEnrollmentStatusScreenSettings()(WindowsEnrollmentStatusScreenSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -126,72 +130,32 @@ func (m *WindowsAutopilotDeploymentProfile) GetExtractHardwareHash()(*bool) {
         return m.extractHardwareHash
     }
 }
-// GetLanguage gets the language property value. Language configured on the device
-func (m *WindowsAutopilotDeploymentProfile) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time
-func (m *WindowsAutopilotDeploymentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetManagementServiceAppId gets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
-func (m *WindowsAutopilotDeploymentProfile) GetManagementServiceAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementServiceAppId
-    }
-}
-// GetOutOfBoxExperienceSettings gets the outOfBoxExperienceSettings property value. Out of box experience setting
-func (m *WindowsAutopilotDeploymentProfile) GetOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outOfBoxExperienceSettings
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope tags for the profile.
-func (m *WindowsAutopilotDeploymentProfile) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsAutopilotDeviceIdentity() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsAutopilotDeviceIdentity, len(val))
+            res := make([]WindowsAutopilotDeviceIdentityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsAutopilotDeviceIdentity))
+                res[i] = v.(WindowsAutopilotDeviceIdentityable)
             }
             m.SetAssignedDevices(res)
         }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsAutopilotDeploymentProfileAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsAutopilotDeploymentProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsAutopilotDeploymentProfileAssignment, len(val))
+            res := make([]WindowsAutopilotDeploymentProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsAutopilotDeploymentProfileAssignment))
+                res[i] = v.(WindowsAutopilotDeploymentProfileAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -258,12 +222,12 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["enrollmentStatusScreenSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsEnrollmentStatusScreenSettings() })
+        val, err := n.GetObjectValue(CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEnrollmentStatusScreenSettings(val.(*WindowsEnrollmentStatusScreenSettings))
+            m.SetEnrollmentStatusScreenSettings(val.(WindowsEnrollmentStatusScreenSettingsable))
         }
         return nil
     }
@@ -308,12 +272,12 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["outOfBoxExperienceSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutOfBoxExperienceSettings() })
+        val, err := n.GetObjectValue(CreateOutOfBoxExperienceSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOutOfBoxExperienceSettings(val.(*OutOfBoxExperienceSettings))
+            m.SetOutOfBoxExperienceSettings(val.(OutOfBoxExperienceSettingsable))
         }
         return nil
     }
@@ -333,6 +297,46 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetLanguage gets the language property value. Language configured on the device
+func (m *WindowsAutopilotDeploymentProfile) GetLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.language
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time
+func (m *WindowsAutopilotDeploymentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetManagementServiceAppId gets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
+func (m *WindowsAutopilotDeploymentProfile) GetManagementServiceAppId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementServiceAppId
+    }
+}
+// GetOutOfBoxExperienceSettings gets the outOfBoxExperienceSettings property value. Out of box experience setting
+func (m *WindowsAutopilotDeploymentProfile) GetOutOfBoxExperienceSettings()(OutOfBoxExperienceSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outOfBoxExperienceSettings
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope tags for the profile.
+func (m *WindowsAutopilotDeploymentProfile) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
 func (m *WindowsAutopilotDeploymentProfile) IsNil()(bool) {
     return m == nil
 }
@@ -345,8 +349,7 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i04eb5309aeaafadd28
     if m.GetAssignedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedDevices()))
         for i, v := range m.GetAssignedDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignedDevices", cast)
         if err != nil {
@@ -356,8 +359,7 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i04eb5309aeaafadd28
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -446,13 +448,13 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i04eb5309aeaafadd28
     return nil
 }
 // SetAssignedDevices sets the assignedDevices property value. The list of assigned devices for the profile.
-func (m *WindowsAutopilotDeploymentProfile) SetAssignedDevices(value []WindowsAutopilotDeviceIdentity)() {
+func (m *WindowsAutopilotDeploymentProfile) SetAssignedDevices(value []WindowsAutopilotDeviceIdentityable)() {
     if m != nil {
         m.assignedDevices = value
     }
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the profile.
-func (m *WindowsAutopilotDeploymentProfile) SetAssignments(value []WindowsAutopilotDeploymentProfileAssignment)() {
+func (m *WindowsAutopilotDeploymentProfile) SetAssignments(value []WindowsAutopilotDeploymentProfileAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -494,7 +496,7 @@ func (m *WindowsAutopilotDeploymentProfile) SetEnableWhiteGlove(value *bool)() {
     }
 }
 // SetEnrollmentStatusScreenSettings sets the enrollmentStatusScreenSettings property value. Enrollment status screen setting
-func (m *WindowsAutopilotDeploymentProfile) SetEnrollmentStatusScreenSettings(value *WindowsEnrollmentStatusScreenSettings)() {
+func (m *WindowsAutopilotDeploymentProfile) SetEnrollmentStatusScreenSettings(value WindowsEnrollmentStatusScreenSettingsable)() {
     if m != nil {
         m.enrollmentStatusScreenSettings = value
     }
@@ -524,7 +526,7 @@ func (m *WindowsAutopilotDeploymentProfile) SetManagementServiceAppId(value *str
     }
 }
 // SetOutOfBoxExperienceSettings sets the outOfBoxExperienceSettings property value. Out of box experience setting
-func (m *WindowsAutopilotDeploymentProfile) SetOutOfBoxExperienceSettings(value *OutOfBoxExperienceSettings)() {
+func (m *WindowsAutopilotDeploymentProfile) SetOutOfBoxExperienceSettings(value OutOfBoxExperienceSettingsable)() {
     if m != nil {
         m.outOfBoxExperienceSettings = value
     }

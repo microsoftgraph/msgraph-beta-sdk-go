@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthAppImpact 
+// UserExperienceAnalyticsBatteryHealthAppImpact provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     Entity
     // Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
@@ -26,6 +26,10 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalytics
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsBatteryHealthAppImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBatteryHealthAppImpactFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBatteryHealthAppImpact(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int32) {
@@ -65,14 +69,6 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentag
         return nil
     } else {
         return m.batteryUsagePercentage
-    }
-}
-// GetIsForegroundApp gets the isForegroundApp property value. true if the user had active interaction with the app.
-func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetIsForegroundApp()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isForegroundApp
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +135,14 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
         return nil
     }
     return res
+}
+// GetIsForegroundApp gets the isForegroundApp property value. true if the user had active interaction with the app.
+func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetIsForegroundApp()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isForegroundApp
+    }
 }
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) IsNil()(bool) {
     return m == nil

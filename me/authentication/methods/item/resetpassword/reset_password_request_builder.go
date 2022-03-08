@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ResetPasswordRequestBuilder builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}\microsoft.graph.resetPassword
+// ResetPasswordRequestBuilder provides operations to call the resetPassword method.
 type ResetPasswordRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ResetPasswordRequestBuilder struct {
 // ResetPasswordRequestBuilderPostOptions options for Post
 type ResetPasswordRequestBuilderPostOptions struct {
     // 
-    Body *ResetPasswordRequestBody;
+    Body ResetPasswordRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type ResetPasswordRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // ResetPasswordResponse union type wrapper for classes passwordResetResponse
 type ResetPasswordResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type passwordResetResponse
-    passwordResetResponse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponse;
+    passwordResetResponse i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponseable;
 }
 // NewResetPasswordResponse instantiates a new resetPasswordResponse and sets the default values.
 func NewResetPasswordResponse()(*ResetPasswordResponse) {
@@ -39,6 +44,9 @@ func NewResetPasswordResponse()(*ResetPasswordResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateResetPasswordResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResetPasswordResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResetPasswordResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +56,28 @@ func (m *ResetPasswordResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ResetPasswordResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["passwordResetResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePasswordResetResponseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasswordResetResponse(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponseable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPasswordResetResponse gets the passwordResetResponse property value. Union type representation for type passwordResetResponse
-func (m *ResetPasswordResponse) GetPasswordResetResponse()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponse) {
+func (m *ResetPasswordResponse) GetPasswordResetResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponseable) {
     if m == nil {
         return nil
     } else {
         return m.passwordResetResponse
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ResetPasswordResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["passwordResetResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPasswordResetResponse() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordResetResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponse))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ResetPasswordResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +105,7 @@ func (m *ResetPasswordResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetPasswordResetResponse sets the passwordResetResponse property value. Union type representation for type passwordResetResponse
-func (m *ResetPasswordResponse) SetPasswordResetResponse(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponse)() {
+func (m *ResetPasswordResponse) SetPasswordResetResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordResetResponseable)() {
     if m != nil {
         m.passwordResetResponse = value
     }
@@ -111,7 +119,7 @@ func NewResetPasswordRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *ResetPasswordRequestBuilder) CreatePostRequestInformation(options *Rese
     return requestInfo, nil
 }
 // Post invoke action resetPassword
-func (m *ResetPasswordRequestBuilder) Post(options *ResetPasswordRequestBuilderPostOptions)(*ResetPasswordResponse, error) {
+func (m *ResetPasswordRequestBuilder) Post(options *ResetPasswordRequestBuilderPostOptions)(ResetPasswordResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResetPasswordResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateResetPasswordResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ResetPasswordResponse), nil
+    return res.(ResetPasswordResponseable), nil
 }

@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterStatusDetails 
+// AssignmentFilterStatusDetails provides operations to call the getAssignmentFiltersStatusDetails method.
 type AssignmentFilterStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Device properties used for filter evaluation during device check-in time.
-    deviceProperties []KeyValuePair;
+    deviceProperties []KeyValuePairable;
     // Evaluation result summaries for each filter associated to device and payload
-    evalutionSummaries []AssignmentFilterEvaluationSummary;
+    evalutionSummaries []AssignmentFilterEvaluationSummaryable;
     // Unique identifier for the device object.
     managedDeviceId *string;
     // Unique identifier for payload object.
@@ -26,6 +26,10 @@ func NewAssignmentFilterStatusDetails()(*AssignmentFilterStatusDetails) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAssignmentFilterStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentFilterStatusDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentFilterStatusDetails(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterStatusDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,7 +39,7 @@ func (m *AssignmentFilterStatusDetails) GetAdditionalData()(map[string]interface
     }
 }
 // GetDeviceProperties gets the deviceProperties property value. Device properties used for filter evaluation during device check-in time.
-func (m *AssignmentFilterStatusDetails) GetDeviceProperties()([]KeyValuePair) {
+func (m *AssignmentFilterStatusDetails) GetDeviceProperties()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -43,63 +47,39 @@ func (m *AssignmentFilterStatusDetails) GetDeviceProperties()([]KeyValuePair) {
     }
 }
 // GetEvalutionSummaries gets the evalutionSummaries property value. Evaluation result summaries for each filter associated to device and payload
-func (m *AssignmentFilterStatusDetails) GetEvalutionSummaries()([]AssignmentFilterEvaluationSummary) {
+func (m *AssignmentFilterStatusDetails) GetEvalutionSummaries()([]AssignmentFilterEvaluationSummaryable) {
     if m == nil {
         return nil
     } else {
         return m.evalutionSummaries
     }
 }
-// GetManagedDeviceId gets the managedDeviceId property value. Unique identifier for the device object.
-func (m *AssignmentFilterStatusDetails) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetPayloadId gets the payloadId property value. Unique identifier for payload object.
-func (m *AssignmentFilterStatusDetails) GetPayloadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadId
-    }
-}
-// GetUserId gets the userId property value. Unique identifier for UserId object. Can be null
-func (m *AssignmentFilterStatusDetails) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetDeviceProperties(res)
         }
         return nil
     }
     res["evalutionSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignmentFilterEvaluationSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AssignmentFilterEvaluationSummary, len(val))
+            res := make([]AssignmentFilterEvaluationSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignmentFilterEvaluationSummary))
+                res[i] = v.(AssignmentFilterEvaluationSummaryable)
             }
             m.SetEvalutionSummaries(res)
         }
@@ -137,6 +117,30 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
+// GetManagedDeviceId gets the managedDeviceId property value. Unique identifier for the device object.
+func (m *AssignmentFilterStatusDetails) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetPayloadId gets the payloadId property value. Unique identifier for payload object.
+func (m *AssignmentFilterStatusDetails) GetPayloadId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payloadId
+    }
+}
+// GetUserId gets the userId property value. Unique identifier for UserId object. Can be null
+func (m *AssignmentFilterStatusDetails) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
 func (m *AssignmentFilterStatusDetails) IsNil()(bool) {
     return m == nil
 }
@@ -145,8 +149,7 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetDeviceProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceProperties()))
         for i, v := range m.GetDeviceProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("deviceProperties", cast)
         if err != nil {
@@ -156,8 +159,7 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetEvalutionSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvalutionSummaries()))
         for i, v := range m.GetEvalutionSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("evalutionSummaries", cast)
         if err != nil {
@@ -197,13 +199,13 @@ func (m *AssignmentFilterStatusDetails) SetAdditionalData(value map[string]inter
     }
 }
 // SetDeviceProperties sets the deviceProperties property value. Device properties used for filter evaluation during device check-in time.
-func (m *AssignmentFilterStatusDetails) SetDeviceProperties(value []KeyValuePair)() {
+func (m *AssignmentFilterStatusDetails) SetDeviceProperties(value []KeyValuePairable)() {
     if m != nil {
         m.deviceProperties = value
     }
 }
 // SetEvalutionSummaries sets the evalutionSummaries property value. Evaluation result summaries for each filter associated to device and payload
-func (m *AssignmentFilterStatusDetails) SetEvalutionSummaries(value []AssignmentFilterEvaluationSummary)() {
+func (m *AssignmentFilterStatusDetails) SetEvalutionSummaries(value []AssignmentFilterEvaluationSummaryable)() {
     if m != nil {
         m.evalutionSummaries = value
     }

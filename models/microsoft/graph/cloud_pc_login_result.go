@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcLoginResult 
+// CloudPcLoginResult provides operations to manage the deviceManagement singleton.
 type CloudPcLoginResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,20 +19,16 @@ func NewCloudPcLoginResult()(*CloudPcLoginResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCloudPcLoginResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcLoginResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcLoginResult(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcLoginResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTime gets the time property value. The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
-func (m *CloudPcLoginResult) GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.time
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -49,6 +45,14 @@ func (m *CloudPcLoginResult) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetTime gets the time property value. The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+func (m *CloudPcLoginResult) GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.time
+    }
 }
 func (m *CloudPcLoginResult) IsNil()(bool) {
     return m == nil

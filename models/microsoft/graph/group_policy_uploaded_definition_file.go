@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyUploadedDefinitionFile 
+// GroupPolicyUploadedDefinitionFile provides operations to manage the deviceManagement singleton.
 type GroupPolicyUploadedDefinitionFile struct {
     GroupPolicyDefinitionFile
     // The contents of the uploaded ADMX file.
@@ -13,9 +13,9 @@ type GroupPolicyUploadedDefinitionFile struct {
     // The default language of the uploaded ADMX file.
     defaultLanguageCode *string;
     // The list of operations on the uploaded ADMX file.
-    groupPolicyOperations []GroupPolicyOperation;
+    groupPolicyOperations []GroupPolicyOperationable;
     // The list of ADML files associated with the uploaded ADMX file.
-    groupPolicyUploadedLanguageFiles []GroupPolicyUploadedLanguageFile;
+    groupPolicyUploadedLanguageFiles []GroupPolicyUploadedLanguageFileable;
     // The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
     status *GroupPolicyUploadedDefinitionFileStatus;
     // The uploaded time of the uploaded ADMX file.
@@ -27,6 +27,10 @@ func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) 
         GroupPolicyDefinitionFile: *NewGroupPolicyDefinitionFile(),
     }
     return m
+}
+// CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyUploadedDefinitionFile(), nil
 }
 // GetContent gets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetContent()([]byte) {
@@ -42,38 +46,6 @@ func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
         return nil
     } else {
         return m.defaultLanguageCode
-    }
-}
-// GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
-func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyOperations()([]GroupPolicyOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyOperations
-    }
-}
-// GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
-func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles()([]GroupPolicyUploadedLanguageFile) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyUploadedLanguageFiles
-    }
-}
-// GetStatus gets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
-func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefinitionFileStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUploadDateTime gets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
-func (m *GroupPolicyUploadedDefinitionFile) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,28 +72,28 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["groupPolicyOperations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyOperation, len(val))
+            res := make([]GroupPolicyOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyOperation))
+                res[i] = v.(GroupPolicyOperationable)
             }
             m.SetGroupPolicyOperations(res)
         }
         return nil
     }
     res["groupPolicyUploadedLanguageFiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyUploadedLanguageFile() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyUploadedLanguageFile, len(val))
+            res := make([]GroupPolicyUploadedLanguageFileable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyUploadedLanguageFile))
+                res[i] = v.(GroupPolicyUploadedLanguageFileable)
             }
             m.SetGroupPolicyUploadedLanguageFiles(res)
         }
@@ -149,6 +121,38 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
+func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyOperations()([]GroupPolicyOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyOperations
+    }
+}
+// GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
+func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles()([]GroupPolicyUploadedLanguageFileable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyUploadedLanguageFiles
+    }
+}
+// GetStatus gets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
+func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefinitionFileStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUploadDateTime gets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
+func (m *GroupPolicyUploadedDefinitionFile) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadDateTime
+    }
+}
 func (m *GroupPolicyUploadedDefinitionFile) IsNil()(bool) {
     return m == nil
 }
@@ -173,8 +177,7 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
     if m.GetGroupPolicyOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyOperations()))
         for i, v := range m.GetGroupPolicyOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groupPolicyOperations", cast)
         if err != nil {
@@ -184,8 +187,7 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
     if m.GetGroupPolicyUploadedLanguageFiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
         for i, v := range m.GetGroupPolicyUploadedLanguageFiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groupPolicyUploadedLanguageFiles", cast)
         if err != nil {
@@ -220,13 +222,13 @@ func (m *GroupPolicyUploadedDefinitionFile) SetDefaultLanguageCode(value *string
     }
 }
 // SetGroupPolicyOperations sets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
-func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyOperations(value []GroupPolicyOperation)() {
+func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyOperations(value []GroupPolicyOperationable)() {
     if m != nil {
         m.groupPolicyOperations = value
     }
 }
 // SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
-func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyUploadedLanguageFiles(value []GroupPolicyUploadedLanguageFile)() {
+func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyUploadedLanguageFiles(value []GroupPolicyUploadedLanguageFileable)() {
     if m != nil {
         m.groupPolicyUploadedLanguageFiles = value
     }

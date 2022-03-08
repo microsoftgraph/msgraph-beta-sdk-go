@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationshipRequestStatus int
 
 const (

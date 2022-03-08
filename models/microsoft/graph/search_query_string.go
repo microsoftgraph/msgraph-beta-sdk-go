@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchQueryString 
+// SearchQueryString provides operations to call the query method.
 type SearchQueryString struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewSearchQueryString()(*SearchQueryString) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSearchQueryStringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchQueryStringFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchQueryString(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchQueryString) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetQuery gets the query property value. Contains the actual search terms of the request.
-func (m *SearchQueryString) GetQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *SearchQueryString) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetQuery gets the query property value. Contains the actual search terms of the request.
+func (m *SearchQueryString) GetQuery()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.query
+    }
 }
 func (m *SearchQueryString) IsNil()(bool) {
     return m == nil

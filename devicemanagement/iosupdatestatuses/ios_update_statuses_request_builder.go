@@ -2,11 +2,11 @@ package iosupdatestatuses
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iaa40bbba6f03802d1217f98e74a547cd9599888c10d8a026b686587ce63fd477 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/iosupdatestatuses/count"
 )
 
-// IosUpdateStatusesRequestBuilder builds and executes requests for operations under \deviceManagement\iosUpdateStatuses
+// IosUpdateStatusesRequestBuilder provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
 type IosUpdateStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type IosUpdateStatusesRequestBuilderGetQueryParameters struct {
 // IosUpdateStatusesRequestBuilderPostOptions options for Post
 type IosUpdateStatusesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatus;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatusable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewIosUpdateStatusesRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewIosUpdateStatusesRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosUpdateStatusesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *IosUpdateStatusesRequestBuilder) Count()(*iaa40bbba6f03802d1217f98e74a547cd9599888c10d8a026b686587ce63fd477.CountRequestBuilder) {
+    return iaa40bbba6f03802d1217f98e74a547cd9599888c10d8a026b686587ce63fd477.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the IOS software update installation statuses for this account.
 func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformation(options *IosUpdateStatusesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformation(options *I
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the IOS software update installation statuses for this account.
+// CreatePostRequestInformation create new navigation property to iosUpdateStatuses for deviceManagement
 func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformation(options *IosUpdateStatusesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Get the IOS software update installation statuses for this account.
-func (m *IosUpdateStatusesRequestBuilder) Get(options *IosUpdateStatusesRequestBuilderGetOptions)(*IosUpdateStatusesResponse, error) {
+func (m *IosUpdateStatusesRequestBuilder) Get(options *IosUpdateStatusesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatusCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIosUpdateStatusesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIosUpdateDeviceStatusCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*IosUpdateStatusesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatusCollectionResponseable), nil
 }
-// Post the IOS software update installation statuses for this account.
-func (m *IosUpdateStatusesRequestBuilder) Post(options *IosUpdateStatusesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatus, error) {
+// Post create new navigation property to iosUpdateStatuses for deviceManagement
+func (m *IosUpdateStatusesRequestBuilder) Post(options *IosUpdateStatusesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIosUpdateDeviceStatus() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIosUpdateDeviceStatusFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatus), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosUpdateDeviceStatusable), nil
 }

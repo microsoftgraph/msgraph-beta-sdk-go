@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// ManagementAction 
+// ManagementAction provides operations to manage the tenantRelationship singleton.
 type ManagementAction struct {
     Entity
     // The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
@@ -19,7 +19,7 @@ type ManagementAction struct {
     // 
     referenceTemplateVersion *int32;
     // The collection of workload actions associated with the management action. Required. Read-only.
-    workloadActions []WorkloadAction;
+    workloadActions []WorkloadActionable;
 }
 // NewManagementAction instantiates a new managementAction and sets the default values.
 func NewManagementAction()(*ManagementAction) {
@@ -27,6 +27,10 @@ func NewManagementAction()(*ManagementAction) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagementActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementAction(), nil
 }
 // GetCategory gets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
 func (m *ManagementAction) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
@@ -50,30 +54,6 @@ func (m *ManagementAction) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetReferenceTemplateId gets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
-func (m *ManagementAction) GetReferenceTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceTemplateId
-    }
-}
-// GetReferenceTemplateVersion gets the referenceTemplateVersion property value. 
-func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceTemplateVersion
-    }
-}
-// GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
-func (m *ManagementAction) GetWorkloadActions()([]WorkloadAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workloadActions
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,20 +110,44 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["workloadActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkloadAction() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkloadActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkloadAction, len(val))
+            res := make([]WorkloadActionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkloadAction))
+                res[i] = v.(WorkloadActionable)
             }
             m.SetWorkloadActions(res)
         }
         return nil
     }
     return res
+}
+// GetReferenceTemplateId gets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
+func (m *ManagementAction) GetReferenceTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referenceTemplateId
+    }
+}
+// GetReferenceTemplateVersion gets the referenceTemplateVersion property value. 
+func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referenceTemplateVersion
+    }
+}
+// GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
+func (m *ManagementAction) GetWorkloadActions()([]WorkloadActionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workloadActions
+    }
 }
 func (m *ManagementAction) IsNil()(bool) {
     return m == nil
@@ -188,8 +192,7 @@ func (m *ManagementAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetWorkloadActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("workloadActions", cast)
         if err != nil {
@@ -229,7 +232,7 @@ func (m *ManagementAction) SetReferenceTemplateVersion(value *int32)() {
     }
 }
 // SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
-func (m *ManagementAction) SetWorkloadActions(value []WorkloadAction)() {
+func (m *ManagementAction) SetWorkloadActions(value []WorkloadActionable)() {
     if m != nil {
         m.workloadActions = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScriptRuleError 
+// DeviceComplianceScriptRuleError provides operations to call the validateComplianceScript method.
 type DeviceComplianceScriptRuleError struct {
     DeviceComplianceScriptError
     // Setting name for the rule with error.
@@ -17,13 +17,9 @@ func NewDeviceComplianceScriptRuleError()(*DeviceComplianceScriptRuleError) {
     }
     return m
 }
-// GetSettingName gets the settingName property value. Setting name for the rule with error.
-func (m *DeviceComplianceScriptRuleError) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+// CreateDeviceComplianceScriptRuleErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceScriptRuleErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceScriptRuleError(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptRuleError) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *DeviceComplianceScriptRuleError) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetSettingName gets the settingName property value. Setting name for the rule with error.
+func (m *DeviceComplianceScriptRuleError) GetSettingName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingName
+    }
 }
 func (m *DeviceComplianceScriptRuleError) IsNil()(bool) {
     return m == nil

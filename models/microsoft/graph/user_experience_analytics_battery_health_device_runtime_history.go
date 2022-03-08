@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory 
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     Entity
     // The unique identifier of the device, Intune DeviceID or SCCM device id.
@@ -21,6 +21,10 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperien
     }
     return m
 }
+// CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory(), nil
+}
 // GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetEstimatedR
         return nil
     } else {
         return m.estimatedRuntimeInMinutes
-    }
-}
-// GetRuntimeDateTime gets the runtimeDateTime property value. The datetime for the instance of runtime history.
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetRuntimeDateTime()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runtimeDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeser
         return nil
     }
     return res
+}
+// GetRuntimeDateTime gets the runtimeDateTime property value. The datetime for the instance of runtime history.
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetRuntimeDateTime()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runtimeDateTime
+    }
 }
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) IsNil()(bool) {
     return m == nil

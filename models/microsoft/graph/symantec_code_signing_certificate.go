@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SymantecCodeSigningCertificate 
+// SymantecCodeSigningCertificate provides operations to manage the deviceAppManagement singleton.
 type SymantecCodeSigningCertificate struct {
     Entity
     // The Windows Symantec Code-Signing Certificate in the raw data format.
@@ -34,6 +34,10 @@ func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     }
     return m
 }
+// CreateSymantecCodeSigningCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSymantecCodeSigningCertificateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSymantecCodeSigningCertificate(), nil
+}
 // GetContent gets the content property value. The Windows Symantec Code-Signing Certificate in the raw data format.
 func (m *SymantecCodeSigningCertificate) GetContent()([]byte) {
     if m == nil {
@@ -48,62 +52,6 @@ func (m *SymantecCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc85
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetIssuer gets the issuer property value. The Issuer value for the cert.
-func (m *SymantecCodeSigningCertificate) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
-}
-// GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
-func (m *SymantecCodeSigningCertificate) GetIssuerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerName
-    }
-}
-// GetPassword gets the password property value. The Password required for .pfx file.
-func (m *SymantecCodeSigningCertificate) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
-}
-// GetStatus gets the status property value. The Cert Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
-func (m *SymantecCodeSigningCertificate) GetStatus()(*CertificateStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetSubject gets the subject property value. The Subject value for the cert.
-func (m *SymantecCodeSigningCertificate) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
-}
-// GetSubjectName gets the subjectName property value. The Subject Name for the cert.
-func (m *SymantecCodeSigningCertificate) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
-    }
-}
-// GetUploadDateTime gets the uploadDateTime property value. The Type of the CodeSigning Cert as Symantec Cert.
-func (m *SymantecCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -200,6 +148,62 @@ func (m *SymantecCodeSigningCertificate) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetIssuer gets the issuer property value. The Issuer value for the cert.
+func (m *SymantecCodeSigningCertificate) GetIssuer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuer
+    }
+}
+// GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
+func (m *SymantecCodeSigningCertificate) GetIssuerName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuerName
+    }
+}
+// GetPassword gets the password property value. The Password required for .pfx file.
+func (m *SymantecCodeSigningCertificate) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
+}
+// GetStatus gets the status property value. The Cert Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+func (m *SymantecCodeSigningCertificate) GetStatus()(*CertificateStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetSubject gets the subject property value. The Subject value for the cert.
+func (m *SymantecCodeSigningCertificate) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
+}
+// GetSubjectName gets the subjectName property value. The Subject Name for the cert.
+func (m *SymantecCodeSigningCertificate) GetSubjectName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjectName
+    }
+}
+// GetUploadDateTime gets the uploadDateTime property value. The Type of the CodeSigning Cert as Symantec Cert.
+func (m *SymantecCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadDateTime
+    }
 }
 func (m *SymantecCodeSigningCertificate) IsNil()(bool) {
     return m == nil

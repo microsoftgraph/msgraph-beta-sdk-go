@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetAssignedRoleDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.getAssignedRoleDetails()
+// GetAssignedRoleDetailsRequestBuilder provides operations to call the getAssignedRoleDetails method.
 type GetAssignedRoleDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,12 +24,17 @@ type GetAssignedRoleDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // GetAssignedRoleDetailsResponse union type wrapper for classes deviceAndAppManagementAssignedRoleDetails
 type GetAssignedRoleDetailsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type deviceAndAppManagementAssignedRoleDetails
-    deviceAndAppManagementAssignedRoleDetails *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetails;
+    deviceAndAppManagementAssignedRoleDetails i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetailsable;
 }
 // NewGetAssignedRoleDetailsResponse instantiates a new getAssignedRoleDetailsResponse and sets the default values.
 func NewGetAssignedRoleDetailsResponse()(*GetAssignedRoleDetailsResponse) {
@@ -37,6 +42,9 @@ func NewGetAssignedRoleDetailsResponse()(*GetAssignedRoleDetailsResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetAssignedRoleDetailsResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetAssignedRoleDetailsResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetAssignedRoleDetailsResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +55,7 @@ func (m *GetAssignedRoleDetailsResponse) GetAdditionalData()(map[string]interfac
     }
 }
 // GetDeviceAndAppManagementAssignedRoleDetails gets the deviceAndAppManagementAssignedRoleDetails property value. Union type representation for type deviceAndAppManagementAssignedRoleDetails
-func (m *GetAssignedRoleDetailsResponse) GetDeviceAndAppManagementAssignedRoleDetails()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetails) {
+func (m *GetAssignedRoleDetailsResponse) GetDeviceAndAppManagementAssignedRoleDetails()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetailsable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +66,12 @@ func (m *GetAssignedRoleDetailsResponse) GetDeviceAndAppManagementAssignedRoleDe
 func (m *GetAssignedRoleDetailsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceAndAppManagementAssignedRoleDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceAndAppManagementAssignedRoleDetails() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceAndAppManagementAssignedRoleDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceAndAppManagementAssignedRoleDetails(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetails))
+            m.SetDeviceAndAppManagementAssignedRoleDetails(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetailsable))
         }
         return nil
     }
@@ -95,7 +103,7 @@ func (m *GetAssignedRoleDetailsResponse) SetAdditionalData(value map[string]inte
     }
 }
 // SetDeviceAndAppManagementAssignedRoleDetails sets the deviceAndAppManagementAssignedRoleDetails property value. Union type representation for type deviceAndAppManagementAssignedRoleDetails
-func (m *GetAssignedRoleDetailsResponse) SetDeviceAndAppManagementAssignedRoleDetails(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetails)() {
+func (m *GetAssignedRoleDetailsResponse) SetDeviceAndAppManagementAssignedRoleDetails(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignedRoleDetailsable)() {
     if m != nil {
         m.deviceAndAppManagementAssignedRoleDetails = value
     }
@@ -109,7 +117,7 @@ func NewGetAssignedRoleDetailsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +145,14 @@ func (m *GetAssignedRoleDetailsRequestBuilder) CreateGetRequestInformation(optio
     return requestInfo, nil
 }
 // Get retrieves the assigned role definitions and role assignments of the currently authenticated user.
-func (m *GetAssignedRoleDetailsRequestBuilder) Get(options *GetAssignedRoleDetailsRequestBuilderGetOptions)(*GetAssignedRoleDetailsResponse, error) {
+func (m *GetAssignedRoleDetailsRequestBuilder) Get(options *GetAssignedRoleDetailsRequestBuilderGetOptions)(GetAssignedRoleDetailsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetAssignedRoleDetailsResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAssignedRoleDetailsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetAssignedRoleDetailsResponse), nil
+    return res.(GetAssignedRoleDetailsResponseable), nil
 }

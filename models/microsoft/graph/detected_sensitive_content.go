@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DetectedSensitiveContent 
+// DetectedSensitiveContent provides operations to call the classifyFile method.
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // 
-    classificationAttributes []ClassificationAttribute;
+    classificationAttributes []ClassificationAttributeable;
     // 
     classificationMethod *ClassificationMethod;
     // 
-    matches []SensitiveContentLocation;
+    matches []SensitiveContentLocationable;
     // 
     scope *SensitiveTypeScope;
     // 
@@ -25,8 +25,12 @@ func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     }
     return m
 }
+// CreateDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDetectedSensitiveContentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDetectedSensitiveContent(), nil
+}
 // GetClassificationAttributes gets the classificationAttributes property value. 
-func (m *DetectedSensitiveContent) GetClassificationAttributes()([]ClassificationAttribute) {
+func (m *DetectedSensitiveContent) GetClassificationAttributes()([]ClassificationAttributeable) {
     if m == nil {
         return nil
     } else {
@@ -41,42 +45,18 @@ func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMeth
         return m.classificationMethod
     }
 }
-// GetMatches gets the matches property value. 
-func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matches
-    }
-}
-// GetScope gets the scope property value. 
-func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
-}
-// GetSensitiveTypeSource gets the sensitiveTypeSource property value. 
-func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeSource
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
     res["classificationAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassificationAttribute() })
+        val, err := n.GetCollectionOfObjectValues(CreateClassificationAttributeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ClassificationAttribute, len(val))
+            res := make([]ClassificationAttributeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ClassificationAttribute))
+                res[i] = v.(ClassificationAttributeable)
             }
             m.SetClassificationAttributes(res)
         }
@@ -93,14 +73,14 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["matches"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSensitiveContentLocation() })
+        val, err := n.GetCollectionOfObjectValues(CreateSensitiveContentLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SensitiveContentLocation, len(val))
+            res := make([]SensitiveContentLocationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SensitiveContentLocation))
+                res[i] = v.(SensitiveContentLocationable)
             }
             m.SetMatches(res)
         }
@@ -128,6 +108,30 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
+// GetMatches gets the matches property value. 
+func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matches
+    }
+}
+// GetScope gets the scope property value. 
+func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
+}
+// GetSensitiveTypeSource gets the sensitiveTypeSource property value. 
+func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitiveTypeSource
+    }
+}
 func (m *DetectedSensitiveContent) IsNil()(bool) {
     return m == nil
 }
@@ -140,8 +144,7 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetClassificationAttributes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClassificationAttributes()))
         for i, v := range m.GetClassificationAttributes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("classificationAttributes", cast)
         if err != nil {
@@ -158,8 +161,7 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetMatches() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {
@@ -183,7 +185,7 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
     return nil
 }
 // SetClassificationAttributes sets the classificationAttributes property value. 
-func (m *DetectedSensitiveContent) SetClassificationAttributes(value []ClassificationAttribute)() {
+func (m *DetectedSensitiveContent) SetClassificationAttributes(value []ClassificationAttributeable)() {
     if m != nil {
         m.classificationAttributes = value
     }
@@ -195,7 +197,7 @@ func (m *DetectedSensitiveContent) SetClassificationMethod(value *Classification
     }
 }
 // SetMatches sets the matches property value. 
-func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocation)() {
+func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocationable)() {
     if m != nil {
         m.matches = value
     }

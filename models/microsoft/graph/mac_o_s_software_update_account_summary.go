@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MacOSSoftwareUpdateAccountSummary 
+// MacOSSoftwareUpdateAccountSummary provides operations to manage the deviceManagement singleton.
 type MacOSSoftwareUpdateAccountSummary struct {
     Entity
     // Summary of the updates by category.
-    categorySummaries []MacOSSoftwareUpdateCategorySummary;
+    categorySummaries []MacOSSoftwareUpdateCategorySummaryable;
     // The device ID.
     deviceId *string;
     // The device name.
@@ -38,8 +38,12 @@ func NewMacOSSoftwareUpdateAccountSummary()(*MacOSSoftwareUpdateAccountSummary) 
     }
     return m
 }
+// CreateMacOSSoftwareUpdateAccountSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMacOSSoftwareUpdateAccountSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMacOSSoftwareUpdateAccountSummary(), nil
+}
 // GetCategorySummaries gets the categorySummaries property value. Summary of the updates by category.
-func (m *MacOSSoftwareUpdateAccountSummary) GetCategorySummaries()([]MacOSSoftwareUpdateCategorySummary) {
+func (m *MacOSSoftwareUpdateAccountSummary) GetCategorySummaries()([]MacOSSoftwareUpdateCategorySummaryable) {
     if m == nil {
         return nil
     } else {
@@ -78,66 +82,18 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFailedUpdateCount()(*int32) {
         return m.failedUpdateCount
     }
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device was updated.
-func (m *MacOSSoftwareUpdateAccountSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetOsVersion gets the osVersion property value. The OS version.
-func (m *MacOSSoftwareUpdateAccountSummary) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetSuccessfulUpdateCount gets the successfulUpdateCount property value. Number of successful updates on the device.
-func (m *MacOSSoftwareUpdateAccountSummary) GetSuccessfulUpdateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulUpdateCount
-    }
-}
-// GetTotalUpdateCount gets the totalUpdateCount property value. Number of total updates on the device.
-func (m *MacOSSoftwareUpdateAccountSummary) GetTotalUpdateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUpdateCount
-    }
-}
-// GetUserId gets the userId property value. The user ID.
-func (m *MacOSSoftwareUpdateAccountSummary) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name
-func (m *MacOSSoftwareUpdateAccountSummary) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["categorySummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMacOSSoftwareUpdateCategorySummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MacOSSoftwareUpdateCategorySummary, len(val))
+            res := make([]MacOSSoftwareUpdateCategorySummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MacOSSoftwareUpdateCategorySummary))
+                res[i] = v.(MacOSSoftwareUpdateCategorySummaryable)
             }
             m.SetCategorySummaries(res)
         }
@@ -245,6 +201,54 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device was updated.
+func (m *MacOSSoftwareUpdateAccountSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetOsVersion gets the osVersion property value. The OS version.
+func (m *MacOSSoftwareUpdateAccountSummary) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetSuccessfulUpdateCount gets the successfulUpdateCount property value. Number of successful updates on the device.
+func (m *MacOSSoftwareUpdateAccountSummary) GetSuccessfulUpdateCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successfulUpdateCount
+    }
+}
+// GetTotalUpdateCount gets the totalUpdateCount property value. Number of total updates on the device.
+func (m *MacOSSoftwareUpdateAccountSummary) GetTotalUpdateCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalUpdateCount
+    }
+}
+// GetUserId gets the userId property value. The user ID.
+func (m *MacOSSoftwareUpdateAccountSummary) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name
+func (m *MacOSSoftwareUpdateAccountSummary) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
 func (m *MacOSSoftwareUpdateAccountSummary) IsNil()(bool) {
     return m == nil
 }
@@ -257,8 +261,7 @@ func (m *MacOSSoftwareUpdateAccountSummary) Serialize(writer i04eb5309aeaafadd28
     if m.GetCategorySummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCategorySummaries()))
         for i, v := range m.GetCategorySummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("categorySummaries", cast)
         if err != nil {
@@ -328,7 +331,7 @@ func (m *MacOSSoftwareUpdateAccountSummary) Serialize(writer i04eb5309aeaafadd28
     return nil
 }
 // SetCategorySummaries sets the categorySummaries property value. Summary of the updates by category.
-func (m *MacOSSoftwareUpdateAccountSummary) SetCategorySummaries(value []MacOSSoftwareUpdateCategorySummary)() {
+func (m *MacOSSoftwareUpdateAccountSummary) SetCategorySummaries(value []MacOSSoftwareUpdateCategorySummaryable)() {
     if m != nil {
         m.categorySummaries = value
     }

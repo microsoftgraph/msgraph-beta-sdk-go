@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkOnPremisesCalendarSyncConfiguration 
+// TeamworkOnPremisesCalendarSyncConfiguration provides operations to manage the teamwork singleton.
 type TeamworkOnPremisesCalendarSyncConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewTeamworkOnPremisesCalendarSyncConfiguration()(*TeamworkOnPremisesCalenda
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkOnPremisesCalendarSyncConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomainUserName()(*strin
         return nil
     } else {
         return m.domainUserName
-    }
-}
-// GetSmtpAddress gets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
-func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetSmtpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smtpAddress
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetSmtpAddress gets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
+func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetSmtpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.smtpAddress
+    }
 }
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) IsNil()(bool) {
     return m == nil

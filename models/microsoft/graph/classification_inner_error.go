@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClassificationInnerError 
+// ClassificationInnerError provides operations to manage the dataClassificationService singleton.
 type ClassificationInnerError struct {
     // 
     activityId *string;
@@ -24,6 +24,10 @@ func NewClassificationInnerError()(*ClassificationInnerError) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateClassificationInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateClassificationInnerErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassificationInnerError(), nil
 }
 // GetActivityId gets the activityId property value. 
 func (m *ClassificationInnerError) GetActivityId()(*string) {

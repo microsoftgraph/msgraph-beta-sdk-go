@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmbeddedSIMActivationCode 
+// EmbeddedSIMActivationCode provides operations to manage the deviceManagement singleton.
 type EmbeddedSIMActivationCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEmbeddedSIMActivationCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEmbeddedSIMActivationCodeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEmbeddedSIMActivationCode(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmbeddedSIMActivationCode) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIntegratedCircuitCardIdentifier gets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
-func (m *EmbeddedSIMActivationCode) GetIntegratedCircuitCardIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.integratedCircuitCardIdentifier
-    }
-}
-// GetMatchingIdentifier gets the matchingIdentifier property value. The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
-func (m *EmbeddedSIMActivationCode) GetMatchingIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchingIdentifier
-    }
-}
-// GetSmdpPlusServerAddress gets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
-func (m *EmbeddedSIMActivationCode) GetSmdpPlusServerAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smdpPlusServerAddress
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetIntegratedCircuitCardIdentifier gets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
+func (m *EmbeddedSIMActivationCode) GetIntegratedCircuitCardIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.integratedCircuitCardIdentifier
+    }
+}
+// GetMatchingIdentifier gets the matchingIdentifier property value. The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
+func (m *EmbeddedSIMActivationCode) GetMatchingIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matchingIdentifier
+    }
+}
+// GetSmdpPlusServerAddress gets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
+func (m *EmbeddedSIMActivationCode) GetSmdpPlusServerAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.smdpPlusServerAddress
+    }
 }
 func (m *EmbeddedSIMActivationCode) IsNil()(bool) {
     return m == nil

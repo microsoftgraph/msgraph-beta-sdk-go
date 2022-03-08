@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// MuteAllRequestBuilder builds and executes requests for operations under \app\calls\{call-id}\participants\microsoft.graph.muteAll
+// MuteAllRequestBuilder provides operations to call the muteAll method.
 type MuteAllRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type MuteAllRequestBuilder struct {
 // MuteAllRequestBuilderPostOptions options for Post
 type MuteAllRequestBuilderPostOptions struct {
     // 
-    Body *MuteAllRequestBody;
+    Body MuteAllRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -26,12 +26,17 @@ type MuteAllRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
+
+import (
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
 // MuteAllResponse union type wrapper for classes muteParticipantsOperation
 type MuteAllResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type muteParticipantsOperation
-    muteParticipantsOperation *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperation;
+    muteParticipantsOperation i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperationable;
 }
 // NewMuteAllResponse instantiates a new muteAllResponse and sets the default values.
 func NewMuteAllResponse()(*MuteAllResponse) {
@@ -39,6 +44,9 @@ func NewMuteAllResponse()(*MuteAllResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateMuteAllResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMuteAllResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MuteAllResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +56,28 @@ func (m *MuteAllResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *MuteAllResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["muteParticipantsOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMuteParticipantsOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMuteParticipantsOperation(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetMuteParticipantsOperation gets the muteParticipantsOperation property value. Union type representation for type muteParticipantsOperation
-func (m *MuteAllResponse) GetMuteParticipantsOperation()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperation) {
+func (m *MuteAllResponse) GetMuteParticipantsOperation()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperationable) {
     if m == nil {
         return nil
     } else {
         return m.muteParticipantsOperation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *MuteAllResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["muteParticipantsOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMuteParticipantsOperation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMuteParticipantsOperation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *MuteAllResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +105,7 @@ func (m *MuteAllResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetMuteParticipantsOperation sets the muteParticipantsOperation property value. Union type representation for type muteParticipantsOperation
-func (m *MuteAllResponse) SetMuteParticipantsOperation(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperation)() {
+func (m *MuteAllResponse) SetMuteParticipantsOperation(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MuteParticipantsOperationable)() {
     if m != nil {
         m.muteParticipantsOperation = value
     }
@@ -111,7 +119,7 @@ func NewMuteAllRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +148,14 @@ func (m *MuteAllRequestBuilder) CreatePostRequestInformation(options *MuteAllReq
     return requestInfo, nil
 }
 // Post invoke action muteAll
-func (m *MuteAllRequestBuilder) Post(options *MuteAllRequestBuilderPostOptions)(*MuteAllResponse, error) {
+func (m *MuteAllRequestBuilder) Post(options *MuteAllRequestBuilderPostOptions)(MuteAllResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMuteAllResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateMuteAllResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*MuteAllResponse), nil
+    return res.(MuteAllResponseable), nil
 }

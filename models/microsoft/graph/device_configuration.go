@@ -5,31 +5,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfiguration 
+// DeviceConfiguration provides operations to manage the deviceManagement singleton.
 type DeviceConfiguration struct {
     Entity
     // The list of assignments for the device configuration profile.
-    assignments []DeviceConfigurationAssignment;
+    assignments []DeviceConfigurationAssignmentable;
     // DateTime the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Admin provided description of the Device Configuration.
     description *string;
     // The device mode applicability rule for this Policy.
-    deviceManagementApplicabilityRuleDeviceMode *DeviceManagementApplicabilityRuleDeviceMode;
+    deviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceModeable;
     // The OS edition applicability for this Policy.
-    deviceManagementApplicabilityRuleOsEdition *DeviceManagementApplicabilityRuleOsEdition;
+    deviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEditionable;
     // The OS version applicability rule for this Policy.
-    deviceManagementApplicabilityRuleOsVersion *DeviceManagementApplicabilityRuleOsVersion;
+    deviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersionable;
     // Device Configuration Setting State Device Summary
-    deviceSettingStateSummaries []SettingStateDeviceSummary;
+    deviceSettingStateSummaries []SettingStateDeviceSummaryable;
     // Device configuration installation status by device.
-    deviceStatuses []DeviceConfigurationDeviceStatus;
+    deviceStatuses []DeviceConfigurationDeviceStatusable;
     // Device Configuration devices status overview
-    deviceStatusOverview *DeviceConfigurationDeviceOverview;
+    deviceStatusOverview DeviceConfigurationDeviceOverviewable;
     // Admin provided name of the device configuration.
     displayName *string;
     // The list of group assignments for the device configuration profile.
-    groupAssignments []DeviceConfigurationGroupAssignment;
+    groupAssignments []DeviceConfigurationGroupAssignmentable;
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // List of Scope Tags for this Entity instance.
@@ -37,9 +37,9 @@ type DeviceConfiguration struct {
     // Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
     supportsScopeTags *bool;
     // Device configuration installation status by user.
-    userStatuses []DeviceConfigurationUserStatus;
+    userStatuses []DeviceConfigurationUserStatusable;
     // Device Configuration users status overview
-    userStatusOverview *DeviceConfigurationUserOverview;
+    userStatusOverview DeviceConfigurationUserOverviewable;
     // Version of the device configuration.
     version *int32;
 }
@@ -50,8 +50,12 @@ func NewDeviceConfiguration()(*DeviceConfiguration) {
     }
     return m
 }
+// CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfiguration(), nil
+}
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
-func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignment) {
+func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +79,7 @@ func (m *DeviceConfiguration) GetDescription()(*string) {
     }
 }
 // GetDeviceManagementApplicabilityRuleDeviceMode gets the deviceManagementApplicabilityRuleDeviceMode property value. The device mode applicability rule for this Policy.
-func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleDeviceMode()(*DeviceManagementApplicabilityRuleDeviceMode) {
+func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleDeviceMode()(DeviceManagementApplicabilityRuleDeviceModeable) {
     if m == nil {
         return nil
     } else {
@@ -83,7 +87,7 @@ func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleDeviceMode()(*
     }
 }
 // GetDeviceManagementApplicabilityRuleOsEdition gets the deviceManagementApplicabilityRuleOsEdition property value. The OS edition applicability for this Policy.
-func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsEdition()(*DeviceManagementApplicabilityRuleOsEdition) {
+func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsEdition()(DeviceManagementApplicabilityRuleOsEditionable) {
     if m == nil {
         return nil
     } else {
@@ -91,7 +95,7 @@ func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsEdition()(*D
     }
 }
 // GetDeviceManagementApplicabilityRuleOsVersion gets the deviceManagementApplicabilityRuleOsVersion property value. The OS version applicability rule for this Policy.
-func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsVersion()(*DeviceManagementApplicabilityRuleOsVersion) {
+func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsVersion()(DeviceManagementApplicabilityRuleOsVersionable) {
     if m == nil {
         return nil
     } else {
@@ -99,7 +103,7 @@ func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsVersion()(*D
     }
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummary) {
+func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -107,7 +111,7 @@ func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDev
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
-func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatus) {
+func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable) {
     if m == nil {
         return nil
     } else {
@@ -115,7 +119,7 @@ func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceSta
     }
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
-func (m *DeviceConfiguration) GetDeviceStatusOverview()(*DeviceConfigurationDeviceOverview) {
+func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable) {
     if m == nil {
         return nil
     } else {
@@ -130,74 +134,18 @@ func (m *DeviceConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device configuration profile.
-func (m *DeviceConfiguration) GetGroupAssignments()([]DeviceConfigurationGroupAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupAssignments
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
-func (m *DeviceConfiguration) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetSupportsScopeTags gets the supportsScopeTags property value. Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
-func (m *DeviceConfiguration) GetSupportsScopeTags()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportsScopeTags
-    }
-}
-// GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
-func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatuses
-    }
-}
-// GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
-func (m *DeviceConfiguration) GetUserStatusOverview()(*DeviceConfigurationUserOverview) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStatusOverview
-    }
-}
-// GetVersion gets the version property value. Version of the device configuration.
-func (m *DeviceConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationAssignment, len(val))
+            res := make([]DeviceConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationAssignment))
+                res[i] = v.(DeviceConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -224,70 +172,70 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["deviceManagementApplicabilityRuleDeviceMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementApplicabilityRuleDeviceMode() })
+        val, err := n.GetObjectValue(CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceManagementApplicabilityRuleDeviceMode(val.(*DeviceManagementApplicabilityRuleDeviceMode))
+            m.SetDeviceManagementApplicabilityRuleDeviceMode(val.(DeviceManagementApplicabilityRuleDeviceModeable))
         }
         return nil
     }
     res["deviceManagementApplicabilityRuleOsEdition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementApplicabilityRuleOsEdition() })
+        val, err := n.GetObjectValue(CreateDeviceManagementApplicabilityRuleOsEditionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceManagementApplicabilityRuleOsEdition(val.(*DeviceManagementApplicabilityRuleOsEdition))
+            m.SetDeviceManagementApplicabilityRuleOsEdition(val.(DeviceManagementApplicabilityRuleOsEditionable))
         }
         return nil
     }
     res["deviceManagementApplicabilityRuleOsVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementApplicabilityRuleOsVersion() })
+        val, err := n.GetObjectValue(CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceManagementApplicabilityRuleOsVersion(val.(*DeviceManagementApplicabilityRuleOsVersion))
+            m.SetDeviceManagementApplicabilityRuleOsVersion(val.(DeviceManagementApplicabilityRuleOsVersionable))
         }
         return nil
     }
     res["deviceSettingStateSummaries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettingStateDeviceSummary() })
+        val, err := n.GetCollectionOfObjectValues(CreateSettingStateDeviceSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SettingStateDeviceSummary, len(val))
+            res := make([]SettingStateDeviceSummaryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SettingStateDeviceSummary))
+                res[i] = v.(SettingStateDeviceSummaryable)
             }
             m.SetDeviceSettingStateSummaries(res)
         }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationDeviceStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationDeviceStatus, len(val))
+            res := make([]DeviceConfigurationDeviceStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationDeviceStatus))
+                res[i] = v.(DeviceConfigurationDeviceStatusable)
             }
             m.SetDeviceStatuses(res)
         }
         return nil
     }
     res["deviceStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationDeviceOverview() })
+        val, err := n.GetObjectValue(CreateDeviceConfigurationDeviceOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceStatusOverview(val.(*DeviceConfigurationDeviceOverview))
+            m.SetDeviceStatusOverview(val.(DeviceConfigurationDeviceOverviewable))
         }
         return nil
     }
@@ -302,14 +250,14 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["groupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationGroupAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationGroupAssignment, len(val))
+            res := make([]DeviceConfigurationGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationGroupAssignment))
+                res[i] = v.(DeviceConfigurationGroupAssignmentable)
             }
             m.SetGroupAssignments(res)
         }
@@ -350,26 +298,26 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["userStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationUserStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationUserStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceConfigurationUserStatus, len(val))
+            res := make([]DeviceConfigurationUserStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceConfigurationUserStatus))
+                res[i] = v.(DeviceConfigurationUserStatusable)
             }
             m.SetUserStatuses(res)
         }
         return nil
     }
     res["userStatusOverview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfigurationUserOverview() })
+        val, err := n.GetObjectValue(CreateDeviceConfigurationUserOverviewFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserStatusOverview(val.(*DeviceConfigurationUserOverview))
+            m.SetUserStatusOverview(val.(DeviceConfigurationUserOverviewable))
         }
         return nil
     }
@@ -385,6 +333,62 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
+// GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device configuration profile.
+func (m *DeviceConfiguration) GetGroupAssignments()([]DeviceConfigurationGroupAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupAssignments
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+func (m *DeviceConfiguration) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetSupportsScopeTags gets the supportsScopeTags property value. Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
+func (m *DeviceConfiguration) GetSupportsScopeTags()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportsScopeTags
+    }
+}
+// GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
+func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatuses
+    }
+}
+// GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
+func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOverviewable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userStatusOverview
+    }
+}
+// GetVersion gets the version property value. Version of the device configuration.
+func (m *DeviceConfiguration) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *DeviceConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -397,8 +401,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -438,8 +441,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDeviceSettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceSettingStateSummaries()))
         for i, v := range m.GetDeviceSettingStateSummaries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceSettingStateSummaries", cast)
         if err != nil {
@@ -449,8 +451,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -472,8 +473,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
         if err != nil {
@@ -501,8 +501,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetUserStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
         if err != nil {
@@ -524,7 +523,7 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
-func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignment)() {
+func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -542,37 +541,37 @@ func (m *DeviceConfiguration) SetDescription(value *string)() {
     }
 }
 // SetDeviceManagementApplicabilityRuleDeviceMode sets the deviceManagementApplicabilityRuleDeviceMode property value. The device mode applicability rule for this Policy.
-func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleDeviceMode(value *DeviceManagementApplicabilityRuleDeviceMode)() {
+func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleDeviceMode(value DeviceManagementApplicabilityRuleDeviceModeable)() {
     if m != nil {
         m.deviceManagementApplicabilityRuleDeviceMode = value
     }
 }
 // SetDeviceManagementApplicabilityRuleOsEdition sets the deviceManagementApplicabilityRuleOsEdition property value. The OS edition applicability for this Policy.
-func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleOsEdition(value *DeviceManagementApplicabilityRuleOsEdition)() {
+func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleOsEdition(value DeviceManagementApplicabilityRuleOsEditionable)() {
     if m != nil {
         m.deviceManagementApplicabilityRuleOsEdition = value
     }
 }
 // SetDeviceManagementApplicabilityRuleOsVersion sets the deviceManagementApplicabilityRuleOsVersion property value. The OS version applicability rule for this Policy.
-func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleOsVersion(value *DeviceManagementApplicabilityRuleOsVersion)() {
+func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleOsVersion(value DeviceManagementApplicabilityRuleOsVersionable)() {
     if m != nil {
         m.deviceManagementApplicabilityRuleOsVersion = value
     }
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummary)() {
+func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)() {
     if m != nil {
         m.deviceSettingStateSummaries = value
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. Device configuration installation status by device.
-func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatus)() {
+func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }
 }
 // SetDeviceStatusOverview sets the deviceStatusOverview property value. Device Configuration devices status overview
-func (m *DeviceConfiguration) SetDeviceStatusOverview(value *DeviceConfigurationDeviceOverview)() {
+func (m *DeviceConfiguration) SetDeviceStatusOverview(value DeviceConfigurationDeviceOverviewable)() {
     if m != nil {
         m.deviceStatusOverview = value
     }
@@ -584,7 +583,7 @@ func (m *DeviceConfiguration) SetDisplayName(value *string)() {
     }
 }
 // SetGroupAssignments sets the groupAssignments property value. The list of group assignments for the device configuration profile.
-func (m *DeviceConfiguration) SetGroupAssignments(value []DeviceConfigurationGroupAssignment)() {
+func (m *DeviceConfiguration) SetGroupAssignments(value []DeviceConfigurationGroupAssignmentable)() {
     if m != nil {
         m.groupAssignments = value
     }
@@ -608,13 +607,13 @@ func (m *DeviceConfiguration) SetSupportsScopeTags(value *bool)() {
     }
 }
 // SetUserStatuses sets the userStatuses property value. Device configuration installation status by user.
-func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatus)() {
+func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatusable)() {
     if m != nil {
         m.userStatuses = value
     }
 }
 // SetUserStatusOverview sets the userStatusOverview property value. Device Configuration users status overview
-func (m *DeviceConfiguration) SetUserStatusOverview(value *DeviceConfigurationUserOverview)() {
+func (m *DeviceConfiguration) SetUserStatusOverview(value DeviceConfigurationUserOverviewable)() {
     if m != nil {
         m.userStatusOverview = value
     }

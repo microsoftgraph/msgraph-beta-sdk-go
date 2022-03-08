@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchEntity 
+// SearchEntity provides operations to manage the searchEntity singleton.
 type SearchEntity struct {
     Entity
     // Administrative answer in Microsoft Search results to define common acronyms in a organization.
-    acronyms []Acronym;
+    acronyms []Acronymable;
     // Administrative answer in Microsoft Search results for common search queries in an organization.
-    bookmarks []Bookmark;
+    bookmarks []Bookmarkable;
     // Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-    qnas []Qna;
+    qnas []Qnaable;
 }
 // NewSearchEntity instantiates a new searchEntity and sets the default values.
 func NewSearchEntity()(*SearchEntity) {
@@ -21,8 +21,12 @@ func NewSearchEntity()(*SearchEntity) {
     }
     return m
 }
+// CreateSearchEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchEntityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchEntity(), nil
+}
 // GetAcronyms gets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in a organization.
-func (m *SearchEntity) GetAcronyms()([]Acronym) {
+func (m *SearchEntity) GetAcronyms()([]Acronymable) {
     if m == nil {
         return nil
     } else {
@@ -30,67 +34,67 @@ func (m *SearchEntity) GetAcronyms()([]Acronym) {
     }
 }
 // GetBookmarks gets the bookmarks property value. Administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *SearchEntity) GetBookmarks()([]Bookmark) {
+func (m *SearchEntity) GetBookmarks()([]Bookmarkable) {
     if m == nil {
         return nil
     } else {
         return m.bookmarks
     }
 }
-// GetQnas gets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *SearchEntity) GetQnas()([]Qna) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qnas
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acronyms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAcronym() })
+        val, err := n.GetCollectionOfObjectValues(CreateAcronymFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Acronym, len(val))
+            res := make([]Acronymable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Acronym))
+                res[i] = v.(Acronymable)
             }
             m.SetAcronyms(res)
         }
         return nil
     }
     res["bookmarks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookmark() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookmarkFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Bookmark, len(val))
+            res := make([]Bookmarkable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Bookmark))
+                res[i] = v.(Bookmarkable)
             }
             m.SetBookmarks(res)
         }
         return nil
     }
     res["qnas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewQna() })
+        val, err := n.GetCollectionOfObjectValues(CreateQnaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Qna, len(val))
+            res := make([]Qnaable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Qna))
+                res[i] = v.(Qnaable)
             }
             m.SetQnas(res)
         }
         return nil
     }
     return res
+}
+// GetQnas gets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+func (m *SearchEntity) GetQnas()([]Qnaable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.qnas
+    }
 }
 func (m *SearchEntity) IsNil()(bool) {
     return m == nil
@@ -104,8 +108,7 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetAcronyms() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAcronyms()))
         for i, v := range m.GetAcronyms() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("acronyms", cast)
         if err != nil {
@@ -115,8 +118,7 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetBookmarks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBookmarks()))
         for i, v := range m.GetBookmarks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("bookmarks", cast)
         if err != nil {
@@ -126,8 +128,7 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetQnas() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetQnas()))
         for i, v := range m.GetQnas() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("qnas", cast)
         if err != nil {
@@ -137,19 +138,19 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetAcronyms sets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in a organization.
-func (m *SearchEntity) SetAcronyms(value []Acronym)() {
+func (m *SearchEntity) SetAcronyms(value []Acronymable)() {
     if m != nil {
         m.acronyms = value
     }
 }
 // SetBookmarks sets the bookmarks property value. Administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *SearchEntity) SetBookmarks(value []Bookmark)() {
+func (m *SearchEntity) SetBookmarks(value []Bookmarkable)() {
     if m != nil {
         m.bookmarks = value
     }
 }
 // SetQnas sets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *SearchEntity) SetQnas(value []Qna)() {
+func (m *SearchEntity) SetQnas(value []Qnaable)() {
     if m != nil {
         m.qnas = value
     }

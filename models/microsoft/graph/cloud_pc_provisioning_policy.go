@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcProvisioningPolicy 
+// CloudPcProvisioningPolicy provides operations to manage the deviceManagement singleton.
 type CloudPcProvisioningPolicy struct {
     Entity
     // A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-    assignments []CloudPcProvisioningPolicyAssignment;
+    assignments []CloudPcProvisioningPolicyAssignmentable;
     // The provisioning policy description.
     description *string;
     // The display name for the provisioning policy.
     displayName *string;
     // Specifies how Cloud PCs will join Azure Active Directory.
-    domainJoinConfiguration *CloudPcDomainJoinConfiguration;
+    domainJoinConfiguration CloudPcDomainJoinConfigurationable;
     // The display name for the OS image you’re provisioning.
     imageDisplayName *string;
     // The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
@@ -22,7 +22,7 @@ type CloudPcProvisioningPolicy struct {
     // The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
     imageType *CloudPcProvisioningPolicyImageType;
     // The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
-    microsoftManagedDesktop *MicrosoftManagedDesktop;
+    microsoftManagedDesktop MicrosoftManagedDesktopable;
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
     onPremisesConnectionId *string;
 }
@@ -33,8 +33,12 @@ func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     }
     return m
 }
+// CreateCloudPcProvisioningPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcProvisioningPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcProvisioningPolicy(), nil
+}
 // GetAssignments gets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicyAssignment) {
+func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicyAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -58,65 +62,25 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
     }
 }
 // GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
-func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
+func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable) {
     if m == nil {
         return nil
     } else {
         return m.domainJoinConfiguration
     }
 }
-// GetImageDisplayName gets the imageDisplayName property value. The display name for the OS image you’re provisioning.
-func (m *CloudPcProvisioningPolicy) GetImageDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imageDisplayName
-    }
-}
-// GetImageId gets the imageId property value. The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
-func (m *CloudPcProvisioningPolicy) GetImageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imageId
-    }
-}
-// GetImageType gets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
-func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyImageType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imageType
-    }
-}
-// GetMicrosoftManagedDesktop gets the microsoftManagedDesktop property value. The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
-func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftManagedDesktop
-    }
-}
-// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
-func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesConnectionId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcProvisioningPolicyAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CloudPcProvisioningPolicyAssignment, len(val))
+            res := make([]CloudPcProvisioningPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CloudPcProvisioningPolicyAssignment))
+                res[i] = v.(CloudPcProvisioningPolicyAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -143,12 +107,12 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["domainJoinConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcDomainJoinConfiguration() })
+        val, err := n.GetObjectValue(CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDomainJoinConfiguration(val.(*CloudPcDomainJoinConfiguration))
+            m.SetDomainJoinConfiguration(val.(CloudPcDomainJoinConfigurationable))
         }
         return nil
     }
@@ -183,12 +147,12 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["microsoftManagedDesktop"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftManagedDesktop() })
+        val, err := n.GetObjectValue(CreateMicrosoftManagedDesktopFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMicrosoftManagedDesktop(val.(*MicrosoftManagedDesktop))
+            m.SetMicrosoftManagedDesktop(val.(MicrosoftManagedDesktopable))
         }
         return nil
     }
@@ -204,6 +168,46 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
+// GetImageDisplayName gets the imageDisplayName property value. The display name for the OS image you’re provisioning.
+func (m *CloudPcProvisioningPolicy) GetImageDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imageDisplayName
+    }
+}
+// GetImageId gets the imageId property value. The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
+func (m *CloudPcProvisioningPolicy) GetImageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imageId
+    }
+}
+// GetImageType gets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
+func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyImageType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imageType
+    }
+}
+// GetMicrosoftManagedDesktop gets the microsoftManagedDesktop property value. The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
+func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.microsoftManagedDesktop
+    }
+}
+// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
+func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesConnectionId
+    }
+}
 func (m *CloudPcProvisioningPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -216,8 +220,7 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -276,7 +279,7 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetAssignments sets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPolicyAssignment)() {
+func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -294,7 +297,7 @@ func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
     }
 }
 // SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
-func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value *CloudPcDomainJoinConfiguration)() {
+func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)() {
     if m != nil {
         m.domainJoinConfiguration = value
     }
@@ -318,7 +321,7 @@ func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolic
     }
 }
 // SetMicrosoftManagedDesktop sets the microsoftManagedDesktop property value. The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
-func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value *MicrosoftManagedDesktop)() {
+func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)() {
     if m != nil {
         m.microsoftManagedDesktop = value
     }

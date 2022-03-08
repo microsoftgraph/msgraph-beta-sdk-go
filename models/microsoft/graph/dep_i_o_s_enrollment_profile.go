@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DepIOSEnrollmentProfile 
+// DepIOSEnrollmentProfile provides operations to manage the deviceManagement singleton.
 type DepIOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
     // Indicates if Apperance screen is disabled
@@ -32,7 +32,7 @@ type DepIOSEnrollmentProfile struct {
     // Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
     iTunesPairingMode *ITunesPairingMode;
     // Management certificates for Apple Configurator
-    managementCertificates []ManagementCertificateWithThumbprint;
+    managementCertificates []ManagementCertificateWithThumbprintable;
     // Indicates if onboarding setup screen is disabled
     onBoardingScreenDisabled *bool;
     // Indicates if Passcode setup pane is disabled
@@ -55,7 +55,7 @@ type DepIOSEnrollmentProfile struct {
     temporarySessionTimeoutInSeconds *int32;
     // Indicates if Weclome screen is disabled
     updateCompleteScreenDisabled *bool;
-    // Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
+    // Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
     userlessSharedAadModeEnabled *bool;
     // Indicates timeout of temporary session
     userSessionTimeoutInSeconds *int32;
@@ -72,6 +72,10 @@ func NewDepIOSEnrollmentProfile()(*DepIOSEnrollmentProfile) {
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
     }
     return m
+}
+// CreateDepIOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDepIOSEnrollmentProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDepIOSEnrollmentProfile(), nil
 }
 // GetAppearanceScreenDisabled gets the appearanceScreenDisabled property value. Indicates if Apperance screen is disabled
 func (m *DepIOSEnrollmentProfile) GetAppearanceScreenDisabled()(*bool) {
@@ -135,174 +139,6 @@ func (m *DepIOSEnrollmentProfile) GetExpressLanguageScreenDisabled()(*bool) {
         return nil
     } else {
         return m.expressLanguageScreenDisabled
-    }
-}
-// GetForceTemporarySession gets the forceTemporarySession property value. Indicates if temporary sessions is enabled
-func (m *DepIOSEnrollmentProfile) GetForceTemporarySession()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.forceTemporarySession
-    }
-}
-// GetHomeButtonScreenDisabled gets the homeButtonScreenDisabled property value. Indicates if home button sensitivity screen is disabled
-func (m *DepIOSEnrollmentProfile) GetHomeButtonScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeButtonScreenDisabled
-    }
-}
-// GetIMessageAndFaceTimeScreenDisabled gets the iMessageAndFaceTimeScreenDisabled property value. Indicates if iMessage and FaceTime screen is disabled
-func (m *DepIOSEnrollmentProfile) GetIMessageAndFaceTimeScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iMessageAndFaceTimeScreenDisabled
-    }
-}
-// GetITunesPairingMode gets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
-func (m *DepIOSEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iTunesPairingMode
-    }
-}
-// GetManagementCertificates gets the managementCertificates property value. Management certificates for Apple Configurator
-func (m *DepIOSEnrollmentProfile) GetManagementCertificates()([]ManagementCertificateWithThumbprint) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementCertificates
-    }
-}
-// GetOnBoardingScreenDisabled gets the onBoardingScreenDisabled property value. Indicates if onboarding setup screen is disabled
-func (m *DepIOSEnrollmentProfile) GetOnBoardingScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onBoardingScreenDisabled
-    }
-}
-// GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
-func (m *DepIOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passCodeDisabled
-    }
-}
-// GetPasscodeLockGracePeriodInSeconds gets the passcodeLockGracePeriodInSeconds property value. Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
-func (m *DepIOSEnrollmentProfile) GetPasscodeLockGracePeriodInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeLockGracePeriodInSeconds
-    }
-}
-// GetPreferredLanguageScreenDisabled gets the preferredLanguageScreenDisabled property value. Indicates if Preferred language screen is disabled
-func (m *DepIOSEnrollmentProfile) GetPreferredLanguageScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredLanguageScreenDisabled
-    }
-}
-// GetRestoreCompletedScreenDisabled gets the restoreCompletedScreenDisabled property value. Indicates if Weclome screen is disabled
-func (m *DepIOSEnrollmentProfile) GetRestoreCompletedScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restoreCompletedScreenDisabled
-    }
-}
-// GetRestoreFromAndroidDisabled gets the restoreFromAndroidDisabled property value. Indicates if Restore from Android is disabled
-func (m *DepIOSEnrollmentProfile) GetRestoreFromAndroidDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restoreFromAndroidDisabled
-    }
-}
-// GetSharedIPadMaximumUserCount gets the sharedIPadMaximumUserCount property value. This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
-func (m *DepIOSEnrollmentProfile) GetSharedIPadMaximumUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedIPadMaximumUserCount
-    }
-}
-// GetSimSetupScreenDisabled gets the simSetupScreenDisabled property value. Indicates if the SIMSetup screen is disabled
-func (m *DepIOSEnrollmentProfile) GetSimSetupScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simSetupScreenDisabled
-    }
-}
-// GetSoftwareUpdateScreenDisabled gets the softwareUpdateScreenDisabled property value. Indicates if the mandatory sofware update screen is disabled
-func (m *DepIOSEnrollmentProfile) GetSoftwareUpdateScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.softwareUpdateScreenDisabled
-    }
-}
-// GetTemporarySessionTimeoutInSeconds gets the temporarySessionTimeoutInSeconds property value. Indicates timeout of temporary session
-func (m *DepIOSEnrollmentProfile) GetTemporarySessionTimeoutInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.temporarySessionTimeoutInSeconds
-    }
-}
-// GetUpdateCompleteScreenDisabled gets the updateCompleteScreenDisabled property value. Indicates if Weclome screen is disabled
-func (m *DepIOSEnrollmentProfile) GetUpdateCompleteScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateCompleteScreenDisabled
-    }
-}
-// GetUserlessSharedAadModeEnabled gets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
-func (m *DepIOSEnrollmentProfile) GetUserlessSharedAadModeEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userlessSharedAadModeEnabled
-    }
-}
-// GetUserSessionTimeoutInSeconds gets the userSessionTimeoutInSeconds property value. Indicates timeout of temporary session
-func (m *DepIOSEnrollmentProfile) GetUserSessionTimeoutInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSessionTimeoutInSeconds
-    }
-}
-// GetWatchMigrationScreenDisabled gets the watchMigrationScreenDisabled property value. Indicates if the watch migration screen is disabled
-func (m *DepIOSEnrollmentProfile) GetWatchMigrationScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.watchMigrationScreenDisabled
-    }
-}
-// GetWelcomeScreenDisabled gets the welcomeScreenDisabled property value. Indicates if Weclome screen is disabled
-func (m *DepIOSEnrollmentProfile) GetWelcomeScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.welcomeScreenDisabled
-    }
-}
-// GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
-func (m *DepIOSEnrollmentProfile) GetZoomDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.zoomDisabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -429,14 +265,14 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["managementCertificates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementCertificateWithThumbprint() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementCertificateWithThumbprintFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementCertificateWithThumbprint, len(val))
+            res := make([]ManagementCertificateWithThumbprintable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementCertificateWithThumbprint))
+                res[i] = v.(ManagementCertificateWithThumbprintable)
             }
             m.SetManagementCertificates(res)
         }
@@ -604,6 +440,174 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetForceTemporarySession gets the forceTemporarySession property value. Indicates if temporary sessions is enabled
+func (m *DepIOSEnrollmentProfile) GetForceTemporarySession()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.forceTemporarySession
+    }
+}
+// GetHomeButtonScreenDisabled gets the homeButtonScreenDisabled property value. Indicates if home button sensitivity screen is disabled
+func (m *DepIOSEnrollmentProfile) GetHomeButtonScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.homeButtonScreenDisabled
+    }
+}
+// GetIMessageAndFaceTimeScreenDisabled gets the iMessageAndFaceTimeScreenDisabled property value. Indicates if iMessage and FaceTime screen is disabled
+func (m *DepIOSEnrollmentProfile) GetIMessageAndFaceTimeScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iMessageAndFaceTimeScreenDisabled
+    }
+}
+// GetITunesPairingMode gets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+func (m *DepIOSEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iTunesPairingMode
+    }
+}
+// GetManagementCertificates gets the managementCertificates property value. Management certificates for Apple Configurator
+func (m *DepIOSEnrollmentProfile) GetManagementCertificates()([]ManagementCertificateWithThumbprintable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementCertificates
+    }
+}
+// GetOnBoardingScreenDisabled gets the onBoardingScreenDisabled property value. Indicates if onboarding setup screen is disabled
+func (m *DepIOSEnrollmentProfile) GetOnBoardingScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onBoardingScreenDisabled
+    }
+}
+// GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
+func (m *DepIOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passCodeDisabled
+    }
+}
+// GetPasscodeLockGracePeriodInSeconds gets the passcodeLockGracePeriodInSeconds property value. Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
+func (m *DepIOSEnrollmentProfile) GetPasscodeLockGracePeriodInSeconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passcodeLockGracePeriodInSeconds
+    }
+}
+// GetPreferredLanguageScreenDisabled gets the preferredLanguageScreenDisabled property value. Indicates if Preferred language screen is disabled
+func (m *DepIOSEnrollmentProfile) GetPreferredLanguageScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preferredLanguageScreenDisabled
+    }
+}
+// GetRestoreCompletedScreenDisabled gets the restoreCompletedScreenDisabled property value. Indicates if Weclome screen is disabled
+func (m *DepIOSEnrollmentProfile) GetRestoreCompletedScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restoreCompletedScreenDisabled
+    }
+}
+// GetRestoreFromAndroidDisabled gets the restoreFromAndroidDisabled property value. Indicates if Restore from Android is disabled
+func (m *DepIOSEnrollmentProfile) GetRestoreFromAndroidDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restoreFromAndroidDisabled
+    }
+}
+// GetSharedIPadMaximumUserCount gets the sharedIPadMaximumUserCount property value. This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
+func (m *DepIOSEnrollmentProfile) GetSharedIPadMaximumUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharedIPadMaximumUserCount
+    }
+}
+// GetSimSetupScreenDisabled gets the simSetupScreenDisabled property value. Indicates if the SIMSetup screen is disabled
+func (m *DepIOSEnrollmentProfile) GetSimSetupScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.simSetupScreenDisabled
+    }
+}
+// GetSoftwareUpdateScreenDisabled gets the softwareUpdateScreenDisabled property value. Indicates if the mandatory sofware update screen is disabled
+func (m *DepIOSEnrollmentProfile) GetSoftwareUpdateScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.softwareUpdateScreenDisabled
+    }
+}
+// GetTemporarySessionTimeoutInSeconds gets the temporarySessionTimeoutInSeconds property value. Indicates timeout of temporary session
+func (m *DepIOSEnrollmentProfile) GetTemporarySessionTimeoutInSeconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.temporarySessionTimeoutInSeconds
+    }
+}
+// GetUpdateCompleteScreenDisabled gets the updateCompleteScreenDisabled property value. Indicates if Weclome screen is disabled
+func (m *DepIOSEnrollmentProfile) GetUpdateCompleteScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateCompleteScreenDisabled
+    }
+}
+// GetUserlessSharedAadModeEnabled gets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
+func (m *DepIOSEnrollmentProfile) GetUserlessSharedAadModeEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userlessSharedAadModeEnabled
+    }
+}
+// GetUserSessionTimeoutInSeconds gets the userSessionTimeoutInSeconds property value. Indicates timeout of temporary session
+func (m *DepIOSEnrollmentProfile) GetUserSessionTimeoutInSeconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userSessionTimeoutInSeconds
+    }
+}
+// GetWatchMigrationScreenDisabled gets the watchMigrationScreenDisabled property value. Indicates if the watch migration screen is disabled
+func (m *DepIOSEnrollmentProfile) GetWatchMigrationScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.watchMigrationScreenDisabled
+    }
+}
+// GetWelcomeScreenDisabled gets the welcomeScreenDisabled property value. Indicates if Weclome screen is disabled
+func (m *DepIOSEnrollmentProfile) GetWelcomeScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.welcomeScreenDisabled
+    }
+}
+// GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
+func (m *DepIOSEnrollmentProfile) GetZoomDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.zoomDisabled
+    }
+}
 func (m *DepIOSEnrollmentProfile) IsNil()(bool) {
     return m == nil
 }
@@ -689,8 +693,7 @@ func (m *DepIOSEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetManagementCertificates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementCertificates()))
         for i, v := range m.GetManagementCertificates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementCertificates", cast)
         if err != nil {
@@ -868,7 +871,7 @@ func (m *DepIOSEnrollmentProfile) SetITunesPairingMode(value *ITunesPairingMode)
     }
 }
 // SetManagementCertificates sets the managementCertificates property value. Management certificates for Apple Configurator
-func (m *DepIOSEnrollmentProfile) SetManagementCertificates(value []ManagementCertificateWithThumbprint)() {
+func (m *DepIOSEnrollmentProfile) SetManagementCertificates(value []ManagementCertificateWithThumbprintable)() {
     if m != nil {
         m.managementCertificates = value
     }
@@ -939,7 +942,7 @@ func (m *DepIOSEnrollmentProfile) SetUpdateCompleteScreenDisabled(value *bool)()
         m.updateCompleteScreenDisabled = value
     }
 }
-// SetUserlessSharedAadModeEnabled sets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
+// SetUserlessSharedAadModeEnabled sets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
 func (m *DepIOSEnrollmentProfile) SetUserlessSharedAadModeEnabled(value *bool)() {
     if m != nil {
         m.userlessSharedAadModeEnabled = value

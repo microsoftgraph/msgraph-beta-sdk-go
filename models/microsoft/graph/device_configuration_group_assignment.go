@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationGroupAssignment 
+// DeviceConfigurationGroupAssignment provides operations to manage the deviceManagement singleton.
 type DeviceConfigurationGroupAssignment struct {
     Entity
     // The navigation link to the Device Configuration being targeted.
-    deviceConfiguration *DeviceConfiguration;
+    deviceConfiguration DeviceConfigurationable;
     // Indicates if this group is should be excluded. Defaults that the group should be included
     excludeGroup *bool;
     // The Id of the AAD group we are targeting the device configuration to.
@@ -21,8 +21,12 @@ func NewDeviceConfigurationGroupAssignment()(*DeviceConfigurationGroupAssignment
     }
     return m
 }
+// CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfigurationGroupAssignment(), nil
+}
 // GetDeviceConfiguration gets the deviceConfiguration property value. The navigation link to the Device Configuration being targeted.
-func (m *DeviceConfigurationGroupAssignment) GetDeviceConfiguration()(*DeviceConfiguration) {
+func (m *DeviceConfigurationGroupAssignment) GetDeviceConfiguration()(DeviceConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -37,24 +41,16 @@ func (m *DeviceConfigurationGroupAssignment) GetExcludeGroup()(*bool) {
         return m.excludeGroup
     }
 }
-// GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device configuration to.
-func (m *DeviceConfigurationGroupAssignment) GetTargetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceConfiguration() })
+        val, err := n.GetObjectValue(CreateDeviceConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceConfiguration(val.(*DeviceConfiguration))
+            m.SetDeviceConfiguration(val.(DeviceConfigurationable))
         }
         return nil
     }
@@ -79,6 +75,14 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device configuration to.
+func (m *DeviceConfigurationGroupAssignment) GetTargetGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetGroupId
+    }
 }
 func (m *DeviceConfigurationGroupAssignment) IsNil()(bool) {
     return m == nil
@@ -110,7 +114,7 @@ func (m *DeviceConfigurationGroupAssignment) Serialize(writer i04eb5309aeaafadd2
     return nil
 }
 // SetDeviceConfiguration sets the deviceConfiguration property value. The navigation link to the Device Configuration being targeted.
-func (m *DeviceConfigurationGroupAssignment) SetDeviceConfiguration(value *DeviceConfiguration)() {
+func (m *DeviceConfigurationGroupAssignment) SetDeviceConfiguration(value DeviceConfigurationable)() {
     if m != nil {
         m.deviceConfiguration = value
     }

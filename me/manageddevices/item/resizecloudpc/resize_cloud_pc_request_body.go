@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResizeCloudPcRequestBody 
+// ResizeCloudPcRequestBody provides operations to call the resizeCloudPc method.
 type ResizeCloudPcRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewResizeCloudPcRequestBody()(*ResizeCloudPcRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateResizeCloudPcRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResizeCloudPcRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResizeCloudPcRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResizeCloudPcRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTargetServicePlanId gets the targetServicePlanId property value. 
-func (m *ResizeCloudPcRequestBody) GetTargetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetServicePlanId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *ResizeCloudPcRequestBody) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetTargetServicePlanId gets the targetServicePlanId property value. 
+func (m *ResizeCloudPcRequestBody) GetTargetServicePlanId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetServicePlanId
+    }
 }
 func (m *ResizeCloudPcRequestBody) IsNil()(bool) {
     return m == nil

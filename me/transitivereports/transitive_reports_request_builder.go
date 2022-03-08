@@ -2,11 +2,11 @@ package transitivereports
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i42279aa5e9f15993d93102f3662fdccab19c123006e1b5a81d6919f4f5b78100 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/transitivereports/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ie5f31523a6d9b855fea86a9157a45a9bac58564dbf8ec458f68e6e82596ff3a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/transitivereports/count"
 )
 
-// TransitiveReportsRequestBuilder builds and executes requests for operations under \me\transitiveReports
+// TransitiveReportsRequestBuilder provides operations to manage the transitiveReports property of the microsoft.graph.user entity.
 type TransitiveReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewTransitiveReportsRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewTransitiveReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveReportsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TransitiveReportsRequestBuilder) Count()(*ie5f31523a6d9b855fea86a9157a45a9bac58564dbf8ec458f68e6e82596ff3a6.CountRequestBuilder) {
+    return ie5f31523a6d9b855fea86a9157a45a9bac58564dbf8ec458f68e6e82596ff3a6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the transitive reports for a user. Read-only.
 func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformation(options *TransitiveReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformation(options *T
     return requestInfo, nil
 }
 // Get the transitive reports for a user. Read-only.
-func (m *TransitiveReportsRequestBuilder) Get(options *TransitiveReportsRequestBuilderGetOptions)(*TransitiveReportsResponse, error) {
+func (m *TransitiveReportsRequestBuilder) Get(options *TransitiveReportsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTransitiveReportsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TransitiveReportsResponse), nil
-}
-func (m *TransitiveReportsRequestBuilder) Ref()(*i42279aa5e9f15993d93102f3662fdccab19c123006e1b5a81d6919f4f5b78100.RefRequestBuilder) {
-    return i42279aa5e9f15993d93102f3662fdccab19c123006e1b5a81d6919f4f5b78100.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

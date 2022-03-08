@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SensitivityPolicySettings 
+// SensitivityPolicySettings provides operations to manage the compliance singleton.
 type SensitivityPolicySettings struct {
     Entity
     // 
@@ -23,6 +23,10 @@ func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {
     }
     return m
 }
+// CreateSensitivityPolicySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSensitivityPolicySettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSensitivityPolicySettings(), nil
+}
 // GetApplicableTo gets the applicableTo property value. 
 func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityLabelTarget) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification
         return nil
     } else {
         return m.downgradeSensitivityRequiresJustification
-    }
-}
-// GetHelpWebUrl gets the helpWebUrl property value. 
-func (m *SensitivityPolicySettings) GetHelpWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.helpWebUrl
-    }
-}
-// GetIsMandatory gets the isMandatory property value. 
-func (m *SensitivityPolicySettings) GetIsMandatory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMandatory
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetHelpWebUrl gets the helpWebUrl property value. 
+func (m *SensitivityPolicySettings) GetHelpWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.helpWebUrl
+    }
+}
+// GetIsMandatory gets the isMandatory property value. 
+func (m *SensitivityPolicySettings) GetIsMandatory()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMandatory
+    }
 }
 func (m *SensitivityPolicySettings) IsNil()(bool) {
     return m == nil

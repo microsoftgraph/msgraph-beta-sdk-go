@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSimulationEventInfo 
+// UserSimulationEventInfo provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type UserSimulationEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewUserSimulationEventInfo()(*UserSimulationEventInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUserSimulationEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserSimulationEventInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserSimulationEventInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationEventInfo) GetAdditionalData()(map[string]interface{}) {
@@ -57,22 +61,6 @@ func (m *UserSimulationEventInfo) GetEventName()(*string) {
         return nil
     } else {
         return m.eventName
-    }
-}
-// GetIpAddress gets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
-func (m *UserSimulationEventInfo) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
-func (m *UserSimulationEventInfo) GetOsPlatformDeviceDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osPlatformDeviceDetails
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +117,22 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetIpAddress gets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
+func (m *UserSimulationEventInfo) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
+func (m *UserSimulationEventInfo) GetOsPlatformDeviceDetails()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osPlatformDeviceDetails
+    }
 }
 func (m *UserSimulationEventInfo) IsNil()(bool) {
     return m == nil

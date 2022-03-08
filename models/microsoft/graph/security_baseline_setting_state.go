@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityBaselineSettingState 
+// SecurityBaselineSettingState provides operations to manage the compliance singleton.
 type SecurityBaselineSettingState struct {
     Entity
     // The policies that contribute to this setting instance
-    contributingPolicies []SecurityBaselineContributingPolicy;
+    contributingPolicies []SecurityBaselineContributingPolicyable;
     // The error code if the setting is in error state
     errorCode *string;
     // The setting category id which this setting belongs to
@@ -20,7 +20,7 @@ type SecurityBaselineSettingState struct {
     // The setting name that is being reported
     settingName *string;
     // The policies that contribute to this setting instance
-    sourcePolicies []SettingSource;
+    sourcePolicies []SettingSourceable;
     // The compliance state of the security baseline setting
     state *SecurityBaselineComplianceState;
 }
@@ -31,8 +31,12 @@ func NewSecurityBaselineSettingState()(*SecurityBaselineSettingState) {
     }
     return m
 }
+// CreateSecurityBaselineSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityBaselineSettingStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityBaselineSettingState(), nil
+}
 // GetContributingPolicies gets the contributingPolicies property value. The policies that contribute to this setting instance
-func (m *SecurityBaselineSettingState) GetContributingPolicies()([]SecurityBaselineContributingPolicy) {
+func (m *SecurityBaselineSettingState) GetContributingPolicies()([]SecurityBaselineContributingPolicyable) {
     if m == nil {
         return nil
     } else {
@@ -47,66 +51,18 @@ func (m *SecurityBaselineSettingState) GetErrorCode()(*string) {
         return m.errorCode
     }
 }
-// GetSettingCategoryId gets the settingCategoryId property value. The setting category id which this setting belongs to
-func (m *SecurityBaselineSettingState) GetSettingCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCategoryId
-    }
-}
-// GetSettingCategoryName gets the settingCategoryName property value. The setting category name which this setting belongs to
-func (m *SecurityBaselineSettingState) GetSettingCategoryName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCategoryName
-    }
-}
-// GetSettingId gets the settingId property value. The setting id guid
-func (m *SecurityBaselineSettingState) GetSettingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingId
-    }
-}
-// GetSettingName gets the settingName property value. The setting name that is being reported
-func (m *SecurityBaselineSettingState) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
-}
-// GetSourcePolicies gets the sourcePolicies property value. The policies that contribute to this setting instance
-func (m *SecurityBaselineSettingState) GetSourcePolicies()([]SettingSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourcePolicies
-    }
-}
-// GetState gets the state property value. The compliance state of the security baseline setting
-func (m *SecurityBaselineSettingState) GetState()(*SecurityBaselineComplianceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contributingPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityBaselineContributingPolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineContributingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SecurityBaselineContributingPolicy, len(val))
+            res := make([]SecurityBaselineContributingPolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SecurityBaselineContributingPolicy))
+                res[i] = v.(SecurityBaselineContributingPolicyable)
             }
             m.SetContributingPolicies(res)
         }
@@ -163,14 +119,14 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["sourcePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettingSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateSettingSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SettingSource, len(val))
+            res := make([]SettingSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SettingSource))
+                res[i] = v.(SettingSourceable)
             }
             m.SetSourcePolicies(res)
         }
@@ -188,6 +144,54 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetSettingCategoryId gets the settingCategoryId property value. The setting category id which this setting belongs to
+func (m *SecurityBaselineSettingState) GetSettingCategoryId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingCategoryId
+    }
+}
+// GetSettingCategoryName gets the settingCategoryName property value. The setting category name which this setting belongs to
+func (m *SecurityBaselineSettingState) GetSettingCategoryName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingCategoryName
+    }
+}
+// GetSettingId gets the settingId property value. The setting id guid
+func (m *SecurityBaselineSettingState) GetSettingId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingId
+    }
+}
+// GetSettingName gets the settingName property value. The setting name that is being reported
+func (m *SecurityBaselineSettingState) GetSettingName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingName
+    }
+}
+// GetSourcePolicies gets the sourcePolicies property value. The policies that contribute to this setting instance
+func (m *SecurityBaselineSettingState) GetSourcePolicies()([]SettingSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourcePolicies
+    }
+}
+// GetState gets the state property value. The compliance state of the security baseline setting
+func (m *SecurityBaselineSettingState) GetState()(*SecurityBaselineComplianceState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
 func (m *SecurityBaselineSettingState) IsNil()(bool) {
     return m == nil
 }
@@ -200,8 +204,7 @@ func (m *SecurityBaselineSettingState) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetContributingPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContributingPolicies()))
         for i, v := range m.GetContributingPolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("contributingPolicies", cast)
         if err != nil {
@@ -241,8 +244,7 @@ func (m *SecurityBaselineSettingState) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetSourcePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSourcePolicies()))
         for i, v := range m.GetSourcePolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sourcePolicies", cast)
         if err != nil {
@@ -259,7 +261,7 @@ func (m *SecurityBaselineSettingState) Serialize(writer i04eb5309aeaafadd28374d7
     return nil
 }
 // SetContributingPolicies sets the contributingPolicies property value. The policies that contribute to this setting instance
-func (m *SecurityBaselineSettingState) SetContributingPolicies(value []SecurityBaselineContributingPolicy)() {
+func (m *SecurityBaselineSettingState) SetContributingPolicies(value []SecurityBaselineContributingPolicyable)() {
     if m != nil {
         m.contributingPolicies = value
     }
@@ -295,7 +297,7 @@ func (m *SecurityBaselineSettingState) SetSettingName(value *string)() {
     }
 }
 // SetSourcePolicies sets the sourcePolicies property value. The policies that contribute to this setting instance
-func (m *SecurityBaselineSettingState) SetSourcePolicies(value []SettingSource)() {
+func (m *SecurityBaselineSettingState) SetSourcePolicies(value []SettingSourceable)() {
     if m != nil {
         m.sourcePolicies = value
     }

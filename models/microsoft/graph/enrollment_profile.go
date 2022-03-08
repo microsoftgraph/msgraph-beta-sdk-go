@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EnrollmentProfile 
+// EnrollmentProfile provides operations to manage the deviceManagement singleton.
 type EnrollmentProfile struct {
     Entity
     // Configuration endpoint url to use for Enrollment
@@ -26,6 +26,10 @@ func NewEnrollmentProfile()(*EnrollmentProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEnrollmentProfile(), nil
 }
 // GetConfigurationEndpointUrl gets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
 func (m *EnrollmentProfile) GetConfigurationEndpointUrl()(*string) {
@@ -57,22 +61,6 @@ func (m *EnrollmentProfile) GetEnableAuthenticationViaCompanyPortal()(*bool) {
         return nil
     } else {
         return m.enableAuthenticationViaCompanyPortal
-    }
-}
-// GetRequireCompanyPortalOnSetupAssistantEnrolledDevices gets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
-func (m *EnrollmentProfile) GetRequireCompanyPortalOnSetupAssistantEnrolledDevices()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireCompanyPortalOnSetupAssistantEnrolledDevices
-    }
-}
-// GetRequiresUserAuthentication gets the requiresUserAuthentication property value. Indicates if the profile requires user authentication
-func (m *EnrollmentProfile) GetRequiresUserAuthentication()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiresUserAuthentication
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +127,22 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetRequireCompanyPortalOnSetupAssistantEnrolledDevices gets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
+func (m *EnrollmentProfile) GetRequireCompanyPortalOnSetupAssistantEnrolledDevices()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requireCompanyPortalOnSetupAssistantEnrolledDevices
+    }
+}
+// GetRequiresUserAuthentication gets the requiresUserAuthentication property value. Indicates if the profile requires user authentication
+func (m *EnrollmentProfile) GetRequiresUserAuthentication()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requiresUserAuthentication
+    }
 }
 func (m *EnrollmentProfile) IsNil()(bool) {
     return m == nil

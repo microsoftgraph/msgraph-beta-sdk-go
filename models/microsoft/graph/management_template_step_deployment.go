@@ -6,7 +6,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// ManagementTemplateStepDeployment 
+// ManagementTemplateStepDeployment provides operations to manage the tenantRelationship singleton.
 type ManagementTemplateStepDeployment struct {
     Entity
     // 
@@ -14,7 +14,7 @@ type ManagementTemplateStepDeployment struct {
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    error *GraphAPIErrorDetails;
+    error GraphAPIErrorDetailsable;
     // 
     lastActionByUserId *string;
     // 
@@ -22,7 +22,7 @@ type ManagementTemplateStepDeployment struct {
     // 
     status *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementTemplateDeploymentStatus;
     // 
-    templateStepVersion *ManagementTemplateStepVersion;
+    templateStepVersion ManagementTemplateStepVersionable;
     // 
     tenantId *string;
 }
@@ -32,6 +32,10 @@ func NewManagementTemplateStepDeployment()(*ManagementTemplateStepDeployment) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagementTemplateStepDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementTemplateStepDeploymentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementTemplateStepDeployment(), nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. 
 func (m *ManagementTemplateStepDeployment) GetCreatedByUserId()(*string) {
@@ -50,51 +54,11 @@ func (m *ManagementTemplateStepDeployment) GetCreatedDateTime()(*i336074805fc853
     }
 }
 // GetError gets the error property value. 
-func (m *ManagementTemplateStepDeployment) GetError()(*GraphAPIErrorDetails) {
+func (m *ManagementTemplateStepDeployment) GetError()(GraphAPIErrorDetailsable) {
     if m == nil {
         return nil
     } else {
         return m.error
-    }
-}
-// GetLastActionByUserId gets the lastActionByUserId property value. 
-func (m *ManagementTemplateStepDeployment) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. 
-func (m *ManagementTemplateStepDeployment) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetStatus gets the status property value. 
-func (m *ManagementTemplateStepDeployment) GetStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementTemplateDeploymentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTemplateStepVersion gets the templateStepVersion property value. 
-func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(*ManagementTemplateStepVersion) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateStepVersion
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *ManagementTemplateStepDeployment) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -121,12 +85,12 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGraphAPIErrorDetails() })
+        val, err := n.GetObjectValue(CreateGraphAPIErrorDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*GraphAPIErrorDetails))
+            m.SetError(val.(GraphAPIErrorDetailsable))
         }
         return nil
     }
@@ -161,12 +125,12 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["templateStepVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStepVersion() })
+        val, err := n.GetObjectValue(CreateManagementTemplateStepVersionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTemplateStepVersion(val.(*ManagementTemplateStepVersion))
+            m.SetTemplateStepVersion(val.(ManagementTemplateStepVersionable))
         }
         return nil
     }
@@ -181,6 +145,46 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetLastActionByUserId gets the lastActionByUserId property value. 
+func (m *ManagementTemplateStepDeployment) GetLastActionByUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionByUserId
+    }
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. 
+func (m *ManagementTemplateStepDeployment) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetStatus gets the status property value. 
+func (m *ManagementTemplateStepDeployment) GetStatus()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementTemplateDeploymentStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTemplateStepVersion gets the templateStepVersion property value. 
+func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(ManagementTemplateStepVersionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateStepVersion
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *ManagementTemplateStepDeployment) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *ManagementTemplateStepDeployment) IsNil()(bool) {
     return m == nil
@@ -255,7 +259,7 @@ func (m *ManagementTemplateStepDeployment) SetCreatedDateTime(value *i336074805f
     }
 }
 // SetError sets the error property value. 
-func (m *ManagementTemplateStepDeployment) SetError(value *GraphAPIErrorDetails)() {
+func (m *ManagementTemplateStepDeployment) SetError(value GraphAPIErrorDetailsable)() {
     if m != nil {
         m.error = value
     }
@@ -279,7 +283,7 @@ func (m *ManagementTemplateStepDeployment) SetStatus(value *i5c2592132064055aae4
     }
 }
 // SetTemplateStepVersion sets the templateStepVersion property value. 
-func (m *ManagementTemplateStepDeployment) SetTemplateStepVersion(value *ManagementTemplateStepVersion)() {
+func (m *ManagementTemplateStepDeployment) SetTemplateStepVersion(value ManagementTemplateStepVersionable)() {
     if m != nil {
         m.templateStepVersion = value
     }

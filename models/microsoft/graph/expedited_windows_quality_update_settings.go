@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExpeditedWindowsQualityUpdateSettings 
+// ExpeditedWindowsQualityUpdateSettings provides operations to manage the deviceManagement singleton.
 type ExpeditedWindowsQualityUpdateSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewExpeditedWindowsQualityUpdateSettings()(*ExpeditedWindowsQualityUpdateSe
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateExpeditedWindowsQualityUpdateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExpeditedWindowsQualityUpdateSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExpeditedWindowsQualityUpdateSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpeditedWindowsQualityUpdateSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetDaysUntilForcedReboot()(*int3
         return nil
     } else {
         return m.daysUntilForcedReboot
-    }
-}
-// GetQualityUpdateRelease gets the qualityUpdateRelease property value. The release date to identify a quality update.
-func (m *ExpeditedWindowsQualityUpdateSettings) GetQualityUpdateRelease()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdateRelease
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetQualityUpdateRelease gets the qualityUpdateRelease property value. The release date to identify a quality update.
+func (m *ExpeditedWindowsQualityUpdateSettings) GetQualityUpdateRelease()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.qualityUpdateRelease
+    }
 }
 func (m *ExpeditedWindowsQualityUpdateSettings) IsNil()(bool) {
     return m == nil

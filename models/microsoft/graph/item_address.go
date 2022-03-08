@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemAddress 
+// ItemAddress provides operations to manage the compliance singleton.
 type ItemAddress struct {
     ItemFacet
     // 
-    detail *PhysicalAddress;
+    detail PhysicalAddressable;
     // Friendly name the user has assigned to this address.
     displayName *string;
     // The geocoordinates of the address.
-    geoCoordinates *GeoCoordinates;
+    geoCoordinates GeoCoordinatesable;
 }
 // NewItemAddress instantiates a new itemAddress and sets the default values.
 func NewItemAddress()(*ItemAddress) {
@@ -21,8 +21,12 @@ func NewItemAddress()(*ItemAddress) {
     }
     return m
 }
+// CreateItemAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemAddressFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemAddress(), nil
+}
 // GetDetail gets the detail property value. 
-func (m *ItemAddress) GetDetail()(*PhysicalAddress) {
+func (m *ItemAddress) GetDetail()(PhysicalAddressable) {
     if m == nil {
         return nil
     } else {
@@ -37,24 +41,16 @@ func (m *ItemAddress) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetGeoCoordinates gets the geoCoordinates property value. The geocoordinates of the address.
-func (m *ItemAddress) GetGeoCoordinates()(*GeoCoordinates) {
-    if m == nil {
-        return nil
-    } else {
-        return m.geoCoordinates
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["detail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*PhysicalAddress))
+            m.SetDetail(val.(PhysicalAddressable))
         }
         return nil
     }
@@ -69,16 +65,24 @@ func (m *ItemAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["geoCoordinates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGeoCoordinates() })
+        val, err := n.GetObjectValue(CreateGeoCoordinatesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGeoCoordinates(val.(*GeoCoordinates))
+            m.SetGeoCoordinates(val.(GeoCoordinatesable))
         }
         return nil
     }
     return res
+}
+// GetGeoCoordinates gets the geoCoordinates property value. The geocoordinates of the address.
+func (m *ItemAddress) GetGeoCoordinates()(GeoCoordinatesable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.geoCoordinates
+    }
 }
 func (m *ItemAddress) IsNil()(bool) {
     return m == nil
@@ -110,7 +114,7 @@ func (m *ItemAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     return nil
 }
 // SetDetail sets the detail property value. 
-func (m *ItemAddress) SetDetail(value *PhysicalAddress)() {
+func (m *ItemAddress) SetDetail(value PhysicalAddressable)() {
     if m != nil {
         m.detail = value
     }
@@ -122,7 +126,7 @@ func (m *ItemAddress) SetDisplayName(value *string)() {
     }
 }
 // SetGeoCoordinates sets the geoCoordinates property value. The geocoordinates of the address.
-func (m *ItemAddress) SetGeoCoordinates(value *GeoCoordinates)() {
+func (m *ItemAddress) SetGeoCoordinates(value GeoCoordinatesable)() {
     if m != nil {
         m.geoCoordinates = value
     }
