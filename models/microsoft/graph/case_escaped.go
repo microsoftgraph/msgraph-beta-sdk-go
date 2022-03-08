@@ -6,17 +6,17 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// Case_escaped 
+// Case_escaped provides operations to manage the compliance singleton.
 type Case_escaped struct {
     Entity
     // The user who closed the case.
-    closedBy *IdentitySet;
+    closedBy IdentitySetable;
     // The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Returns a list of case custodian objects for this case.  Nullable.
-    custodians []Custodian;
+    custodians []Custodianable;
     // The case description.
     description *string;
     // The case name.
@@ -24,25 +24,25 @@ type Case_escaped struct {
     // The external case number for customer reference.
     externalId *string;
     // The last user who modified the entity.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Returns a list of case legalHold objects for this case.  Nullable.
-    legalHolds []LegalHold;
+    legalHolds []LegalHoldable;
     // Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-    noncustodialDataSources []NoncustodialDataSource;
+    noncustodialDataSources []NoncustodialDataSourceable;
     // Returns a list of case operation objects for this case. Nullable.
-    operations []CaseOperation;
+    operations []CaseOperationable;
     // Returns a list of reviewSet objects in the case. Read-only. Nullable.
-    reviewSets []ReviewSet;
+    reviewSets []ReviewSetable;
     // 
-    settings *CaseSettings;
+    settings CaseSettingsable;
     // Returns a list of sourceCollection objects associated with this case.
-    sourceCollections []SourceCollection;
+    sourceCollections []SourceCollectionable;
     // The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
     status *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseStatus;
     // Returns a list of tag objects associated to this case.
-    tags []Tag;
+    tags []Tagable;
 }
 // NewCase_escaped instantiates a new case_escaped and sets the default values.
 func NewCase_escaped()(*Case_escaped) {
@@ -51,8 +51,12 @@ func NewCase_escaped()(*Case_escaped) {
     }
     return m
 }
+// CreateCase_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCase_escapedFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCase_escaped(), nil
+}
 // GetClosedBy gets the closedBy property value. The user who closed the case.
-func (m *Case_escaped) GetClosedBy()(*IdentitySet) {
+func (m *Case_escaped) GetClosedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -76,7 +80,7 @@ func (m *Case_escaped) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // GetCustodians gets the custodians property value. Returns a list of case custodian objects for this case.  Nullable.
-func (m *Case_escaped) GetCustodians()([]Custodian) {
+func (m *Case_escaped) GetCustodians()([]Custodianable) {
     if m == nil {
         return nil
     } else {
@@ -107,96 +111,16 @@ func (m *Case_escaped) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The last user who modified the entity.
-func (m *Case_escaped) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Case_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLegalHolds gets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
-func (m *Case_escaped) GetLegalHolds()([]LegalHold) {
-    if m == nil {
-        return nil
-    } else {
-        return m.legalHolds
-    }
-}
-// GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-func (m *Case_escaped) GetNoncustodialDataSources()([]NoncustodialDataSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noncustodialDataSources
-    }
-}
-// GetOperations gets the operations property value. Returns a list of case operation objects for this case. Nullable.
-func (m *Case_escaped) GetOperations()([]CaseOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
-}
-// GetReviewSets gets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *Case_escaped) GetReviewSets()([]ReviewSet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSets
-    }
-}
-// GetSettings gets the settings property value. 
-func (m *Case_escaped) GetSettings()(*CaseSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetSourceCollections gets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
-func (m *Case_escaped) GetSourceCollections()([]SourceCollection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceCollections
-    }
-}
-// GetStatus gets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-func (m *Case_escaped) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTags gets the tags property value. Returns a list of tag objects associated to this case.
-func (m *Case_escaped) GetTags()([]Tag) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["closedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClosedBy(val.(*IdentitySet))
+            m.SetClosedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -221,14 +145,14 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["custodians"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustodian() })
+        val, err := n.GetCollectionOfObjectValues(CreateCustodianFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Custodian, len(val))
+            res := make([]Custodianable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Custodian))
+                res[i] = v.(Custodianable)
             }
             m.SetCustodians(res)
         }
@@ -265,12 +189,12 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -285,80 +209,80 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["legalHolds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLegalHold() })
+        val, err := n.GetCollectionOfObjectValues(CreateLegalHoldFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LegalHold, len(val))
+            res := make([]LegalHoldable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LegalHold))
+                res[i] = v.(LegalHoldable)
             }
             m.SetLegalHolds(res)
         }
         return nil
     }
     res["noncustodialDataSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNoncustodialDataSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateNoncustodialDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]NoncustodialDataSource, len(val))
+            res := make([]NoncustodialDataSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*NoncustodialDataSource))
+                res[i] = v.(NoncustodialDataSourceable)
             }
             m.SetNoncustodialDataSources(res)
         }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCaseOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateCaseOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CaseOperation, len(val))
+            res := make([]CaseOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CaseOperation))
+                res[i] = v.(CaseOperationable)
             }
             m.SetOperations(res)
         }
         return nil
     }
     res["reviewSets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReviewSet() })
+        val, err := n.GetCollectionOfObjectValues(CreateReviewSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ReviewSet, len(val))
+            res := make([]ReviewSetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ReviewSet))
+                res[i] = v.(ReviewSetable)
             }
             m.SetReviewSets(res)
         }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCaseSettings() })
+        val, err := n.GetObjectValue(CreateCaseSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*CaseSettings))
+            m.SetSettings(val.(CaseSettingsable))
         }
         return nil
     }
     res["sourceCollections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSourceCollection() })
+        val, err := n.GetCollectionOfObjectValues(CreateSourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SourceCollection, len(val))
+            res := make([]SourceCollectionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SourceCollection))
+                res[i] = v.(SourceCollectionable)
             }
             m.SetSourceCollections(res)
         }
@@ -375,20 +299,100 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["tags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTag() })
+        val, err := n.GetCollectionOfObjectValues(CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Tag, len(val))
+            res := make([]Tagable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Tag))
+                res[i] = v.(Tagable)
             }
             m.SetTags(res)
         }
         return nil
     }
     return res
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The last user who modified the entity.
+func (m *Case_escaped) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *Case_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLegalHolds gets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
+func (m *Case_escaped) GetLegalHolds()([]LegalHoldable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.legalHolds
+    }
+}
+// GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+func (m *Case_escaped) GetNoncustodialDataSources()([]NoncustodialDataSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.noncustodialDataSources
+    }
+}
+// GetOperations gets the operations property value. Returns a list of case operation objects for this case. Nullable.
+func (m *Case_escaped) GetOperations()([]CaseOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetReviewSets gets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
+func (m *Case_escaped) GetReviewSets()([]ReviewSetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewSets
+    }
+}
+// GetSettings gets the settings property value. 
+func (m *Case_escaped) GetSettings()(CaseSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetSourceCollections gets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
+func (m *Case_escaped) GetSourceCollections()([]SourceCollectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceCollections
+    }
+}
+// GetStatus gets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
+func (m *Case_escaped) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTags gets the tags property value. Returns a list of tag objects associated to this case.
+func (m *Case_escaped) GetTags()([]Tagable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
 }
 func (m *Case_escaped) IsNil()(bool) {
     return m == nil
@@ -420,8 +424,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetCustodians() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustodians()))
         for i, v := range m.GetCustodians() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("custodians", cast)
         if err != nil {
@@ -461,8 +464,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetLegalHolds() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLegalHolds()))
         for i, v := range m.GetLegalHolds() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("legalHolds", cast)
         if err != nil {
@@ -472,8 +474,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetNoncustodialDataSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNoncustodialDataSources()))
         for i, v := range m.GetNoncustodialDataSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("noncustodialDataSources", cast)
         if err != nil {
@@ -483,8 +484,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -494,8 +494,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetReviewSets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewSets()))
         for i, v := range m.GetReviewSets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("reviewSets", cast)
         if err != nil {
@@ -511,8 +510,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetSourceCollections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSourceCollections()))
         for i, v := range m.GetSourceCollections() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sourceCollections", cast)
         if err != nil {
@@ -529,8 +527,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetTags() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTags()))
         for i, v := range m.GetTags() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tags", cast)
         if err != nil {
@@ -540,7 +537,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetClosedBy sets the closedBy property value. The user who closed the case.
-func (m *Case_escaped) SetClosedBy(value *IdentitySet)() {
+func (m *Case_escaped) SetClosedBy(value IdentitySetable)() {
     if m != nil {
         m.closedBy = value
     }
@@ -558,7 +555,7 @@ func (m *Case_escaped) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97
     }
 }
 // SetCustodians sets the custodians property value. Returns a list of case custodian objects for this case.  Nullable.
-func (m *Case_escaped) SetCustodians(value []Custodian)() {
+func (m *Case_escaped) SetCustodians(value []Custodianable)() {
     if m != nil {
         m.custodians = value
     }
@@ -582,7 +579,7 @@ func (m *Case_escaped) SetExternalId(value *string)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user who modified the entity.
-func (m *Case_escaped) SetLastModifiedBy(value *IdentitySet)() {
+func (m *Case_escaped) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -594,37 +591,37 @@ func (m *Case_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetLegalHolds sets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
-func (m *Case_escaped) SetLegalHolds(value []LegalHold)() {
+func (m *Case_escaped) SetLegalHolds(value []LegalHoldable)() {
     if m != nil {
         m.legalHolds = value
     }
 }
 // SetNoncustodialDataSources sets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-func (m *Case_escaped) SetNoncustodialDataSources(value []NoncustodialDataSource)() {
+func (m *Case_escaped) SetNoncustodialDataSources(value []NoncustodialDataSourceable)() {
     if m != nil {
         m.noncustodialDataSources = value
     }
 }
 // SetOperations sets the operations property value. Returns a list of case operation objects for this case. Nullable.
-func (m *Case_escaped) SetOperations(value []CaseOperation)() {
+func (m *Case_escaped) SetOperations(value []CaseOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
 // SetReviewSets sets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *Case_escaped) SetReviewSets(value []ReviewSet)() {
+func (m *Case_escaped) SetReviewSets(value []ReviewSetable)() {
     if m != nil {
         m.reviewSets = value
     }
 }
 // SetSettings sets the settings property value. 
-func (m *Case_escaped) SetSettings(value *CaseSettings)() {
+func (m *Case_escaped) SetSettings(value CaseSettingsable)() {
     if m != nil {
         m.settings = value
     }
 }
 // SetSourceCollections sets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
-func (m *Case_escaped) SetSourceCollections(value []SourceCollection)() {
+func (m *Case_escaped) SetSourceCollections(value []SourceCollectionable)() {
     if m != nil {
         m.sourceCollections = value
     }
@@ -636,7 +633,7 @@ func (m *Case_escaped) SetStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b6
     }
 }
 // SetTags sets the tags property value. Returns a list of tag objects associated to this case.
-func (m *Case_escaped) SetTags(value []Tag)() {
+func (m *Case_escaped) SetTags(value []Tagable)() {
     if m != nil {
         m.tags = value
     }

@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RecommendationResource 
+// RecommendationResource provides operations to manage the directory singleton.
 type RecommendationResource struct {
     Entity
     // 
     addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    additionalDetails []KeyValue;
+    additionalDetails []KeyValueable;
     // 
     apiUrl *string;
     // 
@@ -36,6 +36,10 @@ func NewRecommendationResource()(*RecommendationResource) {
     }
     return m
 }
+// CreateRecommendationResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecommendationResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecommendationResource(), nil
+}
 // GetAddedDateTime gets the addedDateTime property value. 
 func (m *RecommendationResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -45,7 +49,7 @@ func (m *RecommendationResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3
     }
 }
 // GetAdditionalDetails gets the additionalDetails property value. 
-func (m *RecommendationResource) GetAdditionalDetails()([]KeyValue) {
+func (m *RecommendationResource) GetAdditionalDetails()([]KeyValueable) {
     if m == nil {
         return nil
     } else {
@@ -68,54 +72,6 @@ func (m *RecommendationResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetOwner gets the owner property value. 
-func (m *RecommendationResource) GetOwner()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
-}
-// GetPortalUrl gets the portalUrl property value. 
-func (m *RecommendationResource) GetPortalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.portalUrl
-    }
-}
-// GetRank gets the rank property value. 
-func (m *RecommendationResource) GetRank()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rank
-    }
-}
-// GetRecommendationId gets the recommendationId property value. 
-func (m *RecommendationResource) GetRecommendationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationId
-    }
-}
-// GetResourceType gets the resourceType property value. 
-func (m *RecommendationResource) GetResourceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceType
-    }
-}
-// GetStatus gets the status property value. 
-func (m *RecommendationResource) GetStatus()(*RecommendationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecommendationResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -130,14 +86,14 @@ func (m *RecommendationResource) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["additionalDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValue, len(val))
+            res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValue))
+                res[i] = v.(KeyValueable)
             }
             m.SetAdditionalDetails(res)
         }
@@ -225,6 +181,54 @@ func (m *RecommendationResource) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
+// GetOwner gets the owner property value. 
+func (m *RecommendationResource) GetOwner()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.owner
+    }
+}
+// GetPortalUrl gets the portalUrl property value. 
+func (m *RecommendationResource) GetPortalUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.portalUrl
+    }
+}
+// GetRank gets the rank property value. 
+func (m *RecommendationResource) GetRank()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rank
+    }
+}
+// GetRecommendationId gets the recommendationId property value. 
+func (m *RecommendationResource) GetRecommendationId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationId
+    }
+}
+// GetResourceType gets the resourceType property value. 
+func (m *RecommendationResource) GetResourceType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceType
+    }
+}
+// GetStatus gets the status property value. 
+func (m *RecommendationResource) GetStatus()(*RecommendationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *RecommendationResource) IsNil()(bool) {
     return m == nil
 }
@@ -243,8 +247,7 @@ func (m *RecommendationResource) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetAdditionalDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalDetails()))
         for i, v := range m.GetAdditionalDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("additionalDetails", cast)
         if err != nil {
@@ -309,7 +312,7 @@ func (m *RecommendationResource) SetAddedDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetAdditionalDetails sets the additionalDetails property value. 
-func (m *RecommendationResource) SetAdditionalDetails(value []KeyValue)() {
+func (m *RecommendationResource) SetAdditionalDetails(value []KeyValueable)() {
     if m != nil {
         m.additionalDetails = value
     }

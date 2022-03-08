@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScript 
+// DeviceManagementScript provides operations to manage the deviceManagement singleton.
 type DeviceManagementScript struct {
     Entity
     // The list of group assignments for the device management script.
-    assignments []DeviceManagementScriptAssignment;
+    assignments []DeviceManagementScriptAssignmentable;
     // The date and time the device management script was created. This property is read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Optional description for the device management script.
     description *string;
     // List of run states for this script across all devices.
-    deviceRunStates []DeviceManagementScriptDeviceState;
+    deviceRunStates []DeviceManagementScriptDeviceStateable;
     // Name of the device management script.
     displayName *string;
     // Indicate whether the script signature needs be checked.
@@ -23,7 +23,7 @@ type DeviceManagementScript struct {
     // Script file name.
     fileName *string;
     // The list of group assignments for the device management script.
-    groupAssignments []DeviceManagementScriptGroupAssignment;
+    groupAssignments []DeviceManagementScriptGroupAssignmentable;
     // The date and time the device management script was last modified. This property is read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // List of Scope Tag IDs for this PowerShellScript instance.
@@ -33,11 +33,11 @@ type DeviceManagementScript struct {
     // Indicates the type of execution context. Possible values are: system, user.
     runAsAccount *RunAsAccountType;
     // Run summary for device management script.
-    runSummary *DeviceManagementScriptRunSummary;
+    runSummary DeviceManagementScriptRunSummaryable;
     // The script content.
     scriptContent []byte;
     // List of run states for this script across all users.
-    userRunStates []DeviceManagementScriptUserState;
+    userRunStates []DeviceManagementScriptUserStateable;
 }
 // NewDeviceManagementScript instantiates a new deviceManagementScript and sets the default values.
 func NewDeviceManagementScript()(*DeviceManagementScript) {
@@ -46,8 +46,12 @@ func NewDeviceManagementScript()(*DeviceManagementScript) {
     }
     return m
 }
+// CreateDeviceManagementScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementScriptFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementScript(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
-func (m *DeviceManagementScript) GetAssignments()([]DeviceManagementScriptAssignment) {
+func (m *DeviceManagementScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -71,7 +75,7 @@ func (m *DeviceManagementScript) GetDescription()(*string) {
     }
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices.
-func (m *DeviceManagementScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceState) {
+func (m *DeviceManagementScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
     if m == nil {
         return nil
     } else {
@@ -94,90 +98,18 @@ func (m *DeviceManagementScript) GetEnforceSignatureCheck()(*bool) {
         return m.enforceSignatureCheck
     }
 }
-// GetFileName gets the fileName property value. Script file name.
-func (m *DeviceManagementScript) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
-func (m *DeviceManagementScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupAssignments
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
-func (m *DeviceManagementScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
-func (m *DeviceManagementScript) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether the PowerShell script should run as 32-bit
-func (m *DeviceManagementScript) GetRunAs32Bit()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAs32Bit
-    }
-}
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
-func (m *DeviceManagementScript) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
-}
-// GetRunSummary gets the runSummary property value. Run summary for device management script.
-func (m *DeviceManagementScript) GetRunSummary()(*DeviceManagementScriptRunSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runSummary
-    }
-}
-// GetScriptContent gets the scriptContent property value. The script content.
-func (m *DeviceManagementScript) GetScriptContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptContent
-    }
-}
-// GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
-func (m *DeviceManagementScript) GetUserRunStates()([]DeviceManagementScriptUserState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRunStates
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementScriptAssignment, len(val))
+            res := make([]DeviceManagementScriptAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementScriptAssignment))
+                res[i] = v.(DeviceManagementScriptAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -204,14 +136,14 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["deviceRunStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptDeviceState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementScriptDeviceState, len(val))
+            res := make([]DeviceManagementScriptDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementScriptDeviceState))
+                res[i] = v.(DeviceManagementScriptDeviceStateable)
             }
             m.SetDeviceRunStates(res)
         }
@@ -248,14 +180,14 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["groupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptGroupAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementScriptGroupAssignment, len(val))
+            res := make([]DeviceManagementScriptGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementScriptGroupAssignment))
+                res[i] = v.(DeviceManagementScriptGroupAssignmentable)
             }
             m.SetGroupAssignments(res)
         }
@@ -306,12 +238,12 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["runSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptRunSummary() })
+        val, err := n.GetObjectValue(CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRunSummary(val.(*DeviceManagementScriptRunSummary))
+            m.SetRunSummary(val.(DeviceManagementScriptRunSummaryable))
         }
         return nil
     }
@@ -326,20 +258,92 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["userRunStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptUserState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptUserStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementScriptUserState, len(val))
+            res := make([]DeviceManagementScriptUserStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementScriptUserState))
+                res[i] = v.(DeviceManagementScriptUserStateable)
             }
             m.SetUserRunStates(res)
         }
         return nil
     }
     return res
+}
+// GetFileName gets the fileName property value. Script file name.
+func (m *DeviceManagementScript) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
+func (m *DeviceManagementScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupAssignments
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
+func (m *DeviceManagementScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
+func (m *DeviceManagementScript) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether the PowerShell script should run as 32-bit
+func (m *DeviceManagementScript) GetRunAs32Bit()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runAs32Bit
+    }
+}
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+func (m *DeviceManagementScript) GetRunAsAccount()(*RunAsAccountType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runAsAccount
+    }
+}
+// GetRunSummary gets the runSummary property value. Run summary for device management script.
+func (m *DeviceManagementScript) GetRunSummary()(DeviceManagementScriptRunSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runSummary
+    }
+}
+// GetScriptContent gets the scriptContent property value. The script content.
+func (m *DeviceManagementScript) GetScriptContent()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scriptContent
+    }
+}
+// GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
+func (m *DeviceManagementScript) GetUserRunStates()([]DeviceManagementScriptUserStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRunStates
+    }
 }
 func (m *DeviceManagementScript) IsNil()(bool) {
     return m == nil
@@ -353,8 +357,7 @@ func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -376,8 +379,7 @@ func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetDeviceRunStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {
@@ -405,8 +407,7 @@ func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
         if err != nil {
@@ -453,8 +454,7 @@ func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetUserRunStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserRunStates()))
         for i, v := range m.GetUserRunStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userRunStates", cast)
         if err != nil {
@@ -464,7 +464,7 @@ func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device management script.
-func (m *DeviceManagementScript) SetAssignments(value []DeviceManagementScriptAssignment)() {
+func (m *DeviceManagementScript) SetAssignments(value []DeviceManagementScriptAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -482,7 +482,7 @@ func (m *DeviceManagementScript) SetDescription(value *string)() {
     }
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for this script across all devices.
-func (m *DeviceManagementScript) SetDeviceRunStates(value []DeviceManagementScriptDeviceState)() {
+func (m *DeviceManagementScript) SetDeviceRunStates(value []DeviceManagementScriptDeviceStateable)() {
     if m != nil {
         m.deviceRunStates = value
     }
@@ -506,7 +506,7 @@ func (m *DeviceManagementScript) SetFileName(value *string)() {
     }
 }
 // SetGroupAssignments sets the groupAssignments property value. The list of group assignments for the device management script.
-func (m *DeviceManagementScript) SetGroupAssignments(value []DeviceManagementScriptGroupAssignment)() {
+func (m *DeviceManagementScript) SetGroupAssignments(value []DeviceManagementScriptGroupAssignmentable)() {
     if m != nil {
         m.groupAssignments = value
     }
@@ -536,7 +536,7 @@ func (m *DeviceManagementScript) SetRunAsAccount(value *RunAsAccountType)() {
     }
 }
 // SetRunSummary sets the runSummary property value. Run summary for device management script.
-func (m *DeviceManagementScript) SetRunSummary(value *DeviceManagementScriptRunSummary)() {
+func (m *DeviceManagementScript) SetRunSummary(value DeviceManagementScriptRunSummaryable)() {
     if m != nil {
         m.runSummary = value
     }
@@ -548,7 +548,7 @@ func (m *DeviceManagementScript) SetScriptContent(value []byte)() {
     }
 }
 // SetUserRunStates sets the userRunStates property value. List of run states for this script across all users.
-func (m *DeviceManagementScript) SetUserRunStates(value []DeviceManagementScriptUserState)() {
+func (m *DeviceManagementScript) SetUserRunStates(value []DeviceManagementScriptUserStateable)() {
     if m != nil {
         m.userRunStates = value
     }

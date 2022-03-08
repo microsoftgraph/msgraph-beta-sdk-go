@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GenerateKeyRequestBuilder builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}\microsoft.graph.generateKey
+// GenerateKeyRequestBuilder provides operations to call the generateKey method.
 type GenerateKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type GenerateKeyRequestBuilder struct {
 // GenerateKeyRequestBuilderPostOptions options for Post
 type GenerateKeyRequestBuilderPostOptions struct {
     // 
-    Body *GenerateKeyRequestBody;
+    Body GenerateKeyRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type GenerateKeyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type trustFrameworkKey
-    trustFrameworkKey *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey;
+    trustFrameworkKey i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable;
 }
 // NewGenerateKeyResponse instantiates a new generateKeyResponse and sets the default values.
 func NewGenerateKeyResponse()(*GenerateKeyResponse) {
@@ -39,6 +39,9 @@ func NewGenerateKeyResponse()(*GenerateKeyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGenerateKeyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGenerateKeyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenerateKeyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *GenerateKeyResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *GenerateKeyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["trustFrameworkKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTrustFrameworkKeyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrustFrameworkKey(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTrustFrameworkKey gets the trustFrameworkKey property value. Union type representation for type trustFrameworkKey
-func (m *GenerateKeyResponse) GetTrustFrameworkKey()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey) {
+func (m *GenerateKeyResponse) GetTrustFrameworkKey()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable) {
     if m == nil {
         return nil
     } else {
         return m.trustFrameworkKey
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GenerateKeyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["trustFrameworkKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTrustFrameworkKey() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTrustFrameworkKey(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey))
-        }
-        return nil
-    }
-    return res
 }
 func (m *GenerateKeyResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *GenerateKeyResponse) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetTrustFrameworkKey sets the trustFrameworkKey property value. Union type representation for type trustFrameworkKey
-func (m *GenerateKeyResponse) SetTrustFrameworkKey(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKey)() {
+func (m *GenerateKeyResponse) SetTrustFrameworkKey(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeyable)() {
     if m != nil {
         m.trustFrameworkKey = value
     }
@@ -111,7 +114,7 @@ func NewGenerateKeyRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *GenerateKeyRequestBuilder) CreatePostRequestInformation(options *Genera
     return requestInfo, nil
 }
 // Post invoke action generateKey
-func (m *GenerateKeyRequestBuilder) Post(options *GenerateKeyRequestBuilderPostOptions)(*GenerateKeyResponse, error) {
+func (m *GenerateKeyRequestBuilder) Post(options *GenerateKeyRequestBuilderPostOptions)(GenerateKeyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGenerateKeyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGenerateKeyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GenerateKeyResponse), nil
+    return res.(GenerateKeyResponseable), nil
 }

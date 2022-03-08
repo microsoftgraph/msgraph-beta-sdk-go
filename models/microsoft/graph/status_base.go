@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// StatusBase 
+// StatusBase provides operations to manage the auditLogRoot singleton.
 type StatusBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewStatusBase()(*StatusBase) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateStatusBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateStatusBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewStatusBase(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StatusBase) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetStatus gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
-func (m *StatusBase) GetStatus()(*ProvisioningResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *StatusBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
+func (m *StatusBase) GetStatus()(*ProvisioningResult) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *StatusBase) IsNil()(bool) {
     return m == nil

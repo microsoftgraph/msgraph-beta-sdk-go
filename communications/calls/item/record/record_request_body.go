@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RecordRequestBody 
+// RecordRequestBody provides operations to call the record method.
 type RecordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,7 +22,7 @@ type RecordRequestBody struct {
     // 
     playBeep *bool;
     // 
-    prompts []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt;
+    prompts []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Promptable;
     // 
     stopTones []string;
     // 
@@ -34,6 +34,10 @@ func NewRecordRequestBody()(*RecordRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRecordRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecordRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecordRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -57,62 +61,6 @@ func (m *RecordRequestBody) GetClientContext()(*string) {
         return nil
     } else {
         return m.clientContext
-    }
-}
-// GetInitialSilenceTimeoutInSeconds gets the initialSilenceTimeoutInSeconds property value. 
-func (m *RecordRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initialSilenceTimeoutInSeconds
-    }
-}
-// GetMaxRecordDurationInSeconds gets the maxRecordDurationInSeconds property value. 
-func (m *RecordRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxRecordDurationInSeconds
-    }
-}
-// GetMaxSilenceTimeoutInSeconds gets the maxSilenceTimeoutInSeconds property value. 
-func (m *RecordRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxSilenceTimeoutInSeconds
-    }
-}
-// GetPlayBeep gets the playBeep property value. 
-func (m *RecordRequestBody) GetPlayBeep()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.playBeep
-    }
-}
-// GetPrompts gets the prompts property value. 
-func (m *RecordRequestBody) GetPrompts()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prompts
-    }
-}
-// GetStopTones gets the stopTones property value. 
-func (m *RecordRequestBody) GetStopTones()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stopTones
-    }
-}
-// GetStreamWhileRecording gets the streamWhileRecording property value. 
-func (m *RecordRequestBody) GetStreamWhileRecording()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.streamWhileRecording
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,14 +127,14 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["prompts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrompt() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePromptFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Promptable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Promptable)
             }
             m.SetPrompts(res)
         }
@@ -217,6 +165,62 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetInitialSilenceTimeoutInSeconds gets the initialSilenceTimeoutInSeconds property value. 
+func (m *RecordRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initialSilenceTimeoutInSeconds
+    }
+}
+// GetMaxRecordDurationInSeconds gets the maxRecordDurationInSeconds property value. 
+func (m *RecordRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxRecordDurationInSeconds
+    }
+}
+// GetMaxSilenceTimeoutInSeconds gets the maxSilenceTimeoutInSeconds property value. 
+func (m *RecordRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxSilenceTimeoutInSeconds
+    }
+}
+// GetPlayBeep gets the playBeep property value. 
+func (m *RecordRequestBody) GetPlayBeep()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.playBeep
+    }
+}
+// GetPrompts gets the prompts property value. 
+func (m *RecordRequestBody) GetPrompts()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Promptable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.prompts
+    }
+}
+// GetStopTones gets the stopTones property value. 
+func (m *RecordRequestBody) GetStopTones()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stopTones
+    }
+}
+// GetStreamWhileRecording gets the streamWhileRecording property value. 
+func (m *RecordRequestBody) GetStreamWhileRecording()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.streamWhileRecording
+    }
 }
 func (m *RecordRequestBody) IsNil()(bool) {
     return m == nil
@@ -262,8 +266,7 @@ func (m *RecordRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetPrompts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrompts()))
         for i, v := range m.GetPrompts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("prompts", cast)
         if err != nil {
@@ -333,7 +336,7 @@ func (m *RecordRequestBody) SetPlayBeep(value *bool)() {
     }
 }
 // SetPrompts sets the prompts property value. 
-func (m *RecordRequestBody) SetPrompts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt)() {
+func (m *RecordRequestBody) SetPrompts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Promptable)() {
     if m != nil {
         m.prompts = value
     }

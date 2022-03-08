@@ -2,11 +2,11 @@ package exactmatchuploadagents
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/exactmatchuploadagents/count"
 )
 
-// ExactMatchUploadAgentsRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchUploadAgents
+// ExactMatchUploadAgentsRequestBuilder provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
 type ExactMatchUploadAgentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ExactMatchUploadAgentsRequestBuilderGetQueryParameters struct {
 // ExactMatchUploadAgentsRequestBuilderPostOptions options for Post
 type ExactMatchUploadAgentsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewExactMatchUploadAgentsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewExactMatchUploadAgentsRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchUploadAgentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ExactMatchUploadAgentsRequestBuilder) Count()(*ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2.CountRequestBuilder) {
+    return ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get exactMatchUploadAgents from dataClassification
 func (m *ExactMatchUploadAgentsRequestBuilder) CreateGetRequestInformation(options *ExactMatchUploadAgentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *ExactMatchUploadAgentsRequestBuilder) CreatePostRequestInformation(opti
     return requestInfo, nil
 }
 // Get get exactMatchUploadAgents from dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) Get(options *ExactMatchUploadAgentsRequestBuilderGetOptions)(*ExactMatchUploadAgentsResponse, error) {
+func (m *ExactMatchUploadAgentsRequestBuilder) Get(options *ExactMatchUploadAgentsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExactMatchUploadAgentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateExactMatchUploadAgentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ExactMatchUploadAgentsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgentCollectionResponseable), nil
 }
 // Post create new navigation property to exactMatchUploadAgents for dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) Post(options *ExactMatchUploadAgentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent, error) {
+func (m *ExactMatchUploadAgentsRequestBuilder) Post(options *ExactMatchUploadAgentsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewExactMatchUploadAgent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateExactMatchUploadAgentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgentable), nil
 }

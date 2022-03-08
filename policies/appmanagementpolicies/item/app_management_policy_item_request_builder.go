@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i39246f205a7ceced8c7ecbef8cbfa15757785cd1d0f62de6ca5bd4e8c035342d "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/appmanagementpolicies/item/appliesto"
+    i5bfe18ce550e877199a23bfc74000f1842df32fb36e78ada04700c468505c5e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/appmanagementpolicies/item/appliesto/item"
 )
 
-// AppManagementPolicyItemRequestBuilder builds and executes requests for operations under \policies\appManagementPolicies\{appManagementPolicy-id}
+// AppManagementPolicyItemRequestBuilder provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
 type AppManagementPolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type AppManagementPolicyItemRequestBuilderGetQueryParameters struct {
 // AppManagementPolicyItemRequestBuilderPatchOptions options for Patch
 type AppManagementPolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -57,6 +57,17 @@ type AppManagementPolicyItemRequestBuilderPatchOptions struct {
 func (m *AppManagementPolicyItemRequestBuilder) AppliesTo()(*i39246f205a7ceced8c7ecbef8cbfa15757785cd1d0f62de6ca5bd4e8c035342d.AppliesToRequestBuilder) {
     return i39246f205a7ceced8c7ecbef8cbfa15757785cd1d0f62de6ca5bd4e8c035342d.NewAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AppliesToById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.appManagementPolicies.item.appliesTo.item collection
+func (m *AppManagementPolicyItemRequestBuilder) AppliesToById(id string)(*i5bfe18ce550e877199a23bfc74000f1842df32fb36e78ada04700c468505c5e2.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i5bfe18ce550e877199a23bfc74000f1842df32fb36e78ada04700c468505c5e2.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
 func NewAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppManagementPolicyItemRequestBuilder) {
     m := &AppManagementPolicyItemRequestBuilder{
@@ -66,7 +77,7 @@ func NewAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +87,7 @@ func NewAppManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// CreateDeleteRequestInformation delete navigation property appManagementPolicies for policies
 func (m *AppManagementPolicyItemRequestBuilder) CreateDeleteRequestInformation(options *AppManagementPolicyItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +124,7 @@ func (m *AppManagementPolicyItemRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// CreatePatchRequestInformation update the navigation property appManagementPolicies in policies
 func (m *AppManagementPolicyItemRequestBuilder) CreatePatchRequestInformation(options *AppManagementPolicyItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,37 +142,49 @@ func (m *AppManagementPolicyItemRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// Delete delete navigation property appManagementPolicies for policies
 func (m *AppManagementPolicyItemRequestBuilder) Delete(options *AppManagementPolicyItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-func (m *AppManagementPolicyItemRequestBuilder) Get(options *AppManagementPolicyItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicy, error) {
+func (m *AppManagementPolicyItemRequestBuilder) Get(options *AppManagementPolicyItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAppManagementPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAppManagementPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicyable), nil
 }
-// Patch the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// Patch update the navigation property appManagementPolicies in policies
 func (m *AppManagementPolicyItemRequestBuilder) Patch(options *AppManagementPolicyItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

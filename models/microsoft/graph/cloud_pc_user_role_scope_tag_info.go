@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcUserRoleScopeTagInfo 
+// CloudPcUserRoleScopeTagInfo provides operations to manage the deviceManagement singleton.
 type CloudPcUserRoleScopeTagInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewCloudPcUserRoleScopeTagInfo()(*CloudPcUserRoleScopeTagInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcUserRoleScopeTagInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcUserRoleScopeTagInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *CloudPcUserRoleScopeTagInfo) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetRoleScopeTagId gets the roleScopeTagId property value. Scope tag ID.
-func (m *CloudPcUserRoleScopeTagInfo) GetRoleScopeTagId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *CloudPcUserRoleScopeTagInfo) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetRoleScopeTagId gets the roleScopeTagId property value. Scope tag ID.
+func (m *CloudPcUserRoleScopeTagInfo) GetRoleScopeTagId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagId
+    }
 }
 func (m *CloudPcUserRoleScopeTagInfo) IsNil()(bool) {
     return m == nil

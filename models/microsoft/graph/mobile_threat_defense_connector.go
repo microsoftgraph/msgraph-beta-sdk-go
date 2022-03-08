@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileThreatDefenseConnector 
+// MobileThreatDefenseConnector provides operations to manage the deviceManagement singleton.
 type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
@@ -50,6 +50,10 @@ func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     }
     return m
 }
+// CreateMobileThreatDefenseConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileThreatDefenseConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileThreatDefenseConnector(), nil
+}
 // GetAllowPartnerToCollectIOSApplicationMetadata gets the allowPartnerToCollectIOSApplicationMetadata property value. For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
 func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMetadata()(*bool) {
     if m == nil {
@@ -88,102 +92,6 @@ func (m *MobileThreatDefenseConnector) GetAndroidMobileApplicationManagementEnab
         return nil
     } else {
         return m.androidMobileApplicationManagementEnabled
-    }
-}
-// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosDeviceBlockedOnMissingPartnerData
-    }
-}
-// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosEnabled
-    }
-}
-// GetIosMobileApplicationManagementEnabled gets the iosMobileApplicationManagementEnabled property value. For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
-func (m *MobileThreatDefenseConnector) GetIosMobileApplicationManagementEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosMobileApplicationManagementEnabled
-    }
-}
-// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
-func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastHeartbeatDateTime
-    }
-}
-// GetMacDeviceBlockedOnMissingPartnerData gets the macDeviceBlockedOnMissingPartnerData property value. For Mac, get or set whether Intune must receive data from the data sync partner prior to marking a device compliant
-func (m *MobileThreatDefenseConnector) GetMacDeviceBlockedOnMissingPartnerData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macDeviceBlockedOnMissingPartnerData
-    }
-}
-// GetMacEnabled gets the macEnabled property value. For Mac, get or set whether data from the data sync partner should be used during compliance evaluations
-func (m *MobileThreatDefenseConnector) GetMacEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macEnabled
-    }
-}
-// GetMicrosoftDefenderForEndpointAttachEnabled gets the microsoftDefenderForEndpointAttachEnabled property value. When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.
-func (m *MobileThreatDefenseConnector) GetMicrosoftDefenderForEndpointAttachEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftDefenderForEndpointAttachEnabled
-    }
-}
-// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
-func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerState
-    }
-}
-// GetPartnerUnresponsivenessThresholdInDays gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerUnresponsivenessThresholdInDays
-    }
-}
-// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerUnsupportedOsVersionBlocked
-    }
-}
-// GetWindowsDeviceBlockedOnMissingPartnerData gets the windowsDeviceBlockedOnMissingPartnerData property value. For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsDeviceBlockedOnMissingPartnerData
-    }
-}
-// GetWindowsEnabled gets the windowsEnabled property value. For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
-func (m *MobileThreatDefenseConnector) GetWindowsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -360,6 +268,102 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosDeviceBlockedOnMissingPartnerData
+    }
+}
+// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosEnabled
+    }
+}
+// GetIosMobileApplicationManagementEnabled gets the iosMobileApplicationManagementEnabled property value. For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
+func (m *MobileThreatDefenseConnector) GetIosMobileApplicationManagementEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosMobileApplicationManagementEnabled
+    }
+}
+// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
+func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastHeartbeatDateTime
+    }
+}
+// GetMacDeviceBlockedOnMissingPartnerData gets the macDeviceBlockedOnMissingPartnerData property value. For Mac, get or set whether Intune must receive data from the data sync partner prior to marking a device compliant
+func (m *MobileThreatDefenseConnector) GetMacDeviceBlockedOnMissingPartnerData()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macDeviceBlockedOnMissingPartnerData
+    }
+}
+// GetMacEnabled gets the macEnabled property value. For Mac, get or set whether data from the data sync partner should be used during compliance evaluations
+func (m *MobileThreatDefenseConnector) GetMacEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macEnabled
+    }
+}
+// GetMicrosoftDefenderForEndpointAttachEnabled gets the microsoftDefenderForEndpointAttachEnabled property value. When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.
+func (m *MobileThreatDefenseConnector) GetMicrosoftDefenderForEndpointAttachEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.microsoftDefenderForEndpointAttachEnabled
+    }
+}
+// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerState
+    }
+}
+// GetPartnerUnresponsivenessThresholdInDays gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerUnresponsivenessThresholdInDays
+    }
+}
+// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partnerUnsupportedOsVersionBlocked
+    }
+}
+// GetWindowsDeviceBlockedOnMissingPartnerData gets the windowsDeviceBlockedOnMissingPartnerData property value. For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerData()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsDeviceBlockedOnMissingPartnerData
+    }
+}
+// GetWindowsEnabled gets the windowsEnabled property value. For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
+func (m *MobileThreatDefenseConnector) GetWindowsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsEnabled
+    }
 }
 func (m *MobileThreatDefenseConnector) IsNil()(bool) {
     return m == nil

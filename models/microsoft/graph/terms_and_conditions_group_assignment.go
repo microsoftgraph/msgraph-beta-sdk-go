@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TermsAndConditionsGroupAssignment 
+// TermsAndConditionsGroupAssignment provides operations to manage the deviceManagement singleton.
 type TermsAndConditionsGroupAssignment struct {
     Entity
     // Unique identifier of a group that the T&C policy is assigned to.
     targetGroupId *string;
     // Navigation link to the terms and conditions that are assigned.
-    termsAndConditions *TermsAndConditions;
+    termsAndConditions TermsAndConditionsable;
 }
 // NewTermsAndConditionsGroupAssignment instantiates a new termsAndConditionsGroupAssignment and sets the default values.
 func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) {
@@ -19,21 +19,9 @@ func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) 
     }
     return m
 }
-// GetTargetGroupId gets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
-func (m *TermsAndConditionsGroupAssignment) GetTargetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupId
-    }
-}
-// GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
-func (m *TermsAndConditionsGroupAssignment) GetTermsAndConditions()(*TermsAndConditions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsAndConditions
-    }
+// CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTermsAndConditionsGroupAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,16 +37,32 @@ func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["termsAndConditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsAndConditions() })
+        val, err := n.GetObjectValue(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTermsAndConditions(val.(*TermsAndConditions))
+            m.SetTermsAndConditions(val.(TermsAndConditionsable))
         }
         return nil
     }
     return res
+}
+// GetTargetGroupId gets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
+func (m *TermsAndConditionsGroupAssignment) GetTargetGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetGroupId
+    }
+}
+// GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
+func (m *TermsAndConditionsGroupAssignment) GetTermsAndConditions()(TermsAndConditionsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsAndConditions
+    }
 }
 func (m *TermsAndConditionsGroupAssignment) IsNil()(bool) {
     return m == nil
@@ -90,7 +94,7 @@ func (m *TermsAndConditionsGroupAssignment) SetTargetGroupId(value *string)() {
     }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
-func (m *TermsAndConditionsGroupAssignment) SetTermsAndConditions(value *TermsAndConditions)() {
+func (m *TermsAndConditionsGroupAssignment) SetTermsAndConditions(value TermsAndConditionsable)() {
     if m != nil {
         m.termsAndConditions = value
     }

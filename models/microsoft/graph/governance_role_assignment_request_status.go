@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceRoleAssignmentRequestStatus 
+// GovernanceRoleAssignmentRequestStatus provides operations to manage the collection of governanceRoleDefinition entities.
 type GovernanceRoleAssignmentRequestStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     status *string;
     // 
-    statusDetails []KeyValue;
+    statusDetails []KeyValueable;
     // 
     subStatus *string;
 }
@@ -22,36 +22,16 @@ func NewGovernanceRoleAssignmentRequestStatus()(*GovernanceRoleAssignmentRequest
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGovernanceRoleAssignmentRequestStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceRoleAssignmentRequestStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceRoleAssignmentRequestStatus(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRoleAssignmentRequestStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetStatus gets the status property value. 
-func (m *GovernanceRoleAssignmentRequestStatus) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetStatusDetails gets the statusDetails property value. 
-func (m *GovernanceRoleAssignmentRequestStatus) GetStatusDetails()([]KeyValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
-    }
-}
-// GetSubStatus gets the subStatus property value. 
-func (m *GovernanceRoleAssignmentRequestStatus) GetSubStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +48,14 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
         return nil
     }
     res["statusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValue, len(val))
+            res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValue))
+                res[i] = v.(KeyValueable)
             }
             m.SetStatusDetails(res)
         }
@@ -93,6 +73,30 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
     }
     return res
 }
+// GetStatus gets the status property value. 
+func (m *GovernanceRoleAssignmentRequestStatus) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetStatusDetails gets the statusDetails property value. 
+func (m *GovernanceRoleAssignmentRequestStatus) GetStatusDetails()([]KeyValueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statusDetails
+    }
+}
+// GetSubStatus gets the subStatus property value. 
+func (m *GovernanceRoleAssignmentRequestStatus) GetSubStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subStatus
+    }
+}
 func (m *GovernanceRoleAssignmentRequestStatus) IsNil()(bool) {
     return m == nil
 }
@@ -107,8 +111,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) Serialize(writer i04eb5309aeaafa
     if m.GetStatusDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStatusDetails()))
         for i, v := range m.GetStatusDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("statusDetails", cast)
         if err != nil {
@@ -142,7 +145,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) SetStatus(value *string)() {
     }
 }
 // SetStatusDetails sets the statusDetails property value. 
-func (m *GovernanceRoleAssignmentRequestStatus) SetStatusDetails(value []KeyValue)() {
+func (m *GovernanceRoleAssignmentRequestStatus) SetStatusDetails(value []KeyValueable)() {
     if m != nil {
         m.statusDetails = value
     }

@@ -7,7 +7,6 @@ import (
     i8c83ac2fb480533d8c9e30080c936573aac55d73adc5a8f1617aed89f50165d0 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users"
     ib66e30f6b3aeaf350ed09763c0deac43e2a8c5ebd97258eecafd38240fa58d1b "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i55d158864f05addf1ddf88c8f6aff3854a29b88e36bc404eb7167a1c13495a9a "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item"
     i7bc4bfb8dac45e0b487266018aebf5c4f0660e8547d69a5d9bccd64de3f76c6e "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item"
@@ -15,7 +14,7 @@ import (
     ic55376c4e180e6c30db51b0da6b21653e2bd1c223954aa398f7f85ee7f1ab1fd "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item"
 )
 
-// EducationRequestBuilder builds and executes requests for operations under \education
+// EducationRequestBuilder provides operations to manage the educationRoot singleton.
 type EducationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type EducationRequestBuilderGetQueryParameters struct {
 // EducationRequestBuilderPatchOptions options for Patch
 type EducationRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationRoot;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationRootable;
     // Request headers
     H map[string]string;
     // Request options
@@ -76,7 +75,7 @@ func NewEducationRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -125,16 +124,20 @@ func (m *EducationRequestBuilder) CreatePatchRequestInformation(options *Educati
     return requestInfo, nil
 }
 // Get get education
-func (m *EducationRequestBuilder) Get(options *EducationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationRoot, error) {
+func (m *EducationRequestBuilder) Get(options *EducationRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationRoot() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationRoot), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationRootable), nil
 }
 func (m *EducationRequestBuilder) Me()(*i3c67db4ec1fd2f6c500265c4eb67ba5ae029834f96efe48e7be4b1c86c5e4deb.MeRequestBuilder) {
     return i3c67db4ec1fd2f6c500265c4eb67ba5ae029834f96efe48e7be4b1c86c5e4deb.NewMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -145,7 +148,11 @@ func (m *EducationRequestBuilder) Patch(options *EducationRequestBuilderPatchOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

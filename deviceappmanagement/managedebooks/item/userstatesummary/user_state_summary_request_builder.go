@@ -2,11 +2,11 @@ package userstatesummary
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    id98c1c7736e8db9985261ce64683beb463d5ff1abb2bc1ca5f19f2429632cf6a "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/userstatesummary/count"
 )
 
-// UserStateSummaryRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\userStateSummary
+// UserStateSummaryRequestBuilder provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
 type UserStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserStateSummaryRequestBuilderGetQueryParameters struct {
 // UserStateSummaryRequestBuilderPostOptions options for Post
 type UserStateSummaryRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummary;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummaryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserStateSummaryRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserStateSummaryRequestBuilder) Count()(*id98c1c7736e8db9985261ce64683beb463d5ff1abb2bc1ca5f19f2429632cf6a.CountRequestBuilder) {
+    return id98c1c7736e8db9985261ce64683beb463d5ff1abb2bc1ca5f19f2429632cf6a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of installation states for this eBook.
 func (m *UserStateSummaryRequestBuilder) CreateGetRequestInformation(options *UserStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserStateSummaryRequestBuilder) CreateGetRequestInformation(options *Us
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of installation states for this eBook.
+// CreatePostRequestInformation create new navigation property to userStateSummary for deviceAppManagement
 func (m *UserStateSummaryRequestBuilder) CreatePostRequestInformation(options *UserStateSummaryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserStateSummaryRequestBuilder) CreatePostRequestInformation(options *U
     return requestInfo, nil
 }
 // Get the list of installation states for this eBook.
-func (m *UserStateSummaryRequestBuilder) Get(options *UserStateSummaryRequestBuilderGetOptions)(*UserStateSummaryResponse, error) {
+func (m *UserStateSummaryRequestBuilder) Get(options *UserStateSummaryRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserStateSummaryResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserInstallStateSummaryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserStateSummaryResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummaryCollectionResponseable), nil
 }
-// Post the list of installation states for this eBook.
-func (m *UserStateSummaryRequestBuilder) Post(options *UserStateSummaryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummary, error) {
+// Post create new navigation property to userStateSummary for deviceAppManagement
+func (m *UserStateSummaryRequestBuilder) Post(options *UserStateSummaryRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserInstallStateSummary() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserInstallStateSummaryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummary), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserInstallStateSummaryable), nil
 }

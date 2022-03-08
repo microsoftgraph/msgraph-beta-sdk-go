@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceInsight 
+// GovernanceInsight provides operations to manage the compliance singleton.
 type GovernanceInsight struct {
     Entity
     // Indicates when the insight was created.
@@ -18,13 +18,9 @@ func NewGovernanceInsight()(*GovernanceInsight) {
     }
     return m
 }
-// GetInsightCreatedDateTime gets the insightCreatedDateTime property value. Indicates when the insight was created.
-func (m *GovernanceInsight) GetInsightCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insightCreatedDateTime
-    }
+// CreateGovernanceInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceInsightFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceInsight(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceInsight) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -40,6 +36,14 @@ func (m *GovernanceInsight) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetInsightCreatedDateTime gets the insightCreatedDateTime property value. Indicates when the insight was created.
+func (m *GovernanceInsight) GetInsightCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.insightCreatedDateTime
+    }
 }
 func (m *GovernanceInsight) IsNil()(bool) {
     return m == nil

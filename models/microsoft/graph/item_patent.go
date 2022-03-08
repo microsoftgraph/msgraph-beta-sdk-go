@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemPatent 
+// ItemPatent provides operations to manage the compliance singleton.
 type ItemPatent struct {
     ItemFacet
     // Descpription of the patent or filing.
@@ -29,6 +29,10 @@ func NewItemPatent()(*ItemPatent) {
     }
     return m
 }
+// CreateItemPatentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemPatentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemPatent(), nil
+}
 // GetDescription gets the description property value. Descpription of the patent or filing.
 func (m *ItemPatent) GetDescription()(*string) {
     if m == nil {
@@ -43,46 +47,6 @@ func (m *ItemPatent) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsPending gets the isPending property value. Indicates the patent is pending.
-func (m *ItemPatent) GetIsPending()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPending
-    }
-}
-// GetIssuedDate gets the issuedDate property value. The date that the patent was granted.
-func (m *ItemPatent) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuedDate
-    }
-}
-// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the patent.
-func (m *ItemPatent) GetIssuingAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuingAuthority
-    }
-}
-// GetNumber gets the number property value. The patent number.
-func (m *ItemPatent) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetWebUrl gets the webUrl property value. URL referencing the patent or filing.
-func (m *ItemPatent) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,6 +123,46 @@ func (m *ItemPatent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetIsPending gets the isPending property value. Indicates the patent is pending.
+func (m *ItemPatent) GetIsPending()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPending
+    }
+}
+// GetIssuedDate gets the issuedDate property value. The date that the patent was granted.
+func (m *ItemPatent) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuedDate
+    }
+}
+// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the patent.
+func (m *ItemPatent) GetIssuingAuthority()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuingAuthority
+    }
+}
+// GetNumber gets the number property value. The patent number.
+func (m *ItemPatent) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetWebUrl gets the webUrl property value. URL referencing the patent or filing.
+func (m *ItemPatent) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *ItemPatent) IsNil()(bool) {
     return m == nil

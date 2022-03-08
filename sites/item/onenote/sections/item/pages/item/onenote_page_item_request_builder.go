@@ -2,7 +2,6 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i1f54231f74fbbdc3d0d636b8938be865c8335da29d996497d9003b8fc00dece8 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/sections/item/pages/item/preview"
     ia4f8e9f2976a0c12c0c9836cfd4559a6e83b5d8ab9248adb417057e4a03c201a "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/sections/item/pages/item/content"
@@ -12,7 +11,7 @@ import (
     id0b0d39ad473c965bc413d471b85996f56a76969de11b740b08056b9aec0d31d "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/sections/item/pages/item/parentsection"
 )
 
-// OnenotePageItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}
+// OnenotePageItemRequestBuilder provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
 type OnenotePageItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -51,7 +50,7 @@ type OnenotePageItemRequestBuilderGetQueryParameters struct {
 // OnenotePageItemRequestBuilderPatchOptions options for Patch
 type OnenotePageItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePage;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -68,7 +67,7 @@ func NewOnenotePageItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -84,7 +83,7 @@ func (m *OnenotePageItemRequestBuilder) Content()(*ia4f8e9f2976a0c12c0c9836cfd45
 func (m *OnenotePageItemRequestBuilder) CopyToSection()(*ib964da6828865374bd448f71bf32ad9c84723f8ba5da3467f96a792bcd14b318.CopyToSectionRequestBuilder) {
     return ib964da6828865374bd448f71bf32ad9c84723f8ba5da3467f96a792bcd14b318.NewCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the collection of pages in the section.  Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property pages for sites
 func (m *OnenotePageItemRequestBuilder) CreateDeleteRequestInformation(options *OnenotePageItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,7 +120,7 @@ func (m *OnenotePageItemRequestBuilder) CreateGetRequestInformation(options *One
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of pages in the section.  Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property pages in sites
 func (m *OnenotePageItemRequestBuilder) CreatePatchRequestInformation(options *OnenotePageItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,29 +138,37 @@ func (m *OnenotePageItemRequestBuilder) CreatePatchRequestInformation(options *O
     }
     return requestInfo, nil
 }
-// Delete the collection of pages in the section.  Read-only. Nullable.
+// Delete delete navigation property pages for sites
 func (m *OnenotePageItemRequestBuilder) Delete(options *OnenotePageItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the collection of pages in the section.  Read-only. Nullable.
-func (m *OnenotePageItemRequestBuilder) Get(options *OnenotePageItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePage, error) {
+func (m *OnenotePageItemRequestBuilder) Get(options *OnenotePageItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePageable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOnenotePage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOnenotePageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePage), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePageable), nil
 }
 func (m *OnenotePageItemRequestBuilder) OnenotePatchContent()(*ibaf60fb6b304de32f594302a9b8324c52067193856b01c5922a0b62f7734b618.OnenotePatchContentRequestBuilder) {
     return ibaf60fb6b304de32f594302a9b8324c52067193856b01c5922a0b62f7734b618.NewOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -172,19 +179,23 @@ func (m *OnenotePageItemRequestBuilder) ParentNotebook()(*iba3e5508c8f873eaf9a1d
 func (m *OnenotePageItemRequestBuilder) ParentSection()(*id0b0d39ad473c965bc413d471b85996f56a76969de11b740b08056b9aec0d31d.ParentSectionRequestBuilder) {
     return id0b0d39ad473c965bc413d471b85996f56a76969de11b740b08056b9aec0d31d.NewParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the collection of pages in the section.  Read-only. Nullable.
+// Patch update the navigation property pages in sites
 func (m *OnenotePageItemRequestBuilder) Patch(options *OnenotePageItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
-// Preview builds and executes requests for operations under \sites\{site-id}\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.preview()
+// Preview provides operations to call the preview method.
 func (m *OnenotePageItemRequestBuilder) Preview()(*i1f54231f74fbbdc3d0d636b8938be865c8335da29d996497d9003b8fc00dece8.PreviewRequestBuilder) {
     return i1f54231f74fbbdc3d0d636b8938be865c8335da29d996497d9003b8fc00dece8.NewPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

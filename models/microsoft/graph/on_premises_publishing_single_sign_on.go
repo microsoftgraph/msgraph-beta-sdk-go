@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesPublishingSingleSignOn 
+// OnPremisesPublishingSingleSignOn provides operations to manage the collection of application entities.
 type OnPremisesPublishingSingleSignOn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
-    kerberosSignOnSettings *KerberosSignOnSettings;
+    kerberosSignOnSettings KerberosSignOnSettingsable;
     // The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
     singleSignOnMode *SingleSignOnMode;
 }
@@ -20,6 +20,10 @@ func NewOnPremisesPublishingSingleSignOn()(*OnPremisesPublishingSingleSignOn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesPublishingSingleSignOn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesPublishingSingleSignOn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -28,32 +32,16 @@ func (m *OnPremisesPublishingSingleSignOn) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// GetKerberosSignOnSettings gets the kerberosSignOnSettings property value. The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
-func (m *OnPremisesPublishingSingleSignOn) GetKerberosSignOnSettings()(*KerberosSignOnSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosSignOnSettings
-    }
-}
-// GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
-func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnMode
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["kerberosSignOnSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKerberosSignOnSettings() })
+        val, err := n.GetObjectValue(CreateKerberosSignOnSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKerberosSignOnSettings(val.(*KerberosSignOnSettings))
+            m.SetKerberosSignOnSettings(val.(KerberosSignOnSettingsable))
         }
         return nil
     }
@@ -68,6 +56,22 @@ func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetKerberosSignOnSettings gets the kerberosSignOnSettings property value. The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
+func (m *OnPremisesPublishingSingleSignOn) GetKerberosSignOnSettings()(KerberosSignOnSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.kerberosSignOnSettings
+    }
+}
+// GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
+func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMode) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleSignOnMode
+    }
 }
 func (m *OnPremisesPublishingSingleSignOn) IsNil()(bool) {
     return m == nil
@@ -102,7 +106,7 @@ func (m *OnPremisesPublishingSingleSignOn) SetAdditionalData(value map[string]in
     }
 }
 // SetKerberosSignOnSettings sets the kerberosSignOnSettings property value. The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
-func (m *OnPremisesPublishingSingleSignOn) SetKerberosSignOnSettings(value *KerberosSignOnSettings)() {
+func (m *OnPremisesPublishingSingleSignOn) SetKerberosSignOnSettings(value KerberosSignOnSettingsable)() {
     if m != nil {
         m.kerberosSignOnSettings = value
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HostSecurityProfile 
+// HostSecurityProfile provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
 type HostSecurityProfile struct {
     Entity
     // 
@@ -25,11 +25,11 @@ type HostSecurityProfile struct {
     // 
     lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    logonUsers []LogonUser;
+    logonUsers []LogonUserable;
     // 
     netBiosName *string;
     // 
-    networkInterfaces []NetworkInterface;
+    networkInterfaces []NetworkInterfaceable;
     // 
     os *string;
     // 
@@ -43,7 +43,7 @@ type HostSecurityProfile struct {
     // 
     tags []string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewHostSecurityProfile instantiates a new hostSecurityProfile and sets the default values.
 func NewHostSecurityProfile()(*HostSecurityProfile) {
@@ -51,6 +51,10 @@ func NewHostSecurityProfile()(*HostSecurityProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateHostSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateHostSecurityProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewHostSecurityProfile(), nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. 
 func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
@@ -66,134 +70,6 @@ func (m *HostSecurityProfile) GetAzureTenantId()(*string) {
         return nil
     } else {
         return m.azureTenantId
-    }
-}
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
-func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
-}
-// GetFqdn gets the fqdn property value. 
-func (m *HostSecurityProfile) GetFqdn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fqdn
-    }
-}
-// GetIsAzureAdJoined gets the isAzureAdJoined property value. 
-func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdJoined
-    }
-}
-// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. 
-func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdRegistered
-    }
-}
-// GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. 
-func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHybridAzureDomainJoined
-    }
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. 
-func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
-}
-// GetLogonUsers gets the logonUsers property value. 
-func (m *HostSecurityProfile) GetLogonUsers()([]LogonUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonUsers
-    }
-}
-// GetNetBiosName gets the netBiosName property value. 
-func (m *HostSecurityProfile) GetNetBiosName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netBiosName
-    }
-}
-// GetNetworkInterfaces gets the networkInterfaces property value. 
-func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterface) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkInterfaces
-    }
-}
-// GetOs gets the os property value. 
-func (m *HostSecurityProfile) GetOs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.os
-    }
-}
-// GetOsVersion gets the osVersion property value. 
-func (m *HostSecurityProfile) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetParentHost gets the parentHost property value. 
-func (m *HostSecurityProfile) GetParentHost()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentHost
-    }
-}
-// GetRelatedHostIds gets the relatedHostIds property value. 
-func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relatedHostIds
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *HostSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetTags gets the tags property value. 
-func (m *HostSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *HostSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -280,14 +156,14 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["logonUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLogonUser() })
+        val, err := n.GetCollectionOfObjectValues(CreateLogonUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LogonUser, len(val))
+            res := make([]LogonUserable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LogonUser))
+                res[i] = v.(LogonUserable)
             }
             m.SetLogonUsers(res)
         }
@@ -304,14 +180,14 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["networkInterfaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNetworkInterface() })
+        val, err := n.GetCollectionOfObjectValues(CreateNetworkInterfaceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]NetworkInterface, len(val))
+            res := make([]NetworkInterfaceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*NetworkInterface))
+                res[i] = v.(NetworkInterfaceable)
             }
             m.SetNetworkInterfaces(res)
         }
@@ -386,16 +262,144 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
+func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstSeenDateTime
+    }
+}
+// GetFqdn gets the fqdn property value. 
+func (m *HostSecurityProfile) GetFqdn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fqdn
+    }
+}
+// GetIsAzureAdJoined gets the isAzureAdJoined property value. 
+func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAzureAdJoined
+    }
+}
+// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. 
+func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAzureAdRegistered
+    }
+}
+// GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. 
+func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHybridAzureDomainJoined
+    }
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. 
+func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSeenDateTime
+    }
+}
+// GetLogonUsers gets the logonUsers property value. 
+func (m *HostSecurityProfile) GetLogonUsers()([]LogonUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonUsers
+    }
+}
+// GetNetBiosName gets the netBiosName property value. 
+func (m *HostSecurityProfile) GetNetBiosName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.netBiosName
+    }
+}
+// GetNetworkInterfaces gets the networkInterfaces property value. 
+func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterfaceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkInterfaces
+    }
+}
+// GetOs gets the os property value. 
+func (m *HostSecurityProfile) GetOs()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.os
+    }
+}
+// GetOsVersion gets the osVersion property value. 
+func (m *HostSecurityProfile) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetParentHost gets the parentHost property value. 
+func (m *HostSecurityProfile) GetParentHost()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentHost
+    }
+}
+// GetRelatedHostIds gets the relatedHostIds property value. 
+func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relatedHostIds
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *HostSecurityProfile) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetTags gets the tags property value. 
+func (m *HostSecurityProfile) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *HostSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *HostSecurityProfile) IsNil()(bool) {
     return m == nil
@@ -457,8 +461,7 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetLogonUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLogonUsers()))
         for i, v := range m.GetLogonUsers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("logonUsers", cast)
         if err != nil {
@@ -474,8 +477,7 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetNetworkInterfaces() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNetworkInterfaces()))
         for i, v := range m.GetNetworkInterfaces() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("networkInterfaces", cast)
         if err != nil {
@@ -575,7 +577,7 @@ func (m *HostSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetLogonUsers sets the logonUsers property value. 
-func (m *HostSecurityProfile) SetLogonUsers(value []LogonUser)() {
+func (m *HostSecurityProfile) SetLogonUsers(value []LogonUserable)() {
     if m != nil {
         m.logonUsers = value
     }
@@ -587,7 +589,7 @@ func (m *HostSecurityProfile) SetNetBiosName(value *string)() {
     }
 }
 // SetNetworkInterfaces sets the networkInterfaces property value. 
-func (m *HostSecurityProfile) SetNetworkInterfaces(value []NetworkInterface)() {
+func (m *HostSecurityProfile) SetNetworkInterfaces(value []NetworkInterfaceable)() {
     if m != nil {
         m.networkInterfaces = value
     }
@@ -629,7 +631,7 @@ func (m *HostSecurityProfile) SetTags(value []string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *HostSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *HostSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

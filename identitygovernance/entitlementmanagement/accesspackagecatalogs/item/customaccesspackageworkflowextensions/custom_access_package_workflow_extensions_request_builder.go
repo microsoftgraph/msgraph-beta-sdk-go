@@ -2,11 +2,11 @@ package customaccesspackageworkflowextensions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/item/customaccesspackageworkflowextensions/count"
 )
 
-// CustomAccessPackageWorkflowExtensionsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\customAccessPackageWorkflowExtensions
+// CustomAccessPackageWorkflowExtensionsRequestBuilder provides operations to manage the customAccessPackageWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
 type CustomAccessPackageWorkflowExtensionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type CustomAccessPackageWorkflowExtensionsRequestBuilderGetQueryParameters struc
 // CustomAccessPackageWorkflowExtensionsRequestBuilderPostOptions options for Post
 type CustomAccessPackageWorkflowExtensionsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtension;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtensionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewCustomAccessPackageWorkflowExtensionsRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewCustomAccessPackageWorkflowExtensionsRequestBuilder(rawUrl string, reque
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAccessPackageWorkflowExtensionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Count()(*i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23.CountRequestBuilder) {
+    return i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get customAccessPackageWorkflowExtensions from identityGovernance
 func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreateGetRequestInformation(options *CustomAccessPackageWorkflowExtensionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreatePostRequestI
     return requestInfo, nil
 }
 // Get get customAccessPackageWorkflowExtensions from identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Get(options *CustomAccessPackageWorkflowExtensionsRequestBuilderGetOptions)(*CustomAccessPackageWorkflowExtensionsResponse, error) {
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Get(options *CustomAccessPackageWorkflowExtensionsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtensionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomAccessPackageWorkflowExtensionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCustomAccessPackageWorkflowExtensionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CustomAccessPackageWorkflowExtensionsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtensionCollectionResponseable), nil
 }
 // Post create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Post(options *CustomAccessPackageWorkflowExtensionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtension, error) {
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Post(options *CustomAccessPackageWorkflowExtensionsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtensionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCustomAccessPackageWorkflowExtension() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCustomAccessPackageWorkflowExtensionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtension), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomAccessPackageWorkflowExtensionable), nil
 }

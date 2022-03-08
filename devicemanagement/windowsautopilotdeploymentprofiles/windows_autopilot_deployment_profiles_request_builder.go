@@ -2,12 +2,12 @@ package windowsautopilotdeploymentprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     ifbfe4e409b366cfd880e674e55ae37852c68132f4109dbac0ba62d28be4f0868 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles/haspayloadlinks"
 )
 
-// WindowsAutopilotDeploymentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles
+// WindowsAutopilotDeploymentProfilesRequestBuilder provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
 type WindowsAutopilotDeploymentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type WindowsAutopilotDeploymentProfilesRequestBuilderGetQueryParameters struct {
 // WindowsAutopilotDeploymentProfilesRequestBuilderPostOptions options for Post
 type WindowsAutopilotDeploymentProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewWindowsAutopilotDeploymentProfilesRequestBuilder(rawUrl string, requestA
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Count()(*i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d.CountRequestBuilder) {
+    return i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) CreateGetRequestInformation(options *WindowsAutopilotDeploymentProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation windows auto pilot deployment profiles
+// CreatePostRequestInformation create new navigation property to windowsAutopilotDeploymentProfiles for deviceManagement
 func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) CreatePostRequestInformation(options *WindowsAutopilotDeploymentProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,29 +118,37 @@ func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Get windows auto pilot deployment profiles
-func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Get(options *WindowsAutopilotDeploymentProfilesRequestBuilderGetOptions)(*WindowsAutopilotDeploymentProfilesResponse, error) {
+func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Get(options *WindowsAutopilotDeploymentProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsAutopilotDeploymentProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsAutopilotDeploymentProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*WindowsAutopilotDeploymentProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileCollectionResponseable), nil
 }
 func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) HasPayloadLinks()(*ifbfe4e409b366cfd880e674e55ae37852c68132f4109dbac0ba62d28be4f0868.HasPayloadLinksRequestBuilder) {
     return ifbfe4e409b366cfd880e674e55ae37852c68132f4109dbac0ba62d28be4f0868.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post windows auto pilot deployment profiles
-func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Post(options *WindowsAutopilotDeploymentProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile, error) {
+// Post create new navigation property to windowsAutopilotDeploymentProfiles for deviceManagement
+func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Post(options *WindowsAutopilotDeploymentProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsAutopilotDeploymentProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileable), nil
 }

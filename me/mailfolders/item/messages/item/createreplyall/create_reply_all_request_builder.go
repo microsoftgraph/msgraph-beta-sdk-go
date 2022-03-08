@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateReplyAllRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.createReplyAll
+// CreateReplyAllRequestBuilder provides operations to call the createReplyAll method.
 type CreateReplyAllRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CreateReplyAllRequestBuilder struct {
 // CreateReplyAllRequestBuilderPostOptions options for Post
 type CreateReplyAllRequestBuilderPostOptions struct {
     // 
-    Body *CreateReplyAllRequestBody;
+    Body CreateReplyAllRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CreateReplyAllResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type message
-    message *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
+    message i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable;
 }
 // NewCreateReplyAllResponse instantiates a new createReplyAllResponse and sets the default values.
 func NewCreateReplyAllResponse()(*CreateReplyAllResponse) {
@@ -39,6 +39,9 @@ func NewCreateReplyAllResponse()(*CreateReplyAllResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCreateReplyAllResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateReplyAllResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateReplyAllResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *CreateReplyAllResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CreateReplyAllResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMessageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessage(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable))
+        }
+        return nil
+    }
+    return res
+}
 // GetMessage gets the message property value. Union type representation for type message
-func (m *CreateReplyAllResponse) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message) {
+func (m *CreateReplyAllResponse) GetMessage()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable) {
     if m == nil {
         return nil
     } else {
         return m.message
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CreateReplyAllResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMessage() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMessage(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CreateReplyAllResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *CreateReplyAllResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetMessage sets the message property value. Union type representation for type message
-func (m *CreateReplyAllResponse) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message)() {
+func (m *CreateReplyAllResponse) SetMessage(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable)() {
     if m != nil {
         m.message = value
     }
@@ -111,7 +114,7 @@ func NewCreateReplyAllRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *CreateReplyAllRequestBuilder) CreatePostRequestInformation(options *Cre
     return requestInfo, nil
 }
 // Post invoke action createReplyAll
-func (m *CreateReplyAllRequestBuilder) Post(options *CreateReplyAllRequestBuilderPostOptions)(*CreateReplyAllResponse, error) {
+func (m *CreateReplyAllRequestBuilder) Post(options *CreateReplyAllRequestBuilderPostOptions)(CreateReplyAllResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreateReplyAllResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateReplyAllResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CreateReplyAllResponse), nil
+    return res.(CreateReplyAllResponseable), nil
 }

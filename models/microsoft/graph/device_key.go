@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceKey 
+// DeviceKey provides operations to manage the compliance singleton.
 type DeviceKey struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewDeviceKey()(*DeviceKey) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceKeyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceKey(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceKey) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *DeviceKey) GetDeviceId()(*string) {
         return nil
     } else {
         return m.deviceId
-    }
-}
-// GetKeyMaterial gets the keyMaterial property value. 
-func (m *DeviceKey) GetKeyMaterial()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyMaterial
-    }
-}
-// GetKeyType gets the keyType property value. 
-func (m *DeviceKey) GetKeyType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *DeviceKey) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetKeyMaterial gets the keyMaterial property value. 
+func (m *DeviceKey) GetKeyMaterial()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyMaterial
+    }
+}
+// GetKeyType gets the keyType property value. 
+func (m *DeviceKey) GetKeyType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keyType
+    }
 }
 func (m *DeviceKey) IsNil()(bool) {
     return m == nil

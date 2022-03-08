@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}\policyStatusDetails\{deviceManagementAutopilotPolicyStatusDetail-id}
+// DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 type DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetQueryParame
 // DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetailable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation policy and application status details for this device.
+// CreateDeleteRequestInformation delete navigation property policyStatusDetails for deviceManagement
 func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation policy and application status details for this device.
+// CreatePatchRequestInformation update the navigation property policyStatusDetails in deviceManagement
 func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) CreatePa
     }
     return requestInfo, nil
 }
-// Delete policy and application status details for this device.
+// Delete delete navigation property policyStatusDetails for deviceManagement
 func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) Delete(options *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get policy and application status details for this device.
-func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) Get(options *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail, error) {
+func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) Get(options *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetailable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementAutopilotPolicyStatusDetail() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetail), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotPolicyStatusDetailable), nil
 }
-// Patch policy and application status details for this device.
+// Patch update the navigation property policyStatusDetails in deviceManagement
 func (m *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) Patch(options *DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

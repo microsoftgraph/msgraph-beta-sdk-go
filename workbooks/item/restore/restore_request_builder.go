@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RestoreRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.restore
+// RestoreRequestBuilder provides operations to call the restore method.
 type RestoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type RestoreRequestBuilder struct {
 // RestoreRequestBuilderPostOptions options for Post
 type RestoreRequestBuilderPostOptions struct {
     // 
-    Body *RestoreRequestBody;
+    Body RestoreRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type RestoreResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type driveItem
-    driveItem *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem;
+    driveItem i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable;
 }
 // NewRestoreResponse instantiates a new restoreResponse and sets the default values.
 func NewRestoreResponse()(*RestoreResponse) {
@@ -39,6 +39,9 @@ func NewRestoreResponse()(*RestoreResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateRestoreResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRestoreResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RestoreResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *RestoreResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDriveItem gets the driveItem property value. Union type representation for type driveItem
-func (m *RestoreResponse) GetDriveItem()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem) {
+func (m *RestoreResponse) GetDriveItem()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *RestoreResponse) GetDriveItem()(*i535684e11b5500196ecb4b5c6634e0651fe2c
 func (m *RestoreResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDriveItem() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDriveItem(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem))
+            m.SetDriveItem(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *RestoreResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDriveItem sets the driveItem property value. Union type representation for type driveItem
-func (m *RestoreResponse) SetDriveItem(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem)() {
+func (m *RestoreResponse) SetDriveItem(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable)() {
     if m != nil {
         m.driveItem = value
     }
@@ -111,7 +114,7 @@ func NewRestoreRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *RestoreRequestBuilder) CreatePostRequestInformation(options *RestoreReq
     return requestInfo, nil
 }
 // Post invoke action restore
-func (m *RestoreRequestBuilder) Post(options *RestoreRequestBuilderPostOptions)(*RestoreResponse, error) {
+func (m *RestoreRequestBuilder) Post(options *RestoreRequestBuilderPostOptions)(RestoreResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRestoreResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRestoreResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RestoreResponse), nil
+    return res.(RestoreResponseable), nil
 }

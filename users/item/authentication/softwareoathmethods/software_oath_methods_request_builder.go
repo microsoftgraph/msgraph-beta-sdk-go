@@ -2,11 +2,11 @@ package softwareoathmethods
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i1d162c05b5cf7301fb130f8fc795c692912263a375d85fafa15dfd3ab2f7a318 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/softwareoathmethods/count"
 )
 
-// SoftwareOathMethodsRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\softwareOathMethods
+// SoftwareOathMethodsRequestBuilder provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
 type SoftwareOathMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type SoftwareOathMethodsRequestBuilderGetQueryParameters struct {
 // SoftwareOathMethodsRequestBuilderPostOptions options for Post
 type SoftwareOathMethodsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethodable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewSoftwareOathMethodsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewSoftwareOathMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSoftwareOathMethodsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SoftwareOathMethodsRequestBuilder) Count()(*i1d162c05b5cf7301fb130f8fc795c692912263a375d85fafa15dfd3ab2f7a318.CountRequestBuilder) {
+    return i1d162c05b5cf7301fb130f8fc795c692912263a375d85fafa15dfd3ab2f7a318.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get softwareOathMethods from users
 func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation(options *SoftwareOathMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *SoftwareOathMethodsRequestBuilder) CreatePostRequestInformation(options
     return requestInfo, nil
 }
 // Get get softwareOathMethods from users
-func (m *SoftwareOathMethodsRequestBuilder) Get(options *SoftwareOathMethodsRequestBuilderGetOptions)(*SoftwareOathMethodsResponse, error) {
+func (m *SoftwareOathMethodsRequestBuilder) Get(options *SoftwareOathMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSoftwareOathMethodsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSoftwareOathAuthenticationMethodCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SoftwareOathMethodsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethodCollectionResponseable), nil
 }
 // Post create new navigation property to softwareOathMethods for users
-func (m *SoftwareOathMethodsRequestBuilder) Post(options *SoftwareOathMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod, error) {
+func (m *SoftwareOathMethodsRequestBuilder) Post(options *SoftwareOathMethodsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSoftwareOathAuthenticationMethod() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethodable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicySetItem 
+// PolicySetItem provides operations to manage the deviceAppManagement singleton.
 type PolicySetItem struct {
     Entity
     // Creation time of the PolicySetItem.
@@ -32,6 +32,10 @@ func NewPolicySetItem()(*PolicySetItem) {
     }
     return m
 }
+// CreatePolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePolicySetItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPolicySetItem(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the PolicySetItem.
 func (m *PolicySetItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -54,46 +58,6 @@ func (m *PolicySetItem) GetErrorCode()(*ErrorCode) {
         return nil
     } else {
         return m.errorCode
-    }
-}
-// GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
-func (m *PolicySetItem) GetGuidedDeploymentTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guidedDeploymentTags
-    }
-}
-// GetItemType gets the itemType property value. policySetType of the PolicySetItem.
-func (m *PolicySetItem) GetItemType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemType
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySetItem.
-func (m *PolicySetItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPayloadId gets the payloadId property value. PayloadId of the PolicySetItem.
-func (m *PolicySetItem) GetPayloadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadId
-    }
-}
-// GetStatus gets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
-func (m *PolicySetItem) GetStatus()(*PolicySetStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -184,6 +148,46 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
+func (m *PolicySetItem) GetGuidedDeploymentTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.guidedDeploymentTags
+    }
+}
+// GetItemType gets the itemType property value. policySetType of the PolicySetItem.
+func (m *PolicySetItem) GetItemType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemType
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySetItem.
+func (m *PolicySetItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPayloadId gets the payloadId property value. PayloadId of the PolicySetItem.
+func (m *PolicySetItem) GetPayloadId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payloadId
+    }
+}
+// GetStatus gets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+func (m *PolicySetItem) GetStatus()(*PolicySetStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *PolicySetItem) IsNil()(bool) {
     return m == nil

@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicy 
+// WindowsDefenderApplicationControlSupplementalPolicy provides operations to manage the deviceAppManagement singleton.
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
     // The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-    assignments []WindowsDefenderApplicationControlSupplementalPolicyAssignment;
+    assignments []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable;
     // The WindowsDefenderApplicationControl supplemental policy content in byte array format.
     content []byte;
     // The WindowsDefenderApplicationControl supplemental policy content's file name.
@@ -17,11 +17,11 @@ type WindowsDefenderApplicationControlSupplementalPolicy struct {
     // The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // WindowsDefenderApplicationControl supplemental policy deployment summary.
-    deploySummary *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary;
+    deploySummary WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable;
     // The description of WindowsDefenderApplicationControl supplemental policy.
     description *string;
     // The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-    deviceStatuses []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus;
+    deviceStatuses []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable;
     // The display name of WindowsDefenderApplicationControl supplemental policy.
     displayName *string;
     // The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
@@ -38,8 +38,12 @@ func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderAp
     }
     return m
 }
+// CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsDefenderApplicationControlSupplementalPolicy(), nil
+}
 // GetAssignments gets the assignments property value. The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([]WindowsDefenderApplicationControlSupplementalPolicyAssignment) {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([]WindowsDefenderApplicationControlSupplementalPolicyAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -71,7 +75,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetCreationDateTim
     }
 }
 // GetDeploySummary gets the deploySummary property value. WindowsDefenderApplicationControl supplemental policy deployment summary.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeploySummary()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeploySummary()(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -87,7 +91,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDescription()(*
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeviceStatuses()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeviceStatuses()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable) {
     if m == nil {
         return nil
     } else {
@@ -102,42 +106,18 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDisplayName()(*
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetVersion gets the version property value. The WindowsDefenderApplicationControl supplemental policy's version.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDefenderApplicationControlSupplementalPolicyAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsDefenderApplicationControlSupplementalPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsDefenderApplicationControlSupplementalPolicyAssignment, len(val))
+            res := make([]WindowsDefenderApplicationControlSupplementalPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsDefenderApplicationControlSupplementalPolicyAssignment))
+                res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -174,12 +154,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         return nil
     }
     res["deploySummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary() })
+        val, err := n.GetObjectValue(CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeploySummary(val.(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary))
+            m.SetDeploySummary(val.(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable))
         }
         return nil
     }
@@ -194,14 +174,14 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, len(val))
+            res := make([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus))
+                res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)
             }
             m.SetDeviceStatuses(res)
         }
@@ -253,6 +233,30 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetVersion gets the version property value. The WindowsDefenderApplicationControl supplemental policy's version.
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -265,8 +269,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -306,8 +309,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -341,7 +343,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
     return nil
 }
 // SetAssignments sets the assignments property value. The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetAssignments(value []WindowsDefenderApplicationControlSupplementalPolicyAssignment)() {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetAssignments(value []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -365,7 +367,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetCreationDateTim
     }
 }
 // SetDeploySummary sets the deploySummary property value. WindowsDefenderApplicationControl supplemental policy deployment summary.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDeploySummary(value *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary)() {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDeploySummary(value WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable)() {
     if m != nil {
         m.deploySummary = value
     }
@@ -377,7 +379,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDescription(val
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDeviceStatuses(value []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus)() {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDeviceStatuses(value []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }

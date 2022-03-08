@@ -2,11 +2,11 @@ package connectors
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i5850a85cff2c99cf08e08e0cde632172e8bc409fac742578a7c9e0e8cc842384 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item/connectors/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item/connectors/count"
 )
 
-// ConnectorsRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\connectors
+// ConnectorsRequestBuilder provides operations to manage the connectors property of the microsoft.graph.printer entity.
 type ConnectorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewConnectorsRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewConnectorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ConnectorsRequestBuilder) Count()(*i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305.CountRequestBuilder) {
+    return i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the connectors that are associated with the printer.
 func (m *ConnectorsRequestBuilder) CreateGetRequestInformation(options *ConnectorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *ConnectorsRequestBuilder) CreateGetRequestInformation(options *Connecto
     return requestInfo, nil
 }
 // Get the connectors that are associated with the printer.
-func (m *ConnectorsRequestBuilder) Get(options *ConnectorsRequestBuilderGetOptions)(*ConnectorsResponse, error) {
+func (m *ConnectorsRequestBuilder) Get(options *ConnectorsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintConnectorCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectorsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrintConnectorCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ConnectorsResponse), nil
-}
-func (m *ConnectorsRequestBuilder) Ref()(*i5850a85cff2c99cf08e08e0cde632172e8bc409fac742578a7c9e0e8cc842384.RefRequestBuilder) {
-    return i5850a85cff2c99cf08e08e0cde632172e8bc409fac742578a7c9e0e8cc842384.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintConnectorCollectionResponseable), nil
 }

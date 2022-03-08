@@ -2,11 +2,11 @@ package incompatiblegroups
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    idf226034cc7d5cd73a15fdcbbd1f6456da91db833629deb43534cfa72a9751af "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/item/incompatiblegroups/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2e19a02a8c19124167abd1e79ace5e94698d2ab3900fe155b0e3230ee40944a0 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/item/incompatiblegroups/count"
 )
 
-// IncompatibleGroupsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleGroups
+// IncompatibleGroupsRequestBuilder provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
 type IncompatibleGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewIncompatibleGroupsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewIncompatibleGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIncompatibleGroupsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *IncompatibleGroupsRequestBuilder) Count()(*i2e19a02a8c19124167abd1e79ace5e94698d2ab3900fe155b0e3230ee40944a0.CountRequestBuilder) {
+    return i2e19a02a8c19124167abd1e79ace5e94698d2ab3900fe155b0e3230ee40944a0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the groups whose members are ineligible to be assigned this access package.
 func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(options *IncompatibleGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get the groups whose members are ineligible to be assigned this access package.
-func (m *IncompatibleGroupsRequestBuilder) Get(options *IncompatibleGroupsRequestBuilderGetOptions)(*IncompatibleGroupsResponse, error) {
+func (m *IncompatibleGroupsRequestBuilder) Get(options *IncompatibleGroupsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIncompatibleGroupsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*IncompatibleGroupsResponse), nil
-}
-func (m *IncompatibleGroupsRequestBuilder) Ref()(*idf226034cc7d5cd73a15fdcbbd1f6456da91db833629deb43534cfa72a9751af.RefRequestBuilder) {
-    return idf226034cc7d5cd73a15fdcbbd1f6456da91db833629deb43534cfa72a9751af.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupCollectionResponseable), nil
 }

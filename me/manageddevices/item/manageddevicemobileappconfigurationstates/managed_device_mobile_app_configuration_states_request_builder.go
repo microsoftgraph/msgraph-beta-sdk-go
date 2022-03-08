@@ -2,11 +2,11 @@ package manageddevicemobileappconfigurationstates
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i429c57ae782a619cc939d488c9ef0abd26ad214f23a9637171b81ab92033a978 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/manageddevicemobileappconfigurationstates/count"
 )
 
-// ManagedDeviceMobileAppConfigurationStatesRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\managedDeviceMobileAppConfigurationStates
+// ManagedDeviceMobileAppConfigurationStatesRequestBuilder provides operations to manage the managedDeviceMobileAppConfigurationStates property of the microsoft.graph.managedDevice entity.
 type ManagedDeviceMobileAppConfigurationStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ManagedDeviceMobileAppConfigurationStatesRequestBuilderGetQueryParameters s
 // ManagedDeviceMobileAppConfigurationStatesRequestBuilderPostOptions options for Post
 type ManagedDeviceMobileAppConfigurationStatesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationState;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationStateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewManagedDeviceMobileAppConfigurationStatesRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewManagedDeviceMobileAppConfigurationStatesRequestBuilder(rawUrl string, r
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceMobileAppConfigurationStatesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) Count()(*i429c57ae782a619cc939d488c9ef0abd26ad214f23a9637171b81ab92033a978.CountRequestBuilder) {
+    return i429c57ae782a619cc939d488c9ef0abd26ad214f23a9637171b81ab92033a978.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation managed device mobile app configuration states for this device.
 func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceMobileAppConfigurationStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation managed device mobile app configuration states for this device.
+// CreatePostRequestInformation create new navigation property to managedDeviceMobileAppConfigurationStates for me
 func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) CreatePostRequestInformation(options *ManagedDeviceMobileAppConfigurationStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) CreatePostRequ
     return requestInfo, nil
 }
 // Get managed device mobile app configuration states for this device.
-func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) Get(options *ManagedDeviceMobileAppConfigurationStatesRequestBuilderGetOptions)(*ManagedDeviceMobileAppConfigurationStatesResponse, error) {
+func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) Get(options *ManagedDeviceMobileAppConfigurationStatesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationStateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceMobileAppConfigurationStatesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceMobileAppConfigurationStateCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagedDeviceMobileAppConfigurationStatesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationStateCollectionResponseable), nil
 }
-// Post managed device mobile app configuration states for this device.
-func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) Post(options *ManagedDeviceMobileAppConfigurationStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationState, error) {
+// Post create new navigation property to managedDeviceMobileAppConfigurationStates for me
+func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) Post(options *ManagedDeviceMobileAppConfigurationStatesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationStateable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagedDeviceMobileAppConfigurationState() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceMobileAppConfigurationStateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationState), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceMobileAppConfigurationStateable), nil
 }

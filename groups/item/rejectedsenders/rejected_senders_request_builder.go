@@ -2,11 +2,11 @@ package rejectedsenders
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i00437f87924367e7c57f188661cf8fb5c73bd7f445ee688226aee02471eb14b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/rejectedsenders/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i4cd946ba6fa87ef9076b08165c8d362f1f54b4ae7f7949a0783809a0f18bbbae "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/rejectedsenders/count"
 )
 
-// RejectedSendersRequestBuilder builds and executes requests for operations under \groups\{group-id}\rejectedSenders
+// RejectedSendersRequestBuilder provides operations to manage the rejectedSenders property of the microsoft.graph.group entity.
 type RejectedSendersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +50,7 @@ func NewRejectedSendersRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,6 +59,9 @@ func NewRejectedSendersRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRejectedSendersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RejectedSendersRequestBuilder) Count()(*i4cd946ba6fa87ef9076b08165c8d362f1f54b4ae7f7949a0783809a0f18bbbae.CountRequestBuilder) {
+    return i4cd946ba6fa87ef9076b08165c8d362f1f54b4ae7f7949a0783809a0f18bbbae.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
 func (m *RejectedSendersRequestBuilder) CreateGetRequestInformation(options *RejectedSendersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -81,17 +84,18 @@ func (m *RejectedSendersRequestBuilder) CreateGetRequestInformation(options *Rej
     return requestInfo, nil
 }
 // Get the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-func (m *RejectedSendersRequestBuilder) Get(options *RejectedSendersRequestBuilderGetOptions)(*RejectedSendersResponse, error) {
+func (m *RejectedSendersRequestBuilder) Get(options *RejectedSendersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRejectedSendersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RejectedSendersResponse), nil
-}
-func (m *RejectedSendersRequestBuilder) Ref()(*i00437f87924367e7c57f188661cf8fb5c73bd7f445ee688226aee02471eb14b5.RefRequestBuilder) {
-    return i00437f87924367e7c57f188661cf8fb5c73bd7f445ee688226aee02471eb14b5.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

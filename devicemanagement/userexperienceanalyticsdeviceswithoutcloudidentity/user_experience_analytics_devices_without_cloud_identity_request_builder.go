@@ -2,11 +2,11 @@ package userexperienceanalyticsdeviceswithoutcloudidentity
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i4c0ef7b8cc32fdc957d25c7e40e7d2ff407cfdf5e3d81c6156db8e43e0f08a24 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdeviceswithoutcloudidentity/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicesWithoutCloudIdentity
+// UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetQueryPar
 // UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(rawUrl 
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Count()(*i4c0ef7b8cc32fdc957d25c7e40e7d2ff407cfdf5e3d81c6156db8e43e0f08a24.CountRequestBuilder) {
+    return i4c0ef7b8cc32fdc957d25c7e40e7d2ff407cfdf5e3d81c6156db8e43e0f08a24.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics devices without cloud identity.
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics devices without cloud identity.
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Creat
     return requestInfo, nil
 }
 // Get user experience analytics devices without cloud identity.
-func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Get(options *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetOptions)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityResponse, error) {
+func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Get(options *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsDevicesWithoutCloudIdentityResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseable), nil
 }
-// Post user experience analytics devices without cloud identity.
-func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Post(options *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity, error) {
+// Post create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
+func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Post(options *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsDeviceWithoutCloudIdentity() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityable), nil
 }

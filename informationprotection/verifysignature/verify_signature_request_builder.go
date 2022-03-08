@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// VerifySignatureRequestBuilder builds and executes requests for operations under \informationProtection\microsoft.graph.verifySignature
+// VerifySignatureRequestBuilder provides operations to call the verifySignature method.
 type VerifySignatureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type VerifySignatureRequestBuilder struct {
 // VerifySignatureRequestBuilderPostOptions options for Post
 type VerifySignatureRequestBuilderPostOptions struct {
     // 
-    Body *VerifySignatureRequestBody;
+    Body VerifySignatureRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type VerifySignatureResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type verificationResult
-    verificationResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult;
+    verificationResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResultable;
 }
 // NewVerifySignatureResponse instantiates a new verifySignatureResponse and sets the default values.
 func NewVerifySignatureResponse()(*VerifySignatureResponse) {
@@ -39,6 +39,9 @@ func NewVerifySignatureResponse()(*VerifySignatureResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateVerifySignatureResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVerifySignatureResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifySignatureResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *VerifySignatureResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *VerifySignatureResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["verificationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateVerificationResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerificationResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResultable))
+        }
+        return nil
+    }
+    return res
+}
 // GetVerificationResult gets the verificationResult property value. Union type representation for type verificationResult
-func (m *VerifySignatureResponse) GetVerificationResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult) {
+func (m *VerifySignatureResponse) GetVerificationResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResultable) {
     if m == nil {
         return nil
     } else {
         return m.verificationResult
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *VerifySignatureResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["verificationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewVerificationResult() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVerificationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult))
-        }
-        return nil
-    }
-    return res
 }
 func (m *VerifySignatureResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *VerifySignatureResponse) SetAdditionalData(value map[string]interface{}
     }
 }
 // SetVerificationResult sets the verificationResult property value. Union type representation for type verificationResult
-func (m *VerifySignatureResponse) SetVerificationResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResult)() {
+func (m *VerifySignatureResponse) SetVerificationResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VerificationResultable)() {
     if m != nil {
         m.verificationResult = value
     }
@@ -111,7 +114,7 @@ func NewVerifySignatureRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *VerifySignatureRequestBuilder) CreatePostRequestInformation(options *Ve
     return requestInfo, nil
 }
 // Post invoke action verifySignature
-func (m *VerifySignatureRequestBuilder) Post(options *VerifySignatureRequestBuilderPostOptions)(*VerifySignatureResponse, error) {
+func (m *VerifySignatureRequestBuilder) Post(options *VerifySignatureRequestBuilderPostOptions)(VerifySignatureResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVerifySignatureResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateVerifySignatureResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*VerifySignatureResponse), nil
+    return res.(VerifySignatureResponseable), nil
 }

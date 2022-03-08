@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// PreviewRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\{notebook-id}\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.preview()
+// PreviewRequestBuilder provides operations to call the preview method.
 type PreviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type PreviewResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type onenotePagePreview
-    onenotePagePreview *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreview;
+    onenotePagePreview i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreviewable;
 }
 // NewPreviewResponse instantiates a new previewResponse and sets the default values.
 func NewPreviewResponse()(*PreviewResponse) {
@@ -37,6 +37,9 @@ func NewPreviewResponse()(*PreviewResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreatePreviewResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPreviewResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *PreviewResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["onenotePagePreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOnenotePagePreviewFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnenotePagePreview(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreviewable))
+        }
+        return nil
+    }
+    return res
+}
 // GetOnenotePagePreview gets the onenotePagePreview property value. Union type representation for type onenotePagePreview
-func (m *PreviewResponse) GetOnenotePagePreview()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreview) {
+func (m *PreviewResponse) GetOnenotePagePreview()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreviewable) {
     if m == nil {
         return nil
     } else {
         return m.onenotePagePreview
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["onenotePagePreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOnenotePagePreview() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnenotePagePreview(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreview))
-        }
-        return nil
-    }
-    return res
 }
 func (m *PreviewResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +98,7 @@ func (m *PreviewResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetOnenotePagePreview sets the onenotePagePreview property value. Union type representation for type onenotePagePreview
-func (m *PreviewResponse) SetOnenotePagePreview(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreview)() {
+func (m *PreviewResponse) SetOnenotePagePreview(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePagePreviewable)() {
     if m != nil {
         m.onenotePagePreview = value
     }
@@ -109,7 +112,7 @@ func NewPreviewRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *PreviewRequestBuilder) CreateGetRequestInformation(options *PreviewRequ
     return requestInfo, nil
 }
 // Get invoke function preview
-func (m *PreviewRequestBuilder) Get(options *PreviewRequestBuilderGetOptions)(*PreviewResponse, error) {
+func (m *PreviewRequestBuilder) Get(options *PreviewRequestBuilderGetOptions)(PreviewResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPreviewResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreatePreviewResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*PreviewResponse), nil
+    return res.(PreviewResponseable), nil
 }

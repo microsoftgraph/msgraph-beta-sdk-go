@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContentInfo 
+// ContentInfo provides operations to call the evaluateApplication method.
 type ContentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewContentInfo()(*ContentInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateContentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContentInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContentInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -31,6 +35,55 @@ func (m *ContentInfo) GetAdditionalData()(map[string]interface{}) {
     } else {
         return m.additionalData
     }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseContentFormat)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFormat(val.(*ContentFormat))
+        }
+        return nil
+    }
+    res["identifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentifier(val)
+        }
+        return nil
+    }
+    res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetMetadata(res)
+        }
+        return nil
+    }
+    res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseContentState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetState(val.(*ContentState))
+        }
+        return nil
+    }
+    return res
 }
 // GetFormat gets the format property value. Possible values are: default, email.
 func (m *ContentInfo) GetFormat()(*ContentFormat) {
@@ -63,55 +116,6 @@ func (m *ContentInfo) GetState()(*ContentState) {
     } else {
         return m.state
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseContentFormat)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFormat(val.(*ContentFormat))
-        }
-        return nil
-    }
-    res["identifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentifier(val)
-        }
-        return nil
-    }
-    res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]KeyValuePair, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
-            }
-            m.SetMetadata(res)
-        }
-        return nil
-    }
-    res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseContentState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetState(val.(*ContentState))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ContentInfo) IsNil()(bool) {
     return m == nil

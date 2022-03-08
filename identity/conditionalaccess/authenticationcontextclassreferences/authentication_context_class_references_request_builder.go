@@ -2,11 +2,11 @@ package authenticationcontextclassreferences
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/conditionalaccess/authenticationcontextclassreferences/count"
 )
 
-// AuthenticationContextClassReferencesRequestBuilder builds and executes requests for operations under \identity\conditionalAccess\authenticationContextClassReferences
+// AuthenticationContextClassReferencesRequestBuilder provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
 type AuthenticationContextClassReferencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AuthenticationContextClassReferencesRequestBuilderGetQueryParameters struct
 // AuthenticationContextClassReferencesRequestBuilderPostOptions options for Post
 type AuthenticationContextClassReferencesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReference;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReferenceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAuthenticationContextClassReferencesRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAuthenticationContextClassReferencesRequestBuilder(rawUrl string, reques
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationContextClassReferencesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AuthenticationContextClassReferencesRequestBuilder) Count()(*i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf.CountRequestBuilder) {
+    return i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInformation(options *AuthenticationContextClassReferencesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified authentication context class references.
+// CreatePostRequestInformation create new navigation property to authenticationContextClassReferences for identity
 func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestInformation(options *AuthenticationContextClassReferencesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestIn
     return requestInfo, nil
 }
 // Get read-only. Nullable. Returns a collection of the specified authentication context class references.
-func (m *AuthenticationContextClassReferencesRequestBuilder) Get(options *AuthenticationContextClassReferencesRequestBuilderGetOptions)(*AuthenticationContextClassReferencesResponse, error) {
+func (m *AuthenticationContextClassReferencesRequestBuilder) Get(options *AuthenticationContextClassReferencesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReferenceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationContextClassReferencesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAuthenticationContextClassReferenceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AuthenticationContextClassReferencesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReferenceCollectionResponseable), nil
 }
-// Post read-only. Nullable. Returns a collection of the specified authentication context class references.
-func (m *AuthenticationContextClassReferencesRequestBuilder) Post(options *AuthenticationContextClassReferencesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReference, error) {
+// Post create new navigation property to authenticationContextClassReferences for identity
+func (m *AuthenticationContextClassReferencesRequestBuilder) Post(options *AuthenticationContextClassReferencesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReferenceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAuthenticationContextClassReference() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAuthenticationContextClassReferenceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReference), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReferenceable), nil
 }

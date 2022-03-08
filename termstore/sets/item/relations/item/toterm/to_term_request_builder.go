@@ -2,12 +2,10 @@ package toterm
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    ie7477b495b590be25674e2d07a22052835234f7371747e0e0748aea34d658087 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item/relations/item/toterm/ref"
 )
 
-// ToTermRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\relations\{relation-id}\toTerm
+// ToTermRequestBuilder provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
 type ToTermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +41,7 @@ func NewToTermRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,17 +72,18 @@ func (m *ToTermRequestBuilder) CreateGetRequestInformation(options *ToTermReques
     return requestInfo, nil
 }
 // Get the to [term] of the relation. The term to which the relationship is defined.
-func (m *ToTermRequestBuilder) Get(options *ToTermRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Term, error) {
+func (m *ToTermRequestBuilder) Get(options *ToTermRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Termable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTerm() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTermFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Term), nil
-}
-func (m *ToTermRequestBuilder) Ref()(*ie7477b495b590be25674e2d07a22052835234f7371747e0e0748aea34d658087.RefRequestBuilder) {
-    return ie7477b495b590be25674e2d07a22052835234f7371747e0e0748aea34d658087.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Termable), nil
 }

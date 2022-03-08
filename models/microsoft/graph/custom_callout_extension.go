@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomCalloutExtension 
+// CustomCalloutExtension provides operations to manage the identityGovernance singleton.
 type CustomCalloutExtension struct {
     Entity
     // Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
-    authenticationConfiguration *CustomExtensionAuthenticationConfiguration;
+    authenticationConfiguration CustomExtensionAuthenticationConfigurationable;
     // HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
-    clientConfiguration *CustomExtensionClientConfiguration;
+    clientConfiguration CustomExtensionClientConfigurationable;
     // Description for the customCalloutExtension object.
     description *string;
     // Display name for the customCalloutExtension object.
     displayName *string;
     // The type and details for configuring the endpoint to call the logic app's workflow.
-    endpointConfiguration *CustomExtensionEndpointConfiguration;
+    endpointConfiguration CustomExtensionEndpointConfigurationable;
 }
 // NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {
@@ -25,8 +25,12 @@ func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     }
     return m
 }
+// CreateCustomCalloutExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomCalloutExtension(), nil
+}
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
-func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(*CustomExtensionAuthenticationConfiguration) {
+func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(CustomExtensionAuthenticationConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -34,7 +38,7 @@ func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(*CustomExtensi
     }
 }
 // GetClientConfiguration gets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
-func (m *CustomCalloutExtension) GetClientConfiguration()(*CustomExtensionClientConfiguration) {
+func (m *CustomCalloutExtension) GetClientConfiguration()(CustomExtensionClientConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -58,7 +62,7 @@ func (m *CustomCalloutExtension) GetDisplayName()(*string) {
     }
 }
 // GetEndpointConfiguration gets the endpointConfiguration property value. The type and details for configuring the endpoint to call the logic app's workflow.
-func (m *CustomCalloutExtension) GetEndpointConfiguration()(*CustomExtensionEndpointConfiguration) {
+func (m *CustomCalloutExtension) GetEndpointConfiguration()(CustomExtensionEndpointConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -69,22 +73,22 @@ func (m *CustomCalloutExtension) GetEndpointConfiguration()(*CustomExtensionEndp
 func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionAuthenticationConfiguration() })
+        val, err := n.GetObjectValue(CreateCustomExtensionAuthenticationConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationConfiguration(val.(*CustomExtensionAuthenticationConfiguration))
+            m.SetAuthenticationConfiguration(val.(CustomExtensionAuthenticationConfigurationable))
         }
         return nil
     }
     res["clientConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionClientConfiguration() })
+        val, err := n.GetObjectValue(CreateCustomExtensionClientConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClientConfiguration(val.(*CustomExtensionClientConfiguration))
+            m.SetClientConfiguration(val.(CustomExtensionClientConfigurationable))
         }
         return nil
     }
@@ -109,12 +113,12 @@ func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["endpointConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionEndpointConfiguration() })
+        val, err := n.GetObjectValue(CreateCustomExtensionEndpointConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndpointConfiguration(val.(*CustomExtensionEndpointConfiguration))
+            m.SetEndpointConfiguration(val.(CustomExtensionEndpointConfigurationable))
         }
         return nil
     }
@@ -162,13 +166,13 @@ func (m *CustomCalloutExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
-func (m *CustomCalloutExtension) SetAuthenticationConfiguration(value *CustomExtensionAuthenticationConfiguration)() {
+func (m *CustomCalloutExtension) SetAuthenticationConfiguration(value CustomExtensionAuthenticationConfigurationable)() {
     if m != nil {
         m.authenticationConfiguration = value
     }
 }
 // SetClientConfiguration sets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
-func (m *CustomCalloutExtension) SetClientConfiguration(value *CustomExtensionClientConfiguration)() {
+func (m *CustomCalloutExtension) SetClientConfiguration(value CustomExtensionClientConfigurationable)() {
     if m != nil {
         m.clientConfiguration = value
     }
@@ -186,7 +190,7 @@ func (m *CustomCalloutExtension) SetDisplayName(value *string)() {
     }
 }
 // SetEndpointConfiguration sets the endpointConfiguration property value. The type and details for configuring the endpoint to call the logic app's workflow.
-func (m *CustomCalloutExtension) SetEndpointConfiguration(value *CustomExtensionEndpointConfiguration)() {
+func (m *CustomCalloutExtension) SetEndpointConfiguration(value CustomExtensionEndpointConfigurationable)() {
     if m != nil {
         m.endpointConfiguration = value
     }

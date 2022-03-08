@@ -2,11 +2,11 @@ package userexperienceanalyticsworkfromanywheremodelperformance
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ib1b7bbaed9be0d34a3a87f66323accafd0101e6d2ddb65a564734a096452d3b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremodelperformance/count"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereModelPerformance
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQue
 // UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformance;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(ra
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) Count()(*ib1b7bbaed9be0d34a3a87f66323accafd0101e6d2ddb65a564734a096452d3b4.CountRequestBuilder) {
+    return ib1b7bbaed9be0d34a3a87f66323accafd0101e6d2ddb65a564734a096452d3b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the user experience analytics work from anywhere model performance
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) 
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the user experience analytics work from anywhere model performance
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsWorkFromAnywhereModelPerformance for deviceManagement
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) 
     return requestInfo, nil
 }
 // Get the user experience analytics work from anywhere model performance
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsWorkFromAnywhereModelPerformanceResponse, error) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsWorkFromAnywhereModelPerformanceResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponseable), nil
 }
-// Post the user experience analytics work from anywhere model performance
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformance, error) {
+// Post create new navigation property to userExperienceAnalyticsWorkFromAnywhereModelPerformance for deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformanceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformance), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable), nil
 }

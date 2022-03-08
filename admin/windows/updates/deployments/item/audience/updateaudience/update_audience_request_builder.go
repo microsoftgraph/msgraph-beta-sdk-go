@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// UpdateAudienceRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\microsoft.graph.windowsUpdates.updateAudience
+// UpdateAudienceRequestBuilder provides operations to call the updateAudience method.
 type UpdateAudienceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UpdateAudienceRequestBuilder struct {
 // UpdateAudienceRequestBuilderPostOptions options for Post
 type UpdateAudienceRequestBuilderPostOptions struct {
     // 
-    Body *UpdateAudienceRequestBody;
+    Body UpdateAudienceRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewUpdateAudienceRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *UpdateAudienceRequestBuilder) Post(options *UpdateAudienceRequestBuilde
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

@@ -2,10 +2,9 @@ package getlicensesforappwithbundleid
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetLicensesForAppWithBundleIdRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.getLicensesForApp(bundleId='{bundleId}')
+// GetLicensesForAppWithBundleIdRequestBuilder provides operations to call the getLicensesForApp method.
 type GetLicensesForAppWithBundleIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +34,7 @@ func NewGetLicensesForAppWithBundleIdRequestBuilderInternal(pathParameters map[s
     if bundleId != nil {
         urlTplParams["bundleId"] = *bundleId
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *GetLicensesForAppWithBundleIdRequestBuilder) CreateGetRequestInformatio
     return requestInfo, nil
 }
 // Get invoke function getLicensesForApp
-func (m *GetLicensesForAppWithBundleIdRequestBuilder) Get(options *GetLicensesForAppWithBundleIdRequestBuilderGetOptions)([]GetLicensesForAppWithBundleId, error) {
+func (m *GetLicensesForAppWithBundleIdRequestBuilder) Get(options *GetLicensesForAppWithBundleIdRequestBuilderGetOptions)(GetLicensesForAppWithBundleIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetLicensesForAppWithBundleId() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetLicensesForAppWithBundleIdResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetLicensesForAppWithBundleId, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetLicensesForAppWithBundleId))
-    }
-    return val, nil
+    return res.(GetLicensesForAppWithBundleIdResponseable), nil
 }

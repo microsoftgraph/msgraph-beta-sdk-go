@@ -2,11 +2,11 @@ package reviewers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i890f1ea30dd83288fdc28d4de889838da9f3b932911c1c556ab26eaaa0ac2b09 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/reviewers/count"
 )
 
-// ReviewersRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}\reviewers
+// ReviewersRequestBuilder provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 type ReviewersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ReviewersRequestBuilderGetQueryParameters struct {
 // ReviewersRequestBuilderPostOptions options for Post
 type ReviewersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewer;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewerable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewReviewersRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewReviewersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReviewersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ReviewersRequestBuilder) Count()(*i890f1ea30dd83288fdc28d4de889838da9f3b932911c1c556ab26eaaa0ac2b09.CountRequestBuilder) {
+    return i890f1ea30dd83288fdc28d4de889838da9f3b932911c1c556ab26eaaa0ac2b09.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *ReviewersRequestBuilder) CreateGetRequestInformation(options *ReviewersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ReviewersRequestBuilder) CreateGetRequestInformation(options *Reviewers
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of reviewers for an access review, if access review reviewerType is of type delegated.
+// CreatePostRequestInformation create new navigation property to reviewers for accessReviews
 func (m *ReviewersRequestBuilder) CreatePostRequestInformation(options *ReviewersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ReviewersRequestBuilder) CreatePostRequestInformation(options *Reviewer
     return requestInfo, nil
 }
 // Get the collection of reviewers for an access review, if access review reviewerType is of type delegated.
-func (m *ReviewersRequestBuilder) Get(options *ReviewersRequestBuilderGetOptions)(*ReviewersResponse, error) {
+func (m *ReviewersRequestBuilder) Get(options *ReviewersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReviewersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessReviewReviewerCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ReviewersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewerCollectionResponseable), nil
 }
-// Post the collection of reviewers for an access review, if access review reviewerType is of type delegated.
-func (m *ReviewersRequestBuilder) Post(options *ReviewersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewer, error) {
+// Post create new navigation property to reviewers for accessReviews
+func (m *ReviewersRequestBuilder) Post(options *ReviewersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewerable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewReviewer() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessReviewReviewerFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewer), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewReviewerable), nil
 }

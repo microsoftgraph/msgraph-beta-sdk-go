@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkSpeakerConfiguration 
+// TeamworkSpeakerConfiguration provides operations to manage the teamwork singleton.
 type TeamworkSpeakerConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    defaultCommunicationSpeaker *TeamworkPeripheral;
+    defaultCommunicationSpeaker TeamworkPeripheralable;
     // 
-    defaultSpeaker *TeamworkPeripheral;
+    defaultSpeaker TeamworkPeripheralable;
     // True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
     isCommunicationSpeakerOptional *bool;
     // True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
     isSpeakerOptional *bool;
     // 
-    speakers []TeamworkPeripheral;
+    speakers []TeamworkPeripheralable;
 }
 // NewTeamworkSpeakerConfiguration instantiates a new teamworkSpeakerConfiguration and sets the default values.
 func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
@@ -25,6 +25,10 @@ func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkSpeakerConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkSpeakerConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkSpeakerConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSpeakerConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -35,7 +39,7 @@ func (m *TeamworkSpeakerConfiguration) GetAdditionalData()(map[string]interface{
     }
 }
 // GetDefaultCommunicationSpeaker gets the defaultCommunicationSpeaker property value. 
-func (m *TeamworkSpeakerConfiguration) GetDefaultCommunicationSpeaker()(*TeamworkPeripheral) {
+func (m *TeamworkSpeakerConfiguration) GetDefaultCommunicationSpeaker()(TeamworkPeripheralable) {
     if m == nil {
         return nil
     } else {
@@ -43,57 +47,33 @@ func (m *TeamworkSpeakerConfiguration) GetDefaultCommunicationSpeaker()(*Teamwor
     }
 }
 // GetDefaultSpeaker gets the defaultSpeaker property value. 
-func (m *TeamworkSpeakerConfiguration) GetDefaultSpeaker()(*TeamworkPeripheral) {
+func (m *TeamworkSpeakerConfiguration) GetDefaultSpeaker()(TeamworkPeripheralable) {
     if m == nil {
         return nil
     } else {
         return m.defaultSpeaker
     }
 }
-// GetIsCommunicationSpeakerOptional gets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
-func (m *TeamworkSpeakerConfiguration) GetIsCommunicationSpeakerOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCommunicationSpeakerOptional
-    }
-}
-// GetIsSpeakerOptional gets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
-func (m *TeamworkSpeakerConfiguration) GetIsSpeakerOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSpeakerOptional
-    }
-}
-// GetSpeakers gets the speakers property value. 
-func (m *TeamworkSpeakerConfiguration) GetSpeakers()([]TeamworkPeripheral) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speakers
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["defaultCommunicationSpeaker"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultCommunicationSpeaker(val.(*TeamworkPeripheral))
+            m.SetDefaultCommunicationSpeaker(val.(TeamworkPeripheralable))
         }
         return nil
     }
     res["defaultSpeaker"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultSpeaker(val.(*TeamworkPeripheral))
+            m.SetDefaultSpeaker(val.(TeamworkPeripheralable))
         }
         return nil
     }
@@ -118,20 +98,44 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["speakers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamworkPeripheral, len(val))
+            res := make([]TeamworkPeripheralable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamworkPeripheral))
+                res[i] = v.(TeamworkPeripheralable)
             }
             m.SetSpeakers(res)
         }
         return nil
     }
     return res
+}
+// GetIsCommunicationSpeakerOptional gets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
+func (m *TeamworkSpeakerConfiguration) GetIsCommunicationSpeakerOptional()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCommunicationSpeakerOptional
+    }
+}
+// GetIsSpeakerOptional gets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
+func (m *TeamworkSpeakerConfiguration) GetIsSpeakerOptional()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSpeakerOptional
+    }
+}
+// GetSpeakers gets the speakers property value. 
+func (m *TeamworkSpeakerConfiguration) GetSpeakers()([]TeamworkPeripheralable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.speakers
+    }
 }
 func (m *TeamworkSpeakerConfiguration) IsNil()(bool) {
     return m == nil
@@ -165,8 +169,7 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetSpeakers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSpeakers()))
         for i, v := range m.GetSpeakers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("speakers", cast)
         if err != nil {
@@ -188,13 +191,13 @@ func (m *TeamworkSpeakerConfiguration) SetAdditionalData(value map[string]interf
     }
 }
 // SetDefaultCommunicationSpeaker sets the defaultCommunicationSpeaker property value. 
-func (m *TeamworkSpeakerConfiguration) SetDefaultCommunicationSpeaker(value *TeamworkPeripheral)() {
+func (m *TeamworkSpeakerConfiguration) SetDefaultCommunicationSpeaker(value TeamworkPeripheralable)() {
     if m != nil {
         m.defaultCommunicationSpeaker = value
     }
 }
 // SetDefaultSpeaker sets the defaultSpeaker property value. 
-func (m *TeamworkSpeakerConfiguration) SetDefaultSpeaker(value *TeamworkPeripheral)() {
+func (m *TeamworkSpeakerConfiguration) SetDefaultSpeaker(value TeamworkPeripheralable)() {
     if m != nil {
         m.defaultSpeaker = value
     }
@@ -212,7 +215,7 @@ func (m *TeamworkSpeakerConfiguration) SetIsSpeakerOptional(value *bool)() {
     }
 }
 // SetSpeakers sets the speakers property value. 
-func (m *TeamworkSpeakerConfiguration) SetSpeakers(value []TeamworkPeripheral)() {
+func (m *TeamworkSpeakerConfiguration) SetSpeakers(value []TeamworkPeripheralable)() {
     if m != nil {
         m.speakers = value
     }

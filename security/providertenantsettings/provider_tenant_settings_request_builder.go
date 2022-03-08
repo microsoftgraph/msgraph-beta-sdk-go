@@ -2,11 +2,11 @@ package providertenantsettings
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ic8c1434bd2f1674b0199d32078b811be4c4b1e953bcfec933c5db55bca367f72 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/providertenantsettings/count"
 )
 
-// ProviderTenantSettingsRequestBuilder builds and executes requests for operations under \security\providerTenantSettings
+// ProviderTenantSettingsRequestBuilder provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
 type ProviderTenantSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ProviderTenantSettingsRequestBuilderGetQueryParameters struct {
 // ProviderTenantSettingsRequestBuilderPostOptions options for Post
 type ProviderTenantSettingsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSetting;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSettingable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewProviderTenantSettingsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewProviderTenantSettingsRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProviderTenantSettingsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ProviderTenantSettingsRequestBuilder) Count()(*ic8c1434bd2f1674b0199d32078b811be4c4b1e953bcfec933c5db55bca367f72.CountRequestBuilder) {
+    return ic8c1434bd2f1674b0199d32078b811be4c4b1e953bcfec933c5db55bca367f72.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get providerTenantSettings from security
 func (m *ProviderTenantSettingsRequestBuilder) CreateGetRequestInformation(options *ProviderTenantSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *ProviderTenantSettingsRequestBuilder) CreatePostRequestInformation(opti
     return requestInfo, nil
 }
 // Get get providerTenantSettings from security
-func (m *ProviderTenantSettingsRequestBuilder) Get(options *ProviderTenantSettingsRequestBuilderGetOptions)(*ProviderTenantSettingsResponse, error) {
+func (m *ProviderTenantSettingsRequestBuilder) Get(options *ProviderTenantSettingsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSettingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProviderTenantSettingsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateProviderTenantSettingCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ProviderTenantSettingsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSettingCollectionResponseable), nil
 }
 // Post create new navigation property to providerTenantSettings for security
-func (m *ProviderTenantSettingsRequestBuilder) Post(options *ProviderTenantSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSetting, error) {
+func (m *ProviderTenantSettingsRequestBuilder) Post(options *ProviderTenantSettingsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSettingable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewProviderTenantSetting() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateProviderTenantSettingFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSetting), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSettingable), nil
 }

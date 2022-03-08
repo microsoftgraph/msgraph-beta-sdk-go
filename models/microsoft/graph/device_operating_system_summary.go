@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceOperatingSystemSummary 
+// DeviceOperatingSystemSummary provides operations to manage the deviceManagement singleton.
 type DeviceOperatingSystemSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -47,6 +47,10 @@ func NewDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceOperatingSystemSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceOperatingSystemSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceOperatingSystemSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceOperatingSystemSummary) GetAdditionalData()(map[string]interface{}) {
@@ -134,54 +138,6 @@ func (m *DeviceOperatingSystemSummary) GetConfigMgrDeviceCount()(*int32) {
         return nil
     } else {
         return m.configMgrDeviceCount
-    }
-}
-// GetIosCount gets the iosCount property value. Number of iOS device count.
-func (m *DeviceOperatingSystemSummary) GetIosCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosCount
-    }
-}
-// GetLinuxCount gets the linuxCount property value. Number of Linux OS devices. Valid values 0 to 2147483647
-func (m *DeviceOperatingSystemSummary) GetLinuxCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.linuxCount
-    }
-}
-// GetMacOSCount gets the macOSCount property value. Number of Mac OS X device count.
-func (m *DeviceOperatingSystemSummary) GetMacOSCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macOSCount
-    }
-}
-// GetUnknownCount gets the unknownCount property value. Number of unknown device count.
-func (m *DeviceOperatingSystemSummary) GetUnknownCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownCount
-    }
-}
-// GetWindowsCount gets the windowsCount property value. Number of Windows device count.
-func (m *DeviceOperatingSystemSummary) GetWindowsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsCount
-    }
-}
-// GetWindowsMobileCount gets the windowsMobileCount property value. Number of Windows mobile device count.
-func (m *DeviceOperatingSystemSummary) GetWindowsMobileCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsMobileCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -348,6 +304,54 @@ func (m *DeviceOperatingSystemSummary) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIosCount gets the iosCount property value. Number of iOS device count.
+func (m *DeviceOperatingSystemSummary) GetIosCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.iosCount
+    }
+}
+// GetLinuxCount gets the linuxCount property value. Number of Linux OS devices. Valid values 0 to 2147483647
+func (m *DeviceOperatingSystemSummary) GetLinuxCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.linuxCount
+    }
+}
+// GetMacOSCount gets the macOSCount property value. Number of Mac OS X device count.
+func (m *DeviceOperatingSystemSummary) GetMacOSCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macOSCount
+    }
+}
+// GetUnknownCount gets the unknownCount property value. Number of unknown device count.
+func (m *DeviceOperatingSystemSummary) GetUnknownCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownCount
+    }
+}
+// GetWindowsCount gets the windowsCount property value. Number of Windows device count.
+func (m *DeviceOperatingSystemSummary) GetWindowsCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsCount
+    }
+}
+// GetWindowsMobileCount gets the windowsMobileCount property value. Number of Windows mobile device count.
+func (m *DeviceOperatingSystemSummary) GetWindowsMobileCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsMobileCount
+    }
 }
 func (m *DeviceOperatingSystemSummary) IsNil()(bool) {
     return m == nil

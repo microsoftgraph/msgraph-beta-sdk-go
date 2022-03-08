@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Item 
+// Item provides operations to manage the financials singleton.
 type Item struct {
     Entity
     // 
@@ -19,7 +19,7 @@ type Item struct {
     // 
     inventory *float64;
     // 
-    itemCategory *ItemCategory;
+    itemCategory ItemCategoryable;
     // 
     itemCategoryCode *string;
     // 
@@ -29,7 +29,7 @@ type Item struct {
     // 
     number *string;
     // 
-    picture []Picture;
+    picture []Pictureable;
     // 
     priceIncludesTax *bool;
     // 
@@ -49,6 +49,10 @@ func NewItem()(*Item) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItem(), nil
 }
 // GetBaseUnitOfMeasureId gets the baseUnitOfMeasureId property value. 
 func (m *Item) GetBaseUnitOfMeasureId()(*string) {
@@ -72,118 +76,6 @@ func (m *Item) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetGtin gets the gtin property value. 
-func (m *Item) GetGtin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gtin
-    }
-}
-// GetInventory gets the inventory property value. 
-func (m *Item) GetInventory()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventory
-    }
-}
-// GetItemCategory gets the itemCategory property value. 
-func (m *Item) GetItemCategory()(*ItemCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategory
-    }
-}
-// GetItemCategoryCode gets the itemCategoryCode property value. 
-func (m *Item) GetItemCategoryCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategoryCode
-    }
-}
-// GetItemCategoryId gets the itemCategoryId property value. 
-func (m *Item) GetItemCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategoryId
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Item) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNumber gets the number property value. 
-func (m *Item) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetPicture gets the picture property value. 
-func (m *Item) GetPicture()([]Picture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
-}
-// GetPriceIncludesTax gets the priceIncludesTax property value. 
-func (m *Item) GetPriceIncludesTax()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priceIncludesTax
-    }
-}
-// GetTaxGroupCode gets the taxGroupCode property value. 
-func (m *Item) GetTaxGroupCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxGroupCode
-    }
-}
-// GetTaxGroupId gets the taxGroupId property value. 
-func (m *Item) GetTaxGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxGroupId
-    }
-}
-// GetType gets the type property value. 
-func (m *Item) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUnitCost gets the unitCost property value. 
-func (m *Item) GetUnitCost()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitCost
-    }
-}
-// GetUnitPrice gets the unitPrice property value. 
-func (m *Item) GetUnitPrice()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitPrice
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -240,12 +132,12 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["itemCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemCategory() })
+        val, err := n.GetObjectValue(CreateItemCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetItemCategory(val.(*ItemCategory))
+            m.SetItemCategory(val.(ItemCategoryable))
         }
         return nil
     }
@@ -290,14 +182,14 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["picture"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPicture() })
+        val, err := n.GetCollectionOfObjectValues(CreatePictureFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Picture, len(val))
+            res := make([]Pictureable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Picture))
+                res[i] = v.(Pictureable)
             }
             m.SetPicture(res)
         }
@@ -364,6 +256,118 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     return res
+}
+// GetGtin gets the gtin property value. 
+func (m *Item) GetGtin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.gtin
+    }
+}
+// GetInventory gets the inventory property value. 
+func (m *Item) GetInventory()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inventory
+    }
+}
+// GetItemCategory gets the itemCategory property value. 
+func (m *Item) GetItemCategory()(ItemCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemCategory
+    }
+}
+// GetItemCategoryCode gets the itemCategoryCode property value. 
+func (m *Item) GetItemCategoryCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemCategoryCode
+    }
+}
+// GetItemCategoryId gets the itemCategoryId property value. 
+func (m *Item) GetItemCategoryId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemCategoryId
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Item) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNumber gets the number property value. 
+func (m *Item) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetPicture gets the picture property value. 
+func (m *Item) GetPicture()([]Pictureable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.picture
+    }
+}
+// GetPriceIncludesTax gets the priceIncludesTax property value. 
+func (m *Item) GetPriceIncludesTax()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priceIncludesTax
+    }
+}
+// GetTaxGroupCode gets the taxGroupCode property value. 
+func (m *Item) GetTaxGroupCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxGroupCode
+    }
+}
+// GetTaxGroupId gets the taxGroupId property value. 
+func (m *Item) GetTaxGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxGroupId
+    }
+}
+// GetType gets the type property value. 
+func (m *Item) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUnitCost gets the unitCost property value. 
+func (m *Item) GetUnitCost()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unitCost
+    }
+}
+// GetUnitPrice gets the unitPrice property value. 
+func (m *Item) GetUnitPrice()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unitPrice
+    }
 }
 func (m *Item) IsNil()(bool) {
     return m == nil
@@ -437,8 +441,7 @@ func (m *Item) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetPicture() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
@@ -514,7 +517,7 @@ func (m *Item) SetInventory(value *float64)() {
     }
 }
 // SetItemCategory sets the itemCategory property value. 
-func (m *Item) SetItemCategory(value *ItemCategory)() {
+func (m *Item) SetItemCategory(value ItemCategoryable)() {
     if m != nil {
         m.itemCategory = value
     }
@@ -544,7 +547,7 @@ func (m *Item) SetNumber(value *string)() {
     }
 }
 // SetPicture sets the picture property value. 
-func (m *Item) SetPicture(value []Picture)() {
+func (m *Item) SetPicture(value []Pictureable)() {
     if m != nil {
         m.picture = value
     }

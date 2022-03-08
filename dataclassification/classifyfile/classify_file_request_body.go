@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClassifyFileRequestBody 
+// ClassifyFileRequestBody provides operations to call the classifyFile method.
 type ClassifyFileRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewClassifyFileRequestBody()(*ClassifyFileRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateClassifyFileRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateClassifyFileRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassifyFileRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyFileRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFile gets the file property value. 
-func (m *ClassifyFileRequestBody) GetFile()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
-}
-// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
-func (m *ClassifyFileRequestBody) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +60,22 @@ func (m *ClassifyFileRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetFile gets the file property value. 
+func (m *ClassifyFileRequestBody) GetFile()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.file
+    }
+}
+// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
+func (m *ClassifyFileRequestBody) GetSensitiveTypeIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitiveTypeIds
+    }
 }
 func (m *ClassifyFileRequestBody) IsNil()(bool) {
     return m == nil

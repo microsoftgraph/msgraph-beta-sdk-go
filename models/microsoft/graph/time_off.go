@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeOff 
+// TimeOff provides operations to manage the compliance singleton.
 type TimeOff struct {
     ChangeTrackedEntity
     // The draft version of this timeOff that is viewable by managers. Required.
-    draftTimeOff *TimeOffItem;
+    draftTimeOff TimeOffItemable;
     // 
     isStagedForDeletion *bool;
     // The shared version of this timeOff that is viewable by both employees and managers. Required.
-    sharedTimeOff *TimeOffItem;
+    sharedTimeOff TimeOffItemable;
     // ID of the user assigned to the timeOff. Required.
     userId *string;
 }
@@ -23,48 +23,28 @@ func NewTimeOff()(*TimeOff) {
     }
     return m
 }
+// CreateTimeOffFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeOffFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeOff(), nil
+}
 // GetDraftTimeOff gets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
-func (m *TimeOff) GetDraftTimeOff()(*TimeOffItem) {
+func (m *TimeOff) GetDraftTimeOff()(TimeOffItemable) {
     if m == nil {
         return nil
     } else {
         return m.draftTimeOff
     }
 }
-// GetIsStagedForDeletion gets the isStagedForDeletion property value. 
-func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isStagedForDeletion
-    }
-}
-// GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
-func (m *TimeOff) GetSharedTimeOff()(*TimeOffItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedTimeOff
-    }
-}
-// GetUserId gets the userId property value. ID of the user assigned to the timeOff. Required.
-func (m *TimeOff) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeOff) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["draftTimeOff"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeOffItem() })
+        val, err := n.GetObjectValue(CreateTimeOffItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDraftTimeOff(val.(*TimeOffItem))
+            m.SetDraftTimeOff(val.(TimeOffItemable))
         }
         return nil
     }
@@ -79,12 +59,12 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["sharedTimeOff"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeOffItem() })
+        val, err := n.GetObjectValue(CreateTimeOffItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharedTimeOff(val.(*TimeOffItem))
+            m.SetSharedTimeOff(val.(TimeOffItemable))
         }
         return nil
     }
@@ -99,6 +79,30 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetIsStagedForDeletion gets the isStagedForDeletion property value. 
+func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isStagedForDeletion
+    }
+}
+// GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+func (m *TimeOff) GetSharedTimeOff()(TimeOffItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharedTimeOff
+    }
+}
+// GetUserId gets the userId property value. ID of the user assigned to the timeOff. Required.
+func (m *TimeOff) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *TimeOff) IsNil()(bool) {
     return m == nil
@@ -136,7 +140,7 @@ func (m *TimeOff) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetDraftTimeOff sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
-func (m *TimeOff) SetDraftTimeOff(value *TimeOffItem)() {
+func (m *TimeOff) SetDraftTimeOff(value TimeOffItemable)() {
     if m != nil {
         m.draftTimeOff = value
     }
@@ -148,7 +152,7 @@ func (m *TimeOff) SetIsStagedForDeletion(value *bool)() {
     }
 }
 // SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
-func (m *TimeOff) SetSharedTimeOff(value *TimeOffItem)() {
+func (m *TimeOff) SetSharedTimeOff(value TimeOffItemable)() {
     if m != nil {
         m.sharedTimeOff = value
     }

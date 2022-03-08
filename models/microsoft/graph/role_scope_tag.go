@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RoleScopeTag 
+// RoleScopeTag provides operations to manage the deviceManagement singleton.
 type RoleScopeTag struct {
     Entity
     // The list of assignments for this Role Scope Tag.
-    assignments []RoleScopeTagAutoAssignment;
+    assignments []RoleScopeTagAutoAssignmentable;
     // Description of the Role Scope Tag.
     description *string;
     // The display or friendly name of the Role Scope Tag.
@@ -23,8 +23,12 @@ func NewRoleScopeTag()(*RoleScopeTag) {
     }
     return m
 }
+// CreateRoleScopeTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRoleScopeTagFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRoleScopeTag(), nil
+}
 // GetAssignments gets the assignments property value. The list of assignments for this Role Scope Tag.
-func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignment) {
+func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -47,26 +51,18 @@ func (m *RoleScopeTag) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsBuiltIn gets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
-func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleScopeTagAutoAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateRoleScopeTagAutoAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RoleScopeTagAutoAssignment, len(val))
+            res := make([]RoleScopeTagAutoAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RoleScopeTagAutoAssignment))
+                res[i] = v.(RoleScopeTagAutoAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -104,6 +100,14 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(interface{}, i04e
     }
     return res
 }
+// GetIsBuiltIn gets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
+func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isBuiltIn
+    }
+}
 func (m *RoleScopeTag) IsNil()(bool) {
     return m == nil
 }
@@ -116,8 +120,7 @@ func (m *RoleScopeTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -145,7 +148,7 @@ func (m *RoleScopeTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetAssignments sets the assignments property value. The list of assignments for this Role Scope Tag.
-func (m *RoleScopeTag) SetAssignments(value []RoleScopeTagAutoAssignment)() {
+func (m *RoleScopeTag) SetAssignments(value []RoleScopeTagAutoAssignmentable)() {
     if m != nil {
         m.assignments = value
     }

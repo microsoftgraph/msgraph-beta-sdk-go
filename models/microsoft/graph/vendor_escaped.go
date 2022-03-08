@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Vendor_escaped 
+// Vendor_escaped provides operations to manage the financials singleton.
 type Vendor_escaped struct {
     Entity
     // 
-    address *PostalAddressType;
+    address PostalAddressTypeable;
     // 
     balance *float64;
     // 
     blocked *string;
     // 
-    currency *Currency;
+    currency Currencyable;
     // 
     currencyCode *string;
     // 
@@ -29,17 +29,17 @@ type Vendor_escaped struct {
     // 
     number *string;
     // 
-    paymentMethod *PaymentMethod;
+    paymentMethod PaymentMethodable;
     // 
     paymentMethodId *string;
     // 
-    paymentTerm *PaymentTerm;
+    paymentTerm PaymentTermable;
     // 
     paymentTermsId *string;
     // 
     phoneNumber *string;
     // 
-    picture []Picture;
+    picture []Pictureable;
     // 
     taxLiable *bool;
     // 
@@ -54,8 +54,12 @@ func NewVendor_escaped()(*Vendor_escaped) {
     }
     return m
 }
+// CreateVendor_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVendor_escapedFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVendor_escaped(), nil
+}
 // GetAddress gets the address property value. 
-func (m *Vendor_escaped) GetAddress()(*PostalAddressType) {
+func (m *Vendor_escaped) GetAddress()(PostalAddressTypeable) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +83,7 @@ func (m *Vendor_escaped) GetBlocked()(*string) {
     }
 }
 // GetCurrency gets the currency property value. 
-func (m *Vendor_escaped) GetCurrency()(*Currency) {
+func (m *Vendor_escaped) GetCurrency()(Currencyable) {
     if m == nil {
         return nil
     } else {
@@ -118,104 +122,16 @@ func (m *Vendor_escaped) GetEmail()(*string) {
         return m.email
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Vendor_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNumber gets the number property value. 
-func (m *Vendor_escaped) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetPaymentMethod gets the paymentMethod property value. 
-func (m *Vendor_escaped) GetPaymentMethod()(*PaymentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethod
-    }
-}
-// GetPaymentMethodId gets the paymentMethodId property value. 
-func (m *Vendor_escaped) GetPaymentMethodId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethodId
-    }
-}
-// GetPaymentTerm gets the paymentTerm property value. 
-func (m *Vendor_escaped) GetPaymentTerm()(*PaymentTerm) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerm
-    }
-}
-// GetPaymentTermsId gets the paymentTermsId property value. 
-func (m *Vendor_escaped) GetPaymentTermsId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTermsId
-    }
-}
-// GetPhoneNumber gets the phoneNumber property value. 
-func (m *Vendor_escaped) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
-}
-// GetPicture gets the picture property value. 
-func (m *Vendor_escaped) GetPicture()([]Picture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
-}
-// GetTaxLiable gets the taxLiable property value. 
-func (m *Vendor_escaped) GetTaxLiable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxLiable
-    }
-}
-// GetTaxRegistrationNumber gets the taxRegistrationNumber property value. 
-func (m *Vendor_escaped) GetTaxRegistrationNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxRegistrationNumber
-    }
-}
-// GetWebsite gets the website property value. 
-func (m *Vendor_escaped) GetWebsite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.website
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPostalAddressType() })
+        val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PostalAddressType))
+            m.SetAddress(val.(PostalAddressTypeable))
         }
         return nil
     }
@@ -240,12 +156,12 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["currency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCurrency() })
+        val, err := n.GetObjectValue(CreateCurrencyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCurrency(val.(*Currency))
+            m.SetCurrency(val.(Currencyable))
         }
         return nil
     }
@@ -310,12 +226,12 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["paymentMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPaymentMethod() })
+        val, err := n.GetObjectValue(CreatePaymentMethodFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPaymentMethod(val.(*PaymentMethod))
+            m.SetPaymentMethod(val.(PaymentMethodable))
         }
         return nil
     }
@@ -330,12 +246,12 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["paymentTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPaymentTerm() })
+        val, err := n.GetObjectValue(CreatePaymentTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPaymentTerm(val.(*PaymentTerm))
+            m.SetPaymentTerm(val.(PaymentTermable))
         }
         return nil
     }
@@ -360,14 +276,14 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["picture"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPicture() })
+        val, err := n.GetCollectionOfObjectValues(CreatePictureFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Picture, len(val))
+            res := make([]Pictureable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Picture))
+                res[i] = v.(Pictureable)
             }
             m.SetPicture(res)
         }
@@ -404,6 +320,94 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Vendor_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNumber gets the number property value. 
+func (m *Vendor_escaped) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetPaymentMethod gets the paymentMethod property value. 
+func (m *Vendor_escaped) GetPaymentMethod()(PaymentMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentMethod
+    }
+}
+// GetPaymentMethodId gets the paymentMethodId property value. 
+func (m *Vendor_escaped) GetPaymentMethodId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentMethodId
+    }
+}
+// GetPaymentTerm gets the paymentTerm property value. 
+func (m *Vendor_escaped) GetPaymentTerm()(PaymentTermable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentTerm
+    }
+}
+// GetPaymentTermsId gets the paymentTermsId property value. 
+func (m *Vendor_escaped) GetPaymentTermsId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentTermsId
+    }
+}
+// GetPhoneNumber gets the phoneNumber property value. 
+func (m *Vendor_escaped) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
+}
+// GetPicture gets the picture property value. 
+func (m *Vendor_escaped) GetPicture()([]Pictureable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.picture
+    }
+}
+// GetTaxLiable gets the taxLiable property value. 
+func (m *Vendor_escaped) GetTaxLiable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxLiable
+    }
+}
+// GetTaxRegistrationNumber gets the taxRegistrationNumber property value. 
+func (m *Vendor_escaped) GetTaxRegistrationNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxRegistrationNumber
+    }
+}
+// GetWebsite gets the website property value. 
+func (m *Vendor_escaped) GetWebsite()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.website
+    }
 }
 func (m *Vendor_escaped) IsNil()(bool) {
     return m == nil
@@ -507,8 +511,7 @@ func (m *Vendor_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetPicture() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
@@ -536,7 +539,7 @@ func (m *Vendor_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetAddress sets the address property value. 
-func (m *Vendor_escaped) SetAddress(value *PostalAddressType)() {
+func (m *Vendor_escaped) SetAddress(value PostalAddressTypeable)() {
     if m != nil {
         m.address = value
     }
@@ -554,7 +557,7 @@ func (m *Vendor_escaped) SetBlocked(value *string)() {
     }
 }
 // SetCurrency sets the currency property value. 
-func (m *Vendor_escaped) SetCurrency(value *Currency)() {
+func (m *Vendor_escaped) SetCurrency(value Currencyable)() {
     if m != nil {
         m.currency = value
     }
@@ -596,7 +599,7 @@ func (m *Vendor_escaped) SetNumber(value *string)() {
     }
 }
 // SetPaymentMethod sets the paymentMethod property value. 
-func (m *Vendor_escaped) SetPaymentMethod(value *PaymentMethod)() {
+func (m *Vendor_escaped) SetPaymentMethod(value PaymentMethodable)() {
     if m != nil {
         m.paymentMethod = value
     }
@@ -608,7 +611,7 @@ func (m *Vendor_escaped) SetPaymentMethodId(value *string)() {
     }
 }
 // SetPaymentTerm sets the paymentTerm property value. 
-func (m *Vendor_escaped) SetPaymentTerm(value *PaymentTerm)() {
+func (m *Vendor_escaped) SetPaymentTerm(value PaymentTermable)() {
     if m != nil {
         m.paymentTerm = value
     }
@@ -626,7 +629,7 @@ func (m *Vendor_escaped) SetPhoneNumber(value *string)() {
     }
 }
 // SetPicture sets the picture property value. 
-func (m *Vendor_escaped) SetPicture(value []Picture)() {
+func (m *Vendor_escaped) SetPicture(value []Pictureable)() {
     if m != nil {
         m.picture = value
     }

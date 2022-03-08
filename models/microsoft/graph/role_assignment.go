@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RoleAssignment 
+// RoleAssignment provides operations to manage the deviceManagement singleton.
 type RoleAssignment struct {
     Entity
     // Description of the Role Assignment.
@@ -14,7 +14,7 @@ type RoleAssignment struct {
     // List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
     resourceScopes []string;
     // Role definition this assignment is part of.
-    roleDefinition *RoleDefinition;
+    roleDefinition RoleDefinitionable;
     // List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
     scopeMembers []string;
     // Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
@@ -26,6 +26,10 @@ func NewRoleAssignment()(*RoleAssignment) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRoleAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRoleAssignment(), nil
 }
 // GetDescription gets the description property value. Description of the Role Assignment.
 func (m *RoleAssignment) GetDescription()(*string) {
@@ -41,38 +45,6 @@ func (m *RoleAssignment) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-func (m *RoleAssignment) GetResourceScopes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceScopes
-    }
-}
-// GetRoleDefinition gets the roleDefinition property value. Role definition this assignment is part of.
-func (m *RoleAssignment) GetRoleDefinition()(*RoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
-}
-// GetScopeMembers gets the scopeMembers property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-func (m *RoleAssignment) GetScopeMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeMembers
-    }
-}
-// GetScopeType gets the scopeType property value. Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
-func (m *RoleAssignment) GetScopeType()(*RoleAssignmentScopeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -113,12 +85,12 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["roleDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleDefinition() })
+        val, err := n.GetObjectValue(CreateRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleDefinition(val.(*RoleDefinition))
+            m.SetRoleDefinition(val.(RoleDefinitionable))
         }
         return nil
     }
@@ -147,6 +119,38 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+func (m *RoleAssignment) GetResourceScopes()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceScopes
+    }
+}
+// GetRoleDefinition gets the roleDefinition property value. Role definition this assignment is part of.
+func (m *RoleAssignment) GetRoleDefinition()(RoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinition
+    }
+}
+// GetScopeMembers gets the scopeMembers property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+func (m *RoleAssignment) GetScopeMembers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeMembers
+    }
+}
+// GetScopeType gets the scopeType property value. Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
+func (m *RoleAssignment) GetScopeType()(*RoleAssignmentScopeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeType
+    }
 }
 func (m *RoleAssignment) IsNil()(bool) {
     return m == nil
@@ -215,7 +219,7 @@ func (m *RoleAssignment) SetResourceScopes(value []string)() {
     }
 }
 // SetRoleDefinition sets the roleDefinition property value. Role definition this assignment is part of.
-func (m *RoleAssignment) SetRoleDefinition(value *RoleDefinition)() {
+func (m *RoleAssignment) SetRoleDefinition(value RoleDefinitionable)() {
     if m != nil {
         m.roleDefinition = value
     }

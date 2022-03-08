@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamsTab 
+// TeamsTab provides operations to manage the collection of chat entities.
 type TeamsTab struct {
     Entity
     // Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
-    configuration *TeamsTabConfiguration;
+    configuration TeamsTabConfigurationable;
     // Name of the tab.
     displayName *string;
     // 
@@ -16,7 +16,7 @@ type TeamsTab struct {
     // Index of the order used for sorting tabs.
     sortOrderIndex *string;
     // The application that is linked to the tab. This cannot be changed after tab creation.
-    teamsApp *TeamsApp;
+    teamsApp TeamsAppable;
     // 
     teamsAppId *string;
     // Deep link URL of the tab instance. Read only.
@@ -29,8 +29,12 @@ func NewTeamsTab()(*TeamsTab) {
     }
     return m
 }
+// CreateTeamsTabFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamsTabFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamsTab(), nil
+}
 // GetConfiguration gets the configuration property value. Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
-func (m *TeamsTab) GetConfiguration()(*TeamsTabConfiguration) {
+func (m *TeamsTab) GetConfiguration()(TeamsTabConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -45,56 +49,16 @@ func (m *TeamsTab) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetMessageId gets the messageId property value. 
-func (m *TeamsTab) GetMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageId
-    }
-}
-// GetSortOrderIndex gets the sortOrderIndex property value. Index of the order used for sorting tabs.
-func (m *TeamsTab) GetSortOrderIndex()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sortOrderIndex
-    }
-}
-// GetTeamsApp gets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
-func (m *TeamsTab) GetTeamsApp()(*TeamsApp) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsApp
-    }
-}
-// GetTeamsAppId gets the teamsAppId property value. 
-func (m *TeamsTab) GetTeamsAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppId
-    }
-}
-// GetWebUrl gets the webUrl property value. Deep link URL of the tab instance. Read only.
-func (m *TeamsTab) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsTabConfiguration() })
+        val, err := n.GetObjectValue(CreateTeamsTabConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfiguration(val.(*TeamsTabConfiguration))
+            m.SetConfiguration(val.(TeamsTabConfigurationable))
         }
         return nil
     }
@@ -129,12 +93,12 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["teamsApp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsApp() })
+        val, err := n.GetObjectValue(CreateTeamsAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTeamsApp(val.(*TeamsApp))
+            m.SetTeamsApp(val.(TeamsAppable))
         }
         return nil
     }
@@ -159,6 +123,46 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetMessageId gets the messageId property value. 
+func (m *TeamsTab) GetMessageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageId
+    }
+}
+// GetSortOrderIndex gets the sortOrderIndex property value. Index of the order used for sorting tabs.
+func (m *TeamsTab) GetSortOrderIndex()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sortOrderIndex
+    }
+}
+// GetTeamsApp gets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+func (m *TeamsTab) GetTeamsApp()(TeamsAppable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsApp
+    }
+}
+// GetTeamsAppId gets the teamsAppId property value. 
+func (m *TeamsTab) GetTeamsAppId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsAppId
+    }
+}
+// GetWebUrl gets the webUrl property value. Deep link URL of the tab instance. Read only.
+func (m *TeamsTab) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *TeamsTab) IsNil()(bool) {
     return m == nil
@@ -214,7 +218,7 @@ func (m *TeamsTab) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetConfiguration sets the configuration property value. Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
-func (m *TeamsTab) SetConfiguration(value *TeamsTabConfiguration)() {
+func (m *TeamsTab) SetConfiguration(value TeamsTabConfigurationable)() {
     if m != nil {
         m.configuration = value
     }
@@ -238,7 +242,7 @@ func (m *TeamsTab) SetSortOrderIndex(value *string)() {
     }
 }
 // SetTeamsApp sets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
-func (m *TeamsTab) SetTeamsApp(value *TeamsApp)() {
+func (m *TeamsTab) SetTeamsApp(value TeamsAppable)() {
     if m != nil {
         m.teamsApp = value
     }

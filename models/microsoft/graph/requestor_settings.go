@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RequestorSettings 
+// RequestorSettings provides operations to manage the identityGovernance singleton.
 type RequestorSettings struct {
     // Indicates whether new requests are accepted on this policy.
     acceptRequests *bool;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
-    allowedRequestors []UserSet;
+    allowedRequestors []UserSetable;
     // Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
     scopeType *string;
 }
@@ -21,6 +21,10 @@ func NewRequestorSettings()(*RequestorSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRequestorSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRequestorSettings(), nil
 }
 // GetAcceptRequests gets the acceptRequests property value. Indicates whether new requests are accepted on this policy.
 func (m *RequestorSettings) GetAcceptRequests()(*bool) {
@@ -39,19 +43,11 @@ func (m *RequestorSettings) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAllowedRequestors gets the allowedRequestors property value. The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
-func (m *RequestorSettings) GetAllowedRequestors()([]UserSet) {
+func (m *RequestorSettings) GetAllowedRequestors()([]UserSetable) {
     if m == nil {
         return nil
     } else {
         return m.allowedRequestors
-    }
-}
-// GetScopeType gets the scopeType property value. Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
-func (m *RequestorSettings) GetScopeType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +64,14 @@ func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["allowedRequestors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSet() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserSet, len(val))
+            res := make([]UserSetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserSet))
+                res[i] = v.(UserSetable)
             }
             m.SetAllowedRequestors(res)
         }
@@ -93,6 +89,14 @@ func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
+// GetScopeType gets the scopeType property value. Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
+func (m *RequestorSettings) GetScopeType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeType
+    }
+}
 func (m *RequestorSettings) IsNil()(bool) {
     return m == nil
 }
@@ -107,8 +111,7 @@ func (m *RequestorSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetAllowedRequestors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedRequestors()))
         for i, v := range m.GetAllowedRequestors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("allowedRequestors", cast)
         if err != nil {
@@ -142,7 +145,7 @@ func (m *RequestorSettings) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAllowedRequestors sets the allowedRequestors property value. The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
-func (m *RequestorSettings) SetAllowedRequestors(value []UserSet)() {
+func (m *RequestorSettings) SetAllowedRequestors(value []UserSetable)() {
     if m != nil {
         m.allowedRequestors = value
     }

@@ -2,11 +2,11 @@ package detectedapps
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ibafc9d4db20931116a42c40c760489aa89d155a2ff56fc1c8831b76b617e826c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/detectedapps/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i6a7fa19bc0cb851b6dc5c421e4f50466823cbfc64b04b66be9ee034a16211b88 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/detectedapps/count"
 )
 
-// DetectedAppsRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\detectedApps
+// DetectedAppsRequestBuilder provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
 type DetectedAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewDetectedAppsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewDetectedAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDetectedAppsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DetectedAppsRequestBuilder) Count()(*i6a7fa19bc0cb851b6dc5c421e4f50466823cbfc64b04b66be9ee034a16211b88.CountRequestBuilder) {
+    return i6a7fa19bc0cb851b6dc5c421e4f50466823cbfc64b04b66be9ee034a16211b88.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation all applications currently installed on the device
 func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(options *DetectedAppsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(options *Detect
     return requestInfo, nil
 }
 // Get all applications currently installed on the device
-func (m *DetectedAppsRequestBuilder) Get(options *DetectedAppsRequestBuilderGetOptions)(*DetectedAppsResponse, error) {
+func (m *DetectedAppsRequestBuilder) Get(options *DetectedAppsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DetectedAppCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDetectedAppsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDetectedAppCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DetectedAppsResponse), nil
-}
-func (m *DetectedAppsRequestBuilder) Ref()(*ibafc9d4db20931116a42c40c760489aa89d155a2ff56fc1c8831b76b617e826c.RefRequestBuilder) {
-    return ibafc9d4db20931116a42c40c760489aa89d155a2ff56fc1c8831b76b617e826c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DetectedAppCollectionResponseable), nil
 }

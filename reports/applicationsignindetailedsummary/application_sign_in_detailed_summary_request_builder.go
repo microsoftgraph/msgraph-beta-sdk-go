@@ -2,11 +2,11 @@ package applicationsignindetailedsummary
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i33fa4fc0235acf9bed81861dc25c475b0074af88ebf20445b05171c9bcb25942 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/applicationsignindetailedsummary/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ApplicationSignInDetailedSummaryRequestBuilder builds and executes requests for operations under \reports\applicationSignInDetailedSummary
+// ApplicationSignInDetailedSummaryRequestBuilder provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
 type ApplicationSignInDetailedSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters struct {
 // ApplicationSignInDetailedSummaryRequestBuilderPostOptions options for Post
 type ApplicationSignInDetailedSummaryRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummary;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummaryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewApplicationSignInDetailedSummaryRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ApplicationSignInDetailedSummaryRequestBuilder) Count()(*i33fa4fc0235acf9bed81861dc25c475b0074af88ebf20445b05171c9bcb25942.CountRequestBuilder) {
+    return i33fa4fc0235acf9bed81861dc25c475b0074af88ebf20445b05171c9bcb25942.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInformation(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents a detailed summary of an application sign-in.
+// CreatePostRequestInformation create new navigation property to applicationSignInDetailedSummary for reports
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInformation(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get represents a detailed summary of an application sign-in.
-func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(*ApplicationSignInDetailedSummaryResponse, error) {
+func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApplicationSignInDetailedSummaryResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApplicationSignInDetailedSummaryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ApplicationSignInDetailedSummaryResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummaryCollectionResponseable), nil
 }
-// Post represents a detailed summary of an application sign-in.
-func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummary, error) {
+// Post create new navigation property to applicationSignInDetailedSummary for reports
+func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewApplicationSignInDetailedSummary() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApplicationSignInDetailedSummaryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummary), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummaryable), nil
 }

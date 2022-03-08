@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AddCopyFromContentTypeHubRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\microsoft.graph.addCopyFromContentTypeHub
+// AddCopyFromContentTypeHubRequestBuilder provides operations to call the addCopyFromContentTypeHub method.
 type AddCopyFromContentTypeHubRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type AddCopyFromContentTypeHubRequestBuilder struct {
 // AddCopyFromContentTypeHubRequestBuilderPostOptions options for Post
 type AddCopyFromContentTypeHubRequestBuilderPostOptions struct {
     // 
-    Body *AddCopyFromContentTypeHubRequestBody;
+    Body AddCopyFromContentTypeHubRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type AddCopyFromContentTypeHubResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type contentType
-    contentType *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType;
+    contentType i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable;
 }
 // NewAddCopyFromContentTypeHubResponse instantiates a new addCopyFromContentTypeHubResponse and sets the default values.
 func NewAddCopyFromContentTypeHubResponse()(*AddCopyFromContentTypeHubResponse) {
@@ -39,6 +39,9 @@ func NewAddCopyFromContentTypeHubResponse()(*AddCopyFromContentTypeHubResponse) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateAddCopyFromContentTypeHubResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAddCopyFromContentTypeHubResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddCopyFromContentTypeHubResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *AddCopyFromContentTypeHubResponse) GetAdditionalData()(map[string]inter
     }
 }
 // GetContentType gets the contentType property value. Union type representation for type contentType
-func (m *AddCopyFromContentTypeHubResponse) GetContentType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType) {
+func (m *AddCopyFromContentTypeHubResponse) GetContentType()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *AddCopyFromContentTypeHubResponse) GetContentType()(*i535684e11b5500196
 func (m *AddCopyFromContentTypeHubResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewContentType() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType))
+            m.SetContentType(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *AddCopyFromContentTypeHubResponse) SetAdditionalData(value map[string]i
     }
 }
 // SetContentType sets the contentType property value. Union type representation for type contentType
-func (m *AddCopyFromContentTypeHubResponse) SetContentType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType)() {
+func (m *AddCopyFromContentTypeHubResponse) SetContentType(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeable)() {
     if m != nil {
         m.contentType = value
     }
@@ -111,7 +114,7 @@ func NewAddCopyFromContentTypeHubRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *AddCopyFromContentTypeHubRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Post invoke action addCopyFromContentTypeHub
-func (m *AddCopyFromContentTypeHubRequestBuilder) Post(options *AddCopyFromContentTypeHubRequestBuilderPostOptions)(*AddCopyFromContentTypeHubResponse, error) {
+func (m *AddCopyFromContentTypeHubRequestBuilder) Post(options *AddCopyFromContentTypeHubRequestBuilderPostOptions)(AddCopyFromContentTypeHubResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAddCopyFromContentTypeHubResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAddCopyFromContentTypeHubResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*AddCopyFromContentTypeHubResponse), nil
+    return res.(AddCopyFromContentTypeHubResponseable), nil
 }

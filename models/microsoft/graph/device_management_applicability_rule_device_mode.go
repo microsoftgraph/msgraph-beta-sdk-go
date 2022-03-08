@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementApplicabilityRuleDeviceMode 
+// DeviceManagementApplicabilityRuleDeviceMode provides operations to manage the deviceManagement singleton.
 type DeviceManagementApplicabilityRuleDeviceMode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewDeviceManagementApplicabilityRuleDeviceMode()(*DeviceManagementApplicabi
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementApplicabilityRuleDeviceMode(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetDeviceMode()(*Windows10
         return nil
     } else {
         return m.deviceMode
-    }
-}
-// GetName gets the name property value. Name for object.
-func (m *DeviceManagementApplicabilityRuleDeviceMode) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
-func (m *DeviceManagementApplicabilityRuleDeviceMode) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name for object.
+func (m *DeviceManagementApplicabilityRuleDeviceMode) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+func (m *DeviceManagementApplicabilityRuleDeviceMode) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleType
+    }
 }
 func (m *DeviceManagementApplicabilityRuleDeviceMode) IsNil()(bool) {
     return m == nil

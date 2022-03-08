@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementSettings 
+// DeviceManagementSettings provides operations to manage the deviceManagement singleton.
 type DeviceManagementSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ type DeviceManagementSettings struct {
     deviceInactivityBeforeRetirementInDay *int32;
     // Determines whether the autopilot diagnostic feature is enabled or not.
     enableAutopilotDiagnostics *bool;
+    // Determines whether the device group membership report feature is enabled or not.
+    enableDeviceGroupMembershipReport *bool;
+    // Determines whether the enhanced troubleshooting UX is enabled or not.
+    enableEnhancedTroubleshootingExperience *bool;
     // Determines whether the log collection feature should be available for use.
     enableLogCollection *bool;
     // Is feature enabled or not for enhanced jailbreak detection.
@@ -37,6 +41,10 @@ func NewDeviceManagementSettings()(*DeviceManagementSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) GetAdditionalData()(map[string]interface{}) {
@@ -94,6 +102,22 @@ func (m *DeviceManagementSettings) GetEnableAutopilotDiagnostics()(*bool) {
         return m.enableAutopilotDiagnostics
     }
 }
+// GetEnableDeviceGroupMembershipReport gets the enableDeviceGroupMembershipReport property value. Determines whether the device group membership report feature is enabled or not.
+func (m *DeviceManagementSettings) GetEnableDeviceGroupMembershipReport()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.enableDeviceGroupMembershipReport
+    }
+}
+// GetEnableEnhancedTroubleshootingExperience gets the enableEnhancedTroubleshootingExperience property value. Determines whether the enhanced troubleshooting UX is enabled or not.
+func (m *DeviceManagementSettings) GetEnableEnhancedTroubleshootingExperience()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.enableEnhancedTroubleshootingExperience
+    }
+}
 // GetEnableLogCollection gets the enableLogCollection property value. Determines whether the log collection feature should be available for use.
 func (m *DeviceManagementSettings) GetEnableLogCollection()(*bool) {
     if m == nil {
@@ -108,30 +132,6 @@ func (m *DeviceManagementSettings) GetEnhancedJailBreak()(*bool) {
         return nil
     } else {
         return m.enhancedJailBreak
-    }
-}
-// GetIgnoreDevicesForUnsupportedSettingsEnabled gets the ignoreDevicesForUnsupportedSettingsEnabled property value. The property to determine whether to ignore unsupported compliance settings on certian models of devices.
-func (m *DeviceManagementSettings) GetIgnoreDevicesForUnsupportedSettingsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ignoreDevicesForUnsupportedSettingsEnabled
-    }
-}
-// GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
-func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isScheduledActionEnabled
-    }
-}
-// GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
-func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureByDefault
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -197,6 +197,26 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
+    res["enableDeviceGroupMembershipReport"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableDeviceGroupMembershipReport(val)
+        }
+        return nil
+    }
+    res["enableEnhancedTroubleshootingExperience"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableEnhancedTroubleshootingExperience(val)
+        }
+        return nil
+    }
     res["enableLogCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -249,6 +269,30 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
+// GetIgnoreDevicesForUnsupportedSettingsEnabled gets the ignoreDevicesForUnsupportedSettingsEnabled property value. The property to determine whether to ignore unsupported compliance settings on certian models of devices.
+func (m *DeviceManagementSettings) GetIgnoreDevicesForUnsupportedSettingsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ignoreDevicesForUnsupportedSettingsEnabled
+    }
+}
+// GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
+func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isScheduledActionEnabled
+    }
+}
+// GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
+func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.secureByDefault
+    }
+}
 func (m *DeviceManagementSettings) IsNil()(bool) {
     return m == nil
 }
@@ -287,6 +331,18 @@ func (m *DeviceManagementSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     {
         err := writer.WriteBoolValue("enableAutopilotDiagnostics", m.GetEnableAutopilotDiagnostics())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("enableDeviceGroupMembershipReport", m.GetEnableDeviceGroupMembershipReport())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("enableEnhancedTroubleshootingExperience", m.GetEnableEnhancedTroubleshootingExperience())
         if err != nil {
             return err
         }
@@ -369,6 +425,18 @@ func (m *DeviceManagementSettings) SetDeviceInactivityBeforeRetirementInDay(valu
 func (m *DeviceManagementSettings) SetEnableAutopilotDiagnostics(value *bool)() {
     if m != nil {
         m.enableAutopilotDiagnostics = value
+    }
+}
+// SetEnableDeviceGroupMembershipReport sets the enableDeviceGroupMembershipReport property value. Determines whether the device group membership report feature is enabled or not.
+func (m *DeviceManagementSettings) SetEnableDeviceGroupMembershipReport(value *bool)() {
+    if m != nil {
+        m.enableDeviceGroupMembershipReport = value
+    }
+}
+// SetEnableEnhancedTroubleshootingExperience sets the enableEnhancedTroubleshootingExperience property value. Determines whether the enhanced troubleshooting UX is enabled or not.
+func (m *DeviceManagementSettings) SetEnableEnhancedTroubleshootingExperience(value *bool)() {
+    if m != nil {
+        m.enableEnhancedTroubleshootingExperience = value
     }
 }
 // SetEnableLogCollection sets the enableLogCollection property value. Determines whether the log collection feature should be available for use.

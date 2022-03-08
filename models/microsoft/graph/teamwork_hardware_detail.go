@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkHardwareDetail 
+// TeamworkHardwareDetail provides operations to manage the teamwork singleton.
 type TeamworkHardwareDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,52 +26,16 @@ func NewTeamworkHardwareDetail()(*TeamworkHardwareDetail) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkHardwareDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkHardwareDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkHardwareDetail(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMacAddresses gets the macAddresses property value. MAC address.
-func (m *TeamworkHardwareDetail) GetMacAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macAddresses
-    }
-}
-// GetManufacturer gets the manufacturer property value. Device manufacturer.
-func (m *TeamworkHardwareDetail) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. Devie model.
-func (m *TeamworkHardwareDetail) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetSerialNumber gets the serialNumber property value. Device serial number.
-func (m *TeamworkHardwareDetail) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
-}
-// GetUniqueId gets the uniqueId property value. The unique identifier for the device.
-func (m *TeamworkHardwareDetail) GetUniqueId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -132,6 +96,46 @@ func (m *TeamworkHardwareDetail) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetMacAddresses gets the macAddresses property value. MAC address.
+func (m *TeamworkHardwareDetail) GetMacAddresses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macAddresses
+    }
+}
+// GetManufacturer gets the manufacturer property value. Device manufacturer.
+func (m *TeamworkHardwareDetail) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. Devie model.
+func (m *TeamworkHardwareDetail) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetSerialNumber gets the serialNumber property value. Device serial number.
+func (m *TeamworkHardwareDetail) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
+}
+// GetUniqueId gets the uniqueId property value. The unique identifier for the device.
+func (m *TeamworkHardwareDetail) GetUniqueId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueId
+    }
 }
 func (m *TeamworkHardwareDetail) IsNil()(bool) {
     return m == nil

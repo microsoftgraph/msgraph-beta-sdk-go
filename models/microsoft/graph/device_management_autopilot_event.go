@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementAutopilotEvent 
+// DeviceManagementAutopilotEvent provides operations to manage the deviceManagement singleton.
 type DeviceManagementAutopilotEvent struct {
     Entity
     // Time spent in user ESP.
@@ -49,7 +49,7 @@ type DeviceManagementAutopilotEvent struct {
     // Device operating system version.
     osVersion *string;
     // Policy and application status details for this device.
-    policyStatusDetails []DeviceManagementAutopilotPolicyStatusDetail;
+    policyStatusDetails []DeviceManagementAutopilotPolicyStatusDetailable;
     // Count of applications targeted.
     targetedAppCount *int32;
     // Count of policies targeted.
@@ -69,6 +69,10 @@ func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementAutopilotEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementAutopilotEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementAutopilotEvent(), nil
 }
 // GetAccountSetupDuration gets the accountSetupDuration property value. Time spent in user ESP.
 func (m *DeviceManagementAutopilotEvent) GetAccountSetupDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
@@ -212,78 +216,6 @@ func (m *DeviceManagementAutopilotEvent) GetEventDateTime()(*i336074805fc853987a
         return nil
     } else {
         return m.eventDateTime
-    }
-}
-// GetManagedDeviceName gets the managedDeviceName property value. Managed device name.
-func (m *DeviceManagementAutopilotEvent) GetManagedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceName
-    }
-}
-// GetOsVersion gets the osVersion property value. Device operating system version.
-func (m *DeviceManagementAutopilotEvent) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetPolicyStatusDetails gets the policyStatusDetails property value. Policy and application status details for this device.
-func (m *DeviceManagementAutopilotEvent) GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyStatusDetails
-    }
-}
-// GetTargetedAppCount gets the targetedAppCount property value. Count of applications targeted.
-func (m *DeviceManagementAutopilotEvent) GetTargetedAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedAppCount
-    }
-}
-// GetTargetedPolicyCount gets the targetedPolicyCount property value. Count of policies targeted.
-func (m *DeviceManagementAutopilotEvent) GetTargetedPolicyCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedPolicyCount
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User principal name used to enroll the device.
-func (m *DeviceManagementAutopilotEvent) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetWindows10EnrollmentCompletionPageConfigurationDisplayName gets the windows10EnrollmentCompletionPageConfigurationDisplayName property value. Enrollment Status Page profile name
-func (m *DeviceManagementAutopilotEvent) GetWindows10EnrollmentCompletionPageConfigurationDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows10EnrollmentCompletionPageConfigurationDisplayName
-    }
-}
-// GetWindows10EnrollmentCompletionPageConfigurationId gets the windows10EnrollmentCompletionPageConfigurationId property value. Enrollment Status Page profile ID
-func (m *DeviceManagementAutopilotEvent) GetWindows10EnrollmentCompletionPageConfigurationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows10EnrollmentCompletionPageConfigurationId
-    }
-}
-// GetWindowsAutopilotDeploymentProfileDisplayName gets the windowsAutopilotDeploymentProfileDisplayName property value. Autopilot profile name.
-func (m *DeviceManagementAutopilotEvent) GetWindowsAutopilotDeploymentProfileDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsAutopilotDeploymentProfileDisplayName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -490,14 +422,14 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["policyStatusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementAutopilotPolicyStatusDetail() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementAutopilotPolicyStatusDetail, len(val))
+            res := make([]DeviceManagementAutopilotPolicyStatusDetailable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementAutopilotPolicyStatusDetail))
+                res[i] = v.(DeviceManagementAutopilotPolicyStatusDetailable)
             }
             m.SetPolicyStatusDetails(res)
         }
@@ -564,6 +496,78 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetManagedDeviceName gets the managedDeviceName property value. Managed device name.
+func (m *DeviceManagementAutopilotEvent) GetManagedDeviceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceName
+    }
+}
+// GetOsVersion gets the osVersion property value. Device operating system version.
+func (m *DeviceManagementAutopilotEvent) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetPolicyStatusDetails gets the policyStatusDetails property value. Policy and application status details for this device.
+func (m *DeviceManagementAutopilotEvent) GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetailable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyStatusDetails
+    }
+}
+// GetTargetedAppCount gets the targetedAppCount property value. Count of applications targeted.
+func (m *DeviceManagementAutopilotEvent) GetTargetedAppCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedAppCount
+    }
+}
+// GetTargetedPolicyCount gets the targetedPolicyCount property value. Count of policies targeted.
+func (m *DeviceManagementAutopilotEvent) GetTargetedPolicyCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedPolicyCount
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name used to enroll the device.
+func (m *DeviceManagementAutopilotEvent) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetWindows10EnrollmentCompletionPageConfigurationDisplayName gets the windows10EnrollmentCompletionPageConfigurationDisplayName property value. Enrollment Status Page profile name
+func (m *DeviceManagementAutopilotEvent) GetWindows10EnrollmentCompletionPageConfigurationDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows10EnrollmentCompletionPageConfigurationDisplayName
+    }
+}
+// GetWindows10EnrollmentCompletionPageConfigurationId gets the windows10EnrollmentCompletionPageConfigurationId property value. Enrollment Status Page profile ID
+func (m *DeviceManagementAutopilotEvent) GetWindows10EnrollmentCompletionPageConfigurationId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows10EnrollmentCompletionPageConfigurationId
+    }
+}
+// GetWindowsAutopilotDeploymentProfileDisplayName gets the windowsAutopilotDeploymentProfileDisplayName property value. Autopilot profile name.
+func (m *DeviceManagementAutopilotEvent) GetWindowsAutopilotDeploymentProfileDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsAutopilotDeploymentProfileDisplayName
+    }
 }
 func (m *DeviceManagementAutopilotEvent) IsNil()(bool) {
     return m == nil
@@ -702,8 +706,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
     if m.GetPolicyStatusDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPolicyStatusDetails()))
         for i, v := range m.GetPolicyStatusDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("policyStatusDetails", cast)
         if err != nil {
@@ -869,7 +872,7 @@ func (m *DeviceManagementAutopilotEvent) SetOsVersion(value *string)() {
     }
 }
 // SetPolicyStatusDetails sets the policyStatusDetails property value. Policy and application status details for this device.
-func (m *DeviceManagementAutopilotEvent) SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetail)() {
+func (m *DeviceManagementAutopilotEvent) SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetailable)() {
     if m != nil {
         m.policyStatusDetails = value
     }

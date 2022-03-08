@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConnectorGroup 
+// ConnectorGroup provides operations to manage the collection of application entities.
 type ConnectorGroup struct {
     Entity
     // Read-only. Nullable.
-    applications []Application;
+    applications []Applicationable;
     // Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
     connectorGroupType *ConnectorGroupType;
     // Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
     isDefault *bool;
     // Read-only. Nullable.
-    members []Connector;
+    members []Connectorable;
     // The name associated with the connectorGroup.
     name *string;
     // The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
@@ -27,8 +27,12 @@ func NewConnectorGroup()(*ConnectorGroup) {
     }
     return m
 }
+// CreateConnectorGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConnectorGroupFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnectorGroup(), nil
+}
 // GetApplications gets the applications property value. Read-only. Nullable.
-func (m *ConnectorGroup) GetApplications()([]Application) {
+func (m *ConnectorGroup) GetApplications()([]Applicationable) {
     if m == nil {
         return nil
     } else {
@@ -43,50 +47,18 @@ func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
         return m.connectorGroupType
     }
 }
-// GetIsDefault gets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
-func (m *ConnectorGroup) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetMembers gets the members property value. Read-only. Nullable.
-func (m *ConnectorGroup) GetMembers()([]Connector) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
-}
-// GetName gets the name property value. The name associated with the connectorGroup.
-func (m *ConnectorGroup) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetRegion gets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
-func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApplication() })
+        val, err := n.GetCollectionOfObjectValues(CreateApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Application, len(val))
+            res := make([]Applicationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Application))
+                res[i] = v.(Applicationable)
             }
             m.SetApplications(res)
         }
@@ -113,14 +85,14 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnector() })
+        val, err := n.GetCollectionOfObjectValues(CreateConnectorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Connector, len(val))
+            res := make([]Connectorable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Connector))
+                res[i] = v.(Connectorable)
             }
             m.SetMembers(res)
         }
@@ -148,6 +120,38 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
     }
     return res
 }
+// GetIsDefault gets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
+func (m *ConnectorGroup) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetMembers gets the members property value. Read-only. Nullable.
+func (m *ConnectorGroup) GetMembers()([]Connectorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.members
+    }
+}
+// GetName gets the name property value. The name associated with the connectorGroup.
+func (m *ConnectorGroup) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetRegion gets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
+func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
+    if m == nil {
+        return nil
+    } else {
+        return m.region
+    }
+}
 func (m *ConnectorGroup) IsNil()(bool) {
     return m == nil
 }
@@ -160,8 +164,7 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetApplications() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApplications()))
         for i, v := range m.GetApplications() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("applications", cast)
         if err != nil {
@@ -184,8 +187,7 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -208,7 +210,7 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetApplications sets the applications property value. Read-only. Nullable.
-func (m *ConnectorGroup) SetApplications(value []Application)() {
+func (m *ConnectorGroup) SetApplications(value []Applicationable)() {
     if m != nil {
         m.applications = value
     }
@@ -226,7 +228,7 @@ func (m *ConnectorGroup) SetIsDefault(value *bool)() {
     }
 }
 // SetMembers sets the members property value. Read-only. Nullable.
-func (m *ConnectorGroup) SetMembers(value []Connector)() {
+func (m *ConnectorGroup) SetMembers(value []Connectorable)() {
     if m != nil {
         m.members = value
     }

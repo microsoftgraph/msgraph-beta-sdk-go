@@ -2,11 +2,10 @@ package userexperienceanalyticsbatteryhealthcapacitydetails
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthCapacityDetails
+// UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder provides operations to manage the userExperienceAnalyticsBatteryHealthCapacityDetails property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderGetQueryPa
 // UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthCapacityDetails;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthCapacityDetailsable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation user Experience Analytics Battery Health Capacity Details
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsBatteryHealthCapacityDetails for deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation user Experience Analytics Battery Health Capacity Details
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsBatteryHealthCapacityDetails in deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// Delete user Experience Analytics Battery Health Capacity Details
+// Delete delete navigation property userExperienceAnalyticsBatteryHealthCapacityDetails for deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) Delete(options *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get user Experience Analytics Battery Health Capacity Details
-func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthCapacityDetails, error) {
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthCapacityDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsBatteryHealthCapacityDetails() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsBatteryHealthCapacityDetailsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthCapacityDetails), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthCapacityDetailsable), nil
 }
-// Patch user Experience Analytics Battery Health Capacity Details
+// Patch update the navigation property userExperienceAnalyticsBatteryHealthCapacityDetails in deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) Patch(options *UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

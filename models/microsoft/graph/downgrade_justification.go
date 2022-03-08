@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DowngradeJustification 
+// DowngradeJustification provides operations to call the evaluateApplication method.
 type DowngradeJustification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewDowngradeJustification()(*DowngradeJustification) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDowngradeJustificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDowngradeJustificationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDowngradeJustification(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DowngradeJustification) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsDowngradeJustified gets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
-func (m *DowngradeJustification) GetIsDowngradeJustified()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDowngradeJustified
-    }
-}
-// GetJustificationMessage gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
-func (m *DowngradeJustification) GetJustificationMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justificationMessage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *DowngradeJustification) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetIsDowngradeJustified gets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
+func (m *DowngradeJustification) GetIsDowngradeJustified()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDowngradeJustified
+    }
+}
+// GetJustificationMessage gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+func (m *DowngradeJustification) GetJustificationMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justificationMessage
+    }
 }
 func (m *DowngradeJustification) IsNil()(bool) {
     return m == nil

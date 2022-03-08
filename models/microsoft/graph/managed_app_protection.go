@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedAppProtection 
+// ManagedAppProtection provides operations to manage the deviceAppManagement singleton.
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
@@ -104,6 +104,10 @@ func NewManagedAppProtection()(*ManagedAppProtection) {
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
     return m
+}
+// CreateManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedAppProtectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedAppProtection(), nil
 }
 // GetAllowedDataIngestionLocations gets the allowedDataIngestionLocations property value. Data storage locations where a user may store managed data.
 func (m *ManagedAppProtection) GetAllowedDataIngestionLocations()([]ManagedAppDataIngestionLocation) {
@@ -223,246 +227,6 @@ func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
         return nil
     } else {
         return m.disableAppPinIfDevicePinIsSet
-    }
-}
-// GetFingerprintBlocked gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fingerprintBlocked
-    }
-}
-// GetGracePeriodToBlockAppsDuringOffClockHours gets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
-func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gracePeriodToBlockAppsDuringOffClockHours
-    }
-}
-// GetManagedBrowser gets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
-func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedBrowser
-    }
-}
-// GetManagedBrowserToOpenLinksRequired gets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
-func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedBrowserToOpenLinksRequired
-    }
-}
-// GetMaximumAllowedDeviceThreatLevel gets the maximumAllowedDeviceThreatLevel property value. Maximum allowed device threat level, as reported by the MTD app. Possible values are: notConfigured, secured, low, medium, high.
-func (m *ManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppDeviceThreatLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAllowedDeviceThreatLevel
-    }
-}
-// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
-func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumPinRetries
-    }
-}
-// GetMaximumRequiredOsVersion gets the maximumRequiredOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
-func (m *ManagedAppProtection) GetMaximumRequiredOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumRequiredOsVersion
-    }
-}
-// GetMaximumWarningOsVersion gets the maximumWarningOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
-func (m *ManagedAppProtection) GetMaximumWarningOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumWarningOsVersion
-    }
-}
-// GetMaximumWipeOsVersion gets the maximumWipeOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
-func (m *ManagedAppProtection) GetMaximumWipeOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumWipeOsVersion
-    }
-}
-// GetMinimumPinLength gets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
-func (m *ManagedAppProtection) GetMinimumPinLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumPinLength
-    }
-}
-// GetMinimumRequiredAppVersion gets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-func (m *ManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredAppVersion
-    }
-}
-// GetMinimumRequiredOsVersion gets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-func (m *ManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredOsVersion
-    }
-}
-// GetMinimumWarningAppVersion gets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
-func (m *ManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningAppVersion
-    }
-}
-// GetMinimumWarningOsVersion gets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
-func (m *ManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningOsVersion
-    }
-}
-// GetMinimumWipeAppVersion gets the minimumWipeAppVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
-func (m *ManagedAppProtection) GetMinimumWipeAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipeAppVersion
-    }
-}
-// GetMinimumWipeOsVersion gets the minimumWipeOsVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
-func (m *ManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipeOsVersion
-    }
-}
-// GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
-func (m *ManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileThreatDefenseRemediationAction
-    }
-}
-// GetNotificationRestriction gets the notificationRestriction property value. Specify app notification restriction. Possible values are: allow, blockOrganizationalData, block.
-func (m *ManagedAppProtection) GetNotificationRestriction()(*ManagedAppNotificationRestriction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationRestriction
-    }
-}
-// GetOrganizationalCredentialsRequired gets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
-func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationalCredentialsRequired
-    }
-}
-// GetPeriodBeforePinReset gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodBeforePinReset
-    }
-}
-// GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodOfflineBeforeAccessCheck
-    }
-}
-// GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodOfflineBeforeWipeIsEnforced
-    }
-}
-// GetPeriodOnlineBeforeAccessCheck gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodOnlineBeforeAccessCheck
-    }
-}
-// GetPinCharacterSet gets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
-func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinCharacterSet
-    }
-}
-// GetPinRequired gets the pinRequired property value. Indicates whether an app-level pin is required.
-func (m *ManagedAppProtection) GetPinRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinRequired
-    }
-}
-// GetPinRequiredInsteadOfBiometricTimeout gets the pinRequiredInsteadOfBiometricTimeout property value. Timeout in minutes for an app pin instead of non biometrics passcode
-func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinRequiredInsteadOfBiometricTimeout
-    }
-}
-// GetPreviousPinBlockCount gets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property.
-func (m *ManagedAppProtection) GetPreviousPinBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previousPinBlockCount
-    }
-}
-// GetPrintBlocked gets the printBlocked property value. Indicates whether printing is allowed from managed apps.
-func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printBlocked
-    }
-}
-// GetSaveAsBlocked gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
-func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.saveAsBlocked
-    }
-}
-// GetSimplePinBlocked gets the simplePinBlocked property value. Indicates whether simplePin is blocked.
-func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simplePinBlocked
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -927,6 +691,246 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetFingerprintBlocked gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fingerprintBlocked
+    }
+}
+// GetGracePeriodToBlockAppsDuringOffClockHours gets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
+func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.gracePeriodToBlockAppsDuringOffClockHours
+    }
+}
+// GetManagedBrowser gets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
+func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedBrowser
+    }
+}
+// GetManagedBrowserToOpenLinksRequired gets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
+func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedBrowserToOpenLinksRequired
+    }
+}
+// GetMaximumAllowedDeviceThreatLevel gets the maximumAllowedDeviceThreatLevel property value. Maximum allowed device threat level, as reported by the MTD app. Possible values are: notConfigured, secured, low, medium, high.
+func (m *ManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppDeviceThreatLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumAllowedDeviceThreatLevel
+    }
+}
+// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumPinRetries
+    }
+}
+// GetMaximumRequiredOsVersion gets the maximumRequiredOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
+func (m *ManagedAppProtection) GetMaximumRequiredOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumRequiredOsVersion
+    }
+}
+// GetMaximumWarningOsVersion gets the maximumWarningOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
+func (m *ManagedAppProtection) GetMaximumWarningOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumWarningOsVersion
+    }
+}
+// GetMaximumWipeOsVersion gets the maximumWipeOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
+func (m *ManagedAppProtection) GetMaximumWipeOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumWipeOsVersion
+    }
+}
+// GetMinimumPinLength gets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
+func (m *ManagedAppProtection) GetMinimumPinLength()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumPinLength
+    }
+}
+// GetMinimumRequiredAppVersion gets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+func (m *ManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumRequiredAppVersion
+    }
+}
+// GetMinimumRequiredOsVersion gets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+func (m *ManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumRequiredOsVersion
+    }
+}
+// GetMinimumWarningAppVersion gets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
+func (m *ManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWarningAppVersion
+    }
+}
+// GetMinimumWarningOsVersion gets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
+func (m *ManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWarningOsVersion
+    }
+}
+// GetMinimumWipeAppVersion gets the minimumWipeAppVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+func (m *ManagedAppProtection) GetMinimumWipeAppVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWipeAppVersion
+    }
+}
+// GetMinimumWipeOsVersion gets the minimumWipeOsVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+func (m *ManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minimumWipeOsVersion
+    }
+}
+// GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
+func (m *ManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileThreatDefenseRemediationAction
+    }
+}
+// GetNotificationRestriction gets the notificationRestriction property value. Specify app notification restriction. Possible values are: allow, blockOrganizationalData, block.
+func (m *ManagedAppProtection) GetNotificationRestriction()(*ManagedAppNotificationRestriction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationRestriction
+    }
+}
+// GetOrganizationalCredentialsRequired gets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
+func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationalCredentialsRequired
+    }
+}
+// GetPeriodBeforePinReset gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
+func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.periodBeforePinReset
+    }
+}
+// GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
+func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.periodOfflineBeforeAccessCheck
+    }
+}
+// GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
+func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.periodOfflineBeforeWipeIsEnforced
+    }
+}
+// GetPeriodOnlineBeforeAccessCheck gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
+func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.periodOnlineBeforeAccessCheck
+    }
+}
+// GetPinCharacterSet gets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
+func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pinCharacterSet
+    }
+}
+// GetPinRequired gets the pinRequired property value. Indicates whether an app-level pin is required.
+func (m *ManagedAppProtection) GetPinRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pinRequired
+    }
+}
+// GetPinRequiredInsteadOfBiometricTimeout gets the pinRequiredInsteadOfBiometricTimeout property value. Timeout in minutes for an app pin instead of non biometrics passcode
+func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pinRequiredInsteadOfBiometricTimeout
+    }
+}
+// GetPreviousPinBlockCount gets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property.
+func (m *ManagedAppProtection) GetPreviousPinBlockCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.previousPinBlockCount
+    }
+}
+// GetPrintBlocked gets the printBlocked property value. Indicates whether printing is allowed from managed apps.
+func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.printBlocked
+    }
+}
+// GetSaveAsBlocked gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
+func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.saveAsBlocked
+    }
+}
+// GetSimplePinBlocked gets the simplePinBlocked property value. Indicates whether simplePin is blocked.
+func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.simplePinBlocked
+    }
 }
 func (m *ManagedAppProtection) IsNil()(bool) {
     return m == nil

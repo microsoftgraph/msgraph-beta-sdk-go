@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RbacApplicationMultiple 
+// RbacApplicationMultiple provides operations to manage the roleManagement singleton.
 type RbacApplicationMultiple struct {
     Entity
     // 
-    resourceNamespaces []UnifiedRbacResourceNamespace;
+    resourceNamespaces []UnifiedRbacResourceNamespaceable;
     // 
-    roleAssignments []UnifiedRoleAssignmentMultiple;
+    roleAssignments []UnifiedRoleAssignmentMultipleable;
     // 
-    roleDefinitions []UnifiedRoleDefinition;
+    roleDefinitions []UnifiedRoleDefinitionable;
 }
 // NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
@@ -21,8 +21,59 @@ func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     }
     return m
 }
+// CreateRbacApplicationMultipleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRbacApplicationMultipleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRbacApplicationMultiple(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["resourceNamespaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRbacResourceNamespaceable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRbacResourceNamespaceable)
+            }
+            m.SetResourceNamespaces(res)
+        }
+        return nil
+    }
+    res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentMultipleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentMultipleable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleAssignmentMultipleable)
+            }
+            m.SetRoleAssignments(res)
+        }
+        return nil
+    }
+    res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleDefinitionable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleDefinitionable)
+            }
+            m.SetRoleDefinitions(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetResourceNamespaces gets the resourceNamespaces property value. 
-func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceNamespace) {
+func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
     if m == nil {
         return nil
     } else {
@@ -30,7 +81,7 @@ func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceN
     }
 }
 // GetRoleAssignments gets the roleAssignments property value. 
-func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMultiple) {
+func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMultipleable) {
     if m == nil {
         return nil
     } else {
@@ -38,59 +89,12 @@ func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMu
     }
 }
 // GetRoleDefinitions gets the roleDefinitions property value. 
-func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinition) {
+func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     if m == nil {
         return nil
     } else {
         return m.roleDefinitions
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["resourceNamespaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRbacResourceNamespace() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRbacResourceNamespace, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRbacResourceNamespace))
-            }
-            m.SetResourceNamespaces(res)
-        }
-        return nil
-    }
-    res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignmentMultiple() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentMultiple, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleAssignmentMultiple))
-            }
-            m.SetRoleAssignments(res)
-        }
-        return nil
-    }
-    res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleDefinition() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleDefinition, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleDefinition))
-            }
-            m.SetRoleDefinitions(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *RbacApplicationMultiple) IsNil()(bool) {
     return m == nil
@@ -104,8 +108,7 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetResourceNamespaces() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceNamespaces()))
         for i, v := range m.GetResourceNamespaces() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resourceNamespaces", cast)
         if err != nil {
@@ -115,8 +118,7 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -126,8 +128,7 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -137,19 +138,19 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. 
-func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespace)() {
+func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
     if m != nil {
         m.resourceNamespaces = value
     }
 }
 // SetRoleAssignments sets the roleAssignments property value. 
-func (m *RbacApplicationMultiple) SetRoleAssignments(value []UnifiedRoleAssignmentMultiple)() {
+func (m *RbacApplicationMultiple) SetRoleAssignments(value []UnifiedRoleAssignmentMultipleable)() {
     if m != nil {
         m.roleAssignments = value
     }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. 
-func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
+func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefinitionable)() {
     if m != nil {
         m.roleDefinitions = value
     }

@@ -5,7 +5,7 @@ import (
     id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// Acronym 
+// Acronym provides operations to manage the searchEntity singleton.
 type Acronym struct {
     SearchAnswer
     // What the acronym stands for.
@@ -20,21 +20,9 @@ func NewAcronym()(*Acronym) {
     }
     return m
 }
-// GetStandsFor gets the standsFor property value. What the acronym stands for.
-func (m *Acronym) GetStandsFor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.standsFor
-    }
-}
-// GetState gets the state property value. State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
-func (m *Acronym) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+// CreateAcronymFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAcronymFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAcronym(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -60,6 +48,22 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetStandsFor gets the standsFor property value. What the acronym stands for.
+func (m *Acronym) GetStandsFor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.standsFor
+    }
+}
+// GetState gets the state property value. State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
+func (m *Acronym) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *Acronym) IsNil()(bool) {
     return m == nil

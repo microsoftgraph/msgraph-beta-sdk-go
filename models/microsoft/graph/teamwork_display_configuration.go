@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDisplayConfiguration 
+// TeamworkDisplayConfiguration provides operations to manage the teamwork singleton.
 type TeamworkDisplayConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
-    configuredDisplays []TeamworkConfiguredPeripheral;
+    configuredDisplays []TeamworkConfiguredPeripheralable;
     // Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.
     displayCount *int32;
     // Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
-    inBuiltDisplayScreenConfiguration *TeamworkDisplayScreenConfiguration;
+    inBuiltDisplayScreenConfiguration TeamworkDisplayScreenConfigurationable;
     // True if content duplication is allowed. Applicable only for Teams Rooms devices.
     isContentDuplicationAllowed *bool;
     // True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
@@ -26,6 +26,10 @@ func NewTeamworkDisplayConfiguration()(*TeamworkDisplayConfiguration) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkDisplayConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkDisplayConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkDisplayConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,7 +39,7 @@ func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]interface{
     }
 }
 // GetConfiguredDisplays gets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
-func (m *TeamworkDisplayConfiguration) GetConfiguredDisplays()([]TeamworkConfiguredPeripheral) {
+func (m *TeamworkDisplayConfiguration) GetConfiguredDisplays()([]TeamworkConfiguredPeripheralable) {
     if m == nil {
         return nil
     } else {
@@ -50,42 +54,18 @@ func (m *TeamworkDisplayConfiguration) GetDisplayCount()(*int32) {
         return m.displayCount
     }
 }
-// GetInBuiltDisplayScreenConfiguration gets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
-func (m *TeamworkDisplayConfiguration) GetInBuiltDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inBuiltDisplayScreenConfiguration
-    }
-}
-// GetIsContentDuplicationAllowed gets the isContentDuplicationAllowed property value. True if content duplication is allowed. Applicable only for Teams Rooms devices.
-func (m *TeamworkDisplayConfiguration) GetIsContentDuplicationAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isContentDuplicationAllowed
-    }
-}
-// GetIsDualDisplayModeEnabled gets the isDualDisplayModeEnabled property value. True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
-func (m *TeamworkDisplayConfiguration) GetIsDualDisplayModeEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDualDisplayModeEnabled
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["configuredDisplays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkConfiguredPeripheral() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkConfiguredPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamworkConfiguredPeripheral, len(val))
+            res := make([]TeamworkConfiguredPeripheralable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamworkConfiguredPeripheral))
+                res[i] = v.(TeamworkConfiguredPeripheralable)
             }
             m.SetConfiguredDisplays(res)
         }
@@ -102,12 +82,12 @@ func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["inBuiltDisplayScreenConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkDisplayScreenConfiguration() })
+        val, err := n.GetObjectValue(CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInBuiltDisplayScreenConfiguration(val.(*TeamworkDisplayScreenConfiguration))
+            m.SetInBuiltDisplayScreenConfiguration(val.(TeamworkDisplayScreenConfigurationable))
         }
         return nil
     }
@@ -133,6 +113,30 @@ func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetInBuiltDisplayScreenConfiguration gets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
+func (m *TeamworkDisplayConfiguration) GetInBuiltDisplayScreenConfiguration()(TeamworkDisplayScreenConfigurationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inBuiltDisplayScreenConfiguration
+    }
+}
+// GetIsContentDuplicationAllowed gets the isContentDuplicationAllowed property value. True if content duplication is allowed. Applicable only for Teams Rooms devices.
+func (m *TeamworkDisplayConfiguration) GetIsContentDuplicationAllowed()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isContentDuplicationAllowed
+    }
+}
+// GetIsDualDisplayModeEnabled gets the isDualDisplayModeEnabled property value. True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
+func (m *TeamworkDisplayConfiguration) GetIsDualDisplayModeEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDualDisplayModeEnabled
+    }
+}
 func (m *TeamworkDisplayConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -141,8 +145,7 @@ func (m *TeamworkDisplayConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetConfiguredDisplays() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConfiguredDisplays()))
         for i, v := range m.GetConfiguredDisplays() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("configuredDisplays", cast)
         if err != nil {
@@ -188,7 +191,7 @@ func (m *TeamworkDisplayConfiguration) SetAdditionalData(value map[string]interf
     }
 }
 // SetConfiguredDisplays sets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
-func (m *TeamworkDisplayConfiguration) SetConfiguredDisplays(value []TeamworkConfiguredPeripheral)() {
+func (m *TeamworkDisplayConfiguration) SetConfiguredDisplays(value []TeamworkConfiguredPeripheralable)() {
     if m != nil {
         m.configuredDisplays = value
     }
@@ -200,7 +203,7 @@ func (m *TeamworkDisplayConfiguration) SetDisplayCount(value *int32)() {
     }
 }
 // SetInBuiltDisplayScreenConfiguration sets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
-func (m *TeamworkDisplayConfiguration) SetInBuiltDisplayScreenConfiguration(value *TeamworkDisplayScreenConfiguration)() {
+func (m *TeamworkDisplayConfiguration) SetInBuiltDisplayScreenConfiguration(value TeamworkDisplayScreenConfigurationable)() {
     if m != nil {
         m.inBuiltDisplayScreenConfiguration = value
     }

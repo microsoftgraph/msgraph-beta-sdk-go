@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SensitiveContentEvidence 
+// SensitiveContentEvidence provides operations to call the classifyExactMatches method.
 type SensitiveContentEvidence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewSensitiveContentEvidence()(*SensitiveContentEvidence) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSensitiveContentEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSensitiveContentEvidenceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSensitiveContentEvidence(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentEvidence) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLength gets the length property value. 
-func (m *SensitiveContentEvidence) GetLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.length
-    }
-}
-// GetMatch gets the match property value. 
-func (m *SensitiveContentEvidence) GetMatch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.match
-    }
-}
-// GetOffset gets the offset property value. 
-func (m *SensitiveContentEvidence) GetOffset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offset
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *SensitiveContentEvidence) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetLength gets the length property value. 
+func (m *SensitiveContentEvidence) GetLength()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.length
+    }
+}
+// GetMatch gets the match property value. 
+func (m *SensitiveContentEvidence) GetMatch()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.match
+    }
+}
+// GetOffset gets the offset property value. 
+func (m *SensitiveContentEvidence) GetOffset()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offset
+    }
 }
 func (m *SensitiveContentEvidence) IsNil()(bool) {
     return m == nil

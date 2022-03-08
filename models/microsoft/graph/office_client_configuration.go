@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OfficeClientConfiguration 
+// OfficeClientConfiguration provides operations to manage the officeConfiguration singleton.
 type OfficeClientConfiguration struct {
     Entity
     // The list of group assignments for the policy.
-    assignments []OfficeClientConfigurationAssignment;
+    assignments []OfficeClientConfigurationAssignmentable;
     // List of office Client check-in status.
-    checkinStatuses []OfficeClientCheckinStatus;
+    checkinStatuses []OfficeClientCheckinStatusable;
     // Not yet documented
     description *string;
     // Admin provided description of the office client configuration policy.
@@ -20,7 +20,7 @@ type OfficeClientConfiguration struct {
     // Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
     priority *int32;
     // User check-in summary for the policy.
-    userCheckinSummary *OfficeUserCheckinSummary;
+    userCheckinSummary OfficeUserCheckinSummaryable;
     // Preference settings JSON string in binary format, these values can be overridden by the user.
     userPreferencePayload []byte;
 }
@@ -31,8 +31,12 @@ func NewOfficeClientConfiguration()(*OfficeClientConfiguration) {
     }
     return m
 }
+// CreateOfficeClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOfficeClientConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOfficeClientConfiguration(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments for the policy.
-func (m *OfficeClientConfiguration) GetAssignments()([]OfficeClientConfigurationAssignment) {
+func (m *OfficeClientConfiguration) GetAssignments()([]OfficeClientConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -40,7 +44,7 @@ func (m *OfficeClientConfiguration) GetAssignments()([]OfficeClientConfiguration
     }
 }
 // GetCheckinStatuses gets the checkinStatuses property value. List of office Client check-in status.
-func (m *OfficeClientConfiguration) GetCheckinStatuses()([]OfficeClientCheckinStatus) {
+func (m *OfficeClientConfiguration) GetCheckinStatuses()([]OfficeClientCheckinStatusable) {
     if m == nil {
         return nil
     } else {
@@ -63,64 +67,32 @@ func (m *OfficeClientConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetPolicyPayload gets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *OfficeClientConfiguration) GetPolicyPayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyPayload
-    }
-}
-// GetPriority gets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
-func (m *OfficeClientConfiguration) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetUserCheckinSummary gets the userCheckinSummary property value. User check-in summary for the policy.
-func (m *OfficeClientConfiguration) GetUserCheckinSummary()(*OfficeUserCheckinSummary) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userCheckinSummary
-    }
-}
-// GetUserPreferencePayload gets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *OfficeClientConfiguration) GetUserPreferencePayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPreferencePayload
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfficeClientConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateOfficeClientConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OfficeClientConfigurationAssignment, len(val))
+            res := make([]OfficeClientConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OfficeClientConfigurationAssignment))
+                res[i] = v.(OfficeClientConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
         return nil
     }
     res["checkinStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfficeClientCheckinStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OfficeClientCheckinStatus, len(val))
+            res := make([]OfficeClientCheckinStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OfficeClientCheckinStatus))
+                res[i] = v.(OfficeClientCheckinStatusable)
             }
             m.SetCheckinStatuses(res)
         }
@@ -167,12 +139,12 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["userCheckinSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfficeUserCheckinSummary() })
+        val, err := n.GetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserCheckinSummary(val.(*OfficeUserCheckinSummary))
+            m.SetUserCheckinSummary(val.(OfficeUserCheckinSummaryable))
         }
         return nil
     }
@@ -188,6 +160,38 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
+// GetPolicyPayload gets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *OfficeClientConfiguration) GetPolicyPayload()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyPayload
+    }
+}
+// GetPriority gets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
+func (m *OfficeClientConfiguration) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetUserCheckinSummary gets the userCheckinSummary property value. User check-in summary for the policy.
+func (m *OfficeClientConfiguration) GetUserCheckinSummary()(OfficeUserCheckinSummaryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userCheckinSummary
+    }
+}
+// GetUserPreferencePayload gets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *OfficeClientConfiguration) GetUserPreferencePayload()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPreferencePayload
+    }
+}
 func (m *OfficeClientConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -200,8 +204,7 @@ func (m *OfficeClientConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -211,8 +214,7 @@ func (m *OfficeClientConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetCheckinStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCheckinStatuses()))
         for i, v := range m.GetCheckinStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("checkinStatuses", cast)
         if err != nil {
@@ -258,13 +260,13 @@ func (m *OfficeClientConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the policy.
-func (m *OfficeClientConfiguration) SetAssignments(value []OfficeClientConfigurationAssignment)() {
+func (m *OfficeClientConfiguration) SetAssignments(value []OfficeClientConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
 // SetCheckinStatuses sets the checkinStatuses property value. List of office Client check-in status.
-func (m *OfficeClientConfiguration) SetCheckinStatuses(value []OfficeClientCheckinStatus)() {
+func (m *OfficeClientConfiguration) SetCheckinStatuses(value []OfficeClientCheckinStatusable)() {
     if m != nil {
         m.checkinStatuses = value
     }
@@ -294,7 +296,7 @@ func (m *OfficeClientConfiguration) SetPriority(value *int32)() {
     }
 }
 // SetUserCheckinSummary sets the userCheckinSummary property value. User check-in summary for the policy.
-func (m *OfficeClientConfiguration) SetUserCheckinSummary(value *OfficeUserCheckinSummary)() {
+func (m *OfficeClientConfiguration) SetUserCheckinSummary(value OfficeUserCheckinSummaryable)() {
     if m != nil {
         m.userCheckinSummary = value
     }

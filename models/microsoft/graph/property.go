@@ -5,7 +5,7 @@ import (
     i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// Property 
+// Property provides operations to manage the collection of externalConnection entities.
 type Property struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -33,6 +33,10 @@ func NewProperty()(*Property) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProperty(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Property) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -47,62 +51,6 @@ func (m *Property) GetAliases()([]string) {
         return nil
     } else {
         return m.aliases
-    }
-}
-// GetIsQueryable gets the isQueryable property value. Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
-func (m *Property) GetIsQueryable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isQueryable
-    }
-}
-// GetIsRefinable gets the isRefinable property value. Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
-func (m *Property) GetIsRefinable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRefinable
-    }
-}
-// GetIsRetrievable gets the isRetrievable property value. Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
-func (m *Property) GetIsRetrievable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRetrievable
-    }
-}
-// GetIsSearchable gets the isSearchable property value. Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
-func (m *Property) GetIsSearchable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSearchable
-    }
-}
-// GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.
-func (m *Property) GetLabels()([]i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.Label) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labels
-    }
-}
-// GetName gets the name property value. The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
-func (m *Property) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetType gets the type property value. The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue.
-func (m *Property) GetType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.PropertyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -197,6 +145,62 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetIsQueryable gets the isQueryable property value. Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
+func (m *Property) GetIsQueryable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isQueryable
+    }
+}
+// GetIsRefinable gets the isRefinable property value. Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
+func (m *Property) GetIsRefinable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRefinable
+    }
+}
+// GetIsRetrievable gets the isRetrievable property value. Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
+func (m *Property) GetIsRetrievable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRetrievable
+    }
+}
+// GetIsSearchable gets the isSearchable property value. Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
+func (m *Property) GetIsSearchable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSearchable
+    }
+}
+// GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.
+func (m *Property) GetLabels()([]i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.Label) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labels
+    }
+}
+// GetName gets the name property value. The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
+func (m *Property) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetType gets the type property value. The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue.
+func (m *Property) GetType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.PropertyType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *Property) IsNil()(bool) {
     return m == nil

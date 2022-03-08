@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationError 
+// SynchronizationError provides operations to call the instantiate method.
 type SynchronizationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewSynchronizationError()(*SynchronizationError) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSynchronizationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationError(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationError) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *SynchronizationError) GetCode()(*string) {
         return nil
     } else {
         return m.code
-    }
-}
-// GetMessage gets the message property value. 
-func (m *SynchronizationError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetTenantActionable gets the tenantActionable property value. 
-func (m *SynchronizationError) GetTenantActionable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantActionable
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *SynchronizationError) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. 
+func (m *SynchronizationError) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetTenantActionable gets the tenantActionable property value. 
+func (m *SynchronizationError) GetTenantActionable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantActionable
+    }
 }
 func (m *SynchronizationError) IsNil()(bool) {
     return m == nil

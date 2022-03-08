@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetRoleScopeTagsByIdRequestBody 
+// GetRoleScopeTagsByIdRequestBody provides operations to call the getRoleScopeTagsById method.
 type GetRoleScopeTagsByIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewGetRoleScopeTagsByIdRequestBody()(*GetRoleScopeTagsByIdRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetRoleScopeTagsByIdRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetRoleScopeTagsByIdRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetRoleScopeTagsByIdRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetRoleScopeTagsByIdRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. 
-func (m *GetRoleScopeTagsByIdRequestBody) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *GetRoleScopeTagsByIdRequestBody) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. 
+func (m *GetRoleScopeTagsByIdRequestBody) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
 }
 func (m *GetRoleScopeTagsByIdRequestBody) IsNil()(bool) {
     return m == nil

@@ -5,12 +5,12 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AssignedAccessMultiModeProfilesRequestBody 
+// AssignedAccessMultiModeProfilesRequestBody provides operations to call the assignedAccessMultiModeProfiles method.
 type AssignedAccessMultiModeProfilesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    assignedAccessMultiModeProfiles []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfile;
+    assignedAccessMultiModeProfiles []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfileable;
 }
 // NewAssignedAccessMultiModeProfilesRequestBody instantiates a new assignedAccessMultiModeProfilesRequestBody and sets the default values.
 func NewAssignedAccessMultiModeProfilesRequestBody()(*AssignedAccessMultiModeProfilesRequestBody) {
@@ -18,6 +18,10 @@ func NewAssignedAccessMultiModeProfilesRequestBody()(*AssignedAccessMultiModePro
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignedAccessMultiModeProfilesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignedAccessMultiModeProfilesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignedAccessMultiModeProfilesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedAccessMultiModeProfilesRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -28,7 +32,7 @@ func (m *AssignedAccessMultiModeProfilesRequestBody) GetAdditionalData()(map[str
     }
 }
 // GetAssignedAccessMultiModeProfiles gets the assignedAccessMultiModeProfiles property value. 
-func (m *AssignedAccessMultiModeProfilesRequestBody) GetAssignedAccessMultiModeProfiles()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfile) {
+func (m *AssignedAccessMultiModeProfilesRequestBody) GetAssignedAccessMultiModeProfiles()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfileable) {
     if m == nil {
         return nil
     } else {
@@ -39,14 +43,14 @@ func (m *AssignedAccessMultiModeProfilesRequestBody) GetAssignedAccessMultiModeP
 func (m *AssignedAccessMultiModeProfilesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignedAccessMultiModeProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsAssignedAccessProfile() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsAssignedAccessProfileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfile, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfileable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfile))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfileable)
             }
             m.SetAssignedAccessMultiModeProfiles(res)
         }
@@ -62,8 +66,7 @@ func (m *AssignedAccessMultiModeProfilesRequestBody) Serialize(writer i04eb5309a
     if m.GetAssignedAccessMultiModeProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedAccessMultiModeProfiles()))
         for i, v := range m.GetAssignedAccessMultiModeProfiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("assignedAccessMultiModeProfiles", cast)
         if err != nil {
@@ -85,7 +88,7 @@ func (m *AssignedAccessMultiModeProfilesRequestBody) SetAdditionalData(value map
     }
 }
 // SetAssignedAccessMultiModeProfiles sets the assignedAccessMultiModeProfiles property value. 
-func (m *AssignedAccessMultiModeProfilesRequestBody) SetAssignedAccessMultiModeProfiles(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfile)() {
+func (m *AssignedAccessMultiModeProfilesRequestBody) SetAssignedAccessMultiModeProfiles(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAssignedAccessProfileable)() {
     if m != nil {
         m.assignedAccessMultiModeProfiles = value
     }

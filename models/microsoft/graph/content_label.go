@@ -6,7 +6,7 @@ import (
     i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
 )
 
-// ContentLabel 
+// ContentLabel provides operations to call the extractContentLabel method.
 type ContentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewContentLabel()(*ContentLabel) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContentLabelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContentLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentLabel) GetAdditionalData()(map[string]interface{}) {
@@ -46,14 +50,6 @@ func (m *ContentLabel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetSensitivityLabelId gets the sensitivityLabelId property value. 
-func (m *ContentLabel) GetSensitivityLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityLabelId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -90,6 +86,14 @@ func (m *ContentLabel) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetSensitivityLabelId gets the sensitivityLabelId property value. 
+func (m *ContentLabel) GetSensitivityLabelId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitivityLabelId
+    }
 }
 func (m *ContentLabel) IsNil()(bool) {
     return m == nil

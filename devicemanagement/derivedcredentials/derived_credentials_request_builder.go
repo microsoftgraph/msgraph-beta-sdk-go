@@ -2,11 +2,11 @@ package derivedcredentials
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/derivedcredentials/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// DerivedCredentialsRequestBuilder builds and executes requests for operations under \deviceManagement\derivedCredentials
+// DerivedCredentialsRequestBuilder provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.
 type DerivedCredentialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type DerivedCredentialsRequestBuilderGetQueryParameters struct {
 // DerivedCredentialsRequestBuilderPostOptions options for Post
 type DerivedCredentialsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettingsable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewDerivedCredentialsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewDerivedCredentialsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDerivedCredentialsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DerivedCredentialsRequestBuilder) Count()(*i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318.CountRequestBuilder) {
+    return i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of Derived credential settings associated with account.
 func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformation(options *DerivedCredentialsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation collection of Derived credential settings associated with account.
+// CreatePostRequestInformation create new navigation property to derivedCredentials for deviceManagement
 func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformation(options *DerivedCredentialsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get collection of Derived credential settings associated with account.
-func (m *DerivedCredentialsRequestBuilder) Get(options *DerivedCredentialsRequestBuilderGetOptions)(*DerivedCredentialsResponse, error) {
+func (m *DerivedCredentialsRequestBuilder) Get(options *DerivedCredentialsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettingsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDerivedCredentialsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementDerivedCredentialSettingsCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DerivedCredentialsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettingsCollectionResponseable), nil
 }
-// Post collection of Derived credential settings associated with account.
-func (m *DerivedCredentialsRequestBuilder) Post(options *DerivedCredentialsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings, error) {
+// Post create new navigation property to derivedCredentials for deviceManagement
+func (m *DerivedCredentialsRequestBuilder) Post(options *DerivedCredentialsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettingsable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementDerivedCredentialSettings() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettings), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementDerivedCredentialSettingsable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileAssignment 
+// DeviceManagementResourceAccessProfileAssignment provides operations to manage the deviceManagement singleton.
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
     // The assignment intent for the resource access profile. Possible values are: apply, remove.
@@ -12,7 +12,7 @@ type DeviceManagementResourceAccessProfileAssignment struct {
     // The identifier of the source of the assignment.
     sourceId *string;
     // Base type for assignment targets.
-    target *DeviceAndAppManagementAssignmentTarget;
+    target DeviceAndAppManagementAssignmentTargetable;
 }
 // NewDeviceManagementResourceAccessProfileAssignment instantiates a new deviceManagementResourceAccessProfileAssignment and sets the default values.
 func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResourceAccessProfileAssignment) {
@@ -21,29 +21,9 @@ func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResou
     }
     return m
 }
-// GetIntent gets the intent property value. The assignment intent for the resource access profile. Possible values are: apply, remove.
-func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceManagementResourceAccessProfileIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intent
-    }
-}
-// GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
-func (m *DeviceManagementResourceAccessProfileAssignment) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
-}
-// GetTarget gets the target property value. Base type for assignment targets.
-func (m *DeviceManagementResourceAccessProfileAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+// CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementResourceAccessProfileAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -69,16 +49,40 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers(
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceAndAppManagementAssignmentTarget() })
+        val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+            m.SetTarget(val.(DeviceAndAppManagementAssignmentTargetable))
         }
         return nil
     }
     return res
+}
+// GetIntent gets the intent property value. The assignment intent for the resource access profile. Possible values are: apply, remove.
+func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceManagementResourceAccessProfileIntent) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intent
+    }
+}
+// GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
+func (m *DeviceManagementResourceAccessProfileAssignment) GetSourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceId
+    }
+}
+// GetTarget gets the target property value. Base type for assignment targets.
+func (m *DeviceManagementResourceAccessProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *DeviceManagementResourceAccessProfileAssignment) IsNil()(bool) {
     return m == nil
@@ -123,7 +127,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) SetSourceId(value *str
     }
 }
 // SetTarget sets the target property value. Base type for assignment targets.
-func (m *DeviceManagementResourceAccessProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
+func (m *DeviceManagementResourceAccessProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
     if m != nil {
         m.target = value
     }

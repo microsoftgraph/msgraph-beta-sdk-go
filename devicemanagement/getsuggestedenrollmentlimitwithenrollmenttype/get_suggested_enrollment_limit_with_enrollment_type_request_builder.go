@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')
+// GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder provides operations to call the getSuggestedEnrollmentLimit method.
 type GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type suggestedEnrollmentLimit
-    suggestedEnrollmentLimit *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimit;
+    suggestedEnrollmentLimit i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimitable;
 }
 // NewGetSuggestedEnrollmentLimitWithEnrollmentTypeResponse instantiates a new getSuggestedEnrollmentLimitWithEnrollmentTypeResponse and sets the default values.
 func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeResponse()(*GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) {
@@ -37,6 +37,9 @@ func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeResponse()(*GetSuggestedEnr
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetSuggestedEnrollmentLimitWithEnrollmentTypeResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetSuggestedEnrollmentLimitWithEnrollmentTypeResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) GetAdditionalDat
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["suggestedEnrollmentLimit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSuggestedEnrollmentLimitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSuggestedEnrollmentLimit(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimitable))
+        }
+        return nil
+    }
+    return res
+}
 // GetSuggestedEnrollmentLimit gets the suggestedEnrollmentLimit property value. Union type representation for type suggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) GetSuggestedEnrollmentLimit()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimit) {
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) GetSuggestedEnrollmentLimit()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimitable) {
     if m == nil {
         return nil
     } else {
         return m.suggestedEnrollmentLimit
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["suggestedEnrollmentLimit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSuggestedEnrollmentLimit() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSuggestedEnrollmentLimit(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimit))
-        }
-        return nil
-    }
-    return res
 }
 func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) IsNil()(bool) {
     return m == nil
@@ -95,7 +98,7 @@ func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) SetAdditionalDat
     }
 }
 // SetSuggestedEnrollmentLimit sets the suggestedEnrollmentLimit property value. Union type representation for type suggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) SetSuggestedEnrollmentLimit(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimit)() {
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) SetSuggestedEnrollmentLimit(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimitable)() {
     if m != nil {
         m.suggestedEnrollmentLimit = value
     }
@@ -112,7 +115,7 @@ func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(path
     if enrollmentType != nil {
         urlTplParams["enrollmentType"] = *enrollmentType
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetR
     return requestInfo, nil
 }
 // Get invoke function getSuggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) Get(options *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetOptions)(*GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse, error) {
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) Get(options *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetOptions)(GetSuggestedEnrollmentLimitWithEnrollmentTypeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetSuggestedEnrollmentLimitWithEnrollmentTypeResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSuggestedEnrollmentLimitWithEnrollmentTypeResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse), nil
+    return res.(GetSuggestedEnrollmentLimitWithEnrollmentTypeResponseable), nil
 }

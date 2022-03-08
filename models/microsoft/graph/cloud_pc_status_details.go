@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcStatusDetails 
+// CloudPcStatusDetails provides operations to manage the compliance singleton.
 type CloudPcStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Any additional information about the Cloud PC status.
-    additionalInformation []KeyValuePair;
+    additionalInformation []KeyValuePairable;
     // The code associated with the Cloud PC status.
     code *string;
     // The status message.
@@ -22,6 +22,10 @@ func NewCloudPcStatusDetails()(*CloudPcStatusDetails) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCloudPcStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcStatusDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcStatusDetails(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -31,7 +35,7 @@ func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAdditionalInformation gets the additionalInformation property value. Any additional information about the Cloud PC status.
-func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePair) {
+func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -46,26 +50,18 @@ func (m *CloudPcStatusDetails) GetCode()(*string) {
         return m.code
     }
 }
-// GetMessage gets the message property value. The status message.
-func (m *CloudPcStatusDetails) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["additionalInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetAdditionalInformation(res)
         }
@@ -93,6 +89,14 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
+// GetMessage gets the message property value. The status message.
+func (m *CloudPcStatusDetails) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
 func (m *CloudPcStatusDetails) IsNil()(bool) {
     return m == nil
 }
@@ -101,8 +105,7 @@ func (m *CloudPcStatusDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetAdditionalInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalInformation()))
         for i, v := range m.GetAdditionalInformation() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("additionalInformation", cast)
         if err != nil {
@@ -136,7 +139,7 @@ func (m *CloudPcStatusDetails) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetAdditionalInformation sets the additionalInformation property value. Any additional information about the Cloud PC status.
-func (m *CloudPcStatusDetails) SetAdditionalInformation(value []KeyValuePair)() {
+func (m *CloudPcStatusDetails) SetAdditionalInformation(value []KeyValuePairable)() {
     if m != nil {
         m.additionalInformation = value
     }

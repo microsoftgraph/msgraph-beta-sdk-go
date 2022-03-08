@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreatePasswordSingleSignOnCredentialsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.createPasswordSingleSignOnCredentials
+// CreatePasswordSingleSignOnCredentialsRequestBuilder provides operations to call the createPasswordSingleSignOnCredentials method.
 type CreatePasswordSingleSignOnCredentialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CreatePasswordSingleSignOnCredentialsRequestBuilder struct {
 // CreatePasswordSingleSignOnCredentialsRequestBuilderPostOptions options for Post
 type CreatePasswordSingleSignOnCredentialsRequestBuilderPostOptions struct {
     // 
-    Body *CreatePasswordSingleSignOnCredentialsRequestBody;
+    Body CreatePasswordSingleSignOnCredentialsRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CreatePasswordSingleSignOnCredentialsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type passwordSingleSignOnCredentialSet
-    passwordSingleSignOnCredentialSet *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSet;
+    passwordSingleSignOnCredentialSet i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSetable;
 }
 // NewCreatePasswordSingleSignOnCredentialsResponse instantiates a new createPasswordSingleSignOnCredentialsResponse and sets the default values.
 func NewCreatePasswordSingleSignOnCredentialsResponse()(*CreatePasswordSingleSignOnCredentialsResponse) {
@@ -39,6 +39,9 @@ func NewCreatePasswordSingleSignOnCredentialsResponse()(*CreatePasswordSingleSig
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCreatePasswordSingleSignOnCredentialsResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreatePasswordSingleSignOnCredentialsResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreatePasswordSingleSignOnCredentialsResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *CreatePasswordSingleSignOnCredentialsResponse) GetAdditionalData()(map[
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CreatePasswordSingleSignOnCredentialsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["passwordSingleSignOnCredentialSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePasswordSingleSignOnCredentialSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasswordSingleSignOnCredentialSet(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSetable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPasswordSingleSignOnCredentialSet gets the passwordSingleSignOnCredentialSet property value. Union type representation for type passwordSingleSignOnCredentialSet
-func (m *CreatePasswordSingleSignOnCredentialsResponse) GetPasswordSingleSignOnCredentialSet()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSet) {
+func (m *CreatePasswordSingleSignOnCredentialsResponse) GetPasswordSingleSignOnCredentialSet()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSetable) {
     if m == nil {
         return nil
     } else {
         return m.passwordSingleSignOnCredentialSet
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CreatePasswordSingleSignOnCredentialsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["passwordSingleSignOnCredentialSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPasswordSingleSignOnCredentialSet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordSingleSignOnCredentialSet(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSet))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CreatePasswordSingleSignOnCredentialsResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *CreatePasswordSingleSignOnCredentialsResponse) SetAdditionalData(value 
     }
 }
 // SetPasswordSingleSignOnCredentialSet sets the passwordSingleSignOnCredentialSet property value. Union type representation for type passwordSingleSignOnCredentialSet
-func (m *CreatePasswordSingleSignOnCredentialsResponse) SetPasswordSingleSignOnCredentialSet(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSet)() {
+func (m *CreatePasswordSingleSignOnCredentialsResponse) SetPasswordSingleSignOnCredentialSet(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordSingleSignOnCredentialSetable)() {
     if m != nil {
         m.passwordSingleSignOnCredentialSet = value
     }
@@ -111,7 +114,7 @@ func NewCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     return requestInfo, nil
 }
 // Post invoke action createPasswordSingleSignOnCredentials
-func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) Post(options *CreatePasswordSingleSignOnCredentialsRequestBuilderPostOptions)(*CreatePasswordSingleSignOnCredentialsResponse, error) {
+func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) Post(options *CreatePasswordSingleSignOnCredentialsRequestBuilderPostOptions)(CreatePasswordSingleSignOnCredentialsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreatePasswordSingleSignOnCredentialsResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreatePasswordSingleSignOnCredentialsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CreatePasswordSingleSignOnCredentialsResponse), nil
+    return res.(CreatePasswordSingleSignOnCredentialsResponseable), nil
 }

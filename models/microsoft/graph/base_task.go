@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BaseTask 
+// BaseTask provides operations to manage the compliance singleton.
 type BaseTask struct {
     Entity
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of checklistItems linked to a task.
-    checklistItems []ChecklistItem;
+    checklistItems []ChecklistItemable;
     // The date when the task was finished.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -19,27 +19,27 @@ type BaseTask struct {
     // The name of the task.
     displayName *string;
     // The date in the specified time zone that the task is to be finished.
-    dueDateTime *DateTimeTimeZone;
+    dueDateTime DateTimeTimeZoneable;
     // The collection of open extensions defined for the task .
-    extensions []Extension;
+    extensions []Extensionable;
     // The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.
     importance *Importance;
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of resources linked to the task.
-    linkedResources []LinkedResource_v2;
+    linkedResources []LinkedResource_v2able;
     // The list which contains the task.
-    parentList *BaseTaskList;
+    parentList BaseTaskListable;
     // The recurrence pattern for the task.
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // The date in the specified time zone when the task is to begin.
-    startDateTime *DateTimeTimeZone;
+    startDateTime DateTimeTimeZoneable;
     // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
     status *TaskStatus_v2;
     // 
     textBody *string;
     // 
-    viewpoint *TaskViewpoint;
+    viewpoint TaskViewpointable;
 }
 // NewBaseTask instantiates a new baseTask and sets the default values.
 func NewBaseTask()(*BaseTask) {
@@ -47,6 +47,10 @@ func NewBaseTask()(*BaseTask) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateBaseTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBaseTaskFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBaseTask(), nil
 }
 // GetBodyLastModifiedDateTime gets the bodyLastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -57,7 +61,7 @@ func (m *BaseTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
 }
 // GetChecklistItems gets the checklistItems property value. A collection of checklistItems linked to a task.
-func (m *BaseTask) GetChecklistItems()([]ChecklistItem) {
+func (m *BaseTask) GetChecklistItems()([]ChecklistItemable) {
     if m == nil {
         return nil
     } else {
@@ -89,7 +93,7 @@ func (m *BaseTask) GetDisplayName()(*string) {
     }
 }
 // GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
-func (m *BaseTask) GetDueDateTime()(*DateTimeTimeZone) {
+func (m *BaseTask) GetDueDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
@@ -97,83 +101,11 @@ func (m *BaseTask) GetDueDateTime()(*DateTimeTimeZone) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task .
-func (m *BaseTask) GetExtensions()([]Extension) {
+func (m *BaseTask) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.
-func (m *BaseTask) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-func (m *BaseTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
-func (m *BaseTask) GetLinkedResources()([]LinkedResource_v2) {
-    if m == nil {
-        return nil
-    } else {
-        return m.linkedResources
-    }
-}
-// GetParentList gets the parentList property value. The list which contains the task.
-func (m *BaseTask) GetParentList()(*BaseTaskList) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentList
-    }
-}
-// GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
-func (m *BaseTask) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The date in the specified time zone when the task is to begin.
-func (m *BaseTask) GetStartDateTime()(*DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
-func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTextBody gets the textBody property value. 
-func (m *BaseTask) GetTextBody()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.textBody
-    }
-}
-// GetViewpoint gets the viewpoint property value. 
-func (m *BaseTask) GetViewpoint()(*TaskViewpoint) {
-    if m == nil {
-        return nil
-    } else {
-        return m.viewpoint
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -190,14 +122,14 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["checklistItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChecklistItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateChecklistItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ChecklistItem, len(val))
+            res := make([]ChecklistItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ChecklistItem))
+                res[i] = v.(ChecklistItemable)
             }
             m.SetChecklistItems(res)
         }
@@ -234,24 +166,24 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["dueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDueDateTime(val.(*DateTimeTimeZone))
+            m.SetDueDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -278,46 +210,46 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["linkedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLinkedResource_v2() })
+        val, err := n.GetCollectionOfObjectValues(CreateLinkedResource_v2FromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LinkedResource_v2, len(val))
+            res := make([]LinkedResource_v2able, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LinkedResource_v2))
+                res[i] = v.(LinkedResource_v2able)
             }
             m.SetLinkedResources(res)
         }
         return nil
     }
     res["parentList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBaseTaskList() })
+        val, err := n.GetObjectValue(CreateBaseTaskListFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParentList(val.(*BaseTaskList))
+            m.SetParentList(val.(BaseTaskListable))
         }
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStartDateTime(val.(*DateTimeTimeZone))
+            m.SetStartDateTime(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -342,16 +274,88 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["viewpoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTaskViewpoint() })
+        val, err := n.GetObjectValue(CreateTaskViewpointFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetViewpoint(val.(*TaskViewpoint))
+            m.SetViewpoint(val.(TaskViewpointable))
         }
         return nil
     }
     return res
+}
+// GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.
+func (m *BaseTask) GetImportance()(*Importance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importance
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+func (m *BaseTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
+func (m *BaseTask) GetLinkedResources()([]LinkedResource_v2able) {
+    if m == nil {
+        return nil
+    } else {
+        return m.linkedResources
+    }
+}
+// GetParentList gets the parentList property value. The list which contains the task.
+func (m *BaseTask) GetParentList()(BaseTaskListable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentList
+    }
+}
+// GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
+func (m *BaseTask) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The date in the specified time zone when the task is to begin.
+func (m *BaseTask) GetStartDateTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
+func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTextBody gets the textBody property value. 
+func (m *BaseTask) GetTextBody()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.textBody
+    }
+}
+// GetViewpoint gets the viewpoint property value. 
+func (m *BaseTask) GetViewpoint()(TaskViewpointable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.viewpoint
+    }
 }
 func (m *BaseTask) IsNil()(bool) {
     return m == nil
@@ -371,8 +375,7 @@ func (m *BaseTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetChecklistItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChecklistItems()))
         for i, v := range m.GetChecklistItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("checklistItems", cast)
         if err != nil {
@@ -406,8 +409,7 @@ func (m *BaseTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -430,8 +432,7 @@ func (m *BaseTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetLinkedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLinkedResources()))
         for i, v := range m.GetLinkedResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("linkedResources", cast)
         if err != nil {
@@ -484,7 +485,7 @@ func (m *BaseTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetChecklistItems sets the checklistItems property value. A collection of checklistItems linked to a task.
-func (m *BaseTask) SetChecklistItems(value []ChecklistItem)() {
+func (m *BaseTask) SetChecklistItems(value []ChecklistItemable)() {
     if m != nil {
         m.checklistItems = value
     }
@@ -508,13 +509,13 @@ func (m *BaseTask) SetDisplayName(value *string)() {
     }
 }
 // SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
-func (m *BaseTask) SetDueDateTime(value *DateTimeTimeZone)() {
+func (m *BaseTask) SetDueDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.dueDateTime = value
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task .
-func (m *BaseTask) SetExtensions(value []Extension)() {
+func (m *BaseTask) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -532,25 +533,25 @@ func (m *BaseTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetLinkedResources sets the linkedResources property value. A collection of resources linked to the task.
-func (m *BaseTask) SetLinkedResources(value []LinkedResource_v2)() {
+func (m *BaseTask) SetLinkedResources(value []LinkedResource_v2able)() {
     if m != nil {
         m.linkedResources = value
     }
 }
 // SetParentList sets the parentList property value. The list which contains the task.
-func (m *BaseTask) SetParentList(value *BaseTaskList)() {
+func (m *BaseTask) SetParentList(value BaseTaskListable)() {
     if m != nil {
         m.parentList = value
     }
 }
 // SetRecurrence sets the recurrence property value. The recurrence pattern for the task.
-func (m *BaseTask) SetRecurrence(value *PatternedRecurrence)() {
+func (m *BaseTask) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. The date in the specified time zone when the task is to begin.
-func (m *BaseTask) SetStartDateTime(value *DateTimeTimeZone)() {
+func (m *BaseTask) SetStartDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.startDateTime = value
     }
@@ -568,7 +569,7 @@ func (m *BaseTask) SetTextBody(value *string)() {
     }
 }
 // SetViewpoint sets the viewpoint property value. 
-func (m *BaseTask) SetViewpoint(value *TaskViewpoint)() {
+func (m *BaseTask) SetViewpoint(value TaskViewpointable)() {
     if m != nil {
         m.viewpoint = value
     }

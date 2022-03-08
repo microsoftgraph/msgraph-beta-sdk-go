@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptDeviceState 
+// DeviceManagementScriptDeviceState provides operations to manage the deviceManagement singleton.
 type DeviceManagementScriptDeviceState struct {
     Entity
     // Error code corresponding to erroneous execution of the device management script.
@@ -15,7 +15,7 @@ type DeviceManagementScriptDeviceState struct {
     // Latest time the device management script executes.
     lastStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The managed devices that executes the device management script.
-    managedDevice *ManagedDevice;
+    managedDevice ManagedDeviceable;
     // Details of execution output.
     resultMessage *string;
     // State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
@@ -27,6 +27,10 @@ func NewDeviceManagementScriptDeviceState()(*DeviceManagementScriptDeviceState) 
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementScriptDeviceState(), nil
 }
 // GetErrorCode gets the errorCode property value. Error code corresponding to erroneous execution of the device management script.
 func (m *DeviceManagementScriptDeviceState) GetErrorCode()(*int32) {
@@ -42,38 +46,6 @@ func (m *DeviceManagementScriptDeviceState) GetErrorDescription()(*string) {
         return nil
     } else {
         return m.errorDescription
-    }
-}
-// GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. Latest time the device management script executes.
-func (m *DeviceManagementScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastStateUpdateDateTime
-    }
-}
-// GetManagedDevice gets the managedDevice property value. The managed devices that executes the device management script.
-func (m *DeviceManagementScriptDeviceState) GetManagedDevice()(*ManagedDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevice
-    }
-}
-// GetResultMessage gets the resultMessage property value. Details of execution output.
-func (m *DeviceManagementScriptDeviceState) GetResultMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultMessage
-    }
-}
-// GetRunState gets the runState property value. State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
-func (m *DeviceManagementScriptDeviceState) GetRunState()(*RunState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runState
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,12 +82,12 @@ func (m *DeviceManagementScriptDeviceState) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["managedDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevice() })
+        val, err := n.GetObjectValue(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManagedDevice(val.(*ManagedDevice))
+            m.SetManagedDevice(val.(ManagedDeviceable))
         }
         return nil
     }
@@ -140,6 +112,38 @@ func (m *DeviceManagementScriptDeviceState) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. Latest time the device management script executes.
+func (m *DeviceManagementScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastStateUpdateDateTime
+    }
+}
+// GetManagedDevice gets the managedDevice property value. The managed devices that executes the device management script.
+func (m *DeviceManagementScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDevice
+    }
+}
+// GetResultMessage gets the resultMessage property value. Details of execution output.
+func (m *DeviceManagementScriptDeviceState) GetResultMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultMessage
+    }
+}
+// GetRunState gets the runState property value. State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+func (m *DeviceManagementScriptDeviceState) GetRunState()(*RunState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.runState
+    }
 }
 func (m *DeviceManagementScriptDeviceState) IsNil()(bool) {
     return m == nil
@@ -208,7 +212,7 @@ func (m *DeviceManagementScriptDeviceState) SetLastStateUpdateDateTime(value *i3
     }
 }
 // SetManagedDevice sets the managedDevice property value. The managed devices that executes the device management script.
-func (m *DeviceManagementScriptDeviceState) SetManagedDevice(value *ManagedDevice)() {
+func (m *DeviceManagementScriptDeviceState) SetManagedDevice(value ManagedDeviceable)() {
     if m != nil {
         m.managedDevice = value
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AggregatedPolicyCompliance 
+// AggregatedPolicyCompliance provides operations to manage the tenantRelationship singleton.
 type AggregatedPolicyCompliance struct {
     Entity
     // Identifier for the device compliance policy. Optional. Read-only.
@@ -38,6 +38,10 @@ func NewAggregatedPolicyCompliance()(*AggregatedPolicyCompliance) {
     }
     return m
 }
+// CreateAggregatedPolicyComplianceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAggregatedPolicyComplianceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAggregatedPolicyCompliance(), nil
+}
 // GetCompliancePolicyId gets the compliancePolicyId property value. Identifier for the device compliance policy. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) GetCompliancePolicyId()(*string) {
     if m == nil {
@@ -68,62 +72,6 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyType()(*string) {
         return nil
     } else {
         return m.compliancePolicyType
-    }
-}
-// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
-}
-// GetNumberOfCompliantDevices gets the numberOfCompliantDevices property value. The number of devices that are in a compliant status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberOfCompliantDevices
-    }
-}
-// GetNumberOfErrorDevices gets the numberOfErrorDevices property value. The number of devices that are in an error status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberOfErrorDevices
-    }
-}
-// GetNumberOfNonCompliantDevices gets the numberOfNonCompliantDevices property value. The number of device that are in a non-compliant status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberOfNonCompliantDevices
-    }
-}
-// GetPolicyModifiedDateTime gets the policyModifiedDateTime property value. The date and time the device policy was last modified. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyModifiedDateTime
-    }
-}
-// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -240,6 +188,62 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
+    }
+}
+// GetNumberOfCompliantDevices gets the numberOfCompliantDevices property value. The number of devices that are in a compliant status. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.numberOfCompliantDevices
+    }
+}
+// GetNumberOfErrorDevices gets the numberOfErrorDevices property value. The number of devices that are in an error status. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.numberOfErrorDevices
+    }
+}
+// GetNumberOfNonCompliantDevices gets the numberOfNonCompliantDevices property value. The number of device that are in a non-compliant status. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.numberOfNonCompliantDevices
+    }
+}
+// GetPolicyModifiedDateTime gets the policyModifiedDateTime property value. The date and time the device policy was last modified. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyModifiedDateTime
+    }
+}
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetTenantDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantDisplayName
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+func (m *AggregatedPolicyCompliance) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *AggregatedPolicyCompliance) IsNil()(bool) {
     return m == nil

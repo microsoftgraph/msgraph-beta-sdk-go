@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsNotAutopilotReadyDevice 
+// UserExperienceAnalyticsNotAutopilotReadyDevice provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
     // The intune device's autopilotProfileAssigned.
@@ -32,6 +32,10 @@ func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalytic
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsNotAutopilotReadyDevice(), nil
 }
 // GetAutoPilotProfileAssigned gets the autoPilotProfileAssigned property value. The intune device's autopilotProfileAssigned.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotProfileAssigned()(*bool) {
@@ -71,38 +75,6 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetDeviceName()(*string
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetManagedBy gets the managedBy property value. The intune device's managed by.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManagedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedBy
-    }
-}
-// GetManufacturer gets the manufacturer property value. The intune device's manufacturer.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. The intune device's model.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetSerialNumber gets the serialNumber property value. The intune device's serial number.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -199,6 +171,38 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetManagedBy gets the managedBy property value. The intune device's managed by.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManagedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedBy
+    }
+}
+// GetManufacturer gets the manufacturer property value. The intune device's manufacturer.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. The intune device's model.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetSerialNumber gets the serialNumber property value. The intune device's serial number.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
 }
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) IsNil()(bool) {
     return m == nil

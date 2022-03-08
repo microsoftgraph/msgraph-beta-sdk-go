@@ -5,7 +5,7 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// ExportRequestBody 
+// ExportRequestBody provides operations to call the export method.
 type ExportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewExportRequestBody()(*ExportRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateExportRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExportRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExportRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -75,14 +79,6 @@ func (m *ExportRequestBody) GetExportStructure()(*i2756dc8c91c60abdde0aa43bf23ca
         return nil
     } else {
         return m.exportStructure
-    }
-}
-// GetOutputName gets the outputName property value. 
-func (m *ExportRequestBody) GetOutputName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,6 +145,14 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetOutputName gets the outputName property value. 
+func (m *ExportRequestBody) GetOutputName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outputName
+    }
 }
 func (m *ExportRequestBody) IsNil()(bool) {
     return m == nil

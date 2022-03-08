@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsMetricHistory 
+// UserExperienceAnalyticsMetricHistory provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsMetricHistory struct {
     Entity
     // The user experience analytics device id.
@@ -22,28 +22,16 @@ func NewUserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHis
     }
     return m
 }
+// CreateUserExperienceAnalyticsMetricHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsMetricHistoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsMetricHistory(), nil
+}
 // GetDeviceId gets the deviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsMetricHistory) GetDeviceId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.deviceId
-    }
-}
-// GetMetricDateTime gets the metricDateTime property value. The user experience analytics metric date time.
-func (m *UserExperienceAnalyticsMetricHistory) GetMetricDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricDateTime
-    }
-}
-// GetMetricType gets the metricType property value. The user experience analytics metric type.
-func (m *UserExperienceAnalyticsMetricHistory) GetMetricType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +68,22 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetMetricDateTime gets the metricDateTime property value. The user experience analytics metric date time.
+func (m *UserExperienceAnalyticsMetricHistory) GetMetricDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metricDateTime
+    }
+}
+// GetMetricType gets the metricType property value. The user experience analytics metric type.
+func (m *UserExperienceAnalyticsMetricHistory) GetMetricType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metricType
+    }
 }
 func (m *UserExperienceAnalyticsMetricHistory) IsNil()(bool) {
     return m == nil

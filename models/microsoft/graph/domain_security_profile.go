@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DomainSecurityProfile 
+// DomainSecurityProfile provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
 type DomainSecurityProfile struct {
     Entity
     // 
@@ -19,7 +19,7 @@ type DomainSecurityProfile struct {
     // 
     countInOrg *int32;
     // 
-    domainCategories []ReputationCategory;
+    domainCategories []ReputationCategoryable;
     // 
     domainRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -29,13 +29,13 @@ type DomainSecurityProfile struct {
     // 
     name *string;
     // 
-    registrant *DomainRegistrant;
+    registrant DomainRegistrantable;
     // 
     riskScore *string;
     // 
     tags []string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewDomainSecurityProfile instantiates a new domainSecurityProfile and sets the default values.
 func NewDomainSecurityProfile()(*DomainSecurityProfile) {
@@ -43,6 +43,10 @@ func NewDomainSecurityProfile()(*DomainSecurityProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDomainSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDomainSecurityProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDomainSecurityProfile(), nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. 
 func (m *DomainSecurityProfile) GetActivityGroupNames()([]string) {
@@ -85,7 +89,7 @@ func (m *DomainSecurityProfile) GetCountInOrg()(*int32) {
     }
 }
 // GetDomainCategories gets the domainCategories property value. 
-func (m *DomainSecurityProfile) GetDomainCategories()([]ReputationCategory) {
+func (m *DomainSecurityProfile) GetDomainCategories()([]ReputationCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -98,62 +102,6 @@ func (m *DomainSecurityProfile) GetDomainRegisteredDateTime()(*i336074805fc85398
         return nil
     } else {
         return m.domainRegisteredDateTime
-    }
-}
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
-func (m *DomainSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. 
-func (m *DomainSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
-}
-// GetName gets the name property value. 
-func (m *DomainSecurityProfile) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetRegistrant gets the registrant property value. 
-func (m *DomainSecurityProfile) GetRegistrant()(*DomainRegistrant) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrant
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *DomainSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetTags gets the tags property value. 
-func (m *DomainSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *DomainSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -214,14 +162,14 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["domainCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReputationCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateReputationCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ReputationCategory, len(val))
+            res := make([]ReputationCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ReputationCategory))
+                res[i] = v.(ReputationCategoryable)
             }
             m.SetDomainCategories(res)
         }
@@ -268,12 +216,12 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["registrant"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDomainRegistrant() })
+        val, err := n.GetObjectValue(CreateDomainRegistrantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRegistrant(val.(*DomainRegistrant))
+            m.SetRegistrant(val.(DomainRegistrantable))
         }
         return nil
     }
@@ -302,16 +250,72 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
+func (m *DomainSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstSeenDateTime
+    }
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. 
+func (m *DomainSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSeenDateTime
+    }
+}
+// GetName gets the name property value. 
+func (m *DomainSecurityProfile) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetRegistrant gets the registrant property value. 
+func (m *DomainSecurityProfile) GetRegistrant()(DomainRegistrantable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrant
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *DomainSecurityProfile) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetTags gets the tags property value. 
+func (m *DomainSecurityProfile) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *DomainSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *DomainSecurityProfile) IsNil()(bool) {
     return m == nil
@@ -355,8 +359,7 @@ func (m *DomainSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetDomainCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDomainCategories()))
         for i, v := range m.GetDomainCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("domainCategories", cast)
         if err != nil {
@@ -444,7 +447,7 @@ func (m *DomainSecurityProfile) SetCountInOrg(value *int32)() {
     }
 }
 // SetDomainCategories sets the domainCategories property value. 
-func (m *DomainSecurityProfile) SetDomainCategories(value []ReputationCategory)() {
+func (m *DomainSecurityProfile) SetDomainCategories(value []ReputationCategoryable)() {
     if m != nil {
         m.domainCategories = value
     }
@@ -474,7 +477,7 @@ func (m *DomainSecurityProfile) SetName(value *string)() {
     }
 }
 // SetRegistrant sets the registrant property value. 
-func (m *DomainSecurityProfile) SetRegistrant(value *DomainRegistrant)() {
+func (m *DomainSecurityProfile) SetRegistrant(value DomainRegistrantable)() {
     if m != nil {
         m.registrant = value
     }
@@ -492,7 +495,7 @@ func (m *DomainSecurityProfile) SetTags(value []string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *DomainSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *DomainSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

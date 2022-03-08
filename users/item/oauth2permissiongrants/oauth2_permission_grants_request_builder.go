@@ -2,11 +2,11 @@ package oauth2permissiongrants
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i7e86f0ee0655eddb9fb3e4a718525b63f2dc7b3e97390823f64d45294f5e663c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/oauth2permissiongrants/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i557e849a2f0dd2eaebf1ec92e81131aa32362b3fc1d9b0e5e792f647ce7178cb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/oauth2permissiongrants/count"
 )
 
-// Oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \users\{user-id}\oauth2PermissionGrants
+// Oauth2PermissionGrantsRequestBuilder provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
 type Oauth2PermissionGrantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOauth2PermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*i557e849a2f0dd2eaebf1ec92e81131aa32362b3fc1d9b0e5e792f647ce7178cb.CountRequestBuilder) {
+    return i557e849a2f0dd2eaebf1ec92e81131aa32362b3fc1d9b0e5e792f647ce7178cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get oauth2PermissionGrants from users
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(optio
     return requestInfo, nil
 }
 // Get get oauth2PermissionGrants from users
-func (m *Oauth2PermissionGrantsRequestBuilder) Get(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(*Oauth2PermissionGrantsResponse, error) {
+func (m *Oauth2PermissionGrantsRequestBuilder) Get(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OAuth2PermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOauth2PermissionGrantsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOAuth2PermissionGrantCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*Oauth2PermissionGrantsResponse), nil
-}
-func (m *Oauth2PermissionGrantsRequestBuilder) Ref()(*i7e86f0ee0655eddb9fb3e4a718525b63f2dc7b3e97390823f64d45294f5e663c.RefRequestBuilder) {
-    return i7e86f0ee0655eddb9fb3e4a718525b63f2dc7b3e97390823f64d45294f5e663c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OAuth2PermissionGrantCollectionResponseable), nil
 }

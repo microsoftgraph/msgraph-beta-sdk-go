@@ -2,11 +2,11 @@ package staffmembers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i87f851e36690005e389b0e5106444f77dbd294652263f95c5fc04fb6328d4a2d "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/staffmembers/count"
 )
 
-// StaffMembersRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\staffMembers
+// StaffMembersRequestBuilder provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
 type StaffMembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type StaffMembersRequestBuilderGetQueryParameters struct {
 // StaffMembersRequestBuilderPostOptions options for Post
 type StaffMembersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMemberable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewStaffMembersRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewStaffMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStaffMembersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *StaffMembersRequestBuilder) Count()(*i87f851e36690005e389b0e5106444f77dbd294652263f95c5fc04fb6328d4a2d.CountRequestBuilder) {
+    return i87f851e36690005e389b0e5106444f77dbd294652263f95c5fc04fb6328d4a2d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *StaffMembersRequestBuilder) CreateGetRequestInformation(options *StaffMembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *StaffMembersRequestBuilder) CreateGetRequestInformation(options *StaffM
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to staffMembers for bookingBusinesses
 func (m *StaffMembersRequestBuilder) CreatePostRequestInformation(options *StaffMembersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *StaffMembersRequestBuilder) CreatePostRequestInformation(options *Staff
     return requestInfo, nil
 }
 // Get all the staff members that provide services in this business. Read-only. Nullable.
-func (m *StaffMembersRequestBuilder) Get(options *StaffMembersRequestBuilderGetOptions)(*StaffMembersResponse, error) {
+func (m *StaffMembersRequestBuilder) Get(options *StaffMembersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMemberCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStaffMembersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBookingStaffMemberCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*StaffMembersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMemberCollectionResponseable), nil
 }
-// Post all the staff members that provide services in this business. Read-only. Nullable.
-func (m *StaffMembersRequestBuilder) Post(options *StaffMembersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember, error) {
+// Post create new navigation property to staffMembers for bookingBusinesses
+func (m *StaffMembersRequestBuilder) Post(options *StaffMembersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMemberable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBookingStaffMember() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBookingStaffMemberFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMember), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingStaffMemberable), nil
 }

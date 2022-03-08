@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppLogCollectionRequest 
+// AppLogCollectionRequest provides operations to manage the compliance singleton.
 type AppLogCollectionRequest struct {
     Entity
     // Time at which the upload log request reached a terminal state
@@ -23,6 +23,10 @@ func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAppLogCollectionRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppLogCollectionRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppLogCollectionRequest(), nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. Time at which the upload log request reached a terminal state
 func (m *AppLogCollectionRequest) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -46,14 +50,6 @@ func (m *AppLogCollectionRequest) GetErrorMessage()(*string) {
         return nil
     } else {
         return m.errorMessage
-    }
-}
-// GetStatus gets the status property value. Log upload status. Possible values are: pending, completed, failed.
-func (m *AppLogCollectionRequest) GetStatus()(*AppLogUploadState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -104,6 +100,14 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetStatus gets the status property value. Log upload status. Possible values are: pending, completed, failed.
+func (m *AppLogCollectionRequest) GetStatus()(*AppLogUploadState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *AppLogCollectionRequest) IsNil()(bool) {
     return m == nil

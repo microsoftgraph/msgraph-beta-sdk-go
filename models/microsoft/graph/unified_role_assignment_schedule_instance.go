@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleAssignmentScheduleInstance 
+// UnifiedRoleAssignmentScheduleInstance provides operations to manage the roleManagement singleton.
 type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
-    activatedUsing *UnifiedRoleEligibilityScheduleInstance;
+    activatedUsing UnifiedRoleEligibilityScheduleInstanceable;
     // Type of the assignment. It can either be Assigned or Activated.
     assignmentType *string;
     // Time that the roleAssignmentInstance will expire
@@ -30,8 +30,12 @@ func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleIn
     }
     return m
 }
+// CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleAssignmentScheduleInstance(), nil
+}
 // GetActivatedUsing gets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
-func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(*UnifiedRoleEligibilityScheduleInstance) {
+func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(UnifiedRoleEligibilityScheduleInstanceable) {
     if m == nil {
         return nil
     } else {
@@ -54,48 +58,16 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetEndDateTime()(*i336074805fc85
         return m.endDateTime
     }
 }
-// GetMemberType gets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
-func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberType
-    }
-}
-// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
-func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentOriginId
-    }
-}
-// GetRoleAssignmentScheduleId gets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
-func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentScheduleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentScheduleId
-    }
-}
-// GetStartDateTime gets the startDateTime property value. Time that the roleAssignmentInstance will start
-func (m *UnifiedRoleAssignmentScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleInstanceBase.GetFieldDeserializers()
     res["activatedUsing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleEligibilityScheduleInstance() })
+        val, err := n.GetObjectValue(CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActivatedUsing(val.(*UnifiedRoleEligibilityScheduleInstance))
+            m.SetActivatedUsing(val.(UnifiedRoleEligibilityScheduleInstanceable))
         }
         return nil
     }
@@ -161,6 +133,38 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[stri
     }
     return res
 }
+// GetMemberType gets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
+func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberType
+    }
+}
+// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
+func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentOriginId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignmentOriginId
+    }
+}
+// GetRoleAssignmentScheduleId gets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
+func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentScheduleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignmentScheduleId
+    }
+}
+// GetStartDateTime gets the startDateTime property value. Time that the roleAssignmentInstance will start
+func (m *UnifiedRoleAssignmentScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
 func (m *UnifiedRoleAssignmentScheduleInstance) IsNil()(bool) {
     return m == nil
 }
@@ -215,7 +219,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i04eb5309aeaafa
     return nil
 }
 // SetActivatedUsing sets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
-func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value *UnifiedRoleEligibilityScheduleInstance)() {
+func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value UnifiedRoleEligibilityScheduleInstanceable)() {
     if m != nil {
         m.activatedUsing = value
     }

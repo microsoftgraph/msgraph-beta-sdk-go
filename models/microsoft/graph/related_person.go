@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RelatedPerson 
+// RelatedPerson provides operations to manage the compliance singleton.
 type RelatedPerson struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewRelatedPerson()(*RelatedPerson) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRelatedPersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRelatedPersonFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRelatedPerson(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedPerson) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *RelatedPerson) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetRelationship gets the relationship property value. Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
-func (m *RelatedPerson) GetRelationship()(*PersonRelationship) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relationship
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. Email address or reference to person within organization.
-func (m *RelatedPerson) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *RelatedPerson) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetRelationship gets the relationship property value. Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
+func (m *RelatedPerson) GetRelationship()(*PersonRelationship) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relationship
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. Email address or reference to person within organization.
+func (m *RelatedPerson) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *RelatedPerson) IsNil()(bool) {
     return m == nil

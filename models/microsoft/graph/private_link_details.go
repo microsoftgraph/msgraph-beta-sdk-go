@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivateLinkDetails 
+// PrivateLinkDetails provides operations to manage the auditLogRoot singleton.
 type PrivateLinkDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,44 +24,16 @@ func NewPrivateLinkDetails()(*PrivateLinkDetails) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePrivateLinkDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivateLinkDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivateLinkDetails(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivateLinkDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPolicyId gets the policyId property value. The unique identifier for the Private Link policy.
-func (m *PrivateLinkDetails) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
-}
-// GetPolicyName gets the policyName property value. The name of the Private Link policy in Azure AD.
-func (m *PrivateLinkDetails) GetPolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyName
-    }
-}
-// GetPolicyTenantId gets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
-func (m *PrivateLinkDetails) GetPolicyTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTenantId
-    }
-}
-// GetResourceId gets the resourceId property value. The Azure Resource Manager (ARM) path for the Private Link policy resource.
-func (m *PrivateLinkDetails) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +80,38 @@ func (m *PrivateLinkDetails) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetPolicyId gets the policyId property value. The unique identifier for the Private Link policy.
+func (m *PrivateLinkDetails) GetPolicyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyId
+    }
+}
+// GetPolicyName gets the policyName property value. The name of the Private Link policy in Azure AD.
+func (m *PrivateLinkDetails) GetPolicyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyName
+    }
+}
+// GetPolicyTenantId gets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
+func (m *PrivateLinkDetails) GetPolicyTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyTenantId
+    }
+}
+// GetResourceId gets the resourceId property value. The Azure Resource Manager (ARM) path for the Private Link policy resource.
+func (m *PrivateLinkDetails) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
 }
 func (m *PrivateLinkDetails) IsNil()(bool) {
     return m == nil

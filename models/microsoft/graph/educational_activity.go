@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationalActivity 
+// EducationalActivity provides operations to manage the compliance singleton.
 type EducationalActivity struct {
     ItemFacet
     // The month and year the user graduated or completed the activity.
@@ -12,9 +12,9 @@ type EducationalActivity struct {
     // The month and year the user completed the educational activity referenced.
     endMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
-    institution *InstitutionData;
+    institution InstitutionDataable;
     // 
-    program *EducationalActivityDetail;
+    program EducationalActivityDetailable;
     // The month and year the user commenced the activity referenced.
     startMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
@@ -24,6 +24,10 @@ func NewEducationalActivity()(*EducationalActivity) {
         ItemFacet: *NewItemFacet(),
     }
     return m
+}
+// CreateEducationalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationalActivityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationalActivity(), nil
 }
 // GetCompletionMonthYear gets the completionMonthYear property value. The month and year the user graduated or completed the activity.
 func (m *EducationalActivity) GetCompletionMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
@@ -39,30 +43,6 @@ func (m *EducationalActivity) GetEndMonthYear()(*i04eb5309aeaafadd28374d79c8471d
         return nil
     } else {
         return m.endMonthYear
-    }
-}
-// GetInstitution gets the institution property value. 
-func (m *EducationalActivity) GetInstitution()(*InstitutionData) {
-    if m == nil {
-        return nil
-    } else {
-        return m.institution
-    }
-}
-// GetProgram gets the program property value. 
-func (m *EducationalActivity) GetProgram()(*EducationalActivityDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.program
-    }
-}
-// GetStartMonthYear gets the startMonthYear property value. The month and year the user commenced the activity referenced.
-func (m *EducationalActivity) GetStartMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startMonthYear
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,22 +69,22 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["institution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInstitutionData() })
+        val, err := n.GetObjectValue(CreateInstitutionDataFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInstitution(val.(*InstitutionData))
+            m.SetInstitution(val.(InstitutionDataable))
         }
         return nil
     }
     res["program"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationalActivityDetail() })
+        val, err := n.GetObjectValue(CreateEducationalActivityDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProgram(val.(*EducationalActivityDetail))
+            m.SetProgram(val.(EducationalActivityDetailable))
         }
         return nil
     }
@@ -119,6 +99,30 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetInstitution gets the institution property value. 
+func (m *EducationalActivity) GetInstitution()(InstitutionDataable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.institution
+    }
+}
+// GetProgram gets the program property value. 
+func (m *EducationalActivity) GetProgram()(EducationalActivityDetailable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.program
+    }
+}
+// GetStartMonthYear gets the startMonthYear property value. The month and year the user commenced the activity referenced.
+func (m *EducationalActivity) GetStartMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startMonthYear
+    }
 }
 func (m *EducationalActivity) IsNil()(bool) {
     return m == nil
@@ -174,13 +178,13 @@ func (m *EducationalActivity) SetEndMonthYear(value *i04eb5309aeaafadd28374d79c8
     }
 }
 // SetInstitution sets the institution property value. 
-func (m *EducationalActivity) SetInstitution(value *InstitutionData)() {
+func (m *EducationalActivity) SetInstitution(value InstitutionDataable)() {
     if m != nil {
         m.institution = value
     }
 }
 // SetProgram sets the program property value. 
-func (m *EducationalActivity) SetProgram(value *EducationalActivityDetail)() {
+func (m *EducationalActivity) SetProgram(value EducationalActivityDetailable)() {
     if m != nil {
         m.program = value
     }

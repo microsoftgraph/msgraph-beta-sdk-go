@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchDataStoreBase 
+// ExactMatchDataStoreBase provides operations to manage the dataClassificationService singleton.
 type ExactMatchDataStoreBase struct {
     Entity
     // 
-    columns []ExactDataMatchStoreColumn;
+    columns []ExactDataMatchStoreColumnable;
     // 
     dataLastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -24,8 +24,12 @@ func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {
     }
     return m
 }
+// CreateExactMatchDataStoreBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactMatchDataStoreBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactMatchDataStoreBase(), nil
+}
 // GetColumns gets the columns property value. 
-func (m *ExactMatchDataStoreBase) GetColumns()([]ExactDataMatchStoreColumn) {
+func (m *ExactMatchDataStoreBase) GetColumns()([]ExactDataMatchStoreColumnable) {
     if m == nil {
         return nil
     } else {
@@ -60,14 +64,14 @@ func (m *ExactMatchDataStoreBase) GetDisplayName()(*string) {
 func (m *ExactMatchDataStoreBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["columns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExactDataMatchStoreColumn() })
+        val, err := n.GetCollectionOfObjectValues(CreateExactDataMatchStoreColumnFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExactDataMatchStoreColumn, len(val))
+            res := make([]ExactDataMatchStoreColumnable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExactDataMatchStoreColumn))
+                res[i] = v.(ExactDataMatchStoreColumnable)
             }
             m.SetColumns(res)
         }
@@ -117,8 +121,7 @@ func (m *ExactMatchDataStoreBase) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColumns()))
         for i, v := range m.GetColumns() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("columns", cast)
         if err != nil {
@@ -146,7 +149,7 @@ func (m *ExactMatchDataStoreBase) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetColumns sets the columns property value. 
-func (m *ExactMatchDataStoreBase) SetColumns(value []ExactDataMatchStoreColumn)() {
+func (m *ExactMatchDataStoreBase) SetColumns(value []ExactDataMatchStoreColumnable)() {
     if m != nil {
         m.columns = value
     }

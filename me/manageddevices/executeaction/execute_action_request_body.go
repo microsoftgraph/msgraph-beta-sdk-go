@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ExecuteActionRequestBody 
+// ExecuteActionRequestBody provides operations to call the executeAction method.
 type ExecuteActionRequestBody struct {
     // 
     actionName *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction;
@@ -38,6 +38,10 @@ func NewExecuteActionRequestBody()(*ExecuteActionRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateExecuteActionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExecuteActionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExecuteActionRequestBody(), nil
 }
 // GetActionName gets the actionName property value. 
 func (m *ExecuteActionRequestBody) GetActionName()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction) {
@@ -85,54 +89,6 @@ func (m *ExecuteActionRequestBody) GetDeviceName()(*string) {
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetKeepEnrollmentData gets the keepEnrollmentData property value. 
-func (m *ExecuteActionRequestBody) GetKeepEnrollmentData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keepEnrollmentData
-    }
-}
-// GetKeepUserData gets the keepUserData property value. 
-func (m *ExecuteActionRequestBody) GetKeepUserData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keepUserData
-    }
-}
-// GetNotificationBody gets the notificationBody property value. 
-func (m *ExecuteActionRequestBody) GetNotificationBody()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationBody
-    }
-}
-// GetNotificationTitle gets the notificationTitle property value. 
-func (m *ExecuteActionRequestBody) GetNotificationTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTitle
-    }
-}
-// GetOrganizationalUnitPath gets the organizationalUnitPath property value. 
-func (m *ExecuteActionRequestBody) GetOrganizationalUnitPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationalUnitPath
-    }
-}
-// GetPersistEsimDataPlan gets the persistEsimDataPlan property value. 
-func (m *ExecuteActionRequestBody) GetPersistEsimDataPlan()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.persistEsimDataPlan
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -253,6 +209,54 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetKeepEnrollmentData gets the keepEnrollmentData property value. 
+func (m *ExecuteActionRequestBody) GetKeepEnrollmentData()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keepEnrollmentData
+    }
+}
+// GetKeepUserData gets the keepUserData property value. 
+func (m *ExecuteActionRequestBody) GetKeepUserData()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keepUserData
+    }
+}
+// GetNotificationBody gets the notificationBody property value. 
+func (m *ExecuteActionRequestBody) GetNotificationBody()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationBody
+    }
+}
+// GetNotificationTitle gets the notificationTitle property value. 
+func (m *ExecuteActionRequestBody) GetNotificationTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationTitle
+    }
+}
+// GetOrganizationalUnitPath gets the organizationalUnitPath property value. 
+func (m *ExecuteActionRequestBody) GetOrganizationalUnitPath()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationalUnitPath
+    }
+}
+// GetPersistEsimDataPlan gets the persistEsimDataPlan property value. 
+func (m *ExecuteActionRequestBody) GetPersistEsimDataPlan()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.persistEsimDataPlan
+    }
 }
 func (m *ExecuteActionRequestBody) IsNil()(bool) {
     return m == nil

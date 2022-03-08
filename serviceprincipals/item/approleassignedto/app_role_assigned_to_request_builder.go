@@ -2,11 +2,11 @@ package approleassignedto
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i9f473681a7112d945bf068330b1a0d6093fa2039b2659636ce064aac8b7993f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/approleassignedto/count"
 )
 
-// AppRoleAssignedToRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\appRoleAssignedTo
+// AppRoleAssignedToRequestBuilder provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
 type AppRoleAssignedToRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AppRoleAssignedToRequestBuilderGetQueryParameters struct {
 // AppRoleAssignedToRequestBuilderPostOptions options for Post
 type AppRoleAssignedToRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAppRoleAssignedToRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAppRoleAssignedToRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppRoleAssignedToRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AppRoleAssignedToRequestBuilder) Count()(*i9f473681a7112d945bf068330b1a0d6093fa2039b2659636ce064aac8b7993f0.CountRequestBuilder) {
+    return i9f473681a7112d945bf068330b1a0d6093fa2039b2659636ce064aac8b7993f0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
 func (m *AppRoleAssignedToRequestBuilder) CreateGetRequestInformation(options *AppRoleAssignedToRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AppRoleAssignedToRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// CreatePostRequestInformation create new navigation property to appRoleAssignedTo for servicePrincipals
 func (m *AppRoleAssignedToRequestBuilder) CreatePostRequestInformation(options *AppRoleAssignedToRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AppRoleAssignedToRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Get app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
-func (m *AppRoleAssignedToRequestBuilder) Get(options *AppRoleAssignedToRequestBuilderGetOptions)(*AppRoleAssignedToResponse, error) {
+func (m *AppRoleAssignedToRequestBuilder) Get(options *AppRoleAssignedToRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppRoleAssignedToResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAppRoleAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AppRoleAssignedToResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignmentCollectionResponseable), nil
 }
-// Post app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
-func (m *AppRoleAssignedToRequestBuilder) Post(options *AppRoleAssignedToRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignment, error) {
+// Post create new navigation property to appRoleAssignedTo for servicePrincipals
+func (m *AppRoleAssignedToRequestBuilder) Post(options *AppRoleAssignedToRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAppRoleAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAppRoleAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppRoleAssignmentable), nil
 }

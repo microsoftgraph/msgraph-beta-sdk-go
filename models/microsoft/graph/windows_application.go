@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsApplication 
+// WindowsApplication provides operations to manage the collection of application entities.
 type WindowsApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewWindowsApplication()(*WindowsApplication) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateWindowsApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsApplicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsApplication(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsApplication) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPackageSid gets the packageSid property value. The package security identifier that Microsoft has assigned the application. Optional. Read-only.
-func (m *WindowsApplication) GetPackageSid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageSid
-    }
-}
-// GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
-func (m *WindowsApplication) GetRedirectUris()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectUris
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +60,22 @@ func (m *WindowsApplication) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetPackageSid gets the packageSid property value. The package security identifier that Microsoft has assigned the application. Optional. Read-only.
+func (m *WindowsApplication) GetPackageSid()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.packageSid
+    }
+}
+// GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
+func (m *WindowsApplication) GetRedirectUris()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.redirectUris
+    }
 }
 func (m *WindowsApplication) IsNil()(bool) {
     return m == nil

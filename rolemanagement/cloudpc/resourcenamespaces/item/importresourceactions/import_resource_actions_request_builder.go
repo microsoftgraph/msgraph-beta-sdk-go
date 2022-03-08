@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ImportResourceActionsRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\resourceNamespaces\{unifiedRbacResourceNamespace-id}\microsoft.graph.importResourceActions
+// ImportResourceActionsRequestBuilder provides operations to call the importResourceActions method.
 type ImportResourceActionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ImportResourceActionsRequestBuilder struct {
 // ImportResourceActionsRequestBuilderPostOptions options for Post
 type ImportResourceActionsRequestBuilderPostOptions struct {
     // 
-    Body *ImportResourceActionsRequestBody;
+    Body ImportResourceActionsRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type ImportResourceActionsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type unifiedRbacResourceNamespace
-    unifiedRbacResourceNamespace *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace;
+    unifiedRbacResourceNamespace i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespaceable;
 }
 // NewImportResourceActionsResponse instantiates a new importResourceActionsResponse and sets the default values.
 func NewImportResourceActionsResponse()(*ImportResourceActionsResponse) {
@@ -39,6 +39,9 @@ func NewImportResourceActionsResponse()(*ImportResourceActionsResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateImportResourceActionsResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewImportResourceActionsResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportResourceActionsResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *ImportResourceActionsResponse) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ImportResourceActionsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["unifiedRbacResourceNamespace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnifiedRbacResourceNamespace(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespaceable))
+        }
+        return nil
+    }
+    return res
+}
 // GetUnifiedRbacResourceNamespace gets the unifiedRbacResourceNamespace property value. Union type representation for type unifiedRbacResourceNamespace
-func (m *ImportResourceActionsResponse) GetUnifiedRbacResourceNamespace()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace) {
+func (m *ImportResourceActionsResponse) GetUnifiedRbacResourceNamespace()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespaceable) {
     if m == nil {
         return nil
     } else {
         return m.unifiedRbacResourceNamespace
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ImportResourceActionsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["unifiedRbacResourceNamespace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUnifiedRbacResourceNamespace() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUnifiedRbacResourceNamespace(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ImportResourceActionsResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *ImportResourceActionsResponse) SetAdditionalData(value map[string]inter
     }
 }
 // SetUnifiedRbacResourceNamespace sets the unifiedRbacResourceNamespace property value. Union type representation for type unifiedRbacResourceNamespace
-func (m *ImportResourceActionsResponse) SetUnifiedRbacResourceNamespace(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace)() {
+func (m *ImportResourceActionsResponse) SetUnifiedRbacResourceNamespace(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespaceable)() {
     if m != nil {
         m.unifiedRbacResourceNamespace = value
     }
@@ -111,7 +114,7 @@ func NewImportResourceActionsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Post invoke action importResourceActions
-func (m *ImportResourceActionsRequestBuilder) Post(options *ImportResourceActionsRequestBuilderPostOptions)(*ImportResourceActionsResponse, error) {
+func (m *ImportResourceActionsRequestBuilder) Post(options *ImportResourceActionsRequestBuilderPostOptions)(ImportResourceActionsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewImportResourceActionsResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateImportResourceActionsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ImportResourceActionsResponse), nil
+    return res.(ImportResourceActionsResponseable), nil
 }

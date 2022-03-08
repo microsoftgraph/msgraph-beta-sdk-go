@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthScriptRemediationSummary 
+// DeviceHealthScriptRemediationSummary provides operations to call the getRemediationSummary method.
 type DeviceHealthScriptRemediationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewDeviceHealthScriptRemediationSummary()(*DeviceHealthScriptRemediationSum
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceHealthScriptRemediationSummary(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by device health scripts.
-func (m *DeviceHealthScriptRemediationSummary) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
-}
-// GetScriptCount gets the scriptCount property value. The number of device health scripts deployed.
-func (m *DeviceHealthScriptRemediationSummary) GetScriptCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *DeviceHealthScriptRemediationSummary) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by device health scripts.
+func (m *DeviceHealthScriptRemediationSummary) GetRemediatedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedDeviceCount
+    }
+}
+// GetScriptCount gets the scriptCount property value. The number of device health scripts deployed.
+func (m *DeviceHealthScriptRemediationSummary) GetScriptCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scriptCount
+    }
 }
 func (m *DeviceHealthScriptRemediationSummary) IsNil()(bool) {
     return m == nil

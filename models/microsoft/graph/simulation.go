@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Simulation 
+// Simulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type Simulation struct {
     Entity
     // The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
@@ -17,7 +17,7 @@ type Simulation struct {
     // Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Identity of the user who created the attack simulation and training campaign.
-    createdBy *EmailIdentity;
+    createdBy EmailIdentityable;
     // Date and time of creation of the attack simulation and training campaign.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description of the attack simulation and training campaign.
@@ -27,7 +27,7 @@ type Simulation struct {
     // Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
     isAutomated *bool;
     // Identity of the user who most recently modified the attack simulation and training campaign.
-    lastModifiedBy *EmailIdentity;
+    lastModifiedBy EmailIdentityable;
     // Date and time of the most recent modification of the attack simulation and training campaign.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
@@ -35,7 +35,7 @@ type Simulation struct {
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform;
     // Report of the attack simulation and training campaign.
-    report *SimulationReport;
+    report SimulationReportable;
     // Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
     status *SimulationStatus;
 }
@@ -45,6 +45,10 @@ func NewSimulation()(*Simulation) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSimulationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSimulationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSimulation(), nil
 }
 // GetAttackTechnique gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Simulation) GetAttackTechnique()(*SimulationAttackTechnique) {
@@ -79,7 +83,7 @@ func (m *Simulation) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
-func (m *Simulation) GetCreatedBy()(*EmailIdentity) {
+func (m *Simulation) GetCreatedBy()(EmailIdentityable) {
     if m == nil {
         return nil
     } else {
@@ -108,62 +112,6 @@ func (m *Simulation) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsAutomated gets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
-func (m *Simulation) GetIsAutomated()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAutomated
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
-func (m *Simulation) GetLastModifiedBy()(*EmailIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
-func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLaunchDateTime gets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
-func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.launchDateTime
-    }
-}
-// GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
-func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadDeliveryPlatform
-    }
-}
-// GetReport gets the report property value. Report of the attack simulation and training campaign.
-func (m *Simulation) GetReport()(*SimulationReport) {
-    if m == nil {
-        return nil
-    } else {
-        return m.report
-    }
-}
-// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
-func (m *Simulation) GetStatus()(*SimulationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -210,12 +158,12 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailIdentity() })
+        val, err := n.GetObjectValue(CreateEmailIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*EmailIdentity))
+            m.SetCreatedBy(val.(EmailIdentityable))
         }
         return nil
     }
@@ -260,12 +208,12 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailIdentity() })
+        val, err := n.GetObjectValue(CreateEmailIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*EmailIdentity))
+            m.SetLastModifiedBy(val.(EmailIdentityable))
         }
         return nil
     }
@@ -300,12 +248,12 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSimulationReport() })
+        val, err := n.GetObjectValue(CreateSimulationReportFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetReport(val.(*SimulationReport))
+            m.SetReport(val.(SimulationReportable))
         }
         return nil
     }
@@ -320,6 +268,62 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetIsAutomated gets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+func (m *Simulation) GetIsAutomated()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAutomated
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
+func (m *Simulation) GetLastModifiedBy()(EmailIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
+func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLaunchDateTime gets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
+func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.launchDateTime
+    }
+}
+// GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
+func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payloadDeliveryPlatform
+    }
+}
+// GetReport gets the report property value. Report of the attack simulation and training campaign.
+func (m *Simulation) GetReport()(SimulationReportable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.report
+    }
+}
+// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
+func (m *Simulation) GetStatus()(*SimulationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *Simulation) IsNil()(bool) {
     return m == nil
@@ -451,7 +455,7 @@ func (m *Simulation) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
-func (m *Simulation) SetCreatedBy(value *EmailIdentity)() {
+func (m *Simulation) SetCreatedBy(value EmailIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -481,7 +485,7 @@ func (m *Simulation) SetIsAutomated(value *bool)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
-func (m *Simulation) SetLastModifiedBy(value *EmailIdentity)() {
+func (m *Simulation) SetLastModifiedBy(value EmailIdentityable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -505,7 +509,7 @@ func (m *Simulation) SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)(
     }
 }
 // SetReport sets the report property value. Report of the attack simulation and training campaign.
-func (m *Simulation) SetReport(value *SimulationReport)() {
+func (m *Simulation) SetReport(value SimulationReportable)() {
     if m != nil {
         m.report = value
     }

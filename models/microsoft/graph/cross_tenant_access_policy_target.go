@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyTarget 
+// CrossTenantAccessPolicyTarget provides operations to manage the policyRoot singleton.
 type CrossTenantAccessPolicyTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewCrossTenantAccessPolicyTarget()(*CrossTenantAccessPolicyTarget) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCrossTenantAccessPolicyTarget(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyTarget) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTarget gets the target property value. The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.
-func (m *CrossTenantAccessPolicyTarget) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
-}
-// GetTargetType gets the targetType property value. The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
-func (m *CrossTenantAccessPolicyTarget) GetTargetType()(*CrossTenantAccessPolicyTargetType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *CrossTenantAccessPolicyTarget) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetTarget gets the target property value. The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.
+func (m *CrossTenantAccessPolicyTarget) GetTarget()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
+}
+// GetTargetType gets the targetType property value. The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
+func (m *CrossTenantAccessPolicyTarget) GetTargetType()(*CrossTenantAccessPolicyTargetType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetType
+    }
 }
 func (m *CrossTenantAccessPolicyTarget) IsNil()(bool) {
     return m == nil

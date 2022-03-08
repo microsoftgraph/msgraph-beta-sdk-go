@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SetUserPreferredPresenceRequestBody 
+// SetUserPreferredPresenceRequestBody provides operations to call the setUserPreferredPresence method.
 type SetUserPreferredPresenceRequestBody struct {
     // 
     activity *string;
@@ -21,6 +21,10 @@ func NewSetUserPreferredPresenceRequestBody()(*SetUserPreferredPresenceRequestBo
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSetUserPreferredPresenceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSetUserPreferredPresenceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSetUserPreferredPresenceRequestBody(), nil
 }
 // GetActivity gets the activity property value. 
 func (m *SetUserPreferredPresenceRequestBody) GetActivity()(*string) {

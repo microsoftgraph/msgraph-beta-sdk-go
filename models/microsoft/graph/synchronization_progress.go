@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationProgress 
+// SynchronizationProgress provides operations to call the instantiate method.
 type SynchronizationProgress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewSynchronizationProgress()(*SynchronizationProgress) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSynchronizationProgressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationProgressFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationProgress(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationProgress) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *SynchronizationProgress) GetCompletedUnits()(*int64) {
         return nil
     } else {
         return m.completedUnits
-    }
-}
-// GetProgressObservationDateTime gets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.
-func (m *SynchronizationProgress) GetProgressObservationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.progressObservationDateTime
-    }
-}
-// GetTotalUnits gets the totalUnits property value. The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
-func (m *SynchronizationProgress) GetTotalUnits()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUnits
-    }
-}
-// GetUnits gets the units property value. An optional description of the units.
-func (m *SynchronizationProgress) GetUnits()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.units
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +89,30 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetProgressObservationDateTime gets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.
+func (m *SynchronizationProgress) GetProgressObservationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.progressObservationDateTime
+    }
+}
+// GetTotalUnits gets the totalUnits property value. The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
+func (m *SynchronizationProgress) GetTotalUnits()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalUnits
+    }
+}
+// GetUnits gets the units property value. An optional description of the units.
+func (m *SynchronizationProgress) GetUnits()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.units
+    }
 }
 func (m *SynchronizationProgress) IsNil()(bool) {
     return m == nil

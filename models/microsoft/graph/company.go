@@ -4,87 +4,87 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Company 
+// Company provides operations to manage the financials singleton.
 type Company struct {
     Entity
     // 
-    accounts []Account;
+    accounts []Accountable;
     // 
-    agedAccountsPayable []AgedAccountsPayable;
+    agedAccountsPayable []AgedAccountsPayableable;
     // 
-    agedAccountsReceivable []AgedAccountsReceivable;
+    agedAccountsReceivable []AgedAccountsReceivableable;
     // 
     businessProfileId *string;
     // 
-    companyInformation []CompanyInformation;
+    companyInformation []CompanyInformationable;
     // 
-    countriesRegions []CountryRegion;
+    countriesRegions []CountryRegionable;
     // 
-    currencies []Currency;
+    currencies []Currencyable;
     // 
-    customerPaymentJournals []CustomerPaymentJournal;
+    customerPaymentJournals []CustomerPaymentJournalable;
     // 
-    customerPayments []CustomerPayment;
+    customerPayments []CustomerPaymentable;
     // 
-    customers []Customer;
+    customers []Customerable;
     // 
-    dimensions []Dimension;
+    dimensions []Dimensionable;
     // 
-    dimensionValues []DimensionValue;
+    dimensionValues []DimensionValueable;
     // 
     displayName *string;
     // 
-    employees []Employee;
+    employees []Employeeable;
     // 
-    generalLedgerEntries []GeneralLedgerEntry;
+    generalLedgerEntries []GeneralLedgerEntryable;
     // 
-    itemCategories []ItemCategory;
+    itemCategories []ItemCategoryable;
     // 
-    items []Item;
+    items []Itemable;
     // 
-    journalLines []JournalLine;
+    journalLines []JournalLineable;
     // 
-    journals []Journal;
+    journals []Journalable;
     // 
     name *string;
     // 
-    paymentMethods []PaymentMethod;
+    paymentMethods []PaymentMethodable;
     // 
-    paymentTerms []PaymentTerm;
+    paymentTerms []PaymentTermable;
     // 
-    picture []Picture;
+    picture []Pictureable;
     // 
-    purchaseInvoiceLines []PurchaseInvoiceLine;
+    purchaseInvoiceLines []PurchaseInvoiceLineable;
     // 
-    purchaseInvoices []PurchaseInvoice;
+    purchaseInvoices []PurchaseInvoiceable;
     // 
-    salesCreditMemoLines []SalesCreditMemoLine;
+    salesCreditMemoLines []SalesCreditMemoLineable;
     // 
-    salesCreditMemos []SalesCreditMemo;
+    salesCreditMemos []SalesCreditMemoable;
     // 
-    salesInvoiceLines []SalesInvoiceLine;
+    salesInvoiceLines []SalesInvoiceLineable;
     // 
-    salesInvoices []SalesInvoice;
+    salesInvoices []SalesInvoiceable;
     // 
-    salesOrderLines []SalesOrderLine;
+    salesOrderLines []SalesOrderLineable;
     // 
-    salesOrders []SalesOrder;
+    salesOrders []SalesOrderable;
     // 
-    salesQuoteLines []SalesQuoteLine;
+    salesQuoteLines []SalesQuoteLineable;
     // 
-    salesQuotes []SalesQuote;
+    salesQuotes []SalesQuoteable;
     // 
-    shipmentMethods []ShipmentMethod;
+    shipmentMethods []ShipmentMethodable;
     // 
     systemVersion *string;
     // 
-    taxAreas []TaxArea;
+    taxAreas []TaxAreaable;
     // 
-    taxGroups []TaxGroup;
+    taxGroups []TaxGroupable;
     // 
-    unitsOfMeasure []UnitOfMeasure;
+    unitsOfMeasure []UnitOfMeasureable;
     // 
-    vendors []Vendor_escaped;
+    vendors []Vendor_escapedable;
 }
 // NewCompany instantiates a new company and sets the default values.
 func NewCompany()(*Company) {
@@ -93,8 +93,12 @@ func NewCompany()(*Company) {
     }
     return m
 }
+// CreateCompanyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCompanyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCompany(), nil
+}
 // GetAccounts gets the accounts property value. 
-func (m *Company) GetAccounts()([]Account) {
+func (m *Company) GetAccounts()([]Accountable) {
     if m == nil {
         return nil
     } else {
@@ -102,7 +106,7 @@ func (m *Company) GetAccounts()([]Account) {
     }
 }
 // GetAgedAccountsPayable gets the agedAccountsPayable property value. 
-func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayable) {
+func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayableable) {
     if m == nil {
         return nil
     } else {
@@ -110,7 +114,7 @@ func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayable) {
     }
 }
 // GetAgedAccountsReceivable gets the agedAccountsReceivable property value. 
-func (m *Company) GetAgedAccountsReceivable()([]AgedAccountsReceivable) {
+func (m *Company) GetAgedAccountsReceivable()([]AgedAccountsReceivableable) {
     if m == nil {
         return nil
     } else {
@@ -126,7 +130,7 @@ func (m *Company) GetBusinessProfileId()(*string) {
     }
 }
 // GetCompanyInformation gets the companyInformation property value. 
-func (m *Company) GetCompanyInformation()([]CompanyInformation) {
+func (m *Company) GetCompanyInformation()([]CompanyInformationable) {
     if m == nil {
         return nil
     } else {
@@ -134,7 +138,7 @@ func (m *Company) GetCompanyInformation()([]CompanyInformation) {
     }
 }
 // GetCountriesRegions gets the countriesRegions property value. 
-func (m *Company) GetCountriesRegions()([]CountryRegion) {
+func (m *Company) GetCountriesRegions()([]CountryRegionable) {
     if m == nil {
         return nil
     } else {
@@ -142,7 +146,7 @@ func (m *Company) GetCountriesRegions()([]CountryRegion) {
     }
 }
 // GetCurrencies gets the currencies property value. 
-func (m *Company) GetCurrencies()([]Currency) {
+func (m *Company) GetCurrencies()([]Currencyable) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +154,7 @@ func (m *Company) GetCurrencies()([]Currency) {
     }
 }
 // GetCustomerPaymentJournals gets the customerPaymentJournals property value. 
-func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournal) {
+func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournalable) {
     if m == nil {
         return nil
     } else {
@@ -158,7 +162,7 @@ func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournal) {
     }
 }
 // GetCustomerPayments gets the customerPayments property value. 
-func (m *Company) GetCustomerPayments()([]CustomerPayment) {
+func (m *Company) GetCustomerPayments()([]CustomerPaymentable) {
     if m == nil {
         return nil
     } else {
@@ -166,7 +170,7 @@ func (m *Company) GetCustomerPayments()([]CustomerPayment) {
     }
 }
 // GetCustomers gets the customers property value. 
-func (m *Company) GetCustomers()([]Customer) {
+func (m *Company) GetCustomers()([]Customerable) {
     if m == nil {
         return nil
     } else {
@@ -174,7 +178,7 @@ func (m *Company) GetCustomers()([]Customer) {
     }
 }
 // GetDimensions gets the dimensions property value. 
-func (m *Company) GetDimensions()([]Dimension) {
+func (m *Company) GetDimensions()([]Dimensionable) {
     if m == nil {
         return nil
     } else {
@@ -182,7 +186,7 @@ func (m *Company) GetDimensions()([]Dimension) {
     }
 }
 // GetDimensionValues gets the dimensionValues property value. 
-func (m *Company) GetDimensionValues()([]DimensionValue) {
+func (m *Company) GetDimensionValues()([]DimensionValueable) {
     if m == nil {
         return nil
     } else {
@@ -198,253 +202,53 @@ func (m *Company) GetDisplayName()(*string) {
     }
 }
 // GetEmployees gets the employees property value. 
-func (m *Company) GetEmployees()([]Employee) {
+func (m *Company) GetEmployees()([]Employeeable) {
     if m == nil {
         return nil
     } else {
         return m.employees
     }
 }
-// GetGeneralLedgerEntries gets the generalLedgerEntries property value. 
-func (m *Company) GetGeneralLedgerEntries()([]GeneralLedgerEntry) {
-    if m == nil {
-        return nil
-    } else {
-        return m.generalLedgerEntries
-    }
-}
-// GetItemCategories gets the itemCategories property value. 
-func (m *Company) GetItemCategories()([]ItemCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategories
-    }
-}
-// GetItems gets the items property value. 
-func (m *Company) GetItems()([]Item) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
-}
-// GetJournalLines gets the journalLines property value. 
-func (m *Company) GetJournalLines()([]JournalLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journalLines
-    }
-}
-// GetJournals gets the journals property value. 
-func (m *Company) GetJournals()([]Journal) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journals
-    }
-}
-// GetName gets the name property value. 
-func (m *Company) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPaymentMethods gets the paymentMethods property value. 
-func (m *Company) GetPaymentMethods()([]PaymentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethods
-    }
-}
-// GetPaymentTerms gets the paymentTerms property value. 
-func (m *Company) GetPaymentTerms()([]PaymentTerm) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerms
-    }
-}
-// GetPicture gets the picture property value. 
-func (m *Company) GetPicture()([]Picture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
-}
-// GetPurchaseInvoiceLines gets the purchaseInvoiceLines property value. 
-func (m *Company) GetPurchaseInvoiceLines()([]PurchaseInvoiceLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.purchaseInvoiceLines
-    }
-}
-// GetPurchaseInvoices gets the purchaseInvoices property value. 
-func (m *Company) GetPurchaseInvoices()([]PurchaseInvoice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.purchaseInvoices
-    }
-}
-// GetSalesCreditMemoLines gets the salesCreditMemoLines property value. 
-func (m *Company) GetSalesCreditMemoLines()([]SalesCreditMemoLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesCreditMemoLines
-    }
-}
-// GetSalesCreditMemos gets the salesCreditMemos property value. 
-func (m *Company) GetSalesCreditMemos()([]SalesCreditMemo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesCreditMemos
-    }
-}
-// GetSalesInvoiceLines gets the salesInvoiceLines property value. 
-func (m *Company) GetSalesInvoiceLines()([]SalesInvoiceLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesInvoiceLines
-    }
-}
-// GetSalesInvoices gets the salesInvoices property value. 
-func (m *Company) GetSalesInvoices()([]SalesInvoice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesInvoices
-    }
-}
-// GetSalesOrderLines gets the salesOrderLines property value. 
-func (m *Company) GetSalesOrderLines()([]SalesOrderLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesOrderLines
-    }
-}
-// GetSalesOrders gets the salesOrders property value. 
-func (m *Company) GetSalesOrders()([]SalesOrder) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesOrders
-    }
-}
-// GetSalesQuoteLines gets the salesQuoteLines property value. 
-func (m *Company) GetSalesQuoteLines()([]SalesQuoteLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesQuoteLines
-    }
-}
-// GetSalesQuotes gets the salesQuotes property value. 
-func (m *Company) GetSalesQuotes()([]SalesQuote) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesQuotes
-    }
-}
-// GetShipmentMethods gets the shipmentMethods property value. 
-func (m *Company) GetShipmentMethods()([]ShipmentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethods
-    }
-}
-// GetSystemVersion gets the systemVersion property value. 
-func (m *Company) GetSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemVersion
-    }
-}
-// GetTaxAreas gets the taxAreas property value. 
-func (m *Company) GetTaxAreas()([]TaxArea) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxAreas
-    }
-}
-// GetTaxGroups gets the taxGroups property value. 
-func (m *Company) GetTaxGroups()([]TaxGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxGroups
-    }
-}
-// GetUnitsOfMeasure gets the unitsOfMeasure property value. 
-func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasure) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitsOfMeasure
-    }
-}
-// GetVendors gets the vendors property value. 
-func (m *Company) GetVendors()([]Vendor_escaped) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendors
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Company) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccount() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Account, len(val))
+            res := make([]Accountable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Account))
+                res[i] = v.(Accountable)
             }
             m.SetAccounts(res)
         }
         return nil
     }
     res["agedAccountsPayable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgedAccountsPayable() })
+        val, err := n.GetCollectionOfObjectValues(CreateAgedAccountsPayableFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AgedAccountsPayable, len(val))
+            res := make([]AgedAccountsPayableable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AgedAccountsPayable))
+                res[i] = v.(AgedAccountsPayableable)
             }
             m.SetAgedAccountsPayable(res)
         }
         return nil
     }
     res["agedAccountsReceivable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgedAccountsReceivable() })
+        val, err := n.GetCollectionOfObjectValues(CreateAgedAccountsReceivableFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AgedAccountsReceivable, len(val))
+            res := make([]AgedAccountsReceivableable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AgedAccountsReceivable))
+                res[i] = v.(AgedAccountsReceivableable)
             }
             m.SetAgedAccountsReceivable(res)
         }
@@ -461,112 +265,112 @@ func (m *Company) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["companyInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCompanyInformation() })
+        val, err := n.GetCollectionOfObjectValues(CreateCompanyInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CompanyInformation, len(val))
+            res := make([]CompanyInformationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CompanyInformation))
+                res[i] = v.(CompanyInformationable)
             }
             m.SetCompanyInformation(res)
         }
         return nil
     }
     res["countriesRegions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCountryRegion() })
+        val, err := n.GetCollectionOfObjectValues(CreateCountryRegionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CountryRegion, len(val))
+            res := make([]CountryRegionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CountryRegion))
+                res[i] = v.(CountryRegionable)
             }
             m.SetCountriesRegions(res)
         }
         return nil
     }
     res["currencies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCurrency() })
+        val, err := n.GetCollectionOfObjectValues(CreateCurrencyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Currency, len(val))
+            res := make([]Currencyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Currency))
+                res[i] = v.(Currencyable)
             }
             m.SetCurrencies(res)
         }
         return nil
     }
     res["customerPaymentJournals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomerPaymentJournal() })
+        val, err := n.GetCollectionOfObjectValues(CreateCustomerPaymentJournalFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CustomerPaymentJournal, len(val))
+            res := make([]CustomerPaymentJournalable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CustomerPaymentJournal))
+                res[i] = v.(CustomerPaymentJournalable)
             }
             m.SetCustomerPaymentJournals(res)
         }
         return nil
     }
     res["customerPayments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomerPayment() })
+        val, err := n.GetCollectionOfObjectValues(CreateCustomerPaymentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CustomerPayment, len(val))
+            res := make([]CustomerPaymentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CustomerPayment))
+                res[i] = v.(CustomerPaymentable)
             }
             m.SetCustomerPayments(res)
         }
         return nil
     }
     res["customers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomer() })
+        val, err := n.GetCollectionOfObjectValues(CreateCustomerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Customer, len(val))
+            res := make([]Customerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Customer))
+                res[i] = v.(Customerable)
             }
             m.SetCustomers(res)
         }
         return nil
     }
     res["dimensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDimension() })
+        val, err := n.GetCollectionOfObjectValues(CreateDimensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Dimension, len(val))
+            res := make([]Dimensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Dimension))
+                res[i] = v.(Dimensionable)
             }
             m.SetDimensions(res)
         }
         return nil
     }
     res["dimensionValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDimensionValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateDimensionValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DimensionValue, len(val))
+            res := make([]DimensionValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DimensionValue))
+                res[i] = v.(DimensionValueable)
             }
             m.SetDimensionValues(res)
         }
@@ -583,84 +387,84 @@ func (m *Company) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["employees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmployee() })
+        val, err := n.GetCollectionOfObjectValues(CreateEmployeeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Employee, len(val))
+            res := make([]Employeeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Employee))
+                res[i] = v.(Employeeable)
             }
             m.SetEmployees(res)
         }
         return nil
     }
     res["generalLedgerEntries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGeneralLedgerEntry() })
+        val, err := n.GetCollectionOfObjectValues(CreateGeneralLedgerEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GeneralLedgerEntry, len(val))
+            res := make([]GeneralLedgerEntryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GeneralLedgerEntry))
+                res[i] = v.(GeneralLedgerEntryable)
             }
             m.SetGeneralLedgerEntries(res)
         }
         return nil
     }
     res["itemCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemCategory() })
+        val, err := n.GetCollectionOfObjectValues(CreateItemCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ItemCategory, len(val))
+            res := make([]ItemCategoryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ItemCategory))
+                res[i] = v.(ItemCategoryable)
             }
             m.SetItemCategories(res)
         }
         return nil
     }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Item, len(val))
+            res := make([]Itemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Item))
+                res[i] = v.(Itemable)
             }
             m.SetItems(res)
         }
         return nil
     }
     res["journalLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJournalLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateJournalLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]JournalLine, len(val))
+            res := make([]JournalLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*JournalLine))
+                res[i] = v.(JournalLineable)
             }
             m.SetJournalLines(res)
         }
         return nil
     }
     res["journals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJournal() })
+        val, err := n.GetCollectionOfObjectValues(CreateJournalFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Journal, len(val))
+            res := make([]Journalable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Journal))
+                res[i] = v.(Journalable)
             }
             m.SetJournals(res)
         }
@@ -677,196 +481,196 @@ func (m *Company) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["paymentMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPaymentMethod() })
+        val, err := n.GetCollectionOfObjectValues(CreatePaymentMethodFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PaymentMethod, len(val))
+            res := make([]PaymentMethodable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PaymentMethod))
+                res[i] = v.(PaymentMethodable)
             }
             m.SetPaymentMethods(res)
         }
         return nil
     }
     res["paymentTerms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPaymentTerm() })
+        val, err := n.GetCollectionOfObjectValues(CreatePaymentTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PaymentTerm, len(val))
+            res := make([]PaymentTermable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PaymentTerm))
+                res[i] = v.(PaymentTermable)
             }
             m.SetPaymentTerms(res)
         }
         return nil
     }
     res["picture"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPicture() })
+        val, err := n.GetCollectionOfObjectValues(CreatePictureFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Picture, len(val))
+            res := make([]Pictureable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Picture))
+                res[i] = v.(Pictureable)
             }
             m.SetPicture(res)
         }
         return nil
     }
     res["purchaseInvoiceLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPurchaseInvoiceLine() })
+        val, err := n.GetCollectionOfObjectValues(CreatePurchaseInvoiceLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PurchaseInvoiceLine, len(val))
+            res := make([]PurchaseInvoiceLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PurchaseInvoiceLine))
+                res[i] = v.(PurchaseInvoiceLineable)
             }
             m.SetPurchaseInvoiceLines(res)
         }
         return nil
     }
     res["purchaseInvoices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPurchaseInvoice() })
+        val, err := n.GetCollectionOfObjectValues(CreatePurchaseInvoiceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PurchaseInvoice, len(val))
+            res := make([]PurchaseInvoiceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PurchaseInvoice))
+                res[i] = v.(PurchaseInvoiceable)
             }
             m.SetPurchaseInvoices(res)
         }
         return nil
     }
     res["salesCreditMemoLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesCreditMemoLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesCreditMemoLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesCreditMemoLine, len(val))
+            res := make([]SalesCreditMemoLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesCreditMemoLine))
+                res[i] = v.(SalesCreditMemoLineable)
             }
             m.SetSalesCreditMemoLines(res)
         }
         return nil
     }
     res["salesCreditMemos"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesCreditMemo() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesCreditMemoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesCreditMemo, len(val))
+            res := make([]SalesCreditMemoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesCreditMemo))
+                res[i] = v.(SalesCreditMemoable)
             }
             m.SetSalesCreditMemos(res)
         }
         return nil
     }
     res["salesInvoiceLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesInvoiceLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesInvoiceLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesInvoiceLine, len(val))
+            res := make([]SalesInvoiceLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesInvoiceLine))
+                res[i] = v.(SalesInvoiceLineable)
             }
             m.SetSalesInvoiceLines(res)
         }
         return nil
     }
     res["salesInvoices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesInvoice() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesInvoiceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesInvoice, len(val))
+            res := make([]SalesInvoiceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesInvoice))
+                res[i] = v.(SalesInvoiceable)
             }
             m.SetSalesInvoices(res)
         }
         return nil
     }
     res["salesOrderLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesOrderLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesOrderLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesOrderLine, len(val))
+            res := make([]SalesOrderLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesOrderLine))
+                res[i] = v.(SalesOrderLineable)
             }
             m.SetSalesOrderLines(res)
         }
         return nil
     }
     res["salesOrders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesOrder() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesOrderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesOrder, len(val))
+            res := make([]SalesOrderable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesOrder))
+                res[i] = v.(SalesOrderable)
             }
             m.SetSalesOrders(res)
         }
         return nil
     }
     res["salesQuoteLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesQuoteLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesQuoteLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesQuoteLine, len(val))
+            res := make([]SalesQuoteLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesQuoteLine))
+                res[i] = v.(SalesQuoteLineable)
             }
             m.SetSalesQuoteLines(res)
         }
         return nil
     }
     res["salesQuotes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesQuote() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesQuoteFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesQuote, len(val))
+            res := make([]SalesQuoteable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesQuote))
+                res[i] = v.(SalesQuoteable)
             }
             m.SetSalesQuotes(res)
         }
         return nil
     }
     res["shipmentMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShipmentMethod() })
+        val, err := n.GetCollectionOfObjectValues(CreateShipmentMethodFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ShipmentMethod, len(val))
+            res := make([]ShipmentMethodable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ShipmentMethod))
+                res[i] = v.(ShipmentMethodable)
             }
             m.SetShipmentMethods(res)
         }
@@ -883,62 +687,262 @@ func (m *Company) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["taxAreas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTaxArea() })
+        val, err := n.GetCollectionOfObjectValues(CreateTaxAreaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TaxArea, len(val))
+            res := make([]TaxAreaable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TaxArea))
+                res[i] = v.(TaxAreaable)
             }
             m.SetTaxAreas(res)
         }
         return nil
     }
     res["taxGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTaxGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateTaxGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TaxGroup, len(val))
+            res := make([]TaxGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TaxGroup))
+                res[i] = v.(TaxGroupable)
             }
             m.SetTaxGroups(res)
         }
         return nil
     }
     res["unitsOfMeasure"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnitOfMeasure() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnitOfMeasureFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnitOfMeasure, len(val))
+            res := make([]UnitOfMeasureable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnitOfMeasure))
+                res[i] = v.(UnitOfMeasureable)
             }
             m.SetUnitsOfMeasure(res)
         }
         return nil
     }
     res["vendors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVendor_escaped() })
+        val, err := n.GetCollectionOfObjectValues(CreateVendor_escapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Vendor_escaped, len(val))
+            res := make([]Vendor_escapedable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Vendor_escaped))
+                res[i] = v.(Vendor_escapedable)
             }
             m.SetVendors(res)
         }
         return nil
     }
     return res
+}
+// GetGeneralLedgerEntries gets the generalLedgerEntries property value. 
+func (m *Company) GetGeneralLedgerEntries()([]GeneralLedgerEntryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.generalLedgerEntries
+    }
+}
+// GetItemCategories gets the itemCategories property value. 
+func (m *Company) GetItemCategories()([]ItemCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemCategories
+    }
+}
+// GetItems gets the items property value. 
+func (m *Company) GetItems()([]Itemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.items
+    }
+}
+// GetJournalLines gets the journalLines property value. 
+func (m *Company) GetJournalLines()([]JournalLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.journalLines
+    }
+}
+// GetJournals gets the journals property value. 
+func (m *Company) GetJournals()([]Journalable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.journals
+    }
+}
+// GetName gets the name property value. 
+func (m *Company) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPaymentMethods gets the paymentMethods property value. 
+func (m *Company) GetPaymentMethods()([]PaymentMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentMethods
+    }
+}
+// GetPaymentTerms gets the paymentTerms property value. 
+func (m *Company) GetPaymentTerms()([]PaymentTermable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentTerms
+    }
+}
+// GetPicture gets the picture property value. 
+func (m *Company) GetPicture()([]Pictureable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.picture
+    }
+}
+// GetPurchaseInvoiceLines gets the purchaseInvoiceLines property value. 
+func (m *Company) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.purchaseInvoiceLines
+    }
+}
+// GetPurchaseInvoices gets the purchaseInvoices property value. 
+func (m *Company) GetPurchaseInvoices()([]PurchaseInvoiceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.purchaseInvoices
+    }
+}
+// GetSalesCreditMemoLines gets the salesCreditMemoLines property value. 
+func (m *Company) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesCreditMemoLines
+    }
+}
+// GetSalesCreditMemos gets the salesCreditMemos property value. 
+func (m *Company) GetSalesCreditMemos()([]SalesCreditMemoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesCreditMemos
+    }
+}
+// GetSalesInvoiceLines gets the salesInvoiceLines property value. 
+func (m *Company) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesInvoiceLines
+    }
+}
+// GetSalesInvoices gets the salesInvoices property value. 
+func (m *Company) GetSalesInvoices()([]SalesInvoiceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesInvoices
+    }
+}
+// GetSalesOrderLines gets the salesOrderLines property value. 
+func (m *Company) GetSalesOrderLines()([]SalesOrderLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesOrderLines
+    }
+}
+// GetSalesOrders gets the salesOrders property value. 
+func (m *Company) GetSalesOrders()([]SalesOrderable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesOrders
+    }
+}
+// GetSalesQuoteLines gets the salesQuoteLines property value. 
+func (m *Company) GetSalesQuoteLines()([]SalesQuoteLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesQuoteLines
+    }
+}
+// GetSalesQuotes gets the salesQuotes property value. 
+func (m *Company) GetSalesQuotes()([]SalesQuoteable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesQuotes
+    }
+}
+// GetShipmentMethods gets the shipmentMethods property value. 
+func (m *Company) GetShipmentMethods()([]ShipmentMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shipmentMethods
+    }
+}
+// GetSystemVersion gets the systemVersion property value. 
+func (m *Company) GetSystemVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.systemVersion
+    }
+}
+// GetTaxAreas gets the taxAreas property value. 
+func (m *Company) GetTaxAreas()([]TaxAreaable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxAreas
+    }
+}
+// GetTaxGroups gets the taxGroups property value. 
+func (m *Company) GetTaxGroups()([]TaxGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxGroups
+    }
+}
+// GetUnitsOfMeasure gets the unitsOfMeasure property value. 
+func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasureable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unitsOfMeasure
+    }
+}
+// GetVendors gets the vendors property value. 
+func (m *Company) GetVendors()([]Vendor_escapedable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendors
+    }
 }
 func (m *Company) IsNil()(bool) {
     return m == nil
@@ -952,8 +956,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetAccounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccounts()))
         for i, v := range m.GetAccounts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accounts", cast)
         if err != nil {
@@ -963,8 +966,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetAgedAccountsPayable() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgedAccountsPayable()))
         for i, v := range m.GetAgedAccountsPayable() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("agedAccountsPayable", cast)
         if err != nil {
@@ -974,8 +976,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetAgedAccountsReceivable() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgedAccountsReceivable()))
         for i, v := range m.GetAgedAccountsReceivable() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("agedAccountsReceivable", cast)
         if err != nil {
@@ -991,8 +992,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCompanyInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompanyInformation()))
         for i, v := range m.GetCompanyInformation() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("companyInformation", cast)
         if err != nil {
@@ -1002,8 +1002,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCountriesRegions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCountriesRegions()))
         for i, v := range m.GetCountriesRegions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("countriesRegions", cast)
         if err != nil {
@@ -1013,8 +1012,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCurrencies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCurrencies()))
         for i, v := range m.GetCurrencies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("currencies", cast)
         if err != nil {
@@ -1024,8 +1022,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCustomerPaymentJournals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomerPaymentJournals()))
         for i, v := range m.GetCustomerPaymentJournals() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customerPaymentJournals", cast)
         if err != nil {
@@ -1035,8 +1032,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCustomerPayments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomerPayments()))
         for i, v := range m.GetCustomerPayments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customerPayments", cast)
         if err != nil {
@@ -1046,8 +1042,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetCustomers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customers", cast)
         if err != nil {
@@ -1057,8 +1052,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetDimensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDimensions()))
         for i, v := range m.GetDimensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dimensions", cast)
         if err != nil {
@@ -1068,8 +1062,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetDimensionValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDimensionValues()))
         for i, v := range m.GetDimensionValues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dimensionValues", cast)
         if err != nil {
@@ -1085,8 +1078,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetEmployees() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEmployees()))
         for i, v := range m.GetEmployees() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("employees", cast)
         if err != nil {
@@ -1096,8 +1088,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetGeneralLedgerEntries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGeneralLedgerEntries()))
         for i, v := range m.GetGeneralLedgerEntries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("generalLedgerEntries", cast)
         if err != nil {
@@ -1107,8 +1098,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetItemCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItemCategories()))
         for i, v := range m.GetItemCategories() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("itemCategories", cast)
         if err != nil {
@@ -1118,8 +1108,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -1129,8 +1118,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetJournalLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJournalLines()))
         for i, v := range m.GetJournalLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("journalLines", cast)
         if err != nil {
@@ -1140,8 +1128,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetJournals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJournals()))
         for i, v := range m.GetJournals() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("journals", cast)
         if err != nil {
@@ -1157,8 +1144,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPaymentMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPaymentMethods()))
         for i, v := range m.GetPaymentMethods() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("paymentMethods", cast)
         if err != nil {
@@ -1168,8 +1154,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPaymentTerms() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPaymentTerms()))
         for i, v := range m.GetPaymentTerms() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("paymentTerms", cast)
         if err != nil {
@@ -1179,8 +1164,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPicture() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
@@ -1190,8 +1174,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPurchaseInvoiceLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPurchaseInvoiceLines()))
         for i, v := range m.GetPurchaseInvoiceLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("purchaseInvoiceLines", cast)
         if err != nil {
@@ -1201,8 +1184,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPurchaseInvoices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPurchaseInvoices()))
         for i, v := range m.GetPurchaseInvoices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("purchaseInvoices", cast)
         if err != nil {
@@ -1212,8 +1194,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesCreditMemoLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesCreditMemoLines()))
         for i, v := range m.GetSalesCreditMemoLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesCreditMemoLines", cast)
         if err != nil {
@@ -1223,8 +1204,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesCreditMemos() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesCreditMemos()))
         for i, v := range m.GetSalesCreditMemos() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesCreditMemos", cast)
         if err != nil {
@@ -1234,8 +1214,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesInvoiceLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesInvoiceLines()))
         for i, v := range m.GetSalesInvoiceLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesInvoiceLines", cast)
         if err != nil {
@@ -1245,8 +1224,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesInvoices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesInvoices()))
         for i, v := range m.GetSalesInvoices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesInvoices", cast)
         if err != nil {
@@ -1256,8 +1234,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesOrderLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesOrderLines()))
         for i, v := range m.GetSalesOrderLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesOrderLines", cast)
         if err != nil {
@@ -1267,8 +1244,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesOrders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesOrders()))
         for i, v := range m.GetSalesOrders() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesOrders", cast)
         if err != nil {
@@ -1278,8 +1254,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesQuoteLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesQuoteLines()))
         for i, v := range m.GetSalesQuoteLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesQuoteLines", cast)
         if err != nil {
@@ -1289,8 +1264,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetSalesQuotes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesQuotes()))
         for i, v := range m.GetSalesQuotes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesQuotes", cast)
         if err != nil {
@@ -1300,8 +1274,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetShipmentMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShipmentMethods()))
         for i, v := range m.GetShipmentMethods() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("shipmentMethods", cast)
         if err != nil {
@@ -1317,8 +1290,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetTaxAreas() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaxAreas()))
         for i, v := range m.GetTaxAreas() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("taxAreas", cast)
         if err != nil {
@@ -1328,8 +1300,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetTaxGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaxGroups()))
         for i, v := range m.GetTaxGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("taxGroups", cast)
         if err != nil {
@@ -1339,8 +1310,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetUnitsOfMeasure() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUnitsOfMeasure()))
         for i, v := range m.GetUnitsOfMeasure() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("unitsOfMeasure", cast)
         if err != nil {
@@ -1350,8 +1320,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetVendors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVendors()))
         for i, v := range m.GetVendors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("vendors", cast)
         if err != nil {
@@ -1361,19 +1330,19 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetAccounts sets the accounts property value. 
-func (m *Company) SetAccounts(value []Account)() {
+func (m *Company) SetAccounts(value []Accountable)() {
     if m != nil {
         m.accounts = value
     }
 }
 // SetAgedAccountsPayable sets the agedAccountsPayable property value. 
-func (m *Company) SetAgedAccountsPayable(value []AgedAccountsPayable)() {
+func (m *Company) SetAgedAccountsPayable(value []AgedAccountsPayableable)() {
     if m != nil {
         m.agedAccountsPayable = value
     }
 }
 // SetAgedAccountsReceivable sets the agedAccountsReceivable property value. 
-func (m *Company) SetAgedAccountsReceivable(value []AgedAccountsReceivable)() {
+func (m *Company) SetAgedAccountsReceivable(value []AgedAccountsReceivableable)() {
     if m != nil {
         m.agedAccountsReceivable = value
     }
@@ -1385,49 +1354,49 @@ func (m *Company) SetBusinessProfileId(value *string)() {
     }
 }
 // SetCompanyInformation sets the companyInformation property value. 
-func (m *Company) SetCompanyInformation(value []CompanyInformation)() {
+func (m *Company) SetCompanyInformation(value []CompanyInformationable)() {
     if m != nil {
         m.companyInformation = value
     }
 }
 // SetCountriesRegions sets the countriesRegions property value. 
-func (m *Company) SetCountriesRegions(value []CountryRegion)() {
+func (m *Company) SetCountriesRegions(value []CountryRegionable)() {
     if m != nil {
         m.countriesRegions = value
     }
 }
 // SetCurrencies sets the currencies property value. 
-func (m *Company) SetCurrencies(value []Currency)() {
+func (m *Company) SetCurrencies(value []Currencyable)() {
     if m != nil {
         m.currencies = value
     }
 }
 // SetCustomerPaymentJournals sets the customerPaymentJournals property value. 
-func (m *Company) SetCustomerPaymentJournals(value []CustomerPaymentJournal)() {
+func (m *Company) SetCustomerPaymentJournals(value []CustomerPaymentJournalable)() {
     if m != nil {
         m.customerPaymentJournals = value
     }
 }
 // SetCustomerPayments sets the customerPayments property value. 
-func (m *Company) SetCustomerPayments(value []CustomerPayment)() {
+func (m *Company) SetCustomerPayments(value []CustomerPaymentable)() {
     if m != nil {
         m.customerPayments = value
     }
 }
 // SetCustomers sets the customers property value. 
-func (m *Company) SetCustomers(value []Customer)() {
+func (m *Company) SetCustomers(value []Customerable)() {
     if m != nil {
         m.customers = value
     }
 }
 // SetDimensions sets the dimensions property value. 
-func (m *Company) SetDimensions(value []Dimension)() {
+func (m *Company) SetDimensions(value []Dimensionable)() {
     if m != nil {
         m.dimensions = value
     }
 }
 // SetDimensionValues sets the dimensionValues property value. 
-func (m *Company) SetDimensionValues(value []DimensionValue)() {
+func (m *Company) SetDimensionValues(value []DimensionValueable)() {
     if m != nil {
         m.dimensionValues = value
     }
@@ -1439,37 +1408,37 @@ func (m *Company) SetDisplayName(value *string)() {
     }
 }
 // SetEmployees sets the employees property value. 
-func (m *Company) SetEmployees(value []Employee)() {
+func (m *Company) SetEmployees(value []Employeeable)() {
     if m != nil {
         m.employees = value
     }
 }
 // SetGeneralLedgerEntries sets the generalLedgerEntries property value. 
-func (m *Company) SetGeneralLedgerEntries(value []GeneralLedgerEntry)() {
+func (m *Company) SetGeneralLedgerEntries(value []GeneralLedgerEntryable)() {
     if m != nil {
         m.generalLedgerEntries = value
     }
 }
 // SetItemCategories sets the itemCategories property value. 
-func (m *Company) SetItemCategories(value []ItemCategory)() {
+func (m *Company) SetItemCategories(value []ItemCategoryable)() {
     if m != nil {
         m.itemCategories = value
     }
 }
 // SetItems sets the items property value. 
-func (m *Company) SetItems(value []Item)() {
+func (m *Company) SetItems(value []Itemable)() {
     if m != nil {
         m.items = value
     }
 }
 // SetJournalLines sets the journalLines property value. 
-func (m *Company) SetJournalLines(value []JournalLine)() {
+func (m *Company) SetJournalLines(value []JournalLineable)() {
     if m != nil {
         m.journalLines = value
     }
 }
 // SetJournals sets the journals property value. 
-func (m *Company) SetJournals(value []Journal)() {
+func (m *Company) SetJournals(value []Journalable)() {
     if m != nil {
         m.journals = value
     }
@@ -1481,85 +1450,85 @@ func (m *Company) SetName(value *string)() {
     }
 }
 // SetPaymentMethods sets the paymentMethods property value. 
-func (m *Company) SetPaymentMethods(value []PaymentMethod)() {
+func (m *Company) SetPaymentMethods(value []PaymentMethodable)() {
     if m != nil {
         m.paymentMethods = value
     }
 }
 // SetPaymentTerms sets the paymentTerms property value. 
-func (m *Company) SetPaymentTerms(value []PaymentTerm)() {
+func (m *Company) SetPaymentTerms(value []PaymentTermable)() {
     if m != nil {
         m.paymentTerms = value
     }
 }
 // SetPicture sets the picture property value. 
-func (m *Company) SetPicture(value []Picture)() {
+func (m *Company) SetPicture(value []Pictureable)() {
     if m != nil {
         m.picture = value
     }
 }
 // SetPurchaseInvoiceLines sets the purchaseInvoiceLines property value. 
-func (m *Company) SetPurchaseInvoiceLines(value []PurchaseInvoiceLine)() {
+func (m *Company) SetPurchaseInvoiceLines(value []PurchaseInvoiceLineable)() {
     if m != nil {
         m.purchaseInvoiceLines = value
     }
 }
 // SetPurchaseInvoices sets the purchaseInvoices property value. 
-func (m *Company) SetPurchaseInvoices(value []PurchaseInvoice)() {
+func (m *Company) SetPurchaseInvoices(value []PurchaseInvoiceable)() {
     if m != nil {
         m.purchaseInvoices = value
     }
 }
 // SetSalesCreditMemoLines sets the salesCreditMemoLines property value. 
-func (m *Company) SetSalesCreditMemoLines(value []SalesCreditMemoLine)() {
+func (m *Company) SetSalesCreditMemoLines(value []SalesCreditMemoLineable)() {
     if m != nil {
         m.salesCreditMemoLines = value
     }
 }
 // SetSalesCreditMemos sets the salesCreditMemos property value. 
-func (m *Company) SetSalesCreditMemos(value []SalesCreditMemo)() {
+func (m *Company) SetSalesCreditMemos(value []SalesCreditMemoable)() {
     if m != nil {
         m.salesCreditMemos = value
     }
 }
 // SetSalesInvoiceLines sets the salesInvoiceLines property value. 
-func (m *Company) SetSalesInvoiceLines(value []SalesInvoiceLine)() {
+func (m *Company) SetSalesInvoiceLines(value []SalesInvoiceLineable)() {
     if m != nil {
         m.salesInvoiceLines = value
     }
 }
 // SetSalesInvoices sets the salesInvoices property value. 
-func (m *Company) SetSalesInvoices(value []SalesInvoice)() {
+func (m *Company) SetSalesInvoices(value []SalesInvoiceable)() {
     if m != nil {
         m.salesInvoices = value
     }
 }
 // SetSalesOrderLines sets the salesOrderLines property value. 
-func (m *Company) SetSalesOrderLines(value []SalesOrderLine)() {
+func (m *Company) SetSalesOrderLines(value []SalesOrderLineable)() {
     if m != nil {
         m.salesOrderLines = value
     }
 }
 // SetSalesOrders sets the salesOrders property value. 
-func (m *Company) SetSalesOrders(value []SalesOrder)() {
+func (m *Company) SetSalesOrders(value []SalesOrderable)() {
     if m != nil {
         m.salesOrders = value
     }
 }
 // SetSalesQuoteLines sets the salesQuoteLines property value. 
-func (m *Company) SetSalesQuoteLines(value []SalesQuoteLine)() {
+func (m *Company) SetSalesQuoteLines(value []SalesQuoteLineable)() {
     if m != nil {
         m.salesQuoteLines = value
     }
 }
 // SetSalesQuotes sets the salesQuotes property value. 
-func (m *Company) SetSalesQuotes(value []SalesQuote)() {
+func (m *Company) SetSalesQuotes(value []SalesQuoteable)() {
     if m != nil {
         m.salesQuotes = value
     }
 }
 // SetShipmentMethods sets the shipmentMethods property value. 
-func (m *Company) SetShipmentMethods(value []ShipmentMethod)() {
+func (m *Company) SetShipmentMethods(value []ShipmentMethodable)() {
     if m != nil {
         m.shipmentMethods = value
     }
@@ -1571,25 +1540,25 @@ func (m *Company) SetSystemVersion(value *string)() {
     }
 }
 // SetTaxAreas sets the taxAreas property value. 
-func (m *Company) SetTaxAreas(value []TaxArea)() {
+func (m *Company) SetTaxAreas(value []TaxAreaable)() {
     if m != nil {
         m.taxAreas = value
     }
 }
 // SetTaxGroups sets the taxGroups property value. 
-func (m *Company) SetTaxGroups(value []TaxGroup)() {
+func (m *Company) SetTaxGroups(value []TaxGroupable)() {
     if m != nil {
         m.taxGroups = value
     }
 }
 // SetUnitsOfMeasure sets the unitsOfMeasure property value. 
-func (m *Company) SetUnitsOfMeasure(value []UnitOfMeasure)() {
+func (m *Company) SetUnitsOfMeasure(value []UnitOfMeasureable)() {
     if m != nil {
         m.unitsOfMeasure = value
     }
 }
 // SetVendors sets the vendors property value. 
-func (m *Company) SetVendors(value []Vendor_escaped)() {
+func (m *Company) SetVendors(value []Vendor_escapedable)() {
     if m != nil {
         m.vendors = value
     }

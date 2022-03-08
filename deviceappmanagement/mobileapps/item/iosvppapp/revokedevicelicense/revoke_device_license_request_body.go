@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RevokeDeviceLicenseRequestBody 
+// RevokeDeviceLicenseRequestBody provides operations to call the revokeDeviceLicense method.
 type RevokeDeviceLicenseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewRevokeDeviceLicenseRequestBody()(*RevokeDeviceLicenseRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRevokeDeviceLicenseRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRevokeDeviceLicenseRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRevokeDeviceLicenseRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RevokeDeviceLicenseRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. 
-func (m *RevokeDeviceLicenseRequestBody) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetNotifyManagedDevices gets the notifyManagedDevices property value. 
-func (m *RevokeDeviceLicenseRequestBody) GetNotifyManagedDevices()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifyManagedDevices
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *RevokeDeviceLicenseRequestBody) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetManagedDeviceId gets the managedDeviceId property value. 
+func (m *RevokeDeviceLicenseRequestBody) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetNotifyManagedDevices gets the notifyManagedDevices property value. 
+func (m *RevokeDeviceLicenseRequestBody) GetNotifyManagedDevices()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notifyManagedDevices
+    }
 }
 func (m *RevokeDeviceLicenseRequestBody) IsNil()(bool) {
     return m == nil

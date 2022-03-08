@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserInsightsSettings 
+// UserInsightsSettings provides operations to manage the compliance singleton.
 type UserInsightsSettings struct {
     Entity
     // true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
@@ -17,13 +17,9 @@ func NewUserInsightsSettings()(*UserInsightsSettings) {
     }
     return m
 }
-// GetIsEnabled gets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
-func (m *UserInsightsSettings) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+// CreateUserInsightsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserInsightsSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserInsightsSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetIsEnabled gets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+func (m *UserInsightsSettings) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
 }
 func (m *UserInsightsSettings) IsNil()(bool) {
     return m == nil

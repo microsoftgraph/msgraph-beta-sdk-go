@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyDefinition 
+// GroupPolicyDefinition provides operations to manage the deviceManagement singleton.
 type GroupPolicyDefinition struct {
     Entity
     // The group policy category associated with the definition.
-    category *GroupPolicyCategory;
+    category GroupPolicyCategoryable;
     // The localized full category path for the policy.
     categoryPath *string;
     // Identifies the type of groups the policy can be applied to. Possible values are: user, machine.
     classType *GroupPolicyDefinitionClassType;
     // The group policy file associated with the definition.
-    definitionFile *GroupPolicyDefinitionFile;
+    definitionFile GroupPolicyDefinitionFileable;
     // The localized policy name.
     displayName *string;
     // The localized explanation or help text associated with the policy. The default value is empty.
@@ -31,13 +31,13 @@ type GroupPolicyDefinition struct {
     // Minimum required CSP version for user configuration in this definition
     minUserCspVersion *string;
     // Definition of the next version of this definition
-    nextVersionDefinition *GroupPolicyDefinition;
+    nextVersionDefinition GroupPolicyDefinitionable;
     // Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
     policyType *GroupPolicyType;
     // The group policy presentations associated with the definition.
-    presentations []GroupPolicyPresentation;
+    presentations []GroupPolicyPresentationable;
     // Definition of the previous version of this definition
-    previousVersionDefinition *GroupPolicyDefinition;
+    previousVersionDefinition GroupPolicyDefinitionable;
     // Localized string used to specify what operating system or application version is affected by the policy.
     supportedOn *string;
     // Setting definition version
@@ -50,8 +50,12 @@ func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {
     }
     return m
 }
+// CreateGroupPolicyDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyDefinition(), nil
+}
 // GetCategory gets the category property value. The group policy category associated with the definition.
-func (m *GroupPolicyDefinition) GetCategory()(*GroupPolicyCategory) {
+func (m *GroupPolicyDefinition) GetCategory()(GroupPolicyCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +79,7 @@ func (m *GroupPolicyDefinition) GetClassType()(*GroupPolicyDefinitionClassType) 
     }
 }
 // GetDefinitionFile gets the definitionFile property value. The group policy file associated with the definition.
-func (m *GroupPolicyDefinition) GetDefinitionFile()(*GroupPolicyDefinitionFile) {
+func (m *GroupPolicyDefinition) GetDefinitionFile()(GroupPolicyDefinitionFileable) {
     if m == nil {
         return nil
     } else {
@@ -98,104 +102,16 @@ func (m *GroupPolicyDefinition) GetExplainText()(*string) {
         return m.explainText
     }
 }
-// GetGroupPolicyCategoryId gets the groupPolicyCategoryId property value. The category id of the parent category
-func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyCategoryId
-    }
-}
-// GetHasRelatedDefinitions gets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
-func (m *GroupPolicyDefinition) GetHasRelatedDefinitions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasRelatedDefinitions
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetMinDeviceCspVersion gets the minDeviceCspVersion property value. Minimum required CSP version for device configuration in this definition
-func (m *GroupPolicyDefinition) GetMinDeviceCspVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minDeviceCspVersion
-    }
-}
-// GetMinUserCspVersion gets the minUserCspVersion property value. Minimum required CSP version for user configuration in this definition
-func (m *GroupPolicyDefinition) GetMinUserCspVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minUserCspVersion
-    }
-}
-// GetNextVersionDefinition gets the nextVersionDefinition property value. Definition of the next version of this definition
-func (m *GroupPolicyDefinition) GetNextVersionDefinition()(*GroupPolicyDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nextVersionDefinition
-    }
-}
-// GetPolicyType gets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
-func (m *GroupPolicyDefinition) GetPolicyType()(*GroupPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyType
-    }
-}
-// GetPresentations gets the presentations property value. The group policy presentations associated with the definition.
-func (m *GroupPolicyDefinition) GetPresentations()([]GroupPolicyPresentation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.presentations
-    }
-}
-// GetPreviousVersionDefinition gets the previousVersionDefinition property value. Definition of the previous version of this definition
-func (m *GroupPolicyDefinition) GetPreviousVersionDefinition()(*GroupPolicyDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previousVersionDefinition
-    }
-}
-// GetSupportedOn gets the supportedOn property value. Localized string used to specify what operating system or application version is affected by the policy.
-func (m *GroupPolicyDefinition) GetSupportedOn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedOn
-    }
-}
-// GetVersion gets the version property value. Setting definition version
-func (m *GroupPolicyDefinition) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyCategory() })
+        val, err := n.GetObjectValue(CreateGroupPolicyCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*GroupPolicyCategory))
+            m.SetCategory(val.(GroupPolicyCategoryable))
         }
         return nil
     }
@@ -220,12 +136,12 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["definitionFile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinitionFile() })
+        val, err := n.GetObjectValue(CreateGroupPolicyDefinitionFileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefinitionFile(val.(*GroupPolicyDefinitionFile))
+            m.SetDefinitionFile(val.(GroupPolicyDefinitionFileable))
         }
         return nil
     }
@@ -300,12 +216,12 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["nextVersionDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinition() })
+        val, err := n.GetObjectValue(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNextVersionDefinition(val.(*GroupPolicyDefinition))
+            m.SetNextVersionDefinition(val.(GroupPolicyDefinitionable))
         }
         return nil
     }
@@ -320,26 +236,26 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["presentations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyPresentation() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyPresentationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyPresentation, len(val))
+            res := make([]GroupPolicyPresentationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyPresentation))
+                res[i] = v.(GroupPolicyPresentationable)
             }
             m.SetPresentations(res)
         }
         return nil
     }
     res["previousVersionDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinition() })
+        val, err := n.GetObjectValue(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPreviousVersionDefinition(val.(*GroupPolicyDefinition))
+            m.SetPreviousVersionDefinition(val.(GroupPolicyDefinitionable))
         }
         return nil
     }
@@ -364,6 +280,94 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetGroupPolicyCategoryId gets the groupPolicyCategoryId property value. The category id of the parent category
+func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyCategoryId
+    }
+}
+// GetHasRelatedDefinitions gets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
+func (m *GroupPolicyDefinition) GetHasRelatedDefinitions()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasRelatedDefinitions
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetMinDeviceCspVersion gets the minDeviceCspVersion property value. Minimum required CSP version for device configuration in this definition
+func (m *GroupPolicyDefinition) GetMinDeviceCspVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minDeviceCspVersion
+    }
+}
+// GetMinUserCspVersion gets the minUserCspVersion property value. Minimum required CSP version for user configuration in this definition
+func (m *GroupPolicyDefinition) GetMinUserCspVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minUserCspVersion
+    }
+}
+// GetNextVersionDefinition gets the nextVersionDefinition property value. Definition of the next version of this definition
+func (m *GroupPolicyDefinition) GetNextVersionDefinition()(GroupPolicyDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nextVersionDefinition
+    }
+}
+// GetPolicyType gets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+func (m *GroupPolicyDefinition) GetPolicyType()(*GroupPolicyType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyType
+    }
+}
+// GetPresentations gets the presentations property value. The group policy presentations associated with the definition.
+func (m *GroupPolicyDefinition) GetPresentations()([]GroupPolicyPresentationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.presentations
+    }
+}
+// GetPreviousVersionDefinition gets the previousVersionDefinition property value. Definition of the previous version of this definition
+func (m *GroupPolicyDefinition) GetPreviousVersionDefinition()(GroupPolicyDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.previousVersionDefinition
+    }
+}
+// GetSupportedOn gets the supportedOn property value. Localized string used to specify what operating system or application version is affected by the policy.
+func (m *GroupPolicyDefinition) GetSupportedOn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedOn
+    }
+}
+// GetVersion gets the version property value. Setting definition version
+func (m *GroupPolicyDefinition) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *GroupPolicyDefinition) IsNil()(bool) {
     return m == nil
@@ -457,8 +461,7 @@ func (m *GroupPolicyDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetPresentations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPresentations()))
         for i, v := range m.GetPresentations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("presentations", cast)
         if err != nil {
@@ -486,7 +489,7 @@ func (m *GroupPolicyDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     return nil
 }
 // SetCategory sets the category property value. The group policy category associated with the definition.
-func (m *GroupPolicyDefinition) SetCategory(value *GroupPolicyCategory)() {
+func (m *GroupPolicyDefinition) SetCategory(value GroupPolicyCategoryable)() {
     if m != nil {
         m.category = value
     }
@@ -504,7 +507,7 @@ func (m *GroupPolicyDefinition) SetClassType(value *GroupPolicyDefinitionClassTy
     }
 }
 // SetDefinitionFile sets the definitionFile property value. The group policy file associated with the definition.
-func (m *GroupPolicyDefinition) SetDefinitionFile(value *GroupPolicyDefinitionFile)() {
+func (m *GroupPolicyDefinition) SetDefinitionFile(value GroupPolicyDefinitionFileable)() {
     if m != nil {
         m.definitionFile = value
     }
@@ -552,7 +555,7 @@ func (m *GroupPolicyDefinition) SetMinUserCspVersion(value *string)() {
     }
 }
 // SetNextVersionDefinition sets the nextVersionDefinition property value. Definition of the next version of this definition
-func (m *GroupPolicyDefinition) SetNextVersionDefinition(value *GroupPolicyDefinition)() {
+func (m *GroupPolicyDefinition) SetNextVersionDefinition(value GroupPolicyDefinitionable)() {
     if m != nil {
         m.nextVersionDefinition = value
     }
@@ -564,13 +567,13 @@ func (m *GroupPolicyDefinition) SetPolicyType(value *GroupPolicyType)() {
     }
 }
 // SetPresentations sets the presentations property value. The group policy presentations associated with the definition.
-func (m *GroupPolicyDefinition) SetPresentations(value []GroupPolicyPresentation)() {
+func (m *GroupPolicyDefinition) SetPresentations(value []GroupPolicyPresentationable)() {
     if m != nil {
         m.presentations = value
     }
 }
 // SetPreviousVersionDefinition sets the previousVersionDefinition property value. Definition of the previous version of this definition
-func (m *GroupPolicyDefinition) SetPreviousVersionDefinition(value *GroupPolicyDefinition)() {
+func (m *GroupPolicyDefinition) SetPreviousVersionDefinition(value GroupPolicyDefinitionable)() {
     if m != nil {
         m.previousVersionDefinition = value
     }

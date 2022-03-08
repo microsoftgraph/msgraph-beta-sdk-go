@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcRestorePointSetting 
+// CloudPcRestorePointSetting provides operations to manage the deviceManagement singleton.
 type CloudPcRestorePointSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCloudPcRestorePointSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcRestorePointSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcRestorePointSetting(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFrequencyInHours gets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
-func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.frequencyInHours
-    }
-}
-// GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
-func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRestoreEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetFrequencyInHours gets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
+func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.frequencyInHours
+    }
+}
+// GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
+func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRestoreEnabled
+    }
 }
 func (m *CloudPcRestorePointSetting) IsNil()(bool) {
     return m == nil

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// PostponeRequestBuilder builds and executes requests for operations under \directory\recommendations\{recommendation-id}\microsoft.graph.postpone
+// PostponeRequestBuilder provides operations to call the postpone method.
 type PostponeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PostponeRequestBuilder struct {
 // PostponeRequestBuilderPostOptions options for Post
 type PostponeRequestBuilderPostOptions struct {
     // 
-    Body *PostponeRequestBody;
+    Body PostponeRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type PostponeResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type recommendation
-    recommendation *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendation;
+    recommendation i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendationable;
 }
 // NewPostponeResponse instantiates a new postponeResponse and sets the default values.
 func NewPostponeResponse()(*PostponeResponse) {
@@ -39,6 +39,9 @@ func NewPostponeResponse()(*PostponeResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreatePostponeResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPostponeResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostponeResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *PostponeResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *PostponeResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["recommendation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateRecommendationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecommendation(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendationable))
+        }
+        return nil
+    }
+    return res
+}
 // GetRecommendation gets the recommendation property value. Union type representation for type recommendation
-func (m *PostponeResponse) GetRecommendation()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendation) {
+func (m *PostponeResponse) GetRecommendation()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendationable) {
     if m == nil {
         return nil
     } else {
         return m.recommendation
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *PostponeResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["recommendation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRecommendation() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecommendation(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendation))
-        }
-        return nil
-    }
-    return res
 }
 func (m *PostponeResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *PostponeResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetRecommendation sets the recommendation property value. Union type representation for type recommendation
-func (m *PostponeResponse) SetRecommendation(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendation)() {
+func (m *PostponeResponse) SetRecommendation(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recommendationable)() {
     if m != nil {
         m.recommendation = value
     }
@@ -111,7 +114,7 @@ func NewPostponeRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *PostponeRequestBuilder) CreatePostRequestInformation(options *PostponeR
     return requestInfo, nil
 }
 // Post invoke action postpone
-func (m *PostponeRequestBuilder) Post(options *PostponeRequestBuilderPostOptions)(*PostponeResponse, error) {
+func (m *PostponeRequestBuilder) Post(options *PostponeRequestBuilderPostOptions)(PostponeResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPostponeResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreatePostponeResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*PostponeResponse), nil
+    return res.(PostponeResponseable), nil
 }

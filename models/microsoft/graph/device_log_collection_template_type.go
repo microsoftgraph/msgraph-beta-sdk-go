@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the createDeviceLogCollectionRequest method.
 type DeviceLogCollectionTemplateType int
 
 const (

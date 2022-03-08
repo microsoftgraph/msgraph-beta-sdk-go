@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetStateRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()
+// GetStateRequestBuilder provides operations to call the getState method.
 type GetStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type GetStateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type assignmentFilterState
-    assignmentFilterState *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState;
+    assignmentFilterState i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStateable;
 }
 // NewGetStateResponse instantiates a new getStateResponse and sets the default values.
 func NewGetStateResponse()(*GetStateResponse) {
@@ -37,6 +37,9 @@ func NewGetStateResponse()(*GetStateResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetStateResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetStateResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetStateResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *GetStateResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAssignmentFilterState gets the assignmentFilterState property value. Union type representation for type assignmentFilterState
-func (m *GetStateResponse) GetAssignmentFilterState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState) {
+func (m *GetStateResponse) GetAssignmentFilterState()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStateable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *GetStateResponse) GetAssignmentFilterState()(*i535684e11b5500196ecb4b5c
 func (m *GetStateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentFilterState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAssignmentFilterState() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAssignmentFilterStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignmentFilterState(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState))
+            m.SetAssignmentFilterState(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStateable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *GetStateResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAssignmentFilterState sets the assignmentFilterState property value. Union type representation for type assignmentFilterState
-func (m *GetStateResponse) SetAssignmentFilterState(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState)() {
+func (m *GetStateResponse) SetAssignmentFilterState(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStateable)() {
     if m != nil {
         m.assignmentFilterState = value
     }
@@ -109,7 +112,7 @@ func NewGetStateRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *GetStateRequestBuilder) CreateGetRequestInformation(options *GetStateRe
     return requestInfo, nil
 }
 // Get invoke function getState
-func (m *GetStateRequestBuilder) Get(options *GetStateRequestBuilderGetOptions)(*GetStateResponse, error) {
+func (m *GetStateRequestBuilder) Get(options *GetStateRequestBuilderGetOptions)(GetStateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetStateResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetStateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetStateResponse), nil
+    return res.(GetStateResponseable), nil
 }

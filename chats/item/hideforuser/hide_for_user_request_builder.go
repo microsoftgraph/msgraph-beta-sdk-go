@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// HideForUserRequestBuilder builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.hideForUser
+// HideForUserRequestBuilder provides operations to call the hideForUser method.
 type HideForUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type HideForUserRequestBuilder struct {
 // HideForUserRequestBuilderPostOptions options for Post
 type HideForUserRequestBuilderPostOptions struct {
     // 
-    Body *HideForUserRequestBody;
+    Body HideForUserRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewHideForUserRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *HideForUserRequestBuilder) Post(options *HideForUserRequestBuilderPostO
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

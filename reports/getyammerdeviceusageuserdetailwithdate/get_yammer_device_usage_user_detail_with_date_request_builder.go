@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetYammerDeviceUsageUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getYammerDeviceUsageUserDetail(date={date})
+// GetYammerDeviceUsageUserDetailWithDateRequestBuilder provides operations to call the getYammerDeviceUsageUserDetail method.
 type GetYammerDeviceUsageUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ func NewGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(pathParamet
     if date != nil {
         urlTplParams["date"] = (*date).String()
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,14 +63,14 @@ func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) CreateGetRequestI
     return requestInfo, nil
 }
 // Get invoke function getYammerDeviceUsageUserDetail
-func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) Get(options *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetOptions)([]byte, error) {
+func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) Get(options *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetOptions)(GetYammerDeviceUsageUserDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetYammerDeviceUsageUserDetailWithDateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetYammerDeviceUsageUserDetailWithDateResponseable), nil
 }

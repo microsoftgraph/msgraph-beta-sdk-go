@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserAccount 
+// UserAccount provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
 type UserAccount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,6 +29,10 @@ func NewUserAccount()(*UserAccount) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserAccountFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserAccount(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -43,46 +47,6 @@ func (m *UserAccount) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. 
-func (m *UserAccount) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *UserAccount) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetService gets the service property value. 
-func (m *UserAccount) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
-}
-// GetSigninName gets the signinName property value. 
-func (m *UserAccount) GetSigninName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signinName
-    }
-}
-// GetStatus gets the status property value. 
-func (m *UserAccount) GetStatus()(*AccountStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,6 +113,46 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. 
+func (m *UserAccount) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSeenDateTime
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *UserAccount) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetService gets the service property value. 
+func (m *UserAccount) GetService()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.service
+    }
+}
+// GetSigninName gets the signinName property value. 
+func (m *UserAccount) GetSigninName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signinName
+    }
+}
+// GetStatus gets the status property value. 
+func (m *UserAccount) GetStatus()(*AccountStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *UserAccount) IsNil()(bool) {
     return m == nil

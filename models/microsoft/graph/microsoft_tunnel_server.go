@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelServer 
+// MicrosoftTunnelServer provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelServer struct {
     Entity
     // The digest of the current agent image running on this server
@@ -26,6 +26,10 @@ func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {
     }
     return m
 }
+// CreateMicrosoftTunnelServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMicrosoftTunnelServerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMicrosoftTunnelServer(), nil
+}
 // GetAgentImageDigest gets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastCheckinDateTime gets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
-func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckinDateTime
-    }
-}
-// GetServerImageDigest gets the serverImageDigest property value. The digest of the current server image running on this server
-func (m *MicrosoftTunnelServer) GetServerImageDigest()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverImageDigest
-    }
-}
-// GetTunnelServerHealthStatus gets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
-func (m *MicrosoftTunnelServer) GetTunnelServerHealthStatus()(*MicrosoftTunnelServerHealthStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tunnelServerHealthStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +100,30 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetLastCheckinDateTime gets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
+func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastCheckinDateTime
+    }
+}
+// GetServerImageDigest gets the serverImageDigest property value. The digest of the current server image running on this server
+func (m *MicrosoftTunnelServer) GetServerImageDigest()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serverImageDigest
+    }
+}
+// GetTunnelServerHealthStatus gets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+func (m *MicrosoftTunnelServer) GetTunnelServerHealthStatus()(*MicrosoftTunnelServerHealthStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tunnelServerHealthStatus
+    }
 }
 func (m *MicrosoftTunnelServer) IsNil()(bool) {
     return m == nil

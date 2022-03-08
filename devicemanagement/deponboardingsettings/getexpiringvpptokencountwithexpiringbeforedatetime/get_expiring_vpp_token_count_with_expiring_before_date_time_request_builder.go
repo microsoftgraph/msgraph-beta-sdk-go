@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')
+// GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder provides operations to call the getExpiringVppTokenCount method.
 type GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal
     if expiringBeforeDateTime != nil {
         urlTplParams["expiringBeforeDateTime"] = *expiringBeforeDateTime
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Creat
     return requestInfo, nil
 }
 // Get invoke function getExpiringVppTokenCount
-func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Get(options *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions)(*int32, error) {
+func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Get(options *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions)(GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int32", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*int32), nil
+    return res.(GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable), nil
 }

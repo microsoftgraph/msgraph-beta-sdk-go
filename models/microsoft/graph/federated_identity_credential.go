@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FederatedIdentityCredential 
+// FederatedIdentityCredential provides operations to call the instantiate method.
 type FederatedIdentityCredential struct {
     Entity
     // Lists the audiences that can appear in the external token. This field is mandatory, and defaults to 'api://AzureADTokenExchange'. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.
@@ -25,6 +25,10 @@ func NewFederatedIdentityCredential()(*FederatedIdentityCredential) {
     }
     return m
 }
+// CreateFederatedIdentityCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFederatedIdentityCredentialFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFederatedIdentityCredential(), nil
+}
 // GetAudiences gets the audiences property value. Lists the audiences that can appear in the external token. This field is mandatory, and defaults to 'api://AzureADTokenExchange'. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.
 func (m *FederatedIdentityCredential) GetAudiences()([]string) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *FederatedIdentityCredential) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetIssuer gets the issuer property value. The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
-func (m *FederatedIdentityCredential) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
-}
-// GetName gets the name property value. is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-func (m *FederatedIdentityCredential) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetSubject gets the subject property value. Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).
-func (m *FederatedIdentityCredential) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -123,6 +103,30 @@ func (m *FederatedIdentityCredential) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetIssuer gets the issuer property value. The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
+func (m *FederatedIdentityCredential) GetIssuer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuer
+    }
+}
+// GetName gets the name property value. is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
+func (m *FederatedIdentityCredential) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetSubject gets the subject property value. Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).
+func (m *FederatedIdentityCredential) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
 }
 func (m *FederatedIdentityCredential) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CertificateConnectorDetails 
+// CertificateConnectorDetails provides operations to manage the deviceManagement singleton.
 type CertificateConnectorDetails struct {
     Entity
     // Connector name (set during enrollment).
@@ -24,6 +24,10 @@ func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {
     }
     return m
 }
+// CreateCertificateConnectorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCertificateConnectorDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCertificateConnectorDetails(), nil
+}
 // GetConnectorName gets the connectorName property value. Connector name (set during enrollment).
 func (m *CertificateConnectorDetails) GetConnectorName()(*string) {
     if m == nil {
@@ -38,22 +42,6 @@ func (m *CertificateConnectorDetails) GetEnrollmentDateTime()(*i336074805fc85398
         return nil
     } else {
         return m.enrollmentDateTime
-    }
-}
-// GetLastCheckinDateTime gets the lastCheckinDateTime property value. Date/time when this connector last connected to the service.
-func (m *CertificateConnectorDetails) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckinDateTime
-    }
-}
-// GetMachineName gets the machineName property value. Name of the machine hosting this connector service.
-func (m *CertificateConnectorDetails) GetMachineName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.machineName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +88,22 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetLastCheckinDateTime gets the lastCheckinDateTime property value. Date/time when this connector last connected to the service.
+func (m *CertificateConnectorDetails) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastCheckinDateTime
+    }
+}
+// GetMachineName gets the machineName property value. Name of the machine hosting this connector service.
+func (m *CertificateConnectorDetails) GetMachineName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.machineName
+    }
 }
 func (m *CertificateConnectorDetails) IsNil()(bool) {
     return m == nil

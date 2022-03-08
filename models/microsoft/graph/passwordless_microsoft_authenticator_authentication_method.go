@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PasswordlessMicrosoftAuthenticatorAuthenticationMethod 
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethod provides operations to manage the compliance singleton.
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
     // 
@@ -13,7 +13,7 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     // The timestamp when this method was registered to the user.
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    device *Device;
+    device Deviceable;
     // The display name of the mobile device as given by the user.
     displayName *string;
 }
@@ -23,6 +23,10 @@ func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMi
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
     return m
+}
+// CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -41,7 +45,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreationDate
     }
 }
 // GetDevice gets the device property value. 
-func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDevice()(*Device) {
+func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDevice()(Deviceable) {
     if m == nil {
         return nil
     } else {
@@ -80,12 +84,12 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeseria
         return nil
     }
     res["device"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDevice() })
+        val, err := n.GetObjectValue(CreateDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDevice(val.(*Device))
+            m.SetDevice(val.(Deviceable))
         }
         return nil
     }
@@ -149,7 +153,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetCreationDate
     }
 }
 // SetDevice sets the device property value. 
-func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDevice(value *Device)() {
+func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDevice(value Deviceable)() {
     if m != nil {
         m.device = value
     }

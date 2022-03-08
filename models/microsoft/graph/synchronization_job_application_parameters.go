@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationJobApplicationParameters 
+// SynchronizationJobApplicationParameters provides operations to call the provisionOnDemand method.
 type SynchronizationJobApplicationParameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The identifier of a the synchronizationRule to be applied.
     ruleId *string;
     // The identifiers of one or more objects to which a synchronizationJob is to be applied.
-    subjects []SynchronizationJobSubject;
+    subjects []SynchronizationJobSubjectable;
 }
 // NewSynchronizationJobApplicationParameters instantiates a new synchronizationJobApplicationParameters and sets the default values.
 func NewSynchronizationJobApplicationParameters()(*SynchronizationJobApplicationParameters) {
@@ -20,28 +20,16 @@ func NewSynchronizationJobApplicationParameters()(*SynchronizationJobApplication
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSynchronizationJobApplicationParametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationJobApplicationParametersFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationJobApplicationParameters(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobApplicationParameters) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRuleId gets the ruleId property value. The identifier of a the synchronizationRule to be applied.
-func (m *SynchronizationJobApplicationParameters) GetRuleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleId
-    }
-}
-// GetSubjects gets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.
-func (m *SynchronizationJobApplicationParameters) GetSubjects()([]SynchronizationJobSubject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjects
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -58,20 +46,36 @@ func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[st
         return nil
     }
     res["subjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationJobSubject() })
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationJobSubjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SynchronizationJobSubject, len(val))
+            res := make([]SynchronizationJobSubjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SynchronizationJobSubject))
+                res[i] = v.(SynchronizationJobSubjectable)
             }
             m.SetSubjects(res)
         }
         return nil
     }
     return res
+}
+// GetRuleId gets the ruleId property value. The identifier of a the synchronizationRule to be applied.
+func (m *SynchronizationJobApplicationParameters) GetRuleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleId
+    }
+}
+// GetSubjects gets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.
+func (m *SynchronizationJobApplicationParameters) GetSubjects()([]SynchronizationJobSubjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjects
+    }
 }
 func (m *SynchronizationJobApplicationParameters) IsNil()(bool) {
     return m == nil
@@ -87,8 +91,7 @@ func (m *SynchronizationJobApplicationParameters) Serialize(writer i04eb5309aeaa
     if m.GetSubjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubjects()))
         for i, v := range m.GetSubjects() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("subjects", cast)
         if err != nil {
@@ -116,7 +119,7 @@ func (m *SynchronizationJobApplicationParameters) SetRuleId(value *string)() {
     }
 }
 // SetSubjects sets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.
-func (m *SynchronizationJobApplicationParameters) SetSubjects(value []SynchronizationJobSubject)() {
+func (m *SynchronizationJobApplicationParameters) SetSubjects(value []SynchronizationJobSubjectable)() {
     if m != nil {
         m.subjects = value
     }

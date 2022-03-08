@@ -5,14 +5,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcOnPremisesConnectionStatusDetails 
+// CloudPcOnPremisesConnectionStatusDetails provides operations to manage the deviceManagement singleton.
 type CloudPcOnPremisesConnectionStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // All checks that are done on the connection.
-    healthChecks []CloudPcOnPremisesConnectionHealthCheck;
+    healthChecks []CloudPcOnPremisesConnectionHealthCheckable;
     // The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -22,6 +22,10 @@ func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionS
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcOnPremisesConnectionStatusDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetAdditionalData()(map[string]interface{}) {
@@ -39,22 +43,6 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetEndDateTime()(*i336074805f
         return m.endDateTime
     }
 }
-// GetHealthChecks gets the healthChecks property value. All checks that are done on the connection.
-func (m *CloudPcOnPremisesConnectionStatusDetails) GetHealthChecks()([]CloudPcOnPremisesConnectionHealthCheck) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthChecks
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *CloudPcOnPremisesConnectionStatusDetails) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -69,14 +57,14 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
         return nil
     }
     res["healthChecks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcOnPremisesConnectionHealthCheck() })
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CloudPcOnPremisesConnectionHealthCheck, len(val))
+            res := make([]CloudPcOnPremisesConnectionHealthCheckable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CloudPcOnPremisesConnectionHealthCheck))
+                res[i] = v.(CloudPcOnPremisesConnectionHealthCheckable)
             }
             m.SetHealthChecks(res)
         }
@@ -94,6 +82,22 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
     }
     return res
 }
+// GetHealthChecks gets the healthChecks property value. All checks that are done on the connection.
+func (m *CloudPcOnPremisesConnectionStatusDetails) GetHealthChecks()([]CloudPcOnPremisesConnectionHealthCheckable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthChecks
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *CloudPcOnPremisesConnectionStatusDetails) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
 func (m *CloudPcOnPremisesConnectionStatusDetails) IsNil()(bool) {
     return m == nil
 }
@@ -108,8 +112,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) Serialize(writer i04eb5309aea
     if m.GetHealthChecks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHealthChecks()))
         for i, v := range m.GetHealthChecks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("healthChecks", cast)
         if err != nil {
@@ -143,7 +146,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) SetEndDateTime(value *i336074
     }
 }
 // SetHealthChecks sets the healthChecks property value. All checks that are done on the connection.
-func (m *CloudPcOnPremisesConnectionStatusDetails) SetHealthChecks(value []CloudPcOnPremisesConnectionHealthCheck)() {
+func (m *CloudPcOnPremisesConnectionStatusDetails) SetHealthChecks(value []CloudPcOnPremisesConnectionHealthCheckable)() {
     if m != nil {
         m.healthChecks = value
     }

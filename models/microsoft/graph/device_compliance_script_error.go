@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScriptError 
+// DeviceComplianceScriptError provides operations to call the validateComplianceScript method.
 type DeviceComplianceScriptError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewDeviceComplianceScriptError()(*DeviceComplianceScriptError) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceComplianceScriptErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceScriptErrorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceScriptError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptError) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *DeviceComplianceScriptError) GetDeviceComplianceScriptRulesValidationEr
         return nil
     } else {
         return m.deviceComplianceScriptRulesValidationError
-    }
-}
-// GetMessage gets the message property value. Error message.
-func (m *DeviceComplianceScriptError) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. Error message.
+func (m *DeviceComplianceScriptError) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
 }
 func (m *DeviceComplianceScriptError) IsNil()(bool) {
     return m == nil

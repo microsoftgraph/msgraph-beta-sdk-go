@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityAction 
+// SecurityAction provides operations to manage the securityActions property of the microsoft.graph.security entity.
 type SecurityAction struct {
     Entity
     // Reason for invoking this action.
@@ -21,21 +21,21 @@ type SecurityAction struct {
     // Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Error info when the action fails.
-    errorInfo *ResultInfo;
+    errorInfo ResultInfoable;
     // Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Action name.
     name *string;
     // Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
-    parameters []KeyValuePair;
+    parameters []KeyValuePairable;
     // Collection of securityActionState to keep the history of an action.
-    states []SecurityActionState;
+    states []SecurityActionStateable;
     // Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
     status *OperationStatus;
     // The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
     user *string;
     // Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewSecurityAction instantiates a new securityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
@@ -43,6 +43,10 @@ func NewSecurityAction()(*SecurityAction) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSecurityActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityAction(), nil
 }
 // GetActionReason gets the actionReason property value. Reason for invoking this action.
 func (m *SecurityAction) GetActionReason()(*string) {
@@ -93,67 +97,11 @@ func (m *SecurityAction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
 }
 // GetErrorInfo gets the errorInfo property value. Error info when the action fails.
-func (m *SecurityAction) GetErrorInfo()(*ResultInfo) {
+func (m *SecurityAction) GetErrorInfo()(ResultInfoable) {
     if m == nil {
         return nil
     } else {
         return m.errorInfo
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *SecurityAction) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetName gets the name property value. Action name.
-func (m *SecurityAction) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParameters gets the parameters property value. Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
-func (m *SecurityAction) GetParameters()([]KeyValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parameters
-    }
-}
-// GetStates gets the states property value. Collection of securityActionState to keep the history of an action.
-func (m *SecurityAction) GetStates()([]SecurityActionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.states
-    }
-}
-// GetStatus gets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
-func (m *SecurityAction) GetStatus()(*OperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUser gets the user property value. The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
-func (m *SecurityAction) GetUser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
-func (m *SecurityAction) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,12 +168,12 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["errorInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResultInfo() })
+        val, err := n.GetObjectValue(CreateResultInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetErrorInfo(val.(*ResultInfo))
+            m.SetErrorInfo(val.(ResultInfoable))
         }
         return nil
     }
@@ -250,28 +198,28 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["parameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetParameters(res)
         }
         return nil
     }
     res["states"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityActionState() })
+        val, err := n.GetCollectionOfObjectValues(CreateSecurityActionStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SecurityActionState, len(val))
+            res := make([]SecurityActionStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SecurityActionState))
+                res[i] = v.(SecurityActionStateable)
             }
             m.SetStates(res)
         }
@@ -298,16 +246,72 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *SecurityAction) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetName gets the name property value. Action name.
+func (m *SecurityAction) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParameters gets the parameters property value. Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
+func (m *SecurityAction) GetParameters()([]KeyValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parameters
+    }
+}
+// GetStates gets the states property value. Collection of securityActionState to keep the history of an action.
+func (m *SecurityAction) GetStates()([]SecurityActionStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.states
+    }
+}
+// GetStatus gets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
+func (m *SecurityAction) GetStatus()(*OperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUser gets the user property value. The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
+func (m *SecurityAction) GetUser()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.user
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
+func (m *SecurityAction) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *SecurityAction) IsNil()(bool) {
     return m == nil
@@ -375,8 +379,7 @@ func (m *SecurityAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetParameters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("parameters", cast)
         if err != nil {
@@ -386,8 +389,7 @@ func (m *SecurityAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStates()))
         for i, v := range m.GetStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("states", cast)
         if err != nil {
@@ -452,7 +454,7 @@ func (m *SecurityAction) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad
     }
 }
 // SetErrorInfo sets the errorInfo property value. Error info when the action fails.
-func (m *SecurityAction) SetErrorInfo(value *ResultInfo)() {
+func (m *SecurityAction) SetErrorInfo(value ResultInfoable)() {
     if m != nil {
         m.errorInfo = value
     }
@@ -470,13 +472,13 @@ func (m *SecurityAction) SetName(value *string)() {
     }
 }
 // SetParameters sets the parameters property value. Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
-func (m *SecurityAction) SetParameters(value []KeyValuePair)() {
+func (m *SecurityAction) SetParameters(value []KeyValuePairable)() {
     if m != nil {
         m.parameters = value
     }
 }
 // SetStates sets the states property value. Collection of securityActionState to keep the history of an action.
-func (m *SecurityAction) SetStates(value []SecurityActionState)() {
+func (m *SecurityAction) SetStates(value []SecurityActionStateable)() {
     if m != nil {
         m.states = value
     }
@@ -494,7 +496,7 @@ func (m *SecurityAction) SetUser(value *string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
-func (m *SecurityAction) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *SecurityAction) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

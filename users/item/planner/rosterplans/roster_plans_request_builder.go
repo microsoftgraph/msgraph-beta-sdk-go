@@ -2,11 +2,11 @@ package rosterplans
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    iff341cba6eb4f1189a82ef2fb43fa6aa0ea1cfddf91b6c9e42419a2b80985015 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/rosterplans/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/planner/rosterplans/count"
 )
 
-// RosterPlansRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\rosterPlans
+// RosterPlansRequestBuilder provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 type RosterPlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewRosterPlansRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewRosterPlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRosterPlansRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RosterPlansRequestBuilder) Count()(*ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d.CountRequestBuilder) {
+    return ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *RosterPlansRequestBuilder) CreateGetRequestInformation(options *RosterPlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *RosterPlansRequestBuilder) CreateGetRequestInformation(options *RosterP
     return requestInfo, nil
 }
 // Get read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
-func (m *RosterPlansRequestBuilder) Get(options *RosterPlansRequestBuilderGetOptions)(*RosterPlansResponse, error) {
+func (m *RosterPlansRequestBuilder) Get(options *RosterPlansRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRosterPlansResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePlannerPlanCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RosterPlansResponse), nil
-}
-func (m *RosterPlansRequestBuilder) Ref()(*iff341cba6eb4f1189a82ef2fb43fa6aa0ea1cfddf91b6c9e42419a2b80985015.RefRequestBuilder) {
-    return iff341cba6eb4f1189a82ef2fb43fa6aa0ea1cfddf91b6c9e42419a2b80985015.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlanCollectionResponseable), nil
 }

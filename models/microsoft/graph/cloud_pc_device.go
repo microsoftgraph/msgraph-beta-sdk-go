@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcDevice 
+// CloudPcDevice provides operations to manage the tenantRelationship singleton.
 type CloudPcDevice struct {
     Entity
     // The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
@@ -36,6 +36,10 @@ func NewCloudPcDevice()(*CloudPcDevice) {
     }
     return m
 }
+// CreateCloudPcDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcDeviceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcDevice(), nil
+}
 // GetCloudPcStatus gets the cloudPcStatus property value. The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
 func (m *CloudPcDevice) GetCloudPcStatus()(*string) {
     if m == nil {
@@ -50,70 +54,6 @@ func (m *CloudPcDevice) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
-func (m *CloudPcDevice) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. The managed device identifier for the cloud PC. Optional. Read-only.
-func (m *CloudPcDevice) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetManagedDeviceName gets the managedDeviceName property value. The managed device display name for the cloud PC. Optional. Read-only.
-func (m *CloudPcDevice) GetManagedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceName
-    }
-}
-// GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy identifier for the cloud PC. Required. Read-only.
-func (m *CloudPcDevice) GetProvisioningPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningPolicyId
-    }
-}
-// GetServicePlanName gets the servicePlanName property value. The service plan name for the cloud PC. Required. Read-only.
-func (m *CloudPcDevice) GetServicePlanName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanName
-    }
-}
-// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
-func (m *CloudPcDevice) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-func (m *CloudPcDevice) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.
-func (m *CloudPcDevice) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +160,70 @@ func (m *CloudPcDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
+func (m *CloudPcDevice) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
+    }
+}
+// GetManagedDeviceId gets the managedDeviceId property value. The managed device identifier for the cloud PC. Optional. Read-only.
+func (m *CloudPcDevice) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetManagedDeviceName gets the managedDeviceName property value. The managed device display name for the cloud PC. Optional. Read-only.
+func (m *CloudPcDevice) GetManagedDeviceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceName
+    }
+}
+// GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy identifier for the cloud PC. Required. Read-only.
+func (m *CloudPcDevice) GetProvisioningPolicyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisioningPolicyId
+    }
+}
+// GetServicePlanName gets the servicePlanName property value. The service plan name for the cloud PC. Required. Read-only.
+func (m *CloudPcDevice) GetServicePlanName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePlanName
+    }
+}
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
+func (m *CloudPcDevice) GetTenantDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantDisplayName
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+func (m *CloudPcDevice) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.
+func (m *CloudPcDevice) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *CloudPcDevice) IsNil()(bool) {
     return m == nil

@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleAssignmentMultiple 
+// UnifiedRoleAssignmentMultiple provides operations to manage the roleManagement singleton.
 type UnifiedRoleAssignmentMultiple struct {
     Entity
     // Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
     appScopeIds []string;
     // Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-    appScopes []AppScope;
+    appScopes []AppScopeable;
     // 
     condition *string;
     // Description of the role assignment.
@@ -18,15 +18,15 @@ type UnifiedRoleAssignmentMultiple struct {
     // Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
     directoryScopeIds []string;
     // Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-    directoryScopes []DirectoryObject;
+    directoryScopes []DirectoryObjectable;
     // Name of the role assignment. Required.
     displayName *string;
     // Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
     principalIds []string;
     // Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-    principals []DirectoryObject;
+    principals []DirectoryObjectable;
     // Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
-    roleDefinition *UnifiedRoleDefinition;
+    roleDefinition UnifiedRoleDefinitionable;
     // Identifier of the unifiedRoleDefinition the assignment is for.
     roleDefinitionId *string;
 }
@@ -37,6 +37,10 @@ func NewUnifiedRoleAssignmentMultiple()(*UnifiedRoleAssignmentMultiple) {
     }
     return m
 }
+// CreateUnifiedRoleAssignmentMultipleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleAssignmentMultipleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleAssignmentMultiple(), nil
+}
 // GetAppScopeIds gets the appScopeIds property value. Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) GetAppScopeIds()([]string) {
     if m == nil {
@@ -46,7 +50,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetAppScopeIds()([]string) {
     }
 }
 // GetAppScopes gets the appScopes property value. Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-func (m *UnifiedRoleAssignmentMultiple) GetAppScopes()([]AppScope) {
+func (m *UnifiedRoleAssignmentMultiple) GetAppScopes()([]AppScopeable) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +82,7 @@ func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopeIds()([]string) {
     }
 }
 // GetDirectoryScopes gets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopes()([]DirectoryObject) {
+func (m *UnifiedRoleAssignmentMultiple) GetDirectoryScopes()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -91,38 +95,6 @@ func (m *UnifiedRoleAssignmentMultiple) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetPrincipalIds gets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
-func (m *UnifiedRoleAssignmentMultiple) GetPrincipalIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalIds
-    }
-}
-// GetPrincipals gets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-func (m *UnifiedRoleAssignmentMultiple) GetPrincipals()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principals
-    }
-}
-// GetRoleDefinition gets the roleDefinition property value. Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
-func (m *UnifiedRoleAssignmentMultiple) GetRoleDefinition()(*UnifiedRoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinition
-    }
-}
-// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for.
-func (m *UnifiedRoleAssignmentMultiple) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -143,14 +115,14 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["appScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppScope, len(val))
+            res := make([]AppScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppScope))
+                res[i] = v.(AppScopeable)
             }
             m.SetAppScopes(res)
         }
@@ -191,14 +163,14 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["directoryScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetDirectoryScopes(res)
         }
@@ -229,26 +201,26 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["principals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetPrincipals(res)
         }
         return nil
     }
     res["roleDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleDefinition() })
+        val, err := n.GetObjectValue(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleDefinition(val.(*UnifiedRoleDefinition))
+            m.SetRoleDefinition(val.(UnifiedRoleDefinitionable))
         }
         return nil
     }
@@ -263,6 +235,38 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetPrincipalIds gets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
+func (m *UnifiedRoleAssignmentMultiple) GetPrincipalIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalIds
+    }
+}
+// GetPrincipals gets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+func (m *UnifiedRoleAssignmentMultiple) GetPrincipals()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principals
+    }
+}
+// GetRoleDefinition gets the roleDefinition property value. Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
+func (m *UnifiedRoleAssignmentMultiple) GetRoleDefinition()(UnifiedRoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinition
+    }
+}
+// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for.
+func (m *UnifiedRoleAssignmentMultiple) GetRoleDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitionId
+    }
 }
 func (m *UnifiedRoleAssignmentMultiple) IsNil()(bool) {
     return m == nil
@@ -282,8 +286,7 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetAppScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppScopes()))
         for i, v := range m.GetAppScopes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appScopes", cast)
         if err != nil {
@@ -311,8 +314,7 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetDirectoryScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectoryScopes()))
         for i, v := range m.GetDirectoryScopes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("directoryScopes", cast)
         if err != nil {
@@ -334,8 +336,7 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetPrincipals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrincipals()))
         for i, v := range m.GetPrincipals() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("principals", cast)
         if err != nil {
@@ -363,7 +364,7 @@ func (m *UnifiedRoleAssignmentMultiple) SetAppScopeIds(value []string)() {
     }
 }
 // SetAppScopes sets the appScopes property value. Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-func (m *UnifiedRoleAssignmentMultiple) SetAppScopes(value []AppScope)() {
+func (m *UnifiedRoleAssignmentMultiple) SetAppScopes(value []AppScopeable)() {
     if m != nil {
         m.appScopes = value
     }
@@ -387,7 +388,7 @@ func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopeIds(value []string)() {
     }
 }
 // SetDirectoryScopes sets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopes(value []DirectoryObject)() {
+func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopes(value []DirectoryObjectable)() {
     if m != nil {
         m.directoryScopes = value
     }
@@ -405,13 +406,13 @@ func (m *UnifiedRoleAssignmentMultiple) SetPrincipalIds(value []string)() {
     }
 }
 // SetPrincipals sets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-func (m *UnifiedRoleAssignmentMultiple) SetPrincipals(value []DirectoryObject)() {
+func (m *UnifiedRoleAssignmentMultiple) SetPrincipals(value []DirectoryObjectable)() {
     if m != nil {
         m.principals = value
     }
 }
 // SetRoleDefinition sets the roleDefinition property value. Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
-func (m *UnifiedRoleAssignmentMultiple) SetRoleDefinition(value *UnifiedRoleDefinition)() {
+func (m *UnifiedRoleAssignmentMultiple) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
     if m != nil {
         m.roleDefinition = value
     }

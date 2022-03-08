@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementTroubleshootingErrorDetails 
+// DeviceManagementTroubleshootingErrorDetails provides operations to manage the compliance singleton.
 type DeviceManagementTroubleshootingErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,7 +17,7 @@ type DeviceManagementTroubleshootingErrorDetails struct {
     // The detailed description of how to remediate this issue.
     remediation *string;
     // Links to helpful documentation about this failure.
-    resources []DeviceManagementTroubleshootingErrorResource;
+    resources []DeviceManagementTroubleshootingErrorResourceable;
 }
 // NewDeviceManagementTroubleshootingErrorDetails instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
 func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroubleshootingErrorDetails) {
@@ -25,6 +25,10 @@ func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroublesh
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementTroubleshootingErrorDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[string]interface{}) {
@@ -56,22 +60,6 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*strin
         return nil
     } else {
         return m.failureDetails
-    }
-}
-// GetRemediation gets the remediation property value. The detailed description of how to remediate this issue.
-func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediation
-    }
-}
-// GetResources gets the resources property value. Links to helpful documentation about this failure.
-func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceManagementTroubleshootingErrorResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -118,20 +106,36 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementTroubleshootingErrorResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementTroubleshootingErrorResource, len(val))
+            res := make([]DeviceManagementTroubleshootingErrorResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementTroubleshootingErrorResource))
+                res[i] = v.(DeviceManagementTroubleshootingErrorResourceable)
             }
             m.SetResources(res)
         }
         return nil
     }
     return res
+}
+// GetRemediation gets the remediation property value. The detailed description of how to remediate this issue.
+func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediation
+    }
+}
+// GetResources gets the resources property value. Links to helpful documentation about this failure.
+func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceManagementTroubleshootingErrorResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resources
+    }
 }
 func (m *DeviceManagementTroubleshootingErrorDetails) IsNil()(bool) {
     return m == nil
@@ -165,8 +169,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i04eb5309
     if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -212,7 +215,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) SetRemediation(value *stri
     }
 }
 // SetResources sets the resources property value. Links to helpful documentation about this failure.
-func (m *DeviceManagementTroubleshootingErrorDetails) SetResources(value []DeviceManagementTroubleshootingErrorResource)() {
+func (m *DeviceManagementTroubleshootingErrorDetails) SetResources(value []DeviceManagementTroubleshootingErrorResourceable)() {
     if m != nil {
         m.resources = value
     }

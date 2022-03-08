@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityBaselineContributingPolicy 
+// SecurityBaselineContributingPolicy provides operations to manage the compliance singleton.
 type SecurityBaselineContributingPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewSecurityBaselineContributingPolicy()(*SecurityBaselineContributingPolicy
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSecurityBaselineContributingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityBaselineContributingPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityBaselineContributingPolicy(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityBaselineContributingPolicy) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *SecurityBaselineContributingPolicy) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetSourceId gets the sourceId property value. Unique identifier of the policy
-func (m *SecurityBaselineContributingPolicy) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
-}
-// GetSourceType gets the sourceType property value. Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
-func (m *SecurityBaselineContributingPolicy) GetSourceType()(*SecurityBaselinePolicySourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetSourceId gets the sourceId property value. Unique identifier of the policy
+func (m *SecurityBaselineContributingPolicy) GetSourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceId
+    }
+}
+// GetSourceType gets the sourceType property value. Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
+func (m *SecurityBaselineContributingPolicy) GetSourceType()(*SecurityBaselinePolicySourceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceType
+    }
 }
 func (m *SecurityBaselineContributingPolicy) IsNil()(bool) {
     return m == nil

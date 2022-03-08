@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationCategory 
+// DeviceManagementConfigurationCategory provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationCategory struct {
     Entity
     // Description of the category header
@@ -37,6 +37,10 @@ func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCa
     }
     return m
 }
+// CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementConfigurationCategory(), nil
+}
 // GetCategoryDescription gets the categoryDescription property value. Description of the category header
 func (m *DeviceManagementConfigurationCategory) GetCategoryDescription()(*string) {
     if m == nil {
@@ -67,62 +71,6 @@ func (m *DeviceManagementConfigurationCategory) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHelpText gets the helpText property value. Help text of the item
-func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.helpText
-    }
-}
-// GetName gets the name property value. Name of the item
-func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParentCategoryId gets the parentCategoryId property value. Parent id of the category.
-func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentCategoryId
-    }
-}
-// GetPlatforms gets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
-func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platforms
-    }
-}
-// GetRootCategoryId gets the rootCategoryId property value. Root id of the category.
-func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCategoryId
-    }
-}
-// GetSettingUsage gets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
-func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingUsage
-    }
-}
-// GetTechnologies gets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
-func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
-    if m == nil {
-        return nil
-    } else {
-        return m.technologies
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -243,6 +191,62 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetHelpText gets the helpText property value. Help text of the item
+func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.helpText
+    }
+}
+// GetName gets the name property value. Name of the item
+func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParentCategoryId gets the parentCategoryId property value. Parent id of the category.
+func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentCategoryId
+    }
+}
+// GetPlatforms gets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platforms
+    }
+}
+// GetRootCategoryId gets the rootCategoryId property value. Root id of the category.
+func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rootCategoryId
+    }
+}
+// GetSettingUsage gets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
+func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingUsage
+    }
+}
+// GetTechnologies gets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
+    if m == nil {
+        return nil
+    } else {
+        return m.technologies
+    }
 }
 func (m *DeviceManagementConfigurationCategory) IsNil()(bool) {
     return m == nil

@@ -5,14 +5,14 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// EvaluateRemovalRequestBody 
+// EvaluateRemovalRequestBody provides operations to call the evaluateRemoval method.
 type EvaluateRemovalRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    contentInfo *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo;
+    contentInfo i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable;
     // 
-    downgradeJustification *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustification;
+    downgradeJustification i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustificationable;
 }
 // NewEvaluateRemovalRequestBody instantiates a new evaluateRemovalRequestBody and sets the default values.
 func NewEvaluateRemovalRequestBody()(*EvaluateRemovalRequestBody) {
@@ -20,6 +20,10 @@ func NewEvaluateRemovalRequestBody()(*EvaluateRemovalRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEvaluateRemovalRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEvaluateRemovalRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEvaluateRemovalRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateRemovalRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -30,7 +34,7 @@ func (m *EvaluateRemovalRequestBody) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetContentInfo gets the contentInfo property value. 
-func (m *EvaluateRemovalRequestBody) GetContentInfo()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo) {
+func (m *EvaluateRemovalRequestBody) GetContentInfo()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable) {
     if m == nil {
         return nil
     } else {
@@ -38,7 +42,7 @@ func (m *EvaluateRemovalRequestBody) GetContentInfo()(*i535684e11b5500196ecb4b5c
     }
 }
 // GetDowngradeJustification gets the downgradeJustification property value. 
-func (m *EvaluateRemovalRequestBody) GetDowngradeJustification()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustification) {
+func (m *EvaluateRemovalRequestBody) GetDowngradeJustification()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustificationable) {
     if m == nil {
         return nil
     } else {
@@ -49,22 +53,22 @@ func (m *EvaluateRemovalRequestBody) GetDowngradeJustification()(*i535684e11b550
 func (m *EvaluateRemovalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewContentInfo() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentInfo(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo))
+            m.SetContentInfo(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable))
         }
         return nil
     }
     res["downgradeJustification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDowngradeJustification() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDowngradeJustificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDowngradeJustification(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustification))
+            m.SetDowngradeJustification(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustificationable))
         }
         return nil
     }
@@ -102,13 +106,13 @@ func (m *EvaluateRemovalRequestBody) SetAdditionalData(value map[string]interfac
     }
 }
 // SetContentInfo sets the contentInfo property value. 
-func (m *EvaluateRemovalRequestBody) SetContentInfo(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo)() {
+func (m *EvaluateRemovalRequestBody) SetContentInfo(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable)() {
     if m != nil {
         m.contentInfo = value
     }
 }
 // SetDowngradeJustification sets the downgradeJustification property value. 
-func (m *EvaluateRemovalRequestBody) SetDowngradeJustification(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustification)() {
+func (m *EvaluateRemovalRequestBody) SetDowngradeJustification(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DowngradeJustificationable)() {
     if m != nil {
         m.downgradeJustification = value
     }

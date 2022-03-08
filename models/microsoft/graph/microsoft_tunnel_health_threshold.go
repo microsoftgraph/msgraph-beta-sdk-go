@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelHealthThreshold 
+// MicrosoftTunnelHealthThreshold provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelHealthThreshold struct {
     Entity
     // The default threshold for being healthy
@@ -23,6 +23,10 @@ func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
     }
     return m
 }
+// CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMicrosoftTunnelHealthThreshold(), nil
+}
 // GetDefaultHealthyThreshold gets the defaultHealthyThreshold property value. The default threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) 
         return nil
     } else {
         return m.defaultUnhealthyThreshold
-    }
-}
-// GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy
-func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthyThreshold
-    }
-}
-// GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy
-func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unhealthyThreshold
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy
+func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthyThreshold
+    }
+}
+// GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy
+func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unhealthyThreshold
+    }
 }
 func (m *MicrosoftTunnelHealthThreshold) IsNil()(bool) {
     return m == nil

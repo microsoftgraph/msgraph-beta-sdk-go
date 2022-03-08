@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceSubject 
+// GovernanceSubject provides operations to manage the collection of governanceRoleDefinition entities.
 type GovernanceSubject struct {
     Entity
     // The display name of the subject.
@@ -23,6 +23,10 @@ func NewGovernanceSubject()(*GovernanceSubject) {
     }
     return m
 }
+// CreateGovernanceSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceSubjectFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceSubject(), nil
+}
 // GetDisplayName gets the displayName property value. The display name of the subject.
 func (m *GovernanceSubject) GetDisplayName()(*string) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *GovernanceSubject) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
-func (m *GovernanceSubject) GetPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalName
-    }
-}
-// GetType gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
+func (m *GovernanceSubject) GetPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalName
+    }
+}
+// GetType gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
+func (m *GovernanceSubject) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *GovernanceSubject) IsNil()(bool) {
     return m == nil

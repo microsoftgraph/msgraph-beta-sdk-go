@@ -1,13 +1,13 @@
 package privilegedroleassignmentrequests
 
 import (
+    i70d6e58f3a3c90dc95763338a5e5ad4e94491fc09788136c71619ec0fe88911b "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/count"
     i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/my"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// PrivilegedRoleAssignmentRequestsRequestBuilder builds and executes requests for operations under \privilegedRoleAssignmentRequests
+// PrivilegedRoleAssignmentRequestsRequestBuilder provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
 type PrivilegedRoleAssignmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
 // PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions options for Post
 type PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewPrivilegedRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Count()(*i70d6e58f3a3c90dc95763338a5e5ad4e94491fc09788136c71619ec0fe88911b.CountRequestBuilder) {
+    return i70d6e58f3a3c90dc95763338a5e5ad4e94491fc09788136c71619ec0fe88911b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from privilegedRoleAssignmentRequests
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -115,30 +118,38 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get get entities from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get(options *PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions)(*PrivilegedRoleAssignmentRequestsResponse, error) {
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get(options *PrivilegedRoleAssignmentRequestsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedRoleAssignmentRequestsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedRoleAssignmentRequestCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PrivilegedRoleAssignmentRequestsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestCollectionResponseable), nil
 }
-// My builds and executes requests for operations under \privilegedRoleAssignmentRequests\microsoft.graph.my()
+// My provides operations to call the my method.
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) My()(*i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a.MyRequestBuilder) {
     return i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a.NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Post(options *PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest, error) {
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Post(options *PrivilegedRoleAssignmentRequestsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedRoleAssignmentRequest() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequestable), nil
 }

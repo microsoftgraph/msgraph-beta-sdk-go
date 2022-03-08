@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomExtensionHandlerInstance 
+// CustomExtensionHandlerInstance provides operations to manage the identityGovernance singleton.
 type CustomExtensionHandlerInstance struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewCustomExtensionHandlerInstance()(*CustomExtensionHandlerInstance) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCustomExtensionHandlerInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomExtensionHandlerInstanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomExtensionHandlerInstance(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomExtensionHandlerInstance) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *CustomExtensionHandlerInstance) GetExternalCorrelationId()(*string) {
         return nil
     } else {
         return m.externalCorrelationId
-    }
-}
-// GetStage gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensionStage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stage
-    }
-}
-// GetStatus gets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
-func (m *CustomExtensionHandlerInstance) GetStatus()(*AccessPackageCustomExtensionHandlerStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *CustomExtensionHandlerInstance) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetStage gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensionStage) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stage
+    }
+}
+// GetStatus gets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
+func (m *CustomExtensionHandlerInstance) GetStatus()(*AccessPackageCustomExtensionHandlerStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *CustomExtensionHandlerInstance) IsNil()(bool) {
     return m == nil

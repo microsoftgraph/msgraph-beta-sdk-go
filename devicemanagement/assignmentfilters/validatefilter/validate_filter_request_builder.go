@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ValidateFilterRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.validateFilter
+// ValidateFilterRequestBuilder provides operations to call the validateFilter method.
 type ValidateFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ValidateFilterRequestBuilder struct {
 // ValidateFilterRequestBuilderPostOptions options for Post
 type ValidateFilterRequestBuilderPostOptions struct {
     // 
-    Body *ValidateFilterRequestBody;
+    Body ValidateFilterRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type ValidateFilterResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type assignmentFilterValidationResult
-    assignmentFilterValidationResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult;
+    assignmentFilterValidationResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResultable;
 }
 // NewValidateFilterResponse instantiates a new validateFilterResponse and sets the default values.
 func NewValidateFilterResponse()(*ValidateFilterResponse) {
@@ -39,6 +39,9 @@ func NewValidateFilterResponse()(*ValidateFilterResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateValidateFilterResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewValidateFilterResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateFilterResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *ValidateFilterResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAssignmentFilterValidationResult gets the assignmentFilterValidationResult property value. Union type representation for type assignmentFilterValidationResult
-func (m *ValidateFilterResponse) GetAssignmentFilterValidationResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult) {
+func (m *ValidateFilterResponse) GetAssignmentFilterValidationResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *ValidateFilterResponse) GetAssignmentFilterValidationResult()(*i535684e
 func (m *ValidateFilterResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentFilterValidationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAssignmentFilterValidationResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAssignmentFilterValidationResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignmentFilterValidationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult))
+            m.SetAssignmentFilterValidationResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResultable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *ValidateFilterResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetAssignmentFilterValidationResult sets the assignmentFilterValidationResult property value. Union type representation for type assignmentFilterValidationResult
-func (m *ValidateFilterResponse) SetAssignmentFilterValidationResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResult)() {
+func (m *ValidateFilterResponse) SetAssignmentFilterValidationResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterValidationResultable)() {
     if m != nil {
         m.assignmentFilterValidationResult = value
     }
@@ -111,7 +114,7 @@ func NewValidateFilterRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *ValidateFilterRequestBuilder) CreatePostRequestInformation(options *Val
     return requestInfo, nil
 }
 // Post invoke action validateFilter
-func (m *ValidateFilterRequestBuilder) Post(options *ValidateFilterRequestBuilderPostOptions)(*ValidateFilterResponse, error) {
+func (m *ValidateFilterRequestBuilder) Post(options *ValidateFilterRequestBuilderPostOptions)(ValidateFilterResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewValidateFilterResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateValidateFilterResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ValidateFilterResponse), nil
+    return res.(ValidateFilterResponseable), nil
 }

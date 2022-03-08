@@ -2,11 +2,11 @@ package androidforworkenrollmentprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ieb404ee6184ffe60f204de38aa016a4722dd883b1804499c76f78e6a59f08f61 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworkenrollmentprofiles/count"
 )
 
-// AndroidForWorkEnrollmentProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles
+// AndroidForWorkEnrollmentProfilesRequestBuilder provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 type AndroidForWorkEnrollmentProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AndroidForWorkEnrollmentProfilesRequestBuilderGetQueryParameters struct {
 // AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions options for Post
 type AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAndroidForWorkEnrollmentProfilesRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Count()(*ieb404ee6184ffe60f204de38aa016a4722dd883b1804499c76f78e6a59f08f61.CountRequestBuilder) {
+    return ieb404ee6184ffe60f204de38aa016a4722dd883b1804499c76f78e6a59f08f61.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation android for Work enrollment profile entities.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreateGetRequestInformation(options *AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation android for Work enrollment profile entities.
+// CreatePostRequestInformation create new navigation property to androidForWorkEnrollmentProfiles for deviceManagement
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreatePostRequestInformation(options *AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get android for Work enrollment profile entities.
-func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Get(options *AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions)(*AndroidForWorkEnrollmentProfilesResponse, error) {
+func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Get(options *AndroidForWorkEnrollmentProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAndroidForWorkEnrollmentProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAndroidForWorkEnrollmentProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AndroidForWorkEnrollmentProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfileCollectionResponseable), nil
 }
-// Post android for Work enrollment profile entities.
-func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Post(options *AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfile, error) {
+// Post create new navigation property to androidForWorkEnrollmentProfiles for deviceManagement
+func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Post(options *AndroidForWorkEnrollmentProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAndroidForWorkEnrollmentProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAndroidForWorkEnrollmentProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkEnrollmentProfileable), nil
 }

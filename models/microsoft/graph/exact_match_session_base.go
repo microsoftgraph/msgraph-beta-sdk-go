@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchSessionBase 
+// ExactMatchSessionBase provides operations to manage the dataClassificationService singleton.
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
     // 
@@ -32,68 +32,16 @@ func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     }
     return m
 }
+// CreateExactMatchSessionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactMatchSessionBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactMatchSessionBase(), nil
+}
 // GetDataStoreId gets the dataStoreId property value. 
 func (m *ExactMatchSessionBase) GetDataStoreId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.dataStoreId
-    }
-}
-// GetProcessingCompletionDateTime gets the processingCompletionDateTime property value. 
-func (m *ExactMatchSessionBase) GetProcessingCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processingCompletionDateTime
-    }
-}
-// GetRemainingBlockCount gets the remainingBlockCount property value. 
-func (m *ExactMatchSessionBase) GetRemainingBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remainingBlockCount
-    }
-}
-// GetRemainingJobCount gets the remainingJobCount property value. 
-func (m *ExactMatchSessionBase) GetRemainingJobCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remainingJobCount
-    }
-}
-// GetState gets the state property value. 
-func (m *ExactMatchSessionBase) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetTotalBlockCount gets the totalBlockCount property value. 
-func (m *ExactMatchSessionBase) GetTotalBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalBlockCount
-    }
-}
-// GetTotalJobCount gets the totalJobCount property value. 
-func (m *ExactMatchSessionBase) GetTotalJobCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalJobCount
-    }
-}
-// GetUploadCompletionDateTime gets the uploadCompletionDateTime property value. 
-func (m *ExactMatchSessionBase) GetUploadCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadCompletionDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,6 +128,62 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetProcessingCompletionDateTime gets the processingCompletionDateTime property value. 
+func (m *ExactMatchSessionBase) GetProcessingCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processingCompletionDateTime
+    }
+}
+// GetRemainingBlockCount gets the remainingBlockCount property value. 
+func (m *ExactMatchSessionBase) GetRemainingBlockCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remainingBlockCount
+    }
+}
+// GetRemainingJobCount gets the remainingJobCount property value. 
+func (m *ExactMatchSessionBase) GetRemainingJobCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remainingJobCount
+    }
+}
+// GetState gets the state property value. 
+func (m *ExactMatchSessionBase) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetTotalBlockCount gets the totalBlockCount property value. 
+func (m *ExactMatchSessionBase) GetTotalBlockCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalBlockCount
+    }
+}
+// GetTotalJobCount gets the totalJobCount property value. 
+func (m *ExactMatchSessionBase) GetTotalJobCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalJobCount
+    }
+}
+// GetUploadCompletionDateTime gets the uploadCompletionDateTime property value. 
+func (m *ExactMatchSessionBase) GetUploadCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadCompletionDateTime
+    }
 }
 func (m *ExactMatchSessionBase) IsNil()(bool) {
     return m == nil

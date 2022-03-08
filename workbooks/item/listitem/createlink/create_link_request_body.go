@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateLinkRequestBody 
+// CreateLinkRequestBody provides operations to call the createLink method.
 type CreateLinkRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type CreateLinkRequestBody struct {
     // 
     password *string;
     // 
-    recipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient;
+    recipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipientable;
     // 
     retainInheritedPermissions *bool;
     // 
@@ -29,6 +29,10 @@ func NewCreateLinkRequestBody()(*CreateLinkRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCreateLinkRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCreateLinkRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateLinkRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -44,46 +48,6 @@ func (m *CreateLinkRequestBody) GetExpirationDateTime()(*i336074805fc853987abe6f
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetPassword gets the password property value. 
-func (m *CreateLinkRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
-}
-// GetRecipients gets the recipients property value. 
-func (m *CreateLinkRequestBody) GetRecipients()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
-}
-// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
-func (m *CreateLinkRequestBody) GetRetainInheritedPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retainInheritedPermissions
-    }
-}
-// GetScope gets the scope property value. 
-func (m *CreateLinkRequestBody) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
-}
-// GetType gets the type property value. 
-func (m *CreateLinkRequestBody) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,14 +74,14 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["recipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDriveRecipient() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipientable)
             }
             m.SetRecipients(res)
         }
@@ -155,6 +119,46 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
+// GetPassword gets the password property value. 
+func (m *CreateLinkRequestBody) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
+}
+// GetRecipients gets the recipients property value. 
+func (m *CreateLinkRequestBody) GetRecipients()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipients
+    }
+}
+// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
+func (m *CreateLinkRequestBody) GetRetainInheritedPermissions()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.retainInheritedPermissions
+    }
+}
+// GetScope gets the scope property value. 
+func (m *CreateLinkRequestBody) GetScope()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scope
+    }
+}
+// GetType gets the type property value. 
+func (m *CreateLinkRequestBody) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 func (m *CreateLinkRequestBody) IsNil()(bool) {
     return m == nil
 }
@@ -175,8 +179,7 @@ func (m *CreateLinkRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecipients()))
         for i, v := range m.GetRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("recipients", cast)
         if err != nil {
@@ -228,7 +231,7 @@ func (m *CreateLinkRequestBody) SetPassword(value *string)() {
     }
 }
 // SetRecipients sets the recipients property value. 
-func (m *CreateLinkRequestBody) SetRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient)() {
+func (m *CreateLinkRequestBody) SetRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipientable)() {
     if m != nil {
         m.recipients = value
     }

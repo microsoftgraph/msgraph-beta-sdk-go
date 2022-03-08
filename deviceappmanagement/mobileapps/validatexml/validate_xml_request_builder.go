@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// ValidateXmlRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\microsoft.graph.validateXml
+// ValidateXmlRequestBuilder provides operations to call the validateXml method.
 type ValidateXmlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ValidateXmlRequestBuilder struct {
 // ValidateXmlRequestBuilderPostOptions options for Post
 type ValidateXmlRequestBuilderPostOptions struct {
     // 
-    Body *ValidateXmlRequestBody;
+    Body ValidateXmlRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewValidateXmlRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *ValidateXmlRequestBuilder) CreatePostRequestInformation(options *Valida
     return requestInfo, nil
 }
 // Post invoke action validateXml
-func (m *ValidateXmlRequestBuilder) Post(options *ValidateXmlRequestBuilderPostOptions)(*string, error) {
+func (m *ValidateXmlRequestBuilder) Post(options *ValidateXmlRequestBuilderPostOptions)(ValidateXmlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateValidateXmlResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(ValidateXmlResponseable), nil
 }

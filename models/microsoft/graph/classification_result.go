@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClassificationResult 
+// ClassificationResult provides operations to call the evaluateClassificationResults method.
 type ClassificationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewClassificationResult()(*ClassificationResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateClassificationResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassificationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationResult) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *ClassificationResult) GetCount()(*int32) {
         return nil
     } else {
         return m.count
-    }
-}
-// GetSensitiveTypeId gets the sensitiveTypeId property value. The GUID of the discovered sensitive information type.
-func (m *ClassificationResult) GetSensitiveTypeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetSensitiveTypeId gets the sensitiveTypeId property value. The GUID of the discovered sensitive information type.
+func (m *ClassificationResult) GetSensitiveTypeId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitiveTypeId
+    }
 }
 func (m *ClassificationResult) IsNil()(bool) {
     return m == nil

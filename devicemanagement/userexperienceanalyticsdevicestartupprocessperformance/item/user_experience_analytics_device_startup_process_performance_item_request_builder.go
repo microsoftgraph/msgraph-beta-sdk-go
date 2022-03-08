@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceStartupProcessPerformance\{userExperienceAnalyticsDeviceStartupProcessPerformance-id}
+// UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderGet
 // UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformance;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformanceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation user experience analytics device Startup Process Performance
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation user experience analytics device Startup Process Performance
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsDeviceStartupProcessPerformance in deviceManagement
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// Delete user experience analytics device Startup Process Performance
+// Delete delete navigation property userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) Delete(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get user experience analytics device Startup Process Performance
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) Get(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformance, error) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) Get(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformanceable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsDeviceStartupProcessPerformance() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformance), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformanceable), nil
 }
-// Patch user experience analytics device Startup Process Performance
+// Patch update the navigation property userExperienceAnalyticsDeviceStartupProcessPerformance in deviceManagement
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) Patch(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

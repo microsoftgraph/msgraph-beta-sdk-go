@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the getAssignmentFiltersStatusDetails method.
 type AssignmentFilterEvaluationResult int
 
 const (

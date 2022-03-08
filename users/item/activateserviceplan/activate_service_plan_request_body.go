@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ActivateServicePlanRequestBody 
+// ActivateServicePlanRequestBody provides operations to call the activateServicePlan method.
 type ActivateServicePlanRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewActivateServicePlanRequestBody()(*ActivateServicePlanRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateActivateServicePlanRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateActivateServicePlanRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewActivateServicePlanRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServicePlanRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetServicePlanId gets the servicePlanId property value. 
-func (m *ActivateServicePlanRequestBody) GetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanId
-    }
-}
-// GetSkuId gets the skuId property value. 
-func (m *ActivateServicePlanRequestBody) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *ActivateServicePlanRequestBody) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetServicePlanId gets the servicePlanId property value. 
+func (m *ActivateServicePlanRequestBody) GetServicePlanId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePlanId
+    }
+}
+// GetSkuId gets the skuId property value. 
+func (m *ActivateServicePlanRequestBody) GetSkuId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skuId
+    }
 }
 func (m *ActivateServicePlanRequestBody) IsNil()(bool) {
     return m == nil

@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidForWorkAppConfigurationSchema 
+// AndroidForWorkAppConfigurationSchema provides operations to manage the deviceManagement singleton.
 type AndroidForWorkAppConfigurationSchema struct {
     Entity
     // UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
     exampleJson []byte;
     // Collection of items each representing a named configuration option in the schema
-    schemaItems []AndroidForWorkAppConfigurationSchemaItem;
+    schemaItems []AndroidForWorkAppConfigurationSchemaItemable;
 }
 // NewAndroidForWorkAppConfigurationSchema instantiates a new androidForWorkAppConfigurationSchema and sets the default values.
 func NewAndroidForWorkAppConfigurationSchema()(*AndroidForWorkAppConfigurationSchema) {
@@ -19,20 +19,16 @@ func NewAndroidForWorkAppConfigurationSchema()(*AndroidForWorkAppConfigurationSc
     }
     return m
 }
+// CreateAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidForWorkAppConfigurationSchema(), nil
+}
 // GetExampleJson gets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidForWorkAppConfigurationSchema) GetExampleJson()([]byte) {
     if m == nil {
         return nil
     } else {
         return m.exampleJson
-    }
-}
-// GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema
-func (m *AndroidForWorkAppConfigurationSchema) GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schemaItems
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -49,20 +45,28 @@ func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[strin
         return nil
     }
     res["schemaItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAndroidForWorkAppConfigurationSchemaItem() })
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AndroidForWorkAppConfigurationSchemaItem, len(val))
+            res := make([]AndroidForWorkAppConfigurationSchemaItemable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AndroidForWorkAppConfigurationSchemaItem))
+                res[i] = v.(AndroidForWorkAppConfigurationSchemaItemable)
             }
             m.SetSchemaItems(res)
         }
         return nil
     }
     return res
+}
+// GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema
+func (m *AndroidForWorkAppConfigurationSchema) GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schemaItems
+    }
 }
 func (m *AndroidForWorkAppConfigurationSchema) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i04eb5309aeaafad
     if m.GetSchemaItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSchemaItems()))
         for i, v := range m.GetSchemaItems() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("schemaItems", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *AndroidForWorkAppConfigurationSchema) SetExampleJson(value []byte)() {
     }
 }
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema
-func (m *AndroidForWorkAppConfigurationSchema) SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItem)() {
+func (m *AndroidForWorkAppConfigurationSchema) SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItemable)() {
     if m != nil {
         m.schemaItems = value
     }

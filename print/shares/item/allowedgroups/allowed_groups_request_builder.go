@@ -2,11 +2,11 @@ package allowedgroups
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i6a6bfda29c34402dd3264b307964c188308767998fbd81fa5ad6333864c5067d "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedgroups/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i370fec57d886107bbd85ee628d0ae239f8de31ea23f9aacec07ce6e297959347 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedgroups/count"
 )
 
-// AllowedGroupsRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}\allowedGroups
+// AllowedGroupsRequestBuilder provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
 type AllowedGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewAllowedGroupsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewAllowedGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedGroupsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AllowedGroupsRequestBuilder) Count()(*i370fec57d886107bbd85ee628d0ae239f8de31ea23f9aacec07ce6e297959347.CountRequestBuilder) {
+    return i370fec57d886107bbd85ee628d0ae239f8de31ea23f9aacec07ce6e297959347.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the groups whose users have access to print using the printer.
 func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation(options *AllowedGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation(options *Allow
     return requestInfo, nil
 }
 // Get the groups whose users have access to print using the printer.
-func (m *AllowedGroupsRequestBuilder) Get(options *AllowedGroupsRequestBuilderGetOptions)(*AllowedGroupsResponse, error) {
+func (m *AllowedGroupsRequestBuilder) Get(options *AllowedGroupsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAllowedGroupsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AllowedGroupsResponse), nil
-}
-func (m *AllowedGroupsRequestBuilder) Ref()(*i6a6bfda29c34402dd3264b307964c188308767998fbd81fa5ad6333864c5067d.RefRequestBuilder) {
-    return i6a6bfda29c34402dd3264b307964c188308767998fbd81fa5ad6333864c5067d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupCollectionResponseable), nil
 }

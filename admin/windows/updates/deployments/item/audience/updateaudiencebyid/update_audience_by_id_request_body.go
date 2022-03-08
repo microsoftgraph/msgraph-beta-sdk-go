@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdateAudienceByIdRequestBody 
+// UpdateAudienceByIdRequestBody provides operations to call the updateAudienceById method.
 type UpdateAudienceByIdRequestBody struct {
     // 
     addExclusions []string;
@@ -25,6 +25,10 @@ func NewUpdateAudienceByIdRequestBody()(*UpdateAudienceByIdRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUpdateAudienceByIdRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateAudienceByIdRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateAudienceByIdRequestBody(), nil
 }
 // GetAddExclusions gets the addExclusions property value. 
 func (m *UpdateAudienceByIdRequestBody) GetAddExclusions()([]string) {
@@ -48,30 +52,6 @@ func (m *UpdateAudienceByIdRequestBody) GetAddMembers()([]string) {
         return nil
     } else {
         return m.addMembers
-    }
-}
-// GetMemberEntityType gets the memberEntityType property value. 
-func (m *UpdateAudienceByIdRequestBody) GetMemberEntityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberEntityType
-    }
-}
-// GetRemoveExclusions gets the removeExclusions property value. 
-func (m *UpdateAudienceByIdRequestBody) GetRemoveExclusions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeExclusions
-    }
-}
-// GetRemoveMembers gets the removeMembers property value. 
-func (m *UpdateAudienceByIdRequestBody) GetRemoveMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeMembers
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -144,6 +124,30 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetMemberEntityType gets the memberEntityType property value. 
+func (m *UpdateAudienceByIdRequestBody) GetMemberEntityType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberEntityType
+    }
+}
+// GetRemoveExclusions gets the removeExclusions property value. 
+func (m *UpdateAudienceByIdRequestBody) GetRemoveExclusions()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.removeExclusions
+    }
+}
+// GetRemoveMembers gets the removeMembers property value. 
+func (m *UpdateAudienceByIdRequestBody) GetRemoveMembers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.removeMembers
+    }
 }
 func (m *UpdateAudienceByIdRequestBody) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChangeDeploymentStatusRequestBody 
+// ChangeDeploymentStatusRequestBody provides operations to call the changeDeploymentStatus method.
 type ChangeDeploymentStatusRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewChangeDeploymentStatusRequestBody()(*ChangeDeploymentStatusRequestBody) 
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateChangeDeploymentStatusRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChangeDeploymentStatusRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChangeDeploymentStatusRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetManagementTemplateStepId gets the managementTemplateStepId property value. 
-func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateStepId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateStepId
-    }
-}
-// GetStatus gets the status property value. 
-func (m *ChangeDeploymentStatusRequestBody) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *ChangeDeploymentStatusRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetManagementTemplateStepId gets the managementTemplateStepId property value. 
+func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateStepId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateStepId
+    }
+}
+// GetStatus gets the status property value. 
+func (m *ChangeDeploymentStatusRequestBody) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *ChangeDeploymentStatusRequestBody) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *ChangeDeploymentStatusRequestBody) IsNil()(bool) {
     return m == nil

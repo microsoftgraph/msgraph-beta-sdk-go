@@ -5,7 +5,7 @@ import (
     ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
-// EnrollAssetsByIdRequestBody 
+// EnrollAssetsByIdRequestBody provides operations to call the enrollAssetsById method.
 type EnrollAssetsByIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,36 +23,16 @@ func NewEnrollAssetsByIdRequestBody()(*EnrollAssetsByIdRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEnrollAssetsByIdRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEnrollAssetsByIdRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEnrollAssetsByIdRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EnrollAssetsByIdRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIds gets the ids property value. 
-func (m *EnrollAssetsByIdRequestBody) GetIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ids
-    }
-}
-// GetMemberEntityType gets the memberEntityType property value. 
-func (m *EnrollAssetsByIdRequestBody) GetMemberEntityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberEntityType
-    }
-}
-// GetUpdateCategory gets the updateCategory property value. 
-func (m *EnrollAssetsByIdRequestBody) GetUpdateCategory()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateCategory
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -93,6 +73,30 @@ func (m *EnrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetIds gets the ids property value. 
+func (m *EnrollAssetsByIdRequestBody) GetIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ids
+    }
+}
+// GetMemberEntityType gets the memberEntityType property value. 
+func (m *EnrollAssetsByIdRequestBody) GetMemberEntityType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberEntityType
+    }
+}
+// GetUpdateCategory gets the updateCategory property value. 
+func (m *EnrollAssetsByIdRequestBody) GetUpdateCategory()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateCategory
+    }
 }
 func (m *EnrollAssetsByIdRequestBody) IsNil()(bool) {
     return m == nil

@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppleUserInitiatedEnrollmentProfile 
+// AppleUserInitiatedEnrollmentProfile provides operations to manage the deviceManagement singleton.
 type AppleUserInitiatedEnrollmentProfile struct {
     Entity
     // The list of assignments for this profile.
-    assignments []AppleEnrollmentProfileAssignment;
+    assignments []AppleEnrollmentProfileAssignmentable;
     // List of available enrollment type options
-    availableEnrollmentTypeOptions []AppleOwnerTypeEnrollmentType;
+    availableEnrollmentTypeOptions []AppleOwnerTypeEnrollmentTypeable;
     // Profile creation time
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The default profile enrollment type. Possible values are: unknown, device, user.
@@ -34,8 +34,12 @@ func NewAppleUserInitiatedEnrollmentProfile()(*AppleUserInitiatedEnrollmentProfi
     }
     return m
 }
+// CreateAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppleUserInitiatedEnrollmentProfile(), nil
+}
 // GetAssignments gets the assignments property value. The list of assignments for this profile.
-func (m *AppleUserInitiatedEnrollmentProfile) GetAssignments()([]AppleEnrollmentProfileAssignment) {
+func (m *AppleUserInitiatedEnrollmentProfile) GetAssignments()([]AppleEnrollmentProfileAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -43,7 +47,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetAssignments()([]AppleEnrollment
     }
 }
 // GetAvailableEnrollmentTypeOptions gets the availableEnrollmentTypeOptions property value. List of available enrollment type options
-func (m *AppleUserInitiatedEnrollmentProfile) GetAvailableEnrollmentTypeOptions()([]AppleOwnerTypeEnrollmentType) {
+func (m *AppleUserInitiatedEnrollmentProfile) GetAvailableEnrollmentTypeOptions()([]AppleOwnerTypeEnrollmentTypeable) {
     if m == nil {
         return nil
     } else {
@@ -82,56 +86,32 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time
-func (m *AppleUserInitiatedEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPlatform gets the platform property value. The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
-func (m *AppleUserInitiatedEnrollmentProfile) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
-}
-// GetPriority gets the priority property value. Priority, 0 is highest
-func (m *AppleUserInitiatedEnrollmentProfile) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppleEnrollmentProfileAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppleEnrollmentProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppleEnrollmentProfileAssignment, len(val))
+            res := make([]AppleEnrollmentProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppleEnrollmentProfileAssignment))
+                res[i] = v.(AppleEnrollmentProfileAssignmentable)
             }
             m.SetAssignments(res)
         }
         return nil
     }
     res["availableEnrollmentTypeOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppleOwnerTypeEnrollmentType() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppleOwnerTypeEnrollmentTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppleOwnerTypeEnrollmentType, len(val))
+            res := make([]AppleOwnerTypeEnrollmentTypeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppleOwnerTypeEnrollmentType))
+                res[i] = v.(AppleOwnerTypeEnrollmentTypeable)
             }
             m.SetAvailableEnrollmentTypeOptions(res)
         }
@@ -209,6 +189,30 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time
+func (m *AppleUserInitiatedEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPlatform gets the platform property value. The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+func (m *AppleUserInitiatedEnrollmentProfile) GetPlatform()(*DevicePlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
+}
+// GetPriority gets the priority property value. Priority, 0 is highest
+func (m *AppleUserInitiatedEnrollmentProfile) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
 func (m *AppleUserInitiatedEnrollmentProfile) IsNil()(bool) {
     return m == nil
 }
@@ -221,8 +225,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -232,8 +235,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
     if m.GetAvailableEnrollmentTypeOptions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAvailableEnrollmentTypeOptions()))
         for i, v := range m.GetAvailableEnrollmentTypeOptions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("availableEnrollmentTypeOptions", cast)
         if err != nil {
@@ -287,13 +289,13 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
     return nil
 }
 // SetAssignments sets the assignments property value. The list of assignments for this profile.
-func (m *AppleUserInitiatedEnrollmentProfile) SetAssignments(value []AppleEnrollmentProfileAssignment)() {
+func (m *AppleUserInitiatedEnrollmentProfile) SetAssignments(value []AppleEnrollmentProfileAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
 // SetAvailableEnrollmentTypeOptions sets the availableEnrollmentTypeOptions property value. List of available enrollment type options
-func (m *AppleUserInitiatedEnrollmentProfile) SetAvailableEnrollmentTypeOptions(value []AppleOwnerTypeEnrollmentType)() {
+func (m *AppleUserInitiatedEnrollmentProfile) SetAvailableEnrollmentTypeOptions(value []AppleOwnerTypeEnrollmentTypeable)() {
     if m != nil {
         m.availableEnrollmentTypeOptions = value
     }

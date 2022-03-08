@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceScores 
+// UserExperienceAnalyticsDeviceScores provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsDeviceScores struct {
     Entity
     // The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -31,6 +31,10 @@ func NewUserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScor
     }
     return m
 }
+// CreateUserExperienceAnalyticsDeviceScoresFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsDeviceScoresFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsDeviceScores(), nil
+}
 // GetAppReliabilityScore gets the appReliabilityScore property value. The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) GetAppReliabilityScore()(*float64) {
     if m == nil {
@@ -53,46 +57,6 @@ func (m *UserExperienceAnalyticsDeviceScores) GetEndpointAnalyticsScore()(*float
         return nil
     } else {
         return m.endpointAnalyticsScore
-    }
-}
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsDeviceScores) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
-}
-// GetManufacturer gets the manufacturer property value. The user experience analytics device manufacturer.
-func (m *UserExperienceAnalyticsDeviceScores) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. The user experience analytics device model.
-func (m *UserExperienceAnalyticsDeviceScores) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetStartupPerformanceScore gets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsDeviceScores) GetStartupPerformanceScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupPerformanceScore
-    }
-}
-// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsDeviceScores) GetWorkFromAnywhereScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workFromAnywhereScore
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,6 +143,46 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsDeviceScores) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatus
+    }
+}
+// GetManufacturer gets the manufacturer property value. The user experience analytics device manufacturer.
+func (m *UserExperienceAnalyticsDeviceScores) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. The user experience analytics device model.
+func (m *UserExperienceAnalyticsDeviceScores) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetStartupPerformanceScore gets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsDeviceScores) GetStartupPerformanceScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startupPerformanceScore
+    }
+}
+// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsDeviceScores) GetWorkFromAnywhereScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workFromAnywhereScore
+    }
 }
 func (m *UserExperienceAnalyticsDeviceScores) IsNil()(bool) {
     return m == nil

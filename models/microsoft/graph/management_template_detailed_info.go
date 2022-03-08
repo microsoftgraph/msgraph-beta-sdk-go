@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// ManagementTemplateDetailedInfo 
+// ManagementTemplateDetailedInfo provides operations to manage the tenantRelationship singleton.
 type ManagementTemplateDetailedInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateManagementTemplateDetailedInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementTemplateDetailedInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]interface{}) {
@@ -47,22 +51,6 @@ func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetManagementTemplateId gets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
-func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
-}
-// GetVersion gets the version property value. 
-func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +97,22 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetManagementTemplateId gets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
+func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateId
+    }
+}
+// GetVersion gets the version property value. 
+func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *ManagementTemplateDetailedInfo) IsNil()(bool) {
     return m == nil

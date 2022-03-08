@@ -2,11 +2,11 @@ package allowedusers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i56d79da647894b14dbab21544b855898a90594477e24299b69a0e711adfbacae "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedusers/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i80225734b8bb22b64a29709a890d77d1e7de550228a4a6f28a1d311fbc2fe8f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedusers/count"
 )
 
-// AllowedUsersRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}\allowedUsers
+// AllowedUsersRequestBuilder provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
 type AllowedUsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewAllowedUsersRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewAllowedUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedUsersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AllowedUsersRequestBuilder) Count()(*i80225734b8bb22b64a29709a890d77d1e7de550228a4a6f28a1d311fbc2fe8f1.CountRequestBuilder) {
+    return i80225734b8bb22b64a29709a890d77d1e7de550228a4a6f28a1d311fbc2fe8f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the users who have access to print using the printer.
 func (m *AllowedUsersRequestBuilder) CreateGetRequestInformation(options *AllowedUsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *AllowedUsersRequestBuilder) CreateGetRequestInformation(options *Allowe
     return requestInfo, nil
 }
 // Get the users who have access to print using the printer.
-func (m *AllowedUsersRequestBuilder) Get(options *AllowedUsersRequestBuilderGetOptions)(*AllowedUsersResponse, error) {
+func (m *AllowedUsersRequestBuilder) Get(options *AllowedUsersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAllowedUsersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AllowedUsersResponse), nil
-}
-func (m *AllowedUsersRequestBuilder) Ref()(*i56d79da647894b14dbab21544b855898a90594477e24299b69a0e711adfbacae.RefRequestBuilder) {
-    return i56d79da647894b14dbab21544b855898a90594477e24299b69a0e711adfbacae.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCollectionResponseable), nil
 }

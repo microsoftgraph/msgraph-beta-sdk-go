@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// DiscoverRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates\{synchronizationTemplate-id}\schema\directories\{directoryDefinition-id}\microsoft.graph.discover
+// DiscoverRequestBuilder provides operations to call the discover method.
 type DiscoverRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type DiscoverResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type directoryDefinition
-    directoryDefinition *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition;
+    directoryDefinition i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinitionable;
 }
 // NewDiscoverResponse instantiates a new discoverResponse and sets the default values.
 func NewDiscoverResponse()(*DiscoverResponse) {
@@ -37,6 +37,9 @@ func NewDiscoverResponse()(*DiscoverResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateDiscoverResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDiscoverResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DiscoverResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *DiscoverResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDirectoryDefinition gets the directoryDefinition property value. Union type representation for type directoryDefinition
-func (m *DiscoverResponse) GetDirectoryDefinition()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition) {
+func (m *DiscoverResponse) GetDirectoryDefinition()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *DiscoverResponse) GetDirectoryDefinition()(*i535684e11b5500196ecb4b5c66
 func (m *DiscoverResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["directoryDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDirectoryDefinition() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectoryDefinition(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition))
+            m.SetDirectoryDefinition(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinitionable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *DiscoverResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDirectoryDefinition sets the directoryDefinition property value. Union type representation for type directoryDefinition
-func (m *DiscoverResponse) SetDirectoryDefinition(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition)() {
+func (m *DiscoverResponse) SetDirectoryDefinition(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinitionable)() {
     if m != nil {
         m.directoryDefinition = value
     }
@@ -109,7 +112,7 @@ func NewDiscoverRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *DiscoverRequestBuilder) CreatePostRequestInformation(options *DiscoverR
     return requestInfo, nil
 }
 // Post invoke action discover
-func (m *DiscoverRequestBuilder) Post(options *DiscoverRequestBuilderPostOptions)(*DiscoverResponse, error) {
+func (m *DiscoverRequestBuilder) Post(options *DiscoverRequestBuilderPostOptions)(DiscoverResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDiscoverResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateDiscoverResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*DiscoverResponse), nil
+    return res.(DiscoverResponseable), nil
 }

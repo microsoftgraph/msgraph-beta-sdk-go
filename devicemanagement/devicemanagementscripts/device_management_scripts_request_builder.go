@@ -2,12 +2,12 @@ package devicemanagementscripts
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/count"
     if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/haspayloadlinks"
 )
 
-// DeviceManagementScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts
+// DeviceManagementScriptsRequestBuilder provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type DeviceManagementScriptsRequestBuilderGetQueryParameters struct {
 // DeviceManagementScriptsRequestBuilderPostOptions options for Post
 type DeviceManagementScriptsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScript;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewDeviceManagementScriptsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewDeviceManagementScriptsRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DeviceManagementScriptsRequestBuilder) Count()(*if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f.CountRequestBuilder) {
+    return if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsRequestBuilder) CreateGetRequestInformation(options *DeviceManagementScriptsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *DeviceManagementScriptsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of device management scripts associated with the tenant.
+// CreatePostRequestInformation create new navigation property to deviceManagementScripts for deviceManagement
 func (m *DeviceManagementScriptsRequestBuilder) CreatePostRequestInformation(options *DeviceManagementScriptsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,29 +118,37 @@ func (m *DeviceManagementScriptsRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Get the list of device management scripts associated with the tenant.
-func (m *DeviceManagementScriptsRequestBuilder) Get(options *DeviceManagementScriptsRequestBuilderGetOptions)(*DeviceManagementScriptsResponse, error) {
+func (m *DeviceManagementScriptsRequestBuilder) Get(options *DeviceManagementScriptsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementScriptCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DeviceManagementScriptsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptCollectionResponseable), nil
 }
 func (m *DeviceManagementScriptsRequestBuilder) HasPayloadLinks()(*if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba.HasPayloadLinksRequestBuilder) {
     return if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the list of device management scripts associated with the tenant.
-func (m *DeviceManagementScriptsRequestBuilder) Post(options *DeviceManagementScriptsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScript, error) {
+// Post create new navigation property to deviceManagementScripts for deviceManagement
+func (m *DeviceManagementScriptsRequestBuilder) Post(options *DeviceManagementScriptsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementScript() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementScriptFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScript), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptable), nil
 }

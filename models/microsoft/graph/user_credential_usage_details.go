@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserCredentialUsageDetails 
+// UserCredentialUsageDetails provides operations to manage the print singleton.
 type UserCredentialUsageDetails struct {
     Entity
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
@@ -29,6 +29,10 @@ func NewUserCredentialUsageDetails()(*UserCredentialUsageDetails) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserCredentialUsageDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserCredentialUsageDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserCredentialUsageDetails(), nil
 }
 // GetAuthMethod gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
 func (m *UserCredentialUsageDetails) GetAuthMethod()(*UsageAuthMethod) {
@@ -60,30 +64,6 @@ func (m *UserCredentialUsageDetails) GetFeature()(*FeatureType) {
         return nil
     } else {
         return m.feature
-    }
-}
-// GetIsSuccess gets the isSuccess property value. Indicates success or failure of the workflow.
-func (m *UserCredentialUsageDetails) GetIsSuccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSuccess
-    }
-}
-// GetUserDisplayName gets the userDisplayName property value. User name of the user performing the reset or registration workflow.
-func (m *UserCredentialUsageDetails) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
-func (m *UserCredentialUsageDetails) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,6 +140,30 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetIsSuccess gets the isSuccess property value. Indicates success or failure of the workflow.
+func (m *UserCredentialUsageDetails) GetIsSuccess()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSuccess
+    }
+}
+// GetUserDisplayName gets the userDisplayName property value. User name of the user performing the reset or registration workflow.
+func (m *UserCredentialUsageDetails) GetUserDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userDisplayName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
+func (m *UserCredentialUsageDetails) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *UserCredentialUsageDetails) IsNil()(bool) {
     return m == nil

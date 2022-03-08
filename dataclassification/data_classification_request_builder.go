@@ -14,7 +14,6 @@ import (
     ie0685d2de7afc64537caa2ec0727e7ebc4b4f61202921a69878ce943d829154d "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/evaluatedlppoliciesjobs"
     if188e6305418a24469cd7682c1cd0ca10f00ccdfaa5a763f68d87201ba832986 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/sensitivetypes"
     ifbc5c976485c8ce6802245796a7bca4914bfd3e80f624a761511266b13799b70 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/classifytextjobs"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i27eb8dd6f1e19fde6babe9ea8109f5b765c6eb4971d149bdf4ac63504c239dbf "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/sensitivitylabels/item"
     i45cfe1305c2a625c914638131757b68e2e595331b1cb835c1b30df24ea16f31f "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/classifytextjobs/item"
     i4792e57c8d9125efc146f0b2e40e63e9de13f444548ccb305eb4736a1a5be3a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/classifyfilejobs/item"
@@ -27,7 +26,7 @@ import (
     id639ff5c7f5dd2905bbbcf9dbcd6a7912904f3f8da7f947d8b3eec42a0d9bfd4 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/evaluatelabeljobs/item"
 )
 
-// DataClassificationRequestBuilder builds and executes requests for operations under \dataClassification
+// DataClassificationRequestBuilder provides operations to manage the dataClassificationService singleton.
 type DataClassificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -57,7 +56,7 @@ type DataClassificationRequestBuilderGetQueryParameters struct {
 // DataClassificationRequestBuilderPatchOptions options for Patch
 type DataClassificationRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataClassificationService;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataClassificationServiceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -111,7 +110,7 @@ func NewDataClassificationRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -216,16 +215,20 @@ func (m *DataClassificationRequestBuilder) ExactMatchUploadAgentsById(id string)
     return i6031e0e8286fe11a8cf1dce07b526e8cf9498b49a741cc2cc1f28e944ef6db8b.NewExactMatchUploadAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get dataClassification
-func (m *DataClassificationRequestBuilder) Get(options *DataClassificationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataClassificationService, error) {
+func (m *DataClassificationRequestBuilder) Get(options *DataClassificationRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataClassificationServiceable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDataClassificationService() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDataClassificationServiceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataClassificationService), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataClassificationServiceable), nil
 }
 func (m *DataClassificationRequestBuilder) Jobs()(*i6594c9c85b2fe737b67f8e7096b7bac27a77e943585e903afc1c799b3c1391e0.JobsRequestBuilder) {
     return i6594c9c85b2fe737b67f8e7096b7bac27a77e943585e903afc1c799b3c1391e0.NewJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -247,7 +250,11 @@ func (m *DataClassificationRequestBuilder) Patch(options *DataClassificationRequ
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

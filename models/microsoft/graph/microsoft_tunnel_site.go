@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelSite 
+// MicrosoftTunnelSite provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelSite struct {
     Entity
     // The MicrosoftTunnelSite's description
@@ -14,9 +14,9 @@ type MicrosoftTunnelSite struct {
     // The MicrosoftTunnelSite's Internal Network Access Probe URL
     internalNetworkProbeUrl *string;
     // The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-    microsoftTunnelConfiguration *MicrosoftTunnelConfiguration;
+    microsoftTunnelConfiguration MicrosoftTunnelConfigurationable;
     // A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-    microsoftTunnelServers []MicrosoftTunnelServer;
+    microsoftTunnelServers []MicrosoftTunnelServerable;
     // The MicrosoftTunnelSite's public domain name or IP address
     publicAddress *string;
     // List of Scope Tags for this Entity instance.
@@ -39,6 +39,10 @@ func NewMicrosoftTunnelSite()(*MicrosoftTunnelSite) {
     }
     return m
 }
+// CreateMicrosoftTunnelSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMicrosoftTunnelSiteFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMicrosoftTunnelSite(), nil
+}
 // GetDescription gets the description property value. The MicrosoftTunnelSite's description
 func (m *MicrosoftTunnelSite) GetDescription()(*string) {
     if m == nil {
@@ -53,86 +57,6 @@ func (m *MicrosoftTunnelSite) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetInternalNetworkProbeUrl gets the internalNetworkProbeUrl property value. The MicrosoftTunnelSite's Internal Network Access Probe URL
-func (m *MicrosoftTunnelSite) GetInternalNetworkProbeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalNetworkProbeUrl
-    }
-}
-// GetMicrosoftTunnelConfiguration gets the microsoftTunnelConfiguration property value. The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-func (m *MicrosoftTunnelSite) GetMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftTunnelConfiguration
-    }
-}
-// GetMicrosoftTunnelServers gets the microsoftTunnelServers property value. A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-func (m *MicrosoftTunnelSite) GetMicrosoftTunnelServers()([]MicrosoftTunnelServer) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftTunnelServers
-    }
-}
-// GetPublicAddress gets the publicAddress property value. The MicrosoftTunnelSite's public domain name or IP address
-func (m *MicrosoftTunnelSite) GetPublicAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicAddress
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
-func (m *MicrosoftTunnelSite) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetUpgradeAutomatically gets the upgradeAutomatically property value. The site's automatic upgrade setting. True for automatic upgrades, false for manual control
-func (m *MicrosoftTunnelSite) GetUpgradeAutomatically()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeAutomatically
-    }
-}
-// GetUpgradeAvailable gets the upgradeAvailable property value. True if an upgrade is available
-func (m *MicrosoftTunnelSite) GetUpgradeAvailable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeAvailable
-    }
-}
-// GetUpgradeWindowEndTime gets the upgradeWindowEndTime property value. The site's upgrade window end time of day
-func (m *MicrosoftTunnelSite) GetUpgradeWindowEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeWindowEndTime
-    }
-}
-// GetUpgradeWindowStartTime gets the upgradeWindowStartTime property value. The site's upgrade window start time of day
-func (m *MicrosoftTunnelSite) GetUpgradeWindowStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeWindowStartTime
-    }
-}
-// GetUpgradeWindowUtcOffsetInMinutes gets the upgradeWindowUtcOffsetInMinutes property value. The site's timezone represented as a minute offset from UTC
-func (m *MicrosoftTunnelSite) GetUpgradeWindowUtcOffsetInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeWindowUtcOffsetInMinutes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -169,24 +93,24 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["microsoftTunnelConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftTunnelConfiguration() })
+        val, err := n.GetObjectValue(CreateMicrosoftTunnelConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMicrosoftTunnelConfiguration(val.(*MicrosoftTunnelConfiguration))
+            m.SetMicrosoftTunnelConfiguration(val.(MicrosoftTunnelConfigurationable))
         }
         return nil
     }
     res["microsoftTunnelServers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftTunnelServer() })
+        val, err := n.GetCollectionOfObjectValues(CreateMicrosoftTunnelServerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MicrosoftTunnelServer, len(val))
+            res := make([]MicrosoftTunnelServerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MicrosoftTunnelServer))
+                res[i] = v.(MicrosoftTunnelServerable)
             }
             m.SetMicrosoftTunnelServers(res)
         }
@@ -268,6 +192,86 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
+// GetInternalNetworkProbeUrl gets the internalNetworkProbeUrl property value. The MicrosoftTunnelSite's Internal Network Access Probe URL
+func (m *MicrosoftTunnelSite) GetInternalNetworkProbeUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internalNetworkProbeUrl
+    }
+}
+// GetMicrosoftTunnelConfiguration gets the microsoftTunnelConfiguration property value. The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
+func (m *MicrosoftTunnelSite) GetMicrosoftTunnelConfiguration()(MicrosoftTunnelConfigurationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.microsoftTunnelConfiguration
+    }
+}
+// GetMicrosoftTunnelServers gets the microsoftTunnelServers property value. A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
+func (m *MicrosoftTunnelSite) GetMicrosoftTunnelServers()([]MicrosoftTunnelServerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.microsoftTunnelServers
+    }
+}
+// GetPublicAddress gets the publicAddress property value. The MicrosoftTunnelSite's public domain name or IP address
+func (m *MicrosoftTunnelSite) GetPublicAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publicAddress
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+func (m *MicrosoftTunnelSite) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetUpgradeAutomatically gets the upgradeAutomatically property value. The site's automatic upgrade setting. True for automatic upgrades, false for manual control
+func (m *MicrosoftTunnelSite) GetUpgradeAutomatically()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.upgradeAutomatically
+    }
+}
+// GetUpgradeAvailable gets the upgradeAvailable property value. True if an upgrade is available
+func (m *MicrosoftTunnelSite) GetUpgradeAvailable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.upgradeAvailable
+    }
+}
+// GetUpgradeWindowEndTime gets the upgradeWindowEndTime property value. The site's upgrade window end time of day
+func (m *MicrosoftTunnelSite) GetUpgradeWindowEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.upgradeWindowEndTime
+    }
+}
+// GetUpgradeWindowStartTime gets the upgradeWindowStartTime property value. The site's upgrade window start time of day
+func (m *MicrosoftTunnelSite) GetUpgradeWindowStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.upgradeWindowStartTime
+    }
+}
+// GetUpgradeWindowUtcOffsetInMinutes gets the upgradeWindowUtcOffsetInMinutes property value. The site's timezone represented as a minute offset from UTC
+func (m *MicrosoftTunnelSite) GetUpgradeWindowUtcOffsetInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.upgradeWindowUtcOffsetInMinutes
+    }
+}
 func (m *MicrosoftTunnelSite) IsNil()(bool) {
     return m == nil
 }
@@ -304,8 +308,7 @@ func (m *MicrosoftTunnelSite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetMicrosoftTunnelServers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMicrosoftTunnelServers()))
         for i, v := range m.GetMicrosoftTunnelServers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("microsoftTunnelServers", cast)
         if err != nil {
@@ -375,13 +378,13 @@ func (m *MicrosoftTunnelSite) SetInternalNetworkProbeUrl(value *string)() {
     }
 }
 // SetMicrosoftTunnelConfiguration sets the microsoftTunnelConfiguration property value. The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-func (m *MicrosoftTunnelSite) SetMicrosoftTunnelConfiguration(value *MicrosoftTunnelConfiguration)() {
+func (m *MicrosoftTunnelSite) SetMicrosoftTunnelConfiguration(value MicrosoftTunnelConfigurationable)() {
     if m != nil {
         m.microsoftTunnelConfiguration = value
     }
 }
 // SetMicrosoftTunnelServers sets the microsoftTunnelServers property value. A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-func (m *MicrosoftTunnelSite) SetMicrosoftTunnelServers(value []MicrosoftTunnelServer)() {
+func (m *MicrosoftTunnelSite) SetMicrosoftTunnelServers(value []MicrosoftTunnelServerable)() {
     if m != nil {
         m.microsoftTunnelServers = value
     }

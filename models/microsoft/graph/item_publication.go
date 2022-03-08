@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemPublication 
+// ItemPublication provides operations to manage the compliance singleton.
 type ItemPublication struct {
     ItemFacet
     // Description of the publication.
@@ -27,6 +27,10 @@ func NewItemPublication()(*ItemPublication) {
     }
     return m
 }
+// CreateItemPublicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemPublicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemPublication(), nil
+}
 // GetDescription gets the description property value. Description of the publication.
 func (m *ItemPublication) GetDescription()(*string) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *ItemPublication) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetPublishedDate gets the publishedDate property value. The date that the publication was published.
-func (m *ItemPublication) GetPublishedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedDate
-    }
-}
-// GetPublisher gets the publisher property value. Publication or publisher for the publication.
-func (m *ItemPublication) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
-func (m *ItemPublication) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
-}
-// GetWebUrl gets the webUrl property value. URL referencing the publication.
-func (m *ItemPublication) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +111,38 @@ func (m *ItemPublication) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetPublishedDate gets the publishedDate property value. The date that the publication was published.
+func (m *ItemPublication) GetPublishedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishedDate
+    }
+}
+// GetPublisher gets the publisher property value. Publication or publisher for the publication.
+func (m *ItemPublication) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
+func (m *ItemPublication) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
+}
+// GetWebUrl gets the webUrl property value. URL referencing the publication.
+func (m *ItemPublication) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *ItemPublication) IsNil()(bool) {
     return m == nil

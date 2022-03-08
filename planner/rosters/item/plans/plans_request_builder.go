@@ -2,11 +2,11 @@ package plans
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ib5697ad827cac6724d298f8e138a085ff8bd1fe4320424b3249fdb87d0461850 "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/rosters/item/plans/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i71f4e0b5de33192ac2eea69fce89879ddc86819a8d139f9acaa27d748ea90924 "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/rosters/item/plans/count"
 )
 
-// PlansRequestBuilder builds and executes requests for operations under \planner\rosters\{plannerRoster-id}\plans
+// PlansRequestBuilder provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
 type PlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewPlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlansRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PlansRequestBuilder) Count()(*i71f4e0b5de33192ac2eea69fce89879ddc86819a8d139f9acaa27d748ea90924.CountRequestBuilder) {
+    return i71f4e0b5de33192ac2eea69fce89879ddc86819a8d139f9acaa27d748ea90924.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieves the plans contained by the plannerRoster.
 func (m *PlansRequestBuilder) CreateGetRequestInformation(options *PlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *PlansRequestBuilder) CreateGetRequestInformation(options *PlansRequestB
     return requestInfo, nil
 }
 // Get retrieves the plans contained by the plannerRoster.
-func (m *PlansRequestBuilder) Get(options *PlansRequestBuilderGetOptions)(*PlansResponse, error) {
+func (m *PlansRequestBuilder) Get(options *PlansRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlansResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePlannerPlanCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PlansResponse), nil
-}
-func (m *PlansRequestBuilder) Ref()(*ib5697ad827cac6724d298f8e138a085ff8bd1fe4320424b3249fdb87d0461850.RefRequestBuilder) {
-    return ib5697ad827cac6724d298f8e138a085ff8bd1fe4320424b3249fdb87d0461850.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerPlanCollectionResponseable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VisualProperties 
+// VisualProperties provides operations to manage the compliance singleton.
 type VisualProperties struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewVisualProperties()(*VisualProperties) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateVisualPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateVisualPropertiesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewVisualProperties(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualProperties) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *VisualProperties) GetBody()(*string) {
         return nil
     } else {
         return m.body
-    }
-}
-// GetTitle gets the title property value. The title of a visual user notification. This field is required for visual notification payloads.
-func (m *VisualProperties) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *VisualProperties) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetTitle gets the title property value. The title of a visual user notification. This field is required for visual notification payloads.
+func (m *VisualProperties) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
 }
 func (m *VisualProperties) IsNil()(bool) {
     return m == nil

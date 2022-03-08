@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExpressionInputObject 
+// ExpressionInputObject provides operations to call the parseExpression method.
 type ExpressionInputObject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Definition of the test object.
-    definition *ObjectDefinition;
+    definition ObjectDefinitionable;
     // Property values of the test object.
-    properties []StringKeyObjectValuePair;
+    properties []StringKeyObjectValuePairable;
 }
 // NewExpressionInputObject instantiates a new expressionInputObject and sets the default values.
 func NewExpressionInputObject()(*ExpressionInputObject) {
@@ -19,6 +19,10 @@ func NewExpressionInputObject()(*ExpressionInputObject) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateExpressionInputObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExpressionInputObjectFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExpressionInputObject(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionInputObject) GetAdditionalData()(map[string]interface{}) {
@@ -29,49 +33,49 @@ func (m *ExpressionInputObject) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDefinition gets the definition property value. Definition of the test object.
-func (m *ExpressionInputObject) GetDefinition()(*ObjectDefinition) {
+func (m *ExpressionInputObject) GetDefinition()(ObjectDefinitionable) {
     if m == nil {
         return nil
     } else {
         return m.definition
     }
 }
-// GetProperties gets the properties property value. Property values of the test object.
-func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["definition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewObjectDefinition() })
+        val, err := n.GetObjectValue(CreateObjectDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefinition(val.(*ObjectDefinition))
+            m.SetDefinition(val.(ObjectDefinitionable))
         }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStringKeyObjectValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateStringKeyObjectValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]StringKeyObjectValuePair, len(val))
+            res := make([]StringKeyObjectValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*StringKeyObjectValuePair))
+                res[i] = v.(StringKeyObjectValuePairable)
             }
             m.SetProperties(res)
         }
         return nil
     }
     return res
+}
+// GetProperties gets the properties property value. Property values of the test object.
+func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.properties
+    }
 }
 func (m *ExpressionInputObject) IsNil()(bool) {
     return m == nil
@@ -87,8 +91,7 @@ func (m *ExpressionInputObject) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -110,13 +113,13 @@ func (m *ExpressionInputObject) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetDefinition sets the definition property value. Definition of the test object.
-func (m *ExpressionInputObject) SetDefinition(value *ObjectDefinition)() {
+func (m *ExpressionInputObject) SetDefinition(value ObjectDefinitionable)() {
     if m != nil {
         m.definition = value
     }
 }
 // SetProperties sets the properties property value. Property values of the test object.
-func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePair)() {
+func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePairable)() {
     if m != nil {
         m.properties = value
     }

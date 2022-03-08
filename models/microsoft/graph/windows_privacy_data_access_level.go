@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the windowsPrivacyAccessControls method.
 type WindowsPrivacyDataAccessLevel int
 
 const (

@@ -2,11 +2,11 @@ package microsofttunnelserverlogcollectionresponses
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i307c2cf1dc84881d3e50c1bff7a4834a4a49d30624bea3171bdc6e9b8cc85799 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelserverlogcollectionresponses/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// MicrosoftTunnelServerLogCollectionResponsesRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses
+// MicrosoftTunnelServerLogCollectionResponsesRequestBuilder provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
 type MicrosoftTunnelServerLogCollectionResponsesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters
 // MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions options for Post
 type MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl string,
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Count()(*i307c2cf1dc84881d3e50c1bff7a4834a4a49d30624bea3171bdc6e9b8cc85799.CountRequestBuilder) {
+    return i307c2cf1dc84881d3e50c1bff7a4834a4a49d30624bea3171bdc6e9b8cc85799.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// CreatePostRequestInformation create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreatePostRequestInformation(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) CreatePostRe
     return requestInfo, nil
 }
 // Get collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Get(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions)(*MicrosoftTunnelServerLogCollectionResponsesResponse, error) {
+func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Get(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftTunnelServerLogCollectionResponsesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftTunnelServerLogCollectionResponseCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MicrosoftTunnelServerLogCollectionResponsesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseCollectionResponseable), nil
 }
-// Post collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Post(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse, error) {
+// Post create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
+func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Post(options *MicrosoftTunnelServerLogCollectionResponsesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMicrosoftTunnelServerLogCollectionResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable), nil
 }

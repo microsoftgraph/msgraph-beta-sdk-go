@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UnsubmitRequestBuilder builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.unsubmit
+// UnsubmitRequestBuilder provides operations to call the unsubmit method.
 type UnsubmitRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type UnsubmitResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type educationSubmission
-    educationSubmission *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission;
+    educationSubmission i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable;
 }
 // NewUnsubmitResponse instantiates a new unsubmitResponse and sets the default values.
 func NewUnsubmitResponse()(*UnsubmitResponse) {
@@ -37,6 +37,9 @@ func NewUnsubmitResponse()(*UnsubmitResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateUnsubmitResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnsubmitResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnsubmitResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *UnsubmitResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEducationSubmission gets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *UnsubmitResponse) GetEducationSubmission()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission) {
+func (m *UnsubmitResponse) GetEducationSubmission()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *UnsubmitResponse) GetEducationSubmission()(*i535684e11b5500196ecb4b5c66
 func (m *UnsubmitResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["educationSubmission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationSubmission() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationSubmissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEducationSubmission(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission))
+            m.SetEducationSubmission(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *UnsubmitResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEducationSubmission sets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *UnsubmitResponse) SetEducationSubmission(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission)() {
+func (m *UnsubmitResponse) SetEducationSubmission(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable)() {
     if m != nil {
         m.educationSubmission = value
     }
@@ -109,7 +112,7 @@ func NewUnsubmitRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *UnsubmitRequestBuilder) CreatePostRequestInformation(options *UnsubmitR
     return requestInfo, nil
 }
 // Post invoke action unsubmit
-func (m *UnsubmitRequestBuilder) Post(options *UnsubmitRequestBuilderPostOptions)(*UnsubmitResponse, error) {
+func (m *UnsubmitRequestBuilder) Post(options *UnsubmitRequestBuilderPostOptions)(UnsubmitResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnsubmitResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUnsubmitResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*UnsubmitResponse), nil
+    return res.(UnsubmitResponseable), nil
 }

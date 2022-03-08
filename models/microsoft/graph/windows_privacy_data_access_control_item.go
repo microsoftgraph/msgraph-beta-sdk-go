@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsPrivacyDataAccessControlItem 
+// WindowsPrivacyDataAccessControlItem provides operations to call the windowsPrivacyAccessControls method.
 type WindowsPrivacyDataAccessControlItem struct {
     Entity
     // This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
@@ -22,6 +22,10 @@ func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlIt
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsPrivacyDataAccessControlItem(), nil
 }
 // GetAccessLevel gets the accessLevel property value. This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
 func (m *WindowsPrivacyDataAccessControlItem) GetAccessLevel()(*WindowsPrivacyDataAccessLevel) {

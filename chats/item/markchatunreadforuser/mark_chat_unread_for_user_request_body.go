@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// MarkChatUnreadForUserRequestBody 
+// MarkChatUnreadForUserRequestBody provides operations to call the markChatUnreadForUser method.
 type MarkChatUnreadForUserRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type MarkChatUnreadForUserRequestBody struct {
     // 
     tenantId *string;
     // 
-    user *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentity;
+    user i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentityable;
 }
 // NewMarkChatUnreadForUserRequestBody instantiates a new markChatUnreadForUserRequestBody and sets the default values.
 func NewMarkChatUnreadForUserRequestBody()(*MarkChatUnreadForUserRequestBody) {
@@ -24,36 +24,16 @@ func NewMarkChatUnreadForUserRequestBody()(*MarkChatUnreadForUserRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMarkChatUnreadForUserRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMarkChatUnreadForUserRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMarkChatUnreadForUserRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkChatUnreadForUserRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastMessageReadDateTime gets the lastMessageReadDateTime property value. 
-func (m *MarkChatUnreadForUserRequestBody) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastMessageReadDateTime
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *MarkChatUnreadForUserRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetUser gets the user property value. 
-func (m *MarkChatUnreadForUserRequestBody) GetUser()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,16 +60,40 @@ func (m *MarkChatUnreadForUserRequestBody) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTeamworkUserIdentity() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamworkUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUser(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentity))
+            m.SetUser(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentityable))
         }
         return nil
     }
     return res
+}
+// GetLastMessageReadDateTime gets the lastMessageReadDateTime property value. 
+func (m *MarkChatUnreadForUserRequestBody) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastMessageReadDateTime
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *MarkChatUnreadForUserRequestBody) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetUser gets the user property value. 
+func (m *MarkChatUnreadForUserRequestBody) GetUser()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.user
+    }
 }
 func (m *MarkChatUnreadForUserRequestBody) IsNil()(bool) {
     return m == nil
@@ -141,7 +145,7 @@ func (m *MarkChatUnreadForUserRequestBody) SetTenantId(value *string)() {
     }
 }
 // SetUser sets the user property value. 
-func (m *MarkChatUnreadForUserRequestBody) SetUser(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentity)() {
+func (m *MarkChatUnreadForUserRequestBody) SetUser(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentityable)() {
     if m != nil {
         m.user = value
     }

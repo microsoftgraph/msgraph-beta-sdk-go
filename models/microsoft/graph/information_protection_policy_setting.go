@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InformationProtectionPolicySetting 
+// InformationProtectionPolicySetting provides operations to manage the compliance singleton.
 type InformationProtectionPolicySetting struct {
     Entity
     // 
@@ -23,36 +23,16 @@ func NewInformationProtectionPolicySetting()(*InformationProtectionPolicySetting
     }
     return m
 }
+// CreateInformationProtectionPolicySettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInformationProtectionPolicySettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInformationProtectionPolicySetting(), nil
+}
 // GetDefaultLabelId gets the defaultLabelId property value. 
 func (m *InformationProtectionPolicySetting) GetDefaultLabelId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.defaultLabelId
-    }
-}
-// GetIsDowngradeJustificationRequired gets the isDowngradeJustificationRequired property value. 
-func (m *InformationProtectionPolicySetting) GetIsDowngradeJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDowngradeJustificationRequired
-    }
-}
-// GetIsMandatory gets the isMandatory property value. 
-func (m *InformationProtectionPolicySetting) GetIsMandatory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMandatory
-    }
-}
-// GetMoreInfoUrl gets the moreInfoUrl property value. 
-func (m *InformationProtectionPolicySetting) GetMoreInfoUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.moreInfoUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +79,30 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetIsDowngradeJustificationRequired gets the isDowngradeJustificationRequired property value. 
+func (m *InformationProtectionPolicySetting) GetIsDowngradeJustificationRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDowngradeJustificationRequired
+    }
+}
+// GetIsMandatory gets the isMandatory property value. 
+func (m *InformationProtectionPolicySetting) GetIsMandatory()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMandatory
+    }
+}
+// GetMoreInfoUrl gets the moreInfoUrl property value. 
+func (m *InformationProtectionPolicySetting) GetMoreInfoUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.moreInfoUrl
+    }
 }
 func (m *InformationProtectionPolicySetting) IsNil()(bool) {
     return m == nil

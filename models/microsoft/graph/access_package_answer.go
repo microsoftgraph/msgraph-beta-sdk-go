@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageAnswer 
+// AccessPackageAnswer provides operations to manage the identityGovernance singleton.
 type AccessPackageAnswer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The question the answer is for. Required and Read-only.
-    answeredQuestion *AccessPackageQuestion;
+    answeredQuestion AccessPackageQuestionable;
     // The display value of the answer. Required.
     displayValue *string;
 }
@@ -20,6 +20,10 @@ func NewAccessPackageAnswer()(*AccessPackageAnswer) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessPackageAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageAnswerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageAnswer(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAnswer) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,7 +33,7 @@ func (m *AccessPackageAnswer) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAnsweredQuestion gets the answeredQuestion property value. The question the answer is for. Required and Read-only.
-func (m *AccessPackageAnswer) GetAnsweredQuestion()(*AccessPackageQuestion) {
+func (m *AccessPackageAnswer) GetAnsweredQuestion()(AccessPackageQuestionable) {
     if m == nil {
         return nil
     } else {
@@ -48,12 +52,12 @@ func (m *AccessPackageAnswer) GetDisplayValue()(*string) {
 func (m *AccessPackageAnswer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["answeredQuestion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageQuestion() })
+        val, err := n.GetObjectValue(CreateAccessPackageQuestionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAnsweredQuestion(val.(*AccessPackageQuestion))
+            m.SetAnsweredQuestion(val.(AccessPackageQuestionable))
         }
         return nil
     }
@@ -101,7 +105,7 @@ func (m *AccessPackageAnswer) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetAnsweredQuestion sets the answeredQuestion property value. The question the answer is for. Required and Read-only.
-func (m *AccessPackageAnswer) SetAnsweredQuestion(value *AccessPackageQuestion)() {
+func (m *AccessPackageAnswer) SetAnsweredQuestion(value AccessPackageQuestionable)() {
     if m != nil {
         m.answeredQuestion = value
     }

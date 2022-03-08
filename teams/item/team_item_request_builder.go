@@ -3,7 +3,6 @@ package item
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i048dd3eda626b5c64ad8acc7d562355d6648e78b61cb9150e852218748576fca "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/installedapps"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i0acc5a25a7c609872781f3db26798489e7383966bcf6ccb86a382799c15443b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/operations"
     i279367125768e25f45766783a5a7e5b8365fc99cf8e0872f52ac607992a020d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/clone"
     i390feffd708cca0f7b6a5195858181d312c7117b9de188d29741208793e80c6c "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/completemigration"
@@ -27,9 +26,10 @@ import (
     i816caa6537457ad2108f6d14fc5f83f30b010c0f3ebaa1f99a81c44641b9d1e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item"
     ib1fa9341ce0e195b37a0fcac629719d660cd28ed736c3abf54fe54102868c36d "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/operations/item"
     iba461bd7c348411b42a81c1813125516bec205337ca79a73172439185e9cd1c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/item"
+    ifc8558814710963aeed18cad6c4a77609daafa95e19508c1be52d9732d135fc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/owners/item"
 )
 
-// TeamItemRequestBuilder builds and executes requests for operations under \teams\{team-id}
+// TeamItemRequestBuilder provides operations to manage the collection of team entities.
 type TeamItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -68,7 +68,7 @@ type TeamItemRequestBuilderGetQueryParameters struct {
 // TeamItemRequestBuilderPatchOptions options for Patch
 type TeamItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamable;
     // Request headers
     H map[string]string;
     // Request options
@@ -108,7 +108,7 @@ func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -179,23 +179,31 @@ func (m *TeamItemRequestBuilder) Delete(options *TeamItemRequestBuilderDeleteOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get entity from teams by key
-func (m *TeamItemRequestBuilder) Get(options *TeamItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team, error) {
+func (m *TeamItemRequestBuilder) Get(options *TeamItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTeam() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamable), nil
 }
 func (m *TeamItemRequestBuilder) Group()(*i6356c4272d892a6b1753bbed0e3b3f265f9d5630d86393549775b40b26fad406.GroupRequestBuilder) {
     return i6356c4272d892a6b1753bbed0e3b3f265f9d5630d86393549775b40b26fad406.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -245,13 +253,28 @@ func (m *TeamItemRequestBuilder) OperationsById(id string)(*ib1fa9341ce0e195b37a
 func (m *TeamItemRequestBuilder) Owners()(*i565462b4460b597336ced0fd92db4b81564041b705b332120e10962a0807ca79.OwnersRequestBuilder) {
     return i565462b4460b597336ced0fd92db4b81564041b705b332120e10962a0807ca79.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// OwnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.owners.item collection
+func (m *TeamItemRequestBuilder) OwnersById(id string)(*ifc8558814710963aeed18cad6c4a77609daafa95e19508c1be52d9732d135fc7.UserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["user_id"] = id
+    }
+    return ifc8558814710963aeed18cad6c4a77609daafa95e19508c1be52d9732d135fc7.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // Patch update entity in teams
 func (m *TeamItemRequestBuilder) Patch(options *TeamItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

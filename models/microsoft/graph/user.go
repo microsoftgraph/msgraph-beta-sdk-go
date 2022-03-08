@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// User 
+// User provides operations to manage the compliance singleton.
 type User struct {
     DirectoryObject
     // A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -13,39 +13,39 @@ type User struct {
     // true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
     accountEnabled *bool;
     // The user's activities across devices. Read-only. Nullable.
-    activities []UserActivity;
+    activities []UserActivityable;
     // Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
     ageGroup *string;
     // The user's terms of use acceptance statuses. Read-only. Nullable.
-    agreementAcceptances []AgreementAcceptance;
+    agreementAcceptances []AgreementAcceptanceable;
     // 
-    analytics *UserAnalytics;
+    analytics UserAnalyticsable;
     // 
-    appConsentRequestsForApproval []AppConsentRequest;
+    appConsentRequestsForApproval []AppConsentRequestable;
     // Represents the app roles a user has been granted for an application. Supports $expand.
-    appRoleAssignments []AppRoleAssignment;
+    appRoleAssignments []AppRoleAssignmentable;
     // 
-    approvals []Approval;
+    approvals []Approvalable;
     // The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on $select. Supports $filter (eq and not).
-    assignedLicenses []AssignedLicense;
+    assignedLicenses []AssignedLicenseable;
     // The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
-    assignedPlans []AssignedPlan;
+    assignedPlans []AssignedPlanable;
     // 
-    authentication *Authentication;
+    authentication Authenticationable;
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     businessPhones []string;
     // The user's primary calendar. Read-only.
-    calendar *Calendar;
+    calendar Calendarable;
     // The user's calendar groups. Read-only. Nullable.
-    calendarGroups []CalendarGroup;
+    calendarGroups []CalendarGroupable;
     // The user's calendars. Read-only. Nullable.
-    calendars []Calendar;
+    calendars []Calendarable;
     // The calendar view for the calendar. Read-only. Nullable.
-    calendarView []Event;
+    calendarView []Eventable;
     // 
-    chats []Chat;
+    chats []Chatable;
     // The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     city *string;
     // The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -53,51 +53,51 @@ type User struct {
     // Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
     consentProvidedForMinor *string;
     // The user's contacts folders. Read-only. Nullable.
-    contactFolders []ContactFolder;
+    contactFolders []ContactFolderable;
     // The user's contacts. Read-only. Nullable.
-    contacts []Contact;
+    contacts []Contactable;
     // The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     country *string;
     // The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Directory objects that were created by the user. Read-only. Nullable.
-    createdObjects []DirectoryObject;
+    createdObjects []DirectoryObjectable;
     // Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
     creationType *string;
     // An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
-    customSecurityAttributes *CustomSecurityAttributeValue;
+    customSecurityAttributes CustomSecurityAttributeValueable;
     // The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
     department *string;
     // Get enrollment configurations targeted to the user
-    deviceEnrollmentConfigurations []DeviceEnrollmentConfiguration;
+    deviceEnrollmentConfigurations []DeviceEnrollmentConfigurationable;
     // The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
     deviceEnrollmentLimit *int32;
     // 
-    deviceKeys []DeviceKey;
+    deviceKeys []DeviceKeyable;
     // The list of troubleshooting events for this user.
-    deviceManagementTroubleshootingEvents []DeviceManagementTroubleshootingEvent;
+    deviceManagementTroubleshootingEvents []DeviceManagementTroubleshootingEventable;
     // 
-    devices []Device;
+    devices []Deviceable;
     // The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-    directReports []DirectoryObject;
+    directReports []DirectoryObjectable;
     // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
     displayName *string;
     // The user's OneDrive. Read-only.
-    drive *Drive;
+    drive Driveable;
     // A collection of drives available for this user. Read-only.
-    drives []Drive;
+    drives []Driveable;
     // The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     employeeHireDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     employeeId *string;
     // Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-    employeeOrgData *EmployeeOrgData;
+    employeeOrgData EmployeeOrgDataable;
     // Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith).
     employeeType *string;
     // The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
-    events []Event;
+    events []Eventable;
     // The collection of open extensions defined for the user. Read-only. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).
     externalUserState *string;
     // Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, not , in).
@@ -105,23 +105,23 @@ type User struct {
     // The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     faxNumber *string;
     // 
-    followedSites []Site;
+    followedSites []Siteable;
     // The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     givenName *string;
     // The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
     hireDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-    identities []ObjectIdentity;
+    identities []ObjectIdentityable;
     // The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
     imAddresses []string;
     // Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-    inferenceClassification *InferenceClassification;
+    inferenceClassification InferenceClassificationable;
     // Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
     infoCatalogs []string;
     // 
-    informationProtection *InformationProtection;
+    informationProtection InformationProtectionable;
     // Read-only. Nullable.
-    insights *ItemInsights;
+    insights ItemInsightsable;
     // A list for the user to describe their interests. Returned only on $select.
     interests []string;
     // Do not use – reserved for future use.
@@ -129,65 +129,65 @@ type User struct {
     // The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     jobTitle *string;
     // Read-only. Nullable.
-    joinedGroups []Group;
+    joinedGroups []Groupable;
     // The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-    joinedTeams []Team;
+    joinedTeams []Teamable;
     // The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     lastPasswordChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
     legalAgeGroupClassification *string;
     // State of license assignments for this user. Read-only. Returned only on $select.
-    licenseAssignmentStates []LicenseAssignmentState;
+    licenseAssignmentStates []LicenseAssignmentStateable;
     // A collection of this user's license details. Read-only.
-    licenseDetails []LicenseDetails;
+    licenseDetails []LicenseDetailsable;
     // The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
     mail *string;
     // Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-    mailboxSettings *MailboxSettings;
+    mailboxSettings MailboxSettingsable;
     // The user's mail folders. Read-only. Nullable.
-    mailFolders []MailFolder;
+    mailFolders []MailFolderable;
     // The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     mailNickname *string;
     // Zero or more managed app registrations that belong to the user.
-    managedAppRegistrations []ManagedAppRegistration;
+    managedAppRegistrations []ManagedAppRegistrationable;
     // The managed devices associated with the user.
-    managedDevices []ManagedDevice;
+    managedDevices []ManagedDeviceable;
     // The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
-    manager *DirectoryObject;
+    manager DirectoryObjectable;
     // The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-    memberOf []DirectoryObject;
+    memberOf []DirectoryObjectable;
     // The messages in a mailbox or folder. Read-only. Nullable.
-    messages []Message;
+    messages []Messageable;
     // The list of troubleshooting events for this user.
-    mobileAppIntentAndStates []MobileAppIntentAndState;
+    mobileAppIntentAndStates []MobileAppIntentAndStateable;
     // The list of mobile app troubleshooting events for this user.
-    mobileAppTroubleshootingEvents []MobileAppTroubleshootingEvent;
+    mobileAppTroubleshootingEvents []MobileAppTroubleshootingEventable;
     // The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     mobilePhone *string;
     // The URL for the user's personal site. Returned only on $select.
     mySite *string;
     // 
-    notifications []Notification;
+    notifications []Notificationable;
     // 
-    oauth2PermissionGrants []OAuth2PermissionGrant;
+    oauth2PermissionGrants []OAuth2PermissionGrantable;
     // The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     officeLocation *string;
     // Read-only.
-    onenote *Onenote;
+    onenote Onenoteable;
     // 
-    onlineMeetings []OnlineMeeting;
+    onlineMeetings []OnlineMeetingable;
     // Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     onPremisesDistinguishedName *string;
     // Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     onPremisesDomainName *string;
     // Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
-    onPremisesExtensionAttributes *OnPremisesExtensionAttributes;
+    onPremisesExtensionAttributes OnPremisesExtensionAttributesable;
     // This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
     onPremisesImmutableId *string;
     // Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
-    onPremisesProvisioningErrors []OnPremisesProvisioningError;
+    onPremisesProvisioningErrors []OnPremisesProvisioningErrorable;
     // Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     onPremisesSamAccountName *string;
     // Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
@@ -199,27 +199,27 @@ type User struct {
     // A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
     otherMails []string;
     // Read-only.
-    outlook *OutlookUser;
+    outlook OutlookUserable;
     // Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-    ownedDevices []DirectoryObject;
+    ownedDevices []DirectoryObjectable;
     // Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-    ownedObjects []DirectoryObject;
+    ownedObjects []DirectoryObjectable;
     // Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
     passwordPolicies *string;
     // Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-    passwordProfile *PasswordProfile;
+    passwordProfile PasswordProfileable;
     // A list for the user to enumerate their past projects. Returned only on $select.
     pastProjects []string;
     // Navigation property to get list of access reviews pending approval by reviewer.
-    pendingAccessReviewInstances []AccessReviewInstance;
+    pendingAccessReviewInstances []AccessReviewInstanceable;
     // People that are relevant to the user. Read-only. Nullable.
-    people []Person;
+    people []Personable;
     // The user's profile photo. Read-only.
-    photo *ProfilePhoto;
+    photo ProfilePhotoable;
     // Read-only. Nullable.
-    photos []ProfilePhoto;
+    photos []ProfilePhotoable;
     // Entry-point to the Planner resource that might exist for a user. Read-only.
-    planner *PlannerUser;
+    planner PlannerUserable;
     // The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     postalCode *string;
     // The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
@@ -229,31 +229,31 @@ type User struct {
     // The preferred name for the user. Returned only on $select.
     preferredName *string;
     // 
-    presence *Presence;
+    presence Presenceable;
     // Represents properties that are descriptive of a user in a tenant.
-    profile *Profile;
+    profile Profileable;
     // The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
-    provisionedPlans []ProvisionedPlan;
+    provisionedPlans []ProvisionedPlanable;
     // For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
     proxyAddresses []string;
     // Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.
     refreshTokensValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-    registeredDevices []DirectoryObject;
+    registeredDevices []DirectoryObjectable;
     // A list for the user to enumerate their responsibilities. Returned only on $select.
     responsibilities []string;
     // A list for the user to enumerate the schools they have attended. Returned only on $select.
     schools []string;
     // The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-    scopedRoleMemberOf []ScopedRoleMembership;
+    scopedRoleMemberOf []ScopedRoleMembershipable;
     // 
-    security *Security;
+    security Securityable;
     // Read-only. Nullable.
-    settings *UserSettings;
+    settings UserSettingsable;
     // true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).
     showInAddressList *bool;
     // Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.
-    signInActivity *SignInActivity;
+    signInActivity SignInActivityable;
     // Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
     signInSessionsValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A list for the user to enumerate their skills. Returned only on $select.
@@ -265,25 +265,25 @@ type User struct {
     // The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     surname *string;
     // 
-    tasks *Tasks;
+    tasks Tasksable;
     // A container for Microsoft Teams features available for the user. Read-only. Nullable.
-    teamwork *UserTeamwork;
+    teamwork UserTeamworkable;
     // Represents the To Do services available to a user.
-    todo *Todo;
+    todo Todoable;
     // 
-    transitiveMemberOf []DirectoryObject;
+    transitiveMemberOf []DirectoryObjectable;
     // The transitive reports for a user. Read-only.
-    transitiveReports []DirectoryObject;
+    transitiveReports []DirectoryObjectable;
     // A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     usageLocation *string;
-    // 
-    usageRights []UsageRight;
+    // Represents the usage rights a user has been granted.
+    usageRights []UsageRightable;
     // The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
     userPrincipalName *string;
     // A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
     userType *string;
     // Zero or more WIP device registrations that belong to the user.
-    windowsInformationProtectionDeviceRegistrations []WindowsInformationProtectionDeviceRegistration;
+    windowsInformationProtectionDeviceRegistrations []WindowsInformationProtectionDeviceRegistrationable;
 }
 // NewUser instantiates a new user and sets the default values.
 func NewUser()(*User) {
@@ -291,6 +291,10 @@ func NewUser()(*User) {
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
+}
+// CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUser(), nil
 }
 // GetAboutMe gets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
 func (m *User) GetAboutMe()(*string) {
@@ -309,7 +313,7 @@ func (m *User) GetAccountEnabled()(*bool) {
     }
 }
 // GetActivities gets the activities property value. The user's activities across devices. Read-only. Nullable.
-func (m *User) GetActivities()([]UserActivity) {
+func (m *User) GetActivities()([]UserActivityable) {
     if m == nil {
         return nil
     } else {
@@ -325,7 +329,7 @@ func (m *User) GetAgeGroup()(*string) {
     }
 }
 // GetAgreementAcceptances gets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *User) GetAgreementAcceptances()([]AgreementAcceptance) {
+func (m *User) GetAgreementAcceptances()([]AgreementAcceptanceable) {
     if m == nil {
         return nil
     } else {
@@ -333,7 +337,7 @@ func (m *User) GetAgreementAcceptances()([]AgreementAcceptance) {
     }
 }
 // GetAnalytics gets the analytics property value. 
-func (m *User) GetAnalytics()(*UserAnalytics) {
+func (m *User) GetAnalytics()(UserAnalyticsable) {
     if m == nil {
         return nil
     } else {
@@ -341,7 +345,7 @@ func (m *User) GetAnalytics()(*UserAnalytics) {
     }
 }
 // GetAppConsentRequestsForApproval gets the appConsentRequestsForApproval property value. 
-func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequest) {
+func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequestable) {
     if m == nil {
         return nil
     } else {
@@ -349,7 +353,7 @@ func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequest) {
     }
 }
 // GetAppRoleAssignments gets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
-func (m *User) GetAppRoleAssignments()([]AppRoleAssignment) {
+func (m *User) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -357,7 +361,7 @@ func (m *User) GetAppRoleAssignments()([]AppRoleAssignment) {
     }
 }
 // GetApprovals gets the approvals property value. 
-func (m *User) GetApprovals()([]Approval) {
+func (m *User) GetApprovals()([]Approvalable) {
     if m == nil {
         return nil
     } else {
@@ -365,7 +369,7 @@ func (m *User) GetApprovals()([]Approval) {
     }
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on $select. Supports $filter (eq and not).
-func (m *User) GetAssignedLicenses()([]AssignedLicense) {
+func (m *User) GetAssignedLicenses()([]AssignedLicenseable) {
     if m == nil {
         return nil
     } else {
@@ -373,7 +377,7 @@ func (m *User) GetAssignedLicenses()([]AssignedLicense) {
     }
 }
 // GetAssignedPlans gets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
-func (m *User) GetAssignedPlans()([]AssignedPlan) {
+func (m *User) GetAssignedPlans()([]AssignedPlanable) {
     if m == nil {
         return nil
     } else {
@@ -381,7 +385,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlan) {
     }
 }
 // GetAuthentication gets the authentication property value. 
-func (m *User) GetAuthentication()(*Authentication) {
+func (m *User) GetAuthentication()(Authenticationable) {
     if m == nil {
         return nil
     } else {
@@ -405,7 +409,7 @@ func (m *User) GetBusinessPhones()([]string) {
     }
 }
 // GetCalendar gets the calendar property value. The user's primary calendar. Read-only.
-func (m *User) GetCalendar()(*Calendar) {
+func (m *User) GetCalendar()(Calendarable) {
     if m == nil {
         return nil
     } else {
@@ -413,7 +417,7 @@ func (m *User) GetCalendar()(*Calendar) {
     }
 }
 // GetCalendarGroups gets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
-func (m *User) GetCalendarGroups()([]CalendarGroup) {
+func (m *User) GetCalendarGroups()([]CalendarGroupable) {
     if m == nil {
         return nil
     } else {
@@ -421,7 +425,7 @@ func (m *User) GetCalendarGroups()([]CalendarGroup) {
     }
 }
 // GetCalendars gets the calendars property value. The user's calendars. Read-only. Nullable.
-func (m *User) GetCalendars()([]Calendar) {
+func (m *User) GetCalendars()([]Calendarable) {
     if m == nil {
         return nil
     } else {
@@ -429,7 +433,7 @@ func (m *User) GetCalendars()([]Calendar) {
     }
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
-func (m *User) GetCalendarView()([]Event) {
+func (m *User) GetCalendarView()([]Eventable) {
     if m == nil {
         return nil
     } else {
@@ -437,7 +441,7 @@ func (m *User) GetCalendarView()([]Event) {
     }
 }
 // GetChats gets the chats property value. 
-func (m *User) GetChats()([]Chat) {
+func (m *User) GetChats()([]Chatable) {
     if m == nil {
         return nil
     } else {
@@ -469,7 +473,7 @@ func (m *User) GetConsentProvidedForMinor()(*string) {
     }
 }
 // GetContactFolders gets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
-func (m *User) GetContactFolders()([]ContactFolder) {
+func (m *User) GetContactFolders()([]ContactFolderable) {
     if m == nil {
         return nil
     } else {
@@ -477,7 +481,7 @@ func (m *User) GetContactFolders()([]ContactFolder) {
     }
 }
 // GetContacts gets the contacts property value. The user's contacts. Read-only. Nullable.
-func (m *User) GetContacts()([]Contact) {
+func (m *User) GetContacts()([]Contactable) {
     if m == nil {
         return nil
     } else {
@@ -501,7 +505,7 @@ func (m *User) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     }
 }
 // GetCreatedObjects gets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
-func (m *User) GetCreatedObjects()([]DirectoryObject) {
+func (m *User) GetCreatedObjects()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -517,7 +521,7 @@ func (m *User) GetCreationType()(*string) {
     }
 }
 // GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
-func (m *User) GetCustomSecurityAttributes()(*CustomSecurityAttributeValue) {
+func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     if m == nil {
         return nil
     } else {
@@ -533,7 +537,7 @@ func (m *User) GetDepartment()(*string) {
     }
 }
 // GetDeviceEnrollmentConfigurations gets the deviceEnrollmentConfigurations property value. Get enrollment configurations targeted to the user
-func (m *User) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfiguration) {
+func (m *User) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -549,7 +553,7 @@ func (m *User) GetDeviceEnrollmentLimit()(*int32) {
     }
 }
 // GetDeviceKeys gets the deviceKeys property value. 
-func (m *User) GetDeviceKeys()([]DeviceKey) {
+func (m *User) GetDeviceKeys()([]DeviceKeyable) {
     if m == nil {
         return nil
     } else {
@@ -557,7 +561,7 @@ func (m *User) GetDeviceKeys()([]DeviceKey) {
     }
 }
 // GetDeviceManagementTroubleshootingEvents gets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
-func (m *User) GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTroubleshootingEvent) {
+func (m *User) GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable) {
     if m == nil {
         return nil
     } else {
@@ -565,7 +569,7 @@ func (m *User) GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTrou
     }
 }
 // GetDevices gets the devices property value. 
-func (m *User) GetDevices()([]Device) {
+func (m *User) GetDevices()([]Deviceable) {
     if m == nil {
         return nil
     } else {
@@ -573,7 +577,7 @@ func (m *User) GetDevices()([]Device) {
     }
 }
 // GetDirectReports gets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-func (m *User) GetDirectReports()([]DirectoryObject) {
+func (m *User) GetDirectReports()([]DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -589,7 +593,7 @@ func (m *User) GetDisplayName()(*string) {
     }
 }
 // GetDrive gets the drive property value. The user's OneDrive. Read-only.
-func (m *User) GetDrive()(*Drive) {
+func (m *User) GetDrive()(Driveable) {
     if m == nil {
         return nil
     } else {
@@ -597,7 +601,7 @@ func (m *User) GetDrive()(*Drive) {
     }
 }
 // GetDrives gets the drives property value. A collection of drives available for this user. Read-only.
-func (m *User) GetDrives()([]Drive) {
+func (m *User) GetDrives()([]Driveable) {
     if m == nil {
         return nil
     } else {
@@ -621,7 +625,7 @@ func (m *User) GetEmployeeId()(*string) {
     }
 }
 // GetEmployeeOrgData gets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-func (m *User) GetEmployeeOrgData()(*EmployeeOrgData) {
+func (m *User) GetEmployeeOrgData()(EmployeeOrgDataable) {
     if m == nil {
         return nil
     } else {
@@ -637,7 +641,7 @@ func (m *User) GetEmployeeType()(*string) {
     }
 }
 // GetEvents gets the events property value. The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
-func (m *User) GetEvents()([]Event) {
+func (m *User) GetEvents()([]Eventable) {
     if m == nil {
         return nil
     } else {
@@ -645,7 +649,7 @@ func (m *User) GetEvents()([]Event) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the user. Read-only. Nullable.
-func (m *User) GetExtensions()([]Extension) {
+func (m *User) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
@@ -676,726 +680,6 @@ func (m *User) GetFaxNumber()(*string) {
         return m.faxNumber
     }
 }
-// GetFollowedSites gets the followedSites property value. 
-func (m *User) GetFollowedSites()([]Site) {
-    if m == nil {
-        return nil
-    } else {
-        return m.followedSites
-    }
-}
-// GetGivenName gets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-func (m *User) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
-}
-// GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hireDate
-    }
-}
-// GetIdentities gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-func (m *User) GetIdentities()([]ObjectIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identities
-    }
-}
-// GetImAddresses gets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
-func (m *User) GetImAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imAddresses
-    }
-}
-// GetInferenceClassification gets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-func (m *User) GetInferenceClassification()(*InferenceClassification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inferenceClassification
-    }
-}
-// GetInfoCatalogs gets the infoCatalogs property value. Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
-func (m *User) GetInfoCatalogs()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.infoCatalogs
-    }
-}
-// GetInformationProtection gets the informationProtection property value. 
-func (m *User) GetInformationProtection()(*InformationProtection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.informationProtection
-    }
-}
-// GetInsights gets the insights property value. Read-only. Nullable.
-func (m *User) GetInsights()(*ItemInsights) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insights
-    }
-}
-// GetInterests gets the interests property value. A list for the user to describe their interests. Returned only on $select.
-func (m *User) GetInterests()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.interests
-    }
-}
-// GetIsResourceAccount gets the isResourceAccount property value. Do not use – reserved for future use.
-func (m *User) GetIsResourceAccount()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isResourceAccount
-    }
-}
-// GetJobTitle gets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-func (m *User) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
-}
-// GetJoinedGroups gets the joinedGroups property value. Read-only. Nullable.
-func (m *User) GetJoinedGroups()([]Group) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinedGroups
-    }
-}
-// GetJoinedTeams gets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-func (m *User) GetJoinedTeams()([]Team) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinedTeams
-    }
-}
-// GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
-func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastPasswordChangeDateTime
-    }
-}
-// GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-func (m *User) GetLegalAgeGroupClassification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.legalAgeGroupClassification
-    }
-}
-// GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. Read-only. Returned only on $select.
-func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseAssignmentStates
-    }
-}
-// GetLicenseDetails gets the licenseDetails property value. A collection of this user's license details. Read-only.
-func (m *User) GetLicenseDetails()([]LicenseDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseDetails
-    }
-}
-// GetMail gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
-func (m *User) GetMail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mail
-    }
-}
-// GetMailboxSettings gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-func (m *User) GetMailboxSettings()(*MailboxSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailboxSettings
-    }
-}
-// GetMailFolders gets the mailFolders property value. The user's mail folders. Read-only. Nullable.
-func (m *User) GetMailFolders()([]MailFolder) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailFolders
-    }
-}
-// GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
-}
-// GetManagedAppRegistrations gets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
-func (m *User) GetManagedAppRegistrations()([]ManagedAppRegistration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedAppRegistrations
-    }
-}
-// GetManagedDevices gets the managedDevices property value. The managed devices associated with the user.
-func (m *User) GetManagedDevices()([]ManagedDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevices
-    }
-}
-// GetManager gets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
-func (m *User) GetManager()(*DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
-}
-// GetMemberOf gets the memberOf property value. The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-func (m *User) GetMemberOf()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
-}
-// GetMessages gets the messages property value. The messages in a mailbox or folder. Read-only. Nullable.
-func (m *User) GetMessages()([]Message) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messages
-    }
-}
-// GetMobileAppIntentAndStates gets the mobileAppIntentAndStates property value. The list of troubleshooting events for this user.
-func (m *User) GetMobileAppIntentAndStates()([]MobileAppIntentAndState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppIntentAndStates
-    }
-}
-// GetMobileAppTroubleshootingEvents gets the mobileAppTroubleshootingEvents property value. The list of mobile app troubleshooting events for this user.
-func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEvent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppTroubleshootingEvents
-    }
-}
-// GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
-}
-// GetMySite gets the mySite property value. The URL for the user's personal site. Returned only on $select.
-func (m *User) GetMySite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mySite
-    }
-}
-// GetNotifications gets the notifications property value. 
-func (m *User) GetNotifications()([]Notification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifications
-    }
-}
-// GetOauth2PermissionGrants gets the oauth2PermissionGrants property value. 
-func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrant) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oauth2PermissionGrants
-    }
-}
-// GetOfficeLocation gets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
-}
-// GetOnenote gets the onenote property value. Read-only.
-func (m *User) GetOnenote()(*Onenote) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onenote
-    }
-}
-// GetOnlineMeetings gets the onlineMeetings property value. 
-func (m *User) GetOnlineMeetings()([]OnlineMeeting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetings
-    }
-}
-// GetOnPremisesDistinguishedName gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-func (m *User) GetOnPremisesDistinguishedName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesDistinguishedName
-    }
-}
-// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-func (m *User) GetOnPremisesDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesDomainName
-    }
-}
-// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
-func (m *User) GetOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesExtensionAttributes
-    }
-}
-// GetOnPremisesImmutableId gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
-func (m *User) GetOnPremisesImmutableId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesImmutableId
-    }
-}
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
-func (m *User) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesLastSyncDateTime
-    }
-}
-// GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
-func (m *User) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningError) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesProvisioningErrors
-    }
-}
-// GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-func (m *User) GetOnPremisesSamAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSamAccountName
-    }
-}
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
-func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSecurityIdentifier
-    }
-}
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-func (m *User) GetOnPremisesSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSyncEnabled
-    }
-}
-// GetOnPremisesUserPrincipalName gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-func (m *User) GetOnPremisesUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesUserPrincipalName
-    }
-}
-// GetOtherMails gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
-func (m *User) GetOtherMails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.otherMails
-    }
-}
-// GetOutlook gets the outlook property value. Read-only.
-func (m *User) GetOutlook()(*OutlookUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outlook
-    }
-}
-// GetOwnedDevices gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *User) GetOwnedDevices()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownedDevices
-    }
-}
-// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *User) GetOwnedObjects()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownedObjects
-    }
-}
-// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
-func (m *User) GetPasswordPolicies()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPolicies
-    }
-}
-// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-func (m *User) GetPasswordProfile()(*PasswordProfile) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordProfile
-    }
-}
-// GetPastProjects gets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
-func (m *User) GetPastProjects()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pastProjects
-    }
-}
-// GetPendingAccessReviewInstances gets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
-func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingAccessReviewInstances
-    }
-}
-// GetPeople gets the people property value. People that are relevant to the user. Read-only. Nullable.
-func (m *User) GetPeople()([]Person) {
-    if m == nil {
-        return nil
-    } else {
-        return m.people
-    }
-}
-// GetPhoto gets the photo property value. The user's profile photo. Read-only.
-func (m *User) GetPhoto()(*ProfilePhoto) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photo
-    }
-}
-// GetPhotos gets the photos property value. Read-only. Nullable.
-func (m *User) GetPhotos()([]ProfilePhoto) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photos
-    }
-}
-// GetPlanner gets the planner property value. Entry-point to the Planner resource that might exist for a user. Read-only.
-func (m *User) GetPlanner()(*PlannerUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.planner
-    }
-}
-// GetPostalCode gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetPostalCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalCode
-    }
-}
-// GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-func (m *User) GetPreferredDataLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredDataLocation
-    }
-}
-// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
-func (m *User) GetPreferredLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredLanguage
-    }
-}
-// GetPreferredName gets the preferredName property value. The preferred name for the user. Returned only on $select.
-func (m *User) GetPreferredName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredName
-    }
-}
-// GetPresence gets the presence property value. 
-func (m *User) GetPresence()(*Presence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.presence
-    }
-}
-// GetProfile gets the profile property value. Represents properties that are descriptive of a user in a tenant.
-func (m *User) GetProfile()(*Profile) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profile
-    }
-}
-// GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
-func (m *User) GetProvisionedPlans()([]ProvisionedPlan) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisionedPlans
-    }
-}
-// GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
-func (m *User) GetProxyAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyAddresses
-    }
-}
-// GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.
-func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.refreshTokensValidFromDateTime
-    }
-}
-// GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *User) GetRegisteredDevices()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredDevices
-    }
-}
-// GetResponsibilities gets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
-func (m *User) GetResponsibilities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsibilities
-    }
-}
-// GetSchools gets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
-func (m *User) GetSchools()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schools
-    }
-}
-// GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembership) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopedRoleMemberOf
-    }
-}
-// GetSecurity gets the security property value. 
-func (m *User) GetSecurity()(*Security) {
-    if m == nil {
-        return nil
-    } else {
-        return m.security
-    }
-}
-// GetSettings gets the settings property value. Read-only. Nullable.
-func (m *User) GetSettings()(*UserSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetShowInAddressList gets the showInAddressList property value. true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).
-func (m *User) GetShowInAddressList()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showInAddressList
-    }
-}
-// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.
-func (m *User) GetSignInActivity()(*SignInActivity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInActivity
-    }
-}
-// GetSignInSessionsValidFromDateTime gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
-func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInSessionsValidFromDateTime
-    }
-}
-// GetSkills gets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
-func (m *User) GetSkills()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skills
-    }
-}
-// GetState gets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetStreetAddress gets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetStreetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.streetAddress
-    }
-}
-// GetSurname gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
-}
-// GetTasks gets the tasks property value. 
-func (m *User) GetTasks()(*Tasks) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
-}
-// GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
-func (m *User) GetTeamwork()(*UserTeamwork) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamwork
-    }
-}
-// GetTodo gets the todo property value. Represents the To Do services available to a user.
-func (m *User) GetTodo()(*Todo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.todo
-    }
-}
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. 
-func (m *User) GetTransitiveMemberOf()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveMemberOf
-    }
-}
-// GetTransitiveReports gets the transitiveReports property value. The transitive reports for a user. Read-only.
-func (m *User) GetTransitiveReports()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveReports
-    }
-}
-// GetUsageLocation gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-func (m *User) GetUsageLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageLocation
-    }
-}
-// GetUsageRights gets the usageRights property value. 
-func (m *User) GetUsageRights()([]UsageRight) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageRights
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
-func (m *User) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetUserType gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
-func (m *User) GetUserType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userType
-    }
-}
-// GetWindowsInformationProtectionDeviceRegistrations gets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.
-func (m *User) GetWindowsInformationProtectionDeviceRegistrations()([]WindowsInformationProtectionDeviceRegistration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsInformationProtectionDeviceRegistrations
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
@@ -1420,14 +704,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["activities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserActivity() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserActivityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserActivity, len(val))
+            res := make([]UserActivityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserActivity))
+                res[i] = v.(UserActivityable)
             }
             m.SetActivities(res)
         }
@@ -1444,106 +728,106 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["agreementAcceptances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgreementAcceptance() })
+        val, err := n.GetCollectionOfObjectValues(CreateAgreementAcceptanceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AgreementAcceptance, len(val))
+            res := make([]AgreementAcceptanceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AgreementAcceptance))
+                res[i] = v.(AgreementAcceptanceable)
             }
             m.SetAgreementAcceptances(res)
         }
         return nil
     }
     res["analytics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserAnalytics() })
+        val, err := n.GetObjectValue(CreateUserAnalyticsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAnalytics(val.(*UserAnalytics))
+            m.SetAnalytics(val.(UserAnalyticsable))
         }
         return nil
     }
     res["appConsentRequestsForApproval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppConsentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppConsentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppConsentRequest, len(val))
+            res := make([]AppConsentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppConsentRequest))
+                res[i] = v.(AppConsentRequestable)
             }
             m.SetAppConsentRequestsForApproval(res)
         }
         return nil
     }
     res["appRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppRoleAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateAppRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AppRoleAssignment, len(val))
+            res := make([]AppRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AppRoleAssignment))
+                res[i] = v.(AppRoleAssignmentable)
             }
             m.SetAppRoleAssignments(res)
         }
         return nil
     }
     res["approvals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApproval() })
+        val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Approval, len(val))
+            res := make([]Approvalable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Approval))
+                res[i] = v.(Approvalable)
             }
             m.SetApprovals(res)
         }
         return nil
     }
     res["assignedLicenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignedLicense() })
+        val, err := n.GetCollectionOfObjectValues(CreateAssignedLicenseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AssignedLicense, len(val))
+            res := make([]AssignedLicenseable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignedLicense))
+                res[i] = v.(AssignedLicenseable)
             }
             m.SetAssignedLicenses(res)
         }
         return nil
     }
     res["assignedPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignedPlan() })
+        val, err := n.GetCollectionOfObjectValues(CreateAssignedPlanFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AssignedPlan, len(val))
+            res := make([]AssignedPlanable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignedPlan))
+                res[i] = v.(AssignedPlanable)
             }
             m.SetAssignedPlans(res)
         }
         return nil
     }
     res["authentication"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthentication() })
+        val, err := n.GetObjectValue(CreateAuthenticationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthentication(val.(*Authentication))
+            m.SetAuthentication(val.(Authenticationable))
         }
         return nil
     }
@@ -1572,66 +856,66 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["calendar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendar() })
+        val, err := n.GetObjectValue(CreateCalendarFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCalendar(val.(*Calendar))
+            m.SetCalendar(val.(Calendarable))
         }
         return nil
     }
     res["calendarGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendarGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateCalendarGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CalendarGroup, len(val))
+            res := make([]CalendarGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CalendarGroup))
+                res[i] = v.(CalendarGroupable)
             }
             m.SetCalendarGroups(res)
         }
         return nil
     }
     res["calendars"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendar() })
+        val, err := n.GetCollectionOfObjectValues(CreateCalendarFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Calendar, len(val))
+            res := make([]Calendarable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Calendar))
+                res[i] = v.(Calendarable)
             }
             m.SetCalendars(res)
         }
         return nil
     }
     res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = v.(Eventable)
             }
             m.SetCalendarView(res)
         }
         return nil
     }
     res["chats"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChat() })
+        val, err := n.GetCollectionOfObjectValues(CreateChatFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Chat, len(val))
+            res := make([]Chatable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Chat))
+                res[i] = v.(Chatable)
             }
             m.SetChats(res)
         }
@@ -1668,28 +952,28 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["contactFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContactFolder() })
+        val, err := n.GetCollectionOfObjectValues(CreateContactFolderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ContactFolder, len(val))
+            res := make([]ContactFolderable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ContactFolder))
+                res[i] = v.(ContactFolderable)
             }
             m.SetContactFolders(res)
         }
         return nil
     }
     res["contacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContact() })
+        val, err := n.GetCollectionOfObjectValues(CreateContactFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Contact, len(val))
+            res := make([]Contactable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Contact))
+                res[i] = v.(Contactable)
             }
             m.SetContacts(res)
         }
@@ -1716,14 +1000,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["createdObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetCreatedObjects(res)
         }
@@ -1740,12 +1024,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["customSecurityAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomSecurityAttributeValue() })
+        val, err := n.GetObjectValue(CreateCustomSecurityAttributeValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCustomSecurityAttributes(val.(*CustomSecurityAttributeValue))
+            m.SetCustomSecurityAttributes(val.(CustomSecurityAttributeValueable))
         }
         return nil
     }
@@ -1760,14 +1044,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["deviceEnrollmentConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceEnrollmentConfiguration() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceEnrollmentConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceEnrollmentConfiguration, len(val))
+            res := make([]DeviceEnrollmentConfigurationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceEnrollmentConfiguration))
+                res[i] = v.(DeviceEnrollmentConfigurationable)
             }
             m.SetDeviceEnrollmentConfigurations(res)
         }
@@ -1784,56 +1068,56 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["deviceKeys"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceKey() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceKeyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceKey, len(val))
+            res := make([]DeviceKeyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceKey))
+                res[i] = v.(DeviceKeyable)
             }
             m.SetDeviceKeys(res)
         }
         return nil
     }
     res["deviceManagementTroubleshootingEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementTroubleshootingEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementTroubleshootingEvent, len(val))
+            res := make([]DeviceManagementTroubleshootingEventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementTroubleshootingEvent))
+                res[i] = v.(DeviceManagementTroubleshootingEventable)
             }
             m.SetDeviceManagementTroubleshootingEvents(res)
         }
         return nil
     }
     res["devices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDevice() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Device, len(val))
+            res := make([]Deviceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Device))
+                res[i] = v.(Deviceable)
             }
             m.SetDevices(res)
         }
         return nil
     }
     res["directReports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetDirectReports(res)
         }
@@ -1850,24 +1134,24 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["drive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDrive() })
+        val, err := n.GetObjectValue(CreateDriveFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDrive(val.(*Drive))
+            m.SetDrive(val.(Driveable))
         }
         return nil
     }
     res["drives"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDrive() })
+        val, err := n.GetCollectionOfObjectValues(CreateDriveFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Drive, len(val))
+            res := make([]Driveable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Drive))
+                res[i] = v.(Driveable)
             }
             m.SetDrives(res)
         }
@@ -1894,12 +1178,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["employeeOrgData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmployeeOrgData() })
+        val, err := n.GetObjectValue(CreateEmployeeOrgDataFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEmployeeOrgData(val.(*EmployeeOrgData))
+            m.SetEmployeeOrgData(val.(EmployeeOrgDataable))
         }
         return nil
     }
@@ -1914,28 +1198,28 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = v.(Eventable)
             }
             m.SetEvents(res)
         }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -1972,14 +1256,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["followedSites"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSite() })
+        val, err := n.GetCollectionOfObjectValues(CreateSiteFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Site, len(val))
+            res := make([]Siteable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Site))
+                res[i] = v.(Siteable)
             }
             m.SetFollowedSites(res)
         }
@@ -2006,14 +1290,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["identities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewObjectIdentity() })
+        val, err := n.GetCollectionOfObjectValues(CreateObjectIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ObjectIdentity, len(val))
+            res := make([]ObjectIdentityable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ObjectIdentity))
+                res[i] = v.(ObjectIdentityable)
             }
             m.SetIdentities(res)
         }
@@ -2034,12 +1318,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["inferenceClassification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInferenceClassification() })
+        val, err := n.GetObjectValue(CreateInferenceClassificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInferenceClassification(val.(*InferenceClassification))
+            m.SetInferenceClassification(val.(InferenceClassificationable))
         }
         return nil
     }
@@ -2058,22 +1342,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["informationProtection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInformationProtection() })
+        val, err := n.GetObjectValue(CreateInformationProtectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInformationProtection(val.(*InformationProtection))
+            m.SetInformationProtection(val.(InformationProtectionable))
         }
         return nil
     }
     res["insights"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemInsights() })
+        val, err := n.GetObjectValue(CreateItemInsightsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInsights(val.(*ItemInsights))
+            m.SetInsights(val.(ItemInsightsable))
         }
         return nil
     }
@@ -2112,28 +1396,28 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["joinedGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Group, len(val))
+            res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Group))
+                res[i] = v.(Groupable)
             }
             m.SetJoinedGroups(res)
         }
         return nil
     }
     res["joinedTeams"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeam() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Team, len(val))
+            res := make([]Teamable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Team))
+                res[i] = v.(Teamable)
             }
             m.SetJoinedTeams(res)
         }
@@ -2160,28 +1444,28 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["licenseAssignmentStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLicenseAssignmentState() })
+        val, err := n.GetCollectionOfObjectValues(CreateLicenseAssignmentStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LicenseAssignmentState, len(val))
+            res := make([]LicenseAssignmentStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LicenseAssignmentState))
+                res[i] = v.(LicenseAssignmentStateable)
             }
             m.SetLicenseAssignmentStates(res)
         }
         return nil
     }
     res["licenseDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLicenseDetails() })
+        val, err := n.GetCollectionOfObjectValues(CreateLicenseDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LicenseDetails, len(val))
+            res := make([]LicenseDetailsable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LicenseDetails))
+                res[i] = v.(LicenseDetailsable)
             }
             m.SetLicenseDetails(res)
         }
@@ -2198,24 +1482,24 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["mailboxSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMailboxSettings() })
+        val, err := n.GetObjectValue(CreateMailboxSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMailboxSettings(val.(*MailboxSettings))
+            m.SetMailboxSettings(val.(MailboxSettingsable))
         }
         return nil
     }
     res["mailFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMailFolder() })
+        val, err := n.GetCollectionOfObjectValues(CreateMailFolderFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MailFolder, len(val))
+            res := make([]MailFolderable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MailFolder))
+                res[i] = v.(MailFolderable)
             }
             m.SetMailFolders(res)
         }
@@ -2232,94 +1516,94 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["managedAppRegistrations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppRegistration() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedAppRegistrationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedAppRegistration, len(val))
+            res := make([]ManagedAppRegistrationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedAppRegistration))
+                res[i] = v.(ManagedAppRegistrationable)
             }
             m.SetManagedAppRegistrations(res)
         }
         return nil
     }
     res["managedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevice() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDevice, len(val))
+            res := make([]ManagedDeviceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDevice))
+                res[i] = v.(ManagedDeviceable)
             }
             m.SetManagedDevices(res)
         }
         return nil
     }
     res["manager"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManager(val.(*DirectoryObject))
+            m.SetManager(val.(DirectoryObjectable))
         }
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetMemberOf(res)
         }
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessage() })
+        val, err := n.GetCollectionOfObjectValues(CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Message, len(val))
+            res := make([]Messageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Message))
+                res[i] = v.(Messageable)
             }
             m.SetMessages(res)
         }
         return nil
     }
     res["mobileAppIntentAndStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppIntentAndState() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppIntentAndStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppIntentAndState, len(val))
+            res := make([]MobileAppIntentAndStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppIntentAndState))
+                res[i] = v.(MobileAppIntentAndStateable)
             }
             m.SetMobileAppIntentAndStates(res)
         }
         return nil
     }
     res["mobileAppTroubleshootingEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppTroubleshootingEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppTroubleshootingEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppTroubleshootingEvent, len(val))
+            res := make([]MobileAppTroubleshootingEventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppTroubleshootingEvent))
+                res[i] = v.(MobileAppTroubleshootingEventable)
             }
             m.SetMobileAppTroubleshootingEvents(res)
         }
@@ -2346,28 +1630,28 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["notifications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewNotification() })
+        val, err := n.GetCollectionOfObjectValues(CreateNotificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Notification, len(val))
+            res := make([]Notificationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Notification))
+                res[i] = v.(Notificationable)
             }
             m.SetNotifications(res)
         }
         return nil
     }
     res["oauth2PermissionGrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOAuth2PermissionGrant() })
+        val, err := n.GetCollectionOfObjectValues(CreateOAuth2PermissionGrantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OAuth2PermissionGrant, len(val))
+            res := make([]OAuth2PermissionGrantable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OAuth2PermissionGrant))
+                res[i] = v.(OAuth2PermissionGrantable)
             }
             m.SetOauth2PermissionGrants(res)
         }
@@ -2384,24 +1668,24 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["onenote"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnenote() })
+        val, err := n.GetObjectValue(CreateOnenoteFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnenote(val.(*Onenote))
+            m.SetOnenote(val.(Onenoteable))
         }
         return nil
     }
     res["onlineMeetings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnlineMeeting() })
+        val, err := n.GetCollectionOfObjectValues(CreateOnlineMeetingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnlineMeeting, len(val))
+            res := make([]OnlineMeetingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnlineMeeting))
+                res[i] = v.(OnlineMeetingable)
             }
             m.SetOnlineMeetings(res)
         }
@@ -2428,12 +1712,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["onPremisesExtensionAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesExtensionAttributes() })
+        val, err := n.GetObjectValue(CreateOnPremisesExtensionAttributesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnPremisesExtensionAttributes(val.(*OnPremisesExtensionAttributes))
+            m.SetOnPremisesExtensionAttributes(val.(OnPremisesExtensionAttributesable))
         }
         return nil
     }
@@ -2458,14 +1742,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["onPremisesProvisioningErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesProvisioningError() })
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesProvisioningErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnPremisesProvisioningError, len(val))
+            res := make([]OnPremisesProvisioningErrorable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnPremisesProvisioningError))
+                res[i] = v.(OnPremisesProvisioningErrorable)
             }
             m.SetOnPremisesProvisioningErrors(res)
         }
@@ -2526,38 +1810,38 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["outlook"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutlookUser() })
+        val, err := n.GetObjectValue(CreateOutlookUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOutlook(val.(*OutlookUser))
+            m.SetOutlook(val.(OutlookUserable))
         }
         return nil
     }
     res["ownedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetOwnedDevices(res)
         }
         return nil
     }
     res["ownedObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetOwnedObjects(res)
         }
@@ -2574,12 +1858,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["passwordProfile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPasswordProfile() })
+        val, err := n.GetObjectValue(CreatePasswordProfileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPasswordProfile(val.(*PasswordProfile))
+            m.SetPasswordProfile(val.(PasswordProfileable))
         }
         return nil
     }
@@ -2598,64 +1882,64 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["pendingAccessReviewInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewInstance() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewInstanceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewInstance, len(val))
+            res := make([]AccessReviewInstanceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewInstance))
+                res[i] = v.(AccessReviewInstanceable)
             }
             m.SetPendingAccessReviewInstances(res)
         }
         return nil
     }
     res["people"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPerson() })
+        val, err := n.GetCollectionOfObjectValues(CreatePersonFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Person, len(val))
+            res := make([]Personable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Person))
+                res[i] = v.(Personable)
             }
             m.SetPeople(res)
         }
         return nil
     }
     res["photo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProfilePhoto() })
+        val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPhoto(val.(*ProfilePhoto))
+            m.SetPhoto(val.(ProfilePhotoable))
         }
         return nil
     }
     res["photos"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProfilePhoto() })
+        val, err := n.GetCollectionOfObjectValues(CreateProfilePhotoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ProfilePhoto, len(val))
+            res := make([]ProfilePhotoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ProfilePhoto))
+                res[i] = v.(ProfilePhotoable)
             }
             m.SetPhotos(res)
         }
         return nil
     }
     res["planner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerUser() })
+        val, err := n.GetObjectValue(CreatePlannerUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPlanner(val.(*PlannerUser))
+            m.SetPlanner(val.(PlannerUserable))
         }
         return nil
     }
@@ -2700,34 +1984,34 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["presence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPresence() })
+        val, err := n.GetObjectValue(CreatePresenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPresence(val.(*Presence))
+            m.SetPresence(val.(Presenceable))
         }
         return nil
     }
     res["profile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProfile() })
+        val, err := n.GetObjectValue(CreateProfileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProfile(val.(*Profile))
+            m.SetProfile(val.(Profileable))
         }
         return nil
     }
     res["provisionedPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProvisionedPlan() })
+        val, err := n.GetCollectionOfObjectValues(CreateProvisionedPlanFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ProvisionedPlan, len(val))
+            res := make([]ProvisionedPlanable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ProvisionedPlan))
+                res[i] = v.(ProvisionedPlanable)
             }
             m.SetProvisionedPlans(res)
         }
@@ -2758,14 +2042,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["registeredDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetRegisteredDevices(res)
         }
@@ -2800,36 +2084,36 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["scopedRoleMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewScopedRoleMembership() })
+        val, err := n.GetCollectionOfObjectValues(CreateScopedRoleMembershipFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ScopedRoleMembership, len(val))
+            res := make([]ScopedRoleMembershipable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ScopedRoleMembership))
+                res[i] = v.(ScopedRoleMembershipable)
             }
             m.SetScopedRoleMemberOf(res)
         }
         return nil
     }
     res["security"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurity() })
+        val, err := n.GetObjectValue(CreateSecurityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSecurity(val.(*Security))
+            m.SetSecurity(val.(Securityable))
         }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSettings() })
+        val, err := n.GetObjectValue(CreateUserSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*UserSettings))
+            m.SetSettings(val.(UserSettingsable))
         }
         return nil
     }
@@ -2844,12 +2128,12 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["signInActivity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSignInActivity() })
+        val, err := n.GetObjectValue(CreateSignInActivityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignInActivity(val.(*SignInActivity))
+            m.SetSignInActivity(val.(SignInActivityable))
         }
         return nil
     }
@@ -2908,58 +2192,58 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTasks() })
+        val, err := n.GetObjectValue(CreateTasksFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTasks(val.(*Tasks))
+            m.SetTasks(val.(Tasksable))
         }
         return nil
     }
     res["teamwork"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserTeamwork() })
+        val, err := n.GetObjectValue(CreateUserTeamworkFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTeamwork(val.(*UserTeamwork))
+            m.SetTeamwork(val.(UserTeamworkable))
         }
         return nil
     }
     res["todo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTodo() })
+        val, err := n.GetObjectValue(CreateTodoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTodo(val.(*Todo))
+            m.SetTodo(val.(Todoable))
         }
         return nil
     }
     res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetTransitiveMemberOf(res)
         }
         return nil
     }
     res["transitiveReports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetTransitiveReports(res)
         }
@@ -2976,14 +2260,14 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["usageRights"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUsageRight() })
+        val, err := n.GetCollectionOfObjectValues(CreateUsageRightFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UsageRight, len(val))
+            res := make([]UsageRightable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UsageRight))
+                res[i] = v.(UsageRightable)
             }
             m.SetUsageRights(res)
         }
@@ -3010,20 +2294,740 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["windowsInformationProtectionDeviceRegistrations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsInformationProtectionDeviceRegistration() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsInformationProtectionDeviceRegistration, len(val))
+            res := make([]WindowsInformationProtectionDeviceRegistrationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsInformationProtectionDeviceRegistration))
+                res[i] = v.(WindowsInformationProtectionDeviceRegistrationable)
             }
             m.SetWindowsInformationProtectionDeviceRegistrations(res)
         }
         return nil
     }
     return res
+}
+// GetFollowedSites gets the followedSites property value. 
+func (m *User) GetFollowedSites()([]Siteable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.followedSites
+    }
+}
+// GetGivenName gets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+func (m *User) GetGivenName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.givenName
+    }
+}
+// GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hireDate
+    }
+}
+// GetIdentities gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+func (m *User) GetIdentities()([]ObjectIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.identities
+    }
+}
+// GetImAddresses gets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
+func (m *User) GetImAddresses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imAddresses
+    }
+}
+// GetInferenceClassification gets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+func (m *User) GetInferenceClassification()(InferenceClassificationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inferenceClassification
+    }
+}
+// GetInfoCatalogs gets the infoCatalogs property value. Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
+func (m *User) GetInfoCatalogs()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.infoCatalogs
+    }
+}
+// GetInformationProtection gets the informationProtection property value. 
+func (m *User) GetInformationProtection()(InformationProtectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.informationProtection
+    }
+}
+// GetInsights gets the insights property value. Read-only. Nullable.
+func (m *User) GetInsights()(ItemInsightsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.insights
+    }
+}
+// GetInterests gets the interests property value. A list for the user to describe their interests. Returned only on $select.
+func (m *User) GetInterests()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.interests
+    }
+}
+// GetIsResourceAccount gets the isResourceAccount property value. Do not use – reserved for future use.
+func (m *User) GetIsResourceAccount()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isResourceAccount
+    }
+}
+// GetJobTitle gets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+func (m *User) GetJobTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jobTitle
+    }
+}
+// GetJoinedGroups gets the joinedGroups property value. Read-only. Nullable.
+func (m *User) GetJoinedGroups()([]Groupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinedGroups
+    }
+}
+// GetJoinedTeams gets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+func (m *User) GetJoinedTeams()([]Teamable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinedTeams
+    }
+}
+// GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
+func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastPasswordChangeDateTime
+    }
+}
+// GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+func (m *User) GetLegalAgeGroupClassification()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.legalAgeGroupClassification
+    }
+}
+// GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. Read-only. Returned only on $select.
+func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.licenseAssignmentStates
+    }
+}
+// GetLicenseDetails gets the licenseDetails property value. A collection of this user's license details. Read-only.
+func (m *User) GetLicenseDetails()([]LicenseDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.licenseDetails
+    }
+}
+// GetMail gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+func (m *User) GetMail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mail
+    }
+}
+// GetMailboxSettings gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+func (m *User) GetMailboxSettings()(MailboxSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailboxSettings
+    }
+}
+// GetMailFolders gets the mailFolders property value. The user's mail folders. Read-only. Nullable.
+func (m *User) GetMailFolders()([]MailFolderable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailFolders
+    }
+}
+// GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetMailNickname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNickname
+    }
+}
+// GetManagedAppRegistrations gets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
+func (m *User) GetManagedAppRegistrations()([]ManagedAppRegistrationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedAppRegistrations
+    }
+}
+// GetManagedDevices gets the managedDevices property value. The managed devices associated with the user.
+func (m *User) GetManagedDevices()([]ManagedDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDevices
+    }
+}
+// GetManager gets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+func (m *User) GetManager()(DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manager
+    }
+}
+// GetMemberOf gets the memberOf property value. The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
+func (m *User) GetMemberOf()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberOf
+    }
+}
+// GetMessages gets the messages property value. The messages in a mailbox or folder. Read-only. Nullable.
+func (m *User) GetMessages()([]Messageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messages
+    }
+}
+// GetMobileAppIntentAndStates gets the mobileAppIntentAndStates property value. The list of troubleshooting events for this user.
+func (m *User) GetMobileAppIntentAndStates()([]MobileAppIntentAndStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileAppIntentAndStates
+    }
+}
+// GetMobileAppTroubleshootingEvents gets the mobileAppTroubleshootingEvents property value. The list of mobile app troubleshooting events for this user.
+func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEventable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileAppTroubleshootingEvents
+    }
+}
+// GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetMobilePhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobilePhone
+    }
+}
+// GetMySite gets the mySite property value. The URL for the user's personal site. Returned only on $select.
+func (m *User) GetMySite()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mySite
+    }
+}
+// GetNotifications gets the notifications property value. 
+func (m *User) GetNotifications()([]Notificationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notifications
+    }
+}
+// GetOauth2PermissionGrants gets the oauth2PermissionGrants property value. 
+func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oauth2PermissionGrants
+    }
+}
+// GetOfficeLocation gets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetOfficeLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeLocation
+    }
+}
+// GetOnenote gets the onenote property value. Read-only.
+func (m *User) GetOnenote()(Onenoteable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onenote
+    }
+}
+// GetOnlineMeetings gets the onlineMeetings property value. 
+func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineMeetings
+    }
+}
+// GetOnPremisesDistinguishedName gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+func (m *User) GetOnPremisesDistinguishedName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesDistinguishedName
+    }
+}
+// GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+func (m *User) GetOnPremisesDomainName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesDomainName
+    }
+}
+// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
+func (m *User) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesExtensionAttributes
+    }
+}
+// GetOnPremisesImmutableId gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
+func (m *User) GetOnPremisesImmutableId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesImmutableId
+    }
+}
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
+func (m *User) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesLastSyncDateTime
+    }
+}
+// GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
+func (m *User) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesProvisioningErrors
+    }
+}
+// GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+func (m *User) GetOnPremisesSamAccountName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesSamAccountName
+    }
+}
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
+func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesSecurityIdentifier
+    }
+}
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
+func (m *User) GetOnPremisesSyncEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesSyncEnabled
+    }
+}
+// GetOnPremisesUserPrincipalName gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+func (m *User) GetOnPremisesUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesUserPrincipalName
+    }
+}
+// GetOtherMails gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
+func (m *User) GetOtherMails()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.otherMails
+    }
+}
+// GetOutlook gets the outlook property value. Read-only.
+func (m *User) GetOutlook()(OutlookUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outlook
+    }
+}
+// GetOwnedDevices gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownedDevices
+    }
+}
+// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *User) GetOwnedObjects()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownedObjects
+    }
+}
+// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
+func (m *User) GetPasswordPolicies()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passwordPolicies
+    }
+}
+// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
+func (m *User) GetPasswordProfile()(PasswordProfileable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passwordProfile
+    }
+}
+// GetPastProjects gets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
+func (m *User) GetPastProjects()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pastProjects
+    }
+}
+// GetPendingAccessReviewInstances gets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
+func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstanceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingAccessReviewInstances
+    }
+}
+// GetPeople gets the people property value. People that are relevant to the user. Read-only. Nullable.
+func (m *User) GetPeople()([]Personable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.people
+    }
+}
+// GetPhoto gets the photo property value. The user's profile photo. Read-only.
+func (m *User) GetPhoto()(ProfilePhotoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.photo
+    }
+}
+// GetPhotos gets the photos property value. Read-only. Nullable.
+func (m *User) GetPhotos()([]ProfilePhotoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.photos
+    }
+}
+// GetPlanner gets the planner property value. Entry-point to the Planner resource that might exist for a user. Read-only.
+func (m *User) GetPlanner()(PlannerUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.planner
+    }
+}
+// GetPostalCode gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetPostalCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postalCode
+    }
+}
+// GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
+func (m *User) GetPreferredDataLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preferredDataLocation
+    }
+}
+// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+func (m *User) GetPreferredLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preferredLanguage
+    }
+}
+// GetPreferredName gets the preferredName property value. The preferred name for the user. Returned only on $select.
+func (m *User) GetPreferredName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preferredName
+    }
+}
+// GetPresence gets the presence property value. 
+func (m *User) GetPresence()(Presenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.presence
+    }
+}
+// GetProfile gets the profile property value. Represents properties that are descriptive of a user in a tenant.
+func (m *User) GetProfile()(Profileable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.profile
+    }
+}
+// GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
+func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provisionedPlans
+    }
+}
+// GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
+func (m *User) GetProxyAddresses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.proxyAddresses
+    }
+}
+// GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.
+func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.refreshTokensValidFromDateTime
+    }
+}
+// GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registeredDevices
+    }
+}
+// GetResponsibilities gets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
+func (m *User) GetResponsibilities()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.responsibilities
+    }
+}
+// GetSchools gets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
+func (m *User) GetSchools()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schools
+    }
+}
+// GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. The scoped-role administrative unit memberships for this user. Read-only. Nullable.
+func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopedRoleMemberOf
+    }
+}
+// GetSecurity gets the security property value. 
+func (m *User) GetSecurity()(Securityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.security
+    }
+}
+// GetSettings gets the settings property value. Read-only. Nullable.
+func (m *User) GetSettings()(UserSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetShowInAddressList gets the showInAddressList property value. true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).
+func (m *User) GetShowInAddressList()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showInAddressList
+    }
+}
+// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.
+func (m *User) GetSignInActivity()(SignInActivityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInActivity
+    }
+}
+// GetSignInSessionsValidFromDateTime gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
+func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInSessionsValidFromDateTime
+    }
+}
+// GetSkills gets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
+func (m *User) GetSkills()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skills
+    }
+}
+// GetState gets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetStreetAddress gets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetStreetAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.streetAddress
+    }
+}
+// GetSurname gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetSurname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.surname
+    }
+}
+// GetTasks gets the tasks property value. 
+func (m *User) GetTasks()(Tasksable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
+    }
+}
+// GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
+func (m *User) GetTeamwork()(UserTeamworkable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamwork
+    }
+}
+// GetTodo gets the todo property value. Represents the To Do services available to a user.
+func (m *User) GetTodo()(Todoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.todo
+    }
+}
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. 
+func (m *User) GetTransitiveMemberOf()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transitiveMemberOf
+    }
+}
+// GetTransitiveReports gets the transitiveReports property value. The transitive reports for a user. Read-only.
+func (m *User) GetTransitiveReports()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transitiveReports
+    }
+}
+// GetUsageLocation gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+func (m *User) GetUsageLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usageLocation
+    }
+}
+// GetUsageRights gets the usageRights property value. Represents the usage rights a user has been granted.
+func (m *User) GetUsageRights()([]UsageRightable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usageRights
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
+func (m *User) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetUserType gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+func (m *User) GetUserType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userType
+    }
+}
+// GetWindowsInformationProtectionDeviceRegistrations gets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.
+func (m *User) GetWindowsInformationProtectionDeviceRegistrations()([]WindowsInformationProtectionDeviceRegistrationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsInformationProtectionDeviceRegistrations
+    }
 }
 func (m *User) IsNil()(bool) {
     return m == nil
@@ -3049,8 +3053,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {
@@ -3066,8 +3069,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetAgreementAcceptances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgreementAcceptances()))
         for i, v := range m.GetAgreementAcceptances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("agreementAcceptances", cast)
         if err != nil {
@@ -3083,8 +3085,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetAppConsentRequestsForApproval() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppConsentRequestsForApproval()))
         for i, v := range m.GetAppConsentRequestsForApproval() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appConsentRequestsForApproval", cast)
         if err != nil {
@@ -3094,8 +3095,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetAppRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppRoleAssignments()))
         for i, v := range m.GetAppRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("appRoleAssignments", cast)
         if err != nil {
@@ -3105,8 +3105,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetApprovals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApprovals()))
         for i, v := range m.GetApprovals() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("approvals", cast)
         if err != nil {
@@ -3116,8 +3115,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetAssignedLicenses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedLicenses()))
         for i, v := range m.GetAssignedLicenses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignedLicenses", cast)
         if err != nil {
@@ -3127,8 +3125,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetAssignedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedPlans()))
         for i, v := range m.GetAssignedPlans() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignedPlans", cast)
         if err != nil {
@@ -3162,8 +3159,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetCalendarGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarGroups()))
         for i, v := range m.GetCalendarGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("calendarGroups", cast)
         if err != nil {
@@ -3173,8 +3169,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetCalendars() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendars()))
         for i, v := range m.GetCalendars() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("calendars", cast)
         if err != nil {
@@ -3184,8 +3179,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetCalendarView() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
         if err != nil {
@@ -3195,8 +3189,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetChats() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChats()))
         for i, v := range m.GetChats() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("chats", cast)
         if err != nil {
@@ -3224,8 +3217,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetContactFolders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContactFolders()))
         for i, v := range m.GetContactFolders() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("contactFolders", cast)
         if err != nil {
@@ -3235,8 +3227,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetContacts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContacts()))
         for i, v := range m.GetContacts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("contacts", cast)
         if err != nil {
@@ -3258,8 +3249,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetCreatedObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCreatedObjects()))
         for i, v := range m.GetCreatedObjects() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("createdObjects", cast)
         if err != nil {
@@ -3287,8 +3277,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDeviceEnrollmentConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceEnrollmentConfigurations()))
         for i, v := range m.GetDeviceEnrollmentConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceEnrollmentConfigurations", cast)
         if err != nil {
@@ -3304,8 +3293,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDeviceKeys() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceKeys()))
         for i, v := range m.GetDeviceKeys() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceKeys", cast)
         if err != nil {
@@ -3315,8 +3303,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDeviceManagementTroubleshootingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceManagementTroubleshootingEvents()))
         for i, v := range m.GetDeviceManagementTroubleshootingEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceManagementTroubleshootingEvents", cast)
         if err != nil {
@@ -3326,8 +3313,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDevices()))
         for i, v := range m.GetDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("devices", cast)
         if err != nil {
@@ -3337,8 +3323,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDirectReports() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectReports()))
         for i, v := range m.GetDirectReports() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("directReports", cast)
         if err != nil {
@@ -3360,8 +3345,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetDrives() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDrives()))
         for i, v := range m.GetDrives() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("drives", cast)
         if err != nil {
@@ -3395,8 +3379,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {
@@ -3406,8 +3389,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -3435,8 +3417,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetFollowedSites() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFollowedSites()))
         for i, v := range m.GetFollowedSites() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("followedSites", cast)
         if err != nil {
@@ -3458,8 +3439,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdentities()))
         for i, v := range m.GetIdentities() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("identities", cast)
         if err != nil {
@@ -3517,8 +3497,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetJoinedGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJoinedGroups()))
         for i, v := range m.GetJoinedGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("joinedGroups", cast)
         if err != nil {
@@ -3528,8 +3507,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetJoinedTeams() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJoinedTeams()))
         for i, v := range m.GetJoinedTeams() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("joinedTeams", cast)
         if err != nil {
@@ -3551,8 +3529,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetLicenseAssignmentStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLicenseAssignmentStates()))
         for i, v := range m.GetLicenseAssignmentStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("licenseAssignmentStates", cast)
         if err != nil {
@@ -3562,8 +3539,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetLicenseDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLicenseDetails()))
         for i, v := range m.GetLicenseDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("licenseDetails", cast)
         if err != nil {
@@ -3585,8 +3561,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMailFolders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMailFolders()))
         for i, v := range m.GetMailFolders() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("mailFolders", cast)
         if err != nil {
@@ -3602,8 +3577,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetManagedAppRegistrations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedAppRegistrations()))
         for i, v := range m.GetManagedAppRegistrations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managedAppRegistrations", cast)
         if err != nil {
@@ -3613,8 +3587,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetManagedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDevices()))
         for i, v := range m.GetManagedDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managedDevices", cast)
         if err != nil {
@@ -3630,8 +3603,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("memberOf", cast)
         if err != nil {
@@ -3641,8 +3613,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMessages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
         if err != nil {
@@ -3652,8 +3623,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMobileAppIntentAndStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMobileAppIntentAndStates()))
         for i, v := range m.GetMobileAppIntentAndStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("mobileAppIntentAndStates", cast)
         if err != nil {
@@ -3663,8 +3633,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMobileAppTroubleshootingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMobileAppTroubleshootingEvents()))
         for i, v := range m.GetMobileAppTroubleshootingEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("mobileAppTroubleshootingEvents", cast)
         if err != nil {
@@ -3686,8 +3655,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetNotifications() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNotifications()))
         for i, v := range m.GetNotifications() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("notifications", cast)
         if err != nil {
@@ -3697,8 +3665,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOauth2PermissionGrants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOauth2PermissionGrants()))
         for i, v := range m.GetOauth2PermissionGrants() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("oauth2PermissionGrants", cast)
         if err != nil {
@@ -3720,8 +3687,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOnlineMeetings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnlineMeetings()))
         for i, v := range m.GetOnlineMeetings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("onlineMeetings", cast)
         if err != nil {
@@ -3761,8 +3727,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOnPremisesProvisioningErrors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnPremisesProvisioningErrors()))
         for i, v := range m.GetOnPremisesProvisioningErrors() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("onPremisesProvisioningErrors", cast)
         if err != nil {
@@ -3808,8 +3773,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOwnedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOwnedDevices()))
         for i, v := range m.GetOwnedDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("ownedDevices", cast)
         if err != nil {
@@ -3819,8 +3783,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetOwnedObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOwnedObjects()))
         for i, v := range m.GetOwnedObjects() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("ownedObjects", cast)
         if err != nil {
@@ -3848,8 +3811,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetPendingAccessReviewInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPendingAccessReviewInstances()))
         for i, v := range m.GetPendingAccessReviewInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("pendingAccessReviewInstances", cast)
         if err != nil {
@@ -3859,8 +3821,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetPeople() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPeople()))
         for i, v := range m.GetPeople() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("people", cast)
         if err != nil {
@@ -3876,8 +3837,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetPhotos() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhotos()))
         for i, v := range m.GetPhotos() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("photos", cast)
         if err != nil {
@@ -3929,8 +3889,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetProvisionedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisionedPlans()))
         for i, v := range m.GetProvisionedPlans() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("provisionedPlans", cast)
         if err != nil {
@@ -3952,8 +3911,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetRegisteredDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegisteredDevices()))
         for i, v := range m.GetRegisteredDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("registeredDevices", cast)
         if err != nil {
@@ -3975,8 +3933,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetScopedRoleMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScopedRoleMemberOf()))
         for i, v := range m.GetScopedRoleMemberOf() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("scopedRoleMemberOf", cast)
         if err != nil {
@@ -4058,8 +4015,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetTransitiveMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveMemberOf()))
         for i, v := range m.GetTransitiveMemberOf() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("transitiveMemberOf", cast)
         if err != nil {
@@ -4069,8 +4025,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetTransitiveReports() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveReports()))
         for i, v := range m.GetTransitiveReports() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("transitiveReports", cast)
         if err != nil {
@@ -4086,8 +4041,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetUsageRights() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsageRights()))
         for i, v := range m.GetUsageRights() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("usageRights", cast)
         if err != nil {
@@ -4109,8 +4063,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetWindowsInformationProtectionDeviceRegistrations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsInformationProtectionDeviceRegistrations()))
         for i, v := range m.GetWindowsInformationProtectionDeviceRegistrations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionDeviceRegistrations", cast)
         if err != nil {
@@ -4132,7 +4085,7 @@ func (m *User) SetAccountEnabled(value *bool)() {
     }
 }
 // SetActivities sets the activities property value. The user's activities across devices. Read-only. Nullable.
-func (m *User) SetActivities(value []UserActivity)() {
+func (m *User) SetActivities(value []UserActivityable)() {
     if m != nil {
         m.activities = value
     }
@@ -4144,49 +4097,49 @@ func (m *User) SetAgeGroup(value *string)() {
     }
 }
 // SetAgreementAcceptances sets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *User) SetAgreementAcceptances(value []AgreementAcceptance)() {
+func (m *User) SetAgreementAcceptances(value []AgreementAcceptanceable)() {
     if m != nil {
         m.agreementAcceptances = value
     }
 }
 // SetAnalytics sets the analytics property value. 
-func (m *User) SetAnalytics(value *UserAnalytics)() {
+func (m *User) SetAnalytics(value UserAnalyticsable)() {
     if m != nil {
         m.analytics = value
     }
 }
 // SetAppConsentRequestsForApproval sets the appConsentRequestsForApproval property value. 
-func (m *User) SetAppConsentRequestsForApproval(value []AppConsentRequest)() {
+func (m *User) SetAppConsentRequestsForApproval(value []AppConsentRequestable)() {
     if m != nil {
         m.appConsentRequestsForApproval = value
     }
 }
 // SetAppRoleAssignments sets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
-func (m *User) SetAppRoleAssignments(value []AppRoleAssignment)() {
+func (m *User) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
     if m != nil {
         m.appRoleAssignments = value
     }
 }
 // SetApprovals sets the approvals property value. 
-func (m *User) SetApprovals(value []Approval)() {
+func (m *User) SetApprovals(value []Approvalable)() {
     if m != nil {
         m.approvals = value
     }
 }
 // SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on $select. Supports $filter (eq and not).
-func (m *User) SetAssignedLicenses(value []AssignedLicense)() {
+func (m *User) SetAssignedLicenses(value []AssignedLicenseable)() {
     if m != nil {
         m.assignedLicenses = value
     }
 }
 // SetAssignedPlans sets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
-func (m *User) SetAssignedPlans(value []AssignedPlan)() {
+func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
     if m != nil {
         m.assignedPlans = value
     }
 }
 // SetAuthentication sets the authentication property value. 
-func (m *User) SetAuthentication(value *Authentication)() {
+func (m *User) SetAuthentication(value Authenticationable)() {
     if m != nil {
         m.authentication = value
     }
@@ -4204,31 +4157,31 @@ func (m *User) SetBusinessPhones(value []string)() {
     }
 }
 // SetCalendar sets the calendar property value. The user's primary calendar. Read-only.
-func (m *User) SetCalendar(value *Calendar)() {
+func (m *User) SetCalendar(value Calendarable)() {
     if m != nil {
         m.calendar = value
     }
 }
 // SetCalendarGroups sets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
-func (m *User) SetCalendarGroups(value []CalendarGroup)() {
+func (m *User) SetCalendarGroups(value []CalendarGroupable)() {
     if m != nil {
         m.calendarGroups = value
     }
 }
 // SetCalendars sets the calendars property value. The user's calendars. Read-only. Nullable.
-func (m *User) SetCalendars(value []Calendar)() {
+func (m *User) SetCalendars(value []Calendarable)() {
     if m != nil {
         m.calendars = value
     }
 }
 // SetCalendarView sets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
-func (m *User) SetCalendarView(value []Event)() {
+func (m *User) SetCalendarView(value []Eventable)() {
     if m != nil {
         m.calendarView = value
     }
 }
 // SetChats sets the chats property value. 
-func (m *User) SetChats(value []Chat)() {
+func (m *User) SetChats(value []Chatable)() {
     if m != nil {
         m.chats = value
     }
@@ -4252,13 +4205,13 @@ func (m *User) SetConsentProvidedForMinor(value *string)() {
     }
 }
 // SetContactFolders sets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
-func (m *User) SetContactFolders(value []ContactFolder)() {
+func (m *User) SetContactFolders(value []ContactFolderable)() {
     if m != nil {
         m.contactFolders = value
     }
 }
 // SetContacts sets the contacts property value. The user's contacts. Read-only. Nullable.
-func (m *User) SetContacts(value []Contact)() {
+func (m *User) SetContacts(value []Contactable)() {
     if m != nil {
         m.contacts = value
     }
@@ -4276,7 +4229,7 @@ func (m *User) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // SetCreatedObjects sets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
-func (m *User) SetCreatedObjects(value []DirectoryObject)() {
+func (m *User) SetCreatedObjects(value []DirectoryObjectable)() {
     if m != nil {
         m.createdObjects = value
     }
@@ -4288,7 +4241,7 @@ func (m *User) SetCreationType(value *string)() {
     }
 }
 // SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
-func (m *User) SetCustomSecurityAttributes(value *CustomSecurityAttributeValue)() {
+func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
     if m != nil {
         m.customSecurityAttributes = value
     }
@@ -4300,7 +4253,7 @@ func (m *User) SetDepartment(value *string)() {
     }
 }
 // SetDeviceEnrollmentConfigurations sets the deviceEnrollmentConfigurations property value. Get enrollment configurations targeted to the user
-func (m *User) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfiguration)() {
+func (m *User) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfigurationable)() {
     if m != nil {
         m.deviceEnrollmentConfigurations = value
     }
@@ -4312,25 +4265,25 @@ func (m *User) SetDeviceEnrollmentLimit(value *int32)() {
     }
 }
 // SetDeviceKeys sets the deviceKeys property value. 
-func (m *User) SetDeviceKeys(value []DeviceKey)() {
+func (m *User) SetDeviceKeys(value []DeviceKeyable)() {
     if m != nil {
         m.deviceKeys = value
     }
 }
 // SetDeviceManagementTroubleshootingEvents sets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
-func (m *User) SetDeviceManagementTroubleshootingEvents(value []DeviceManagementTroubleshootingEvent)() {
+func (m *User) SetDeviceManagementTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)() {
     if m != nil {
         m.deviceManagementTroubleshootingEvents = value
     }
 }
 // SetDevices sets the devices property value. 
-func (m *User) SetDevices(value []Device)() {
+func (m *User) SetDevices(value []Deviceable)() {
     if m != nil {
         m.devices = value
     }
 }
 // SetDirectReports sets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-func (m *User) SetDirectReports(value []DirectoryObject)() {
+func (m *User) SetDirectReports(value []DirectoryObjectable)() {
     if m != nil {
         m.directReports = value
     }
@@ -4342,13 +4295,13 @@ func (m *User) SetDisplayName(value *string)() {
     }
 }
 // SetDrive sets the drive property value. The user's OneDrive. Read-only.
-func (m *User) SetDrive(value *Drive)() {
+func (m *User) SetDrive(value Driveable)() {
     if m != nil {
         m.drive = value
     }
 }
 // SetDrives sets the drives property value. A collection of drives available for this user. Read-only.
-func (m *User) SetDrives(value []Drive)() {
+func (m *User) SetDrives(value []Driveable)() {
     if m != nil {
         m.drives = value
     }
@@ -4366,7 +4319,7 @@ func (m *User) SetEmployeeId(value *string)() {
     }
 }
 // SetEmployeeOrgData sets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-func (m *User) SetEmployeeOrgData(value *EmployeeOrgData)() {
+func (m *User) SetEmployeeOrgData(value EmployeeOrgDataable)() {
     if m != nil {
         m.employeeOrgData = value
     }
@@ -4378,13 +4331,13 @@ func (m *User) SetEmployeeType(value *string)() {
     }
 }
 // SetEvents sets the events property value. The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
-func (m *User) SetEvents(value []Event)() {
+func (m *User) SetEvents(value []Eventable)() {
     if m != nil {
         m.events = value
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the user. Read-only. Nullable.
-func (m *User) SetExtensions(value []Extension)() {
+func (m *User) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -4408,7 +4361,7 @@ func (m *User) SetFaxNumber(value *string)() {
     }
 }
 // SetFollowedSites sets the followedSites property value. 
-func (m *User) SetFollowedSites(value []Site)() {
+func (m *User) SetFollowedSites(value []Siteable)() {
     if m != nil {
         m.followedSites = value
     }
@@ -4426,7 +4379,7 @@ func (m *User) SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391
     }
 }
 // SetIdentities sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-func (m *User) SetIdentities(value []ObjectIdentity)() {
+func (m *User) SetIdentities(value []ObjectIdentityable)() {
     if m != nil {
         m.identities = value
     }
@@ -4438,7 +4391,7 @@ func (m *User) SetImAddresses(value []string)() {
     }
 }
 // SetInferenceClassification sets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-func (m *User) SetInferenceClassification(value *InferenceClassification)() {
+func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
     if m != nil {
         m.inferenceClassification = value
     }
@@ -4450,13 +4403,13 @@ func (m *User) SetInfoCatalogs(value []string)() {
     }
 }
 // SetInformationProtection sets the informationProtection property value. 
-func (m *User) SetInformationProtection(value *InformationProtection)() {
+func (m *User) SetInformationProtection(value InformationProtectionable)() {
     if m != nil {
         m.informationProtection = value
     }
 }
 // SetInsights sets the insights property value. Read-only. Nullable.
-func (m *User) SetInsights(value *ItemInsights)() {
+func (m *User) SetInsights(value ItemInsightsable)() {
     if m != nil {
         m.insights = value
     }
@@ -4480,13 +4433,13 @@ func (m *User) SetJobTitle(value *string)() {
     }
 }
 // SetJoinedGroups sets the joinedGroups property value. Read-only. Nullable.
-func (m *User) SetJoinedGroups(value []Group)() {
+func (m *User) SetJoinedGroups(value []Groupable)() {
     if m != nil {
         m.joinedGroups = value
     }
 }
 // SetJoinedTeams sets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-func (m *User) SetJoinedTeams(value []Team)() {
+func (m *User) SetJoinedTeams(value []Teamable)() {
     if m != nil {
         m.joinedTeams = value
     }
@@ -4504,13 +4457,13 @@ func (m *User) SetLegalAgeGroupClassification(value *string)() {
     }
 }
 // SetLicenseAssignmentStates sets the licenseAssignmentStates property value. State of license assignments for this user. Read-only. Returned only on $select.
-func (m *User) SetLicenseAssignmentStates(value []LicenseAssignmentState)() {
+func (m *User) SetLicenseAssignmentStates(value []LicenseAssignmentStateable)() {
     if m != nil {
         m.licenseAssignmentStates = value
     }
 }
 // SetLicenseDetails sets the licenseDetails property value. A collection of this user's license details. Read-only.
-func (m *User) SetLicenseDetails(value []LicenseDetails)() {
+func (m *User) SetLicenseDetails(value []LicenseDetailsable)() {
     if m != nil {
         m.licenseDetails = value
     }
@@ -4522,13 +4475,13 @@ func (m *User) SetMail(value *string)() {
     }
 }
 // SetMailboxSettings sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-func (m *User) SetMailboxSettings(value *MailboxSettings)() {
+func (m *User) SetMailboxSettings(value MailboxSettingsable)() {
     if m != nil {
         m.mailboxSettings = value
     }
 }
 // SetMailFolders sets the mailFolders property value. The user's mail folders. Read-only. Nullable.
-func (m *User) SetMailFolders(value []MailFolder)() {
+func (m *User) SetMailFolders(value []MailFolderable)() {
     if m != nil {
         m.mailFolders = value
     }
@@ -4540,43 +4493,43 @@ func (m *User) SetMailNickname(value *string)() {
     }
 }
 // SetManagedAppRegistrations sets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
-func (m *User) SetManagedAppRegistrations(value []ManagedAppRegistration)() {
+func (m *User) SetManagedAppRegistrations(value []ManagedAppRegistrationable)() {
     if m != nil {
         m.managedAppRegistrations = value
     }
 }
 // SetManagedDevices sets the managedDevices property value. The managed devices associated with the user.
-func (m *User) SetManagedDevices(value []ManagedDevice)() {
+func (m *User) SetManagedDevices(value []ManagedDeviceable)() {
     if m != nil {
         m.managedDevices = value
     }
 }
 // SetManager sets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
-func (m *User) SetManager(value *DirectoryObject)() {
+func (m *User) SetManager(value DirectoryObjectable)() {
     if m != nil {
         m.manager = value
     }
 }
 // SetMemberOf sets the memberOf property value. The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-func (m *User) SetMemberOf(value []DirectoryObject)() {
+func (m *User) SetMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.memberOf = value
     }
 }
 // SetMessages sets the messages property value. The messages in a mailbox or folder. Read-only. Nullable.
-func (m *User) SetMessages(value []Message)() {
+func (m *User) SetMessages(value []Messageable)() {
     if m != nil {
         m.messages = value
     }
 }
 // SetMobileAppIntentAndStates sets the mobileAppIntentAndStates property value. The list of troubleshooting events for this user.
-func (m *User) SetMobileAppIntentAndStates(value []MobileAppIntentAndState)() {
+func (m *User) SetMobileAppIntentAndStates(value []MobileAppIntentAndStateable)() {
     if m != nil {
         m.mobileAppIntentAndStates = value
     }
 }
 // SetMobileAppTroubleshootingEvents sets the mobileAppTroubleshootingEvents property value. The list of mobile app troubleshooting events for this user.
-func (m *User) SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootingEvent)() {
+func (m *User) SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootingEventable)() {
     if m != nil {
         m.mobileAppTroubleshootingEvents = value
     }
@@ -4594,13 +4547,13 @@ func (m *User) SetMySite(value *string)() {
     }
 }
 // SetNotifications sets the notifications property value. 
-func (m *User) SetNotifications(value []Notification)() {
+func (m *User) SetNotifications(value []Notificationable)() {
     if m != nil {
         m.notifications = value
     }
 }
 // SetOauth2PermissionGrants sets the oauth2PermissionGrants property value. 
-func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrant)() {
+func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)() {
     if m != nil {
         m.oauth2PermissionGrants = value
     }
@@ -4612,13 +4565,13 @@ func (m *User) SetOfficeLocation(value *string)() {
     }
 }
 // SetOnenote sets the onenote property value. Read-only.
-func (m *User) SetOnenote(value *Onenote)() {
+func (m *User) SetOnenote(value Onenoteable)() {
     if m != nil {
         m.onenote = value
     }
 }
 // SetOnlineMeetings sets the onlineMeetings property value. 
-func (m *User) SetOnlineMeetings(value []OnlineMeeting)() {
+func (m *User) SetOnlineMeetings(value []OnlineMeetingable)() {
     if m != nil {
         m.onlineMeetings = value
     }
@@ -4636,7 +4589,7 @@ func (m *User) SetOnPremisesDomainName(value *string)() {
     }
 }
 // SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
-func (m *User) SetOnPremisesExtensionAttributes(value *OnPremisesExtensionAttributes)() {
+func (m *User) SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)() {
     if m != nil {
         m.onPremisesExtensionAttributes = value
     }
@@ -4654,7 +4607,7 @@ func (m *User) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3a
     }
 }
 // SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
-func (m *User) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningError)() {
+func (m *User) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)() {
     if m != nil {
         m.onPremisesProvisioningErrors = value
     }
@@ -4690,19 +4643,19 @@ func (m *User) SetOtherMails(value []string)() {
     }
 }
 // SetOutlook sets the outlook property value. Read-only.
-func (m *User) SetOutlook(value *OutlookUser)() {
+func (m *User) SetOutlook(value OutlookUserable)() {
     if m != nil {
         m.outlook = value
     }
 }
 // SetOwnedDevices sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *User) SetOwnedDevices(value []DirectoryObject)() {
+func (m *User) SetOwnedDevices(value []DirectoryObjectable)() {
     if m != nil {
         m.ownedDevices = value
     }
 }
 // SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *User) SetOwnedObjects(value []DirectoryObject)() {
+func (m *User) SetOwnedObjects(value []DirectoryObjectable)() {
     if m != nil {
         m.ownedObjects = value
     }
@@ -4714,7 +4667,7 @@ func (m *User) SetPasswordPolicies(value *string)() {
     }
 }
 // SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-func (m *User) SetPasswordProfile(value *PasswordProfile)() {
+func (m *User) SetPasswordProfile(value PasswordProfileable)() {
     if m != nil {
         m.passwordProfile = value
     }
@@ -4726,31 +4679,31 @@ func (m *User) SetPastProjects(value []string)() {
     }
 }
 // SetPendingAccessReviewInstances sets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
-func (m *User) SetPendingAccessReviewInstances(value []AccessReviewInstance)() {
+func (m *User) SetPendingAccessReviewInstances(value []AccessReviewInstanceable)() {
     if m != nil {
         m.pendingAccessReviewInstances = value
     }
 }
 // SetPeople sets the people property value. People that are relevant to the user. Read-only. Nullable.
-func (m *User) SetPeople(value []Person)() {
+func (m *User) SetPeople(value []Personable)() {
     if m != nil {
         m.people = value
     }
 }
 // SetPhoto sets the photo property value. The user's profile photo. Read-only.
-func (m *User) SetPhoto(value *ProfilePhoto)() {
+func (m *User) SetPhoto(value ProfilePhotoable)() {
     if m != nil {
         m.photo = value
     }
 }
 // SetPhotos sets the photos property value. Read-only. Nullable.
-func (m *User) SetPhotos(value []ProfilePhoto)() {
+func (m *User) SetPhotos(value []ProfilePhotoable)() {
     if m != nil {
         m.photos = value
     }
 }
 // SetPlanner sets the planner property value. Entry-point to the Planner resource that might exist for a user. Read-only.
-func (m *User) SetPlanner(value *PlannerUser)() {
+func (m *User) SetPlanner(value PlannerUserable)() {
     if m != nil {
         m.planner = value
     }
@@ -4780,19 +4733,19 @@ func (m *User) SetPreferredName(value *string)() {
     }
 }
 // SetPresence sets the presence property value. 
-func (m *User) SetPresence(value *Presence)() {
+func (m *User) SetPresence(value Presenceable)() {
     if m != nil {
         m.presence = value
     }
 }
 // SetProfile sets the profile property value. Represents properties that are descriptive of a user in a tenant.
-func (m *User) SetProfile(value *Profile)() {
+func (m *User) SetProfile(value Profileable)() {
     if m != nil {
         m.profile = value
     }
 }
 // SetProvisionedPlans sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
-func (m *User) SetProvisionedPlans(value []ProvisionedPlan)() {
+func (m *User) SetProvisionedPlans(value []ProvisionedPlanable)() {
     if m != nil {
         m.provisionedPlans = value
     }
@@ -4810,7 +4763,7 @@ func (m *User) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7
     }
 }
 // SetRegisteredDevices sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *User) SetRegisteredDevices(value []DirectoryObject)() {
+func (m *User) SetRegisteredDevices(value []DirectoryObjectable)() {
     if m != nil {
         m.registeredDevices = value
     }
@@ -4828,19 +4781,19 @@ func (m *User) SetSchools(value []string)() {
     }
 }
 // SetScopedRoleMemberOf sets the scopedRoleMemberOf property value. The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembership)() {
+func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
     if m != nil {
         m.scopedRoleMemberOf = value
     }
 }
 // SetSecurity sets the security property value. 
-func (m *User) SetSecurity(value *Security)() {
+func (m *User) SetSecurity(value Securityable)() {
     if m != nil {
         m.security = value
     }
 }
 // SetSettings sets the settings property value. Read-only. Nullable.
-func (m *User) SetSettings(value *UserSettings)() {
+func (m *User) SetSettings(value UserSettingsable)() {
     if m != nil {
         m.settings = value
     }
@@ -4852,7 +4805,7 @@ func (m *User) SetShowInAddressList(value *bool)() {
     }
 }
 // SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.
-func (m *User) SetSignInActivity(value *SignInActivity)() {
+func (m *User) SetSignInActivity(value SignInActivityable)() {
     if m != nil {
         m.signInActivity = value
     }
@@ -4888,31 +4841,31 @@ func (m *User) SetSurname(value *string)() {
     }
 }
 // SetTasks sets the tasks property value. 
-func (m *User) SetTasks(value *Tasks)() {
+func (m *User) SetTasks(value Tasksable)() {
     if m != nil {
         m.tasks = value
     }
 }
 // SetTeamwork sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
-func (m *User) SetTeamwork(value *UserTeamwork)() {
+func (m *User) SetTeamwork(value UserTeamworkable)() {
     if m != nil {
         m.teamwork = value
     }
 }
 // SetTodo sets the todo property value. Represents the To Do services available to a user.
-func (m *User) SetTodo(value *Todo)() {
+func (m *User) SetTodo(value Todoable)() {
     if m != nil {
         m.todo = value
     }
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. 
-func (m *User) SetTransitiveMemberOf(value []DirectoryObject)() {
+func (m *User) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.transitiveMemberOf = value
     }
 }
 // SetTransitiveReports sets the transitiveReports property value. The transitive reports for a user. Read-only.
-func (m *User) SetTransitiveReports(value []DirectoryObject)() {
+func (m *User) SetTransitiveReports(value []DirectoryObjectable)() {
     if m != nil {
         m.transitiveReports = value
     }
@@ -4923,8 +4876,8 @@ func (m *User) SetUsageLocation(value *string)() {
         m.usageLocation = value
     }
 }
-// SetUsageRights sets the usageRights property value. 
-func (m *User) SetUsageRights(value []UsageRight)() {
+// SetUsageRights sets the usageRights property value. Represents the usage rights a user has been granted.
+func (m *User) SetUsageRights(value []UsageRightable)() {
     if m != nil {
         m.usageRights = value
     }
@@ -4942,7 +4895,7 @@ func (m *User) SetUserType(value *string)() {
     }
 }
 // SetWindowsInformationProtectionDeviceRegistrations sets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.
-func (m *User) SetWindowsInformationProtectionDeviceRegistrations(value []WindowsInformationProtectionDeviceRegistration)() {
+func (m *User) SetWindowsInformationProtectionDeviceRegistrations(value []WindowsInformationProtectionDeviceRegistrationable)() {
     if m != nil {
         m.windowsInformationProtectionDeviceRegistrations = value
     }

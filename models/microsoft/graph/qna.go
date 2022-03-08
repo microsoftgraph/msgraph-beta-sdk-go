@@ -6,7 +6,7 @@ import (
     id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// Qna 
+// Qna provides operations to manage the searchEntity singleton.
 type Qna struct {
     SearchAnswer
     // Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
@@ -18,7 +18,7 @@ type Qna struct {
     // True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
     isSuggested *bool;
     // Keywords that trigger this qna to appear in search results.
-    keywords *AnswerKeyword;
+    keywords AnswerKeywordable;
     // A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{REGION}. As an example, en-US is English as used in the United States. See supported language tags for the list of possible values.
     languageTags []string;
     // List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
@@ -26,7 +26,7 @@ type Qna struct {
     // State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
     state *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState;
     // Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
-    targetedVariations []AnswerVariant;
+    targetedVariations []AnswerVariantable;
 }
 // NewQna instantiates a new qna and sets the default values.
 func NewQna()(*Qna) {
@@ -34,6 +34,10 @@ func NewQna()(*Qna) {
         SearchAnswer: *NewSearchAnswer(),
     }
     return m
+}
+// CreateQnaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateQnaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewQna(), nil
 }
 // GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
 func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -49,62 +53,6 @@ func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return nil
     } else {
         return m.availabilityStartDateTime
-    }
-}
-// GetGroupIds gets the groupIds property value. List of security groups able to view this qna.
-func (m *Qna) GetGroupIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupIds
-    }
-}
-// GetIsSuggested gets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
-func (m *Qna) GetIsSuggested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSuggested
-    }
-}
-// GetKeywords gets the keywords property value. Keywords that trigger this qna to appear in search results.
-func (m *Qna) GetKeywords()(*AnswerKeyword) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keywords
-    }
-}
-// GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{REGION}. As an example, en-US is English as used in the United States. See supported language tags for the list of possible values.
-func (m *Qna) GetLanguageTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTags
-    }
-}
-// GetPlatforms gets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
-func (m *Qna) GetPlatforms()([]DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platforms
-    }
-}
-// GetState gets the state property value. State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
-func (m *Qna) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetTargetedVariations gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
-func (m *Qna) GetTargetedVariations()([]AnswerVariant) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedVariations
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -155,12 +103,12 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         return nil
     }
     res["keywords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAnswerKeyword() })
+        val, err := n.GetObjectValue(CreateAnswerKeywordFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKeywords(val.(*AnswerKeyword))
+            m.SetKeywords(val.(AnswerKeywordable))
         }
         return nil
     }
@@ -203,20 +151,76 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         return nil
     }
     res["targetedVariations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAnswerVariant() })
+        val, err := n.GetCollectionOfObjectValues(CreateAnswerVariantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AnswerVariant, len(val))
+            res := make([]AnswerVariantable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AnswerVariant))
+                res[i] = v.(AnswerVariantable)
             }
             m.SetTargetedVariations(res)
         }
         return nil
     }
     return res
+}
+// GetGroupIds gets the groupIds property value. List of security groups able to view this qna.
+func (m *Qna) GetGroupIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupIds
+    }
+}
+// GetIsSuggested gets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+func (m *Qna) GetIsSuggested()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSuggested
+    }
+}
+// GetKeywords gets the keywords property value. Keywords that trigger this qna to appear in search results.
+func (m *Qna) GetKeywords()(AnswerKeywordable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keywords
+    }
+}
+// GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{REGION}. As an example, en-US is English as used in the United States. See supported language tags for the list of possible values.
+func (m *Qna) GetLanguageTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTags
+    }
+}
+// GetPlatforms gets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+func (m *Qna) GetPlatforms()([]DevicePlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platforms
+    }
+}
+// GetState gets the state property value. State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
+func (m *Qna) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetTargetedVariations gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+func (m *Qna) GetTargetedVariations()([]AnswerVariantable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedVariations
+    }
 }
 func (m *Qna) IsNil()(bool) {
     return m == nil
@@ -279,8 +283,7 @@ func (m *Qna) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetTargetedVariations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargetedVariations()))
         for i, v := range m.GetTargetedVariations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("targetedVariations", cast)
         if err != nil {
@@ -314,7 +317,7 @@ func (m *Qna) SetIsSuggested(value *bool)() {
     }
 }
 // SetKeywords sets the keywords property value. Keywords that trigger this qna to appear in search results.
-func (m *Qna) SetKeywords(value *AnswerKeyword)() {
+func (m *Qna) SetKeywords(value AnswerKeywordable)() {
     if m != nil {
         m.keywords = value
     }
@@ -338,7 +341,7 @@ func (m *Qna) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b
     }
 }
 // SetTargetedVariations sets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
-func (m *Qna) SetTargetedVariations(value []AnswerVariant)() {
+func (m *Qna) SetTargetedVariations(value []AnswerVariantable)() {
     if m != nil {
         m.targetedVariations = value
     }

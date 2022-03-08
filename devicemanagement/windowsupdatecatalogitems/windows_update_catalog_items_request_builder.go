@@ -2,11 +2,11 @@ package windowsupdatecatalogitems
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i1174f9d0200ba86e0c8b61bb3ad81ae27b4cc31f5f4647212f42819ac5d7054c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsupdatecatalogitems/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// WindowsUpdateCatalogItemsRequestBuilder builds and executes requests for operations under \deviceManagement\windowsUpdateCatalogItems
+// WindowsUpdateCatalogItemsRequestBuilder provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
 type WindowsUpdateCatalogItemsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type WindowsUpdateCatalogItemsRequestBuilderGetQueryParameters struct {
 // WindowsUpdateCatalogItemsRequestBuilderPostOptions options for Post
 type WindowsUpdateCatalogItemsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItem;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewWindowsUpdateCatalogItemsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewWindowsUpdateCatalogItemsRequestBuilder(rawUrl string, requestAdapter id
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdateCatalogItemsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *WindowsUpdateCatalogItemsRequestBuilder) Count()(*i1174f9d0200ba86e0c8b61bb3ad81ae27b4cc31f5f4647212f42819ac5d7054c.CountRequestBuilder) {
+    return i1174f9d0200ba86e0c8b61bb3ad81ae27b4cc31f5f4647212f42819ac5d7054c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *WindowsUpdateCatalogItemsRequestBuilder) CreateGetRequestInformation(options *WindowsUpdateCatalogItemsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *WindowsUpdateCatalogItemsRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
+// CreatePostRequestInformation create new navigation property to windowsUpdateCatalogItems for deviceManagement
 func (m *WindowsUpdateCatalogItemsRequestBuilder) CreatePostRequestInformation(options *WindowsUpdateCatalogItemsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *WindowsUpdateCatalogItemsRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Get a collection of windows update catalog items (fetaure updates item , quality updates item)
-func (m *WindowsUpdateCatalogItemsRequestBuilder) Get(options *WindowsUpdateCatalogItemsRequestBuilderGetOptions)(*WindowsUpdateCatalogItemsResponse, error) {
+func (m *WindowsUpdateCatalogItemsRequestBuilder) Get(options *WindowsUpdateCatalogItemsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsUpdateCatalogItemsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsUpdateCatalogItemCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*WindowsUpdateCatalogItemsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItemCollectionResponseable), nil
 }
-// Post a collection of windows update catalog items (fetaure updates item , quality updates item)
-func (m *WindowsUpdateCatalogItemsRequestBuilder) Post(options *WindowsUpdateCatalogItemsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItem, error) {
+// Post create new navigation property to windowsUpdateCatalogItems for deviceManagement
+func (m *WindowsUpdateCatalogItemsRequestBuilder) Post(options *WindowsUpdateCatalogItemsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItemable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsUpdateCatalogItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsUpdateCatalogItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItem), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsUpdateCatalogItemable), nil
 }

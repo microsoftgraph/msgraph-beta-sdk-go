@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementConditionStatement 
+// ManagementConditionStatement provides operations to manage the deviceManagement singleton.
 type ManagementConditionStatement struct {
     Entity
     // The applicable platforms for this management condition statement.
@@ -19,9 +19,9 @@ type ManagementConditionStatement struct {
     // ETag of the management condition statement. Updated service side.
     eTag *string;
     // The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
-    expression *ManagementConditionExpression;
+    expression ManagementConditionExpressionable;
     // The management conditions associated to the management condition statement.
-    managementConditions []ManagementCondition;
+    managementConditions []ManagementConditionable;
     // The time the management condition statement was last modified. Updated service side.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -31,6 +31,10 @@ func NewManagementConditionStatement()(*ManagementConditionStatement) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagementConditionStatementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementConditionStatementFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementConditionStatement(), nil
 }
 // GetApplicablePlatforms gets the applicablePlatforms property value. The applicable platforms for this management condition statement.
 func (m *ManagementConditionStatement) GetApplicablePlatforms()([]DevicePlatformType) {
@@ -73,27 +77,11 @@ func (m *ManagementConditionStatement) GetETag()(*string) {
     }
 }
 // GetExpression gets the expression property value. The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
-func (m *ManagementConditionStatement) GetExpression()(*ManagementConditionExpression) {
+func (m *ManagementConditionStatement) GetExpression()(ManagementConditionExpressionable) {
     if m == nil {
         return nil
     } else {
         return m.expression
-    }
-}
-// GetManagementConditions gets the managementConditions property value. The management conditions associated to the management condition statement.
-func (m *ManagementConditionStatement) GetManagementConditions()([]ManagementCondition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementConditions
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The time the management condition statement was last modified. Updated service side.
-func (m *ManagementConditionStatement) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -154,24 +142,24 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["expression"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementConditionExpression() })
+        val, err := n.GetObjectValue(CreateManagementConditionExpressionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExpression(val.(*ManagementConditionExpression))
+            m.SetExpression(val.(ManagementConditionExpressionable))
         }
         return nil
     }
     res["managementConditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementCondition() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementConditionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementCondition, len(val))
+            res := make([]ManagementConditionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementCondition))
+                res[i] = v.(ManagementConditionable)
             }
             m.SetManagementConditions(res)
         }
@@ -188,6 +176,22 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetManagementConditions gets the managementConditions property value. The management conditions associated to the management condition statement.
+func (m *ManagementConditionStatement) GetManagementConditions()([]ManagementConditionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementConditions
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The time the management condition statement was last modified. Updated service side.
+func (m *ManagementConditionStatement) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
 }
 func (m *ManagementConditionStatement) IsNil()(bool) {
     return m == nil
@@ -237,8 +241,7 @@ func (m *ManagementConditionStatement) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetManagementConditions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementConditions()))
         for i, v := range m.GetManagementConditions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementConditions", cast)
         if err != nil {
@@ -284,13 +287,13 @@ func (m *ManagementConditionStatement) SetETag(value *string)() {
     }
 }
 // SetExpression sets the expression property value. The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
-func (m *ManagementConditionStatement) SetExpression(value *ManagementConditionExpression)() {
+func (m *ManagementConditionStatement) SetExpression(value ManagementConditionExpressionable)() {
     if m != nil {
         m.expression = value
     }
 }
 // SetManagementConditions sets the managementConditions property value. The management conditions associated to the management condition statement.
-func (m *ManagementConditionStatement) SetManagementConditions(value []ManagementCondition)() {
+func (m *ManagementConditionStatement) SetManagementConditions(value []ManagementConditionable)() {
     if m != nil {
         m.managementConditions = value
     }

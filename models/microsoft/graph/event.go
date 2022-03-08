@@ -5,29 +5,29 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Event 
+// Event provides operations to manage the compliance singleton.
 type Event struct {
     OutlookItem
     // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
     allowNewTimeProposals *bool;
     // The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
-    attachments []Attachment;
+    attachments []Attachmentable;
     // The collection of attendees for the event.
-    attendees []Attendee;
+    attendees []Attendeeable;
     // The body of the message associated with the event. It can be in HTML or text format.
-    body *ItemBody;
+    body ItemBodyable;
     // The preview of the message associated with the event. It is in text format.
     bodyPreview *string;
     // The calendar that contains the event. Navigation property. Read-only.
-    calendar *Calendar;
+    calendar Calendarable;
     // Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
     cancelledOccurrences []string;
     // The date, time, and time zone that the event ends. By default, the end time is in UTC.
-    end *DateTimeTimeZone;
+    end DateTimeTimeZoneable;
     // 
-    exceptionOccurrences []Event;
+    exceptionOccurrences []Eventable;
     // The collection of open extensions defined for the event. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // Set to true if the event has attachments.
     hasAttachments *bool;
     // When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
@@ -35,7 +35,7 @@ type Event struct {
     // 
     importance *Importance;
     // The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-    instances []Event;
+    instances []Eventable;
     // 
     isAllDay *bool;
     // 
@@ -49,21 +49,21 @@ type Event struct {
     // 
     isReminderOn *bool;
     // 
-    location *Location;
+    location Locationable;
     // 
-    locations []Location;
+    locations []Locationable;
     // The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // 
     occurrenceId *string;
     // 
-    onlineMeeting *OnlineMeetingInfo;
+    onlineMeeting OnlineMeetingInfoable;
     // 
     onlineMeetingProvider *OnlineMeetingProviderType;
     // 
     onlineMeetingUrl *string;
     // 
-    organizer *Recipient;
+    organizer Recipientable;
     // 
     originalEndTimeZone *string;
     // 
@@ -71,13 +71,13 @@ type Event struct {
     // 
     originalStartTimeZone *string;
     // 
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // 
     reminderMinutesBeforeStart *int32;
     // 
     responseRequested *bool;
     // 
-    responseStatus *ResponseStatus;
+    responseStatus ResponseStatusable;
     // 
     sensitivity *Sensitivity;
     // 
@@ -85,9 +85,9 @@ type Event struct {
     // 
     showAs *FreeBusyStatus;
     // The collection of single-value extended properties defined for the event. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
     // 
-    start *DateTimeTimeZone;
+    start DateTimeTimeZoneable;
     // 
     subject *string;
     // 
@@ -106,6 +106,10 @@ func NewEvent()(*Event) {
     }
     return m
 }
+// CreateEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEvent(), nil
+}
 // GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
 func (m *Event) GetAllowNewTimeProposals()(*bool) {
     if m == nil {
@@ -115,7 +119,7 @@ func (m *Event) GetAllowNewTimeProposals()(*bool) {
     }
 }
 // GetAttachments gets the attachments property value. The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
-func (m *Event) GetAttachments()([]Attachment) {
+func (m *Event) GetAttachments()([]Attachmentable) {
     if m == nil {
         return nil
     } else {
@@ -123,7 +127,7 @@ func (m *Event) GetAttachments()([]Attachment) {
     }
 }
 // GetAttendees gets the attendees property value. The collection of attendees for the event.
-func (m *Event) GetAttendees()([]Attendee) {
+func (m *Event) GetAttendees()([]Attendeeable) {
     if m == nil {
         return nil
     } else {
@@ -131,7 +135,7 @@ func (m *Event) GetAttendees()([]Attendee) {
     }
 }
 // GetBody gets the body property value. The body of the message associated with the event. It can be in HTML or text format.
-func (m *Event) GetBody()(*ItemBody) {
+func (m *Event) GetBody()(ItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -147,7 +151,7 @@ func (m *Event) GetBodyPreview()(*string) {
     }
 }
 // GetCalendar gets the calendar property value. The calendar that contains the event. Navigation property. Read-only.
-func (m *Event) GetCalendar()(*Calendar) {
+func (m *Event) GetCalendar()(Calendarable) {
     if m == nil {
         return nil
     } else {
@@ -163,7 +167,7 @@ func (m *Event) GetCancelledOccurrences()([]string) {
     }
 }
 // GetEnd gets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
-func (m *Event) GetEnd()(*DateTimeTimeZone) {
+func (m *Event) GetEnd()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
@@ -171,7 +175,7 @@ func (m *Event) GetEnd()(*DateTimeTimeZone) {
     }
 }
 // GetExceptionOccurrences gets the exceptionOccurrences property value. 
-func (m *Event) GetExceptionOccurrences()([]Event) {
+func (m *Event) GetExceptionOccurrences()([]Eventable) {
     if m == nil {
         return nil
     } else {
@@ -179,291 +183,11 @@ func (m *Event) GetExceptionOccurrences()([]Event) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the event. Nullable.
-func (m *Event) GetExtensions()([]Extension) {
+func (m *Event) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetHasAttachments gets the hasAttachments property value. Set to true if the event has attachments.
-func (m *Event) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
-}
-// GetHideAttendees gets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
-func (m *Event) GetHideAttendees()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideAttendees
-    }
-}
-// GetImportance gets the importance property value. 
-func (m *Event) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
-}
-// GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-func (m *Event) GetInstances()([]Event) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instances
-    }
-}
-// GetIsAllDay gets the isAllDay property value. 
-func (m *Event) GetIsAllDay()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAllDay
-    }
-}
-// GetIsCancelled gets the isCancelled property value. 
-func (m *Event) GetIsCancelled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCancelled
-    }
-}
-// GetIsDraft gets the isDraft property value. 
-func (m *Event) GetIsDraft()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDraft
-    }
-}
-// GetIsOnlineMeeting gets the isOnlineMeeting property value. 
-func (m *Event) GetIsOnlineMeeting()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOnlineMeeting
-    }
-}
-// GetIsOrganizer gets the isOrganizer property value. 
-func (m *Event) GetIsOrganizer()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOrganizer
-    }
-}
-// GetIsReminderOn gets the isReminderOn property value. 
-func (m *Event) GetIsReminderOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReminderOn
-    }
-}
-// GetLocation gets the location property value. 
-func (m *Event) GetLocation()(*Location) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
-}
-// GetLocations gets the locations property value. 
-func (m *Event) GetLocations()([]Location) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locations
-    }
-}
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetOccurrenceId gets the occurrenceId property value. 
-func (m *Event) GetOccurrenceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.occurrenceId
-    }
-}
-// GetOnlineMeeting gets the onlineMeeting property value. 
-func (m *Event) GetOnlineMeeting()(*OnlineMeetingInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeeting
-    }
-}
-// GetOnlineMeetingProvider gets the onlineMeetingProvider property value. 
-func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetingProvider
-    }
-}
-// GetOnlineMeetingUrl gets the onlineMeetingUrl property value. 
-func (m *Event) GetOnlineMeetingUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetingUrl
-    }
-}
-// GetOrganizer gets the organizer property value. 
-func (m *Event) GetOrganizer()(*Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizer
-    }
-}
-// GetOriginalEndTimeZone gets the originalEndTimeZone property value. 
-func (m *Event) GetOriginalEndTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originalEndTimeZone
-    }
-}
-// GetOriginalStart gets the originalStart property value. 
-func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originalStart
-    }
-}
-// GetOriginalStartTimeZone gets the originalStartTimeZone property value. 
-func (m *Event) GetOriginalStartTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originalStartTimeZone
-    }
-}
-// GetRecurrence gets the recurrence property value. 
-func (m *Event) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetReminderMinutesBeforeStart gets the reminderMinutesBeforeStart property value. 
-func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderMinutesBeforeStart
-    }
-}
-// GetResponseRequested gets the responseRequested property value. 
-func (m *Event) GetResponseRequested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responseRequested
-    }
-}
-// GetResponseStatus gets the responseStatus property value. 
-func (m *Event) GetResponseStatus()(*ResponseStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responseStatus
-    }
-}
-// GetSensitivity gets the sensitivity property value. 
-func (m *Event) GetSensitivity()(*Sensitivity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivity
-    }
-}
-// GetSeriesMasterId gets the seriesMasterId property value. 
-func (m *Event) GetSeriesMasterId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.seriesMasterId
-    }
-}
-// GetShowAs gets the showAs property value. 
-func (m *Event) GetShowAs()(*FreeBusyStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showAs
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
-func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
-}
-// GetStart gets the start property value. 
-func (m *Event) GetStart()(*DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
-    }
-}
-// GetSubject gets the subject property value. 
-func (m *Event) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
-}
-// GetTransactionId gets the transactionId property value. 
-func (m *Event) GetTransactionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transactionId
-    }
-}
-// GetType gets the type property value. 
-func (m *Event) GetType()(*EventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUid gets the uid property value. 
-func (m *Event) GetUid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uid
-    }
-}
-// GetWebLink gets the webLink property value. 
-func (m *Event) GetWebLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webLink
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -480,40 +204,40 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["attachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttachment() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Attachment, len(val))
+            res := make([]Attachmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Attachment))
+                res[i] = v.(Attachmentable)
             }
             m.SetAttachments(res)
         }
         return nil
     }
     res["attendees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttendee() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttendeeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Attendee, len(val))
+            res := make([]Attendeeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Attendee))
+                res[i] = v.(Attendeeable)
             }
             m.SetAttendees(res)
         }
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(*ItemBody))
+            m.SetBody(val.(ItemBodyable))
         }
         return nil
     }
@@ -528,12 +252,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["calendar"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendar() })
+        val, err := n.GetObjectValue(CreateCalendarFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCalendar(val.(*Calendar))
+            m.SetCalendar(val.(Calendarable))
         }
         return nil
     }
@@ -552,38 +276,38 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["end"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEnd(val.(*DateTimeTimeZone))
+            m.SetEnd(val.(DateTimeTimeZoneable))
         }
         return nil
     }
     res["exceptionOccurrences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = v.(Eventable)
             }
             m.SetExceptionOccurrences(res)
         }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
@@ -620,14 +344,14 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = v.(Eventable)
             }
             m.SetInstances(res)
         }
@@ -694,38 +418,38 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocation() })
+        val, err := n.GetObjectValue(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocation(val.(*Location))
+            m.SetLocation(val.(Locationable))
         }
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocation() })
+        val, err := n.GetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Location, len(val))
+            res := make([]Locationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Location))
+                res[i] = v.(Locationable)
             }
             m.SetLocations(res)
         }
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -742,12 +466,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["onlineMeeting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnlineMeetingInfo() })
+        val, err := n.GetObjectValue(CreateOnlineMeetingInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnlineMeeting(val.(*OnlineMeetingInfo))
+            m.SetOnlineMeeting(val.(OnlineMeetingInfoable))
         }
         return nil
     }
@@ -772,12 +496,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["organizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOrganizer(val.(*Recipient))
+            m.SetOrganizer(val.(Recipientable))
         }
         return nil
     }
@@ -812,12 +536,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
@@ -842,12 +566,12 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["responseStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResponseStatus() })
+        val, err := n.GetObjectValue(CreateResponseStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResponseStatus(val.(*ResponseStatus))
+            m.SetResponseStatus(val.(ResponseStatusable))
         }
         return nil
     }
@@ -882,26 +606,26 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
         return nil
     }
     res["start"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStart(val.(*DateTimeTimeZone))
+            m.SetStart(val.(DateTimeTimeZoneable))
         }
         return nil
     }
@@ -957,6 +681,286 @@ func (m *Event) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
     }
     return res
 }
+// GetHasAttachments gets the hasAttachments property value. Set to true if the event has attachments.
+func (m *Event) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
+    }
+}
+// GetHideAttendees gets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
+func (m *Event) GetHideAttendees()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hideAttendees
+    }
+}
+// GetImportance gets the importance property value. 
+func (m *Event) GetImportance()(*Importance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importance
+    }
+}
+// GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *Event) GetInstances()([]Eventable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instances
+    }
+}
+// GetIsAllDay gets the isAllDay property value. 
+func (m *Event) GetIsAllDay()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAllDay
+    }
+}
+// GetIsCancelled gets the isCancelled property value. 
+func (m *Event) GetIsCancelled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCancelled
+    }
+}
+// GetIsDraft gets the isDraft property value. 
+func (m *Event) GetIsDraft()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDraft
+    }
+}
+// GetIsOnlineMeeting gets the isOnlineMeeting property value. 
+func (m *Event) GetIsOnlineMeeting()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOnlineMeeting
+    }
+}
+// GetIsOrganizer gets the isOrganizer property value. 
+func (m *Event) GetIsOrganizer()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOrganizer
+    }
+}
+// GetIsReminderOn gets the isReminderOn property value. 
+func (m *Event) GetIsReminderOn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isReminderOn
+    }
+}
+// GetLocation gets the location property value. 
+func (m *Event) GetLocation()(Locationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.location
+    }
+}
+// GetLocations gets the locations property value. 
+func (m *Event) GetLocations()([]Locationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locations
+    }
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
+func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetOccurrenceId gets the occurrenceId property value. 
+func (m *Event) GetOccurrenceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.occurrenceId
+    }
+}
+// GetOnlineMeeting gets the onlineMeeting property value. 
+func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineMeeting
+    }
+}
+// GetOnlineMeetingProvider gets the onlineMeetingProvider property value. 
+func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineMeetingProvider
+    }
+}
+// GetOnlineMeetingUrl gets the onlineMeetingUrl property value. 
+func (m *Event) GetOnlineMeetingUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineMeetingUrl
+    }
+}
+// GetOrganizer gets the organizer property value. 
+func (m *Event) GetOrganizer()(Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizer
+    }
+}
+// GetOriginalEndTimeZone gets the originalEndTimeZone property value. 
+func (m *Event) GetOriginalEndTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originalEndTimeZone
+    }
+}
+// GetOriginalStart gets the originalStart property value. 
+func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originalStart
+    }
+}
+// GetOriginalStartTimeZone gets the originalStartTimeZone property value. 
+func (m *Event) GetOriginalStartTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originalStartTimeZone
+    }
+}
+// GetRecurrence gets the recurrence property value. 
+func (m *Event) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetReminderMinutesBeforeStart gets the reminderMinutesBeforeStart property value. 
+func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reminderMinutesBeforeStart
+    }
+}
+// GetResponseRequested gets the responseRequested property value. 
+func (m *Event) GetResponseRequested()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.responseRequested
+    }
+}
+// GetResponseStatus gets the responseStatus property value. 
+func (m *Event) GetResponseStatus()(ResponseStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.responseStatus
+    }
+}
+// GetSensitivity gets the sensitivity property value. 
+func (m *Event) GetSensitivity()(*Sensitivity) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitivity
+    }
+}
+// GetSeriesMasterId gets the seriesMasterId property value. 
+func (m *Event) GetSeriesMasterId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.seriesMasterId
+    }
+}
+// GetShowAs gets the showAs property value. 
+func (m *Event) GetShowAs()(*FreeBusyStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showAs
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
+func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
+}
+// GetStart gets the start property value. 
+func (m *Event) GetStart()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.start
+    }
+}
+// GetSubject gets the subject property value. 
+func (m *Event) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
+}
+// GetTransactionId gets the transactionId property value. 
+func (m *Event) GetTransactionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transactionId
+    }
+}
+// GetType gets the type property value. 
+func (m *Event) GetType()(*EventType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUid gets the uid property value. 
+func (m *Event) GetUid()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uid
+    }
+}
+// GetWebLink gets the webLink property value. 
+func (m *Event) GetWebLink()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webLink
+    }
+}
 func (m *Event) IsNil()(bool) {
     return m == nil
 }
@@ -975,8 +979,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetAttachments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {
@@ -986,8 +989,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetAttendees() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendees()))
         for i, v := range m.GetAttendees() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attendees", cast)
         if err != nil {
@@ -1027,8 +1029,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetExceptionOccurrences() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExceptionOccurrences()))
         for i, v := range m.GetExceptionOccurrences() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("exceptionOccurrences", cast)
         if err != nil {
@@ -1038,8 +1039,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -1068,8 +1068,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -1121,8 +1120,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetLocations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLocations()))
         for i, v := range m.GetLocations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("locations", cast)
         if err != nil {
@@ -1132,8 +1130,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -1236,8 +1233,7 @@ func (m *Event) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -1290,19 +1286,19 @@ func (m *Event) SetAllowNewTimeProposals(value *bool)() {
     }
 }
 // SetAttachments sets the attachments property value. The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
-func (m *Event) SetAttachments(value []Attachment)() {
+func (m *Event) SetAttachments(value []Attachmentable)() {
     if m != nil {
         m.attachments = value
     }
 }
 // SetAttendees sets the attendees property value. The collection of attendees for the event.
-func (m *Event) SetAttendees(value []Attendee)() {
+func (m *Event) SetAttendees(value []Attendeeable)() {
     if m != nil {
         m.attendees = value
     }
 }
 // SetBody sets the body property value. The body of the message associated with the event. It can be in HTML or text format.
-func (m *Event) SetBody(value *ItemBody)() {
+func (m *Event) SetBody(value ItemBodyable)() {
     if m != nil {
         m.body = value
     }
@@ -1314,7 +1310,7 @@ func (m *Event) SetBodyPreview(value *string)() {
     }
 }
 // SetCalendar sets the calendar property value. The calendar that contains the event. Navigation property. Read-only.
-func (m *Event) SetCalendar(value *Calendar)() {
+func (m *Event) SetCalendar(value Calendarable)() {
     if m != nil {
         m.calendar = value
     }
@@ -1326,19 +1322,19 @@ func (m *Event) SetCancelledOccurrences(value []string)() {
     }
 }
 // SetEnd sets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
-func (m *Event) SetEnd(value *DateTimeTimeZone)() {
+func (m *Event) SetEnd(value DateTimeTimeZoneable)() {
     if m != nil {
         m.end = value
     }
 }
 // SetExceptionOccurrences sets the exceptionOccurrences property value. 
-func (m *Event) SetExceptionOccurrences(value []Event)() {
+func (m *Event) SetExceptionOccurrences(value []Eventable)() {
     if m != nil {
         m.exceptionOccurrences = value
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the event. Nullable.
-func (m *Event) SetExtensions(value []Extension)() {
+func (m *Event) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
@@ -1362,7 +1358,7 @@ func (m *Event) SetImportance(value *Importance)() {
     }
 }
 // SetInstances sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-func (m *Event) SetInstances(value []Event)() {
+func (m *Event) SetInstances(value []Eventable)() {
     if m != nil {
         m.instances = value
     }
@@ -1404,19 +1400,19 @@ func (m *Event) SetIsReminderOn(value *bool)() {
     }
 }
 // SetLocation sets the location property value. 
-func (m *Event) SetLocation(value *Location)() {
+func (m *Event) SetLocation(value Locationable)() {
     if m != nil {
         m.location = value
     }
 }
 // SetLocations sets the locations property value. 
-func (m *Event) SetLocations(value []Location)() {
+func (m *Event) SetLocations(value []Locationable)() {
     if m != nil {
         m.locations = value
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-func (m *Event) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *Event) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
@@ -1428,7 +1424,7 @@ func (m *Event) SetOccurrenceId(value *string)() {
     }
 }
 // SetOnlineMeeting sets the onlineMeeting property value. 
-func (m *Event) SetOnlineMeeting(value *OnlineMeetingInfo)() {
+func (m *Event) SetOnlineMeeting(value OnlineMeetingInfoable)() {
     if m != nil {
         m.onlineMeeting = value
     }
@@ -1446,7 +1442,7 @@ func (m *Event) SetOnlineMeetingUrl(value *string)() {
     }
 }
 // SetOrganizer sets the organizer property value. 
-func (m *Event) SetOrganizer(value *Recipient)() {
+func (m *Event) SetOrganizer(value Recipientable)() {
     if m != nil {
         m.organizer = value
     }
@@ -1470,7 +1466,7 @@ func (m *Event) SetOriginalStartTimeZone(value *string)() {
     }
 }
 // SetRecurrence sets the recurrence property value. 
-func (m *Event) SetRecurrence(value *PatternedRecurrence)() {
+func (m *Event) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }
@@ -1488,7 +1484,7 @@ func (m *Event) SetResponseRequested(value *bool)() {
     }
 }
 // SetResponseStatus sets the responseStatus property value. 
-func (m *Event) SetResponseStatus(value *ResponseStatus)() {
+func (m *Event) SetResponseStatus(value ResponseStatusable)() {
     if m != nil {
         m.responseStatus = value
     }
@@ -1512,13 +1508,13 @@ func (m *Event) SetShowAs(value *FreeBusyStatus)() {
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
-func (m *Event) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *Event) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }
 }
 // SetStart sets the start property value. 
-func (m *Event) SetStart(value *DateTimeTimeZone)() {
+func (m *Event) SetStart(value DateTimeTimeZoneable)() {
     if m != nil {
         m.start = value
     }

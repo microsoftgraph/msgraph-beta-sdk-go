@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementSettingDefinition 
+// DeviceManagementSettingDefinition provides operations to manage the deviceManagement singleton.
 type DeviceManagementSettingDefinition struct {
     Entity
     // Collection of constraints for the setting value
-    constraints []DeviceManagementConstraint;
+    constraints []DeviceManagementConstraintable;
     // Collection of dependencies on other settings
-    dependencies []DeviceManagementSettingDependency;
+    dependencies []DeviceManagementSettingDependencyable;
     // The setting's description
     description *string;
     // The setting's display name
@@ -37,8 +37,12 @@ func NewDeviceManagementSettingDefinition()(*DeviceManagementSettingDefinition) 
     }
     return m
 }
+// CreateDeviceManagementSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementSettingDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementSettingDefinition(), nil
+}
 // GetConstraints gets the constraints property value. Collection of constraints for the setting value
-func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementConstraint) {
+func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementConstraintable) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +50,7 @@ func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementC
     }
 }
 // GetDependencies gets the dependencies property value. Collection of dependencies on other settings
-func (m *DeviceManagementSettingDefinition) GetDependencies()([]DeviceManagementSettingDependency) {
+func (m *DeviceManagementSettingDefinition) GetDependencies()([]DeviceManagementSettingDependencyable) {
     if m == nil {
         return nil
     } else {
@@ -77,80 +81,32 @@ func (m *DeviceManagementSettingDefinition) GetDocumentationUrl()(*string) {
         return m.documentationUrl
     }
 }
-// GetHeaderSubtitle gets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
-func (m *DeviceManagementSettingDefinition) GetHeaderSubtitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.headerSubtitle
-    }
-}
-// GetHeaderTitle gets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
-func (m *DeviceManagementSettingDefinition) GetHeaderTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.headerTitle
-    }
-}
-// GetIsTopLevel gets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
-func (m *DeviceManagementSettingDefinition) GetIsTopLevel()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTopLevel
-    }
-}
-// GetKeywords gets the keywords property value. Keywords associated with the setting
-func (m *DeviceManagementSettingDefinition) GetKeywords()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keywords
-    }
-}
-// GetPlaceholderText gets the placeholderText property value. Placeholder text as an example of valid input
-func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.placeholderText
-    }
-}
-// GetValueType gets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
-func (m *DeviceManagementSettingDefinition) GetValueType()(*DeviceManangementIntentValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["constraints"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConstraint() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConstraintFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementConstraint, len(val))
+            res := make([]DeviceManagementConstraintable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementConstraint))
+                res[i] = v.(DeviceManagementConstraintable)
             }
             m.SetConstraints(res)
         }
         return nil
     }
     res["dependencies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementSettingDependency() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingDependencyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementSettingDependency, len(val))
+            res := make([]DeviceManagementSettingDependencyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementSettingDependency))
+                res[i] = v.(DeviceManagementSettingDependencyable)
             }
             m.SetDependencies(res)
         }
@@ -252,6 +208,54 @@ func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetHeaderSubtitle gets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
+func (m *DeviceManagementSettingDefinition) GetHeaderSubtitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.headerSubtitle
+    }
+}
+// GetHeaderTitle gets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
+func (m *DeviceManagementSettingDefinition) GetHeaderTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.headerTitle
+    }
+}
+// GetIsTopLevel gets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
+func (m *DeviceManagementSettingDefinition) GetIsTopLevel()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isTopLevel
+    }
+}
+// GetKeywords gets the keywords property value. Keywords associated with the setting
+func (m *DeviceManagementSettingDefinition) GetKeywords()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keywords
+    }
+}
+// GetPlaceholderText gets the placeholderText property value. Placeholder text as an example of valid input
+func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.placeholderText
+    }
+}
+// GetValueType gets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
+func (m *DeviceManagementSettingDefinition) GetValueType()(*DeviceManangementIntentValueType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueType
+    }
+}
 func (m *DeviceManagementSettingDefinition) IsNil()(bool) {
     return m == nil
 }
@@ -264,8 +268,7 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
     if m.GetConstraints() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConstraints()))
         for i, v := range m.GetConstraints() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("constraints", cast)
         if err != nil {
@@ -275,8 +278,7 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
     if m.GetDependencies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDependencies()))
         for i, v := range m.GetDependencies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("dependencies", cast)
         if err != nil {
@@ -341,13 +343,13 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
     return nil
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the setting value
-func (m *DeviceManagementSettingDefinition) SetConstraints(value []DeviceManagementConstraint)() {
+func (m *DeviceManagementSettingDefinition) SetConstraints(value []DeviceManagementConstraintable)() {
     if m != nil {
         m.constraints = value
     }
 }
 // SetDependencies sets the dependencies property value. Collection of dependencies on other settings
-func (m *DeviceManagementSettingDefinition) SetDependencies(value []DeviceManagementSettingDependency)() {
+func (m *DeviceManagementSettingDefinition) SetDependencies(value []DeviceManagementSettingDependencyable)() {
     if m != nil {
         m.dependencies = value
     }

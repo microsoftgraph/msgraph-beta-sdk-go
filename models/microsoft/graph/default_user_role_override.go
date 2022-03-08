@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DefaultUserRoleOverride 
+// DefaultUserRoleOverride provides operations to manage the policyRoot singleton.
 type DefaultUserRoleOverride struct {
     Entity
     // 
     isDefault *bool;
     // 
-    rolePermissions []UnifiedRolePermission;
+    rolePermissions []UnifiedRolePermissionable;
 }
 // NewDefaultUserRoleOverride instantiates a new defaultUserRoleOverride and sets the default values.
 func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {
@@ -19,21 +19,9 @@ func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {
     }
     return m
 }
-// GetIsDefault gets the isDefault property value. 
-func (m *DefaultUserRoleOverride) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetRolePermissions gets the rolePermissions property value. 
-func (m *DefaultUserRoleOverride) GetRolePermissions()([]UnifiedRolePermission) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rolePermissions
-    }
+// CreateDefaultUserRoleOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDefaultUserRoleOverrideFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDefaultUserRoleOverride(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,20 +37,36 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["rolePermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRolePermission() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRolePermissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedRolePermission, len(val))
+            res := make([]UnifiedRolePermissionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedRolePermission))
+                res[i] = v.(UnifiedRolePermissionable)
             }
             m.SetRolePermissions(res)
         }
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. 
+func (m *DefaultUserRoleOverride) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetRolePermissions gets the rolePermissions property value. 
+func (m *DefaultUserRoleOverride) GetRolePermissions()([]UnifiedRolePermissionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rolePermissions
+    }
 }
 func (m *DefaultUserRoleOverride) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *DefaultUserRoleOverride) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetRolePermissions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRolePermissions()))
         for i, v := range m.GetRolePermissions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("rolePermissions", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *DefaultUserRoleOverride) SetIsDefault(value *bool)() {
     }
 }
 // SetRolePermissions sets the rolePermissions property value. 
-func (m *DefaultUserRoleOverride) SetRolePermissions(value []UnifiedRolePermission)() {
+func (m *DefaultUserRoleOverride) SetRolePermissions(value []UnifiedRolePermissionable)() {
     if m != nil {
         m.rolePermissions = value
     }

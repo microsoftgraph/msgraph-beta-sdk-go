@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeDefinition 
+// AttributeDefinition provides operations to call the instantiate method.
 type AttributeDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
     anchor *bool;
     // 
-    apiExpressions []StringKeyStringValuePair;
+    apiExpressions []StringKeyStringValuePairable;
     // true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
     caseExact *bool;
     // 
@@ -19,7 +19,7 @@ type AttributeDefinition struct {
     // 'true' to allow null values for attributes.
     flowNullValues *bool;
     // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntry;
+    metadata []MetadataEntryable;
     // true if an attribute can have multiple values. Default is false.
     multivalued *bool;
     // An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
@@ -27,7 +27,7 @@ type AttributeDefinition struct {
     // Name of the attribute. Must be unique within the object definition. Not nullable.
     name *string;
     // For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
-    referencedObjects []ReferencedObject;
+    referencedObjects []ReferencedObjectable;
     // true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     required *bool;
     // Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
@@ -39,6 +39,10 @@ func NewAttributeDefinition()(*AttributeDefinition) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttributeDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttributeDefinition(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeDefinition) GetAdditionalData()(map[string]interface{}) {
@@ -57,7 +61,7 @@ func (m *AttributeDefinition) GetAnchor()(*bool) {
     }
 }
 // GetApiExpressions gets the apiExpressions property value. 
-func (m *AttributeDefinition) GetApiExpressions()([]StringKeyStringValuePair) {
+func (m *AttributeDefinition) GetApiExpressions()([]StringKeyStringValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -80,70 +84,6 @@ func (m *AttributeDefinition) GetDefaultValue()(*string) {
         return m.defaultValue
     }
 }
-// GetFlowNullValues gets the flowNullValues property value. 'true' to allow null values for attributes.
-func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flowNullValues
-    }
-}
-// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *AttributeDefinition) GetMetadata()([]MetadataEntry) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
-}
-// GetMultivalued gets the multivalued property value. true if an attribute can have multiple values. Default is false.
-func (m *AttributeDefinition) GetMultivalued()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multivalued
-    }
-}
-// GetMutability gets the mutability property value. An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
-func (m *AttributeDefinition) GetMutability()(*Mutability) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mutability
-    }
-}
-// GetName gets the name property value. Name of the attribute. Must be unique within the object definition. Not nullable.
-func (m *AttributeDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetReferencedObjects gets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
-func (m *AttributeDefinition) GetReferencedObjects()([]ReferencedObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referencedObjects
-    }
-}
-// GetRequired gets the required property value. true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
-func (m *AttributeDefinition) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
-}
-// GetType gets the type property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
-func (m *AttributeDefinition) GetType()(*AttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -158,14 +98,14 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["apiExpressions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStringKeyStringValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateStringKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]StringKeyStringValuePair, len(val))
+            res := make([]StringKeyStringValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*StringKeyStringValuePair))
+                res[i] = v.(StringKeyStringValuePairable)
             }
             m.SetApiExpressions(res)
         }
@@ -202,14 +142,14 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMetadataEntry() })
+        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntry, len(val))
+            res := make([]MetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MetadataEntry))
+                res[i] = v.(MetadataEntryable)
             }
             m.SetMetadata(res)
         }
@@ -246,14 +186,14 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["referencedObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReferencedObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateReferencedObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ReferencedObject, len(val))
+            res := make([]ReferencedObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ReferencedObject))
+                res[i] = v.(ReferencedObjectable)
             }
             m.SetReferencedObjects(res)
         }
@@ -281,6 +221,70 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
+// GetFlowNullValues gets the flowNullValues property value. 'true' to allow null values for attributes.
+func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.flowNullValues
+    }
+}
+// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+func (m *AttributeDefinition) GetMetadata()([]MetadataEntryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metadata
+    }
+}
+// GetMultivalued gets the multivalued property value. true if an attribute can have multiple values. Default is false.
+func (m *AttributeDefinition) GetMultivalued()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multivalued
+    }
+}
+// GetMutability gets the mutability property value. An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
+func (m *AttributeDefinition) GetMutability()(*Mutability) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mutability
+    }
+}
+// GetName gets the name property value. Name of the attribute. Must be unique within the object definition. Not nullable.
+func (m *AttributeDefinition) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetReferencedObjects gets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+func (m *AttributeDefinition) GetReferencedObjects()([]ReferencedObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referencedObjects
+    }
+}
+// GetRequired gets the required property value. true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
+func (m *AttributeDefinition) GetRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.required
+    }
+}
+// GetType gets the type property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
+func (m *AttributeDefinition) GetType()(*AttributeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 func (m *AttributeDefinition) IsNil()(bool) {
     return m == nil
 }
@@ -295,8 +299,7 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetApiExpressions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApiExpressions()))
         for i, v := range m.GetApiExpressions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("apiExpressions", cast)
         if err != nil {
@@ -324,8 +327,7 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetMetadata() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {
@@ -354,8 +356,7 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetReferencedObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReferencedObjects()))
         for i, v := range m.GetReferencedObjects() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("referencedObjects", cast)
         if err != nil {
@@ -396,7 +397,7 @@ func (m *AttributeDefinition) SetAnchor(value *bool)() {
     }
 }
 // SetApiExpressions sets the apiExpressions property value. 
-func (m *AttributeDefinition) SetApiExpressions(value []StringKeyStringValuePair)() {
+func (m *AttributeDefinition) SetApiExpressions(value []StringKeyStringValuePairable)() {
     if m != nil {
         m.apiExpressions = value
     }
@@ -420,7 +421,7 @@ func (m *AttributeDefinition) SetFlowNullValues(value *bool)() {
     }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *AttributeDefinition) SetMetadata(value []MetadataEntry)() {
+func (m *AttributeDefinition) SetMetadata(value []MetadataEntryable)() {
     if m != nil {
         m.metadata = value
     }
@@ -444,7 +445,7 @@ func (m *AttributeDefinition) SetName(value *string)() {
     }
 }
 // SetReferencedObjects sets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
-func (m *AttributeDefinition) SetReferencedObjects(value []ReferencedObject)() {
+func (m *AttributeDefinition) SetReferencedObjects(value []ReferencedObjectable)() {
     if m != nil {
         m.referencedObjects = value
     }

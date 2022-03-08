@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationPolicyTemplateReference 
+// DeviceManagementConfigurationPolicyTemplateReference provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationPolicyTemplateReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,44 +24,16 @@ func NewDeviceManagementConfigurationPolicyTemplateReference()(*DeviceManagement
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementConfigurationPolicyTemplateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementConfigurationPolicyTemplateReferenceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementConfigurationPolicyTemplateReference(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTemplateDisplayName gets the templateDisplayName property value. Template Display Name of the referenced template. This property is read-only.
-func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateDisplayName
-    }
-}
-// GetTemplateDisplayVersion gets the templateDisplayVersion property value. Template Display Version of the referenced Template. This property is read-only.
-func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDisplayVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateDisplayVersion
-    }
-}
-// GetTemplateFamily gets the templateFamily property value. Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
-func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateFamily
-    }
-}
-// GetTemplateId gets the templateId property value. Template id
-func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +80,38 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
         return nil
     }
     return res
+}
+// GetTemplateDisplayName gets the templateDisplayName property value. Template Display Name of the referenced template. This property is read-only.
+func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateDisplayName
+    }
+}
+// GetTemplateDisplayVersion gets the templateDisplayVersion property value. Template Display Version of the referenced Template. This property is read-only.
+func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDisplayVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateDisplayVersion
+    }
+}
+// GetTemplateFamily gets the templateFamily property value. Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateFamily
+    }
+}
+// GetTemplateId gets the templateId property value. Template id
+func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateId
+    }
 }
 func (m *DeviceManagementConfigurationPolicyTemplateReference) IsNil()(bool) {
     return m == nil

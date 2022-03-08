@@ -4,10 +4,10 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContactMergeSuggestions 
+// ContactMergeSuggestions provides operations to manage the compliance singleton.
 type ContactMergeSuggestions struct {
     Entity
-    // 
+    // true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
     isEnabled *bool;
 }
 // NewContactMergeSuggestions instantiates a new contactMergeSuggestions and sets the default values.
@@ -17,13 +17,9 @@ func NewContactMergeSuggestions()(*ContactMergeSuggestions) {
     }
     return m
 }
-// GetIsEnabled gets the isEnabled property value. 
-func (m *ContactMergeSuggestions) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+// CreateContactMergeSuggestionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContactMergeSuggestionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContactMergeSuggestions(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContactMergeSuggestions) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *ContactMergeSuggestions) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetIsEnabled gets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
+func (m *ContactMergeSuggestions) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
 }
 func (m *ContactMergeSuggestions) IsNil()(bool) {
     return m == nil
@@ -57,7 +61,7 @@ func (m *ContactMergeSuggestions) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// SetIsEnabled sets the isEnabled property value. 
+// SetIsEnabled sets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 func (m *ContactMergeSuggestions) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value

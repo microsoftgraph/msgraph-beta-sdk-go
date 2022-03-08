@@ -2,14 +2,14 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i2d983ab662cc55b9e4e21bf61af856e737bbfaa145d374a8cf93b53912bf9532 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackage"
     ib74a6137fedaf5938cbbf5a8b30c50f11379dccf6bc374a7fbf6d44c6af261fc "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/customextensionhandlers"
     idf8643844b16f4a1b09c9fb4b7ba88c6a7ea426a45227d14b77579164d571313 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog"
+    ifecd3ae21008a0b99debbef575c8dab8240d5ec15b4a543d74cae4efe1bfdb8a "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/customextensionhandlers/item"
 )
 
-// AccessPackageAssignmentPolicyItemRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentPolicies\{accessPackageAssignmentPolicy-id}
+// AccessPackageAssignmentPolicyItemRequestBuilder provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.entitlementManagement entity.
 type AccessPackageAssignmentPolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters struct {
 // AccessPackageAssignmentPolicyItemRequestBuilderPatchOptions options for Patch
 type AccessPackageAssignmentPolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -71,7 +71,7 @@ func NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -81,7 +81,7 @@ func NewAccessPackageAssignmentPolicyItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+// CreateDeleteRequestInformation delete navigation property accessPackageAssignmentPolicies for identityGovernance
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentPolicyItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+// CreatePatchRequestInformation update the navigation property accessPackageAssignmentPolicies in identityGovernance
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentPolicyItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,37 +139,60 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreatePatchRequestInfo
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionHandlers()(*ib74a6137fedaf5938cbbf5a8b30c50f11379dccf6bc374a7fbf6d44c6af261fc.CustomExtensionHandlersRequestBuilder) {
     return ib74a6137fedaf5938cbbf5a8b30c50f11379dccf6bc374a7fbf6d44c6af261fc.NewCustomExtensionHandlersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+// CustomExtensionHandlersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item.customExtensionHandlers.item collection
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionHandlersById(id string)(*ifecd3ae21008a0b99debbef575c8dab8240d5ec15b4a543d74cae4efe1bfdb8a.CustomExtensionHandlerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["customExtensionHandler_id"] = id
+    }
+    return ifecd3ae21008a0b99debbef575c8dab8240d5ec15b4a543d74cae4efe1bfdb8a.NewCustomExtensionHandlerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Delete delete navigation property accessPackageAssignmentPolicies for identityGovernance
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Delete(options *AccessPackageAssignmentPolicyItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Get(options *AccessPackageAssignmentPolicyItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicy, error) {
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Get(options *AccessPackageAssignmentPolicyItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessPackageAssignmentPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageAssignmentPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicyable), nil
 }
-// Patch represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+// Patch update the navigation property accessPackageAssignmentPolicies in identityGovernance
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Patch(options *AccessPackageAssignmentPolicyItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

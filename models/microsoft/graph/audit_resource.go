@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuditResource 
+// AuditResource provides operations to manage the deviceManagement singleton.
 type AuditResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Display name.
     displayName *string;
     // List of modified properties.
-    modifiedProperties []AuditProperty;
+    modifiedProperties []AuditPropertyable;
     // Audit resource's Id.
     resourceId *string;
     // Audit resource's type.
@@ -23,6 +23,10 @@ func NewAuditResource()(*AuditResource) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuditResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuditResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditResource) GetAdditionalData()(map[string]interface{}) {
@@ -40,30 +44,6 @@ func (m *AuditResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetModifiedProperties gets the modifiedProperties property value. List of modified properties.
-func (m *AuditResource) GetModifiedProperties()([]AuditProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedProperties
-    }
-}
-// GetResourceId gets the resourceId property value. Audit resource's Id.
-func (m *AuditResource) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
-}
-// GetType gets the type property value. Audit resource's type.
-func (m *AuditResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -78,14 +58,14 @@ func (m *AuditResource) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["modifiedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuditProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateAuditPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AuditProperty, len(val))
+            res := make([]AuditPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuditProperty))
+                res[i] = v.(AuditPropertyable)
             }
             m.SetModifiedProperties(res)
         }
@@ -113,6 +93,30 @@ func (m *AuditResource) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
+// GetModifiedProperties gets the modifiedProperties property value. List of modified properties.
+func (m *AuditResource) GetModifiedProperties()([]AuditPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedProperties
+    }
+}
+// GetResourceId gets the resourceId property value. Audit resource's Id.
+func (m *AuditResource) GetResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceId
+    }
+}
+// GetType gets the type property value. Audit resource's type.
+func (m *AuditResource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 func (m *AuditResource) IsNil()(bool) {
     return m == nil
 }
@@ -127,8 +131,7 @@ func (m *AuditResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetModifiedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {
@@ -168,7 +171,7 @@ func (m *AuditResource) SetDisplayName(value *string)() {
     }
 }
 // SetModifiedProperties sets the modifiedProperties property value. List of modified properties.
-func (m *AuditResource) SetModifiedProperties(value []AuditProperty)() {
+func (m *AuditResource) SetModifiedProperties(value []AuditPropertyable)() {
     if m != nil {
         m.modifiedProperties = value
     }

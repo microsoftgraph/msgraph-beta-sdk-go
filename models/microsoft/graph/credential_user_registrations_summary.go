@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CredentialUserRegistrationsSummary 
+// CredentialUserRegistrationsSummary provides operations to manage the tenantRelationship singleton.
 type CredentialUserRegistrationsSummary struct {
     Entity
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
@@ -36,85 +36,9 @@ func NewCredentialUserRegistrationsSummary()(*CredentialUserRegistrationsSummary
     }
     return m
 }
-// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
-}
-// GetMfaAndSsprCapableUserCount gets the mfaAndSsprCapableUserCount property value. The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetMfaAndSsprCapableUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mfaAndSsprCapableUserCount
-    }
-}
-// GetMfaConditionalAccessPolicyState gets the mfaConditionalAccessPolicyState property value. The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetMfaConditionalAccessPolicyState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mfaConditionalAccessPolicyState
-    }
-}
-// GetMfaRegisteredUserCount gets the mfaRegisteredUserCount property value. The number of users registered for multi-factor authentication. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetMfaRegisteredUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mfaRegisteredUserCount
-    }
-}
-// GetSecurityDefaultsEnabled gets the securityDefaultsEnabled property value. A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetSecurityDefaultsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityDefaultsEnabled
-    }
-}
-// GetSsprEnabledUserCount gets the ssprEnabledUserCount property value. The number of users enabled for self service password reset. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetSsprEnabledUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ssprEnabledUserCount
-    }
-}
-// GetSsprRegisteredUserCount gets the ssprRegisteredUserCount property value. The number of users registered for self service password reset. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetSsprRegisteredUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ssprRegisteredUserCount
-    }
-}
-// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetTotalUserCount gets the totalUserCount property value. The total number of users in the given managed tenant. Optional. Read-only.
-func (m *CredentialUserRegistrationsSummary) GetTotalUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUserCount
-    }
+// CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCredentialUserRegistrationsSummary(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -220,6 +144,86 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
+    }
+}
+// GetMfaAndSsprCapableUserCount gets the mfaAndSsprCapableUserCount property value. The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetMfaAndSsprCapableUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mfaAndSsprCapableUserCount
+    }
+}
+// GetMfaConditionalAccessPolicyState gets the mfaConditionalAccessPolicyState property value. The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetMfaConditionalAccessPolicyState()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mfaConditionalAccessPolicyState
+    }
+}
+// GetMfaRegisteredUserCount gets the mfaRegisteredUserCount property value. The number of users registered for multi-factor authentication. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetMfaRegisteredUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mfaRegisteredUserCount
+    }
+}
+// GetSecurityDefaultsEnabled gets the securityDefaultsEnabled property value. A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetSecurityDefaultsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityDefaultsEnabled
+    }
+}
+// GetSsprEnabledUserCount gets the ssprEnabledUserCount property value. The number of users enabled for self service password reset. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetSsprEnabledUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ssprEnabledUserCount
+    }
+}
+// GetSsprRegisteredUserCount gets the ssprRegisteredUserCount property value. The number of users registered for self service password reset. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetSsprRegisteredUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ssprRegisteredUserCount
+    }
+}
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetTenantDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantDisplayName
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetTotalUserCount gets the totalUserCount property value. The total number of users in the given managed tenant. Optional. Read-only.
+func (m *CredentialUserRegistrationsSummary) GetTotalUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalUserCount
+    }
 }
 func (m *CredentialUserRegistrationsSummary) IsNil()(bool) {
     return m == nil

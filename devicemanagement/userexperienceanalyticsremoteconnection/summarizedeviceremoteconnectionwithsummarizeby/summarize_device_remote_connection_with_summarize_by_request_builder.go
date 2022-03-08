@@ -2,10 +2,9 @@ package summarizedeviceremoteconnectionwithsummarizeby
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection\microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})
+// SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder provides operations to call the summarizeDeviceRemoteConnection method.
 type SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +26,7 @@ type SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetOptions stru
 func NewSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, summarizeBy *string)(*SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) {
     m := &SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRemoteConnection/microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})";
+    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRemoteConnection/microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy='{summarizeBy}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,7 +34,7 @@ func NewSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal(pat
     if summarizeBy != nil {
         urlTplParams["summarizeBy"] = *summarizeBy
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) CreateGet
     return requestInfo, nil
 }
 // Get invoke function summarizeDeviceRemoteConnection
-func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) Get(options *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetOptions)([]SummarizeDeviceRemoteConnectionWithSummarizeBy, error) {
+func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) Get(options *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetOptions)(SummarizeDeviceRemoteConnectionWithSummarizeByResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSummarizeDeviceRemoteConnectionWithSummarizeBy() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSummarizeDeviceRemoteConnectionWithSummarizeByResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]SummarizeDeviceRemoteConnectionWithSummarizeBy, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*SummarizeDeviceRemoteConnectionWithSummarizeBy))
-    }
-    return val, nil
+    return res.(SummarizeDeviceRemoteConnectionWithSummarizeByResponseable), nil
 }

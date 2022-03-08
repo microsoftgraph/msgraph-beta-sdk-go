@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkPeripheral 
+// TeamworkPeripheral provides operations to manage the teamwork singleton.
 type TeamworkPeripheral struct {
     Entity
     // Display name for the peripheral.
@@ -21,28 +21,16 @@ func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     }
     return m
 }
+// CreateTeamworkPeripheralFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkPeripheralFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkPeripheral(), nil
+}
 // GetDisplayName gets the displayName property value. Display name for the peripheral.
 func (m *TeamworkPeripheral) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetProductId gets the productId property value. The product ID of the device. Each product from a vendor has its own ID.
-func (m *TeamworkPeripheral) GetProductId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productId
-    }
-}
-// GetVendorId gets the vendorId property value. The unique identifier for the vendor of the device. Each vendor has a unique ID.
-func (m *TeamworkPeripheral) GetVendorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +67,22 @@ func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetProductId gets the productId property value. The product ID of the device. Each product from a vendor has its own ID.
+func (m *TeamworkPeripheral) GetProductId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productId
+    }
+}
+// GetVendorId gets the vendorId property value. The unique identifier for the vendor of the device. Each vendor has a unique ID.
+func (m *TeamworkPeripheral) GetVendorId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorId
+    }
 }
 func (m *TeamworkPeripheral) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TiIndicator 
+// TiIndicator provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
 type TiIndicator struct {
     Entity
     // The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
@@ -131,6 +131,10 @@ func NewTiIndicator()(*TiIndicator) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTiIndicatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTiIndicatorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTiIndicator(), nil
 }
 // GetAction gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
 func (m *TiIndicator) GetAction()(*TiAction) {
@@ -282,318 +286,6 @@ func (m *TiIndicator) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetFileCompileDateTime gets the fileCompileDateTime property value. 
-func (m *TiIndicator) GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileCompileDateTime
-    }
-}
-// GetFileCreatedDateTime gets the fileCreatedDateTime property value. 
-func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileCreatedDateTime
-    }
-}
-// GetFileHashType gets the fileHashType property value. 
-func (m *TiIndicator) GetFileHashType()(*FileHashType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHashType
-    }
-}
-// GetFileHashValue gets the fileHashValue property value. 
-func (m *TiIndicator) GetFileHashValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHashValue
-    }
-}
-// GetFileMutexName gets the fileMutexName property value. 
-func (m *TiIndicator) GetFileMutexName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileMutexName
-    }
-}
-// GetFileName gets the fileName property value. 
-func (m *TiIndicator) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetFilePacker gets the filePacker property value. 
-func (m *TiIndicator) GetFilePacker()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filePacker
-    }
-}
-// GetFilePath gets the filePath property value. 
-func (m *TiIndicator) GetFilePath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filePath
-    }
-}
-// GetFileSize gets the fileSize property value. 
-func (m *TiIndicator) GetFileSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSize
-    }
-}
-// GetFileType gets the fileType property value. 
-func (m *TiIndicator) GetFileType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileType
-    }
-}
-// GetIngestedDateTime gets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *TiIndicator) GetIngestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ingestedDateTime
-    }
-}
-// GetIsActive gets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
-func (m *TiIndicator) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
-}
-// GetKillChain gets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
-func (m *TiIndicator) GetKillChain()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.killChain
-    }
-}
-// GetKnownFalsePositives gets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
-func (m *TiIndicator) GetKnownFalsePositives()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.knownFalsePositives
-    }
-}
-// GetLastReportedDateTime gets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
-}
-// GetMalwareFamilyNames gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
-func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.malwareFamilyNames
-    }
-}
-// GetNetworkCidrBlock gets the networkCidrBlock property value. 
-func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkCidrBlock
-    }
-}
-// GetNetworkDestinationAsn gets the networkDestinationAsn property value. 
-func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkDestinationAsn
-    }
-}
-// GetNetworkDestinationCidrBlock gets the networkDestinationCidrBlock property value. 
-func (m *TiIndicator) GetNetworkDestinationCidrBlock()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkDestinationCidrBlock
-    }
-}
-// GetNetworkDestinationIPv4 gets the networkDestinationIPv4 property value. 
-func (m *TiIndicator) GetNetworkDestinationIPv4()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkDestinationIPv4
-    }
-}
-// GetNetworkDestinationIPv6 gets the networkDestinationIPv6 property value. 
-func (m *TiIndicator) GetNetworkDestinationIPv6()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkDestinationIPv6
-    }
-}
-// GetNetworkDestinationPort gets the networkDestinationPort property value. 
-func (m *TiIndicator) GetNetworkDestinationPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkDestinationPort
-    }
-}
-// GetNetworkIPv4 gets the networkIPv4 property value. 
-func (m *TiIndicator) GetNetworkIPv4()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkIPv4
-    }
-}
-// GetNetworkIPv6 gets the networkIPv6 property value. 
-func (m *TiIndicator) GetNetworkIPv6()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkIPv6
-    }
-}
-// GetNetworkPort gets the networkPort property value. 
-func (m *TiIndicator) GetNetworkPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkPort
-    }
-}
-// GetNetworkProtocol gets the networkProtocol property value. 
-func (m *TiIndicator) GetNetworkProtocol()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkProtocol
-    }
-}
-// GetNetworkSourceAsn gets the networkSourceAsn property value. 
-func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkSourceAsn
-    }
-}
-// GetNetworkSourceCidrBlock gets the networkSourceCidrBlock property value. 
-func (m *TiIndicator) GetNetworkSourceCidrBlock()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkSourceCidrBlock
-    }
-}
-// GetNetworkSourceIPv4 gets the networkSourceIPv4 property value. 
-func (m *TiIndicator) GetNetworkSourceIPv4()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkSourceIPv4
-    }
-}
-// GetNetworkSourceIPv6 gets the networkSourceIPv6 property value. 
-func (m *TiIndicator) GetNetworkSourceIPv6()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkSourceIPv6
-    }
-}
-// GetNetworkSourcePort gets the networkSourcePort property value. 
-func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkSourcePort
-    }
-}
-// GetPassiveOnly gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
-func (m *TiIndicator) GetPassiveOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passiveOnly
-    }
-}
-// GetSeverity gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
-func (m *TiIndicator) GetSeverity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.severity
-    }
-}
-// GetTags gets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
-func (m *TiIndicator) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetTargetProduct gets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
-func (m *TiIndicator) GetTargetProduct()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetProduct
-    }
-}
-// GetThreatType gets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
-func (m *TiIndicator) GetThreatType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatType
-    }
-}
-// GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
-func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tlpLevel
-    }
-}
-// GetUrl gets the url property value. 
-func (m *TiIndicator) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
-}
-// GetUserAgent gets the userAgent property value. 
-func (m *TiIndicator) GetUserAgent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAgent
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -1196,6 +888,318 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetFileCompileDateTime gets the fileCompileDateTime property value. 
+func (m *TiIndicator) GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileCompileDateTime
+    }
+}
+// GetFileCreatedDateTime gets the fileCreatedDateTime property value. 
+func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileCreatedDateTime
+    }
+}
+// GetFileHashType gets the fileHashType property value. 
+func (m *TiIndicator) GetFileHashType()(*FileHashType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileHashType
+    }
+}
+// GetFileHashValue gets the fileHashValue property value. 
+func (m *TiIndicator) GetFileHashValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileHashValue
+    }
+}
+// GetFileMutexName gets the fileMutexName property value. 
+func (m *TiIndicator) GetFileMutexName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileMutexName
+    }
+}
+// GetFileName gets the fileName property value. 
+func (m *TiIndicator) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetFilePacker gets the filePacker property value. 
+func (m *TiIndicator) GetFilePacker()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filePacker
+    }
+}
+// GetFilePath gets the filePath property value. 
+func (m *TiIndicator) GetFilePath()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filePath
+    }
+}
+// GetFileSize gets the fileSize property value. 
+func (m *TiIndicator) GetFileSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileSize
+    }
+}
+// GetFileType gets the fileType property value. 
+func (m *TiIndicator) GetFileType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileType
+    }
+}
+// GetIngestedDateTime gets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *TiIndicator) GetIngestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ingestedDateTime
+    }
+}
+// GetIsActive gets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
+func (m *TiIndicator) GetIsActive()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isActive
+    }
+}
+// GetKillChain gets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
+func (m *TiIndicator) GetKillChain()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.killChain
+    }
+}
+// GetKnownFalsePositives gets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
+func (m *TiIndicator) GetKnownFalsePositives()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.knownFalsePositives
+    }
+}
+// GetLastReportedDateTime gets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastReportedDateTime
+    }
+}
+// GetMalwareFamilyNames gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.malwareFamilyNames
+    }
+}
+// GetNetworkCidrBlock gets the networkCidrBlock property value. 
+func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkCidrBlock
+    }
+}
+// GetNetworkDestinationAsn gets the networkDestinationAsn property value. 
+func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkDestinationAsn
+    }
+}
+// GetNetworkDestinationCidrBlock gets the networkDestinationCidrBlock property value. 
+func (m *TiIndicator) GetNetworkDestinationCidrBlock()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkDestinationCidrBlock
+    }
+}
+// GetNetworkDestinationIPv4 gets the networkDestinationIPv4 property value. 
+func (m *TiIndicator) GetNetworkDestinationIPv4()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkDestinationIPv4
+    }
+}
+// GetNetworkDestinationIPv6 gets the networkDestinationIPv6 property value. 
+func (m *TiIndicator) GetNetworkDestinationIPv6()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkDestinationIPv6
+    }
+}
+// GetNetworkDestinationPort gets the networkDestinationPort property value. 
+func (m *TiIndicator) GetNetworkDestinationPort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkDestinationPort
+    }
+}
+// GetNetworkIPv4 gets the networkIPv4 property value. 
+func (m *TiIndicator) GetNetworkIPv4()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkIPv4
+    }
+}
+// GetNetworkIPv6 gets the networkIPv6 property value. 
+func (m *TiIndicator) GetNetworkIPv6()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkIPv6
+    }
+}
+// GetNetworkPort gets the networkPort property value. 
+func (m *TiIndicator) GetNetworkPort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkPort
+    }
+}
+// GetNetworkProtocol gets the networkProtocol property value. 
+func (m *TiIndicator) GetNetworkProtocol()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkProtocol
+    }
+}
+// GetNetworkSourceAsn gets the networkSourceAsn property value. 
+func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkSourceAsn
+    }
+}
+// GetNetworkSourceCidrBlock gets the networkSourceCidrBlock property value. 
+func (m *TiIndicator) GetNetworkSourceCidrBlock()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkSourceCidrBlock
+    }
+}
+// GetNetworkSourceIPv4 gets the networkSourceIPv4 property value. 
+func (m *TiIndicator) GetNetworkSourceIPv4()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkSourceIPv4
+    }
+}
+// GetNetworkSourceIPv6 gets the networkSourceIPv6 property value. 
+func (m *TiIndicator) GetNetworkSourceIPv6()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkSourceIPv6
+    }
+}
+// GetNetworkSourcePort gets the networkSourcePort property value. 
+func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.networkSourcePort
+    }
+}
+// GetPassiveOnly gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+func (m *TiIndicator) GetPassiveOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passiveOnly
+    }
+}
+// GetSeverity gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+func (m *TiIndicator) GetSeverity()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.severity
+    }
+}
+// GetTags gets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
+func (m *TiIndicator) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetTargetProduct gets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
+func (m *TiIndicator) GetTargetProduct()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetProduct
+    }
+}
+// GetThreatType gets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
+func (m *TiIndicator) GetThreatType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.threatType
+    }
+}
+// GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
+func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tlpLevel
+    }
+}
+// GetUrl gets the url property value. 
+func (m *TiIndicator) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
+}
+// GetUserAgent gets the userAgent property value. 
+func (m *TiIndicator) GetUserAgent()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userAgent
+    }
 }
 func (m *TiIndicator) IsNil()(bool) {
     return m == nil

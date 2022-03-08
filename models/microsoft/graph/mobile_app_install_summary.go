@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppInstallSummary 
+// MobileAppInstallSummary provides operations to manage the deviceAppManagement singleton.
 type MobileAppInstallSummary struct {
     Entity
     // Number of Devices that have failed to install this app.
@@ -35,6 +35,10 @@ func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
     }
     return m
 }
+// CreateMobileAppInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppInstallSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppInstallSummary(), nil
+}
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this app.
 func (m *MobileAppInstallSummary) GetFailedDeviceCount()(*int32) {
     if m == nil {
@@ -49,70 +53,6 @@ func (m *MobileAppInstallSummary) GetFailedUserCount()(*int32) {
         return nil
     } else {
         return m.failedUserCount
-    }
-}
-// GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this app.
-func (m *MobileAppInstallSummary) GetInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedDeviceCount
-    }
-}
-// GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this app.
-func (m *MobileAppInstallSummary) GetInstalledUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedUserCount
-    }
-}
-// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of Devices that are not applicable for this app.
-func (m *MobileAppInstallSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
-}
-// GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of Users whose devices were all not applicable for this app.
-func (m *MobileAppInstallSummary) GetNotApplicableUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableUserCount
-    }
-}
-// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this app installed.
-func (m *MobileAppInstallSummary) GetNotInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledDeviceCount
-    }
-}
-// GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that have 1 or more devices that did not install this app.
-func (m *MobileAppInstallSummary) GetNotInstalledUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledUserCount
-    }
-}
-// GetPendingInstallDeviceCount gets the pendingInstallDeviceCount property value. Number of Devices that have been notified to install this app.
-func (m *MobileAppInstallSummary) GetPendingInstallDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingInstallDeviceCount
-    }
-}
-// GetPendingInstallUserCount gets the pendingInstallUserCount property value. Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
-func (m *MobileAppInstallSummary) GetPendingInstallUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingInstallUserCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -219,6 +159,70 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this app.
+func (m *MobileAppInstallSummary) GetInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedDeviceCount
+    }
+}
+// GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this app.
+func (m *MobileAppInstallSummary) GetInstalledUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedUserCount
+    }
+}
+// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of Devices that are not applicable for this app.
+func (m *MobileAppInstallSummary) GetNotApplicableDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableDeviceCount
+    }
+}
+// GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of Users whose devices were all not applicable for this app.
+func (m *MobileAppInstallSummary) GetNotApplicableUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableUserCount
+    }
+}
+// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this app installed.
+func (m *MobileAppInstallSummary) GetNotInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notInstalledDeviceCount
+    }
+}
+// GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that have 1 or more devices that did not install this app.
+func (m *MobileAppInstallSummary) GetNotInstalledUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notInstalledUserCount
+    }
+}
+// GetPendingInstallDeviceCount gets the pendingInstallDeviceCount property value. Number of Devices that have been notified to install this app.
+func (m *MobileAppInstallSummary) GetPendingInstallDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingInstallDeviceCount
+    }
+}
+// GetPendingInstallUserCount gets the pendingInstallUserCount property value. Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
+func (m *MobileAppInstallSummary) GetPendingInstallUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingInstallUserCount
+    }
 }
 func (m *MobileAppInstallSummary) IsNil()(bool) {
     return m == nil

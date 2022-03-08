@@ -4,36 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CredentialUserRegistrationCount 
+// CredentialUserRegistrationCount provides operations to call the getCredentialUserRegistrationCount method.
 type CredentialUserRegistrationCount struct {
     Entity
     // Provides the total user count in the tenant.
     totalUserCount *int64;
     // A collection of registration count and status information for users in your tenant.
-    userRegistrationCounts []UserRegistrationCount;
+    userRegistrationCounts []UserRegistrationCountable;
 }
-// NewCredentialUserRegistrationCount instantiates a new CredentialUserRegistrationCount and sets the default values.
+// NewCredentialUserRegistrationCount instantiates a new credentialUserRegistrationCount and sets the default values.
 func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
     m := &CredentialUserRegistrationCount{
         Entity: *NewEntity(),
     }
     return m
 }
-// GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
-func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUserCount
-    }
-}
-// GetUserRegistrationCounts gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
-func (m *CredentialUserRegistrationCount) GetUserRegistrationCounts()([]UserRegistrationCount) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRegistrationCounts
-    }
+// CreateCredentialUserRegistrationCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCredentialUserRegistrationCountFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCredentialUserRegistrationCount(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -49,20 +37,36 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["userRegistrationCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserRegistrationCount() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationCountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserRegistrationCount, len(val))
+            res := make([]UserRegistrationCountable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserRegistrationCount))
+                res[i] = v.(UserRegistrationCountable)
             }
             m.SetUserRegistrationCounts(res)
         }
         return nil
     }
     return res
+}
+// GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
+func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalUserCount
+    }
+}
+// GetUserRegistrationCounts gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
+func (m *CredentialUserRegistrationCount) GetUserRegistrationCounts()([]UserRegistrationCountable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userRegistrationCounts
+    }
 }
 func (m *CredentialUserRegistrationCount) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i04eb5309aeaafadd2837
     if m.GetUserRegistrationCounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserRegistrationCounts()))
         for i, v := range m.GetUserRegistrationCounts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userRegistrationCounts", cast)
         if err != nil {
@@ -99,7 +102,7 @@ func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
     }
 }
 // SetUserRegistrationCounts sets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
-func (m *CredentialUserRegistrationCount) SetUserRegistrationCounts(value []UserRegistrationCount)() {
+func (m *CredentialUserRegistrationCount) SetUserRegistrationCounts(value []UserRegistrationCountable)() {
     if m != nil {
         m.userRegistrationCounts = value
     }

@@ -2,12 +2,12 @@ package governanceroleassignments
 
 import (
     i1a5b64af85add71a023d2e785c1a5be6ae9f5cb8a4b70eac9b1164d616d8b1c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/export"
+    i86d77de760f63f9525b1d187924b60019eb7f47ccd0a3aae49066b65191c38bd "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/count"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GovernanceRoleAssignmentsRequestBuilder builds and executes requests for operations under \governanceRoleAssignments
+// GovernanceRoleAssignmentsRequestBuilder provides operations to manage the collection of governanceRoleAssignment entities.
 type GovernanceRoleAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type GovernanceRoleAssignmentsRequestBuilderGetQueryParameters struct {
 // GovernanceRoleAssignmentsRequestBuilderPostOptions options for Post
 type GovernanceRoleAssignmentsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewGovernanceRoleAssignmentsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewGovernanceRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter id
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *GovernanceRoleAssignmentsRequestBuilder) Count()(*i86d77de760f63f9525b1d187924b60019eb7f47ccd0a3aae49066b65191c38bd.CountRequestBuilder) {
+    return i86d77de760f63f9525b1d187924b60019eb7f47ccd0a3aae49066b65191c38bd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceRoleAssignments
 func (m *GovernanceRoleAssignmentsRequestBuilder) CreateGetRequestInformation(options *GovernanceRoleAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,31 +117,39 @@ func (m *GovernanceRoleAssignmentsRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Export builds and executes requests for operations under \governanceRoleAssignments\microsoft.graph.export()
+// Export provides operations to call the export method.
 func (m *GovernanceRoleAssignmentsRequestBuilder) Export()(*i1a5b64af85add71a023d2e785c1a5be6ae9f5cb8a4b70eac9b1164d616d8b1c3.ExportRequestBuilder) {
     return i1a5b64af85add71a023d2e785c1a5be6ae9f5cb8a4b70eac9b1164d616d8b1c3.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get entities from governanceRoleAssignments
-func (m *GovernanceRoleAssignmentsRequestBuilder) Get(options *GovernanceRoleAssignmentsRequestBuilderGetOptions)(*GovernanceRoleAssignmentsResponse, error) {
+func (m *GovernanceRoleAssignmentsRequestBuilder) Get(options *GovernanceRoleAssignmentsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleAssignmentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceRoleAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*GovernanceRoleAssignmentsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentCollectionResponseable), nil
 }
 // Post add new entity to governanceRoleAssignments
-func (m *GovernanceRoleAssignmentsRequestBuilder) Post(options *GovernanceRoleAssignmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignment, error) {
+func (m *GovernanceRoleAssignmentsRequestBuilder) Post(options *GovernanceRoleAssignmentsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceRoleAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceRoleAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentable), nil
 }

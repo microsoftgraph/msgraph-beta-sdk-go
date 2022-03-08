@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InstitutionData 
+// InstitutionData provides operations to manage the compliance singleton.
 type InstitutionData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type InstitutionData struct {
     // Name of the institution the user studied at.
     displayName *string;
     // Address or location of the institute.
-    location *PhysicalAddress;
+    location PhysicalAddressable;
     // Link to the institution or department homepage.
     webUrl *string;
 }
@@ -23,6 +23,10 @@ func NewInstitutionData()(*InstitutionData) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateInstitutionDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInstitutionDataFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInstitutionData(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstitutionData) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *InstitutionData) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLocation gets the location property value. Address or location of the institute.
-func (m *InstitutionData) GetLocation()(*PhysicalAddress) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
-}
-// GetWebUrl gets the webUrl property value. Link to the institution or department homepage.
-func (m *InstitutionData) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,12 +76,12 @@ func (m *InstitutionData) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocation(val.(*PhysicalAddress))
+            m.SetLocation(val.(PhysicalAddressable))
         }
         return nil
     }
@@ -108,6 +96,22 @@ func (m *InstitutionData) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetLocation gets the location property value. Address or location of the institute.
+func (m *InstitutionData) GetLocation()(PhysicalAddressable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.location
+    }
+}
+// GetWebUrl gets the webUrl property value. Link to the institution or department homepage.
+func (m *InstitutionData) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *InstitutionData) IsNil()(bool) {
     return m == nil
@@ -165,7 +169,7 @@ func (m *InstitutionData) SetDisplayName(value *string)() {
     }
 }
 // SetLocation sets the location property value. Address or location of the institute.
-func (m *InstitutionData) SetLocation(value *PhysicalAddress)() {
+func (m *InstitutionData) SetLocation(value PhysicalAddressable)() {
     if m != nil {
         m.location = value
     }

@@ -2,11 +2,12 @@ package roledefinition
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iad81eb4a91d7bc6619d5d1da28909d328a79f85f663c2edf08431affaa32176e "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/item/roledefinition/resource"
+    ie010156c0b89b62e2dc5b18cbc9103f2bcf9f4ffc7ba750d493f89019aa44e0d "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/item/roledefinition/rolesetting"
 )
 
-// RoleDefinitionRequestBuilder builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\roleDefinition
+// RoleDefinitionRequestBuilder provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignment entity.
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +46,7 @@ type RoleDefinitionRequestBuilderGetQueryParameters struct {
 // RoleDefinitionRequestBuilderPatchOptions options for Patch
 type RoleDefinitionRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +63,7 @@ func NewRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +73,7 @@ func NewRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. The role definition associated with the role assignment.
+// CreateDeleteRequestInformation delete navigation property roleDefinition for governanceRoleAssignments
 func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *RoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +110,7 @@ func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. The role definition associated with the role assignment.
+// CreatePatchRequestInformation update the navigation property roleDefinition in governanceRoleAssignments
 func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *RoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,39 +128,57 @@ func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *Ro
     }
     return requestInfo, nil
 }
-// Delete read-only. The role definition associated with the role assignment.
+// Delete delete navigation property roleDefinition for governanceRoleAssignments
 func (m *RoleDefinitionRequestBuilder) Delete(options *RoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get read-only. The role definition associated with the role assignment.
-func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition, error) {
+func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceRoleDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceRoleDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinitionable), nil
 }
-// Patch read-only. The role definition associated with the role assignment.
+// Patch update the navigation property roleDefinition in governanceRoleAssignments
 func (m *RoleDefinitionRequestBuilder) Patch(options *RoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *RoleDefinitionRequestBuilder) Resource()(*iad81eb4a91d7bc6619d5d1da28909d328a79f85f663c2edf08431affaa32176e.ResourceRequestBuilder) {
+    return iad81eb4a91d7bc6619d5d1da28909d328a79f85f663c2edf08431affaa32176e.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *RoleDefinitionRequestBuilder) RoleSetting()(*ie010156c0b89b62e2dc5b18cbc9103f2bcf9f4ffc7ba750d493f89019aa44e0d.RoleSettingRequestBuilder) {
+    return ie010156c0b89b62e2dc5b18cbc9103f2bcf9f4ffc7ba750d493f89019aa44e0d.NewRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

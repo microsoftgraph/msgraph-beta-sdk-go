@@ -2,11 +2,11 @@ package managementtemplatecollections
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    if2cb735b8e1f5a4dc100e2d27310069fcdb495776e2b40116f0238c1a3805e9c "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates/item/managementtemplatecollections/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates/item/managementtemplatecollections/count"
 )
 
-// ManagementTemplateCollectionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}\managementTemplateCollections
+// ManagementTemplateCollectionsRequestBuilder provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managementTemplate entity.
 type ManagementTemplateCollectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewManagementTemplateCollectionsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewManagementTemplateCollectionsRequestBuilder(rawUrl string, requestAdapte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateCollectionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagementTemplateCollectionsRequestBuilder) Count()(*i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246.CountRequestBuilder) {
+    return i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get managementTemplateCollections from tenantRelationships
 func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateCollectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformatio
     return requestInfo, nil
 }
 // Get get managementTemplateCollections from tenantRelationships
-func (m *ManagementTemplateCollectionsRequestBuilder) Get(options *ManagementTemplateCollectionsRequestBuilderGetOptions)(*ManagementTemplateCollectionsResponse, error) {
+func (m *ManagementTemplateCollectionsRequestBuilder) Get(options *ManagementTemplateCollectionsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateCollectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateCollectionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagementTemplateCollectionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagementTemplateCollectionsResponse), nil
-}
-func (m *ManagementTemplateCollectionsRequestBuilder) Ref()(*if2cb735b8e1f5a4dc100e2d27310069fcdb495776e2b40116f0238c1a3805e9c.RefRequestBuilder) {
-    return if2cb735b8e1f5a4dc100e2d27310069fcdb495776e2b40116f0238c1a3805e9c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateCollectionCollectionResponseable), nil
 }

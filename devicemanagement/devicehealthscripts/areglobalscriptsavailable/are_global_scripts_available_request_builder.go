@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AreGlobalScriptsAvailableRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()
+// AreGlobalScriptsAvailableRequestBuilder provides operations to call the areGlobalScriptsAvailable method.
 type AreGlobalScriptsAvailableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,20 +38,15 @@ func NewAreGlobalScriptsAvailableResponse()(*AreGlobalScriptsAvailableResponse) 
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+func CreateAreGlobalScriptsAvailableResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAreGlobalScriptsAvailableResponse(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AreGlobalScriptsAvailableResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetGlobalDeviceHealthScriptState gets the globalDeviceHealthScriptState property value. Union type representation for type globalDeviceHealthScriptState
-func (m *AreGlobalScriptsAvailableResponse) GetGlobalDeviceHealthScriptState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.globalDeviceHealthScriptState
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +63,14 @@ func (m *AreGlobalScriptsAvailableResponse) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetGlobalDeviceHealthScriptState gets the globalDeviceHealthScriptState property value. Union type representation for type globalDeviceHealthScriptState
+func (m *AreGlobalScriptsAvailableResponse) GetGlobalDeviceHealthScriptState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.globalDeviceHealthScriptState
+    }
 }
 func (m *AreGlobalScriptsAvailableResponse) IsNil()(bool) {
     return m == nil
@@ -110,7 +113,7 @@ func NewAreGlobalScriptsAvailableRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -138,14 +141,14 @@ func (m *AreGlobalScriptsAvailableRequestBuilder) CreateGetRequestInformation(op
     return requestInfo, nil
 }
 // Get invoke function areGlobalScriptsAvailable
-func (m *AreGlobalScriptsAvailableRequestBuilder) Get(options *AreGlobalScriptsAvailableRequestBuilderGetOptions)(*AreGlobalScriptsAvailableResponse, error) {
+func (m *AreGlobalScriptsAvailableRequestBuilder) Get(options *AreGlobalScriptsAvailableRequestBuilderGetOptions)(AreGlobalScriptsAvailableResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAreGlobalScriptsAvailableResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAreGlobalScriptsAvailableResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*AreGlobalScriptsAvailableResponse), nil
+    return res.(AreGlobalScriptsAvailableResponseable), nil
 }

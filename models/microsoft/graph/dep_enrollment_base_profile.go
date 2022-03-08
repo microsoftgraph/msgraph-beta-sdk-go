@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DepEnrollmentBaseProfile 
+// DepEnrollmentBaseProfile provides operations to manage the deviceManagement singleton.
 type DepEnrollmentBaseProfile struct {
     EnrollmentProfile
     // Indicates if Apple id setup pane is disabled
@@ -53,6 +53,10 @@ func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     }
     return m
 }
+// CreateDepEnrollmentBaseProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDepEnrollmentBaseProfile(), nil
+}
 // GetAppleIdDisabled gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetAppleIdDisabled()(*bool) {
     if m == nil {
@@ -99,110 +103,6 @@ func (m *DepEnrollmentBaseProfile) GetDisplayToneSetupDisabled()(*bool) {
         return nil
     } else {
         return m.displayToneSetupDisabled
-    }
-}
-// GetIsDefault gets the isDefault property value. Indicates if this is the default profile
-func (m *DepEnrollmentBaseProfile) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetIsMandatory gets the isMandatory property value. Indicates if the profile is mandatory
-func (m *DepEnrollmentBaseProfile) GetIsMandatory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMandatory
-    }
-}
-// GetLocationDisabled gets the locationDisabled property value. Indicates if Location service setup pane is disabled
-func (m *DepEnrollmentBaseProfile) GetLocationDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locationDisabled
-    }
-}
-// GetPrivacyPaneDisabled gets the privacyPaneDisabled property value. Indicates if privacy screen is disabled
-func (m *DepEnrollmentBaseProfile) GetPrivacyPaneDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacyPaneDisabled
-    }
-}
-// GetProfileRemovalDisabled gets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
-func (m *DepEnrollmentBaseProfile) GetProfileRemovalDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileRemovalDisabled
-    }
-}
-// GetRestoreBlocked gets the restoreBlocked property value. Indicates if Restore setup pane is blocked
-func (m *DepEnrollmentBaseProfile) GetRestoreBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restoreBlocked
-    }
-}
-// GetScreenTimeScreenDisabled gets the screenTimeScreenDisabled property value. Indicates if screen timeout setup is disabled
-func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenTimeScreenDisabled
-    }
-}
-// GetSiriDisabled gets the siriDisabled property value. Indicates if siri setup pane is disabled
-func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siriDisabled
-    }
-}
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
-func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supervisedModeEnabled
-    }
-}
-// GetSupportDepartment gets the supportDepartment property value. Support department information
-func (m *DepEnrollmentBaseProfile) GetSupportDepartment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportDepartment
-    }
-}
-// GetSupportPhoneNumber gets the supportPhoneNumber property value. Support phone number
-func (m *DepEnrollmentBaseProfile) GetSupportPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportPhoneNumber
-    }
-}
-// GetTermsAndConditionsDisabled gets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
-func (m *DepEnrollmentBaseProfile) GetTermsAndConditionsDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsAndConditionsDisabled
-    }
-}
-// GetTouchIdDisabled gets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
-func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.touchIdDisabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -399,6 +299,110 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. Indicates if this is the default profile
+func (m *DepEnrollmentBaseProfile) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetIsMandatory gets the isMandatory property value. Indicates if the profile is mandatory
+func (m *DepEnrollmentBaseProfile) GetIsMandatory()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMandatory
+    }
+}
+// GetLocationDisabled gets the locationDisabled property value. Indicates if Location service setup pane is disabled
+func (m *DepEnrollmentBaseProfile) GetLocationDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.locationDisabled
+    }
+}
+// GetPrivacyPaneDisabled gets the privacyPaneDisabled property value. Indicates if privacy screen is disabled
+func (m *DepEnrollmentBaseProfile) GetPrivacyPaneDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.privacyPaneDisabled
+    }
+}
+// GetProfileRemovalDisabled gets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
+func (m *DepEnrollmentBaseProfile) GetProfileRemovalDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.profileRemovalDisabled
+    }
+}
+// GetRestoreBlocked gets the restoreBlocked property value. Indicates if Restore setup pane is blocked
+func (m *DepEnrollmentBaseProfile) GetRestoreBlocked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restoreBlocked
+    }
+}
+// GetScreenTimeScreenDisabled gets the screenTimeScreenDisabled property value. Indicates if screen timeout setup is disabled
+func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.screenTimeScreenDisabled
+    }
+}
+// GetSiriDisabled gets the siriDisabled property value. Indicates if siri setup pane is disabled
+func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siriDisabled
+    }
+}
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supervisedModeEnabled
+    }
+}
+// GetSupportDepartment gets the supportDepartment property value. Support department information
+func (m *DepEnrollmentBaseProfile) GetSupportDepartment()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportDepartment
+    }
+}
+// GetSupportPhoneNumber gets the supportPhoneNumber property value. Support phone number
+func (m *DepEnrollmentBaseProfile) GetSupportPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportPhoneNumber
+    }
+}
+// GetTermsAndConditionsDisabled gets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
+func (m *DepEnrollmentBaseProfile) GetTermsAndConditionsDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsAndConditionsDisabled
+    }
+}
+// GetTouchIdDisabled gets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
+func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.touchIdDisabled
+    }
 }
 func (m *DepEnrollmentBaseProfile) IsNil()(bool) {
     return m == nil

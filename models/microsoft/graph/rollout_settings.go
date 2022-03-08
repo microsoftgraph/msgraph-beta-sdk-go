@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RolloutSettings 
+// RolloutSettings provides operations to manage the admin singleton.
 type RolloutSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewRolloutSettings()(*RolloutSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRolloutSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRolloutSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRolloutSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RolloutSettings) GetAdditionalData()(map[string]interface{}) {
@@ -55,14 +59,6 @@ func (m *RolloutSettings) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetStartDateTime gets the startDateTime property value. Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
-func (m *RolloutSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +105,14 @@ func (m *RolloutSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetStartDateTime gets the startDateTime property value. Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
+func (m *RolloutSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *RolloutSettings) IsNil()(bool) {
     return m == nil

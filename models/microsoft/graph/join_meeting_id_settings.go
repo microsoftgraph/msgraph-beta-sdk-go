@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// JoinMeetingIdSettings 
+// JoinMeetingIdSettings provides operations to manage the commsApplication singleton.
 type JoinMeetingIdSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewJoinMeetingIdSettings()(*JoinMeetingIdSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateJoinMeetingIdSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateJoinMeetingIdSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewJoinMeetingIdSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *JoinMeetingIdSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsPasscodeRequired gets the isPasscodeRequired property value. 
-func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPasscodeRequired
-    }
-}
-// GetJoinMeetingId gets the joinMeetingId property value. 
-func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinMeetingId
-    }
-}
-// GetPasscode gets the passcode property value. 
-func (m *JoinMeetingIdSettings) GetPasscode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcode
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *JoinMeetingIdSettings) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetIsPasscodeRequired gets the isPasscodeRequired property value. 
+func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPasscodeRequired
+    }
+}
+// GetJoinMeetingId gets the joinMeetingId property value. 
+func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinMeetingId
+    }
+}
+// GetPasscode gets the passcode property value. 
+func (m *JoinMeetingIdSettings) GetPasscode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passcode
+    }
 }
 func (m *JoinMeetingIdSettings) IsNil()(bool) {
     return m == nil

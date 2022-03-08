@@ -2,11 +2,11 @@ package monthlyprintusagesummariesbyprinter
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    icb0a9b7e13b7cf8908c63121013e62bd427391c2cf6e9d166b5d634dc13b1bcb "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagesummariesbyprinter/count"
 )
 
-// MonthlyPrintUsageSummariesByPrinterRequestBuilder builds and executes requests for operations under \reports\monthlyPrintUsageSummariesByPrinter
+// MonthlyPrintUsageSummariesByPrinterRequestBuilder provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 type MonthlyPrintUsageSummariesByPrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MonthlyPrintUsageSummariesByPrinterRequestBuilderGetQueryParameters struct 
 // MonthlyPrintUsageSummariesByPrinterRequestBuilderPostOptions options for Post
 type MonthlyPrintUsageSummariesByPrinterRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinter;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinterable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMonthlyPrintUsageSummariesByPrinterRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMonthlyPrintUsageSummariesByPrinterRequestBuilder(rawUrl string, request
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMonthlyPrintUsageSummariesByPrinterRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) Count()(*icb0a9b7e13b7cf8908c63121013e62bd427391c2cf6e9d166b5d634dc13b1bcb.CountRequestBuilder) {
+    return icb0a9b7e13b7cf8908c63121013e62bd427391c2cf6e9d166b5d634dc13b1bcb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get monthlyPrintUsageSummariesByPrinter from reports
 func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) CreateGetRequestInformation(options *MonthlyPrintUsageSummariesByPrinterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) CreatePostRequestInf
     return requestInfo, nil
 }
 // Get get monthlyPrintUsageSummariesByPrinter from reports
-func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) Get(options *MonthlyPrintUsageSummariesByPrinterRequestBuilderGetOptions)(*MonthlyPrintUsageSummariesByPrinterResponse, error) {
+func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) Get(options *MonthlyPrintUsageSummariesByPrinterRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMonthlyPrintUsageSummariesByPrinterResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrintUsageByPrinterCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MonthlyPrintUsageSummariesByPrinterResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinterCollectionResponseable), nil
 }
 // Post create new navigation property to monthlyPrintUsageSummariesByPrinter for reports
-func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) Post(options *MonthlyPrintUsageSummariesByPrinterRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinter, error) {
+func (m *MonthlyPrintUsageSummariesByPrinterRequestBuilder) Post(options *MonthlyPrintUsageSummariesByPrinterRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinterable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrintUsageByPrinter() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrintUsageByPrinterFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinter), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinterable), nil
 }

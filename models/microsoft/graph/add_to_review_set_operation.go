@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AddToReviewSetOperation 
+// AddToReviewSetOperation provides operations to manage the compliance singleton.
 type AddToReviewSetOperation struct {
     CaseOperation
     // The review set to which items matching the source collection query are added to.
-    reviewSet *ReviewSet;
+    reviewSet ReviewSetable;
     // The sourceCollection that items are being added from.
-    sourceCollection *SourceCollection;
+    sourceCollection SourceCollectionable;
 }
 // NewAddToReviewSetOperation instantiates a new addToReviewSetOperation and sets the default values.
 func NewAddToReviewSetOperation()(*AddToReviewSetOperation) {
@@ -19,8 +19,37 @@ func NewAddToReviewSetOperation()(*AddToReviewSetOperation) {
     }
     return m
 }
+// CreateAddToReviewSetOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAddToReviewSetOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAddToReviewSetOperation(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.CaseOperation.GetFieldDeserializers()
+    res["reviewSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateReviewSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReviewSet(val.(ReviewSetable))
+        }
+        return nil
+    }
+    res["sourceCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSourceCollectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceCollection(val.(SourceCollectionable))
+        }
+        return nil
+    }
+    return res
+}
 // GetReviewSet gets the reviewSet property value. The review set to which items matching the source collection query are added to.
-func (m *AddToReviewSetOperation) GetReviewSet()(*ReviewSet) {
+func (m *AddToReviewSetOperation) GetReviewSet()(ReviewSetable) {
     if m == nil {
         return nil
     } else {
@@ -28,37 +57,12 @@ func (m *AddToReviewSetOperation) GetReviewSet()(*ReviewSet) {
     }
 }
 // GetSourceCollection gets the sourceCollection property value. The sourceCollection that items are being added from.
-func (m *AddToReviewSetOperation) GetSourceCollection()(*SourceCollection) {
+func (m *AddToReviewSetOperation) GetSourceCollection()(SourceCollectionable) {
     if m == nil {
         return nil
     } else {
         return m.sourceCollection
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.CaseOperation.GetFieldDeserializers()
-    res["reviewSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReviewSet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReviewSet(val.(*ReviewSet))
-        }
-        return nil
-    }
-    res["sourceCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSourceCollection() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSourceCollection(val.(*SourceCollection))
-        }
-        return nil
-    }
-    return res
 }
 func (m *AddToReviewSetOperation) IsNil()(bool) {
     return m == nil
@@ -84,13 +88,13 @@ func (m *AddToReviewSetOperation) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetReviewSet sets the reviewSet property value. The review set to which items matching the source collection query are added to.
-func (m *AddToReviewSetOperation) SetReviewSet(value *ReviewSet)() {
+func (m *AddToReviewSetOperation) SetReviewSet(value ReviewSetable)() {
     if m != nil {
         m.reviewSet = value
     }
 }
 // SetSourceCollection sets the sourceCollection property value. The sourceCollection that items are being added from.
-func (m *AddToReviewSetOperation) SetSourceCollection(value *SourceCollection)() {
+func (m *AddToReviewSetOperation) SetSourceCollection(value SourceCollectionable)() {
     if m != nil {
         m.sourceCollection = value
     }

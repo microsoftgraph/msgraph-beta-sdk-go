@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementActionInfo 
+// ManagementActionInfo provides operations to manage the tenantRelationship singleton.
 type ManagementActionInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewManagementActionInfo()(*ManagementActionInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateManagementActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementActionInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementActionInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
-func (m *ManagementActionInfo) GetManagementActionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementActionId
-    }
-}
-// GetManagementTemplateId gets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
-func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
-}
-// GetManagementTemplateVersion gets the managementTemplateVersion property value. 
-func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
+func (m *ManagementActionInfo) GetManagementActionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementActionId
+    }
+}
+// GetManagementTemplateId gets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
+func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateId
+    }
+}
+// GetManagementTemplateVersion gets the managementTemplateVersion property value. 
+func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateVersion
+    }
 }
 func (m *ManagementActionInfo) IsNil()(bool) {
     return m == nil

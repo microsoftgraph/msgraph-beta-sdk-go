@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetMobileAppCountWithStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\microsoft.graph.getMobileAppCount(status='{status}')
+// GetMobileAppCountWithStatusRequestBuilder provides operations to call the getMobileAppCount method.
 type GetMobileAppCountWithStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetMobileAppCountWithStatusRequestBuilderInternal(pathParameters map[str
     if status != nil {
         urlTplParams["status"] = *status
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetMobileAppCountWithStatusRequestBuilder) CreateGetRequestInformation(
     return requestInfo, nil
 }
 // Get invoke function getMobileAppCount
-func (m *GetMobileAppCountWithStatusRequestBuilder) Get(options *GetMobileAppCountWithStatusRequestBuilderGetOptions)(*int64, error) {
+func (m *GetMobileAppCountWithStatusRequestBuilder) Get(options *GetMobileAppCountWithStatusRequestBuilderGetOptions)(GetMobileAppCountWithStatusResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int64", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetMobileAppCountWithStatusResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*int64), nil
+    return res.(GetMobileAppCountWithStatusResponseable), nil
 }

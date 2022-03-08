@@ -2,15 +2,11 @@ package manageddevices
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i1018d4869692703b9b231a9d9796ea086b51d50b4ab465fc18bfa4bfec0e9951 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/executeaction"
-    i179bbad3399daa7952a7169991dad820c980669224959d8820b27df3705cfea2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/movedevicestoou"
-    i247cbfb29f4a7ba9c2ae9e5a868d95fbcc0128e2c169700e507e3ba4e042bb27 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/bulkreprovisioncloudpc"
-    i860b3077a0ea6a4a5feada40f3b0d1f1d9795bd2e63ecbee4ef47f25ada7c0f6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/bulkrestorecloudpc"
-    idc3947230f9ec3c69eb3e851f6ac557afab9214686da7582beed0fef3c1a0fd8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i9100d01c0c9bbed50ac937d4bbaa93f2a001979df8ae416efa950a38b3e285a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/count"
 )
 
-// ManagedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices
+// ManagedDevicesRequestBuilder provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
 type ManagedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,12 +45,6 @@ type ManagedDevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i247cbfb29f4a7ba9c2ae9e5a868d95fbcc0128e2c169700e507e3ba4e042bb27.BulkReprovisionCloudPcRequestBuilder) {
-    return i247cbfb29f4a7ba9c2ae9e5a868d95fbcc0128e2c169700e507e3ba4e042bb27.NewBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*i860b3077a0ea6a4a5feada40f3b0d1f1d9795bd2e63ecbee4ef47f25ada7c0f6.BulkRestoreCloudPcRequestBuilder) {
-    return i860b3077a0ea6a4a5feada40f3b0d1f1d9795bd2e63ecbee4ef47f25ada7c0f6.NewBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDevicesRequestBuilder) {
     m := &ManagedDevicesRequestBuilder{
@@ -64,7 +54,7 @@ func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,6 +63,9 @@ func NewManagedDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagedDevicesRequestBuilder) Count()(*i9100d01c0c9bbed50ac937d4bbaa93f2a001979df8ae416efa950a38b3e285a9.CountRequestBuilder) {
+    return i9100d01c0c9bbed50ac937d4bbaa93f2a001979df8ae416efa950a38b3e285a9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the devices that have the discovered application installed
 func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformation(options *ManagedDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -94,24 +87,19 @@ func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformation(options *Mana
     }
     return requestInfo, nil
 }
-func (m *ManagedDevicesRequestBuilder) ExecuteAction()(*i1018d4869692703b9b231a9d9796ea086b51d50b4ab465fc18bfa4bfec0e9951.ExecuteActionRequestBuilder) {
-    return i1018d4869692703b9b231a9d9796ea086b51d50b4ab465fc18bfa4bfec0e9951.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get the devices that have the discovered application installed
-func (m *ManagedDevicesRequestBuilder) Get(options *ManagedDevicesRequestBuilderGetOptions)(*ManagedDevicesResponse, error) {
+func (m *ManagedDevicesRequestBuilder) Get(options *ManagedDevicesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevicesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagedDevicesResponse), nil
-}
-func (m *ManagedDevicesRequestBuilder) MoveDevicesToOU()(*i179bbad3399daa7952a7169991dad820c980669224959d8820b27df3705cfea2.MoveDevicesToOURequestBuilder) {
-    return i179bbad3399daa7952a7169991dad820c980669224959d8820b27df3705cfea2.NewMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *ManagedDevicesRequestBuilder) Ref()(*idc3947230f9ec3c69eb3e851f6ac557afab9214686da7582beed0fef3c1a0fd8.RefRequestBuilder) {
-    return idc3947230f9ec3c69eb3e851f6ac557afab9214686da7582beed0fef3c1a0fd8.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceCollectionResponseable), nil
 }

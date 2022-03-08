@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TargetedManagedAppConfiguration 
+// TargetedManagedAppConfiguration provides operations to manage the deviceAppManagement singleton.
 type TargetedManagedAppConfiguration struct {
     ManagedAppConfiguration
     // Public Apps selection: group or individual
     appGroupType *TargetedManagedAppGroupType;
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileApp;
+    apps []ManagedMobileAppable;
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    assignments []TargetedManagedAppPolicyAssignment;
+    assignments []TargetedManagedAppPolicyAssignmentable;
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32;
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary *ManagedAppPolicyDeploymentSummary;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool;
 }
@@ -27,6 +27,10 @@ func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {
     }
     return m
 }
+// CreateTargetedManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTargetedManagedAppConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTargetedManagedAppConfiguration(), nil
+}
 // GetAppGroupType gets the appGroupType property value. Public Apps selection: group or individual
 func (m *TargetedManagedAppConfiguration) GetAppGroupType()(*TargetedManagedAppGroupType) {
     if m == nil {
@@ -36,7 +40,7 @@ func (m *TargetedManagedAppConfiguration) GetAppGroupType()(*TargetedManagedAppG
     }
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
-func (m *TargetedManagedAppConfiguration) GetApps()([]ManagedMobileApp) {
+func (m *TargetedManagedAppConfiguration) GetApps()([]ManagedMobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -44,7 +48,7 @@ func (m *TargetedManagedAppConfiguration) GetApps()([]ManagedMobileApp) {
     }
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-func (m *TargetedManagedAppConfiguration) GetAssignments()([]TargetedManagedAppPolicyAssignment) {
+func (m *TargetedManagedAppConfiguration) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -60,19 +64,11 @@ func (m *TargetedManagedAppConfiguration) GetDeployedAppCount()(*int32) {
     }
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *TargetedManagedAppConfiguration) GetDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
+func (m *TargetedManagedAppConfiguration) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
     if m == nil {
         return nil
     } else {
         return m.deploymentSummary
-    }
-}
-// GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
-func (m *TargetedManagedAppConfiguration) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,28 +85,28 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedMobileApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedMobileApp, len(val))
+            res := make([]ManagedMobileAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedMobileApp))
+                res[i] = v.(ManagedMobileAppable)
             }
             m.SetApps(res)
         }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTargetedManagedAppPolicyAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TargetedManagedAppPolicyAssignment, len(val))
+            res := make([]TargetedManagedAppPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TargetedManagedAppPolicyAssignment))
+                res[i] = v.(TargetedManagedAppPolicyAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -127,12 +123,12 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedAppPolicyDeploymentSummary() })
+        val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+            m.SetDeploymentSummary(val.(ManagedAppPolicyDeploymentSummaryable))
         }
         return nil
     }
@@ -147,6 +143,14 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
+func (m *TargetedManagedAppConfiguration) GetIsAssigned()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAssigned
+    }
 }
 func (m *TargetedManagedAppConfiguration) IsNil()(bool) {
     return m == nil
@@ -167,8 +171,7 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd2837
     if m.GetApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
@@ -178,8 +181,7 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd2837
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -213,13 +215,13 @@ func (m *TargetedManagedAppConfiguration) SetAppGroupType(value *TargetedManaged
     }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
-func (m *TargetedManagedAppConfiguration) SetApps(value []ManagedMobileApp)() {
+func (m *TargetedManagedAppConfiguration) SetApps(value []ManagedMobileAppable)() {
     if m != nil {
         m.apps = value
     }
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-func (m *TargetedManagedAppConfiguration) SetAssignments(value []TargetedManagedAppPolicyAssignment)() {
+func (m *TargetedManagedAppConfiguration) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -231,7 +233,7 @@ func (m *TargetedManagedAppConfiguration) SetDeployedAppCount(value *int32)() {
     }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-func (m *TargetedManagedAppConfiguration) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
+func (m *TargetedManagedAppConfiguration) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
     if m != nil {
         m.deploymentSummary = value
     }

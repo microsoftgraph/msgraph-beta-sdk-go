@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeCard 
+// TimeCard provides operations to manage the compliance singleton.
 type TimeCard struct {
     ChangeTrackedEntity
     // The list of breaks associated with the timeCard.
-    breaks []TimeCardBreak;
+    breaks []TimeCardBreakable;
     // The clock-in event of the timeCard.
-    clockInEvent *TimeCardEvent;
+    clockInEvent TimeCardEventable;
     // The clock-out event of the timeCard.
-    clockOutEvent *TimeCardEvent;
+    clockOutEvent TimeCardEventable;
     // Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
     confirmedBy *ConfirmedBy;
     // Notes about the timeCard.
-    notes *ItemBody;
+    notes ItemBodyable;
     // The original timeCardEntry of the timeCard, before user edits.
-    originalEntry *TimeCardEntry;
+    originalEntry TimeCardEntryable;
     // The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
     state *TimeCardState;
     // User ID to which  the timeCard belongs.
@@ -31,8 +31,12 @@ func NewTimeCard()(*TimeCard) {
     }
     return m
 }
+// CreateTimeCardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeCardFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeCard(), nil
+}
 // GetBreaks gets the breaks property value. The list of breaks associated with the timeCard.
-func (m *TimeCard) GetBreaks()([]TimeCardBreak) {
+func (m *TimeCard) GetBreaks()([]TimeCardBreakable) {
     if m == nil {
         return nil
     } else {
@@ -40,7 +44,7 @@ func (m *TimeCard) GetBreaks()([]TimeCardBreak) {
     }
 }
 // GetClockInEvent gets the clockInEvent property value. The clock-in event of the timeCard.
-func (m *TimeCard) GetClockInEvent()(*TimeCardEvent) {
+func (m *TimeCard) GetClockInEvent()(TimeCardEventable) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +52,7 @@ func (m *TimeCard) GetClockInEvent()(*TimeCardEvent) {
     }
 }
 // GetClockOutEvent gets the clockOutEvent property value. The clock-out event of the timeCard.
-func (m *TimeCard) GetClockOutEvent()(*TimeCardEvent) {
+func (m *TimeCard) GetClockOutEvent()(TimeCardEventable) {
     if m == nil {
         return nil
     } else {
@@ -63,72 +67,40 @@ func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
         return m.confirmedBy
     }
 }
-// GetNotes gets the notes property value. Notes about the timeCard.
-func (m *TimeCard) GetNotes()(*ItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
-}
-// GetOriginalEntry gets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
-func (m *TimeCard) GetOriginalEntry()(*TimeCardEntry) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originalEntry
-    }
-}
-// GetState gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
-func (m *TimeCard) GetState()(*TimeCardState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUserId gets the userId property value. User ID to which  the timeCard belongs.
-func (m *TimeCard) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["breaks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeCardBreak() })
+        val, err := n.GetCollectionOfObjectValues(CreateTimeCardBreakFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TimeCardBreak, len(val))
+            res := make([]TimeCardBreakable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TimeCardBreak))
+                res[i] = v.(TimeCardBreakable)
             }
             m.SetBreaks(res)
         }
         return nil
     }
     res["clockInEvent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeCardEvent() })
+        val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClockInEvent(val.(*TimeCardEvent))
+            m.SetClockInEvent(val.(TimeCardEventable))
         }
         return nil
     }
     res["clockOutEvent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeCardEvent() })
+        val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClockOutEvent(val.(*TimeCardEvent))
+            m.SetClockOutEvent(val.(TimeCardEventable))
         }
         return nil
     }
@@ -143,22 +115,22 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotes(val.(*ItemBody))
+            m.SetNotes(val.(ItemBodyable))
         }
         return nil
     }
     res["originalEntry"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeCardEntry() })
+        val, err := n.GetObjectValue(CreateTimeCardEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOriginalEntry(val.(*TimeCardEntry))
+            m.SetOriginalEntry(val.(TimeCardEntryable))
         }
         return nil
     }
@@ -184,6 +156,38 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
     }
     return res
 }
+// GetNotes gets the notes property value. Notes about the timeCard.
+func (m *TimeCard) GetNotes()(ItemBodyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
+}
+// GetOriginalEntry gets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
+func (m *TimeCard) GetOriginalEntry()(TimeCardEntryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originalEntry
+    }
+}
+// GetState gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
+func (m *TimeCard) GetState()(*TimeCardState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUserId gets the userId property value. User ID to which  the timeCard belongs.
+func (m *TimeCard) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
 func (m *TimeCard) IsNil()(bool) {
     return m == nil
 }
@@ -196,8 +200,7 @@ func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetBreaks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBreaks()))
         for i, v := range m.GetBreaks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("breaks", cast)
         if err != nil {
@@ -251,19 +254,19 @@ func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetBreaks sets the breaks property value. The list of breaks associated with the timeCard.
-func (m *TimeCard) SetBreaks(value []TimeCardBreak)() {
+func (m *TimeCard) SetBreaks(value []TimeCardBreakable)() {
     if m != nil {
         m.breaks = value
     }
 }
 // SetClockInEvent sets the clockInEvent property value. The clock-in event of the timeCard.
-func (m *TimeCard) SetClockInEvent(value *TimeCardEvent)() {
+func (m *TimeCard) SetClockInEvent(value TimeCardEventable)() {
     if m != nil {
         m.clockInEvent = value
     }
 }
 // SetClockOutEvent sets the clockOutEvent property value. The clock-out event of the timeCard.
-func (m *TimeCard) SetClockOutEvent(value *TimeCardEvent)() {
+func (m *TimeCard) SetClockOutEvent(value TimeCardEventable)() {
     if m != nil {
         m.clockOutEvent = value
     }
@@ -275,13 +278,13 @@ func (m *TimeCard) SetConfirmedBy(value *ConfirmedBy)() {
     }
 }
 // SetNotes sets the notes property value. Notes about the timeCard.
-func (m *TimeCard) SetNotes(value *ItemBody)() {
+func (m *TimeCard) SetNotes(value ItemBodyable)() {
     if m != nil {
         m.notes = value
     }
 }
 // SetOriginalEntry sets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
-func (m *TimeCard) SetOriginalEntry(value *TimeCardEntry)() {
+func (m *TimeCard) SetOriginalEntry(value TimeCardEntryable)() {
     if m != nil {
         m.originalEntry = value
     }

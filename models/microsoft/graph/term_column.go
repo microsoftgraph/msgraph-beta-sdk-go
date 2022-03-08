@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TermColumn 
+// TermColumn provides operations to manage the compliance singleton.
 type TermColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewTermColumn()(*TermColumn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTermColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTermColumnFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTermColumn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TermColumn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *TermColumn) GetAllowMultipleValues()(*bool) {
         return nil
     } else {
         return m.allowMultipleValues
-    }
-}
-// GetShowFullyQualifiedName gets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
-func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showFullyQualifiedName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetShowFullyQualifiedName gets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
+func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showFullyQualifiedName
+    }
 }
 func (m *TermColumn) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AddMembersByIdRequestBody 
+// AddMembersByIdRequestBody provides operations to call the addMembersById method.
 type AddMembersByIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewAddMembersByIdRequestBody()(*AddMembersByIdRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAddMembersByIdRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAddMembersByIdRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAddMembersByIdRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddMembersByIdRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIds gets the ids property value. 
-func (m *AddMembersByIdRequestBody) GetIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ids
-    }
-}
-// GetMemberEntityType gets the memberEntityType property value. 
-func (m *AddMembersByIdRequestBody) GetMemberEntityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberEntityType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +60,22 @@ func (m *AddMembersByIdRequestBody) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetIds gets the ids property value. 
+func (m *AddMembersByIdRequestBody) GetIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ids
+    }
+}
+// GetMemberEntityType gets the memberEntityType property value. 
+func (m *AddMembersByIdRequestBody) GetMemberEntityType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberEntityType
+    }
 }
 func (m *AddMembersByIdRequestBody) IsNil()(bool) {
     return m == nil

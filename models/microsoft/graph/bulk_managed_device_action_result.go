@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BulkManagedDeviceActionResult 
+// BulkManagedDeviceActionResult provides operations to call the executeAction method.
 type BulkManagedDeviceActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewBulkManagedDeviceActionResult()(*BulkManagedDeviceActionResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBulkManagedDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBulkManagedDeviceActionResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBulkManagedDeviceActionResult(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkManagedDeviceActionResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *BulkManagedDeviceActionResult) GetFailedDeviceIds()([]string) {
         return nil
     } else {
         return m.failedDeviceIds
-    }
-}
-// GetNotFoundDeviceIds gets the notFoundDeviceIds property value. Not found devices
-func (m *BulkManagedDeviceActionResult) GetNotFoundDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notFoundDeviceIds
-    }
-}
-// GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. Not supported devices
-func (m *BulkManagedDeviceActionResult) GetNotSupportedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notSupportedDeviceIds
-    }
-}
-// GetSuccessfulDeviceIds gets the successfulDeviceIds property value. Successful devices
-func (m *BulkManagedDeviceActionResult) GetSuccessfulDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulDeviceIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -124,6 +104,30 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetNotFoundDeviceIds gets the notFoundDeviceIds property value. Not found devices
+func (m *BulkManagedDeviceActionResult) GetNotFoundDeviceIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notFoundDeviceIds
+    }
+}
+// GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. Not supported devices
+func (m *BulkManagedDeviceActionResult) GetNotSupportedDeviceIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notSupportedDeviceIds
+    }
+}
+// GetSuccessfulDeviceIds gets the successfulDeviceIds property value. Successful devices
+func (m *BulkManagedDeviceActionResult) GetSuccessfulDeviceIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successfulDeviceIds
+    }
 }
 func (m *BulkManagedDeviceActionResult) IsNil()(bool) {
     return m == nil

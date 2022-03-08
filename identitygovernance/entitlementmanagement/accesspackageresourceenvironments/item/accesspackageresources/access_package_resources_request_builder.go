@@ -2,11 +2,11 @@ package accesspackageresources
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i3f7642279120e0d794d7e3f12f09d33b860300b7436ef36b2cf11a810c4a1522 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourceenvironments/item/accesspackageresources/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i847e263db8f444f4835b19e0b3cb56860a388601b0dc4138b050882283015fc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourceenvironments/item/accesspackageresources/count"
 )
 
-// AccessPackageResourcesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}\accessPackageResources
+// AccessPackageResourcesRequestBuilder provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
 type AccessPackageResourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewAccessPackageResourcesRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewAccessPackageResourcesRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourcesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AccessPackageResourcesRequestBuilder) Count()(*i847e263db8f444f4835b19e0b3cb56860a388601b0dc4138b050882283015fc0.CountRequestBuilder) {
+    return i847e263db8f444f4835b19e0b3cb56860a388601b0dc4138b050882283015fc0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Required.
 func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformation(optio
     return requestInfo, nil
 }
 // Get read-only. Required.
-func (m *AccessPackageResourcesRequestBuilder) Get(options *AccessPackageResourcesRequestBuilderGetOptions)(*AccessPackageResourcesResponse, error) {
+func (m *AccessPackageResourcesRequestBuilder) Get(options *AccessPackageResourcesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResourcesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageResourceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AccessPackageResourcesResponse), nil
-}
-func (m *AccessPackageResourcesRequestBuilder) Ref()(*i3f7642279120e0d794d7e3f12f09d33b860300b7436ef36b2cf11a810c4a1522.RefRequestBuilder) {
-    return i3f7642279120e0d794d7e3f12f09d33b860300b7436ef36b2cf11a810c4a1522.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceCollectionResponseable), nil
 }

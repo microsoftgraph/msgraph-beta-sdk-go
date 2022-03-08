@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcConnection 
+// CloudPcConnection provides operations to manage the tenantRelationship singleton.
 type CloudPcConnection struct {
     Entity
     // The display name of the cloud PC connection. Required. Read-only.
@@ -26,44 +26,16 @@ func NewCloudPcConnection()(*CloudPcConnection) {
     }
     return m
 }
+// CreateCloudPcConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcConnectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcConnection(), nil
+}
 // GetDisplayName gets the displayName property value. The display name of the cloud PC connection. Required. Read-only.
 func (m *CloudPcConnection) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHealthCheckStatus gets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
-func (m *CloudPcConnection) GetHealthCheckStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthCheckStatus
-    }
-}
-// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
-func (m *CloudPcConnection) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
-}
-// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
-func (m *CloudPcConnection) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-func (m *CloudPcConnection) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +92,38 @@ func (m *CloudPcConnection) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetHealthCheckStatus gets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
+func (m *CloudPcConnection) GetHealthCheckStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthCheckStatus
+    }
+}
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
+func (m *CloudPcConnection) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
+    }
+}
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
+func (m *CloudPcConnection) GetTenantDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantDisplayName
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+func (m *CloudPcConnection) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *CloudPcConnection) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EncryptBufferRequestBody 
+// EncryptBufferRequestBody provides operations to call the encryptBuffer method.
 type EncryptBufferRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewEncryptBufferRequestBody()(*EncryptBufferRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEncryptBufferRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEncryptBufferRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEncryptBufferRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptBufferRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *EncryptBufferRequestBody) GetBuffer()([]byte) {
         return nil
     } else {
         return m.buffer
-    }
-}
-// GetLabelId gets the labelId property value. 
-func (m *EncryptBufferRequestBody) GetLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *EncryptBufferRequestBody) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetLabelId gets the labelId property value. 
+func (m *EncryptBufferRequestBody) GetLabelId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labelId
+    }
 }
 func (m *EncryptBufferRequestBody) IsNil()(bool) {
     return m == nil

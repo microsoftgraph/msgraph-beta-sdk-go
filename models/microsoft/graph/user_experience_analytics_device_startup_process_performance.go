@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcessPerformance 
+// UserExperienceAnalyticsDeviceStartupProcessPerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
     // User experience analytics device startup process summarized count.
@@ -31,68 +31,16 @@ func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperience
     }
     return m
 }
+// CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsDeviceStartupProcessPerformance(), nil
+}
 // GetDeviceCount gets the deviceCount property value. User experience analytics device startup process summarized count.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount()(*int64) {
     if m == nil {
         return nil
     } else {
         return m.deviceCount
-    }
-}
-// GetMedianImpactInMs gets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.medianImpactInMs
-    }
-}
-// GetMedianImpactInMs2 gets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.medianImpactInMs2
-    }
-}
-// GetProcessName gets the processName property value. User experience analytics device startup process name.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProcessName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processName
-    }
-}
-// GetProductName gets the productName property value. The user experience analytics device startup process product name.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProductName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productName
-    }
-}
-// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetTotalImpactInMs gets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalImpactInMs
-    }
-}
-// GetTotalImpactInMs2 gets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalImpactInMs2
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,6 +127,62 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         return nil
     }
     return res
+}
+// GetMedianImpactInMs gets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.medianImpactInMs
+    }
+}
+// GetMedianImpactInMs2 gets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.medianImpactInMs2
+    }
+}
+// GetProcessName gets the processName property value. User experience analytics device startup process name.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProcessName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processName
+    }
+}
+// GetProductName gets the productName property value. The user experience analytics device startup process product name.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProductName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productName
+    }
+}
+// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetTotalImpactInMs gets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalImpactInMs
+    }
+}
+// GetTotalImpactInMs2 gets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalImpactInMs2
+    }
 }
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) IsNil()(bool) {
     return m == nil

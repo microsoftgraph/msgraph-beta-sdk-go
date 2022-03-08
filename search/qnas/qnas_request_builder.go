@@ -2,11 +2,11 @@ package qnas
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ida4fefffebeed6ab2de08831de0be07bb869686cf2f1f448687b924116459c0d "github.com/microsoftgraph/msgraph-beta-sdk-go/search/qnas/count"
 )
 
-// QnasRequestBuilder builds and executes requests for operations under \search\qnas
+// QnasRequestBuilder provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
 type QnasRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type QnasRequestBuilderGetQueryParameters struct {
 // QnasRequestBuilderPostOptions options for Post
 type QnasRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qnaable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewQnasRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewQnasRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewQnasRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *QnasRequestBuilder) Count()(*ida4fefffebeed6ab2de08831de0be07bb869686cf2f1f448687b924116459c0d.CountRequestBuilder) {
+    return ida4fefffebeed6ab2de08831de0be07bb869686cf2f1f448687b924116459c0d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *QnasRequestBuilder) CreateGetRequestInformation(options *QnasRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *QnasRequestBuilder) CreateGetRequestInformation(options *QnasRequestBui
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+// CreatePostRequestInformation create new navigation property to qnas for search
 func (m *QnasRequestBuilder) CreatePostRequestInformation(options *QnasRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *QnasRequestBuilder) CreatePostRequestInformation(options *QnasRequestBu
     return requestInfo, nil
 }
 // Get administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *QnasRequestBuilder) Get(options *QnasRequestBuilderGetOptions)(*QnasResponse, error) {
+func (m *QnasRequestBuilder) Get(options *QnasRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.QnaCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewQnasResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateQnaCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*QnasResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.QnaCollectionResponseable), nil
 }
-// Post administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *QnasRequestBuilder) Post(options *QnasRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna, error) {
+// Post create new navigation property to qnas for search
+func (m *QnasRequestBuilder) Post(options *QnasRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qnaable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewQna() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateQnaFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qnaable), nil
 }

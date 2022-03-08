@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesPublishing 
+// OnPremisesPublishing provides operations to manage the collection of application entities.
 type OnPremisesPublishing struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -35,15 +35,15 @@ type OnPremisesPublishing struct {
     // Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
     isTranslateLinksInBodyEnabled *bool;
     // Represents the single sign-on configuration for the on-premises application.
-    singleSignOnSettings *OnPremisesPublishingSingleSignOn;
+    singleSignOnSettings OnPremisesPublishingSingleSignOnable;
     // 
     useAlternateUrlForTranslationAndRedirect *bool;
     // Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
-    verifiedCustomDomainCertificatesMetadata *VerifiedCustomDomainCertificatesMetadata;
+    verifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadataable;
     // The associated key credential for the custom domain used.
-    verifiedCustomDomainKeyCredential *KeyCredential;
+    verifiedCustomDomainKeyCredential KeyCredentialable;
     // The associated password credential for the custom domain used.
-    verifiedCustomDomainPasswordCredential *PasswordCredential;
+    verifiedCustomDomainPasswordCredential PasswordCredentialable;
 }
 // NewOnPremisesPublishing instantiates a new onPremisesPublishing and sets the default values.
 func NewOnPremisesPublishing()(*OnPremisesPublishing) {
@@ -51,6 +51,10 @@ func NewOnPremisesPublishing()(*OnPremisesPublishing) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOnPremisesPublishingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesPublishingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesPublishing(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesPublishing) GetAdditionalData()(map[string]interface{}) {
@@ -98,110 +102,6 @@ func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
         return nil
     } else {
         return m.externalUrl
-    }
-}
-// GetInternalUrl gets the internalUrl property value. The internal url of the application. For example, https://intranet/.
-func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalUrl
-    }
-}
-// GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
-func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBackendCertificateValidationEnabled
-    }
-}
-// GetIsHttpOnlyCookieEnabled gets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
-func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHttpOnlyCookieEnabled
-    }
-}
-// GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
-func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOnPremPublishingEnabled
-    }
-}
-// GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
-func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPersistentCookieEnabled
-    }
-}
-// GetIsSecureCookieEnabled gets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
-func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSecureCookieEnabled
-    }
-}
-// GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
-func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTranslateHostHeaderEnabled
-    }
-}
-// GetIsTranslateLinksInBodyEnabled gets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
-func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTranslateLinksInBodyEnabled
-    }
-}
-// GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
-func (m *OnPremisesPublishing) GetSingleSignOnSettings()(*OnPremisesPublishingSingleSignOn) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnSettings
-    }
-}
-// GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. 
-func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useAlternateUrlForTranslationAndRedirect
-    }
-}
-// GetVerifiedCustomDomainCertificatesMetadata gets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
-func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata()(*VerifiedCustomDomainCertificatesMetadata) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedCustomDomainCertificatesMetadata
-    }
-}
-// GetVerifiedCustomDomainKeyCredential gets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
-func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential()(*KeyCredential) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedCustomDomainKeyCredential
-    }
-}
-// GetVerifiedCustomDomainPasswordCredential gets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
-func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential()(*PasswordCredential) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedCustomDomainPasswordCredential
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -338,12 +238,12 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["singleSignOnSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesPublishingSingleSignOn() })
+        val, err := n.GetObjectValue(CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSingleSignOnSettings(val.(*OnPremisesPublishingSingleSignOn))
+            m.SetSingleSignOnSettings(val.(OnPremisesPublishingSingleSignOnable))
         }
         return nil
     }
@@ -358,36 +258,140 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["verifiedCustomDomainCertificatesMetadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVerifiedCustomDomainCertificatesMetadata() })
+        val, err := n.GetObjectValue(CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVerifiedCustomDomainCertificatesMetadata(val.(*VerifiedCustomDomainCertificatesMetadata))
+            m.SetVerifiedCustomDomainCertificatesMetadata(val.(VerifiedCustomDomainCertificatesMetadataable))
         }
         return nil
     }
     res["verifiedCustomDomainKeyCredential"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyCredential() })
+        val, err := n.GetObjectValue(CreateKeyCredentialFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVerifiedCustomDomainKeyCredential(val.(*KeyCredential))
+            m.SetVerifiedCustomDomainKeyCredential(val.(KeyCredentialable))
         }
         return nil
     }
     res["verifiedCustomDomainPasswordCredential"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPasswordCredential() })
+        val, err := n.GetObjectValue(CreatePasswordCredentialFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVerifiedCustomDomainPasswordCredential(val.(*PasswordCredential))
+            m.SetVerifiedCustomDomainPasswordCredential(val.(PasswordCredentialable))
         }
         return nil
     }
     return res
+}
+// GetInternalUrl gets the internalUrl property value. The internal url of the application. For example, https://intranet/.
+func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.internalUrl
+    }
+}
+// GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
+func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isBackendCertificateValidationEnabled
+    }
+}
+// GetIsHttpOnlyCookieEnabled gets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
+func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHttpOnlyCookieEnabled
+    }
+}
+// GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
+func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOnPremPublishingEnabled
+    }
+}
+// GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
+func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPersistentCookieEnabled
+    }
+}
+// GetIsSecureCookieEnabled gets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
+func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSecureCookieEnabled
+    }
+}
+// GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isTranslateHostHeaderEnabled
+    }
+}
+// GetIsTranslateLinksInBodyEnabled gets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
+func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isTranslateLinksInBodyEnabled
+    }
+}
+// GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
+func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleSignOnSettings
+    }
+}
+// GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. 
+func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.useAlternateUrlForTranslationAndRedirect
+    }
+}
+// GetVerifiedCustomDomainCertificatesMetadata gets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
+func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.verifiedCustomDomainCertificatesMetadata
+    }
+}
+// GetVerifiedCustomDomainKeyCredential gets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
+func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential()(KeyCredentialable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.verifiedCustomDomainKeyCredential
+    }
+}
+// GetVerifiedCustomDomainPasswordCredential gets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
+func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential()(PasswordCredentialable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.verifiedCustomDomainPasswordCredential
+    }
 }
 func (m *OnPremisesPublishing) IsNil()(bool) {
     return m == nil
@@ -596,7 +600,7 @@ func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool)() {
     }
 }
 // SetSingleSignOnSettings sets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
-func (m *OnPremisesPublishing) SetSingleSignOnSettings(value *OnPremisesPublishingSingleSignOn)() {
+func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)() {
     if m != nil {
         m.singleSignOnSettings = value
     }
@@ -608,19 +612,19 @@ func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value
     }
 }
 // SetVerifiedCustomDomainCertificatesMetadata sets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
-func (m *OnPremisesPublishing) SetVerifiedCustomDomainCertificatesMetadata(value *VerifiedCustomDomainCertificatesMetadata)() {
+func (m *OnPremisesPublishing) SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)() {
     if m != nil {
         m.verifiedCustomDomainCertificatesMetadata = value
     }
 }
 // SetVerifiedCustomDomainKeyCredential sets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
-func (m *OnPremisesPublishing) SetVerifiedCustomDomainKeyCredential(value *KeyCredential)() {
+func (m *OnPremisesPublishing) SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)() {
     if m != nil {
         m.verifiedCustomDomainKeyCredential = value
     }
 }
 // SetVerifiedCustomDomainPasswordCredential sets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
-func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value *PasswordCredential)() {
+func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable)() {
     if m != nil {
         m.verifiedCustomDomainPasswordCredential = value
     }

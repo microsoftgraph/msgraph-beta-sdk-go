@@ -2,12 +2,12 @@ package messages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i7f508c5c20c6f2ad8190b1b9fd031d95eb609152501ee3c3b84a332d9730e0d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/count"
     ic38726d8e7b63483d8ee3a3543de3129abedfaf7dd3b123a05d4cd084e6302e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/delta"
 )
 
-// MessagesRequestBuilder builds and executes requests for operations under \me\messages
+// MessagesRequestBuilder provides operations to manage the messages property of the microsoft.graph.user entity.
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type MessagesRequestBuilderGetQueryParameters struct {
 // MessagesRequestBuilderPostOptions options for Post
 type MessagesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +64,7 @@ func NewMessagesRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,6 +73,9 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessagesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MessagesRequestBuilder) Count()(*i7f508c5c20c6f2ad8190b1b9fd031d95eb609152501ee3c3b84a332d9730e0d6.CountRequestBuilder) {
+    return i7f508c5c20c6f2ad8190b1b9fd031d95eb609152501ee3c3b84a332d9730e0d6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the messages in a mailbox or folder. Read-only. Nullable.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -94,7 +97,7 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the messages in a mailbox or folder. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to messages for me
 func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,31 +115,39 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesR
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \me\messages\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *MessagesRequestBuilder) Delta()(*ic38726d8e7b63483d8ee3a3543de3129abedfaf7dd3b123a05d4cd084e6302e7.DeltaRequestBuilder) {
     return ic38726d8e7b63483d8ee3a3543de3129abedfaf7dd3b123a05d4cd084e6302e7.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(*MessagesResponse, error) {
+func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessagesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMessageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MessagesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageCollectionResponseable), nil
 }
-// Post the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message, error) {
+// Post create new navigation property to messages for me
+func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable), nil
 }

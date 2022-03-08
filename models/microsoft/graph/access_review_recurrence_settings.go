@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewRecurrenceSettings 
+// AccessReviewRecurrenceSettings provides operations to manage the collection of accessReview entities.
 type AccessReviewRecurrenceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewRecurrenceSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewRecurrenceSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *AccessReviewRecurrenceSettings) GetDurationInDays()(*int32) {
         return nil
     } else {
         return m.durationInDays
-    }
-}
-// GetRecurrenceCount gets the recurrenceCount property value. The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
-func (m *AccessReviewRecurrenceSettings) GetRecurrenceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceCount
-    }
-}
-// GetRecurrenceEndType gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
-func (m *AccessReviewRecurrenceSettings) GetRecurrenceEndType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceEndType
-    }
-}
-// GetRecurrenceType gets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
-func (m *AccessReviewRecurrenceSettings) GetRecurrenceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetRecurrenceCount gets the recurrenceCount property value. The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
+func (m *AccessReviewRecurrenceSettings) GetRecurrenceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrenceCount
+    }
+}
+// GetRecurrenceEndType gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
+func (m *AccessReviewRecurrenceSettings) GetRecurrenceEndType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrenceEndType
+    }
+}
+// GetRecurrenceType gets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
+func (m *AccessReviewRecurrenceSettings) GetRecurrenceType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrenceType
+    }
 }
 func (m *AccessReviewRecurrenceSettings) IsNil()(bool) {
     return m == nil

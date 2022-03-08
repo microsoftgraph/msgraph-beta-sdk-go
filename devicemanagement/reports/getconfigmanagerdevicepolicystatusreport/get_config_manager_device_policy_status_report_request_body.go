@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetConfigManagerDevicePolicyStatusReportRequestBody 
+// GetConfigManagerDevicePolicyStatusReportRequestBody provides operations to call the getConfigManagerDevicePolicyStatusReport method.
 type GetConfigManagerDevicePolicyStatusReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,84 +34,16 @@ func NewGetConfigManagerDevicePolicyStatusReportRequestBody()(*GetConfigManagerD
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetConfigManagerDevicePolicyStatusReportRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetConfigManagerDevicePolicyStatusReportRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetConfigManagerDevicePolicyStatusReportRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFilter gets the filter property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
-}
-// GetGroupBy gets the groupBy property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetGroupBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupBy
-    }
-}
-// GetName gets the name property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOrderBy gets the orderBy property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
-}
-// GetSearch gets the search property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSearch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
-}
-// GetSelect gets the select property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
-}
-// GetSessionId gets the sessionId property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSessionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionId
-    }
-}
-// GetSkip gets the skip property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
-}
-// GetTop gets the top property value. 
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +152,78 @@ func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetFieldDeserializ
         return nil
     }
     return res
+}
+// GetFilter gets the filter property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetFilter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filter
+    }
+}
+// GetGroupBy gets the groupBy property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetGroupBy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupBy
+    }
+}
+// GetName gets the name property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOrderBy gets the orderBy property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetOrderBy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderBy
+    }
+}
+// GetSearch gets the search property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSearch()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.search
+    }
+}
+// GetSelect gets the select property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSelect()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.select_escaped
+    }
+}
+// GetSessionId gets the sessionId property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSessionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionId
+    }
+}
+// GetSkip gets the skip property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetSkip()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skip
+    }
+}
+// GetTop gets the top property value. 
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) GetTop()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.top
+    }
 }
 func (m *GetConfigManagerDevicePolicyStatusReportRequestBody) IsNil()(bool) {
     return m == nil

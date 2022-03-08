@@ -2,11 +2,11 @@ package telecomexpensemanagementpartners
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5bb0f0e30557fe1162278f4861f5e9f0f251e51e5bc8bf8159ea7741f2f5dd21 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/telecomexpensemanagementpartners/count"
 )
 
-// TelecomExpenseManagementPartnersRequestBuilder builds and executes requests for operations under \deviceManagement\telecomExpenseManagementPartners
+// TelecomExpenseManagementPartnersRequestBuilder provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
 type TelecomExpenseManagementPartnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type TelecomExpenseManagementPartnersRequestBuilderGetQueryParameters struct {
 // TelecomExpenseManagementPartnersRequestBuilderPostOptions options for Post
 type TelecomExpenseManagementPartnersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartner;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartnerable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewTelecomExpenseManagementPartnersRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewTelecomExpenseManagementPartnersRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTelecomExpenseManagementPartnersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TelecomExpenseManagementPartnersRequestBuilder) Count()(*i5bb0f0e30557fe1162278f4861f5e9f0f251e51e5bc8bf8159ea7741f2f5dd21.CountRequestBuilder) {
+    return i5bb0f0e30557fe1162278f4861f5e9f0f251e51e5bc8bf8159ea7741f2f5dd21.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnersRequestBuilder) CreateGetRequestInformation(options *TelecomExpenseManagementPartnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *TelecomExpenseManagementPartnersRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the telecom expense management partners.
+// CreatePostRequestInformation create new navigation property to telecomExpenseManagementPartners for deviceManagement
 func (m *TelecomExpenseManagementPartnersRequestBuilder) CreatePostRequestInformation(options *TelecomExpenseManagementPartnersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *TelecomExpenseManagementPartnersRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get the telecom expense management partners.
-func (m *TelecomExpenseManagementPartnersRequestBuilder) Get(options *TelecomExpenseManagementPartnersRequestBuilderGetOptions)(*TelecomExpenseManagementPartnersResponse, error) {
+func (m *TelecomExpenseManagementPartnersRequestBuilder) Get(options *TelecomExpenseManagementPartnersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartnerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTelecomExpenseManagementPartnersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTelecomExpenseManagementPartnerCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TelecomExpenseManagementPartnersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartnerCollectionResponseable), nil
 }
-// Post the telecom expense management partners.
-func (m *TelecomExpenseManagementPartnersRequestBuilder) Post(options *TelecomExpenseManagementPartnersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartner, error) {
+// Post create new navigation property to telecomExpenseManagementPartners for deviceManagement
+func (m *TelecomExpenseManagementPartnersRequestBuilder) Post(options *TelecomExpenseManagementPartnersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartnerable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTelecomExpenseManagementPartner() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTelecomExpenseManagementPartnerFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartner), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TelecomExpenseManagementPartnerable), nil
 }

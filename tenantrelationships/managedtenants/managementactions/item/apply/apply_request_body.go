@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApplyRequestBody 
+// ApplyRequestBody provides operations to call the apply method.
 type ApplyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewApplyRequestBody()(*ApplyRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateApplyRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApplyRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApplyRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -42,46 +46,6 @@ func (m *ApplyRequestBody) GetExcludeGroups()([]string) {
         return nil
     } else {
         return m.excludeGroups
-    }
-}
-// GetIncludeAllUsers gets the includeAllUsers property value. 
-func (m *ApplyRequestBody) GetIncludeAllUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAllUsers
-    }
-}
-// GetIncludeGroups gets the includeGroups property value. 
-func (m *ApplyRequestBody) GetIncludeGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeGroups
-    }
-}
-// GetManagementTemplateId gets the managementTemplateId property value. 
-func (m *ApplyRequestBody) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
-}
-// GetTenantGroupId gets the tenantGroupId property value. 
-func (m *ApplyRequestBody) GetTenantGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantGroupId
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *ApplyRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -156,6 +120,46 @@ func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetIncludeAllUsers gets the includeAllUsers property value. 
+func (m *ApplyRequestBody) GetIncludeAllUsers()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeAllUsers
+    }
+}
+// GetIncludeGroups gets the includeGroups property value. 
+func (m *ApplyRequestBody) GetIncludeGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeGroups
+    }
+}
+// GetManagementTemplateId gets the managementTemplateId property value. 
+func (m *ApplyRequestBody) GetManagementTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateId
+    }
+}
+// GetTenantGroupId gets the tenantGroupId property value. 
+func (m *ApplyRequestBody) GetTenantGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantGroupId
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *ApplyRequestBody) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *ApplyRequestBody) IsNil()(bool) {
     return m == nil

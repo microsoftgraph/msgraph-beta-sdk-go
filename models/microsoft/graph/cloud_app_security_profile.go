@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudAppSecurityProfile 
+// CloudAppSecurityProfile provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
 type CloudAppSecurityProfile struct {
     Entity
     // 
@@ -41,7 +41,7 @@ type CloudAppSecurityProfile struct {
     // 
     type_escaped *string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
@@ -49,6 +49,10 @@ func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCloudAppSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudAppSecurityProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudAppSecurityProfile(), nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. 
 func (m *CloudAppSecurityProfile) GetAzureSubscriptionId()(*string) {
@@ -88,102 +92,6 @@ func (m *CloudAppSecurityProfile) GetDestinationServiceName()(*string) {
         return nil
     } else {
         return m.destinationServiceName
-    }
-}
-// GetIsSigned gets the isSigned property value. 
-func (m *CloudAppSecurityProfile) GetIsSigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSigned
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *CloudAppSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetManifest gets the manifest property value. 
-func (m *CloudAppSecurityProfile) GetManifest()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manifest
-    }
-}
-// GetName gets the name property value. 
-func (m *CloudAppSecurityProfile) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPermissionsRequired gets the permissionsRequired property value. 
-func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*ApplicationPermissionsRequired) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionsRequired
-    }
-}
-// GetPlatform gets the platform property value. 
-func (m *CloudAppSecurityProfile) GetPlatform()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
-}
-// GetPolicyName gets the policyName property value. 
-func (m *CloudAppSecurityProfile) GetPolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyName
-    }
-}
-// GetPublisher gets the publisher property value. 
-func (m *CloudAppSecurityProfile) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *CloudAppSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetTags gets the tags property value. 
-func (m *CloudAppSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetType gets the type property value. 
-func (m *CloudAppSecurityProfile) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *CloudAppSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -354,16 +262,112 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetIsSigned gets the isSigned property value. 
+func (m *CloudAppSecurityProfile) GetIsSigned()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSigned
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *CloudAppSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetManifest gets the manifest property value. 
+func (m *CloudAppSecurityProfile) GetManifest()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manifest
+    }
+}
+// GetName gets the name property value. 
+func (m *CloudAppSecurityProfile) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPermissionsRequired gets the permissionsRequired property value. 
+func (m *CloudAppSecurityProfile) GetPermissionsRequired()(*ApplicationPermissionsRequired) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionsRequired
+    }
+}
+// GetPlatform gets the platform property value. 
+func (m *CloudAppSecurityProfile) GetPlatform()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
+}
+// GetPolicyName gets the policyName property value. 
+func (m *CloudAppSecurityProfile) GetPolicyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyName
+    }
+}
+// GetPublisher gets the publisher property value. 
+func (m *CloudAppSecurityProfile) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *CloudAppSecurityProfile) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetTags gets the tags property value. 
+func (m *CloudAppSecurityProfile) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetType gets the type property value. 
+func (m *CloudAppSecurityProfile) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *CloudAppSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *CloudAppSecurityProfile) IsNil()(bool) {
     return m == nil
@@ -576,7 +580,7 @@ func (m *CloudAppSecurityProfile) SetType(value *string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *CloudAppSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *CloudAppSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

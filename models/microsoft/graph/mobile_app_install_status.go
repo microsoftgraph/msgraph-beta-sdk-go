@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppInstallStatus 
+// MobileAppInstallStatus provides operations to manage the deviceAppManagement singleton.
 type MobileAppInstallStatus struct {
     Entity
     // The navigation link to the mobile app.
-    app *MobileApp;
+    app MobileAppable;
     // Device ID
     deviceId *string;
     // Device name
@@ -42,8 +42,12 @@ func NewMobileAppInstallStatus()(*MobileAppInstallStatus) {
     }
     return m
 }
+// CreateMobileAppInstallStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppInstallStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppInstallStatus(), nil
+}
 // GetApp gets the app property value. The navigation link to the mobile app.
-func (m *MobileAppInstallStatus) GetApp()(*MobileApp) {
+func (m *MobileAppInstallStatus) GetApp()(MobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -82,80 +86,16 @@ func (m *MobileAppInstallStatus) GetErrorCode()(*int32) {
         return m.errorCode
     }
 }
-// GetInstallState gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
-func (m *MobileAppInstallStatus) GetInstallState()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
-}
-// GetInstallStateDetail gets the installStateDetail property value. The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, supersededAppUninstallFailed, supersededAppUninstallPendingReboot, removingSupersededApps, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, uninstallPendingReboot, supersedingAppsDetected, supersededAppsDetected, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, untargetedSupersedingAppsDetected, appRemovedBySupersedence, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, supersedingAppsNotApplicable, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.
-func (m *MobileAppInstallStatus) GetInstallStateDetail()(*ResultantAppStateDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installStateDetail
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date time
-func (m *MobileAppInstallStatus) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetMobileAppInstallStatusValue gets the mobileAppInstallStatusValue property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
-func (m *MobileAppInstallStatus) GetMobileAppInstallStatusValue()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppInstallStatusValue
-    }
-}
-// GetOsDescription gets the osDescription property value. OS Description
-func (m *MobileAppInstallStatus) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
-}
-// GetOsVersion gets the osVersion property value. OS Version
-func (m *MobileAppInstallStatus) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetUserName gets the userName property value. Device User Name
-func (m *MobileAppInstallStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
-func (m *MobileAppInstallStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["app"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileApp() })
+        val, err := n.GetObjectValue(CreateMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApp(val.(*MobileApp))
+            m.SetApp(val.(MobileAppable))
         }
         return nil
     }
@@ -281,6 +221,70 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
+// GetInstallState gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+func (m *MobileAppInstallStatus) GetInstallState()(*ResultantAppState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installState
+    }
+}
+// GetInstallStateDetail gets the installStateDetail property value. The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, supersededAppUninstallFailed, supersededAppUninstallPendingReboot, removingSupersededApps, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, uninstallPendingReboot, supersedingAppsDetected, supersededAppsDetected, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, untargetedSupersedingAppsDetected, appRemovedBySupersedence, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, supersedingAppsNotApplicable, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.
+func (m *MobileAppInstallStatus) GetInstallStateDetail()(*ResultantAppStateDetail) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installStateDetail
+    }
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date time
+func (m *MobileAppInstallStatus) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetMobileAppInstallStatusValue gets the mobileAppInstallStatusValue property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+func (m *MobileAppInstallStatus) GetMobileAppInstallStatusValue()(*ResultantAppState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileAppInstallStatusValue
+    }
+}
+// GetOsDescription gets the osDescription property value. OS Description
+func (m *MobileAppInstallStatus) GetOsDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osDescription
+    }
+}
+// GetOsVersion gets the osVersion property value. OS Version
+func (m *MobileAppInstallStatus) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetUserName gets the userName property value. Device User Name
+func (m *MobileAppInstallStatus) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
+func (m *MobileAppInstallStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
 func (m *MobileAppInstallStatus) IsNil()(bool) {
     return m == nil
 }
@@ -374,7 +378,7 @@ func (m *MobileAppInstallStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetApp sets the app property value. The navigation link to the mobile app.
-func (m *MobileAppInstallStatus) SetApp(value *MobileApp)() {
+func (m *MobileAppInstallStatus) SetApp(value MobileAppable)() {
     if m != nil {
         m.app = value
     }

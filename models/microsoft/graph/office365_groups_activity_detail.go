@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityDetail 
+// Office365GroupsActivityDetail provides operations to call the getOffice365GroupsActivityDetail method.
 type Office365GroupsActivityDetail struct {
     Entity
     // The storage used of the group mailbox.
@@ -46,12 +46,16 @@ type Office365GroupsActivityDetail struct {
     // The number of messages read in Yammer groups.
     yammerReadMessageCount *int64;
 }
-// NewOffice365GroupsActivityDetail instantiates a new Office365GroupsActivityDetail and sets the default values.
+// NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     m := &Office365GroupsActivityDetail{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOffice365GroupsActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOffice365GroupsActivityDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOffice365GroupsActivityDetail(), nil
 }
 // GetExchangeMailboxStorageUsedInBytes gets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
 func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*int64) {
@@ -83,126 +87,6 @@ func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int64) {
         return nil
     } else {
         return m.externalMemberCount
-    }
-}
-// GetGroupDisplayName gets the groupDisplayName property value. The display name of the group.
-func (m *Office365GroupsActivityDetail) GetGroupDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupDisplayName
-    }
-}
-// GetGroupId gets the groupId property value. The group id.
-func (m *Office365GroupsActivityDetail) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
-}
-// GetGroupType gets the groupType property value. The group type. Possible values are: Public or Private.
-func (m *Office365GroupsActivityDetail) GetGroupType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupType
-    }
-}
-// GetIsDeleted gets the isDeleted property value. Whether this user has been deleted or soft deleted.
-func (m *Office365GroupsActivityDetail) GetIsDeleted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeleted
-    }
-}
-// GetLastActivityDate gets the lastActivityDate property value. The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-func (m *Office365GroupsActivityDetail) GetLastActivityDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActivityDate
-    }
-}
-// GetMemberCount gets the memberCount property value. The group member count.
-func (m *Office365GroupsActivityDetail) GetMemberCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberCount
-    }
-}
-// GetOwnerPrincipalName gets the ownerPrincipalName property value. The group owner principal name.
-func (m *Office365GroupsActivityDetail) GetOwnerPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerPrincipalName
-    }
-}
-// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
-func (m *Office365GroupsActivityDetail) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
-}
-// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *Office365GroupsActivityDetail) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
-}
-// GetSharePointActiveFileCount gets the sharePointActiveFileCount property value. The number of active files in SharePoint Group site.
-func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePointActiveFileCount
-    }
-}
-// GetSharePointSiteStorageUsedInBytes gets the sharePointSiteStorageUsedInBytes property value. The storage used by SharePoint Group site.
-func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePointSiteStorageUsedInBytes
-    }
-}
-// GetSharePointTotalFileCount gets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
-func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePointTotalFileCount
-    }
-}
-// GetYammerLikedMessageCount gets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
-func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerLikedMessageCount
-    }
-}
-// GetYammerPostedMessageCount gets the yammerPostedMessageCount property value. The number of messages posted to Yammer groups.
-func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerPostedMessageCount
-    }
-}
-// GetYammerReadMessageCount gets the yammerReadMessageCount property value. The number of messages read in Yammer groups.
-func (m *Office365GroupsActivityDetail) GetYammerReadMessageCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerReadMessageCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -399,6 +283,126 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetGroupDisplayName gets the groupDisplayName property value. The display name of the group.
+func (m *Office365GroupsActivityDetail) GetGroupDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupDisplayName
+    }
+}
+// GetGroupId gets the groupId property value. The group id.
+func (m *Office365GroupsActivityDetail) GetGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupId
+    }
+}
+// GetGroupType gets the groupType property value. The group type. Possible values are: Public or Private.
+func (m *Office365GroupsActivityDetail) GetGroupType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupType
+    }
+}
+// GetIsDeleted gets the isDeleted property value. Whether this user has been deleted or soft deleted.
+func (m *Office365GroupsActivityDetail) GetIsDeleted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDeleted
+    }
+}
+// GetLastActivityDate gets the lastActivityDate property value. The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+func (m *Office365GroupsActivityDetail) GetLastActivityDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActivityDate
+    }
+}
+// GetMemberCount gets the memberCount property value. The group member count.
+func (m *Office365GroupsActivityDetail) GetMemberCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberCount
+    }
+}
+// GetOwnerPrincipalName gets the ownerPrincipalName property value. The group owner principal name.
+func (m *Office365GroupsActivityDetail) GetOwnerPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerPrincipalName
+    }
+}
+// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+func (m *Office365GroupsActivityDetail) GetReportPeriod()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportPeriod
+    }
+}
+// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+func (m *Office365GroupsActivityDetail) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportRefreshDate
+    }
+}
+// GetSharePointActiveFileCount gets the sharePointActiveFileCount property value. The number of active files in SharePoint Group site.
+func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharePointActiveFileCount
+    }
+}
+// GetSharePointSiteStorageUsedInBytes gets the sharePointSiteStorageUsedInBytes property value. The storage used by SharePoint Group site.
+func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharePointSiteStorageUsedInBytes
+    }
+}
+// GetSharePointTotalFileCount gets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
+func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharePointTotalFileCount
+    }
+}
+// GetYammerLikedMessageCount gets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
+func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerLikedMessageCount
+    }
+}
+// GetYammerPostedMessageCount gets the yammerPostedMessageCount property value. The number of messages posted to Yammer groups.
+func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerPostedMessageCount
+    }
+}
+// GetYammerReadMessageCount gets the yammerReadMessageCount property value. The number of messages read in Yammer groups.
+func (m *Office365GroupsActivityDetail) GetYammerReadMessageCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerReadMessageCount
+    }
 }
 func (m *Office365GroupsActivityDetail) IsNil()(bool) {
     return m == nil

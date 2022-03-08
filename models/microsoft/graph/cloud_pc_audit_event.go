@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcAuditEvent 
+// CloudPcAuditEvent provides operations to manage the deviceManagement singleton.
 type CloudPcAuditEvent struct {
     Entity
     // Friendly name of the activity. Optional.
@@ -19,7 +19,7 @@ type CloudPcAuditEvent struct {
     // The type of activity that was performed. Read-only.
     activityType *string;
     // 
-    actor *CloudPcAuditActor;
+    actor CloudPcAuditActorable;
     // Audit category. Read-only.
     category *CloudPcAuditCategory;
     // Component name. Read-only.
@@ -29,7 +29,7 @@ type CloudPcAuditEvent struct {
     // Event display name. Read-only.
     displayName *string;
     // List of cloudPcAuditResource objects. Read-only.
-    resources []CloudPcAuditResource;
+    resources []CloudPcAuditResourceable;
 }
 // NewCloudPcAuditEvent instantiates a new cloudPcAuditEvent and sets the default values.
 func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
@@ -37,6 +37,10 @@ func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCloudPcAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcAuditEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcAuditEvent(), nil
 }
 // GetActivity gets the activity property value. Friendly name of the activity. Optional.
 func (m *CloudPcAuditEvent) GetActivity()(*string) {
@@ -79,7 +83,7 @@ func (m *CloudPcAuditEvent) GetActivityType()(*string) {
     }
 }
 // GetActor gets the actor property value. 
-func (m *CloudPcAuditEvent) GetActor()(*CloudPcAuditActor) {
+func (m *CloudPcAuditEvent) GetActor()(CloudPcAuditActorable) {
     if m == nil {
         return nil
     } else {
@@ -116,14 +120,6 @@ func (m *CloudPcAuditEvent) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetResources gets the resources property value. List of cloudPcAuditResource objects. Read-only.
-func (m *CloudPcAuditEvent) GetResources()([]CloudPcAuditResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,12 +176,12 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["actor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcAuditActor() })
+        val, err := n.GetObjectValue(CreateCloudPcAuditActorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActor(val.(*CloudPcAuditActor))
+            m.SetActor(val.(CloudPcAuditActorable))
         }
         return nil
     }
@@ -230,20 +226,28 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcAuditResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcAuditResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CloudPcAuditResource, len(val))
+            res := make([]CloudPcAuditResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CloudPcAuditResource))
+                res[i] = v.(CloudPcAuditResourceable)
             }
             m.SetResources(res)
         }
         return nil
     }
     return res
+}
+// GetResources gets the resources property value. List of cloudPcAuditResource objects. Read-only.
+func (m *CloudPcAuditEvent) GetResources()([]CloudPcAuditResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resources
+    }
 }
 func (m *CloudPcAuditEvent) IsNil()(bool) {
     return m == nil
@@ -320,8 +324,7 @@ func (m *CloudPcAuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -361,7 +364,7 @@ func (m *CloudPcAuditEvent) SetActivityType(value *string)() {
     }
 }
 // SetActor sets the actor property value. 
-func (m *CloudPcAuditEvent) SetActor(value *CloudPcAuditActor)() {
+func (m *CloudPcAuditEvent) SetActor(value CloudPcAuditActorable)() {
     if m != nil {
         m.actor = value
     }
@@ -391,7 +394,7 @@ func (m *CloudPcAuditEvent) SetDisplayName(value *string)() {
     }
 }
 // SetResources sets the resources property value. List of cloudPcAuditResource objects. Read-only.
-func (m *CloudPcAuditEvent) SetResources(value []CloudPcAuditResource)() {
+func (m *CloudPcAuditEvent) SetResources(value []CloudPcAuditResourceable)() {
     if m != nil {
         m.resources = value
     }

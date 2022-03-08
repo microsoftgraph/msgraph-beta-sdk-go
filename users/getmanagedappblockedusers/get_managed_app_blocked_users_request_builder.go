@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetManagedAppBlockedUsersRequestBuilder builds and executes requests for operations under \users\microsoft.graph.getManagedAppBlockedUsers()
+// GetManagedAppBlockedUsersRequestBuilder provides operations to call the getManagedAppBlockedUsers method.
 type GetManagedAppBlockedUsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetManagedAppBlockedUsersRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,18 +59,14 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformation(op
     return requestInfo, nil
 }
 // Get invoke function getManagedAppBlockedUsers
-func (m *GetManagedAppBlockedUsersRequestBuilder) Get(options *GetManagedAppBlockedUsersRequestBuilderGetOptions)([]string, error) {
+func (m *GetManagedAppBlockedUsersRequestBuilder) Get(options *GetManagedAppBlockedUsersRequestBuilderGetOptions)(GetManagedAppBlockedUsersResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedAppBlockedUsersResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]string, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*string))
-    }
-    return val, nil
+    return res.(GetManagedAppBlockedUsersResponseable), nil
 }

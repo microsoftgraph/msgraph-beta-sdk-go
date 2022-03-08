@@ -2,12 +2,12 @@ package managementconditionstatements
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5b053b0e2157896797ad74e4b2833df21745c193240376eb3e2541184991c9d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditionstatements/getmanagementconditionstatementsforplatformwithplatform"
+    iafa552b05b750fe3bc3ac717c19e19bddb441d52698670adc4e7de02ab661a8d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditionstatements/count"
 )
 
-// ManagementConditionStatementsRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements
+// ManagementConditionStatementsRequestBuilder provides operations to manage the managementConditionStatements property of the microsoft.graph.deviceManagement entity.
 type ManagementConditionStatementsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type ManagementConditionStatementsRequestBuilderGetQueryParameters struct {
 // ManagementConditionStatementsRequestBuilderPostOptions options for Post
 type ManagementConditionStatementsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatement;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatementable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewManagementConditionStatementsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewManagementConditionStatementsRequestBuilder(rawUrl string, requestAdapte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementConditionStatementsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagementConditionStatementsRequestBuilder) Count()(*iafa552b05b750fe3bc3ac717c19e19bddb441d52698670adc4e7de02ab661a8d.CountRequestBuilder) {
+    return iafa552b05b750fe3bc3ac717c19e19bddb441d52698670adc4e7de02ab661a8d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the management condition statements associated with device management of the company.
 func (m *ManagementConditionStatementsRequestBuilder) CreateGetRequestInformation(options *ManagementConditionStatementsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +99,7 @@ func (m *ManagementConditionStatementsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the management condition statements associated with device management of the company.
+// CreatePostRequestInformation create new navigation property to managementConditionStatements for deviceManagement
 func (m *ManagementConditionStatementsRequestBuilder) CreatePostRequestInformation(options *ManagementConditionStatementsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,30 +118,38 @@ func (m *ManagementConditionStatementsRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Get the management condition statements associated with device management of the company.
-func (m *ManagementConditionStatementsRequestBuilder) Get(options *ManagementConditionStatementsRequestBuilderGetOptions)(*ManagementConditionStatementsResponse, error) {
+func (m *ManagementConditionStatementsRequestBuilder) Get(options *ManagementConditionStatementsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatementCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementConditionStatementsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagementConditionStatementCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagementConditionStatementsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatementCollectionResponseable), nil
 }
-// GetManagementConditionStatementsForPlatformWithPlatform builds and executes requests for operations under \deviceManagement\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
+// GetManagementConditionStatementsForPlatformWithPlatform provides operations to call the getManagementConditionStatementsForPlatform method.
 func (m *ManagementConditionStatementsRequestBuilder) GetManagementConditionStatementsForPlatformWithPlatform(platform *string)(*i5b053b0e2157896797ad74e4b2833df21745c193240376eb3e2541184991c9d2.GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) {
     return i5b053b0e2157896797ad74e4b2833df21745c193240376eb3e2541184991c9d2.NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform);
 }
-// Post the management condition statements associated with device management of the company.
-func (m *ManagementConditionStatementsRequestBuilder) Post(options *ManagementConditionStatementsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatement, error) {
+// Post create new navigation property to managementConditionStatements for deviceManagement
+func (m *ManagementConditionStatementsRequestBuilder) Post(options *ManagementConditionStatementsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatementable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagementConditionStatement() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagementConditionStatementFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatement), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionStatementable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentReviewSettings 
+// AssignmentReviewSettings provides operations to manage the identityGovernance singleton.
 type AssignmentReviewSettings struct {
     // The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
     accessReviewTimeoutBehavior *AccessReviewTimeoutBehavior;
@@ -22,7 +22,7 @@ type AssignmentReviewSettings struct {
     // The interval for recurrence, such as monthly or quarterly.
     recurrenceType *string;
     // If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
-    reviewers []UserSet;
+    reviewers []UserSetable;
     // Who should be asked to do the review, either Self or Reviewers.
     reviewerType *string;
     // When the first review should start.
@@ -34,6 +34,10 @@ func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentReviewSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentReviewSettings(), nil
 }
 // GetAccessReviewTimeoutBehavior gets the accessReviewTimeoutBehavior property value. The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
 func (m *AssignmentReviewSettings) GetAccessReviewTimeoutBehavior()(*AccessReviewTimeoutBehavior) {
@@ -57,62 +61,6 @@ func (m *AssignmentReviewSettings) GetDurationInDays()(*int32) {
         return nil
     } else {
         return m.durationInDays
-    }
-}
-// GetIsAccessRecommendationEnabled gets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
-func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAccessRecommendationEnabled
-    }
-}
-// GetIsApprovalJustificationRequired gets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
-func (m *AssignmentReviewSettings) GetIsApprovalJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalJustificationRequired
-    }
-}
-// GetIsEnabled gets the isEnabled property value. If true, access reviews are required for assignments from this policy.
-func (m *AssignmentReviewSettings) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetRecurrenceType gets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
-func (m *AssignmentReviewSettings) GetRecurrenceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceType
-    }
-}
-// GetReviewers gets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
-func (m *AssignmentReviewSettings) GetReviewers()([]UserSet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
-}
-// GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
-func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewerType
-    }
-}
-// GetStartDateTime gets the startDateTime property value. When the first review should start.
-func (m *AssignmentReviewSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,14 +127,14 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSet() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserSet, len(val))
+            res := make([]UserSetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserSet))
+                res[i] = v.(UserSetable)
             }
             m.SetReviewers(res)
         }
@@ -213,6 +161,62 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsAccessRecommendationEnabled gets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
+func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAccessRecommendationEnabled
+    }
+}
+// GetIsApprovalJustificationRequired gets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
+func (m *AssignmentReviewSettings) GetIsApprovalJustificationRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isApprovalJustificationRequired
+    }
+}
+// GetIsEnabled gets the isEnabled property value. If true, access reviews are required for assignments from this policy.
+func (m *AssignmentReviewSettings) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetRecurrenceType gets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
+func (m *AssignmentReviewSettings) GetRecurrenceType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrenceType
+    }
+}
+// GetReviewers gets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
+func (m *AssignmentReviewSettings) GetReviewers()([]UserSetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewers
+    }
+}
+// GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
+func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reviewerType
+    }
+}
+// GetStartDateTime gets the startDateTime property value. When the first review should start.
+func (m *AssignmentReviewSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *AssignmentReviewSettings) IsNil()(bool) {
     return m == nil
@@ -259,8 +263,7 @@ func (m *AssignmentReviewSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
@@ -330,7 +333,7 @@ func (m *AssignmentReviewSettings) SetRecurrenceType(value *string)() {
     }
 }
 // SetReviewers sets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
-func (m *AssignmentReviewSettings) SetReviewers(value []UserSet)() {
+func (m *AssignmentReviewSettings) SetReviewers(value []UserSetable)() {
     if m != nil {
         m.reviewers = value
     }

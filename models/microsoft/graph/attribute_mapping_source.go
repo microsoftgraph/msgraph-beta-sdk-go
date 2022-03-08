@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeMappingSource 
+// AttributeMappingSource provides operations to call the instantiate method.
 type AttributeMappingSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type AttributeMappingSource struct {
     // 
     name *string;
     // 
-    parameters []StringKeyAttributeMappingSourceValuePair;
+    parameters []StringKeyAttributeMappingSourceValuePairable;
     // 
     type_escaped *AttributeMappingSourceType;
 }
@@ -23,6 +23,10 @@ func NewAttributeMappingSource()(*AttributeMappingSource) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAttributeMappingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttributeMappingSourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttributeMappingSource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingSource) GetAdditionalData()(map[string]interface{}) {
@@ -38,30 +42,6 @@ func (m *AttributeMappingSource) GetExpression()(*string) {
         return nil
     } else {
         return m.expression
-    }
-}
-// GetName gets the name property value. 
-func (m *AttributeMappingSource) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParameters gets the parameters property value. 
-func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSourceValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parameters
-    }
-}
-// GetType gets the type property value. 
-func (m *AttributeMappingSource) GetType()(*AttributeMappingSourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,14 +68,14 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["parameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStringKeyAttributeMappingSourceValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateStringKeyAttributeMappingSourceValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]StringKeyAttributeMappingSourceValuePair, len(val))
+            res := make([]StringKeyAttributeMappingSourceValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*StringKeyAttributeMappingSourceValuePair))
+                res[i] = v.(StringKeyAttributeMappingSourceValuePairable)
             }
             m.SetParameters(res)
         }
@@ -112,6 +92,30 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetName gets the name property value. 
+func (m *AttributeMappingSource) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParameters gets the parameters property value. 
+func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSourceValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parameters
+    }
+}
+// GetType gets the type property value. 
+func (m *AttributeMappingSource) GetType()(*AttributeMappingSourceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *AttributeMappingSource) IsNil()(bool) {
     return m == nil
@@ -133,8 +137,7 @@ func (m *AttributeMappingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetParameters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("parameters", cast)
         if err != nil {
@@ -175,7 +178,7 @@ func (m *AttributeMappingSource) SetName(value *string)() {
     }
 }
 // SetParameters sets the parameters property value. 
-func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePair)() {
+func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePairable)() {
     if m != nil {
         m.parameters = value
     }

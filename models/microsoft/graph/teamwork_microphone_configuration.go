@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkMicrophoneConfiguration 
+// TeamworkMicrophoneConfiguration provides operations to manage the teamwork singleton.
 type TeamworkMicrophoneConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    defaultMicrophone *TeamworkPeripheral;
+    defaultMicrophone TeamworkPeripheralable;
     // True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
     isMicrophoneOptional *bool;
     // 
-    microphones []TeamworkPeripheral;
+    microphones []TeamworkPeripheralable;
 }
 // NewTeamworkMicrophoneConfiguration instantiates a new teamworkMicrophoneConfiguration and sets the default values.
 func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
@@ -21,6 +21,10 @@ func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkMicrophoneConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -31,39 +35,23 @@ func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]interfa
     }
 }
 // GetDefaultMicrophone gets the defaultMicrophone property value. 
-func (m *TeamworkMicrophoneConfiguration) GetDefaultMicrophone()(*TeamworkPeripheral) {
+func (m *TeamworkMicrophoneConfiguration) GetDefaultMicrophone()(TeamworkPeripheralable) {
     if m == nil {
         return nil
     } else {
         return m.defaultMicrophone
     }
 }
-// GetIsMicrophoneOptional gets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
-func (m *TeamworkMicrophoneConfiguration) GetIsMicrophoneOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMicrophoneOptional
-    }
-}
-// GetMicrophones gets the microphones property value. 
-func (m *TeamworkMicrophoneConfiguration) GetMicrophones()([]TeamworkPeripheral) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphones
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["defaultMicrophone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultMicrophone(val.(*TeamworkPeripheral))
+            m.SetDefaultMicrophone(val.(TeamworkPeripheralable))
         }
         return nil
     }
@@ -78,20 +66,36 @@ func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["microphones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheral() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamworkPeripheral, len(val))
+            res := make([]TeamworkPeripheralable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamworkPeripheral))
+                res[i] = v.(TeamworkPeripheralable)
             }
             m.SetMicrophones(res)
         }
         return nil
     }
     return res
+}
+// GetIsMicrophoneOptional gets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
+func (m *TeamworkMicrophoneConfiguration) GetIsMicrophoneOptional()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMicrophoneOptional
+    }
+}
+// GetMicrophones gets the microphones property value. 
+func (m *TeamworkMicrophoneConfiguration) GetMicrophones()([]TeamworkPeripheralable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.microphones
+    }
 }
 func (m *TeamworkMicrophoneConfiguration) IsNil()(bool) {
     return m == nil
@@ -113,8 +117,7 @@ func (m *TeamworkMicrophoneConfiguration) Serialize(writer i04eb5309aeaafadd2837
     if m.GetMicrophones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMicrophones()))
         for i, v := range m.GetMicrophones() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("microphones", cast)
         if err != nil {
@@ -136,7 +139,7 @@ func (m *TeamworkMicrophoneConfiguration) SetAdditionalData(value map[string]int
     }
 }
 // SetDefaultMicrophone sets the defaultMicrophone property value. 
-func (m *TeamworkMicrophoneConfiguration) SetDefaultMicrophone(value *TeamworkPeripheral)() {
+func (m *TeamworkMicrophoneConfiguration) SetDefaultMicrophone(value TeamworkPeripheralable)() {
     if m != nil {
         m.defaultMicrophone = value
     }
@@ -148,7 +151,7 @@ func (m *TeamworkMicrophoneConfiguration) SetIsMicrophoneOptional(value *bool)()
     }
 }
 // SetMicrophones sets the microphones property value. 
-func (m *TeamworkMicrophoneConfiguration) SetMicrophones(value []TeamworkPeripheral)() {
+func (m *TeamworkMicrophoneConfiguration) SetMicrophones(value []TeamworkPeripheralable)() {
     if m != nil {
         m.microphones = value
     }

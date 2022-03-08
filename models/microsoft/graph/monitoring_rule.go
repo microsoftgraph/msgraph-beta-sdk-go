@@ -5,7 +5,7 @@ import (
     ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
-// MonitoringRule 
+// MonitoringRule provides operations to manage the admin singleton.
 type MonitoringRule struct {
     // The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
     action *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringAction;
@@ -23,6 +23,10 @@ func NewMonitoringRule()(*MonitoringRule) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMonitoringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMonitoringRuleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMonitoringRule(), nil
+}
 // GetAction gets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
 func (m *MonitoringRule) GetAction()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringAction) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *MonitoringRule) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
-func (m *MonitoringRule) GetSignal()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringSignal) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signal
-    }
-}
-// GetThreshold gets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
-func (m *MonitoringRule) GetThreshold()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threshold
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
+func (m *MonitoringRule) GetSignal()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringSignal) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signal
+    }
+}
+// GetThreshold gets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+func (m *MonitoringRule) GetThreshold()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.threshold
+    }
 }
 func (m *MonitoringRule) IsNil()(bool) {
     return m == nil

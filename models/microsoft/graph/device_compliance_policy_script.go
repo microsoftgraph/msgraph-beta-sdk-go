@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCompliancePolicyScript 
+// DeviceCompliancePolicyScript provides operations to call the validateComplianceScript method.
 type DeviceCompliancePolicyScript struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewDeviceCompliancePolicyScript()(*DeviceCompliancePolicyScript) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceCompliancePolicyScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceCompliancePolicyScriptFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceCompliancePolicyScript(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceCompliancePolicyScript) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *DeviceCompliancePolicyScript) GetDeviceComplianceScriptId()(*string) {
         return nil
     } else {
         return m.deviceComplianceScriptId
-    }
-}
-// GetRulesContent gets the rulesContent property value. Json of the rules.
-func (m *DeviceCompliancePolicyScript) GetRulesContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rulesContent
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *DeviceCompliancePolicyScript) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetRulesContent gets the rulesContent property value. Json of the rules.
+func (m *DeviceCompliancePolicyScript) GetRulesContent()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rulesContent
+    }
 }
 func (m *DeviceCompliancePolicyScript) IsNil()(bool) {
     return m == nil

@@ -23,7 +23,7 @@ func NewCaseExportOperationRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -33,7 +33,7 @@ func NewCaseExportOperationRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewCaseExportOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// GetDownloadUrl builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation\microsoft.graph.ediscovery.getDownloadUrl()
+// GetDownloadUrl provides operations to call the getDownloadUrl method.
 func (m *CaseExportOperationRequestBuilder) GetDownloadUrl()(*i853045a1c17d869baaeeca6d724b0704bd59922311548198cc7c32c73ab5d870.GetDownloadUrlRequestBuilder) {
     return i853045a1c17d869baaeeca6d724b0704bd59922311548198cc7c32c73ab5d870.NewGetDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

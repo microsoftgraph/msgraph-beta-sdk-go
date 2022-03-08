@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityStorage 
+// Office365GroupsActivityStorage provides operations to call the getOffice365GroupsActivityStorage method.
 type Office365GroupsActivityStorage struct {
     Entity
     // The storage used in group mailbox.
@@ -18,52 +18,16 @@ type Office365GroupsActivityStorage struct {
     // The storage used in SharePoint document library.
     siteStorageUsedInBytes *int64;
 }
-// NewOffice365GroupsActivityStorage instantiates a new Office365GroupsActivityStorage and sets the default values.
+// NewOffice365GroupsActivityStorage instantiates a new office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
     m := &Office365GroupsActivityStorage{
         Entity: *NewEntity(),
     }
     return m
 }
-// GetMailboxStorageUsedInBytes gets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
-func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailboxStorageUsedInBytes
-    }
-}
-// GetReportDate gets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
-func (m *Office365GroupsActivityStorage) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportDate
-    }
-}
-// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
-func (m *Office365GroupsActivityStorage) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
-}
-// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *Office365GroupsActivityStorage) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
-}
-// GetSiteStorageUsedInBytes gets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
-func (m *Office365GroupsActivityStorage) GetSiteStorageUsedInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteStorageUsedInBytes
-    }
+// CreateOffice365GroupsActivityStorageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOffice365GroupsActivityStorageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOffice365GroupsActivityStorage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -119,6 +83,46 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetMailboxStorageUsedInBytes gets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
+func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailboxStorageUsedInBytes
+    }
+}
+// GetReportDate gets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
+func (m *Office365GroupsActivityStorage) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportDate
+    }
+}
+// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+func (m *Office365GroupsActivityStorage) GetReportPeriod()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportPeriod
+    }
+}
+// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+func (m *Office365GroupsActivityStorage) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportRefreshDate
+    }
+}
+// GetSiteStorageUsedInBytes gets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
+func (m *Office365GroupsActivityStorage) GetSiteStorageUsedInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteStorageUsedInBytes
+    }
 }
 func (m *Office365GroupsActivityStorage) IsNil()(bool) {
     return m == nil

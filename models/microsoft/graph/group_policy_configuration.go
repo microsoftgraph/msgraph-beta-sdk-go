@@ -5,15 +5,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyConfiguration 
+// GroupPolicyConfiguration provides operations to manage the deviceManagement singleton.
 type GroupPolicyConfiguration struct {
     Entity
     // The list of group assignments for the configuration.
-    assignments []GroupPolicyConfigurationAssignment;
+    assignments []GroupPolicyConfigurationAssignmentable;
     // The date and time the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The list of enabled or disabled group policy definition values for the configuration.
-    definitionValues []GroupPolicyDefinitionValue;
+    definitionValues []GroupPolicyDefinitionValueable;
     // User provided description for the resource object.
     description *string;
     // User provided name for the resource object.
@@ -30,8 +30,12 @@ func NewGroupPolicyConfiguration()(*GroupPolicyConfiguration) {
     }
     return m
 }
+// CreateGroupPolicyConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyConfiguration(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments for the configuration.
-func (m *GroupPolicyConfiguration) GetAssignments()([]GroupPolicyConfigurationAssignment) {
+func (m *GroupPolicyConfiguration) GetAssignments()([]GroupPolicyConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *GroupPolicyConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f
     }
 }
 // GetDefinitionValues gets the definitionValues property value. The list of enabled or disabled group policy definition values for the configuration.
-func (m *GroupPolicyConfiguration) GetDefinitionValues()([]GroupPolicyDefinitionValue) {
+func (m *GroupPolicyConfiguration) GetDefinitionValues()([]GroupPolicyDefinitionValueable) {
     if m == nil {
         return nil
     } else {
@@ -70,34 +74,18 @@ func (m *GroupPolicyConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. The list of scope tags for the configuration.
-func (m *GroupPolicyConfiguration) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyConfigurationAssignment, len(val))
+            res := make([]GroupPolicyConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyConfigurationAssignment))
+                res[i] = v.(GroupPolicyConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -114,14 +102,14 @@ func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["definitionValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinitionValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyDefinitionValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyDefinitionValue, len(val))
+            res := make([]GroupPolicyDefinitionValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyDefinitionValue))
+                res[i] = v.(GroupPolicyDefinitionValueable)
             }
             m.SetDefinitionValues(res)
         }
@@ -173,6 +161,22 @@ func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. The list of scope tags for the configuration.
+func (m *GroupPolicyConfiguration) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
 func (m *GroupPolicyConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -185,8 +189,7 @@ func (m *GroupPolicyConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -202,8 +205,7 @@ func (m *GroupPolicyConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetDefinitionValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefinitionValues()))
         for i, v := range m.GetDefinitionValues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("definitionValues", cast)
         if err != nil {
@@ -237,7 +239,7 @@ func (m *GroupPolicyConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c84
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the configuration.
-func (m *GroupPolicyConfiguration) SetAssignments(value []GroupPolicyConfigurationAssignment)() {
+func (m *GroupPolicyConfiguration) SetAssignments(value []GroupPolicyConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -249,7 +251,7 @@ func (m *GroupPolicyConfiguration) SetCreatedDateTime(value *i336074805fc853987a
     }
 }
 // SetDefinitionValues sets the definitionValues property value. The list of enabled or disabled group policy definition values for the configuration.
-func (m *GroupPolicyConfiguration) SetDefinitionValues(value []GroupPolicyDefinitionValue)() {
+func (m *GroupPolicyConfiguration) SetDefinitionValues(value []GroupPolicyDefinitionValueable)() {
     if m != nil {
         m.definitionValues = value
     }

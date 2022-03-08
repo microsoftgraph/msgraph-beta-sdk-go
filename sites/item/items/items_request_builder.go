@@ -2,11 +2,11 @@ package items
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i72dc56b0b5f8830b1ca8bf177426b37d848aa6882c9b47d9414241162ae599fa "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/items/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i7268332f19f11d4164e0005331c9af025c5de53e33aa08455551cb00beeeef5f "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/items/count"
 )
 
-// ItemsRequestBuilder builds and executes requests for operations under \sites\{site-id}\items
+// ItemsRequestBuilder provides operations to manage the items property of the microsoft.graph.site entity.
 type ItemsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewItemsRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ItemsRequestBuilder) Count()(*i7268332f19f11d4164e0005331c9af025c5de53e33aa08455551cb00beeeef5f.CountRequestBuilder) {
+    return i7268332f19f11d4164e0005331c9af025c5de53e33aa08455551cb00beeeef5f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestB
     return requestInfo, nil
 }
 // Get used to address any item contained in this site. This collection can't be enumerated.
-func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(*ItemsResponse, error) {
+func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBaseItemCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ItemsResponse), nil
-}
-func (m *ItemsRequestBuilder) Ref()(*i72dc56b0b5f8830b1ca8bf177426b37d848aa6882c9b47d9414241162ae599fa.RefRequestBuilder) {
-    return i72dc56b0b5f8830b1ca8bf177426b37d848aa6882c9b47d9414241162ae599fa.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseItemCollectionResponseable), nil
 }

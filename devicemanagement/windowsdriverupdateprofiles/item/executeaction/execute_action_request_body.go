@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ExecuteActionRequestBody 
+// ExecuteActionRequestBody provides operations to call the executeAction method.
 type ExecuteActionRequestBody struct {
     // 
     actionName *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriverApprovalAction;
@@ -23,6 +23,10 @@ func NewExecuteActionRequestBody()(*ExecuteActionRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateExecuteActionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExecuteActionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExecuteActionRequestBody(), nil
 }
 // GetActionName gets the actionName property value. 
 func (m *ExecuteActionRequestBody) GetActionName()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriverApprovalAction) {

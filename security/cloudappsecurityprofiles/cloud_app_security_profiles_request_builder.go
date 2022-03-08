@@ -2,11 +2,11 @@ package cloudappsecurityprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i1cfbd52510d232fe3be4fb1aa7b0e119dae106d6e6abb2e8b7703561f346f58e "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cloudappsecurityprofiles/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CloudAppSecurityProfilesRequestBuilder builds and executes requests for operations under \security\cloudAppSecurityProfiles
+// CloudAppSecurityProfilesRequestBuilder provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
 type CloudAppSecurityProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type CloudAppSecurityProfilesRequestBuilderGetQueryParameters struct {
 // CloudAppSecurityProfilesRequestBuilderPostOptions options for Post
 type CloudAppSecurityProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewCloudAppSecurityProfilesRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewCloudAppSecurityProfilesRequestBuilder(rawUrl string, requestAdapter ida
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudAppSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CloudAppSecurityProfilesRequestBuilder) Count()(*i1cfbd52510d232fe3be4fb1aa7b0e119dae106d6e6abb2e8b7703561f346f58e.CountRequestBuilder) {
+    return i1cfbd52510d232fe3be4fb1aa7b0e119dae106d6e6abb2e8b7703561f346f58e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get cloudAppSecurityProfiles from security
 func (m *CloudAppSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *CloudAppSecurityProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *CloudAppSecurityProfilesRequestBuilder) CreatePostRequestInformation(op
     return requestInfo, nil
 }
 // Get get cloudAppSecurityProfiles from security
-func (m *CloudAppSecurityProfilesRequestBuilder) Get(options *CloudAppSecurityProfilesRequestBuilderGetOptions)(*CloudAppSecurityProfilesResponse, error) {
+func (m *CloudAppSecurityProfilesRequestBuilder) Get(options *CloudAppSecurityProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudAppSecurityProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCloudAppSecurityProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CloudAppSecurityProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfileCollectionResponseable), nil
 }
 // Post create new navigation property to cloudAppSecurityProfiles for security
-func (m *CloudAppSecurityProfilesRequestBuilder) Post(options *CloudAppSecurityProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfile, error) {
+func (m *CloudAppSecurityProfilesRequestBuilder) Post(options *CloudAppSecurityProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudAppSecurityProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCloudAppSecurityProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudAppSecurityProfileable), nil
 }

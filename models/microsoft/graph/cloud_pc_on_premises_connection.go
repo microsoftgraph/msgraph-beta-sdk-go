@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcOnPremisesConnection 
+// CloudPcOnPremisesConnection provides operations to manage the deviceManagement singleton.
 type CloudPcOnPremisesConnection struct {
     Entity
     // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -18,7 +18,7 @@ type CloudPcOnPremisesConnection struct {
     // The status of the most recent health check done on the on-premises connection. For example, if status is 'passed', the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
     healthCheckStatus *CloudPcOnPremisesConnectionStatus;
     // The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
-    healthCheckStatusDetails *CloudPcOnPremisesConnectionStatusDetails;
+    healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable;
     // When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
     inUse *bool;
     // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
@@ -42,6 +42,10 @@ func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCloudPcOnPremisesConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcOnPremisesConnectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcOnPremisesConnection(), nil
 }
 // GetAdDomainName gets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
 func (m *CloudPcOnPremisesConnection) GetAdDomainName()(*string) {
@@ -73,86 +77,6 @@ func (m *CloudPcOnPremisesConnection) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHealthCheckStatus gets the healthCheckStatus property value. The status of the most recent health check done on the on-premises connection. For example, if status is 'passed', the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
-func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthCheckStatus
-    }
-}
-// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
-func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(*CloudPcOnPremisesConnectionStatusDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthCheckStatusDetails
-    }
-}
-// GetInUse gets the inUse property value. When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
-func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inUse
-    }
-}
-// GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
-func (m *CloudPcOnPremisesConnection) GetOrganizationalUnit()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationalUnit
-    }
-}
-// GetResourceGroupId gets the resourceGroupId property value. The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
-func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceGroupId
-    }
-}
-// GetSubnetId gets the subnetId property value. The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
-func (m *CloudPcOnPremisesConnection) GetSubnetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subnetId
-    }
-}
-// GetSubscriptionId gets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
-func (m *CloudPcOnPremisesConnection) GetSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionId
-    }
-}
-// GetSubscriptionName gets the subscriptionName property value. The name of the target Azure subscription. Read-only.
-func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionName
-    }
-}
-// GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
-func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.virtualNetworkId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -209,12 +133,12 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["healthCheckStatusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcOnPremisesConnectionStatusDetails() })
+        val, err := n.GetObjectValue(CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHealthCheckStatusDetails(val.(*CloudPcOnPremisesConnectionStatusDetails))
+            m.SetHealthCheckStatusDetails(val.(CloudPcOnPremisesConnectionStatusDetailsable))
         }
         return nil
     }
@@ -299,6 +223,86 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetHealthCheckStatus gets the healthCheckStatus property value. The status of the most recent health check done on the on-premises connection. For example, if status is 'passed', the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthCheckStatus
+    }
+}
+// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
+func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthCheckStatusDetails
+    }
+}
+// GetInUse gets the inUse property value. When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
+func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inUse
+    }
+}
+// GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
+func (m *CloudPcOnPremisesConnection) GetOrganizationalUnit()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationalUnit
+    }
+}
+// GetResourceGroupId gets the resourceGroupId property value. The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
+func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceGroupId
+    }
+}
+// GetSubnetId gets the subnetId property value. The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+func (m *CloudPcOnPremisesConnection) GetSubnetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subnetId
+    }
+}
+// GetSubscriptionId gets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
+func (m *CloudPcOnPremisesConnection) GetSubscriptionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriptionId
+    }
+}
+// GetSubscriptionName gets the subscriptionName property value. The name of the target Azure subscription. Read-only.
+func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriptionName
+    }
+}
+// GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.virtualNetworkId
+    }
 }
 func (m *CloudPcOnPremisesConnection) IsNil()(bool) {
     return m == nil
@@ -428,7 +432,7 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremi
     }
 }
 // SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
-func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value *CloudPcOnPremisesConnectionStatusDetails)() {
+func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)() {
     if m != nil {
         m.healthCheckStatusDetails = value
     }

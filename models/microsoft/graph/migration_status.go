@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the getRelyingPartyDetailedSummary method.
 type MigrationStatus int
 
 const (

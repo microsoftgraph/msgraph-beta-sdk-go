@@ -2,11 +2,11 @@ package externalcolumns
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ia4bf53b2009ea6254b6bd1e95e8e6e9903598b1a6c65f9bb4e4230640346167c "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/externalcolumns/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i77533fd38714bf6da6eb1c4d95a1992e36b7cf6c168100cc1179687f68e9b3c5 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/externalcolumns/count"
 )
 
-// ExternalColumnsRequestBuilder builds and executes requests for operations under \sites\{site-id}\externalColumns
+// ExternalColumnsRequestBuilder provides operations to manage the externalColumns property of the microsoft.graph.site entity.
 type ExternalColumnsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewExternalColumnsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewExternalColumnsRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExternalColumnsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ExternalColumnsRequestBuilder) Count()(*i77533fd38714bf6da6eb1c4d95a1992e36b7cf6c168100cc1179687f68e9b3c5.CountRequestBuilder) {
+    return i77533fd38714bf6da6eb1c4d95a1992e36b7cf6c168100cc1179687f68e9b3c5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation(options *ExternalColumnsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation(options *Ext
     return requestInfo, nil
 }
 // Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ExternalColumnsRequestBuilder) Get(options *ExternalColumnsRequestBuilderGetOptions)(*ExternalColumnsResponse, error) {
+func (m *ExternalColumnsRequestBuilder) Get(options *ExternalColumnsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExternalColumnsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateColumnDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ExternalColumnsResponse), nil
-}
-func (m *ExternalColumnsRequestBuilder) Ref()(*ia4bf53b2009ea6254b6bd1e95e8e6e9903598b1a6c65f9bb4e4230640346167c.RefRequestBuilder) {
-    return ia4bf53b2009ea6254b6bd1e95e8e6e9903598b1a6c65f9bb4e4230640346167c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ColumnDefinitionCollectionResponseable), nil
 }

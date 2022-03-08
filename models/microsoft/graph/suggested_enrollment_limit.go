@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SuggestedEnrollmentLimit 
+// SuggestedEnrollmentLimit provides operations to call the getSuggestedEnrollmentLimit method.
 type SuggestedEnrollmentLimit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewSuggestedEnrollmentLimit()(*SuggestedEnrollmentLimit) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSuggestedEnrollmentLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSuggestedEnrollmentLimitFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSuggestedEnrollmentLimit(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SuggestedEnrollmentLimit) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetSuggestedDailyLimit gets the suggestedDailyLimit property value. The suggested enrollment limit within a day
-func (m *SuggestedEnrollmentLimit) GetSuggestedDailyLimit()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestedDailyLimit
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *SuggestedEnrollmentLimit) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetSuggestedDailyLimit gets the suggestedDailyLimit property value. The suggested enrollment limit within a day
+func (m *SuggestedEnrollmentLimit) GetSuggestedDailyLimit()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.suggestedDailyLimit
+    }
 }
 func (m *SuggestedEnrollmentLimit) IsNil()(bool) {
     return m == nil

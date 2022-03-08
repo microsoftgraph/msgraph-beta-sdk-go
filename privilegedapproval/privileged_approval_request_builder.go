@@ -1,13 +1,13 @@
 package privilegedapproval
 
 import (
+    i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval/count"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval/myrequests"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// PrivilegedApprovalRequestBuilder builds and executes requests for operations under \privilegedApproval
+// PrivilegedApprovalRequestBuilder provides operations to manage the collection of privilegedApproval entities.
 type PrivilegedApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type PrivilegedApprovalRequestBuilderGetQueryParameters struct {
 // PrivilegedApprovalRequestBuilderPostOptions options for Post
 type PrivilegedApprovalRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApproval;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApprovalable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewPrivilegedApprovalRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewPrivilegedApprovalRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedApprovalRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PrivilegedApprovalRequestBuilder) Count()(*i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0.CountRequestBuilder) {
+    return i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreateGetRequestInformation(options *PrivilegedApprovalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -115,30 +118,38 @@ func (m *PrivilegedApprovalRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get get entities from privilegedApproval
-func (m *PrivilegedApprovalRequestBuilder) Get(options *PrivilegedApprovalRequestBuilderGetOptions)(*PrivilegedApprovalResponse, error) {
+func (m *PrivilegedApprovalRequestBuilder) Get(options *PrivilegedApprovalRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedApprovalResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedApprovalCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PrivilegedApprovalResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApprovalCollectionResponseable), nil
 }
-// MyRequests builds and executes requests for operations under \privilegedApproval\microsoft.graph.myRequests()
+// MyRequests provides operations to call the myRequests method.
 func (m *PrivilegedApprovalRequestBuilder) MyRequests()(*if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab.MyRequestsRequestBuilder) {
     return if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab.NewMyRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to privilegedApproval
-func (m *PrivilegedApprovalRequestBuilder) Post(options *PrivilegedApprovalRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApproval, error) {
+func (m *PrivilegedApprovalRequestBuilder) Post(options *PrivilegedApprovalRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApprovalable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedApproval() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedApprovalFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApproval), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApprovalable), nil
 }

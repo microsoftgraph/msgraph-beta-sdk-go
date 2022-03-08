@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SetUpResourcesFolderRequestBuilder builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.setUpResourcesFolder
+// SetUpResourcesFolderRequestBuilder provides operations to call the setUpResourcesFolder method.
 type SetUpResourcesFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type SetUpResourcesFolderResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type educationSubmission
-    educationSubmission *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission;
+    educationSubmission i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable;
 }
 // NewSetUpResourcesFolderResponse instantiates a new setUpResourcesFolderResponse and sets the default values.
 func NewSetUpResourcesFolderResponse()(*SetUpResourcesFolderResponse) {
@@ -37,6 +37,9 @@ func NewSetUpResourcesFolderResponse()(*SetUpResourcesFolderResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSetUpResourcesFolderResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSetUpResourcesFolderResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetUpResourcesFolderResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *SetUpResourcesFolderResponse) GetAdditionalData()(map[string]interface{
     }
 }
 // GetEducationSubmission gets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *SetUpResourcesFolderResponse) GetEducationSubmission()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission) {
+func (m *SetUpResourcesFolderResponse) GetEducationSubmission()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *SetUpResourcesFolderResponse) GetEducationSubmission()(*i535684e11b5500
 func (m *SetUpResourcesFolderResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["educationSubmission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationSubmission() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationSubmissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEducationSubmission(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission))
+            m.SetEducationSubmission(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *SetUpResourcesFolderResponse) SetAdditionalData(value map[string]interf
     }
 }
 // SetEducationSubmission sets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *SetUpResourcesFolderResponse) SetEducationSubmission(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission)() {
+func (m *SetUpResourcesFolderResponse) SetEducationSubmission(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable)() {
     if m != nil {
         m.educationSubmission = value
     }
@@ -109,7 +112,7 @@ func NewSetUpResourcesFolderRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *SetUpResourcesFolderRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Post invoke action setUpResourcesFolder
-func (m *SetUpResourcesFolderRequestBuilder) Post(options *SetUpResourcesFolderRequestBuilderPostOptions)(*SetUpResourcesFolderResponse, error) {
+func (m *SetUpResourcesFolderRequestBuilder) Post(options *SetUpResourcesFolderRequestBuilderPostOptions)(SetUpResourcesFolderResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSetUpResourcesFolderResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSetUpResourcesFolderResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SetUpResourcesFolderResponse), nil
+    return res.(SetUpResourcesFolderResponseable), nil
 }

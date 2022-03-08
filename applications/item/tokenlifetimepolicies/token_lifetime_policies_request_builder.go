@@ -2,11 +2,11 @@ package tokenlifetimepolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ie62257f70fec21b9cd339074053fd870d0aec476a2e4106cdb8c727bb20e2bbf "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/tokenlifetimepolicies/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i7172932d27c2888b978db0643e94013f907c99d8c714b0bb22b775b8b20ea6d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/tokenlifetimepolicies/count"
 )
 
-// TokenLifetimePoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies
+// TokenLifetimePoliciesRequestBuilder provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.
 type TokenLifetimePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewTokenLifetimePoliciesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TokenLifetimePoliciesRequestBuilder) Count()(*i7172932d27c2888b978db0643e94013f907c99d8c714b0bb22b775b8b20ea6d8.CountRequestBuilder) {
+    return i7172932d27c2888b978db0643e94013f907c99d8c714b0bb22b775b8b20ea6d8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the tokenLifetimePolicies assigned to this application. Supports $expand.
 func (m *TokenLifetimePoliciesRequestBuilder) CreateGetRequestInformation(options *TokenLifetimePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *TokenLifetimePoliciesRequestBuilder) CreateGetRequestInformation(option
     return requestInfo, nil
 }
 // Get the tokenLifetimePolicies assigned to this application. Supports $expand.
-func (m *TokenLifetimePoliciesRequestBuilder) Get(options *TokenLifetimePoliciesRequestBuilderGetOptions)(*TokenLifetimePoliciesResponse, error) {
+func (m *TokenLifetimePoliciesRequestBuilder) Get(options *TokenLifetimePoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TokenLifetimePolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTokenLifetimePoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTokenLifetimePolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TokenLifetimePoliciesResponse), nil
-}
-func (m *TokenLifetimePoliciesRequestBuilder) Ref()(*ie62257f70fec21b9cd339074053fd870d0aec476a2e4106cdb8c727bb20e2bbf.RefRequestBuilder) {
-    return ie62257f70fec21b9cd339074053fd870d0aec476a2e4106cdb8c727bb20e2bbf.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TokenLifetimePolicyCollectionResponseable), nil
 }

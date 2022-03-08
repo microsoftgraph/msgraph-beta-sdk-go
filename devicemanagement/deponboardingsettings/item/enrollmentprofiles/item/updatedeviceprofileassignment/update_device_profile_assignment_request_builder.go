@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// UpdateDeviceProfileAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.updateDeviceProfileAssignment
+// UpdateDeviceProfileAssignmentRequestBuilder provides operations to call the updateDeviceProfileAssignment method.
 type UpdateDeviceProfileAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UpdateDeviceProfileAssignmentRequestBuilder struct {
 // UpdateDeviceProfileAssignmentRequestBuilderPostOptions options for Post
 type UpdateDeviceProfileAssignmentRequestBuilderPostOptions struct {
     // 
-    Body *UpdateDeviceProfileAssignmentRequestBody;
+    Body UpdateDeviceProfileAssignmentRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewUpdateDeviceProfileAssignmentRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *UpdateDeviceProfileAssignmentRequestBuilder) Post(options *UpdateDevice
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

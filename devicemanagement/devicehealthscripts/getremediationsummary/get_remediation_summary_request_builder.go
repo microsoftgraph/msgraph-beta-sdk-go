@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetRemediationSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.getRemediationSummary()
+// GetRemediationSummaryRequestBuilder provides operations to call the getRemediationSummary method.
 type GetRemediationSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type GetRemediationSummaryResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type deviceHealthScriptRemediationSummary
-    deviceHealthScriptRemediationSummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummary;
+    deviceHealthScriptRemediationSummary i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummaryable;
 }
 // NewGetRemediationSummaryResponse instantiates a new getRemediationSummaryResponse and sets the default values.
 func NewGetRemediationSummaryResponse()(*GetRemediationSummaryResponse) {
@@ -37,6 +37,9 @@ func NewGetRemediationSummaryResponse()(*GetRemediationSummaryResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetRemediationSummaryResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetRemediationSummaryResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetRemediationSummaryResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *GetRemediationSummaryResponse) GetAdditionalData()(map[string]interface
     }
 }
 // GetDeviceHealthScriptRemediationSummary gets the deviceHealthScriptRemediationSummary property value. Union type representation for type deviceHealthScriptRemediationSummary
-func (m *GetRemediationSummaryResponse) GetDeviceHealthScriptRemediationSummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummary) {
+func (m *GetRemediationSummaryResponse) GetDeviceHealthScriptRemediationSummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *GetRemediationSummaryResponse) GetDeviceHealthScriptRemediationSummary(
 func (m *GetRemediationSummaryResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceHealthScriptRemediationSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceHealthScriptRemediationSummary() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceHealthScriptRemediationSummary(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummary))
+            m.SetDeviceHealthScriptRemediationSummary(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummaryable))
         }
         return nil
     }
@@ -95,7 +98,7 @@ func (m *GetRemediationSummaryResponse) SetAdditionalData(value map[string]inter
     }
 }
 // SetDeviceHealthScriptRemediationSummary sets the deviceHealthScriptRemediationSummary property value. Union type representation for type deviceHealthScriptRemediationSummary
-func (m *GetRemediationSummaryResponse) SetDeviceHealthScriptRemediationSummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummary)() {
+func (m *GetRemediationSummaryResponse) SetDeviceHealthScriptRemediationSummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptRemediationSummaryable)() {
     if m != nil {
         m.deviceHealthScriptRemediationSummary = value
     }
@@ -109,7 +112,7 @@ func NewGetRemediationSummaryRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +140,14 @@ func (m *GetRemediationSummaryRequestBuilder) CreateGetRequestInformation(option
     return requestInfo, nil
 }
 // Get invoke function getRemediationSummary
-func (m *GetRemediationSummaryRequestBuilder) Get(options *GetRemediationSummaryRequestBuilderGetOptions)(*GetRemediationSummaryResponse, error) {
+func (m *GetRemediationSummaryRequestBuilder) Get(options *GetRemediationSummaryRequestBuilderGetOptions)(GetRemediationSummaryResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetRemediationSummaryResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetRemediationSummaryResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetRemediationSummaryResponse), nil
+    return res.(GetRemediationSummaryResponseable), nil
 }

@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewScheduleSettings 
+// AccessReviewScheduleSettings provides operations to manage the compliance singleton.
 type AccessReviewScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-    applyActions []AccessReviewApplyAction;
+    applyActions []AccessReviewApplyActionable;
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
     autoApplyDecisionsEnabled *bool;
     // Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
@@ -25,13 +25,13 @@ type AccessReviewScheduleSettings struct {
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool;
     // Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-    recommendationInsightSettings []AccessReviewRecommendationInsightSetting;
+    recommendationInsightSettings []AccessReviewRecommendationInsightSettingable;
     // Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
     recommendationLookBackDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Indicates whether decision recommendations are enabled or disabled.
     recommendationsEnabled *bool;
     // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-    recurrence *PatternedRecurrence;
+    recurrence PatternedRecurrenceable;
     // Indicates whether reminders are enabled or disabled. Default value is false.
     reminderNotificationsEnabled *bool;
 }
@@ -42,6 +42,10 @@ func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAccessReviewScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewScheduleSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewScheduleSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewScheduleSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -51,7 +55,7 @@ func (m *AccessReviewScheduleSettings) GetAdditionalData()(map[string]interface{
     }
 }
 // GetApplyActions gets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-func (m *AccessReviewScheduleSettings) GetApplyActions()([]AccessReviewApplyAction) {
+func (m *AccessReviewScheduleSettings) GetApplyActions()([]AccessReviewApplyActionable) {
     if m == nil {
         return nil
     } else {
@@ -90,82 +94,18 @@ func (m *AccessReviewScheduleSettings) GetDefaultDecisionEnabled()(*bool) {
         return m.defaultDecisionEnabled
     }
 }
-// GetInstanceDurationInDays gets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
-func (m *AccessReviewScheduleSettings) GetInstanceDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceDurationInDays
-    }
-}
-// GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
-func (m *AccessReviewScheduleSettings) GetJustificationRequiredOnApproval()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justificationRequiredOnApproval
-    }
-}
-// GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
-func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNotificationsEnabled
-    }
-}
-// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-func (m *AccessReviewScheduleSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationInsightSettings
-    }
-}
-// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
-func (m *AccessReviewScheduleSettings) GetRecommendationLookBackDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationLookBackDuration
-    }
-}
-// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
-func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationsEnabled
-    }
-}
-// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-func (m *AccessReviewScheduleSettings) GetRecurrence()(*PatternedRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
-}
-// GetReminderNotificationsEnabled gets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
-func (m *AccessReviewScheduleSettings) GetReminderNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderNotificationsEnabled
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["applyActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewApplyAction() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewApplyActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewApplyAction, len(val))
+            res := make([]AccessReviewApplyActionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewApplyAction))
+                res[i] = v.(AccessReviewApplyActionable)
             }
             m.SetApplyActions(res)
         }
@@ -242,14 +182,14 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["recommendationInsightSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewRecommendationInsightSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewRecommendationInsightSetting, len(val))
+            res := make([]AccessReviewRecommendationInsightSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewRecommendationInsightSetting))
+                res[i] = v.(AccessReviewRecommendationInsightSettingable)
             }
             m.SetRecommendationInsightSettings(res)
         }
@@ -276,12 +216,12 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrence(val.(*PatternedRecurrence))
+            m.SetRecurrence(val.(PatternedRecurrenceable))
         }
         return nil
     }
@@ -297,6 +237,70 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetInstanceDurationInDays gets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
+func (m *AccessReviewScheduleSettings) GetInstanceDurationInDays()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instanceDurationInDays
+    }
+}
+// GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+func (m *AccessReviewScheduleSettings) GetJustificationRequiredOnApproval()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justificationRequiredOnApproval
+    }
+}
+// GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
+func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNotificationsEnabled
+    }
+}
+// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
+func (m *AccessReviewScheduleSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationInsightSettings
+    }
+}
+// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+func (m *AccessReviewScheduleSettings) GetRecommendationLookBackDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationLookBackDuration
+    }
+}
+// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
+func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendationsEnabled
+    }
+}
+// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+func (m *AccessReviewScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrence
+    }
+}
+// GetReminderNotificationsEnabled gets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
+func (m *AccessReviewScheduleSettings) GetReminderNotificationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reminderNotificationsEnabled
+    }
+}
 func (m *AccessReviewScheduleSettings) IsNil()(bool) {
     return m == nil
 }
@@ -305,8 +309,7 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetApplyActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApplyActions()))
         for i, v := range m.GetApplyActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("applyActions", cast)
         if err != nil {
@@ -358,8 +361,7 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetRecommendationInsightSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendationInsightSettings()))
         for i, v := range m.GetRecommendationInsightSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("recommendationInsightSettings", cast)
         if err != nil {
@@ -405,7 +407,7 @@ func (m *AccessReviewScheduleSettings) SetAdditionalData(value map[string]interf
     }
 }
 // SetApplyActions sets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-func (m *AccessReviewScheduleSettings) SetApplyActions(value []AccessReviewApplyAction)() {
+func (m *AccessReviewScheduleSettings) SetApplyActions(value []AccessReviewApplyActionable)() {
     if m != nil {
         m.applyActions = value
     }
@@ -453,7 +455,7 @@ func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)(
     }
 }
 // SetRecommendationInsightSettings sets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-func (m *AccessReviewScheduleSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSetting)() {
+func (m *AccessReviewScheduleSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSettingable)() {
     if m != nil {
         m.recommendationInsightSettings = value
     }
@@ -471,7 +473,7 @@ func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() 
     }
 }
 // SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-func (m *AccessReviewScheduleSettings) SetRecurrence(value *PatternedRecurrence)() {
+func (m *AccessReviewScheduleSettings) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value
     }

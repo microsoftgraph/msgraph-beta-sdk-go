@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceAndAppManagementAssignmentFilter 
+// DeviceAndAppManagementAssignmentFilter provides operations to manage the deviceManagement singleton.
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
     // Creation time of the Assignment Filter.
@@ -30,6 +30,10 @@ func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignme
     }
     return m
 }
+// CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceAndAppManagementAssignmentFilter(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -52,38 +56,6 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
-func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPlatform gets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
-func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
-}
-// GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
-func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTags
-    }
-}
-// GetRule gets the rule property value. Rule definition of the Assignment Filter.
-func (m *DeviceAndAppManagementAssignmentFilter) GetRule()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rule
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -164,6 +136,38 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
+func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPlatform gets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
+}
+// GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
+func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTags
+    }
+}
+// GetRule gets the rule property value. Rule definition of the Assignment Filter.
+func (m *DeviceAndAppManagementAssignmentFilter) GetRule()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rule
+    }
 }
 func (m *DeviceAndAppManagementAssignmentFilter) IsNil()(bool) {
     return m == nil

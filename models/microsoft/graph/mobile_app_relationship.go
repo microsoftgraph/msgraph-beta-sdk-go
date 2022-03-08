@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppRelationship 
+// MobileAppRelationship provides operations to manage the deviceAppManagement singleton.
 type MobileAppRelationship struct {
     Entity
     // The target mobile app's display name.
@@ -25,45 +25,9 @@ func NewMobileAppRelationship()(*MobileAppRelationship) {
     }
     return m
 }
-// GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
-func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetDisplayName
-    }
-}
-// GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version.
-func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetDisplayVersion
-    }
-}
-// GetTargetId gets the targetId property value. The target mobile app's app id.
-func (m *MobileAppRelationship) GetTargetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetId
-    }
-}
-// GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher.
-func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetPublisher
-    }
-}
-// GetTargetType gets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
-func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetType
-    }
+// CreateMobileAppRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppRelationshipFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppRelationship(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -119,6 +83,46 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
+func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetDisplayName
+    }
+}
+// GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version.
+func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetDisplayVersion
+    }
+}
+// GetTargetId gets the targetId property value. The target mobile app's app id.
+func (m *MobileAppRelationship) GetTargetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetId
+    }
+}
+// GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher.
+func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetPublisher
+    }
+}
+// GetTargetType gets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetType
+    }
 }
 func (m *MobileAppRelationship) IsNil()(bool) {
     return m == nil

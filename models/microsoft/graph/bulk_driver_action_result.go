@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BulkDriverActionResult 
+// BulkDriverActionResult provides operations to call the executeAction method.
 type BulkDriverActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewBulkDriverActionResult()(*BulkDriverActionResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateBulkDriverActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBulkDriverActionResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBulkDriverActionResult(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkDriverActionResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *BulkDriverActionResult) GetFailedDriverIds()([]string) {
         return nil
     } else {
         return m.failedDriverIds
-    }
-}
-// GetNotFoundDriverIds gets the notFoundDriverIds property value. List of driver Ids that are not found.
-func (m *BulkDriverActionResult) GetNotFoundDriverIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notFoundDriverIds
-    }
-}
-// GetSuccessfulDriverIds gets the successfulDriverIds property value. List of driver Ids where the action is successful.
-func (m *BulkDriverActionResult) GetSuccessfulDriverIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulDriverIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +88,22 @@ func (m *BulkDriverActionResult) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetNotFoundDriverIds gets the notFoundDriverIds property value. List of driver Ids that are not found.
+func (m *BulkDriverActionResult) GetNotFoundDriverIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notFoundDriverIds
+    }
+}
+// GetSuccessfulDriverIds gets the successfulDriverIds property value. List of driver Ids where the action is successful.
+func (m *BulkDriverActionResult) GetSuccessfulDriverIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successfulDriverIds
+    }
 }
 func (m *BulkDriverActionResult) IsNil()(bool) {
     return m == nil

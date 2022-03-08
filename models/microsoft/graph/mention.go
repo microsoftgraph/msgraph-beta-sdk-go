@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Mention 
+// Mention provides operations to manage the compliance singleton.
 type Mention struct {
     Entity
     // The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
@@ -13,13 +13,13 @@ type Mention struct {
     // A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
     clientReference *string;
     // The email information of the user who made the mention.
-    createdBy *EmailAddress;
+    createdBy EmailAddressable;
     // The date and time that the mention is created on the client.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
     deepLink *string;
     // 
-    mentioned *EmailAddress;
+    mentioned EmailAddressable;
     // Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
     mentionText *string;
     // The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
@@ -31,6 +31,10 @@ func NewMention()(*Mention) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateMentionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMentionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMention(), nil
 }
 // GetApplication gets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
 func (m *Mention) GetApplication()(*string) {
@@ -49,7 +53,7 @@ func (m *Mention) GetClientReference()(*string) {
     }
 }
 // GetCreatedBy gets the createdBy property value. The email information of the user who made the mention.
-func (m *Mention) GetCreatedBy()(*EmailAddress) {
+func (m *Mention) GetCreatedBy()(EmailAddressable) {
     if m == nil {
         return nil
     } else {
@@ -70,30 +74,6 @@ func (m *Mention) GetDeepLink()(*string) {
         return nil
     } else {
         return m.deepLink
-    }
-}
-// GetMentioned gets the mentioned property value. 
-func (m *Mention) GetMentioned()(*EmailAddress) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentioned
-    }
-}
-// GetMentionText gets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
-func (m *Mention) GetMentionText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentionText
-    }
-}
-// GetServerCreatedDateTime gets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
-func (m *Mention) GetServerCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverCreatedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,12 +100,12 @@ func (m *Mention) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailAddress() })
+        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*EmailAddress))
+            m.SetCreatedBy(val.(EmailAddressable))
         }
         return nil
     }
@@ -150,12 +130,12 @@ func (m *Mention) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["mentioned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailAddress() })
+        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMentioned(val.(*EmailAddress))
+            m.SetMentioned(val.(EmailAddressable))
         }
         return nil
     }
@@ -180,6 +160,30 @@ func (m *Mention) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetMentioned gets the mentioned property value. 
+func (m *Mention) GetMentioned()(EmailAddressable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mentioned
+    }
+}
+// GetMentionText gets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
+func (m *Mention) GetMentionText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mentionText
+    }
+}
+// GetServerCreatedDateTime gets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
+func (m *Mention) GetServerCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serverCreatedDateTime
+    }
 }
 func (m *Mention) IsNil()(bool) {
     return m == nil
@@ -253,7 +257,7 @@ func (m *Mention) SetClientReference(value *string)() {
     }
 }
 // SetCreatedBy sets the createdBy property value. The email information of the user who made the mention.
-func (m *Mention) SetCreatedBy(value *EmailAddress)() {
+func (m *Mention) SetCreatedBy(value EmailAddressable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -271,7 +275,7 @@ func (m *Mention) SetDeepLink(value *string)() {
     }
 }
 // SetMentioned sets the mentioned property value. 
-func (m *Mention) SetMentioned(value *EmailAddress)() {
+func (m *Mention) SetMentioned(value EmailAddressable)() {
     if m != nil {
         m.mentioned = value
     }

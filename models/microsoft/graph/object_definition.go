@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ObjectDefinition 
+// ObjectDefinition provides operations to call the instantiate method.
 type ObjectDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    attributes []AttributeDefinition;
+    attributes []AttributeDefinitionable;
     // 
-    metadata []MetadataEntry;
+    metadata []MetadataEntryable;
     // 
     name *string;
     // 
@@ -24,6 +24,10 @@ func NewObjectDefinition()(*ObjectDefinition) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateObjectDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateObjectDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewObjectDefinition(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectDefinition) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -33,63 +37,39 @@ func (m *ObjectDefinition) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAttributes gets the attributes property value. 
-func (m *ObjectDefinition) GetAttributes()([]AttributeDefinition) {
+func (m *ObjectDefinition) GetAttributes()([]AttributeDefinitionable) {
     if m == nil {
         return nil
     } else {
         return m.attributes
     }
 }
-// GetMetadata gets the metadata property value. 
-func (m *ObjectDefinition) GetMetadata()([]MetadataEntry) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
-}
-// GetName gets the name property value. 
-func (m *ObjectDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetSupportedApis gets the supportedApis property value. 
-func (m *ObjectDefinition) GetSupportedApis()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedApis
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttributeDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttributeDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AttributeDefinition, len(val))
+            res := make([]AttributeDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AttributeDefinition))
+                res[i] = v.(AttributeDefinitionable)
             }
             m.SetAttributes(res)
         }
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMetadataEntry() })
+        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntry, len(val))
+            res := make([]MetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MetadataEntry))
+                res[i] = v.(MetadataEntryable)
             }
             m.SetMetadata(res)
         }
@@ -121,6 +101,30 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
     }
     return res
 }
+// GetMetadata gets the metadata property value. 
+func (m *ObjectDefinition) GetMetadata()([]MetadataEntryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metadata
+    }
+}
+// GetName gets the name property value. 
+func (m *ObjectDefinition) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetSupportedApis gets the supportedApis property value. 
+func (m *ObjectDefinition) GetSupportedApis()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedApis
+    }
+}
 func (m *ObjectDefinition) IsNil()(bool) {
     return m == nil
 }
@@ -129,8 +133,7 @@ func (m *ObjectDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetAttributes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttributes()))
         for i, v := range m.GetAttributes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("attributes", cast)
         if err != nil {
@@ -140,8 +143,7 @@ func (m *ObjectDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetMetadata() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {
@@ -175,13 +177,13 @@ func (m *ObjectDefinition) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAttributes sets the attributes property value. 
-func (m *ObjectDefinition) SetAttributes(value []AttributeDefinition)() {
+func (m *ObjectDefinition) SetAttributes(value []AttributeDefinitionable)() {
     if m != nil {
         m.attributes = value
     }
 }
 // SetMetadata sets the metadata property value. 
-func (m *ObjectDefinition) SetMetadata(value []MetadataEntry)() {
+func (m *ObjectDefinition) SetMetadata(value []MetadataEntryable)() {
     if m != nil {
         m.metadata = value
     }

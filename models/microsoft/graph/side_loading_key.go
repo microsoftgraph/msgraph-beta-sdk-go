@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SideLoadingKey 
+// SideLoadingKey provides operations to manage the deviceAppManagement singleton.
 type SideLoadingKey struct {
     Entity
     // Side Loading Key description displayed to the ITPro Admins..
@@ -25,6 +25,10 @@ func NewSideLoadingKey()(*SideLoadingKey) {
     }
     return m
 }
+// CreateSideLoadingKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSideLoadingKeyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSideLoadingKey(), nil
+}
 // GetDescription gets the description property value. Side Loading Key description displayed to the ITPro Admins..
 func (m *SideLoadingKey) GetDescription()(*string) {
     if m == nil {
@@ -39,30 +43,6 @@ func (m *SideLoadingKey) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Side Loading Key Last Updated Date displayed to the ITPro Admins.
-func (m *SideLoadingKey) GetLastUpdatedDateTime()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetTotalActivation gets the totalActivation property value. Side Loading Key Total Activation displayed to the ITPro Admins.
-func (m *SideLoadingKey) GetTotalActivation()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalActivation
-    }
-}
-// GetValue gets the value property value. Side Loading Key Value, it is 5x5 value, seperated by hiphens.
-func (m *SideLoadingKey) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -119,6 +99,30 @@ func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Side Loading Key Last Updated Date displayed to the ITPro Admins.
+func (m *SideLoadingKey) GetLastUpdatedDateTime()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetTotalActivation gets the totalActivation property value. Side Loading Key Total Activation displayed to the ITPro Admins.
+func (m *SideLoadingKey) GetTotalActivation()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalActivation
+    }
+}
+// GetValue gets the value property value. Side Loading Key Value, it is 5x5 value, seperated by hiphens.
+func (m *SideLoadingKey) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *SideLoadingKey) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TenantDetailedInformation 
+// TenantDetailedInformation provides operations to manage the tenantRelationship singleton.
 type TenantDetailedInformation struct {
     Entity
     // The city where the managed tenant is located. Optional. Read-only.
@@ -34,6 +34,10 @@ func NewTenantDetailedInformation()(*TenantDetailedInformation) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTenantDetailedInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTenantDetailedInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTenantDetailedInformation(), nil
 }
 // GetCity gets the city property value. The city where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) GetCity()(*string) {
@@ -73,46 +77,6 @@ func (m *TenantDetailedInformation) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIndustryName gets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
-func (m *TenantDetailedInformation) GetIndustryName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.industryName
-    }
-}
-// GetRegion gets the region property value. The region where the managed tenant is located. Optional. Read-only.
-func (m *TenantDetailedInformation) GetRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
-    }
-}
-// GetSegmentName gets the segmentName property value. The business segment associated with the managed tenant. Optional. Read-only.
-func (m *TenantDetailedInformation) GetSegmentName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.segmentName
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
-func (m *TenantDetailedInformation) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetVerticalName gets the verticalName property value. The vertical associated with the managed tenant. Optional. Read-only.
-func (m *TenantDetailedInformation) GetVerticalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verticalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -219,6 +183,46 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetIndustryName gets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
+func (m *TenantDetailedInformation) GetIndustryName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.industryName
+    }
+}
+// GetRegion gets the region property value. The region where the managed tenant is located. Optional. Read-only.
+func (m *TenantDetailedInformation) GetRegion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.region
+    }
+}
+// GetSegmentName gets the segmentName property value. The business segment associated with the managed tenant. Optional. Read-only.
+func (m *TenantDetailedInformation) GetSegmentName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.segmentName
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
+func (m *TenantDetailedInformation) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetVerticalName gets the verticalName property value. The vertical associated with the managed tenant. Optional. Read-only.
+func (m *TenantDetailedInformation) GetVerticalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.verticalName
+    }
 }
 func (m *TenantDetailedInformation) IsNil()(bool) {
     return m == nil

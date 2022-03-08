@@ -2,9 +2,10 @@ package recording
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RecordingRequestBuilder builds and executes requests for operations under \me\onlineMeetings\{onlineMeeting-id}\recording
+// RecordingRequestBuilder provides operations to manage the media for the user entity.
 type RecordingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +43,7 @@ func NewRecordingRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -52,7 +53,7 @@ func NewRecordingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get media content for the navigation property onlineMeetings from me
+// CreateGetRequestInformation the content stream of the recording of a Teams live event. Read-only.
 func (m *RecordingRequestBuilder) CreateGetRequestInformation(options *RecordingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,7 +70,7 @@ func (m *RecordingRequestBuilder) CreateGetRequestInformation(options *Recording
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformation update media content for the navigation property onlineMeetings in me
+// CreatePutRequestInformation the content stream of the recording of a Teams live event. Read-only.
 func (m *RecordingRequestBuilder) CreatePutRequestInformation(options *RecordingRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,25 +88,33 @@ func (m *RecordingRequestBuilder) CreatePutRequestInformation(options *Recording
     }
     return requestInfo, nil
 }
-// Get get media content for the navigation property onlineMeetings from me
+// Get the content stream of the recording of a Teams live event. Read-only.
 func (m *RecordingRequestBuilder) Get(options *RecordingRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", nil, errorMapping)
     if err != nil {
         return nil, err
     }
     return res.([]byte), nil
 }
-// Put update media content for the navigation property onlineMeetings in me
+// Put the content stream of the recording of a Teams live event. Read-only.
 func (m *RecordingRequestBuilder) Put(options *RecordingRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsFeatureUpdateProfile 
+// WindowsFeatureUpdateProfile provides operations to manage the deviceManagement singleton.
 type WindowsFeatureUpdateProfile struct {
     Entity
     // The list of group assignments of the profile.
-    assignments []WindowsFeatureUpdateProfileAssignment;
+    assignments []WindowsFeatureUpdateProfileAssignmentable;
     // The date time that the profile was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Friendly display name of the quality update profile deployable content
@@ -27,7 +27,7 @@ type WindowsFeatureUpdateProfile struct {
     // List of Scope Tags for this Feature Update entity.
     roleScopeTagIds []string;
     // The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
-    rolloutSettings *WindowsUpdateRolloutSettings;
+    rolloutSettings WindowsUpdateRolloutSettingsable;
 }
 // NewWindowsFeatureUpdateProfile instantiates a new windowsFeatureUpdateProfile and sets the default values.
 func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {
@@ -36,8 +36,12 @@ func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {
     }
     return m
 }
+// CreateWindowsFeatureUpdateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsFeatureUpdateProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsFeatureUpdateProfile(), nil
+}
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
-func (m *WindowsFeatureUpdateProfile) GetAssignments()([]WindowsFeatureUpdateProfileAssignment) {
+func (m *WindowsFeatureUpdateProfile) GetAssignments()([]WindowsFeatureUpdateProfileAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -92,42 +96,18 @@ func (m *WindowsFeatureUpdateProfile) GetFeatureUpdateVersion()(*string) {
         return m.featureUpdateVersion
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
-func (m *WindowsFeatureUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Feature Update entity.
-func (m *WindowsFeatureUpdateProfile) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetRolloutSettings gets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
-func (m *WindowsFeatureUpdateProfile) GetRolloutSettings()(*WindowsUpdateRolloutSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rolloutSettings
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsFeatureUpdateProfileAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsFeatureUpdateProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WindowsFeatureUpdateProfileAssignment, len(val))
+            res := make([]WindowsFeatureUpdateProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WindowsFeatureUpdateProfileAssignment))
+                res[i] = v.(WindowsFeatureUpdateProfileAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -218,16 +198,40 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["rolloutSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsUpdateRolloutSettings() })
+        val, err := n.GetObjectValue(CreateWindowsUpdateRolloutSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRolloutSettings(val.(*WindowsUpdateRolloutSettings))
+            m.SetRolloutSettings(val.(WindowsUpdateRolloutSettingsable))
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
+func (m *WindowsFeatureUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Feature Update entity.
+func (m *WindowsFeatureUpdateProfile) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetRolloutSettings gets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
+func (m *WindowsFeatureUpdateProfile) GetRolloutSettings()(WindowsUpdateRolloutSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rolloutSettings
+    }
 }
 func (m *WindowsFeatureUpdateProfile) IsNil()(bool) {
     return m == nil
@@ -241,8 +245,7 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -306,7 +309,7 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
-func (m *WindowsFeatureUpdateProfile) SetAssignments(value []WindowsFeatureUpdateProfileAssignment)() {
+func (m *WindowsFeatureUpdateProfile) SetAssignments(value []WindowsFeatureUpdateProfileAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -360,7 +363,7 @@ func (m *WindowsFeatureUpdateProfile) SetRoleScopeTagIds(value []string)() {
     }
 }
 // SetRolloutSettings sets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
-func (m *WindowsFeatureUpdateProfile) SetRolloutSettings(value *WindowsUpdateRolloutSettings)() {
+func (m *WindowsFeatureUpdateProfile) SetRolloutSettings(value WindowsUpdateRolloutSettingsable)() {
     if m != nil {
         m.rolloutSettings = value
     }

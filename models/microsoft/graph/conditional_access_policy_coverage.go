@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessPolicyCoverage 
+// ConditionalAccessPolicyCoverage provides operations to manage the tenantRelationship singleton.
 type ConditionalAccessPolicyCoverage struct {
     Entity
     // The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
@@ -24,36 +24,16 @@ func NewConditionalAccessPolicyCoverage()(*ConditionalAccessPolicyCoverage) {
     }
     return m
 }
+// CreateConditionalAccessPolicyCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessPolicyCoverageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessPolicyCoverage(), nil
+}
 // GetConditionalAccessPolicyState gets the conditionalAccessPolicyState property value. The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) GetConditionalAccessPolicyState()(*string) {
     if m == nil {
         return nil
     } else {
         return m.conditionalAccessPolicyState
-    }
-}
-// GetLatestPolicyModifiedDateTime gets the latestPolicyModifiedDateTime property value. The date and time the conditional access policy was last modified. Required. Read-only.
-func (m *ConditionalAccessPolicyCoverage) GetLatestPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latestPolicyModifiedDateTime
-    }
-}
-// GetRequiresDeviceCompliance gets the requiresDeviceCompliance property value. A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
-func (m *ConditionalAccessPolicyCoverage) GetRequiresDeviceCompliance()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiresDeviceCompliance
-    }
-}
-// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
-func (m *ConditionalAccessPolicyCoverage) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +80,30 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetLatestPolicyModifiedDateTime gets the latestPolicyModifiedDateTime property value. The date and time the conditional access policy was last modified. Required. Read-only.
+func (m *ConditionalAccessPolicyCoverage) GetLatestPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.latestPolicyModifiedDateTime
+    }
+}
+// GetRequiresDeviceCompliance gets the requiresDeviceCompliance property value. A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
+func (m *ConditionalAccessPolicyCoverage) GetRequiresDeviceCompliance()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requiresDeviceCompliance
+    }
+}
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
+func (m *ConditionalAccessPolicyCoverage) GetTenantDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantDisplayName
+    }
 }
 func (m *ConditionalAccessPolicyCoverage) IsNil()(bool) {
     return m == nil

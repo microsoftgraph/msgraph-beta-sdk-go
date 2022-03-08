@@ -2,14 +2,10 @@ package parentsection
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i072d79ce88fe717a104bf208f2c680a1496d5fc3320eda581f12af45d8bb3733 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/onenote/sections/item/pages/item/parentsection/copytosectiongroup"
-    id11982e262992c4fff4d2a997b532af4b54b3d0f0c0690b4f514706b3c5ba3da "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/onenote/sections/item/pages/item/parentsection/ref"
-    ie60ce0e334f94ce9d6e0fe1efbb6bc9bdf1509d309620f69d23bdd6906c76e43 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/onenote/sections/item/pages/item/parentsection/copytonotebook"
 )
 
-// ParentSectionRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}\parentSection
+// ParentSectionRequestBuilder provides operations to manage the parentSection property of the microsoft.graph.onenotePage entity.
 type ParentSectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +41,7 @@ func NewParentSectionRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -54,12 +50,6 @@ func NewParentSectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParentSectionRequestBuilderInternal(urlParams, requestAdapter)
-}
-func (m *ParentSectionRequestBuilder) CopyToNotebook()(*ie60ce0e334f94ce9d6e0fe1efbb6bc9bdf1509d309620f69d23bdd6906c76e43.CopyToNotebookRequestBuilder) {
-    return ie60ce0e334f94ce9d6e0fe1efbb6bc9bdf1509d309620f69d23bdd6906c76e43.NewCopyToNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *ParentSectionRequestBuilder) CopyToSectionGroup()(*i072d79ce88fe717a104bf208f2c680a1496d5fc3320eda581f12af45d8bb3733.CopyToSectionGroupRequestBuilder) {
-    return i072d79ce88fe717a104bf208f2c680a1496d5fc3320eda581f12af45d8bb3733.NewCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the section that contains the page. Read-only.
 func (m *ParentSectionRequestBuilder) CreateGetRequestInformation(options *ParentSectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -82,17 +72,18 @@ func (m *ParentSectionRequestBuilder) CreateGetRequestInformation(options *Paren
     return requestInfo, nil
 }
 // Get the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) Get(options *ParentSectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection, error) {
+func (m *ParentSectionRequestBuilder) Get(options *ParentSectionRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSectionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOnenoteSection() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOnenoteSectionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection), nil
-}
-func (m *ParentSectionRequestBuilder) Ref()(*id11982e262992c4fff4d2a997b532af4b54b3d0f0c0690b4f514706b3c5ba3da.RefRequestBuilder) {
-    return id11982e262992c4fff4d2a997b532af4b54b3d0f0c0690b4f514706b3c5ba3da.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSectionable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PaymentTerm 
+// PaymentTerm provides operations to manage the financials singleton.
 type PaymentTerm struct {
     Entity
     // 
@@ -29,6 +29,10 @@ func NewPaymentTerm()(*PaymentTerm) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreatePaymentTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePaymentTermFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPaymentTerm(), nil
 }
 // GetCalculateDiscountOnCreditMemos gets the calculateDiscountOnCreditMemos property value. 
 func (m *PaymentTerm) GetCalculateDiscountOnCreditMemos()(*bool) {
@@ -76,14 +80,6 @@ func (m *PaymentTerm) GetDueDateCalculation()(*string) {
         return nil
     } else {
         return m.dueDateCalculation
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *PaymentTerm) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,6 +156,14 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *PaymentTerm) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *PaymentTerm) IsNil()(bool) {
     return m == nil

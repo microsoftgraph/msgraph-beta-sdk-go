@@ -6,7 +6,7 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// DataSourceContainer 
+// DataSourceContainer provides operations to manage the compliance singleton.
 type DataSourceContainer struct {
     Entity
     // Created date and time of the dataSourceContainer entity.
@@ -16,7 +16,7 @@ type DataSourceContainer struct {
     // 
     holdStatus *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus;
     // 
-    lastIndexOperation *CaseIndexOperation;
+    lastIndexOperation CaseIndexOperationable;
     // Last modified date and time of the dataSourceContainer.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Date and time that the dataSourceContainer was released from the case.
@@ -30,6 +30,10 @@ func NewDataSourceContainer()(*DataSourceContainer) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDataSourceContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDataSourceContainerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDataSourceContainer(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
 func (m *DataSourceContainer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -45,46 +49,6 @@ func (m *DataSourceContainer) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHoldStatus gets the holdStatus property value. 
-func (m *DataSourceContainer) GetHoldStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.holdStatus
-    }
-}
-// GetLastIndexOperation gets the lastIndexOperation property value. 
-func (m *DataSourceContainer) GetLastIndexOperation()(*CaseIndexOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastIndexOperation
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
-func (m *DataSourceContainer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetReleasedDateTime gets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
-func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releasedDateTime
-    }
-}
-// GetStatus gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
-func (m *DataSourceContainer) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -121,12 +85,12 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["lastIndexOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCaseIndexOperation() })
+        val, err := n.GetObjectValue(CreateCaseIndexOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastIndexOperation(val.(*CaseIndexOperation))
+            m.SetLastIndexOperation(val.(CaseIndexOperationable))
         }
         return nil
     }
@@ -161,6 +125,46 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetHoldStatus gets the holdStatus property value. 
+func (m *DataSourceContainer) GetHoldStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.holdStatus
+    }
+}
+// GetLastIndexOperation gets the lastIndexOperation property value. 
+func (m *DataSourceContainer) GetLastIndexOperation()(CaseIndexOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastIndexOperation
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
+func (m *DataSourceContainer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetReleasedDateTime gets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
+func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.releasedDateTime
+    }
+}
+// GetStatus gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
+func (m *DataSourceContainer) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DataSourceContainer) IsNil()(bool) {
     return m == nil
@@ -236,7 +240,7 @@ func (m *DataSourceContainer) SetHoldStatus(value *i2756dc8c91c60abdde0aa43bf23c
     }
 }
 // SetLastIndexOperation sets the lastIndexOperation property value. 
-func (m *DataSourceContainer) SetLastIndexOperation(value *CaseIndexOperation)() {
+func (m *DataSourceContainer) SetLastIndexOperation(value CaseIndexOperationable)() {
     if m != nil {
         m.lastIndexOperation = value
     }

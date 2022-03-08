@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Journal 
+// Journal provides operations to manage the financials singleton.
 type Journal struct {
     Entity
     // 
-    account *Account;
+    account Accountable;
     // 
     balancingAccountId *string;
     // 
@@ -19,7 +19,7 @@ type Journal struct {
     // 
     displayName *string;
     // 
-    journalLines []JournalLine;
+    journalLines []JournalLineable;
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -30,8 +30,12 @@ func NewJournal()(*Journal) {
     }
     return m
 }
+// CreateJournalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateJournalFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewJournal(), nil
+}
 // GetAccount gets the account property value. 
-func (m *Journal) GetAccount()(*Account) {
+func (m *Journal) GetAccount()(Accountable) {
     if m == nil {
         return nil
     } else {
@@ -70,32 +74,16 @@ func (m *Journal) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetJournalLines gets the journalLines property value. 
-func (m *Journal) GetJournalLines()([]JournalLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journalLines
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Journal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccount() })
+        val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccount(val.(*Account))
+            m.SetAccount(val.(Accountable))
         }
         return nil
     }
@@ -140,14 +128,14 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["journalLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJournalLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateJournalLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]JournalLine, len(val))
+            res := make([]JournalLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*JournalLine))
+                res[i] = v.(JournalLineable)
             }
             m.SetJournalLines(res)
         }
@@ -164,6 +152,22 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetJournalLines gets the journalLines property value. 
+func (m *Journal) GetJournalLines()([]JournalLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.journalLines
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Journal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *Journal) IsNil()(bool) {
     return m == nil
@@ -207,8 +211,7 @@ func (m *Journal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetJournalLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJournalLines()))
         for i, v := range m.GetJournalLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("journalLines", cast)
         if err != nil {
@@ -224,7 +227,7 @@ func (m *Journal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetAccount sets the account property value. 
-func (m *Journal) SetAccount(value *Account)() {
+func (m *Journal) SetAccount(value Accountable)() {
     if m != nil {
         m.account = value
     }
@@ -254,7 +257,7 @@ func (m *Journal) SetDisplayName(value *string)() {
     }
 }
 // SetJournalLines sets the journalLines property value. 
-func (m *Journal) SetJournalLines(value []JournalLine)() {
+func (m *Journal) SetJournalLines(value []JournalLineable)() {
     if m != nil {
         m.journalLines = value
     }

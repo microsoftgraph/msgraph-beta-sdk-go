@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// TemplateParameter 
+// TemplateParameter provides operations to manage the tenantRelationship singleton.
 type TemplateParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewTemplateParameter()(*TemplateParameter) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTemplateParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTemplateParameterFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTemplateParameter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) GetAdditionalData()(map[string]interface{}) {
@@ -49,30 +53,6 @@ func (m *TemplateParameter) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetJsonAllowedValues gets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
-func (m *TemplateParameter) GetJsonAllowedValues()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jsonAllowedValues
-    }
-}
-// GetJsonDefaultValue gets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
-func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jsonDefaultValue
-    }
-}
-// GetValueType gets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
-func (m *TemplateParameter) GetValueType()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +109,30 @@ func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetJsonAllowedValues gets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
+func (m *TemplateParameter) GetJsonAllowedValues()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jsonAllowedValues
+    }
+}
+// GetJsonDefaultValue gets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
+func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jsonDefaultValue
+    }
+}
+// GetValueType gets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+func (m *TemplateParameter) GetValueType()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueType
+    }
 }
 func (m *TemplateParameter) IsNil()(bool) {
     return m == nil

@@ -2,13 +2,13 @@ package userattributeassignments
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i0fb36e749699428077c12ff5812a9bb575834815e4d7e3a86acc87c26c8c32a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userattributeassignments/getorder"
+    i3660bb9994f10f290c69bdd1f0196aebae95b8f6b8c701da2715b7126edc2b14 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userattributeassignments/count"
     i5240f41d615de8c637c0c8acdf6dc7282d58b03f61ba028038bdbaa1649ff59f "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/userattributeassignments/setorder"
 )
 
-// UserAttributeAssignmentsRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments
+// UserAttributeAssignmentsRequestBuilder provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.
 type UserAttributeAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +50,7 @@ type UserAttributeAssignmentsRequestBuilderGetQueryParameters struct {
 // UserAttributeAssignmentsRequestBuilderPostOptions options for Post
 type UserAttributeAssignmentsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +67,7 @@ func NewUserAttributeAssignmentsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,6 +76,9 @@ func NewUserAttributeAssignmentsRequestBuilder(rawUrl string, requestAdapter ida
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserAttributeAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserAttributeAssignmentsRequestBuilder) Count()(*i3660bb9994f10f290c69bdd1f0196aebae95b8f6b8c701da2715b7126edc2b14.CountRequestBuilder) {
+    return i3660bb9994f10f290c69bdd1f0196aebae95b8f6b8c701da2715b7126edc2b14.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the user attribute assignments included in the user flow.
 func (m *UserAttributeAssignmentsRequestBuilder) CreateGetRequestInformation(options *UserAttributeAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -97,7 +100,7 @@ func (m *UserAttributeAssignmentsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the user attribute assignments included in the user flow.
+// CreatePostRequestInformation create new navigation property to userAttributeAssignments for identity
 func (m *UserAttributeAssignmentsRequestBuilder) CreatePostRequestInformation(options *UserAttributeAssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,32 +119,40 @@ func (m *UserAttributeAssignmentsRequestBuilder) CreatePostRequestInformation(op
     return requestInfo, nil
 }
 // Get the user attribute assignments included in the user flow.
-func (m *UserAttributeAssignmentsRequestBuilder) Get(options *UserAttributeAssignmentsRequestBuilderGetOptions)(*UserAttributeAssignmentsResponse, error) {
+func (m *UserAttributeAssignmentsRequestBuilder) Get(options *UserAttributeAssignmentsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserAttributeAssignmentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIdentityUserFlowAttributeAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserAttributeAssignmentsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignmentCollectionResponseable), nil
 }
-// GetOrder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.getOrder()
+// GetOrder provides operations to call the getOrder method.
 func (m *UserAttributeAssignmentsRequestBuilder) GetOrder()(*i0fb36e749699428077c12ff5812a9bb575834815e4d7e3a86acc87c26c8c32a8.GetOrderRequestBuilder) {
     return i0fb36e749699428077c12ff5812a9bb575834815e4d7e3a86acc87c26c8c32a8.NewGetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the user attribute assignments included in the user flow.
-func (m *UserAttributeAssignmentsRequestBuilder) Post(options *UserAttributeAssignmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignment, error) {
+// Post create new navigation property to userAttributeAssignments for identity
+func (m *UserAttributeAssignmentsRequestBuilder) Post(options *UserAttributeAssignmentsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIdentityUserFlowAttributeAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignmentable), nil
 }
 func (m *UserAttributeAssignmentsRequestBuilder) SetOrder()(*i5240f41d615de8c637c0c8acdf6dc7282d58b03f61ba028038bdbaa1649ff59f.SetOrderRequestBuilder) {
     return i5240f41d615de8c637c0c8acdf6dc7282d58b03f61ba028038bdbaa1649ff59f.NewSetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);

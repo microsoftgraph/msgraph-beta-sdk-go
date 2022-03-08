@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SensitivityLabel 
+// SensitivityLabel provides operations to manage the compliance singleton.
 type SensitivityLabel struct {
     Entity
     // 
@@ -12,9 +12,9 @@ type SensitivityLabel struct {
     // 
     applicationMode *ApplicationMode;
     // 
-    assignedPolicies []LabelPolicy;
+    assignedPolicies []LabelPolicyable;
     // 
-    autoLabeling *AutoLabeling;
+    autoLabeling AutoLabelingable;
     // 
     description *string;
     // 
@@ -24,13 +24,13 @@ type SensitivityLabel struct {
     // 
     isEndpointProtectionEnabled *bool;
     // 
-    labelActions []LabelActionBase;
+    labelActions []LabelActionBaseable;
     // 
     name *string;
     // 
     priority *int32;
     // 
-    sublabels []SensitivityLabel;
+    sublabels []SensitivityLabelable;
     // 
     toolTip *string;
 }
@@ -40,6 +40,10 @@ func NewSensitivityLabel()(*SensitivityLabel) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSensitivityLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSensitivityLabelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSensitivityLabel(), nil
 }
 // GetApplicableTo gets the applicableTo property value. 
 func (m *SensitivityLabel) GetApplicableTo()(*SensitivityLabelTarget) {
@@ -58,7 +62,7 @@ func (m *SensitivityLabel) GetApplicationMode()(*ApplicationMode) {
     }
 }
 // GetAssignedPolicies gets the assignedPolicies property value. 
-func (m *SensitivityLabel) GetAssignedPolicies()([]LabelPolicy) {
+func (m *SensitivityLabel) GetAssignedPolicies()([]LabelPolicyable) {
     if m == nil {
         return nil
     } else {
@@ -66,7 +70,7 @@ func (m *SensitivityLabel) GetAssignedPolicies()([]LabelPolicy) {
     }
 }
 // GetAutoLabeling gets the autoLabeling property value. 
-func (m *SensitivityLabel) GetAutoLabeling()(*AutoLabeling) {
+func (m *SensitivityLabel) GetAutoLabeling()(AutoLabelingable) {
     if m == nil {
         return nil
     } else {
@@ -87,62 +91,6 @@ func (m *SensitivityLabel) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsDefault gets the isDefault property value. 
-func (m *SensitivityLabel) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
-}
-// GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. 
-func (m *SensitivityLabel) GetIsEndpointProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEndpointProtectionEnabled
-    }
-}
-// GetLabelActions gets the labelActions property value. 
-func (m *SensitivityLabel) GetLabelActions()([]LabelActionBase) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelActions
-    }
-}
-// GetName gets the name property value. 
-func (m *SensitivityLabel) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPriority gets the priority property value. 
-func (m *SensitivityLabel) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetSublabels gets the sublabels property value. 
-func (m *SensitivityLabel) GetSublabels()([]SensitivityLabel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sublabels
-    }
-}
-// GetToolTip gets the toolTip property value. 
-func (m *SensitivityLabel) GetToolTip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toolTip
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -169,26 +117,26 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["assignedPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLabelPolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateLabelPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LabelPolicy, len(val))
+            res := make([]LabelPolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LabelPolicy))
+                res[i] = v.(LabelPolicyable)
             }
             m.SetAssignedPolicies(res)
         }
         return nil
     }
     res["autoLabeling"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAutoLabeling() })
+        val, err := n.GetObjectValue(CreateAutoLabelingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAutoLabeling(val.(*AutoLabeling))
+            m.SetAutoLabeling(val.(AutoLabelingable))
         }
         return nil
     }
@@ -233,14 +181,14 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["labelActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLabelActionBase() })
+        val, err := n.GetCollectionOfObjectValues(CreateLabelActionBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LabelActionBase, len(val))
+            res := make([]LabelActionBaseable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LabelActionBase))
+                res[i] = v.(LabelActionBaseable)
             }
             m.SetLabelActions(res)
         }
@@ -267,14 +215,14 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["sublabels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSensitivityLabel() })
+        val, err := n.GetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SensitivityLabel, len(val))
+            res := make([]SensitivityLabelable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SensitivityLabel))
+                res[i] = v.(SensitivityLabelable)
             }
             m.SetSublabels(res)
         }
@@ -291,6 +239,62 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetIsDefault gets the isDefault property value. 
+func (m *SensitivityLabel) GetIsDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefault
+    }
+}
+// GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. 
+func (m *SensitivityLabel) GetIsEndpointProtectionEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEndpointProtectionEnabled
+    }
+}
+// GetLabelActions gets the labelActions property value. 
+func (m *SensitivityLabel) GetLabelActions()([]LabelActionBaseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labelActions
+    }
+}
+// GetName gets the name property value. 
+func (m *SensitivityLabel) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPriority gets the priority property value. 
+func (m *SensitivityLabel) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetSublabels gets the sublabels property value. 
+func (m *SensitivityLabel) GetSublabels()([]SensitivityLabelable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sublabels
+    }
+}
+// GetToolTip gets the toolTip property value. 
+func (m *SensitivityLabel) GetToolTip()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.toolTip
+    }
 }
 func (m *SensitivityLabel) IsNil()(bool) {
     return m == nil
@@ -318,8 +322,7 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetAssignedPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedPolicies()))
         for i, v := range m.GetAssignedPolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignedPolicies", cast)
         if err != nil {
@@ -359,8 +362,7 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetLabelActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLabelActions()))
         for i, v := range m.GetLabelActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("labelActions", cast)
         if err != nil {
@@ -382,8 +384,7 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetSublabels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSublabels()))
         for i, v := range m.GetSublabels() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sublabels", cast)
         if err != nil {
@@ -411,13 +412,13 @@ func (m *SensitivityLabel) SetApplicationMode(value *ApplicationMode)() {
     }
 }
 // SetAssignedPolicies sets the assignedPolicies property value. 
-func (m *SensitivityLabel) SetAssignedPolicies(value []LabelPolicy)() {
+func (m *SensitivityLabel) SetAssignedPolicies(value []LabelPolicyable)() {
     if m != nil {
         m.assignedPolicies = value
     }
 }
 // SetAutoLabeling sets the autoLabeling property value. 
-func (m *SensitivityLabel) SetAutoLabeling(value *AutoLabeling)() {
+func (m *SensitivityLabel) SetAutoLabeling(value AutoLabelingable)() {
     if m != nil {
         m.autoLabeling = value
     }
@@ -447,7 +448,7 @@ func (m *SensitivityLabel) SetIsEndpointProtectionEnabled(value *bool)() {
     }
 }
 // SetLabelActions sets the labelActions property value. 
-func (m *SensitivityLabel) SetLabelActions(value []LabelActionBase)() {
+func (m *SensitivityLabel) SetLabelActions(value []LabelActionBaseable)() {
     if m != nil {
         m.labelActions = value
     }
@@ -465,7 +466,7 @@ func (m *SensitivityLabel) SetPriority(value *int32)() {
     }
 }
 // SetSublabels sets the sublabels property value. 
-func (m *SensitivityLabel) SetSublabels(value []SensitivityLabel)() {
+func (m *SensitivityLabel) SetSublabels(value []SensitivityLabelable)() {
     if m != nil {
         m.sublabels = value
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// JobResponseBase 
+// JobResponseBase provides operations to manage the dataClassificationService singleton.
 type JobResponseBase struct {
     Entity
     // 
@@ -13,7 +13,7 @@ type JobResponseBase struct {
     // 
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    error *ClassificationError;
+    error ClassificationErrorable;
     // 
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -29,6 +29,10 @@ func NewJobResponseBase()(*JobResponseBase) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateJobResponseBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateJobResponseBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewJobResponseBase(), nil
 }
 // GetCreationDateTime gets the creationDateTime property value. 
 func (m *JobResponseBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -47,43 +51,11 @@ func (m *JobResponseBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
 }
 // GetError gets the error property value. 
-func (m *JobResponseBase) GetError()(*ClassificationError) {
+func (m *JobResponseBase) GetError()(ClassificationErrorable) {
     if m == nil {
         return nil
     } else {
         return m.error
-    }
-}
-// GetStartDateTime gets the startDateTime property value. 
-func (m *JobResponseBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatus gets the status property value. 
-func (m *JobResponseBase) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *JobResponseBase) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetType gets the type property value. 
-func (m *JobResponseBase) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,12 +82,12 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassificationError() })
+        val, err := n.GetObjectValue(CreateClassificationErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*ClassificationError))
+            m.SetError(val.(ClassificationErrorable))
         }
         return nil
     }
@@ -160,6 +132,38 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetStartDateTime gets the startDateTime property value. 
+func (m *JobResponseBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatus gets the status property value. 
+func (m *JobResponseBase) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *JobResponseBase) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetType gets the type property value. 
+func (m *JobResponseBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *JobResponseBase) IsNil()(bool) {
     return m == nil
@@ -227,7 +231,7 @@ func (m *JobResponseBase) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a
     }
 }
 // SetError sets the error property value. 
-func (m *JobResponseBase) SetError(value *ClassificationError)() {
+func (m *JobResponseBase) SetError(value ClassificationErrorable)() {
     if m != nil {
         m.error = value
     }

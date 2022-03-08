@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TypedEmailAddress 
+// TypedEmailAddress provides operations to manage the compliance singleton.
 type TypedEmailAddress struct {
     EmailAddress
     // To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
@@ -19,21 +19,9 @@ func NewTypedEmailAddress()(*TypedEmailAddress) {
     }
     return m
 }
-// GetOtherLabel gets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
-func (m *TypedEmailAddress) GetOtherLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.otherLabel
-    }
-}
-// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-func (m *TypedEmailAddress) GetType()(*EmailType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+// CreateTypedEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTypedEmailAddressFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTypedEmailAddress(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetOtherLabel gets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
+func (m *TypedEmailAddress) GetOtherLabel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.otherLabel
+    }
+}
+// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+func (m *TypedEmailAddress) GetType()(*EmailType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *TypedEmailAddress) IsNil()(bool) {
     return m == nil

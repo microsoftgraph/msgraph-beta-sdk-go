@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceProtectionOverview 
+// DeviceProtectionOverview provides operations to manage the deviceManagement singleton.
 type DeviceProtectionOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -38,6 +38,10 @@ func NewDeviceProtectionOverview()(*DeviceProtectionOverview) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceProtectionOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceProtectionOverviewFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceProtectionOverview(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -60,78 +64,6 @@ func (m *DeviceProtectionOverview) GetCriticalFailuresDeviceCount()(*int32) {
         return nil
     } else {
         return m.criticalFailuresDeviceCount
-    }
-}
-// GetInactiveThreatAgentDeviceCount gets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
-func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inactiveThreatAgentDeviceCount
-    }
-}
-// GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Pending full scan device count.
-func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingFullScanDeviceCount
-    }
-}
-// GetPendingManualStepsDeviceCount gets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
-func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingManualStepsDeviceCount
-    }
-}
-// GetPendingOfflineScanDeviceCount gets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
-func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingOfflineScanDeviceCount
-    }
-}
-// GetPendingQuickScanDeviceCount gets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
-func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingQuickScanDeviceCount
-    }
-}
-// GetPendingRestartDeviceCount gets the pendingRestartDeviceCount property value. Pending restart device count.
-func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingRestartDeviceCount
-    }
-}
-// GetPendingSignatureUpdateDeviceCount gets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
-func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingSignatureUpdateDeviceCount
-    }
-}
-// GetTotalReportedDeviceCount gets the totalReportedDeviceCount property value. Total device count.
-func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalReportedDeviceCount
-    }
-}
-// GetUnknownStateThreatAgentDeviceCount gets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
-func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownStateThreatAgentDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -248,6 +180,78 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetInactiveThreatAgentDeviceCount gets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
+func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inactiveThreatAgentDeviceCount
+    }
+}
+// GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Pending full scan device count.
+func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingFullScanDeviceCount
+    }
+}
+// GetPendingManualStepsDeviceCount gets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
+func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingManualStepsDeviceCount
+    }
+}
+// GetPendingOfflineScanDeviceCount gets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
+func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingOfflineScanDeviceCount
+    }
+}
+// GetPendingQuickScanDeviceCount gets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
+func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingQuickScanDeviceCount
+    }
+}
+// GetPendingRestartDeviceCount gets the pendingRestartDeviceCount property value. Pending restart device count.
+func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingRestartDeviceCount
+    }
+}
+// GetPendingSignatureUpdateDeviceCount gets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
+func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pendingSignatureUpdateDeviceCount
+    }
+}
+// GetTotalReportedDeviceCount gets the totalReportedDeviceCount property value. Total device count.
+func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalReportedDeviceCount
+    }
+}
+// GetUnknownStateThreatAgentDeviceCount gets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
+func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownStateThreatAgentDeviceCount
+    }
 }
 func (m *DeviceProtectionOverview) IsNil()(bool) {
     return m == nil

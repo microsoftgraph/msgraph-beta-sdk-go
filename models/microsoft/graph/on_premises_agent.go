@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesAgent 
+// OnPremisesAgent provides operations to manage the collection of onPremisesPublishingProfile entities.
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-    agentGroups []OnPremisesAgentGroup;
+    agentGroups []OnPremisesAgentGroupable;
     // The external IP address as detected by the service for the agent machine. Read-only
     externalIp *string;
     // The name of the machine that the aggent is running on. Read-only
@@ -25,8 +25,12 @@ func NewOnPremisesAgent()(*OnPremisesAgent) {
     }
     return m
 }
+// CreateOnPremisesAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOnPremisesAgentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOnPremisesAgent(), nil
+}
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroup) {
+func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroupable) {
     if m == nil {
         return nil
     } else {
@@ -41,42 +45,18 @@ func (m *OnPremisesAgent) GetExternalIp()(*string) {
         return m.externalIp
     }
 }
-// GetMachineName gets the machineName property value. The name of the machine that the aggent is running on. Read-only
-func (m *OnPremisesAgent) GetMachineName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.machineName
-    }
-}
-// GetStatus gets the status property value. Possible values are: active, inactive.
-func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. 
-func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedPublishingTypes
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesAgentGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnPremisesAgentGroup, len(val))
+            res := make([]OnPremisesAgentGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnPremisesAgentGroup))
+                res[i] = v.(OnPremisesAgentGroupable)
             }
             m.SetAgentGroups(res)
         }
@@ -128,6 +108,30 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
     }
     return res
 }
+// GetMachineName gets the machineName property value. The name of the machine that the aggent is running on. Read-only
+func (m *OnPremisesAgent) GetMachineName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.machineName
+    }
+}
+// GetStatus gets the status property value. Possible values are: active, inactive.
+func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. 
+func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedPublishingTypes
+    }
+}
 func (m *OnPremisesAgent) IsNil()(bool) {
     return m == nil
 }
@@ -140,8 +144,7 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetAgentGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgentGroups()))
         for i, v := range m.GetAgentGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("agentGroups", cast)
         if err != nil {
@@ -176,7 +179,7 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-func (m *OnPremisesAgent) SetAgentGroups(value []OnPremisesAgentGroup)() {
+func (m *OnPremisesAgent) SetAgentGroups(value []OnPremisesAgentGroupable)() {
     if m != nil {
         m.agentGroups = value
     }

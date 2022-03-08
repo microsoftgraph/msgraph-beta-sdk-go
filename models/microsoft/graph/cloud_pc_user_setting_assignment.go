@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcUserSettingAssignment 
+// CloudPcUserSettingAssignment provides operations to manage the deviceManagement singleton.
 type CloudPcUserSettingAssignment struct {
     Entity
     // The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
-    target *CloudPcManagementAssignmentTarget;
+    target CloudPcManagementAssignmentTargetable;
 }
 // NewCloudPcUserSettingAssignment instantiates a new cloudPcUserSettingAssignment and sets the default values.
 func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {
@@ -20,20 +20,16 @@ func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {
     }
     return m
 }
+// CreateCloudPcUserSettingAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcUserSettingAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcUserSettingAssignment(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSettingAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetTarget gets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
-func (m *CloudPcUserSettingAssignment) GetTarget()(*CloudPcManagementAssignmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -50,16 +46,24 @@ func (m *CloudPcUserSettingAssignment) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcManagementAssignmentTarget() })
+        val, err := n.GetObjectValue(CreateCloudPcManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*CloudPcManagementAssignmentTarget))
+            m.SetTarget(val.(CloudPcManagementAssignmentTargetable))
         }
         return nil
     }
     return res
+}
+// GetTarget gets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
+func (m *CloudPcUserSettingAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *CloudPcUserSettingAssignment) IsNil()(bool) {
     return m == nil
@@ -91,7 +95,7 @@ func (m *CloudPcUserSettingAssignment) SetCreatedDateTime(value *i336074805fc853
     }
 }
 // SetTarget sets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
-func (m *CloudPcUserSettingAssignment) SetTarget(value *CloudPcManagementAssignmentTarget)() {
+func (m *CloudPcUserSettingAssignment) SetTarget(value CloudPcManagementAssignmentTargetable)() {
     if m != nil {
         m.target = value
     }

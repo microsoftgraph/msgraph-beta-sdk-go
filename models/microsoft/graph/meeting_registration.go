@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingRegistration 
+// MeetingRegistration provides operations to manage the commsApplication singleton.
 type MeetingRegistration struct {
     MeetingRegistrationBase
     // Custom registration questions.
-    customQuestions []MeetingRegistrationQuestion;
+    customQuestions []MeetingRegistrationQuestionable;
     // The description of the meeting.
     description *string;
     // The meeting end time in UTC.
@@ -19,7 +19,7 @@ type MeetingRegistration struct {
     // The URL of the registration page. Read-only.
     registrationPageWebUrl *string;
     // The meeting speaker's information.
-    speakers []MeetingSpeaker;
+    speakers []MeetingSpeakerable;
     // The meeting start time in UTC.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The subject of the meeting.
@@ -32,8 +32,12 @@ func NewMeetingRegistration()(*MeetingRegistration) {
     }
     return m
 }
+// CreateMeetingRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMeetingRegistrationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMeetingRegistration(), nil
+}
 // GetCustomQuestions gets the customQuestions property value. Custom registration questions.
-func (m *MeetingRegistration) GetCustomQuestions()([]MeetingRegistrationQuestion) {
+func (m *MeetingRegistration) GetCustomQuestions()([]MeetingRegistrationQuestionable) {
     if m == nil {
         return nil
     } else {
@@ -56,58 +60,18 @@ func (m *MeetingRegistration) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.endDateTime
     }
 }
-// GetRegistrationPageViewCount gets the registrationPageViewCount property value. The number of times the registration page has been visited. Read-only.
-func (m *MeetingRegistration) GetRegistrationPageViewCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationPageViewCount
-    }
-}
-// GetRegistrationPageWebUrl gets the registrationPageWebUrl property value. The URL of the registration page. Read-only.
-func (m *MeetingRegistration) GetRegistrationPageWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationPageWebUrl
-    }
-}
-// GetSpeakers gets the speakers property value. The meeting speaker's information.
-func (m *MeetingRegistration) GetSpeakers()([]MeetingSpeaker) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speakers
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
-func (m *MeetingRegistration) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetSubject gets the subject property value. The subject of the meeting.
-func (m *MeetingRegistration) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.MeetingRegistrationBase.GetFieldDeserializers()
     res["customQuestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingRegistrationQuestion() })
+        val, err := n.GetCollectionOfObjectValues(CreateMeetingRegistrationQuestionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MeetingRegistrationQuestion, len(val))
+            res := make([]MeetingRegistrationQuestionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MeetingRegistrationQuestion))
+                res[i] = v.(MeetingRegistrationQuestionable)
             }
             m.SetCustomQuestions(res)
         }
@@ -154,14 +118,14 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["speakers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingSpeaker() })
+        val, err := n.GetCollectionOfObjectValues(CreateMeetingSpeakerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MeetingSpeaker, len(val))
+            res := make([]MeetingSpeakerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MeetingSpeaker))
+                res[i] = v.(MeetingSpeakerable)
             }
             m.SetSpeakers(res)
         }
@@ -189,6 +153,46 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
+// GetRegistrationPageViewCount gets the registrationPageViewCount property value. The number of times the registration page has been visited. Read-only.
+func (m *MeetingRegistration) GetRegistrationPageViewCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationPageViewCount
+    }
+}
+// GetRegistrationPageWebUrl gets the registrationPageWebUrl property value. The URL of the registration page. Read-only.
+func (m *MeetingRegistration) GetRegistrationPageWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationPageWebUrl
+    }
+}
+// GetSpeakers gets the speakers property value. The meeting speaker's information.
+func (m *MeetingRegistration) GetSpeakers()([]MeetingSpeakerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.speakers
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
+func (m *MeetingRegistration) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetSubject gets the subject property value. The subject of the meeting.
+func (m *MeetingRegistration) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
+}
 func (m *MeetingRegistration) IsNil()(bool) {
     return m == nil
 }
@@ -201,8 +205,7 @@ func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetCustomQuestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
         if err != nil {
@@ -236,8 +239,7 @@ func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetSpeakers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSpeakers()))
         for i, v := range m.GetSpeakers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("speakers", cast)
         if err != nil {
@@ -259,7 +261,7 @@ func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetCustomQuestions sets the customQuestions property value. Custom registration questions.
-func (m *MeetingRegistration) SetCustomQuestions(value []MeetingRegistrationQuestion)() {
+func (m *MeetingRegistration) SetCustomQuestions(value []MeetingRegistrationQuestionable)() {
     if m != nil {
         m.customQuestions = value
     }
@@ -289,7 +291,7 @@ func (m *MeetingRegistration) SetRegistrationPageWebUrl(value *string)() {
     }
 }
 // SetSpeakers sets the speakers property value. The meeting speaker's information.
-func (m *MeetingRegistration) SetSpeakers(value []MeetingSpeaker)() {
+func (m *MeetingRegistration) SetSpeakers(value []MeetingSpeakerable)() {
     if m != nil {
         m.speakers = value
     }

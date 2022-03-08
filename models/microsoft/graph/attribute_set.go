@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeSet 
+// AttributeSet provides operations to manage the directory singleton.
 type AttributeSet struct {
     Entity
     // Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -19,20 +19,16 @@ func NewAttributeSet()(*AttributeSet) {
     }
     return m
 }
+// CreateAttributeSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttributeSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttributeSet(), nil
+}
 // GetDescription gets the description property value. Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
 func (m *AttributeSet) GetDescription()(*string) {
     if m == nil {
         return nil
     } else {
         return m.description
-    }
-}
-// GetMaxAttributesPerSet gets the maxAttributesPerSet property value. Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
-func (m *AttributeSet) GetMaxAttributesPerSet()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxAttributesPerSet
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *AttributeSet) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetMaxAttributesPerSet gets the maxAttributesPerSet property value. Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
+func (m *AttributeSet) GetMaxAttributesPerSet()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxAttributesPerSet
+    }
 }
 func (m *AttributeSet) IsNil()(bool) {
     return m == nil

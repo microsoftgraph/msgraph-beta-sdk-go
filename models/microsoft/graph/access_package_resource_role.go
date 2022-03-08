@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageResourceRole 
+// AccessPackageResourceRole provides operations to manage the identityGovernance singleton.
 type AccessPackageResourceRole struct {
     Entity
     // Read-only. Nullable.
-    accessPackageResource *AccessPackageResource;
+    accessPackageResource AccessPackageResourceable;
     // A description for the resource role.
     description *string;
     // The display name of the resource role such as the role defined by the application.
@@ -25,8 +25,12 @@ func NewAccessPackageResourceRole()(*AccessPackageResourceRole) {
     }
     return m
 }
+// CreateAccessPackageResourceRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageResourceRoleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageResourceRole(), nil
+}
 // GetAccessPackageResource gets the accessPackageResource property value. Read-only. Nullable.
-func (m *AccessPackageResourceRole) GetAccessPackageResource()(*AccessPackageResource) {
+func (m *AccessPackageResourceRole) GetAccessPackageResource()(AccessPackageResourceable) {
     if m == nil {
         return nil
     } else {
@@ -49,32 +53,16 @@ func (m *AccessPackageResourceRole) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetOriginId gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
-func (m *AccessPackageResourceRole) GetOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originId
-    }
-}
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originSystem
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResource() })
+        val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageResource(val.(*AccessPackageResource))
+            m.SetAccessPackageResource(val.(AccessPackageResourceable))
         }
         return nil
     }
@@ -120,6 +108,22 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
+// GetOriginId gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+func (m *AccessPackageResourceRole) GetOriginId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originId
+    }
+}
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originSystem
+    }
+}
 func (m *AccessPackageResourceRole) IsNil()(bool) {
     return m == nil
 }
@@ -162,7 +166,7 @@ func (m *AccessPackageResourceRole) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetAccessPackageResource sets the accessPackageResource property value. Read-only. Nullable.
-func (m *AccessPackageResourceRole) SetAccessPackageResource(value *AccessPackageResource)() {
+func (m *AccessPackageResourceRole) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
     }

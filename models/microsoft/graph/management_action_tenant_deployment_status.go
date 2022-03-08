@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementActionTenantDeploymentStatus 
+// ManagementActionTenantDeploymentStatus provides operations to manage the tenantRelationship singleton.
 type ManagementActionTenantDeploymentStatus struct {
     Entity
     // The collection of deployment status for each instance of a management action. Optional.
-    statuses []ManagementActionDeploymentStatus;
+    statuses []ManagementActionDeploymentStatusable;
     // The identifier for the tenant group that is associated with the management action. Required. Read-only.
     tenantGroupId *string;
     // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
@@ -21,42 +21,22 @@ func NewManagementActionTenantDeploymentStatus()(*ManagementActionTenantDeployme
     }
     return m
 }
-// GetStatuses gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
-func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statuses
-    }
-}
-// GetTenantGroupId gets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
-func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantGroupId
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+// CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementActionTenantDeploymentStatus(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["statuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementActionDeploymentStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementActionDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementActionDeploymentStatus, len(val))
+            res := make([]ManagementActionDeploymentStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementActionDeploymentStatus))
+                res[i] = v.(ManagementActionDeploymentStatusable)
             }
             m.SetStatuses(res)
         }
@@ -84,6 +64,30 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
     }
     return res
 }
+// GetStatuses gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
+func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statuses
+    }
+}
+// GetTenantGroupId gets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
+func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantGroupId
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
 func (m *ManagementActionTenantDeploymentStatus) IsNil()(bool) {
     return m == nil
 }
@@ -96,8 +100,7 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i04eb5309aeaaf
     if m.GetStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStatuses()))
         for i, v := range m.GetStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("statuses", cast)
         if err != nil {
@@ -119,7 +122,7 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i04eb5309aeaaf
     return nil
 }
 // SetStatuses sets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
-func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatus)() {
+func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatusable)() {
     if m != nil {
         m.statuses = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BusinessFlowTemplate 
+// BusinessFlowTemplate provides operations to manage the collection of businessFlowTemplate entities.
 type BusinessFlowTemplate struct {
     Entity
     // The name of the business flow template
@@ -16,6 +16,10 @@ func NewBusinessFlowTemplate()(*BusinessFlowTemplate) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateBusinessFlowTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBusinessFlowTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBusinessFlowTemplate(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the business flow template
 func (m *BusinessFlowTemplate) GetDisplayName()(*string) {

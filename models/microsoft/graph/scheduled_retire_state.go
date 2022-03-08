@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the setScheduledRetireState method.
 type ScheduledRetireState int
 
 const (

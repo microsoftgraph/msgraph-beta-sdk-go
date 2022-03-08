@@ -6,7 +6,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// ManagementTemplate 
+// ManagementTemplate provides operations to manage the tenantRelationship singleton.
 type ManagementTemplate struct {
     Entity
     // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
@@ -20,17 +20,17 @@ type ManagementTemplate struct {
     // The display name for the management template. Required. Read-only.
     displayName *string;
     // 
-    informationLinks []ActionUrl;
+    informationLinks []ActionUrlable;
     // 
     lastActionByUserId *string;
     // 
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    managementTemplateCollections []ManagementTemplateCollection;
+    managementTemplateCollections []ManagementTemplateCollectionable;
     // 
-    managementTemplateSteps []ManagementTemplateStep;
+    managementTemplateSteps []ManagementTemplateStepable;
     // The collection of parameters used by the management template. Optional. Read-only.
-    parameters []TemplateParameter;
+    parameters []TemplateParameterable;
     // 
     priority *int32;
     // 
@@ -40,7 +40,7 @@ type ManagementTemplate struct {
     // 
     version *int32;
     // The collection of workload actions associated with the management template. Optional. Read-only.
-    workloadActions []WorkloadAction;
+    workloadActions []WorkloadActionable;
 }
 // NewManagementTemplate instantiates a new managementTemplate and sets the default values.
 func NewManagementTemplate()(*ManagementTemplate) {
@@ -48,6 +48,10 @@ func NewManagementTemplate()(*ManagementTemplate) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagementTemplate(), nil
 }
 // GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
@@ -87,94 +91,6 @@ func (m *ManagementTemplate) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetInformationLinks gets the informationLinks property value. 
-func (m *ManagementTemplate) GetInformationLinks()([]ActionUrl) {
-    if m == nil {
-        return nil
-    } else {
-        return m.informationLinks
-    }
-}
-// GetLastActionByUserId gets the lastActionByUserId property value. 
-func (m *ManagementTemplate) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. 
-func (m *ManagementTemplate) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetManagementTemplateCollections gets the managementTemplateCollections property value. 
-func (m *ManagementTemplate) GetManagementTemplateCollections()([]ManagementTemplateCollection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateCollections
-    }
-}
-// GetManagementTemplateSteps gets the managementTemplateSteps property value. 
-func (m *ManagementTemplate) GetManagementTemplateSteps()([]ManagementTemplateStep) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateSteps
-    }
-}
-// GetParameters gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
-func (m *ManagementTemplate) GetParameters()([]TemplateParameter) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parameters
-    }
-}
-// GetPriority gets the priority property value. 
-func (m *ManagementTemplate) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetProvider gets the provider property value. 
-func (m *ManagementTemplate) GetProvider()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provider
-    }
-}
-// GetUserImpact gets the userImpact property value. 
-func (m *ManagementTemplate) GetUserImpact()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userImpact
-    }
-}
-// GetVersion gets the version property value. 
-func (m *ManagementTemplate) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
-// GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
-func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workloadActions
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -231,14 +147,14 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["informationLinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActionUrl() })
+        val, err := n.GetCollectionOfObjectValues(CreateActionUrlFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ActionUrl, len(val))
+            res := make([]ActionUrlable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ActionUrl))
+                res[i] = v.(ActionUrlable)
             }
             m.SetInformationLinks(res)
         }
@@ -265,42 +181,42 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["managementTemplateCollections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateCollection() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateCollectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementTemplateCollection, len(val))
+            res := make([]ManagementTemplateCollectionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementTemplateCollection))
+                res[i] = v.(ManagementTemplateCollectionable)
             }
             m.SetManagementTemplateCollections(res)
         }
         return nil
     }
     res["managementTemplateSteps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementTemplateStep() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagementTemplateStep, len(val))
+            res := make([]ManagementTemplateStepable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagementTemplateStep))
+                res[i] = v.(ManagementTemplateStepable)
             }
             m.SetManagementTemplateSteps(res)
         }
         return nil
     }
     res["parameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTemplateParameter() })
+        val, err := n.GetCollectionOfObjectValues(CreateTemplateParameterFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TemplateParameter, len(val))
+            res := make([]TemplateParameterable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TemplateParameter))
+                res[i] = v.(TemplateParameterable)
             }
             m.SetParameters(res)
         }
@@ -347,20 +263,108 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["workloadActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkloadAction() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkloadActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkloadAction, len(val))
+            res := make([]WorkloadActionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkloadAction))
+                res[i] = v.(WorkloadActionable)
             }
             m.SetWorkloadActions(res)
         }
         return nil
     }
     return res
+}
+// GetInformationLinks gets the informationLinks property value. 
+func (m *ManagementTemplate) GetInformationLinks()([]ActionUrlable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.informationLinks
+    }
+}
+// GetLastActionByUserId gets the lastActionByUserId property value. 
+func (m *ManagementTemplate) GetLastActionByUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionByUserId
+    }
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. 
+func (m *ManagementTemplate) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetManagementTemplateCollections gets the managementTemplateCollections property value. 
+func (m *ManagementTemplate) GetManagementTemplateCollections()([]ManagementTemplateCollectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateCollections
+    }
+}
+// GetManagementTemplateSteps gets the managementTemplateSteps property value. 
+func (m *ManagementTemplate) GetManagementTemplateSteps()([]ManagementTemplateStepable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managementTemplateSteps
+    }
+}
+// GetParameters gets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
+func (m *ManagementTemplate) GetParameters()([]TemplateParameterable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parameters
+    }
+}
+// GetPriority gets the priority property value. 
+func (m *ManagementTemplate) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetProvider gets the provider property value. 
+func (m *ManagementTemplate) GetProvider()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider) {
+    if m == nil {
+        return nil
+    } else {
+        return m.provider
+    }
+}
+// GetUserImpact gets the userImpact property value. 
+func (m *ManagementTemplate) GetUserImpact()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userImpact
+    }
+}
+// GetVersion gets the version property value. 
+func (m *ManagementTemplate) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
+// GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
+func (m *ManagementTemplate) GetWorkloadActions()([]WorkloadActionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workloadActions
+    }
 }
 func (m *ManagementTemplate) IsNil()(bool) {
     return m == nil
@@ -405,8 +409,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetInformationLinks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInformationLinks()))
         for i, v := range m.GetInformationLinks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("informationLinks", cast)
         if err != nil {
@@ -428,8 +431,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetManagementTemplateCollections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateCollections()))
         for i, v := range m.GetManagementTemplateCollections() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementTemplateCollections", cast)
         if err != nil {
@@ -439,8 +441,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetManagementTemplateSteps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateSteps()))
         for i, v := range m.GetManagementTemplateSteps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("managementTemplateSteps", cast)
         if err != nil {
@@ -450,8 +451,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetParameters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("parameters", cast)
         if err != nil {
@@ -486,8 +486,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetWorkloadActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("workloadActions", cast)
         if err != nil {
@@ -527,7 +526,7 @@ func (m *ManagementTemplate) SetDisplayName(value *string)() {
     }
 }
 // SetInformationLinks sets the informationLinks property value. 
-func (m *ManagementTemplate) SetInformationLinks(value []ActionUrl)() {
+func (m *ManagementTemplate) SetInformationLinks(value []ActionUrlable)() {
     if m != nil {
         m.informationLinks = value
     }
@@ -545,19 +544,19 @@ func (m *ManagementTemplate) SetLastActionDateTime(value *i336074805fc853987abe6
     }
 }
 // SetManagementTemplateCollections sets the managementTemplateCollections property value. 
-func (m *ManagementTemplate) SetManagementTemplateCollections(value []ManagementTemplateCollection)() {
+func (m *ManagementTemplate) SetManagementTemplateCollections(value []ManagementTemplateCollectionable)() {
     if m != nil {
         m.managementTemplateCollections = value
     }
 }
 // SetManagementTemplateSteps sets the managementTemplateSteps property value. 
-func (m *ManagementTemplate) SetManagementTemplateSteps(value []ManagementTemplateStep)() {
+func (m *ManagementTemplate) SetManagementTemplateSteps(value []ManagementTemplateStepable)() {
     if m != nil {
         m.managementTemplateSteps = value
     }
 }
 // SetParameters sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
-func (m *ManagementTemplate) SetParameters(value []TemplateParameter)() {
+func (m *ManagementTemplate) SetParameters(value []TemplateParameterable)() {
     if m != nil {
         m.parameters = value
     }
@@ -587,7 +586,7 @@ func (m *ManagementTemplate) SetVersion(value *int32)() {
     }
 }
 // SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
-func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadAction)() {
+func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadActionable)() {
     if m != nil {
         m.workloadActions = value
     }

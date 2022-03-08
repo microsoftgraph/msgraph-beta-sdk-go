@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkSoftwareUpdateStatus 
+// TeamworkSoftwareUpdateStatus provides operations to manage the teamwork singleton.
 type TeamworkSoftwareUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewTeamworkSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkSoftwareUpdateStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateStatus) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *TeamworkSoftwareUpdateStatus) GetCurrentVersion()(*string) {
         return nil
     } else {
         return m.currentVersion
-    }
-}
-// GetSoftwareFreshness gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
-func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareFreshness) {
-    if m == nil {
-        return nil
-    } else {
-        return m.softwareFreshness
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetSoftwareFreshness gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
+func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareFreshness) {
+    if m == nil {
+        return nil
+    } else {
+        return m.softwareFreshness
+    }
 }
 func (m *TeamworkSoftwareUpdateStatus) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationTemplate 
+// SynchronizationTemplate provides operations to call the instantiate method.
 type SynchronizationTemplate struct {
     Entity
     // Identifier of the application this template belongs to.
@@ -18,9 +18,9 @@ type SynchronizationTemplate struct {
     // One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
     factoryTag *string;
     // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntry;
+    metadata []MetadataEntryable;
     // Default synchronization schema for the jobs based on this template.
-    schema *SynchronizationSchema;
+    schema SynchronizationSchemaable;
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {
@@ -28,6 +28,10 @@ func NewSynchronizationTemplate()(*SynchronizationTemplate) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateSynchronizationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationTemplate(), nil
 }
 // GetApplicationId gets the applicationId property value. Identifier of the application this template belongs to.
 func (m *SynchronizationTemplate) GetApplicationId()(*string) {
@@ -67,22 +71,6 @@ func (m *SynchronizationTemplate) GetFactoryTag()(*string) {
         return nil
     } else {
         return m.factoryTag
-    }
-}
-// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *SynchronizationTemplate) GetMetadata()([]MetadataEntry) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
-}
-// GetSchema gets the schema property value. Default synchronization schema for the jobs based on this template.
-func (m *SynchronizationTemplate) GetSchema()(*SynchronizationSchema) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schema
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,30 +127,46 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMetadataEntry() })
+        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntry, len(val))
+            res := make([]MetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MetadataEntry))
+                res[i] = v.(MetadataEntryable)
             }
             m.SetMetadata(res)
         }
         return nil
     }
     res["schema"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationSchema() })
+        val, err := n.GetObjectValue(CreateSynchronizationSchemaFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchema(val.(*SynchronizationSchema))
+            m.SetSchema(val.(SynchronizationSchemaable))
         }
         return nil
     }
     return res
+}
+// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+func (m *SynchronizationTemplate) GetMetadata()([]MetadataEntryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metadata
+    }
+}
+// GetSchema gets the schema property value. Default synchronization schema for the jobs based on this template.
+func (m *SynchronizationTemplate) GetSchema()(SynchronizationSchemaable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schema
+    }
 }
 func (m *SynchronizationTemplate) IsNil()(bool) {
     return m == nil
@@ -206,8 +210,7 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetMetadata() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {
@@ -253,13 +256,13 @@ func (m *SynchronizationTemplate) SetFactoryTag(value *string)() {
     }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *SynchronizationTemplate) SetMetadata(value []MetadataEntry)() {
+func (m *SynchronizationTemplate) SetMetadata(value []MetadataEntryable)() {
     if m != nil {
         m.metadata = value
     }
 }
 // SetSchema sets the schema property value. Default synchronization schema for the jobs based on this template.
-func (m *SynchronizationTemplate) SetSchema(value *SynchronizationSchema)() {
+func (m *SynchronizationTemplate) SetSchema(value SynchronizationSchemaable)() {
     if m != nil {
         m.schema = value
     }

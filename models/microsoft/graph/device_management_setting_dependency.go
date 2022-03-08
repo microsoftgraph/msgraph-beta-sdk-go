@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementSettingDependency 
+// DeviceManagementSettingDependency provides operations to manage the deviceManagement singleton.
 type DeviceManagementSettingDependency struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Collection of constraints for the dependency setting value
-    constraints []DeviceManagementConstraint;
+    constraints []DeviceManagementConstraintable;
     // The setting definition ID of the setting depended on
     definitionId *string;
 }
@@ -20,6 +20,10 @@ func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) 
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementSettingDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementSettingDependencyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementSettingDependency(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,7 +33,7 @@ func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]inter
     }
 }
 // GetConstraints gets the constraints property value. Collection of constraints for the dependency setting value
-func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementConstraint) {
+func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementConstraintable) {
     if m == nil {
         return nil
     } else {
@@ -48,14 +52,14 @@ func (m *DeviceManagementSettingDependency) GetDefinitionId()(*string) {
 func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["constraints"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConstraint() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConstraintFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementConstraint, len(val))
+            res := make([]DeviceManagementConstraintable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementConstraint))
+                res[i] = v.(DeviceManagementConstraintable)
             }
             m.SetConstraints(res)
         }
@@ -81,8 +85,7 @@ func (m *DeviceManagementSettingDependency) Serialize(writer i04eb5309aeaafadd28
     if m.GetConstraints() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConstraints()))
         for i, v := range m.GetConstraints() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("constraints", cast)
         if err != nil {
@@ -110,7 +113,7 @@ func (m *DeviceManagementSettingDependency) SetAdditionalData(value map[string]i
     }
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the dependency setting value
-func (m *DeviceManagementSettingDependency) SetConstraints(value []DeviceManagementConstraint)() {
+func (m *DeviceManagementSettingDependency) SetConstraints(value []DeviceManagementConstraintable)() {
     if m != nil {
         m.constraints = value
     }

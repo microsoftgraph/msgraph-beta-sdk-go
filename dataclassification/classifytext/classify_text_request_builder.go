@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ClassifyTextRequestBuilder builds and executes requests for operations under \dataClassification\microsoft.graph.classifyText
+// ClassifyTextRequestBuilder provides operations to call the classifyText method.
 type ClassifyTextRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ClassifyTextRequestBuilder struct {
 // ClassifyTextRequestBuilderPostOptions options for Post
 type ClassifyTextRequestBuilderPostOptions struct {
     // 
-    Body *ClassifyTextRequestBody;
+    Body ClassifyTextRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type ClassifyTextResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type classificationJobResponse
-    classificationJobResponse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponse;
+    classificationJobResponse i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponseable;
 }
 // NewClassifyTextResponse instantiates a new classifyTextResponse and sets the default values.
 func NewClassifyTextResponse()(*ClassifyTextResponse) {
@@ -39,6 +39,9 @@ func NewClassifyTextResponse()(*ClassifyTextResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateClassifyTextResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewClassifyTextResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyTextResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *ClassifyTextResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetClassificationJobResponse gets the classificationJobResponse property value. Union type representation for type classificationJobResponse
-func (m *ClassifyTextResponse) GetClassificationJobResponse()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponse) {
+func (m *ClassifyTextResponse) GetClassificationJobResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponseable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *ClassifyTextResponse) GetClassificationJobResponse()(*i535684e11b550019
 func (m *ClassifyTextResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["classificationJobResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewClassificationJobResponse() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateClassificationJobResponseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassificationJobResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponse))
+            m.SetClassificationJobResponse(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponseable))
         }
         return nil
     }
@@ -97,7 +100,7 @@ func (m *ClassifyTextResponse) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetClassificationJobResponse sets the classificationJobResponse property value. Union type representation for type classificationJobResponse
-func (m *ClassifyTextResponse) SetClassificationJobResponse(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponse)() {
+func (m *ClassifyTextResponse) SetClassificationJobResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClassificationJobResponseable)() {
     if m != nil {
         m.classificationJobResponse = value
     }
@@ -111,7 +114,7 @@ func NewClassifyTextRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *ClassifyTextRequestBuilder) CreatePostRequestInformation(options *Class
     return requestInfo, nil
 }
 // Post invoke action classifyText
-func (m *ClassifyTextRequestBuilder) Post(options *ClassifyTextRequestBuilderPostOptions)(*ClassifyTextResponse, error) {
+func (m *ClassifyTextRequestBuilder) Post(options *ClassifyTextRequestBuilderPostOptions)(ClassifyTextResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassifyTextResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateClassifyTextResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ClassifyTextResponse), nil
+    return res.(ClassifyTextResponseable), nil
 }

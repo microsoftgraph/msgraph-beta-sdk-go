@@ -6,13 +6,13 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// LegalHold 
+// LegalHold provides operations to manage the compliance singleton.
 type LegalHold struct {
     Entity
     // KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
     contentQuery *string;
     // The user who created the legal hold.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The date and time the legal hold was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The legal hold description.
@@ -24,17 +24,17 @@ type LegalHold struct {
     // Indicates whether the hold is enabled and actively holding content.
     isEnabled *bool;
     // the user who last modified the legal hold.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // The date and time the legal hold was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Data source entity for SharePoint sites associated with the legal hold.
-    siteSources []SiteSource;
+    siteSources []SiteSourceable;
     // The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
     status *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.LegalHoldStatus;
     // 
-    unifiedGroupSources []UnifiedGroupSource;
+    unifiedGroupSources []UnifiedGroupSourceable;
     // Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-    userSources []UserSource;
+    userSources []UserSourceable;
 }
 // NewLegalHold instantiates a new legalHold and sets the default values.
 func NewLegalHold()(*LegalHold) {
@@ -42,6 +42,10 @@ func NewLegalHold()(*LegalHold) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateLegalHoldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLegalHoldFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLegalHold(), nil
 }
 // GetContentQuery gets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *LegalHold) GetContentQuery()(*string) {
@@ -52,7 +56,7 @@ func (m *LegalHold) GetContentQuery()(*string) {
     }
 }
 // GetCreatedBy gets the createdBy property value. The user who created the legal hold.
-func (m *LegalHold) GetCreatedBy()(*IdentitySet) {
+func (m *LegalHold) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -91,62 +95,6 @@ func (m *LegalHold) GetErrors()([]string) {
         return m.errors
     }
 }
-// GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
-func (m *LegalHold) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. the user who last modified the legal hold.
-func (m *LegalHold) GetLastModifiedBy()(*IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the legal hold was last modified.
-func (m *LegalHold) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the legal hold.
-func (m *LegalHold) GetSiteSources()([]SiteSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteSources
-    }
-}
-// GetStatus gets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
-func (m *LegalHold) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.LegalHoldStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetUnifiedGroupSources gets the unifiedGroupSources property value. 
-func (m *LegalHold) GetUnifiedGroupSources()([]UnifiedGroupSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unifiedGroupSources
-    }
-}
-// GetUserSources gets the userSources property value. Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-func (m *LegalHold) GetUserSources()([]UserSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSources
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LegalHold) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -161,12 +109,12 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -225,12 +173,12 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
+            m.SetLastModifiedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -245,14 +193,14 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["siteSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSiteSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SiteSource, len(val))
+            res := make([]SiteSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SiteSource))
+                res[i] = v.(SiteSourceable)
             }
             m.SetSiteSources(res)
         }
@@ -269,34 +217,90 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["unifiedGroupSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedGroupSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedGroupSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedGroupSource, len(val))
+            res := make([]UnifiedGroupSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedGroupSource))
+                res[i] = v.(UnifiedGroupSourceable)
             }
             m.SetUnifiedGroupSources(res)
         }
         return nil
     }
     res["userSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserSource, len(val))
+            res := make([]UserSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserSource))
+                res[i] = v.(UserSourceable)
             }
             m.SetUserSources(res)
         }
         return nil
     }
     return res
+}
+// GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
+func (m *LegalHold) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. the user who last modified the legal hold.
+func (m *LegalHold) GetLastModifiedBy()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the legal hold was last modified.
+func (m *LegalHold) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the legal hold.
+func (m *LegalHold) GetSiteSources()([]SiteSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteSources
+    }
+}
+// GetStatus gets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
+func (m *LegalHold) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.LegalHoldStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetUnifiedGroupSources gets the unifiedGroupSources property value. 
+func (m *LegalHold) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unifiedGroupSources
+    }
+}
+// GetUserSources gets the userSources property value. Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
+func (m *LegalHold) GetUserSources()([]UserSourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userSources
+    }
 }
 func (m *LegalHold) IsNil()(bool) {
     return m == nil
@@ -364,8 +368,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetSiteSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSiteSources()))
         for i, v := range m.GetSiteSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("siteSources", cast)
         if err != nil {
@@ -382,8 +385,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetUnifiedGroupSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUnifiedGroupSources()))
         for i, v := range m.GetUnifiedGroupSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("unifiedGroupSources", cast)
         if err != nil {
@@ -393,8 +395,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetUserSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserSources()))
         for i, v := range m.GetUserSources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userSources", cast)
         if err != nil {
@@ -410,7 +411,7 @@ func (m *LegalHold) SetContentQuery(value *string)() {
     }
 }
 // SetCreatedBy sets the createdBy property value. The user who created the legal hold.
-func (m *LegalHold) SetCreatedBy(value *IdentitySet)() {
+func (m *LegalHold) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -446,7 +447,7 @@ func (m *LegalHold) SetIsEnabled(value *bool)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. the user who last modified the legal hold.
-func (m *LegalHold) SetLastModifiedBy(value *IdentitySet)() {
+func (m *LegalHold) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -458,7 +459,7 @@ func (m *LegalHold) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
     }
 }
 // SetSiteSources sets the siteSources property value. Data source entity for SharePoint sites associated with the legal hold.
-func (m *LegalHold) SetSiteSources(value []SiteSource)() {
+func (m *LegalHold) SetSiteSources(value []SiteSourceable)() {
     if m != nil {
         m.siteSources = value
     }
@@ -470,13 +471,13 @@ func (m *LegalHold) SetStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b6301
     }
 }
 // SetUnifiedGroupSources sets the unifiedGroupSources property value. 
-func (m *LegalHold) SetUnifiedGroupSources(value []UnifiedGroupSource)() {
+func (m *LegalHold) SetUnifiedGroupSources(value []UnifiedGroupSourceable)() {
     if m != nil {
         m.unifiedGroupSources = value
     }
 }
 // SetUserSources sets the userSources property value. Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-func (m *LegalHold) SetUserSources(value []UserSource)() {
+func (m *LegalHold) SetUserSources(value []UserSourceable)() {
     if m != nil {
         m.userSources = value
     }

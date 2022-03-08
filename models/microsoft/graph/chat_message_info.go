@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChatMessageInfo 
+// ChatMessageInfo provides operations to manage the collection of chat entities.
 type ChatMessageInfo struct {
     Entity
     // Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
-    body *ItemBody;
+    body ItemBodyable;
     // Date time object representing the time at which message was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
-    eventDetail *EventMessageDetail;
+    eventDetail EventMessageDetailable;
     // Information about the sender of the message.
-    from *ChatMessageFromIdentitySet;
+    from ChatMessageFromIdentitySetable;
     // If set to true, the original message has been deleted.
     isDeleted *bool;
     // The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
@@ -28,8 +28,12 @@ func NewChatMessageInfo()(*ChatMessageInfo) {
     }
     return m
 }
+// CreateChatMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChatMessageInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChatMessageInfo(), nil
+}
 // GetBody gets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
-func (m *ChatMessageInfo) GetBody()(*ItemBody) {
+func (m *ChatMessageInfo) GetBody()(ItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -45,47 +49,23 @@ func (m *ChatMessageInfo) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
 }
 // GetEventDetail gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
-func (m *ChatMessageInfo) GetEventDetail()(*EventMessageDetail) {
+func (m *ChatMessageInfo) GetEventDetail()(EventMessageDetailable) {
     if m == nil {
         return nil
     } else {
         return m.eventDetail
     }
 }
-// GetFrom gets the from property value. Information about the sender of the message.
-func (m *ChatMessageInfo) GetFrom()(*ChatMessageFromIdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
-}
-// GetIsDeleted gets the isDeleted property value. If set to true, the original message has been deleted.
-func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeleted
-    }
-}
-// GetMessageType gets the messageType property value. The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
-func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageType
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(*ItemBody))
+            m.SetBody(val.(ItemBodyable))
         }
         return nil
     }
@@ -100,22 +80,22 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["eventDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEventMessageDetail() })
+        val, err := n.GetObjectValue(CreateEventMessageDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEventDetail(val.(*EventMessageDetail))
+            m.SetEventDetail(val.(EventMessageDetailable))
         }
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessageFromIdentitySet() })
+        val, err := n.GetObjectValue(CreateChatMessageFromIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFrom(val.(*ChatMessageFromIdentitySet))
+            m.SetFrom(val.(ChatMessageFromIdentitySetable))
         }
         return nil
     }
@@ -140,6 +120,30 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetFrom gets the from property value. Information about the sender of the message.
+func (m *ChatMessageInfo) GetFrom()(ChatMessageFromIdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.from
+    }
+}
+// GetIsDeleted gets the isDeleted property value. If set to true, the original message has been deleted.
+func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDeleted
+    }
+}
+// GetMessageType gets the messageType property value. The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
+func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.messageType
+    }
 }
 func (m *ChatMessageInfo) IsNil()(bool) {
     return m == nil
@@ -190,7 +194,7 @@ func (m *ChatMessageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetBody sets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
-func (m *ChatMessageInfo) SetBody(value *ItemBody)() {
+func (m *ChatMessageInfo) SetBody(value ItemBodyable)() {
     if m != nil {
         m.body = value
     }
@@ -202,13 +206,13 @@ func (m *ChatMessageInfo) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3a
     }
 }
 // SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
-func (m *ChatMessageInfo) SetEventDetail(value *EventMessageDetail)() {
+func (m *ChatMessageInfo) SetEventDetail(value EventMessageDetailable)() {
     if m != nil {
         m.eventDetail = value
     }
 }
 // SetFrom sets the from property value. Information about the sender of the message.
-func (m *ChatMessageInfo) SetFrom(value *ChatMessageFromIdentitySet)() {
+func (m *ChatMessageInfo) SetFrom(value ChatMessageFromIdentitySetable)() {
     if m != nil {
         m.from = value
     }

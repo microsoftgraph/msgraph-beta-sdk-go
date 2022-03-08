@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintDocument 
+// PrintDocument provides operations to manage the print singleton.
 type PrintDocument struct {
     Entity
     // 
-    configuration *PrinterDocumentConfiguration;
+    configuration PrinterDocumentConfigurationable;
     // The document's content (MIME) type. Read-only.
     contentType *string;
     // The document's name. Read-only.
@@ -23,8 +23,12 @@ func NewPrintDocument()(*PrintDocument) {
     }
     return m
 }
+// CreatePrintDocumentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrintDocumentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrintDocument(), nil
+}
 // GetConfiguration gets the configuration property value. 
-func (m *PrintDocument) GetConfiguration()(*PrinterDocumentConfiguration) {
+func (m *PrintDocument) GetConfiguration()(PrinterDocumentConfigurationable) {
     if m == nil {
         return nil
     } else {
@@ -47,24 +51,16 @@ func (m *PrintDocument) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetSize gets the size property value. The document's size in bytes. Read-only.
-func (m *PrintDocument) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrinterDocumentConfiguration() })
+        val, err := n.GetObjectValue(CreatePrinterDocumentConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfiguration(val.(*PrinterDocumentConfiguration))
+            m.SetConfiguration(val.(PrinterDocumentConfigurationable))
         }
         return nil
     }
@@ -99,6 +95,14 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetSize gets the size property value. The document's size in bytes. Read-only.
+func (m *PrintDocument) GetSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
 }
 func (m *PrintDocument) IsNil()(bool) {
     return m == nil
@@ -136,7 +140,7 @@ func (m *PrintDocument) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetConfiguration sets the configuration property value. 
-func (m *PrintDocument) SetConfiguration(value *PrinterDocumentConfiguration)() {
+func (m *PrintDocument) SetConfiguration(value PrinterDocumentConfigurationable)() {
     if m != nil {
         m.configuration = value
     }

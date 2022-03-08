@@ -5,27 +5,27 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDeviceHealth 
+// TeamworkDeviceHealth provides operations to manage the teamwork singleton.
 type TeamworkDeviceHealth struct {
     Entity
     // 
-    connection *TeamworkConnection;
+    connection TeamworkConnectionable;
     // Identity of the user who created the device health document.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The UTC date and time when the device health document was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Health details about the device hardware.
-    hardwareHealth *TeamworkHardwareHealth;
+    hardwareHealth TeamworkHardwareHealthable;
     // Identity of the user who last modified the device health details.
-    lastModifiedBy *IdentitySet;
+    lastModifiedBy IdentitySetable;
     // The UTC date and time when the device health detail was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The login status of Microsoft Teams, Skype for Business, and Exchange.
-    loginStatus *TeamworkLoginStatus;
+    loginStatus TeamworkLoginStatusable;
     // Health details about all peripherals (for example, speaker and microphone) attached to a device.
-    peripheralsHealth *TeamworkPeripheralsHealth;
+    peripheralsHealth TeamworkPeripheralsHealthable;
     // Software updates available for the device.
-    softwareUpdateHealth *TeamworkSoftwareUpdateHealth;
+    softwareUpdateHealth TeamworkSoftwareUpdateHealthable;
 }
 // NewTeamworkDeviceHealth instantiates a new teamworkDeviceHealth and sets the default values.
 func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
@@ -34,8 +34,12 @@ func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
     }
     return m
 }
+// CreateTeamworkDeviceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkDeviceHealthFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkDeviceHealth(), nil
+}
 // GetConnection gets the connection property value. 
-func (m *TeamworkDeviceHealth) GetConnection()(*TeamworkConnection) {
+func (m *TeamworkDeviceHealth) GetConnection()(TeamworkConnectionable) {
     if m == nil {
         return nil
     } else {
@@ -43,7 +47,7 @@ func (m *TeamworkDeviceHealth) GetConnection()(*TeamworkConnection) {
     }
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device health document.
-func (m *TeamworkDeviceHealth) GetCreatedBy()(*IdentitySet) {
+func (m *TeamworkDeviceHealth) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -58,8 +62,103 @@ func (m *TeamworkDeviceHealth) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
         return m.createdDateTime
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["connection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnection(val.(TeamworkConnectionable))
+        }
+        return nil
+    }
+    res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["hardwareHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkHardwareHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHardwareHealth(val.(TeamworkHardwareHealthable))
+        }
+        return nil
+    }
+    res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["loginStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkLoginStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLoginStatus(val.(TeamworkLoginStatusable))
+        }
+        return nil
+    }
+    res["peripheralsHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralsHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPeripheralsHealth(val.(TeamworkPeripheralsHealthable))
+        }
+        return nil
+    }
+    res["softwareUpdateHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSoftwareUpdateHealth(val.(TeamworkSoftwareUpdateHealthable))
+        }
+        return nil
+    }
+    return res
+}
 // GetHardwareHealth gets the hardwareHealth property value. Health details about the device hardware.
-func (m *TeamworkDeviceHealth) GetHardwareHealth()(*TeamworkHardwareHealth) {
+func (m *TeamworkDeviceHealth) GetHardwareHealth()(TeamworkHardwareHealthable) {
     if m == nil {
         return nil
     } else {
@@ -67,7 +166,7 @@ func (m *TeamworkDeviceHealth) GetHardwareHealth()(*TeamworkHardwareHealth) {
     }
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device health details.
-func (m *TeamworkDeviceHealth) GetLastModifiedBy()(*IdentitySet) {
+func (m *TeamworkDeviceHealth) GetLastModifiedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -83,7 +182,7 @@ func (m *TeamworkDeviceHealth) GetLastModifiedDateTime()(*i336074805fc853987abe6
     }
 }
 // GetLoginStatus gets the loginStatus property value. The login status of Microsoft Teams, Skype for Business, and Exchange.
-func (m *TeamworkDeviceHealth) GetLoginStatus()(*TeamworkLoginStatus) {
+func (m *TeamworkDeviceHealth) GetLoginStatus()(TeamworkLoginStatusable) {
     if m == nil {
         return nil
     } else {
@@ -91,7 +190,7 @@ func (m *TeamworkDeviceHealth) GetLoginStatus()(*TeamworkLoginStatus) {
     }
 }
 // GetPeripheralsHealth gets the peripheralsHealth property value. Health details about all peripherals (for example, speaker and microphone) attached to a device.
-func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(*TeamworkPeripheralsHealth) {
+func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(TeamworkPeripheralsHealthable) {
     if m == nil {
         return nil
     } else {
@@ -99,107 +198,12 @@ func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(*TeamworkPeripheralsHealth
     }
 }
 // GetSoftwareUpdateHealth gets the softwareUpdateHealth property value. Software updates available for the device.
-func (m *TeamworkDeviceHealth) GetSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
+func (m *TeamworkDeviceHealth) GetSoftwareUpdateHealth()(TeamworkSoftwareUpdateHealthable) {
     if m == nil {
         return nil
     } else {
         return m.softwareUpdateHealth
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["connection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkConnection() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnection(val.(*TeamworkConnection))
-        }
-        return nil
-    }
-    res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["hardwareHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkHardwareHealth() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHardwareHealth(val.(*TeamworkHardwareHealth))
-        }
-        return nil
-    }
-    res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedBy(val.(*IdentitySet))
-        }
-        return nil
-    }
-    res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["loginStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkLoginStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLoginStatus(val.(*TeamworkLoginStatus))
-        }
-        return nil
-    }
-    res["peripheralsHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkPeripheralsHealth() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPeripheralsHealth(val.(*TeamworkPeripheralsHealth))
-        }
-        return nil
-    }
-    res["softwareUpdateHealth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkSoftwareUpdateHealth() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSoftwareUpdateHealth(val.(*TeamworkSoftwareUpdateHealth))
-        }
-        return nil
-    }
-    return res
 }
 func (m *TeamworkDeviceHealth) IsNil()(bool) {
     return m == nil
@@ -267,13 +271,13 @@ func (m *TeamworkDeviceHealth) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetConnection sets the connection property value. 
-func (m *TeamworkDeviceHealth) SetConnection(value *TeamworkConnection)() {
+func (m *TeamworkDeviceHealth) SetConnection(value TeamworkConnectionable)() {
     if m != nil {
         m.connection = value
     }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the device health document.
-func (m *TeamworkDeviceHealth) SetCreatedBy(value *IdentitySet)() {
+func (m *TeamworkDeviceHealth) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -285,13 +289,13 @@ func (m *TeamworkDeviceHealth) SetCreatedDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetHardwareHealth sets the hardwareHealth property value. Health details about the device hardware.
-func (m *TeamworkDeviceHealth) SetHardwareHealth(value *TeamworkHardwareHealth)() {
+func (m *TeamworkDeviceHealth) SetHardwareHealth(value TeamworkHardwareHealthable)() {
     if m != nil {
         m.hardwareHealth = value
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the device health details.
-func (m *TeamworkDeviceHealth) SetLastModifiedBy(value *IdentitySet)() {
+func (m *TeamworkDeviceHealth) SetLastModifiedBy(value IdentitySetable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -303,19 +307,19 @@ func (m *TeamworkDeviceHealth) SetLastModifiedDateTime(value *i336074805fc853987
     }
 }
 // SetLoginStatus sets the loginStatus property value. The login status of Microsoft Teams, Skype for Business, and Exchange.
-func (m *TeamworkDeviceHealth) SetLoginStatus(value *TeamworkLoginStatus)() {
+func (m *TeamworkDeviceHealth) SetLoginStatus(value TeamworkLoginStatusable)() {
     if m != nil {
         m.loginStatus = value
     }
 }
 // SetPeripheralsHealth sets the peripheralsHealth property value. Health details about all peripherals (for example, speaker and microphone) attached to a device.
-func (m *TeamworkDeviceHealth) SetPeripheralsHealth(value *TeamworkPeripheralsHealth)() {
+func (m *TeamworkDeviceHealth) SetPeripheralsHealth(value TeamworkPeripheralsHealthable)() {
     if m != nil {
         m.peripheralsHealth = value
     }
 }
 // SetSoftwareUpdateHealth sets the softwareUpdateHealth property value. Software updates available for the device.
-func (m *TeamworkDeviceHealth) SetSoftwareUpdateHealth(value *TeamworkSoftwareUpdateHealth)() {
+func (m *TeamworkDeviceHealth) SetSoftwareUpdateHealth(value TeamworkSoftwareUpdateHealthable)() {
     if m != nil {
         m.softwareUpdateHealth = value
     }

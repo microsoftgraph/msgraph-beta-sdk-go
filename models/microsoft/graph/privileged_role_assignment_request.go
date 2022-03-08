@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedRoleAssignmentRequest 
+// PrivilegedRoleAssignmentRequest provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
 type PrivilegedRoleAssignmentRequest struct {
     Entity
     // The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
@@ -19,9 +19,9 @@ type PrivilegedRoleAssignmentRequest struct {
     // The id of the role.
     roleId *string;
     // The roleInfo object of the role assignment request.
-    roleInfo *PrivilegedRole;
+    roleInfo PrivilegedRoleable;
     // The schedule object of the role assignment request.
-    schedule *GovernanceSchedule;
+    schedule GovernanceScheduleable;
     // Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.
     status *string;
     // The ticketNumber for the role assignment.
@@ -40,6 +40,10 @@ func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {
     }
     return m
 }
+// CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedRoleAssignmentRequest(), nil
+}
 // GetAssignmentState gets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
 func (m *PrivilegedRoleAssignmentRequest) GetAssignmentState()(*string) {
     if m == nil {
@@ -54,86 +58,6 @@ func (m *PrivilegedRoleAssignmentRequest) GetDuration()(*string) {
         return nil
     } else {
         return m.duration
-    }
-}
-// GetReason gets the reason property value. The reason for the role assignment.
-func (m *PrivilegedRoleAssignmentRequest) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
-}
-// GetRequestedDateTime gets the requestedDateTime property value. Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *PrivilegedRoleAssignmentRequest) GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestedDateTime
-    }
-}
-// GetRoleId gets the roleId property value. The id of the role.
-func (m *PrivilegedRoleAssignmentRequest) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
-}
-// GetRoleInfo gets the roleInfo property value. The roleInfo object of the role assignment request.
-func (m *PrivilegedRoleAssignmentRequest) GetRoleInfo()(*PrivilegedRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleInfo
-    }
-}
-// GetSchedule gets the schedule property value. The schedule object of the role assignment request.
-func (m *PrivilegedRoleAssignmentRequest) GetSchedule()(*GovernanceSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
-}
-// GetStatus gets the status property value. Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.
-func (m *PrivilegedRoleAssignmentRequest) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTicketNumber gets the ticketNumber property value. The ticketNumber for the role assignment.
-func (m *PrivilegedRoleAssignmentRequest) GetTicketNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketNumber
-    }
-}
-// GetTicketSystem gets the ticketSystem property value. The ticketSystem for the role assignment.
-func (m *PrivilegedRoleAssignmentRequest) GetTicketSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketSystem
-    }
-}
-// GetType gets the type property value. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
-func (m *PrivilegedRoleAssignmentRequest) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUserId gets the userId property value. The id of the user.
-func (m *PrivilegedRoleAssignmentRequest) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -190,22 +114,22 @@ func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["roleInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedRole() })
+        val, err := n.GetObjectValue(CreatePrivilegedRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleInfo(val.(*PrivilegedRole))
+            m.SetRoleInfo(val.(PrivilegedRoleable))
         }
         return nil
     }
     res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceSchedule() })
+        val, err := n.GetObjectValue(CreateGovernanceScheduleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedule(val.(*GovernanceSchedule))
+            m.SetSchedule(val.(GovernanceScheduleable))
         }
         return nil
     }
@@ -260,6 +184,86 @@ func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetReason gets the reason property value. The reason for the role assignment.
+func (m *PrivilegedRoleAssignmentRequest) GetReason()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reason
+    }
+}
+// GetRequestedDateTime gets the requestedDateTime property value. Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *PrivilegedRoleAssignmentRequest) GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestedDateTime
+    }
+}
+// GetRoleId gets the roleId property value. The id of the role.
+func (m *PrivilegedRoleAssignmentRequest) GetRoleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleId
+    }
+}
+// GetRoleInfo gets the roleInfo property value. The roleInfo object of the role assignment request.
+func (m *PrivilegedRoleAssignmentRequest) GetRoleInfo()(PrivilegedRoleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleInfo
+    }
+}
+// GetSchedule gets the schedule property value. The schedule object of the role assignment request.
+func (m *PrivilegedRoleAssignmentRequest) GetSchedule()(GovernanceScheduleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedule
+    }
+}
+// GetStatus gets the status property value. Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.
+func (m *PrivilegedRoleAssignmentRequest) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTicketNumber gets the ticketNumber property value. The ticketNumber for the role assignment.
+func (m *PrivilegedRoleAssignmentRequest) GetTicketNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ticketNumber
+    }
+}
+// GetTicketSystem gets the ticketSystem property value. The ticketSystem for the role assignment.
+func (m *PrivilegedRoleAssignmentRequest) GetTicketSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ticketSystem
+    }
+}
+// GetType gets the type property value. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
+func (m *PrivilegedRoleAssignmentRequest) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUserId gets the userId property value. The id of the user.
+func (m *PrivilegedRoleAssignmentRequest) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *PrivilegedRoleAssignmentRequest) IsNil()(bool) {
     return m == nil
@@ -375,13 +379,13 @@ func (m *PrivilegedRoleAssignmentRequest) SetRoleId(value *string)() {
     }
 }
 // SetRoleInfo sets the roleInfo property value. The roleInfo object of the role assignment request.
-func (m *PrivilegedRoleAssignmentRequest) SetRoleInfo(value *PrivilegedRole)() {
+func (m *PrivilegedRoleAssignmentRequest) SetRoleInfo(value PrivilegedRoleable)() {
     if m != nil {
         m.roleInfo = value
     }
 }
 // SetSchedule sets the schedule property value. The schedule object of the role assignment request.
-func (m *PrivilegedRoleAssignmentRequest) SetSchedule(value *GovernanceSchedule)() {
+func (m *PrivilegedRoleAssignmentRequest) SetSchedule(value GovernanceScheduleable)() {
     if m != nil {
         m.schedule = value
     }

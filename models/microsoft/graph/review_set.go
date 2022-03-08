@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ReviewSet 
+// ReviewSet provides operations to manage the compliance singleton.
 type ReviewSet struct {
     Entity
     // The user who created the review set. Read-only.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The review set name. The name is unique with a maximum limit of 64 characters.
     displayName *string;
     // Read-only. Nullable.
-    queries []ReviewSetQuery;
+    queries []ReviewSetQueryable;
 }
 // NewReviewSet instantiates a new reviewSet and sets the default values.
 func NewReviewSet()(*ReviewSet) {
@@ -24,8 +24,12 @@ func NewReviewSet()(*ReviewSet) {
     }
     return m
 }
+// CreateReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReviewSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReviewSet(), nil
+}
 // GetCreatedBy gets the createdBy property value. The user who created the review set. Read-only.
-func (m *ReviewSet) GetCreatedBy()(*IdentitySet) {
+func (m *ReviewSet) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -48,24 +52,16 @@ func (m *ReviewSet) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetQueries gets the queries property value. Read-only. Nullable.
-func (m *ReviewSet) GetQueries()([]ReviewSetQuery) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queries
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -90,20 +86,28 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["queries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReviewSetQuery() })
+        val, err := n.GetCollectionOfObjectValues(CreateReviewSetQueryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ReviewSetQuery, len(val))
+            res := make([]ReviewSetQueryable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ReviewSetQuery))
+                res[i] = v.(ReviewSetQueryable)
             }
             m.SetQueries(res)
         }
         return nil
     }
     return res
+}
+// GetQueries gets the queries property value. Read-only. Nullable.
+func (m *ReviewSet) GetQueries()([]ReviewSetQueryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queries
+    }
 }
 func (m *ReviewSet) IsNil()(bool) {
     return m == nil
@@ -135,8 +139,7 @@ func (m *ReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetQueries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetQueries()))
         for i, v := range m.GetQueries() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("queries", cast)
         if err != nil {
@@ -146,7 +149,7 @@ func (m *ReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     return nil
 }
 // SetCreatedBy sets the createdBy property value. The user who created the review set. Read-only.
-func (m *ReviewSet) SetCreatedBy(value *IdentitySet)() {
+func (m *ReviewSet) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -164,7 +167,7 @@ func (m *ReviewSet) SetDisplayName(value *string)() {
     }
 }
 // SetQueries sets the queries property value. Read-only. Nullable.
-func (m *ReviewSet) SetQueries(value []ReviewSetQuery)() {
+func (m *ReviewSet) SetQueries(value []ReviewSetQueryable)() {
     if m != nil {
         m.queries = value
     }

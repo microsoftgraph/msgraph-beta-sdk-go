@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminAccessAssignment 
+// DelegatedAdminAccessAssignment provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminAccessAssignment struct {
     Entity
     // 
-    accessContainer *DelegatedAdminAccessContainer;
+    accessContainer DelegatedAdminAccessContainerable;
     // 
-    accessDetails *DelegatedAdminAccessDetails;
+    accessDetails DelegatedAdminAccessDetailsable;
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -26,8 +26,12 @@ func NewDelegatedAdminAccessAssignment()(*DelegatedAdminAccessAssignment) {
     }
     return m
 }
+// CreateDelegatedAdminAccessAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminAccessAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminAccessAssignment(), nil
+}
 // GetAccessContainer gets the accessContainer property value. 
-func (m *DelegatedAdminAccessAssignment) GetAccessContainer()(*DelegatedAdminAccessContainer) {
+func (m *DelegatedAdminAccessAssignment) GetAccessContainer()(DelegatedAdminAccessContainerable) {
     if m == nil {
         return nil
     } else {
@@ -35,7 +39,7 @@ func (m *DelegatedAdminAccessAssignment) GetAccessContainer()(*DelegatedAdminAcc
     }
 }
 // GetAccessDetails gets the accessDetails property value. 
-func (m *DelegatedAdminAccessAssignment) GetAccessDetails()(*DelegatedAdminAccessDetails) {
+func (m *DelegatedAdminAccessAssignment) GetAccessDetails()(DelegatedAdminAccessDetailsable) {
     if m == nil {
         return nil
     } else {
@@ -50,42 +54,26 @@ func (m *DelegatedAdminAccessAssignment) GetCreatedDateTime()(*i336074805fc85398
         return m.createdDateTime
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *DelegatedAdminAccessAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetStatus gets the status property value. 
-func (m *DelegatedAdminAccessAssignment) GetStatus()(*DelegatedAdminAccessAssignmentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessContainer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminAccessContainer() })
+        val, err := n.GetObjectValue(CreateDelegatedAdminAccessContainerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessContainer(val.(*DelegatedAdminAccessContainer))
+            m.SetAccessContainer(val.(DelegatedAdminAccessContainerable))
         }
         return nil
     }
     res["accessDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminAccessDetails() })
+        val, err := n.GetObjectValue(CreateDelegatedAdminAccessDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessDetails(val.(*DelegatedAdminAccessDetails))
+            m.SetAccessDetails(val.(DelegatedAdminAccessDetailsable))
         }
         return nil
     }
@@ -120,6 +108,22 @@ func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *DelegatedAdminAccessAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetStatus gets the status property value. 
+func (m *DelegatedAdminAccessAssignment) GetStatus()(*DelegatedAdminAccessAssignmentStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DelegatedAdminAccessAssignment) IsNil()(bool) {
     return m == nil
@@ -164,13 +168,13 @@ func (m *DelegatedAdminAccessAssignment) Serialize(writer i04eb5309aeaafadd28374
     return nil
 }
 // SetAccessContainer sets the accessContainer property value. 
-func (m *DelegatedAdminAccessAssignment) SetAccessContainer(value *DelegatedAdminAccessContainer)() {
+func (m *DelegatedAdminAccessAssignment) SetAccessContainer(value DelegatedAdminAccessContainerable)() {
     if m != nil {
         m.accessContainer = value
     }
 }
 // SetAccessDetails sets the accessDetails property value. 
-func (m *DelegatedAdminAccessAssignment) SetAccessDetails(value *DelegatedAdminAccessDetails)() {
+func (m *DelegatedAdminAccessAssignment) SetAccessDetails(value DelegatedAdminAccessDetailsable)() {
     if m != nil {
         m.accessDetails = value
     }

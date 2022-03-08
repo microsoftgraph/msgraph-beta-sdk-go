@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentUserStateSummary 
+// DeviceManagementIntentUserStateSummary provides operations to manage the deviceManagement singleton.
 type DeviceManagementIntentUserStateSummary struct {
     Entity
     // Number of users in conflict
@@ -24,6 +24,10 @@ func NewDeviceManagementIntentUserStateSummary()(*DeviceManagementIntentUserStat
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementIntentUserStateSummary(), nil
 }
 // GetConflictCount gets the conflictCount property value. Number of users in conflict
 func (m *DeviceManagementIntentUserStateSummary) GetConflictCount()(*int32) {
@@ -47,22 +51,6 @@ func (m *DeviceManagementIntentUserStateSummary) GetFailedCount()(*int32) {
         return nil
     } else {
         return m.failedCount
-    }
-}
-// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable users
-func (m *DeviceManagementIntentUserStateSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
-}
-// GetSuccessCount gets the successCount property value. Number of succeeded users
-func (m *DeviceManagementIntentUserStateSummary) GetSuccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -119,6 +107,22 @@ func (m *DeviceManagementIntentUserStateSummary) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable users
+func (m *DeviceManagementIntentUserStateSummary) GetNotApplicableCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableCount
+    }
+}
+// GetSuccessCount gets the successCount property value. Number of succeeded users
+func (m *DeviceManagementIntentUserStateSummary) GetSuccessCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successCount
+    }
 }
 func (m *DeviceManagementIntentUserStateSummary) IsNil()(bool) {
     return m == nil

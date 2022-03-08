@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProgramControl 
+// ProgramControl provides operations to manage the collection of programControl entities.
 type ProgramControl struct {
     Entity
     // The controlId of the control, in particular the identifier of an access review. Required on create.
@@ -17,13 +17,13 @@ type ProgramControl struct {
     // The name of the control.
     displayName *string;
     // The user who created the program control.
-    owner *UserIdentity;
+    owner UserIdentityable;
     // The program this control is part of.
-    program *Program;
+    program Programable;
     // The programId of the program this control is a part of. Required on create.
     programId *string;
     // The resource, a group or an app, targeted by this program control's access review.
-    resource *ProgramResource;
+    resource ProgramResourceable;
     // The life cycle status of the control.
     status *string;
 }
@@ -33,6 +33,10 @@ func NewProgramControl()(*ProgramControl) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateProgramControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProgramControlFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProgramControl(), nil
 }
 // GetControlId gets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) GetControlId()(*string) {
@@ -64,46 +68,6 @@ func (m *ProgramControl) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetOwner gets the owner property value. The user who created the program control.
-func (m *ProgramControl) GetOwner()(*UserIdentity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
-}
-// GetProgram gets the program property value. The program this control is part of.
-func (m *ProgramControl) GetProgram()(*Program) {
-    if m == nil {
-        return nil
-    } else {
-        return m.program
-    }
-}
-// GetProgramId gets the programId property value. The programId of the program this control is a part of. Required on create.
-func (m *ProgramControl) GetProgramId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.programId
-    }
-}
-// GetResource gets the resource property value. The resource, a group or an app, targeted by this program control's access review.
-func (m *ProgramControl) GetResource()(*ProgramResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
-}
-// GetStatus gets the status property value. The life cycle status of the control.
-func (m *ProgramControl) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,22 +114,22 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
+        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOwner(val.(*UserIdentity))
+            m.SetOwner(val.(UserIdentityable))
         }
         return nil
     }
     res["program"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProgram() })
+        val, err := n.GetObjectValue(CreateProgramFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProgram(val.(*Program))
+            m.SetProgram(val.(Programable))
         }
         return nil
     }
@@ -180,12 +144,12 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewProgramResource() })
+        val, err := n.GetObjectValue(CreateProgramResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResource(val.(*ProgramResource))
+            m.SetResource(val.(ProgramResourceable))
         }
         return nil
     }
@@ -200,6 +164,46 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetOwner gets the owner property value. The user who created the program control.
+func (m *ProgramControl) GetOwner()(UserIdentityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.owner
+    }
+}
+// GetProgram gets the program property value. The program this control is part of.
+func (m *ProgramControl) GetProgram()(Programable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.program
+    }
+}
+// GetProgramId gets the programId property value. The programId of the program this control is a part of. Required on create.
+func (m *ProgramControl) GetProgramId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.programId
+    }
+}
+// GetResource gets the resource property value. The resource, a group or an app, targeted by this program control's access review.
+func (m *ProgramControl) GetResource()(ProgramResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resource
+    }
+}
+// GetStatus gets the status property value. The life cycle status of the control.
+func (m *ProgramControl) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *ProgramControl) IsNil()(bool) {
     return m == nil
@@ -291,13 +295,13 @@ func (m *ProgramControl) SetDisplayName(value *string)() {
     }
 }
 // SetOwner sets the owner property value. The user who created the program control.
-func (m *ProgramControl) SetOwner(value *UserIdentity)() {
+func (m *ProgramControl) SetOwner(value UserIdentityable)() {
     if m != nil {
         m.owner = value
     }
 }
 // SetProgram sets the program property value. The program this control is part of.
-func (m *ProgramControl) SetProgram(value *Program)() {
+func (m *ProgramControl) SetProgram(value Programable)() {
     if m != nil {
         m.program = value
     }
@@ -309,7 +313,7 @@ func (m *ProgramControl) SetProgramId(value *string)() {
     }
 }
 // SetResource sets the resource property value. The resource, a group or an app, targeted by this program control's access review.
-func (m *ProgramControl) SetResource(value *ProgramResource)() {
+func (m *ProgramControl) SetResource(value ProgramResourceable)() {
     if m != nil {
         m.resource = value
     }

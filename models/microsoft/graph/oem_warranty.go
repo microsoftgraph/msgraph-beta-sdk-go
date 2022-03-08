@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OemWarranty 
+// OemWarranty provides operations to call the getOemWarranty method.
 type OemWarranty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // List of additional warranty offers. This collection can contain a maximum of 100 elements.
-    additionalWarranties []WarrantyOffer;
+    additionalWarranties []WarrantyOfferable;
     // List of base warranty offers. This collection can contain a maximum of 100 elements.
-    baseWarranties []WarrantyOffer;
+    baseWarranties []WarrantyOfferable;
     // Device configuration page URL
     deviceConfigurationUrl *string;
     // Device warranty page URL
@@ -24,6 +24,10 @@ func NewOemWarranty()(*OemWarranty) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOemWarrantyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOemWarrantyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOemWarranty(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OemWarranty) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -33,7 +37,7 @@ func (m *OemWarranty) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAdditionalWarranties gets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
-func (m *OemWarranty) GetAdditionalWarranties()([]WarrantyOffer) {
+func (m *OemWarranty) GetAdditionalWarranties()([]WarrantyOfferable) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +45,7 @@ func (m *OemWarranty) GetAdditionalWarranties()([]WarrantyOffer) {
     }
 }
 // GetBaseWarranties gets the baseWarranties property value. List of base warranty offers. This collection can contain a maximum of 100 elements.
-func (m *OemWarranty) GetBaseWarranties()([]WarrantyOffer) {
+func (m *OemWarranty) GetBaseWarranties()([]WarrantyOfferable) {
     if m == nil {
         return nil
     } else {
@@ -68,28 +72,28 @@ func (m *OemWarranty) GetDeviceWarrantyUrl()(*string) {
 func (m *OemWarranty) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["additionalWarranties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWarrantyOffer() })
+        val, err := n.GetCollectionOfObjectValues(CreateWarrantyOfferFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WarrantyOffer, len(val))
+            res := make([]WarrantyOfferable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WarrantyOffer))
+                res[i] = v.(WarrantyOfferable)
             }
             m.SetAdditionalWarranties(res)
         }
         return nil
     }
     res["baseWarranties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWarrantyOffer() })
+        val, err := n.GetCollectionOfObjectValues(CreateWarrantyOfferFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WarrantyOffer, len(val))
+            res := make([]WarrantyOfferable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WarrantyOffer))
+                res[i] = v.(WarrantyOfferable)
             }
             m.SetBaseWarranties(res)
         }
@@ -125,8 +129,7 @@ func (m *OemWarranty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetAdditionalWarranties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalWarranties()))
         for i, v := range m.GetAdditionalWarranties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("additionalWarranties", cast)
         if err != nil {
@@ -136,8 +139,7 @@ func (m *OemWarranty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetBaseWarranties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBaseWarranties()))
         for i, v := range m.GetBaseWarranties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("baseWarranties", cast)
         if err != nil {
@@ -171,13 +173,13 @@ func (m *OemWarranty) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAdditionalWarranties sets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
-func (m *OemWarranty) SetAdditionalWarranties(value []WarrantyOffer)() {
+func (m *OemWarranty) SetAdditionalWarranties(value []WarrantyOfferable)() {
     if m != nil {
         m.additionalWarranties = value
     }
 }
 // SetBaseWarranties sets the baseWarranties property value. List of base warranty offers. This collection can contain a maximum of 100 elements.
-func (m *OemWarranty) SetBaseWarranties(value []WarrantyOffer)() {
+func (m *OemWarranty) SetBaseWarranties(value []WarrantyOfferable)() {
     if m != nil {
         m.baseWarranties = value
     }

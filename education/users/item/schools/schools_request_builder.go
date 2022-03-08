@@ -2,12 +2,11 @@ package schools
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i7e9821d8d5cef943f50f696c0b951d61bdbac41b0e641563741ca30bfd6cd3c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/schools/delta"
-    i82975e8af2b25075d5f849b47aeca4c6e5831694b011b36d6a843d1360a1093b "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/schools/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i67774f102cb1c3ec7ba63699d14fe98e3347b0488670fd744d35d5e74b1c30bb "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/schools/count"
 )
 
-// SchoolsRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\schools
+// SchoolsRequestBuilder provides operations to manage the schools property of the microsoft.graph.educationUser entity.
 type SchoolsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +54,7 @@ func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,6 +63,9 @@ func NewSchoolsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SchoolsRequestBuilder) Count()(*i67774f102cb1c3ec7ba63699d14fe98e3347b0488670fd744d35d5e74b1c30bb.CountRequestBuilder) {
+    return i67774f102cb1c3ec7ba63699d14fe98e3347b0488670fd744d35d5e74b1c30bb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation schools to which the user belongs. Nullable.
 func (m *SchoolsRequestBuilder) CreateGetRequestInformation(options *SchoolsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,22 +87,19 @@ func (m *SchoolsRequestBuilder) CreateGetRequestInformation(options *SchoolsRequ
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \education\users\{educationUser-id}\schools\microsoft.graph.delta()
-func (m *SchoolsRequestBuilder) Delta()(*i7e9821d8d5cef943f50f696c0b951d61bdbac41b0e641563741ca30bfd6cd3c4.DeltaRequestBuilder) {
-    return i7e9821d8d5cef943f50f696c0b951d61bdbac41b0e641563741ca30bfd6cd3c4.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get schools to which the user belongs. Nullable.
-func (m *SchoolsRequestBuilder) Get(options *SchoolsRequestBuilderGetOptions)(*SchoolsResponse, error) {
+func (m *SchoolsRequestBuilder) Get(options *SchoolsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchoolCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSchoolsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationSchoolCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SchoolsResponse), nil
-}
-func (m *SchoolsRequestBuilder) Ref()(*i82975e8af2b25075d5f849b47aeca4c6e5831694b011b36d6a843d1360a1093b.RefRequestBuilder) {
-    return i82975e8af2b25075d5f849b47aeca4c6e5831694b011b36d6a843d1360a1093b.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchoolCollectionResponseable), nil
 }

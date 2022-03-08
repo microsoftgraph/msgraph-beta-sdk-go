@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchDetectedSensitiveContent 
+// ExactMatchDetectedSensitiveContent provides operations to call the classifyExactMatches method.
 type ExactMatchDetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // 
-    matches []SensitiveContentLocation;
+    matches []SensitiveContentLocationable;
 }
 // NewExactMatchDetectedSensitiveContent instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
 func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent) {
@@ -17,32 +17,36 @@ func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent
     }
     return m
 }
-// GetMatches gets the matches property value. 
-func (m *ExactMatchDetectedSensitiveContent) GetMatches()([]SensitiveContentLocation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matches
-    }
+// CreateExactMatchDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactMatchDetectedSensitiveContentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactMatchDetectedSensitiveContent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
     res["matches"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSensitiveContentLocation() })
+        val, err := n.GetCollectionOfObjectValues(CreateSensitiveContentLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SensitiveContentLocation, len(val))
+            res := make([]SensitiveContentLocationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SensitiveContentLocation))
+                res[i] = v.(SensitiveContentLocationable)
             }
             m.SetMatches(res)
         }
         return nil
     }
     return res
+}
+// GetMatches gets the matches property value. 
+func (m *ExactMatchDetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matches
+    }
 }
 func (m *ExactMatchDetectedSensitiveContent) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd2
     if m.GetMatches() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd2
     return nil
 }
 // SetMatches sets the matches property value. 
-func (m *ExactMatchDetectedSensitiveContent) SetMatches(value []SensitiveContentLocation)() {
+func (m *ExactMatchDetectedSensitiveContent) SetMatches(value []SensitiveContentLocationable)() {
     if m != nil {
         m.matches = value
     }

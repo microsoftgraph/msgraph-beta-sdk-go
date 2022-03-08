@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the executeAction method.
 type ManagedDeviceRemoteAction int
 
 const (

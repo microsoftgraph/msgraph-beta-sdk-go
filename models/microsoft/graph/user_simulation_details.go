@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSimulationDetails 
+// UserSimulationDetails provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type UserSimulationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,11 +22,11 @@ type UserSimulationDetails struct {
     // Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
     reportedPhishDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // List of simulation events of a user in the attack simulation and training campaign.
-    simulationEvents []UserSimulationEventInfo;
+    simulationEvents []UserSimulationEventInfoable;
     // User in an attack simulation and training campaign.
-    simulationUser *AttackSimulationUser;
+    simulationUser AttackSimulationUserable;
     // List of training events of a user in the attack simulation and training campaign.
-    trainingEvents []UserTrainingEventInfo;
+    trainingEvents []UserTrainingEventInfoable;
 }
 // NewUserSimulationDetails instantiates a new userSimulationDetails and sets the default values.
 func NewUserSimulationDetails()(*UserSimulationDetails) {
@@ -34,6 +34,10 @@ func NewUserSimulationDetails()(*UserSimulationDetails) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUserSimulationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserSimulationDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserSimulationDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationDetails) GetAdditionalData()(map[string]interface{}) {
@@ -65,54 +69,6 @@ func (m *UserSimulationDetails) GetCompromisedDateTime()(*i336074805fc853987abe6
         return nil
     } else {
         return m.compromisedDateTime
-    }
-}
-// GetInProgressTrainingsCount gets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
-func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inProgressTrainingsCount
-    }
-}
-// GetIsCompromised gets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
-func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCompromised
-    }
-}
-// GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
-func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportedPhishDateTime
-    }
-}
-// GetSimulationEvents gets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
-func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationEvents
-    }
-}
-// GetSimulationUser gets the simulationUser property value. User in an attack simulation and training campaign.
-func (m *UserSimulationDetails) GetSimulationUser()(*AttackSimulationUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationUser
-    }
-}
-// GetTrainingEvents gets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
-func (m *UserSimulationDetails) GetTrainingEvents()([]UserTrainingEventInfo) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingEvents
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,44 +135,92 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["simulationEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSimulationEventInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserSimulationEventInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserSimulationEventInfo, len(val))
+            res := make([]UserSimulationEventInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserSimulationEventInfo))
+                res[i] = v.(UserSimulationEventInfoable)
             }
             m.SetSimulationEvents(res)
         }
         return nil
     }
     res["simulationUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttackSimulationUser() })
+        val, err := n.GetObjectValue(CreateAttackSimulationUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSimulationUser(val.(*AttackSimulationUser))
+            m.SetSimulationUser(val.(AttackSimulationUserable))
         }
         return nil
     }
     res["trainingEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserTrainingEventInfo() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserTrainingEventInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserTrainingEventInfo, len(val))
+            res := make([]UserTrainingEventInfoable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserTrainingEventInfo))
+                res[i] = v.(UserTrainingEventInfoable)
             }
             m.SetTrainingEvents(res)
         }
         return nil
     }
     return res
+}
+// GetInProgressTrainingsCount gets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
+func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inProgressTrainingsCount
+    }
+}
+// GetIsCompromised gets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
+func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCompromised
+    }
+}
+// GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportedPhishDateTime
+    }
+}
+// GetSimulationEvents gets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
+func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.simulationEvents
+    }
+}
+// GetSimulationUser gets the simulationUser property value. User in an attack simulation and training campaign.
+func (m *UserSimulationDetails) GetSimulationUser()(AttackSimulationUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.simulationUser
+    }
+}
+// GetTrainingEvents gets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
+func (m *UserSimulationDetails) GetTrainingEvents()([]UserTrainingEventInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trainingEvents
+    }
 }
 func (m *UserSimulationDetails) IsNil()(bool) {
     return m == nil
@@ -262,8 +266,7 @@ func (m *UserSimulationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetSimulationEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSimulationEvents()))
         for i, v := range m.GetSimulationEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("simulationEvents", cast)
         if err != nil {
@@ -279,8 +282,7 @@ func (m *UserSimulationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetTrainingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTrainingEvents()))
         for i, v := range m.GetTrainingEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("trainingEvents", cast)
         if err != nil {
@@ -338,19 +340,19 @@ func (m *UserSimulationDetails) SetReportedPhishDateTime(value *i336074805fc8539
     }
 }
 // SetSimulationEvents sets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
-func (m *UserSimulationDetails) SetSimulationEvents(value []UserSimulationEventInfo)() {
+func (m *UserSimulationDetails) SetSimulationEvents(value []UserSimulationEventInfoable)() {
     if m != nil {
         m.simulationEvents = value
     }
 }
 // SetSimulationUser sets the simulationUser property value. User in an attack simulation and training campaign.
-func (m *UserSimulationDetails) SetSimulationUser(value *AttackSimulationUser)() {
+func (m *UserSimulationDetails) SetSimulationUser(value AttackSimulationUserable)() {
     if m != nil {
         m.simulationUser = value
     }
 }
 // SetTrainingEvents sets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
-func (m *UserSimulationDetails) SetTrainingEvents(value []UserTrainingEventInfo)() {
+func (m *UserSimulationDetails) SetTrainingEvents(value []UserTrainingEventInfoable)() {
     if m != nil {
         m.trainingEvents = value
     }

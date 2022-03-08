@@ -2,14 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i29849b7bdbfecd87e4bbd3df4a5e86328cd6ecaa3abc6305f327b6fbe08c2513 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/classes"
     i73b5871e98e80de0617052da16b736c5337770c4ccdfb726277a00424b92fe7d "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/users"
     icfb6e32f97bd4235dc90841a8db94d6ae91f82157354db59ed54dd9f182a6096 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/administrativeunit"
+    i23a7fb5a1ffc4cf80cf349afab1b5f8cfb3d3a3a12e2e62e24930a8787b14069 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/classes/item"
+    if8d8bcc13aaebd6e3ce9c01fcd6bb1063bdbebeded04ae846764acbc189974a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/item/users/item"
 )
 
-// EducationSchoolItemRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}
+// EducationSchoolItemRequestBuilder provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
 type EducationSchoolItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type EducationSchoolItemRequestBuilderGetQueryParameters struct {
 // EducationSchoolItemRequestBuilderPatchOptions options for Patch
 type EducationSchoolItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchool;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchoolable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,6 +63,17 @@ func (m *EducationSchoolItemRequestBuilder) AdministrativeUnit()(*icfb6e32f97bd4
 func (m *EducationSchoolItemRequestBuilder) Classes()(*i29849b7bdbfecd87e4bbd3df4a5e86328cd6ecaa3abc6305f327b6fbe08c2513.ClassesRequestBuilder) {
     return i29849b7bdbfecd87e4bbd3df4a5e86328cd6ecaa3abc6305f327b6fbe08c2513.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ClassesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.schools.item.classes.item collection
+func (m *EducationSchoolItemRequestBuilder) ClassesById(id string)(*i23a7fb5a1ffc4cf80cf349afab1b5f8cfb3d3a3a12e2e62e24930a8787b14069.EducationClassItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationClass_id"] = id
+    }
+    return i23a7fb5a1ffc4cf80cf349afab1b5f8cfb3d3a3a12e2e62e24930a8787b14069.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
 func NewEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSchoolItemRequestBuilder) {
     m := &EducationSchoolItemRequestBuilder{
@@ -71,7 +83,7 @@ func NewEducationSchoolItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -142,23 +154,31 @@ func (m *EducationSchoolItemRequestBuilder) Delete(options *EducationSchoolItemR
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get schools from education
-func (m *EducationSchoolItemRequestBuilder) Get(options *EducationSchoolItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchool, error) {
+func (m *EducationSchoolItemRequestBuilder) Get(options *EducationSchoolItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchoolable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationSchool() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationSchoolFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchool), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchoolable), nil
 }
 // Patch update the navigation property schools in education
 func (m *EducationSchoolItemRequestBuilder) Patch(options *EducationSchoolItemRequestBuilderPatchOptions)(error) {
@@ -166,7 +186,11 @@ func (m *EducationSchoolItemRequestBuilder) Patch(options *EducationSchoolItemRe
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -174,4 +198,15 @@ func (m *EducationSchoolItemRequestBuilder) Patch(options *EducationSchoolItemRe
 }
 func (m *EducationSchoolItemRequestBuilder) Users()(*i73b5871e98e80de0617052da16b736c5337770c4ccdfb726277a00424b92fe7d.UsersRequestBuilder) {
     return i73b5871e98e80de0617052da16b736c5337770c4ccdfb726277a00424b92fe7d.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UsersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.schools.item.users.item collection
+func (m *EducationSchoolItemRequestBuilder) UsersById(id string)(*if8d8bcc13aaebd6e3ce9c01fcd6bb1063bdbebeded04ae846764acbc189974a5.EducationUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationUser_id"] = id
+    }
+    return if8d8bcc13aaebd6e3ce9c01fcd6bb1063bdbebeded04ae846764acbc189974a5.NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

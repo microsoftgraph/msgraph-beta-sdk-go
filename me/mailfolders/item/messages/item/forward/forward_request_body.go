@@ -5,16 +5,16 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ForwardRequestBody 
+// ForwardRequestBody provides operations to call the forward method.
 type ForwardRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     comment *string;
     // 
-    message *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
+    message i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable;
     // 
-    toRecipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient;
+    toRecipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipientable;
 }
 // NewForwardRequestBody instantiates a new forwardRequestBody and sets the default values.
 func NewForwardRequestBody()(*ForwardRequestBody) {
@@ -22,6 +22,10 @@ func NewForwardRequestBody()(*ForwardRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateForwardRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateForwardRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewForwardRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ForwardRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -39,22 +43,6 @@ func (m *ForwardRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetMessage gets the message property value. 
-func (m *ForwardRequestBody) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetToRecipients gets the toRecipients property value. 
-func (m *ForwardRequestBody) GetToRecipients()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toRecipients
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ForwardRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -69,30 +57,46 @@ func (m *ForwardRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMessage() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMessage(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message))
+            m.SetMessage(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable))
         }
         return nil
     }
     res["toRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipientable)
             }
             m.SetToRecipients(res)
         }
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. 
+func (m *ForwardRequestBody) GetMessage()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetToRecipients gets the toRecipients property value. 
+func (m *ForwardRequestBody) GetToRecipients()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.toRecipients
+    }
 }
 func (m *ForwardRequestBody) IsNil()(bool) {
     return m == nil
@@ -114,8 +118,7 @@ func (m *ForwardRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetToRecipients() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetToRecipients()))
         for i, v := range m.GetToRecipients() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("toRecipients", cast)
         if err != nil {
@@ -143,13 +146,13 @@ func (m *ForwardRequestBody) SetComment(value *string)() {
     }
 }
 // SetMessage sets the message property value. 
-func (m *ForwardRequestBody) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message)() {
+func (m *ForwardRequestBody) SetMessage(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable)() {
     if m != nil {
         m.message = value
     }
 }
 // SetToRecipients sets the toRecipients property value. 
-func (m *ForwardRequestBody) SetToRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient)() {
+func (m *ForwardRequestBody) SetToRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipientable)() {
     if m != nil {
         m.toRecipients = value
     }

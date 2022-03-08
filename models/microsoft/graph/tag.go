@@ -6,15 +6,15 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// Tag 
+// Tag provides operations to manage the compliance singleton.
 type Tag struct {
     Entity
     // Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
     childSelectability *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability;
     // Returns the tags that are a child of a tag.
-    childTags []Tag;
+    childTags []Tagable;
     // The user who created the tag.
-    createdBy *IdentitySet;
+    createdBy IdentitySetable;
     // The description for the tag.
     description *string;
     // Display name of the tag.
@@ -22,7 +22,7 @@ type Tag struct {
     // The date and time the tag was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Returns the parent tag of the specified tag.
-    parent *Tag;
+    parent Tagable;
 }
 // NewTag instantiates a new tag and sets the default values.
 func NewTag()(*Tag) {
@@ -30,6 +30,10 @@ func NewTag()(*Tag) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTagFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTag(), nil
 }
 // GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *Tag) GetChildSelectability()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability) {
@@ -40,7 +44,7 @@ func (m *Tag) GetChildSelectability()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b63
     }
 }
 // GetChildTags gets the childTags property value. Returns the tags that are a child of a tag.
-func (m *Tag) GetChildTags()([]Tag) {
+func (m *Tag) GetChildTags()([]Tagable) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +52,7 @@ func (m *Tag) GetChildTags()([]Tag) {
     }
 }
 // GetCreatedBy gets the createdBy property value. The user who created the tag.
-func (m *Tag) GetCreatedBy()(*IdentitySet) {
+func (m *Tag) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
     } else {
@@ -71,22 +75,6 @@ func (m *Tag) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the tag was last modified.
-func (m *Tag) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetParent gets the parent property value. Returns the parent tag of the specified tag.
-func (m *Tag) GetParent()(*Tag) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parent
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -101,26 +89,26 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         return nil
     }
     res["childTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTag() })
+        val, err := n.GetCollectionOfObjectValues(CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Tag, len(val))
+            res := make([]Tagable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Tag))
+                res[i] = v.(Tagable)
             }
             m.SetChildTags(res)
         }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedBy(val.(*IdentitySet))
+            m.SetCreatedBy(val.(IdentitySetable))
         }
         return nil
     }
@@ -155,16 +143,32 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         return nil
     }
     res["parent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTag() })
+        val, err := n.GetObjectValue(CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParent(val.(*Tag))
+            m.SetParent(val.(Tagable))
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the tag was last modified.
+func (m *Tag) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetParent gets the parent property value. Returns the parent tag of the specified tag.
+func (m *Tag) GetParent()(Tagable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parent
+    }
 }
 func (m *Tag) IsNil()(bool) {
     return m == nil
@@ -185,8 +189,7 @@ func (m *Tag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if m.GetChildTags() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildTags()))
         for i, v := range m.GetChildTags() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("childTags", cast)
         if err != nil {
@@ -232,13 +235,13 @@ func (m *Tag) SetChildSelectability(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac
     }
 }
 // SetChildTags sets the childTags property value. Returns the tags that are a child of a tag.
-func (m *Tag) SetChildTags(value []Tag)() {
+func (m *Tag) SetChildTags(value []Tagable)() {
     if m != nil {
         m.childTags = value
     }
 }
 // SetCreatedBy sets the createdBy property value. The user who created the tag.
-func (m *Tag) SetCreatedBy(value *IdentitySet)() {
+func (m *Tag) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
@@ -262,7 +265,7 @@ func (m *Tag) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetParent sets the parent property value. Returns the parent tag of the specified tag.
-func (m *Tag) SetParent(value *Tag)() {
+func (m *Tag) SetParent(value Tagable)() {
     if m != nil {
         m.parent = value
     }

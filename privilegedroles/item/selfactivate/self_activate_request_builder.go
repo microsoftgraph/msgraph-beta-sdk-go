@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SelfActivateRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\microsoft.graph.selfActivate
+// SelfActivateRequestBuilder provides operations to call the selfActivate method.
 type SelfActivateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type SelfActivateRequestBuilder struct {
 // SelfActivateRequestBuilderPostOptions options for Post
 type SelfActivateRequestBuilderPostOptions struct {
     // 
-    Body *SelfActivateRequestBody;
+    Body SelfActivateRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type SelfActivateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type privilegedRoleAssignment
-    privilegedRoleAssignment *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment;
+    privilegedRoleAssignment i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable;
 }
 // NewSelfActivateResponse instantiates a new selfActivateResponse and sets the default values.
 func NewSelfActivateResponse()(*SelfActivateResponse) {
@@ -39,6 +39,9 @@ func NewSelfActivateResponse()(*SelfActivateResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSelfActivateResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSelfActivateResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfActivateResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *SelfActivateResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *SelfActivateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["privilegedRoleAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedRoleAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegedRoleAssignment(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPrivilegedRoleAssignment gets the privilegedRoleAssignment property value. Union type representation for type privilegedRoleAssignment
-func (m *SelfActivateResponse) GetPrivilegedRoleAssignment()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment) {
+func (m *SelfActivateResponse) GetPrivilegedRoleAssignment()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable) {
     if m == nil {
         return nil
     } else {
         return m.privilegedRoleAssignment
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *SelfActivateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["privilegedRoleAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedRoleAssignment() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrivilegedRoleAssignment(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment))
-        }
-        return nil
-    }
-    return res
 }
 func (m *SelfActivateResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *SelfActivateResponse) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetPrivilegedRoleAssignment sets the privilegedRoleAssignment property value. Union type representation for type privilegedRoleAssignment
-func (m *SelfActivateResponse) SetPrivilegedRoleAssignment(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment)() {
+func (m *SelfActivateResponse) SetPrivilegedRoleAssignment(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable)() {
     if m != nil {
         m.privilegedRoleAssignment = value
     }
@@ -111,7 +114,7 @@ func NewSelfActivateRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *SelfActivateRequestBuilder) CreatePostRequestInformation(options *SelfA
     return requestInfo, nil
 }
 // Post invoke action selfActivate
-func (m *SelfActivateRequestBuilder) Post(options *SelfActivateRequestBuilderPostOptions)(*SelfActivateResponse, error) {
+func (m *SelfActivateRequestBuilder) Post(options *SelfActivateRequestBuilderPostOptions)(SelfActivateResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSelfActivateResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSelfActivateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SelfActivateResponse), nil
+    return res.(SelfActivateResponseable), nil
 }

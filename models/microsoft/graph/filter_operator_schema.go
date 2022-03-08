@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FilterOperatorSchema 
+// FilterOperatorSchema provides operations to call the filterOperators method.
 type FilterOperatorSchema struct {
     Entity
     // Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
@@ -21,28 +21,16 @@ func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     }
     return m
 }
+// CreateFilterOperatorSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFilterOperatorSchemaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFilterOperatorSchema(), nil
+}
 // GetArity gets the arity property value. Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
 func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
     if m == nil {
         return nil
     } else {
         return m.arity
-    }
-}
-// GetMultivaluedComparisonType gets the multivaluedComparisonType property value. Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
-func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multivaluedComparisonType
-    }
-}
-// GetSupportedAttributeTypes gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
-func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]AttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedAttributeTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -83,6 +71,22 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetMultivaluedComparisonType gets the multivaluedComparisonType property value. Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
+func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multivaluedComparisonType
+    }
+}
+// GetSupportedAttributeTypes gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
+func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]AttributeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedAttributeTypes
+    }
 }
 func (m *FilterOperatorSchema) IsNil()(bool) {
     return m == nil

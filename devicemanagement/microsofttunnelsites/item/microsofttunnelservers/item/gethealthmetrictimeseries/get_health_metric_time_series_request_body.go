@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetHealthMetricTimeSeriesRequestBody 
+// GetHealthMetricTimeSeriesRequestBody provides operations to call the getHealthMetricTimeSeries method.
 type GetHealthMetricTimeSeriesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewGetHealthMetricTimeSeriesRequestBody()(*GetHealthMetricTimeSeriesRequest
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetHealthMetricTimeSeriesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetHealthMetricTimeSeriesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetHealthMetricTimeSeriesRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetHealthMetricTimeSeriesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *GetHealthMetricTimeSeriesRequestBody) GetEndDateTime()(*i336074805fc853
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetMetricName gets the metricName property value. 
-func (m *GetHealthMetricTimeSeriesRequestBody) GetMetricName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricName
-    }
-}
-// GetStartDateTime gets the startDateTime property value. 
-func (m *GetHealthMetricTimeSeriesRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,6 +77,22 @@ func (m *GetHealthMetricTimeSeriesRequestBody) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetMetricName gets the metricName property value. 
+func (m *GetHealthMetricTimeSeriesRequestBody) GetMetricName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metricName
+    }
+}
+// GetStartDateTime gets the startDateTime property value. 
+func (m *GetHealthMetricTimeSeriesRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *GetHealthMetricTimeSeriesRequestBody) IsNil()(bool) {
     return m == nil

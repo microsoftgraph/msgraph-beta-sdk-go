@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TranslationLanguageOverride 
+// TranslationLanguageOverride provides operations to manage the compliance singleton.
 type TranslationLanguageOverride struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewTranslationLanguageOverride()(*TranslationLanguageOverride) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTranslationLanguageOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTranslationLanguageOverrideFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTranslationLanguageOverride(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslationLanguageOverride) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLanguageTag gets the languageTag property value. The language to apply the override.Returned by default. Not nullable.
-func (m *TranslationLanguageOverride) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
-}
-// GetTranslationBehavior gets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
-func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.translationBehavior
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *TranslationLanguageOverride) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetLanguageTag gets the languageTag property value. The language to apply the override.Returned by default. Not nullable.
+func (m *TranslationLanguageOverride) GetLanguageTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTag
+    }
+}
+// GetTranslationBehavior gets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
+func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationBehavior) {
+    if m == nil {
+        return nil
+    } else {
+        return m.translationBehavior
+    }
 }
 func (m *TranslationLanguageOverride) IsNil()(bool) {
     return m == nil

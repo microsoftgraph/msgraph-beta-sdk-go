@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InsightsSettings 
+// InsightsSettings provides operations to manage the collection of organization entities.
 type InsightsSettings struct {
     Entity
     // The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
@@ -19,20 +19,16 @@ func NewInsightsSettings()(*InsightsSettings) {
     }
     return m
 }
+// CreateInsightsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInsightsSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInsightsSettings(), nil
+}
 // GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) GetDisabledForGroup()(*string) {
     if m == nil {
         return nil
     } else {
         return m.disabledForGroup
-    }
-}
-// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
-func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabledInOrganization
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabledInOrganization
+    }
 }
 func (m *InsightsSettings) IsNil()(bool) {
     return m == nil

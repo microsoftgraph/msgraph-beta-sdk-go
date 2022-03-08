@@ -2,11 +2,11 @@ package userexperienceanalyticsapphealthapplicationperformancebyappversion
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i84373d61bfcce691515bbcc8278b8f9cd7d2914c714057d40e3eaf0967a9beb9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversion/count"
 )
 
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBu
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReques
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Count()(*i84373d61bfcce691515bbcc8278b8f9cd7d2914c714057d40e3eaf0967a9beb9.CountRequestBuilder) {
+    return i84373d61bfcce691515bbcc8278b8f9cd7d2914c714057d40e3eaf0967a9beb9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics appHealth Application Performance by App Version
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics appHealth Application Performance by App Version
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionReque
     return requestInfo, nil
 }
 // Get user experience analytics appHealth Application Performance by App Version
-func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderGetOptions)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionResponse, error) {
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponseable), nil
 }
-// Post user experience analytics appHealth Application Performance by App Version
-func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Post(options *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion, error) {
+// Post create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) Post(options *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable), nil
 }

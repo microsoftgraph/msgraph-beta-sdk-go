@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// RenewGroupRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\microsoft.graph.renewGroup
+// RenewGroupRequestBuilder provides operations to call the renewGroup method.
 type RenewGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RenewGroupRequestBuilder struct {
 // RenewGroupRequestBuilderPostOptions options for Post
 type RenewGroupRequestBuilderPostOptions struct {
     // 
-    Body *RenewGroupRequestBody;
+    Body RenewGroupRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewRenewGroupRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *RenewGroupRequestBuilder) CreatePostRequestInformation(options *RenewGr
     return requestInfo, nil
 }
 // Post invoke action renewGroup
-func (m *RenewGroupRequestBuilder) Post(options *RenewGroupRequestBuilderPostOptions)(*bool, error) {
+func (m *RenewGroupRequestBuilder) Post(options *RenewGroupRequestBuilderPostOptions)(RenewGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateRenewGroupResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(RenewGroupResponseable), nil
 }

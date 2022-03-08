@@ -2,7 +2,6 @@ package schema
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i0660671695b3f2242dd3113221c5e3f72342e0ff0ffa9d380502e223eb7c75f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/jobs/item/schema/filteroperators"
     i2bb0f986999c75c0ca4bdcdc1c396d94ceed8cc193cfa0837b2802ca7f2c8fab "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/jobs/item/schema/functions"
@@ -11,7 +10,7 @@ import (
     i3b5a871a284736b01431c7efcb2c26c841b70a3fec1db50432ea66085f8a95dc "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/synchronization/jobs/item/schema/directories/item"
 )
 
-// SchemaRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}\schema
+// SchemaRequestBuilder provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.
 type SchemaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +49,7 @@ type SchemaRequestBuilderGetQueryParameters struct {
 // SchemaRequestBuilderPatchOptions options for Patch
 type SchemaRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSchema;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSchemaable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +66,7 @@ func NewSchemaRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,7 +76,7 @@ func NewSchemaRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the synchronization schema configured for the job.
+// CreateDeleteRequestInformation delete navigation property schema for servicePrincipals
 func (m *SchemaRequestBuilder) CreateDeleteRequestInformation(options *SchemaRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +113,7 @@ func (m *SchemaRequestBuilder) CreateGetRequestInformation(options *SchemaReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the synchronization schema configured for the job.
+// CreatePatchRequestInformation update the navigation property schema in servicePrincipals
 func (m *SchemaRequestBuilder) CreatePatchRequestInformation(options *SchemaRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,13 +131,17 @@ func (m *SchemaRequestBuilder) CreatePatchRequestInformation(options *SchemaRequ
     }
     return requestInfo, nil
 }
-// Delete the synchronization schema configured for the job.
+// Delete delete navigation property schema for servicePrincipals
 func (m *SchemaRequestBuilder) Delete(options *SchemaRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -158,36 +161,44 @@ func (m *SchemaRequestBuilder) DirectoriesById(id string)(*i3b5a871a284736b01431
     }
     return i3b5a871a284736b01431c7efcb2c26c841b70a3fec1db50432ea66085f8a95dc.NewDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// FilterOperators builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.filterOperators()
+// FilterOperators provides operations to call the filterOperators method.
 func (m *SchemaRequestBuilder) FilterOperators()(*i0660671695b3f2242dd3113221c5e3f72342e0ff0ffa9d380502e223eb7c75f7.FilterOperatorsRequestBuilder) {
     return i0660671695b3f2242dd3113221c5e3f72342e0ff0ffa9d380502e223eb7c75f7.NewFilterOperatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Functions builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.functions()
+// Functions provides operations to call the functions method.
 func (m *SchemaRequestBuilder) Functions()(*i2bb0f986999c75c0ca4bdcdc1c396d94ceed8cc193cfa0837b2802ca7f2c8fab.FunctionsRequestBuilder) {
     return i2bb0f986999c75c0ca4bdcdc1c396d94ceed8cc193cfa0837b2802ca7f2c8fab.NewFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the synchronization schema configured for the job.
-func (m *SchemaRequestBuilder) Get(options *SchemaRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSchema, error) {
+func (m *SchemaRequestBuilder) Get(options *SchemaRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSchemaable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSynchronizationSchema() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSynchronizationSchemaFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSchema), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSchemaable), nil
 }
 func (m *SchemaRequestBuilder) ParseExpression()(*if23bb949ea15062726d8be4224904c7bd42d0e0e3dd45612ea423af36b5ad737.ParseExpressionRequestBuilder) {
     return if23bb949ea15062726d8be4224904c7bd42d0e0e3dd45612ea423af36b5ad737.NewParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the synchronization schema configured for the job.
+// Patch update the navigation property schema in servicePrincipals
 func (m *SchemaRequestBuilder) Patch(options *SchemaRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

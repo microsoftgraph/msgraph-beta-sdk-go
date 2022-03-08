@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MuteParticipantsOperation 
+// MuteParticipantsOperation provides operations to call the muteAll method.
 type MuteParticipantsOperation struct {
     CommsOperation
     // 
@@ -17,13 +17,9 @@ func NewMuteParticipantsOperation()(*MuteParticipantsOperation) {
     }
     return m
 }
-// GetParticipants gets the participants property value. 
-func (m *MuteParticipantsOperation) GetParticipants()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+// CreateMuteParticipantsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMuteParticipantsOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMuteParticipantsOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MuteParticipantsOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -43,6 +39,14 @@ func (m *MuteParticipantsOperation) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetParticipants gets the participants property value. 
+func (m *MuteParticipantsOperation) GetParticipants()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participants
+    }
 }
 func (m *MuteParticipantsOperation) IsNil()(bool) {
     return m == nil

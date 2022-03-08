@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SendActivityNotificationRequestBody 
+// SendActivityNotificationRequestBody provides operations to call the sendActivityNotification method.
 type SendActivityNotificationRequestBody struct {
     // 
     activityType *string;
@@ -14,13 +14,13 @@ type SendActivityNotificationRequestBody struct {
     // 
     chainId *int64;
     // 
-    previewText *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody;
+    previewText i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable;
     // 
-    recipient *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipient;
+    recipient i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipientable;
     // 
-    templateParameters []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair;
+    templateParameters []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePairable;
     // 
-    topic *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic;
+    topic i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopicable;
 }
 // NewSendActivityNotificationRequestBody instantiates a new sendActivityNotificationRequestBody and sets the default values.
 func NewSendActivityNotificationRequestBody()(*SendActivityNotificationRequestBody) {
@@ -28,6 +28,10 @@ func NewSendActivityNotificationRequestBody()(*SendActivityNotificationRequestBo
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSendActivityNotificationRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSendActivityNotificationRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSendActivityNotificationRequestBody(), nil
 }
 // GetActivityType gets the activityType property value. 
 func (m *SendActivityNotificationRequestBody) GetActivityType()(*string) {
@@ -51,38 +55,6 @@ func (m *SendActivityNotificationRequestBody) GetChainId()(*int64) {
         return nil
     } else {
         return m.chainId
-    }
-}
-// GetPreviewText gets the previewText property value. 
-func (m *SendActivityNotificationRequestBody) GetPreviewText()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewText
-    }
-}
-// GetRecipient gets the recipient property value. 
-func (m *SendActivityNotificationRequestBody) GetRecipient()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipient
-    }
-}
-// GetTemplateParameters gets the templateParameters property value. 
-func (m *SendActivityNotificationRequestBody) GetTemplateParameters()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateParameters
-    }
-}
-// GetTopic gets the topic property value. 
-func (m *SendActivityNotificationRequestBody) GetTopic()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topic
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,50 +81,82 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
         return nil
     }
     res["previewText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewItemBody() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPreviewText(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody))
+            m.SetPreviewText(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable))
         }
         return nil
     }
     res["recipient"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTeamworkNotificationRecipient() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamworkNotificationRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecipient(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipient))
+            m.SetRecipient(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipientable))
         }
         return nil
     }
     res["templateParameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePairable)
             }
             m.SetTemplateParameters(res)
         }
         return nil
     }
     res["topic"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTeamworkActivityTopic() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamworkActivityTopicFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTopic(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic))
+            m.SetTopic(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopicable))
         }
         return nil
     }
     return res
+}
+// GetPreviewText gets the previewText property value. 
+func (m *SendActivityNotificationRequestBody) GetPreviewText()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.previewText
+    }
+}
+// GetRecipient gets the recipient property value. 
+func (m *SendActivityNotificationRequestBody) GetRecipient()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recipient
+    }
+}
+// GetTemplateParameters gets the templateParameters property value. 
+func (m *SendActivityNotificationRequestBody) GetTemplateParameters()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.templateParameters
+    }
+}
+// GetTopic gets the topic property value. 
+func (m *SendActivityNotificationRequestBody) GetTopic()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopicable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.topic
+    }
 }
 func (m *SendActivityNotificationRequestBody) IsNil()(bool) {
     return m == nil
@@ -186,8 +190,7 @@ func (m *SendActivityNotificationRequestBody) Serialize(writer i04eb5309aeaafadd
     if m.GetTemplateParameters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTemplateParameters()))
         for i, v := range m.GetTemplateParameters() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("templateParameters", cast)
         if err != nil {
@@ -227,25 +230,25 @@ func (m *SendActivityNotificationRequestBody) SetChainId(value *int64)() {
     }
 }
 // SetPreviewText sets the previewText property value. 
-func (m *SendActivityNotificationRequestBody) SetPreviewText(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody)() {
+func (m *SendActivityNotificationRequestBody) SetPreviewText(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable)() {
     if m != nil {
         m.previewText = value
     }
 }
 // SetRecipient sets the recipient property value. 
-func (m *SendActivityNotificationRequestBody) SetRecipient(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipient)() {
+func (m *SendActivityNotificationRequestBody) SetRecipient(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkNotificationRecipientable)() {
     if m != nil {
         m.recipient = value
     }
 }
 // SetTemplateParameters sets the templateParameters property value. 
-func (m *SendActivityNotificationRequestBody) SetTemplateParameters(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair)() {
+func (m *SendActivityNotificationRequestBody) SetTemplateParameters(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePairable)() {
     if m != nil {
         m.templateParameters = value
     }
 }
 // SetTopic sets the topic property value. 
-func (m *SendActivityNotificationRequestBody) SetTopic(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic)() {
+func (m *SendActivityNotificationRequestBody) SetTopic(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopicable)() {
     if m != nil {
         m.topic = value
     }

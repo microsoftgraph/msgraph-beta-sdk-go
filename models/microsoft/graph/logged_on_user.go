@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LoggedOnUser 
+// LoggedOnUser provides operations to manage the compliance singleton.
 type LoggedOnUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,28 +21,16 @@ func NewLoggedOnUser()(*LoggedOnUser) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateLoggedOnUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLoggedOnUserFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLoggedOnUser(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoggedOnUser) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastLogOnDateTime gets the lastLogOnDateTime property value. Date time when user logs on
-func (m *LoggedOnUser) GetLastLogOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastLogOnDateTime
-    }
-}
-// GetUserId gets the userId property value. User id
-func (m *LoggedOnUser) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +57,22 @@ func (m *LoggedOnUser) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetLastLogOnDateTime gets the lastLogOnDateTime property value. Date time when user logs on
+func (m *LoggedOnUser) GetLastLogOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastLogOnDateTime
+    }
+}
+// GetUserId gets the userId property value. User id
+func (m *LoggedOnUser) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *LoggedOnUser) IsNil()(bool) {
     return m == nil

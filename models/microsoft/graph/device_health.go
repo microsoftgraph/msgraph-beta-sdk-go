@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealth 
+// DeviceHealth provides operations to manage the print singleton.
 type DeviceHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,20 +19,16 @@ func NewDeviceHealth()(*DeviceHealth) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceHealthFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceHealth(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealth) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastConnectionTime gets the lastConnectionTime property value. The last time the device was connected.
-func (m *DeviceHealth) GetLastConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -49,6 +45,14 @@ func (m *DeviceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetLastConnectionTime gets the lastConnectionTime property value. The last time the device was connected.
+func (m *DeviceHealth) GetLastConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastConnectionTime
+    }
 }
 func (m *DeviceHealth) IsNil()(bool) {
     return m == nil

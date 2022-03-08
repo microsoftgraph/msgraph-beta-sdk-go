@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutOfBoxExperienceSettings 
+// OutOfBoxExperienceSettings provides operations to manage the deviceManagement singleton.
 type OutOfBoxExperienceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOutOfBoxExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutOfBoxExperienceSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutOfBoxExperienceSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutOfBoxExperienceSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -42,46 +46,6 @@ func (m *OutOfBoxExperienceSettings) GetDeviceUsageType()(*WindowsDeviceUsageTyp
         return nil
     } else {
         return m.deviceUsageType
-    }
-}
-// GetHideEscapeLink gets the hideEscapeLink property value. If set to true, then the user can't start over with different account, on company sign-in
-func (m *OutOfBoxExperienceSettings) GetHideEscapeLink()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideEscapeLink
-    }
-}
-// GetHideEULA gets the hideEULA property value. Show or hide EULA to user
-func (m *OutOfBoxExperienceSettings) GetHideEULA()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideEULA
-    }
-}
-// GetHidePrivacySettings gets the hidePrivacySettings property value. Show or hide privacy settings to user
-func (m *OutOfBoxExperienceSettings) GetHidePrivacySettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidePrivacySettings
-    }
-}
-// GetSkipKeyboardSelectionPage gets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
-func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skipKeyboardSelectionPage
-    }
-}
-// GetUserType gets the userType property value. Type of user. Possible values are: administrator, standard.
-func (m *OutOfBoxExperienceSettings) GetUserType()(*WindowsUserType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +112,46 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetHideEscapeLink gets the hideEscapeLink property value. If set to true, then the user can't start over with different account, on company sign-in
+func (m *OutOfBoxExperienceSettings) GetHideEscapeLink()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hideEscapeLink
+    }
+}
+// GetHideEULA gets the hideEULA property value. Show or hide EULA to user
+func (m *OutOfBoxExperienceSettings) GetHideEULA()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hideEULA
+    }
+}
+// GetHidePrivacySettings gets the hidePrivacySettings property value. Show or hide privacy settings to user
+func (m *OutOfBoxExperienceSettings) GetHidePrivacySettings()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hidePrivacySettings
+    }
+}
+// GetSkipKeyboardSelectionPage gets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
+func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skipKeyboardSelectionPage
+    }
+}
+// GetUserType gets the userType property value. Type of user. Possible values are: administrator, standard.
+func (m *OutOfBoxExperienceSettings) GetUserType()(*WindowsUserType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userType
+    }
 }
 func (m *OutOfBoxExperienceSettings) IsNil()(bool) {
     return m == nil

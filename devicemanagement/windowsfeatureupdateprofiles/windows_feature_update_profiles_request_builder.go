@@ -2,11 +2,11 @@ package windowsfeatureupdateprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ia982d8a568462ee022ad1cccab7c070041b50d54d68cec4e6e82813941a3a944 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsfeatureupdateprofiles/count"
 )
 
-// WindowsFeatureUpdateProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles
+// WindowsFeatureUpdateProfilesRequestBuilder provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 type WindowsFeatureUpdateProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type WindowsFeatureUpdateProfilesRequestBuilderGetQueryParameters struct {
 // WindowsFeatureUpdateProfilesRequestBuilderPostOptions options for Post
 type WindowsFeatureUpdateProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewWindowsFeatureUpdateProfilesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewWindowsFeatureUpdateProfilesRequestBuilder(rawUrl string, requestAdapter
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsFeatureUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *WindowsFeatureUpdateProfilesRequestBuilder) Count()(*ia982d8a568462ee022ad1cccab7c070041b50d54d68cec4e6e82813941a3a944.CountRequestBuilder) {
+    return ia982d8a568462ee022ad1cccab7c070041b50d54d68cec4e6e82813941a3a944.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a collection of windows feature update profiles
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreateGetRequestInformation(options *WindowsFeatureUpdateProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of windows feature update profiles
+// CreatePostRequestInformation create new navigation property to windowsFeatureUpdateProfiles for deviceManagement
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreatePostRequestInformation(options *WindowsFeatureUpdateProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *WindowsFeatureUpdateProfilesRequestBuilder) CreatePostRequestInformatio
     return requestInfo, nil
 }
 // Get a collection of windows feature update profiles
-func (m *WindowsFeatureUpdateProfilesRequestBuilder) Get(options *WindowsFeatureUpdateProfilesRequestBuilderGetOptions)(*WindowsFeatureUpdateProfilesResponse, error) {
+func (m *WindowsFeatureUpdateProfilesRequestBuilder) Get(options *WindowsFeatureUpdateProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsFeatureUpdateProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsFeatureUpdateProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*WindowsFeatureUpdateProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileCollectionResponseable), nil
 }
-// Post a collection of windows feature update profiles
-func (m *WindowsFeatureUpdateProfilesRequestBuilder) Post(options *WindowsFeatureUpdateProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfile, error) {
+// Post create new navigation property to windowsFeatureUpdateProfiles for deviceManagement
+func (m *WindowsFeatureUpdateProfilesRequestBuilder) Post(options *WindowsFeatureUpdateProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsFeatureUpdateProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsFeatureUpdateProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsFeatureUpdateProfileable), nil
 }

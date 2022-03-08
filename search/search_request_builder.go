@@ -6,14 +6,13 @@ import (
     ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc9a4823e780f848a593eed31e "github.com/microsoftgraph/msgraph-beta-sdk-go/search/qnas"
     ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072 "github.com/microsoftgraph/msgraph-beta-sdk-go/search/acronyms"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c "github.com/microsoftgraph/msgraph-beta-sdk-go/search/qnas/item"
     i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d "github.com/microsoftgraph/msgraph-beta-sdk-go/search/acronyms/item"
     i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192 "github.com/microsoftgraph/msgraph-beta-sdk-go/search/bookmarks/item"
 )
 
-// SearchRequestBuilder builds and executes requests for operations under \search
+// SearchRequestBuilder provides operations to manage the searchEntity singleton.
 type SearchRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +42,7 @@ type SearchRequestBuilderGetQueryParameters struct {
 // SearchRequestBuilderPatchOptions options for Patch
 type SearchRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntity;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntityable;
     // Request headers
     H map[string]string;
     // Request options
@@ -88,7 +87,7 @@ func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,16 +136,20 @@ func (m *SearchRequestBuilder) CreatePatchRequestInformation(options *SearchRequ
     return requestInfo, nil
 }
 // Get get search
-func (m *SearchRequestBuilder) Get(options *SearchRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntity, error) {
+func (m *SearchRequestBuilder) Get(options *SearchRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntityable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSearchEntity() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSearchEntityFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntity), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntityable), nil
 }
 // Patch update search
 func (m *SearchRequestBuilder) Patch(options *SearchRequestBuilderPatchOptions)(error) {
@@ -154,7 +157,11 @@ func (m *SearchRequestBuilder) Patch(options *SearchRequestBuilderPatchOptions)(
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

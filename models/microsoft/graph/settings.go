@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Settings 
+// Settings provides operations to manage the compliance singleton.
 type Settings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewSettings()(*Settings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Settings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetHasGraphMailbox gets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
-func (m *Settings) GetHasGraphMailbox()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasGraphMailbox
-    }
-}
-// GetHasLicense gets the hasLicense property value. Specifies if the user has a MyAnalytics license assigned.
-func (m *Settings) GetHasLicense()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasLicense
-    }
-}
-// GetHasOptedOut gets the hasOptedOut property value. Specifies if the user opted out of MyAnalytics.
-func (m *Settings) GetHasOptedOut()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasOptedOut
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetHasGraphMailbox gets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
+func (m *Settings) GetHasGraphMailbox()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasGraphMailbox
+    }
+}
+// GetHasLicense gets the hasLicense property value. Specifies if the user has a MyAnalytics license assigned.
+func (m *Settings) GetHasLicense()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasLicense
+    }
+}
+// GetHasOptedOut gets the hasOptedOut property value. Specifies if the user opted out of MyAnalytics.
+func (m *Settings) GetHasOptedOut()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasOptedOut
+    }
 }
 func (m *Settings) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedRoleAssignment 
+// PrivilegedRoleAssignment provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
 type PrivilegedRoleAssignment struct {
     Entity
     // The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
@@ -17,7 +17,7 @@ type PrivilegedRoleAssignment struct {
     // Role identifier. In GUID string format.
     roleId *string;
     // Read-only. Nullable. The associated role information.
-    roleInfo *PrivilegedRole;
+    roleInfo PrivilegedRoleable;
     // User identifier. In GUID string format.
     userId *string;
 }
@@ -28,52 +28,16 @@ func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
     }
     return m
 }
+// CreatePrivilegedRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedRoleAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedRoleAssignment(), nil
+}
 // GetExpirationDateTime gets the expirationDateTime property value. The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
 func (m *PrivilegedRoleAssignment) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetIsElevated gets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
-func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isElevated
-    }
-}
-// GetResultMessage gets the resultMessage property value. Result message set by the service.
-func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultMessage
-    }
-}
-// GetRoleId gets the roleId property value. Role identifier. In GUID string format.
-func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
-}
-// GetRoleInfo gets the roleInfo property value. Read-only. Nullable. The associated role information.
-func (m *PrivilegedRoleAssignment) GetRoleInfo()(*PrivilegedRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleInfo
-    }
-}
-// GetUserId gets the userId property value. User identifier. In GUID string format.
-func (m *PrivilegedRoleAssignment) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,12 +84,12 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["roleInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedRole() })
+        val, err := n.GetObjectValue(CreatePrivilegedRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRoleInfo(val.(*PrivilegedRole))
+            m.SetRoleInfo(val.(PrivilegedRoleable))
         }
         return nil
     }
@@ -140,6 +104,46 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsElevated gets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
+func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isElevated
+    }
+}
+// GetResultMessage gets the resultMessage property value. Result message set by the service.
+func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultMessage
+    }
+}
+// GetRoleId gets the roleId property value. Role identifier. In GUID string format.
+func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleId
+    }
+}
+// GetRoleInfo gets the roleInfo property value. Read-only. Nullable. The associated role information.
+func (m *PrivilegedRoleAssignment) GetRoleInfo()(PrivilegedRoleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleInfo
+    }
+}
+// GetUserId gets the userId property value. User identifier. In GUID string format.
+func (m *PrivilegedRoleAssignment) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *PrivilegedRoleAssignment) IsNil()(bool) {
     return m == nil
@@ -213,7 +217,7 @@ func (m *PrivilegedRoleAssignment) SetRoleId(value *string)() {
     }
 }
 // SetRoleInfo sets the roleInfo property value. Read-only. Nullable. The associated role information.
-func (m *PrivilegedRoleAssignment) SetRoleInfo(value *PrivilegedRole)() {
+func (m *PrivilegedRoleAssignment) SetRoleInfo(value PrivilegedRoleable)() {
     if m != nil {
         m.roleInfo = value
     }

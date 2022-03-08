@@ -2,12 +2,12 @@ package printers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i2bfcf69a040d0541df35e0f4f2b9a58406220cca9db00d73533e68c3c93f1771 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/create"
 )
 
-// PrintersRequestBuilder builds and executes requests for operations under \print\printers
+// PrintersRequestBuilder provides operations to manage the printers property of the microsoft.graph.print entity.
 type PrintersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type PrintersRequestBuilderGetQueryParameters struct {
 // PrintersRequestBuilderPostOptions options for Post
 type PrintersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printerable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewPrintersRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +75,9 @@ func NewPrintersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PrintersRequestBuilder) Count()(*i2bfcf69a040d0541df35e0f4f2b9a58406220cca9db00d73533e68c3c93f1771.CountRequestBuilder) {
+    return i2bfcf69a040d0541df35e0f4f2b9a58406220cca9db00d73533e68c3c93f1771.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PrintersRequestBuilder) Create()(*i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.CreateRequestBuilder) {
     return i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.NewCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -99,7 +102,7 @@ func (m *PrintersRequestBuilder) CreateGetRequestInformation(options *PrintersRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of printers registered in the tenant.
+// CreatePostRequestInformation create new navigation property to printers for print
 func (m *PrintersRequestBuilder) CreatePostRequestInformation(options *PrintersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,26 +121,34 @@ func (m *PrintersRequestBuilder) CreatePostRequestInformation(options *PrintersR
     return requestInfo, nil
 }
 // Get the list of printers registered in the tenant.
-func (m *PrintersRequestBuilder) Get(options *PrintersRequestBuilderGetOptions)(*PrintersResponse, error) {
+func (m *PrintersRequestBuilder) Get(options *PrintersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PrintersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCollectionResponseable), nil
 }
-// Post the list of printers registered in the tenant.
-func (m *PrintersRequestBuilder) Post(options *PrintersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer, error) {
+// Post create new navigation property to printers for print
+func (m *PrintersRequestBuilder) Post(options *PrintersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printerable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrinter() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printerable), nil
 }

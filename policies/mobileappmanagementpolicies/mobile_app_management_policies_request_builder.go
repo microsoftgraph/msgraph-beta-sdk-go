@@ -2,11 +2,11 @@ package mobileappmanagementpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i3bfcedbcdd0a68811feb546929b792a26162461eca3cacb136582bb5eb936ec1 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/mobileappmanagementpolicies/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// MobileAppManagementPoliciesRequestBuilder builds and executes requests for operations under \policies\mobileAppManagementPolicies
+// MobileAppManagementPoliciesRequestBuilder provides operations to manage the mobileAppManagementPolicies property of the microsoft.graph.policyRoot entity.
 type MobileAppManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MobileAppManagementPoliciesRequestBuilderGetQueryParameters struct {
 // MobileAppManagementPoliciesRequestBuilderPostOptions options for Post
 type MobileAppManagementPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMobileAppManagementPoliciesRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMobileAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter 
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MobileAppManagementPoliciesRequestBuilder) Count()(*i3bfcedbcdd0a68811feb546929b792a26162461eca3cacb136582bb5eb936ec1.CountRequestBuilder) {
+    return i3bfcedbcdd0a68811feb546929b792a26162461eca3cacb136582bb5eb936ec1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *MobileAppManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// CreatePostRequestInformation create new navigation property to mobileAppManagementPolicies for policies
 func (m *MobileAppManagementPoliciesRequestBuilder) CreatePostRequestInformation(options *MobileAppManagementPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *MobileAppManagementPoliciesRequestBuilder) CreatePostRequestInformation
     return requestInfo, nil
 }
 // Get the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-func (m *MobileAppManagementPoliciesRequestBuilder) Get(options *MobileAppManagementPoliciesRequestBuilderGetOptions)(*MobileAppManagementPoliciesResponse, error) {
+func (m *MobileAppManagementPoliciesRequestBuilder) Get(options *MobileAppManagementPoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppManagementPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMobilityManagementPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MobileAppManagementPoliciesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicyCollectionResponseable), nil
 }
-// Post the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-func (m *MobileAppManagementPoliciesRequestBuilder) Post(options *MobileAppManagementPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy, error) {
+// Post create new navigation property to mobileAppManagementPolicies for policies
+func (m *MobileAppManagementPoliciesRequestBuilder) Post(options *MobileAppManagementPoliciesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMobilityManagementPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMobilityManagementPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicyable), nil
 }

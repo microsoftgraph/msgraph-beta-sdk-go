@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UpdateStatusRequestBody 
+// UpdateStatusRequestBody provides operations to call the updateStatus method.
 type UpdateStatusRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,28 +21,16 @@ func NewUpdateStatusRequestBody()(*UpdateStatusRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUpdateStatusRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateStatusRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateStatusRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateStatusRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetNote gets the note property value. 
-func (m *UpdateStatusRequestBody) GetNote()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.note
-    }
-}
-// GetStatus gets the status property value. 
-func (m *UpdateStatusRequestBody) GetStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTaskStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +57,22 @@ func (m *UpdateStatusRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetNote gets the note property value. 
+func (m *UpdateStatusRequestBody) GetNote()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.note
+    }
+}
+// GetStatus gets the status property value. 
+func (m *UpdateStatusRequestBody) GetStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTaskStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *UpdateStatusRequestBody) IsNil()(bool) {
     return m == nil

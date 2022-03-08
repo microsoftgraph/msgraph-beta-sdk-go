@@ -5,14 +5,14 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AssignRequestBody 
+// AssignRequestBody provides operations to call the assign method.
 type AssignRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    assignments []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignment;
+    assignments []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignmentable;
     // 
-    deviceConfigurationGroupAssignments []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignment;
+    deviceConfigurationGroupAssignments []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignmentable;
 }
 // NewAssignRequestBody instantiates a new assignRequestBody and sets the default values.
 func NewAssignRequestBody()(*AssignRequestBody) {
@@ -20,6 +20,10 @@ func NewAssignRequestBody()(*AssignRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -30,7 +34,7 @@ func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAssignments gets the assignments property value. 
-func (m *AssignRequestBody) GetAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignment) {
+func (m *AssignRequestBody) GetAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -38,7 +42,7 @@ func (m *AssignRequestBody) GetAssignments()([]i535684e11b5500196ecb4b5c6634e065
     }
 }
 // GetDeviceConfigurationGroupAssignments gets the deviceConfigurationGroupAssignments property value. 
-func (m *AssignRequestBody) GetDeviceConfigurationGroupAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignment) {
+func (m *AssignRequestBody) GetDeviceConfigurationGroupAssignments()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -49,28 +53,28 @@ func (m *AssignRequestBody) GetDeviceConfigurationGroupAssignments()([]i535684e1
 func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceConfigurationAssignment() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignment, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignment))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignmentable)
             }
             m.SetAssignments(res)
         }
         return nil
     }
     res["deviceConfigurationGroupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceConfigurationGroupAssignment() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignment, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignment))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignmentable)
             }
             m.SetDeviceConfigurationGroupAssignments(res)
         }
@@ -86,8 +90,7 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -97,8 +100,7 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if m.GetDeviceConfigurationGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceConfigurationGroupAssignments()))
         for i, v := range m.GetDeviceConfigurationGroupAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("deviceConfigurationGroupAssignments", cast)
         if err != nil {
@@ -120,13 +122,13 @@ func (m *AssignRequestBody) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAssignments sets the assignments property value. 
-func (m *AssignRequestBody) SetAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignment)() {
+func (m *AssignRequestBody) SetAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
 // SetDeviceConfigurationGroupAssignments sets the deviceConfigurationGroupAssignments property value. 
-func (m *AssignRequestBody) SetDeviceConfigurationGroupAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignment)() {
+func (m *AssignRequestBody) SetDeviceConfigurationGroupAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceConfigurationGroupAssignmentable)() {
     if m != nil {
         m.deviceConfigurationGroupAssignments = value
     }

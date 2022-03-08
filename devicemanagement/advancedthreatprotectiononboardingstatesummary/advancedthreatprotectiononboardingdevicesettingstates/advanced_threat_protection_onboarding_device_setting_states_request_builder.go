@@ -2,11 +2,11 @@ package advancedthreatprotectiononboardingdevicesettingstates
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ib3d3306963652e8f6a68207aa230c25a6347f5703dfe7f75558ed78bca438b09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary/advancedthreatprotectiononboardingdevicesettingstates/count"
 )
 
-// AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary\advancedThreatProtectionOnboardingDeviceSettingStates
+// AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder provides operations to manage the advancedThreatProtectionOnboardingDeviceSettingStates property of the microsoft.graph.advancedThreatProtectionOnboardingStateSummary entity.
 type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQuery
 // AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions options for Post
 type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingState;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingStateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder(rawU
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Count()(*ib3d3306963652e8f6a68207aa230c25a6347f5703dfe7f75558ed78bca438b09.CountRequestBuilder) {
+    return ib3d3306963652e8f6a68207aa230c25a6347f5703dfe7f75558ed78bca438b09.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation not yet documented
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) CreateGetRequestInformation(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +98,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation not yet documented
+// CreatePostRequestInformation create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) CreatePostRequestInformation(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +117,34 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Cr
     return requestInfo, nil
 }
 // Get not yet documented
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Get(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions)(*AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse, error) {
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Get(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAdvancedThreatProtectionOnboardingDeviceSettingStatesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponseable), nil
 }
-// Post not yet documented
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Post(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingState, error) {
+// Post create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Post(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingStateable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAdvancedThreatProtectionOnboardingDeviceSettingState() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingState), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingStateable), nil
 }

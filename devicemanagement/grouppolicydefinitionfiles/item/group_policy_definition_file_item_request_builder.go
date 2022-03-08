@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5be0d8880502185fd7c711521fef0b2544b7baad4394cd438f4b5bc4841090ac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitionfiles/item/definitions"
+    i127c36cfa00901ec1f6e2ca37cfd9639032b399ec048f50d6a66d9e5a5af307f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitionfiles/item/definitions/item"
 )
 
-// GroupPolicyDefinitionFileItemRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitionFiles\{groupPolicyDefinitionFile-id}
+// GroupPolicyDefinitionFileItemRequestBuilder provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 type GroupPolicyDefinitionFileItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type GroupPolicyDefinitionFileItemRequestBuilderGetQueryParameters struct {
 // GroupPolicyDefinitionFileItemRequestBuilderPatchOptions options for Patch
 type GroupPolicyDefinitionFileItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewGroupPolicyDefinitionFileItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,7 +73,7 @@ func NewGroupPolicyDefinitionFileItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the available group policy definition files for this account.
+// CreateDeleteRequestInformation delete navigation property groupPolicyDefinitionFiles for deviceManagement
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyDefinitionFileItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *GroupPolicyDefinitionFileItemRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the available group policy definition files for this account.
+// CreatePatchRequestInformation update the navigation property groupPolicyDefinitionFiles in deviceManagement
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyDefinitionFileItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,37 +131,60 @@ func (m *GroupPolicyDefinitionFileItemRequestBuilder) CreatePatchRequestInformat
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) Definitions()(*i5be0d8880502185fd7c711521fef0b2544b7baad4394cd438f4b5bc4841090ac.DefinitionsRequestBuilder) {
     return i5be0d8880502185fd7c711521fef0b2544b7baad4394cd438f4b5bc4841090ac.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete the available group policy definition files for this account.
+// DefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitionFiles.item.definitions.item collection
+func (m *GroupPolicyDefinitionFileItemRequestBuilder) DefinitionsById(id string)(*i127c36cfa00901ec1f6e2ca37cfd9639032b399ec048f50d6a66d9e5a5af307f.GroupPolicyDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["groupPolicyDefinition_id"] = id
+    }
+    return i127c36cfa00901ec1f6e2ca37cfd9639032b399ec048f50d6a66d9e5a5af307f.NewGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Delete delete navigation property groupPolicyDefinitionFiles for deviceManagement
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) Delete(options *GroupPolicyDefinitionFileItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the available group policy definition files for this account.
-func (m *GroupPolicyDefinitionFileItemRequestBuilder) Get(options *GroupPolicyDefinitionFileItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFile, error) {
+func (m *GroupPolicyDefinitionFileItemRequestBuilder) Get(options *GroupPolicyDefinitionFileItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFileable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGroupPolicyDefinitionFile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupPolicyDefinitionFileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFileable), nil
 }
-// Patch the available group policy definition files for this account.
+// Patch update the navigation property groupPolicyDefinitionFiles in deviceManagement
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) Patch(options *GroupPolicyDefinitionFileItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FilterClause 
+// FilterClause provides operations to call the instantiate method.
 type FilterClause struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type FilterClause struct {
     // Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
     sourceOperandName *string;
     // Values that the source operand will be tested against.
-    targetOperand *FilterOperand;
+    targetOperand FilterOperandable;
 }
 // NewFilterClause instantiates a new filterClause and sets the default values.
 func NewFilterClause()(*FilterClause) {
@@ -22,36 +22,16 @@ func NewFilterClause()(*FilterClause) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateFilterClauseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFilterClauseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFilterClause(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FilterClause) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetOperatorName gets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
-func (m *FilterClause) GetOperatorName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatorName
-    }
-}
-// GetSourceOperandName gets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
-func (m *FilterClause) GetSourceOperandName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceOperandName
-    }
-}
-// GetTargetOperand gets the targetOperand property value. Values that the source operand will be tested against.
-func (m *FilterClause) GetTargetOperand()(*FilterOperand) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetOperand
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,16 +58,40 @@ func (m *FilterClause) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["targetOperand"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFilterOperand() })
+        val, err := n.GetObjectValue(CreateFilterOperandFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetOperand(val.(*FilterOperand))
+            m.SetTargetOperand(val.(FilterOperandable))
         }
         return nil
     }
     return res
+}
+// GetOperatorName gets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
+func (m *FilterClause) GetOperatorName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatorName
+    }
+}
+// GetSourceOperandName gets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
+func (m *FilterClause) GetSourceOperandName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceOperandName
+    }
+}
+// GetTargetOperand gets the targetOperand property value. Values that the source operand will be tested against.
+func (m *FilterClause) GetTargetOperand()(FilterOperandable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetOperand
+    }
 }
 func (m *FilterClause) IsNil()(bool) {
     return m == nil
@@ -139,7 +143,7 @@ func (m *FilterClause) SetSourceOperandName(value *string)() {
     }
 }
 // SetTargetOperand sets the targetOperand property value. Values that the source operand will be tested against.
-func (m *FilterClause) SetTargetOperand(value *FilterOperand)() {
+func (m *FilterClause) SetTargetOperand(value FilterOperandable)() {
     if m != nil {
         m.targetOperand = value
     }

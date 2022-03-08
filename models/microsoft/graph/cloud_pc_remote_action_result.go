@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcRemoteActionResult 
+// CloudPcRemoteActionResult provides operations to manage the compliance singleton.
 type CloudPcRemoteActionResult struct {
     // The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
     actionName *string;
@@ -22,7 +22,7 @@ type CloudPcRemoteActionResult struct {
     // Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The details of the Cloud PC status.
-    statusDetails *CloudPcStatusDetails;
+    statusDetails CloudPcStatusDetailsable;
 }
 // NewCloudPcRemoteActionResult instantiates a new cloudPcRemoteActionResult and sets the default values.
 func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
@@ -30,6 +30,10 @@ func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCloudPcRemoteActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcRemoteActionResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcRemoteActionResult(), nil
 }
 // GetActionName gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
 func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
@@ -61,38 +65,6 @@ func (m *CloudPcRemoteActionResult) GetCloudPcId()(*string) {
         return nil
     } else {
         return m.cloudPcId
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-func (m *CloudPcRemoteActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. The ID of the Intune managed device on which the remote action is performed. Read-only.
-func (m *CloudPcRemoteActionResult) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetStartDateTime gets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
-func (m *CloudPcRemoteActionResult) GetStatusDetails()(*CloudPcStatusDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,16 +131,48 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["statusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcStatusDetails() })
+        val, err := n.GetObjectValue(CreateCloudPcStatusDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatusDetails(val.(*CloudPcStatusDetails))
+            m.SetStatusDetails(val.(CloudPcStatusDetailsable))
         }
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+func (m *CloudPcRemoteActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetManagedDeviceId gets the managedDeviceId property value. The ID of the Intune managed device on which the remote action is performed. Read-only.
+func (m *CloudPcRemoteActionResult) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetStartDateTime gets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
+func (m *CloudPcRemoteActionResult) GetStatusDetails()(CloudPcStatusDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statusDetails
+    }
 }
 func (m *CloudPcRemoteActionResult) IsNil()(bool) {
     return m == nil
@@ -269,7 +273,7 @@ func (m *CloudPcRemoteActionResult) SetStartDateTime(value *i336074805fc853987ab
     }
 }
 // SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status.
-func (m *CloudPcRemoteActionResult) SetStatusDetails(value *CloudPcStatusDetails)() {
+func (m *CloudPcRemoteActionResult) SetStatusDetails(value CloudPcStatusDetailsable)() {
     if m != nil {
         m.statusDetails = value
     }

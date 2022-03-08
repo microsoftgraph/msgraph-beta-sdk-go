@@ -2,11 +2,11 @@ package appmanagementpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4b46f0a388612e72e4fc363736a37cd164b7507646dc94c37cef4e4c633bcc21 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/appmanagementpolicies/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i216fa4b923b97ceccc077a2824b5a221cb07cc6a71cef76cfcd07269d743e9f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/appmanagementpolicies/count"
 )
 
-// AppManagementPoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\appManagementPolicies
+// AppManagementPoliciesRequestBuilder provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
 type AppManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AppManagementPoliciesRequestBuilder) Count()(*i216fa4b923b97ceccc077a2824b5a221cb07cc6a71cef76cfcd07269d743e9f5.CountRequestBuilder) {
+    return i216fa4b923b97ceccc077a2824b5a221cb07cc6a71cef76cfcd07269d743e9f5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the appManagementPolicy applied to this service principal.
 func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *AppManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(option
     return requestInfo, nil
 }
 // Get the appManagementPolicy applied to this service principal.
-func (m *AppManagementPoliciesRequestBuilder) Get(options *AppManagementPoliciesRequestBuilderGetOptions)(*AppManagementPoliciesResponse, error) {
+func (m *AppManagementPoliciesRequestBuilder) Get(options *AppManagementPoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppManagementPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAppManagementPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AppManagementPoliciesResponse), nil
-}
-func (m *AppManagementPoliciesRequestBuilder) Ref()(*i4b46f0a388612e72e4fc363736a37cd164b7507646dc94c37cef4e4c633bcc21.RefRequestBuilder) {
-    return i4b46f0a388612e72e4fc363736a37cd164b7507646dc94c37cef4e4c633bcc21.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppManagementPolicyCollectionResponseable), nil
 }

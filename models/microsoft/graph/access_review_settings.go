@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewSettings 
+// AccessReviewSettings provides operations to manage the collection of accessReview entities.
 type AccessReviewSettings struct {
     // Indicates whether showing recommendations to reviewers is enabled.
     accessRecommendationsEnabled *bool;
@@ -17,13 +17,13 @@ type AccessReviewSettings struct {
     // Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
     autoReviewEnabled *bool;
     // Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
-    autoReviewSettings *AutoReviewSettings;
+    autoReviewSettings AutoReviewSettingsable;
     // Indicates whether reviewers are required to provide a justification when reviewing access.
     justificationRequiredOnApproval *bool;
     // Indicates whether sending mails to reviewers and the review creator is enabled.
     mailNotificationsEnabled *bool;
     // Detailed settings for recurrence.
-    recurrenceSettings *AccessReviewRecurrenceSettings;
+    recurrenceSettings AccessReviewRecurrenceSettingsable;
     // Indicates whether sending reminder emails to reviewers is enabled.
     remindersEnabled *bool;
 }
@@ -33,6 +33,10 @@ func NewAccessReviewSettings()(*AccessReviewSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAccessReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessReviewSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessReviewSettings(), nil
 }
 // GetAccessRecommendationsEnabled gets the accessRecommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled.
 func (m *AccessReviewSettings) GetAccessRecommendationsEnabled()(*bool) {
@@ -75,43 +79,11 @@ func (m *AccessReviewSettings) GetAutoReviewEnabled()(*bool) {
     }
 }
 // GetAutoReviewSettings gets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
-func (m *AccessReviewSettings) GetAutoReviewSettings()(*AutoReviewSettings) {
+func (m *AccessReviewSettings) GetAutoReviewSettings()(AutoReviewSettingsable) {
     if m == nil {
         return nil
     } else {
         return m.autoReviewSettings
-    }
-}
-// GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide a justification when reviewing access.
-func (m *AccessReviewSettings) GetJustificationRequiredOnApproval()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justificationRequiredOnApproval
-    }
-}
-// GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether sending mails to reviewers and the review creator is enabled.
-func (m *AccessReviewSettings) GetMailNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNotificationsEnabled
-    }
-}
-// GetRecurrenceSettings gets the recurrenceSettings property value. Detailed settings for recurrence.
-func (m *AccessReviewSettings) GetRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceSettings
-    }
-}
-// GetRemindersEnabled gets the remindersEnabled property value. Indicates whether sending reminder emails to reviewers is enabled.
-func (m *AccessReviewSettings) GetRemindersEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remindersEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -158,12 +130,12 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["autoReviewSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAutoReviewSettings() })
+        val, err := n.GetObjectValue(CreateAutoReviewSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAutoReviewSettings(val.(*AutoReviewSettings))
+            m.SetAutoReviewSettings(val.(AutoReviewSettingsable))
         }
         return nil
     }
@@ -188,12 +160,12 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["recurrenceSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewRecurrenceSettings() })
+        val, err := n.GetObjectValue(CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecurrenceSettings(val.(*AccessReviewRecurrenceSettings))
+            m.SetRecurrenceSettings(val.(AccessReviewRecurrenceSettingsable))
         }
         return nil
     }
@@ -208,6 +180,38 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide a justification when reviewing access.
+func (m *AccessReviewSettings) GetJustificationRequiredOnApproval()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.justificationRequiredOnApproval
+    }
+}
+// GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether sending mails to reviewers and the review creator is enabled.
+func (m *AccessReviewSettings) GetMailNotificationsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mailNotificationsEnabled
+    }
+}
+// GetRecurrenceSettings gets the recurrenceSettings property value. Detailed settings for recurrence.
+func (m *AccessReviewSettings) GetRecurrenceSettings()(AccessReviewRecurrenceSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recurrenceSettings
+    }
+}
+// GetRemindersEnabled gets the remindersEnabled property value. Indicates whether sending reminder emails to reviewers is enabled.
+func (m *AccessReviewSettings) GetRemindersEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remindersEnabled
+    }
 }
 func (m *AccessReviewSettings) IsNil()(bool) {
     return m == nil
@@ -307,7 +311,7 @@ func (m *AccessReviewSettings) SetAutoReviewEnabled(value *bool)() {
     }
 }
 // SetAutoReviewSettings sets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
-func (m *AccessReviewSettings) SetAutoReviewSettings(value *AutoReviewSettings)() {
+func (m *AccessReviewSettings) SetAutoReviewSettings(value AutoReviewSettingsable)() {
     if m != nil {
         m.autoReviewSettings = value
     }
@@ -325,7 +329,7 @@ func (m *AccessReviewSettings) SetMailNotificationsEnabled(value *bool)() {
     }
 }
 // SetRecurrenceSettings sets the recurrenceSettings property value. Detailed settings for recurrence.
-func (m *AccessReviewSettings) SetRecurrenceSettings(value *AccessReviewRecurrenceSettings)() {
+func (m *AccessReviewSettings) SetRecurrenceSettings(value AccessReviewRecurrenceSettingsable)() {
     if m != nil {
         m.recurrenceSettings = value
     }

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the areGlobalScriptsAvailable method.
 type GlobalDeviceHealthScriptState int
 
 const (

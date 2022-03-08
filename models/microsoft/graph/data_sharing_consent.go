@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DataSharingConsent 
+// DataSharingConsent provides operations to manage the deviceManagement singleton.
 type DataSharingConsent struct {
     Entity
     // The time consent was granted for this account
@@ -28,53 +28,9 @@ func NewDataSharingConsent()(*DataSharingConsent) {
     }
     return m
 }
-// GetGrantDateTime gets the grantDateTime property value. The time consent was granted for this account
-func (m *DataSharingConsent) GetGrantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantDateTime
-    }
-}
-// GetGranted gets the granted property value. The granted state for the data sharing consent
-func (m *DataSharingConsent) GetGranted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.granted
-    }
-}
-// GetGrantedByUpn gets the grantedByUpn property value. The Upn of the user that granted consent for this account
-func (m *DataSharingConsent) GetGrantedByUpn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantedByUpn
-    }
-}
-// GetGrantedByUserId gets the grantedByUserId property value. The UserId of the user that granted consent for this account
-func (m *DataSharingConsent) GetGrantedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grantedByUserId
-    }
-}
-// GetServiceDisplayName gets the serviceDisplayName property value. The display name of the service work flow
-func (m *DataSharingConsent) GetServiceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceDisplayName
-    }
-}
-// GetTermsUrl gets the termsUrl property value. The TermsUrl for the data sharing consent
-func (m *DataSharingConsent) GetTermsUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsUrl
-    }
+// CreateDataSharingConsentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDataSharingConsentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDataSharingConsent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -140,6 +96,54 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetGrantDateTime gets the grantDateTime property value. The time consent was granted for this account
+func (m *DataSharingConsent) GetGrantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grantDateTime
+    }
+}
+// GetGranted gets the granted property value. The granted state for the data sharing consent
+func (m *DataSharingConsent) GetGranted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.granted
+    }
+}
+// GetGrantedByUpn gets the grantedByUpn property value. The Upn of the user that granted consent for this account
+func (m *DataSharingConsent) GetGrantedByUpn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grantedByUpn
+    }
+}
+// GetGrantedByUserId gets the grantedByUserId property value. The UserId of the user that granted consent for this account
+func (m *DataSharingConsent) GetGrantedByUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.grantedByUserId
+    }
+}
+// GetServiceDisplayName gets the serviceDisplayName property value. The display name of the service work flow
+func (m *DataSharingConsent) GetServiceDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceDisplayName
+    }
+}
+// GetTermsUrl gets the termsUrl property value. The TermsUrl for the data sharing consent
+func (m *DataSharingConsent) GetTermsUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.termsUrl
+    }
 }
 func (m *DataSharingConsent) IsNil()(bool) {
     return m == nil

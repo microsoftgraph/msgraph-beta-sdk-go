@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnsupportedGroupPolicyExtension 
+// UnsupportedGroupPolicyExtension provides operations to manage the deviceManagement singleton.
 type UnsupportedGroupPolicyExtension struct {
     Entity
     // ExtensionType of the unsupported extension.
@@ -23,36 +23,16 @@ func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
     }
     return m
 }
+// CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnsupportedGroupPolicyExtension(), nil
+}
 // GetExtensionType gets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
     if m == nil {
         return nil
     } else {
         return m.extensionType
-    }
-}
-// GetNamespaceUrl gets the namespaceUrl property value. Namespace Url of the unsupported extension.
-func (m *UnsupportedGroupPolicyExtension) GetNamespaceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.namespaceUrl
-    }
-}
-// GetNodeName gets the nodeName property value. Node name of the unsupported extension.
-func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nodeName
-    }
-}
-// GetSettingScope gets the settingScope property value. Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
-func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingScope
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +79,30 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetNamespaceUrl gets the namespaceUrl property value. Namespace Url of the unsupported extension.
+func (m *UnsupportedGroupPolicyExtension) GetNamespaceUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.namespaceUrl
+    }
+}
+// GetNodeName gets the nodeName property value. Node name of the unsupported extension.
+func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nodeName
+    }
+}
+// GetSettingScope gets the settingScope property value. Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
+func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingScope) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingScope
+    }
 }
 func (m *UnsupportedGroupPolicyExtension) IsNil()(bool) {
     return m == nil

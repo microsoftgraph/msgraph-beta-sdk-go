@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RestrictedAppsViolation 
+// RestrictedAppsViolation provides operations to manage the deviceManagement singleton.
 type RestrictedAppsViolation struct {
     Entity
     // Device configuration profile unique identifier, must be Guid
@@ -18,7 +18,7 @@ type RestrictedAppsViolation struct {
     // Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
     platformType *PolicyPlatformType;
     // List of violated restricted apps
-    restrictedApps []ManagedDeviceReportedApp;
+    restrictedApps []ManagedDeviceReportedAppable;
     // Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
     restrictedAppsState *RestrictedAppsState;
     // User unique identifier, must be Guid
@@ -32,6 +32,10 @@ func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateRestrictedAppsViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRestrictedAppsViolationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRestrictedAppsViolation(), nil
 }
 // GetDeviceConfigurationId gets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
 func (m *RestrictedAppsViolation) GetDeviceConfigurationId()(*string) {
@@ -55,54 +59,6 @@ func (m *RestrictedAppsViolation) GetDeviceName()(*string) {
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. Managed device unique identifier, must be Guid
-func (m *RestrictedAppsViolation) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetPlatformType gets the platformType property value. Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
-func (m *RestrictedAppsViolation) GetPlatformType()(*PolicyPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
-}
-// GetRestrictedApps gets the restrictedApps property value. List of violated restricted apps
-func (m *RestrictedAppsViolation) GetRestrictedApps()([]ManagedDeviceReportedApp) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictedApps
-    }
-}
-// GetRestrictedAppsState gets the restrictedAppsState property value. Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
-func (m *RestrictedAppsViolation) GetRestrictedAppsState()(*RestrictedAppsState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictedAppsState
-    }
-}
-// GetUserId gets the userId property value. User unique identifier, must be Guid
-func (m *RestrictedAppsViolation) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserName gets the userName property value. User name
-func (m *RestrictedAppsViolation) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,14 +115,14 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["restrictedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceReportedApp() })
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceReportedAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedDeviceReportedApp, len(val))
+            res := make([]ManagedDeviceReportedAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedDeviceReportedApp))
+                res[i] = v.(ManagedDeviceReportedAppable)
             }
             m.SetRestrictedApps(res)
         }
@@ -203,6 +159,54 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetManagedDeviceId gets the managedDeviceId property value. Managed device unique identifier, must be Guid
+func (m *RestrictedAppsViolation) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetPlatformType gets the platformType property value. Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+func (m *RestrictedAppsViolation) GetPlatformType()(*PolicyPlatformType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platformType
+    }
+}
+// GetRestrictedApps gets the restrictedApps property value. List of violated restricted apps
+func (m *RestrictedAppsViolation) GetRestrictedApps()([]ManagedDeviceReportedAppable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restrictedApps
+    }
+}
+// GetRestrictedAppsState gets the restrictedAppsState property value. Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
+func (m *RestrictedAppsViolation) GetRestrictedAppsState()(*RestrictedAppsState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restrictedAppsState
+    }
+}
+// GetUserId gets the userId property value. User unique identifier, must be Guid
+func (m *RestrictedAppsViolation) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserName gets the userName property value. User name
+func (m *RestrictedAppsViolation) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
 }
 func (m *RestrictedAppsViolation) IsNil()(bool) {
     return m == nil
@@ -247,8 +251,7 @@ func (m *RestrictedAppsViolation) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetRestrictedApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRestrictedApps()))
         for i, v := range m.GetRestrictedApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("restrictedApps", cast)
         if err != nil {
@@ -307,7 +310,7 @@ func (m *RestrictedAppsViolation) SetPlatformType(value *PolicyPlatformType)() {
     }
 }
 // SetRestrictedApps sets the restrictedApps property value. List of violated restricted apps
-func (m *RestrictedAppsViolation) SetRestrictedApps(value []ManagedDeviceReportedApp)() {
+func (m *RestrictedAppsViolation) SetRestrictedApps(value []ManagedDeviceReportedAppable)() {
     if m != nil {
         m.restrictedApps = value
     }

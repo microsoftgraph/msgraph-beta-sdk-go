@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConnectionQuota 
+// ConnectionQuota provides operations to manage the collection of externalConnection entities.
 type ConnectionQuota struct {
     Entity
     // 
@@ -17,13 +17,9 @@ func NewConnectionQuota()(*ConnectionQuota) {
     }
     return m
 }
-// GetItemsRemaining gets the itemsRemaining property value. 
-func (m *ConnectionQuota) GetItemsRemaining()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemsRemaining
-    }
+// CreateConnectionQuotaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConnectionQuotaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnectionQuota(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectionQuota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *ConnectionQuota) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetItemsRemaining gets the itemsRemaining property value. 
+func (m *ConnectionQuota) GetItemsRemaining()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemsRemaining
+    }
 }
 func (m *ConnectionQuota) IsNil()(bool) {
     return m == nil

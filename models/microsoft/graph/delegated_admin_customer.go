@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminCustomer 
+// DelegatedAdminCustomer provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminCustomer struct {
     Entity
     // 
     displayName *string;
     // 
-    serviceManagementDetails []DelegatedAdminServiceManagementDetail;
+    serviceManagementDetails []DelegatedAdminServiceManagementDetailable;
     // 
     tenantId *string;
 }
@@ -21,28 +21,16 @@ func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     }
     return m
 }
+// CreateDelegatedAdminCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminCustomerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminCustomer(), nil
+}
 // GetDisplayName gets the displayName property value. 
 func (m *DelegatedAdminCustomer) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetServiceManagementDetails gets the serviceManagementDetails property value. 
-func (m *DelegatedAdminCustomer) GetServiceManagementDetails()([]DelegatedAdminServiceManagementDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceManagementDetails
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *DelegatedAdminCustomer) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,14 +47,14 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["serviceManagementDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminServiceManagementDetail() })
+        val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DelegatedAdminServiceManagementDetail, len(val))
+            res := make([]DelegatedAdminServiceManagementDetailable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DelegatedAdminServiceManagementDetail))
+                res[i] = v.(DelegatedAdminServiceManagementDetailable)
             }
             m.SetServiceManagementDetails(res)
         }
@@ -83,6 +71,22 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetServiceManagementDetails gets the serviceManagementDetails property value. 
+func (m *DelegatedAdminCustomer) GetServiceManagementDetails()([]DelegatedAdminServiceManagementDetailable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceManagementDetails
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *DelegatedAdminCustomer) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *DelegatedAdminCustomer) IsNil()(bool) {
     return m == nil
@@ -102,8 +106,7 @@ func (m *DelegatedAdminCustomer) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetServiceManagementDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServiceManagementDetails()))
         for i, v := range m.GetServiceManagementDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("serviceManagementDetails", cast)
         if err != nil {
@@ -125,7 +128,7 @@ func (m *DelegatedAdminCustomer) SetDisplayName(value *string)() {
     }
 }
 // SetServiceManagementDetails sets the serviceManagementDetails property value. 
-func (m *DelegatedAdminCustomer) SetServiceManagementDetails(value []DelegatedAdminServiceManagementDetail)() {
+func (m *DelegatedAdminCustomer) SetServiceManagementDetails(value []DelegatedAdminServiceManagementDetailable)() {
     if m != nil {
         m.serviceManagementDetails = value
     }

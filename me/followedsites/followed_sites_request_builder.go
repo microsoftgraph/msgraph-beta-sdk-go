@@ -2,11 +2,11 @@ package followedsites
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i3cbc0743abe48a8879b6bb54d555dc00cef80664216624b2af75e084511f26e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/followedsites/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iea864de3197734f1d93fe3037037c1ccbed81709ca33fbb11862aa590bca3cbb "github.com/microsoftgraph/msgraph-beta-sdk-go/me/followedsites/count"
 )
 
-// FollowedSitesRequestBuilder builds and executes requests for operations under \me\followedSites
+// FollowedSitesRequestBuilder provides operations to manage the followedSites property of the microsoft.graph.user entity.
 type FollowedSitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewFollowedSitesRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewFollowedSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFollowedSitesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *FollowedSitesRequestBuilder) Count()(*iea864de3197734f1d93fe3037037c1ccbed81709ca33fbb11862aa590bca3cbb.CountRequestBuilder) {
+    return iea864de3197734f1d93fe3037037c1ccbed81709ca33fbb11862aa590bca3cbb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get followedSites from me
 func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(options *FollowedSitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(options *Follo
     return requestInfo, nil
 }
 // Get get followedSites from me
-func (m *FollowedSitesRequestBuilder) Get(options *FollowedSitesRequestBuilderGetOptions)(*FollowedSitesResponse, error) {
+func (m *FollowedSitesRequestBuilder) Get(options *FollowedSitesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFollowedSitesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSiteCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*FollowedSitesResponse), nil
-}
-func (m *FollowedSitesRequestBuilder) Ref()(*i3cbc0743abe48a8879b6bb54d555dc00cef80664216624b2af75e084511f26e7.RefRequestBuilder) {
-    return i3cbc0743abe48a8879b6bb54d555dc00cef80664216624b2af75e084511f26e7.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteCollectionResponseable), nil
 }

@@ -5,14 +5,14 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ReplyRequestBody 
+// ReplyRequestBody provides operations to call the reply method.
 type ReplyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     comment *string;
     // 
-    message *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
+    message i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable;
 }
 // NewReplyRequestBody instantiates a new replyRequestBody and sets the default values.
 func NewReplyRequestBody()(*ReplyRequestBody) {
@@ -20,6 +20,10 @@ func NewReplyRequestBody()(*ReplyRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateReplyRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateReplyRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReplyRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplyRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -37,14 +41,6 @@ func (m *ReplyRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetMessage gets the message property value. 
-func (m *ReplyRequestBody) GetMessage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -59,16 +55,24 @@ func (m *ReplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMessage() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMessage(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message))
+            m.SetMessage(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable))
         }
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. 
+func (m *ReplyRequestBody) GetMessage()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
 }
 func (m *ReplyRequestBody) IsNil()(bool) {
     return m == nil
@@ -108,7 +112,7 @@ func (m *ReplyRequestBody) SetComment(value *string)() {
     }
 }
 // SetMessage sets the message property value. 
-func (m *ReplyRequestBody) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message)() {
+func (m *ReplyRequestBody) SetMessage(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable)() {
     if m != nil {
         m.message = value
     }

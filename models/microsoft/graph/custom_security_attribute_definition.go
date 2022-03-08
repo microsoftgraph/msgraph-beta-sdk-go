@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomSecurityAttributeDefinition 
+// CustomSecurityAttributeDefinition provides operations to manage the directory singleton.
 type CustomSecurityAttributeDefinition struct {
     Entity
     // Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
-    allowedValues []AllowedValue;
+    allowedValues []AllowedValueable;
     // Name of the attribute set. Case insensitive.
     attributeSet *string;
     // Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -33,8 +33,12 @@ func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) 
     }
     return m
 }
+// CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomSecurityAttributeDefinition(), nil
+}
 // GetAllowedValues gets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
-func (m *CustomSecurityAttributeDefinition) GetAllowedValues()([]AllowedValue) {
+func (m *CustomSecurityAttributeDefinition) GetAllowedValues()([]AllowedValueable) {
     if m == nil {
         return nil
     } else {
@@ -57,66 +61,18 @@ func (m *CustomSecurityAttributeDefinition) GetDescription()(*string) {
         return m.description
     }
 }
-// GetIsCollection gets the isCollection property value. Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
-func (m *CustomSecurityAttributeDefinition) GetIsCollection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCollection
-    }
-}
-// GetIsSearchable gets the isSearchable property value. Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) GetIsSearchable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSearchable
-    }
-}
-// GetName gets the name property value. Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
-func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetStatus gets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
-func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetType gets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
-// GetUsePreDefinedValuesOnly gets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
-func (m *CustomSecurityAttributeDefinition) GetUsePreDefinedValuesOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usePreDefinedValuesOnly
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAllowedValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateAllowedValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AllowedValue, len(val))
+            res := make([]AllowedValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AllowedValue))
+                res[i] = v.(AllowedValueable)
             }
             m.SetAllowedValues(res)
         }
@@ -204,6 +160,54 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetIsCollection gets the isCollection property value. Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
+func (m *CustomSecurityAttributeDefinition) GetIsCollection()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCollection
+    }
+}
+// GetIsSearchable gets the isSearchable property value. Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) GetIsSearchable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSearchable
+    }
+}
+// GetName gets the name property value. Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
+func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetStatus gets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
+func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetType gets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// GetUsePreDefinedValuesOnly gets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
+func (m *CustomSecurityAttributeDefinition) GetUsePreDefinedValuesOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usePreDefinedValuesOnly
+    }
+}
 func (m *CustomSecurityAttributeDefinition) IsNil()(bool) {
     return m == nil
 }
@@ -216,8 +220,7 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28
     if m.GetAllowedValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedValues()))
         for i, v := range m.GetAllowedValues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("allowedValues", cast)
         if err != nil {
@@ -275,7 +278,7 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28
     return nil
 }
 // SetAllowedValues sets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
-func (m *CustomSecurityAttributeDefinition) SetAllowedValues(value []AllowedValue)() {
+func (m *CustomSecurityAttributeDefinition) SetAllowedValues(value []AllowedValueable)() {
     if m != nil {
         m.allowedValues = value
     }

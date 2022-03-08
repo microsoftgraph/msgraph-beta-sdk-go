@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SimulationEventsContent 
+// SimulationEventsContent provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type SimulationEventsContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
     compromisedRate *float64;
     // List of simulation events in an attack simulation and training campaign.
-    events []SimulationEvent;
+    events []SimulationEventable;
 }
 // NewSimulationEventsContent instantiates a new simulationEventsContent and sets the default values.
 func NewSimulationEventsContent()(*SimulationEventsContent) {
@@ -19,6 +19,10 @@ func NewSimulationEventsContent()(*SimulationEventsContent) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSimulationEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSimulationEventsContentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSimulationEventsContent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEventsContent) GetAdditionalData()(map[string]interface{}) {
@@ -37,7 +41,7 @@ func (m *SimulationEventsContent) GetCompromisedRate()(*float64) {
     }
 }
 // GetEvents gets the events property value. List of simulation events in an attack simulation and training campaign.
-func (m *SimulationEventsContent) GetEvents()([]SimulationEvent) {
+func (m *SimulationEventsContent) GetEvents()([]SimulationEventable) {
     if m == nil {
         return nil
     } else {
@@ -58,14 +62,14 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSimulationEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateSimulationEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SimulationEvent, len(val))
+            res := make([]SimulationEventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SimulationEvent))
+                res[i] = v.(SimulationEventable)
             }
             m.SetEvents(res)
         }
@@ -87,8 +91,7 @@ func (m *SimulationEventsContent) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {
@@ -116,7 +119,7 @@ func (m *SimulationEventsContent) SetCompromisedRate(value *float64)() {
     }
 }
 // SetEvents sets the events property value. List of simulation events in an attack simulation and training campaign.
-func (m *SimulationEventsContent) SetEvents(value []SimulationEvent)() {
+func (m *SimulationEventsContent) SetEvents(value []SimulationEventable)() {
     if m != nil {
         m.events = value
     }

@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicesWithoutCloudIdentity\{userExperienceAnalyticsDeviceWithoutCloudIdentity-id}
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQuery
 // UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation user experience analytics devices without cloud identity.
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation user experience analytics devices without cloud identity.
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity in deviceManagement
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// Delete user experience analytics devices without cloud identity.
+// Delete delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) Delete(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get user experience analytics devices without cloud identity.
-func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) Get(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity, error) {
+func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) Get(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsDeviceWithoutCloudIdentity() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentity), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceWithoutCloudIdentityable), nil
 }
-// Patch user experience analytics devices without cloud identity.
+// Patch update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity in deviceManagement
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) Patch(options *UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

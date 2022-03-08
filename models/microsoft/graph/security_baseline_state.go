@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityBaselineState 
+// SecurityBaselineState provides operations to manage the compliance singleton.
 type SecurityBaselineState struct {
     Entity
     // The display name of the security baseline
@@ -12,7 +12,7 @@ type SecurityBaselineState struct {
     // The security baseline template id
     securityBaselineTemplateId *string;
     // The security baseline state for different settings for a device
-    settingStates []SecurityBaselineSettingState;
+    settingStates []SecurityBaselineSettingStateable;
     // Security baseline compliance state
     state *SecurityBaselineComplianceState;
     // User Principal Name
@@ -25,44 +25,16 @@ func NewSecurityBaselineState()(*SecurityBaselineState) {
     }
     return m
 }
+// CreateSecurityBaselineStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSecurityBaselineStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSecurityBaselineState(), nil
+}
 // GetDisplayName gets the displayName property value. The display name of the security baseline
 func (m *SecurityBaselineState) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetSecurityBaselineTemplateId gets the securityBaselineTemplateId property value. The security baseline template id
-func (m *SecurityBaselineState) GetSecurityBaselineTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityBaselineTemplateId
-    }
-}
-// GetSettingStates gets the settingStates property value. The security baseline state for different settings for a device
-func (m *SecurityBaselineState) GetSettingStates()([]SecurityBaselineSettingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingStates
-    }
-}
-// GetState gets the state property value. Security baseline compliance state
-func (m *SecurityBaselineState) GetState()(*SecurityBaselineComplianceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
-func (m *SecurityBaselineState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,14 +61,14 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["settingStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityBaselineSettingState() })
+        val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineSettingStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SecurityBaselineSettingState, len(val))
+            res := make([]SecurityBaselineSettingStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SecurityBaselineSettingState))
+                res[i] = v.(SecurityBaselineSettingStateable)
             }
             m.SetSettingStates(res)
         }
@@ -124,6 +96,38 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
+// GetSecurityBaselineTemplateId gets the securityBaselineTemplateId property value. The security baseline template id
+func (m *SecurityBaselineState) GetSecurityBaselineTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityBaselineTemplateId
+    }
+}
+// GetSettingStates gets the settingStates property value. The security baseline state for different settings for a device
+func (m *SecurityBaselineState) GetSettingStates()([]SecurityBaselineSettingStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingStates
+    }
+}
+// GetState gets the state property value. Security baseline compliance state
+func (m *SecurityBaselineState) GetState()(*SecurityBaselineComplianceState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
+func (m *SecurityBaselineState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
 func (m *SecurityBaselineState) IsNil()(bool) {
     return m == nil
 }
@@ -148,8 +152,7 @@ func (m *SecurityBaselineState) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetSettingStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettingStates()))
         for i, v := range m.GetSettingStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("settingStates", cast)
         if err != nil {
@@ -184,7 +187,7 @@ func (m *SecurityBaselineState) SetSecurityBaselineTemplateId(value *string)() {
     }
 }
 // SetSettingStates sets the settingStates property value. The security baseline state for different settings for a device
-func (m *SecurityBaselineState) SetSettingStates(value []SecurityBaselineSettingState)() {
+func (m *SecurityBaselineState) SetSettingStates(value []SecurityBaselineSettingStateable)() {
     if m != nil {
         m.settingStates = value
     }

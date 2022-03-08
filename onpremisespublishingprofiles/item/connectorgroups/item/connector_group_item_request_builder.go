@@ -2,14 +2,14 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/members"
     i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/applications"
     i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/members/item"
+    ia89622dbe24176b268f77a9bc06936b0458832e38a0d3a929aaeb22f16f585d1 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/applications/item"
 )
 
-// ConnectorGroupItemRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}
+// ConnectorGroupItemRequestBuilder provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 type ConnectorGroupItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type ConnectorGroupItemRequestBuilderGetQueryParameters struct {
 // ConnectorGroupItemRequestBuilderPatchOptions options for Patch
 type ConnectorGroupItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroupable;
     // Request headers
     H map[string]string;
     // Request options
@@ -59,6 +59,17 @@ type ConnectorGroupItemRequestBuilderPatchOptions struct {
 func (m *ConnectorGroupItemRequestBuilder) Applications()(*i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc.ApplicationsRequestBuilder) {
     return i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc.NewApplicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ApplicationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.applications.item collection
+func (m *ConnectorGroupItemRequestBuilder) ApplicationsById(id string)(*ia89622dbe24176b268f77a9bc06936b0458832e38a0d3a929aaeb22f16f585d1.ApplicationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["application_id"] = id
+    }
+    return ia89622dbe24176b268f77a9bc06936b0458832e38a0d3a929aaeb22f16f585d1.NewApplicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewConnectorGroupItemRequestBuilderInternal instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
 func NewConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorGroupItemRequestBuilder) {
     m := &ConnectorGroupItemRequestBuilder{
@@ -68,7 +79,7 @@ func NewConnectorGroupItemRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,7 +89,7 @@ func NewConnectorGroupItemRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property connectorGroups for onPremisesPublishingProfiles
 func (m *ConnectorGroupItemRequestBuilder) CreateDeleteRequestInformation(options *ConnectorGroupItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +126,7 @@ func (m *ConnectorGroupItemRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property connectorGroups in onPremisesPublishingProfiles
 func (m *ConnectorGroupItemRequestBuilder) CreatePatchRequestInformation(options *ConnectorGroupItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,29 +144,37 @@ func (m *ConnectorGroupItemRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// Delete delete navigation property connectorGroups for onPremisesPublishingProfiles
 func (m *ConnectorGroupItemRequestBuilder) Delete(options *ConnectorGroupItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-func (m *ConnectorGroupItemRequestBuilder) Get(options *ConnectorGroupItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup, error) {
+func (m *ConnectorGroupItemRequestBuilder) Get(options *ConnectorGroupItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewConnectorGroup() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateConnectorGroupFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroupable), nil
 }
 func (m *ConnectorGroupItemRequestBuilder) Members()(*i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.MembersRequestBuilder) {
     return i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -171,13 +190,17 @@ func (m *ConnectorGroupItemRequestBuilder) MembersById(id string)(*i753cfff90925
     }
     return i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae.NewConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// Patch update the navigation property connectorGroups in onPremisesPublishingProfiles
 func (m *ConnectorGroupItemRequestBuilder) Patch(options *ConnectorGroupItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

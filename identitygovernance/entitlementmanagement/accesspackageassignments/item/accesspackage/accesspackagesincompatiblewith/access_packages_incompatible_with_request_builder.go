@@ -2,13 +2,11 @@ package accesspackagesincompatiblewith
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i45ebc34581437a79433cf4aa3876992373c137af7a7637663271606abbcf3a5e "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackage/accesspackagesincompatiblewith/search"
-    i92feb2d0991460a5350aa50e3dd293b750ef10e0ebb969a34f3bc81581c92021 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackage/accesspackagesincompatiblewith/filterbycurrentuserwithon"
-    ib61b8206722061a54c5b0d950b74dbf691189ad6adca7951e55f274324f6ed77 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackage/accesspackagesincompatiblewith/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackage/accesspackagesincompatiblewith/count"
 )
 
-// AccessPackagesIncompatibleWithRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackagesIncompatibleWith
+// AccessPackagesIncompatibleWithRequestBuilder provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
 type AccessPackagesIncompatibleWithRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -56,7 +54,7 @@ func NewAccessPackagesIncompatibleWithRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -65,6 +63,9 @@ func NewAccessPackagesIncompatibleWithRequestBuilder(rawUrl string, requestAdapt
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesIncompatibleWithRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AccessPackagesIncompatibleWithRequestBuilder) Count()(*if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1.CountRequestBuilder) {
+    return if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the access packages that are incompatible with this package. Read-only.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformation(options *AccessPackagesIncompatibleWithRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -86,26 +87,19 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackagesIncompatibleWith\microsoft.graph.filterByCurrentUser(on={on})
-func (m *AccessPackagesIncompatibleWithRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i92feb2d0991460a5350aa50e3dd293b750ef10e0ebb969a34f3bc81581c92021.FilterByCurrentUserWithOnRequestBuilder) {
-    return i92feb2d0991460a5350aa50e3dd293b750ef10e0ebb969a34f3bc81581c92021.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
-}
 // Get the access packages that are incompatible with this package. Read-only.
-func (m *AccessPackagesIncompatibleWithRequestBuilder) Get(options *AccessPackagesIncompatibleWithRequestBuilderGetOptions)(*AccessPackagesIncompatibleWithResponse, error) {
+func (m *AccessPackagesIncompatibleWithRequestBuilder) Get(options *AccessPackagesIncompatibleWithRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackagesIncompatibleWithResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AccessPackagesIncompatibleWithResponse), nil
-}
-func (m *AccessPackagesIncompatibleWithRequestBuilder) Ref()(*ib61b8206722061a54c5b0d950b74dbf691189ad6adca7951e55f274324f6ed77.RefRequestBuilder) {
-    return ib61b8206722061a54c5b0d950b74dbf691189ad6adca7951e55f274324f6ed77.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Search builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackagesIncompatibleWith\microsoft.graph.Search()
-func (m *AccessPackagesIncompatibleWithRequestBuilder) Search()(*i45ebc34581437a79433cf4aa3876992373c137af7a7637663271606abbcf3a5e.SearchRequestBuilder) {
-    return i45ebc34581437a79433cf4aa3876992373c137af7a7637663271606abbcf3a5e.NewSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCollectionResponseable), nil
 }

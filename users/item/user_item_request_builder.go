@@ -5,7 +5,6 @@ import (
     i007cac44b1ad1a90ea316a1c0c51e045017f34e30cc3b64342ae3537775aaca4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activateserviceplan"
     i00eee5f4e45952d7af6d7dbf02a5397275cbfa69444a9cd54a450f1cc9c5baf6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives"
     i028859f982626d2101b8d8b68caff0f04ef34796aed805e993e21fefb9152760 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/getmanageddeviceswithappfailures"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i099d32137e6ab567a080a6d574abebbf5b3e8b218fa6fda8a2a0fce52a347329 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/wipemanagedappregistrationbydevicetag"
     i09b3ed8449f0eb014b1a1c391d9057c99dca194b7d9cee6d67e587c2b4d66363 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/findrooms"
     i0bb45fabb973cc1726799c26601b61fb5d4ceef85239469bf8a48d255ddcab77 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/events"
@@ -106,34 +105,47 @@ import (
     i1a9eb6fb24429a79e1e7397bd609e240ae9eef7f551f559e57f6c0050aa81ec7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendars/item"
     i1fb04953ffbe8174524af5da51d2e85d0602b9611bf6179631d63cd31623aa9c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/events/item"
     i20d5bc3e0beaac35f1cb30b0824d071deea9c98aa2da0ea95797426ec3391a8b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/deviceenrollmentconfigurations/item"
+    i2c5057cc6c2035899f3804d4bce915570738d9af43d8e9a3f1ea425e7c0130ff "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/transitivereports/item"
     i2cf542b96fcffbafb31190c7c7e24f2b652b0249d3c7d0e6deaf71e333abf373 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item"
     i322200ffec4334c71536e3a74319b0afb2071fae07124a70501b4a91e5d3efc2 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendargroups/item"
+    i404e4499afbbdf92e8ee2c947bd2f30954ca765dc8d5deeda689c119c7e7eff7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices/item"
     i41bcf6e933152d51a0364a3166ccb57d9e6cc7316937216a235e9f7a7973b36c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/licensedetails/item"
     i4d1bb8d1a6e444b2e99d643949896393d13341c23c9e59170d7cf747778a84f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devicemanagementtroubleshootingevents/item"
     i532345ba6b7192bf733f1b4b3de662c47c1e7e0d3989701bcdc0d8f857dbe580 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/extensions/item"
+    i53afa1534ef724ece2eabf4449fabc9c4904d986ecd4d6a0c11e3784f58eaab4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/directreports/item"
     i5d09ee5a147e62e93172ba3c3003b1e37657e5078803e7fa2be2756f303a9607 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/notifications/item"
+    i662c61ababf046e658d661a256ad38f5e55026354d35305f3f7fbd8b59a76654 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/agreementacceptances/item"
     i66ea18aba758406b3b710707db096aa499334ab8141ff00b5817c0160d62f849 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/contacts/item"
     i7f7b81e49212c0fd4aff0640f7a76daf8d10816c9da8bbbf24c63c6d3002dac7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approleassignments/item"
     i7fdae8345bbd328abce3eca8f17ca05dfb12b3a6a3adcb8b7b394f3697581dae "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mobileapptroubleshootingevents/item"
+    i84c9cc6d33fc548d6b6b6210a170d3ce1e97e608f9af2ff36d66a133895c1e8b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/ownedobjects/item"
     i86e9fa8da4e357b5840f59b78cd49a5abce31f7a90096cc8b85047571e5a2b06 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendarview/item"
+    i89586fbadaf2720611403fc97537d705bca9891589c65eb565dbae3f293f06c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/owneddevices/item"
     i8a37b6fd0dca54e1e3129d6fa85360b47ae2206831aad7d8bf6c3823b1fb540b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/item"
+    i8a8732491a2ce7d94fc7e324e6a38276076b912c30ea0094d5fb671dd11250f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/createdobjects/item"
     i8bc97b715d2b1f741be45e9db03b6f18317426bb77532976ccdc40d366389a11 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/chats/item"
     i8c655ab8b24fc37660a4329441f6c9936205ed7192659a7b410b5c1b127f0ebd "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activities/item"
     i8e9bfc4860807cf4727d9197394851201c63af67494fa725e469b158152f82c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item"
     i92f204ee1ec183e477ad6aae362cad151b598b7439eda0c58c4750c295bc84e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/messages/item"
+    i9bb18abda2da0890104c07ce4b11694592a3ff71b3436063a29752ff07e0f525 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/followedsites/item"
     i9e371fd6357698c3cd300fbb8012addd3ec298d5df1be3dfa58412fb63c3cae8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mobileappintentandstates/item"
+    i9ff5415484e41f91043b46ae2894ad1a1ddead74f139bbcb66a0ea970caba35b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams/item"
     ia16782564e6f61796daddf42e21afd9855b9a1c1c41eef4e65e545763ac7c8d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/people/item"
+    iabe64332e133a9af5a6f5aafde3a47ea985f385ae58a2f524f86fc1a3ef2f539 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/transitivememberof/item"
     ib1c924a2a83336c2eee6c85a7c0edc6e41999bab4aa8e2db2755b64356506e43 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/contactfolders/item"
     ib39beceac49e7dd17ed1c0885887dae465a45afa34b3eebb70aa5fc08ca691e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/photos/item"
     ib9adfa359ccdf30972cf1f2c9fb0c0a8edde337e58fe26f0a95800e7ce3ba9db "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/usagerights/item"
+    iba97b8ef76c5efeab4d738316d6e0d7c1266515ff3632bf4789418105475f2bd "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/windowsinformationprotectiondeviceregistrations/item"
     ic60383690980d3eba5846d285791ffa2fb94867c1850c6c8da9aaa03aca3c008 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/appconsentrequestsforapproval/item"
     id15759ba2587bc2a0cac47e8d7da5e4bd208929d38688edb78df7122421e531f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item"
+    id62ce646a00a4421b260562c6eb4464e0a6e23540ac62847efa7af52e9578392 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/managedappregistrations/item"
+    idbb158da6d78d676ea0c3d14f6ae7004f016a1bdc89a3da430f82196981f35af "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/memberof/item"
+    ideab25898675089d3e174a0e5f0bde76aa4e227661b4518a256695e6a0500360 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/oauth2permissiongrants/item"
     ie132362db0baae23ad9567ff4032a62c165d8386308f8baec97ecbb60c10a021 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/scopedrolememberof/item"
-    ie39c35482440e2a813ce2612b19ea08745ca523bb7a24088144c3428169a006d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/item"
     ifeea6837d24ad8765a5cb2092fe2e730b4403b36aa4e813a9cdfdb831a8f7974 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/item"
 )
 
-// UserItemRequestBuilder builds and executes requests for operations under \users\{user-id}
+// UserItemRequestBuilder provides operations to manage the collection of user entities.
 type UserItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -172,7 +184,7 @@ type UserItemRequestBuilderGetQueryParameters struct {
 // UserItemRequestBuilderPatchOptions options for Patch
 type UserItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.User;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Userable;
     // Request headers
     H map[string]string;
     // Request options
@@ -199,6 +211,17 @@ func (m *UserItemRequestBuilder) ActivitiesById(id string)(*i8c655ab8b24fc37660a
 }
 func (m *UserItemRequestBuilder) AgreementAcceptances()(*i3d9c184215c67e8ba108a3159afbd942d4eaa93fc6fdec9593468297b72346e5.AgreementAcceptancesRequestBuilder) {
     return i3d9c184215c67e8ba108a3159afbd942d4eaa93fc6fdec9593468297b72346e5.NewAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AgreementAcceptancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.agreementAcceptances.item collection
+func (m *UserItemRequestBuilder) AgreementAcceptancesById(id string)(*i662c61ababf046e658d661a256ad38f5e55026354d35305f3f7fbd8b59a76654.AgreementAcceptanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["agreementAcceptance_id"] = id
+    }
+    return i662c61ababf046e658d661a256ad38f5e55026354d35305f3f7fbd8b59a76654.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) Analytics()(*if6f18d24cca69003f155fe07812d8a9ade476b4b7cb0560b8869ba314a7a79aa.AnalyticsRequestBuilder) {
     return if6f18d24cca69003f155fe07812d8a9ade476b4b7cb0560b8869ba314a7a79aa.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -328,7 +351,7 @@ func NewUserItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -386,6 +409,17 @@ func (m *UserItemRequestBuilder) CreateDeleteRequestInformation(options *UserIte
 func (m *UserItemRequestBuilder) CreatedObjects()(*i396aa46f4b0d835f500bf48230128cbf9b0b575b29db3501c7da923e86cbb886.CreatedObjectsRequestBuilder) {
     return i396aa46f4b0d835f500bf48230128cbf9b0b575b29db3501c7da923e86cbb886.NewCreatedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// CreatedObjectsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.createdObjects.item collection
+func (m *UserItemRequestBuilder) CreatedObjectsById(id string)(*i8a8732491a2ce7d94fc7e324e6a38276076b912c30ea0094d5fb671dd11250f2.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i8a8732491a2ce7d94fc7e324e6a38276076b912c30ea0094d5fb671dd11250f2.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // CreateGetRequestInformation get entity from users by key
 func (m *UserItemRequestBuilder) CreateGetRequestInformation(options *UserItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
@@ -430,7 +464,11 @@ func (m *UserItemRequestBuilder) Delete(options *UserItemRequestBuilderDeleteOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -481,6 +519,17 @@ func (m *UserItemRequestBuilder) DevicesById(id string)(*i8a37b6fd0dca54e1e3129d
 func (m *UserItemRequestBuilder) DirectReports()(*i1e8437839d244c8d93e242e55290d8df8b03ca76cf9b009f9b9a19ef5d5922ac.DirectReportsRequestBuilder) {
     return i1e8437839d244c8d93e242e55290d8df8b03ca76cf9b009f9b9a19ef5d5922ac.NewDirectReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DirectReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.directReports.item collection
+func (m *UserItemRequestBuilder) DirectReportsById(id string)(*i53afa1534ef724ece2eabf4449fabc9c4904d986ecd4d6a0c11e3784f58eaab4.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i53afa1534ef724ece2eabf4449fabc9c4904d986ecd4d6a0c11e3784f58eaab4.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *UserItemRequestBuilder) Drive()(*i3e6a9a935ee43b6bd89f378e203c324f1d517ccc9d1c30202303eafc13d5bb25.DriveRequestBuilder) {
     return i3e6a9a935ee43b6bd89f378e203c324f1d517ccc9d1c30202303eafc13d5bb25.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -512,13 +561,13 @@ func (m *UserItemRequestBuilder) EventsById(id string)(*i1fb04953ffbe8174524af5d
     }
     return i1fb04953ffbe8174524af5da51d2e85d0602b9611bf6179631d63cd31623aa9c.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ExportDeviceAndAppManagementData builds and executes requests for operations under \users\{user-id}\microsoft.graph.exportDeviceAndAppManagementData()
+// ExportDeviceAndAppManagementData provides operations to call the exportDeviceAndAppManagementData method.
 func (m *UserItemRequestBuilder) ExportDeviceAndAppManagementData()(*i6c6abf877b483e321abb71bac38e5c8c592f7ee6915c9ad28447c321b2979b4d.ExportDeviceAndAppManagementDataRequestBuilder) {
     return i6c6abf877b483e321abb71bac38e5c8c592f7ee6915c9ad28447c321b2979b4d.NewExportDeviceAndAppManagementDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExportDeviceAndAppManagementDataWithSkipWithTop builds and executes requests for operations under \users\{user-id}\microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})
-func (m *UserItemRequestBuilder) ExportDeviceAndAppManagementDataWithSkipWithTop(skip *int32, top *int32)(*i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
-    return i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, skip, top);
+// ExportDeviceAndAppManagementDataWithSkipWithTop provides operations to call the exportDeviceAndAppManagementData method.
+func (m *UserItemRequestBuilder) ExportDeviceAndAppManagementDataWithSkipWithTop(top *int32, skip *int32)(*i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
+    return i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, top, skip);
 }
 func (m *UserItemRequestBuilder) ExportPersonalData()(*i10209655736fb29f6fe332f57065da684a4bb7e75afca36c8b0cf9215d9600cf.ExportPersonalDataRequestBuilder) {
     return i10209655736fb29f6fe332f57065da684a4bb7e75afca36c8b0cf9215d9600cf.NewExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -540,57 +589,72 @@ func (m *UserItemRequestBuilder) ExtensionsById(id string)(*i532345ba6b7192bf733
 func (m *UserItemRequestBuilder) FindMeetingTimes()(*i5c0e1410fbc34cac508ae33c37b1e9dd9a4ca3540ad1525e02f20329f8a264f0.FindMeetingTimesRequestBuilder) {
     return i5c0e1410fbc34cac508ae33c37b1e9dd9a4ca3540ad1525e02f20329f8a264f0.NewFindMeetingTimesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FindRoomLists builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRoomLists()
+// FindRoomLists provides operations to call the findRoomLists method.
 func (m *UserItemRequestBuilder) FindRoomLists()(*id5b765e74db4b3dcebe232c27216355fdc0568a1094952e7fc7cbdc858f3d81a.FindRoomListsRequestBuilder) {
     return id5b765e74db4b3dcebe232c27216355fdc0568a1094952e7fc7cbdc858f3d81a.NewFindRoomListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FindRooms builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRooms()
+// FindRooms provides operations to call the findRooms method.
 func (m *UserItemRequestBuilder) FindRooms()(*i09b3ed8449f0eb014b1a1c391d9057c99dca194b7d9cee6d67e587c2b4d66363.FindRoomsRequestBuilder) {
     return i09b3ed8449f0eb014b1a1c391d9057c99dca194b7d9cee6d67e587c2b4d66363.NewFindRoomsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FindRoomsWithRoomList builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRooms(RoomList='{RoomList}')
+// FindRoomsWithRoomList provides operations to call the findRooms method.
 func (m *UserItemRequestBuilder) FindRoomsWithRoomList(roomList *string)(*i933c9dccaf05a6a7fcf066da46cae8d6c4a0940e841426651ace8702209f1b9d.FindRoomsWithRoomListRequestBuilder) {
     return i933c9dccaf05a6a7fcf066da46cae8d6c4a0940e841426651ace8702209f1b9d.NewFindRoomsWithRoomListRequestBuilderInternal(m.pathParameters, m.requestAdapter, roomList);
 }
 func (m *UserItemRequestBuilder) FollowedSites()(*id904363322fca79446fa0f0f2231760c6649433886f1c8e79503338b004b288c.FollowedSitesRequestBuilder) {
     return id904363322fca79446fa0f0f2231760c6649433886f1c8e79503338b004b288c.NewFollowedSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// FollowedSitesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.followedSites.item collection
+func (m *UserItemRequestBuilder) FollowedSitesById(id string)(*i9bb18abda2da0890104c07ce4b11694592a3ff71b3436063a29752ff07e0f525.SiteItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["site_id"] = id
+    }
+    return i9bb18abda2da0890104c07ce4b11694592a3ff71b3436063a29752ff07e0f525.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // Get get entity from users by key
-func (m *UserItemRequestBuilder) Get(options *UserItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.User, error) {
+func (m *UserItemRequestBuilder) Get(options *UserItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUser() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.User), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Userable), nil
 }
-// GetEffectiveDeviceEnrollmentConfigurations builds and executes requests for operations under \users\{user-id}\microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()
+// GetEffectiveDeviceEnrollmentConfigurations provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
 func (m *UserItemRequestBuilder) GetEffectiveDeviceEnrollmentConfigurations()(*i44184067b9a5d3386d10a8d3d78383c99a1f94c6db7a1c78fecc6277422e9842.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) {
     return i44184067b9a5d3386d10a8d3d78383c99a1f94c6db7a1c78fecc6277422e9842.NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetLoggedOnManagedDevices builds and executes requests for operations under \users\{user-id}\microsoft.graph.getLoggedOnManagedDevices()
+// GetLoggedOnManagedDevices provides operations to call the getLoggedOnManagedDevices method.
 func (m *UserItemRequestBuilder) GetLoggedOnManagedDevices()(*i163ca73c2d1426f49f134d87416999c0644a5bf7f78d9912f8098a9785dc6ec1.GetLoggedOnManagedDevicesRequestBuilder) {
     return i163ca73c2d1426f49f134d87416999c0644a5bf7f78d9912f8098a9785dc6ec1.NewGetLoggedOnManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) GetMailTips()(*i89f9ebf7c167c75aff01142f1e2b30d94fcb3ccf3d4af1752e74dbc3f979ecd6.GetMailTipsRequestBuilder) {
     return i89f9ebf7c167c75aff01142f1e2b30d94fcb3ccf3d4af1752e74dbc3f979ecd6.NewGetMailTipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetManagedAppDiagnosticStatuses builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedAppDiagnosticStatuses()
+// GetManagedAppDiagnosticStatuses provides operations to call the getManagedAppDiagnosticStatuses method.
 func (m *UserItemRequestBuilder) GetManagedAppDiagnosticStatuses()(*idaeea547224afeb26277747dcbdab987622f0aec250f6cb9dcebbc9e6d05df1e.GetManagedAppDiagnosticStatusesRequestBuilder) {
     return idaeea547224afeb26277747dcbdab987622f0aec250f6cb9dcebbc9e6d05df1e.NewGetManagedAppDiagnosticStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetManagedAppPolicies builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedAppPolicies()
+// GetManagedAppPolicies provides operations to call the getManagedAppPolicies method.
 func (m *UserItemRequestBuilder) GetManagedAppPolicies()(*i1b6f500d8aa60be2a2a1e7586a07867f5e80bc6da6a793388efc074011aa9f1b.GetManagedAppPoliciesRequestBuilder) {
     return i1b6f500d8aa60be2a2a1e7586a07867f5e80bc6da6a793388efc074011aa9f1b.NewGetManagedAppPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetManagedDevicesWithAppFailures builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedDevicesWithAppFailures()
+// GetManagedDevicesWithAppFailures provides operations to call the getManagedDevicesWithAppFailures method.
 func (m *UserItemRequestBuilder) GetManagedDevicesWithAppFailures()(*i028859f982626d2101b8d8b68caff0f04ef34796aed805e993e21fefb9152760.GetManagedDevicesWithAppFailuresRequestBuilder) {
     return i028859f982626d2101b8d8b68caff0f04ef34796aed805e993e21fefb9152760.NewGetManagedDevicesWithAppFailuresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetManagedDevicesWithFailedOrPendingApps builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedDevicesWithFailedOrPendingApps()
+// GetManagedDevicesWithFailedOrPendingApps provides operations to call the getManagedDevicesWithFailedOrPendingApps method.
 func (m *UserItemRequestBuilder) GetManagedDevicesWithFailedOrPendingApps()(*i52ea864f44c605939329148c5a95626ead1b771dff88c6072de654caee1b281e.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) {
     return i52ea864f44c605939329148c5a95626ead1b771dff88c6072de654caee1b281e.NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -612,26 +676,26 @@ func (m *UserItemRequestBuilder) Insights()(*i5f232e4d902d95d06ec20d5128cce05b56
 func (m *UserItemRequestBuilder) InvalidateAllRefreshTokens()(*i7f0c66e611b8af22dffef0886d0dc8468dc8cac8bb0b577016f3d4b1daf70528.InvalidateAllRefreshTokensRequestBuilder) {
     return i7f0c66e611b8af22dffef0886d0dc8468dc8cac8bb0b577016f3d4b1daf70528.NewInvalidateAllRefreshTokensRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IsManagedAppUserBlocked builds and executes requests for operations under \users\{user-id}\microsoft.graph.isManagedAppUserBlocked()
+// IsManagedAppUserBlocked provides operations to call the isManagedAppUserBlocked method.
 func (m *UserItemRequestBuilder) IsManagedAppUserBlocked()(*ieee72b0b162c07d3dde8ae1950af04718a5801d0d3e6575e0cba2faa3f56157a.IsManagedAppUserBlockedRequestBuilder) {
     return ieee72b0b162c07d3dde8ae1950af04718a5801d0d3e6575e0cba2faa3f56157a.NewIsManagedAppUserBlockedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) JoinedGroups()(*i235dd448b749bb3a1187ec0970cdeb5c226f7aee1c9e6c72733a9d1a15182ffe.JoinedGroupsRequestBuilder) {
     return i235dd448b749bb3a1187ec0970cdeb5c226f7aee1c9e6c72733a9d1a15182ffe.NewJoinedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// JoinedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.joinedGroups.item collection
-func (m *UserItemRequestBuilder) JoinedGroupsById(id string)(*ie39c35482440e2a813ce2612b19ea08745ca523bb7a24088144c3428169a006d.GroupItemRequestBuilder) {
+func (m *UserItemRequestBuilder) JoinedTeams()(*i4e8ad44991b185083366e107199ff13f6438a07cafd58ae36e0e862692bf9826.JoinedTeamsRequestBuilder) {
+    return i4e8ad44991b185083366e107199ff13f6438a07cafd58ae36e0e862692bf9826.NewJoinedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// JoinedTeamsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.joinedTeams.item collection
+func (m *UserItemRequestBuilder) JoinedTeamsById(id string)(*i9ff5415484e41f91043b46ae2894ad1a1ddead74f139bbcb66a0ea970caba35b.TeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["group_id"] = id
+        urlTplParams["team_id"] = id
     }
-    return ie39c35482440e2a813ce2612b19ea08745ca523bb7a24088144c3428169a006d.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-func (m *UserItemRequestBuilder) JoinedTeams()(*i4e8ad44991b185083366e107199ff13f6438a07cafd58ae36e0e862692bf9826.JoinedTeamsRequestBuilder) {
-    return i4e8ad44991b185083366e107199ff13f6438a07cafd58ae36e0e862692bf9826.NewJoinedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return i9ff5415484e41f91043b46ae2894ad1a1ddead74f139bbcb66a0ea970caba35b.NewTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) LicenseDetails()(*i53e4d773c077f49b4590da13b904e6a502ef1f8f43b7a7fdfaba256a667df083.LicenseDetailsRequestBuilder) {
     return i53e4d773c077f49b4590da13b904e6a502ef1f8f43b7a7fdfaba256a667df083.NewLicenseDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -664,6 +728,17 @@ func (m *UserItemRequestBuilder) MailFoldersById(id string)(*i11a0d65a9c2024ff5c
 func (m *UserItemRequestBuilder) ManagedAppRegistrations()(*i44dc4d21a51a483da0eb7ac0bc6c38fa258f1e982bb140f0bd9282a87d39015c.ManagedAppRegistrationsRequestBuilder) {
     return i44dc4d21a51a483da0eb7ac0bc6c38fa258f1e982bb140f0bd9282a87d39015c.NewManagedAppRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ManagedAppRegistrationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.managedAppRegistrations.item collection
+func (m *UserItemRequestBuilder) ManagedAppRegistrationsById(id string)(*id62ce646a00a4421b260562c6eb4464e0a6e23540ac62847efa7af52e9578392.ManagedAppRegistrationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["managedAppRegistration_id"] = id
+    }
+    return id62ce646a00a4421b260562c6eb4464e0a6e23540ac62847efa7af52e9578392.NewManagedAppRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *UserItemRequestBuilder) ManagedDevices()(*i4cd644380b450eedb89634c647645afa6ede7ee4df886587de78ccf69b3a9a42.ManagedDevicesRequestBuilder) {
     return i4cd644380b450eedb89634c647645afa6ede7ee4df886587de78ccf69b3a9a42.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -683,6 +758,17 @@ func (m *UserItemRequestBuilder) Manager()(*ice23d35988441664e0a80c4309242575aeb
 }
 func (m *UserItemRequestBuilder) MemberOf()(*i35ae79fec43abc52b415d013c5ba088edde69bf589391525fec20b1f062c22a7.MemberOfRequestBuilder) {
     return i35ae79fec43abc52b415d013c5ba088edde69bf589391525fec20b1f062c22a7.NewMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MemberOfById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.memberOf.item collection
+func (m *UserItemRequestBuilder) MemberOfById(id string)(*idbb158da6d78d676ea0c3d14f6ae7004f016a1bdc89a3da430f82196981f35af.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return idbb158da6d78d676ea0c3d14f6ae7004f016a1bdc89a3da430f82196981f35af.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) Messages()(*ifc52bce07b756c55dabe5cd8f6a0d8c749809ddcc3831f5bded6c944d449dbd8.MessagesRequestBuilder) {
     return ifc52bce07b756c55dabe5cd8f6a0d8c749809ddcc3831f5bded6c944d449dbd8.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -743,6 +829,17 @@ func (m *UserItemRequestBuilder) NotificationsById(id string)(*i5d09ee5a147e62e9
 func (m *UserItemRequestBuilder) Oauth2PermissionGrants()(*ib674e5ebc7e9a35ea83a7a23737e2e850d21d009460f455398f4235cd71eb2d8.Oauth2PermissionGrantsRequestBuilder) {
     return ib674e5ebc7e9a35ea83a7a23737e2e850d21d009460f455398f4235cd71eb2d8.NewOauth2PermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Oauth2PermissionGrantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.oauth2PermissionGrants.item collection
+func (m *UserItemRequestBuilder) Oauth2PermissionGrantsById(id string)(*ideab25898675089d3e174a0e5f0bde76aa4e227661b4518a256695e6a0500360.OAuth2PermissionGrantItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["oAuth2PermissionGrant_id"] = id
+    }
+    return ideab25898675089d3e174a0e5f0bde76aa4e227661b4518a256695e6a0500360.NewOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *UserItemRequestBuilder) Onenote()(*i4c553c01d10dc5ea91f5e8443a25576af37822a1a9e3b20c39f7d69613ca1a5d.OnenoteRequestBuilder) {
     return i4c553c01d10dc5ea91f5e8443a25576af37822a1a9e3b20c39f7d69613ca1a5d.NewOnenoteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -766,8 +863,30 @@ func (m *UserItemRequestBuilder) Outlook()(*ib9ea7c893835d89864cc7cd939d24f579ba
 func (m *UserItemRequestBuilder) OwnedDevices()(*i71ece4d9b62444d7cd9edeac6c2b5bdaf0f35379d154d089d602c3d246239739.OwnedDevicesRequestBuilder) {
     return i71ece4d9b62444d7cd9edeac6c2b5bdaf0f35379d154d089d602c3d246239739.NewOwnedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// OwnedDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.ownedDevices.item collection
+func (m *UserItemRequestBuilder) OwnedDevicesById(id string)(*i89586fbadaf2720611403fc97537d705bca9891589c65eb565dbae3f293f06c1.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i89586fbadaf2720611403fc97537d705bca9891589c65eb565dbae3f293f06c1.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *UserItemRequestBuilder) OwnedObjects()(*i3aa2a5875223f6b19560c0365147205688fff76fe30e6bbf724b3b25f7b00a43.OwnedObjectsRequestBuilder) {
     return i3aa2a5875223f6b19560c0365147205688fff76fe30e6bbf724b3b25f7b00a43.NewOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OwnedObjectsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.ownedObjects.item collection
+func (m *UserItemRequestBuilder) OwnedObjectsById(id string)(*i84c9cc6d33fc548d6b6b6210a170d3ce1e97e608f9af2ff36d66a133895c1e8b.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i84c9cc6d33fc548d6b6b6210a170d3ce1e97e608f9af2ff36d66a133895c1e8b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update entity in users
 func (m *UserItemRequestBuilder) Patch(options *UserItemRequestBuilderPatchOptions)(error) {
@@ -775,7 +894,11 @@ func (m *UserItemRequestBuilder) Patch(options *UserItemRequestBuilderPatchOptio
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -838,9 +961,20 @@ func (m *UserItemRequestBuilder) Profile()(*i77129a8685763d465ea62e5de870203f0d3
 func (m *UserItemRequestBuilder) RegisteredDevices()(*i9f79453a6cb43e9e5e68087f1d6e774414d8ba83449733d805265bf8cb3d0b5d.RegisteredDevicesRequestBuilder) {
     return i9f79453a6cb43e9e5e68087f1d6e774414d8ba83449733d805265bf8cb3d0b5d.NewRegisteredDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReminderViewWithStartDateTimeWithEndDateTime builds and executes requests for operations under \users\{user-id}\microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')
-func (m *UserItemRequestBuilder) ReminderViewWithStartDateTimeWithEndDateTime(startDateTime *string, endDateTime *string)(*i1e2ed1761df19ea44d2d90f6fdfba02f95eb595495e7804f87126e72ee9345e3.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
-    return i1e2ed1761df19ea44d2d90f6fdfba02f95eb595495e7804f87126e72ee9345e3.NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime);
+// RegisteredDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.registeredDevices.item collection
+func (m *UserItemRequestBuilder) RegisteredDevicesById(id string)(*i404e4499afbbdf92e8ee2c947bd2f30954ca765dc8d5deeda689c119c7e7eff7.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i404e4499afbbdf92e8ee2c947bd2f30954ca765dc8d5deeda689c119c7e7eff7.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// ReminderViewWithStartDateTimeWithEndDateTime provides operations to call the reminderView method.
+func (m *UserItemRequestBuilder) ReminderViewWithStartDateTimeWithEndDateTime(endDateTime *string, startDateTime *string)(*i1e2ed1761df19ea44d2d90f6fdfba02f95eb595495e7804f87126e72ee9345e3.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return i1e2ed1761df19ea44d2d90f6fdfba02f95eb595495e7804f87126e72ee9345e3.NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, startDateTime);
 }
 func (m *UserItemRequestBuilder) RemoveAllDevicesFromManagement()(*i7d78da96ae198e74cdcd846ebd00d688295a8b346c939e4e49d56b88b5f72711.RemoveAllDevicesFromManagementRequestBuilder) {
     return i7d78da96ae198e74cdcd846ebd00d688295a8b346c939e4e49d56b88b5f72711.NewRemoveAllDevicesFromManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -889,8 +1023,30 @@ func (m *UserItemRequestBuilder) Todo()(*i4e66b80d61d13c58a5325be0d73998d6c528f9
 func (m *UserItemRequestBuilder) TransitiveMemberOf()(*i6f957db73ce02e759548f419eb79a2bfdfb04d6c5206523cd438181cc5619df8.TransitiveMemberOfRequestBuilder) {
     return i6f957db73ce02e759548f419eb79a2bfdfb04d6c5206523cd438181cc5619df8.NewTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// TransitiveMemberOfById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.transitiveMemberOf.item collection
+func (m *UserItemRequestBuilder) TransitiveMemberOfById(id string)(*iabe64332e133a9af5a6f5aafde3a47ea985f385ae58a2f524f86fc1a3ef2f539.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return iabe64332e133a9af5a6f5aafde3a47ea985f385ae58a2f524f86fc1a3ef2f539.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *UserItemRequestBuilder) TransitiveReports()(*ia1e1519710e771d8df5e22da39eeb50d37180582bb2065916e5cd0703a4d1cce.TransitiveReportsRequestBuilder) {
     return ia1e1519710e771d8df5e22da39eeb50d37180582bb2065916e5cd0703a4d1cce.NewTransitiveReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TransitiveReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.transitiveReports.item collection
+func (m *UserItemRequestBuilder) TransitiveReportsById(id string)(*i2c5057cc6c2035899f3804d4bce915570738d9af43d8e9a3f1ea425e7c0130ff.DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["directoryObject_id"] = id
+    }
+    return i2c5057cc6c2035899f3804d4bce915570738d9af43d8e9a3f1ea425e7c0130ff.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) TranslateExchangeIds()(*i87f894b87c2947e4dad88e845ac91e8a8ddf1ca5ba6b426384ab8873fe897913.TranslateExchangeIdsRequestBuilder) {
     return i87f894b87c2947e4dad88e845ac91e8a8ddf1ca5ba6b426384ab8873fe897913.NewTranslateExchangeIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -914,6 +1070,17 @@ func (m *UserItemRequestBuilder) UsageRightsById(id string)(*ib9adfa359ccdf30972
 }
 func (m *UserItemRequestBuilder) WindowsInformationProtectionDeviceRegistrations()(*i3eaf8bc51db6f4bd95448da3951002ebce4db39125b63eaa1cb9987f99da858f.WindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     return i3eaf8bc51db6f4bd95448da3951002ebce4db39125b63eaa1cb9987f99da858f.NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// WindowsInformationProtectionDeviceRegistrationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.windowsInformationProtectionDeviceRegistrations.item collection
+func (m *UserItemRequestBuilder) WindowsInformationProtectionDeviceRegistrationsById(id string)(*iba97b8ef76c5efeab4d738316d6e0d7c1266515ff3632bf4789418105475f2bd.WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["windowsInformationProtectionDeviceRegistration_id"] = id
+    }
+    return iba97b8ef76c5efeab4d738316d6e0d7c1266515ff3632bf4789418105475f2bd.NewWindowsInformationProtectionDeviceRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *UserItemRequestBuilder) WipeAndBlockManagedApps()(*ieac84d2e3111366253e033fed8ced42323b1927cd610b6c93eb3eea6d066fd20.WipeAndBlockManagedAppsRequestBuilder) {
     return ieac84d2e3111366253e033fed8ced42323b1927cd610b6c93eb3eea6d066fd20.NewWipeAndBlockManagedAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

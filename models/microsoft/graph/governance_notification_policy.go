@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceNotificationPolicy 
+// GovernanceNotificationPolicy provides operations to manage the collection of approvalWorkflowProvider entities.
 type GovernanceNotificationPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     enabledTemplateTypes []string;
     // 
-    notificationTemplates []GovernanceNotificationTemplate;
+    notificationTemplates []GovernanceNotificationTemplateable;
 }
 // NewGovernanceNotificationPolicy instantiates a new governanceNotificationPolicy and sets the default values.
 func NewGovernanceNotificationPolicy()(*GovernanceNotificationPolicy) {
@@ -19,6 +19,10 @@ func NewGovernanceNotificationPolicy()(*GovernanceNotificationPolicy) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateGovernanceNotificationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceNotificationPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceNotificationPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationPolicy) GetAdditionalData()(map[string]interface{}) {
@@ -34,14 +38,6 @@ func (m *GovernanceNotificationPolicy) GetEnabledTemplateTypes()([]string) {
         return nil
     } else {
         return m.enabledTemplateTypes
-    }
-}
-// GetNotificationTemplates gets the notificationTemplates property value. 
-func (m *GovernanceNotificationPolicy) GetNotificationTemplates()([]GovernanceNotificationTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTemplates
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,20 +58,28 @@ func (m *GovernanceNotificationPolicy) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["notificationTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceNotificationTemplate() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceNotificationTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceNotificationTemplate, len(val))
+            res := make([]GovernanceNotificationTemplateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceNotificationTemplate))
+                res[i] = v.(GovernanceNotificationTemplateable)
             }
             m.SetNotificationTemplates(res)
         }
         return nil
     }
     return res
+}
+// GetNotificationTemplates gets the notificationTemplates property value. 
+func (m *GovernanceNotificationPolicy) GetNotificationTemplates()([]GovernanceNotificationTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationTemplates
+    }
 }
 func (m *GovernanceNotificationPolicy) IsNil()(bool) {
     return m == nil
@@ -91,8 +95,7 @@ func (m *GovernanceNotificationPolicy) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetNotificationTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNotificationTemplates()))
         for i, v := range m.GetNotificationTemplates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("notificationTemplates", cast)
         if err != nil {
@@ -120,7 +123,7 @@ func (m *GovernanceNotificationPolicy) SetEnabledTemplateTypes(value []string)()
     }
 }
 // SetNotificationTemplates sets the notificationTemplates property value. 
-func (m *GovernanceNotificationPolicy) SetNotificationTemplates(value []GovernanceNotificationTemplate)() {
+func (m *GovernanceNotificationPolicy) SetNotificationTemplates(value []GovernanceNotificationTemplateable)() {
     if m != nil {
         m.notificationTemplates = value
     }

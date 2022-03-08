@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionWipeAction 
+// WindowsInformationProtectionWipeAction provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionWipeAction struct {
     Entity
     // Last checkin time of the device that was targeted by this wipe action.
@@ -28,53 +28,9 @@ func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWi
     }
     return m
 }
-// GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device that was targeted by this wipe action.
-func (m *WindowsInformationProtectionWipeAction) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckInDateTime
-    }
-}
-// GetStatus gets the status property value. Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
-func (m *WindowsInformationProtectionWipeAction) GetStatus()(*ActionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTargetedDeviceMacAddress gets the targetedDeviceMacAddress property value. Targeted device Mac address.
-func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceMacAddress
-    }
-}
-// GetTargetedDeviceName gets the targetedDeviceName property value. Targeted device name.
-func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceName
-    }
-}
-// GetTargetedDeviceRegistrationId gets the targetedDeviceRegistrationId property value. The DeviceRegistrationId being targeted by this wipe action.
-func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceRegistrationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceRegistrationId
-    }
-}
-// GetTargetedUserId gets the targetedUserId property value. The UserId being targeted by this wipe action.
-func (m *WindowsInformationProtectionWipeAction) GetTargetedUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedUserId
-    }
+// CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionWipeAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -140,6 +96,54 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device that was targeted by this wipe action.
+func (m *WindowsInformationProtectionWipeAction) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastCheckInDateTime
+    }
+}
+// GetStatus gets the status property value. Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+func (m *WindowsInformationProtectionWipeAction) GetStatus()(*ActionState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTargetedDeviceMacAddress gets the targetedDeviceMacAddress property value. Targeted device Mac address.
+func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceMacAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedDeviceMacAddress
+    }
+}
+// GetTargetedDeviceName gets the targetedDeviceName property value. Targeted device name.
+func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedDeviceName
+    }
+}
+// GetTargetedDeviceRegistrationId gets the targetedDeviceRegistrationId property value. The DeviceRegistrationId being targeted by this wipe action.
+func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceRegistrationId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedDeviceRegistrationId
+    }
+}
+// GetTargetedUserId gets the targetedUserId property value. The UserId being targeted by this wipe action.
+func (m *WindowsInformationProtectionWipeAction) GetTargetedUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetedUserId
+    }
 }
 func (m *WindowsInformationProtectionWipeAction) IsNil()(bool) {
     return m == nil

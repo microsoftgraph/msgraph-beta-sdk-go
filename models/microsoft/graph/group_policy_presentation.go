@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyPresentation 
+// GroupPolicyPresentation provides operations to manage the deviceManagement singleton.
 type GroupPolicyPresentation struct {
     Entity
     // The group policy definition associated with the presentation.
-    definition *GroupPolicyDefinition;
+    definition GroupPolicyDefinitionable;
     // Localized text label for any presentation entity. The default value is empty.
     label *string;
     // The date and time the entity was last modified.
@@ -22,40 +22,28 @@ func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {
     }
     return m
 }
+// CreateGroupPolicyPresentationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyPresentation(), nil
+}
 // GetDefinition gets the definition property value. The group policy definition associated with the presentation.
-func (m *GroupPolicyPresentation) GetDefinition()(*GroupPolicyDefinition) {
+func (m *GroupPolicyPresentation) GetDefinition()(GroupPolicyDefinitionable) {
     if m == nil {
         return nil
     } else {
         return m.definition
     }
 }
-// GetLabel gets the label property value. Localized text label for any presentation entity. The default value is empty.
-func (m *GroupPolicyPresentation) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyPresentation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinition() })
+        val, err := n.GetObjectValue(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefinition(val.(*GroupPolicyDefinition))
+            m.SetDefinition(val.(GroupPolicyDefinitionable))
         }
         return nil
     }
@@ -80,6 +68,22 @@ func (m *GroupPolicyPresentation) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetLabel gets the label property value. Localized text label for any presentation entity. The default value is empty.
+func (m *GroupPolicyPresentation) GetLabel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.label
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyPresentation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *GroupPolicyPresentation) IsNil()(bool) {
     return m == nil
@@ -111,7 +115,7 @@ func (m *GroupPolicyPresentation) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetDefinition sets the definition property value. The group policy definition associated with the presentation.
-func (m *GroupPolicyPresentation) SetDefinition(value *GroupPolicyDefinition)() {
+func (m *GroupPolicyPresentation) SetDefinition(value GroupPolicyDefinitionable)() {
     if m != nil {
         m.definition = value
     }

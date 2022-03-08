@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentDeviceSettingStateSummary 
+// DeviceManagementIntentDeviceSettingStateSummary provides operations to manage the deviceManagement singleton.
 type DeviceManagementIntentDeviceSettingStateSummary struct {
     Entity
     // Number of compliant devices
@@ -29,6 +29,10 @@ func NewDeviceManagementIntentDeviceSettingStateSummary()(*DeviceManagementInten
     }
     return m
 }
+// CreateDeviceManagementIntentDeviceSettingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementIntentDeviceSettingStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementIntentDeviceSettingStateSummary(), nil
+}
 // GetCompliantCount gets the compliantCount property value. Number of compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetCompliantCount()(*int32) {
     if m == nil {
@@ -51,38 +55,6 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetErrorCount()(*int32
         return nil
     } else {
         return m.errorCount
-    }
-}
-// GetNonCompliantCount gets the nonCompliantCount property value. Number of non compliant devices
-func (m *DeviceManagementIntentDeviceSettingStateSummary) GetNonCompliantCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantCount
-    }
-}
-// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
-func (m *DeviceManagementIntentDeviceSettingStateSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
-}
-// GetRemediatedCount gets the remediatedCount property value. Number of remediated devices
-func (m *DeviceManagementIntentDeviceSettingStateSummary) GetRemediatedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedCount
-    }
-}
-// GetSettingName gets the settingName property value. Name of a setting
-func (m *DeviceManagementIntentDeviceSettingStateSummary) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,6 +131,38 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         return nil
     }
     return res
+}
+// GetNonCompliantCount gets the nonCompliantCount property value. Number of non compliant devices
+func (m *DeviceManagementIntentDeviceSettingStateSummary) GetNonCompliantCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nonCompliantCount
+    }
+}
+// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
+func (m *DeviceManagementIntentDeviceSettingStateSummary) GetNotApplicableCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableCount
+    }
+}
+// GetRemediatedCount gets the remediatedCount property value. Number of remediated devices
+func (m *DeviceManagementIntentDeviceSettingStateSummary) GetRemediatedCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediatedCount
+    }
+}
+// GetSettingName gets the settingName property value. Name of a setting
+func (m *DeviceManagementIntentDeviceSettingStateSummary) GetSettingName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingName
+    }
 }
 func (m *DeviceManagementIntentDeviceSettingStateSummary) IsNil()(bool) {
     return m == nil

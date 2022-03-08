@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSecurityProfile 
+// UserSecurityProfile provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
 type UserSecurityProfile struct {
     Entity
     // 
-    accounts []UserAccount;
+    accounts []UserAccountable;
     // 
     azureSubscriptionId *string;
     // 
@@ -27,7 +27,7 @@ type UserSecurityProfile struct {
     // 
     userPrincipalName *string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
 }
 // NewUserSecurityProfile instantiates a new userSecurityProfile and sets the default values.
 func NewUserSecurityProfile()(*UserSecurityProfile) {
@@ -36,8 +36,12 @@ func NewUserSecurityProfile()(*UserSecurityProfile) {
     }
     return m
 }
+// CreateUserSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserSecurityProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserSecurityProfile(), nil
+}
 // GetAccounts gets the accounts property value. 
-func (m *UserSecurityProfile) GetAccounts()([]UserAccount) {
+func (m *UserSecurityProfile) GetAccounts()([]UserAccountable) {
     if m == nil {
         return nil
     } else {
@@ -76,58 +80,18 @@ func (m *UserSecurityProfile) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *UserSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *UserSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetTags gets the tags property value. 
-func (m *UserSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. 
-func (m *UserSecurityProfile) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *UserSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserAccount() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserAccount, len(val))
+            res := make([]UserAccountable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserAccount))
+                res[i] = v.(UserAccountable)
             }
             m.SetAccounts(res)
         }
@@ -218,16 +182,56 @@ func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *UserSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *UserSecurityProfile) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetTags gets the tags property value. 
+func (m *UserSecurityProfile) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. 
+func (m *UserSecurityProfile) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *UserSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
 }
 func (m *UserSecurityProfile) IsNil()(bool) {
     return m == nil
@@ -241,8 +245,7 @@ func (m *UserSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetAccounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccounts()))
         for i, v := range m.GetAccounts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accounts", cast)
         if err != nil {
@@ -306,7 +309,7 @@ func (m *UserSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetAccounts sets the accounts property value. 
-func (m *UserSecurityProfile) SetAccounts(value []UserAccount)() {
+func (m *UserSecurityProfile) SetAccounts(value []UserAccountable)() {
     if m != nil {
         m.accounts = value
     }
@@ -360,7 +363,7 @@ func (m *UserSecurityProfile) SetUserPrincipalName(value *string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *UserSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *UserSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }

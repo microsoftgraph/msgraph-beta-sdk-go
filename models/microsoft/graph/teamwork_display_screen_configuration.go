@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDisplayScreenConfiguration 
+// TeamworkDisplayScreenConfiguration provides operations to manage the teamwork singleton.
 type TeamworkDisplayScreenConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewTeamworkDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkDisplayScreenConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDisplayScreenConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -48,30 +52,6 @@ func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*i04eb5309aea
         return nil
     } else {
         return m.backlightTimeout
-    }
-}
-// GetIsHighContrastEnabled gets the isHighContrastEnabled property value. True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
-func (m *TeamworkDisplayScreenConfiguration) GetIsHighContrastEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHighContrastEnabled
-    }
-}
-// GetIsScreensaverEnabled gets the isScreensaverEnabled property value. True if screensaver is enabled. Not applicable for Teams Rooms devices.
-func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isScreensaverEnabled
-    }
-}
-// GetScreensaverTimeout gets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
-func (m *TeamworkDisplayScreenConfiguration) GetScreensaverTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screensaverTimeout
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +108,30 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetIsHighContrastEnabled gets the isHighContrastEnabled property value. True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
+func (m *TeamworkDisplayScreenConfiguration) GetIsHighContrastEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHighContrastEnabled
+    }
+}
+// GetIsScreensaverEnabled gets the isScreensaverEnabled property value. True if screensaver is enabled. Not applicable for Teams Rooms devices.
+func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isScreensaverEnabled
+    }
+}
+// GetScreensaverTimeout gets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
+func (m *TeamworkDisplayScreenConfiguration) GetScreensaverTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.screensaverTimeout
+    }
 }
 func (m *TeamworkDisplayScreenConfiguration) IsNil()(bool) {
     return m == nil

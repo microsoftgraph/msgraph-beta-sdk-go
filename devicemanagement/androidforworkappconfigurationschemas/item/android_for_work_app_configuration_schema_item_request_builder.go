@@ -2,11 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AndroidForWorkAppConfigurationSchemaItemRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkAppConfigurationSchemas\{androidForWorkAppConfigurationSchema-id}
+// AndroidForWorkAppConfigurationSchemaItemRequestBuilder provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 type AndroidForWorkAppConfigurationSchemaItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +44,7 @@ type AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetQueryParameters st
 // AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchOptions options for Patch
 type AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchema;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchemaable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +61,7 @@ func NewAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +71,7 @@ func NewAndroidForWorkAppConfigurationSchemaItemRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation android for Work app configuration schema entities.
+// CreateDeleteRequestInformation delete navigation property androidForWorkAppConfigurationSchemas for deviceManagement
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateDeleteRequestInformation(options *AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +108,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation android for Work app configuration schema entities.
+// CreatePatchRequestInformation update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreatePatchRequestInformation(options *AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +126,49 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// Delete android for Work app configuration schema entities.
+// Delete delete navigation property androidForWorkAppConfigurationSchemas for deviceManagement
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Delete(options *AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get android for Work app configuration schema entities.
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Get(options *AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchema, error) {
+func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Get(options *AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchemaable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAndroidForWorkAppConfigurationSchema() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchema), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkAppConfigurationSchemaable), nil
 }
-// Patch android for Work app configuration schema entities.
+// Patch update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Patch(options *AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

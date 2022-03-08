@@ -5,19 +5,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminRelationship 
+// DelegatedAdminRelationship provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationship struct {
     Entity
     // 
-    accessAssignments []DelegatedAdminAccessAssignment;
+    accessAssignments []DelegatedAdminAccessAssignmentable;
     // 
-    accessDetails *DelegatedAdminAccessDetails;
+    accessDetails DelegatedAdminAccessDetailsable;
     // 
     activatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    customer *DelegatedAdminRelationshipCustomerParticipant;
+    customer DelegatedAdminRelationshipCustomerParticipantable;
     // 
     displayName *string;
     // 
@@ -27,11 +27,11 @@ type DelegatedAdminRelationship struct {
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    operations []DelegatedAdminRelationshipOperation;
+    operations []DelegatedAdminRelationshipOperationable;
     // 
-    partner *DelegatedAdminRelationshipParticipant;
+    partner DelegatedAdminRelationshipParticipantable;
     // 
-    requests []DelegatedAdminRelationshipRequest;
+    requests []DelegatedAdminRelationshipRequestable;
     // 
     status *DelegatedAdminRelationshipStatus;
 }
@@ -42,8 +42,12 @@ func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     }
     return m
 }
+// CreateDelegatedAdminRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminRelationshipFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminRelationship(), nil
+}
 // GetAccessAssignments gets the accessAssignments property value. 
-func (m *DelegatedAdminRelationship) GetAccessAssignments()([]DelegatedAdminAccessAssignment) {
+func (m *DelegatedAdminRelationship) GetAccessAssignments()([]DelegatedAdminAccessAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +55,7 @@ func (m *DelegatedAdminRelationship) GetAccessAssignments()([]DelegatedAdminAcce
     }
 }
 // GetAccessDetails gets the accessDetails property value. 
-func (m *DelegatedAdminRelationship) GetAccessDetails()(*DelegatedAdminAccessDetails) {
+func (m *DelegatedAdminRelationship) GetAccessDetails()(DelegatedAdminAccessDetailsable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +79,7 @@ func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe
     }
 }
 // GetCustomer gets the customer property value. 
-func (m *DelegatedAdminRelationship) GetCustomer()(*DelegatedAdminRelationshipCustomerParticipant) {
+func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCustomerParticipantable) {
     if m == nil {
         return nil
     } else {
@@ -106,70 +110,30 @@ func (m *DelegatedAdminRelationship) GetEndDateTime()(*i336074805fc853987abe6f7f
         return m.endDateTime
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *DelegatedAdminRelationship) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOperations gets the operations property value. 
-func (m *DelegatedAdminRelationship) GetOperations()([]DelegatedAdminRelationshipOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
-}
-// GetPartner gets the partner property value. 
-func (m *DelegatedAdminRelationship) GetPartner()(*DelegatedAdminRelationshipParticipant) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partner
-    }
-}
-// GetRequests gets the requests property value. 
-func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requests
-    }
-}
-// GetStatus gets the status property value. 
-func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminAccessAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminAccessAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DelegatedAdminAccessAssignment, len(val))
+            res := make([]DelegatedAdminAccessAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DelegatedAdminAccessAssignment))
+                res[i] = v.(DelegatedAdminAccessAssignmentable)
             }
             m.SetAccessAssignments(res)
         }
         return nil
     }
     res["accessDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminAccessDetails() })
+        val, err := n.GetObjectValue(CreateDelegatedAdminAccessDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessDetails(val.(*DelegatedAdminAccessDetails))
+            m.SetAccessDetails(val.(DelegatedAdminAccessDetailsable))
         }
         return nil
     }
@@ -194,12 +158,12 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["customer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminRelationshipCustomerParticipant() })
+        val, err := n.GetObjectValue(CreateDelegatedAdminRelationshipCustomerParticipantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCustomer(val.(*DelegatedAdminRelationshipCustomerParticipant))
+            m.SetCustomer(val.(DelegatedAdminRelationshipCustomerParticipantable))
         }
         return nil
     }
@@ -244,38 +208,38 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminRelationshipOperation() })
+        val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminRelationshipOperationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DelegatedAdminRelationshipOperation, len(val))
+            res := make([]DelegatedAdminRelationshipOperationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DelegatedAdminRelationshipOperation))
+                res[i] = v.(DelegatedAdminRelationshipOperationable)
             }
             m.SetOperations(res)
         }
         return nil
     }
     res["partner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminRelationshipParticipant() })
+        val, err := n.GetObjectValue(CreateDelegatedAdminRelationshipParticipantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPartner(val.(*DelegatedAdminRelationshipParticipant))
+            m.SetPartner(val.(DelegatedAdminRelationshipParticipantable))
         }
         return nil
     }
     res["requests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminRelationshipRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminRelationshipRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DelegatedAdminRelationshipRequest, len(val))
+            res := make([]DelegatedAdminRelationshipRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DelegatedAdminRelationshipRequest))
+                res[i] = v.(DelegatedAdminRelationshipRequestable)
             }
             m.SetRequests(res)
         }
@@ -293,6 +257,46 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *DelegatedAdminRelationship) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOperations gets the operations property value. 
+func (m *DelegatedAdminRelationship) GetOperations()([]DelegatedAdminRelationshipOperationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetPartner gets the partner property value. 
+func (m *DelegatedAdminRelationship) GetPartner()(DelegatedAdminRelationshipParticipantable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partner
+    }
+}
+// GetRequests gets the requests property value. 
+func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requests
+    }
+}
+// GetStatus gets the status property value. 
+func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *DelegatedAdminRelationship) IsNil()(bool) {
     return m == nil
 }
@@ -305,8 +309,7 @@ func (m *DelegatedAdminRelationship) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetAccessAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessAssignments()))
         for i, v := range m.GetAccessAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessAssignments", cast)
         if err != nil {
@@ -364,8 +367,7 @@ func (m *DelegatedAdminRelationship) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -381,8 +383,7 @@ func (m *DelegatedAdminRelationship) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRequests()))
         for i, v := range m.GetRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("requests", cast)
         if err != nil {
@@ -399,13 +400,13 @@ func (m *DelegatedAdminRelationship) Serialize(writer i04eb5309aeaafadd28374d79c
     return nil
 }
 // SetAccessAssignments sets the accessAssignments property value. 
-func (m *DelegatedAdminRelationship) SetAccessAssignments(value []DelegatedAdminAccessAssignment)() {
+func (m *DelegatedAdminRelationship) SetAccessAssignments(value []DelegatedAdminAccessAssignmentable)() {
     if m != nil {
         m.accessAssignments = value
     }
 }
 // SetAccessDetails sets the accessDetails property value. 
-func (m *DelegatedAdminRelationship) SetAccessDetails(value *DelegatedAdminAccessDetails)() {
+func (m *DelegatedAdminRelationship) SetAccessDetails(value DelegatedAdminAccessDetailsable)() {
     if m != nil {
         m.accessDetails = value
     }
@@ -423,7 +424,7 @@ func (m *DelegatedAdminRelationship) SetCreatedDateTime(value *i336074805fc85398
     }
 }
 // SetCustomer sets the customer property value. 
-func (m *DelegatedAdminRelationship) SetCustomer(value *DelegatedAdminRelationshipCustomerParticipant)() {
+func (m *DelegatedAdminRelationship) SetCustomer(value DelegatedAdminRelationshipCustomerParticipantable)() {
     if m != nil {
         m.customer = value
     }
@@ -453,19 +454,19 @@ func (m *DelegatedAdminRelationship) SetLastModifiedDateTime(value *i336074805fc
     }
 }
 // SetOperations sets the operations property value. 
-func (m *DelegatedAdminRelationship) SetOperations(value []DelegatedAdminRelationshipOperation)() {
+func (m *DelegatedAdminRelationship) SetOperations(value []DelegatedAdminRelationshipOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
 // SetPartner sets the partner property value. 
-func (m *DelegatedAdminRelationship) SetPartner(value *DelegatedAdminRelationshipParticipant)() {
+func (m *DelegatedAdminRelationship) SetPartner(value DelegatedAdminRelationshipParticipantable)() {
     if m != nil {
         m.partner = value
     }
 }
 // SetRequests sets the requests property value. 
-func (m *DelegatedAdminRelationship) SetRequests(value []DelegatedAdminRelationshipRequest)() {
+func (m *DelegatedAdminRelationship) SetRequests(value []DelegatedAdminRelationshipRequestable)() {
     if m != nil {
         m.requests = value
     }

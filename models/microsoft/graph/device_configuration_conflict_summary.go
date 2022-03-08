@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationConflictSummary 
+// DeviceConfigurationConflictSummary provides operations to manage the deviceManagement singleton.
 type DeviceConfigurationConflictSummary struct {
     Entity
     // The set of policies in conflict with the given setting
-    conflictingDeviceConfigurations []SettingSource;
+    conflictingDeviceConfigurations []SettingSourceable;
     // The set of settings in conflict with the given policies
     contributingSettings []string;
     // The count of checkins impacted by the conflicting policies and settings
@@ -21,8 +21,12 @@ func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary
     }
     return m
 }
+// CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceConfigurationConflictSummary(), nil
+}
 // GetConflictingDeviceConfigurations gets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
-func (m *DeviceConfigurationConflictSummary) GetConflictingDeviceConfigurations()([]SettingSource) {
+func (m *DeviceConfigurationConflictSummary) GetConflictingDeviceConfigurations()([]SettingSourceable) {
     if m == nil {
         return nil
     } else {
@@ -49,14 +53,14 @@ func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32)
 func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conflictingDeviceConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettingSource() })
+        val, err := n.GetCollectionOfObjectValues(CreateSettingSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SettingSource, len(val))
+            res := make([]SettingSourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SettingSource))
+                res[i] = v.(SettingSourceable)
             }
             m.SetConflictingDeviceConfigurations(res)
         }
@@ -100,8 +104,7 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i04eb5309aeaafadd2
     if m.GetConflictingDeviceConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConflictingDeviceConfigurations()))
         for i, v := range m.GetConflictingDeviceConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("conflictingDeviceConfigurations", cast)
         if err != nil {
@@ -123,7 +126,7 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i04eb5309aeaafadd2
     return nil
 }
 // SetConflictingDeviceConfigurations sets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
-func (m *DeviceConfigurationConflictSummary) SetConflictingDeviceConfigurations(value []SettingSource)() {
+func (m *DeviceConfigurationConflictSummary) SetConflictingDeviceConfigurations(value []SettingSourceable)() {
     if m != nil {
         m.conflictingDeviceConfigurations = value
     }

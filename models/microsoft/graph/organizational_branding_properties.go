@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OrganizationalBrandingProperties 
+// OrganizationalBrandingProperties provides operations to manage the organizationalBranding singleton.
 type OrganizationalBrandingProperties struct {
     Entity
     // Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
@@ -44,7 +44,7 @@ type OrganizationalBrandingProperties struct {
     // The RGB color to apply to customize the color of the header.
     headerBackgroundColor *string;
     // Represents the various texts that can be hidden on the login page for a tenant.
-    loginPageTextVisibilitySettings *LoginPageTextVisibilitySettings;
+    loginPageTextVisibilitySettings LoginPageTextVisibilitySettingsable;
     // Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
     signInPageText *string;
     // A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
@@ -60,6 +60,10 @@ func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOrganizationalBrandingPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOrganizationalBrandingPropertiesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOrganizationalBrandingProperties(), nil
 }
 // GetBackgroundColor gets the backgroundColor property value. Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
 func (m *OrganizationalBrandingProperties) GetBackgroundColor()(*string) {
@@ -195,54 +199,6 @@ func (m *OrganizationalBrandingProperties) GetFaviconRelativeUrl()(*string) {
         return nil
     } else {
         return m.faviconRelativeUrl
-    }
-}
-// GetHeaderBackgroundColor gets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
-func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.headerBackgroundColor
-    }
-}
-// GetLoginPageTextVisibilitySettings gets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
-func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loginPageTextVisibilitySettings
-    }
-}
-// GetSignInPageText gets the signInPageText property value. Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
-func (m *OrganizationalBrandingProperties) GetSignInPageText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInPageText
-    }
-}
-// GetSquareLogo gets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-func (m *OrganizationalBrandingProperties) GetSquareLogo()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.squareLogo
-    }
-}
-// GetSquareLogoRelativeUrl gets the squareLogoRelativeUrl property value. A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
-func (m *OrganizationalBrandingProperties) GetSquareLogoRelativeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.squareLogoRelativeUrl
-    }
-}
-// GetUsernameHintText gets the usernameHintText property value. String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
-func (m *OrganizationalBrandingProperties) GetUsernameHintText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usernameHintText
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -433,12 +389,12 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["loginPageTextVisibilitySettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLoginPageTextVisibilitySettings() })
+        val, err := n.GetObjectValue(CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLoginPageTextVisibilitySettings(val.(*LoginPageTextVisibilitySettings))
+            m.SetLoginPageTextVisibilitySettings(val.(LoginPageTextVisibilitySettingsable))
         }
         return nil
     }
@@ -483,6 +439,54 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetHeaderBackgroundColor gets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
+func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.headerBackgroundColor
+    }
+}
+// GetLoginPageTextVisibilitySettings gets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
+func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(LoginPageTextVisibilitySettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.loginPageTextVisibilitySettings
+    }
+}
+// GetSignInPageText gets the signInPageText property value. Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
+func (m *OrganizationalBrandingProperties) GetSignInPageText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInPageText
+    }
+}
+// GetSquareLogo gets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+func (m *OrganizationalBrandingProperties) GetSquareLogo()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.squareLogo
+    }
+}
+// GetSquareLogoRelativeUrl gets the squareLogoRelativeUrl property value. A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+func (m *OrganizationalBrandingProperties) GetSquareLogoRelativeUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.squareLogoRelativeUrl
+    }
+}
+// GetUsernameHintText gets the usernameHintText property value. String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
+func (m *OrganizationalBrandingProperties) GetUsernameHintText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usernameHintText
+    }
 }
 func (m *OrganizationalBrandingProperties) IsNil()(bool) {
     return m == nil
@@ -742,7 +746,7 @@ func (m *OrganizationalBrandingProperties) SetHeaderBackgroundColor(value *strin
     }
 }
 // SetLoginPageTextVisibilitySettings sets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
-func (m *OrganizationalBrandingProperties) SetLoginPageTextVisibilitySettings(value *LoginPageTextVisibilitySettings)() {
+func (m *OrganizationalBrandingProperties) SetLoginPageTextVisibilitySettings(value LoginPageTextVisibilitySettingsable)() {
     if m != nil {
         m.loginPageTextVisibilitySettings = value
     }

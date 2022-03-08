@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// ScopedForResourceWithResourceRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.scopedForResource(resource='{resource}')
+// ScopedForResourceWithResourceRequestBuilder provides operations to call the scopedForResource method.
 type ScopedForResourceWithResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewScopedForResourceWithResourceRequestBuilderInternal(pathParameters map[s
     if resource != nil {
         urlTplParams["resource"] = *resource
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformatio
     return requestInfo, nil
 }
 // Get invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) Get(options *ScopedForResourceWithResourceRequestBuilderGetOptions)(*bool, error) {
+func (m *ScopedForResourceWithResourceRequestBuilder) Get(options *ScopedForResourceWithResourceRequestBuilderGetOptions)(ScopedForResourceWithResourceResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateScopedForResourceWithResourceResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(ScopedForResourceWithResourceResponseable), nil
 }

@@ -2,13 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i0062f7032319358f950525b0727c7483d6120ab82ff3470b0574d7d1bffe764a "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/parent"
     ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/childtags"
+    i38aad1ced9d8f554b56c1f56b3c9627d8e57370d80ef2c7226ef8dce8859b733 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/childtags/item"
 )
 
-// TagItemRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}
+// TagItemRequestBuilder provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 type TagItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type TagItemRequestBuilderGetQueryParameters struct {
 // TagItemRequestBuilderPatchOptions options for Patch
 type TagItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable;
     // Request headers
     H map[string]string;
     // Request options
@@ -58,6 +58,17 @@ type TagItemRequestBuilderPatchOptions struct {
 func (m *TagItemRequestBuilder) ChildTags()(*ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b.ChildTagsRequestBuilder) {
     return ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b.NewChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ChildTagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.tags.item.childTags.item collection
+func (m *TagItemRequestBuilder) ChildTagsById(id string)(*i38aad1ced9d8f554b56c1f56b3c9627d8e57370d80ef2c7226ef8dce8859b733.TagItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["tag_id1"] = id
+    }
+    return i38aad1ced9d8f554b56c1f56b3c9627d8e57370d80ef2c7226ef8dce8859b733.NewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewTagItemRequestBuilderInternal instantiates a new TagItemRequestBuilder and sets the default values.
 func NewTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TagItemRequestBuilder) {
     m := &TagItemRequestBuilder{
@@ -67,7 +78,7 @@ func NewTagItemRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,7 +88,7 @@ func NewTagItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation returns a list of tag objects associated to this case.
+// CreateDeleteRequestInformation delete navigation property tags for compliance
 func (m *TagItemRequestBuilder) CreateDeleteRequestInformation(options *TagItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +125,7 @@ func (m *TagItemRequestBuilder) CreateGetRequestInformation(options *TagItemRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation returns a list of tag objects associated to this case.
+// CreatePatchRequestInformation update the navigation property tags in compliance
 func (m *TagItemRequestBuilder) CreatePatchRequestInformation(options *TagItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,40 +143,52 @@ func (m *TagItemRequestBuilder) CreatePatchRequestInformation(options *TagItemRe
     }
     return requestInfo, nil
 }
-// Delete returns a list of tag objects associated to this case.
+// Delete delete navigation property tags for compliance
 func (m *TagItemRequestBuilder) Delete(options *TagItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get returns a list of tag objects associated to this case.
-func (m *TagItemRequestBuilder) Get(options *TagItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag, error) {
+func (m *TagItemRequestBuilder) Get(options *TagItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTag() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTagFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable), nil
 }
 func (m *TagItemRequestBuilder) Parent()(*i0062f7032319358f950525b0727c7483d6120ab82ff3470b0574d7d1bffe764a.ParentRequestBuilder) {
     return i0062f7032319358f950525b0727c7483d6120ab82ff3470b0574d7d1bffe764a.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch returns a list of tag objects associated to this case.
+// Patch update the navigation property tags in compliance
 func (m *TagItemRequestBuilder) Patch(options *TagItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

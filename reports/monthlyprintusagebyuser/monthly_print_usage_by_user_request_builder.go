@@ -2,11 +2,11 @@ package monthlyprintusagebyuser
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ie35fdeaa67a318acb5be7bc7faa28d4bbad9dbae0f522a83d6c5f4a5b3566078 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagebyuser/count"
 )
 
-// MonthlyPrintUsageByUserRequestBuilder builds and executes requests for operations under \reports\monthlyPrintUsageByUser
+// MonthlyPrintUsageByUserRequestBuilder provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 type MonthlyPrintUsageByUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type MonthlyPrintUsageByUserRequestBuilderGetQueryParameters struct {
 // MonthlyPrintUsageByUserRequestBuilderPostOptions options for Post
 type MonthlyPrintUsageByUserRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUser;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUserable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewMonthlyPrintUsageByUserRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +74,9 @@ func NewMonthlyPrintUsageByUserRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMonthlyPrintUsageByUserRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MonthlyPrintUsageByUserRequestBuilder) Count()(*ie35fdeaa67a318acb5be7bc7faa28d4bbad9dbae0f522a83d6c5f4a5b3566078.CountRequestBuilder) {
+    return ie35fdeaa67a318acb5be7bc7faa28d4bbad9dbae0f522a83d6c5f4a5b3566078.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get monthlyPrintUsageByUser from reports
 func (m *MonthlyPrintUsageByUserRequestBuilder) CreateGetRequestInformation(options *MonthlyPrintUsageByUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +117,34 @@ func (m *MonthlyPrintUsageByUserRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Get get monthlyPrintUsageByUser from reports
-func (m *MonthlyPrintUsageByUserRequestBuilder) Get(options *MonthlyPrintUsageByUserRequestBuilderGetOptions)(*MonthlyPrintUsageByUserResponse, error) {
+func (m *MonthlyPrintUsageByUserRequestBuilder) Get(options *MonthlyPrintUsageByUserRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMonthlyPrintUsageByUserResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrintUsageByUserCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MonthlyPrintUsageByUserResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUserCollectionResponseable), nil
 }
 // Post create new navigation property to monthlyPrintUsageByUser for reports
-func (m *MonthlyPrintUsageByUserRequestBuilder) Post(options *MonthlyPrintUsageByUserRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUser, error) {
+func (m *MonthlyPrintUsageByUserRequestBuilder) Post(options *MonthlyPrintUsageByUserRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUserable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrintUsageByUser() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrintUsageByUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUser), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUserable), nil
 }

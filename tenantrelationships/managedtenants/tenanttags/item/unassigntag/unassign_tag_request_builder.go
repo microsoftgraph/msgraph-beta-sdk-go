@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UnassignTagRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}\microsoft.graph.managedTenants.unassignTag
+// UnassignTagRequestBuilder provides operations to call the unassignTag method.
 type UnassignTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type UnassignTagRequestBuilder struct {
 // UnassignTagRequestBuilderPostOptions options for Post
 type UnassignTagRequestBuilderPostOptions struct {
     // 
-    Body *UnassignTagRequestBody;
+    Body UnassignTagRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type UnassignTagResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type tenantTag
-    tenantTag *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag;
+    tenantTag i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable;
 }
 // NewUnassignTagResponse instantiates a new unassignTagResponse and sets the default values.
 func NewUnassignTagResponse()(*UnassignTagResponse) {
@@ -39,6 +39,9 @@ func NewUnassignTagResponse()(*UnassignTagResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateUnassignTagResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnassignTagResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnassignTagResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *UnassignTagResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *UnassignTagResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["tenantTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTenantTagFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantTag(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTenantTag gets the tenantTag property value. Union type representation for type tenantTag
-func (m *UnassignTagResponse) GetTenantTag()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag) {
+func (m *UnassignTagResponse) GetTenantTag()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable) {
     if m == nil {
         return nil
     } else {
         return m.tenantTag
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *UnassignTagResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["tenantTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTenantTag() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantTag(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag))
-        }
-        return nil
-    }
-    return res
 }
 func (m *UnassignTagResponse) IsNil()(bool) {
     return m == nil
@@ -97,7 +100,7 @@ func (m *UnassignTagResponse) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetTenantTag sets the tenantTag property value. Union type representation for type tenantTag
-func (m *UnassignTagResponse) SetTenantTag(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag)() {
+func (m *UnassignTagResponse) SetTenantTag(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable)() {
     if m != nil {
         m.tenantTag = value
     }
@@ -111,7 +114,7 @@ func NewUnassignTagRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +143,14 @@ func (m *UnassignTagRequestBuilder) CreatePostRequestInformation(options *Unassi
     return requestInfo, nil
 }
 // Post invoke action unassignTag
-func (m *UnassignTagRequestBuilder) Post(options *UnassignTagRequestBuilderPostOptions)(*UnassignTagResponse, error) {
+func (m *UnassignTagRequestBuilder) Post(options *UnassignTagRequestBuilderPostOptions)(UnassignTagResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnassignTagResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUnassignTagResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*UnassignTagResponse), nil
+    return res.(UnassignTagResponseable), nil
 }

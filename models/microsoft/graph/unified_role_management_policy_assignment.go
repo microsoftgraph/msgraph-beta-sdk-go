@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleManagementPolicyAssignment 
+// UnifiedRoleManagementPolicyAssignment provides operations to manage the policyRoot singleton.
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
     // The policy for the assignment.
-    policy *UnifiedRoleManagementPolicy;
+    policy UnifiedRoleManagementPolicyable;
     // The id of the policy.
     policyId *string;
     // The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
@@ -25,56 +25,20 @@ func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssi
     }
     return m
 }
-// GetPolicy gets the policy property value. The policy for the assignment.
-func (m *UnifiedRoleManagementPolicyAssignment) GetPolicy()(*UnifiedRoleManagementPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policy
-    }
-}
-// GetPolicyId gets the policyId property value. The id of the policy.
-func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
-}
-// GetRoleDefinitionId gets the roleDefinitionId property value. The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
-func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
-}
-// GetScopeId gets the scopeId property value. The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
-func (m *UnifiedRoleManagementPolicyAssignment) GetScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeId
-    }
-}
-// GetScopeType gets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
-func (m *UnifiedRoleManagementPolicyAssignment) GetScopeType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeType
-    }
+// CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleManagementPolicyAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleManagementPolicy() })
+        val, err := n.GetObjectValue(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPolicy(val.(*UnifiedRoleManagementPolicy))
+            m.SetPolicy(val.(UnifiedRoleManagementPolicyable))
         }
         return nil
     }
@@ -120,6 +84,46 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
     }
     return res
 }
+// GetPolicy gets the policy property value. The policy for the assignment.
+func (m *UnifiedRoleManagementPolicyAssignment) GetPolicy()(UnifiedRoleManagementPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policy
+    }
+}
+// GetPolicyId gets the policyId property value. The id of the policy.
+func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyId
+    }
+}
+// GetRoleDefinitionId gets the roleDefinitionId property value. The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
+func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitionId
+    }
+}
+// GetScopeId gets the scopeId property value. The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
+func (m *UnifiedRoleManagementPolicyAssignment) GetScopeId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeId
+    }
+}
+// GetScopeType gets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
+func (m *UnifiedRoleManagementPolicyAssignment) GetScopeType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeType
+    }
+}
 func (m *UnifiedRoleManagementPolicyAssignment) IsNil()(bool) {
     return m == nil
 }
@@ -162,7 +166,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) Serialize(writer i04eb5309aeaafa
     return nil
 }
 // SetPolicy sets the policy property value. The policy for the assignment.
-func (m *UnifiedRoleManagementPolicyAssignment) SetPolicy(value *UnifiedRoleManagementPolicy)() {
+func (m *UnifiedRoleManagementPolicyAssignment) SetPolicy(value UnifiedRoleManagementPolicyable)() {
     if m != nil {
         m.policy = value
     }

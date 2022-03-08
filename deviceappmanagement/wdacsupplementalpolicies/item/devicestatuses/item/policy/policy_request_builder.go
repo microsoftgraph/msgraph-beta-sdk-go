@@ -2,13 +2,10 @@ package policy
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item/policy/assign"
-    ib238b18232a8f5227e7795719555b7d63044b5520a3dbc12859aedf3dde93998 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item/policy/ref"
 )
 
-// PolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}\policy
+// PolicyRequestBuilder provides operations to manage the policy property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus entity.
 type PolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,9 +32,6 @@ type PolicyRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
 }
-func (m *PolicyRequestBuilder) Assign()(*i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.AssignRequestBuilder) {
-    return i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewPolicyRequestBuilderInternal instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     m := &PolicyRequestBuilder{
@@ -47,7 +41,7 @@ func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,17 +72,18 @@ func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyReques
     return requestInfo, nil
 }
 // Get the navigation link to the WindowsDefenderApplicationControl supplemental policy.
-func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicy, error) {
+func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsDefenderApplicationControlSupplementalPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicy), nil
-}
-func (m *PolicyRequestBuilder) Ref()(*ib238b18232a8f5227e7795719555b7d63044b5520a3dbc12859aedf3dde93998.RefRequestBuilder) {
-    return ib238b18232a8f5227e7795719555b7d63044b5520a3dbc12859aedf3dde93998.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicyable), nil
 }

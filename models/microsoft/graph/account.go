@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Account 
+// Account provides operations to manage the financials singleton.
 type Account struct {
     Entity
     // 
@@ -27,6 +27,10 @@ func NewAccount()(*Account) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccountFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccount(), nil
 }
 // GetBlocked gets the blocked property value. 
 func (m *Account) GetBlocked()(*bool) {
@@ -50,30 +54,6 @@ func (m *Account) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Account) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNumber gets the number property value. 
-func (m *Account) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetSubCategory gets the subCategory property value. 
-func (m *Account) GetSubCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subCategory
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +120,30 @@ func (m *Account) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Account) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNumber gets the number property value. 
+func (m *Account) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetSubCategory gets the subCategory property value. 
+func (m *Account) GetSubCategory()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subCategory
+    }
 }
 func (m *Account) IsNil()(bool) {
     return m == nil

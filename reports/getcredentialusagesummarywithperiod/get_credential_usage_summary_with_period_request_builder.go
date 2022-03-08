@@ -2,11 +2,9 @@ package getcredentialusagesummarywithperiod
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetCredentialUsageSummaryWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getCredentialUsageSummary(period='{period}')
+// GetCredentialUsageSummaryWithPeriodRequestBuilder provides operations to call the getCredentialUsageSummary method.
 type GetCredentialUsageSummaryWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +34,7 @@ func NewGetCredentialUsageSummaryWithPeriodRequestBuilderInternal(pathParameters
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,18 +62,14 @@ func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) CreateGetRequestInfo
     return requestInfo, nil
 }
 // Get invoke function getCredentialUsageSummary
-func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(options *GetCredentialUsageSummaryWithPeriodRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUsageSummary, error) {
+func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(options *GetCredentialUsageSummaryWithPeriodRequestBuilderGetOptions)(GetCredentialUsageSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCredentialUsageSummary() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCredentialUsageSummaryWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUsageSummary, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUsageSummary))
-    }
-    return val, nil
+    return res.(GetCredentialUsageSummaryWithPeriodResponseable), nil
 }

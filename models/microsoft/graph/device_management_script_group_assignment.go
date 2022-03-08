@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptGroupAssignment 
+// DeviceManagementScriptGroupAssignment provides operations to manage the deviceManagement singleton.
 type DeviceManagementScriptGroupAssignment struct {
     Entity
     // The Id of the Azure Active Directory group we are targeting the script to.
@@ -17,13 +17,9 @@ func NewDeviceManagementScriptGroupAssignment()(*DeviceManagementScriptGroupAssi
     }
     return m
 }
-// GetTargetGroupId gets the targetGroupId property value. The Id of the Azure Active Directory group we are targeting the script to.
-func (m *DeviceManagementScriptGroupAssignment) GetTargetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupId
-    }
+// CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementScriptGroupAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScriptGroupAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *DeviceManagementScriptGroupAssignment) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetTargetGroupId gets the targetGroupId property value. The Id of the Azure Active Directory group we are targeting the script to.
+func (m *DeviceManagementScriptGroupAssignment) GetTargetGroupId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetGroupId
+    }
 }
 func (m *DeviceManagementScriptGroupAssignment) IsNil()(bool) {
     return m == nil

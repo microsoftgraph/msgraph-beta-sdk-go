@@ -2,10 +2,9 @@ package getrolescopetagsbyid
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetRoleScopeTagsByIdRequestBuilder builds and executes requests for operations under \deviceManagement\roleScopeTags\microsoft.graph.getRoleScopeTagsById
+// GetRoleScopeTagsByIdRequestBuilder provides operations to call the getRoleScopeTagsById method.
 type GetRoleScopeTagsByIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +16,7 @@ type GetRoleScopeTagsByIdRequestBuilder struct {
 // GetRoleScopeTagsByIdRequestBuilderPostOptions options for Post
 type GetRoleScopeTagsByIdRequestBuilderPostOptions struct {
     // 
-    Body *GetRoleScopeTagsByIdRequestBody;
+    Body GetRoleScopeTagsByIdRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -34,7 +33,7 @@ func NewGetRoleScopeTagsByIdRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Post invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) Post(options *GetRoleScopeTagsByIdRequestBuilderPostOptions)([]GetRoleScopeTagsById, error) {
+func (m *GetRoleScopeTagsByIdRequestBuilder) Post(options *GetRoleScopeTagsByIdRequestBuilderPostOptions)(GetRoleScopeTagsByIdResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetRoleScopeTagsById() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetRoleScopeTagsByIdResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetRoleScopeTagsById, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetRoleScopeTagsById))
-    }
-    return val, nil
+    return res.(GetRoleScopeTagsByIdResponseable), nil
 }

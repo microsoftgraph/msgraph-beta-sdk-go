@@ -2,10 +2,9 @@ package getazureaduserfeatureusage
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetAzureADUserFeatureUsageRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getAzureADUserFeatureUsage()
+// GetAzureADUserFeatureUsageRequestBuilder provides operations to call the getAzureADUserFeatureUsage method.
 type GetAzureADUserFeatureUsageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +31,7 @@ func NewGetAzureADUserFeatureUsageRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -60,18 +59,14 @@ func (m *GetAzureADUserFeatureUsageRequestBuilder) CreateGetRequestInformation(o
     return requestInfo, nil
 }
 // Get invoke function getAzureADUserFeatureUsage
-func (m *GetAzureADUserFeatureUsageRequestBuilder) Get(options *GetAzureADUserFeatureUsageRequestBuilderGetOptions)([]GetAzureADUserFeatureUsage, error) {
+func (m *GetAzureADUserFeatureUsageRequestBuilder) Get(options *GetAzureADUserFeatureUsageRequestBuilderGetOptions)(GetAzureADUserFeatureUsageResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetAzureADUserFeatureUsage() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAzureADUserFeatureUsageResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetAzureADUserFeatureUsage, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetAzureADUserFeatureUsage))
-    }
-    return val, nil
+    return res.(GetAzureADUserFeatureUsageResponseable), nil
 }

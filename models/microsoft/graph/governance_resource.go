@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceResource 
+// GovernanceResource provides operations to manage the collection of governanceRoleDefinition entities.
 type GovernanceResource struct {
     Entity
     // The display name of the resource.
@@ -13,19 +13,19 @@ type GovernanceResource struct {
     // The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
     externalId *string;
     // Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
-    parent *GovernanceResource;
+    parent GovernanceResourceable;
     // Represents the date time when the resource is registered in PIM.
     registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
     registeredRoot *string;
     // The collection of role assignment requests for the resource.
-    roleAssignmentRequests []GovernanceRoleAssignmentRequest;
+    roleAssignmentRequests []GovernanceRoleAssignmentRequestable;
     // The collection of role assignments for the resource.
-    roleAssignments []GovernanceRoleAssignment;
+    roleAssignments []GovernanceRoleAssignmentable;
     // The collection of role defintions for the resource.
-    roleDefinitions []GovernanceRoleDefinition;
+    roleDefinitions []GovernanceRoleDefinitionable;
     // The collection of role settings for the resource.
-    roleSettings []GovernanceRoleSetting;
+    roleSettings []GovernanceRoleSettingable;
     // The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
     status *string;
     // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
@@ -37,6 +37,10 @@ func NewGovernanceResource()(*GovernanceResource) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateGovernanceResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceResource(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the resource.
 func (m *GovernanceResource) GetDisplayName()(*string) {
@@ -52,78 +56,6 @@ func (m *GovernanceResource) GetExternalId()(*string) {
         return nil
     } else {
         return m.externalId
-    }
-}
-// GetParent gets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
-func (m *GovernanceResource) GetParent()(*GovernanceResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parent
-    }
-}
-// GetRegisteredDateTime gets the registeredDateTime property value. Represents the date time when the resource is registered in PIM.
-func (m *GovernanceResource) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredDateTime
-    }
-}
-// GetRegisteredRoot gets the registeredRoot property value. The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
-func (m *GovernanceResource) GetRegisteredRoot()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredRoot
-    }
-}
-// GetRoleAssignmentRequests gets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
-func (m *GovernanceResource) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentRequests
-    }
-}
-// GetRoleAssignments gets the roleAssignments property value. The collection of role assignments for the resource.
-func (m *GovernanceResource) GetRoleAssignments()([]GovernanceRoleAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignments
-    }
-}
-// GetRoleDefinitions gets the roleDefinitions property value. The collection of role defintions for the resource.
-func (m *GovernanceResource) GetRoleDefinitions()([]GovernanceRoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitions
-    }
-}
-// GetRoleSettings gets the roleSettings property value. The collection of role settings for the resource.
-func (m *GovernanceResource) GetRoleSettings()([]GovernanceRoleSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleSettings
-    }
-}
-// GetStatus gets the status property value. The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
-func (m *GovernanceResource) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetType gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,12 +82,12 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["parent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceResource() })
+        val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParent(val.(*GovernanceResource))
+            m.SetParent(val.(GovernanceResourceable))
         }
         return nil
     }
@@ -180,56 +112,56 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["roleAssignmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleAssignmentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleAssignmentRequest, len(val))
+            res := make([]GovernanceRoleAssignmentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleAssignmentRequest))
+                res[i] = v.(GovernanceRoleAssignmentRequestable)
             }
             m.SetRoleAssignmentRequests(res)
         }
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleAssignment, len(val))
+            res := make([]GovernanceRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleAssignment))
+                res[i] = v.(GovernanceRoleAssignmentable)
             }
             m.SetRoleAssignments(res)
         }
         return nil
     }
     res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleDefinition, len(val))
+            res := make([]GovernanceRoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleDefinition))
+                res[i] = v.(GovernanceRoleDefinitionable)
             }
             m.SetRoleDefinitions(res)
         }
         return nil
     }
     res["roleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleSetting, len(val))
+            res := make([]GovernanceRoleSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleSetting))
+                res[i] = v.(GovernanceRoleSettingable)
             }
             m.SetRoleSettings(res)
         }
@@ -256,6 +188,78 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetParent gets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+func (m *GovernanceResource) GetParent()(GovernanceResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parent
+    }
+}
+// GetRegisteredDateTime gets the registeredDateTime property value. Represents the date time when the resource is registered in PIM.
+func (m *GovernanceResource) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registeredDateTime
+    }
+}
+// GetRegisteredRoot gets the registeredRoot property value. The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+func (m *GovernanceResource) GetRegisteredRoot()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registeredRoot
+    }
+}
+// GetRoleAssignmentRequests gets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
+func (m *GovernanceResource) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignmentRequests
+    }
+}
+// GetRoleAssignments gets the roleAssignments property value. The collection of role assignments for the resource.
+func (m *GovernanceResource) GetRoleAssignments()([]GovernanceRoleAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignments
+    }
+}
+// GetRoleDefinitions gets the roleDefinitions property value. The collection of role defintions for the resource.
+func (m *GovernanceResource) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitions
+    }
+}
+// GetRoleSettings gets the roleSettings property value. The collection of role settings for the resource.
+func (m *GovernanceResource) GetRoleSettings()([]GovernanceRoleSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleSettings
+    }
+}
+// GetStatus gets the status property value. The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+func (m *GovernanceResource) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetType gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+func (m *GovernanceResource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *GovernanceResource) IsNil()(bool) {
     return m == nil
@@ -299,8 +303,7 @@ func (m *GovernanceResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetRoleAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentRequests()))
         for i, v := range m.GetRoleAssignmentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentRequests", cast)
         if err != nil {
@@ -310,8 +313,7 @@ func (m *GovernanceResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -321,8 +323,7 @@ func (m *GovernanceResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -332,8 +333,7 @@ func (m *GovernanceResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetRoleSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleSettings()))
         for i, v := range m.GetRoleSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleSettings", cast)
         if err != nil {
@@ -367,7 +367,7 @@ func (m *GovernanceResource) SetExternalId(value *string)() {
     }
 }
 // SetParent sets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
-func (m *GovernanceResource) SetParent(value *GovernanceResource)() {
+func (m *GovernanceResource) SetParent(value GovernanceResourceable)() {
     if m != nil {
         m.parent = value
     }
@@ -385,25 +385,25 @@ func (m *GovernanceResource) SetRegisteredRoot(value *string)() {
     }
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
-func (m *GovernanceResource) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequest)() {
+func (m *GovernanceResource) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)() {
     if m != nil {
         m.roleAssignmentRequests = value
     }
 }
 // SetRoleAssignments sets the roleAssignments property value. The collection of role assignments for the resource.
-func (m *GovernanceResource) SetRoleAssignments(value []GovernanceRoleAssignment)() {
+func (m *GovernanceResource) SetRoleAssignments(value []GovernanceRoleAssignmentable)() {
     if m != nil {
         m.roleAssignments = value
     }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The collection of role defintions for the resource.
-func (m *GovernanceResource) SetRoleDefinitions(value []GovernanceRoleDefinition)() {
+func (m *GovernanceResource) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
     if m != nil {
         m.roleDefinitions = value
     }
 }
 // SetRoleSettings sets the roleSettings property value. The collection of role settings for the resource.
-func (m *GovernanceResource) SetRoleSettings(value []GovernanceRoleSetting)() {
+func (m *GovernanceResource) SetRoleSettings(value []GovernanceRoleSettingable)() {
     if m != nil {
         m.roleSettings = value
     }

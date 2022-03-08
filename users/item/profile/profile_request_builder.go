@@ -2,7 +2,6 @@ package profile
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i26a7f8ef2723df7b554c727d88e4c0fade18dfb137078fee4bff0aaadde79d6b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/skills"
     i376a1c9fb041f9485ffc4b05d361c22c731bfc23b1f7d7bd1ee1ccab102bbec4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/websites"
@@ -44,7 +43,7 @@ import (
     iea021cd498fe18da6c27911f34b60740750e87aa77d2bc8965521a0e5f36c311 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/publications/item"
 )
 
-// ProfileRequestBuilder builds and executes requests for operations under \users\{user-id}\profile
+// ProfileRequestBuilder provides operations to manage the profile property of the microsoft.graph.user entity.
 type ProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -83,7 +82,7 @@ type ProfileRequestBuilderGetQueryParameters struct {
 // ProfileRequestBuilderPatchOptions options for Patch
 type ProfileRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -170,7 +169,7 @@ func NewProfileRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -180,7 +179,7 @@ func NewProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents properties that are descriptive of a user in a tenant.
+// CreateDeleteRequestInformation delete navigation property profile for users
 func (m *ProfileRequestBuilder) CreateDeleteRequestInformation(options *ProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -217,7 +216,7 @@ func (m *ProfileRequestBuilder) CreateGetRequestInformation(options *ProfileRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents properties that are descriptive of a user in a tenant.
+// CreatePatchRequestInformation update the navigation property profile in users
 func (m *ProfileRequestBuilder) CreatePatchRequestInformation(options *ProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -235,13 +234,17 @@ func (m *ProfileRequestBuilder) CreatePatchRequestInformation(options *ProfileRe
     }
     return requestInfo, nil
 }
-// Delete represents properties that are descriptive of a user in a tenant.
+// Delete delete navigation property profile for users
 func (m *ProfileRequestBuilder) Delete(options *ProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -276,16 +279,20 @@ func (m *ProfileRequestBuilder) EmailsById(id string)(*i6cb42d6092f89243d60ec2ef
     return i6cb42d6092f89243d60ec2eff66d3051d0f316e72ca67a0846be1031eb378549.NewItemEmailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get represents properties that are descriptive of a user in a tenant.
-func (m *ProfileRequestBuilder) Get(options *ProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile, error) {
+func (m *ProfileRequestBuilder) Get(options *ProfileRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profileable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Profileable), nil
 }
 func (m *ProfileRequestBuilder) Interests()(*i46891830191b8b241de7376dce57ac07cfd53ae6fd0013bd8e1e973a36e35d0a.InterestsRequestBuilder) {
     return i46891830191b8b241de7376dce57ac07cfd53ae6fd0013bd8e1e973a36e35d0a.NewInterestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -343,13 +350,17 @@ func (m *ProfileRequestBuilder) NotesById(id string)(*i42cff4ee1200327093e5e7ebc
     }
     return i42cff4ee1200327093e5e7ebc241155dc70d33e9a1329d8d67d8fb56f8b951a9.NewPersonAnnotationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch represents properties that are descriptive of a user in a tenant.
+// Patch update the navigation property profile in users
 func (m *ProfileRequestBuilder) Patch(options *ProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

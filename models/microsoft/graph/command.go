@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Command 
+// Command provides operations to manage the collection of command entities.
 type Command struct {
     Entity
     // 
@@ -14,13 +14,13 @@ type Command struct {
     // 
     packageFamilyName *string;
     // 
-    payload *PayloadRequest;
+    payload PayloadRequestable;
     // 
     permissionTicket *string;
     // 
     postBackUri *string;
     // 
-    responsepayload *PayloadResponse;
+    responsepayload PayloadResponseable;
     // 
     status *string;
     // 
@@ -32,6 +32,10 @@ func NewCommand()(*Command) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCommandFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCommand(), nil
 }
 // GetAppServiceName gets the appServiceName property value. 
 func (m *Command) GetAppServiceName()(*string) {
@@ -47,62 +51,6 @@ func (m *Command) GetError()(*string) {
         return nil
     } else {
         return m.error
-    }
-}
-// GetPackageFamilyName gets the packageFamilyName property value. 
-func (m *Command) GetPackageFamilyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageFamilyName
-    }
-}
-// GetPayload gets the payload property value. 
-func (m *Command) GetPayload()(*PayloadRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
-}
-// GetPermissionTicket gets the permissionTicket property value. 
-func (m *Command) GetPermissionTicket()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionTicket
-    }
-}
-// GetPostBackUri gets the postBackUri property value. 
-func (m *Command) GetPostBackUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postBackUri
-    }
-}
-// GetResponsepayload gets the responsepayload property value. 
-func (m *Command) GetResponsepayload()(*PayloadResponse) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsepayload
-    }
-}
-// GetStatus gets the status property value. 
-func (m *Command) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetType gets the type property value. 
-func (m *Command) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,12 +87,12 @@ func (m *Command) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["payload"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPayloadRequest() })
+        val, err := n.GetObjectValue(CreatePayloadRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPayload(val.(*PayloadRequest))
+            m.SetPayload(val.(PayloadRequestable))
         }
         return nil
     }
@@ -169,12 +117,12 @@ func (m *Command) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["responsepayload"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPayloadResponse() })
+        val, err := n.GetObjectValue(CreatePayloadResponseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResponsepayload(val.(*PayloadResponse))
+            m.SetResponsepayload(val.(PayloadResponseable))
         }
         return nil
     }
@@ -199,6 +147,62 @@ func (m *Command) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetPackageFamilyName gets the packageFamilyName property value. 
+func (m *Command) GetPackageFamilyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.packageFamilyName
+    }
+}
+// GetPayload gets the payload property value. 
+func (m *Command) GetPayload()(PayloadRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payload
+    }
+}
+// GetPermissionTicket gets the permissionTicket property value. 
+func (m *Command) GetPermissionTicket()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionTicket
+    }
+}
+// GetPostBackUri gets the postBackUri property value. 
+func (m *Command) GetPostBackUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postBackUri
+    }
+}
+// GetResponsepayload gets the responsepayload property value. 
+func (m *Command) GetResponsepayload()(PayloadResponseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.responsepayload
+    }
+}
+// GetStatus gets the status property value. 
+func (m *Command) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetType gets the type property value. 
+func (m *Command) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *Command) IsNil()(bool) {
     return m == nil
@@ -284,7 +288,7 @@ func (m *Command) SetPackageFamilyName(value *string)() {
     }
 }
 // SetPayload sets the payload property value. 
-func (m *Command) SetPayload(value *PayloadRequest)() {
+func (m *Command) SetPayload(value PayloadRequestable)() {
     if m != nil {
         m.payload = value
     }
@@ -302,7 +306,7 @@ func (m *Command) SetPostBackUri(value *string)() {
     }
 }
 // SetResponsepayload sets the responsepayload property value. 
-func (m *Command) SetResponsepayload(value *PayloadResponse)() {
+func (m *Command) SetResponsepayload(value PayloadResponseable)() {
     if m != nil {
         m.responsepayload = value
     }

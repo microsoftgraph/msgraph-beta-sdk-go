@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceComplianceTrend 
+// ManagedDeviceComplianceTrend provides operations to manage the tenantRelationship singleton.
 type ManagedDeviceComplianceTrend struct {
     Entity
     // The number of devices with a compliant status. Required. Read-only.
@@ -32,6 +32,10 @@ func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagedDeviceComplianceTrendFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDeviceComplianceTrend(), nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
@@ -63,46 +67,6 @@ func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
         return nil
     } else {
         return m.errorDeviceCount
-    }
-}
-// GetInGracePeriodDeviceCount gets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
-func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inGracePeriodDeviceCount
-    }
-}
-// GetNoncompliantDeviceCount gets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
-func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noncompliantDeviceCount
-    }
-}
-// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
-func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
-}
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetUnknownDeviceCount gets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
-func (m *ManagedDeviceComplianceTrend) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -199,6 +163,46 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetInGracePeriodDeviceCount gets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
+func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inGracePeriodDeviceCount
+    }
+}
+// GetNoncompliantDeviceCount gets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
+func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.noncompliantDeviceCount
+    }
+}
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantDisplayName
+    }
+}
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
+func (m *ManagedDeviceComplianceTrend) GetUnknownDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unknownDeviceCount
+    }
 }
 func (m *ManagedDeviceComplianceTrend) IsNil()(bool) {
     return m == nil

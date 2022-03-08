@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchSession 
+// ExactMatchSession provides operations to manage the dataClassificationService singleton.
 type ExactMatchSession struct {
     ExactMatchSessionBase
     // 
@@ -20,7 +20,7 @@ type ExactMatchSession struct {
     // 
     salt *string;
     // 
-    uploadAgent *ExactMatchUploadAgent;
+    uploadAgent ExactMatchUploadAgentable;
     // 
     uploadAgentId *string;
 }
@@ -30,6 +30,10 @@ func NewExactMatchSession()(*ExactMatchSession) {
         ExactMatchSessionBase: *NewExactMatchSessionBase(),
     }
     return m
+}
+// CreateExactMatchSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactMatchSessionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactMatchSession(), nil
 }
 // GetChecksum gets the checksum property value. 
 func (m *ExactMatchSession) GetChecksum()(*string) {
@@ -45,54 +49,6 @@ func (m *ExactMatchSession) GetDataUploadURI()(*string) {
         return nil
     } else {
         return m.dataUploadURI
-    }
-}
-// GetFields gets the fields property value. 
-func (m *ExactMatchSession) GetFields()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fields
-    }
-}
-// GetFileName gets the fileName property value. 
-func (m *ExactMatchSession) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetRowsPerBlock gets the rowsPerBlock property value. 
-func (m *ExactMatchSession) GetRowsPerBlock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rowsPerBlock
-    }
-}
-// GetSalt gets the salt property value. 
-func (m *ExactMatchSession) GetSalt()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salt
-    }
-}
-// GetUploadAgent gets the uploadAgent property value. 
-func (m *ExactMatchSession) GetUploadAgent()(*ExactMatchUploadAgent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadAgent
-    }
-}
-// GetUploadAgentId gets the uploadAgentId property value. 
-func (m *ExactMatchSession) GetUploadAgentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadAgentId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -163,12 +119,12 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["uploadAgent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExactMatchUploadAgent() })
+        val, err := n.GetObjectValue(CreateExactMatchUploadAgentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUploadAgent(val.(*ExactMatchUploadAgent))
+            m.SetUploadAgent(val.(ExactMatchUploadAgentable))
         }
         return nil
     }
@@ -183,6 +139,54 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetFields gets the fields property value. 
+func (m *ExactMatchSession) GetFields()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fields
+    }
+}
+// GetFileName gets the fileName property value. 
+func (m *ExactMatchSession) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetRowsPerBlock gets the rowsPerBlock property value. 
+func (m *ExactMatchSession) GetRowsPerBlock()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rowsPerBlock
+    }
+}
+// GetSalt gets the salt property value. 
+func (m *ExactMatchSession) GetSalt()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salt
+    }
+}
+// GetUploadAgent gets the uploadAgent property value. 
+func (m *ExactMatchSession) GetUploadAgent()(ExactMatchUploadAgentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadAgent
+    }
+}
+// GetUploadAgentId gets the uploadAgentId property value. 
+func (m *ExactMatchSession) GetUploadAgentId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadAgentId
+    }
 }
 func (m *ExactMatchSession) IsNil()(bool) {
     return m == nil
@@ -280,7 +284,7 @@ func (m *ExactMatchSession) SetSalt(value *string)() {
     }
 }
 // SetUploadAgent sets the uploadAgent property value. 
-func (m *ExactMatchSession) SetUploadAgent(value *ExactMatchUploadAgent)() {
+func (m *ExactMatchSession) SetUploadAgent(value ExactMatchUploadAgentable)() {
     if m != nil {
         m.uploadAgent = value
     }

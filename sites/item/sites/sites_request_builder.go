@@ -2,11 +2,11 @@ package sites
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    id270bf5b695dc33cb53e1607bfe092a47d4e8c1facd2f93ddedcaae0b6e1b089 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/sites/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5c69f18c73b23ad85b70b5396dbf6c4a1f14381881c396ffa153d106fdc4e34b "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/sites/count"
 )
 
-// SitesRequestBuilder builds and executes requests for operations under \sites\{site-id}\sites
+// SitesRequestBuilder provides operations to manage the sites property of the microsoft.graph.site entity.
 type SitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +63,9 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SitesRequestBuilder) Count()(*i5c69f18c73b23ad85b70b5396dbf6c4a1f14381881c396ffa153d106fdc4e34b.CountRequestBuilder) {
+    return i5c69f18c73b23ad85b70b5396dbf6c4a1f14381881c396ffa153d106fdc4e34b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of the sub-sites under this site.
 func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +88,18 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestB
     return requestInfo, nil
 }
 // Get the collection of the sub-sites under this site.
-func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(*SitesResponse, error) {
+func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSitesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSiteCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SitesResponse), nil
-}
-func (m *SitesRequestBuilder) Ref()(*id270bf5b695dc33cb53e1607bfe092a47d4e8c1facd2f93ddedcaae0b6e1b089.RefRequestBuilder) {
-    return id270bf5b695dc33cb53e1607bfe092a47d4e8c1facd2f93ddedcaae0b6e1b089.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SiteCollectionResponseable), nil
 }

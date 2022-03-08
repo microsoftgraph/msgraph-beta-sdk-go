@@ -2,14 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i168734de056992d72cab15e81d68305aaeaeb4ea4a0542fd088e7d19aef1952e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/methods/item/enablesmssignin"
     ic4978741cb0a6da22ff1661ecb8d06e4df9cd8f4a9a73d4d8821bc9ffd545054 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/methods/item/disablesmssignin"
     ida6186e59b7d46b210722f00360284059fb02e165f3d3a13c9cbd4943a50a6f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/methods/item/resetpassword"
 )
 
-// AuthenticationMethodItemRequestBuilder builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}
+// AuthenticationMethodItemRequestBuilder provides operations to manage the methods property of the microsoft.graph.authentication entity.
 type AuthenticationMethodItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +47,7 @@ type AuthenticationMethodItemRequestBuilderGetQueryParameters struct {
 // AuthenticationMethodItemRequestBuilderPatchOptions options for Patch
 type AuthenticationMethodItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethod;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +64,7 @@ func NewAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -136,7 +135,11 @@ func (m *AuthenticationMethodItemRequestBuilder) Delete(options *AuthenticationM
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -149,16 +152,20 @@ func (m *AuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*i168734de056
     return i168734de056992d72cab15e81d68305aaeaeb4ea4a0542fd088e7d19aef1952e.NewEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get methods from me
-func (m *AuthenticationMethodItemRequestBuilder) Get(options *AuthenticationMethodItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethod, error) {
+func (m *AuthenticationMethodItemRequestBuilder) Get(options *AuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAuthenticationMethod() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAuthenticationMethodFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethod), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodable), nil
 }
 // Patch update the navigation property methods in me
 func (m *AuthenticationMethodItemRequestBuilder) Patch(options *AuthenticationMethodItemRequestBuilderPatchOptions)(error) {
@@ -166,7 +173,11 @@ func (m *AuthenticationMethodItemRequestBuilder) Patch(options *AuthenticationMe
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

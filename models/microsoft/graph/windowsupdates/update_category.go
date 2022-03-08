@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the enrollAssets method.
 type UpdateCategory int
 
 const (
