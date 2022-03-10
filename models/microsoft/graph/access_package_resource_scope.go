@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageResourceScope 
+// AccessPackageResourceScope provides operations to manage the identityGovernance singleton.
 type AccessPackageResourceScope struct {
     Entity
     // Read-only. Nullable.
-    accessPackageResource *AccessPackageResource;
+    accessPackageResource AccessPackageResourceable;
     // The description of the scope.
     description *string;
     // The display name of the scope.
@@ -31,8 +31,12 @@ func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
     }
     return m
 }
+// CreateAccessPackageResourceScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageResourceScopeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageResourceScope(), nil
+}
 // GetAccessPackageResource gets the accessPackageResource property value. Read-only. Nullable.
-func (m *AccessPackageResourceScope) GetAccessPackageResource()(*AccessPackageResource) {
+func (m *AccessPackageResourceScope) GetAccessPackageResource()(AccessPackageResourceable) {
     if m == nil {
         return nil
     } else {
@@ -55,56 +59,16 @@ func (m *AccessPackageResourceScope) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsRootScope gets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
-func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRootScope
-    }
-}
-// GetOriginId gets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
-func (m *AccessPackageResourceScope) GetOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originId
-    }
-}
-// GetOriginSystem gets the originSystem property value. The origin system for the scope.
-func (m *AccessPackageResourceScope) GetOriginSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originSystem
-    }
-}
-// GetRoleOriginId gets the roleOriginId property value. The origin system for the role, if different.
-func (m *AccessPackageResourceScope) GetRoleOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleOriginId
-    }
-}
-// GetUrl gets the url property value. A resource locator for the scope.
-func (m *AccessPackageResourceScope) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResource() })
+        val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageResource(val.(*AccessPackageResource))
+            m.SetAccessPackageResource(val.(AccessPackageResourceable))
         }
         return nil
     }
@@ -180,6 +144,46 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
+// GetIsRootScope gets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
+func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRootScope
+    }
+}
+// GetOriginId gets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
+func (m *AccessPackageResourceScope) GetOriginId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originId
+    }
+}
+// GetOriginSystem gets the originSystem property value. The origin system for the scope.
+func (m *AccessPackageResourceScope) GetOriginSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originSystem
+    }
+}
+// GetRoleOriginId gets the roleOriginId property value. The origin system for the role, if different.
+func (m *AccessPackageResourceScope) GetRoleOriginId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleOriginId
+    }
+}
+// GetUrl gets the url property value. A resource locator for the scope.
+func (m *AccessPackageResourceScope) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
+}
 func (m *AccessPackageResourceScope) IsNil()(bool) {
     return m == nil
 }
@@ -240,7 +244,7 @@ func (m *AccessPackageResourceScope) Serialize(writer i04eb5309aeaafadd28374d79c
     return nil
 }
 // SetAccessPackageResource sets the accessPackageResource property value. Read-only. Nullable.
-func (m *AccessPackageResourceScope) SetAccessPackageResource(value *AccessPackageResource)() {
+func (m *AccessPackageResourceScope) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
     }

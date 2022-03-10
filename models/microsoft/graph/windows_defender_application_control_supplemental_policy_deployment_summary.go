@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary 
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary provides operations to manage the deviceAppManagement singleton.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
     // Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
@@ -18,6 +18,10 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary(), nil
 }
 // GetDeployedDeviceCount gets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetDeployedDeviceCount()(*int32) {

@@ -2,8 +2,8 @@ package list
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i43d48455d4a3f90f42f7efb37baeed2ed81beefe0ecd17a3198b2e7e74cb37e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes"
     i4dcdc20ef6eb76cb441dfc9c064e9325b941a266c8d66c914fcaf6e54ad12175 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/operations"
     i616acf5322905d44724a74277658e2fbb29de886ec41936610c9749a797d2c1e "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/subscriptions"
@@ -19,7 +19,7 @@ import (
     ie87ccd3eba7b0417efc69f4a54be8884c4561c36556493ab22601c51306deac1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/operations/item"
 )
 
-// ListRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list
+// ListRequestBuilder provides operations to manage the list property of the microsoft.graph.drive entity.
 type ListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -58,7 +58,7 @@ type ListRequestBuilderGetQueryParameters struct {
 // ListRequestBuilderPatchOptions options for Patch
 type ListRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.List;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Listable;
     // Request headers
     H map[string]string;
     // Request options
@@ -103,7 +103,7 @@ func NewListRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -127,7 +127,7 @@ func (m *ListRequestBuilder) ContentTypesById(id string)(*i8848c51df74f0989f6c22
     }
     return i8848c51df74f0989f6c22e145c2ee13b413f255dbd7be95258420ca5d687fd44.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property list for drives
 func (m *ListRequestBuilder) CreateDeleteRequestInformation(options *ListRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,7 +164,7 @@ func (m *ListRequestBuilder) CreateGetRequestInformation(options *ListRequestBui
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property list in drives
 func (m *ListRequestBuilder) CreatePatchRequestInformation(options *ListRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -182,13 +182,17 @@ func (m *ListRequestBuilder) CreatePatchRequestInformation(options *ListRequestB
     }
     return requestInfo, nil
 }
-// Delete for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// Delete delete navigation property list for drives
 func (m *ListRequestBuilder) Delete(options *ListRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -198,16 +202,20 @@ func (m *ListRequestBuilder) Drive()(*i815383e92ce310234c9046f660a2267b3f7ce71b9
     return i815383e92ce310234c9046f660a2267b3f7ce71b9bd91e00791d5fdcb4c6fa80.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get for drives in SharePoint, the underlying document library list. Read-only. Nullable.
-func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.List, error) {
+func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Listable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewList() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateListFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.List), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Listable), nil
 }
 func (m *ListRequestBuilder) Items()(*ie4c04524750ad89f45c079100aec7678e2c748e6ebaa485ab81bc9fbac539aa7.ItemsRequestBuilder) {
     return ie4c04524750ad89f45c079100aec7678e2c748e6ebaa485ab81bc9fbac539aa7.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -237,13 +245,17 @@ func (m *ListRequestBuilder) OperationsById(id string)(*ie87ccd3eba7b0417efc69f4
     }
     return ie87ccd3eba7b0417efc69f4a54be8884c4561c36556493ab22601c51306deac1.NewRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// Patch update the navigation property list in drives
 func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

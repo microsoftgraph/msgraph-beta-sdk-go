@@ -2,13 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i9d482566fdf9936391b4484a35db36ee2c9ea057c528e4906b93646a759d755c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/remoteassistancepartners/item/disconnect"
     id0d53dab897cd68adbdccb455d85697abd98f9e5792c35eb1a92375c1451257b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/remoteassistancepartners/item/beginonboarding"
 )
 
-// RemoteAssistancePartnerItemRequestBuilder builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}
+// RemoteAssistancePartnerItemRequestBuilder provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
 type RemoteAssistancePartnerItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type RemoteAssistancePartnerItemRequestBuilderGetQueryParameters struct {
 // RemoteAssistancePartnerItemRequestBuilderPatchOptions options for Patch
 type RemoteAssistancePartnerItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistancePartner;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistancePartnerable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +67,7 @@ func NewRemoteAssistancePartnerItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,7 +77,7 @@ func NewRemoteAssistancePartnerItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistancePartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the remote assist partners.
+// CreateDeleteRequestInformation delete navigation property remoteAssistancePartners for deviceManagement
 func (m *RemoteAssistancePartnerItemRequestBuilder) CreateDeleteRequestInformation(options *RemoteAssistancePartnerItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the remote assist partners.
+// CreatePatchRequestInformation update the navigation property remoteAssistancePartners in deviceManagement
 func (m *RemoteAssistancePartnerItemRequestBuilder) CreatePatchRequestInformation(options *RemoteAssistancePartnerItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,13 +132,17 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Delete the remote assist partners.
+// Delete delete navigation property remoteAssistancePartners for deviceManagement
 func (m *RemoteAssistancePartnerItemRequestBuilder) Delete(options *RemoteAssistancePartnerItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -148,24 +152,32 @@ func (m *RemoteAssistancePartnerItemRequestBuilder) Disconnect()(*i9d482566fdf99
     return i9d482566fdf9936391b4484a35db36ee2c9ea057c528e4906b93646a759d755c.NewDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the remote assist partners.
-func (m *RemoteAssistancePartnerItemRequestBuilder) Get(options *RemoteAssistancePartnerItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistancePartner, error) {
+func (m *RemoteAssistancePartnerItemRequestBuilder) Get(options *RemoteAssistancePartnerItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistancePartnerable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRemoteAssistancePartner() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateRemoteAssistancePartnerFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistancePartner), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistancePartnerable), nil
 }
-// Patch the remote assist partners.
+// Patch update the navigation property remoteAssistancePartners in deviceManagement
 func (m *RemoteAssistancePartnerItemRequestBuilder) Patch(options *RemoteAssistancePartnerItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

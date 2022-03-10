@@ -2,11 +2,12 @@ package agedaccountsreceivable
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/agedaccountsreceivable/count"
 )
 
-// AgedAccountsReceivableRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\agedAccountsReceivable
+// AgedAccountsReceivableRequestBuilder provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
 type AgedAccountsReceivableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type AgedAccountsReceivableRequestBuilderGetQueryParameters struct {
 // AgedAccountsReceivableRequestBuilderPostOptions options for Post
 type AgedAccountsReceivableRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivable;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivableable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewAgedAccountsReceivableRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewAgedAccountsReceivableRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgedAccountsReceivableRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AgedAccountsReceivableRequestBuilder) Count()(*i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0.CountRequestBuilder) {
+    return i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get agedAccountsReceivable from financials
 func (m *AgedAccountsReceivableRequestBuilder) CreateGetRequestInformation(options *AgedAccountsReceivableRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *AgedAccountsReceivableRequestBuilder) CreatePostRequestInformation(opti
     return requestInfo, nil
 }
 // Get get agedAccountsReceivable from financials
-func (m *AgedAccountsReceivableRequestBuilder) Get(options *AgedAccountsReceivableRequestBuilderGetOptions)(*AgedAccountsReceivableResponse, error) {
+func (m *AgedAccountsReceivableRequestBuilder) Get(options *AgedAccountsReceivableRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivableCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgedAccountsReceivableResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAgedAccountsReceivableCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AgedAccountsReceivableResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivableCollectionResponseable), nil
 }
 // Post create new navigation property to agedAccountsReceivable for financials
-func (m *AgedAccountsReceivableRequestBuilder) Post(options *AgedAccountsReceivableRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivable, error) {
+func (m *AgedAccountsReceivableRequestBuilder) Post(options *AgedAccountsReceivableRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivableable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAgedAccountsReceivable() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAgedAccountsReceivableFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivable), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsReceivableable), nil
 }

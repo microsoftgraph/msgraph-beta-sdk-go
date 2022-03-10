@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the restart method.
 type SynchronizationJobRestartScope int
 
 const (

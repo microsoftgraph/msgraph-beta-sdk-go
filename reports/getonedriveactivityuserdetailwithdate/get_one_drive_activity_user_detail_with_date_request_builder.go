@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetOneDriveActivityUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOneDriveActivityUserDetail(date={date})
+// GetOneDriveActivityUserDetailWithDateRequestBuilder provides operations to call the getOneDriveActivityUserDetail method.
 type GetOneDriveActivityUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ func NewGetOneDriveActivityUserDetailWithDateRequestBuilderInternal(pathParamete
     if date != nil {
         urlTplParams["date"] = (*date).String()
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,14 +63,14 @@ func (m *GetOneDriveActivityUserDetailWithDateRequestBuilder) CreateGetRequestIn
     return requestInfo, nil
 }
 // Get invoke function getOneDriveActivityUserDetail
-func (m *GetOneDriveActivityUserDetailWithDateRequestBuilder) Get(options *GetOneDriveActivityUserDetailWithDateRequestBuilderGetOptions)([]byte, error) {
+func (m *GetOneDriveActivityUserDetailWithDateRequestBuilder) Get(options *GetOneDriveActivityUserDetailWithDateRequestBuilderGetOptions)(GetOneDriveActivityUserDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOneDriveActivityUserDetailWithDateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetOneDriveActivityUserDetailWithDateResponseable), nil
 }

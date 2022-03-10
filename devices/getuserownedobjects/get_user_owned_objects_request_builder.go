@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetUserOwnedObjectsRequestBuilder builds and executes requests for operations under \devices\microsoft.graph.getUserOwnedObjects
+// GetUserOwnedObjectsRequestBuilder provides operations to call the getUserOwnedObjects method.
 type GetUserOwnedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type GetUserOwnedObjectsRequestBuilder struct {
 // GetUserOwnedObjectsRequestBuilderPostOptions options for Post
 type GetUserOwnedObjectsRequestBuilderPostOptions struct {
     // 
-    Body *GetUserOwnedObjectsRequestBody;
+    Body GetUserOwnedObjectsRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type GetUserOwnedObjectsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type directoryObject
-    directoryObject *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject;
+    directoryObject i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable;
 }
 // NewGetUserOwnedObjectsResponse instantiates a new getUserOwnedObjectsResponse and sets the default values.
 func NewGetUserOwnedObjectsResponse()(*GetUserOwnedObjectsResponse) {
@@ -39,6 +39,9 @@ func NewGetUserOwnedObjectsResponse()(*GetUserOwnedObjectsResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetUserOwnedObjectsResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetUserOwnedObjectsResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetUserOwnedObjectsResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *GetUserOwnedObjectsResponse) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetDirectoryObject gets the directoryObject property value. Union type representation for type directoryObject
-func (m *GetUserOwnedObjectsResponse) GetDirectoryObject()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject) {
+func (m *GetUserOwnedObjectsResponse) GetDirectoryObject()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *GetUserOwnedObjectsResponse) GetDirectoryObject()(*i535684e11b5500196ec
 func (m *GetUserOwnedObjectsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["directoryObject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDirectoryObject() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectoryObject(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject))
+            m.SetDirectoryObject(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *GetUserOwnedObjectsResponse) SetAdditionalData(value map[string]interfa
     }
 }
 // SetDirectoryObject sets the directoryObject property value. Union type representation for type directoryObject
-func (m *GetUserOwnedObjectsResponse) SetDirectoryObject(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject)() {
+func (m *GetUserOwnedObjectsResponse) SetDirectoryObject(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable)() {
     if m != nil {
         m.directoryObject = value
     }
+}
+// GetUserOwnedObjectsResponseable 
+type GetUserOwnedObjectsResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetDirectoryObject()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable)
+    SetDirectoryObject(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable)()
 }
 // NewGetUserOwnedObjectsRequestBuilderInternal instantiates a new GetUserOwnedObjectsRequestBuilder and sets the default values.
 func NewGetUserOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetUserOwnedObjectsRequestBuilder) {
@@ -111,7 +121,7 @@ func NewGetUserOwnedObjectsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *GetUserOwnedObjectsRequestBuilder) CreatePostRequestInformation(options
     return requestInfo, nil
 }
 // Post invoke action getUserOwnedObjects
-func (m *GetUserOwnedObjectsRequestBuilder) Post(options *GetUserOwnedObjectsRequestBuilderPostOptions)(*GetUserOwnedObjectsResponse, error) {
+func (m *GetUserOwnedObjectsRequestBuilder) Post(options *GetUserOwnedObjectsRequestBuilderPostOptions)(GetUserOwnedObjectsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetUserOwnedObjectsResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetUserOwnedObjectsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetUserOwnedObjectsResponse), nil
+    return res.(GetUserOwnedObjectsResponseable), nil
 }

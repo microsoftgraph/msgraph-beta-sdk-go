@@ -2,11 +2,12 @@ package managementintents
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
+    ie1e07e3f1a83bf21b982927c8f6766837f977b9d7f7603fccd7e7f6160ea16ac "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementintents/count"
 )
 
-// ManagementIntentsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementIntents
+// ManagementIntentsRequestBuilder provides operations to manage the managementIntents property of the microsoft.graph.managedTenants.managedTenant entity.
 type ManagementIntentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type ManagementIntentsRequestBuilderGetQueryParameters struct {
 // ManagementIntentsRequestBuilderPostOptions options for Post
 type ManagementIntentsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementIntent;
+    Body i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementIntentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewManagementIntentsRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewManagementIntentsRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementIntentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagementIntentsRequestBuilder) Count()(*ie1e07e3f1a83bf21b982927c8f6766837f977b9d7f7603fccd7e7f6160ea16ac.CountRequestBuilder) {
+    return ie1e07e3f1a83bf21b982927c8f6766837f977b9d7f7603fccd7e7f6160ea16ac.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of baseline management intents across managed tenants.
 func (m *ManagementIntentsRequestBuilder) CreateGetRequestInformation(options *ManagementIntentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *ManagementIntentsRequestBuilder) CreateGetRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of baseline management intents across managed tenants.
+// CreatePostRequestInformation create new navigation property to managementIntents for tenantRelationships
 func (m *ManagementIntentsRequestBuilder) CreatePostRequestInformation(options *ManagementIntentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *ManagementIntentsRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Get the collection of baseline management intents across managed tenants.
-func (m *ManagementIntentsRequestBuilder) Get(options *ManagementIntentsRequestBuilderGetOptions)(*ManagementIntentsResponse, error) {
+func (m *ManagementIntentsRequestBuilder) Get(options *ManagementIntentsRequestBuilderGetOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementIntentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementIntentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateManagementIntentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagementIntentsResponse), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementIntentCollectionResponseable), nil
 }
-// Post the collection of baseline management intents across managed tenants.
-func (m *ManagementIntentsRequestBuilder) Post(options *ManagementIntentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementIntent, error) {
+// Post create new navigation property to managementIntents for tenantRelationships
+func (m *ManagementIntentsRequestBuilder) Post(options *ManagementIntentsRequestBuilderPostOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementIntentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagementIntent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateManagementIntentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementIntent), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementIntentable), nil
 }

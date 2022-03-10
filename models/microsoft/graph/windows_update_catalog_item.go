@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsUpdateCatalogItem 
+// WindowsUpdateCatalogItem provides operations to manage the deviceManagement singleton.
 type WindowsUpdateCatalogItem struct {
     Entity
     // The display name for the catalog item.
@@ -22,6 +22,10 @@ func NewWindowsUpdateCatalogItem()(*WindowsUpdateCatalogItem) {
     }
     return m
 }
+// CreateWindowsUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsUpdateCatalogItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsUpdateCatalogItem(), nil
+}
 // GetDisplayName gets the displayName property value. The display name for the catalog item.
 func (m *WindowsUpdateCatalogItem) GetDisplayName()(*string) {
     if m == nil {
@@ -36,14 +40,6 @@ func (m *WindowsUpdateCatalogItem) GetEndOfSupportDate()(*i336074805fc853987abe6
         return nil
     } else {
         return m.endOfSupportDate
-    }
-}
-// GetReleaseDateTime gets the releaseDateTime property value. The date the catalog item was released
-func (m *WindowsUpdateCatalogItem) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +76,14 @@ func (m *WindowsUpdateCatalogItem) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetReleaseDateTime gets the releaseDateTime property value. The date the catalog item was released
+func (m *WindowsUpdateCatalogItem) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.releaseDateTime
+    }
 }
 func (m *WindowsUpdateCatalogItem) IsNil()(bool) {
     return m == nil

@@ -1,12 +1,13 @@
 package privilegedoperationevents
 
 import (
+    ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedoperationevents/count"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// PrivilegedOperationEventsRequestBuilder builds and executes requests for operations under \privilegedOperationEvents
+// PrivilegedOperationEventsRequestBuilder provides operations to manage the collection of privilegedOperationEvent entities.
 type PrivilegedOperationEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type PrivilegedOperationEventsRequestBuilderGetQueryParameters struct {
 // PrivilegedOperationEventsRequestBuilderPostOptions options for Post
 type PrivilegedOperationEventsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEvent;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEventable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewPrivilegedOperationEventsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewPrivilegedOperationEventsRequestBuilder(rawUrl string, requestAdapter id
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedOperationEventsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PrivilegedOperationEventsRequestBuilder) Count()(*ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08.CountRequestBuilder) {
+    return ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) CreateGetRequestInformation(options *PrivilegedOperationEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *PrivilegedOperationEventsRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Get get entities from privilegedOperationEvents
-func (m *PrivilegedOperationEventsRequestBuilder) Get(options *PrivilegedOperationEventsRequestBuilderGetOptions)(*PrivilegedOperationEventsResponse, error) {
+func (m *PrivilegedOperationEventsRequestBuilder) Get(options *PrivilegedOperationEventsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrivilegedOperationEventsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedOperationEventCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PrivilegedOperationEventsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEventCollectionResponseable), nil
 }
 // Post add new entity to privilegedOperationEvents
-func (m *PrivilegedOperationEventsRequestBuilder) Post(options *PrivilegedOperationEventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEvent, error) {
+func (m *PrivilegedOperationEventsRequestBuilder) Post(options *PrivilegedOperationEventsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEventable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedOperationEvent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedOperationEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEvent), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedOperationEventable), nil
 }

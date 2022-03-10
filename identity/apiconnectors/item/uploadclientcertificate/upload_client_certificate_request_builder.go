@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UploadClientCertificateRequestBuilder builds and executes requests for operations under \identity\apiConnectors\{identityApiConnector-id}\microsoft.graph.uploadClientCertificate
+// UploadClientCertificateRequestBuilder provides operations to call the uploadClientCertificate method.
 type UploadClientCertificateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type UploadClientCertificateRequestBuilder struct {
 // UploadClientCertificateRequestBuilderPostOptions options for Post
 type UploadClientCertificateRequestBuilderPostOptions struct {
     // 
-    Body *UploadClientCertificateRequestBody;
+    Body UploadClientCertificateRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type UploadClientCertificateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type identityApiConnector
-    identityApiConnector *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnector;
+    identityApiConnector i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnectorable;
 }
 // NewUploadClientCertificateResponse instantiates a new uploadClientCertificateResponse and sets the default values.
 func NewUploadClientCertificateResponse()(*UploadClientCertificateResponse) {
@@ -39,6 +39,9 @@ func NewUploadClientCertificateResponse()(*UploadClientCertificateResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateUploadClientCertificateResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUploadClientCertificateResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificateResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *UploadClientCertificateResponse) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *UploadClientCertificateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["identityApiConnector"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIdentityApiConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityApiConnector(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnectorable))
+        }
+        return nil
+    }
+    return res
+}
 // GetIdentityApiConnector gets the identityApiConnector property value. Union type representation for type identityApiConnector
-func (m *UploadClientCertificateResponse) GetIdentityApiConnector()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnector) {
+func (m *UploadClientCertificateResponse) GetIdentityApiConnector()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnectorable) {
     if m == nil {
         return nil
     } else {
         return m.identityApiConnector
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *UploadClientCertificateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["identityApiConnector"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIdentityApiConnector() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityApiConnector(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnector))
-        }
-        return nil
-    }
-    return res
 }
 func (m *UploadClientCertificateResponse) IsNil()(bool) {
     return m == nil
@@ -97,10 +100,17 @@ func (m *UploadClientCertificateResponse) SetAdditionalData(value map[string]int
     }
 }
 // SetIdentityApiConnector sets the identityApiConnector property value. Union type representation for type identityApiConnector
-func (m *UploadClientCertificateResponse) SetIdentityApiConnector(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnector)() {
+func (m *UploadClientCertificateResponse) SetIdentityApiConnector(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnectorable)() {
     if m != nil {
         m.identityApiConnector = value
     }
+}
+// UploadClientCertificateResponseable 
+type UploadClientCertificateResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetIdentityApiConnector()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnectorable)
+    SetIdentityApiConnector(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityApiConnectorable)()
 }
 // NewUploadClientCertificateRequestBuilderInternal instantiates a new UploadClientCertificateRequestBuilder and sets the default values.
 func NewUploadClientCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadClientCertificateRequestBuilder) {
@@ -111,7 +121,7 @@ func NewUploadClientCertificateRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *UploadClientCertificateRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Post invoke action uploadClientCertificate
-func (m *UploadClientCertificateRequestBuilder) Post(options *UploadClientCertificateRequestBuilderPostOptions)(*UploadClientCertificateResponse, error) {
+func (m *UploadClientCertificateRequestBuilder) Post(options *UploadClientCertificateRequestBuilderPostOptions)(UploadClientCertificateResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUploadClientCertificateResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUploadClientCertificateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*UploadClientCertificateResponse), nil
+    return res.(UploadClientCertificateResponseable), nil
 }

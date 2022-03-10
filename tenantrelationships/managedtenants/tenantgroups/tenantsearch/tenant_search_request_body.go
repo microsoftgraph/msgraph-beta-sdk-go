@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TenantSearchRequestBody 
+// TenantSearchRequestBody provides operations to call the tenantSearch method.
 type TenantSearchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewTenantSearchRequestBody()(*TenantSearchRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTenantSearchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTenantSearchRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTenantSearchRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantSearchRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *TenantSearchRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *TenantSearchRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetTenantId gets the tenantId property value. 
+func (m *TenantSearchRequestBody) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
 }
 func (m *TenantSearchRequestBody) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion 
+// UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion struct {
     Entity
     // The number of devices where the app has been active. Valid values -2147483648 to 2147483647
@@ -32,6 +32,10 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion()(*UserExperie
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion(), nil
 }
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of devices where the app has been active. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetActiveDeviceCount()(*int32) {
@@ -79,30 +83,6 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetAppUsageD
         return nil
     } else {
         return m.appUsageDuration
-    }
-}
-// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetMeanTimeToFailureInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meanTimeToFailureInMinutes
-    }
-}
-// GetOsBuildNumber gets the osBuildNumber property value. The os build number of the application.
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetOsBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osBuildNumber
-    }
-}
-// GetOsVersion gets the osVersion property value. The os version of the application.
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -199,6 +179,30 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetFieldDese
         return nil
     }
     return res
+}
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetMeanTimeToFailureInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meanTimeToFailureInMinutes
+    }
+}
+// GetOsBuildNumber gets the osBuildNumber property value. The os build number of the application.
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetOsBuildNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osBuildNumber
+    }
+}
+// GetOsVersion gets the osVersion property value. The os version of the application.
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
 }
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) IsNil()(bool) {
     return m == nil

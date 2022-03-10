@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// CreateDownloadUrlRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\logCollectionRequests\{deviceLogCollectionResponse-id}\microsoft.graph.createDownloadUrl
+// CreateDownloadUrlRequestBuilder provides operations to call the createDownloadUrl method.
 type CreateDownloadUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Post invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) Post(options *CreateDownloadUrlRequestBuilderPostOptions)(*string, error) {
+func (m *CreateDownloadUrlRequestBuilder) Post(options *CreateDownloadUrlRequestBuilderPostOptions)(CreateDownloadUrlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateDownloadUrlResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(CreateDownloadUrlResponseable), nil
 }

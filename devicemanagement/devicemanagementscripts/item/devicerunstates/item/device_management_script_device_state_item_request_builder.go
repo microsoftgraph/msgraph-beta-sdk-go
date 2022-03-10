@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     icefdfd92af09688aa856900c82be5164319a6d07a6dacdf271f0973c09ee09d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/devicerunstates/item/manageddevice"
 )
 
-// DeviceManagementScriptDeviceStateItemRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}
+// DeviceManagementScriptDeviceStateItemRequestBuilder provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScript entity.
 type DeviceManagementScriptDeviceStateItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type DeviceManagementScriptDeviceStateItemRequestBuilderGetQueryParameters struc
 // DeviceManagementScriptDeviceStateItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementScriptDeviceStateItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptDeviceState;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptDeviceStateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewDeviceManagementScriptDeviceStateItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,7 +73,7 @@ func NewDeviceManagementScriptDeviceStateItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation list of run states for this script across all devices.
+// CreateDeleteRequestInformation delete navigation property deviceRunStates for deviceManagement
 func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementScriptDeviceStateItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation list of run states for this script across all devices.
+// CreatePatchRequestInformation update the navigation property deviceRunStates in deviceManagement
 func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementScriptDeviceStateItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,40 +128,52 @@ func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// Delete list of run states for this script across all devices.
+// Delete delete navigation property deviceRunStates for deviceManagement
 func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) Delete(options *DeviceManagementScriptDeviceStateItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get list of run states for this script across all devices.
-func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) Get(options *DeviceManagementScriptDeviceStateItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptDeviceState, error) {
+func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) Get(options *DeviceManagementScriptDeviceStateItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptDeviceStateable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementScriptDeviceState() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptDeviceState), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptDeviceStateable), nil
 }
 func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) ManagedDevice()(*icefdfd92af09688aa856900c82be5164319a6d07a6dacdf271f0973c09ee09d2.ManagedDeviceRequestBuilder) {
     return icefdfd92af09688aa856900c82be5164319a6d07a6dacdf271f0973c09ee09d2.NewManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch list of run states for this script across all devices.
+// Patch update the navigation property deviceRunStates in deviceManagement
 func (m *DeviceManagementScriptDeviceStateItemRequestBuilder) Patch(options *DeviceManagementScriptDeviceStateItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

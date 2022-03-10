@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LogonUser 
+// LogonUser provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
 type LogonUser struct {
     // Domain of user account used to logon.
     accountDomain *string;
@@ -30,6 +30,10 @@ func NewLogonUser()(*LogonUser) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateLogonUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLogonUserFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLogonUser(), nil
 }
 // GetAccountDomain gets the accountDomain property value. Domain of user account used to logon.
 func (m *LogonUser) GetAccountDomain()(*string) {
@@ -61,38 +65,6 @@ func (m *LogonUser) GetAdditionalData()(map[string]interface{}) {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *LogonUser) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *LogonUser) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
-}
-// GetLogonId gets the logonId property value. User logon ID.
-func (m *LogonUser) GetLogonId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonId
-    }
-}
-// GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *LogonUser) GetLogonTypes()([]LogonType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonTypes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -173,6 +145,38 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *LogonUser) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstSeenDateTime
+    }
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *LogonUser) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSeenDateTime
+    }
+}
+// GetLogonId gets the logonId property value. User logon ID.
+func (m *LogonUser) GetLogonId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonId
+    }
+}
+// GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+func (m *LogonUser) GetLogonTypes()([]LogonType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.logonTypes
+    }
 }
 func (m *LogonUser) IsNil()(bool) {
     return m == nil

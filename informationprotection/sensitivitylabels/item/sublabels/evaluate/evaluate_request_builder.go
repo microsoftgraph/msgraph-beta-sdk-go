@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// EvaluateRequestBuilder builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}\sublabels\microsoft.graph.evaluate
+// EvaluateRequestBuilder provides operations to call the evaluate method.
 type EvaluateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type EvaluateRequestBuilder struct {
 // EvaluateRequestBuilderPostOptions options for Post
 type EvaluateRequestBuilderPostOptions struct {
     // 
-    Body *EvaluateRequestBody;
+    Body EvaluateRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type EvaluateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type evaluateLabelJobResponse
-    evaluateLabelJobResponse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse;
+    evaluateLabelJobResponse i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponseable;
 }
 // NewEvaluateResponse instantiates a new evaluateResponse and sets the default values.
 func NewEvaluateResponse()(*EvaluateResponse) {
@@ -39,6 +39,9 @@ func NewEvaluateResponse()(*EvaluateResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateEvaluateResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEvaluateResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *EvaluateResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEvaluateLabelJobResponse gets the evaluateLabelJobResponse property value. Union type representation for type evaluateLabelJobResponse
-func (m *EvaluateResponse) GetEvaluateLabelJobResponse()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse) {
+func (m *EvaluateResponse) GetEvaluateLabelJobResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponseable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *EvaluateResponse) GetEvaluateLabelJobResponse()(*i535684e11b5500196ecb4
 func (m *EvaluateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["evaluateLabelJobResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEvaluateLabelJobResponse() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEvaluateLabelJobResponseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEvaluateLabelJobResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse))
+            m.SetEvaluateLabelJobResponse(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponseable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *EvaluateResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEvaluateLabelJobResponse sets the evaluateLabelJobResponse property value. Union type representation for type evaluateLabelJobResponse
-func (m *EvaluateResponse) SetEvaluateLabelJobResponse(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse)() {
+func (m *EvaluateResponse) SetEvaluateLabelJobResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponseable)() {
     if m != nil {
         m.evaluateLabelJobResponse = value
     }
+}
+// EvaluateResponseable 
+type EvaluateResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetEvaluateLabelJobResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponseable)
+    SetEvaluateLabelJobResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponseable)()
 }
 // NewEvaluateRequestBuilderInternal instantiates a new EvaluateRequestBuilder and sets the default values.
 func NewEvaluateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRequestBuilder) {
@@ -111,7 +121,7 @@ func NewEvaluateRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *EvaluateRequestBuilder) CreatePostRequestInformation(options *EvaluateR
     return requestInfo, nil
 }
 // Post invoke action evaluate
-func (m *EvaluateRequestBuilder) Post(options *EvaluateRequestBuilderPostOptions)(*EvaluateResponse, error) {
+func (m *EvaluateRequestBuilder) Post(options *EvaluateRequestBuilderPostOptions)(EvaluateResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvaluateResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEvaluateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*EvaluateResponse), nil
+    return res.(EvaluateResponseable), nil
 }

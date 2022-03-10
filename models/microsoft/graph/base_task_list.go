@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BaseTaskList 
+// BaseTaskList provides operations to manage the compliance singleton.
 type BaseTaskList struct {
     Entity
     // The name of the task list.
     displayName *string;
     // The collection of open extensions defined for the task list. Nullable.
-    extensions []Extension;
+    extensions []Extensionable;
     // The tasks in this task list. Read-only. Nullable.
-    tasks []BaseTask;
+    tasks []BaseTaskable;
 }
 // NewBaseTaskList instantiates a new baseTaskList and sets the default values.
 func NewBaseTaskList()(*BaseTaskList) {
@@ -20,6 +20,10 @@ func NewBaseTaskList()(*BaseTaskList) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateBaseTaskListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBaseTaskListFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBaseTaskList(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the task list.
 func (m *BaseTaskList) GetDisplayName()(*string) {
@@ -30,19 +34,11 @@ func (m *BaseTaskList) GetDisplayName()(*string) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task list. Nullable.
-func (m *BaseTaskList) GetExtensions()([]Extension) {
+func (m *BaseTaskList) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
-func (m *BaseTaskList) GetTasks()([]BaseTask) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,34 +55,42 @@ func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBaseTask() })
+        val, err := n.GetCollectionOfObjectValues(CreateBaseTaskFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BaseTask, len(val))
+            res := make([]BaseTaskable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BaseTask))
+                res[i] = v.(BaseTaskable)
             }
             m.SetTasks(res)
         }
         return nil
     }
     return res
+}
+// GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
+func (m *BaseTaskList) GetTasks()([]BaseTaskable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
+    }
 }
 func (m *BaseTaskList) IsNil()(bool) {
     return m == nil
@@ -106,8 +110,7 @@ func (m *BaseTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -117,8 +120,7 @@ func (m *BaseTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
@@ -134,13 +136,13 @@ func (m *BaseTaskList) SetDisplayName(value *string)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task list. Nullable.
-func (m *BaseTaskList) SetExtensions(value []Extension)() {
+func (m *BaseTaskList) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
 }
 // SetTasks sets the tasks property value. The tasks in this task list. Read-only. Nullable.
-func (m *BaseTaskList) SetTasks(value []BaseTask)() {
+func (m *BaseTaskList) SetTasks(value []BaseTaskable)() {
     if m != nil {
         m.tasks = value
     }

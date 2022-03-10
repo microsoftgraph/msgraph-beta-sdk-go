@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PasswordSingleSignOnCredentialSet 
+// PasswordSingleSignOnCredentialSet provides operations to call the createPasswordSingleSignOnCredentials method.
 type PasswordSingleSignOnCredentialSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // A list of credential objects that define the complete sign in flow.
-    credentials []Credential;
+    credentials []Credentialable;
     // The ID of the user or group this credential set belongs to.
     id *string;
 }
@@ -20,6 +20,10 @@ func NewPasswordSingleSignOnCredentialSet()(*PasswordSingleSignOnCredentialSet) 
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePasswordSingleSignOnCredentialSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePasswordSingleSignOnCredentialSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPasswordSingleSignOnCredentialSet(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnCredentialSet) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,33 +33,25 @@ func (m *PasswordSingleSignOnCredentialSet) GetAdditionalData()(map[string]inter
     }
 }
 // GetCredentials gets the credentials property value. A list of credential objects that define the complete sign in flow.
-func (m *PasswordSingleSignOnCredentialSet) GetCredentials()([]Credential) {
+func (m *PasswordSingleSignOnCredentialSet) GetCredentials()([]Credentialable) {
     if m == nil {
         return nil
     } else {
         return m.credentials
     }
 }
-// GetId gets the id property value. The ID of the user or group this credential set belongs to.
-func (m *PasswordSingleSignOnCredentialSet) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordSingleSignOnCredentialSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["credentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCredential() })
+        val, err := n.GetCollectionOfObjectValues(CreateCredentialFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Credential, len(val))
+            res := make([]Credentialable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Credential))
+                res[i] = v.(Credentialable)
             }
             m.SetCredentials(res)
         }
@@ -73,6 +69,14 @@ func (m *PasswordSingleSignOnCredentialSet) GetFieldDeserializers()(map[string]f
     }
     return res
 }
+// GetId gets the id property value. The ID of the user or group this credential set belongs to.
+func (m *PasswordSingleSignOnCredentialSet) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
 func (m *PasswordSingleSignOnCredentialSet) IsNil()(bool) {
     return m == nil
 }
@@ -81,8 +85,7 @@ func (m *PasswordSingleSignOnCredentialSet) Serialize(writer i04eb5309aeaafadd28
     if m.GetCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCredentials()))
         for i, v := range m.GetCredentials() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("credentials", cast)
         if err != nil {
@@ -110,7 +113,7 @@ func (m *PasswordSingleSignOnCredentialSet) SetAdditionalData(value map[string]i
     }
 }
 // SetCredentials sets the credentials property value. A list of credential objects that define the complete sign in flow.
-func (m *PasswordSingleSignOnCredentialSet) SetCredentials(value []Credential)() {
+func (m *PasswordSingleSignOnCredentialSet) SetCredentials(value []Credentialable)() {
     if m != nil {
         m.credentials = value
     }

@@ -5,19 +5,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmbeddedSIMActivationCodePool 
+// EmbeddedSIMActivationCodePool provides operations to manage the deviceManagement singleton.
 type EmbeddedSIMActivationCodePool struct {
     Entity
     // The total count of activation codes which belong to this pool.
     activationCodeCount *int32;
     // The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
-    activationCodes []EmbeddedSIMActivationCode;
+    activationCodes []EmbeddedSIMActivationCodeable;
     // Navigational property to a list of targets to which this pool is assigned.
-    assignments []EmbeddedSIMActivationCodePoolAssignment;
+    assignments []EmbeddedSIMActivationCodePoolAssignmentable;
     // The time the embedded SIM activation code pool was created. Generated service side.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Navigational property to a list of device states for this pool.
-    deviceStates []EmbeddedSIMDeviceState;
+    deviceStates []EmbeddedSIMDeviceStateable;
     // The admin defined name of the embedded SIM activation code pool.
     displayName *string;
     // The time the embedded SIM activation code pool was last modified. Updated service side.
@@ -30,6 +30,10 @@ func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {
     }
     return m
 }
+// CreateEmbeddedSIMActivationCodePoolFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEmbeddedSIMActivationCodePoolFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEmbeddedSIMActivationCodePool(), nil
+}
 // GetActivationCodeCount gets the activationCodeCount property value. The total count of activation codes which belong to this pool.
 func (m *EmbeddedSIMActivationCodePool) GetActivationCodeCount()(*int32) {
     if m == nil {
@@ -39,7 +43,7 @@ func (m *EmbeddedSIMActivationCodePool) GetActivationCodeCount()(*int32) {
     }
 }
 // GetActivationCodes gets the activationCodes property value. The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
-func (m *EmbeddedSIMActivationCodePool) GetActivationCodes()([]EmbeddedSIMActivationCode) {
+func (m *EmbeddedSIMActivationCodePool) GetActivationCodes()([]EmbeddedSIMActivationCodeable) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +51,7 @@ func (m *EmbeddedSIMActivationCodePool) GetActivationCodes()([]EmbeddedSIMActiva
     }
 }
 // GetAssignments gets the assignments property value. Navigational property to a list of targets to which this pool is assigned.
-func (m *EmbeddedSIMActivationCodePool) GetAssignments()([]EmbeddedSIMActivationCodePoolAssignment) {
+func (m *EmbeddedSIMActivationCodePool) GetAssignments()([]EmbeddedSIMActivationCodePoolAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -63,7 +67,7 @@ func (m *EmbeddedSIMActivationCodePool) GetCreatedDateTime()(*i336074805fc853987
     }
 }
 // GetDeviceStates gets the deviceStates property value. Navigational property to a list of device states for this pool.
-func (m *EmbeddedSIMActivationCodePool) GetDeviceStates()([]EmbeddedSIMDeviceState) {
+func (m *EmbeddedSIMActivationCodePool) GetDeviceStates()([]EmbeddedSIMDeviceStateable) {
     if m == nil {
         return nil
     } else {
@@ -76,14 +80,6 @@ func (m *EmbeddedSIMActivationCodePool) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The time the embedded SIM activation code pool was last modified. Updated service side.
-func (m *EmbeddedSIMActivationCodePool) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,28 +96,28 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["activationCodes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmbeddedSIMActivationCode() })
+        val, err := n.GetCollectionOfObjectValues(CreateEmbeddedSIMActivationCodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EmbeddedSIMActivationCode, len(val))
+            res := make([]EmbeddedSIMActivationCodeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EmbeddedSIMActivationCode))
+                res[i] = v.(EmbeddedSIMActivationCodeable)
             }
             m.SetActivationCodes(res)
         }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmbeddedSIMActivationCodePoolAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EmbeddedSIMActivationCodePoolAssignment, len(val))
+            res := make([]EmbeddedSIMActivationCodePoolAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EmbeddedSIMActivationCodePoolAssignment))
+                res[i] = v.(EmbeddedSIMActivationCodePoolAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -138,14 +134,14 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["deviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmbeddedSIMDeviceState() })
+        val, err := n.GetCollectionOfObjectValues(CreateEmbeddedSIMDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EmbeddedSIMDeviceState, len(val))
+            res := make([]EmbeddedSIMDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EmbeddedSIMDeviceState))
+                res[i] = v.(EmbeddedSIMDeviceStateable)
             }
             m.SetDeviceStates(res)
         }
@@ -173,6 +169,14 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
+// GetModifiedDateTime gets the modifiedDateTime property value. The time the embedded SIM activation code pool was last modified. Updated service side.
+func (m *EmbeddedSIMActivationCodePool) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
 func (m *EmbeddedSIMActivationCodePool) IsNil()(bool) {
     return m == nil
 }
@@ -191,8 +195,7 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetActivationCodes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivationCodes()))
         for i, v := range m.GetActivationCodes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("activationCodes", cast)
         if err != nil {
@@ -202,8 +205,7 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -219,8 +221,7 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetDeviceStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStates()))
         for i, v := range m.GetDeviceStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStates", cast)
         if err != nil {
@@ -248,13 +249,13 @@ func (m *EmbeddedSIMActivationCodePool) SetActivationCodeCount(value *int32)() {
     }
 }
 // SetActivationCodes sets the activationCodes property value. The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
-func (m *EmbeddedSIMActivationCodePool) SetActivationCodes(value []EmbeddedSIMActivationCode)() {
+func (m *EmbeddedSIMActivationCodePool) SetActivationCodes(value []EmbeddedSIMActivationCodeable)() {
     if m != nil {
         m.activationCodes = value
     }
 }
 // SetAssignments sets the assignments property value. Navigational property to a list of targets to which this pool is assigned.
-func (m *EmbeddedSIMActivationCodePool) SetAssignments(value []EmbeddedSIMActivationCodePoolAssignment)() {
+func (m *EmbeddedSIMActivationCodePool) SetAssignments(value []EmbeddedSIMActivationCodePoolAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -266,7 +267,7 @@ func (m *EmbeddedSIMActivationCodePool) SetCreatedDateTime(value *i336074805fc85
     }
 }
 // SetDeviceStates sets the deviceStates property value. Navigational property to a list of device states for this pool.
-func (m *EmbeddedSIMActivationCodePool) SetDeviceStates(value []EmbeddedSIMDeviceState)() {
+func (m *EmbeddedSIMActivationCodePool) SetDeviceStates(value []EmbeddedSIMDeviceStateable)() {
     if m != nil {
         m.deviceStates = value
     }

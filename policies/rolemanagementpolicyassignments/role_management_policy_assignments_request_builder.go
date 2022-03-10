@@ -2,11 +2,12 @@ package rolemanagementpolicyassignments
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    id477a38b7c101aaf7ea451ca012742fe3d3a931ddc676462b6d01ff007a8f34e "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicyassignments/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// RoleManagementPolicyAssignmentsRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicyAssignments
+// RoleManagementPolicyAssignmentsRequestBuilder provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
 type RoleManagementPolicyAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters struct {
 // RoleManagementPolicyAssignmentsRequestBuilderPostOptions options for Post
 type RoleManagementPolicyAssignmentsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewRoleManagementPolicyAssignmentsRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewRoleManagementPolicyAssignmentsRequestBuilder(rawUrl string, requestAdap
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementPolicyAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RoleManagementPolicyAssignmentsRequestBuilder) Count()(*id477a38b7c101aaf7ea451ca012742fe3d3a931ddc676462b6d01ff007a8f34e.CountRequestBuilder) {
+    return id477a38b7c101aaf7ea451ca012742fe3d3a931ddc676462b6d01ff007a8f34e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents the role management policy assignments.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreateGetRequestInformation(options *RoleManagementPolicyAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents the role management policy assignments.
+// CreatePostRequestInformation create new navigation property to roleManagementPolicyAssignments for policies
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreatePostRequestInformation(options *RoleManagementPolicyAssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *RoleManagementPolicyAssignmentsRequestBuilder) CreatePostRequestInforma
     return requestInfo, nil
 }
 // Get represents the role management policy assignments.
-func (m *RoleManagementPolicyAssignmentsRequestBuilder) Get(options *RoleManagementPolicyAssignmentsRequestBuilderGetOptions)(*RoleManagementPolicyAssignmentsResponse, error) {
+func (m *RoleManagementPolicyAssignmentsRequestBuilder) Get(options *RoleManagementPolicyAssignmentsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleManagementPolicyAssignmentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnifiedRoleManagementPolicyAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RoleManagementPolicyAssignmentsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignmentCollectionResponseable), nil
 }
-// Post represents the role management policy assignments.
-func (m *RoleManagementPolicyAssignmentsRequestBuilder) Post(options *RoleManagementPolicyAssignmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignment, error) {
+// Post create new navigation property to roleManagementPolicyAssignments for policies
+func (m *RoleManagementPolicyAssignmentsRequestBuilder) Post(options *RoleManagementPolicyAssignmentsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUnifiedRoleManagementPolicyAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyAssignmentable), nil
 }

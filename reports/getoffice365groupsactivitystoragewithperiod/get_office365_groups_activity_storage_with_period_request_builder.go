@@ -2,11 +2,9 @@ package getoffice365groupsactivitystoragewithperiod
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetOffice365GroupsActivityStorageWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityStorage(period='{period}')
+// GetOffice365GroupsActivityStorageWithPeriodRequestBuilder provides operations to call the getOffice365GroupsActivityStorage method.
 type GetOffice365GroupsActivityStorageWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +34,7 @@ func NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilderInternal(pathPa
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,18 +62,14 @@ func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) CreateGetReq
     return requestInfo, nil
 }
 // Get invoke function getOffice365GroupsActivityStorage
-func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) Get(options *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityStorage, error) {
+func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) Get(options *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetOptions)(GetOffice365GroupsActivityStorageWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOffice365GroupsActivityStorage() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOffice365GroupsActivityStorageWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityStorage, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityStorage))
-    }
-    return val, nil
+    return res.(GetOffice365GroupsActivityStorageWithPeriodResponseable), nil
 }

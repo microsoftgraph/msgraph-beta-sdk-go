@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterState 
+// AssignmentFilterState provides operations to call the getState method.
 type AssignmentFilterState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,6 +17,10 @@ func NewAssignmentFilterState()(*AssignmentFilterState) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAssignmentFilterStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignmentFilterStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignmentFilterState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterState) GetAdditionalData()(map[string]interface{}) {

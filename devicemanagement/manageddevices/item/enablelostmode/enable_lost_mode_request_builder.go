@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// EnableLostModeRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.enableLostMode
+// EnableLostModeRequestBuilder provides operations to call the enableLostMode method.
 type EnableLostModeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type EnableLostModeRequestBuilder struct {
 // EnableLostModeRequestBuilderPostOptions options for Post
 type EnableLostModeRequestBuilderPostOptions struct {
     // 
-    Body *EnableLostModeRequestBody;
+    Body EnableLostModeRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewEnableLostModeRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *EnableLostModeRequestBuilder) Post(options *EnableLostModeRequestBuilde
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

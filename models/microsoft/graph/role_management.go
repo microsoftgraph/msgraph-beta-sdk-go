@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RoleManagement 
+// RoleManagement provides operations to manage the roleManagement singleton.
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    cloudPC *RbacApplicationMultiple;
+    cloudPC RbacApplicationMultipleable;
     // The RbacApplication for Device Management
-    deviceManagement *RbacApplicationMultiple;
+    deviceManagement RbacApplicationMultipleable;
     // Read-only. Nullable.
-    directory *RbacApplication;
+    directory RbacApplicationable;
     // Container for all entitlement management resources in Azure AD identity governance.
-    entitlementManagement *RbacApplication;
+    entitlementManagement RbacApplicationable;
 }
 // NewRoleManagement instantiates a new RoleManagement and sets the default values.
 func NewRoleManagement()(*RoleManagement) {
@@ -23,6 +23,10 @@ func NewRoleManagement()(*RoleManagement) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateRoleManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRoleManagementFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRoleManagement(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
@@ -33,7 +37,7 @@ func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCloudPC gets the cloudPC property value. 
-func (m *RoleManagement) GetCloudPC()(*RbacApplicationMultiple) {
+func (m *RoleManagement) GetCloudPC()(RbacApplicationMultipleable) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +45,7 @@ func (m *RoleManagement) GetCloudPC()(*RbacApplicationMultiple) {
     }
 }
 // GetDeviceManagement gets the deviceManagement property value. The RbacApplication for Device Management
-func (m *RoleManagement) GetDeviceManagement()(*RbacApplicationMultiple) {
+func (m *RoleManagement) GetDeviceManagement()(RbacApplicationMultipleable) {
     if m == nil {
         return nil
     } else {
@@ -49,7 +53,7 @@ func (m *RoleManagement) GetDeviceManagement()(*RbacApplicationMultiple) {
     }
 }
 // GetDirectory gets the directory property value. Read-only. Nullable.
-func (m *RoleManagement) GetDirectory()(*RbacApplication) {
+func (m *RoleManagement) GetDirectory()(RbacApplicationable) {
     if m == nil {
         return nil
     } else {
@@ -57,7 +61,7 @@ func (m *RoleManagement) GetDirectory()(*RbacApplication) {
     }
 }
 // GetEntitlementManagement gets the entitlementManagement property value. Container for all entitlement management resources in Azure AD identity governance.
-func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
+func (m *RoleManagement) GetEntitlementManagement()(RbacApplicationable) {
     if m == nil {
         return nil
     } else {
@@ -68,42 +72,42 @@ func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
 func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cloudPC"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRbacApplicationMultiple() })
+        val, err := n.GetObjectValue(CreateRbacApplicationMultipleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudPC(val.(*RbacApplicationMultiple))
+            m.SetCloudPC(val.(RbacApplicationMultipleable))
         }
         return nil
     }
     res["deviceManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRbacApplicationMultiple() })
+        val, err := n.GetObjectValue(CreateRbacApplicationMultipleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceManagement(val.(*RbacApplicationMultiple))
+            m.SetDeviceManagement(val.(RbacApplicationMultipleable))
         }
         return nil
     }
     res["directory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRbacApplication() })
+        val, err := n.GetObjectValue(CreateRbacApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirectory(val.(*RbacApplication))
+            m.SetDirectory(val.(RbacApplicationable))
         }
         return nil
     }
     res["entitlementManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRbacApplication() })
+        val, err := n.GetObjectValue(CreateRbacApplicationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEntitlementManagement(val.(*RbacApplication))
+            m.SetEntitlementManagement(val.(RbacApplicationable))
         }
         return nil
     }
@@ -153,25 +157,25 @@ func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetCloudPC sets the cloudPC property value. 
-func (m *RoleManagement) SetCloudPC(value *RbacApplicationMultiple)() {
+func (m *RoleManagement) SetCloudPC(value RbacApplicationMultipleable)() {
     if m != nil {
         m.cloudPC = value
     }
 }
 // SetDeviceManagement sets the deviceManagement property value. The RbacApplication for Device Management
-func (m *RoleManagement) SetDeviceManagement(value *RbacApplicationMultiple)() {
+func (m *RoleManagement) SetDeviceManagement(value RbacApplicationMultipleable)() {
     if m != nil {
         m.deviceManagement = value
     }
 }
 // SetDirectory sets the directory property value. Read-only. Nullable.
-func (m *RoleManagement) SetDirectory(value *RbacApplication)() {
+func (m *RoleManagement) SetDirectory(value RbacApplicationable)() {
     if m != nil {
         m.directory = value
     }
 }
 // SetEntitlementManagement sets the entitlementManagement property value. Container for all entitlement management resources in Azure AD identity governance.
-func (m *RoleManagement) SetEntitlementManagement(value *RbacApplication)() {
+func (m *RoleManagement) SetEntitlementManagement(value RbacApplicationable)() {
     if m != nil {
         m.entitlementManagement = value
     }

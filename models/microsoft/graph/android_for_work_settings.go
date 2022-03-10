@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidForWorkSettings 
+// AndroidForWorkSettings provides operations to manage the deviceManagement singleton.
 type AndroidForWorkSettings struct {
     Entity
     // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
@@ -34,6 +34,10 @@ func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
     }
     return m
 }
+// CreateAndroidForWorkSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidForWorkSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidForWorkSettings(), nil
+}
 // GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
 func (m *AndroidForWorkSettings) GetBindStatus()(*AndroidForWorkBindStatus) {
     if m == nil {
@@ -56,54 +60,6 @@ func (m *AndroidForWorkSettings) GetEnrollmentTarget()(*AndroidForWorkEnrollment
         return nil
     } else {
         return m.enrollmentTarget
-    }
-}
-// GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
-func (m *AndroidForWorkSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncDateTime
-    }
-}
-// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
-func (m *AndroidForWorkSettings) GetLastAppSyncStatus()(*AndroidForWorkSyncStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncStatus
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android for Work settings
-func (m *AndroidForWorkSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android for Work
-func (m *AndroidForWorkSettings) GetOwnerOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerOrganizationName
-    }
-}
-// GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
-func (m *AndroidForWorkSettings) GetOwnerUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerUserPrincipalName
-    }
-}
-// GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
-func (m *AndroidForWorkSettings) GetTargetGroupIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -204,6 +160,54 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
+func (m *AndroidForWorkSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastAppSyncDateTime
+    }
+}
+// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+func (m *AndroidForWorkSettings) GetLastAppSyncStatus()(*AndroidForWorkSyncStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastAppSyncStatus
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android for Work settings
+func (m *AndroidForWorkSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android for Work
+func (m *AndroidForWorkSettings) GetOwnerOrganizationName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerOrganizationName
+    }
+}
+// GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
+func (m *AndroidForWorkSettings) GetOwnerUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerUserPrincipalName
+    }
+}
+// GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
+func (m *AndroidForWorkSettings) GetTargetGroupIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetGroupIds
+    }
 }
 func (m *AndroidForWorkSettings) IsNil()(bool) {
     return m == nil

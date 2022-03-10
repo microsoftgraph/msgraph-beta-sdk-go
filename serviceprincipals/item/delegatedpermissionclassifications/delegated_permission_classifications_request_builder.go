@@ -2,11 +2,12 @@ package delegatedpermissionclassifications
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i28707c71507035b7d5a52d7324a2b9720293fd643a5eb17efc493e78b00c81ef "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/delegatedpermissionclassifications/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DelegatedPermissionClassificationsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\delegatedPermissionClassifications
+// DelegatedPermissionClassificationsRequestBuilder provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
 type DelegatedPermissionClassificationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type DelegatedPermissionClassificationsRequestBuilderGetQueryParameters struct {
 // DelegatedPermissionClassificationsRequestBuilderPostOptions options for Post
 type DelegatedPermissionClassificationsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassification;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassificationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewDelegatedPermissionClassificationsRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewDelegatedPermissionClassificationsRequestBuilder(rawUrl string, requestA
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedPermissionClassificationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DelegatedPermissionClassificationsRequestBuilder) Count()(*i28707c71507035b7d5a52d7324a2b9720293fd643a5eb17efc493e78b00c81ef.CountRequestBuilder) {
+    return i28707c71507035b7d5a52d7324a2b9720293fd643a5eb17efc493e78b00c81ef.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *DelegatedPermissionClassificationsRequestBuilder) CreateGetRequestInformation(options *DelegatedPermissionClassificationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *DelegatedPermissionClassificationsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// CreatePostRequestInformation create new navigation property to delegatedPermissionClassifications for servicePrincipals
 func (m *DelegatedPermissionClassificationsRequestBuilder) CreatePostRequestInformation(options *DelegatedPermissionClassificationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *DelegatedPermissionClassificationsRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Get the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-func (m *DelegatedPermissionClassificationsRequestBuilder) Get(options *DelegatedPermissionClassificationsRequestBuilderGetOptions)(*DelegatedPermissionClassificationsResponse, error) {
+func (m *DelegatedPermissionClassificationsRequestBuilder) Get(options *DelegatedPermissionClassificationsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassificationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedPermissionClassificationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDelegatedPermissionClassificationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DelegatedPermissionClassificationsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassificationCollectionResponseable), nil
 }
-// Post the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-func (m *DelegatedPermissionClassificationsRequestBuilder) Post(options *DelegatedPermissionClassificationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassification, error) {
+// Post create new navigation property to delegatedPermissionClassifications for servicePrincipals
+func (m *DelegatedPermissionClassificationsRequestBuilder) Post(options *DelegatedPermissionClassificationsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassificationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDelegatedPermissionClassification() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDelegatedPermissionClassificationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassification), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedPermissionClassificationable), nil
 }

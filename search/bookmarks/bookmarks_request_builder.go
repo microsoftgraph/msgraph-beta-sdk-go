@@ -2,11 +2,12 @@ package bookmarks
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    id90852543ffe0a1612445ebbf1b2ba7ecfe3df20a8786bace4a5dd415613d297 "github.com/microsoftgraph/msgraph-beta-sdk-go/search/bookmarks/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// BookmarksRequestBuilder builds and executes requests for operations under \search\bookmarks
+// BookmarksRequestBuilder provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
 type BookmarksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type BookmarksRequestBuilderGetQueryParameters struct {
 // BookmarksRequestBuilderPostOptions options for Post
 type BookmarksRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark;
+    Body id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.Bookmarkable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewBookmarksRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewBookmarksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookmarksRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *BookmarksRequestBuilder) Count()(*id90852543ffe0a1612445ebbf1b2ba7ecfe3df20a8786bace4a5dd415613d297.CountRequestBuilder) {
+    return id90852543ffe0a1612445ebbf1b2ba7ecfe3df20a8786bace4a5dd415613d297.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *BookmarksRequestBuilder) CreateGetRequestInformation(options *BookmarksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *BookmarksRequestBuilder) CreateGetRequestInformation(options *Bookmarks
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation administrative answer in Microsoft Search results for common search queries in an organization.
+// CreatePostRequestInformation create new navigation property to bookmarks for search
 func (m *BookmarksRequestBuilder) CreatePostRequestInformation(options *BookmarksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *BookmarksRequestBuilder) CreatePostRequestInformation(options *Bookmark
     return requestInfo, nil
 }
 // Get administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *BookmarksRequestBuilder) Get(options *BookmarksRequestBuilderGetOptions)(*BookmarksResponse, error) {
+func (m *BookmarksRequestBuilder) Get(options *BookmarksRequestBuilderGetOptions)(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.BookmarkCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookmarksResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.CreateBookmarkCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*BookmarksResponse), nil
+    return res.(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.BookmarkCollectionResponseable), nil
 }
-// Post administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *BookmarksRequestBuilder) Post(options *BookmarksRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark, error) {
+// Post create new navigation property to bookmarks for search
+func (m *BookmarksRequestBuilder) Post(options *BookmarksRequestBuilderPostOptions)(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.Bookmarkable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBookmark() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.CreateBookmarkFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark), nil
+    return res.(id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.Bookmarkable), nil
 }

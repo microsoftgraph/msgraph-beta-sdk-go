@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackage 
+// AccessPackage provides operations to manage the identityGovernance singleton.
 type AccessPackage struct {
     Entity
     // Read-only. Nullable. Supports $expand.
-    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicy;
+    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable;
     // Read-only. Nullable.
-    accessPackageCatalog *AccessPackageCatalog;
+    accessPackageCatalog AccessPackageCatalogable;
     // Nullable.
-    accessPackageResourceRoleScopes []AccessPackageResourceRoleScope;
+    accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable;
     // The access packages that are incompatible with this package. Read-only.
-    accessPackagesIncompatibleWith []AccessPackage;
+    accessPackagesIncompatibleWith []AccessPackageable;
     // Identifier of the access package catalog referencing this access package. Read-only.
     catalogId *string;
     // The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
@@ -27,9 +27,9 @@ type AccessPackage struct {
     // The display name of the access package. Supports $filter (eq, contains).
     displayName *string;
     // The  access packages whose assigned users are ineligible to be assigned this access package.
-    incompatibleAccessPackages []AccessPackage;
+    incompatibleAccessPackages []AccessPackageable;
     // The groups whose members are ineligible to be assigned this access package.
-    incompatibleGroups []Group;
+    incompatibleGroups []Groupable;
     // Whether the access package is hidden from the requestor.
     isHidden *bool;
     // Indicates whether role scopes are visible.
@@ -46,8 +46,12 @@ func NewAccessPackage()(*AccessPackage) {
     }
     return m
 }
+// CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackage(), nil
+}
 // GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicy) {
+func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +59,7 @@ func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssi
     }
 }
 // GetAccessPackageCatalog gets the accessPackageCatalog property value. Read-only. Nullable.
-func (m *AccessPackage) GetAccessPackageCatalog()(*AccessPackageCatalog) {
+func (m *AccessPackage) GetAccessPackageCatalog()(AccessPackageCatalogable) {
     if m == nil {
         return nil
     } else {
@@ -63,7 +67,7 @@ func (m *AccessPackage) GetAccessPackageCatalog()(*AccessPackageCatalog) {
     }
 }
 // GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. Nullable.
-func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScope) {
+func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
     if m == nil {
         return nil
     } else {
@@ -71,7 +75,7 @@ func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageReso
     }
 }
 // GetAccessPackagesIncompatibleWith gets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
-func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackage) {
+func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable) {
     if m == nil {
         return nil
     } else {
@@ -118,104 +122,56 @@ func (m *AccessPackage) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The  access packages whose assigned users are ineligible to be assigned this access package.
-func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incompatibleAccessPackages
-    }
-}
-// GetIncompatibleGroups gets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
-func (m *AccessPackage) GetIncompatibleGroups()([]Group) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incompatibleGroups
-    }
-}
-// GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
-func (m *AccessPackage) GetIsHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHidden
-    }
-}
-// GetIsRoleScopesVisible gets the isRoleScopesVisible property value. Indicates whether role scopes are visible.
-func (m *AccessPackage) GetIsRoleScopesVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRoleScopesVisible
-    }
-}
-// GetModifiedBy gets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
-func (m *AccessPackage) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignmentPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentPolicy() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageAssignmentPolicy, len(val))
+            res := make([]AccessPackageAssignmentPolicyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageAssignmentPolicy))
+                res[i] = v.(AccessPackageAssignmentPolicyable)
             }
             m.SetAccessPackageAssignmentPolicies(res)
         }
         return nil
     }
     res["accessPackageCatalog"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageCatalog() })
+        val, err := n.GetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageCatalog(val.(*AccessPackageCatalog))
+            m.SetAccessPackageCatalog(val.(AccessPackageCatalogable))
         }
         return nil
     }
     res["accessPackageResourceRoleScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResourceRoleScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageResourceRoleScope, len(val))
+            res := make([]AccessPackageResourceRoleScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageResourceRoleScope))
+                res[i] = v.(AccessPackageResourceRoleScopeable)
             }
             m.SetAccessPackageResourceRoleScopes(res)
         }
         return nil
     }
     res["accessPackagesIncompatibleWith"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackage, len(val))
+            res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackage))
+                res[i] = v.(AccessPackageable)
             }
             m.SetAccessPackagesIncompatibleWith(res)
         }
@@ -272,28 +228,28 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["incompatibleAccessPackages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackage, len(val))
+            res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackage))
+                res[i] = v.(AccessPackageable)
             }
             m.SetIncompatibleAccessPackages(res)
         }
         return nil
     }
     res["incompatibleGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Group, len(val))
+            res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Group))
+                res[i] = v.(Groupable)
             }
             m.SetIncompatibleGroups(res)
         }
@@ -341,6 +297,54 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
+// GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The  access packages whose assigned users are ineligible to be assigned this access package.
+func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.incompatibleAccessPackages
+    }
+}
+// GetIncompatibleGroups gets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
+func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.incompatibleGroups
+    }
+}
+// GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
+func (m *AccessPackage) GetIsHidden()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHidden
+    }
+}
+// GetIsRoleScopesVisible gets the isRoleScopesVisible property value. Indicates whether role scopes are visible.
+func (m *AccessPackage) GetIsRoleScopesVisible()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRoleScopesVisible
+    }
+}
+// GetModifiedBy gets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
+func (m *AccessPackage) GetModifiedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedBy
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
 func (m *AccessPackage) IsNil()(bool) {
     return m == nil
 }
@@ -353,8 +357,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetAccessPackageAssignmentPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentPolicies()))
         for i, v := range m.GetAccessPackageAssignmentPolicies() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentPolicies", cast)
         if err != nil {
@@ -370,8 +373,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetAccessPackageResourceRoleScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceRoleScopes()))
         for i, v := range m.GetAccessPackageResourceRoleScopes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceRoleScopes", cast)
         if err != nil {
@@ -381,8 +383,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetAccessPackagesIncompatibleWith() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackagesIncompatibleWith()))
         for i, v := range m.GetAccessPackagesIncompatibleWith() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackagesIncompatibleWith", cast)
         if err != nil {
@@ -422,8 +423,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetIncompatibleAccessPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncompatibleAccessPackages()))
         for i, v := range m.GetIncompatibleAccessPackages() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("incompatibleAccessPackages", cast)
         if err != nil {
@@ -433,8 +433,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetIncompatibleGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncompatibleGroups()))
         for i, v := range m.GetIncompatibleGroups() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("incompatibleGroups", cast)
         if err != nil {
@@ -468,25 +467,25 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackage) SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicy)() {
+func (m *AccessPackage) SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
     if m != nil {
         m.accessPackageAssignmentPolicies = value
     }
 }
 // SetAccessPackageCatalog sets the accessPackageCatalog property value. Read-only. Nullable.
-func (m *AccessPackage) SetAccessPackageCatalog(value *AccessPackageCatalog)() {
+func (m *AccessPackage) SetAccessPackageCatalog(value AccessPackageCatalogable)() {
     if m != nil {
         m.accessPackageCatalog = value
     }
 }
 // SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. Nullable.
-func (m *AccessPackage) SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScope)() {
+func (m *AccessPackage) SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)() {
     if m != nil {
         m.accessPackageResourceRoleScopes = value
     }
 }
 // SetAccessPackagesIncompatibleWith sets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
-func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackage)() {
+func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackageable)() {
     if m != nil {
         m.accessPackagesIncompatibleWith = value
     }
@@ -522,13 +521,13 @@ func (m *AccessPackage) SetDisplayName(value *string)() {
     }
 }
 // SetIncompatibleAccessPackages sets the incompatibleAccessPackages property value. The  access packages whose assigned users are ineligible to be assigned this access package.
-func (m *AccessPackage) SetIncompatibleAccessPackages(value []AccessPackage)() {
+func (m *AccessPackage) SetIncompatibleAccessPackages(value []AccessPackageable)() {
     if m != nil {
         m.incompatibleAccessPackages = value
     }
 }
 // SetIncompatibleGroups sets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
-func (m *AccessPackage) SetIncompatibleGroups(value []Group)() {
+func (m *AccessPackage) SetIncompatibleGroups(value []Groupable)() {
     if m != nil {
         m.incompatibleGroups = value
     }

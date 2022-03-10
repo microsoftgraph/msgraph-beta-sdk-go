@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceSchedule 
+// GovernanceSchedule provides operations to manage the collection of governanceResource entities.
 type GovernanceSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewGovernanceSchedule()(*GovernanceSchedule) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateGovernanceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceScheduleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceSchedule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceSchedule) GetAdditionalData()(map[string]interface{}) {
@@ -47,22 +51,6 @@ func (m *GovernanceSchedule) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return nil
     } else {
         return m.endDateTime
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *GovernanceSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetType gets the type property value. The role assignment schedule type. Only Once is supported for now.
-func (m *GovernanceSchedule) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,6 +97,22 @@ func (m *GovernanceSchedule) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetStartDateTime gets the startDateTime property value. The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *GovernanceSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetType gets the type property value. The role assignment schedule type. Only Once is supported for now.
+func (m *GovernanceSchedule) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *GovernanceSchedule) IsNil()(bool) {
     return m == nil

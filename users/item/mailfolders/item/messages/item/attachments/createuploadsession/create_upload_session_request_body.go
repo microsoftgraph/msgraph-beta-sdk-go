@@ -5,12 +5,12 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateUploadSessionRequestBody 
+// CreateUploadSessionRequestBody provides operations to call the createUploadSession method.
 type CreateUploadSessionRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    attachmentItem *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItem;
+    attachmentItem i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItemable;
 }
 // NewCreateUploadSessionRequestBody instantiates a new createUploadSessionRequestBody and sets the default values.
 func NewCreateUploadSessionRequestBody()(*CreateUploadSessionRequestBody) {
@@ -18,6 +18,10 @@ func NewCreateUploadSessionRequestBody()(*CreateUploadSessionRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCreateUploadSessionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCreateUploadSessionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateUploadSessionRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateUploadSessionRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -28,7 +32,7 @@ func (m *CreateUploadSessionRequestBody) GetAdditionalData()(map[string]interfac
     }
 }
 // GetAttachmentItem gets the attachmentItem property value. 
-func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItem) {
+func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItemable) {
     if m == nil {
         return nil
     } else {
@@ -39,12 +43,12 @@ func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(*i535684e11b5500196
 func (m *CreateUploadSessionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attachmentItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAttachmentItem() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAttachmentItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttachmentItem(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItem))
+            m.SetAttachmentItem(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItemable))
         }
         return nil
     }
@@ -76,7 +80,7 @@ func (m *CreateUploadSessionRequestBody) SetAdditionalData(value map[string]inte
     }
 }
 // SetAttachmentItem sets the attachmentItem property value. 
-func (m *CreateUploadSessionRequestBody) SetAttachmentItem(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItem)() {
+func (m *CreateUploadSessionRequestBody) SetAttachmentItem(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttachmentItemable)() {
     if m != nil {
         m.attachmentItem = value
     }

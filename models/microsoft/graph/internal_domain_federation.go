@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InternalDomainFederation 
+// InternalDomainFederation provides operations to manage the collection of domain entities.
 type InternalDomainFederation struct {
     SamlOrWsFedProvider
     // 
@@ -18,7 +18,7 @@ type InternalDomainFederation struct {
     // 
     promptLoginBehavior *PromptLoginBehavior;
     // 
-    signingCertificateUpdateStatus *SigningCertificateUpdateStatus;
+    signingCertificateUpdateStatus SigningCertificateUpdateStatusable;
     // 
     signOutUri *string;
 }
@@ -28,6 +28,10 @@ func NewInternalDomainFederation()(*InternalDomainFederation) {
         SamlOrWsFedProvider: *NewSamlOrWsFedProvider(),
     }
     return m
+}
+// CreateInternalDomainFederationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInternalDomainFederationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInternalDomainFederation(), nil
 }
 // GetActiveSignInUri gets the activeSignInUri property value. 
 func (m *InternalDomainFederation) GetActiveSignInUri()(*string) {
@@ -43,46 +47,6 @@ func (m *InternalDomainFederation) GetFederatedIdpMfaBehavior()(*FederatedIdpMfa
         return nil
     } else {
         return m.federatedIdpMfaBehavior
-    }
-}
-// GetIsSignedAuthenticationRequestRequired gets the isSignedAuthenticationRequestRequired property value. 
-func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSignedAuthenticationRequestRequired
-    }
-}
-// GetNextSigningCertificate gets the nextSigningCertificate property value. 
-func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nextSigningCertificate
-    }
-}
-// GetPromptLoginBehavior gets the promptLoginBehavior property value. 
-func (m *InternalDomainFederation) GetPromptLoginBehavior()(*PromptLoginBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.promptLoginBehavior
-    }
-}
-// GetSigningCertificateUpdateStatus gets the signingCertificateUpdateStatus property value. 
-func (m *InternalDomainFederation) GetSigningCertificateUpdateStatus()(*SigningCertificateUpdateStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signingCertificateUpdateStatus
-    }
-}
-// GetSignOutUri gets the signOutUri property value. 
-func (m *InternalDomainFederation) GetSignOutUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signOutUri
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,12 +103,12 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["signingCertificateUpdateStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSigningCertificateUpdateStatus() })
+        val, err := n.GetObjectValue(CreateSigningCertificateUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSigningCertificateUpdateStatus(val.(*SigningCertificateUpdateStatus))
+            m.SetSigningCertificateUpdateStatus(val.(SigningCertificateUpdateStatusable))
         }
         return nil
     }
@@ -159,6 +123,46 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetIsSignedAuthenticationRequestRequired gets the isSignedAuthenticationRequestRequired property value. 
+func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSignedAuthenticationRequestRequired
+    }
+}
+// GetNextSigningCertificate gets the nextSigningCertificate property value. 
+func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nextSigningCertificate
+    }
+}
+// GetPromptLoginBehavior gets the promptLoginBehavior property value. 
+func (m *InternalDomainFederation) GetPromptLoginBehavior()(*PromptLoginBehavior) {
+    if m == nil {
+        return nil
+    } else {
+        return m.promptLoginBehavior
+    }
+}
+// GetSigningCertificateUpdateStatus gets the signingCertificateUpdateStatus property value. 
+func (m *InternalDomainFederation) GetSigningCertificateUpdateStatus()(SigningCertificateUpdateStatusable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signingCertificateUpdateStatus
+    }
+}
+// GetSignOutUri gets the signOutUri property value. 
+func (m *InternalDomainFederation) GetSignOutUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signOutUri
+    }
 }
 func (m *InternalDomainFederation) IsNil()(bool) {
     return m == nil
@@ -246,7 +250,7 @@ func (m *InternalDomainFederation) SetPromptLoginBehavior(value *PromptLoginBeha
     }
 }
 // SetSigningCertificateUpdateStatus sets the signingCertificateUpdateStatus property value. 
-func (m *InternalDomainFederation) SetSigningCertificateUpdateStatus(value *SigningCertificateUpdateStatus)() {
+func (m *InternalDomainFederation) SetSigningCertificateUpdateStatus(value SigningCertificateUpdateStatusable)() {
     if m != nil {
         m.signingCertificateUpdateStatus = value
     }

@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SetScheduledRetireStateRequestBody 
+// SetScheduledRetireStateRequestBody provides operations to call the setScheduledRetireState method.
 type SetScheduledRetireStateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,28 +21,16 @@ func NewSetScheduledRetireStateRequestBody()(*SetScheduledRetireStateRequestBody
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSetScheduledRetireStateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSetScheduledRetireStateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSetScheduledRetireStateRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetScheduledRetireStateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetManagedDeviceIds gets the managedDeviceIds property value. 
-func (m *SetScheduledRetireStateRequestBody) GetManagedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceIds
-    }
-}
-// GetState gets the state property value. 
-func (m *SetScheduledRetireStateRequestBody) GetState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScheduledRetireState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -73,6 +61,22 @@ func (m *SetScheduledRetireStateRequestBody) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetManagedDeviceIds gets the managedDeviceIds property value. 
+func (m *SetScheduledRetireStateRequestBody) GetManagedDeviceIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceIds
+    }
+}
+// GetState gets the state property value. 
+func (m *SetScheduledRetireStateRequestBody) GetState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ScheduledRetireState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *SetScheduledRetireStateRequestBody) IsNil()(bool) {
     return m == nil

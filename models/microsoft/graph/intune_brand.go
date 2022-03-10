@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IntuneBrand 
+// IntuneBrand provides operations to manage the deviceManagement singleton.
 type IntuneBrand struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Collection of blocked actions on the company portal as per platform and device ownership types.
-    companyPortalBlockedActions []CompanyPortalBlockedAction;
+    companyPortalBlockedActions []CompanyPortalBlockedActionable;
     // Email address of the person/organization responsible for IT support.
     contactITEmailAddress *string;
     // Name of the person/organization responsible for IT support.
@@ -25,7 +25,7 @@ type IntuneBrand struct {
     // The custom privacy message used to explain what the organization can’t see or do on managed devices.
     customPrivacyMessage *string;
     // Logo image displayed in Company Portal apps which have a dark background behind the logo.
-    darkBackgroundLogo *MimeContent;
+    darkBackgroundLogo MimeContentable;
     // Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
     disableClientTelemetry *bool;
     // Company/organization name that is displayed to end users.
@@ -37,9 +37,9 @@ type IntuneBrand struct {
     // Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
     isRemoveDeviceDisabled *bool;
     // Customized image displayed in Company Portal app landing page
-    landingPageCustomizedImage *MimeContent;
+    landingPageCustomizedImage MimeContentable;
     // Logo image displayed in Company Portal apps which have a light background behind the logo.
-    lightBackgroundLogo *MimeContent;
+    lightBackgroundLogo MimeContentable;
     // Display name of the company/organization’s IT helpdesk site.
     onlineSupportSiteName *string;
     // URL to the company/organization’s IT helpdesk site.
@@ -61,7 +61,7 @@ type IntuneBrand struct {
     // Boolean that indicates if Office WebApps will be shown in Company Portal
     showOfficeWebApps *bool;
     // Primary theme color used in the Company Portal applications and web portal.
-    themeColor *RgbColor;
+    themeColor RgbColorable;
 }
 // NewIntuneBrand instantiates a new intuneBrand and sets the default values.
 func NewIntuneBrand()(*IntuneBrand) {
@@ -69,6 +69,10 @@ func NewIntuneBrand()(*IntuneBrand) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateIntuneBrandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIntuneBrandFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewIntuneBrand(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntuneBrand) GetAdditionalData()(map[string]interface{}) {
@@ -79,7 +83,7 @@ func (m *IntuneBrand) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetCompanyPortalBlockedActions gets the companyPortalBlockedActions property value. Collection of blocked actions on the company portal as per platform and device ownership types.
-func (m *IntuneBrand) GetCompanyPortalBlockedActions()([]CompanyPortalBlockedAction) {
+func (m *IntuneBrand) GetCompanyPortalBlockedActions()([]CompanyPortalBlockedActionable) {
     if m == nil {
         return nil
     } else {
@@ -143,7 +147,7 @@ func (m *IntuneBrand) GetCustomPrivacyMessage()(*string) {
     }
 }
 // GetDarkBackgroundLogo gets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
-func (m *IntuneBrand) GetDarkBackgroundLogo()(*MimeContent) {
+func (m *IntuneBrand) GetDarkBackgroundLogo()(MimeContentable) {
     if m == nil {
         return nil
     } else {
@@ -174,138 +178,18 @@ func (m *IntuneBrand) GetEnrollmentAvailability()(*EnrollmentAvailabilityOptions
         return m.enrollmentAvailability
     }
 }
-// GetIsFactoryResetDisabled gets the isFactoryResetDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
-func (m *IntuneBrand) GetIsFactoryResetDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFactoryResetDisabled
-    }
-}
-// GetIsRemoveDeviceDisabled gets the isRemoveDeviceDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
-func (m *IntuneBrand) GetIsRemoveDeviceDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRemoveDeviceDisabled
-    }
-}
-// GetLandingPageCustomizedImage gets the landingPageCustomizedImage property value. Customized image displayed in Company Portal app landing page
-func (m *IntuneBrand) GetLandingPageCustomizedImage()(*MimeContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.landingPageCustomizedImage
-    }
-}
-// GetLightBackgroundLogo gets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
-func (m *IntuneBrand) GetLightBackgroundLogo()(*MimeContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lightBackgroundLogo
-    }
-}
-// GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
-func (m *IntuneBrand) GetOnlineSupportSiteName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineSupportSiteName
-    }
-}
-// GetOnlineSupportSiteUrl gets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
-func (m *IntuneBrand) GetOnlineSupportSiteUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineSupportSiteUrl
-    }
-}
-// GetPrivacyUrl gets the privacyUrl property value. URL to the company/organization’s privacy policy.
-func (m *IntuneBrand) GetPrivacyUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacyUrl
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of scope tags assigned to the default branding profile
-func (m *IntuneBrand) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetSendDeviceOwnershipChangePushNotification gets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
-func (m *IntuneBrand) GetSendDeviceOwnershipChangePushNotification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sendDeviceOwnershipChangePushNotification
-    }
-}
-// GetShowAzureADEnterpriseApps gets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
-func (m *IntuneBrand) GetShowAzureADEnterpriseApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showAzureADEnterpriseApps
-    }
-}
-// GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-func (m *IntuneBrand) GetShowDisplayNameNextToLogo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showDisplayNameNextToLogo
-    }
-}
-// GetShowLogo gets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-func (m *IntuneBrand) GetShowLogo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showLogo
-    }
-}
-// GetShowNameNextToLogo gets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-func (m *IntuneBrand) GetShowNameNextToLogo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showNameNextToLogo
-    }
-}
-// GetShowOfficeWebApps gets the showOfficeWebApps property value. Boolean that indicates if Office WebApps will be shown in Company Portal
-func (m *IntuneBrand) GetShowOfficeWebApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showOfficeWebApps
-    }
-}
-// GetThemeColor gets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
-func (m *IntuneBrand) GetThemeColor()(*RgbColor) {
-    if m == nil {
-        return nil
-    } else {
-        return m.themeColor
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["companyPortalBlockedActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCompanyPortalBlockedAction() })
+        val, err := n.GetCollectionOfObjectValues(CreateCompanyPortalBlockedActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CompanyPortalBlockedAction, len(val))
+            res := make([]CompanyPortalBlockedActionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CompanyPortalBlockedAction))
+                res[i] = v.(CompanyPortalBlockedActionable)
             }
             m.SetCompanyPortalBlockedActions(res)
         }
@@ -382,12 +266,12 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["darkBackgroundLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDarkBackgroundLogo(val.(*MimeContent))
+            m.SetDarkBackgroundLogo(val.(MimeContentable))
         }
         return nil
     }
@@ -442,22 +326,22 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["landingPageCustomizedImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLandingPageCustomizedImage(val.(*MimeContent))
+            m.SetLandingPageCustomizedImage(val.(MimeContentable))
         }
         return nil
     }
     res["lightBackgroundLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLightBackgroundLogo(val.(*MimeContent))
+            m.SetLightBackgroundLogo(val.(MimeContentable))
         }
         return nil
     }
@@ -566,16 +450,136 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["themeColor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRgbColor() })
+        val, err := n.GetObjectValue(CreateRgbColorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetThemeColor(val.(*RgbColor))
+            m.SetThemeColor(val.(RgbColorable))
         }
         return nil
     }
     return res
+}
+// GetIsFactoryResetDisabled gets the isFactoryResetDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
+func (m *IntuneBrand) GetIsFactoryResetDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isFactoryResetDisabled
+    }
+}
+// GetIsRemoveDeviceDisabled gets the isRemoveDeviceDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
+func (m *IntuneBrand) GetIsRemoveDeviceDisabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRemoveDeviceDisabled
+    }
+}
+// GetLandingPageCustomizedImage gets the landingPageCustomizedImage property value. Customized image displayed in Company Portal app landing page
+func (m *IntuneBrand) GetLandingPageCustomizedImage()(MimeContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.landingPageCustomizedImage
+    }
+}
+// GetLightBackgroundLogo gets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
+func (m *IntuneBrand) GetLightBackgroundLogo()(MimeContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lightBackgroundLogo
+    }
+}
+// GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
+func (m *IntuneBrand) GetOnlineSupportSiteName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineSupportSiteName
+    }
+}
+// GetOnlineSupportSiteUrl gets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
+func (m *IntuneBrand) GetOnlineSupportSiteUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineSupportSiteUrl
+    }
+}
+// GetPrivacyUrl gets the privacyUrl property value. URL to the company/organization’s privacy policy.
+func (m *IntuneBrand) GetPrivacyUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.privacyUrl
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of scope tags assigned to the default branding profile
+func (m *IntuneBrand) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetSendDeviceOwnershipChangePushNotification gets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+func (m *IntuneBrand) GetSendDeviceOwnershipChangePushNotification()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sendDeviceOwnershipChangePushNotification
+    }
+}
+// GetShowAzureADEnterpriseApps gets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
+func (m *IntuneBrand) GetShowAzureADEnterpriseApps()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showAzureADEnterpriseApps
+    }
+}
+// GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+func (m *IntuneBrand) GetShowDisplayNameNextToLogo()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showDisplayNameNextToLogo
+    }
+}
+// GetShowLogo gets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
+func (m *IntuneBrand) GetShowLogo()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showLogo
+    }
+}
+// GetShowNameNextToLogo gets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+func (m *IntuneBrand) GetShowNameNextToLogo()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showNameNextToLogo
+    }
+}
+// GetShowOfficeWebApps gets the showOfficeWebApps property value. Boolean that indicates if Office WebApps will be shown in Company Portal
+func (m *IntuneBrand) GetShowOfficeWebApps()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showOfficeWebApps
+    }
+}
+// GetThemeColor gets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
+func (m *IntuneBrand) GetThemeColor()(RgbColorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.themeColor
+    }
 }
 func (m *IntuneBrand) IsNil()(bool) {
     return m == nil
@@ -585,8 +589,7 @@ func (m *IntuneBrand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if m.GetCompanyPortalBlockedActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompanyPortalBlockedActions()))
         for i, v := range m.GetCompanyPortalBlockedActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("companyPortalBlockedActions", cast)
         if err != nil {
@@ -765,7 +768,7 @@ func (m *IntuneBrand) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetCompanyPortalBlockedActions sets the companyPortalBlockedActions property value. Collection of blocked actions on the company portal as per platform and device ownership types.
-func (m *IntuneBrand) SetCompanyPortalBlockedActions(value []CompanyPortalBlockedAction)() {
+func (m *IntuneBrand) SetCompanyPortalBlockedActions(value []CompanyPortalBlockedActionable)() {
     if m != nil {
         m.companyPortalBlockedActions = value
     }
@@ -813,7 +816,7 @@ func (m *IntuneBrand) SetCustomPrivacyMessage(value *string)() {
     }
 }
 // SetDarkBackgroundLogo sets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
-func (m *IntuneBrand) SetDarkBackgroundLogo(value *MimeContent)() {
+func (m *IntuneBrand) SetDarkBackgroundLogo(value MimeContentable)() {
     if m != nil {
         m.darkBackgroundLogo = value
     }
@@ -849,13 +852,13 @@ func (m *IntuneBrand) SetIsRemoveDeviceDisabled(value *bool)() {
     }
 }
 // SetLandingPageCustomizedImage sets the landingPageCustomizedImage property value. Customized image displayed in Company Portal app landing page
-func (m *IntuneBrand) SetLandingPageCustomizedImage(value *MimeContent)() {
+func (m *IntuneBrand) SetLandingPageCustomizedImage(value MimeContentable)() {
     if m != nil {
         m.landingPageCustomizedImage = value
     }
 }
 // SetLightBackgroundLogo sets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
-func (m *IntuneBrand) SetLightBackgroundLogo(value *MimeContent)() {
+func (m *IntuneBrand) SetLightBackgroundLogo(value MimeContentable)() {
     if m != nil {
         m.lightBackgroundLogo = value
     }
@@ -921,7 +924,7 @@ func (m *IntuneBrand) SetShowOfficeWebApps(value *bool)() {
     }
 }
 // SetThemeColor sets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
-func (m *IntuneBrand) SetThemeColor(value *RgbColor)() {
+func (m *IntuneBrand) SetThemeColor(value RgbColorable)() {
     if m != nil {
         m.themeColor = value
     }

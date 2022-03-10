@@ -5,21 +5,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageResource 
+// AccessPackageResource provides operations to manage the identityGovernance singleton.
 type AccessPackageResource struct {
     Entity
     // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
-    accessPackageResourceEnvironment *AccessPackageResourceEnvironment;
+    accessPackageResourceEnvironment AccessPackageResourceEnvironmentable;
     // Read-only. Nullable. Supports $expand.
-    accessPackageResourceRoles []AccessPackageResourceRole;
+    accessPackageResourceRoles []AccessPackageResourceRoleable;
     // Read-only. Nullable. Supports $expand.
-    accessPackageResourceScopes []AccessPackageResourceScope;
+    accessPackageResourceScopes []AccessPackageResourceScopeable;
     // The name of the user or application that first added this resource. Read-only.
     addedBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Contains information about the attributes to be collected from the requestor and sent to the resource application.
-    attributes []AccessPackageResourceAttribute;
+    attributes []AccessPackageResourceAttributeable;
     // A description for the resource.
     description *string;
     // The display name of the resource, such as the application name, group name or site name.
@@ -42,8 +42,12 @@ func NewAccessPackageResource()(*AccessPackageResource) {
     }
     return m
 }
+// CreateAccessPackageResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageResource(), nil
+}
 // GetAccessPackageResourceEnvironment gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
-func (m *AccessPackageResource) GetAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
+func (m *AccessPackageResource) GetAccessPackageResourceEnvironment()(AccessPackageResourceEnvironmentable) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +55,7 @@ func (m *AccessPackageResource) GetAccessPackageResourceEnvironment()(*AccessPac
     }
 }
 // GetAccessPackageResourceRoles gets the accessPackageResourceRoles property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageResource) GetAccessPackageResourceRoles()([]AccessPackageResourceRole) {
+func (m *AccessPackageResource) GetAccessPackageResourceRoles()([]AccessPackageResourceRoleable) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +63,7 @@ func (m *AccessPackageResource) GetAccessPackageResourceRoles()([]AccessPackageR
     }
 }
 // GetAccessPackageResourceScopes gets the accessPackageResourceScopes property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageResource) GetAccessPackageResourceScopes()([]AccessPackageResourceScope) {
+func (m *AccessPackageResource) GetAccessPackageResourceScopes()([]AccessPackageResourceScopeable) {
     if m == nil {
         return nil
     } else {
@@ -83,7 +87,7 @@ func (m *AccessPackageResource) GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // GetAttributes gets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
-func (m *AccessPackageResource) GetAttributes()([]AccessPackageResourceAttribute) {
+func (m *AccessPackageResource) GetAttributes()([]AccessPackageResourceAttributeable) {
     if m == nil {
         return nil
     } else {
@@ -106,82 +110,42 @@ func (m *AccessPackageResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsPendingOnboarding gets the isPendingOnboarding property value. True if the resource is not yet available for assignment.
-func (m *AccessPackageResource) GetIsPendingOnboarding()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPendingOnboarding
-    }
-}
-// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
-func (m *AccessPackageResource) GetOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originId
-    }
-}
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-func (m *AccessPackageResource) GetOriginSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originSystem
-    }
-}
-// GetResourceType gets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
-func (m *AccessPackageResource) GetResourceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceType
-    }
-}
-// GetUrl gets the url property value. A unique resource locator for the resource, such as the URL for signing a user into an application.
-func (m *AccessPackageResource) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResourceEnvironment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResourceEnvironment() })
+        val, err := n.GetObjectValue(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageResourceEnvironment(val.(*AccessPackageResourceEnvironment))
+            m.SetAccessPackageResourceEnvironment(val.(AccessPackageResourceEnvironmentable))
         }
         return nil
     }
     res["accessPackageResourceRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResourceRole() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageResourceRole, len(val))
+            res := make([]AccessPackageResourceRoleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageResourceRole))
+                res[i] = v.(AccessPackageResourceRoleable)
             }
             m.SetAccessPackageResourceRoles(res)
         }
         return nil
     }
     res["accessPackageResourceScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResourceScope() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageResourceScope, len(val))
+            res := make([]AccessPackageResourceScopeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageResourceScope))
+                res[i] = v.(AccessPackageResourceScopeable)
             }
             m.SetAccessPackageResourceScopes(res)
         }
@@ -208,14 +172,14 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["attributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageResourceAttribute() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceAttributeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageResourceAttribute, len(val))
+            res := make([]AccessPackageResourceAttributeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageResourceAttribute))
+                res[i] = v.(AccessPackageResourceAttributeable)
             }
             m.SetAttributes(res)
         }
@@ -293,6 +257,46 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
+// GetIsPendingOnboarding gets the isPendingOnboarding property value. True if the resource is not yet available for assignment.
+func (m *AccessPackageResource) GetIsPendingOnboarding()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isPendingOnboarding
+    }
+}
+// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+func (m *AccessPackageResource) GetOriginId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originId
+    }
+}
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+func (m *AccessPackageResource) GetOriginSystem()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.originSystem
+    }
+}
+// GetResourceType gets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+func (m *AccessPackageResource) GetResourceType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceType
+    }
+}
+// GetUrl gets the url property value. A unique resource locator for the resource, such as the URL for signing a user into an application.
+func (m *AccessPackageResource) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
+}
 func (m *AccessPackageResource) IsNil()(bool) {
     return m == nil
 }
@@ -311,8 +315,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAccessPackageResourceRoles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceRoles()))
         for i, v := range m.GetAccessPackageResourceRoles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceRoles", cast)
         if err != nil {
@@ -322,8 +325,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAccessPackageResourceScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceScopes()))
         for i, v := range m.GetAccessPackageResourceScopes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceScopes", cast)
         if err != nil {
@@ -345,8 +347,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetAttributes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttributes()))
         for i, v := range m.GetAttributes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attributes", cast)
         if err != nil {
@@ -398,19 +399,19 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     return nil
 }
 // SetAccessPackageResourceEnvironment sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
-func (m *AccessPackageResource) SetAccessPackageResourceEnvironment(value *AccessPackageResourceEnvironment)() {
+func (m *AccessPackageResource) SetAccessPackageResourceEnvironment(value AccessPackageResourceEnvironmentable)() {
     if m != nil {
         m.accessPackageResourceEnvironment = value
     }
 }
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageResource) SetAccessPackageResourceRoles(value []AccessPackageResourceRole)() {
+func (m *AccessPackageResource) SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)() {
     if m != nil {
         m.accessPackageResourceRoles = value
     }
 }
 // SetAccessPackageResourceScopes sets the accessPackageResourceScopes property value. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageResource) SetAccessPackageResourceScopes(value []AccessPackageResourceScope)() {
+func (m *AccessPackageResource) SetAccessPackageResourceScopes(value []AccessPackageResourceScopeable)() {
     if m != nil {
         m.accessPackageResourceScopes = value
     }
@@ -428,7 +429,7 @@ func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetAttributes sets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
-func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttribute)() {
+func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttributeable)() {
     if m != nil {
         m.attributes = value
     }

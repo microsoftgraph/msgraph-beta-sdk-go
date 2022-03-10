@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InboundSharedUserProfile 
+// InboundSharedUserProfile provides operations to manage the directory singleton.
 type InboundSharedUserProfile struct {
     DirectoryObject
     // 
@@ -23,36 +23,16 @@ func NewInboundSharedUserProfile()(*InboundSharedUserProfile) {
     }
     return m
 }
+// CreateInboundSharedUserProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInboundSharedUserProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInboundSharedUserProfile(), nil
+}
 // GetDisplayName gets the displayName property value. 
 func (m *InboundSharedUserProfile) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHomeTenantId gets the homeTenantId property value. 
-func (m *InboundSharedUserProfile) GetHomeTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeTenantId
-    }
-}
-// GetUserId gets the userId property value. 
-func (m *InboundSharedUserProfile) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. 
-func (m *InboundSharedUserProfile) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +79,30 @@ func (m *InboundSharedUserProfile) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetHomeTenantId gets the homeTenantId property value. 
+func (m *InboundSharedUserProfile) GetHomeTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.homeTenantId
+    }
+}
+// GetUserId gets the userId property value. 
+func (m *InboundSharedUserProfile) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. 
+func (m *InboundSharedUserProfile) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *InboundSharedUserProfile) IsNil()(bool) {
     return m == nil

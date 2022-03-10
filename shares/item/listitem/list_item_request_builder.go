@@ -2,11 +2,11 @@ package listitem
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i0b4ec6fc991be1a5bad593d9f97db9c6abcea4505d6ecaaba08d05caabf2592e "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/fields"
     i38a12227778a54f043ed4c9fc899ccea2f8119513b144d335bbb24ff9feb35b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/createlink"
     i3c8545bb4c08289b3ae6c4f2a46d3955a639f2f123c347b15444adbb06feed1a "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/driveitem"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i51d2330b33ed1489d1581eebff193d7fe83fbb44e60294d8c7c24190a7e28c79 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/versions"
     i722d2b0783dd48ef2c67f1b80b73ae19de29fd8738a39e7f55054268ef0f071e "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/analytics"
     ibd6fe918e90b1b84ad35a09f6c26ed4f4979618638425dd07b61021a5aeef29d "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/activities"
@@ -15,7 +15,7 @@ import (
     ie882571704f16fce890ce1823a4378f95130fa7dd10d24c9f8cca3163c9d0344 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/listitem/activities/item"
 )
 
-// ListItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem
+// ListItemRequestBuilder provides operations to manage the listItem property of the microsoft.graph.sharedDriveItem entity.
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type ListItemRequestBuilderGetQueryParameters struct {
 // ListItemRequestBuilderPatchOptions options for Patch
 type ListItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -88,7 +88,7 @@ func NewListItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -98,7 +98,7 @@ func NewListItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation used to access the underlying listItem
+// CreateDeleteRequestInformation delete navigation property listItem for shares
 func (m *ListItemRequestBuilder) CreateDeleteRequestInformation(options *ListItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,7 +138,7 @@ func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRe
 func (m *ListItemRequestBuilder) CreateLink()(*i38a12227778a54f043ed4c9fc899ccea2f8119513b144d335bbb24ff9feb35b6.CreateLinkRequestBuilder) {
     return i38a12227778a54f043ed4c9fc899ccea2f8119513b144d335bbb24ff9feb35b6.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePatchRequestInformation used to access the underlying listItem
+// CreatePatchRequestInformation update the navigation property listItem in shares
 func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,13 +156,17 @@ func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItem
     }
     return requestInfo, nil
 }
-// Delete used to access the underlying listItem
+// Delete delete navigation property listItem for shares
 func (m *ListItemRequestBuilder) Delete(options *ListItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -175,28 +179,36 @@ func (m *ListItemRequestBuilder) Fields()(*i0b4ec6fc991be1a5bad593d9f97db9c6abce
     return i0b4ec6fc991be1a5bad593d9f97db9c6abcea4505d6ecaaba08d05caabf2592e.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get used to access the underlying listItem
-func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem, error) {
+func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewListItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateListItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable), nil
 }
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*ie42ad52aa15579e40c5740c2a43c72ab454f4fd52ca4c960af27593651aae334.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return ie42ad52aa15579e40c5740c2a43c72ab454f4fd52ca4c960af27593651aae334.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ie42ad52aa15579e40c5740c2a43c72ab454f4fd52ca4c960af27593651aae334.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return ie42ad52aa15579e40c5740c2a43c72ab454f4fd52ca4c960af27593651aae334.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
-// Patch used to access the underlying listItem
+// Patch update the navigation property listItem in shares
 func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

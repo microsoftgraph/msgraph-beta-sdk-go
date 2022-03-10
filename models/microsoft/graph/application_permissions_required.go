@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
 type ApplicationPermissionsRequired int
 
 const (

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationSynchronizationProfileStatus 
+// EducationSynchronizationProfileStatus provides operations to manage the educationRoot singleton.
 type EducationSynchronizationProfileStatus struct {
     Entity
     // Number of errors during synchronization.
@@ -26,44 +26,16 @@ func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfile
     }
     return m
 }
+// CreateEducationSynchronizationProfileStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationSynchronizationProfileStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationSynchronizationProfileStatus(), nil
+}
 // GetErrorCount gets the errorCount property value. Number of errors during synchronization.
 func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
     if m == nil {
         return nil
     } else {
         return m.errorCount
-    }
-}
-// GetLastActivityDateTime gets the lastActivityDateTime property value. Represents the time when most recent changes were observed in profile.
-func (m *EducationSynchronizationProfileStatus) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActivityDateTime
-    }
-}
-// GetLastSynchronizationDateTime gets the lastSynchronizationDateTime property value. Represents the time of the most recent successful  synchronization.
-func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSynchronizationDateTime
-    }
-}
-// GetStatus gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
-func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchronizationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetStatusMessage gets the statusMessage property value. Status message for the current profile's synchronization stage.
-func (m *EducationSynchronizationProfileStatus) GetStatusMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusMessage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +92,38 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetLastActivityDateTime gets the lastActivityDateTime property value. Represents the time when most recent changes were observed in profile.
+func (m *EducationSynchronizationProfileStatus) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActivityDateTime
+    }
+}
+// GetLastSynchronizationDateTime gets the lastSynchronizationDateTime property value. Represents the time of the most recent successful  synchronization.
+func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSynchronizationDateTime
+    }
+}
+// GetStatus gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchronizationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetStatusMessage gets the statusMessage property value. Status message for the current profile's synchronization stage.
+func (m *EducationSynchronizationProfileStatus) GetStatusMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statusMessage
+    }
 }
 func (m *EducationSynchronizationProfileStatus) IsNil()(bool) {
     return m == nil

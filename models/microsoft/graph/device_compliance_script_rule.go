@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScriptRule 
+// DeviceComplianceScriptRule provides operations to call the validateComplianceScript method.
 type DeviceComplianceScriptRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewDeviceComplianceScriptRule()(*DeviceComplianceScriptRule) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceComplianceScriptRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceScriptRuleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceScriptRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptRule) GetAdditionalData()(map[string]interface{}) {
@@ -58,30 +62,6 @@ func (m *DeviceComplianceScriptRule) GetDeviceComplianceScriptRulOperator()(*Dev
         return nil
     } else {
         return m.deviceComplianceScriptRulOperator
-    }
-}
-// GetOperand gets the operand property value. Operand specified in the rule.
-func (m *DeviceComplianceScriptRule) GetOperand()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operand
-    }
-}
-// GetOperator gets the operator property value. Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
-func (m *DeviceComplianceScriptRule) GetOperator()(*Operator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
-}
-// GetSettingName gets the settingName property value. Setting name specified in the rule.
-func (m *DeviceComplianceScriptRule) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +128,30 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetOperand gets the operand property value. Operand specified in the rule.
+func (m *DeviceComplianceScriptRule) GetOperand()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operand
+    }
+}
+// GetOperator gets the operator property value. Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
+func (m *DeviceComplianceScriptRule) GetOperator()(*Operator) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operator
+    }
+}
+// GetSettingName gets the settingName property value. Setting name specified in the rule.
+func (m *DeviceComplianceScriptRule) GetSettingName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingName
+    }
 }
 func (m *DeviceComplianceScriptRule) IsNil()(bool) {
     return m == nil

@@ -2,7 +2,6 @@ package me
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i066e6c0b7a628617371533e62ce3ebdd3bb41009a8fbfe0051aebeee5a091763 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments"
     i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/schools"
     i1b5284c067c2acfcb9ec377599aa90647d0e8c253bdeac21d56033eae704633e "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/rubrics"
@@ -10,11 +9,15 @@ import (
     i5f1f4bf3151bbb3488a322f91d88a1e3277a2a2e390a895db3a6a5a0dafd3bd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/user"
     i5f4f009fc61fc7227f7443b57e61741a07864a630e39eba9bf7e097c583915e3 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/taughtclasses"
     ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/classes"
+    i19868cee8abfa86080d68db45779c91f9b2670f8887c97f48ef60e07b22031c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/schools/item"
+    i400d8aa2bba747bb59e46da289af76154496fa6c06cb9a12266b15362b1cfa5b "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/taughtclasses/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i45b49c5a37e86013b854ac973ddf755ed5024fc1a6c2dda426383115a09e7f90 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/classes/item"
     i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/rubrics/item"
     ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/item"
 )
 
-// MeRequestBuilder builds and executes requests for operations under \education\me
+// MeRequestBuilder provides operations to manage the me property of the microsoft.graph.educationRoot entity.
 type MeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -53,7 +56,7 @@ type MeRequestBuilderGetQueryParameters struct {
 // MeRequestBuilderPatchOptions options for Patch
 type MeRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationUser;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationUserable;
     // Request headers
     H map[string]string;
     // Request options
@@ -78,6 +81,17 @@ func (m *MeRequestBuilder) AssignmentsById(id string)(*ieba30bd3da2220b37fa7fcf6
 func (m *MeRequestBuilder) Classes()(*ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc.ClassesRequestBuilder) {
     return ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ClassesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.classes.item collection
+func (m *MeRequestBuilder) ClassesById(id string)(*i45b49c5a37e86013b854ac973ddf755ed5024fc1a6c2dda426383115a09e7f90.EducationClassItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationClass_id"] = id
+    }
+    return i45b49c5a37e86013b854ac973ddf755ed5024fc1a6c2dda426383115a09e7f90.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewMeRequestBuilderInternal instantiates a new MeRequestBuilder and sets the default values.
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeRequestBuilder) {
     m := &MeRequestBuilder{
@@ -87,7 +101,7 @@ func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -158,23 +172,31 @@ func (m *MeRequestBuilder) Delete(options *MeRequestBuilderDeleteOptions)(error)
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get me from education
-func (m *MeRequestBuilder) Get(options *MeRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationUser, error) {
+func (m *MeRequestBuilder) Get(options *MeRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationUserable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationUser() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationUser), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationUserable), nil
 }
 // Patch update the navigation property me in education
 func (m *MeRequestBuilder) Patch(options *MeRequestBuilderPatchOptions)(error) {
@@ -182,7 +204,11 @@ func (m *MeRequestBuilder) Patch(options *MeRequestBuilderPatchOptions)(error) {
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -205,8 +231,30 @@ func (m *MeRequestBuilder) RubricsById(id string)(*i719722077dd2c46836e8fc87facd
 func (m *MeRequestBuilder) Schools()(*i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005.SchoolsRequestBuilder) {
     return i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SchoolsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.schools.item collection
+func (m *MeRequestBuilder) SchoolsById(id string)(*i19868cee8abfa86080d68db45779c91f9b2670f8887c97f48ef60e07b22031c2.EducationSchoolItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationSchool_id"] = id
+    }
+    return i19868cee8abfa86080d68db45779c91f9b2670f8887c97f48ef60e07b22031c2.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 func (m *MeRequestBuilder) TaughtClasses()(*i5f4f009fc61fc7227f7443b57e61741a07864a630e39eba9bf7e097c583915e3.TaughtClassesRequestBuilder) {
     return i5f4f009fc61fc7227f7443b57e61741a07864a630e39eba9bf7e097c583915e3.NewTaughtClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TaughtClassesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.taughtClasses.item collection
+func (m *MeRequestBuilder) TaughtClassesById(id string)(*i400d8aa2bba747bb59e46da289af76154496fa6c06cb9a12266b15362b1cfa5b.EducationClassItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationClass_id"] = id
+    }
+    return i400d8aa2bba747bb59e46da289af76154496fa6c06cb9a12266b15362b1cfa5b.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *MeRequestBuilder) User()(*i5f1f4bf3151bbb3488a322f91d88a1e3277a2a2e390a895db3a6a5a0dafd3bd0.UserRequestBuilder) {
     return i5f1f4bf3151bbb3488a322f91d88a1e3277a2a2e390a895db3a6a5a0dafd3bd0.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);

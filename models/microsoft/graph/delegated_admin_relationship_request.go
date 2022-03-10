@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminRelationshipRequest 
+// DelegatedAdminRelationshipRequest provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationshipRequest struct {
     Entity
     // 
@@ -24,6 +24,10 @@ func NewDelegatedAdminRelationshipRequest()(*DelegatedAdminRelationshipRequest) 
     }
     return m
 }
+// CreateDelegatedAdminRelationshipRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminRelationshipRequestFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminRelationshipRequest(), nil
+}
 // GetAction gets the action property value. 
 func (m *DelegatedAdminRelationshipRequest) GetAction()(*DelegatedAdminRelationshipRequestAction) {
     if m == nil {
@@ -38,22 +42,6 @@ func (m *DelegatedAdminRelationshipRequest) GetCreatedDateTime()(*i336074805fc85
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *DelegatedAdminRelationshipRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetStatus gets the status property value. 
-func (m *DelegatedAdminRelationshipRequest) GetStatus()(*DelegatedAdminRelationshipRequestStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +88,22 @@ func (m *DelegatedAdminRelationshipRequest) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *DelegatedAdminRelationshipRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetStatus gets the status property value. 
+func (m *DelegatedAdminRelationshipRequest) GetStatus()(*DelegatedAdminRelationshipRequestStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DelegatedAdminRelationshipRequest) IsNil()(bool) {
     return m == nil

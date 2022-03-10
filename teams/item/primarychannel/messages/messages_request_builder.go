@@ -2,12 +2,13 @@ package messages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i101f8585bf85711c18ac8f3e302892697ecbb6d43912fd469004bd6038c442b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/delta"
+    ibc033d058e33293c658529cdcee4618a9780251ac07b02e8effacb839feb0296 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/count"
 )
 
-// MessagesRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages
+// MessagesRequestBuilder provides operations to manage the messages property of the microsoft.graph.channel entity.
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type MessagesRequestBuilderGetQueryParameters struct {
 // MessagesRequestBuilderPostOptions options for Post
 type MessagesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewMessagesRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessagesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MessagesRequestBuilder) Count()(*ibc033d058e33293c658529cdcee4618a9780251ac07b02e8effacb839feb0296.CountRequestBuilder) {
+    return ibc033d058e33293c658529cdcee4618a9780251ac07b02e8effacb839feb0296.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
+// CreatePostRequestInformation create new navigation property to messages for teams
 func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +118,39 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesR
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *MessagesRequestBuilder) Delta()(*i101f8585bf85711c18ac8f3e302892697ecbb6d43912fd469004bd6038c442b7.DeltaRequestBuilder) {
     return i101f8585bf85711c18ac8f3e302892697ecbb6d43912fd469004bd6038c442b7.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get a collection of all the messages in the channel. A navigation property. Nullable.
-func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(*MessagesResponse, error) {
+func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMessagesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateChatMessageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MessagesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageCollectionResponseable), nil
 }
-// Post a collection of all the messages in the channel. A navigation property. Nullable.
-func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage, error) {
+// Post create new navigation property to messages for teams
+func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewChatMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateChatMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageable), nil
 }

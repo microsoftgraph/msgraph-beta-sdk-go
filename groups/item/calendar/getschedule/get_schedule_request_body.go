@@ -5,18 +5,18 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetScheduleRequestBody 
+// GetScheduleRequestBody provides operations to call the getSchedule method.
 type GetScheduleRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     availabilityViewInterval *int32;
     // 
-    endTime *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone;
+    endTime i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable;
     // 
     schedules []string;
     // 
-    startTime *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone;
+    startTime i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable;
 }
 // NewGetScheduleRequestBody instantiates a new getScheduleRequestBody and sets the default values.
 func NewGetScheduleRequestBody()(*GetScheduleRequestBody) {
@@ -24,6 +24,10 @@ func NewGetScheduleRequestBody()(*GetScheduleRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateGetScheduleRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetScheduleRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetScheduleRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetScheduleRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -42,27 +46,11 @@ func (m *GetScheduleRequestBody) GetAvailabilityViewInterval()(*int32) {
     }
 }
 // GetEndTime gets the endTime property value. 
-func (m *GetScheduleRequestBody) GetEndTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
+func (m *GetScheduleRequestBody) GetEndTime()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable) {
     if m == nil {
         return nil
     } else {
         return m.endTime
-    }
-}
-// GetSchedules gets the schedules property value. 
-func (m *GetScheduleRequestBody) GetSchedules()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedules
-    }
-}
-// GetStartTime gets the startTime property value. 
-func (m *GetScheduleRequestBody) GetStartTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,12 +67,12 @@ func (m *GetScheduleRequestBody) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["endTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+            m.SetEndTime(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable))
         }
         return nil
     }
@@ -103,16 +91,32 @@ func (m *GetScheduleRequestBody) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["startTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDateTimeTimeZone() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStartTime(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone))
+            m.SetStartTime(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable))
         }
         return nil
     }
     return res
+}
+// GetSchedules gets the schedules property value. 
+func (m *GetScheduleRequestBody) GetSchedules()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schedules
+    }
+}
+// GetStartTime gets the startTime property value. 
+func (m *GetScheduleRequestBody) GetStartTime()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startTime
+    }
 }
 func (m *GetScheduleRequestBody) IsNil()(bool) {
     return m == nil
@@ -164,7 +168,7 @@ func (m *GetScheduleRequestBody) SetAvailabilityViewInterval(value *int32)() {
     }
 }
 // SetEndTime sets the endTime property value. 
-func (m *GetScheduleRequestBody) SetEndTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
+func (m *GetScheduleRequestBody) SetEndTime(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable)() {
     if m != nil {
         m.endTime = value
     }
@@ -176,7 +180,7 @@ func (m *GetScheduleRequestBody) SetSchedules(value []string)() {
     }
 }
 // SetStartTime sets the startTime property value. 
-func (m *GetScheduleRequestBody) SetStartTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
+func (m *GetScheduleRequestBody) SetStartTime(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZoneable)() {
     if m != nil {
         m.startTime = value
     }

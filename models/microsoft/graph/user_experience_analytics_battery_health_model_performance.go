@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthModelPerformance 
+// UserExperienceAnalyticsBatteryHealthModelPerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBatteryHealthModelPerformance struct {
     Entity
     // Number of active devices for that model. Valid values -2147483648 to 2147483647
@@ -26,6 +26,10 @@ func NewUserExperienceAnalyticsBatteryHealthModelPerformance()(*UserExperienceAn
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsBatteryHealthModelPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBatteryHealthModelPerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBatteryHealthModelPerformance(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetActiveDevices()(*int32) {
@@ -57,22 +61,6 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageMaxCapa
         return nil
     } else {
         return m.averageMaxCapacityPercentage
-    }
-}
-// GetManufacturer gets the manufacturer property value. Name of the device manufacturer.
-func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. The model name of the device.
-func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +127,22 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeseriali
         return nil
     }
     return res
+}
+// GetManufacturer gets the manufacturer property value. Name of the device manufacturer.
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. The model name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
 }
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) IsNil()(bool) {
     return m == nil

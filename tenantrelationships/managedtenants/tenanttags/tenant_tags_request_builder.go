@@ -2,11 +2,12 @@ package tenanttags
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
+    iab018c516d8b5116ead211f3b838a8466fbeb28e92f054566dfaf9cd1dab30fa "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenanttags/count"
 )
 
-// TenantTagsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags
+// TenantTagsRequestBuilder provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.
 type TenantTagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type TenantTagsRequestBuilderGetQueryParameters struct {
 // TenantTagsRequestBuilderPostOptions options for Post
 type TenantTagsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag;
+    Body i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewTenantTagsRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewTenantTagsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantTagsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TenantTagsRequestBuilder) Count()(*iab018c516d8b5116ead211f3b838a8466fbeb28e92f054566dfaf9cd1dab30fa.CountRequestBuilder) {
+    return iab018c516d8b5116ead211f3b838a8466fbeb28e92f054566dfaf9cd1dab30fa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of tenant tags across managed tenants.
 func (m *TenantTagsRequestBuilder) CreateGetRequestInformation(options *TenantTagsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *TenantTagsRequestBuilder) CreateGetRequestInformation(options *TenantTa
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of tenant tags across managed tenants.
+// CreatePostRequestInformation create new navigation property to tenantTags for tenantRelationships
 func (m *TenantTagsRequestBuilder) CreatePostRequestInformation(options *TenantTagsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *TenantTagsRequestBuilder) CreatePostRequestInformation(options *TenantT
     return requestInfo, nil
 }
 // Get the collection of tenant tags across managed tenants.
-func (m *TenantTagsRequestBuilder) Get(options *TenantTagsRequestBuilderGetOptions)(*TenantTagsResponse, error) {
+func (m *TenantTagsRequestBuilder) Get(options *TenantTagsRequestBuilderGetOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTenantTagsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateTenantTagCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TenantTagsResponse), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagCollectionResponseable), nil
 }
-// Post the collection of tenant tags across managed tenants.
-func (m *TenantTagsRequestBuilder) Post(options *TenantTagsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag, error) {
+// Post create new navigation property to tenantTags for tenantRelationships
+func (m *TenantTagsRequestBuilder) Post(options *TenantTagsRequestBuilderPostOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTenantTag() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateTenantTagFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable), nil
 }

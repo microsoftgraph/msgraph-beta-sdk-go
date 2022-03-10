@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ExecuteActionRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\microsoft.graph.executeAction
+// ExecuteActionRequestBuilder provides operations to call the executeAction method.
 type ExecuteActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ExecuteActionRequestBuilder struct {
 // ExecuteActionRequestBuilderPostOptions options for Post
 type ExecuteActionRequestBuilderPostOptions struct {
     // 
-    Body *ExecuteActionRequestBody;
+    Body ExecuteActionRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type ExecuteActionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type bulkManagedDeviceActionResult
-    bulkManagedDeviceActionResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult;
+    bulkManagedDeviceActionResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResultable;
 }
 // NewExecuteActionResponse instantiates a new executeActionResponse and sets the default values.
 func NewExecuteActionResponse()(*ExecuteActionResponse) {
@@ -39,6 +39,9 @@ func NewExecuteActionResponse()(*ExecuteActionResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateExecuteActionResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExecuteActionResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *ExecuteActionResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBulkManagedDeviceActionResult gets the bulkManagedDeviceActionResult property value. Union type representation for type bulkManagedDeviceActionResult
-func (m *ExecuteActionResponse) GetBulkManagedDeviceActionResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult) {
+func (m *ExecuteActionResponse) GetBulkManagedDeviceActionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *ExecuteActionResponse) GetBulkManagedDeviceActionResult()(*i535684e11b5
 func (m *ExecuteActionResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bulkManagedDeviceActionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBulkManagedDeviceActionResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBulkManagedDeviceActionResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBulkManagedDeviceActionResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult))
+            m.SetBulkManagedDeviceActionResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResultable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *ExecuteActionResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetBulkManagedDeviceActionResult sets the bulkManagedDeviceActionResult property value. Union type representation for type bulkManagedDeviceActionResult
-func (m *ExecuteActionResponse) SetBulkManagedDeviceActionResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult)() {
+func (m *ExecuteActionResponse) SetBulkManagedDeviceActionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResultable)() {
     if m != nil {
         m.bulkManagedDeviceActionResult = value
     }
+}
+// ExecuteActionResponseable 
+type ExecuteActionResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetBulkManagedDeviceActionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResultable)
+    SetBulkManagedDeviceActionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResultable)()
 }
 // NewExecuteActionRequestBuilderInternal instantiates a new ExecuteActionRequestBuilder and sets the default values.
 func NewExecuteActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExecuteActionRequestBuilder) {
@@ -111,7 +121,7 @@ func NewExecuteActionRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *ExecuteActionRequestBuilder) CreatePostRequestInformation(options *Exec
     return requestInfo, nil
 }
 // Post invoke action executeAction
-func (m *ExecuteActionRequestBuilder) Post(options *ExecuteActionRequestBuilderPostOptions)(*ExecuteActionResponse, error) {
+func (m *ExecuteActionRequestBuilder) Post(options *ExecuteActionRequestBuilderPostOptions)(ExecuteActionResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExecuteActionResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateExecuteActionResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ExecuteActionResponse), nil
+    return res.(ExecuteActionResponseable), nil
 }

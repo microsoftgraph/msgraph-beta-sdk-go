@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AppliedConditionalAccessPolicy 
+// AppliedConditionalAccessPolicy provides operations to manage the auditLogRoot singleton.
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The custom authentication strength enforced in a Conditional Access policy.
-    authenticationStrength *AuthenticationStrength;
+    authenticationStrength AuthenticationStrengthable;
     // Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
     conditionsNotSatisfied *ConditionalAccessConditions;
     // Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
@@ -21,11 +21,11 @@ type AppliedConditionalAccessPolicy struct {
     // Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
     enforcedSessionControls []string;
     // List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
-    excludeRulesSatisfied []ConditionalAccessRuleSatisfied;
+    excludeRulesSatisfied []ConditionalAccessRuleSatisfiedable;
     // An identifier of the conditional access policy.
     id *string;
     // List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
-    includeRulesSatisfied []ConditionalAccessRuleSatisfied;
+    includeRulesSatisfied []ConditionalAccessRuleSatisfiedable;
     // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
     result *AppliedConditionalAccessPolicyResult;
 }
@@ -36,6 +36,10 @@ func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAppliedConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAppliedConditionalAccessPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAppliedConditionalAccessPolicy(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -45,7 +49,7 @@ func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interfac
     }
 }
 // GetAuthenticationStrength gets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.
-func (m *AppliedConditionalAccessPolicy) GetAuthenticationStrength()(*AuthenticationStrength) {
+func (m *AppliedConditionalAccessPolicy) GetAuthenticationStrength()(AuthenticationStrengthable) {
     if m == nil {
         return nil
     } else {
@@ -93,47 +97,23 @@ func (m *AppliedConditionalAccessPolicy) GetEnforcedSessionControls()([]string) 
     }
 }
 // GetExcludeRulesSatisfied gets the excludeRulesSatisfied property value. List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
-func (m *AppliedConditionalAccessPolicy) GetExcludeRulesSatisfied()([]ConditionalAccessRuleSatisfied) {
+func (m *AppliedConditionalAccessPolicy) GetExcludeRulesSatisfied()([]ConditionalAccessRuleSatisfiedable) {
     if m == nil {
         return nil
     } else {
         return m.excludeRulesSatisfied
     }
 }
-// GetId gets the id property value. An identifier of the conditional access policy.
-func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetIncludeRulesSatisfied gets the includeRulesSatisfied property value. List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
-func (m *AppliedConditionalAccessPolicy) GetIncludeRulesSatisfied()([]ConditionalAccessRuleSatisfied) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeRulesSatisfied
-    }
-}
-// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
-func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.result
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["authenticationStrength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationStrength() })
+        val, err := n.GetObjectValue(CreateAuthenticationStrengthFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationStrength(val.(*AuthenticationStrength))
+            m.SetAuthenticationStrength(val.(AuthenticationStrengthable))
         }
         return nil
     }
@@ -196,14 +176,14 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["excludeRulesSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessRuleSatisfied() })
+        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConditionalAccessRuleSatisfied, len(val))
+            res := make([]ConditionalAccessRuleSatisfiedable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessRuleSatisfied))
+                res[i] = v.(ConditionalAccessRuleSatisfiedable)
             }
             m.SetExcludeRulesSatisfied(res)
         }
@@ -220,14 +200,14 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["includeRulesSatisfied"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessRuleSatisfied() })
+        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConditionalAccessRuleSatisfied, len(val))
+            res := make([]ConditionalAccessRuleSatisfiedable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessRuleSatisfied))
+                res[i] = v.(ConditionalAccessRuleSatisfiedable)
             }
             m.SetIncludeRulesSatisfied(res)
         }
@@ -244,6 +224,30 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetId gets the id property value. An identifier of the conditional access policy.
+func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetIncludeRulesSatisfied gets the includeRulesSatisfied property value. List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
+func (m *AppliedConditionalAccessPolicy) GetIncludeRulesSatisfied()([]ConditionalAccessRuleSatisfiedable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includeRulesSatisfied
+    }
+}
+// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
+func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
+    if m == nil {
+        return nil
+    } else {
+        return m.result
+    }
 }
 func (m *AppliedConditionalAccessPolicy) IsNil()(bool) {
     return m == nil
@@ -291,8 +295,7 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
     if m.GetExcludeRulesSatisfied() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExcludeRulesSatisfied()))
         for i, v := range m.GetExcludeRulesSatisfied() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("excludeRulesSatisfied", cast)
         if err != nil {
@@ -308,8 +311,7 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
     if m.GetIncludeRulesSatisfied() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncludeRulesSatisfied()))
         for i, v := range m.GetIncludeRulesSatisfied() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("includeRulesSatisfied", cast)
         if err != nil {
@@ -338,7 +340,7 @@ func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]inte
     }
 }
 // SetAuthenticationStrength sets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.
-func (m *AppliedConditionalAccessPolicy) SetAuthenticationStrength(value *AuthenticationStrength)() {
+func (m *AppliedConditionalAccessPolicy) SetAuthenticationStrength(value AuthenticationStrengthable)() {
     if m != nil {
         m.authenticationStrength = value
     }
@@ -374,7 +376,7 @@ func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []stri
     }
 }
 // SetExcludeRulesSatisfied sets the excludeRulesSatisfied property value. List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
-func (m *AppliedConditionalAccessPolicy) SetExcludeRulesSatisfied(value []ConditionalAccessRuleSatisfied)() {
+func (m *AppliedConditionalAccessPolicy) SetExcludeRulesSatisfied(value []ConditionalAccessRuleSatisfiedable)() {
     if m != nil {
         m.excludeRulesSatisfied = value
     }
@@ -386,7 +388,7 @@ func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
     }
 }
 // SetIncludeRulesSatisfied sets the includeRulesSatisfied property value. List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
-func (m *AppliedConditionalAccessPolicy) SetIncludeRulesSatisfied(value []ConditionalAccessRuleSatisfied)() {
+func (m *AppliedConditionalAccessPolicy) SetIncludeRulesSatisfied(value []ConditionalAccessRuleSatisfiedable)() {
     if m != nil {
         m.includeRulesSatisfied = value
     }

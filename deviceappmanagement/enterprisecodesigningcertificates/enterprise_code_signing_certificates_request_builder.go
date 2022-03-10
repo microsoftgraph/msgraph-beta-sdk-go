@@ -2,11 +2,12 @@ package enterprisecodesigningcertificates
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iceba25b89d1cfd5608e708a877bfa6817365b074a14b81a68f705bb64900c7cf "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/enterprisecodesigningcertificates/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// EnterpriseCodeSigningCertificatesRequestBuilder builds and executes requests for operations under \deviceAppManagement\enterpriseCodeSigningCertificates
+// EnterpriseCodeSigningCertificatesRequestBuilder provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.
 type EnterpriseCodeSigningCertificatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type EnterpriseCodeSigningCertificatesRequestBuilderGetQueryParameters struct {
 // EnterpriseCodeSigningCertificatesRequestBuilderPostOptions options for Post
 type EnterpriseCodeSigningCertificatesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificate;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewEnterpriseCodeSigningCertificatesRequestBuilder(rawUrl string, requestAd
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Count()(*iceba25b89d1cfd5608e708a877bfa6817365b074a14b81a68f705bb64900c7cf.CountRequestBuilder) {
+    return iceba25b89d1cfd5608e708a877bfa6817365b074a14b81a68f705bb64900c7cf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) CreateGetRequestInformation(options *EnterpriseCodeSigningCertificatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the Windows Enterprise Code Signing Certificate.
+// CreatePostRequestInformation create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) CreatePostRequestInformation(options *EnterpriseCodeSigningCertificatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) CreatePostRequestInfor
     return requestInfo, nil
 }
 // Get the Windows Enterprise Code Signing Certificate.
-func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Get(options *EnterpriseCodeSigningCertificatesRequestBuilderGetOptions)(*EnterpriseCodeSigningCertificatesResponse, error) {
+func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Get(options *EnterpriseCodeSigningCertificatesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEnterpriseCodeSigningCertificatesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEnterpriseCodeSigningCertificateCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*EnterpriseCodeSigningCertificatesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificateCollectionResponseable), nil
 }
-// Post the Windows Enterprise Code Signing Certificate.
-func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Post(options *EnterpriseCodeSigningCertificatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificate, error) {
+// Post create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
+func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Post(options *EnterpriseCodeSigningCertificatesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificateable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEnterpriseCodeSigningCertificate() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEnterpriseCodeSigningCertificateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificate), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificateable), nil
 }

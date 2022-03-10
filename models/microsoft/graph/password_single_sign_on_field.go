@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PasswordSingleSignOnField 
+// PasswordSingleSignOnField provides operations to call the instantiate method.
 type PasswordSingleSignOnField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePasswordSingleSignOnFieldFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPasswordSingleSignOnField(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnField) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *PasswordSingleSignOnField) GetDefaultLabel()(*string) {
         return nil
     } else {
         return m.defaultLabel
-    }
-}
-// GetFieldId gets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
-func (m *PasswordSingleSignOnField) GetFieldId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fieldId
-    }
-}
-// GetType gets the type property value. Type of the credential. The values can be text, password.
-func (m *PasswordSingleSignOnField) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetFieldId gets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
+func (m *PasswordSingleSignOnField) GetFieldId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fieldId
+    }
+}
+// GetType gets the type property value. Type of the credential. The values can be text, password.
+func (m *PasswordSingleSignOnField) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *PasswordSingleSignOnField) IsNil()(bool) {
     return m == nil

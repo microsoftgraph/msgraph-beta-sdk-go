@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChromeOSOnboardingSettings 
+// ChromeOSOnboardingSettings provides operations to manage the deviceManagement singleton.
 type ChromeOSOnboardingSettings struct {
     Entity
     // The ChromebookTenant's LastDirectorySyncDateTime
@@ -24,37 +24,9 @@ func NewChromeOSOnboardingSettings()(*ChromeOSOnboardingSettings) {
     }
     return m
 }
-// GetLastDirectorySyncDateTime gets the lastDirectorySyncDateTime property value. The ChromebookTenant's LastDirectorySyncDateTime
-func (m *ChromeOSOnboardingSettings) GetLastDirectorySyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastDirectorySyncDateTime
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The ChromebookTenant's LastModifiedDateTime
-func (m *ChromeOSOnboardingSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOnboardingStatus gets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
-func (m *ChromeOSOnboardingSettings) GetOnboardingStatus()(*OnboardingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardingStatus
-    }
-}
-// GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. The ChromebookTenant's OwnerUserPrincipalName
-func (m *ChromeOSOnboardingSettings) GetOwnerUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerUserPrincipalName
-    }
+// CreateChromeOSOnboardingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChromeOSOnboardingSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChromeOSOnboardingSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -100,6 +72,38 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetLastDirectorySyncDateTime gets the lastDirectorySyncDateTime property value. The ChromebookTenant's LastDirectorySyncDateTime
+func (m *ChromeOSOnboardingSettings) GetLastDirectorySyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastDirectorySyncDateTime
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The ChromebookTenant's LastModifiedDateTime
+func (m *ChromeOSOnboardingSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOnboardingStatus gets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
+func (m *ChromeOSOnboardingSettings) GetOnboardingStatus()(*OnboardingStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onboardingStatus
+    }
+}
+// GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. The ChromebookTenant's OwnerUserPrincipalName
+func (m *ChromeOSOnboardingSettings) GetOwnerUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerUserPrincipalName
+    }
 }
 func (m *ChromeOSOnboardingSettings) IsNil()(bool) {
     return m == nil

@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CompanyDetail 
+// CompanyDetail provides operations to manage the compliance singleton.
 type CompanyDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Address of the company.
-    address *PhysicalAddress;
+    address PhysicalAddressable;
     // Department Name within a company.
     department *string;
     // Company name.
@@ -28,6 +28,10 @@ func NewCompanyDetail()(*CompanyDetail) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCompanyDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCompanyDetail(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -37,7 +41,7 @@ func (m *CompanyDetail) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAddress gets the address property value. Address of the company.
-func (m *CompanyDetail) GetAddress()(*PhysicalAddress) {
+func (m *CompanyDetail) GetAddress()(PhysicalAddressable) {
     if m == nil {
         return nil
     } else {
@@ -60,40 +64,16 @@ func (m *CompanyDetail) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetOfficeLocation gets the officeLocation property value. Office Location of the person referred to.
-func (m *CompanyDetail) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
-}
-// GetPronunciation gets the pronunciation property value. Pronunciation guide for the company name.
-func (m *CompanyDetail) GetPronunciation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pronunciation
-    }
-}
-// GetWebUrl gets the webUrl property value. Link to the company home page.
-func (m *CompanyDetail) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
+        val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PhysicalAddress))
+            m.SetAddress(val.(PhysicalAddressable))
         }
         return nil
     }
@@ -148,6 +128,30 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetOfficeLocation gets the officeLocation property value. Office Location of the person referred to.
+func (m *CompanyDetail) GetOfficeLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeLocation
+    }
+}
+// GetPronunciation gets the pronunciation property value. Pronunciation guide for the company name.
+func (m *CompanyDetail) GetPronunciation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pronunciation
+    }
+}
+// GetWebUrl gets the webUrl property value. Link to the company home page.
+func (m *CompanyDetail) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *CompanyDetail) IsNil()(bool) {
     return m == nil
@@ -205,7 +209,7 @@ func (m *CompanyDetail) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAddress sets the address property value. Address of the company.
-func (m *CompanyDetail) SetAddress(value *PhysicalAddress)() {
+func (m *CompanyDetail) SetAddress(value PhysicalAddressable)() {
     if m != nil {
         m.address = value
     }

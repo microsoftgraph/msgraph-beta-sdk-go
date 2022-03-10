@@ -2,12 +2,11 @@ package category
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i8242c9798419db1e104ab5b2055bd23844fe7778516b605a70680bbd8020cb44 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/category/ref"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// CategoryRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\category
+// CategoryRequestBuilder provides operations to manage the category property of the microsoft.graph.groupPolicyDefinition entity.
 type CategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +42,7 @@ func NewCategoryRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,17 +73,18 @@ func (m *CategoryRequestBuilder) CreateGetRequestInformation(options *CategoryRe
     return requestInfo, nil
 }
 // Get the group policy category associated with the definition.
-func (m *CategoryRequestBuilder) Get(options *CategoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyCategory, error) {
+func (m *CategoryRequestBuilder) Get(options *CategoryRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyCategoryable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGroupPolicyCategory() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupPolicyCategoryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyCategory), nil
-}
-func (m *CategoryRequestBuilder) Ref()(*i8242c9798419db1e104ab5b2055bd23844fe7778516b605a70680bbd8020cb44.RefRequestBuilder) {
-    return i8242c9798419db1e104ab5b2055bd23844fe7778516b605a70680bbd8020cb44.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyCategoryable), nil
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NdesConnector 
+// NdesConnector provides operations to manage the deviceManagement singleton.
 type NdesConnector struct {
     Entity
     // The friendly name of the Ndes Connector.
@@ -22,28 +22,16 @@ func NewNdesConnector()(*NdesConnector) {
     }
     return m
 }
+// CreateNdesConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNdesConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNdesConnector(), nil
+}
 // GetDisplayName gets the displayName property value. The friendly name of the Ndes Connector.
 func (m *NdesConnector) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
-func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionDateTime
-    }
-}
-// GetState gets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
-func (m *NdesConnector) GetState()(*NdesConnectorState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +68,22 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
+func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastConnectionDateTime
+    }
+}
+// GetState gets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
+func (m *NdesConnector) GetState()(*NdesConnectorState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
 }
 func (m *NdesConnector) IsNil()(bool) {
     return m == nil

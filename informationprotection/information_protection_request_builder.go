@@ -12,14 +12,14 @@ import (
     ice41f225667c8f03ae582d3f84fd885e36e168dd2e411baeff49b2bed2923f43 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/signdigest"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     if1d4de22a4e73e8600fbc436c47981b98858d08128f85fdfca3d0206acce2e0e "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/decryptbuffer"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i327f9371a6a981bfca40891bd4712a18ae93dba5046bc3d5eb9091886aa46aa3 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/threatassessmentrequests/item"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i81855f40af60427eaa02288c5b3a8c7910b71b92f7590558464a7545621900e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/datalosspreventionpolicies/item"
     ia08232ff2c92a1e8e8fe0d1ca164e23faf909caa06499c80937301423e6eeecd "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/sensitivitylabels/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// InformationProtectionRequestBuilder builds and executes requests for operations under \informationProtection
+// InformationProtectionRequestBuilder provides operations to manage the informationProtection singleton.
 type InformationProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type InformationProtectionRequestBuilderGetQueryParameters struct {
 // InformationProtectionRequestBuilderPatchOptions options for Patch
 type InformationProtectionRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtection;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -69,7 +69,7 @@ func NewInformationProtectionRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -138,16 +138,20 @@ func (m *InformationProtectionRequestBuilder) EncryptBuffer()(*i2661c5b59d8f8219
     return i2661c5b59d8f82198e7fabe71500b75071f0700081cbe2409e33a8769eea2a52.NewEncryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get informationProtection
-func (m *InformationProtectionRequestBuilder) Get(options *InformationProtectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtection, error) {
+func (m *InformationProtectionRequestBuilder) Get(options *InformationProtectionRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewInformationProtection() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateInformationProtectionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtection), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionable), nil
 }
 // Patch update informationProtection
 func (m *InformationProtectionRequestBuilder) Patch(options *InformationProtectionRequestBuilderPatchOptions)(error) {
@@ -155,7 +159,11 @@ func (m *InformationProtectionRequestBuilder) Patch(options *InformationProtecti
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -2,11 +2,12 @@ package agreements
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i1d129838ea8ae0a0781b7d4870e0b5009e1f9f1c4e9932782a24604919e2b70c "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/termsofuse/agreements/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// AgreementsRequestBuilder builds and executes requests for operations under \identityGovernance\termsOfUse\agreements
+// AgreementsRequestBuilder provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 type AgreementsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type AgreementsRequestBuilderGetQueryParameters struct {
 // AgreementsRequestBuilderPostOptions options for Post
 type AgreementsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Agreement;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Agreementable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewAgreementsRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewAgreementsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AgreementsRequestBuilder) Count()(*i1d129838ea8ae0a0781b7d4870e0b5009e1f9f1c4e9932782a24604919e2b70c.CountRequestBuilder) {
+    return i1d129838ea8ae0a0781b7d4870e0b5009e1f9f1c4e9932782a24604919e2b70c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *AgreementsRequestBuilder) CreateGetRequestInformation(options *AgreementsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *AgreementsRequestBuilder) CreateGetRequestInformation(options *Agreemen
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+// CreatePostRequestInformation create new navigation property to agreements for identityGovernance
 func (m *AgreementsRequestBuilder) CreatePostRequestInformation(options *AgreementsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *AgreementsRequestBuilder) CreatePostRequestInformation(options *Agreeme
     return requestInfo, nil
 }
 // Get represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-func (m *AgreementsRequestBuilder) Get(options *AgreementsRequestBuilderGetOptions)(*AgreementsResponse, error) {
+func (m *AgreementsRequestBuilder) Get(options *AgreementsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgreementCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAgreementsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAgreementCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AgreementsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgreementCollectionResponseable), nil
 }
-// Post represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-func (m *AgreementsRequestBuilder) Post(options *AgreementsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Agreement, error) {
+// Post create new navigation property to agreements for identityGovernance
+func (m *AgreementsRequestBuilder) Post(options *AgreementsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Agreementable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAgreement() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAgreementFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Agreement), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Agreementable), nil
 }

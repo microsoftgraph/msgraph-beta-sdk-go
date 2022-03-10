@@ -2,11 +2,12 @@ package shares
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i46732049c52eddf0f83880b39cad28eaa151032abb724413c1e242b54679d634 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item/shares/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i306601bbfc4adf37222aabd50ce2bfeea0c68206d314e2b8cdd376425396696f "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/item/shares/count"
 )
 
-// SharesRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\shares
+// SharesRequestBuilder provides operations to manage the shares property of the microsoft.graph.printer entity.
 type SharesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewSharesRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewSharesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SharesRequestBuilder) Count()(*i306601bbfc4adf37222aabd50ce2bfeea0c68206d314e2b8cdd376425396696f.CountRequestBuilder) {
+    return i306601bbfc4adf37222aabd50ce2bfeea0c68206d314e2b8cdd376425396696f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *SharesRequestBuilder) CreateGetRequestInformation(options *SharesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *SharesRequestBuilder) CreateGetRequestInformation(options *SharesReques
     return requestInfo, nil
 }
 // Get the list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
-func (m *SharesRequestBuilder) Get(options *SharesRequestBuilderGetOptions)(*SharesResponse, error) {
+func (m *SharesRequestBuilder) Get(options *SharesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShareCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterShareCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SharesResponse), nil
-}
-func (m *SharesRequestBuilder) Ref()(*i46732049c52eddf0f83880b39cad28eaa151032abb724413c1e242b54679d634.RefRequestBuilder) {
-    return i46732049c52eddf0f83880b39cad28eaa151032abb724413c1e242b54679d634.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterShareCollectionResponseable), nil
 }

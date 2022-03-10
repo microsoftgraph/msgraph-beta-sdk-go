@@ -2,12 +2,13 @@ package tasks
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i52bccd00bfd633235a80b00aaa2538ae4f6fdc1809b34540420dd0955311ce63 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/delta"
+    ifbc77995372689a77983c0a3109ac54ecb0f8b3c5dd461ab067ae3a319c23f42 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/count"
 )
 
-// TasksRequestBuilder builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}\tasks
+// TasksRequestBuilder provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
 type TasksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type TasksRequestBuilderGetQueryParameters struct {
 // TasksRequestBuilderPostOptions options for Post
 type TasksRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTask;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewTasksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTasksRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TasksRequestBuilder) Count()(*ifbc77995372689a77983c0a3109ac54ecb0f8b3c5dd461ab067ae3a319c23f42.CountRequestBuilder) {
+    return ifbc77995372689a77983c0a3109ac54ecb0f8b3c5dd461ab067ae3a319c23f42.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the tasks in this task list. Read-only. Nullable.
 func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the tasks in this task list. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to tasks for users
 func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +118,39 @@ func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequest
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}\tasks\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *TasksRequestBuilder) Delta()(*i52bccd00bfd633235a80b00aaa2538ae4f6fdc1809b34540420dd0955311ce63.DeltaRequestBuilder) {
     return i52bccd00bfd633235a80b00aaa2538ae4f6fdc1809b34540420dd0955311ce63.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the tasks in this task list. Read-only. Nullable.
-func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*TasksResponse, error) {
+func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTasksResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTodoTaskCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TasksResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskCollectionResponseable), nil
 }
-// Post the tasks in this task list. Read-only. Nullable.
-func (m *TasksRequestBuilder) Post(options *TasksRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTask, error) {
+// Post create new navigation property to tasks for users
+func (m *TasksRequestBuilder) Post(options *TasksRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTodoTask() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTodoTaskFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTask), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskable), nil
 }

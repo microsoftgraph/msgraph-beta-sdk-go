@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationSettingInstanceTemplate 
+// DeviceManagementConfigurationSettingInstanceTemplate provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationSettingInstanceTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewDeviceManagementConfigurationSettingInstanceTemplate()(*DeviceManagement
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementConfigurationSettingInstanceTemplate(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsRequired gets the isRequired property value. Indicates if a policy must specify this setting.
-func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
-}
-// GetSettingDefinitionId gets the settingDefinitionId property value. Setting Definition Id
-func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDefinitionId
-    }
-}
-// GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting Instance Template Id
-func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingInstanceTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingInstanceTemplateId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
         return nil
     }
     return res
+}
+// GetIsRequired gets the isRequired property value. Indicates if a policy must specify this setting.
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetIsRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRequired
+    }
+}
+// GetSettingDefinitionId gets the settingDefinitionId property value. Setting Definition Id
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingDefinitionId
+    }
+}
+// GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting Instance Template Id
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingInstanceTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingInstanceTemplateId
+    }
 }
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) IsNil()(bool) {
     return m == nil

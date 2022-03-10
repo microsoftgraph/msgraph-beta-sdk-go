@@ -2,13 +2,14 @@ package participants
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i0847722142ea83144d48d36b0651881a597bd1305d87685fde6ee4ad4e70ab84 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/participants/invite"
+    i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/participants/count"
     i77b9a0e637e9266858d90c2a08c687f60d32aae51e61e962ac14febecb8906ba "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/participants/muteall"
 )
 
-// ParticipantsRequestBuilder builds and executes requests for operations under \app\calls\{call-id}\participants
+// ParticipantsRequestBuilder provides operations to manage the participants property of the microsoft.graph.call entity.
 type ParticipantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +51,7 @@ type ParticipantsRequestBuilderGetQueryParameters struct {
 // ParticipantsRequestBuilderPostOptions options for Post
 type ParticipantsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Participant;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Participantable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +68,7 @@ func NewParticipantsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,6 +77,9 @@ func NewParticipantsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParticipantsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ParticipantsRequestBuilder) Count()(*i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97.CountRequestBuilder) {
+    return i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable.
 func (m *ParticipantsRequestBuilder) CreateGetRequestInformation(options *ParticipantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -97,7 +101,7 @@ func (m *ParticipantsRequestBuilder) CreateGetRequestInformation(options *Partic
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to participants for app
 func (m *ParticipantsRequestBuilder) CreatePostRequestInformation(options *ParticipantsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,16 +120,20 @@ func (m *ParticipantsRequestBuilder) CreatePostRequestInformation(options *Parti
     return requestInfo, nil
 }
 // Get read-only. Nullable.
-func (m *ParticipantsRequestBuilder) Get(options *ParticipantsRequestBuilderGetOptions)(*ParticipantsResponse, error) {
+func (m *ParticipantsRequestBuilder) Get(options *ParticipantsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParticipantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewParticipantsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateParticipantCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ParticipantsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParticipantCollectionResponseable), nil
 }
 func (m *ParticipantsRequestBuilder) Invite()(*i0847722142ea83144d48d36b0651881a597bd1305d87685fde6ee4ad4e70ab84.InviteRequestBuilder) {
     return i0847722142ea83144d48d36b0651881a597bd1305d87685fde6ee4ad4e70ab84.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -133,15 +141,19 @@ func (m *ParticipantsRequestBuilder) Invite()(*i0847722142ea83144d48d36b0651881a
 func (m *ParticipantsRequestBuilder) MuteAll()(*i77b9a0e637e9266858d90c2a08c687f60d32aae51e61e962ac14febecb8906ba.MuteAllRequestBuilder) {
     return i77b9a0e637e9266858d90c2a08c687f60d32aae51e61e962ac14febecb8906ba.NewMuteAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post read-only. Nullable.
-func (m *ParticipantsRequestBuilder) Post(options *ParticipantsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Participant, error) {
+// Post create new navigation property to participants for app
+func (m *ParticipantsRequestBuilder) Post(options *ParticipantsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Participantable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewParticipant() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateParticipantFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Participant), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Participantable), nil
 }

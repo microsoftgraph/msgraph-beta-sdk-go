@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RemoveHoldRequestBody 
+// RemoveHoldRequestBody provides operations to call the removeHold method.
 type RemoveHoldRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewRemoveHoldRequestBody()(*RemoveHoldRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRemoveHoldRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRemoveHoldRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRemoveHoldRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveHoldRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIds gets the ids property value. 
-func (m *RemoveHoldRequestBody) GetIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ids
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *RemoveHoldRequestBody) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetIds gets the ids property value. 
+func (m *RemoveHoldRequestBody) GetIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ids
+    }
 }
 func (m *RemoveHoldRequestBody) IsNil()(bool) {
     return m == nil

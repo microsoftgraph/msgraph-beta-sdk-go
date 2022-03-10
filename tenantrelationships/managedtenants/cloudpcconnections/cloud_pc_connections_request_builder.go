@@ -2,11 +2,12 @@ package cloudpcconnections
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
+    i91c04ba14c6306f74dd7597b0f2148c1d7c68869e2fe0d596cbe0de40edb2a34 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/cloudpcconnections/count"
 )
 
-// CloudPcConnectionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcConnections
+// CloudPcConnectionsRequestBuilder provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.
 type CloudPcConnectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type CloudPcConnectionsRequestBuilderGetQueryParameters struct {
 // CloudPcConnectionsRequestBuilderPostOptions options for Post
 type CloudPcConnectionsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcConnection;
+    Body i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcConnectionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewCloudPcConnectionsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewCloudPcConnectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcConnectionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CloudPcConnectionsRequestBuilder) Count()(*i91c04ba14c6306f74dd7597b0f2148c1d7c68869e2fe0d596cbe0de40edb2a34.CountRequestBuilder) {
+    return i91c04ba14c6306f74dd7597b0f2148c1d7c68869e2fe0d596cbe0de40edb2a34.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of cloud PC connections across managed tenants.
 func (m *CloudPcConnectionsRequestBuilder) CreateGetRequestInformation(options *CloudPcConnectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *CloudPcConnectionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of cloud PC connections across managed tenants.
+// CreatePostRequestInformation create new navigation property to cloudPcConnections for tenantRelationships
 func (m *CloudPcConnectionsRequestBuilder) CreatePostRequestInformation(options *CloudPcConnectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *CloudPcConnectionsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get the collection of cloud PC connections across managed tenants.
-func (m *CloudPcConnectionsRequestBuilder) Get(options *CloudPcConnectionsRequestBuilderGetOptions)(*CloudPcConnectionsResponse, error) {
+func (m *CloudPcConnectionsRequestBuilder) Get(options *CloudPcConnectionsRequestBuilderGetOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcConnectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcConnectionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateCloudPcConnectionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CloudPcConnectionsResponse), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcConnectionCollectionResponseable), nil
 }
-// Post the collection of cloud PC connections across managed tenants.
-func (m *CloudPcConnectionsRequestBuilder) Post(options *CloudPcConnectionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcConnection, error) {
+// Post create new navigation property to cloudPcConnections for tenantRelationships
+func (m *CloudPcConnectionsRequestBuilder) Post(options *CloudPcConnectionsRequestBuilderPostOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcConnectionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcConnection() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateCloudPcConnectionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcConnection), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcConnectionable), nil
 }

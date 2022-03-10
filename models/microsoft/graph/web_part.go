@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WebPart 
+// WebPart provides operations to manage the compliance singleton.
 type WebPart struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The required properties for the webPart (varies by webPart)
-    data *SitePageData;
+    data SitePageDataable;
     // A unique identifier specifying the webPart type. Read-only.
     type_escaped *string;
 }
@@ -20,6 +20,10 @@ func NewWebPart()(*WebPart) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWebPartFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWebPart(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPart) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -29,31 +33,23 @@ func (m *WebPart) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetData gets the data property value. The required properties for the webPart (varies by webPart)
-func (m *WebPart) GetData()(*SitePageData) {
+func (m *WebPart) GetData()(SitePageDataable) {
     if m == nil {
         return nil
     } else {
         return m.data
     }
 }
-// GetType gets the type property value. A unique identifier specifying the webPart type. Read-only.
-func (m *WebPart) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WebPart) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["data"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSitePageData() })
+        val, err := n.GetObjectValue(CreateSitePageDataFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetData(val.(*SitePageData))
+            m.SetData(val.(SitePageDataable))
         }
         return nil
     }
@@ -68,6 +64,14 @@ func (m *WebPart) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetType gets the type property value. A unique identifier specifying the webPart type. Read-only.
+func (m *WebPart) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *WebPart) IsNil()(bool) {
     return m == nil
@@ -101,7 +105,7 @@ func (m *WebPart) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetData sets the data property value. The required properties for the webPart (varies by webPart)
-func (m *WebPart) SetData(value *SitePageData)() {
+func (m *WebPart) SetData(value SitePageDataable)() {
     if m != nil {
         m.data = value
     }

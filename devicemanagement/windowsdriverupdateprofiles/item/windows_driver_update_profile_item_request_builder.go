@@ -2,10 +2,10 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i0227b9d371a89beb62067a796c02c0b39fdf080a3997ff8e2e1bccd0df359555 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/driverinventories"
     i0d5104ae2038733f4a0ba840268b8369f6bc121826293eab58ba88947073f553 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/assign"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i7d322cde9c6dc3cbc3b99c3bd99e285cfd57d7d19bb515fe2fe8f2e1362010b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/executeaction"
     idf402f71068be00c76511f89c1a60aaa1debfdf51df203d20c1f5ace9153aa77 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/syncinventory"
     ifa4b3a3995a95d8ea842462ce1688b377028489725a54208f7a79be75071c764 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/assignments"
@@ -13,7 +13,7 @@ import (
     i823e1a7037c21e1cb6a062bc58c9b7f7aacc3516364a051cdbc689c661c6ff50 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item/assignments/item"
 )
 
-// WindowsDriverUpdateProfileItemRequestBuilder builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}
+// WindowsDriverUpdateProfileItemRequestBuilder provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 type WindowsDriverUpdateProfileItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +52,7 @@ type WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters struct {
 // WindowsDriverUpdateProfileItemRequestBuilderPatchOptions options for Patch
 type WindowsDriverUpdateProfileItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -86,7 +86,7 @@ func NewWindowsDriverUpdateProfileItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -96,7 +96,7 @@ func NewWindowsDriverUpdateProfileItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of windows driver update profiles
+// CreateDeleteRequestInformation delete navigation property windowsDriverUpdateProfiles for deviceManagement
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) CreateDeleteRequestInformation(options *WindowsDriverUpdateProfileItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,7 +133,7 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of windows driver update profiles
+// CreatePatchRequestInformation update the navigation property windowsDriverUpdateProfiles in deviceManagement
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) CreatePatchRequestInformation(options *WindowsDriverUpdateProfileItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,13 +151,17 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete a collection of windows driver update profiles
+// Delete delete navigation property windowsDriverUpdateProfiles for deviceManagement
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) Delete(options *WindowsDriverUpdateProfileItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -181,24 +185,32 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) ExecuteAction()(*i7d322cd
     return i7d322cde9c6dc3cbc3b99c3bd99e285cfd57d7d19bb515fe2fe8f2e1362010b9.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get a collection of windows driver update profiles
-func (m *WindowsDriverUpdateProfileItemRequestBuilder) Get(options *WindowsDriverUpdateProfileItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfile, error) {
+func (m *WindowsDriverUpdateProfileItemRequestBuilder) Get(options *WindowsDriverUpdateProfileItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsDriverUpdateProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsDriverUpdateProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfileable), nil
 }
-// Patch a collection of windows driver update profiles
+// Patch update the navigation property windowsDriverUpdateProfiles in deviceManagement
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) Patch(options *WindowsDriverUpdateProfileItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

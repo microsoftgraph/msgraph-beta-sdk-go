@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerTeamsPublicationInfo 
+// PlannerTeamsPublicationInfo provides operations to manage the compliance singleton.
 type PlannerTeamsPublicationInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,52 +27,16 @@ func NewPlannerTeamsPublicationInfo()(*PlannerTeamsPublicationInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePlannerTeamsPublicationInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlannerTeamsPublicationInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlannerTeamsPublicationInfo(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerTeamsPublicationInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
-func (m *PlannerTeamsPublicationInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPublicationId gets the publicationId property value. The identifier of the publication. Read-only.
-func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicationId
-    }
-}
-// GetPublishedToPlanId gets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
-func (m *PlannerTeamsPublicationInfo) GetPublishedToPlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedToPlanId
-    }
-}
-// GetPublishingTeamId gets the publishingTeamId property value. The identifier of the team that initiated the publication process. Read-only.
-func (m *PlannerTeamsPublicationInfo) GetPublishingTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingTeamId
-    }
-}
-// GetPublishingTeamName gets the publishingTeamName property value. The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
-func (m *PlannerTeamsPublicationInfo) GetPublishingTeamName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingTeamName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +93,46 @@ func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
+func (m *PlannerTeamsPublicationInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPublicationId gets the publicationId property value. The identifier of the publication. Read-only.
+func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publicationId
+    }
+}
+// GetPublishedToPlanId gets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
+func (m *PlannerTeamsPublicationInfo) GetPublishedToPlanId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishedToPlanId
+    }
+}
+// GetPublishingTeamId gets the publishingTeamId property value. The identifier of the team that initiated the publication process. Read-only.
+func (m *PlannerTeamsPublicationInfo) GetPublishingTeamId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishingTeamId
+    }
+}
+// GetPublishingTeamName gets the publishingTeamName property value. The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
+func (m *PlannerTeamsPublicationInfo) GetPublishingTeamName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publishingTeamName
+    }
 }
 func (m *PlannerTeamsPublicationInfo) IsNil()(bool) {
     return m == nil

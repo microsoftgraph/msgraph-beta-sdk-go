@@ -2,15 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     if0d35103551c602f5b2331b0ffa6028b98d7b4171e7c4db47010b54171dc2dcb "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies/item/effectiverules"
     ifc39611d357a9b76d0ccfc15869a511b0e0c8f820d08446dd30dd89890511649 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies/item/rules"
     i811ba195cae1e905ab5d23c338b5965c64cfa723b2a7cbaf79f558bcd492389e "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies/item/effectiverules/item"
     ie226ae78525b483a512018ed5f5bf2023846009012cd463b4e7b22c6a6585ac7 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies/item/rules/item"
 )
 
-// UnifiedRoleManagementPolicyItemRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicies\{unifiedRoleManagementPolicy-id}
+// UnifiedRoleManagementPolicyItemRequestBuilder provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
 type UnifiedRoleManagementPolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters struct {
 // UnifiedRoleManagementPolicyItemRequestBuilderPatchOptions options for Patch
 type UnifiedRoleManagementPolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewUnifiedRoleManagementPolicyItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +76,7 @@ func NewUnifiedRoleManagementPolicyItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents the role management policies.
+// CreateDeleteRequestInformation delete navigation property roleManagementPolicies for policies
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleManagementPolicyItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents the role management policies.
+// CreatePatchRequestInformation update the navigation property roleManagementPolicies in policies
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleManagementPolicyItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,13 +131,17 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete represents the role management policies.
+// Delete delete navigation property roleManagementPolicies for policies
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Delete(options *UnifiedRoleManagementPolicyItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -158,24 +162,32 @@ func (m *UnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRulesById(id st
     return i811ba195cae1e905ab5d23c338b5965c64cfa723b2a7cbaf79f558bcd492389e.NewUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get represents the role management policies.
-func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Get(options *UnifiedRoleManagementPolicyItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicy, error) {
+func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Get(options *UnifiedRoleManagementPolicyItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUnifiedRoleManagementPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnifiedRoleManagementPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyable), nil
 }
-// Patch represents the role management policies.
+// Patch update the navigation property roleManagementPolicies in policies
 func (m *UnifiedRoleManagementPolicyItemRequestBuilder) Patch(options *UnifiedRoleManagementPolicyItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

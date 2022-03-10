@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyConfigurationDefault 
+// CrossTenantAccessPolicyConfigurationDefault provides operations to manage the policyRoot singleton.
 type CrossTenantAccessPolicyConfigurationDefault struct {
     CrossTenantAccessPolicyConfigurationBase
     // If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
@@ -17,13 +17,9 @@ func NewCrossTenantAccessPolicyConfigurationDefault()(*CrossTenantAccessPolicyCo
     }
     return m
 }
-// GetIsServiceDefault gets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
-func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isServiceDefault
-    }
+// CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCrossTenantAccessPolicyConfigurationDefault(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetIsServiceDefault gets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isServiceDefault
+    }
 }
 func (m *CrossTenantAccessPolicyConfigurationDefault) IsNil()(bool) {
     return m == nil

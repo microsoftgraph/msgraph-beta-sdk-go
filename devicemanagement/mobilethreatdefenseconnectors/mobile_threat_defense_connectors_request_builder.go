@@ -2,11 +2,12 @@ package mobilethreatdefenseconnectors
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i85b93da7f54f6379452cb0627ff70e70dfd8da507b5ae62d3ac14255f2b97909 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/mobilethreatdefenseconnectors/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// MobileThreatDefenseConnectorsRequestBuilder builds and executes requests for operations under \deviceManagement\mobileThreatDefenseConnectors
+// MobileThreatDefenseConnectorsRequestBuilder provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
 type MobileThreatDefenseConnectorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters struct {
 // MobileThreatDefenseConnectorsRequestBuilderPostOptions options for Post
 type MobileThreatDefenseConnectorsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnector;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnectorable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewMobileThreatDefenseConnectorsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewMobileThreatDefenseConnectorsRequestBuilder(rawUrl string, requestAdapte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileThreatDefenseConnectorsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MobileThreatDefenseConnectorsRequestBuilder) Count()(*i85b93da7f54f6379452cb0627ff70e70dfd8da507b5ae62d3ac14255f2b97909.CountRequestBuilder) {
+    return i85b93da7f54f6379452cb0627ff70e70dfd8da507b5ae62d3ac14255f2b97909.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorsRequestBuilder) CreateGetRequestInformation(options *MobileThreatDefenseConnectorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *MobileThreatDefenseConnectorsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of Mobile threat Defense connectors configured by the tenant.
+// CreatePostRequestInformation create new navigation property to mobileThreatDefenseConnectors for deviceManagement
 func (m *MobileThreatDefenseConnectorsRequestBuilder) CreatePostRequestInformation(options *MobileThreatDefenseConnectorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *MobileThreatDefenseConnectorsRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Get the list of Mobile threat Defense connectors configured by the tenant.
-func (m *MobileThreatDefenseConnectorsRequestBuilder) Get(options *MobileThreatDefenseConnectorsRequestBuilderGetOptions)(*MobileThreatDefenseConnectorsResponse, error) {
+func (m *MobileThreatDefenseConnectorsRequestBuilder) Get(options *MobileThreatDefenseConnectorsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnectorCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileThreatDefenseConnectorsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMobileThreatDefenseConnectorCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MobileThreatDefenseConnectorsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnectorCollectionResponseable), nil
 }
-// Post the list of Mobile threat Defense connectors configured by the tenant.
-func (m *MobileThreatDefenseConnectorsRequestBuilder) Post(options *MobileThreatDefenseConnectorsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnector, error) {
+// Post create new navigation property to mobileThreatDefenseConnectors for deviceManagement
+func (m *MobileThreatDefenseConnectorsRequestBuilder) Post(options *MobileThreatDefenseConnectorsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnectorable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMobileThreatDefenseConnector() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMobileThreatDefenseConnectorFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnector), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileThreatDefenseConnectorable), nil
 }

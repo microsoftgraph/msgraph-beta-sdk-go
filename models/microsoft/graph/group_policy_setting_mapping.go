@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicySettingMapping 
+// GroupPolicySettingMapping provides operations to manage the deviceManagement singleton.
 type GroupPolicySettingMapping struct {
     Entity
     // Admx Group Policy Id
@@ -55,6 +55,10 @@ func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {
     }
     return m
 }
+// CreateGroupPolicySettingMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicySettingMappingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicySettingMapping(), nil
+}
 // GetAdmxSettingDefinitionId gets the admxSettingDefinitionId property value. Admx Group Policy Id
 func (m *GroupPolicySettingMapping) GetAdmxSettingDefinitionId()(*string) {
     if m == nil {
@@ -69,150 +73,6 @@ func (m *GroupPolicySettingMapping) GetChildIdList()([]string) {
         return nil
     } else {
         return m.childIdList
-    }
-}
-// GetIntuneSettingDefinitionId gets the intuneSettingDefinitionId property value. The Intune Setting Definition Id
-func (m *GroupPolicySettingMapping) GetIntuneSettingDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneSettingDefinitionId
-    }
-}
-// GetIntuneSettingUriList gets the intuneSettingUriList property value. The list of Intune Setting URIs this group policy setting maps to
-func (m *GroupPolicySettingMapping) GetIntuneSettingUriList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneSettingUriList
-    }
-}
-// GetIsMdmSupported gets the isMdmSupported property value. Indicates if the setting is supported by Intune or not
-func (m *GroupPolicySettingMapping) GetIsMdmSupported()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMdmSupported
-    }
-}
-// GetMdmCspName gets the mdmCspName property value. The CSP name this group policy setting maps to.
-func (m *GroupPolicySettingMapping) GetMdmCspName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmCspName
-    }
-}
-// GetMdmMinimumOSVersion gets the mdmMinimumOSVersion property value. The minimum OS version this mdm setting supports.
-func (m *GroupPolicySettingMapping) GetMdmMinimumOSVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmMinimumOSVersion
-    }
-}
-// GetMdmSettingUri gets the mdmSettingUri property value. The MDM CSP URI this group policy setting maps to.
-func (m *GroupPolicySettingMapping) GetMdmSettingUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmSettingUri
-    }
-}
-// GetMdmSupportedState gets the mdmSupportedState property value. Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
-func (m *GroupPolicySettingMapping) GetMdmSupportedState()(*MdmSupportedState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmSupportedState
-    }
-}
-// GetParentId gets the parentId property value. Parent Id of the group policy setting.
-func (m *GroupPolicySettingMapping) GetParentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentId
-    }
-}
-// GetSettingCategory gets the settingCategory property value. The category the group policy setting is in.
-func (m *GroupPolicySettingMapping) GetSettingCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCategory
-    }
-}
-// GetSettingDisplayName gets the settingDisplayName property value. The display name of this group policy setting.
-func (m *GroupPolicySettingMapping) GetSettingDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDisplayName
-    }
-}
-// GetSettingDisplayValue gets the settingDisplayValue property value. The display value of this group policy setting.
-func (m *GroupPolicySettingMapping) GetSettingDisplayValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDisplayValue
-    }
-}
-// GetSettingDisplayValueType gets the settingDisplayValueType property value. The display value type of this group policy setting.
-func (m *GroupPolicySettingMapping) GetSettingDisplayValueType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDisplayValueType
-    }
-}
-// GetSettingName gets the settingName property value. The name of this group policy setting.
-func (m *GroupPolicySettingMapping) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
-}
-// GetSettingScope gets the settingScope property value. The scope of the setting. Possible values are: unknown, device, user.
-func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingScope
-    }
-}
-// GetSettingType gets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
-func (m *GroupPolicySettingMapping) GetSettingType()(*GroupPolicySettingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingType
-    }
-}
-// GetSettingValue gets the settingValue property value. The value of this group policy setting.
-func (m *GroupPolicySettingMapping) GetSettingValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingValue
-    }
-}
-// GetSettingValueDisplayUnits gets the settingValueDisplayUnits property value. The display units of this group policy setting value
-func (m *GroupPolicySettingMapping) GetSettingValueDisplayUnits()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingValueDisplayUnits
-    }
-}
-// GetSettingValueType gets the settingValueType property value. The value type of this group policy setting.
-func (m *GroupPolicySettingMapping) GetSettingValueType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingValueType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -427,6 +287,150 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetIntuneSettingDefinitionId gets the intuneSettingDefinitionId property value. The Intune Setting Definition Id
+func (m *GroupPolicySettingMapping) GetIntuneSettingDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intuneSettingDefinitionId
+    }
+}
+// GetIntuneSettingUriList gets the intuneSettingUriList property value. The list of Intune Setting URIs this group policy setting maps to
+func (m *GroupPolicySettingMapping) GetIntuneSettingUriList()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intuneSettingUriList
+    }
+}
+// GetIsMdmSupported gets the isMdmSupported property value. Indicates if the setting is supported by Intune or not
+func (m *GroupPolicySettingMapping) GetIsMdmSupported()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMdmSupported
+    }
+}
+// GetMdmCspName gets the mdmCspName property value. The CSP name this group policy setting maps to.
+func (m *GroupPolicySettingMapping) GetMdmCspName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmCspName
+    }
+}
+// GetMdmMinimumOSVersion gets the mdmMinimumOSVersion property value. The minimum OS version this mdm setting supports.
+func (m *GroupPolicySettingMapping) GetMdmMinimumOSVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmMinimumOSVersion
+    }
+}
+// GetMdmSettingUri gets the mdmSettingUri property value. The MDM CSP URI this group policy setting maps to.
+func (m *GroupPolicySettingMapping) GetMdmSettingUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmSettingUri
+    }
+}
+// GetMdmSupportedState gets the mdmSupportedState property value. Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
+func (m *GroupPolicySettingMapping) GetMdmSupportedState()(*MdmSupportedState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mdmSupportedState
+    }
+}
+// GetParentId gets the parentId property value. Parent Id of the group policy setting.
+func (m *GroupPolicySettingMapping) GetParentId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentId
+    }
+}
+// GetSettingCategory gets the settingCategory property value. The category the group policy setting is in.
+func (m *GroupPolicySettingMapping) GetSettingCategory()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingCategory
+    }
+}
+// GetSettingDisplayName gets the settingDisplayName property value. The display name of this group policy setting.
+func (m *GroupPolicySettingMapping) GetSettingDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingDisplayName
+    }
+}
+// GetSettingDisplayValue gets the settingDisplayValue property value. The display value of this group policy setting.
+func (m *GroupPolicySettingMapping) GetSettingDisplayValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingDisplayValue
+    }
+}
+// GetSettingDisplayValueType gets the settingDisplayValueType property value. The display value type of this group policy setting.
+func (m *GroupPolicySettingMapping) GetSettingDisplayValueType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingDisplayValueType
+    }
+}
+// GetSettingName gets the settingName property value. The name of this group policy setting.
+func (m *GroupPolicySettingMapping) GetSettingName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingName
+    }
+}
+// GetSettingScope gets the settingScope property value. The scope of the setting. Possible values are: unknown, device, user.
+func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingScope
+    }
+}
+// GetSettingType gets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
+func (m *GroupPolicySettingMapping) GetSettingType()(*GroupPolicySettingType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingType
+    }
+}
+// GetSettingValue gets the settingValue property value. The value of this group policy setting.
+func (m *GroupPolicySettingMapping) GetSettingValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingValue
+    }
+}
+// GetSettingValueDisplayUnits gets the settingValueDisplayUnits property value. The display units of this group policy setting value
+func (m *GroupPolicySettingMapping) GetSettingValueDisplayUnits()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingValueDisplayUnits
+    }
+}
+// GetSettingValueType gets the settingValueType property value. The value type of this group policy setting.
+func (m *GroupPolicySettingMapping) GetSettingValueType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingValueType
+    }
 }
 func (m *GroupPolicySettingMapping) IsNil()(bool) {
     return m == nil

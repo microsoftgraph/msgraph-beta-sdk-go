@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DetectedSensitiveContentBase 
+// DetectedSensitiveContentBase provides operations to call the classifyExactMatches method.
 type DetectedSensitiveContentBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -25,6 +25,10 @@ func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDetectedSensitiveContentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDetectedSensitiveContentBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]interface{}) {
@@ -48,30 +52,6 @@ func (m *DetectedSensitiveContentBase) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. 
-func (m *DetectedSensitiveContentBase) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetRecommendedConfidence gets the recommendedConfidence property value. 
-func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedConfidence
-    }
-}
-// GetUniqueCount gets the uniqueCount property value. 
-func (m *DetectedSensitiveContentBase) GetUniqueCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +108,30 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetId gets the id property value. 
+func (m *DetectedSensitiveContentBase) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetRecommendedConfidence gets the recommendedConfidence property value. 
+func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendedConfidence
+    }
+}
+// GetUniqueCount gets the uniqueCount property value. 
+func (m *DetectedSensitiveContentBase) GetUniqueCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueCount
+    }
 }
 func (m *DetectedSensitiveContentBase) IsNil()(bool) {
     return m == nil

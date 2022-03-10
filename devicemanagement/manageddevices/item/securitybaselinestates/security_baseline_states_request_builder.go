@@ -2,11 +2,12 @@ package securitybaselinestates
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i2ac86f0f1edcbaf0612e046835b45a380d95da09591bb981f3a4cfe1ab2b9a0b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/securitybaselinestates/count"
 )
 
-// SecurityBaselineStatesRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\securityBaselineStates
+// SecurityBaselineStatesRequestBuilder provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
 type SecurityBaselineStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type SecurityBaselineStatesRequestBuilderGetQueryParameters struct {
 // SecurityBaselineStatesRequestBuilderPostOptions options for Post
 type SecurityBaselineStatesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewSecurityBaselineStatesRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewSecurityBaselineStatesRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityBaselineStatesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SecurityBaselineStatesRequestBuilder) Count()(*i2ac86f0f1edcbaf0612e046835b45a380d95da09591bb981f3a4cfe1ab2b9a0b.CountRequestBuilder) {
+    return i2ac86f0f1edcbaf0612e046835b45a380d95da09591bb981f3a4cfe1ab2b9a0b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation security baseline states for this device.
 func (m *SecurityBaselineStatesRequestBuilder) CreateGetRequestInformation(options *SecurityBaselineStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *SecurityBaselineStatesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation security baseline states for this device.
+// CreatePostRequestInformation create new navigation property to securityBaselineStates for deviceManagement
 func (m *SecurityBaselineStatesRequestBuilder) CreatePostRequestInformation(options *SecurityBaselineStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *SecurityBaselineStatesRequestBuilder) CreatePostRequestInformation(opti
     return requestInfo, nil
 }
 // Get security baseline states for this device.
-func (m *SecurityBaselineStatesRequestBuilder) Get(options *SecurityBaselineStatesRequestBuilderGetOptions)(*SecurityBaselineStatesResponse, error) {
+func (m *SecurityBaselineStatesRequestBuilder) Get(options *SecurityBaselineStatesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityBaselineStatesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSecurityBaselineStateCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SecurityBaselineStatesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateCollectionResponseable), nil
 }
-// Post security baseline states for this device.
-func (m *SecurityBaselineStatesRequestBuilder) Post(options *SecurityBaselineStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState, error) {
+// Post create new navigation property to securityBaselineStates for deviceManagement
+func (m *SecurityBaselineStatesRequestBuilder) Post(options *SecurityBaselineStatesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSecurityBaselineState() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSecurityBaselineStateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateable), nil
 }

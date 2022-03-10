@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCategory 
+// DeviceCategory provides operations to manage the deviceManagement singleton.
 type DeviceCategory struct {
     Entity
     // Optional description for the device category.
@@ -21,6 +21,10 @@ func NewDeviceCategory()(*DeviceCategory) {
     }
     return m
 }
+// CreateDeviceCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceCategory(), nil
+}
 // GetDescription gets the description property value. Optional description for the device category.
 func (m *DeviceCategory) GetDescription()(*string) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *DeviceCategory) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. Optional role scope tags for the device category.
-func (m *DeviceCategory) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -83,6 +79,14 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     return res
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. Optional role scope tags for the device category.
+func (m *DeviceCategory) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
 }
 func (m *DeviceCategory) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationSecretKeyStringValuePair 
+// SynchronizationSecretKeyStringValuePair provides operations to manage the collection of application entities.
 type SynchronizationSecretKeyStringValuePair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewSynchronizationSecretKeyStringValuePair()(*SynchronizationSecretKeyStrin
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationSecretKeyStringValuePair(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSecretKeyStringValuePair) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetKey gets the key property value. Possible values are: None, UserName, Password, SecretToken, AppKey, BaseAddress, ClientIdentifier, ClientSecret, SingleSignOnType, Sandbox, Url, Domain, ConsumerKey, ConsumerSecret, TokenKey, TokenExpiration, Oauth2AccessToken, Oauth2AccessTokenCreationTime, Oauth2RefreshToken, SyncAll, InstanceName, Oauth2ClientId, Oauth2ClientSecret, CompanyId, UpdateKeyOnSoftDelete, SynchronizationSchedule, SystemOfRecord, SandboxName, EnforceDomain, SyncNotificationSettings, Server, PerformInboundEntitlementGrants, HardDeletesEnabled, SyncAgentCompatibilityKey, SyncAgentADContainer, ValidateDomain, Oauth2TokenExchangeUri, Oauth2AuthorizationUri, AuthenticationType, TestReferences, ConnectionString.
-func (m *SynchronizationSecretKeyStringValuePair) GetKey()(*SynchronizationSecret) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetValue gets the value property value. The value of the secret.
-func (m *SynchronizationSecretKeyStringValuePair) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *SynchronizationSecretKeyStringValuePair) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetKey gets the key property value. Possible values are: None, UserName, Password, SecretToken, AppKey, BaseAddress, ClientIdentifier, ClientSecret, SingleSignOnType, Sandbox, Url, Domain, ConsumerKey, ConsumerSecret, TokenKey, TokenExpiration, Oauth2AccessToken, Oauth2AccessTokenCreationTime, Oauth2RefreshToken, SyncAll, InstanceName, Oauth2ClientId, Oauth2ClientSecret, CompanyId, UpdateKeyOnSoftDelete, SynchronizationSchedule, SystemOfRecord, SandboxName, EnforceDomain, SyncNotificationSettings, Server, PerformInboundEntitlementGrants, HardDeletesEnabled, SyncAgentCompatibilityKey, SyncAgentADContainer, ValidateDomain, Oauth2TokenExchangeUri, Oauth2AuthorizationUri, AuthenticationType, TestReferences, ConnectionString.
+func (m *SynchronizationSecretKeyStringValuePair) GetKey()(*SynchronizationSecret) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetValue gets the value property value. The value of the secret.
+func (m *SynchronizationSecretKeyStringValuePair) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *SynchronizationSecretKeyStringValuePair) IsNil()(bool) {
     return m == nil

@@ -2,12 +2,13 @@ package deviceimages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/getsourceimages"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/count"
 )
 
-// DeviceImagesRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages
+// DeviceImagesRequestBuilder provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
 type DeviceImagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type DeviceImagesRequestBuilderGetQueryParameters struct {
 // DeviceImagesRequestBuilderPostOptions options for Post
 type DeviceImagesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewDeviceImagesRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewDeviceImagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceImagesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DeviceImagesRequestBuilder) Count()(*i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4.CountRequestBuilder) {
+    return i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the image resource on Cloud PC.
 func (m *DeviceImagesRequestBuilder) CreateGetRequestInformation(options *DeviceImagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *DeviceImagesRequestBuilder) CreateGetRequestInformation(options *Device
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the image resource on Cloud PC.
+// CreatePostRequestInformation create new navigation property to deviceImages for deviceManagement
 func (m *DeviceImagesRequestBuilder) CreatePostRequestInformation(options *DeviceImagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,30 +119,38 @@ func (m *DeviceImagesRequestBuilder) CreatePostRequestInformation(options *Devic
     return requestInfo, nil
 }
 // Get the image resource on Cloud PC.
-func (m *DeviceImagesRequestBuilder) Get(options *DeviceImagesRequestBuilderGetOptions)(*DeviceImagesResponse, error) {
+func (m *DeviceImagesRequestBuilder) Get(options *DeviceImagesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceImagesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCloudPcDeviceImageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DeviceImagesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImageCollectionResponseable), nil
 }
-// GetSourceImages builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\microsoft.graph.getSourceImages()
+// GetSourceImages provides operations to call the getSourceImages method.
 func (m *DeviceImagesRequestBuilder) GetSourceImages()(*i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.GetSourceImagesRequestBuilder) {
     return i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.NewGetSourceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the image resource on Cloud PC.
-func (m *DeviceImagesRequestBuilder) Post(options *DeviceImagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage, error) {
+// Post create new navigation property to deviceImages for deviceManagement
+func (m *DeviceImagesRequestBuilder) Post(options *DeviceImagesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcDeviceImage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCloudPcDeviceImageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImageable), nil
 }

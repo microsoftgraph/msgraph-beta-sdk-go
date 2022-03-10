@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereModelPerformance 
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     Entity
     // The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -33,6 +33,10 @@ func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienc
     }
     return m
 }
+// CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance(), nil
+}
 // GetCloudIdentityScore gets the cloudIdentityScore property value. The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudIdentityScore()(*float64) {
     if m == nil {
@@ -55,54 +59,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudProvis
         return nil
     } else {
         return m.cloudProvisioningScore
-    }
-}
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
-}
-// GetManufacturer gets the manufacturer property value. The user experience work from anywhere's manufacturer name of the devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. The user experience work from anywhere's model name of the devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetModelDeviceCount gets the modelDeviceCount property value. The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModelDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelDeviceCount
-    }
-}
-// GetWindowsScore gets the windowsScore property value. The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWindowsScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsScore
-    }
-}
-// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWorkFromAnywhereScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workFromAnywhereScore
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -199,6 +155,54 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         return nil
     }
     return res
+}
+// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatus
+    }
+}
+// GetManufacturer gets the manufacturer property value. The user experience work from anywhere's manufacturer name of the devices.
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. The user experience work from anywhere's model name of the devices.
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetModelDeviceCount gets the modelDeviceCount property value. The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModelDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modelDeviceCount
+    }
+}
+// GetWindowsScore gets the windowsScore property value. The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWindowsScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsScore
+    }
+}
+// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWorkFromAnywhereScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workFromAnywhereScore
+    }
 }
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) IsNil()(bool) {
     return m == nil

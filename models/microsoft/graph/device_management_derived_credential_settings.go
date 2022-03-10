@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementDerivedCredentialSettings 
+// DeviceManagementDerivedCredentialSettings provides operations to manage the deviceManagement singleton.
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
     // The display name for the profile.
@@ -23,36 +23,16 @@ func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCred
     }
     return m
 }
+// CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementDerivedCredentialSettings(), nil
+}
 // GetDisplayName gets the displayName property value. The display name for the profile.
 func (m *DeviceManagementDerivedCredentialSettings) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHelpUrl gets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
-func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.helpUrl
-    }
-}
-// GetIssuer gets the issuer property value. The derived credential provider to use.
-func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagementDerivedCredentialIssuer) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
-}
-// GetNotificationType gets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
-func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +79,30 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetHelpUrl gets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
+func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.helpUrl
+    }
+}
+// GetIssuer gets the issuer property value. The derived credential provider to use.
+func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagementDerivedCredentialIssuer) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuer
+    }
+}
+// GetNotificationType gets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
+func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationType
+    }
 }
 func (m *DeviceManagementDerivedCredentialSettings) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactDataMatchStoreColumn 
+// ExactDataMatchStoreColumn provides operations to manage the dataClassificationService singleton.
 type ExactDataMatchStoreColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,44 +24,16 @@ func NewExactDataMatchStoreColumn()(*ExactDataMatchStoreColumn) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateExactDataMatchStoreColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactDataMatchStoreColumnFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactDataMatchStoreColumn(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExactDataMatchStoreColumn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIgnoredDelimiters gets the ignoredDelimiters property value. 
-func (m *ExactDataMatchStoreColumn) GetIgnoredDelimiters()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ignoredDelimiters
-    }
-}
-// GetIsCaseInsensitive gets the isCaseInsensitive property value. 
-func (m *ExactDataMatchStoreColumn) GetIsCaseInsensitive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCaseInsensitive
-    }
-}
-// GetIsSearchable gets the isSearchable property value. 
-func (m *ExactDataMatchStoreColumn) GetIsSearchable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSearchable
-    }
-}
-// GetName gets the name property value. 
-func (m *ExactDataMatchStoreColumn) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -112,6 +84,38 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetIgnoredDelimiters gets the ignoredDelimiters property value. 
+func (m *ExactDataMatchStoreColumn) GetIgnoredDelimiters()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ignoredDelimiters
+    }
+}
+// GetIsCaseInsensitive gets the isCaseInsensitive property value. 
+func (m *ExactDataMatchStoreColumn) GetIsCaseInsensitive()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCaseInsensitive
+    }
+}
+// GetIsSearchable gets the isSearchable property value. 
+func (m *ExactDataMatchStoreColumn) GetIsSearchable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSearchable
+    }
+}
+// GetName gets the name property value. 
+func (m *ExactDataMatchStoreColumn) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
 }
 func (m *ExactDataMatchStoreColumn) IsNil()(bool) {
     return m == nil

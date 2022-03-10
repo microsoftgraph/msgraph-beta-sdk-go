@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// ActivateServiceRequestBuilder builds and executes requests for operations under \organization\{organization-id}\microsoft.graph.activateService
+// ActivateServiceRequestBuilder provides operations to call the activateService method.
 type ActivateServiceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ActivateServiceRequestBuilder struct {
 // ActivateServiceRequestBuilderPostOptions options for Post
 type ActivateServiceRequestBuilderPostOptions struct {
     // 
-    Body *ActivateServiceRequestBody;
+    Body ActivateServiceRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewActivateServiceRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *ActivateServiceRequestBuilder) Post(options *ActivateServiceRequestBuil
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

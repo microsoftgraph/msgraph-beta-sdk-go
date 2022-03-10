@@ -2,12 +2,13 @@ package approvals
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     id957426e3b4923c6c1bd2d98016573a74452d809cb2a0033d00c3f2ba74a6501 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/filterbycurrentuserwithon"
+    ieb4747a4883a373f784192835aa463ca22e0c8ce016b7cbec22cdf33893d4f2f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/count"
 )
 
-// ApprovalsRequestBuilder builds and executes requests for operations under \users\{user-id}\approvals
+// ApprovalsRequestBuilder provides operations to manage the approvals property of the microsoft.graph.user entity.
 type ApprovalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type ApprovalsRequestBuilderGetQueryParameters struct {
 // ApprovalsRequestBuilderPostOptions options for Post
 type ApprovalsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approvalable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewApprovalsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewApprovalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ApprovalsRequestBuilder) Count()(*ieb4747a4883a373f784192835aa463ca22e0c8ce016b7cbec22cdf33893d4f2f.CountRequestBuilder) {
+    return ieb4747a4883a373f784192835aa463ca22e0c8ce016b7cbec22cdf33893d4f2f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get approvals from users
 func (m *ApprovalsRequestBuilder) CreateGetRequestInformation(options *ApprovalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,31 +118,39 @@ func (m *ApprovalsRequestBuilder) CreatePostRequestInformation(options *Approval
     }
     return requestInfo, nil
 }
-// FilterByCurrentUserWithOn builds and executes requests for operations under \users\{user-id}\approvals\microsoft.graph.filterByCurrentUser(on={on})
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *ApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*id957426e3b4923c6c1bd2d98016573a74452d809cb2a0033d00c3f2ba74a6501.FilterByCurrentUserWithOnRequestBuilder) {
     return id957426e3b4923c6c1bd2d98016573a74452d809cb2a0033d00c3f2ba74a6501.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
 // Get get approvals from users
-func (m *ApprovalsRequestBuilder) Get(options *ApprovalsRequestBuilderGetOptions)(*ApprovalsResponse, error) {
+func (m *ApprovalsRequestBuilder) Get(options *ApprovalsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApprovalsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApprovalCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ApprovalsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalCollectionResponseable), nil
 }
 // Post create new navigation property to approvals for users
-func (m *ApprovalsRequestBuilder) Post(options *ApprovalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval, error) {
+func (m *ApprovalsRequestBuilder) Post(options *ApprovalsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approvalable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewApproval() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApprovalFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approvalable), nil
 }

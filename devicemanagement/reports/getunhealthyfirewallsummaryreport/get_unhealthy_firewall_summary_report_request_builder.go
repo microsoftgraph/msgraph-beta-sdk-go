@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetUnhealthyFirewallSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUnhealthyFirewallSummaryReport
+// GetUnhealthyFirewallSummaryReportRequestBuilder provides operations to call the getUnhealthyFirewallSummaryReport method.
 type GetUnhealthyFirewallSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetUnhealthyFirewallSummaryReportRequestBuilder struct {
 // GetUnhealthyFirewallSummaryReportRequestBuilderPostOptions options for Post
 type GetUnhealthyFirewallSummaryReportRequestBuilderPostOptions struct {
     // 
-    Body *GetUnhealthyFirewallSummaryReportRequestBody;
+    Body GetUnhealthyFirewallSummaryReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetUnhealthyFirewallSummaryReportRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetUnhealthyFirewallSummaryReportRequestBuilder) CreatePostRequestInfor
     return requestInfo, nil
 }
 // Post invoke action getUnhealthyFirewallSummaryReport
-func (m *GetUnhealthyFirewallSummaryReportRequestBuilder) Post(options *GetUnhealthyFirewallSummaryReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetUnhealthyFirewallSummaryReportRequestBuilder) Post(options *GetUnhealthyFirewallSummaryReportRequestBuilderPostOptions)(GetUnhealthyFirewallSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetUnhealthyFirewallSummaryReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetUnhealthyFirewallSummaryReportResponseable), nil
 }

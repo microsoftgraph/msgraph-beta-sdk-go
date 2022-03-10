@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthRuntimeDetails 
+// UserExperienceAnalyticsBatteryHealthRuntimeDetails provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBatteryHealthRuntimeDetails struct {
     Entity
     // Number of active devices within the tenant. Valid values -2147483648 to 2147483647
@@ -25,6 +25,10 @@ func NewUserExperienceAnalyticsBatteryHealthRuntimeDetails()(*UserExperienceAnal
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsBatteryHealthRuntimeDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBatteryHealthRuntimeDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBatteryHealthRuntimeDetails(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetActiveDevices()(*int32) {
@@ -56,14 +60,6 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimePo
         return nil
     } else {
         return m.batteryRuntimePoor
-    }
-}
-// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this runtime details instance.
-func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +116,14 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserialize
         return nil
     }
     return res
+}
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this runtime details instance.
+func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
+    }
 }
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) IsNil()(bool) {
     return m == nil

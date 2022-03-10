@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// LookupRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\microsoft.graph.lookup
+// LookupRequestBuilder provides operations to call the lookup method.
 type LookupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type LookupRequestBuilder struct {
 // LookupRequestBuilderPostOptions options for Post
 type LookupRequestBuilderPostOptions struct {
     // 
-    Body *LookupRequestBody;
+    Body LookupRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewLookupRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,18 +62,14 @@ func (m *LookupRequestBuilder) CreatePostRequestInformation(options *LookupReque
     return requestInfo, nil
 }
 // Post invoke action lookup
-func (m *LookupRequestBuilder) Post(options *LookupRequestBuilderPostOptions)([]string, error) {
+func (m *LookupRequestBuilder) Post(options *LookupRequestBuilderPostOptions)(LookupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateLookupResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]string, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*string))
-    }
-    return val, nil
+    return res.(LookupResponseable), nil
 }

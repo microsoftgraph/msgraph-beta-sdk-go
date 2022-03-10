@@ -2,15 +2,15 @@ package attacksimulation
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i91ea136d6db7c9ecbe5c19aaf6f9924fa0ccbcf63930c3fadff4429c1bbff683 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulations"
     ie8a063a943fef4e082163058dd2e72338195ff1de79a742eb6b73521689f5884 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulationautomations"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulations/item"
     ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulationautomations/item"
 )
 
-// AttackSimulationRequestBuilder builds and executes requests for operations under \security\attackSimulation
+// AttackSimulationRequestBuilder provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type AttackSimulationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type AttackSimulationRequestBuilderGetQueryParameters struct {
 // AttackSimulationRequestBuilderPatchOptions options for Patch
 type AttackSimulationRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttackSimulationRoot;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttackSimulationRootable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewAttackSimulationRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +76,7 @@ func NewAttackSimulationRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// CreateDeleteRequestInformation delete navigation property attackSimulation for security
 func (m *AttackSimulationRequestBuilder) CreateDeleteRequestInformation(options *AttackSimulationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AttackSimulationRequestBuilder) CreateGetRequestInformation(options *At
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// CreatePatchRequestInformation update the navigation property attackSimulation in security
 func (m *AttackSimulationRequestBuilder) CreatePatchRequestInformation(options *AttackSimulationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,37 +131,49 @@ func (m *AttackSimulationRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// Delete delete navigation property attackSimulation for security
 func (m *AttackSimulationRequestBuilder) Delete(options *AttackSimulationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
-func (m *AttackSimulationRequestBuilder) Get(options *AttackSimulationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttackSimulationRoot, error) {
+func (m *AttackSimulationRequestBuilder) Get(options *AttackSimulationRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttackSimulationRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAttackSimulationRoot() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAttackSimulationRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttackSimulationRoot), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttackSimulationRootable), nil
 }
-// Patch provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// Patch update the navigation property attackSimulation in security
 func (m *AttackSimulationRequestBuilder) Patch(options *AttackSimulationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

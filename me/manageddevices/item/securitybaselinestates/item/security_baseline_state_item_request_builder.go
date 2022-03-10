@@ -2,13 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i2bd42e636e83769c0990da4a3b749527f51d572043f52ac85ad6baef36522ca7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/securitybaselinestates/item/settingstates"
     i62acb51610a9d7331253267e6171626c9bf8b167157bceb4da07ac69ac5540ee "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/securitybaselinestates/item/settingstates/item"
 )
 
-// SecurityBaselineStateItemRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}
+// SecurityBaselineStateItemRequestBuilder provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
 type SecurityBaselineStateItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type SecurityBaselineStateItemRequestBuilderGetQueryParameters struct {
 // SecurityBaselineStateItemRequestBuilderPatchOptions options for Patch
 type SecurityBaselineStateItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +64,7 @@ func NewSecurityBaselineStateItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +74,7 @@ func NewSecurityBaselineStateItemRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityBaselineStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation security baseline states for this device.
+// CreateDeleteRequestInformation delete navigation property securityBaselineStates for me
 func (m *SecurityBaselineStateItemRequestBuilder) CreateDeleteRequestInformation(options *SecurityBaselineStateItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *SecurityBaselineStateItemRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation security baseline states for this device.
+// CreatePatchRequestInformation update the navigation property securityBaselineStates in me
 func (m *SecurityBaselineStateItemRequestBuilder) CreatePatchRequestInformation(options *SecurityBaselineStateItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,37 +129,49 @@ func (m *SecurityBaselineStateItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete security baseline states for this device.
+// Delete delete navigation property securityBaselineStates for me
 func (m *SecurityBaselineStateItemRequestBuilder) Delete(options *SecurityBaselineStateItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get security baseline states for this device.
-func (m *SecurityBaselineStateItemRequestBuilder) Get(options *SecurityBaselineStateItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState, error) {
+func (m *SecurityBaselineStateItemRequestBuilder) Get(options *SecurityBaselineStateItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSecurityBaselineState() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSecurityBaselineStateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineStateable), nil
 }
-// Patch security baseline states for this device.
+// Patch update the navigation property securityBaselineStates in me
 func (m *SecurityBaselineStateItemRequestBuilder) Patch(options *SecurityBaselineStateItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to manage the collection of domain entities.
 type FederatedIdpMfaBehavior int
 
 const (

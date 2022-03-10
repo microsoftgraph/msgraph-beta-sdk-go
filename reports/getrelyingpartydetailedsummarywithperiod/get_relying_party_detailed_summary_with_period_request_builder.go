@@ -2,11 +2,9 @@ package getrelyingpartydetailedsummarywithperiod
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getRelyingPartyDetailedSummary(period='{period}')
+// GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder provides operations to call the getRelyingPartyDetailedSummary method.
 type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +34,7 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(pathParam
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,18 +62,14 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) CreateGetReques
     return requestInfo, nil
 }
 // Get invoke function getRelyingPartyDetailedSummary
-func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(options *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RelyingPartyDetailedSummary, error) {
+func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(options *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetOptions)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewRelyingPartyDetailedSummary() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetRelyingPartyDetailedSummaryWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RelyingPartyDetailedSummary, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RelyingPartyDetailedSummary))
-    }
-    return val, nil
+    return res.(GetRelyingPartyDetailedSummaryWithPeriodResponseable), nil
 }

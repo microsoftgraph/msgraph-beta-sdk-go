@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsMetric 
+// UserExperienceAnalyticsMetric provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsMetric struct {
     Entity
     // The unit of the user experience analytics metric.
@@ -19,21 +19,9 @@ func NewUserExperienceAnalyticsMetric()(*UserExperienceAnalyticsMetric) {
     }
     return m
 }
-// GetUnit gets the unit property value. The unit of the user experience analytics metric.
-func (m *UserExperienceAnalyticsMetric) GetUnit()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unit
-    }
-}
-// GetValue gets the value property value. The value of the user experience analytics metric.
-func (m *UserExperienceAnalyticsMetric) GetValue()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+// CreateUserExperienceAnalyticsMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsMetricFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,6 +47,22 @@ func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetUnit gets the unit property value. The unit of the user experience analytics metric.
+func (m *UserExperienceAnalyticsMetric) GetUnit()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unit
+    }
+}
+// GetValue gets the value property value. The value of the user experience analytics metric.
+func (m *UserExperienceAnalyticsMetric) GetValue()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *UserExperienceAnalyticsMetric) IsNil()(bool) {
     return m == nil

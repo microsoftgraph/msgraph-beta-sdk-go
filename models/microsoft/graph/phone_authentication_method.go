@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PhoneAuthenticationMethod 
+// PhoneAuthenticationMethod provides operations to manage the compliance singleton.
 type PhoneAuthenticationMethod struct {
     AuthenticationMethod
     // The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
@@ -21,29 +21,9 @@ func NewPhoneAuthenticationMethod()(*PhoneAuthenticationMethod) {
     }
     return m
 }
-// GetPhoneNumber gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
-func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
-}
-// GetPhoneType gets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
-func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneType
-    }
-}
-// GetSmsSignInState gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
-func (m *PhoneAuthenticationMethod) GetSmsSignInState()(*AuthenticationMethodSignInState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smsSignInState
-    }
+// CreatePhoneAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePhoneAuthenticationMethodFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPhoneAuthenticationMethod(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -79,6 +59,30 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetPhoneNumber gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
+func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
+}
+// GetPhoneType gets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
+func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneType
+    }
+}
+// GetSmsSignInState gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
+func (m *PhoneAuthenticationMethod) GetSmsSignInState()(*AuthenticationMethodSignInState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.smsSignInState
+    }
 }
 func (m *PhoneAuthenticationMethod) IsNil()(bool) {
     return m == nil

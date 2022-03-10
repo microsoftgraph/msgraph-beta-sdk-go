@@ -2,11 +2,12 @@ package deviceshellscripts
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ibddfdbe236b215cb7e1acfa34c988268049e4930bee09d6f6bbc3946c72fe8b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DeviceShellScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceShellScripts
+// DeviceShellScriptsRequestBuilder provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
 type DeviceShellScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type DeviceShellScriptsRequestBuilderGetQueryParameters struct {
 // DeviceShellScriptsRequestBuilderPostOptions options for Post
 type DeviceShellScriptsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScript;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScriptable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewDeviceShellScriptsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewDeviceShellScriptsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceShellScriptsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DeviceShellScriptsRequestBuilder) Count()(*ibddfdbe236b215cb7e1acfa34c988268049e4930bee09d6f6bbc3946c72fe8b3.CountRequestBuilder) {
+    return ibddfdbe236b215cb7e1acfa34c988268049e4930bee09d6f6bbc3946c72fe8b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptsRequestBuilder) CreateGetRequestInformation(options *DeviceShellScriptsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *DeviceShellScriptsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of device shell scripts associated with the tenant.
+// CreatePostRequestInformation create new navigation property to deviceShellScripts for deviceManagement
 func (m *DeviceShellScriptsRequestBuilder) CreatePostRequestInformation(options *DeviceShellScriptsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *DeviceShellScriptsRequestBuilder) CreatePostRequestInformation(options 
     return requestInfo, nil
 }
 // Get the list of device shell scripts associated with the tenant.
-func (m *DeviceShellScriptsRequestBuilder) Get(options *DeviceShellScriptsRequestBuilderGetOptions)(*DeviceShellScriptsResponse, error) {
+func (m *DeviceShellScriptsRequestBuilder) Get(options *DeviceShellScriptsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScriptCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceShellScriptsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceShellScriptCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DeviceShellScriptsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScriptCollectionResponseable), nil
 }
-// Post the list of device shell scripts associated with the tenant.
-func (m *DeviceShellScriptsRequestBuilder) Post(options *DeviceShellScriptsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScript, error) {
+// Post create new navigation property to deviceShellScripts for deviceManagement
+func (m *DeviceShellScriptsRequestBuilder) Post(options *DeviceShellScriptsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScriptable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceShellScript() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceShellScriptFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScript), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceShellScriptable), nil
 }

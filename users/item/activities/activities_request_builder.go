@@ -2,12 +2,13 @@ package activities
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i02c3e4672b8230ecced6c0877e1f477575fac3534f4f20d5ebe62e6ec0563c4c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activities/count"
     i0970d0aff954ec3ec5db365108f846be1c661f3d16cdebac3949440d4ee70b24 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activities/recent"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ActivitiesRequestBuilder builds and executes requests for operations under \users\{user-id}\activities
+// ActivitiesRequestBuilder provides operations to manage the activities property of the microsoft.graph.user entity.
 type ActivitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type ActivitiesRequestBuilderGetQueryParameters struct {
 // ActivitiesRequestBuilderPostOptions options for Post
 type ActivitiesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivity;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivityable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewActivitiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivitiesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ActivitiesRequestBuilder) Count()(*i02c3e4672b8230ecced6c0877e1f477575fac3534f4f20d5ebe62e6ec0563c4c.CountRequestBuilder) {
+    return i02c3e4672b8230ecced6c0877e1f477575fac3534f4f20d5ebe62e6ec0563c4c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformation(options *ActivitiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *ActivitiesRequestBuilder) CreateGetRequestInformation(options *Activiti
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the user's activities across devices. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to activities for users
 func (m *ActivitiesRequestBuilder) CreatePostRequestInformation(options *ActivitiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,30 +119,38 @@ func (m *ActivitiesRequestBuilder) CreatePostRequestInformation(options *Activit
     return requestInfo, nil
 }
 // Get the user's activities across devices. Read-only. Nullable.
-func (m *ActivitiesRequestBuilder) Get(options *ActivitiesRequestBuilderGetOptions)(*ActivitiesResponse, error) {
+func (m *ActivitiesRequestBuilder) Get(options *ActivitiesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivityCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActivitiesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserActivityCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ActivitiesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivityCollectionResponseable), nil
 }
-// Post the user's activities across devices. Read-only. Nullable.
-func (m *ActivitiesRequestBuilder) Post(options *ActivitiesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivity, error) {
+// Post create new navigation property to activities for users
+func (m *ActivitiesRequestBuilder) Post(options *ActivitiesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivityable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserActivity() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserActivityFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivity), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivityable), nil
 }
-// Recent builds and executes requests for operations under \users\{user-id}\activities\microsoft.graph.recent()
+// Recent provides operations to call the recent method.
 func (m *ActivitiesRequestBuilder) Recent()(*i0970d0aff954ec3ec5db365108f846be1c661f3d16cdebac3949440d4ee70b24.RecentRequestBuilder) {
     return i0970d0aff954ec3ec5db365108f846be1c661f3d16cdebac3949440d4ee70b24.NewRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

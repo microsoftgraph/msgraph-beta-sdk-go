@@ -2,12 +2,13 @@ package pendingaccessreviewinstances
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/filterbycurrentuserwithon"
+    ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/count"
 )
 
-// PendingAccessReviewInstancesRequestBuilder builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances
+// PendingAccessReviewInstancesRequestBuilder provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
 type PendingAccessReviewInstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type PendingAccessReviewInstancesRequestBuilderGetQueryParameters struct {
 // PendingAccessReviewInstancesRequestBuilderPostOptions options for Post
 type PendingAccessReviewInstancesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewPendingAccessReviewInstancesRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewPendingAccessReviewInstancesRequestBuilder(rawUrl string, requestAdapter
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPendingAccessReviewInstancesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *PendingAccessReviewInstancesRequestBuilder) Count()(*ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c.CountRequestBuilder) {
+    return ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation navigation property to get list of access reviews pending approval by reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation(options *PendingAccessReviewInstancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation navigation property to get list of access reviews pending approval by reviewer.
+// CreatePostRequestInformation create new navigation property to pendingAccessReviewInstances for users
 func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformation(options *PendingAccessReviewInstancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +118,39 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// FilterByCurrentUserWithOn builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\microsoft.graph.filterByCurrentUser(on={on})
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *PendingAccessReviewInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0.FilterByCurrentUserWithOnRequestBuilder) {
     return icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
 // Get navigation property to get list of access reviews pending approval by reviewer.
-func (m *PendingAccessReviewInstancesRequestBuilder) Get(options *PendingAccessReviewInstancesRequestBuilderGetOptions)(*PendingAccessReviewInstancesResponse, error) {
+func (m *PendingAccessReviewInstancesRequestBuilder) Get(options *PendingAccessReviewInstancesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPendingAccessReviewInstancesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessReviewInstanceCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PendingAccessReviewInstancesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceCollectionResponseable), nil
 }
-// Post navigation property to get list of access reviews pending approval by reviewer.
-func (m *PendingAccessReviewInstancesRequestBuilder) Post(options *PendingAccessReviewInstancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance, error) {
+// Post create new navigation property to pendingAccessReviewInstances for users
+func (m *PendingAccessReviewInstancesRequestBuilder) Post(options *PendingAccessReviewInstancesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewInstance() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessReviewInstanceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceable), nil
 }

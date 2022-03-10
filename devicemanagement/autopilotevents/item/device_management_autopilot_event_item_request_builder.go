@@ -2,13 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     if76c2cb80ed357d07ffd85f409f06a5249ec510099f57edb418f41e7bdb74e03 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/autopilotevents/item/policystatusdetails"
     ib32d34f50255bdea0699208e320acf08a90078315ca8ef82a9c10a80d7799d4b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/autopilotevents/item/policystatusdetails/item"
 )
 
-// DeviceManagementAutopilotEventItemRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}
+// DeviceManagementAutopilotEventItemRequestBuilder provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementAutopilotEventItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type DeviceManagementAutopilotEventItemRequestBuilderGetQueryParameters struct {
 // DeviceManagementAutopilotEventItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementAutopilotEventItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEventable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +64,7 @@ func NewDeviceManagementAutopilotEventItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +74,7 @@ func NewDeviceManagementAutopilotEventItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementAutopilotEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the list of autopilot events for the tenant.
+// CreateDeleteRequestInformation delete navigation property autopilotEvents for deviceManagement
 func (m *DeviceManagementAutopilotEventItemRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementAutopilotEventItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *DeviceManagementAutopilotEventItemRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of autopilot events for the tenant.
+// CreatePatchRequestInformation update the navigation property autopilotEvents in deviceManagement
 func (m *DeviceManagementAutopilotEventItemRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementAutopilotEventItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,37 +129,49 @@ func (m *DeviceManagementAutopilotEventItemRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// Delete the list of autopilot events for the tenant.
+// Delete delete navigation property autopilotEvents for deviceManagement
 func (m *DeviceManagementAutopilotEventItemRequestBuilder) Delete(options *DeviceManagementAutopilotEventItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the list of autopilot events for the tenant.
-func (m *DeviceManagementAutopilotEventItemRequestBuilder) Get(options *DeviceManagementAutopilotEventItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent, error) {
+func (m *DeviceManagementAutopilotEventItemRequestBuilder) Get(options *DeviceManagementAutopilotEventItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEventable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementAutopilotEvent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementAutopilotEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEventable), nil
 }
-// Patch the list of autopilot events for the tenant.
+// Patch update the navigation property autopilotEvents in deviceManagement
 func (m *DeviceManagementAutopilotEventItemRequestBuilder) Patch(options *DeviceManagementAutopilotEventItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

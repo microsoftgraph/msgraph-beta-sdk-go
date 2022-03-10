@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidEnrollmentCompanyCode 
+// AndroidEnrollmentCompanyCode provides operations to manage the deviceManagement singleton.
 type AndroidEnrollmentCompanyCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,7 +13,7 @@ type AndroidEnrollmentCompanyCode struct {
     // String used to generate a QR code for the token.
     qrCodeContent *string;
     // Generated QR code for the token.
-    qrCodeImage *MimeContent;
+    qrCodeImage MimeContentable;
 }
 // NewAndroidEnrollmentCompanyCode instantiates a new androidEnrollmentCompanyCode and sets the default values.
 func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
@@ -21,6 +21,10 @@ func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidEnrollmentCompanyCode(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidEnrollmentCompanyCode) GetAdditionalData()(map[string]interface{}) {
@@ -36,22 +40,6 @@ func (m *AndroidEnrollmentCompanyCode) GetEnrollmentToken()(*string) {
         return nil
     } else {
         return m.enrollmentToken
-    }
-}
-// GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
-func (m *AndroidEnrollmentCompanyCode) GetQrCodeContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qrCodeContent
-    }
-}
-// GetQrCodeImage gets the qrCodeImage property value. Generated QR code for the token.
-func (m *AndroidEnrollmentCompanyCode) GetQrCodeImage()(*MimeContent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qrCodeImage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -78,16 +66,32 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["qrCodeImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMimeContent() })
+        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQrCodeImage(val.(*MimeContent))
+            m.SetQrCodeImage(val.(MimeContentable))
         }
         return nil
     }
     return res
+}
+// GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
+func (m *AndroidEnrollmentCompanyCode) GetQrCodeContent()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.qrCodeContent
+    }
+}
+// GetQrCodeImage gets the qrCodeImage property value. Generated QR code for the token.
+func (m *AndroidEnrollmentCompanyCode) GetQrCodeImage()(MimeContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.qrCodeImage
+    }
 }
 func (m *AndroidEnrollmentCompanyCode) IsNil()(bool) {
     return m == nil
@@ -139,7 +143,7 @@ func (m *AndroidEnrollmentCompanyCode) SetQrCodeContent(value *string)() {
     }
 }
 // SetQrCodeImage sets the qrCodeImage property value. Generated QR code for the token.
-func (m *AndroidEnrollmentCompanyCode) SetQrCodeImage(value *MimeContent)() {
+func (m *AndroidEnrollmentCompanyCode) SetQrCodeImage(value MimeContentable)() {
     if m != nil {
         m.qrCodeImage = value
     }

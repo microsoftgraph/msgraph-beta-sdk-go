@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EncryptionReportPolicyDetails 
+// EncryptionReportPolicyDetails provides operations to manage the deviceManagement singleton.
 type EncryptionReportPolicyDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewEncryptionReportPolicyDetails()(*EncryptionReportPolicyDetails) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEncryptionReportPolicyDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEncryptionReportPolicyDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEncryptionReportPolicyDetails(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptionReportPolicyDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetPolicyId gets the policyId property value. Policy Id for Encryption Report
-func (m *EncryptionReportPolicyDetails) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
-}
-// GetPolicyName gets the policyName property value. Policy Name for Encryption Report
-func (m *EncryptionReportPolicyDetails) GetPolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *EncryptionReportPolicyDetails) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetPolicyId gets the policyId property value. Policy Id for Encryption Report
+func (m *EncryptionReportPolicyDetails) GetPolicyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyId
+    }
+}
+// GetPolicyName gets the policyName property value. Policy Name for Encryption Report
+func (m *EncryptionReportPolicyDetails) GetPolicyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyName
+    }
 }
 func (m *EncryptionReportPolicyDetails) IsNil()(bool) {
     return m == nil

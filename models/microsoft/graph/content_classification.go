@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContentClassification 
+// ContentClassification provides operations to call the classifyExactMatches method.
 type ContentClassification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     confidence *int32;
     // 
-    matches []MatchLocation;
+    matches []MatchLocationable;
     // 
     sensitiveTypeId *string;
     // 
@@ -23,6 +23,10 @@ func NewContentClassification()(*ContentClassification) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateContentClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContentClassificationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContentClassification(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentClassification) GetAdditionalData()(map[string]interface{}) {
@@ -40,30 +44,6 @@ func (m *ContentClassification) GetConfidence()(*int32) {
         return m.confidence
     }
 }
-// GetMatches gets the matches property value. 
-func (m *ContentClassification) GetMatches()([]MatchLocation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matches
-    }
-}
-// GetSensitiveTypeId gets the sensitiveTypeId property value. 
-func (m *ContentClassification) GetSensitiveTypeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeId
-    }
-}
-// GetUniqueCount gets the uniqueCount property value. 
-func (m *ContentClassification) GetUniqueCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueCount
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -78,14 +58,14 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["matches"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMatchLocation() })
+        val, err := n.GetCollectionOfObjectValues(CreateMatchLocationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MatchLocation, len(val))
+            res := make([]MatchLocationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MatchLocation))
+                res[i] = v.(MatchLocationable)
             }
             m.SetMatches(res)
         }
@@ -113,6 +93,30 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
+// GetMatches gets the matches property value. 
+func (m *ContentClassification) GetMatches()([]MatchLocationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.matches
+    }
+}
+// GetSensitiveTypeId gets the sensitiveTypeId property value. 
+func (m *ContentClassification) GetSensitiveTypeId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitiveTypeId
+    }
+}
+// GetUniqueCount gets the uniqueCount property value. 
+func (m *ContentClassification) GetUniqueCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueCount
+    }
+}
 func (m *ContentClassification) IsNil()(bool) {
     return m == nil
 }
@@ -127,8 +131,7 @@ func (m *ContentClassification) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetMatches() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {
@@ -168,7 +171,7 @@ func (m *ContentClassification) SetConfidence(value *int32)() {
     }
 }
 // SetMatches sets the matches property value. 
-func (m *ContentClassification) SetMatches(value []MatchLocation)() {
+func (m *ContentClassification) SetMatches(value []MatchLocationable)() {
     if m != nil {
         m.matches = value
     }

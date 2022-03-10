@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetQuietTimePolicyUserSummaryReportRequestBody 
+// GetQuietTimePolicyUserSummaryReportRequestBody provides operations to call the getQuietTimePolicyUserSummaryReport method.
 type GetQuietTimePolicyUserSummaryReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,84 +34,16 @@ func NewGetQuietTimePolicyUserSummaryReportRequestBody()(*GetQuietTimePolicyUser
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetQuietTimePolicyUserSummaryReportRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetQuietTimePolicyUserSummaryReportRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetQuietTimePolicyUserSummaryReportRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFilter gets the filter property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
-}
-// GetGroupBy gets the groupBy property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetGroupBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupBy
-    }
-}
-// GetName gets the name property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOrderBy gets the orderBy property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
-}
-// GetSearch gets the search property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSearch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
-}
-// GetSelect gets the select property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
-}
-// GetSessionId gets the sessionId property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSessionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionId
-    }
-}
-// GetSkip gets the skip property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
-}
-// GetTop gets the top property value. 
-func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +152,78 @@ func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetFilter gets the filter property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetFilter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.filter
+    }
+}
+// GetGroupBy gets the groupBy property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetGroupBy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupBy
+    }
+}
+// GetName gets the name property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOrderBy gets the orderBy property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetOrderBy()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderBy
+    }
+}
+// GetSearch gets the search property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSearch()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.search
+    }
+}
+// GetSelect gets the select property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSelect()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.select_escaped
+    }
+}
+// GetSessionId gets the sessionId property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSessionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionId
+    }
+}
+// GetSkip gets the skip property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetSkip()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skip
+    }
+}
+// GetTop gets the top property value. 
+func (m *GetQuietTimePolicyUserSummaryReportRequestBody) GetTop()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.top
+    }
 }
 func (m *GetQuietTimePolicyUserSummaryReportRequestBody) IsNil()(bool) {
     return m == nil

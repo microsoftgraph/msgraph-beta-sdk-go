@@ -2,11 +2,12 @@ package userexperienceanalyticsbaselines
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    iebb89b371475b144671e466897a078554d4a7d8af613908f1d59c69cfe1d85dd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// UserExperienceAnalyticsBaselinesRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines
+// UserExperienceAnalyticsBaselinesRequestBuilder provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsBaselinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type UserExperienceAnalyticsBaselinesRequestBuilderGetQueryParameters struct {
 // UserExperienceAnalyticsBaselinesRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsBaselinesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaseline;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaselineable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewUserExperienceAnalyticsBaselinesRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsBaselinesRequestBuilder) Count()(*iebb89b371475b144671e466897a078554d4a7d8af613908f1d59c69cfe1d85dd.CountRequestBuilder) {
+    return iebb89b371475b144671e466897a078554d4a7d8af613908f1d59c69cfe1d85dd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics baselines
 func (m *UserExperienceAnalyticsBaselinesRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsBaselinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *UserExperienceAnalyticsBaselinesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics baselines
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsBaselines for deviceManagement
 func (m *UserExperienceAnalyticsBaselinesRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsBaselinesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *UserExperienceAnalyticsBaselinesRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get user experience analytics baselines
-func (m *UserExperienceAnalyticsBaselinesRequestBuilder) Get(options *UserExperienceAnalyticsBaselinesRequestBuilderGetOptions)(*UserExperienceAnalyticsBaselinesResponse, error) {
+func (m *UserExperienceAnalyticsBaselinesRequestBuilder) Get(options *UserExperienceAnalyticsBaselinesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaselineCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsBaselinesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsBaselineCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsBaselinesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaselineCollectionResponseable), nil
 }
-// Post user experience analytics baselines
-func (m *UserExperienceAnalyticsBaselinesRequestBuilder) Post(options *UserExperienceAnalyticsBaselinesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaseline, error) {
+// Post create new navigation property to userExperienceAnalyticsBaselines for deviceManagement
+func (m *UserExperienceAnalyticsBaselinesRequestBuilder) Post(options *UserExperienceAnalyticsBaselinesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaselineable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsBaseline() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaseline), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBaselineable), nil
 }

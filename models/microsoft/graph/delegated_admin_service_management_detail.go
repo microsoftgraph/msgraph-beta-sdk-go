@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminServiceManagementDetail 
+// DelegatedAdminServiceManagementDetail provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminServiceManagementDetail struct {
     Entity
     // 
@@ -21,29 +21,9 @@ func NewDelegatedAdminServiceManagementDetail()(*DelegatedAdminServiceManagement
     }
     return m
 }
-// GetServiceId gets the serviceId property value. 
-func (m *DelegatedAdminServiceManagementDetail) GetServiceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceId
-    }
-}
-// GetServiceManagementUrl gets the serviceManagementUrl property value. 
-func (m *DelegatedAdminServiceManagementDetail) GetServiceManagementUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceManagementUrl
-    }
-}
-// GetServiceName gets the serviceName property value. 
-func (m *DelegatedAdminServiceManagementDetail) GetServiceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceName
-    }
+// CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminServiceManagementDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -79,6 +59,30 @@ func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetServiceId gets the serviceId property value. 
+func (m *DelegatedAdminServiceManagementDetail) GetServiceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceId
+    }
+}
+// GetServiceManagementUrl gets the serviceManagementUrl property value. 
+func (m *DelegatedAdminServiceManagementDetail) GetServiceManagementUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceManagementUrl
+    }
+}
+// GetServiceName gets the serviceName property value. 
+func (m *DelegatedAdminServiceManagementDetail) GetServiceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceName
+    }
 }
 func (m *DelegatedAdminServiceManagementDetail) IsNil()(bool) {
     return m == nil

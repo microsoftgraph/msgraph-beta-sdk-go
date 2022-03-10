@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrinterDocumentConfiguration 
+// PrinterDocumentConfiguration provides operations to manage the print singleton.
 type PrinterDocumentConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,7 +29,7 @@ type PrinterDocumentConfiguration struct {
     // 
     inputBin *string;
     // 
-    margin *PrintMargin;
+    margin PrintMarginable;
     // 
     mediaSize *string;
     // 
@@ -41,7 +41,7 @@ type PrinterDocumentConfiguration struct {
     // 
     outputBin *string;
     // 
-    pageRanges []IntegerRange;
+    pageRanges []IntegerRangeable;
     // 
     pagesPerSheet *int32;
     // 
@@ -55,6 +55,10 @@ func NewPrinterDocumentConfiguration()(*PrinterDocumentConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreatePrinterDocumentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrinterDocumentConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrinterDocumentConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDocumentConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -118,110 +122,6 @@ func (m *PrinterDocumentConfiguration) GetFeedOrientation()(*PrinterFeedOrientat
         return nil
     } else {
         return m.feedOrientation
-    }
-}
-// GetFinishings gets the finishings property value. 
-func (m *PrinterDocumentConfiguration) GetFinishings()([]PrintFinishing) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finishings
-    }
-}
-// GetFitPdfToPage gets the fitPdfToPage property value. 
-func (m *PrinterDocumentConfiguration) GetFitPdfToPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fitPdfToPage
-    }
-}
-// GetInputBin gets the inputBin property value. 
-func (m *PrinterDocumentConfiguration) GetInputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputBin
-    }
-}
-// GetMargin gets the margin property value. 
-func (m *PrinterDocumentConfiguration) GetMargin()(*PrintMargin) {
-    if m == nil {
-        return nil
-    } else {
-        return m.margin
-    }
-}
-// GetMediaSize gets the mediaSize property value. 
-func (m *PrinterDocumentConfiguration) GetMediaSize()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSize
-    }
-}
-// GetMediaType gets the mediaType property value. 
-func (m *PrinterDocumentConfiguration) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
-}
-// GetMultipageLayout gets the multipageLayout property value. 
-func (m *PrinterDocumentConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multipageLayout
-    }
-}
-// GetOrientation gets the orientation property value. 
-func (m *PrinterDocumentConfiguration) GetOrientation()(*PrintOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
-}
-// GetOutputBin gets the outputBin property value. 
-func (m *PrinterDocumentConfiguration) GetOutputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputBin
-    }
-}
-// GetPageRanges gets the pageRanges property value. 
-func (m *PrinterDocumentConfiguration) GetPageRanges()([]IntegerRange) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pageRanges
-    }
-}
-// GetPagesPerSheet gets the pagesPerSheet property value. 
-func (m *PrinterDocumentConfiguration) GetPagesPerSheet()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesPerSheet
-    }
-}
-// GetQuality gets the quality property value. 
-func (m *PrinterDocumentConfiguration) GetQuality()(*PrintQuality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quality
-    }
-}
-// GetScaling gets the scaling property value. 
-func (m *PrinterDocumentConfiguration) GetScaling()(*PrintScaling) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scaling
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -332,12 +232,12 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["margin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPrintMargin() })
+        val, err := n.GetObjectValue(CreatePrintMarginFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMargin(val.(*PrintMargin))
+            m.SetMargin(val.(PrintMarginable))
         }
         return nil
     }
@@ -392,14 +292,14 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["pageRanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIntegerRange() })
+        val, err := n.GetCollectionOfObjectValues(CreateIntegerRangeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IntegerRange, len(val))
+            res := make([]IntegerRangeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IntegerRange))
+                res[i] = v.(IntegerRangeable)
             }
             m.SetPageRanges(res)
         }
@@ -436,6 +336,110 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetFinishings gets the finishings property value. 
+func (m *PrinterDocumentConfiguration) GetFinishings()([]PrintFinishing) {
+    if m == nil {
+        return nil
+    } else {
+        return m.finishings
+    }
+}
+// GetFitPdfToPage gets the fitPdfToPage property value. 
+func (m *PrinterDocumentConfiguration) GetFitPdfToPage()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fitPdfToPage
+    }
+}
+// GetInputBin gets the inputBin property value. 
+func (m *PrinterDocumentConfiguration) GetInputBin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inputBin
+    }
+}
+// GetMargin gets the margin property value. 
+func (m *PrinterDocumentConfiguration) GetMargin()(PrintMarginable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.margin
+    }
+}
+// GetMediaSize gets the mediaSize property value. 
+func (m *PrinterDocumentConfiguration) GetMediaSize()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaSize
+    }
+}
+// GetMediaType gets the mediaType property value. 
+func (m *PrinterDocumentConfiguration) GetMediaType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaType
+    }
+}
+// GetMultipageLayout gets the multipageLayout property value. 
+func (m *PrinterDocumentConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multipageLayout
+    }
+}
+// GetOrientation gets the orientation property value. 
+func (m *PrinterDocumentConfiguration) GetOrientation()(*PrintOrientation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orientation
+    }
+}
+// GetOutputBin gets the outputBin property value. 
+func (m *PrinterDocumentConfiguration) GetOutputBin()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outputBin
+    }
+}
+// GetPageRanges gets the pageRanges property value. 
+func (m *PrinterDocumentConfiguration) GetPageRanges()([]IntegerRangeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pageRanges
+    }
+}
+// GetPagesPerSheet gets the pagesPerSheet property value. 
+func (m *PrinterDocumentConfiguration) GetPagesPerSheet()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pagesPerSheet
+    }
+}
+// GetQuality gets the quality property value. 
+func (m *PrinterDocumentConfiguration) GetQuality()(*PrintQuality) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quality
+    }
+}
+// GetScaling gets the scaling property value. 
+func (m *PrinterDocumentConfiguration) GetScaling()(*PrintScaling) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scaling
+    }
 }
 func (m *PrinterDocumentConfiguration) IsNil()(bool) {
     return m == nil
@@ -547,8 +551,7 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetPageRanges() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPageRanges()))
         for i, v := range m.GetPageRanges() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("pageRanges", cast)
         if err != nil {
@@ -650,7 +653,7 @@ func (m *PrinterDocumentConfiguration) SetInputBin(value *string)() {
     }
 }
 // SetMargin sets the margin property value. 
-func (m *PrinterDocumentConfiguration) SetMargin(value *PrintMargin)() {
+func (m *PrinterDocumentConfiguration) SetMargin(value PrintMarginable)() {
     if m != nil {
         m.margin = value
     }
@@ -686,7 +689,7 @@ func (m *PrinterDocumentConfiguration) SetOutputBin(value *string)() {
     }
 }
 // SetPageRanges sets the pageRanges property value. 
-func (m *PrinterDocumentConfiguration) SetPageRanges(value []IntegerRange)() {
+func (m *PrinterDocumentConfiguration) SetPageRanges(value []IntegerRangeable)() {
     if m != nil {
         m.pageRanges = value
     }

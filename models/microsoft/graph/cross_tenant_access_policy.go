@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicy 
+// CrossTenantAccessPolicy provides operations to manage the policyRoot singleton.
 type CrossTenantAccessPolicy struct {
     TenantRelationshipAccessPolicyBase
     // Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-    default_escaped *CrossTenantAccessPolicyConfigurationDefault;
+    default_escaped CrossTenantAccessPolicyConfigurationDefaultable;
     // Defines partner-specific configurations for external Azure Active Directory organizations.
-    partners []CrossTenantAccessPolicyConfigurationPartner;
+    partners []CrossTenantAccessPolicyConfigurationPartnerable;
 }
 // NewCrossTenantAccessPolicy instantiates a new crossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
@@ -19,50 +19,54 @@ func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
     }
     return m
 }
+// CreateCrossTenantAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCrossTenantAccessPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCrossTenantAccessPolicy(), nil
+}
 // GetDefault gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-func (m *CrossTenantAccessPolicy) GetDefault()(*CrossTenantAccessPolicyConfigurationDefault) {
+func (m *CrossTenantAccessPolicy) GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable) {
     if m == nil {
         return nil
     } else {
         return m.default_escaped
     }
 }
-// GetPartners gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
-func (m *CrossTenantAccessPolicy) GetPartners()([]CrossTenantAccessPolicyConfigurationPartner) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partners
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.TenantRelationshipAccessPolicyBase.GetFieldDeserializers()
     res["default"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCrossTenantAccessPolicyConfigurationDefault() })
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefault(val.(*CrossTenantAccessPolicyConfigurationDefault))
+            m.SetDefault(val.(CrossTenantAccessPolicyConfigurationDefaultable))
         }
         return nil
     }
     res["partners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCrossTenantAccessPolicyConfigurationPartner() })
+        val, err := n.GetCollectionOfObjectValues(CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CrossTenantAccessPolicyConfigurationPartner, len(val))
+            res := make([]CrossTenantAccessPolicyConfigurationPartnerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CrossTenantAccessPolicyConfigurationPartner))
+                res[i] = v.(CrossTenantAccessPolicyConfigurationPartnerable)
             }
             m.SetPartners(res)
         }
         return nil
     }
     return res
+}
+// GetPartners gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
+func (m *CrossTenantAccessPolicy) GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.partners
+    }
 }
 func (m *CrossTenantAccessPolicy) IsNil()(bool) {
     return m == nil
@@ -82,8 +86,7 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPartners()))
         for i, v := range m.GetPartners() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("partners", cast)
         if err != nil {
@@ -93,13 +96,13 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
     return nil
 }
 // SetDefault sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-func (m *CrossTenantAccessPolicy) SetDefault(value *CrossTenantAccessPolicyConfigurationDefault)() {
+func (m *CrossTenantAccessPolicy) SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)() {
     if m != nil {
         m.default_escaped = value
     }
 }
 // SetPartners sets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
-func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyConfigurationPartner)() {
+func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)() {
     if m != nil {
         m.partners = value
     }

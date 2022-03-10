@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingStaffMember 
+// BookingStaffMember provides operations to manage the collection of bookingBusiness entities.
 type BookingStaffMember struct {
     BookingPerson
     // True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
@@ -18,7 +18,7 @@ type BookingStaffMember struct {
     // True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
     useBusinessHours *bool;
     // The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
-    workingHours []BookingWorkHours;
+    workingHours []BookingWorkHoursable;
 }
 // NewBookingStaffMember instantiates a new bookingStaffMember and sets the default values.
 func NewBookingStaffMember()(*BookingStaffMember) {
@@ -26,6 +26,10 @@ func NewBookingStaffMember()(*BookingStaffMember) {
         BookingPerson: *NewBookingPerson(),
     }
     return m
+}
+// CreateBookingStaffMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingStaffMemberFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingStaffMember(), nil
 }
 // GetAvailabilityIsAffectedByPersonalCalendar gets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
 func (m *BookingStaffMember) GetAvailabilityIsAffectedByPersonalCalendar()(*bool) {
@@ -41,38 +45,6 @@ func (m *BookingStaffMember) GetColorIndex()(*int32) {
         return nil
     } else {
         return m.colorIndex
-    }
-}
-// GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
-func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.role
-    }
-}
-// GetTimeZone gets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
-func (m *BookingStaffMember) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
-}
-// GetUseBusinessHours gets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
-func (m *BookingStaffMember) GetUseBusinessHours()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useBusinessHours
-    }
-}
-// GetWorkingHours gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
-func (m *BookingStaffMember) GetWorkingHours()([]BookingWorkHours) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workingHours
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,20 +101,52 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["workingHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingWorkHours() })
+        val, err := n.GetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BookingWorkHours, len(val))
+            res := make([]BookingWorkHoursable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BookingWorkHours))
+                res[i] = v.(BookingWorkHoursable)
             }
             m.SetWorkingHours(res)
         }
         return nil
     }
     return res
+}
+// GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
+func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
+    if m == nil {
+        return nil
+    } else {
+        return m.role
+    }
+}
+// GetTimeZone gets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+func (m *BookingStaffMember) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
+}
+// GetUseBusinessHours gets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
+func (m *BookingStaffMember) GetUseBusinessHours()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.useBusinessHours
+    }
+}
+// GetWorkingHours gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+func (m *BookingStaffMember) GetWorkingHours()([]BookingWorkHoursable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workingHours
+    }
 }
 func (m *BookingStaffMember) IsNil()(bool) {
     return m == nil
@@ -187,8 +191,7 @@ func (m *BookingStaffMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetWorkingHours() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkingHours()))
         for i, v := range m.GetWorkingHours() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("workingHours", cast)
         if err != nil {
@@ -228,7 +231,7 @@ func (m *BookingStaffMember) SetUseBusinessHours(value *bool)() {
     }
 }
 // SetWorkingHours sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
-func (m *BookingStaffMember) SetWorkingHours(value []BookingWorkHours)() {
+func (m *BookingStaffMember) SetWorkingHours(value []BookingWorkHoursable)() {
     if m != nil {
         m.workingHours = value
     }

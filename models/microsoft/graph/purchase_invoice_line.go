@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PurchaseInvoiceLine 
+// PurchaseInvoiceLine provides operations to manage the financials singleton.
 type PurchaseInvoiceLine struct {
     Entity
     // 
-    account *Account;
+    account Accountable;
     // 
     accountId *string;
     // 
@@ -30,7 +30,7 @@ type PurchaseInvoiceLine struct {
     // 
     invoiceDiscountAllocation *float64;
     // 
-    item *Item;
+    item Itemable;
     // 
     itemId *string;
     // 
@@ -61,8 +61,12 @@ func NewPurchaseInvoiceLine()(*PurchaseInvoiceLine) {
     }
     return m
 }
+// CreatePurchaseInvoiceLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePurchaseInvoiceLineFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPurchaseInvoiceLine(), nil
+}
 // GetAccount gets the account property value. 
-func (m *PurchaseInvoiceLine) GetAccount()(*Account) {
+func (m *PurchaseInvoiceLine) GetAccount()(Accountable) {
     if m == nil {
         return nil
     } else {
@@ -141,120 +145,16 @@ func (m *PurchaseInvoiceLine) GetExpectedReceiptDate()(*i04eb5309aeaafadd28374d7
         return m.expectedReceiptDate
     }
 }
-// GetInvoiceDiscountAllocation gets the invoiceDiscountAllocation property value. 
-func (m *PurchaseInvoiceLine) GetInvoiceDiscountAllocation()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceDiscountAllocation
-    }
-}
-// GetItem gets the item property value. 
-func (m *PurchaseInvoiceLine) GetItem()(*Item) {
-    if m == nil {
-        return nil
-    } else {
-        return m.item
-    }
-}
-// GetItemId gets the itemId property value. 
-func (m *PurchaseInvoiceLine) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
-}
-// GetLineType gets the lineType property value. 
-func (m *PurchaseInvoiceLine) GetLineType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lineType
-    }
-}
-// GetNetAmount gets the netAmount property value. 
-func (m *PurchaseInvoiceLine) GetNetAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netAmount
-    }
-}
-// GetNetAmountIncludingTax gets the netAmountIncludingTax property value. 
-func (m *PurchaseInvoiceLine) GetNetAmountIncludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netAmountIncludingTax
-    }
-}
-// GetNetTaxAmount gets the netTaxAmount property value. 
-func (m *PurchaseInvoiceLine) GetNetTaxAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netTaxAmount
-    }
-}
-// GetQuantity gets the quantity property value. 
-func (m *PurchaseInvoiceLine) GetQuantity()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quantity
-    }
-}
-// GetSequence gets the sequence property value. 
-func (m *PurchaseInvoiceLine) GetSequence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sequence
-    }
-}
-// GetTaxCode gets the taxCode property value. 
-func (m *PurchaseInvoiceLine) GetTaxCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxCode
-    }
-}
-// GetTaxPercent gets the taxPercent property value. 
-func (m *PurchaseInvoiceLine) GetTaxPercent()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxPercent
-    }
-}
-// GetTotalTaxAmount gets the totalTaxAmount property value. 
-func (m *PurchaseInvoiceLine) GetTotalTaxAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalTaxAmount
-    }
-}
-// GetUnitCost gets the unitCost property value. 
-func (m *PurchaseInvoiceLine) GetUnitCost()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitCost
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccount() })
+        val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccount(val.(*Account))
+            m.SetAccount(val.(Accountable))
         }
         return nil
     }
@@ -359,12 +259,12 @@ func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["item"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItem() })
+        val, err := n.GetObjectValue(CreateItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetItem(val.(*Item))
+            m.SetItem(val.(Itemable))
         }
         return nil
     }
@@ -479,6 +379,110 @@ func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetInvoiceDiscountAllocation gets the invoiceDiscountAllocation property value. 
+func (m *PurchaseInvoiceLine) GetInvoiceDiscountAllocation()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invoiceDiscountAllocation
+    }
+}
+// GetItem gets the item property value. 
+func (m *PurchaseInvoiceLine) GetItem()(Itemable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.item
+    }
+}
+// GetItemId gets the itemId property value. 
+func (m *PurchaseInvoiceLine) GetItemId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.itemId
+    }
+}
+// GetLineType gets the lineType property value. 
+func (m *PurchaseInvoiceLine) GetLineType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lineType
+    }
+}
+// GetNetAmount gets the netAmount property value. 
+func (m *PurchaseInvoiceLine) GetNetAmount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.netAmount
+    }
+}
+// GetNetAmountIncludingTax gets the netAmountIncludingTax property value. 
+func (m *PurchaseInvoiceLine) GetNetAmountIncludingTax()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.netAmountIncludingTax
+    }
+}
+// GetNetTaxAmount gets the netTaxAmount property value. 
+func (m *PurchaseInvoiceLine) GetNetTaxAmount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.netTaxAmount
+    }
+}
+// GetQuantity gets the quantity property value. 
+func (m *PurchaseInvoiceLine) GetQuantity()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quantity
+    }
+}
+// GetSequence gets the sequence property value. 
+func (m *PurchaseInvoiceLine) GetSequence()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sequence
+    }
+}
+// GetTaxCode gets the taxCode property value. 
+func (m *PurchaseInvoiceLine) GetTaxCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxCode
+    }
+}
+// GetTaxPercent gets the taxPercent property value. 
+func (m *PurchaseInvoiceLine) GetTaxPercent()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.taxPercent
+    }
+}
+// GetTotalTaxAmount gets the totalTaxAmount property value. 
+func (m *PurchaseInvoiceLine) GetTotalTaxAmount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalTaxAmount
+    }
+}
+// GetUnitCost gets the unitCost property value. 
+func (m *PurchaseInvoiceLine) GetUnitCost()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.unitCost
+    }
 }
 func (m *PurchaseInvoiceLine) IsNil()(bool) {
     return m == nil
@@ -630,7 +634,7 @@ func (m *PurchaseInvoiceLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetAccount sets the account property value. 
-func (m *PurchaseInvoiceLine) SetAccount(value *Account)() {
+func (m *PurchaseInvoiceLine) SetAccount(value Accountable)() {
     if m != nil {
         m.account = value
     }
@@ -696,7 +700,7 @@ func (m *PurchaseInvoiceLine) SetInvoiceDiscountAllocation(value *float64)() {
     }
 }
 // SetItem sets the item property value. 
-func (m *PurchaseInvoiceLine) SetItem(value *Item)() {
+func (m *PurchaseInvoiceLine) SetItem(value Itemable)() {
     if m != nil {
         m.item = value
     }

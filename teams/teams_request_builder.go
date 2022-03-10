@@ -2,13 +2,14 @@ package teams
 
 import (
     i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/allmessages"
+    i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/count"
     i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/getallmessages"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// TeamsRequestBuilder builds and executes requests for operations under \teams
+// TeamsRequestBuilder provides operations to manage the collection of team entities.
 type TeamsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +51,7 @@ type TeamsRequestBuilderGetQueryParameters struct {
 // TeamsRequestBuilderPostOptions options for Post
 type TeamsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamable;
     // Request headers
     H map[string]string;
     // Request options
@@ -58,7 +59,7 @@ type TeamsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AllMessages builds and executes requests for operations under \teams\microsoft.graph.allMessages()
+// AllMessages provides operations to call the allMessages method.
 func (m *TeamsRequestBuilder) AllMessages()(*i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009.AllMessagesRequestBuilder) {
     return i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -71,7 +72,7 @@ func NewTeamsRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -80,6 +81,9 @@ func NewTeamsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TeamsRequestBuilder) Count()(*i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5.CountRequestBuilder) {
+    return i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from teams
 func (m *TeamsRequestBuilder) CreateGetRequestInformation(options *TeamsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -120,30 +124,38 @@ func (m *TeamsRequestBuilder) CreatePostRequestInformation(options *TeamsRequest
     return requestInfo, nil
 }
 // Get get entities from teams
-func (m *TeamsRequestBuilder) Get(options *TeamsRequestBuilderGetOptions)(*TeamsResponse, error) {
+func (m *TeamsRequestBuilder) Get(options *TeamsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TeamsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamCollectionResponseable), nil
 }
-// GetAllMessages builds and executes requests for operations under \teams\microsoft.graph.getAllMessages()
+// GetAllMessages provides operations to call the getAllMessages method.
 func (m *TeamsRequestBuilder) GetAllMessages()(*i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.GetAllMessagesRequestBuilder) {
     return i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to teams
-func (m *TeamsRequestBuilder) Post(options *TeamsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team, error) {
+func (m *TeamsRequestBuilder) Post(options *TeamsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTeam() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTeamFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Team), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamable), nil
 }

@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SalesInvoice 
+// SalesInvoice provides operations to manage the financials singleton.
 type SalesInvoice struct {
     Entity
     // 
-    billingPostalAddress *PostalAddressType;
+    billingPostalAddress PostalAddressTypeable;
     // 
     billToCustomerId *string;
     // 
@@ -17,13 +17,13 @@ type SalesInvoice struct {
     // 
     billToName *string;
     // 
-    currency *Currency;
+    currency Currencyable;
     // 
     currencyCode *string;
     // 
     currencyId *string;
     // 
-    customer *Customer;
+    customer Customerable;
     // 
     customerId *string;
     // 
@@ -53,7 +53,7 @@ type SalesInvoice struct {
     // 
     orderNumber *string;
     // 
-    paymentTerm *PaymentTerm;
+    paymentTerm PaymentTermable;
     // 
     paymentTermsId *string;
     // 
@@ -61,17 +61,17 @@ type SalesInvoice struct {
     // 
     pricesIncludeTax *bool;
     // 
-    salesInvoiceLines []SalesInvoiceLine;
+    salesInvoiceLines []SalesInvoiceLineable;
     // 
     salesperson *string;
     // 
-    sellingPostalAddress *PostalAddressType;
+    sellingPostalAddress PostalAddressTypeable;
     // 
-    shipmentMethod *ShipmentMethod;
+    shipmentMethod ShipmentMethodable;
     // 
     shipmentMethodId *string;
     // 
-    shippingPostalAddress *PostalAddressType;
+    shippingPostalAddress PostalAddressTypeable;
     // 
     shipToContact *string;
     // 
@@ -92,8 +92,12 @@ func NewSalesInvoice()(*SalesInvoice) {
     }
     return m
 }
+// CreateSalesInvoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSalesInvoiceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSalesInvoice(), nil
+}
 // GetBillingPostalAddress gets the billingPostalAddress property value. 
-func (m *SalesInvoice) GetBillingPostalAddress()(*PostalAddressType) {
+func (m *SalesInvoice) GetBillingPostalAddress()(PostalAddressTypeable) {
     if m == nil {
         return nil
     } else {
@@ -125,7 +129,7 @@ func (m *SalesInvoice) GetBillToName()(*string) {
     }
 }
 // GetCurrency gets the currency property value. 
-func (m *SalesInvoice) GetCurrency()(*Currency) {
+func (m *SalesInvoice) GetCurrency()(Currencyable) {
     if m == nil {
         return nil
     } else {
@@ -149,7 +153,7 @@ func (m *SalesInvoice) GetCurrencyId()(*string) {
     }
 }
 // GetCustomer gets the customer property value. 
-func (m *SalesInvoice) GetCustomer()(*Customer) {
+func (m *SalesInvoice) GetCustomer()(Customerable) {
     if m == nil {
         return nil
     } else {
@@ -228,184 +232,16 @@ func (m *SalesInvoice) GetExternalDocumentNumber()(*string) {
         return m.externalDocumentNumber
     }
 }
-// GetInvoiceDate gets the invoiceDate property value. 
-func (m *SalesInvoice) GetInvoiceDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceDate
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *SalesInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetNumber gets the number property value. 
-func (m *SalesInvoice) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetOrderId gets the orderId property value. 
-func (m *SalesInvoice) GetOrderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderId
-    }
-}
-// GetOrderNumber gets the orderNumber property value. 
-func (m *SalesInvoice) GetOrderNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderNumber
-    }
-}
-// GetPaymentTerm gets the paymentTerm property value. 
-func (m *SalesInvoice) GetPaymentTerm()(*PaymentTerm) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerm
-    }
-}
-// GetPaymentTermsId gets the paymentTermsId property value. 
-func (m *SalesInvoice) GetPaymentTermsId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTermsId
-    }
-}
-// GetPhoneNumber gets the phoneNumber property value. 
-func (m *SalesInvoice) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
-}
-// GetPricesIncludeTax gets the pricesIncludeTax property value. 
-func (m *SalesInvoice) GetPricesIncludeTax()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pricesIncludeTax
-    }
-}
-// GetSalesInvoiceLines gets the salesInvoiceLines property value. 
-func (m *SalesInvoice) GetSalesInvoiceLines()([]SalesInvoiceLine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesInvoiceLines
-    }
-}
-// GetSalesperson gets the salesperson property value. 
-func (m *SalesInvoice) GetSalesperson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesperson
-    }
-}
-// GetSellingPostalAddress gets the sellingPostalAddress property value. 
-func (m *SalesInvoice) GetSellingPostalAddress()(*PostalAddressType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sellingPostalAddress
-    }
-}
-// GetShipmentMethod gets the shipmentMethod property value. 
-func (m *SalesInvoice) GetShipmentMethod()(*ShipmentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethod
-    }
-}
-// GetShipmentMethodId gets the shipmentMethodId property value. 
-func (m *SalesInvoice) GetShipmentMethodId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethodId
-    }
-}
-// GetShippingPostalAddress gets the shippingPostalAddress property value. 
-func (m *SalesInvoice) GetShippingPostalAddress()(*PostalAddressType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shippingPostalAddress
-    }
-}
-// GetShipToContact gets the shipToContact property value. 
-func (m *SalesInvoice) GetShipToContact()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipToContact
-    }
-}
-// GetShipToName gets the shipToName property value. 
-func (m *SalesInvoice) GetShipToName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipToName
-    }
-}
-// GetStatus gets the status property value. 
-func (m *SalesInvoice) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. 
-func (m *SalesInvoice) GetTotalAmountExcludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalAmountExcludingTax
-    }
-}
-// GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. 
-func (m *SalesInvoice) GetTotalAmountIncludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalAmountIncludingTax
-    }
-}
-// GetTotalTaxAmount gets the totalTaxAmount property value. 
-func (m *SalesInvoice) GetTotalTaxAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalTaxAmount
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["billingPostalAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPostalAddressType() })
+        val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBillingPostalAddress(val.(*PostalAddressType))
+            m.SetBillingPostalAddress(val.(PostalAddressTypeable))
         }
         return nil
     }
@@ -440,12 +276,12 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["currency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCurrency() })
+        val, err := n.GetObjectValue(CreateCurrencyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCurrency(val.(*Currency))
+            m.SetCurrency(val.(Currencyable))
         }
         return nil
     }
@@ -470,12 +306,12 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["customer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomer() })
+        val, err := n.GetObjectValue(CreateCustomerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCustomer(val.(*Customer))
+            m.SetCustomer(val.(Customerable))
         }
         return nil
     }
@@ -620,12 +456,12 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["paymentTerm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPaymentTerm() })
+        val, err := n.GetObjectValue(CreatePaymentTermFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPaymentTerm(val.(*PaymentTerm))
+            m.SetPaymentTerm(val.(PaymentTermable))
         }
         return nil
     }
@@ -660,14 +496,14 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["salesInvoiceLines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesInvoiceLine() })
+        val, err := n.GetCollectionOfObjectValues(CreateSalesInvoiceLineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SalesInvoiceLine, len(val))
+            res := make([]SalesInvoiceLineable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SalesInvoiceLine))
+                res[i] = v.(SalesInvoiceLineable)
             }
             m.SetSalesInvoiceLines(res)
         }
@@ -684,22 +520,22 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["sellingPostalAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPostalAddressType() })
+        val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSellingPostalAddress(val.(*PostalAddressType))
+            m.SetSellingPostalAddress(val.(PostalAddressTypeable))
         }
         return nil
     }
     res["shipmentMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShipmentMethod() })
+        val, err := n.GetObjectValue(CreateShipmentMethodFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetShipmentMethod(val.(*ShipmentMethod))
+            m.SetShipmentMethod(val.(ShipmentMethodable))
         }
         return nil
     }
@@ -714,12 +550,12 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["shippingPostalAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPostalAddressType() })
+        val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetShippingPostalAddress(val.(*PostalAddressType))
+            m.SetShippingPostalAddress(val.(PostalAddressTypeable))
         }
         return nil
     }
@@ -784,6 +620,174 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetInvoiceDate gets the invoiceDate property value. 
+func (m *SalesInvoice) GetInvoiceDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invoiceDate
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *SalesInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetNumber gets the number property value. 
+func (m *SalesInvoice) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetOrderId gets the orderId property value. 
+func (m *SalesInvoice) GetOrderId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderId
+    }
+}
+// GetOrderNumber gets the orderNumber property value. 
+func (m *SalesInvoice) GetOrderNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.orderNumber
+    }
+}
+// GetPaymentTerm gets the paymentTerm property value. 
+func (m *SalesInvoice) GetPaymentTerm()(PaymentTermable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentTerm
+    }
+}
+// GetPaymentTermsId gets the paymentTermsId property value. 
+func (m *SalesInvoice) GetPaymentTermsId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.paymentTermsId
+    }
+}
+// GetPhoneNumber gets the phoneNumber property value. 
+func (m *SalesInvoice) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
+}
+// GetPricesIncludeTax gets the pricesIncludeTax property value. 
+func (m *SalesInvoice) GetPricesIncludeTax()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pricesIncludeTax
+    }
+}
+// GetSalesInvoiceLines gets the salesInvoiceLines property value. 
+func (m *SalesInvoice) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesInvoiceLines
+    }
+}
+// GetSalesperson gets the salesperson property value. 
+func (m *SalesInvoice) GetSalesperson()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.salesperson
+    }
+}
+// GetSellingPostalAddress gets the sellingPostalAddress property value. 
+func (m *SalesInvoice) GetSellingPostalAddress()(PostalAddressTypeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sellingPostalAddress
+    }
+}
+// GetShipmentMethod gets the shipmentMethod property value. 
+func (m *SalesInvoice) GetShipmentMethod()(ShipmentMethodable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shipmentMethod
+    }
+}
+// GetShipmentMethodId gets the shipmentMethodId property value. 
+func (m *SalesInvoice) GetShipmentMethodId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shipmentMethodId
+    }
+}
+// GetShippingPostalAddress gets the shippingPostalAddress property value. 
+func (m *SalesInvoice) GetShippingPostalAddress()(PostalAddressTypeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shippingPostalAddress
+    }
+}
+// GetShipToContact gets the shipToContact property value. 
+func (m *SalesInvoice) GetShipToContact()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shipToContact
+    }
+}
+// GetShipToName gets the shipToName property value. 
+func (m *SalesInvoice) GetShipToName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.shipToName
+    }
+}
+// GetStatus gets the status property value. 
+func (m *SalesInvoice) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. 
+func (m *SalesInvoice) GetTotalAmountExcludingTax()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalAmountExcludingTax
+    }
+}
+// GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. 
+func (m *SalesInvoice) GetTotalAmountIncludingTax()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalAmountIncludingTax
+    }
+}
+// GetTotalTaxAmount gets the totalTaxAmount property value. 
+func (m *SalesInvoice) GetTotalTaxAmount()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalTaxAmount
+    }
 }
 func (m *SalesInvoice) IsNil()(bool) {
     return m == nil
@@ -953,8 +957,7 @@ func (m *SalesInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if m.GetSalesInvoiceLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesInvoiceLines()))
         for i, v := range m.GetSalesInvoiceLines() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("salesInvoiceLines", cast)
         if err != nil {
@@ -1030,7 +1033,7 @@ func (m *SalesInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     return nil
 }
 // SetBillingPostalAddress sets the billingPostalAddress property value. 
-func (m *SalesInvoice) SetBillingPostalAddress(value *PostalAddressType)() {
+func (m *SalesInvoice) SetBillingPostalAddress(value PostalAddressTypeable)() {
     if m != nil {
         m.billingPostalAddress = value
     }
@@ -1054,7 +1057,7 @@ func (m *SalesInvoice) SetBillToName(value *string)() {
     }
 }
 // SetCurrency sets the currency property value. 
-func (m *SalesInvoice) SetCurrency(value *Currency)() {
+func (m *SalesInvoice) SetCurrency(value Currencyable)() {
     if m != nil {
         m.currency = value
     }
@@ -1072,7 +1075,7 @@ func (m *SalesInvoice) SetCurrencyId(value *string)() {
     }
 }
 // SetCustomer sets the customer property value. 
-func (m *SalesInvoice) SetCustomer(value *Customer)() {
+func (m *SalesInvoice) SetCustomer(value Customerable)() {
     if m != nil {
         m.customer = value
     }
@@ -1162,7 +1165,7 @@ func (m *SalesInvoice) SetOrderNumber(value *string)() {
     }
 }
 // SetPaymentTerm sets the paymentTerm property value. 
-func (m *SalesInvoice) SetPaymentTerm(value *PaymentTerm)() {
+func (m *SalesInvoice) SetPaymentTerm(value PaymentTermable)() {
     if m != nil {
         m.paymentTerm = value
     }
@@ -1186,7 +1189,7 @@ func (m *SalesInvoice) SetPricesIncludeTax(value *bool)() {
     }
 }
 // SetSalesInvoiceLines sets the salesInvoiceLines property value. 
-func (m *SalesInvoice) SetSalesInvoiceLines(value []SalesInvoiceLine)() {
+func (m *SalesInvoice) SetSalesInvoiceLines(value []SalesInvoiceLineable)() {
     if m != nil {
         m.salesInvoiceLines = value
     }
@@ -1198,13 +1201,13 @@ func (m *SalesInvoice) SetSalesperson(value *string)() {
     }
 }
 // SetSellingPostalAddress sets the sellingPostalAddress property value. 
-func (m *SalesInvoice) SetSellingPostalAddress(value *PostalAddressType)() {
+func (m *SalesInvoice) SetSellingPostalAddress(value PostalAddressTypeable)() {
     if m != nil {
         m.sellingPostalAddress = value
     }
 }
 // SetShipmentMethod sets the shipmentMethod property value. 
-func (m *SalesInvoice) SetShipmentMethod(value *ShipmentMethod)() {
+func (m *SalesInvoice) SetShipmentMethod(value ShipmentMethodable)() {
     if m != nil {
         m.shipmentMethod = value
     }
@@ -1216,7 +1219,7 @@ func (m *SalesInvoice) SetShipmentMethodId(value *string)() {
     }
 }
 // SetShippingPostalAddress sets the shippingPostalAddress property value. 
-func (m *SalesInvoice) SetShippingPostalAddress(value *PostalAddressType)() {
+func (m *SalesInvoice) SetShippingPostalAddress(value PostalAddressTypeable)() {
     if m != nil {
         m.shippingPostalAddress = value
     }

@@ -2,15 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i1522474c74e47117b7b5d32f30b9ee09e9a4497d181ef48a790b5dd525353391 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignments/item/directoryscope"
     i3474a2e38b281f4e7797434d422c48f9318be118347d877da4600124658ab447 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignments/item/appscope"
     idbde65951a67811bb15ce6245951166d482b6787a2b87ced4038bae710df35af "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignments/item/principal"
     ife4fc797bde6a1f61ef8a96d5a81eea6e837ac644934fadf77ca8be443553675 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignments/item/roledefinition"
 )
 
-// UnifiedRoleAssignmentItemRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}
+// UnifiedRoleAssignmentItemRequestBuilder provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
 type UnifiedRoleAssignmentItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
 // UnifiedRoleAssignmentItemRequestBuilderPatchOptions options for Patch
 type UnifiedRoleAssignmentItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -69,7 +69,7 @@ func NewUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -79,7 +79,7 @@ func NewUnifiedRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation resource to grant access to users or groups.
+// CreateDeleteRequestInformation delete navigation property roleAssignments for roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleAssignmentItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation resource to grant access to users or groups.
+// CreatePatchRequestInformation update the navigation property roleAssignments in roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleAssignmentItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,13 +134,17 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete resource to grant access to users or groups.
+// Delete delete navigation property roleAssignments for roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) Delete(options *UnifiedRoleAssignmentItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -150,24 +154,32 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*i1522474c74e
     return i1522474c74e47117b7b5d32f30b9ee09e9a4497d181ef48a790b5dd525353391.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get resource to grant access to users or groups.
-func (m *UnifiedRoleAssignmentItemRequestBuilder) Get(options *UnifiedRoleAssignmentItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignment, error) {
+func (m *UnifiedRoleAssignmentItemRequestBuilder) Get(options *UnifiedRoleAssignmentItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUnifiedRoleAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnifiedRoleAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentable), nil
 }
-// Patch resource to grant access to users or groups.
+// Patch update the navigation property roleAssignments in roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) Patch(options *UnifiedRoleAssignmentItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

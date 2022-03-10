@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyInboundTrust 
+// CrossTenantAccessPolicyInboundTrust provides operations to manage the policyRoot singleton.
 type CrossTenantAccessPolicyInboundTrust struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewCrossTenantAccessPolicyInboundTrust()(*CrossTenantAccessPolicyInboundTru
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCrossTenantAccessPolicyInboundTrust(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyInboundTrust) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsCompliantDeviceAccepted gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
-func (m *CrossTenantAccessPolicyInboundTrust) GetIsCompliantDeviceAccepted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCompliantDeviceAccepted
-    }
-}
-// GetIsHybridAzureADJoinedDeviceAccepted gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
-func (m *CrossTenantAccessPolicyInboundTrust) GetIsHybridAzureADJoinedDeviceAccepted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHybridAzureADJoinedDeviceAccepted
-    }
-}
-// GetIsMfaAccepted gets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
-func (m *CrossTenantAccessPolicyInboundTrust) GetIsMfaAccepted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMfaAccepted
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetIsCompliantDeviceAccepted gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
+func (m *CrossTenantAccessPolicyInboundTrust) GetIsCompliantDeviceAccepted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isCompliantDeviceAccepted
+    }
+}
+// GetIsHybridAzureADJoinedDeviceAccepted gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+func (m *CrossTenantAccessPolicyInboundTrust) GetIsHybridAzureADJoinedDeviceAccepted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isHybridAzureADJoinedDeviceAccepted
+    }
+}
+// GetIsMfaAccepted gets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
+func (m *CrossTenantAccessPolicyInboundTrust) GetIsMfaAccepted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMfaAccepted
+    }
 }
 func (m *CrossTenantAccessPolicyInboundTrust) IsNil()(bool) {
     return m == nil

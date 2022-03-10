@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GenerateEncryptionPublicKeyRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.generateEncryptionPublicKey
+// GenerateEncryptionPublicKeyRequestBuilder provides operations to call the generateEncryptionPublicKey method.
 type GenerateEncryptionPublicKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGenerateEncryptionPublicKeyRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation
     return requestInfo, nil
 }
 // Post generate a public key to use to encrypt the Apple device enrollment program token
-func (m *GenerateEncryptionPublicKeyRequestBuilder) Post(options *GenerateEncryptionPublicKeyRequestBuilderPostOptions)(*string, error) {
+func (m *GenerateEncryptionPublicKeyRequestBuilder) Post(options *GenerateEncryptionPublicKeyRequestBuilderPostOptions)(GenerateEncryptionPublicKeyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGenerateEncryptionPublicKeyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(GenerateEncryptionPublicKeyResponseable), nil
 }

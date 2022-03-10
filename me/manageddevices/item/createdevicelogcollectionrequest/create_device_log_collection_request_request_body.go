@@ -5,12 +5,12 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateDeviceLogCollectionRequestRequestBody 
+// CreateDeviceLogCollectionRequestRequestBody provides operations to call the createDeviceLogCollectionRequest method.
 type CreateDeviceLogCollectionRequestRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    templateType *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequest;
+    templateType i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable;
 }
 // NewCreateDeviceLogCollectionRequestRequestBody instantiates a new createDeviceLogCollectionRequestRequestBody and sets the default values.
 func NewCreateDeviceLogCollectionRequestRequestBody()(*CreateDeviceLogCollectionRequestRequestBody) {
@@ -18,6 +18,10 @@ func NewCreateDeviceLogCollectionRequestRequestBody()(*CreateDeviceLogCollection
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCreateDeviceLogCollectionRequestRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCreateDeviceLogCollectionRequestRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateDeviceLogCollectionRequestRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateDeviceLogCollectionRequestRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -27,28 +31,28 @@ func (m *CreateDeviceLogCollectionRequestRequestBody) GetAdditionalData()(map[st
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CreateDeviceLogCollectionRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["templateType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceLogCollectionRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTemplateType(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTemplateType gets the templateType property value. 
-func (m *CreateDeviceLogCollectionRequestRequestBody) GetTemplateType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequest) {
+func (m *CreateDeviceLogCollectionRequestRequestBody) GetTemplateType()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable) {
     if m == nil {
         return nil
     } else {
         return m.templateType
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CreateDeviceLogCollectionRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["templateType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceLogCollectionRequest() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequest))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CreateDeviceLogCollectionRequestRequestBody) IsNil()(bool) {
     return m == nil
@@ -76,7 +80,7 @@ func (m *CreateDeviceLogCollectionRequestRequestBody) SetAdditionalData(value ma
     }
 }
 // SetTemplateType sets the templateType property value. 
-func (m *CreateDeviceLogCollectionRequestRequestBody) SetTemplateType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequest)() {
+func (m *CreateDeviceLogCollectionRequestRequestBody) SetTemplateType(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable)() {
     if m != nil {
         m.templateType = value
     }

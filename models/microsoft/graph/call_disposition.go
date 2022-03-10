@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the redirect method.
 type CallDisposition int
 
 const (

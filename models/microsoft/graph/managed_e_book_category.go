@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedEBookCategory 
+// ManagedEBookCategory provides operations to manage the deviceAppManagement singleton.
 type ManagedEBookCategory struct {
     Entity
     // The name of the eBook category.
@@ -20,20 +20,16 @@ func NewManagedEBookCategory()(*ManagedEBookCategory) {
     }
     return m
 }
+// CreateManagedEBookCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedEBookCategoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedEBookCategory(), nil
+}
 // GetDisplayName gets the displayName property value. The name of the eBook category.
 func (m *ManagedEBookCategory) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the ManagedEBookCategory was last modified.
-func (m *ManagedEBookCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -60,6 +56,14 @@ func (m *ManagedEBookCategory) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the ManagedEBookCategory was last modified.
+func (m *ManagedEBookCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *ManagedEBookCategory) IsNil()(bool) {
     return m == nil

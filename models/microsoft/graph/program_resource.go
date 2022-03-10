@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProgramResource 
+// ProgramResource provides operations to manage the collection of program entities.
 type ProgramResource struct {
     Identity
     // Type of the resource, indicating whether it is a group or an app.
@@ -17,13 +17,9 @@ func NewProgramResource()(*ProgramResource) {
     }
     return m
 }
-// GetType gets the type property value. Type of the resource, indicating whether it is a group or an app.
-func (m *ProgramResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+// CreateProgramResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateProgramResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewProgramResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProgramResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -39,6 +35,14 @@ func (m *ProgramResource) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     return res
+}
+// GetType gets the type property value. Type of the resource, indicating whether it is a group or an app.
+func (m *ProgramResource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *ProgramResource) IsNil()(bool) {
     return m == nil

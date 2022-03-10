@@ -2,11 +2,12 @@ package oemwarrantyinformationonboarding
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ied819887080170f28238677d2c9192c8ead5d753f718c064b7761f23dbd1a16b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/oemwarrantyinformationonboarding/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// OemWarrantyInformationOnboardingRequestBuilder builds and executes requests for operations under \deviceManagement\oemWarrantyInformationOnboarding
+// OemWarrantyInformationOnboardingRequestBuilder provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.
 type OemWarrantyInformationOnboardingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type OemWarrantyInformationOnboardingRequestBuilderGetQueryParameters struct {
 // OemWarrantyInformationOnboardingRequestBuilderPostOptions options for Post
 type OemWarrantyInformationOnboardingRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboarding;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboardingable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewOemWarrantyInformationOnboardingRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewOemWarrantyInformationOnboardingRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOemWarrantyInformationOnboardingRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *OemWarrantyInformationOnboardingRequestBuilder) Count()(*ied819887080170f28238677d2c9192c8ead5d753f718c064b7761f23dbd1a16b.CountRequestBuilder) {
+    return ied819887080170f28238677d2c9192c8ead5d753f718c064b7761f23dbd1a16b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of OEM Warranty Statuses
 func (m *OemWarrantyInformationOnboardingRequestBuilder) CreateGetRequestInformation(options *OemWarrantyInformationOnboardingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *OemWarrantyInformationOnboardingRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation list of OEM Warranty Statuses
+// CreatePostRequestInformation create new navigation property to oemWarrantyInformationOnboarding for deviceManagement
 func (m *OemWarrantyInformationOnboardingRequestBuilder) CreatePostRequestInformation(options *OemWarrantyInformationOnboardingRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *OemWarrantyInformationOnboardingRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get list of OEM Warranty Statuses
-func (m *OemWarrantyInformationOnboardingRequestBuilder) Get(options *OemWarrantyInformationOnboardingRequestBuilderGetOptions)(*OemWarrantyInformationOnboardingResponse, error) {
+func (m *OemWarrantyInformationOnboardingRequestBuilder) Get(options *OemWarrantyInformationOnboardingRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboardingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOemWarrantyInformationOnboardingResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOemWarrantyInformationOnboardingCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*OemWarrantyInformationOnboardingResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboardingCollectionResponseable), nil
 }
-// Post list of OEM Warranty Statuses
-func (m *OemWarrantyInformationOnboardingRequestBuilder) Post(options *OemWarrantyInformationOnboardingRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboarding, error) {
+// Post create new navigation property to oemWarrantyInformationOnboarding for deviceManagement
+func (m *OemWarrantyInformationOnboardingRequestBuilder) Post(options *OemWarrantyInformationOnboardingRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboardingable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOemWarrantyInformationOnboarding() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOemWarrantyInformationOnboardingFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboarding), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyInformationOnboardingable), nil
 }

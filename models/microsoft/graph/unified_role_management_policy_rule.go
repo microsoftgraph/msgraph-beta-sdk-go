@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleManagementPolicyRule 
+// UnifiedRoleManagementPolicyRule provides operations to manage the policyRoot singleton.
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // The target for the policy rule.
-    target *UnifiedRoleManagementPolicyRuleTarget;
+    target UnifiedRoleManagementPolicyRuleTargetable;
 }
 // NewUnifiedRoleManagementPolicyRule instantiates a new unifiedRoleManagementPolicyRule and sets the default values.
 func NewUnifiedRoleManagementPolicyRule()(*UnifiedRoleManagementPolicyRule) {
@@ -17,28 +17,32 @@ func NewUnifiedRoleManagementPolicyRule()(*UnifiedRoleManagementPolicyRule) {
     }
     return m
 }
-// GetTarget gets the target property value. The target for the policy rule.
-func (m *UnifiedRoleManagementPolicyRule) GetTarget()(*UnifiedRoleManagementPolicyRuleTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+// CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleManagementPolicyRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyRule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleManagementPolicyRuleTarget() })
+        val, err := n.GetObjectValue(CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*UnifiedRoleManagementPolicyRuleTarget))
+            m.SetTarget(val.(UnifiedRoleManagementPolicyRuleTargetable))
         }
         return nil
     }
     return res
+}
+// GetTarget gets the target property value. The target for the policy rule.
+func (m *UnifiedRoleManagementPolicyRule) GetTarget()(UnifiedRoleManagementPolicyRuleTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *UnifiedRoleManagementPolicyRule) IsNil()(bool) {
     return m == nil
@@ -58,7 +62,7 @@ func (m *UnifiedRoleManagementPolicyRule) Serialize(writer i04eb5309aeaafadd2837
     return nil
 }
 // SetTarget sets the target property value. The target for the policy rule.
-func (m *UnifiedRoleManagementPolicyRule) SetTarget(value *UnifiedRoleManagementPolicyRuleTarget)() {
+func (m *UnifiedRoleManagementPolicyRule) SetTarget(value UnifiedRoleManagementPolicyRuleTargetable)() {
     if m != nil {
         m.target = value
     }

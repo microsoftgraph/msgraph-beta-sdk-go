@@ -2,11 +2,11 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DeviceManagementCachedReportConfigurationItemRequestBuilder builds and executes requests for operations under \deviceManagement\reports\cachedReportConfigurations\{deviceManagementCachedReportConfiguration-id}
+// DeviceManagementCachedReportConfigurationItemRequestBuilder provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
 type DeviceManagementCachedReportConfigurationItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type DeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParamete
 // DeviceManagementCachedReportConfigurationItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementCachedReportConfigurationItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +62,7 @@ func NewDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +72,7 @@ func NewDeviceManagementCachedReportConfigurationItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation entity representing the configuration of a cached report
+// CreateDeleteRequestInformation delete navigation property cachedReportConfigurations for deviceManagement
 func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementCachedReportConfigurationItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation entity representing the configuration of a cached report
+// CreatePatchRequestInformation update the navigation property cachedReportConfigurations in deviceManagement
 func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementCachedReportConfigurationItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +127,49 @@ func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// Delete entity representing the configuration of a cached report
+// Delete delete navigation property cachedReportConfigurations for deviceManagement
 func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) Delete(options *DeviceManagementCachedReportConfigurationItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get entity representing the configuration of a cached report
-func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) Get(options *DeviceManagementCachedReportConfigurationItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration, error) {
+func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) Get(options *DeviceManagementCachedReportConfigurationItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementCachedReportConfiguration() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationable), nil
 }
-// Patch entity representing the configuration of a cached report
+// Patch update the navigation property cachedReportConfigurations in deviceManagement
 func (m *DeviceManagementCachedReportConfigurationItemRequestBuilder) Patch(options *DeviceManagementCachedReportConfigurationItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

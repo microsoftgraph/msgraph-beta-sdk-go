@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentUserState 
+// DeviceManagementIntentUserState provides operations to manage the deviceManagement singleton.
 type DeviceManagementIntentUserState struct {
     Entity
     // Count of Devices that belongs to a user for an intent
@@ -26,44 +26,16 @@ func NewDeviceManagementIntentUserState()(*DeviceManagementIntentUserState) {
     }
     return m
 }
+// CreateDeviceManagementIntentUserStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementIntentUserStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementIntentUserState(), nil
+}
 // GetDeviceCount gets the deviceCount property value. Count of Devices that belongs to a user for an intent
 func (m *DeviceManagementIntentUserState) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
     } else {
         return m.deviceCount
-    }
-}
-// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of an intent report
-func (m *DeviceManagementIntentUserState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
-}
-// GetState gets the state property value. User state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-func (m *DeviceManagementIntentUserState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUserName gets the userName property value. The user name that is being reported on a device
-func (m *DeviceManagementIntentUserState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name that is being reported on a device
-func (m *DeviceManagementIntentUserState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +92,38 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of an intent report
+func (m *DeviceManagementIntentUserState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastReportedDateTime
+    }
+}
+// GetState gets the state property value. User state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+func (m *DeviceManagementIntentUserState) GetState()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUserName gets the userName property value. The user name that is being reported on a device
+func (m *DeviceManagementIntentUserState) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name that is being reported on a device
+func (m *DeviceManagementIntentUserState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *DeviceManagementIntentUserState) IsNil()(bool) {
     return m == nil

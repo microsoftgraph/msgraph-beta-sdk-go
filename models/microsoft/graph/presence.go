@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Presence 
+// Presence provides operations to manage the cloudCommunications singleton.
 type Presence struct {
     Entity
     // The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
@@ -12,7 +12,7 @@ type Presence struct {
     // The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
     availability *string;
     // The out of office settings for a user.
-    outOfOfficeSettings *OutOfOfficeSettings;
+    outOfOfficeSettings OutOfOfficeSettingsable;
 }
 // NewPresence instantiates a new presence and sets the default values.
 func NewPresence()(*Presence) {
@@ -20,6 +20,10 @@ func NewPresence()(*Presence) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreatePresenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePresenceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPresence(), nil
 }
 // GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
 func (m *Presence) GetActivity()(*string) {
@@ -35,14 +39,6 @@ func (m *Presence) GetAvailability()(*string) {
         return nil
     } else {
         return m.availability
-    }
-}
-// GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The out of office settings for a user.
-func (m *Presence) GetOutOfOfficeSettings()(*OutOfOfficeSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outOfOfficeSettings
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,16 +65,24 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["outOfOfficeSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOutOfOfficeSettings() })
+        val, err := n.GetObjectValue(CreateOutOfOfficeSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOutOfOfficeSettings(val.(*OutOfOfficeSettings))
+            m.SetOutOfOfficeSettings(val.(OutOfOfficeSettingsable))
         }
         return nil
     }
     return res
+}
+// GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The out of office settings for a user.
+func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.outOfOfficeSettings
+    }
 }
 func (m *Presence) IsNil()(bool) {
     return m == nil
@@ -122,7 +126,7 @@ func (m *Presence) SetAvailability(value *string)() {
     }
 }
 // SetOutOfOfficeSettings sets the outOfOfficeSettings property value. The out of office settings for a user.
-func (m *Presence) SetOutOfOfficeSettings(value *OutOfOfficeSettings)() {
+func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
     if m != nil {
         m.outOfOfficeSettings = value
     }

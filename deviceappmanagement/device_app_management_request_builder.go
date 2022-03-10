@@ -28,7 +28,6 @@ import (
     ie802a5a736b1aceb4dbbe40ec170346b4ae36c2165343b37c69767334cdf1f05 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsinformationprotectionpolicies"
     iee0ff8dcd5df6303aaa9e4b0eb5d5437722e178fc10f16c2284bd8702f364eaa "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/vpptokens"
     ief11f22801272e064478cc3e45b3a0f1e63de4a918dab77a8cb1f3924109be70 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/syncmicrosoftstoreforbusinessapps"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i111d2625f1ad2501f178f2146156ce46548595d9f1f6169f1d43762d4d373d9d "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/deviceappmanagementtasks/item"
     i15b8057a97c25aa14e9a4d6fc9def02dce42569f753f7a62f61b392239a5d612 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappstatuses/item"
     i1fa4345424f4e8032c54aadba42924b3c9de89ca46689dc3b1b829ffe729b8f6 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/iosmanagedappprotections/item"
@@ -53,9 +52,10 @@ import (
     iceecf955eeeaa6e59a7ff5c62bcd7ca93ca56e0d58f15cbe8d764abcf525d4fc "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/targetedmanagedappconfigurations/item"
     iebd0ee945a2658314caea3437be3d7434b12969418fd5a37ff33dec3769a17de "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileappcategories/item"
     if980bb6134295700a6ecd4621e106b4faf366915f3f6b4a9decbfa4a90b923df "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileappconfigurations/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DeviceAppManagementRequestBuilder builds and executes requests for operations under \deviceAppManagement
+// DeviceAppManagementRequestBuilder provides operations to manage the deviceAppManagement singleton.
 type DeviceAppManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -85,7 +85,7 @@ type DeviceAppManagementRequestBuilderGetQueryParameters struct {
 // DeviceAppManagementRequestBuilderPatchOptions options for Patch
 type DeviceAppManagementRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagement;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementable;
     // Request headers
     H map[string]string;
     // Request options
@@ -116,7 +116,7 @@ func NewDeviceAppManagementRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -207,16 +207,20 @@ func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesByI
     return ic25fb9fffd8c02c79bfc42b3e12ad25f3fbaf117526021e4526f4cd527116b00.NewEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get deviceAppManagement
-func (m *DeviceAppManagementRequestBuilder) Get(options *DeviceAppManagementRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagement, error) {
+func (m *DeviceAppManagementRequestBuilder) Get(options *DeviceAppManagementRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceAppManagement() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceAppManagementFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagement), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementable), nil
 }
 func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurations()(*i4ae1191713b2bcf5293d5d9a7f57d7875e1fb8395d4f1ac48c09144198cf2584.IosLobAppProvisioningConfigurationsRequestBuilder) {
     return i4ae1191713b2bcf5293d5d9a7f57d7875e1fb8395d4f1ac48c09144198cf2584.NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -378,7 +382,11 @@ func (m *DeviceAppManagementRequestBuilder) Patch(options *DeviceAppManagementRe
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

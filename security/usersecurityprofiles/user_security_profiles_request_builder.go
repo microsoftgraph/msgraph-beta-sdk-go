@@ -2,11 +2,12 @@ package usersecurityprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i879bbbd11e30908ab9d1651eaf3f82799a47d1d38099e5b499b6b4260060ea1e "github.com/microsoftgraph/msgraph-beta-sdk-go/security/usersecurityprofiles/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// UserSecurityProfilesRequestBuilder builds and executes requests for operations under \security\userSecurityProfiles
+// UserSecurityProfilesRequestBuilder provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
 type UserSecurityProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type UserSecurityProfilesRequestBuilderGetQueryParameters struct {
 // UserSecurityProfilesRequestBuilderPostOptions options for Post
 type UserSecurityProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewUserSecurityProfilesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewUserSecurityProfilesRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserSecurityProfilesRequestBuilder) Count()(*i879bbbd11e30908ab9d1651eaf3f82799a47d1d38099e5b499b6b4260060ea1e.CountRequestBuilder) {
+    return i879bbbd11e30908ab9d1651eaf3f82799a47d1d38099e5b499b6b4260060ea1e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get userSecurityProfiles from security
 func (m *UserSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *UserSecurityProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *UserSecurityProfilesRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Get get userSecurityProfiles from security
-func (m *UserSecurityProfilesRequestBuilder) Get(options *UserSecurityProfilesRequestBuilderGetOptions)(*UserSecurityProfilesResponse, error) {
+func (m *UserSecurityProfilesRequestBuilder) Get(options *UserSecurityProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserSecurityProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserSecurityProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserSecurityProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfileCollectionResponseable), nil
 }
 // Post create new navigation property to userSecurityProfiles for security
-func (m *UserSecurityProfilesRequestBuilder) Post(options *UserSecurityProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfile, error) {
+func (m *UserSecurityProfilesRequestBuilder) Post(options *UserSecurityProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserSecurityProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserSecurityProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSecurityProfileable), nil
 }

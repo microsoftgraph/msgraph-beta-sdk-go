@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserAppInstallStatus 
+// UserAppInstallStatus provides operations to manage the deviceAppManagement singleton.
 type UserAppInstallStatus struct {
     Entity
     // The navigation link to the mobile app.
-    app *MobileApp;
+    app MobileAppable;
     // The install state of the app on devices.
-    deviceStatuses []MobileAppInstallStatus;
+    deviceStatuses []MobileAppInstallStatusable;
     // Failed Device Count.
     failedDeviceCount *int32;
     // Installed Device Count.
@@ -29,8 +29,12 @@ func NewUserAppInstallStatus()(*UserAppInstallStatus) {
     }
     return m
 }
+// CreateUserAppInstallStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserAppInstallStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserAppInstallStatus(), nil
+}
 // GetApp gets the app property value. The navigation link to the mobile app.
-func (m *UserAppInstallStatus) GetApp()(*MobileApp) {
+func (m *UserAppInstallStatus) GetApp()(MobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -38,7 +42,7 @@ func (m *UserAppInstallStatus) GetApp()(*MobileApp) {
     }
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The install state of the app on devices.
-func (m *UserAppInstallStatus) GetDeviceStatuses()([]MobileAppInstallStatus) {
+func (m *UserAppInstallStatus) GetDeviceStatuses()([]MobileAppInstallStatusable) {
     if m == nil {
         return nil
     } else {
@@ -53,60 +57,28 @@ func (m *UserAppInstallStatus) GetFailedDeviceCount()(*int32) {
         return m.failedDeviceCount
     }
 }
-// GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
-func (m *UserAppInstallStatus) GetInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedDeviceCount
-    }
-}
-// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
-func (m *UserAppInstallStatus) GetNotInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledDeviceCount
-    }
-}
-// GetUserName gets the userName property value. User name.
-func (m *UserAppInstallStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
-func (m *UserAppInstallStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["app"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileApp() })
+        val, err := n.GetObjectValue(CreateMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApp(val.(*MobileApp))
+            m.SetApp(val.(MobileAppable))
         }
         return nil
     }
     res["deviceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppInstallStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppInstallStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppInstallStatus, len(val))
+            res := make([]MobileAppInstallStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppInstallStatus))
+                res[i] = v.(MobileAppInstallStatusable)
             }
             m.SetDeviceStatuses(res)
         }
@@ -164,6 +136,38 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
+// GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
+func (m *UserAppInstallStatus) GetInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedDeviceCount
+    }
+}
+// GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
+func (m *UserAppInstallStatus) GetNotInstalledDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notInstalledDeviceCount
+    }
+}
+// GetUserName gets the userName property value. User name.
+func (m *UserAppInstallStatus) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
+func (m *UserAppInstallStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
 func (m *UserAppInstallStatus) IsNil()(bool) {
     return m == nil
 }
@@ -182,8 +186,7 @@ func (m *UserAppInstallStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -223,13 +226,13 @@ func (m *UserAppInstallStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     return nil
 }
 // SetApp sets the app property value. The navigation link to the mobile app.
-func (m *UserAppInstallStatus) SetApp(value *MobileApp)() {
+func (m *UserAppInstallStatus) SetApp(value MobileAppable)() {
     if m != nil {
         m.app = value
     }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The install state of the app on devices.
-func (m *UserAppInstallStatus) SetDeviceStatuses(value []MobileAppInstallStatus)() {
+func (m *UserAppInstallStatus) SetDeviceStatuses(value []MobileAppInstallStatusable)() {
     if m != nil {
         m.deviceStatuses = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EnableLostModeRequestBody 
+// EnableLostModeRequestBody provides operations to call the enableLostMode method.
 type EnableLostModeRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewEnableLostModeRequestBody()(*EnableLostModeRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateEnableLostModeRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEnableLostModeRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEnableLostModeRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EnableLostModeRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetFooter gets the footer property value. 
-func (m *EnableLostModeRequestBody) GetFooter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.footer
-    }
-}
-// GetMessage gets the message property value. 
-func (m *EnableLostModeRequestBody) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetPhoneNumber gets the phoneNumber property value. 
-func (m *EnableLostModeRequestBody) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetFooter gets the footer property value. 
+func (m *EnableLostModeRequestBody) GetFooter()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.footer
+    }
+}
+// GetMessage gets the message property value. 
+func (m *EnableLostModeRequestBody) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetPhoneNumber gets the phoneNumber property value. 
+func (m *EnableLostModeRequestBody) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
 }
 func (m *EnableLostModeRequestBody) IsNil()(bool) {
     return m == nil

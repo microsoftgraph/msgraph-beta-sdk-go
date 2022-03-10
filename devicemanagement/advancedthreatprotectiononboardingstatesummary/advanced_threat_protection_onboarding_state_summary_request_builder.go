@@ -2,13 +2,13 @@ package advancedthreatprotectiononboardingstatesummary
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     ice19fdfd521d3baa084d788d924acd2488705b59b4281e0f60085cec8edcab8d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary/advancedthreatprotectiononboardingdevicesettingstates"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i8ac982e4babd498ccfdca8159c2c00708b65a8c1d00512bc9fe29edca2a507ca "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary/advancedthreatprotectiononboardingdevicesettingstates/item"
 )
 
-// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary
+// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParamet
 // AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions options for Patch
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummary;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummaryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -78,7 +78,7 @@ func NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -88,7 +88,7 @@ func NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the summary state of ATP onboarding state for this account.
+// CreateDeleteRequestInformation delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,7 +125,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the summary state of ATP onboarding state for this account.
+// CreatePatchRequestInformation update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePatchRequestInformation(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,37 +143,49 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// Delete the summary state of ATP onboarding state for this account.
+// Delete delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Delete(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the summary state of ATP onboarding state for this account.
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Get(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummary, error) {
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Get(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAdvancedThreatProtectionOnboardingStateSummary() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummary), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummaryable), nil
 }
-// Patch the summary state of ATP onboarding state for this account.
+// Patch update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Patch(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

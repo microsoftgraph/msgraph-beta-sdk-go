@@ -2,11 +2,11 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// CloudPcOverviewItemRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcsOverview\{cloudPcOverview-tenantId}
+// CloudPcOverviewItemRequestBuilder provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
 type CloudPcOverviewItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type CloudPcOverviewItemRequestBuilderGetQueryParameters struct {
 // CloudPcOverviewItemRequestBuilderPatchOptions options for Patch
 type CloudPcOverviewItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOverview;
+    Body i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcOverviewable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +62,7 @@ func NewCloudPcOverviewItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +72,7 @@ func NewCloudPcOverviewItemRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcOverviewItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation overview of cloud PC information across managed tenants.
+// CreateDeleteRequestInformation delete navigation property cloudPcsOverview for tenantRelationships
 func (m *CloudPcOverviewItemRequestBuilder) CreateDeleteRequestInformation(options *CloudPcOverviewItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *CloudPcOverviewItemRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation overview of cloud PC information across managed tenants.
+// CreatePatchRequestInformation update the navigation property cloudPcsOverview in tenantRelationships
 func (m *CloudPcOverviewItemRequestBuilder) CreatePatchRequestInformation(options *CloudPcOverviewItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +127,49 @@ func (m *CloudPcOverviewItemRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete overview of cloud PC information across managed tenants.
+// Delete delete navigation property cloudPcsOverview for tenantRelationships
 func (m *CloudPcOverviewItemRequestBuilder) Delete(options *CloudPcOverviewItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get overview of cloud PC information across managed tenants.
-func (m *CloudPcOverviewItemRequestBuilder) Get(options *CloudPcOverviewItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOverview, error) {
+func (m *CloudPcOverviewItemRequestBuilder) Get(options *CloudPcOverviewItemRequestBuilderGetOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcOverviewable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcOverview() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateCloudPcOverviewFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOverview), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CloudPcOverviewable), nil
 }
-// Patch overview of cloud PC information across managed tenants.
+// Patch update the navigation property cloudPcsOverview in tenantRelationships
 func (m *CloudPcOverviewItemRequestBuilder) Patch(options *CloudPcOverviewItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

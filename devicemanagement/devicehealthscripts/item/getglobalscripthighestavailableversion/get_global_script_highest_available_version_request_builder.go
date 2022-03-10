@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetGlobalScriptHighestAvailableVersionRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\microsoft.graph.getGlobalScriptHighestAvailableVersion
+// GetGlobalScriptHighestAvailableVersionRequestBuilder provides operations to call the getGlobalScriptHighestAvailableVersion method.
 type GetGlobalScriptHighestAvailableVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequest
     return requestInfo, nil
 }
 // Post update the Proprietary Device Health Script
-func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) Post(options *GetGlobalScriptHighestAvailableVersionRequestBuilderPostOptions)(*string, error) {
+func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) Post(options *GetGlobalScriptHighestAvailableVersionRequestBuilderPostOptions)(GetGlobalScriptHighestAvailableVersionResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetGlobalScriptHighestAvailableVersionResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(GetGlobalScriptHighestAvailableVersionResponseable), nil
 }

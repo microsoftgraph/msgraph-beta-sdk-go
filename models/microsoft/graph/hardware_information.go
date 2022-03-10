@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HardwareInformation 
+// HardwareInformation provides operations to manage the deviceManagement singleton.
 type HardwareInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -57,7 +57,7 @@ type HardwareInformation struct {
     // Serial number.
     serialNumber *string;
     // All users on the shared Apple device
-    sharedDeviceCachedUsers []SharedAppleDeviceUser;
+    sharedDeviceCachedUsers []SharedAppleDeviceUserable;
     // SubnetAddress
     subnetAddress *string;
     // Subscriber carrier of the device
@@ -81,6 +81,10 @@ func NewHardwareInformation()(*HardwareInformation) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateHardwareInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateHardwareInformationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewHardwareInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HardwareInformation) GetAdditionalData()(map[string]interface{}) {
@@ -160,198 +164,6 @@ func (m *HardwareInformation) GetEsimIdentifier()(*string) {
         return nil
     } else {
         return m.esimIdentifier
-    }
-}
-// GetFreeStorageSpace gets the freeStorageSpace property value. Free storage space of the device.
-func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.freeStorageSpace
-    }
-}
-// GetImei gets the imei property value. IMEI
-func (m *HardwareInformation) GetImei()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imei
-    }
-}
-// GetIpAddressV4 gets the ipAddressV4 property value. IPAddressV4
-func (m *HardwareInformation) GetIpAddressV4()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddressV4
-    }
-}
-// GetIsEncrypted gets the isEncrypted property value. Encryption status of the device
-func (m *HardwareInformation) GetIsEncrypted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEncrypted
-    }
-}
-// GetIsSharedDevice gets the isSharedDevice property value. Shared iPad
-func (m *HardwareInformation) GetIsSharedDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSharedDevice
-    }
-}
-// GetIsSupervised gets the isSupervised property value. Supervised mode of the device
-func (m *HardwareInformation) GetIsSupervised()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSupervised
-    }
-}
-// GetManufacturer gets the manufacturer property value. Manufacturer of the device
-func (m *HardwareInformation) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetMeid gets the meid property value. MEID
-func (m *HardwareInformation) GetMeid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meid
-    }
-}
-// GetModel gets the model property value. Model of the device
-func (m *HardwareInformation) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetOperatingSystemEdition gets the operatingSystemEdition property value. String that specifies the OS edition.
-func (m *HardwareInformation) GetOperatingSystemEdition()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemEdition
-    }
-}
-// GetOperatingSystemLanguage gets the operatingSystemLanguage property value. Operating system language of the device
-func (m *HardwareInformation) GetOperatingSystemLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemLanguage
-    }
-}
-// GetOperatingSystemProductType gets the operatingSystemProductType property value. Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
-func (m *HardwareInformation) GetOperatingSystemProductType()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemProductType
-    }
-}
-// GetOsBuildNumber gets the osBuildNumber property value. Operating System Build Number on Android device
-func (m *HardwareInformation) GetOsBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osBuildNumber
-    }
-}
-// GetPhoneNumber gets the phoneNumber property value. Phone number of the device
-func (m *HardwareInformation) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
-}
-// GetSerialNumber gets the serialNumber property value. Serial number.
-func (m *HardwareInformation) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
-}
-// GetSharedDeviceCachedUsers gets the sharedDeviceCachedUsers property value. All users on the shared Apple device
-func (m *HardwareInformation) GetSharedDeviceCachedUsers()([]SharedAppleDeviceUser) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedDeviceCachedUsers
-    }
-}
-// GetSubnetAddress gets the subnetAddress property value. SubnetAddress
-func (m *HardwareInformation) GetSubnetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subnetAddress
-    }
-}
-// GetSubscriberCarrier gets the subscriberCarrier property value. Subscriber carrier of the device
-func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriberCarrier
-    }
-}
-// GetSystemManagementBIOSVersion gets the systemManagementBIOSVersion property value. BIOS version as reported by SMBIOS
-func (m *HardwareInformation) GetSystemManagementBIOSVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemManagementBIOSVersion
-    }
-}
-// GetTotalStorageSpace gets the totalStorageSpace property value. Total storage space of the device.
-func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalStorageSpace
-    }
-}
-// GetTpmManufacturer gets the tpmManufacturer property value. The identifying information that uniquely names the TPM manufacturer
-func (m *HardwareInformation) GetTpmManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmManufacturer
-    }
-}
-// GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. String that specifies the specification version.
-func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmSpecificationVersion
-    }
-}
-// GetTpmVersion gets the tpmVersion property value. The version of the TPM, as specified by the manufacturer
-func (m *HardwareInformation) GetTpmVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmVersion
-    }
-}
-// GetWifiMac gets the wifiMac property value. WiFi MAC address of the device
-func (m *HardwareInformation) GetWifiMac()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiMac
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -598,14 +410,14 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["sharedDeviceCachedUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharedAppleDeviceUser() })
+        val, err := n.GetCollectionOfObjectValues(CreateSharedAppleDeviceUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SharedAppleDeviceUser, len(val))
+            res := make([]SharedAppleDeviceUserable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SharedAppleDeviceUser))
+                res[i] = v.(SharedAppleDeviceUserable)
             }
             m.SetSharedDeviceCachedUsers(res)
         }
@@ -692,6 +504,198 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetFreeStorageSpace gets the freeStorageSpace property value. Free storage space of the device.
+func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.freeStorageSpace
+    }
+}
+// GetImei gets the imei property value. IMEI
+func (m *HardwareInformation) GetImei()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.imei
+    }
+}
+// GetIpAddressV4 gets the ipAddressV4 property value. IPAddressV4
+func (m *HardwareInformation) GetIpAddressV4()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddressV4
+    }
+}
+// GetIsEncrypted gets the isEncrypted property value. Encryption status of the device
+func (m *HardwareInformation) GetIsEncrypted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEncrypted
+    }
+}
+// GetIsSharedDevice gets the isSharedDevice property value. Shared iPad
+func (m *HardwareInformation) GetIsSharedDevice()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSharedDevice
+    }
+}
+// GetIsSupervised gets the isSupervised property value. Supervised mode of the device
+func (m *HardwareInformation) GetIsSupervised()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSupervised
+    }
+}
+// GetManufacturer gets the manufacturer property value. Manufacturer of the device
+func (m *HardwareInformation) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetMeid gets the meid property value. MEID
+func (m *HardwareInformation) GetMeid()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meid
+    }
+}
+// GetModel gets the model property value. Model of the device
+func (m *HardwareInformation) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetOperatingSystemEdition gets the operatingSystemEdition property value. String that specifies the OS edition.
+func (m *HardwareInformation) GetOperatingSystemEdition()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemEdition
+    }
+}
+// GetOperatingSystemLanguage gets the operatingSystemLanguage property value. Operating system language of the device
+func (m *HardwareInformation) GetOperatingSystemLanguage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemLanguage
+    }
+}
+// GetOperatingSystemProductType gets the operatingSystemProductType property value. Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
+func (m *HardwareInformation) GetOperatingSystemProductType()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operatingSystemProductType
+    }
+}
+// GetOsBuildNumber gets the osBuildNumber property value. Operating System Build Number on Android device
+func (m *HardwareInformation) GetOsBuildNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osBuildNumber
+    }
+}
+// GetPhoneNumber gets the phoneNumber property value. Phone number of the device
+func (m *HardwareInformation) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
+}
+// GetSerialNumber gets the serialNumber property value. Serial number.
+func (m *HardwareInformation) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
+}
+// GetSharedDeviceCachedUsers gets the sharedDeviceCachedUsers property value. All users on the shared Apple device
+func (m *HardwareInformation) GetSharedDeviceCachedUsers()([]SharedAppleDeviceUserable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sharedDeviceCachedUsers
+    }
+}
+// GetSubnetAddress gets the subnetAddress property value. SubnetAddress
+func (m *HardwareInformation) GetSubnetAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subnetAddress
+    }
+}
+// GetSubscriberCarrier gets the subscriberCarrier property value. Subscriber carrier of the device
+func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriberCarrier
+    }
+}
+// GetSystemManagementBIOSVersion gets the systemManagementBIOSVersion property value. BIOS version as reported by SMBIOS
+func (m *HardwareInformation) GetSystemManagementBIOSVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.systemManagementBIOSVersion
+    }
+}
+// GetTotalStorageSpace gets the totalStorageSpace property value. Total storage space of the device.
+func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalStorageSpace
+    }
+}
+// GetTpmManufacturer gets the tpmManufacturer property value. The identifying information that uniquely names the TPM manufacturer
+func (m *HardwareInformation) GetTpmManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmManufacturer
+    }
+}
+// GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. String that specifies the specification version.
+func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmSpecificationVersion
+    }
+}
+// GetTpmVersion gets the tpmVersion property value. The version of the TPM, as specified by the manufacturer
+func (m *HardwareInformation) GetTpmVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmVersion
+    }
+}
+// GetWifiMac gets the wifiMac property value. WiFi MAC address of the device
+func (m *HardwareInformation) GetWifiMac()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wifiMac
+    }
 }
 func (m *HardwareInformation) IsNil()(bool) {
     return m == nil
@@ -848,8 +852,7 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetSharedDeviceCachedUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedDeviceCachedUsers()))
         for i, v := range m.GetSharedDeviceCachedUsers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("sharedDeviceCachedUsers", cast)
         if err != nil {
@@ -1063,7 +1066,7 @@ func (m *HardwareInformation) SetSerialNumber(value *string)() {
     }
 }
 // SetSharedDeviceCachedUsers sets the sharedDeviceCachedUsers property value. All users on the shared Apple device
-func (m *HardwareInformation) SetSharedDeviceCachedUsers(value []SharedAppleDeviceUser)() {
+func (m *HardwareInformation) SetSharedDeviceCachedUsers(value []SharedAppleDeviceUserable)() {
     if m != nil {
         m.sharedDeviceCachedUsers = value
     }

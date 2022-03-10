@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsInsight 
+// UserExperienceAnalyticsInsight provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsInsight struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsInsight struct {
     // The unique identifier of the user experience analytics insight.
     userExperienceAnalyticsMetricId *string;
     // The value of the user experience analytics insight.
-    values []UserExperienceAnalyticsInsightValue;
+    values []UserExperienceAnalyticsInsightValueable;
 }
 // NewUserExperienceAnalyticsInsight instantiates a new userExperienceAnalyticsInsight and sets the default values.
 func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
@@ -24,44 +24,16 @@ func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUserExperienceAnalyticsInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsInsightFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsInsight(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetInsightId gets the insightId property value. The unique identifier of the user experience analytics insight.
-func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insightId
-    }
-}
-// GetSeverity gets the severity property value. The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
-func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.severity
-    }
-}
-// GetUserExperienceAnalyticsMetricId gets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics insight.
-func (m *UserExperienceAnalyticsInsight) GetUserExperienceAnalyticsMetricId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userExperienceAnalyticsMetricId
-    }
-}
-// GetValues gets the values property value. The value of the user experience analytics insight.
-func (m *UserExperienceAnalyticsInsight) GetValues()([]UserExperienceAnalyticsInsightValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -98,20 +70,52 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsInsightValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsInsightValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserExperienceAnalyticsInsightValue, len(val))
+            res := make([]UserExperienceAnalyticsInsightValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserExperienceAnalyticsInsightValue))
+                res[i] = v.(UserExperienceAnalyticsInsightValueable)
             }
             m.SetValues(res)
         }
         return nil
     }
     return res
+}
+// GetInsightId gets the insightId property value. The unique identifier of the user experience analytics insight.
+func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.insightId
+    }
+}
+// GetSeverity gets the severity property value. The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
+func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
+    if m == nil {
+        return nil
+    } else {
+        return m.severity
+    }
+}
+// GetUserExperienceAnalyticsMetricId gets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics insight.
+func (m *UserExperienceAnalyticsInsight) GetUserExperienceAnalyticsMetricId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsMetricId
+    }
+}
+// GetValues gets the values property value. The value of the user experience analytics insight.
+func (m *UserExperienceAnalyticsInsight) GetValues()([]UserExperienceAnalyticsInsightValueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.values
+    }
 }
 func (m *UserExperienceAnalyticsInsight) IsNil()(bool) {
     return m == nil
@@ -140,8 +144,7 @@ func (m *UserExperienceAnalyticsInsight) Serialize(writer i04eb5309aeaafadd28374
     if m.GetValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetValues()))
         for i, v := range m.GetValues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("values", cast)
         if err != nil {
@@ -181,7 +184,7 @@ func (m *UserExperienceAnalyticsInsight) SetUserExperienceAnalyticsMetricId(valu
     }
 }
 // SetValues sets the values property value. The value of the user experience analytics insight.
-func (m *UserExperienceAnalyticsInsight) SetValues(value []UserExperienceAnalyticsInsightValue)() {
+func (m *UserExperienceAnalyticsInsight) SetValues(value []UserExperienceAnalyticsInsightValueable)() {
     if m != nil {
         m.values = value
     }

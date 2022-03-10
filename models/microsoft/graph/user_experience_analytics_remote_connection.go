@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsRemoteConnection 
+// UserExperienceAnalyticsRemoteConnection provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsRemoteConnection struct {
     Entity
     // The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
@@ -40,6 +40,10 @@ func NewUserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemote
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsRemoteConnection(), nil
 }
 // GetCloudPcFailurePercentage gets the cloudPcFailurePercentage property value. The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcFailurePercentage()(*float64) {
@@ -103,46 +107,6 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceName()(*string) {
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetManufacturer gets the manufacturer property value. The user experience analytics manufacturer.
-func (m *UserExperienceAnalyticsRemoteConnection) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetModel gets the model property value. The user experience analytics device model.
-func (m *UserExperienceAnalyticsRemoteConnection) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
-}
-// GetRemoteSignInTime gets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsRemoteConnection) GetRemoteSignInTime()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteSignInTime
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user experience analytics userPrincipalName.
-func (m *UserExperienceAnalyticsRemoteConnection) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetVirtualNetwork gets the virtualNetwork property value. The user experience analytics virtual network.
-func (m *UserExperienceAnalyticsRemoteConnection) GetVirtualNetwork()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.virtualNetwork
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -279,6 +243,46 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetManufacturer gets the manufacturer property value. The user experience analytics manufacturer.
+func (m *UserExperienceAnalyticsRemoteConnection) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetModel gets the model property value. The user experience analytics device model.
+func (m *UserExperienceAnalyticsRemoteConnection) GetModel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.model
+    }
+}
+// GetRemoteSignInTime gets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsRemoteConnection) GetRemoteSignInTime()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remoteSignInTime
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The user experience analytics userPrincipalName.
+func (m *UserExperienceAnalyticsRemoteConnection) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetVirtualNetwork gets the virtualNetwork property value. The user experience analytics virtual network.
+func (m *UserExperienceAnalyticsRemoteConnection) GetVirtualNetwork()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.virtualNetwork
+    }
 }
 func (m *UserExperienceAnalyticsRemoteConnection) IsNil()(bool) {
     return m == nil

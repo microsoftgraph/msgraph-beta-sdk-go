@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthorizationPolicy 
+// AuthorizationPolicy provides operations to manage the policyRoot singleton.
 type AuthorizationPolicy struct {
     PolicyBase
     // Indicates whether users can sign up for email based subscriptions.
@@ -18,9 +18,9 @@ type AuthorizationPolicy struct {
     // To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
     blockMsolPowerShell *bool;
     // 
-    defaultUserRoleOverrides []DefaultUserRoleOverride;
+    defaultUserRoleOverrides []DefaultUserRoleOverrideable;
     // 
-    defaultUserRolePermissions *DefaultUserRolePermissions;
+    defaultUserRolePermissions DefaultUserRolePermissionsable;
     // List of features enabled for private preview on the tenant.
     enabledPreviewFeatures []string;
     // Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
@@ -34,6 +34,10 @@ func NewAuthorizationPolicy()(*AuthorizationPolicy) {
         PolicyBase: *NewPolicyBase(),
     }
     return m
+}
+// CreateAuthorizationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthorizationPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthorizationPolicy(), nil
 }
 // GetAllowedToSignUpEmailBasedSubscriptions gets the allowedToSignUpEmailBasedSubscriptions property value. Indicates whether users can sign up for email based subscriptions.
 func (m *AuthorizationPolicy) GetAllowedToSignUpEmailBasedSubscriptions()(*bool) {
@@ -76,7 +80,7 @@ func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
     }
 }
 // GetDefaultUserRoleOverrides gets the defaultUserRoleOverrides property value. 
-func (m *AuthorizationPolicy) GetDefaultUserRoleOverrides()([]DefaultUserRoleOverride) {
+func (m *AuthorizationPolicy) GetDefaultUserRoleOverrides()([]DefaultUserRoleOverrideable) {
     if m == nil {
         return nil
     } else {
@@ -84,7 +88,7 @@ func (m *AuthorizationPolicy) GetDefaultUserRoleOverrides()([]DefaultUserRoleOve
     }
 }
 // GetDefaultUserRolePermissions gets the defaultUserRolePermissions property value. 
-func (m *AuthorizationPolicy) GetDefaultUserRolePermissions()(*DefaultUserRolePermissions) {
+func (m *AuthorizationPolicy) GetDefaultUserRolePermissions()(DefaultUserRolePermissionsable) {
     if m == nil {
         return nil
     } else {
@@ -97,22 +101,6 @@ func (m *AuthorizationPolicy) GetEnabledPreviewFeatures()([]string) {
         return nil
     } else {
         return m.enabledPreviewFeatures
-    }
-}
-// GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-func (m *AuthorizationPolicy) GetGuestUserRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guestUserRoleId
-    }
-}
-// GetPermissionGrantPolicyIdsAssignedToDefaultUserRole gets the permissionGrantPolicyIdsAssignedToDefaultUserRole property value. Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
-func (m *AuthorizationPolicy) GetPermissionGrantPolicyIdsAssignedToDefaultUserRole()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionGrantPolicyIdsAssignedToDefaultUserRole
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -169,26 +157,26 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["defaultUserRoleOverrides"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDefaultUserRoleOverride() })
+        val, err := n.GetCollectionOfObjectValues(CreateDefaultUserRoleOverrideFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DefaultUserRoleOverride, len(val))
+            res := make([]DefaultUserRoleOverrideable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DefaultUserRoleOverride))
+                res[i] = v.(DefaultUserRoleOverrideable)
             }
             m.SetDefaultUserRoleOverrides(res)
         }
         return nil
     }
     res["defaultUserRolePermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDefaultUserRolePermissions() })
+        val, err := n.GetObjectValue(CreateDefaultUserRolePermissionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultUserRolePermissions(val.(*DefaultUserRolePermissions))
+            m.SetDefaultUserRolePermissions(val.(DefaultUserRolePermissionsable))
         }
         return nil
     }
@@ -231,6 +219,22 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+func (m *AuthorizationPolicy) GetGuestUserRoleId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.guestUserRoleId
+    }
+}
+// GetPermissionGrantPolicyIdsAssignedToDefaultUserRole gets the permissionGrantPolicyIdsAssignedToDefaultUserRole property value. Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
+func (m *AuthorizationPolicy) GetPermissionGrantPolicyIdsAssignedToDefaultUserRole()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionGrantPolicyIdsAssignedToDefaultUserRole
+    }
 }
 func (m *AuthorizationPolicy) IsNil()(bool) {
     return m == nil
@@ -275,8 +279,7 @@ func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetDefaultUserRoleOverrides() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefaultUserRoleOverrides()))
         for i, v := range m.GetDefaultUserRoleOverrides() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("defaultUserRoleOverrides", cast)
         if err != nil {
@@ -340,13 +343,13 @@ func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
     }
 }
 // SetDefaultUserRoleOverrides sets the defaultUserRoleOverrides property value. 
-func (m *AuthorizationPolicy) SetDefaultUserRoleOverrides(value []DefaultUserRoleOverride)() {
+func (m *AuthorizationPolicy) SetDefaultUserRoleOverrides(value []DefaultUserRoleOverrideable)() {
     if m != nil {
         m.defaultUserRoleOverrides = value
     }
 }
 // SetDefaultUserRolePermissions sets the defaultUserRolePermissions property value. 
-func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value *DefaultUserRolePermissions)() {
+func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value DefaultUserRolePermissionsable)() {
     if m != nil {
         m.defaultUserRolePermissions = value
     }

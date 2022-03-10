@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyTargetConfiguration 
+// CrossTenantAccessPolicyTargetConfiguration provides operations to manage the policyRoot singleton.
 type CrossTenantAccessPolicyTargetConfiguration struct {
     // Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
     accessType *CrossTenantAccessPolicyTargetConfigurationAccessType;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Specifies whether to target users, groups, or applications with this rule.
-    targets []CrossTenantAccessPolicyTarget;
+    targets []CrossTenantAccessPolicyTargetable;
 }
 // NewCrossTenantAccessPolicyTargetConfiguration instantiates a new crossTenantAccessPolicyTargetConfiguration and sets the default values.
 func NewCrossTenantAccessPolicyTargetConfiguration()(*CrossTenantAccessPolicyTargetConfiguration) {
@@ -19,6 +19,10 @@ func NewCrossTenantAccessPolicyTargetConfiguration()(*CrossTenantAccessPolicyTar
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCrossTenantAccessPolicyTargetConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCrossTenantAccessPolicyTargetConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCrossTenantAccessPolicyTargetConfiguration(), nil
 }
 // GetAccessType gets the accessType property value. Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
 func (m *CrossTenantAccessPolicyTargetConfiguration) GetAccessType()(*CrossTenantAccessPolicyTargetConfigurationAccessType) {
@@ -36,14 +40,6 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetAdditionalData()(map[str
         return m.additionalData
     }
 }
-// GetTargets gets the targets property value. Specifies whether to target users, groups, or applications with this rule.
-func (m *CrossTenantAccessPolicyTargetConfiguration) GetTargets()([]CrossTenantAccessPolicyTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targets
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -58,20 +54,28 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map
         return nil
     }
     res["targets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCrossTenantAccessPolicyTarget() })
+        val, err := n.GetCollectionOfObjectValues(CreateCrossTenantAccessPolicyTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CrossTenantAccessPolicyTarget, len(val))
+            res := make([]CrossTenantAccessPolicyTargetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CrossTenantAccessPolicyTarget))
+                res[i] = v.(CrossTenantAccessPolicyTargetable)
             }
             m.SetTargets(res)
         }
         return nil
     }
     return res
+}
+// GetTargets gets the targets property value. Specifies whether to target users, groups, or applications with this rule.
+func (m *CrossTenantAccessPolicyTargetConfiguration) GetTargets()([]CrossTenantAccessPolicyTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targets
+    }
 }
 func (m *CrossTenantAccessPolicyTargetConfiguration) IsNil()(bool) {
     return m == nil
@@ -88,8 +92,7 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) Serialize(writer i04eb5309a
     if m.GetTargets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargets()))
         for i, v := range m.GetTargets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("targets", cast)
         if err != nil {
@@ -117,7 +120,7 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) SetAdditionalData(value map
     }
 }
 // SetTargets sets the targets property value. Specifies whether to target users, groups, or applications with this rule.
-func (m *CrossTenantAccessPolicyTargetConfiguration) SetTargets(value []CrossTenantAccessPolicyTarget)() {
+func (m *CrossTenantAccessPolicyTargetConfiguration) SetTargets(value []CrossTenantAccessPolicyTargetable)() {
     if m != nil {
         m.targets = value
     }

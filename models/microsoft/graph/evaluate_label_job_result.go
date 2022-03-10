@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EvaluateLabelJobResult 
+// EvaluateLabelJobResult provides operations to call the evaluate method.
 type EvaluateLabelJobResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    responsiblePolicy *ResponsiblePolicy;
+    responsiblePolicy ResponsiblePolicyable;
     // 
-    responsibleSensitiveTypes []ResponsibleSensitiveType;
+    responsibleSensitiveTypes []ResponsibleSensitiveTypeable;
     // 
-    sensitivityLabel *MatchingLabel;
+    sensitivityLabel MatchingLabelable;
 }
 // NewEvaluateLabelJobResult instantiates a new evaluateLabelJobResult and sets the default values.
 func NewEvaluateLabelJobResult()(*EvaluateLabelJobResult) {
@@ -21,6 +21,10 @@ func NewEvaluateLabelJobResult()(*EvaluateLabelJobResult) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEvaluateLabelJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEvaluateLabelJobResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEvaluateLabelJobResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]interface{}) {
@@ -30,8 +34,47 @@ func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["responsiblePolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateResponsiblePolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResponsiblePolicy(val.(ResponsiblePolicyable))
+        }
+        return nil
+    }
+    res["responsibleSensitiveTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResponsibleSensitiveTypeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResponsibleSensitiveTypeable, len(val))
+            for i, v := range val {
+                res[i] = v.(ResponsibleSensitiveTypeable)
+            }
+            m.SetResponsibleSensitiveTypes(res)
+        }
+        return nil
+    }
+    res["sensitivityLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMatchingLabelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSensitivityLabel(val.(MatchingLabelable))
+        }
+        return nil
+    }
+    return res
+}
 // GetResponsiblePolicy gets the responsiblePolicy property value. 
-func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(*ResponsiblePolicy) {
+func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(ResponsiblePolicyable) {
     if m == nil {
         return nil
     } else {
@@ -39,7 +82,7 @@ func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(*ResponsiblePolicy) {
     }
 }
 // GetResponsibleSensitiveTypes gets the responsibleSensitiveTypes property value. 
-func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSensitiveType) {
+func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSensitiveTypeable) {
     if m == nil {
         return nil
     } else {
@@ -47,51 +90,12 @@ func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSen
     }
 }
 // GetSensitivityLabel gets the sensitivityLabel property value. 
-func (m *EvaluateLabelJobResult) GetSensitivityLabel()(*MatchingLabel) {
+func (m *EvaluateLabelJobResult) GetSensitivityLabel()(MatchingLabelable) {
     if m == nil {
         return nil
     } else {
         return m.sensitivityLabel
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["responsiblePolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResponsiblePolicy() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResponsiblePolicy(val.(*ResponsiblePolicy))
-        }
-        return nil
-    }
-    res["responsibleSensitiveTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResponsibleSensitiveType() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ResponsibleSensitiveType, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*ResponsibleSensitiveType))
-            }
-            m.SetResponsibleSensitiveTypes(res)
-        }
-        return nil
-    }
-    res["sensitivityLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMatchingLabel() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSensitivityLabel(val.(*MatchingLabel))
-        }
-        return nil
-    }
-    return res
 }
 func (m *EvaluateLabelJobResult) IsNil()(bool) {
     return m == nil
@@ -107,8 +111,7 @@ func (m *EvaluateLabelJobResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if m.GetResponsibleSensitiveTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResponsibleSensitiveTypes()))
         for i, v := range m.GetResponsibleSensitiveTypes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("responsibleSensitiveTypes", cast)
         if err != nil {
@@ -136,19 +139,19 @@ func (m *EvaluateLabelJobResult) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetResponsiblePolicy sets the responsiblePolicy property value. 
-func (m *EvaluateLabelJobResult) SetResponsiblePolicy(value *ResponsiblePolicy)() {
+func (m *EvaluateLabelJobResult) SetResponsiblePolicy(value ResponsiblePolicyable)() {
     if m != nil {
         m.responsiblePolicy = value
     }
 }
 // SetResponsibleSensitiveTypes sets the responsibleSensitiveTypes property value. 
-func (m *EvaluateLabelJobResult) SetResponsibleSensitiveTypes(value []ResponsibleSensitiveType)() {
+func (m *EvaluateLabelJobResult) SetResponsibleSensitiveTypes(value []ResponsibleSensitiveTypeable)() {
     if m != nil {
         m.responsibleSensitiveTypes = value
     }
 }
 // SetSensitivityLabel sets the sensitivityLabel property value. 
-func (m *EvaluateLabelJobResult) SetSensitivityLabel(value *MatchingLabel)() {
+func (m *EvaluateLabelJobResult) SetSensitivityLabel(value MatchingLabelable)() {
     if m != nil {
         m.sensitivityLabel = value
     }

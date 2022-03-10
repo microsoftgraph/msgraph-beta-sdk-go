@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i20b8f6f29c4f846d5d534ad55fbe200f4e7d71c85829acc2959002c31c697ecc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelserverlogcollectionresponses/item/createdownloadurl"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}
+// MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
 type MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetQueryParamet
 // MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderPatchOptions options for Patch
 type MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -73,7 +73,7 @@ func NewMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// CreateDeleteRequestInformation delete navigation property microsoftTunnelServerLogCollectionResponses for deviceManagement
 func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreateDeleteRequestInformation(options *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// CreatePatchRequestInformation update the navigation property microsoftTunnelServerLogCollectionResponses in deviceManagement
 func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreatePatchRequestInformation(options *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,37 +131,49 @@ func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// Delete collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// Delete delete navigation property microsoftTunnelServerLogCollectionResponses for deviceManagement
 func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Delete(options *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
-func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Get(options *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse, error) {
+func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Get(options *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMicrosoftTunnelServerLogCollectionResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable), nil
 }
-// Patch collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// Patch update the navigation property microsoftTunnelServerLogCollectionResponses in deviceManagement
 func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Patch(options *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

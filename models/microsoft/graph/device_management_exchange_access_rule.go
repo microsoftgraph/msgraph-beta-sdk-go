@@ -4,14 +4,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementExchangeAccessRule 
+// DeviceManagementExchangeAccessRule provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeAccessRule struct {
     // Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
     accessLevel *DeviceManagementExchangeAccessLevel;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Device Class which will be impacted by this rule.
-    deviceClass *DeviceManagementExchangeDeviceClass;
+    deviceClass DeviceManagementExchangeDeviceClassable;
 }
 // NewDeviceManagementExchangeAccessRule instantiates a new deviceManagementExchangeAccessRule and sets the default values.
 func NewDeviceManagementExchangeAccessRule()(*DeviceManagementExchangeAccessRule) {
@@ -19,6 +19,10 @@ func NewDeviceManagementExchangeAccessRule()(*DeviceManagementExchangeAccessRule
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementExchangeAccessRule(), nil
 }
 // GetAccessLevel gets the accessLevel property value. Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
 func (m *DeviceManagementExchangeAccessRule) GetAccessLevel()(*DeviceManagementExchangeAccessLevel) {
@@ -37,7 +41,7 @@ func (m *DeviceManagementExchangeAccessRule) GetAdditionalData()(map[string]inte
     }
 }
 // GetDeviceClass gets the deviceClass property value. Device Class which will be impacted by this rule.
-func (m *DeviceManagementExchangeAccessRule) GetDeviceClass()(*DeviceManagementExchangeDeviceClass) {
+func (m *DeviceManagementExchangeAccessRule) GetDeviceClass()(DeviceManagementExchangeDeviceClassable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +62,12 @@ func (m *DeviceManagementExchangeAccessRule) GetFieldDeserializers()(map[string]
         return nil
     }
     res["deviceClass"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementExchangeDeviceClass() })
+        val, err := n.GetObjectValue(CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceClass(val.(*DeviceManagementExchangeDeviceClass))
+            m.SetDeviceClass(val.(DeviceManagementExchangeDeviceClassable))
         }
         return nil
     }
@@ -108,7 +112,7 @@ func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]
     }
 }
 // SetDeviceClass sets the deviceClass property value. Device Class which will be impacted by this rule.
-func (m *DeviceManagementExchangeAccessRule) SetDeviceClass(value *DeviceManagementExchangeDeviceClass)() {
+func (m *DeviceManagementExchangeAccessRule) SetDeviceClass(value DeviceManagementExchangeDeviceClassable)() {
     if m != nil {
         m.deviceClass = value
     }

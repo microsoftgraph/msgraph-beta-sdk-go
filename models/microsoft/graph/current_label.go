@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CurrentLabel 
+// CurrentLabel provides operations to call the evaluate method.
 type CurrentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewCurrentLabel()(*CurrentLabel) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCurrentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCurrentLabelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCurrentLabel(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CurrentLabel) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *CurrentLabel) GetApplicationMode()(*ApplicationMode) {
         return nil
     } else {
         return m.applicationMode
-    }
-}
-// GetId gets the id property value. 
-func (m *CurrentLabel) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *CurrentLabel) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetId gets the id property value. 
+func (m *CurrentLabel) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
 }
 func (m *CurrentLabel) IsNil()(bool) {
     return m == nil

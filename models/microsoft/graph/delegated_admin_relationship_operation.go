@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminRelationshipOperation 
+// DelegatedAdminRelationshipOperation provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationshipOperation struct {
     Entity
     // 
@@ -26,6 +26,10 @@ func NewDelegatedAdminRelationshipOperation()(*DelegatedAdminRelationshipOperati
     }
     return m
 }
+// CreateDelegatedAdminRelationshipOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDelegatedAdminRelationshipOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDelegatedAdminRelationshipOperation(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. 
 func (m *DelegatedAdminRelationshipOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *DelegatedAdminRelationshipOperation) GetData()(*string) {
         return nil
     } else {
         return m.data
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *DelegatedAdminRelationshipOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetOperationType gets the operationType property value. 
-func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdminRelationshipOperationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
-}
-// GetStatus gets the status property value. 
-func (m *DelegatedAdminRelationshipOperation) GetStatus()(*DelegatedAdminRelationshipOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +100,30 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *DelegatedAdminRelationshipOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetOperationType gets the operationType property value. 
+func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdminRelationshipOperationType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operationType
+    }
+}
+// GetStatus gets the status property value. 
+func (m *DelegatedAdminRelationshipOperation) GetStatus()(*DelegatedAdminRelationshipOperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *DelegatedAdminRelationshipOperation) IsNil()(bool) {
     return m == nil

@@ -2,14 +2,11 @@ package listitem
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i9060833978d10acc7df5802fa45b77fcd2790da9422adde7947bd16399428812 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/activities/item/listitem/ref"
-    ia5393902a0c161f5f9284aa604caafb1bc15944cd9fc4878749a15d6b499313c "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/activities/item/listitem/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
-    ibdfd1b435bdb7ada027c836c926ab5c8b32fb9b2b0a0af91492be49dfda1647f "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/activities/item/listitem/createlink"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ListItemRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\activities\{itemActivityOLD-id}\listItem
+// ListItemRequestBuilder provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +42,7 @@ func NewListItemRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,25 +72,19 @@ func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRe
     }
     return requestInfo, nil
 }
-func (m *ListItemRequestBuilder) CreateLink()(*ibdfd1b435bdb7ada027c836c926ab5c8b32fb9b2b0a0af91492be49dfda1647f.CreateLinkRequestBuilder) {
-    return ibdfd1b435bdb7ada027c836c926ab5c8b32fb9b2b0a0af91492be49dfda1647f.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get listItem from drives
-func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem, error) {
+func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewListItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateListItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem), nil
-}
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \drives\{drive-id}\list\activities\{itemActivityOLD-id}\listItem\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*ia5393902a0c161f5f9284aa604caafb1bc15944cd9fc4878749a15d6b499313c.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return ia5393902a0c161f5f9284aa604caafb1bc15944cd9fc4878749a15d6b499313c.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
-}
-func (m *ListItemRequestBuilder) Ref()(*i9060833978d10acc7df5802fa45b77fcd2790da9422adde7947bd16399428812.RefRequestBuilder) {
-    return i9060833978d10acc7df5802fa45b77fcd2790da9422adde7947bd16399428812.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable), nil
 }

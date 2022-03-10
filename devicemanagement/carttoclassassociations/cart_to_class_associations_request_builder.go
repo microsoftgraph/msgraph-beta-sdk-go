@@ -2,11 +2,12 @@ package carttoclassassociations
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/carttoclassassociations/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// CartToClassAssociationsRequestBuilder builds and executes requests for operations under \deviceManagement\cartToClassAssociations
+// CartToClassAssociationsRequestBuilder provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
 type CartToClassAssociationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type CartToClassAssociationsRequestBuilderGetQueryParameters struct {
 // CartToClassAssociationsRequestBuilderPostOptions options for Post
 type CartToClassAssociationsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociation;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewCartToClassAssociationsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewCartToClassAssociationsRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCartToClassAssociationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CartToClassAssociationsRequestBuilder) Count()(*i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035.CountRequestBuilder) {
+    return i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the Cart To Class Associations.
 func (m *CartToClassAssociationsRequestBuilder) CreateGetRequestInformation(options *CartToClassAssociationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *CartToClassAssociationsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the Cart To Class Associations.
+// CreatePostRequestInformation create new navigation property to cartToClassAssociations for deviceManagement
 func (m *CartToClassAssociationsRequestBuilder) CreatePostRequestInformation(options *CartToClassAssociationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *CartToClassAssociationsRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Get the Cart To Class Associations.
-func (m *CartToClassAssociationsRequestBuilder) Get(options *CartToClassAssociationsRequestBuilderGetOptions)(*CartToClassAssociationsResponse, error) {
+func (m *CartToClassAssociationsRequestBuilder) Get(options *CartToClassAssociationsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCartToClassAssociationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCartToClassAssociationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CartToClassAssociationsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociationCollectionResponseable), nil
 }
-// Post the Cart To Class Associations.
-func (m *CartToClassAssociationsRequestBuilder) Post(options *CartToClassAssociationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociation, error) {
+// Post create new navigation property to cartToClassAssociations for deviceManagement
+func (m *CartToClassAssociationsRequestBuilder) Post(options *CartToClassAssociationsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCartToClassAssociation() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCartToClassAssociationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociation), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CartToClassAssociationable), nil
 }

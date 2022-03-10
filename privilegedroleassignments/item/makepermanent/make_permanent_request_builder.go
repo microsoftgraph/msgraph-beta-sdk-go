@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// MakePermanentRequestBuilder builds and executes requests for operations under \privilegedRoleAssignments\{privilegedRoleAssignment-id}\microsoft.graph.makePermanent
+// MakePermanentRequestBuilder provides operations to call the makePermanent method.
 type MakePermanentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type MakePermanentRequestBuilder struct {
 // MakePermanentRequestBuilderPostOptions options for Post
 type MakePermanentRequestBuilderPostOptions struct {
     // 
-    Body *MakePermanentRequestBody;
+    Body MakePermanentRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type MakePermanentResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type privilegedRoleAssignment
-    privilegedRoleAssignment *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment;
+    privilegedRoleAssignment i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable;
 }
 // NewMakePermanentResponse instantiates a new makePermanentResponse and sets the default values.
 func NewMakePermanentResponse()(*MakePermanentResponse) {
@@ -39,6 +39,9 @@ func NewMakePermanentResponse()(*MakePermanentResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateMakePermanentResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMakePermanentResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MakePermanentResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *MakePermanentResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *MakePermanentResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["privilegedRoleAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrivilegedRoleAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegedRoleAssignment(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable))
+        }
+        return nil
+    }
+    return res
+}
 // GetPrivilegedRoleAssignment gets the privilegedRoleAssignment property value. Union type representation for type privilegedRoleAssignment
-func (m *MakePermanentResponse) GetPrivilegedRoleAssignment()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment) {
+func (m *MakePermanentResponse) GetPrivilegedRoleAssignment()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable) {
     if m == nil {
         return nil
     } else {
         return m.privilegedRoleAssignment
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *MakePermanentResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["privilegedRoleAssignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPrivilegedRoleAssignment() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrivilegedRoleAssignment(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment))
-        }
-        return nil
-    }
-    return res
 }
 func (m *MakePermanentResponse) IsNil()(bool) {
     return m == nil
@@ -97,10 +100,17 @@ func (m *MakePermanentResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetPrivilegedRoleAssignment sets the privilegedRoleAssignment property value. Union type representation for type privilegedRoleAssignment
-func (m *MakePermanentResponse) SetPrivilegedRoleAssignment(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment)() {
+func (m *MakePermanentResponse) SetPrivilegedRoleAssignment(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable)() {
     if m != nil {
         m.privilegedRoleAssignment = value
     }
+}
+// MakePermanentResponseable 
+type MakePermanentResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetPrivilegedRoleAssignment()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable)
+    SetPrivilegedRoleAssignment(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentable)()
 }
 // NewMakePermanentRequestBuilderInternal instantiates a new MakePermanentRequestBuilder and sets the default values.
 func NewMakePermanentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MakePermanentRequestBuilder) {
@@ -111,7 +121,7 @@ func NewMakePermanentRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *MakePermanentRequestBuilder) CreatePostRequestInformation(options *Make
     return requestInfo, nil
 }
 // Post invoke action makePermanent
-func (m *MakePermanentRequestBuilder) Post(options *MakePermanentRequestBuilderPostOptions)(*MakePermanentResponse, error) {
+func (m *MakePermanentRequestBuilder) Post(options *MakePermanentRequestBuilderPostOptions)(MakePermanentResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMakePermanentResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateMakePermanentResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*MakePermanentResponse), nil
+    return res.(MakePermanentResponseable), nil
 }

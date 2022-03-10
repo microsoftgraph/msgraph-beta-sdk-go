@@ -5,14 +5,14 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UploadNewVersionRequestBody 
+// UploadNewVersionRequestBody provides operations to call the uploadNewVersion method.
 type UploadNewVersionRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     content []byte;
     // 
-    groupPolicyUploadedLanguageFiles []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile;
+    groupPolicyUploadedLanguageFiles []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFileable;
 }
 // NewUploadNewVersionRequestBody instantiates a new uploadNewVersionRequestBody and sets the default values.
 func NewUploadNewVersionRequestBody()(*UploadNewVersionRequestBody) {
@@ -20,6 +20,10 @@ func NewUploadNewVersionRequestBody()(*UploadNewVersionRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUploadNewVersionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUploadNewVersionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUploadNewVersionRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadNewVersionRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -37,14 +41,6 @@ func (m *UploadNewVersionRequestBody) GetContent()([]byte) {
         return m.content
     }
 }
-// GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. 
-func (m *UploadNewVersionRequestBody) GetGroupPolicyUploadedLanguageFiles()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyUploadedLanguageFiles
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadNewVersionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -59,20 +55,28 @@ func (m *UploadNewVersionRequestBody) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["groupPolicyUploadedLanguageFiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGroupPolicyUploadedLanguageFile() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFileable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFileable)
             }
             m.SetGroupPolicyUploadedLanguageFiles(res)
         }
         return nil
     }
     return res
+}
+// GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. 
+func (m *UploadNewVersionRequestBody) GetGroupPolicyUploadedLanguageFiles()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFileable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupPolicyUploadedLanguageFiles
+    }
 }
 func (m *UploadNewVersionRequestBody) IsNil()(bool) {
     return m == nil
@@ -88,8 +92,7 @@ func (m *UploadNewVersionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetGroupPolicyUploadedLanguageFiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
         for i, v := range m.GetGroupPolicyUploadedLanguageFiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("groupPolicyUploadedLanguageFiles", cast)
         if err != nil {
@@ -117,7 +120,7 @@ func (m *UploadNewVersionRequestBody) SetContent(value []byte)() {
     }
 }
 // SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. 
-func (m *UploadNewVersionRequestBody) SetGroupPolicyUploadedLanguageFiles(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile)() {
+func (m *UploadNewVersionRequestBody) SetGroupPolicyUploadedLanguageFiles(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFileable)() {
     if m != nil {
         m.groupPolicyUploadedLanguageFiles = value
     }

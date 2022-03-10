@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDeviceModelPerformance 
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
     // The number of active devices for the model. Valid values -2147483648 to 2147483647
@@ -29,6 +29,10 @@ func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperience
     }
     return m
 }
+// CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformance(), nil
+}
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetActiveDeviceCount()(*int32) {
     if m == nil {
@@ -51,38 +55,6 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceModel(
         return nil
     } else {
         return m.deviceModel
-    }
-}
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
-}
-// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meanTimeToFailureInMinutes
-    }
-}
-// GetModelAppHealthScore gets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelAppHealthScore
-    }
-}
-// GetModelAppHealthStatus gets the modelAppHealthStatus property value. The overall app health status of the device model.
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelAppHealthStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,6 +131,38 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         return nil
     }
     return res
+}
+// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatus
+    }
+}
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meanTimeToFailureInMinutes
+    }
+}
+// GetModelAppHealthScore gets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modelAppHealthScore
+    }
+}
+// GetModelAppHealthStatus gets the modelAppHealthStatus property value. The overall app health status of the device model.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modelAppHealthStatus
+    }
 }
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) IsNil()(bool) {
     return m == nil

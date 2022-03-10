@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceRuleSetting 
+// GovernanceRuleSetting provides operations to manage the collection of governanceResource entities.
 type GovernanceRuleSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewGovernanceRuleSetting()(*GovernanceRuleSetting) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGovernanceRuleSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGovernanceRuleSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGovernanceRuleSetting(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRuleSetting) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetRuleIdentifier gets the ruleIdentifier property value. The id of the rule. For example, ExpirationRule and MfaRule.
-func (m *GovernanceRuleSetting) GetRuleIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleIdentifier
-    }
-}
-// GetSetting gets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
-func (m *GovernanceRuleSetting) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *GovernanceRuleSetting) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetRuleIdentifier gets the ruleIdentifier property value. The id of the rule. For example, ExpirationRule and MfaRule.
+func (m *GovernanceRuleSetting) GetRuleIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleIdentifier
+    }
+}
+// GetSetting gets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+func (m *GovernanceRuleSetting) GetSetting()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.setting
+    }
 }
 func (m *GovernanceRuleSetting) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyUploadedLanguageFile 
+// GroupPolicyUploadedLanguageFile provides operations to manage the deviceManagement singleton.
 type GroupPolicyUploadedLanguageFile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,6 +27,10 @@ func NewGroupPolicyUploadedLanguageFile()(*GroupPolicyUploadedLanguageFile) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyUploadedLanguageFile(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GroupPolicyUploadedLanguageFile) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *GroupPolicyUploadedLanguageFile) GetContent()([]byte) {
         return nil
     } else {
         return m.content
-    }
-}
-// GetFileName gets the fileName property value. The file name of the uploaded ADML file.
-func (m *GroupPolicyUploadedLanguageFile) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
-}
-// GetId gets the id property value. Key of the entity.
-func (m *GroupPolicyUploadedLanguageFile) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetLanguageCode gets the languageCode property value. The language code of the uploaded ADML file.
-func (m *GroupPolicyUploadedLanguageFile) GetLanguageCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageCode
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyUploadedLanguageFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +101,38 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetFileName gets the fileName property value. The file name of the uploaded ADML file.
+func (m *GroupPolicyUploadedLanguageFile) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
+    }
+}
+// GetId gets the id property value. Key of the entity.
+func (m *GroupPolicyUploadedLanguageFile) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetLanguageCode gets the languageCode property value. The language code of the uploaded ADML file.
+func (m *GroupPolicyUploadedLanguageFile) GetLanguageCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageCode
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyUploadedLanguageFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *GroupPolicyUploadedLanguageFile) IsNil()(bool) {
     return m == nil

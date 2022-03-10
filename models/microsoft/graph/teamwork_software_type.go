@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the updateSoftware method.
 type TeamworkSoftwareType int
 
 const (

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsImpactingProcess 
+// UserExperienceAnalyticsImpactingProcess provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsImpactingProcess struct {
     Entity
     // The category of impacting process.
@@ -26,6 +26,10 @@ func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpact
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsImpactingProcess(), nil
 }
 // GetCategory gets the category property value. The category of impacting process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetCategory()(*string) {
@@ -49,30 +53,6 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetDeviceId()(*string) {
         return nil
     } else {
         return m.deviceId
-    }
-}
-// GetImpactValue gets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
-func (m *UserExperienceAnalyticsImpactingProcess) GetImpactValue()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactValue
-    }
-}
-// GetProcessName gets the processName property value. The process name.
-func (m *UserExperienceAnalyticsImpactingProcess) GetProcessName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processName
-    }
-}
-// GetPublisher gets the publisher property value. The publisher of the process.
-func (m *UserExperienceAnalyticsImpactingProcess) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +119,30 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetImpactValue gets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsImpactingProcess) GetImpactValue()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.impactValue
+    }
+}
+// GetProcessName gets the processName property value. The process name.
+func (m *UserExperienceAnalyticsImpactingProcess) GetProcessName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.processName
+    }
+}
+// GetPublisher gets the publisher property value. The publisher of the process.
+func (m *UserExperienceAnalyticsImpactingProcess) GetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisher
+    }
 }
 func (m *UserExperienceAnalyticsImpactingProcess) IsNil()(bool) {
     return m == nil

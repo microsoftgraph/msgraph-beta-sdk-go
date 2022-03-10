@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationDetail 
+// AuthenticationDetail provides operations to manage the auditLogRoot singleton.
 type AuthenticationDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewAuthenticationDetail()(*AuthenticationDetail) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAuthenticationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuthenticationDetailFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuthenticationDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationDetail) GetAdditionalData()(map[string]interface{}) {
@@ -75,14 +79,6 @@ func (m *AuthenticationDetail) GetAuthenticationStepResultDetail()(*string) {
         return nil
     } else {
         return m.authenticationStepResultDetail
-    }
-}
-// GetSucceeded gets the succeeded property value. Indicates the status of the authentication step. Possible values: succeeded, failed.
-func (m *AuthenticationDetail) GetSucceeded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.succeeded
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,6 +145,14 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetSucceeded gets the succeeded property value. Indicates the status of the authentication step. Possible values: succeeded, failed.
+func (m *AuthenticationDetail) GetSucceeded()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.succeeded
+    }
 }
 func (m *AuthenticationDetail) IsNil()(bool) {
     return m == nil

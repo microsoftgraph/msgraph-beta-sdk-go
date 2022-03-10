@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion 
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -28,6 +28,10 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion()(*UserExperi
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppCrashCount()(*int32) {
@@ -75,14 +79,6 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppVersi
         return nil
     } else {
         return m.appVersion
-    }
-}
-// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetMeanTimeToFailureInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meanTimeToFailureInMinutes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,6 +155,14 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         return nil
     }
     return res
+}
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetMeanTimeToFailureInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.meanTimeToFailureInMinutes
+    }
 }
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) IsNil()(bool) {
     return m == nil

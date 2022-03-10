@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidManagedStoreAccountEnterpriseSettings 
+// AndroidManagedStoreAccountEnterpriseSettings provides operations to manage the deviceManagement singleton.
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
     // Company codes for AndroidManagedStoreAccountEnterpriseSettings
@@ -13,7 +13,7 @@ type AndroidManagedStoreAccountEnterpriseSettings struct {
     // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
     bindStatus *AndroidManagedStoreAccountBindStatus;
     // Company codes for AndroidManagedStoreAccountEnterpriseSettings
-    companyCodes []AndroidEnrollmentCompanyCode;
+    companyCodes []AndroidEnrollmentCompanyCodeable;
     // Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
     deviceOwnerManagementEnabled *bool;
     // Indicates which users can enroll devices in Android Enterprise device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
@@ -40,6 +40,10 @@ func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccou
     }
     return m
 }
+// CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidManagedStoreAccountEnterpriseSettings(), nil
+}
 // GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled gets the androidDeviceOwnerFullyManagedEnrollmentEnabled property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled()(*bool) {
     if m == nil {
@@ -57,7 +61,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetBindStatus()(*AndroidM
     }
 }
 // GetCompanyCodes gets the companyCodes property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetCompanyCodes()([]AndroidEnrollmentCompanyCode) {
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetCompanyCodes()([]AndroidEnrollmentCompanyCodeable) {
     if m == nil {
         return nil
     } else {
@@ -78,62 +82,6 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetEnrollmentTarget()(*An
         return nil
     } else {
         return m.enrollmentTarget
-    }
-}
-// GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncDateTime
-    }
-}
-// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncStatus()(*AndroidManagedStoreAccountAppSyncStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncStatus
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android enterprise settings
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetManagedGooglePlayInitialScopeTagIds gets the managedGooglePlayInitialScopeTagIds property value. Initial scope tags for MGP apps
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetManagedGooglePlayInitialScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedGooglePlayInitialScopeTagIds
-    }
-}
-// GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android Enterprise
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerOrganizationName
-    }
-}
-// GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerUserPrincipalName
-    }
-}
-// GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
-func (m *AndroidManagedStoreAccountEnterpriseSettings) GetTargetGroupIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupIds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,14 +108,14 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         return nil
     }
     res["companyCodes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAndroidEnrollmentCompanyCode() })
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AndroidEnrollmentCompanyCode, len(val))
+            res := make([]AndroidEnrollmentCompanyCodeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AndroidEnrollmentCompanyCode))
+                res[i] = v.(AndroidEnrollmentCompanyCodeable)
             }
             m.SetCompanyCodes(res)
         }
@@ -273,6 +221,62 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
     }
     return res
 }
+// GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastAppSyncDateTime
+    }
+}
+// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncStatus()(*AndroidManagedStoreAccountAppSyncStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastAppSyncStatus
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android enterprise settings
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetManagedGooglePlayInitialScopeTagIds gets the managedGooglePlayInitialScopeTagIds property value. Initial scope tags for MGP apps
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetManagedGooglePlayInitialScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedGooglePlayInitialScopeTagIds
+    }
+}
+// GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android Enterprise
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerOrganizationName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerOrganizationName
+    }
+}
+// GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerUserPrincipalName
+    }
+}
+// GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetTargetGroupIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetGroupIds
+    }
+}
 func (m *AndroidManagedStoreAccountEnterpriseSettings) IsNil()(bool) {
     return m == nil
 }
@@ -298,8 +302,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i04eb530
     if m.GetCompanyCodes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompanyCodes()))
         for i, v := range m.GetCompanyCodes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("companyCodes", cast)
         if err != nil {
@@ -377,7 +380,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) SetBindStatus(value *Andr
     }
 }
 // SetCompanyCodes sets the companyCodes property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
-func (m *AndroidManagedStoreAccountEnterpriseSettings) SetCompanyCodes(value []AndroidEnrollmentCompanyCode)() {
+func (m *AndroidManagedStoreAccountEnterpriseSettings) SetCompanyCodes(value []AndroidEnrollmentCompanyCodeable)() {
     if m != nil {
         m.companyCodes = value
     }

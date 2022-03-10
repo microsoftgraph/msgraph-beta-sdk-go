@@ -2,11 +2,12 @@ package salesinvoicelines
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i9e81f6bd395a36756f132c4e7526d829cbbd209a1fd4cce5bb903b537cc84cd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/salesinvoicelines/count"
 )
 
-// SalesInvoiceLinesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\salesInvoiceLines
+// SalesInvoiceLinesRequestBuilder provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 type SalesInvoiceLinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type SalesInvoiceLinesRequestBuilderGetQueryParameters struct {
 // SalesInvoiceLinesRequestBuilderPostOptions options for Post
 type SalesInvoiceLinesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLine;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLineable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewSalesInvoiceLinesRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewSalesInvoiceLinesRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesInvoiceLinesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SalesInvoiceLinesRequestBuilder) Count()(*i9e81f6bd395a36756f132c4e7526d829cbbd209a1fd4cce5bb903b537cc84cd1.CountRequestBuilder) {
+    return i9e81f6bd395a36756f132c4e7526d829cbbd209a1fd4cce5bb903b537cc84cd1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get salesInvoiceLines from financials
 func (m *SalesInvoiceLinesRequestBuilder) CreateGetRequestInformation(options *SalesInvoiceLinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *SalesInvoiceLinesRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Get get salesInvoiceLines from financials
-func (m *SalesInvoiceLinesRequestBuilder) Get(options *SalesInvoiceLinesRequestBuilderGetOptions)(*SalesInvoiceLinesResponse, error) {
+func (m *SalesInvoiceLinesRequestBuilder) Get(options *SalesInvoiceLinesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLineCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSalesInvoiceLinesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSalesInvoiceLineCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SalesInvoiceLinesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLineCollectionResponseable), nil
 }
 // Post create new navigation property to salesInvoiceLines for financials
-func (m *SalesInvoiceLinesRequestBuilder) Post(options *SalesInvoiceLinesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLine, error) {
+func (m *SalesInvoiceLinesRequestBuilder) Post(options *SalesInvoiceLinesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLineable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSalesInvoiceLine() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSalesInvoiceLineFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLine), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoiceLineable), nil
 }

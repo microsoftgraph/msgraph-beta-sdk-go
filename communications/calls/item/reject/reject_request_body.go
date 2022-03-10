@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RejectRequestBody 
+// RejectRequestBody provides operations to call the reject method.
 type RejectRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewRejectRequestBody()(*RejectRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRejectRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRejectRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRejectRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RejectRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *RejectRequestBody) GetCallbackUri()(*string) {
         return nil
     } else {
         return m.callbackUri
-    }
-}
-// GetReason gets the reason property value. 
-func (m *RejectRequestBody) GetReason()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RejectReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +65,14 @@ func (m *RejectRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetReason gets the reason property value. 
+func (m *RejectRequestBody) GetReason()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RejectReason) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reason
+    }
 }
 func (m *RejectRequestBody) IsNil()(bool) {
     return m == nil

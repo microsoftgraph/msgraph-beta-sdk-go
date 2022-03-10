@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeleteTiIndicatorsByExternalIdRequestBody 
+// DeleteTiIndicatorsByExternalIdRequestBody provides operations to call the deleteTiIndicatorsByExternalId method.
 type DeleteTiIndicatorsByExternalIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewDeleteTiIndicatorsByExternalIdRequestBody()(*DeleteTiIndicatorsByExterna
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeleteTiIndicatorsByExternalIdRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeleteTiIndicatorsByExternalIdRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeleteTiIndicatorsByExternalIdRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeleteTiIndicatorsByExternalIdRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetValue gets the value property value. 
-func (m *DeleteTiIndicatorsByExternalIdRequestBody) GetValue()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -52,6 +48,14 @@ func (m *DeleteTiIndicatorsByExternalIdRequestBody) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetValue gets the value property value. 
+func (m *DeleteTiIndicatorsByExternalIdRequestBody) GetValue()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
 }
 func (m *DeleteTiIndicatorsByExternalIdRequestBody) IsNil()(bool) {
     return m == nil

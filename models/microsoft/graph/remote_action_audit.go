@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RemoteActionAudit 
+// RemoteActionAudit provides operations to manage the deviceManagement singleton.
 type RemoteActionAudit struct {
     Entity
     // The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
@@ -33,6 +33,10 @@ func NewRemoteActionAudit()(*RemoteActionAudit) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateRemoteActionAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRemoteActionAuditFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRemoteActionAudit(), nil
 }
 // GetAction gets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
 func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
@@ -72,38 +76,6 @@ func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
         return nil
     } else {
         return m.deviceOwnerUserPrincipalName
-    }
-}
-// GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
-func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedByUserPrincipalName
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. Action target.
-func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetRequestDateTime gets the requestDateTime property value. Time when the action was issued, given in UTC.
-func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestDateTime
-    }
-}
-// GetUserName gets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
-func (m *RemoteActionAudit) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -200,6 +172,38 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
+func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initiatedByUserPrincipalName
+    }
+}
+// GetManagedDeviceId gets the managedDeviceId property value. Action target.
+func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetRequestDateTime gets the requestDateTime property value. Time when the action was issued, given in UTC.
+func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestDateTime
+    }
+}
+// GetUserName gets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
+func (m *RemoteActionAudit) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
 }
 func (m *RemoteActionAudit) IsNil()(bool) {
     return m == nil

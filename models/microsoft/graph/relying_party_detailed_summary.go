@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RelyingPartyDetailedSummary 
+// RelyingPartyDetailedSummary provides operations to call the getRelyingPartyDetailedSummary method.
 type RelyingPartyDetailedSummary struct {
     Entity
     // Number of failed sign in on Active Directory Federation Service in the period specified.
@@ -12,7 +12,7 @@ type RelyingPartyDetailedSummary struct {
     // Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
     migrationStatus *MigrationStatus;
     // Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
-    migrationValidationDetails []KeyValuePair;
+    migrationValidationDetails []KeyValuePairable;
     // This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
     relyingPartyId *string;
     // Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
@@ -30,12 +30,16 @@ type RelyingPartyDetailedSummary struct {
     // Number of unique users that have signed into the application.
     uniqueUserCount *int64;
 }
-// NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
+// NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateRelyingPartyDetailedSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRelyingPartyDetailedSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRelyingPartyDetailedSummary(), nil
 }
 // GetFailedSignInCount gets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
@@ -43,86 +47,6 @@ func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
         return nil
     } else {
         return m.failedSignInCount
-    }
-}
-// GetMigrationStatus gets the migrationStatus property value. Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
-func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.migrationStatus
-    }
-}
-// GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
-func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.migrationValidationDetails
-    }
-}
-// GetRelyingPartyId gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
-func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relyingPartyId
-    }
-}
-// GetRelyingPartyName gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
-func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relyingPartyName
-    }
-}
-// GetReplyUrls gets the replyUrls property value. Specifies where the relying party expects to receive the token.
-func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replyUrls
-    }
-}
-// GetServiceId gets the serviceId property value. Uniquely identifies the Active Directory forest.
-func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceId
-    }
-}
-// GetSignInSuccessRate gets the signInSuccessRate property value. Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
-func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInSuccessRate
-    }
-}
-// GetSuccessfulSignInCount gets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
-func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulSignInCount
-    }
-}
-// GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
-func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalSignInCount
-    }
-}
-// GetUniqueUserCount gets the uniqueUserCount property value. Number of unique users that have signed into the application.
-func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueUserCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,14 +73,14 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["migrationValidationDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetMigrationValidationDetails(res)
         }
@@ -248,6 +172,86 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetMigrationStatus gets the migrationStatus property value. Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
+func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.migrationStatus
+    }
+}
+// GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.migrationValidationDetails
+    }
+}
+// GetRelyingPartyId gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
+func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relyingPartyId
+    }
+}
+// GetRelyingPartyName gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
+func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relyingPartyName
+    }
+}
+// GetReplyUrls gets the replyUrls property value. Specifies where the relying party expects to receive the token.
+func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.replyUrls
+    }
+}
+// GetServiceId gets the serviceId property value. Uniquely identifies the Active Directory forest.
+func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serviceId
+    }
+}
+// GetSignInSuccessRate gets the signInSuccessRate property value. Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
+func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signInSuccessRate
+    }
+}
+// GetSuccessfulSignInCount gets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
+func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successfulSignInCount
+    }
+}
+// GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
+func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalSignInCount
+    }
+}
+// GetUniqueUserCount gets the uniqueUserCount property value. Number of unique users that have signed into the application.
+func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uniqueUserCount
+    }
+}
 func (m *RelyingPartyDetailedSummary) IsNil()(bool) {
     return m == nil
 }
@@ -273,8 +277,7 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetMigrationValidationDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMigrationValidationDetails()))
         for i, v := range m.GetMigrationValidationDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("migrationValidationDetails", cast)
         if err != nil {
@@ -344,7 +347,7 @@ func (m *RelyingPartyDetailedSummary) SetMigrationStatus(value *MigrationStatus)
     }
 }
 // SetMigrationValidationDetails sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
-func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyValuePair)() {
+func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyValuePairable)() {
     if m != nil {
         m.migrationValidationDetails = value
     }

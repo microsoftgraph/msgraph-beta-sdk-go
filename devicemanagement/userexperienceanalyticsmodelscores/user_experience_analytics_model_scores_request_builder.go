@@ -2,11 +2,12 @@ package userexperienceanalyticsmodelscores
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i99fe782b37391c0745ba8a46ac6c324540d5b94f19c7e0adab5a273339c5c40f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmodelscores/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// UserExperienceAnalyticsModelScoresRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsModelScores
+// UserExperienceAnalyticsModelScoresRequestBuilder provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsModelScoresRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type UserExperienceAnalyticsModelScoresRequestBuilderGetQueryParameters struct {
 // UserExperienceAnalyticsModelScoresRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsModelScoresRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScores;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScoresable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewUserExperienceAnalyticsModelScoresRequestBuilder(rawUrl string, requestA
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsModelScoresRequestBuilder) Count()(*i99fe782b37391c0745ba8a46ac6c324540d5b94f19c7e0adab5a273339c5c40f.CountRequestBuilder) {
+    return i99fe782b37391c0745ba8a46ac6c324540d5b94f19c7e0adab5a273339c5c40f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics model scores
 func (m *UserExperienceAnalyticsModelScoresRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsModelScoresRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *UserExperienceAnalyticsModelScoresRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics model scores
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsModelScores for deviceManagement
 func (m *UserExperienceAnalyticsModelScoresRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsModelScoresRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *UserExperienceAnalyticsModelScoresRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Get user experience analytics model scores
-func (m *UserExperienceAnalyticsModelScoresRequestBuilder) Get(options *UserExperienceAnalyticsModelScoresRequestBuilderGetOptions)(*UserExperienceAnalyticsModelScoresResponse, error) {
+func (m *UserExperienceAnalyticsModelScoresRequestBuilder) Get(options *UserExperienceAnalyticsModelScoresRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScoresCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsModelScoresResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsModelScoresCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsModelScoresResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScoresCollectionResponseable), nil
 }
-// Post user experience analytics model scores
-func (m *UserExperienceAnalyticsModelScoresRequestBuilder) Post(options *UserExperienceAnalyticsModelScoresRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScores, error) {
+// Post create new navigation property to userExperienceAnalyticsModelScores for deviceManagement
+func (m *UserExperienceAnalyticsModelScoresRequestBuilder) Post(options *UserExperienceAnalyticsModelScoresRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScoresable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsModelScores() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsModelScoresFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScores), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsModelScoresable), nil
 }

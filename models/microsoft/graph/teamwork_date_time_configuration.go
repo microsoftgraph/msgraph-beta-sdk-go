@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDateTimeConfiguration 
+// TeamworkDateTimeConfiguration provides operations to manage the teamwork singleton.
 type TeamworkDateTimeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewTeamworkDateTimeConfiguration()(*TeamworkDateTimeConfiguration) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkDateTimeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkDateTimeConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkDateTimeConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDateTimeConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *TeamworkDateTimeConfiguration) GetDateFormat()(*string) {
         return nil
     } else {
         return m.dateFormat
-    }
-}
-// GetOfficeHoursEndTime gets the officeHoursEndTime property value. The time of the day when the device is turned off.
-func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeHoursEndTime
-    }
-}
-// GetOfficeHoursStartTime gets the officeHoursStartTime property value. The time of the day when the device is turned on.
-func (m *TeamworkDateTimeConfiguration) GetOfficeHoursStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeHoursStartTime
-    }
-}
-// GetTimeFormat gets the timeFormat property value. The time format for the device.
-func (m *TeamworkDateTimeConfiguration) GetTimeFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeFormat
-    }
-}
-// GetTimeZone gets the timeZone property value. The time zone to which the office hours apply.
-func (m *TeamworkDateTimeConfiguration) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetOfficeHoursEndTime gets the officeHoursEndTime property value. The time of the day when the device is turned off.
+func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeHoursEndTime
+    }
+}
+// GetOfficeHoursStartTime gets the officeHoursStartTime property value. The time of the day when the device is turned on.
+func (m *TeamworkDateTimeConfiguration) GetOfficeHoursStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeHoursStartTime
+    }
+}
+// GetTimeFormat gets the timeFormat property value. The time format for the device.
+func (m *TeamworkDateTimeConfiguration) GetTimeFormat()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeFormat
+    }
+}
+// GetTimeZone gets the timeZone property value. The time zone to which the office hours apply.
+func (m *TeamworkDateTimeConfiguration) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
 }
 func (m *TeamworkDateTimeConfiguration) IsNil()(bool) {
     return m == nil

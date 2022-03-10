@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the getOemWarranty method.
 type WarrantyType int
 
 const (

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdateWindow 
+// UpdateWindow provides operations to manage the collection of onPremisesPublishingProfile entities.
 type UpdateWindow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewUpdateWindow()(*UpdateWindow) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUpdateWindowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateWindowFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateWindow(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindow) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetUpdateWindowEndTime gets the updateWindowEndTime property value. End of a time window during which agents can receive updates
-func (m *UpdateWindow) GetUpdateWindowEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateWindowEndTime
-    }
-}
-// GetUpdateWindowStartTime gets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
-func (m *UpdateWindow) GetUpdateWindowStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateWindowStartTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetUpdateWindowEndTime gets the updateWindowEndTime property value. End of a time window during which agents can receive updates
+func (m *UpdateWindow) GetUpdateWindowEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateWindowEndTime
+    }
+}
+// GetUpdateWindowStartTime gets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
+func (m *UpdateWindow) GetUpdateWindowStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateWindowStartTime
+    }
 }
 func (m *UpdateWindow) IsNil()(bool) {
     return m == nil

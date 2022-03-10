@@ -2,14 +2,14 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i81796c9b3bb388e047ef193315c701449a8c5498b978a31cdb67ac4a042c2efc "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/stages/item/decisions/item/instance"
     i9726a71f15a35a2afae0754bc167fdf83fa607f49db40224a5399e00e09867a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/stages/item/decisions/item/insights"
     i81b099f2c33c2f064f697d68267f5f2e473d630189d67e90d2fad0a391d3fcb1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/stages/item/decisions/item/insights/item"
 )
 
-// AccessReviewInstanceDecisionItemItemRequestBuilder builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions\{accessReviewInstanceDecisionItem-id}
+// AccessReviewInstanceDecisionItemItemRequestBuilder provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
 type AccessReviewInstanceDecisionItemItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters struct
 // AccessReviewInstanceDecisionItemItemRequestBuilderPatchOptions options for Patch
 type AccessReviewInstanceDecisionItemItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +65,7 @@ func NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,7 +75,7 @@ func NewAccessReviewInstanceDecisionItemItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// CreateDeleteRequestInformation delete navigation property decisions for users
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewInstanceDecisionItemItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// CreatePatchRequestInformation update the navigation property decisions in users
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreatePatchRequestInformation(options *AccessReviewInstanceDecisionItemItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,29 +130,37 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// Delete each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// Delete delete navigation property decisions for users
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Delete(options *AccessReviewInstanceDecisionItemItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(options *AccessReviewInstanceDecisionItemItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem, error) {
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(options *AccessReviewInstanceDecisionItemItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewInstanceDecisionItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItemable), nil
 }
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*i9726a71f15a35a2afae0754bc167fdf83fa607f49db40224a5399e00e09867a5.InsightsRequestBuilder) {
     return i9726a71f15a35a2afae0754bc167fdf83fa607f49db40224a5399e00e09867a5.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -171,13 +179,17 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*i81796c9b3bb388e047ef193315c701449a8c5498b978a31cdb67ac4a042c2efc.InstanceRequestBuilder) {
     return i81796c9b3bb388e047ef193315c701449a8c5498b978a31cdb67ac4a042c2efc.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// Patch update the navigation property decisions in users
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Patch(options *AccessReviewInstanceDecisionItemItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

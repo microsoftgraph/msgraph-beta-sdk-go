@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateInstanceRequestBody 
+// CreateInstanceRequestBody provides operations to call the createInstance method.
 type CreateInstanceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,7 +16,7 @@ type CreateInstanceRequestBody struct {
     // 
     roleScopeTagIds []string;
     // 
-    settingsDelta []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance;
+    settingsDelta []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstanceable;
 }
 // NewCreateInstanceRequestBody instantiates a new createInstanceRequestBody and sets the default values.
 func NewCreateInstanceRequestBody()(*CreateInstanceRequestBody) {
@@ -24,6 +24,10 @@ func NewCreateInstanceRequestBody()(*CreateInstanceRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCreateInstanceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCreateInstanceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateInstanceRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateInstanceRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -47,22 +51,6 @@ func (m *CreateInstanceRequestBody) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. 
-func (m *CreateInstanceRequestBody) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetSettingsDelta gets the settingsDelta property value. 
-func (m *CreateInstanceRequestBody) GetSettingsDelta()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingsDelta
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -103,20 +91,36 @@ func (m *CreateInstanceRequestBody) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["settingsDelta"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementSettingInstance() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementSettingInstanceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstanceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstanceable)
             }
             m.SetSettingsDelta(res)
         }
         return nil
     }
     return res
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. 
+func (m *CreateInstanceRequestBody) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetSettingsDelta gets the settingsDelta property value. 
+func (m *CreateInstanceRequestBody) GetSettingsDelta()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstanceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingsDelta
+    }
 }
 func (m *CreateInstanceRequestBody) IsNil()(bool) {
     return m == nil
@@ -144,8 +148,7 @@ func (m *CreateInstanceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     if m.GetSettingsDelta() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettingsDelta()))
         for i, v := range m.GetSettingsDelta() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("settingsDelta", cast)
         if err != nil {
@@ -185,7 +188,7 @@ func (m *CreateInstanceRequestBody) SetRoleScopeTagIds(value []string)() {
     }
 }
 // SetSettingsDelta sets the settingsDelta property value. 
-func (m *CreateInstanceRequestBody) SetSettingsDelta(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance)() {
+func (m *CreateInstanceRequestBody) SetSettingsDelta(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstanceable)() {
     if m != nil {
         m.settingsDelta = value
     }

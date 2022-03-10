@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetComanagementEligibleDevicesSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.getComanagementEligibleDevicesSummary()
+// GetComanagementEligibleDevicesSummaryRequestBuilder provides operations to call the getComanagementEligibleDevicesSummary method.
 type GetComanagementEligibleDevicesSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type GetComanagementEligibleDevicesSummaryResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type comanagementEligibleDevicesSummary
-    comanagementEligibleDevicesSummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummary;
+    comanagementEligibleDevicesSummary i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummaryable;
 }
 // NewGetComanagementEligibleDevicesSummaryResponse instantiates a new getComanagementEligibleDevicesSummaryResponse and sets the default values.
 func NewGetComanagementEligibleDevicesSummaryResponse()(*GetComanagementEligibleDevicesSummaryResponse) {
@@ -37,6 +37,9 @@ func NewGetComanagementEligibleDevicesSummaryResponse()(*GetComanagementEligible
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetComanagementEligibleDevicesSummaryResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetComanagementEligibleDevicesSummaryResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetComanagementEligibleDevicesSummaryResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *GetComanagementEligibleDevicesSummaryResponse) GetAdditionalData()(map[
     }
 }
 // GetComanagementEligibleDevicesSummary gets the comanagementEligibleDevicesSummary property value. Union type representation for type comanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryResponse) GetComanagementEligibleDevicesSummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummary) {
+func (m *GetComanagementEligibleDevicesSummaryResponse) GetComanagementEligibleDevicesSummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummaryable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *GetComanagementEligibleDevicesSummaryResponse) GetComanagementEligibleD
 func (m *GetComanagementEligibleDevicesSummaryResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["comanagementEligibleDevicesSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewComanagementEligibleDevicesSummary() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetComanagementEligibleDevicesSummary(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummary))
+            m.SetComanagementEligibleDevicesSummary(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummaryable))
         }
         return nil
     }
@@ -95,10 +98,17 @@ func (m *GetComanagementEligibleDevicesSummaryResponse) SetAdditionalData(value 
     }
 }
 // SetComanagementEligibleDevicesSummary sets the comanagementEligibleDevicesSummary property value. Union type representation for type comanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryResponse) SetComanagementEligibleDevicesSummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummary)() {
+func (m *GetComanagementEligibleDevicesSummaryResponse) SetComanagementEligibleDevicesSummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummaryable)() {
     if m != nil {
         m.comanagementEligibleDevicesSummary = value
     }
+}
+// GetComanagementEligibleDevicesSummaryResponseable 
+type GetComanagementEligibleDevicesSummaryResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetComanagementEligibleDevicesSummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummaryable)
+    SetComanagementEligibleDevicesSummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagementEligibleDevicesSummaryable)()
 }
 // NewGetComanagementEligibleDevicesSummaryRequestBuilderInternal instantiates a new GetComanagementEligibleDevicesSummaryRequestBuilder and sets the default values.
 func NewGetComanagementEligibleDevicesSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetComanagementEligibleDevicesSummaryRequestBuilder) {
@@ -109,7 +119,7 @@ func NewGetComanagementEligibleDevicesSummaryRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestIn
     return requestInfo, nil
 }
 // Get invoke function getComanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) Get(options *GetComanagementEligibleDevicesSummaryRequestBuilderGetOptions)(*GetComanagementEligibleDevicesSummaryResponse, error) {
+func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) Get(options *GetComanagementEligibleDevicesSummaryRequestBuilderGetOptions)(GetComanagementEligibleDevicesSummaryResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetComanagementEligibleDevicesSummaryResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetComanagementEligibleDevicesSummaryResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetComanagementEligibleDevicesSummaryResponse), nil
+    return res.(GetComanagementEligibleDevicesSummaryResponseable), nil
 }

@@ -2,8 +2,8 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i1388a5b7afebd5c1d7ad7238e86dfa05a923b4d8e35dc4265272c52df5b7ab94 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/messages/item/move"
     i3c0595e344f6094e852e3be4813c86bfd5e14109889db8d73b847fbb96d50e80 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/messages/item/createreply"
     i58c0a5d3e1252e77598ba1ea581032b7c028f21319ac81bacba8d36aaae8d7c9 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/messages/item/forward"
@@ -29,7 +29,7 @@ import (
     idb97761d489a095537daad3218e84b76808b5d8fc51cba00b233be4c0e0f9e9f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mailfolders/item/messages/item/mentions/item"
 )
 
-// MessageItemRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}
+// MessageItemRequestBuilder provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
 type MessageItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -68,7 +68,7 @@ type MessageItemRequestBuilderGetQueryParameters struct {
 // MessageItemRequestBuilderPatchOptions options for Patch
 type MessageItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -102,7 +102,7 @@ func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -118,7 +118,7 @@ func (m *MessageItemRequestBuilder) Content()(*ia41ad1f56fdb6d2218a17ab1c1042e82
 func (m *MessageItemRequestBuilder) Copy()(*i80e9f30d67f4b0e96cf2e956e67ef07179485a391069b5616f4763663728fad5.CopyRequestBuilder) {
     return i80e9f30d67f4b0e96cf2e956e67ef07179485a391069b5616f4763663728fad5.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the collection of messages in the mailFolder.
+// CreateDeleteRequestInformation delete navigation property messages for users
 func (m *MessageItemRequestBuilder) CreateDeleteRequestInformation(options *MessageItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -158,7 +158,7 @@ func (m *MessageItemRequestBuilder) CreateGetRequestInformation(options *Message
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of messages in the mailFolder.
+// CreatePatchRequestInformation update the navigation property messages in users
 func (m *MessageItemRequestBuilder) CreatePatchRequestInformation(options *MessageItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -182,13 +182,17 @@ func (m *MessageItemRequestBuilder) CreateReply()(*i3c0595e344f6094e852e3be4813c
 func (m *MessageItemRequestBuilder) CreateReplyAll()(*ib48014d797abbb97d18c2fa3c3e893092e5b77db3345b6160da6647afde9d16d.CreateReplyAllRequestBuilder) {
     return ib48014d797abbb97d18c2fa3c3e893092e5b77db3345b6160da6647afde9d16d.NewCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete the collection of messages in the mailFolder.
+// Delete delete navigation property messages for users
 func (m *MessageItemRequestBuilder) Delete(options *MessageItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -215,16 +219,20 @@ func (m *MessageItemRequestBuilder) Forward()(*i58c0a5d3e1252e77598ba1ea581032b7
     return i58c0a5d3e1252e77598ba1ea581032b7c028f21319ac81bacba8d36aaae8d7c9.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the collection of messages in the mailFolder.
-func (m *MessageItemRequestBuilder) Get(options *MessageItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message, error) {
+func (m *MessageItemRequestBuilder) Get(options *MessageItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Messageable), nil
 }
 func (m *MessageItemRequestBuilder) Mentions()(*id21d4bcffeb94fbdc758f4d604a94503e400e91d464e2ea5b2878b43f841f829.MentionsRequestBuilder) {
     return id21d4bcffeb94fbdc758f4d604a94503e400e91d464e2ea5b2878b43f841f829.NewMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -257,13 +265,17 @@ func (m *MessageItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(
     }
     return i8914b25cf327deb26ccf2e46fc7a562348efa5e5885764ce98f231989db617ab.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the collection of messages in the mailFolder.
+// Patch update the navigation property messages in users
 func (m *MessageItemRequestBuilder) Patch(options *MessageItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

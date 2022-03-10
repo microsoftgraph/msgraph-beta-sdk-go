@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the connect method.
 type ChromeOSOnboardingStatus int
 
 const (

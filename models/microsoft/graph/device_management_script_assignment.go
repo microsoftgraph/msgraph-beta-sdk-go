@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptAssignment 
+// DeviceManagementScriptAssignment provides operations to manage the deviceManagement singleton.
 type DeviceManagementScriptAssignment struct {
     Entity
     // The Id of the Azure Active Directory group we are targeting the script to.
-    target *DeviceAndAppManagementAssignmentTarget;
+    target DeviceAndAppManagementAssignmentTargetable;
 }
 // NewDeviceManagementScriptAssignment instantiates a new deviceManagementScriptAssignment and sets the default values.
 func NewDeviceManagementScriptAssignment()(*DeviceManagementScriptAssignment) {
@@ -17,28 +17,32 @@ func NewDeviceManagementScriptAssignment()(*DeviceManagementScriptAssignment) {
     }
     return m
 }
-// GetTarget gets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
-func (m *DeviceManagementScriptAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+// CreateDeviceManagementScriptAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementScriptAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementScriptAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceAndAppManagementAssignmentTarget() })
+        val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+            m.SetTarget(val.(DeviceAndAppManagementAssignmentTargetable))
         }
         return nil
     }
     return res
+}
+// GetTarget gets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
+func (m *DeviceManagementScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *DeviceManagementScriptAssignment) IsNil()(bool) {
     return m == nil
@@ -58,7 +62,7 @@ func (m *DeviceManagementScriptAssignment) Serialize(writer i04eb5309aeaafadd283
     return nil
 }
 // SetTarget sets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
-func (m *DeviceManagementScriptAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
+func (m *DeviceManagementScriptAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
     if m != nil {
         m.target = value
     }

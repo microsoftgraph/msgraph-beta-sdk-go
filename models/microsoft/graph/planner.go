@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Planner 
+// Planner provides operations to manage the planner singleton.
 type Planner struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified buckets
-    buckets []PlannerBucket;
+    buckets []PlannerBucketable;
     // Read-only. Nullable. Returns a collection of the specified plans
-    plans []PlannerPlan;
+    plans []PlannerPlanable;
     // Read-only. Nullable. Returns a collection of the specified rosters
-    rosters []PlannerRoster;
+    rosters []PlannerRosterable;
     // Read-only. Nullable. Returns a collection of the specified tasks
-    tasks []PlannerTask;
+    tasks []PlannerTaskable;
 }
 // NewPlanner instantiates a new planner and sets the default values.
 func NewPlanner()(*Planner) {
@@ -23,16 +23,81 @@ func NewPlanner()(*Planner) {
     }
     return m
 }
+// CreatePlannerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlannerFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlanner(), nil
+}
 // GetBuckets gets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
-func (m *Planner) GetBuckets()([]PlannerBucket) {
+func (m *Planner) GetBuckets()([]PlannerBucketable) {
     if m == nil {
         return nil
     } else {
         return m.buckets
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["buckets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerBucketFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerBucketable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerBucketable)
+            }
+            m.SetBuckets(res)
+        }
+        return nil
+    }
+    res["plans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerPlanable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerPlanable)
+            }
+            m.SetPlans(res)
+        }
+        return nil
+    }
+    res["rosters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerRosterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerRosterable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerRosterable)
+            }
+            m.SetRosters(res)
+        }
+        return nil
+    }
+    res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerTaskable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerTaskable)
+            }
+            m.SetTasks(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetPlans gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
-func (m *Planner) GetPlans()([]PlannerPlan) {
+func (m *Planner) GetPlans()([]PlannerPlanable) {
     if m == nil {
         return nil
     } else {
@@ -40,7 +105,7 @@ func (m *Planner) GetPlans()([]PlannerPlan) {
     }
 }
 // GetRosters gets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
-func (m *Planner) GetRosters()([]PlannerRoster) {
+func (m *Planner) GetRosters()([]PlannerRosterable) {
     if m == nil {
         return nil
     } else {
@@ -48,73 +113,12 @@ func (m *Planner) GetRosters()([]PlannerRoster) {
     }
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
-func (m *Planner) GetTasks()([]PlannerTask) {
+func (m *Planner) GetTasks()([]PlannerTaskable) {
     if m == nil {
         return nil
     } else {
         return m.tasks
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["buckets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerBucket() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PlannerBucket, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PlannerBucket))
-            }
-            m.SetBuckets(res)
-        }
-        return nil
-    }
-    res["plans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerPlan() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PlannerPlan, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PlannerPlan))
-            }
-            m.SetPlans(res)
-        }
-        return nil
-    }
-    res["rosters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerRoster() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PlannerRoster, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PlannerRoster))
-            }
-            m.SetRosters(res)
-        }
-        return nil
-    }
-    res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPlannerTask() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PlannerTask, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*PlannerTask))
-            }
-            m.SetTasks(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Planner) IsNil()(bool) {
     return m == nil
@@ -128,8 +132,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetBuckets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("buckets", cast)
         if err != nil {
@@ -139,8 +142,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("plans", cast)
         if err != nil {
@@ -150,8 +152,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetRosters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRosters()))
         for i, v := range m.GetRosters() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("rosters", cast)
         if err != nil {
@@ -161,8 +162,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
@@ -172,25 +172,25 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     return nil
 }
 // SetBuckets sets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
-func (m *Planner) SetBuckets(value []PlannerBucket)() {
+func (m *Planner) SetBuckets(value []PlannerBucketable)() {
     if m != nil {
         m.buckets = value
     }
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
-func (m *Planner) SetPlans(value []PlannerPlan)() {
+func (m *Planner) SetPlans(value []PlannerPlanable)() {
     if m != nil {
         m.plans = value
     }
 }
 // SetRosters sets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
-func (m *Planner) SetRosters(value []PlannerRoster)() {
+func (m *Planner) SetRosters(value []PlannerRosterable)() {
     if m != nil {
         m.rosters = value
     }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
-func (m *Planner) SetTasks(value []PlannerTask)() {
+func (m *Planner) SetTasks(value []PlannerTaskable)() {
     if m != nil {
         m.tasks = value
     }

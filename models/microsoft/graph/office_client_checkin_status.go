@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OfficeClientCheckinStatus 
+// OfficeClientCheckinStatus provides operations to manage the officeConfiguration singleton.
 type OfficeClientCheckinStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,6 +34,10 @@ func NewOfficeClientCheckinStatus()(*OfficeClientCheckinStatus) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOfficeClientCheckinStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOfficeClientCheckinStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOfficeClientCheckinStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeClientCheckinStatus) GetAdditionalData()(map[string]interface{}) {
@@ -89,30 +93,6 @@ func (m *OfficeClientCheckinStatus) GetErrorMessage()(*string) {
         return nil
     } else {
         return m.errorMessage
-    }
-}
-// GetUserId gets the userId property value. User identifier using the device.
-func (m *OfficeClientCheckinStatus) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User principal name using the device.
-func (m *OfficeClientCheckinStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
-// GetWasSuccessful gets the wasSuccessful property value. If the last checkin was successful.
-func (m *OfficeClientCheckinStatus) GetWasSuccessful()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wasSuccessful
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -213,6 +193,30 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetUserId gets the userId property value. User identifier using the device.
+func (m *OfficeClientCheckinStatus) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name using the device.
+func (m *OfficeClientCheckinStatus) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
+// GetWasSuccessful gets the wasSuccessful property value. If the last checkin was successful.
+func (m *OfficeClientCheckinStatus) GetWasSuccessful()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wasSuccessful
+    }
 }
 func (m *OfficeClientCheckinStatus) IsNil()(bool) {
     return m == nil

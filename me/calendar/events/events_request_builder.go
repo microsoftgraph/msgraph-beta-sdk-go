@@ -2,12 +2,13 @@ package events
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4f35aaad58fd70567d67d114eb4fddd674c978813c1e6f8a0c78f35b62889766 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendar/events/delta"
+    iee238a43be0409a965af4d3a5cf204a322386a86d5c614520b62289b95ea5913 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendar/events/count"
 )
 
-// EventsRequestBuilder builds and executes requests for operations under \me\calendar\events
+// EventsRequestBuilder provides operations to manage the events property of the microsoft.graph.calendar entity.
 type EventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +46,7 @@ type EventsRequestBuilderGetQueryParameters struct {
 // EventsRequestBuilderPostOptions options for Post
 type EventsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Eventable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +63,7 @@ func NewEventsRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -71,6 +72,9 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEventsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *EventsRequestBuilder) Count()(*iee238a43be0409a965af4d3a5cf204a322386a86d5c614520b62289b95ea5913.CountRequestBuilder) {
+    return iee238a43be0409a965af4d3a5cf204a322386a86d5c614520b62289b95ea5913.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the events in the calendar. Navigation property. Read-only.
 func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -92,7 +96,7 @@ func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the events in the calendar. Navigation property. Read-only.
+// CreatePostRequestInformation create new navigation property to events for me
 func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,31 +114,39 @@ func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsReque
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \me\calendar\events\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *EventsRequestBuilder) Delta()(*i4f35aaad58fd70567d67d114eb4fddd674c978813c1e6f8a0c78f35b62889766.DeltaRequestBuilder) {
     return i4f35aaad58fd70567d67d114eb4fddd674c978813c1e6f8a0c78f35b62889766.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the events in the calendar. Navigation property. Read-only.
-func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*EventsResponse, error) {
+func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEventsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEventCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*EventsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventCollectionResponseable), nil
 }
-// Post the events in the calendar. Navigation property. Read-only.
-func (m *EventsRequestBuilder) Post(options *EventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
+// Post create new navigation property to events for me
+func (m *EventsRequestBuilder) Post(options *EventsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Eventable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEvent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Eventable), nil
 }

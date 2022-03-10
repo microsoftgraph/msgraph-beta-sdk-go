@@ -1,0 +1,21 @@
+package graph
+
+import (
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+)
+
+// AuditLogRootable 
+type AuditLogRootable interface {
+    Entityable
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetDirectoryAudits()([]DirectoryAuditable)
+    GetDirectoryProvisioning()([]ProvisioningObjectSummaryable)
+    GetProvisioning()([]ProvisioningObjectSummaryable)
+    GetRestrictedSignIns()([]RestrictedSignInable)
+    GetSignIns()([]SignInable)
+    SetDirectoryAudits(value []DirectoryAuditable)()
+    SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)()
+    SetProvisioning(value []ProvisioningObjectSummaryable)()
+    SetRestrictedSignIns(value []RestrictedSignInable)()
+    SetSignIns(value []SignInable)()
+}

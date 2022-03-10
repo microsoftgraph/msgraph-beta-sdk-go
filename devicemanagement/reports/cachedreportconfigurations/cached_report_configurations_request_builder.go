@@ -2,11 +2,12 @@ package cachedreportconfigurations
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/cachedreportconfigurations/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// CachedReportConfigurationsRequestBuilder builds and executes requests for operations under \deviceManagement\reports\cachedReportConfigurations
+// CachedReportConfigurationsRequestBuilder provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
 type CachedReportConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type CachedReportConfigurationsRequestBuilderGetQueryParameters struct {
 // CachedReportConfigurationsRequestBuilderPostOptions options for Post
 type CachedReportConfigurationsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewCachedReportConfigurationsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewCachedReportConfigurationsRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCachedReportConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CachedReportConfigurationsRequestBuilder) Count()(*i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c.CountRequestBuilder) {
+    return i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation entity representing the configuration of a cached report
 func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformation(options *CachedReportConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation entity representing the configuration of a cached report
+// CreatePostRequestInformation create new navigation property to cachedReportConfigurations for deviceManagement
 func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformation(options *CachedReportConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Get entity representing the configuration of a cached report
-func (m *CachedReportConfigurationsRequestBuilder) Get(options *CachedReportConfigurationsRequestBuilderGetOptions)(*CachedReportConfigurationsResponse, error) {
+func (m *CachedReportConfigurationsRequestBuilder) Get(options *CachedReportConfigurationsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCachedReportConfigurationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementCachedReportConfigurationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CachedReportConfigurationsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationCollectionResponseable), nil
 }
-// Post entity representing the configuration of a cached report
-func (m *CachedReportConfigurationsRequestBuilder) Post(options *CachedReportConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration, error) {
+// Post create new navigation property to cachedReportConfigurations for deviceManagement
+func (m *CachedReportConfigurationsRequestBuilder) Post(options *CachedReportConfigurationsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementCachedReportConfiguration() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfigurationable), nil
 }

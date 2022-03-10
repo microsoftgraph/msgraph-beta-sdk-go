@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetAssignmentFiltersStatusDetailsRequestBody 
+// GetAssignmentFiltersStatusDetailsRequestBody provides operations to call the getAssignmentFiltersStatusDetails method.
 type GetAssignmentFiltersStatusDetailsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewGetAssignmentFiltersStatusDetailsRequestBody()(*GetAssignmentFiltersStat
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateGetAssignmentFiltersStatusDetailsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGetAssignmentFiltersStatusDetailsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetAssignmentFiltersStatusDetailsRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -42,46 +46,6 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetAssignmentFilterIds()(
         return nil
     } else {
         return m.assignmentFilterIds
-    }
-}
-// GetManagedDeviceId gets the managedDeviceId property value. 
-func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
-}
-// GetPayloadId gets the payloadId property value. 
-func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetPayloadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadId
-    }
-}
-// GetSkip gets the skip property value. 
-func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
-}
-// GetTop gets the top property value. 
-func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
-}
-// GetUserId gets the userId property value. 
-func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -152,6 +116,46 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetFieldDeserializers()(m
         return nil
     }
     return res
+}
+// GetManagedDeviceId gets the managedDeviceId property value. 
+func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetManagedDeviceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceId
+    }
+}
+// GetPayloadId gets the payloadId property value. 
+func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetPayloadId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payloadId
+    }
+}
+// GetSkip gets the skip property value. 
+func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetSkip()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skip
+    }
+}
+// GetTop gets the top property value. 
+func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetTop()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.top
+    }
+}
+// GetUserId gets the userId property value. 
+func (m *GetAssignmentFiltersStatusDetailsRequestBody) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) IsNil()(bool) {
     return m == nil

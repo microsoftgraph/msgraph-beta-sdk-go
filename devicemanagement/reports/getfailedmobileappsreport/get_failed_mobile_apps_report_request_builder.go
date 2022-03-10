@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetFailedMobileAppsReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getFailedMobileAppsReport
+// GetFailedMobileAppsReportRequestBuilder provides operations to call the getFailedMobileAppsReport method.
 type GetFailedMobileAppsReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetFailedMobileAppsReportRequestBuilder struct {
 // GetFailedMobileAppsReportRequestBuilderPostOptions options for Post
 type GetFailedMobileAppsReportRequestBuilderPostOptions struct {
     // 
-    Body *GetFailedMobileAppsReportRequestBody;
+    Body GetFailedMobileAppsReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetFailedMobileAppsReportRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetFailedMobileAppsReportRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Post invoke action getFailedMobileAppsReport
-func (m *GetFailedMobileAppsReportRequestBuilder) Post(options *GetFailedMobileAppsReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetFailedMobileAppsReportRequestBuilder) Post(options *GetFailedMobileAppsReportRequestBuilderPostOptions)(GetFailedMobileAppsReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetFailedMobileAppsReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetFailedMobileAppsReportResponseable), nil
 }

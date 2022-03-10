@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignResourceAccountToDeviceRequestBody 
+// AssignResourceAccountToDeviceRequestBody provides operations to call the assignResourceAccountToDevice method.
 type AssignResourceAccountToDeviceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewAssignResourceAccountToDeviceRequestBody()(*AssignResourceAccountToDevic
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAssignResourceAccountToDeviceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAssignResourceAccountToDeviceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAssignResourceAccountToDeviceRequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignResourceAccountToDeviceRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetAddressableUserName()(*str
         return nil
     } else {
         return m.addressableUserName
-    }
-}
-// GetResourceAccountName gets the resourceAccountName property value. 
-func (m *AssignResourceAccountToDeviceRequestBody) GetResourceAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAccountName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. 
-func (m *AssignResourceAccountToDeviceRequestBody) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *AssignResourceAccountToDeviceRequestBody) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetResourceAccountName gets the resourceAccountName property value. 
+func (m *AssignResourceAccountToDeviceRequestBody) GetResourceAccountName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceAccountName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. 
+func (m *AssignResourceAccountToDeviceRequestBody) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *AssignResourceAccountToDeviceRequestBody) IsNil()(bool) {
     return m == nil

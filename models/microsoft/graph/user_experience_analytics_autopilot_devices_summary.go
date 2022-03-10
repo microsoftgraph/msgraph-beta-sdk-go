@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAutopilotDevicesSummary 
+// UserExperienceAnalyticsAutopilotDevicesSummary provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
 type UserExperienceAnalyticsAutopilotDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewUserExperienceAnalyticsAutopilotDevicesSummary()(*UserExperienceAnalytic
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAutopilotDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesWithoutAutopi
         return nil
     } else {
         return m.devicesWithoutAutopilotProfileAssigned
-    }
-}
-// GetTotalWindows10DevicesWithoutTenantAttached gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
-func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetTotalWindows10DevicesWithoutTenantAttached()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalWindows10DevicesWithoutTenantAttached
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetTotalWindows10DevicesWithoutTenantAttached gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
+func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetTotalWindows10DevicesWithoutTenantAttached()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalWindows10DevicesWithoutTenantAttached
+    }
 }
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) IsNil()(bool) {
     return m == nil

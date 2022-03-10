@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FileSecurityProfile 
+// FileSecurityProfile provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
 type FileSecurityProfile struct {
     Entity
     // 
@@ -23,11 +23,11 @@ type FileSecurityProfile struct {
     // 
     firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    hashes []FileHash;
+    hashes []FileHashable;
     // 
     lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    malwareStates []MalwareState;
+    malwareStates []MalwareStateable;
     // 
     names []string;
     // 
@@ -37,9 +37,9 @@ type FileSecurityProfile struct {
     // 
     tags []string;
     // 
-    vendorInformation *SecurityVendorInformation;
+    vendorInformation SecurityVendorInformationable;
     // 
-    vulnerabilityStates []VulnerabilityState;
+    vulnerabilityStates []VulnerabilityStateable;
 }
 // NewFileSecurityProfile instantiates a new fileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
@@ -47,6 +47,10 @@ func NewFileSecurityProfile()(*FileSecurityProfile) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateFileSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateFileSecurityProfileFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewFileSecurityProfile(), nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. 
 func (m *FileSecurityProfile) GetActivityGroupNames()([]string) {
@@ -86,94 +90,6 @@ func (m *FileSecurityProfile) GetExtensions()([]string) {
         return nil
     } else {
         return m.extensions
-    }
-}
-// GetFileType gets the fileType property value. 
-func (m *FileSecurityProfile) GetFileType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileType
-    }
-}
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
-func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
-}
-// GetHashes gets the hashes property value. 
-func (m *FileSecurityProfile) GetHashes()([]FileHash) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashes
-    }
-}
-// GetLastSeenDateTime gets the lastSeenDateTime property value. 
-func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
-}
-// GetMalwareStates gets the malwareStates property value. 
-func (m *FileSecurityProfile) GetMalwareStates()([]MalwareState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.malwareStates
-    }
-}
-// GetNames gets the names property value. 
-func (m *FileSecurityProfile) GetNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.names
-    }
-}
-// GetRiskScore gets the riskScore property value. 
-func (m *FileSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
-}
-// GetSize gets the size property value. 
-func (m *FileSecurityProfile) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
-}
-// GetTags gets the tags property value. 
-func (m *FileSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
-}
-// GetVendorInformation gets the vendorInformation property value. 
-func (m *FileSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
-}
-// GetVulnerabilityStates gets the vulnerabilityStates property value. 
-func (m *FileSecurityProfile) GetVulnerabilityStates()([]VulnerabilityState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vulnerabilityStates
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -258,14 +174,14 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["hashes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewFileHash() })
+        val, err := n.GetCollectionOfObjectValues(CreateFileHashFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]FileHash, len(val))
+            res := make([]FileHashable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*FileHash))
+                res[i] = v.(FileHashable)
             }
             m.SetHashes(res)
         }
@@ -282,14 +198,14 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["malwareStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMalwareState() })
+        val, err := n.GetCollectionOfObjectValues(CreateMalwareStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MalwareState, len(val))
+            res := make([]MalwareStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MalwareState))
+                res[i] = v.(MalwareStateable)
             }
             m.SetMalwareStates(res)
         }
@@ -344,30 +260,118 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSecurityVendorInformation() })
+        val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendorInformation(val.(*SecurityVendorInformation))
+            m.SetVendorInformation(val.(SecurityVendorInformationable))
         }
         return nil
     }
     res["vulnerabilityStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVulnerabilityState() })
+        val, err := n.GetCollectionOfObjectValues(CreateVulnerabilityStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]VulnerabilityState, len(val))
+            res := make([]VulnerabilityStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*VulnerabilityState))
+                res[i] = v.(VulnerabilityStateable)
             }
             m.SetVulnerabilityStates(res)
         }
         return nil
     }
     return res
+}
+// GetFileType gets the fileType property value. 
+func (m *FileSecurityProfile) GetFileType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileType
+    }
+}
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
+func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.firstSeenDateTime
+    }
+}
+// GetHashes gets the hashes property value. 
+func (m *FileSecurityProfile) GetHashes()([]FileHashable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hashes
+    }
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. 
+func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSeenDateTime
+    }
+}
+// GetMalwareStates gets the malwareStates property value. 
+func (m *FileSecurityProfile) GetMalwareStates()([]MalwareStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.malwareStates
+    }
+}
+// GetNames gets the names property value. 
+func (m *FileSecurityProfile) GetNames()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.names
+    }
+}
+// GetRiskScore gets the riskScore property value. 
+func (m *FileSecurityProfile) GetRiskScore()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.riskScore
+    }
+}
+// GetSize gets the size property value. 
+func (m *FileSecurityProfile) GetSize()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.size
+    }
+}
+// GetTags gets the tags property value. 
+func (m *FileSecurityProfile) GetTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tags
+    }
+}
+// GetVendorInformation gets the vendorInformation property value. 
+func (m *FileSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendorInformation
+    }
+}
+// GetVulnerabilityStates gets the vulnerabilityStates property value. 
+func (m *FileSecurityProfile) GetVulnerabilityStates()([]VulnerabilityStateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vulnerabilityStates
+    }
 }
 func (m *FileSecurityProfile) IsNil()(bool) {
     return m == nil
@@ -423,8 +427,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetHashes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHashes()))
         for i, v := range m.GetHashes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("hashes", cast)
         if err != nil {
@@ -440,8 +443,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetMalwareStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMalwareStates()))
         for i, v := range m.GetMalwareStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("malwareStates", cast)
         if err != nil {
@@ -481,8 +483,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetVulnerabilityStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVulnerabilityStates()))
         for i, v := range m.GetVulnerabilityStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("vulnerabilityStates", cast)
         if err != nil {
@@ -534,7 +535,7 @@ func (m *FileSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6
     }
 }
 // SetHashes sets the hashes property value. 
-func (m *FileSecurityProfile) SetHashes(value []FileHash)() {
+func (m *FileSecurityProfile) SetHashes(value []FileHashable)() {
     if m != nil {
         m.hashes = value
     }
@@ -546,7 +547,7 @@ func (m *FileSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetMalwareStates sets the malwareStates property value. 
-func (m *FileSecurityProfile) SetMalwareStates(value []MalwareState)() {
+func (m *FileSecurityProfile) SetMalwareStates(value []MalwareStateable)() {
     if m != nil {
         m.malwareStates = value
     }
@@ -576,13 +577,13 @@ func (m *FileSecurityProfile) SetTags(value []string)() {
     }
 }
 // SetVendorInformation sets the vendorInformation property value. 
-func (m *FileSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
+func (m *FileSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     if m != nil {
         m.vendorInformation = value
     }
 }
 // SetVulnerabilityStates sets the vulnerabilityStates property value. 
-func (m *FileSecurityProfile) SetVulnerabilityStates(value []VulnerabilityState)() {
+func (m *FileSecurityProfile) SetVulnerabilityStates(value []VulnerabilityStateable)() {
     if m != nil {
         m.vulnerabilityStates = value
     }

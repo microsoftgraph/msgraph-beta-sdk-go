@@ -2,11 +2,9 @@ package reminderviewwithstartdatetimewithenddatetime
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder builds and executes requests for operations under \me\microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')
+// ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder provides operations to call the reminderView method.
 type ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +23,7 @@ type ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetOptions struct
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal instantiates a new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
-func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, startDateTime *string, endDateTime *string)(*ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
+func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, endDateTime *string, startDateTime *string)(*ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) {
     m := &ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')";
@@ -33,13 +31,13 @@ func NewReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    if startDateTime != nil {
-        urlTplParams["StartDateTime"] = *startDateTime
-    }
     if endDateTime != nil {
         urlTplParams["EndDateTime"] = *endDateTime
     }
-    m.pathParameters = pathParameters;
+    if startDateTime != nil {
+        urlTplParams["StartDateTime"] = *startDateTime
+    }
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,18 +65,14 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) CreateGetRe
     return requestInfo, nil
 }
 // Get invoke function reminderView
-func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get(options *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reminder, error) {
+func (m *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get(options *ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetOptions)(ReminderViewWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewReminder() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateReminderViewWithStartDateTimeWithEndDateTimeResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reminder, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reminder))
-    }
-    return val, nil
+    return res.(ReminderViewWithStartDateTimeWithEndDateTimeResponseable), nil
 }

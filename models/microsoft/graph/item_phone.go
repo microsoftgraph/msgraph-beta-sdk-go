@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemPhone 
+// ItemPhone provides operations to manage the compliance singleton.
 type ItemPhone struct {
     ItemFacet
     // Friendly name the user has assigned this phone number.
@@ -21,28 +21,16 @@ func NewItemPhone()(*ItemPhone) {
     }
     return m
 }
+// CreateItemPhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemPhoneFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemPhone(), nil
+}
 // GetDisplayName gets the displayName property value. Friendly name the user has assigned this phone number.
 func (m *ItemPhone) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetNumber gets the number property value. Phone number provided by the user.
-func (m *ItemPhone) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetType gets the type property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *ItemPhone) GetType()(*PhoneType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +67,22 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetNumber gets the number property value. Phone number provided by the user.
+func (m *ItemPhone) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetType gets the type property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *ItemPhone) GetType()(*PhoneType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *ItemPhone) IsNil()(bool) {
     return m == nil

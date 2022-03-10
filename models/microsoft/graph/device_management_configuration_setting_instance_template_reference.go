@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationSettingInstanceTemplateReference 
+// DeviceManagementConfigurationSettingInstanceTemplateReference provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationSettingInstanceTemplateReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewDeviceManagementConfigurationSettingInstanceTemplateReference()(*DeviceM
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementConfigurationSettingInstanceTemplateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementConfigurationSettingInstanceTemplateReferenceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementConfigurationSettingInstanceTemplateReference(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting instance template id
-func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetSettingInstanceTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingInstanceTemplateId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetField
         return nil
     }
     return res
+}
+// GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting instance template id
+func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetSettingInstanceTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingInstanceTemplateId
+    }
 }
 func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) IsNil()(bool) {
     return m == nil

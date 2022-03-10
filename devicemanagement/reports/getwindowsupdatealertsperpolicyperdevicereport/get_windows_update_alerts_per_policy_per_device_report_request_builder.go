@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getWindowsUpdateAlertsPerPolicyPerDeviceReport
+// GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.
 type GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder struct {
 // GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostOptions options for Post
 type GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostOptions struct {
     // 
-    Body *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody;
+    Body GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePos
     return requestInfo, nil
 }
 // Post invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(options *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(options *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostOptions)(GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseable), nil
 }

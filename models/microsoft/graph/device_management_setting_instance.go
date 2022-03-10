@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementSettingInstance 
+// DeviceManagementSettingInstance provides operations to manage the deviceManagement singleton.
 type DeviceManagementSettingInstance struct {
     Entity
     // The ID of the setting definition for this instance
@@ -19,20 +19,16 @@ func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
     }
     return m
 }
+// CreateDeviceManagementSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementSettingInstanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementSettingInstance(), nil
+}
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.definitionId
-    }
-}
-// GetValueJson gets the valueJson property value. JSON representation of the value
-func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueJson
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -59,6 +55,14 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetValueJson gets the valueJson property value. JSON representation of the value
+func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.valueJson
+    }
 }
 func (m *DeviceManagementSettingInstance) IsNil()(bool) {
     return m == nil

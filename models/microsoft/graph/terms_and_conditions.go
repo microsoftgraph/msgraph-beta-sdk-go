@@ -5,15 +5,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TermsAndConditions 
+// TermsAndConditions provides operations to manage the deviceManagement singleton.
 type TermsAndConditions struct {
     Entity
     // Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
     acceptanceStatement *string;
     // The list of acceptance statuses for this T&C policy.
-    acceptanceStatuses []TermsAndConditionsAcceptanceStatus;
+    acceptanceStatuses []TermsAndConditionsAcceptanceStatusable;
     // The list of assignments for this T&C policy.
-    assignments []TermsAndConditionsAssignment;
+    assignments []TermsAndConditionsAssignmentable;
     // Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
     bodyText *string;
     // DateTime the object was created.
@@ -23,7 +23,7 @@ type TermsAndConditions struct {
     // Administrator-supplied name for the T&C policy.
     displayName *string;
     // The list of group assignments for this T&C policy.
-    groupAssignments []TermsAndConditionsGroupAssignment;
+    groupAssignments []TermsAndConditionsGroupAssignmentable;
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // DateTime the object was last modified.
@@ -42,6 +42,10 @@ func NewTermsAndConditions()(*TermsAndConditions) {
     }
     return m
 }
+// CreateTermsAndConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTermsAndConditionsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTermsAndConditions(), nil
+}
 // GetAcceptanceStatement gets the acceptanceStatement property value. Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
 func (m *TermsAndConditions) GetAcceptanceStatement()(*string) {
     if m == nil {
@@ -51,7 +55,7 @@ func (m *TermsAndConditions) GetAcceptanceStatement()(*string) {
     }
 }
 // GetAcceptanceStatuses gets the acceptanceStatuses property value. The list of acceptance statuses for this T&C policy.
-func (m *TermsAndConditions) GetAcceptanceStatuses()([]TermsAndConditionsAcceptanceStatus) {
+func (m *TermsAndConditions) GetAcceptanceStatuses()([]TermsAndConditionsAcceptanceStatusable) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +63,7 @@ func (m *TermsAndConditions) GetAcceptanceStatuses()([]TermsAndConditionsAccepta
     }
 }
 // GetAssignments gets the assignments property value. The list of assignments for this T&C policy.
-func (m *TermsAndConditions) GetAssignments()([]TermsAndConditionsAssignment) {
+func (m *TermsAndConditions) GetAssignments()([]TermsAndConditionsAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -98,54 +102,6 @@ func (m *TermsAndConditions) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetGroupAssignments gets the groupAssignments property value. The list of group assignments for this T&C policy.
-func (m *TermsAndConditions) GetGroupAssignments()([]TermsAndConditionsGroupAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupAssignments
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
-func (m *TermsAndConditions) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. DateTime the object was last modified.
-func (m *TermsAndConditions) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
-func (m *TermsAndConditions) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetTitle gets the title property value. Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
-func (m *TermsAndConditions) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
-}
-// GetVersion gets the version property value. Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
-func (m *TermsAndConditions) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -160,28 +116,28 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["acceptanceStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsAndConditionsAcceptanceStatus() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermsAndConditionsAcceptanceStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TermsAndConditionsAcceptanceStatus, len(val))
+            res := make([]TermsAndConditionsAcceptanceStatusable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TermsAndConditionsAcceptanceStatus))
+                res[i] = v.(TermsAndConditionsAcceptanceStatusable)
             }
             m.SetAcceptanceStatuses(res)
         }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsAndConditionsAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermsAndConditionsAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TermsAndConditionsAssignment, len(val))
+            res := make([]TermsAndConditionsAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TermsAndConditionsAssignment))
+                res[i] = v.(TermsAndConditionsAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -228,14 +184,14 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["groupAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTermsAndConditionsGroupAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TermsAndConditionsGroupAssignment, len(val))
+            res := make([]TermsAndConditionsGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TermsAndConditionsGroupAssignment))
+                res[i] = v.(TermsAndConditionsGroupAssignmentable)
             }
             m.SetGroupAssignments(res)
         }
@@ -297,6 +253,54 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(interface{}
     }
     return res
 }
+// GetGroupAssignments gets the groupAssignments property value. The list of group assignments for this T&C policy.
+func (m *TermsAndConditions) GetGroupAssignments()([]TermsAndConditionsGroupAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupAssignments
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+func (m *TermsAndConditions) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. DateTime the object was last modified.
+func (m *TermsAndConditions) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+func (m *TermsAndConditions) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetTitle gets the title property value. Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
+func (m *TermsAndConditions) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
+}
+// GetVersion gets the version property value. Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
+func (m *TermsAndConditions) GetVersion()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
 func (m *TermsAndConditions) IsNil()(bool) {
     return m == nil
 }
@@ -315,8 +319,7 @@ func (m *TermsAndConditions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetAcceptanceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAcceptanceStatuses()))
         for i, v := range m.GetAcceptanceStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("acceptanceStatuses", cast)
         if err != nil {
@@ -326,8 +329,7 @@ func (m *TermsAndConditions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -361,8 +363,7 @@ func (m *TermsAndConditions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
         if err != nil {
@@ -408,13 +409,13 @@ func (m *TermsAndConditions) SetAcceptanceStatement(value *string)() {
     }
 }
 // SetAcceptanceStatuses sets the acceptanceStatuses property value. The list of acceptance statuses for this T&C policy.
-func (m *TermsAndConditions) SetAcceptanceStatuses(value []TermsAndConditionsAcceptanceStatus)() {
+func (m *TermsAndConditions) SetAcceptanceStatuses(value []TermsAndConditionsAcceptanceStatusable)() {
     if m != nil {
         m.acceptanceStatuses = value
     }
 }
 // SetAssignments sets the assignments property value. The list of assignments for this T&C policy.
-func (m *TermsAndConditions) SetAssignments(value []TermsAndConditionsAssignment)() {
+func (m *TermsAndConditions) SetAssignments(value []TermsAndConditionsAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -444,7 +445,7 @@ func (m *TermsAndConditions) SetDisplayName(value *string)() {
     }
 }
 // SetGroupAssignments sets the groupAssignments property value. The list of group assignments for this T&C policy.
-func (m *TermsAndConditions) SetGroupAssignments(value []TermsAndConditionsGroupAssignment)() {
+func (m *TermsAndConditions) SetGroupAssignments(value []TermsAndConditionsGroupAssignmentable)() {
     if m != nil {
         m.groupAssignments = value
     }

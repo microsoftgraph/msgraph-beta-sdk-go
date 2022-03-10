@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConfigManagerCollection 
+// ConfigManagerCollection provides operations to manage the deviceManagement singleton.
 type ConfigManagerCollection struct {
     Entity
     // The collection identifier in SCCM.
@@ -27,6 +27,10 @@ func NewConfigManagerCollection()(*ConfigManagerCollection) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateConfigManagerCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConfigManagerCollectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConfigManagerCollection(), nil
 }
 // GetCollectionIdentifier gets the collectionIdentifier property value. The collection identifier in SCCM.
 func (m *ConfigManagerCollection) GetCollectionIdentifier()(*string) {
@@ -50,30 +54,6 @@ func (m *ConfigManagerCollection) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetHierarchyIdentifier gets the hierarchyIdentifier property value. The Hierarchy Identifier.
-func (m *ConfigManagerCollection) GetHierarchyIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hierarchyIdentifier
-    }
-}
-// GetHierarchyName gets the hierarchyName property value. The HierarchyName.
-func (m *ConfigManagerCollection) GetHierarchyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hierarchyName
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified date.
-func (m *ConfigManagerCollection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +120,30 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetHierarchyIdentifier gets the hierarchyIdentifier property value. The Hierarchy Identifier.
+func (m *ConfigManagerCollection) GetHierarchyIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hierarchyIdentifier
+    }
+}
+// GetHierarchyName gets the hierarchyName property value. The HierarchyName.
+func (m *ConfigManagerCollection) GetHierarchyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hierarchyName
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified date.
+func (m *ConfigManagerCollection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *ConfigManagerCollection) IsNil()(bool) {
     return m == nil

@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationRoot 
+// EducationRoot provides operations to manage the educationRoot singleton.
 type EducationRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    classes []EducationClass;
+    classes []EducationClassable;
     // 
-    me *EducationUser;
+    me EducationUserable;
     // 
-    schools []EducationSchool;
+    schools []EducationSchoolable;
     // 
-    synchronizationProfiles []EducationSynchronizationProfile;
+    synchronizationProfiles []EducationSynchronizationProfileable;
     // 
-    users []EducationUser;
+    users []EducationUserable;
 }
 // NewEducationRoot instantiates a new EducationRoot and sets the default values.
 func NewEducationRoot()(*EducationRoot) {
@@ -25,6 +25,10 @@ func NewEducationRoot()(*EducationRoot) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateEducationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEducationRootFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEducationRoot(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationRoot) GetAdditionalData()(map[string]interface{}) {
@@ -35,15 +39,86 @@ func (m *EducationRoot) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetClasses gets the classes property value. 
-func (m *EducationRoot) GetClasses()([]EducationClass) {
+func (m *EducationRoot) GetClasses()([]EducationClassable) {
     if m == nil {
         return nil
     } else {
         return m.classes
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["classes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationClassable, len(val))
+            for i, v := range val {
+                res[i] = v.(EducationClassable)
+            }
+            m.SetClasses(res)
+        }
+        return nil
+    }
+    res["me"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEducationUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMe(val.(EducationUserable))
+        }
+        return nil
+    }
+    res["schools"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationSchoolable, len(val))
+            for i, v := range val {
+                res[i] = v.(EducationSchoolable)
+            }
+            m.SetSchools(res)
+        }
+        return nil
+    }
+    res["synchronizationProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationSynchronizationProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationSynchronizationProfileable, len(val))
+            for i, v := range val {
+                res[i] = v.(EducationSynchronizationProfileable)
+            }
+            m.SetSynchronizationProfiles(res)
+        }
+        return nil
+    }
+    res["users"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationUserable, len(val))
+            for i, v := range val {
+                res[i] = v.(EducationUserable)
+            }
+            m.SetUsers(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetMe gets the me property value. 
-func (m *EducationRoot) GetMe()(*EducationUser) {
+func (m *EducationRoot) GetMe()(EducationUserable) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +126,7 @@ func (m *EducationRoot) GetMe()(*EducationUser) {
     }
 }
 // GetSchools gets the schools property value. 
-func (m *EducationRoot) GetSchools()([]EducationSchool) {
+func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +134,7 @@ func (m *EducationRoot) GetSchools()([]EducationSchool) {
     }
 }
 // GetSynchronizationProfiles gets the synchronizationProfiles property value. 
-func (m *EducationRoot) GetSynchronizationProfiles()([]EducationSynchronizationProfile) {
+func (m *EducationRoot) GetSynchronizationProfiles()([]EducationSynchronizationProfileable) {
     if m == nil {
         return nil
     } else {
@@ -67,83 +142,12 @@ func (m *EducationRoot) GetSynchronizationProfiles()([]EducationSynchronizationP
     }
 }
 // GetUsers gets the users property value. 
-func (m *EducationRoot) GetUsers()([]EducationUser) {
+func (m *EducationRoot) GetUsers()([]EducationUserable) {
     if m == nil {
         return nil
     } else {
         return m.users
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["classes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationClass() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EducationClass, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*EducationClass))
-            }
-            m.SetClasses(res)
-        }
-        return nil
-    }
-    res["me"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMe(val.(*EducationUser))
-        }
-        return nil
-    }
-    res["schools"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationSchool() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EducationSchool, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*EducationSchool))
-            }
-            m.SetSchools(res)
-        }
-        return nil
-    }
-    res["synchronizationProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationSynchronizationProfile() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EducationSynchronizationProfile, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*EducationSynchronizationProfile))
-            }
-            m.SetSynchronizationProfiles(res)
-        }
-        return nil
-    }
-    res["users"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationUser() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EducationUser, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*EducationUser))
-            }
-            m.SetUsers(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *EducationRoot) IsNil()(bool) {
     return m == nil
@@ -153,8 +157,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetClasses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClasses()))
         for i, v := range m.GetClasses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("classes", cast)
         if err != nil {
@@ -170,8 +173,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetSchools() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSchools()))
         for i, v := range m.GetSchools() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("schools", cast)
         if err != nil {
@@ -181,8 +183,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetSynchronizationProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSynchronizationProfiles()))
         for i, v := range m.GetSynchronizationProfiles() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("synchronizationProfiles", cast)
         if err != nil {
@@ -192,8 +193,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsers()))
         for i, v := range m.GetUsers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("users", cast)
         if err != nil {
@@ -215,31 +215,31 @@ func (m *EducationRoot) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetClasses sets the classes property value. 
-func (m *EducationRoot) SetClasses(value []EducationClass)() {
+func (m *EducationRoot) SetClasses(value []EducationClassable)() {
     if m != nil {
         m.classes = value
     }
 }
 // SetMe sets the me property value. 
-func (m *EducationRoot) SetMe(value *EducationUser)() {
+func (m *EducationRoot) SetMe(value EducationUserable)() {
     if m != nil {
         m.me = value
     }
 }
 // SetSchools sets the schools property value. 
-func (m *EducationRoot) SetSchools(value []EducationSchool)() {
+func (m *EducationRoot) SetSchools(value []EducationSchoolable)() {
     if m != nil {
         m.schools = value
     }
 }
 // SetSynchronizationProfiles sets the synchronizationProfiles property value. 
-func (m *EducationRoot) SetSynchronizationProfiles(value []EducationSynchronizationProfile)() {
+func (m *EducationRoot) SetSynchronizationProfiles(value []EducationSynchronizationProfileable)() {
     if m != nil {
         m.synchronizationProfiles = value
     }
 }
 // SetUsers sets the users property value. 
-func (m *EducationRoot) SetUsers(value []EducationUser)() {
+func (m *EducationRoot) SetUsers(value []EducationUserable)() {
     if m != nil {
         m.users = value
     }

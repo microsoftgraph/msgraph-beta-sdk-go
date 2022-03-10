@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ImportedAppleDeviceIdentity 
+// ImportedAppleDeviceIdentity provides operations to manage the deviceManagement singleton.
 type ImportedAppleDeviceIdentity struct {
     Entity
     // Created Date Time of the device
@@ -38,6 +38,10 @@ func NewImportedAppleDeviceIdentity()(*ImportedAppleDeviceIdentity) {
     }
     return m
 }
+// CreateImportedAppleDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateImportedAppleDeviceIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewImportedAppleDeviceIdentity(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Created Date Time of the device
 func (m *ImportedAppleDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -68,62 +72,6 @@ func (m *ImportedAppleDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
         return nil
     } else {
         return m.enrollmentState
-    }
-}
-// GetIsDeleted gets the isDeleted property value. Indicates if the device is deleted from Apple Business Manager
-func (m *ImportedAppleDeviceIdentity) GetIsDeleted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeleted
-    }
-}
-// GetIsSupervised gets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
-func (m *ImportedAppleDeviceIdentity) GetIsSupervised()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSupervised
-    }
-}
-// GetLastContactedDateTime gets the lastContactedDateTime property value. Last Contacted Date Time of the device
-func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastContactedDateTime
-    }
-}
-// GetPlatform gets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
-func (m *ImportedAppleDeviceIdentity) GetPlatform()(*Platform) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
-}
-// GetRequestedEnrollmentProfileAssignmentDateTime gets the requestedEnrollmentProfileAssignmentDateTime property value. The time enrollment profile was assigned to the device
-func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileAssignmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestedEnrollmentProfileAssignmentDateTime
-    }
-}
-// GetRequestedEnrollmentProfileId gets the requestedEnrollmentProfileId property value. Enrollment profile Id admin intends to apply to the device during next enrollment
-func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestedEnrollmentProfileId
-    }
-}
-// GetSerialNumber gets the serialNumber property value. Device serial number
-func (m *ImportedAppleDeviceIdentity) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -240,6 +188,62 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetIsDeleted gets the isDeleted property value. Indicates if the device is deleted from Apple Business Manager
+func (m *ImportedAppleDeviceIdentity) GetIsDeleted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDeleted
+    }
+}
+// GetIsSupervised gets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
+func (m *ImportedAppleDeviceIdentity) GetIsSupervised()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSupervised
+    }
+}
+// GetLastContactedDateTime gets the lastContactedDateTime property value. Last Contacted Date Time of the device
+func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastContactedDateTime
+    }
+}
+// GetPlatform gets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
+func (m *ImportedAppleDeviceIdentity) GetPlatform()(*Platform) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platform
+    }
+}
+// GetRequestedEnrollmentProfileAssignmentDateTime gets the requestedEnrollmentProfileAssignmentDateTime property value. The time enrollment profile was assigned to the device
+func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileAssignmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestedEnrollmentProfileAssignmentDateTime
+    }
+}
+// GetRequestedEnrollmentProfileId gets the requestedEnrollmentProfileId property value. Enrollment profile Id admin intends to apply to the device during next enrollment
+func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestedEnrollmentProfileId
+    }
+}
+// GetSerialNumber gets the serialNumber property value. Device serial number
+func (m *ImportedAppleDeviceIdentity) GetSerialNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serialNumber
+    }
 }
 func (m *ImportedAppleDeviceIdentity) IsNil()(bool) {
     return m == nil

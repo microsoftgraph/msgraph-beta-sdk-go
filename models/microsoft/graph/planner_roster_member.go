@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerRosterMember 
+// PlannerRosterMember provides operations to manage the planner singleton.
 type PlannerRosterMember struct {
     Entity
     // Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
@@ -21,29 +21,9 @@ func NewPlannerRosterMember()(*PlannerRosterMember) {
     }
     return m
 }
-// GetRoles gets the roles property value. Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
-func (m *PlannerRosterMember) GetRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
-}
-// GetTenantId gets the tenantId property value. Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
-func (m *PlannerRosterMember) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetUserId gets the userId property value. Identifier of the user.
-func (m *PlannerRosterMember) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+// CreatePlannerRosterMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePlannerRosterMemberFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPlannerRosterMember(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -83,6 +63,30 @@ func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetRoles gets the roles property value. Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
+func (m *PlannerRosterMember) GetRoles()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roles
+    }
+}
+// GetTenantId gets the tenantId property value. Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
+func (m *PlannerRosterMember) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetUserId gets the userId property value. Identifier of the user.
+func (m *PlannerRosterMember) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *PlannerRosterMember) IsNil()(bool) {
     return m == nil

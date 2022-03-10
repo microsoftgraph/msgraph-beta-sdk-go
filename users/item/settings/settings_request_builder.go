@@ -2,15 +2,15 @@ package settings
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i21792fb5d0587c01b074f73aa213a9aada350eb2d54feb377416679d1452e3b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/settings/contactmergesuggestions"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i9e63b9aece244b092e835c3c7715d420a6cb488defd0c4ce5f26e2bba05dbda1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/settings/regionalandlanguagesettings"
     ic53be0a6e3ccdb0f71da58981f07304dc4c0f2a8b10ba9bc9eedcc0fbb71c379 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/settings/iteminsights"
     ie7cbd9285be1e57b9114826319c5f590fef40f177efb1e9c8f4b353ea383b428 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/settings/shiftpreferences"
 )
 
-// SettingsRequestBuilder builds and executes requests for operations under \users\{user-id}\settings
+// SettingsRequestBuilder provides operations to manage the settings property of the microsoft.graph.user entity.
 type SettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type SettingsRequestBuilderGetQueryParameters struct {
 // SettingsRequestBuilderPatchOptions options for Patch
 type SettingsRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSettings;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSettingsable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewSettingsRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -79,7 +79,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
 func (m *SettingsRequestBuilder) ContactMergeSuggestions()(*i21792fb5d0587c01b074f73aa213a9aada350eb2d54feb377416679d1452e3b3.ContactMergeSuggestionsRequestBuilder) {
     return i21792fb5d0587c01b074f73aa213a9aada350eb2d54feb377416679d1452e3b3.NewContactMergeSuggestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property settings for users
 func (m *SettingsRequestBuilder) CreateDeleteRequestInformation(options *SettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property settings in users
 func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *SettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,40 +134,52 @@ func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *Settings
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable.
+// Delete delete navigation property settings for users
 func (m *SettingsRequestBuilder) Delete(options *SettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get read-only. Nullable.
-func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSettings, error) {
+func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserSettings() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserSettingsFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSettings), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSettingsable), nil
 }
 func (m *SettingsRequestBuilder) ItemInsights()(*ic53be0a6e3ccdb0f71da58981f07304dc4c0f2a8b10ba9bc9eedcc0fbb71c379.ItemInsightsRequestBuilder) {
     return ic53be0a6e3ccdb0f71da58981f07304dc4c0f2a8b10ba9bc9eedcc0fbb71c379.NewItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch read-only. Nullable.
+// Patch update the navigation property settings in users
 func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

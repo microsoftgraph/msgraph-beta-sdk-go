@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsDeviceUsageDistributionTotalUserCounts(period='{period}')
+// GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder provides operations to call the getTeamsDeviceUsageDistributionTotalUserCounts method.
 type GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderIn
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder)
     return requestInfo, nil
 }
 // Get invoke function getTeamsDeviceUsageDistributionTotalUserCounts
-func (m *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder) Get(options *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
+func (m *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder) Get(options *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions)(GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodResponseable), nil
 }

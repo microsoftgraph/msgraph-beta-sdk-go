@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Synchronization 
+// Synchronization provides operations to manage the collection of application entities.
 type Synchronization struct {
     Entity
     // Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-    jobs []SynchronizationJob;
+    jobs []SynchronizationJobable;
     // Represents a collection of credentials to access provisioned cloud applications.
-    secrets []SynchronizationSecretKeyStringValuePair;
+    secrets []SynchronizationSecretKeyStringValuePairable;
     // Pre-configured synchronization settings for a particular application.
-    templates []SynchronizationTemplate;
+    templates []SynchronizationTemplateable;
 }
 // NewSynchronization instantiates a new synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {
@@ -21,8 +21,59 @@ func NewSynchronization()(*Synchronization) {
     }
     return m
 }
+// CreateSynchronizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronization(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["jobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SynchronizationJobable, len(val))
+            for i, v := range val {
+                res[i] = v.(SynchronizationJobable)
+            }
+            m.SetJobs(res)
+        }
+        return nil
+    }
+    res["secrets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SynchronizationSecretKeyStringValuePairable, len(val))
+            for i, v := range val {
+                res[i] = v.(SynchronizationSecretKeyStringValuePairable)
+            }
+            m.SetSecrets(res)
+        }
+        return nil
+    }
+    res["templates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SynchronizationTemplateable, len(val))
+            for i, v := range val {
+                res[i] = v.(SynchronizationTemplateable)
+            }
+            m.SetTemplates(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *Synchronization) GetJobs()([]SynchronizationJob) {
+func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     if m == nil {
         return nil
     } else {
@@ -30,7 +81,7 @@ func (m *Synchronization) GetJobs()([]SynchronizationJob) {
     }
 }
 // GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
-func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair) {
+func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -38,59 +89,12 @@ func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair
     }
 }
 // GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
-func (m *Synchronization) GetTemplates()([]SynchronizationTemplate) {
+func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
     if m == nil {
         return nil
     } else {
         return m.templates
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["jobs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationJob() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SynchronizationJob, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*SynchronizationJob))
-            }
-            m.SetJobs(res)
-        }
-        return nil
-    }
-    res["secrets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationSecretKeyStringValuePair() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SynchronizationSecretKeyStringValuePair, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*SynchronizationSecretKeyStringValuePair))
-            }
-            m.SetSecrets(res)
-        }
-        return nil
-    }
-    res["templates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationTemplate() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SynchronizationTemplate, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*SynchronizationTemplate))
-            }
-            m.SetTemplates(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *Synchronization) IsNil()(bool) {
     return m == nil
@@ -104,8 +108,7 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJobs()))
         for i, v := range m.GetJobs() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("jobs", cast)
         if err != nil {
@@ -115,8 +118,7 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetSecrets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecrets()))
         for i, v := range m.GetSecrets() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("secrets", cast)
         if err != nil {
@@ -126,8 +128,7 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTemplates()))
         for i, v := range m.GetTemplates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("templates", cast)
         if err != nil {
@@ -137,19 +138,19 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetJobs sets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *Synchronization) SetJobs(value []SynchronizationJob)() {
+func (m *Synchronization) SetJobs(value []SynchronizationJobable)() {
     if m != nil {
         m.jobs = value
     }
 }
 // SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
-func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePair)() {
+func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePairable)() {
     if m != nil {
         m.secrets = value
     }
 }
 // SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
-func (m *Synchronization) SetTemplates(value []SynchronizationTemplate)() {
+func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
     if m != nil {
         m.templates = value
     }

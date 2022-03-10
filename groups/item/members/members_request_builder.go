@@ -2,11 +2,12 @@ package members
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ia4ba8805ab0ada495b5c5fbb898da91d5e48daac76a44a52a6a3d8a1abfe0c8e "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/members/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    idc6ec6a1bedd6935f4390a1b2911a367f6435ef357cd42c0c7fa2134416bacb1 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/members/count"
 )
 
-// MembersRequestBuilder builds and executes requests for operations under \groups\{group-id}\members
+// MembersRequestBuilder provides operations to manage the members property of the microsoft.graph.group entity.
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MembersRequestBuilder) Count()(*idc6ec6a1bedd6935f4390a1b2911a367f6435ef357cd42c0c7fa2134416bacb1.CountRequestBuilder) {
+    return idc6ec6a1bedd6935f4390a1b2911a367f6435ef357cd42c0c7fa2134416bacb1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation uMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequ
     return requestInfo, nil
 }
 // Get uMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*MembersResponse, error) {
+func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMembersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MembersResponse), nil
-}
-func (m *MembersRequestBuilder) Ref()(*ia4ba8805ab0ada495b5c5fbb898da91d5e48daac76a44a52a6a3d8a1abfe0c8e.RefRequestBuilder) {
-    return ia4ba8805ab0ada495b5c5fbb898da91d5e48daac76a44a52a6a3d8a1abfe0c8e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

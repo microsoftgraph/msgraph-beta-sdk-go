@@ -5,11 +5,11 @@ import (
     i4e27de1f5297ce970dc5746ca0bb947c75587bf74148d8b31b6afcb558ceb4c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/permissiongrants/getbyids"
     i9fb61394240d7d93c9556b366b36bb2ee252e683760ce0939e65ef81293661ba "github.com/microsoftgraph/msgraph-beta-sdk-go/permissiongrants/validateproperties"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// PermissionGrantsRequestBuilder builds and executes requests for operations under \permissionGrants
+// PermissionGrantsRequestBuilder provides operations to manage the collection of resourceSpecificPermissionGrant entities.
 type PermissionGrantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type PermissionGrantsRequestBuilderGetQueryParameters struct {
 // PermissionGrantsRequestBuilderPostOptions options for Post
 type PermissionGrantsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrant;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrantable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +62,7 @@ func NewPermissionGrantsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -111,16 +111,20 @@ func (m *PermissionGrantsRequestBuilder) CreatePostRequestInformation(options *P
     return requestInfo, nil
 }
 // Get get entities from permissionGrants
-func (m *PermissionGrantsRequestBuilder) Get(options *PermissionGrantsRequestBuilderGetOptions)(*PermissionGrantsResponse, error) {
+func (m *PermissionGrantsRequestBuilder) Get(options *PermissionGrantsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPermissionGrantsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateResourceSpecificPermissionGrantCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*PermissionGrantsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrantCollectionResponseable), nil
 }
 func (m *PermissionGrantsRequestBuilder) GetByIds()(*i4e27de1f5297ce970dc5746ca0bb947c75587bf74148d8b31b6afcb558ceb4c6.GetByIdsRequestBuilder) {
     return i4e27de1f5297ce970dc5746ca0bb947c75587bf74148d8b31b6afcb558ceb4c6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -129,16 +133,20 @@ func (m *PermissionGrantsRequestBuilder) GetUserOwnedObjects()(*i202a750c6a14280
     return i202a750c6a1428068d8dd5672e744e09ad9f8fda997188cbd223f9347890372b.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to permissionGrants
-func (m *PermissionGrantsRequestBuilder) Post(options *PermissionGrantsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrant, error) {
+func (m *PermissionGrantsRequestBuilder) Post(options *PermissionGrantsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewResourceSpecificPermissionGrant() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateResourceSpecificPermissionGrantFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrant), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceSpecificPermissionGrantable), nil
 }
 func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*i9fb61394240d7d93c9556b366b36bb2ee252e683760ce0939e65ef81293661ba.ValidatePropertiesRequestBuilder) {
     return i9fb61394240d7d93c9556b366b36bb2ee252e683760ce0939e65ef81293661ba.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

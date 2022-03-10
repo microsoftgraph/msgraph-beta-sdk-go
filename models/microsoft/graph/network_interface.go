@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// NetworkInterface 
+// NetworkInterface provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
 type NetworkInterface struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewNetworkInterface()(*NetworkInterface) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateNetworkInterfaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNetworkInterfaceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNetworkInterface(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInterface) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *NetworkInterface) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetIpV4Address gets the ipV4Address property value. Last IPv4 address associated with this NIC.
-func (m *NetworkInterface) GetIpV4Address()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipV4Address
-    }
-}
-// GetIpV6Address gets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
-func (m *NetworkInterface) GetIpV6Address()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipV6Address
-    }
-}
-// GetLocalIpV6Address gets the localIpV6Address property value. Last local (link-local or site-local) IPv6 address associated with this NIC.
-func (m *NetworkInterface) GetLocalIpV6Address()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localIpV6Address
-    }
-}
-// GetMacAddress gets the macAddress property value. MAC address of the NIC on this host.
-func (m *NetworkInterface) GetMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macAddress
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetIpV4Address gets the ipV4Address property value. Last IPv4 address associated with this NIC.
+func (m *NetworkInterface) GetIpV4Address()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipV4Address
+    }
+}
+// GetIpV6Address gets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
+func (m *NetworkInterface) GetIpV6Address()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipV6Address
+    }
+}
+// GetLocalIpV6Address gets the localIpV6Address property value. Last local (link-local or site-local) IPv6 address associated with this NIC.
+func (m *NetworkInterface) GetLocalIpV6Address()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localIpV6Address
+    }
+}
+// GetMacAddress gets the macAddress property value. MAC address of the NIC on this host.
+func (m *NetworkInterface) GetMacAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.macAddress
+    }
 }
 func (m *NetworkInterface) IsNil()(bool) {
     return m == nil

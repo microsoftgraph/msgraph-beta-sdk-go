@@ -3,7 +3,6 @@ package authentication
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i031886e282a72eeb426bbd544e45b4457ce2e270fc8c1a19fa2b007b18eeae51 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i09a669c0839eb56b1267ec6c47053774b28212601399fa8e394fe3659d37cbe8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/operations"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i7181776de67abe7bec5b6b136451c674def2604be35b184f0aa413473fcc5701 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/methods"
@@ -19,6 +18,7 @@ import (
     i01fb633a3822873540b4a37a19ffef4b3877b2e3724ff2a9e0ef15556e878183 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/microsoftauthenticatormethods/item"
     i1d6e1ee1e40c5bb5120f696f065400747d9f8b7c528e9db461c049031f562672 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item"
     i2b7ed9d4e22b5e330477a489ae98a8b1036a0bf39a69812e6c8f86f7902e6637 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/temporaryaccesspassmethods/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i522f450607780460342b3cadbe08d49ca77462560e1b365ab8ce05addc5fb48e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/phonemethods/item"
     i96111e0c5ad54467d200eedd5128b62e6efcead28ff274fda8911bca83e2901f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item"
     id34bbd90b1fa28ce673d316987b63e1a63ca88a556236a01b0fc6f3f0dda42e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/operations/item"
@@ -28,7 +28,7 @@ import (
     if150209e25231db73554a8080d70c03307ce471bae20e97cc930aebfc021ba64 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/softwareoathmethods/item"
 )
 
-// AuthenticationRequestBuilder builds and executes requests for operations under \me\authentication
+// AuthenticationRequestBuilder provides operations to manage the authentication property of the microsoft.graph.user entity.
 type AuthenticationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -67,7 +67,7 @@ type AuthenticationRequestBuilderGetQueryParameters struct {
 // AuthenticationRequestBuilderPatchOptions options for Patch
 type AuthenticationRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authentication;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -84,7 +84,7 @@ func NewAuthenticationRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -155,7 +155,11 @@ func (m *AuthenticationRequestBuilder) Delete(options *AuthenticationRequestBuil
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -190,16 +194,20 @@ func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*i0059c2e4e23
     return i0059c2e4e23bd64f21f59deef18c5332cc205989dbcfed5623a379da011bf37c.NewFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get authentication from me
-func (m *AuthenticationRequestBuilder) Get(options *AuthenticationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authentication, error) {
+func (m *AuthenticationRequestBuilder) Get(options *AuthenticationRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAuthentication() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAuthenticationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authentication), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable), nil
 }
 func (m *AuthenticationRequestBuilder) Methods()(*i7181776de67abe7bec5b6b136451c674def2604be35b184f0aa413473fcc5701.MethodsRequestBuilder) {
     return i7181776de67abe7bec5b6b136451c674def2604be35b184f0aa413473fcc5701.NewMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -277,7 +285,11 @@ func (m *AuthenticationRequestBuilder) Patch(options *AuthenticationRequestBuild
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcOnPremisesConnectionHealthCheck 
+// CloudPcOnPremisesConnectionHealthCheck provides operations to manage the deviceManagement singleton.
 type CloudPcOnPremisesConnectionHealthCheck struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -30,6 +30,10 @@ func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHea
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcOnPremisesConnectionHealthCheck(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]interface{}) {
@@ -69,30 +73,6 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremis
         return nil
     } else {
         return m.errorType
-    }
-}
-// GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
-func (m *CloudPcOnPremisesConnectionHealthCheck) GetRecommendedAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedAction
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The start time of the health check item. Read-only.
-func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatus gets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
-func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesConnectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -169,6 +149,30 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetRecommendedAction()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendedAction
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The start time of the health check item. Read-only.
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatus gets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesConnectionStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *CloudPcOnPremisesConnectionHealthCheck) IsNil()(bool) {
     return m == nil

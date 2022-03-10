@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleManagementPolicy 
+// UnifiedRoleManagementPolicy provides operations to manage the policyRoot singleton.
 type UnifiedRoleManagementPolicy struct {
     Entity
     // Description for the policy.
@@ -13,15 +13,15 @@ type UnifiedRoleManagementPolicy struct {
     // Display name for the policy.
     displayName *string;
     // The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
-    effectiveRules []UnifiedRoleManagementPolicyRule;
+    effectiveRules []UnifiedRoleManagementPolicyRuleable;
     // This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
     isOrganizationDefault *bool;
     // The identity who last modified the role setting.
-    lastModifiedBy *Identity;
+    lastModifiedBy Identityable;
     // The time when the role setting was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The collection of rules like approval rule, expiration rule, etc.
-    rules []UnifiedRoleManagementPolicyRule;
+    rules []UnifiedRoleManagementPolicyRuleable;
     // The id of the scope where the policy is created. E.g. '/', groupId, etc.
     scopeId *string;
     // The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
@@ -33,6 +33,10 @@ func NewUnifiedRoleManagementPolicy()(*UnifiedRoleManagementPolicy) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUnifiedRoleManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleManagementPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleManagementPolicy(), nil
 }
 // GetDescription gets the description property value. Description for the policy.
 func (m *UnifiedRoleManagementPolicy) GetDescription()(*string) {
@@ -51,59 +55,11 @@ func (m *UnifiedRoleManagementPolicy) GetDisplayName()(*string) {
     }
 }
 // GetEffectiveRules gets the effectiveRules property value. The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
-func (m *UnifiedRoleManagementPolicy) GetEffectiveRules()([]UnifiedRoleManagementPolicyRule) {
+func (m *UnifiedRoleManagementPolicy) GetEffectiveRules()([]UnifiedRoleManagementPolicyRuleable) {
     if m == nil {
         return nil
     } else {
         return m.effectiveRules
-    }
-}
-// GetIsOrganizationDefault gets the isOrganizationDefault property value. This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
-func (m *UnifiedRoleManagementPolicy) GetIsOrganizationDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOrganizationDefault
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. The identity who last modified the role setting.
-func (m *UnifiedRoleManagementPolicy) GetLastModifiedBy()(*Identity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The time when the role setting was last modified.
-func (m *UnifiedRoleManagementPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetRules gets the rules property value. The collection of rules like approval rule, expiration rule, etc.
-func (m *UnifiedRoleManagementPolicy) GetRules()([]UnifiedRoleManagementPolicyRule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rules
-    }
-}
-// GetScopeId gets the scopeId property value. The id of the scope where the policy is created. E.g. '/', groupId, etc.
-func (m *UnifiedRoleManagementPolicy) GetScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeId
-    }
-}
-// GetScopeType gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
-func (m *UnifiedRoleManagementPolicy) GetScopeType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopeType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,14 +86,14 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["effectiveRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleManagementPolicyRule() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedRoleManagementPolicyRule, len(val))
+            res := make([]UnifiedRoleManagementPolicyRuleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleManagementPolicyRule))
+                res[i] = v.(UnifiedRoleManagementPolicyRuleable)
             }
             m.SetEffectiveRules(res)
         }
@@ -154,12 +110,12 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentity() })
+        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastModifiedBy(val.(*Identity))
+            m.SetLastModifiedBy(val.(Identityable))
         }
         return nil
     }
@@ -174,14 +130,14 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["rules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleManagementPolicyRule() })
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UnifiedRoleManagementPolicyRule, len(val))
+            res := make([]UnifiedRoleManagementPolicyRuleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleManagementPolicyRule))
+                res[i] = v.(UnifiedRoleManagementPolicyRuleable)
             }
             m.SetRules(res)
         }
@@ -209,6 +165,54 @@ func (m *UnifiedRoleManagementPolicy) GetFieldDeserializers()(map[string]func(in
     }
     return res
 }
+// GetIsOrganizationDefault gets the isOrganizationDefault property value. This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
+func (m *UnifiedRoleManagementPolicy) GetIsOrganizationDefault()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOrganizationDefault
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity who last modified the role setting.
+func (m *UnifiedRoleManagementPolicy) GetLastModifiedBy()(Identityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The time when the role setting was last modified.
+func (m *UnifiedRoleManagementPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetRules gets the rules property value. The collection of rules like approval rule, expiration rule, etc.
+func (m *UnifiedRoleManagementPolicy) GetRules()([]UnifiedRoleManagementPolicyRuleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rules
+    }
+}
+// GetScopeId gets the scopeId property value. The id of the scope where the policy is created. E.g. '/', groupId, etc.
+func (m *UnifiedRoleManagementPolicy) GetScopeId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeId
+    }
+}
+// GetScopeType gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
+func (m *UnifiedRoleManagementPolicy) GetScopeType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scopeType
+    }
+}
 func (m *UnifiedRoleManagementPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -233,8 +237,7 @@ func (m *UnifiedRoleManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetEffectiveRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEffectiveRules()))
         for i, v := range m.GetEffectiveRules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("effectiveRules", cast)
         if err != nil {
@@ -262,8 +265,7 @@ func (m *UnifiedRoleManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     if m.GetRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("rules", cast)
         if err != nil {
@@ -297,7 +299,7 @@ func (m *UnifiedRoleManagementPolicy) SetDisplayName(value *string)() {
     }
 }
 // SetEffectiveRules sets the effectiveRules property value. The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
-func (m *UnifiedRoleManagementPolicy) SetEffectiveRules(value []UnifiedRoleManagementPolicyRule)() {
+func (m *UnifiedRoleManagementPolicy) SetEffectiveRules(value []UnifiedRoleManagementPolicyRuleable)() {
     if m != nil {
         m.effectiveRules = value
     }
@@ -309,7 +311,7 @@ func (m *UnifiedRoleManagementPolicy) SetIsOrganizationDefault(value *bool)() {
     }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity who last modified the role setting.
-func (m *UnifiedRoleManagementPolicy) SetLastModifiedBy(value *Identity)() {
+func (m *UnifiedRoleManagementPolicy) SetLastModifiedBy(value Identityable)() {
     if m != nil {
         m.lastModifiedBy = value
     }
@@ -321,7 +323,7 @@ func (m *UnifiedRoleManagementPolicy) SetLastModifiedDateTime(value *i336074805f
     }
 }
 // SetRules sets the rules property value. The collection of rules like approval rule, expiration rule, etc.
-func (m *UnifiedRoleManagementPolicy) SetRules(value []UnifiedRoleManagementPolicyRule)() {
+func (m *UnifiedRoleManagementPolicy) SetRules(value []UnifiedRoleManagementPolicyRuleable)() {
     if m != nil {
         m.rules = value
     }

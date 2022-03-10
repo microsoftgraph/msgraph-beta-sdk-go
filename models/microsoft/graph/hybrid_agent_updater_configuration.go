@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// HybridAgentUpdaterConfiguration 
+// HybridAgentUpdaterConfiguration provides operations to manage the collection of onPremisesPublishingProfile entities.
 type HybridAgentUpdaterConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,7 +14,7 @@ type HybridAgentUpdaterConfiguration struct {
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     deferUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    updateWindow *UpdateWindow;
+    updateWindow UpdateWindowable;
 }
 // NewHybridAgentUpdaterConfiguration instantiates a new hybridAgentUpdaterConfiguration and sets the default values.
 func NewHybridAgentUpdaterConfiguration()(*HybridAgentUpdaterConfiguration) {
@@ -22,6 +22,10 @@ func NewHybridAgentUpdaterConfiguration()(*HybridAgentUpdaterConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewHybridAgentUpdaterConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HybridAgentUpdaterConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -45,14 +49,6 @@ func (m *HybridAgentUpdaterConfiguration) GetDeferUpdateDateTime()(*i336074805fc
         return nil
     } else {
         return m.deferUpdateDateTime
-    }
-}
-// GetUpdateWindow gets the updateWindow property value. 
-func (m *HybridAgentUpdaterConfiguration) GetUpdateWindow()(*UpdateWindow) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateWindow
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,16 +75,24 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["updateWindow"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUpdateWindow() })
+        val, err := n.GetObjectValue(CreateUpdateWindowFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUpdateWindow(val.(*UpdateWindow))
+            m.SetUpdateWindow(val.(UpdateWindowable))
         }
         return nil
     }
     return res
+}
+// GetUpdateWindow gets the updateWindow property value. 
+func (m *HybridAgentUpdaterConfiguration) GetUpdateWindow()(UpdateWindowable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.updateWindow
+    }
 }
 func (m *HybridAgentUpdaterConfiguration) IsNil()(bool) {
     return m == nil
@@ -140,7 +144,7 @@ func (m *HybridAgentUpdaterConfiguration) SetDeferUpdateDateTime(value *i3360748
     }
 }
 // SetUpdateWindow sets the updateWindow property value. 
-func (m *HybridAgentUpdaterConfiguration) SetUpdateWindow(value *UpdateWindow)() {
+func (m *HybridAgentUpdaterConfiguration) SetUpdateWindow(value UpdateWindowable)() {
     if m != nil {
         m.updateWindow = value
     }

@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Employee 
+// Employee provides operations to manage the financials singleton.
 type Employee struct {
     Entity
     // 
-    address *PostalAddressType;
+    address PostalAddressTypeable;
     // 
     birthDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
@@ -35,7 +35,7 @@ type Employee struct {
     // 
     phoneNumber *string;
     // 
-    picture []Picture;
+    picture []Pictureable;
     // 
     statisticsGroupCode *string;
     // 
@@ -52,8 +52,12 @@ func NewEmployee()(*Employee) {
     }
     return m
 }
+// CreateEmployeeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEmployeeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEmployee(), nil
+}
 // GetAddress gets the address property value. 
-func (m *Employee) GetAddress()(*PostalAddressType) {
+func (m *Employee) GetAddress()(PostalAddressTypeable) {
     if m == nil {
         return nil
     } else {
@@ -92,120 +96,16 @@ func (m *Employee) GetEmploymentDate()(*i04eb5309aeaafadd28374d79c8471df9b267510
         return m.employmentDate
     }
 }
-// GetGivenName gets the givenName property value. 
-func (m *Employee) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
-}
-// GetJobTitle gets the jobTitle property value. 
-func (m *Employee) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetMiddleName gets the middleName property value. 
-func (m *Employee) GetMiddleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middleName
-    }
-}
-// GetMobilePhone gets the mobilePhone property value. 
-func (m *Employee) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
-}
-// GetNumber gets the number property value. 
-func (m *Employee) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
-}
-// GetPersonalEmail gets the personalEmail property value. 
-func (m *Employee) GetPersonalEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalEmail
-    }
-}
-// GetPhoneNumber gets the phoneNumber property value. 
-func (m *Employee) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
-}
-// GetPicture gets the picture property value. 
-func (m *Employee) GetPicture()([]Picture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
-}
-// GetStatisticsGroupCode gets the statisticsGroupCode property value. 
-func (m *Employee) GetStatisticsGroupCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statisticsGroupCode
-    }
-}
-// GetStatus gets the status property value. 
-func (m *Employee) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetSurname gets the surname property value. 
-func (m *Employee) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
-}
-// GetTerminationDate gets the terminationDate property value. 
-func (m *Employee) GetTerminationDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.terminationDate
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPostalAddressType() })
+        val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddress(val.(*PostalAddressType))
+            m.SetAddress(val.(PostalAddressTypeable))
         }
         return nil
     }
@@ -330,14 +230,14 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["picture"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPicture() })
+        val, err := n.GetCollectionOfObjectValues(CreatePictureFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Picture, len(val))
+            res := make([]Pictureable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Picture))
+                res[i] = v.(Pictureable)
             }
             m.SetPicture(res)
         }
@@ -384,6 +284,110 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     return res
+}
+// GetGivenName gets the givenName property value. 
+func (m *Employee) GetGivenName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.givenName
+    }
+}
+// GetJobTitle gets the jobTitle property value. 
+func (m *Employee) GetJobTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.jobTitle
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetMiddleName gets the middleName property value. 
+func (m *Employee) GetMiddleName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.middleName
+    }
+}
+// GetMobilePhone gets the mobilePhone property value. 
+func (m *Employee) GetMobilePhone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobilePhone
+    }
+}
+// GetNumber gets the number property value. 
+func (m *Employee) GetNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.number
+    }
+}
+// GetPersonalEmail gets the personalEmail property value. 
+func (m *Employee) GetPersonalEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.personalEmail
+    }
+}
+// GetPhoneNumber gets the phoneNumber property value. 
+func (m *Employee) GetPhoneNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.phoneNumber
+    }
+}
+// GetPicture gets the picture property value. 
+func (m *Employee) GetPicture()([]Pictureable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.picture
+    }
+}
+// GetStatisticsGroupCode gets the statisticsGroupCode property value. 
+func (m *Employee) GetStatisticsGroupCode()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statisticsGroupCode
+    }
+}
+// GetStatus gets the status property value. 
+func (m *Employee) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetSurname gets the surname property value. 
+func (m *Employee) GetSurname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.surname
+    }
+}
+// GetTerminationDate gets the terminationDate property value. 
+func (m *Employee) GetTerminationDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.terminationDate
+    }
 }
 func (m *Employee) IsNil()(bool) {
     return m == nil
@@ -475,8 +479,7 @@ func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetPicture() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
@@ -510,7 +513,7 @@ func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetAddress sets the address property value. 
-func (m *Employee) SetAddress(value *PostalAddressType)() {
+func (m *Employee) SetAddress(value PostalAddressTypeable)() {
     if m != nil {
         m.address = value
     }
@@ -588,7 +591,7 @@ func (m *Employee) SetPhoneNumber(value *string)() {
     }
 }
 // SetPicture sets the picture property value. 
-func (m *Employee) SetPicture(value []Picture)() {
+func (m *Employee) SetPicture(value []Pictureable)() {
     if m != nil {
         m.picture = value
     }

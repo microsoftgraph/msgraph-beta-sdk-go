@@ -2,11 +2,12 @@ package compliancecategories
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i3b27d1243b5c343cce4e85486db0dfd8497a39229dddb4631dd983cbc399d489 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancecategories/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ComplianceCategoriesRequestBuilder builds and executes requests for operations under \deviceManagement\complianceCategories
+// ComplianceCategoriesRequestBuilder provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
 type ComplianceCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type ComplianceCategoriesRequestBuilderGetQueryParameters struct {
 // ComplianceCategoriesRequestBuilderPostOptions options for Post
 type ComplianceCategoriesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategory;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategoryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewComplianceCategoriesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewComplianceCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComplianceCategoriesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ComplianceCategoriesRequestBuilder) Count()(*i3b27d1243b5c343cce4e85486db0dfd8497a39229dddb4631dd983cbc399d489.CountRequestBuilder) {
+    return i3b27d1243b5c343cce4e85486db0dfd8497a39229dddb4631dd983cbc399d489.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of all compliance categories
 func (m *ComplianceCategoriesRequestBuilder) CreateGetRequestInformation(options *ComplianceCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *ComplianceCategoriesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation list of all compliance categories
+// CreatePostRequestInformation create new navigation property to complianceCategories for deviceManagement
 func (m *ComplianceCategoriesRequestBuilder) CreatePostRequestInformation(options *ComplianceCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *ComplianceCategoriesRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Get list of all compliance categories
-func (m *ComplianceCategoriesRequestBuilder) Get(options *ComplianceCategoriesRequestBuilderGetOptions)(*ComplianceCategoriesResponse, error) {
+func (m *ComplianceCategoriesRequestBuilder) Get(options *ComplianceCategoriesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewComplianceCategoriesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementConfigurationCategoryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ComplianceCategoriesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategoryCollectionResponseable), nil
 }
-// Post list of all compliance categories
-func (m *ComplianceCategoriesRequestBuilder) Post(options *ComplianceCategoriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategory, error) {
+// Post create new navigation property to complianceCategories for deviceManagement
+func (m *ComplianceCategoriesRequestBuilder) Post(options *ComplianceCategoriesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategoryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementConfigurationCategory() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategory), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationCategoryable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityCounts 
+// Office365GroupsActivityCounts provides operations to call the getOffice365GroupsActivityCounts method.
 type Office365GroupsActivityCounts struct {
     Entity
     // The number of emails received by Group mailboxes.
@@ -22,12 +22,16 @@ type Office365GroupsActivityCounts struct {
     // The number of messages read in Yammer groups.
     yammerMessagesRead *int64;
 }
-// NewOffice365GroupsActivityCounts instantiates a new Office365GroupsActivityCounts and sets the default values.
+// NewOffice365GroupsActivityCounts instantiates a new office365GroupsActivityCounts and sets the default values.
 func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
     m := &Office365GroupsActivityCounts{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateOffice365GroupsActivityCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOffice365GroupsActivityCountsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOffice365GroupsActivityCounts(), nil
 }
 // GetExchangeEmailsReceived gets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
 func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
@@ -35,54 +39,6 @@ func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
         return nil
     } else {
         return m.exchangeEmailsReceived
-    }
-}
-// GetReportDate gets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
-func (m *Office365GroupsActivityCounts) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportDate
-    }
-}
-// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
-func (m *Office365GroupsActivityCounts) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
-}
-// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *Office365GroupsActivityCounts) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
-}
-// GetYammerMessagesLiked gets the yammerMessagesLiked property value. The number of messages liked in Yammer groups.
-func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerMessagesLiked
-    }
-}
-// GetYammerMessagesPosted gets the yammerMessagesPosted property value. The number of messages posted to Yammer groups.
-func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerMessagesPosted
-    }
-}
-// GetYammerMessagesRead gets the yammerMessagesRead property value. The number of messages read in Yammer groups.
-func (m *Office365GroupsActivityCounts) GetYammerMessagesRead()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammerMessagesRead
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -159,6 +115,54 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetReportDate gets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
+func (m *Office365GroupsActivityCounts) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportDate
+    }
+}
+// GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+func (m *Office365GroupsActivityCounts) GetReportPeriod()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportPeriod
+    }
+}
+// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+func (m *Office365GroupsActivityCounts) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reportRefreshDate
+    }
+}
+// GetYammerMessagesLiked gets the yammerMessagesLiked property value. The number of messages liked in Yammer groups.
+func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerMessagesLiked
+    }
+}
+// GetYammerMessagesPosted gets the yammerMessagesPosted property value. The number of messages posted to Yammer groups.
+func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerMessagesPosted
+    }
+}
+// GetYammerMessagesRead gets the yammerMessagesRead property value. The number of messages read in Yammer groups.
+func (m *Office365GroupsActivityCounts) GetYammerMessagesRead()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.yammerMessagesRead
+    }
 }
 func (m *Office365GroupsActivityCounts) IsNil()(bool) {
     return m == nil

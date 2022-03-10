@@ -17,9 +17,7 @@ import (
     iee2d4af12376b55381e42df8f22c5ffc39043076828fbebb0a459384ee44c9e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation"
     ife41332ee3198396d805ce9faa05ed3df4e05203fb4e2de40b902e920b0e388f "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection"
     i02e0bbeb2df2eda7dbc98813d493b8564c05050583278d44a701c5e5b6ef886a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/hostsecurityprofiles/item"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i0905673ef4d7fa54e4d3f55e349406fd6862ddc6c802fb42ff1e5afa87694e6e "github.com/microsoftgraph/msgraph-beta-sdk-go/security/domainsecurityprofiles/item"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5a3d2f037bd277d4a881c48a1993939f3df188957e325d6ae0bdf67636fcf03b "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescorecontrolprofiles/item"
     i5c9089aa1bb65758fcfbff1d8a7aa9b5deeb5741c421c67322898649fd582848 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/tiindicators/item"
     i6c9cc74f462fa9e89a76cab1d5a7489b11c2e26c4d3a81cda11945485ac87c86 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescores/item"
@@ -30,9 +28,11 @@ import (
     icf7abdec996315842957a23a296d4a13dfa457345ce67dfb1fcf777acecb7ef7 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts/item"
     idfc7ee4e0b30b6fb2a96f1eed667daeae65a0816e9af7bc38a13ef77dac4c0d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/providertenantsettings/item"
     ie02fc175d3be34ac616ef3dda9f36f01be04b3ccf591093492385bc0ab62023a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cloudappsecurityprofiles/item"
+    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// SecurityRequestBuilder builds and executes requests for operations under \security
+// SecurityRequestBuilder provides operations to manage the security singleton.
 type SecurityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -62,7 +62,7 @@ type SecurityRequestBuilderGetQueryParameters struct {
 // SecurityRequestBuilderPatchOptions options for Patch
 type SecurityRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Security;
+    Body i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.Securityable;
     // Request headers
     H map[string]string;
     // Request options
@@ -110,7 +110,7 @@ func NewSecurityRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -187,16 +187,20 @@ func (m *SecurityRequestBuilder) FileSecurityProfilesById(id string)(*ic633bb560
     return ic633bb560cd35fd4a473b252391ace288264bc3e0245adcecf45bb4f003dcc2d.NewFileSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get security
-func (m *SecurityRequestBuilder) Get(options *SecurityRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Security, error) {
+func (m *SecurityRequestBuilder) Get(options *SecurityRequestBuilderGetOptions)(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.Securityable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSecurity() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateSecurityFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Security), nil
+    return res.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.Securityable), nil
 }
 func (m *SecurityRequestBuilder) HostSecurityProfiles()(*i7e095c516b5de7d1e6e8fa4aaf680dada81b5f596dc746bf98e54a2a345122ac.HostSecurityProfilesRequestBuilder) {
     return i7e095c516b5de7d1e6e8fa4aaf680dada81b5f596dc746bf98e54a2a345122ac.NewHostSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -235,7 +239,11 @@ func (m *SecurityRequestBuilder) Patch(options *SecurityRequestBuilderPatchOptio
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -2,11 +2,12 @@ package conversations
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    ib28fa324eb84248f8792a7c9d366992ec9acfd2017b3776ac0006f9e0b527e65 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/conversations/count"
 )
 
-// ConversationsRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations
+// ConversationsRequestBuilder provides operations to manage the conversations property of the microsoft.graph.group entity.
 type ConversationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +47,7 @@ type ConversationsRequestBuilderGetQueryParameters struct {
 // ConversationsRequestBuilderPostOptions options for Post
 type ConversationsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Conversation;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Conversationable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +64,7 @@ func NewConversationsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,6 +73,9 @@ func NewConversationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConversationsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ConversationsRequestBuilder) Count()(*ib28fa324eb84248f8792a7c9d366992ec9acfd2017b3776ac0006f9e0b527e65.CountRequestBuilder) {
+    return ib28fa324eb84248f8792a7c9d366992ec9acfd2017b3776ac0006f9e0b527e65.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the group's conversations.
 func (m *ConversationsRequestBuilder) CreateGetRequestInformation(options *ConversationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -93,7 +97,7 @@ func (m *ConversationsRequestBuilder) CreateGetRequestInformation(options *Conve
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the group's conversations.
+// CreatePostRequestInformation create new navigation property to conversations for groups
 func (m *ConversationsRequestBuilder) CreatePostRequestInformation(options *ConversationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,26 +116,34 @@ func (m *ConversationsRequestBuilder) CreatePostRequestInformation(options *Conv
     return requestInfo, nil
 }
 // Get the group's conversations.
-func (m *ConversationsRequestBuilder) Get(options *ConversationsRequestBuilderGetOptions)(*ConversationsResponse, error) {
+func (m *ConversationsRequestBuilder) Get(options *ConversationsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConversationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConversationsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateConversationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ConversationsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConversationCollectionResponseable), nil
 }
-// Post the group's conversations.
-func (m *ConversationsRequestBuilder) Post(options *ConversationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Conversation, error) {
+// Post create new navigation property to conversations for groups
+func (m *ConversationsRequestBuilder) Post(options *ConversationsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Conversationable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewConversation() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateConversationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Conversation), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Conversationable), nil
 }

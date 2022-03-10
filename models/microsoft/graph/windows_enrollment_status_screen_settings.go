@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsEnrollmentStatusScreenSettings 
+// WindowsEnrollmentStatusScreenSettings provides operations to manage the deviceManagement singleton.
 type WindowsEnrollmentStatusScreenSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,6 +29,10 @@ func NewWindowsEnrollmentStatusScreenSettings()(*WindowsEnrollmentStatusScreenSe
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsEnrollmentStatusScreenSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsEnrollmentStatusScreenSettings) GetAdditionalData()(map[string]interface{}) {
@@ -76,22 +80,6 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetCustomErrorMessage()(*string)
         return nil
     } else {
         return m.customErrorMessage
-    }
-}
-// GetHideInstallationProgress gets the hideInstallationProgress property value. Show or hide installation progress to user
-func (m *WindowsEnrollmentStatusScreenSettings) GetHideInstallationProgress()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideInstallationProgress
-    }
-}
-// GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
-func (m *WindowsEnrollmentStatusScreenSettings) GetInstallProgressTimeoutInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installProgressTimeoutInMinutes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -168,6 +156,22 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetHideInstallationProgress gets the hideInstallationProgress property value. Show or hide installation progress to user
+func (m *WindowsEnrollmentStatusScreenSettings) GetHideInstallationProgress()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hideInstallationProgress
+    }
+}
+// GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
+func (m *WindowsEnrollmentStatusScreenSettings) GetInstallProgressTimeoutInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installProgressTimeoutInMinutes
+    }
 }
 func (m *WindowsEnrollmentStatusScreenSettings) IsNil()(bool) {
     return m == nil

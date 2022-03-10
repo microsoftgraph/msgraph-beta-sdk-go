@@ -2,12 +2,13 @@ package alerts
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     ic0f34eb05ee86e1f4fa938395d0feec9b577cfcd78533c67a155562b35abea89 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts/updatealerts"
+    ie6c4ed50fd25d2b22f824917c6168d4dbc7e67a1434dab8eb59ad93aba04f0a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// AlertsRequestBuilder builds and executes requests for operations under \security\alerts
+// AlertsRequestBuilder provides operations to manage the alerts property of the microsoft.graph.security entity.
 type AlertsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type AlertsRequestBuilderGetQueryParameters struct {
 // AlertsRequestBuilderPostOptions options for Post
 type AlertsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alertable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewAlertsRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAlertsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AlertsRequestBuilder) Count()(*ie6c4ed50fd25d2b22f824917c6168d4dbc7e67a1434dab8eb59ad93aba04f0a3.CountRequestBuilder) {
+    return ie6c4ed50fd25d2b22f824917c6168d4dbc7e67a1434dab8eb59ad93aba04f0a3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable.
 func (m *AlertsRequestBuilder) CreateGetRequestInformation(options *AlertsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *AlertsRequestBuilder) CreateGetRequestInformation(options *AlertsReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to alerts for security
 func (m *AlertsRequestBuilder) CreatePostRequestInformation(options *AlertsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,28 +119,36 @@ func (m *AlertsRequestBuilder) CreatePostRequestInformation(options *AlertsReque
     return requestInfo, nil
 }
 // Get read-only. Nullable.
-func (m *AlertsRequestBuilder) Get(options *AlertsRequestBuilderGetOptions)(*AlertsResponse, error) {
+func (m *AlertsRequestBuilder) Get(options *AlertsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlertsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAlertCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AlertsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AlertCollectionResponseable), nil
 }
-// Post read-only. Nullable.
-func (m *AlertsRequestBuilder) Post(options *AlertsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert, error) {
+// Post create new navigation property to alerts for security
+func (m *AlertsRequestBuilder) Post(options *AlertsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alertable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAlert() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAlertFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alertable), nil
 }
 func (m *AlertsRequestBuilder) UpdateAlerts()(*ic0f34eb05ee86e1f4fa938395d0feec9b577cfcd78533c67a155562b35abea89.UpdateAlertsRequestBuilder) {
     return ic0f34eb05ee86e1f4fa938395d0feec9b577cfcd78533c67a155562b35abea89.NewUpdateAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

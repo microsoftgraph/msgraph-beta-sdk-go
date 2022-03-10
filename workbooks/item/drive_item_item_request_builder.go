@@ -3,7 +3,6 @@ package item
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i0146b9e31c3cc4f2ab496bd8b7648bd7422072075b9c3fdb0b6223600352be8a "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/children"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i07fa0b9bcf1ebf1422ecf81f650c09280a537299bd61ea4a889e1779aed5cdb1 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/createlink"
     i0d7540bf7da4f5a327b935abc70409898a3fd6c1c9c792496574df321f76f182 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/createuploadsession"
     i12f8dcf6e8ea636350dee797d39120b2eff5eb823b749db83370bd17cde4ee26 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/deltawithtoken"
@@ -12,7 +11,6 @@ import (
     i1ffc874dc11bc59b8f43e08f999b16d5537ed76c0d32ceacaf84e9d01a9a0a54 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/subscriptions"
     i286a92b61d7508a9e3bd4e1607d4dcca000c4c41be5af19c587bbc43e6d8f2e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/content"
     i3434cc42e81799ee683ff05c68279a9af935557da306a30871d4244ec69a586d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/copy"
-    i35894371297ae928bdc491107d0da925520373cf663e0c084b04a7fe5c9e9a44 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook"
     i3a42b727ca0a85dd5841ea0caf5e4ddcc0b92314677b92c30cdff812f9d18de6 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/checkin"
     i4403a8b36ffdd31c6449e834ff7354472d5bcaf819a2c59390ccca08a944e4e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/thumbnails"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
@@ -29,13 +27,16 @@ import (
     ibcde7b93c66be3ae4c6307030c9c1fd4912a9617a23339afbb10615f9a735dd3 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/unfollow"
     iccf725507e0de7b68f548524e89423d3c820bc9d1292124875957bfd3d78a358 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/delta"
     iea15fd2e4983cd4bc7f77c56f9e7d10b714e2d4c76c191417ae77f325254d1fd "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/versions"
+    i07d08684839c1c52e4e2f97c0ac854b38d29ec3cfe7f59122208e108260cbb4d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/children/item"
     i23745af441bc7e806a6ea374d93773d7f5b4d51f0b23dbfc2e289f9ed360c56f "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/versions/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i8af00cb19bae1d8d547aa285fc2e34cbe5c5c5096ff8de885009b1dcd3611d71 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/permissions/item"
+    ib3b0b0b8db03e078a58d5fd2c684b9c2f06f5e77dde80b3c46359e8e3f0480ba "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/activities/item"
     ic2204a9b8bb31b272b46aa5d8e8e1802c6b262a7377a2425b7aeb9b634548a33 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/subscriptions/item"
     if9d9f1bd841c39df4ae58bdaf1c987671d7244b7fbc793a0e55c2c3bcb60d75b "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/thumbnails/item"
 )
 
-// DriveItemItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}
+// DriveItemItemRequestBuilder provides operations to manage the collection of driveItem entities.
 type DriveItemItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -74,7 +75,7 @@ type DriveItemItemRequestBuilderGetQueryParameters struct {
 // DriveItemItemRequestBuilderPatchOptions options for Patch
 type DriveItemItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -84,6 +85,17 @@ type DriveItemItemRequestBuilderPatchOptions struct {
 }
 func (m *DriveItemItemRequestBuilder) Activities()(*i68453248b6adc2e0a123184b9f0397803b74547d93a538bca62fb45840ec7c39.ActivitiesRequestBuilder) {
     return i68453248b6adc2e0a123184b9f0397803b74547d93a538bca62fb45840ec7c39.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.activities.item collection
+func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*ib3b0b0b8db03e078a58d5fd2c684b9c2f06f5e77dde80b3c46359e8e3f0480ba.ItemActivityOLDItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["itemActivityOLD_id"] = id
+    }
+    return ib3b0b0b8db03e078a58d5fd2c684b9c2f06f5e77dde80b3c46359e8e3f0480ba.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DriveItemItemRequestBuilder) Analytics()(*i1559af655b2f07d6991e747733c0a5dbe16a79c9110b9cd4e95e89d1f533b436.AnalyticsRequestBuilder) {
     return i1559af655b2f07d6991e747733c0a5dbe16a79c9110b9cd4e95e89d1f533b436.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -97,6 +109,17 @@ func (m *DriveItemItemRequestBuilder) Checkout()(*ib109f1365e8ac7f6b077a01adab19
 func (m *DriveItemItemRequestBuilder) Children()(*i0146b9e31c3cc4f2ab496bd8b7648bd7422072075b9c3fdb0b6223600352be8a.ChildrenRequestBuilder) {
     return i0146b9e31c3cc4f2ab496bd8b7648bd7422072075b9c3fdb0b6223600352be8a.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.children.item collection
+func (m *DriveItemItemRequestBuilder) ChildrenById(id string)(*i07d08684839c1c52e4e2f97c0ac854b38d29ec3cfe7f59122208e108260cbb4d.DriveItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["driveItem_id1"] = id
+    }
+    return i07d08684839c1c52e4e2f97c0ac854b38d29ec3cfe7f59122208e108260cbb4d.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // NewDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
 func NewDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemItemRequestBuilder) {
     m := &DriveItemItemRequestBuilder{
@@ -106,7 +129,7 @@ func NewDriveItemItemRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -189,17 +212,21 @@ func (m *DriveItemItemRequestBuilder) Delete(options *DriveItemItemRequestBuilde
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
-// Delta builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *DriveItemItemRequestBuilder) Delta()(*iccf725507e0de7b68f548524e89423d3c820bc9d1292124875957bfd3d78a358.DeltaRequestBuilder) {
     return iccf725507e0de7b68f548524e89423d3c820bc9d1292124875957bfd3d78a358.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeltaWithToken builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.delta(token='{token}')
+// DeltaWithToken provides operations to call the delta method.
 func (m *DriveItemItemRequestBuilder) DeltaWithToken(token *string)(*i12f8dcf6e8ea636350dee797d39120b2eff5eb823b749db83370bd17cde4ee26.DeltaWithTokenRequestBuilder) {
     return i12f8dcf6e8ea636350dee797d39120b2eff5eb823b749db83370bd17cde4ee26.NewDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
 }
@@ -207,20 +234,24 @@ func (m *DriveItemItemRequestBuilder) Follow()(*i62c92f7e8ef283c94ff015c3fe5d9d7
     return i62c92f7e8ef283c94ff015c3fe5d9d7f09ae77403203082ac6544c4f367d9676.NewFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get entity from workbooks by key
-func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem, error) {
+func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDriveItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable), nil
 }
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
 func (m *DriveItemItemRequestBuilder) Invite()(*i710d1b03133218cf42db16a0f513411325c8307a829644968e565a02e56ae7f6.InviteRequestBuilder) {
     return i710d1b03133218cf42db16a0f513411325c8307a829644968e565a02e56ae7f6.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -234,7 +265,11 @@ func (m *DriveItemItemRequestBuilder) Patch(options *DriveItemItemRequestBuilder
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -260,7 +295,7 @@ func (m *DriveItemItemRequestBuilder) Preview()(*i9e601979c83767d12347ff319a26aa
 func (m *DriveItemItemRequestBuilder) Restore()(*i652ad18530a0d67db6af9e17a408a0fe46a970bfe04431202d422c3171c97065.RestoreRequestBuilder) {
     return i652ad18530a0d67db6af9e17a408a0fe46a970bfe04431202d422c3171c97065.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SearchWithQ builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.search(q='{q}')
+// SearchWithQ provides operations to call the search method.
 func (m *DriveItemItemRequestBuilder) SearchWithQ(q *string)(*i7ecb3bb901e726c93053e2981950ac4cad1568eec1a8ca7051a9125074a2f106.SearchWithQRequestBuilder) {
     return i7ecb3bb901e726c93053e2981950ac4cad1568eec1a8ca7051a9125074a2f106.NewSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
 }
@@ -311,7 +346,4 @@ func (m *DriveItemItemRequestBuilder) VersionsById(id string)(*i23745af441bc7e80
         urlTplParams["driveItemVersion_id"] = id
     }
     return i23745af441bc7e806a6ea374d93773d7f5b4d51f0b23dbfc2e289f9ed360c56f.NewDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-func (m *DriveItemItemRequestBuilder) Workbook()(*i35894371297ae928bdc491107d0da925520373cf663e0c084b04a7fe5c9e9a44.WorkbookRequestBuilder) {
-    return i35894371297ae928bdc491107d0da925520373cf663e0c084b04a7fe5c9e9a44.NewWorkbookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

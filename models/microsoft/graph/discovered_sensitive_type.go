@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DiscoveredSensitiveType 
+// DiscoveredSensitiveType provides operations to call the evaluate method.
 type DiscoveredSensitiveType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    classificationAttributes []ClassificationAttribute;
+    classificationAttributes []ClassificationAttributeable;
     // 
     confidence *int32;
     // 
@@ -24,6 +24,10 @@ func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDiscoveredSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDiscoveredSensitiveTypeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDiscoveredSensitiveType(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -33,7 +37,7 @@ func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetClassificationAttributes gets the classificationAttributes property value. 
-func (m *DiscoveredSensitiveType) GetClassificationAttributes()([]ClassificationAttribute) {
+func (m *DiscoveredSensitiveType) GetClassificationAttributes()([]ClassificationAttributeable) {
     if m == nil {
         return nil
     } else {
@@ -56,26 +60,18 @@ func (m *DiscoveredSensitiveType) GetCount()(*int32) {
         return m.count
     }
 }
-// GetId gets the id property value. 
-func (m *DiscoveredSensitiveType) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["classificationAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassificationAttribute() })
+        val, err := n.GetCollectionOfObjectValues(CreateClassificationAttributeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ClassificationAttribute, len(val))
+            res := make([]ClassificationAttributeable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ClassificationAttribute))
+                res[i] = v.(ClassificationAttributeable)
             }
             m.SetClassificationAttributes(res)
         }
@@ -113,6 +109,14 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
+// GetId gets the id property value. 
+func (m *DiscoveredSensitiveType) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
 func (m *DiscoveredSensitiveType) IsNil()(bool) {
     return m == nil
 }
@@ -121,8 +125,7 @@ func (m *DiscoveredSensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetClassificationAttributes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClassificationAttributes()))
         for i, v := range m.GetClassificationAttributes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("classificationAttributes", cast)
         if err != nil {
@@ -162,7 +165,7 @@ func (m *DiscoveredSensitiveType) SetAdditionalData(value map[string]interface{}
     }
 }
 // SetClassificationAttributes sets the classificationAttributes property value. 
-func (m *DiscoveredSensitiveType) SetClassificationAttributes(value []ClassificationAttribute)() {
+func (m *DiscoveredSensitiveType) SetClassificationAttributes(value []ClassificationAttributeable)() {
     if m != nil {
         m.classificationAttributes = value
     }

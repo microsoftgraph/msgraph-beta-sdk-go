@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DecisionItemPrincipalResourceMembership 
+// DecisionItemPrincipalResourceMembership provides operations to manage the compliance singleton.
 type DecisionItemPrincipalResourceMembership struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewDecisionItemPrincipalResourceMembership()(*DecisionItemPrincipalResource
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDecisionItemPrincipalResourceMembership(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DecisionItemPrincipalResourceMembership) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMembershipType gets the membershipType property value. 
-func (m *DecisionItemPrincipalResourceMembership) GetMembershipType()(*DecisionItemPrincipalResourceMembershipType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.membershipType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *DecisionItemPrincipalResourceMembership) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetMembershipType gets the membershipType property value. 
+func (m *DecisionItemPrincipalResourceMembership) GetMembershipType()(*DecisionItemPrincipalResourceMembershipType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.membershipType
+    }
 }
 func (m *DecisionItemPrincipalResourceMembership) IsNil()(bool) {
     return m == nil

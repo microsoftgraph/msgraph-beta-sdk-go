@@ -2,13 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i04b2dcef167a2cae4f7fe917f68d75103bd1143f7e59881482a2a8dce2921570 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authorizationpolicy/item/defaultuserroleoverrides"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     if552963b64d01abf5402660068a63a336053e969fbe13841bbe4817b65852c68 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authorizationpolicy/item/defaultuserroleoverrides/item"
 )
 
-// AuthorizationPolicyItemRequestBuilder builds and executes requests for operations under \policies\authorizationPolicy\{authorizationPolicy-id}
+// AuthorizationPolicyItemRequestBuilder provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
 type AuthorizationPolicyItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type AuthorizationPolicyItemRequestBuilderGetQueryParameters struct {
 // AuthorizationPolicyItemRequestBuilderPatchOptions options for Patch
 type AuthorizationPolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +64,7 @@ func NewAuthorizationPolicyItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +74,7 @@ func NewAuthorizationPolicyItemRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewAuthorizationPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the policy that controls Azure AD authorization settings.
+// CreateDeleteRequestInformation delete navigation property authorizationPolicy for policies
 func (m *AuthorizationPolicyItemRequestBuilder) CreateDeleteRequestInformation(options *AuthorizationPolicyItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *AuthorizationPolicyItemRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the policy that controls Azure AD authorization settings.
+// CreatePatchRequestInformation update the navigation property authorizationPolicy in policies
 func (m *AuthorizationPolicyItemRequestBuilder) CreatePatchRequestInformation(options *AuthorizationPolicyItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,37 +143,49 @@ func (m *AuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverridesById(id 
     }
     return if552963b64d01abf5402660068a63a336053e969fbe13841bbe4817b65852c68.NewDefaultUserRoleOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete the policy that controls Azure AD authorization settings.
+// Delete delete navigation property authorizationPolicy for policies
 func (m *AuthorizationPolicyItemRequestBuilder) Delete(options *AuthorizationPolicyItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the policy that controls Azure AD authorization settings.
-func (m *AuthorizationPolicyItemRequestBuilder) Get(options *AuthorizationPolicyItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicy, error) {
+func (m *AuthorizationPolicyItemRequestBuilder) Get(options *AuthorizationPolicyItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAuthorizationPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAuthorizationPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicyable), nil
 }
-// Patch the policy that controls Azure AD authorization settings.
+// Patch update the navigation property authorizationPolicy in policies
 func (m *AuthorizationPolicyItemRequestBuilder) Patch(options *AuthorizationPolicyItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereMetric 
+// UserExperienceAnalyticsWorkFromAnywhereMetric provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsWorkFromAnywhereMetric struct {
     Entity
     // The work from anywhere metric devices.
-    metricDevices []UserExperienceAnalyticsWorkFromAnywhereDevice;
+    metricDevices []UserExperienceAnalyticsWorkFromAnywhereDeviceable;
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetric()(*UserExperienceAnalyticsWorkFromAnywhereMetric) {
@@ -17,32 +17,36 @@ func NewUserExperienceAnalyticsWorkFromAnywhereMetric()(*UserExperienceAnalytics
     }
     return m
 }
-// GetMetricDevices gets the metricDevices property value. The work from anywhere metric devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetMetricDevices()([]UserExperienceAnalyticsWorkFromAnywhereDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricDevices
-    }
+// CreateUserExperienceAnalyticsWorkFromAnywhereMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsWorkFromAnywhereMetricFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsWorkFromAnywhereMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["metricDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsWorkFromAnywhereDevice() })
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsWorkFromAnywhereDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserExperienceAnalyticsWorkFromAnywhereDevice, len(val))
+            res := make([]UserExperienceAnalyticsWorkFromAnywhereDeviceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UserExperienceAnalyticsWorkFromAnywhereDevice))
+                res[i] = v.(UserExperienceAnalyticsWorkFromAnywhereDeviceable)
             }
             m.SetMetricDevices(res)
         }
         return nil
     }
     return res
+}
+// GetMetricDevices gets the metricDevices property value. The work from anywhere metric devices.
+func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetMetricDevices()([]UserExperienceAnalyticsWorkFromAnywhereDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metricDevices
+    }
 }
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i04eb53
     if m.GetMetricDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMetricDevices()))
         for i, v := range m.GetMetricDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("metricDevices", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i04eb53
     return nil
 }
 // SetMetricDevices sets the metricDevices property value. The work from anywhere metric devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDevice)() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDeviceable)() {
     if m != nil {
         m.metricDevices = value
     }

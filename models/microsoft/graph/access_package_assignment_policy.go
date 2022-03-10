@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageAssignmentPolicy 
+// AccessPackageAssignmentPolicy provides operations to manage the identityGovernance singleton.
 type AccessPackageAssignmentPolicy struct {
     Entity
     // The access package with this policy. Read-only. Nullable. Supports $expand.
-    accessPackage *AccessPackage;
+    accessPackage AccessPackageable;
     // 
-    accessPackageCatalog *AccessPackageCatalog;
+    accessPackageCatalog AccessPackageCatalogable;
     // Identifier of the access package.
     accessPackageId *string;
     // Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
-    accessReviewSettings *AssignmentReviewSettings;
+    accessReviewSettings AssignmentReviewSettingsable;
     // Indicates whether a user can extend the access package assignment duration after approval.
     canExtend *bool;
     // Read-only.
@@ -23,7 +23,7 @@ type AccessPackageAssignmentPolicy struct {
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-    customExtensionHandlers []CustomExtensionHandler;
+    customExtensionHandlers []CustomExtensionHandlerable;
     // The description of the policy.
     description *string;
     // The display name of the policy. Supports $filter (eq).
@@ -37,11 +37,11 @@ type AccessPackageAssignmentPolicy struct {
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Questions that are posed to the  requestor.
-    questions []AccessPackageQuestion;
+    questions []AccessPackageQuestionable;
     // Who must approve requests for access package in this policy.
-    requestApprovalSettings *ApprovalSettings;
+    requestApprovalSettings ApprovalSettingsable;
     // Who can request this access package from this policy.
-    requestorSettings *RequestorSettings;
+    requestorSettings RequestorSettingsable;
 }
 // NewAccessPackageAssignmentPolicy instantiates a new accessPackageAssignmentPolicy and sets the default values.
 func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
@@ -50,8 +50,12 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
     }
     return m
 }
+// CreateAccessPackageAssignmentPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAccessPackageAssignmentPolicy(), nil
+}
 // GetAccessPackage gets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(*AccessPackage) {
+func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +63,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(*AccessPackage) {
     }
 }
 // GetAccessPackageCatalog gets the accessPackageCatalog property value. 
-func (m *AccessPackageAssignmentPolicy) GetAccessPackageCatalog()(*AccessPackageCatalog) {
+func (m *AccessPackageAssignmentPolicy) GetAccessPackageCatalog()(AccessPackageCatalogable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +79,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackageId()(*string) {
     }
 }
 // GetAccessReviewSettings gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
-func (m *AccessPackageAssignmentPolicy) GetAccessReviewSettings()(*AssignmentReviewSettings) {
+func (m *AccessPackageAssignmentPolicy) GetAccessReviewSettings()(AssignmentReviewSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -107,7 +111,7 @@ func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987
     }
 }
 // GetCustomExtensionHandlers gets the customExtensionHandlers property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-func (m *AccessPackageAssignmentPolicy) GetCustomExtensionHandlers()([]CustomExtensionHandler) {
+func (m *AccessPackageAssignmentPolicy) GetCustomExtensionHandlers()([]CustomExtensionHandlerable) {
     if m == nil {
         return nil
     } else {
@@ -146,66 +150,26 @@ func (m *AccessPackageAssignmentPolicy) GetExpirationDateTime()(*i336074805fc853
         return m.expirationDateTime
     }
 }
-// GetModifiedBy gets the modifiedBy property value. Read-only.
-func (m *AccessPackageAssignmentPolicy) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetQuestions gets the questions property value. Questions that are posed to the  requestor.
-func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestion) {
-    if m == nil {
-        return nil
-    } else {
-        return m.questions
-    }
-}
-// GetRequestApprovalSettings gets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
-func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(*ApprovalSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestApprovalSettings
-    }
-}
-// GetRequestorSettings gets the requestorSettings property value. Who can request this access package from this policy.
-func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(*RequestorSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorSettings
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackage() })
+        val, err := n.GetObjectValue(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackage(val.(*AccessPackage))
+            m.SetAccessPackage(val.(AccessPackageable))
         }
         return nil
     }
     res["accessPackageCatalog"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageCatalog() })
+        val, err := n.GetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessPackageCatalog(val.(*AccessPackageCatalog))
+            m.SetAccessPackageCatalog(val.(AccessPackageCatalogable))
         }
         return nil
     }
@@ -220,12 +184,12 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["accessReviewSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignmentReviewSettings() })
+        val, err := n.GetObjectValue(CreateAssignmentReviewSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessReviewSettings(val.(*AssignmentReviewSettings))
+            m.SetAccessReviewSettings(val.(AssignmentReviewSettingsable))
         }
         return nil
     }
@@ -260,14 +224,14 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["customExtensionHandlers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionHandler() })
+        val, err := n.GetCollectionOfObjectValues(CreateCustomExtensionHandlerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CustomExtensionHandler, len(val))
+            res := make([]CustomExtensionHandlerable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CustomExtensionHandler))
+                res[i] = v.(CustomExtensionHandlerable)
             }
             m.SetCustomExtensionHandlers(res)
         }
@@ -334,40 +298,80 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["questions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageQuestion() })
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageQuestionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessPackageQuestion, len(val))
+            res := make([]AccessPackageQuestionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessPackageQuestion))
+                res[i] = v.(AccessPackageQuestionable)
             }
             m.SetQuestions(res)
         }
         return nil
     }
     res["requestApprovalSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApprovalSettings() })
+        val, err := n.GetObjectValue(CreateApprovalSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestApprovalSettings(val.(*ApprovalSettings))
+            m.SetRequestApprovalSettings(val.(ApprovalSettingsable))
         }
         return nil
     }
     res["requestorSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRequestorSettings() })
+        val, err := n.GetObjectValue(CreateRequestorSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestorSettings(val.(*RequestorSettings))
+            m.SetRequestorSettings(val.(RequestorSettingsable))
         }
         return nil
     }
     return res
+}
+// GetModifiedBy gets the modifiedBy property value. Read-only.
+func (m *AccessPackageAssignmentPolicy) GetModifiedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedBy
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetQuestions gets the questions property value. Questions that are posed to the  requestor.
+func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.questions
+    }
+}
+// GetRequestApprovalSettings gets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
+func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(ApprovalSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestApprovalSettings
+    }
+}
+// GetRequestorSettings gets the requestorSettings property value. Who can request this access package from this policy.
+func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(RequestorSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestorSettings
+    }
 }
 func (m *AccessPackageAssignmentPolicy) IsNil()(bool) {
     return m == nil
@@ -423,8 +427,7 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetCustomExtensionHandlers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomExtensionHandlers()))
         for i, v := range m.GetCustomExtensionHandlers() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("customExtensionHandlers", cast)
         if err != nil {
@@ -470,8 +473,7 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i04eb5309aeaafadd28374d
     if m.GetQuestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetQuestions()))
         for i, v := range m.GetQuestions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("questions", cast)
         if err != nil {
@@ -493,13 +495,13 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value *AccessPackage)() {
+func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable)() {
     if m != nil {
         m.accessPackage = value
     }
 }
 // SetAccessPackageCatalog sets the accessPackageCatalog property value. 
-func (m *AccessPackageAssignmentPolicy) SetAccessPackageCatalog(value *AccessPackageCatalog)() {
+func (m *AccessPackageAssignmentPolicy) SetAccessPackageCatalog(value AccessPackageCatalogable)() {
     if m != nil {
         m.accessPackageCatalog = value
     }
@@ -511,7 +513,7 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
     }
 }
 // SetAccessReviewSettings sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
-func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value *AssignmentReviewSettings)() {
+func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value AssignmentReviewSettingsable)() {
     if m != nil {
         m.accessReviewSettings = value
     }
@@ -535,7 +537,7 @@ func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc85
     }
 }
 // SetCustomExtensionHandlers sets the customExtensionHandlers property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-func (m *AccessPackageAssignmentPolicy) SetCustomExtensionHandlers(value []CustomExtensionHandler)() {
+func (m *AccessPackageAssignmentPolicy) SetCustomExtensionHandlers(value []CustomExtensionHandlerable)() {
     if m != nil {
         m.customExtensionHandlers = value
     }
@@ -577,19 +579,19 @@ func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc8
     }
 }
 // SetQuestions sets the questions property value. Questions that are posed to the  requestor.
-func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestion)() {
+func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestionable)() {
     if m != nil {
         m.questions = value
     }
 }
 // SetRequestApprovalSettings sets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
-func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value *ApprovalSettings)() {
+func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value ApprovalSettingsable)() {
     if m != nil {
         m.requestApprovalSettings = value
     }
 }
 // SetRequestorSettings sets the requestorSettings property value. Who can request this access package from this policy.
-func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value *RequestorSettings)() {
+func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value RequestorSettingsable)() {
     if m != nil {
         m.requestorSettings = value
     }

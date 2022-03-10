@@ -2,11 +2,12 @@ package categories
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i396bfe954496e31281b28a8f50ec136c3f84d1fa5cd51791df5a5ce64aa3be54 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/categories/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    ie9cd11de8aad9acb387006a01dedd0cee57d3ae5e6ee7b990591ce7327848a98 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedebooks/item/categories/count"
 )
 
-// CategoriesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\categories
+// CategoriesRequestBuilder provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
 type CategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategoriesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CategoriesRequestBuilder) Count()(*ie9cd11de8aad9acb387006a01dedd0cee57d3ae5e6ee7b990591ce7327848a98.CountRequestBuilder) {
+    return ie9cd11de8aad9acb387006a01dedd0cee57d3ae5e6ee7b990591ce7327848a98.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of categories for this eBook.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *CategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *Categori
     return requestInfo, nil
 }
 // Get the list of categories for this eBook.
-func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(*CategoriesResponse, error) {
+func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedEBookCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCategoriesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedEBookCategoryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CategoriesResponse), nil
-}
-func (m *CategoriesRequestBuilder) Ref()(*i396bfe954496e31281b28a8f50ec136c3f84d1fa5cd51791df5a5ce64aa3be54.RefRequestBuilder) {
-    return i396bfe954496e31281b28a8f50ec136c3f84d1fa5cd51791df5a5ce64aa3be54.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedEBookCategoryCollectionResponseable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementTroubleshootingErrorResource 
+// DeviceManagementTroubleshootingErrorResource provides operations to manage the deviceManagement singleton.
 type DeviceManagementTroubleshootingErrorResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewDeviceManagementTroubleshootingErrorResource()(*DeviceManagementTroubles
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementTroubleshootingErrorResource(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLink gets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-func (m *DeviceManagementTroubleshootingErrorResource) GetLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.link
-    }
-}
-// GetText gets the text property value. Not yet documented
-func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
         return nil
     }
     return res
+}
+// GetLink gets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
+func (m *DeviceManagementTroubleshootingErrorResource) GetLink()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.link
+    }
+}
+// GetText gets the text property value. Not yet documented
+func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.text
+    }
 }
 func (m *DeviceManagementTroubleshootingErrorResource) IsNil()(bool) {
     return m == nil

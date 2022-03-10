@@ -4,30 +4,30 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemActionSet 
+// ItemActionSet provides operations to manage the compliance singleton.
 type ItemActionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // A comment was added to the item.
-    comment *CommentAction;
+    comment CommentActionable;
     // An item was created.
-    create *CreateAction;
+    create CreateActionable;
     // An item was deleted.
-    delete *DeleteAction;
+    delete DeleteActionable;
     // An item was edited.
-    edit *EditAction;
+    edit EditActionable;
     // A user was mentioned in the item.
-    mention *MentionAction;
+    mention MentionActionable;
     // An item was moved.
-    move *MoveAction;
+    move MoveActionable;
     // An item was renamed.
-    rename *RenameAction;
+    rename RenameActionable;
     // An item was restored.
-    restore *RestoreAction;
+    restore RestoreActionable;
     // An item was shared.
-    share *ShareAction;
+    share ShareActionable;
     // An item was versioned.
-    version *VersionAction;
+    version VersionActionable;
 }
 // NewItemActionSet instantiates a new itemActionSet and sets the default values.
 func NewItemActionSet()(*ItemActionSet) {
@@ -35,6 +35,10 @@ func NewItemActionSet()(*ItemActionSet) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateItemActionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemActionSetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewItemActionSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionSet) GetAdditionalData()(map[string]interface{}) {
@@ -45,7 +49,7 @@ func (m *ItemActionSet) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetComment gets the comment property value. A comment was added to the item.
-func (m *ItemActionSet) GetComment()(*CommentAction) {
+func (m *ItemActionSet) GetComment()(CommentActionable) {
     if m == nil {
         return nil
     } else {
@@ -53,7 +57,7 @@ func (m *ItemActionSet) GetComment()(*CommentAction) {
     }
 }
 // GetCreate gets the create property value. An item was created.
-func (m *ItemActionSet) GetCreate()(*CreateAction) {
+func (m *ItemActionSet) GetCreate()(CreateActionable) {
     if m == nil {
         return nil
     } else {
@@ -61,7 +65,7 @@ func (m *ItemActionSet) GetCreate()(*CreateAction) {
     }
 }
 // GetDelete gets the delete property value. An item was deleted.
-func (m *ItemActionSet) GetDelete()(*DeleteAction) {
+func (m *ItemActionSet) GetDelete()(DeleteActionable) {
     if m == nil {
         return nil
     } else {
@@ -69,15 +73,120 @@ func (m *ItemActionSet) GetDelete()(*DeleteAction) {
     }
 }
 // GetEdit gets the edit property value. An item was edited.
-func (m *ItemActionSet) GetEdit()(*EditAction) {
+func (m *ItemActionSet) GetEdit()(EditActionable) {
     if m == nil {
         return nil
     } else {
         return m.edit
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCommentActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetComment(val.(CommentActionable))
+        }
+        return nil
+    }
+    res["create"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCreateActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreate(val.(CreateActionable))
+        }
+        return nil
+    }
+    res["delete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeleteActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDelete(val.(DeleteActionable))
+        }
+        return nil
+    }
+    res["edit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEditActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEdit(val.(EditActionable))
+        }
+        return nil
+    }
+    res["mention"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMentionActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMention(val.(MentionActionable))
+        }
+        return nil
+    }
+    res["move"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMoveActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMove(val.(MoveActionable))
+        }
+        return nil
+    }
+    res["rename"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRenameActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRename(val.(RenameActionable))
+        }
+        return nil
+    }
+    res["restore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRestoreActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRestore(val.(RestoreActionable))
+        }
+        return nil
+    }
+    res["share"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateShareActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShare(val.(ShareActionable))
+        }
+        return nil
+    }
+    res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVersionActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVersion(val.(VersionActionable))
+        }
+        return nil
+    }
+    return res
+}
 // GetMention gets the mention property value. A user was mentioned in the item.
-func (m *ItemActionSet) GetMention()(*MentionAction) {
+func (m *ItemActionSet) GetMention()(MentionActionable) {
     if m == nil {
         return nil
     } else {
@@ -85,7 +194,7 @@ func (m *ItemActionSet) GetMention()(*MentionAction) {
     }
 }
 // GetMove gets the move property value. An item was moved.
-func (m *ItemActionSet) GetMove()(*MoveAction) {
+func (m *ItemActionSet) GetMove()(MoveActionable) {
     if m == nil {
         return nil
     } else {
@@ -93,7 +202,7 @@ func (m *ItemActionSet) GetMove()(*MoveAction) {
     }
 }
 // GetRename gets the rename property value. An item was renamed.
-func (m *ItemActionSet) GetRename()(*RenameAction) {
+func (m *ItemActionSet) GetRename()(RenameActionable) {
     if m == nil {
         return nil
     } else {
@@ -101,7 +210,7 @@ func (m *ItemActionSet) GetRename()(*RenameAction) {
     }
 }
 // GetRestore gets the restore property value. An item was restored.
-func (m *ItemActionSet) GetRestore()(*RestoreAction) {
+func (m *ItemActionSet) GetRestore()(RestoreActionable) {
     if m == nil {
         return nil
     } else {
@@ -109,7 +218,7 @@ func (m *ItemActionSet) GetRestore()(*RestoreAction) {
     }
 }
 // GetShare gets the share property value. An item was shared.
-func (m *ItemActionSet) GetShare()(*ShareAction) {
+func (m *ItemActionSet) GetShare()(ShareActionable) {
     if m == nil {
         return nil
     } else {
@@ -117,117 +226,12 @@ func (m *ItemActionSet) GetShare()(*ShareAction) {
     }
 }
 // GetVersion gets the version property value. An item was versioned.
-func (m *ItemActionSet) GetVersion()(*VersionAction) {
+func (m *ItemActionSet) GetVersion()(VersionActionable) {
     if m == nil {
         return nil
     } else {
         return m.version
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCommentAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetComment(val.(*CommentAction))
-        }
-        return nil
-    }
-    res["create"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreateAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreate(val.(*CreateAction))
-        }
-        return nil
-    }
-    res["delete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeleteAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDelete(val.(*DeleteAction))
-        }
-        return nil
-    }
-    res["edit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEditAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEdit(val.(*EditAction))
-        }
-        return nil
-    }
-    res["mention"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMentionAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMention(val.(*MentionAction))
-        }
-        return nil
-    }
-    res["move"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMoveAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMove(val.(*MoveAction))
-        }
-        return nil
-    }
-    res["rename"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRenameAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRename(val.(*RenameAction))
-        }
-        return nil
-    }
-    res["restore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRestoreAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestore(val.(*RestoreAction))
-        }
-        return nil
-    }
-    res["share"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewShareAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetShare(val.(*ShareAction))
-        }
-        return nil
-    }
-    res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVersionAction() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val.(*VersionAction))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ItemActionSet) IsNil()(bool) {
     return m == nil
@@ -309,61 +313,61 @@ func (m *ItemActionSet) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetComment sets the comment property value. A comment was added to the item.
-func (m *ItemActionSet) SetComment(value *CommentAction)() {
+func (m *ItemActionSet) SetComment(value CommentActionable)() {
     if m != nil {
         m.comment = value
     }
 }
 // SetCreate sets the create property value. An item was created.
-func (m *ItemActionSet) SetCreate(value *CreateAction)() {
+func (m *ItemActionSet) SetCreate(value CreateActionable)() {
     if m != nil {
         m.create = value
     }
 }
 // SetDelete sets the delete property value. An item was deleted.
-func (m *ItemActionSet) SetDelete(value *DeleteAction)() {
+func (m *ItemActionSet) SetDelete(value DeleteActionable)() {
     if m != nil {
         m.delete = value
     }
 }
 // SetEdit sets the edit property value. An item was edited.
-func (m *ItemActionSet) SetEdit(value *EditAction)() {
+func (m *ItemActionSet) SetEdit(value EditActionable)() {
     if m != nil {
         m.edit = value
     }
 }
 // SetMention sets the mention property value. A user was mentioned in the item.
-func (m *ItemActionSet) SetMention(value *MentionAction)() {
+func (m *ItemActionSet) SetMention(value MentionActionable)() {
     if m != nil {
         m.mention = value
     }
 }
 // SetMove sets the move property value. An item was moved.
-func (m *ItemActionSet) SetMove(value *MoveAction)() {
+func (m *ItemActionSet) SetMove(value MoveActionable)() {
     if m != nil {
         m.move = value
     }
 }
 // SetRename sets the rename property value. An item was renamed.
-func (m *ItemActionSet) SetRename(value *RenameAction)() {
+func (m *ItemActionSet) SetRename(value RenameActionable)() {
     if m != nil {
         m.rename = value
     }
 }
 // SetRestore sets the restore property value. An item was restored.
-func (m *ItemActionSet) SetRestore(value *RestoreAction)() {
+func (m *ItemActionSet) SetRestore(value RestoreActionable)() {
     if m != nil {
         m.restore = value
     }
 }
 // SetShare sets the share property value. An item was shared.
-func (m *ItemActionSet) SetShare(value *ShareAction)() {
+func (m *ItemActionSet) SetShare(value ShareActionable)() {
     if m != nil {
         m.share = value
     }
 }
 // SetVersion sets the version property value. An item was versioned.
-func (m *ItemActionSet) SetVersion(value *VersionAction)() {
+func (m *ItemActionSet) SetVersion(value VersionActionable)() {
     if m != nil {
         m.version = value
     }

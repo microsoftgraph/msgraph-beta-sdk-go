@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ComanagedDevicesSummary 
+// ComanagedDevicesSummary provides operations to call the getComanagedDevicesSummary method.
 type ComanagedDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -33,6 +33,10 @@ func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateComanagedDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateComanagedDevicesSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewComanagedDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagedDevicesSummary) GetAdditionalData()(map[string]interface{}) {
@@ -64,54 +68,6 @@ func (m *ComanagedDevicesSummary) GetEndpointProtectionCount()(*int32) {
         return nil
     } else {
         return m.endpointProtectionCount
-    }
-}
-// GetInventoryCount gets the inventoryCount property value. Number of devices with Inventory swung-over. This property is read-only.
-func (m *ComanagedDevicesSummary) GetInventoryCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventoryCount
-    }
-}
-// GetModernAppsCount gets the modernAppsCount property value. Number of devices with ModernApps swung-over. This property is read-only.
-func (m *ComanagedDevicesSummary) GetModernAppsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modernAppsCount
-    }
-}
-// GetOfficeAppsCount gets the officeAppsCount property value. Number of devices with OfficeApps swung-over. This property is read-only.
-func (m *ComanagedDevicesSummary) GetOfficeAppsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeAppsCount
-    }
-}
-// GetResourceAccessCount gets the resourceAccessCount property value. Number of devices with ResourceAccess swung-over. This property is read-only.
-func (m *ComanagedDevicesSummary) GetResourceAccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAccessCount
-    }
-}
-// GetTotalComanagedCount gets the totalComanagedCount property value. Number of Co-Managed Devices. This property is read-only.
-func (m *ComanagedDevicesSummary) GetTotalComanagedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalComanagedCount
-    }
-}
-// GetWindowsUpdateForBusinessCount gets the windowsUpdateForBusinessCount property value. Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
-func (m *ComanagedDevicesSummary) GetWindowsUpdateForBusinessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsUpdateForBusinessCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -208,6 +164,54 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetInventoryCount gets the inventoryCount property value. Number of devices with Inventory swung-over. This property is read-only.
+func (m *ComanagedDevicesSummary) GetInventoryCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inventoryCount
+    }
+}
+// GetModernAppsCount gets the modernAppsCount property value. Number of devices with ModernApps swung-over. This property is read-only.
+func (m *ComanagedDevicesSummary) GetModernAppsCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modernAppsCount
+    }
+}
+// GetOfficeAppsCount gets the officeAppsCount property value. Number of devices with OfficeApps swung-over. This property is read-only.
+func (m *ComanagedDevicesSummary) GetOfficeAppsCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeAppsCount
+    }
+}
+// GetResourceAccessCount gets the resourceAccessCount property value. Number of devices with ResourceAccess swung-over. This property is read-only.
+func (m *ComanagedDevicesSummary) GetResourceAccessCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceAccessCount
+    }
+}
+// GetTotalComanagedCount gets the totalComanagedCount property value. Number of Co-Managed Devices. This property is read-only.
+func (m *ComanagedDevicesSummary) GetTotalComanagedCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalComanagedCount
+    }
+}
+// GetWindowsUpdateForBusinessCount gets the windowsUpdateForBusinessCount property value. Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
+func (m *ComanagedDevicesSummary) GetWindowsUpdateForBusinessCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsUpdateForBusinessCount
+    }
 }
 func (m *ComanagedDevicesSummary) IsNil()(bool) {
     return m == nil

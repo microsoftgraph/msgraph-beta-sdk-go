@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InferenceData 
+// InferenceData provides operations to manage the compliance singleton.
 type InferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewInferenceData()(*InferenceData) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateInferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateInferenceDataFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewInferenceData(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InferenceData) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *InferenceData) GetConfidenceScore()(*float64) {
         return nil
     } else {
         return m.confidenceScore
-    }
-}
-// GetUserHasVerifiedAccuracy gets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.
-func (m *InferenceData) GetUserHasVerifiedAccuracy()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userHasVerifiedAccuracy
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *InferenceData) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetUserHasVerifiedAccuracy gets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.
+func (m *InferenceData) GetUserHasVerifiedAccuracy()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userHasVerifiedAccuracy
+    }
 }
 func (m *InferenceData) IsNil()(bool) {
     return m == nil

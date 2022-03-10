@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChecklistItem 
+// ChecklistItem provides operations to manage the compliance singleton.
 type ChecklistItem struct {
     Entity
     // The date and time when the checklistItem was finished.
@@ -23,6 +23,10 @@ func NewChecklistItem()(*ChecklistItem) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateChecklistItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChecklistItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChecklistItem(), nil
 }
 // GetCheckedDateTime gets the checkedDateTime property value. The date and time when the checklistItem was finished.
 func (m *ChecklistItem) GetCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -46,14 +50,6 @@ func (m *ChecklistItem) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIsChecked gets the isChecked property value. State indicating whether the item is checked off or not.
-func (m *ChecklistItem) GetIsChecked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isChecked
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,6 +96,14 @@ func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetIsChecked gets the isChecked property value. State indicating whether the item is checked off or not.
+func (m *ChecklistItem) GetIsChecked()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isChecked
+    }
 }
 func (m *ChecklistItem) IsNil()(bool) {
     return m == nil

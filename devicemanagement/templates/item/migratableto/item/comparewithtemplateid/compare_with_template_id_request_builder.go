@@ -2,10 +2,9 @@ package comparewithtemplateid
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CompareWithTemplateIdRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}\microsoft.graph.compare(templateId='{templateId}')
+// CompareWithTemplateIdRequestBuilder provides operations to call the compare method.
 type CompareWithTemplateIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +34,7 @@ func NewCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]st
     if templateId != nil {
         urlTplParams["templateId"] = *templateId
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *CompareWithTemplateIdRequestBuilder) CreateGetRequestInformation(option
     return requestInfo, nil
 }
 // Get invoke function compare
-func (m *CompareWithTemplateIdRequestBuilder) Get(options *CompareWithTemplateIdRequestBuilderGetOptions)([]CompareWithTemplateId, error) {
+func (m *CompareWithTemplateIdRequestBuilder) Get(options *CompareWithTemplateIdRequestBuilderGetOptions)(CompareWithTemplateIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCompareWithTemplateId() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCompareWithTemplateIdResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]CompareWithTemplateId, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*CompareWithTemplateId))
-    }
-    return val, nil
+    return res.(CompareWithTemplateIdResponseable), nil
 }

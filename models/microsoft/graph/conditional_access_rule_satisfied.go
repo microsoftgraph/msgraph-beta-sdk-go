@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConditionalAccessRuleSatisfied 
+// ConditionalAccessRuleSatisfied provides operations to manage the auditLogRoot singleton.
 type ConditionalAccessRuleSatisfied struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewConditionalAccessRuleSatisfied()(*ConditionalAccessRuleSatisfied) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConditionalAccessRuleSatisfied(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessRuleSatisfied) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *ConditionalAccessRuleSatisfied) GetConditionalAccessCondition()(*Condit
         return nil
     } else {
         return m.conditionalAccessCondition
-    }
-}
-// GetRuleSatisfied gets the ruleSatisfied property value. Refers to the conditional access policy conditions that were satisfied. The possible values are: allApps, firstPartyApps, office365, appId, acr, appFilter, allUsers, guest, groupId, roleId, userId, allDevicePlatforms, devicePlatform, allLocations, insideCorpnet, allTrustedLocations, locationId, allDevices, deviceFilter, deviceState, unknownFutureValue, deviceFilterIncludeRuleNotMatched, allDeviceStates. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: deviceFilterIncludeRuleNotMatched, allDeviceStates.
-func (m *ConditionalAccessRuleSatisfied) GetRuleSatisfied()(*ConditionalAccessRule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleSatisfied
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +64,14 @@ func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetRuleSatisfied gets the ruleSatisfied property value. Refers to the conditional access policy conditions that were satisfied. The possible values are: allApps, firstPartyApps, office365, appId, acr, appFilter, allUsers, guest, groupId, roleId, userId, allDevicePlatforms, devicePlatform, allLocations, insideCorpnet, allTrustedLocations, locationId, allDevices, deviceFilter, deviceState, unknownFutureValue, deviceFilterIncludeRuleNotMatched, allDeviceStates. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: deviceFilterIncludeRuleNotMatched, allDeviceStates.
+func (m *ConditionalAccessRuleSatisfied) GetRuleSatisfied()(*ConditionalAccessRule) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleSatisfied
+    }
 }
 func (m *ConditionalAccessRuleSatisfied) IsNil()(bool) {
     return m == nil

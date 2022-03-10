@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppIntentAndState 
+// MobileAppIntentAndState provides operations to manage the compliance singleton.
 type MobileAppIntentAndState struct {
     Entity
     // Device identifier created or collected by Intune.
     managedDeviceIdentifier *string;
     // The list of payload intents and states for the tenant.
-    mobileAppList []MobileAppIntentAndStateDetail;
+    mobileAppList []MobileAppIntentAndStateDetailable;
     // Identifier for the user that tried to enroll the device.
     userId *string;
 }
@@ -21,29 +21,9 @@ func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     }
     return m
 }
-// GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
-func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceIdentifier
-    }
-}
-// GetMobileAppList gets the mobileAppList property value. The list of payload intents and states for the tenant.
-func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppList
-    }
-}
-// GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
-func (m *MobileAppIntentAndState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+// CreateMobileAppIntentAndStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppIntentAndStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppIntentAndState(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -59,14 +39,14 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["mobileAppList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppIntentAndStateDetail() })
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppIntentAndStateDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileAppIntentAndStateDetail, len(val))
+            res := make([]MobileAppIntentAndStateDetailable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MobileAppIntentAndStateDetail))
+                res[i] = v.(MobileAppIntentAndStateDetailable)
             }
             m.SetMobileAppList(res)
         }
@@ -83,6 +63,30 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
+func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDeviceIdentifier
+    }
+}
+// GetMobileAppList gets the mobileAppList property value. The list of payload intents and states for the tenant.
+func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDetailable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mobileAppList
+    }
+}
+// GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
+func (m *MobileAppIntentAndState) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *MobileAppIntentAndState) IsNil()(bool) {
     return m == nil
@@ -102,8 +106,7 @@ func (m *MobileAppIntentAndState) Serialize(writer i04eb5309aeaafadd28374d79c847
     if m.GetMobileAppList() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMobileAppList()))
         for i, v := range m.GetMobileAppList() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("mobileAppList", cast)
         if err != nil {
@@ -125,7 +128,7 @@ func (m *MobileAppIntentAndState) SetManagedDeviceIdentifier(value *string)() {
     }
 }
 // SetMobileAppList sets the mobileAppList property value. The list of payload intents and states for the tenant.
-func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndStateDetail)() {
+func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndStateDetailable)() {
     if m != nil {
         m.mobileAppList = value
     }

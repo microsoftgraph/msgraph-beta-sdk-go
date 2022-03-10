@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device"
 )
 
-// PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\passwordlessMicrosoftAuthenticatorMethods\{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGet
 // PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderPatchOptions options for Patch
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethod;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -134,7 +134,11 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilde
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -144,16 +148,20 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilde
     return i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get passwordlessMicrosoftAuthenticatorMethods from users
-func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Get(options *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethod, error) {
+func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Get(options *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethod), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable), nil
 }
 // Patch update the navigation property passwordlessMicrosoftAuthenticatorMethods in users
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Patch(options *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderPatchOptions)(error) {
@@ -161,7 +169,11 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilde
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

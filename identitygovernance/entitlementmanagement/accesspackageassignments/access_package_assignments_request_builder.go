@@ -2,12 +2,13 @@ package accesspackageassignments
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i4ca4402d2a675564f16e1906c3258cbb280823aba29ac5775bd16baed3dcc0b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/count"
     i5eeef1e921b924c9513db6945b3258fc213c1751887b288911ad4009a8138495 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/filterbycurrentuserwithon"
 )
 
-// AccessPackageAssignmentsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments
+// AccessPackageAssignmentsRequestBuilder provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
 type AccessPackageAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type AccessPackageAssignmentsRequestBuilderGetQueryParameters struct {
 // AccessPackageAssignmentsRequestBuilderPostOptions options for Post
 type AccessPackageAssignmentsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewAccessPackageAssignmentsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewAccessPackageAssignmentsRequestBuilder(rawUrl string, requestAdapter ida
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AccessPackageAssignmentsRequestBuilder) Count()(*i4ca4402d2a675564f16e1906c3258cbb280823aba29ac5775bd16baed3dcc0b9.CountRequestBuilder) {
+    return i4ca4402d2a675564f16e1906c3258cbb280823aba29ac5775bd16baed3dcc0b9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents the grant of an access package to a subject (user or group).
 func (m *AccessPackageAssignmentsRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *AccessPackageAssignmentsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents the grant of an access package to a subject (user or group).
+// CreatePostRequestInformation create new navigation property to accessPackageAssignments for identityGovernance
 func (m *AccessPackageAssignmentsRequestBuilder) CreatePostRequestInformation(options *AccessPackageAssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +118,39 @@ func (m *AccessPackageAssignmentsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\microsoft.graph.filterByCurrentUser(on={on})
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *AccessPackageAssignmentsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i5eeef1e921b924c9513db6945b3258fc213c1751887b288911ad4009a8138495.FilterByCurrentUserWithOnRequestBuilder) {
     return i5eeef1e921b924c9513db6945b3258fc213c1751887b288911ad4009a8138495.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
 // Get represents the grant of an access package to a subject (user or group).
-func (m *AccessPackageAssignmentsRequestBuilder) Get(options *AccessPackageAssignmentsRequestBuilderGetOptions)(*AccessPackageAssignmentsResponse, error) {
+func (m *AccessPackageAssignmentsRequestBuilder) Get(options *AccessPackageAssignmentsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageAssignmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AccessPackageAssignmentsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentCollectionResponseable), nil
 }
-// Post represents the grant of an access package to a subject (user or group).
-func (m *AccessPackageAssignmentsRequestBuilder) Post(options *AccessPackageAssignmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment, error) {
+// Post create new navigation property to accessPackageAssignments for identityGovernance
+func (m *AccessPackageAssignmentsRequestBuilder) Post(options *AccessPackageAssignmentsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessPackageAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentable), nil
 }

@@ -2,11 +2,12 @@ package troubleshootingevents
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i08e80caefa673bdebb63364e4101ef9d4980dc7236f4e275262cc37fd4e721a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/troubleshootingevents/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// TroubleshootingEventsRequestBuilder builds and executes requests for operations under \deviceManagement\troubleshootingEvents
+// TroubleshootingEventsRequestBuilder provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 type TroubleshootingEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type TroubleshootingEventsRequestBuilderGetQueryParameters struct {
 // TroubleshootingEventsRequestBuilderPostOptions options for Post
 type TroubleshootingEventsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEvent;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEventable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewTroubleshootingEventsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewTroubleshootingEventsRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTroubleshootingEventsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TroubleshootingEventsRequestBuilder) Count()(*i08e80caefa673bdebb63364e4101ef9d4980dc7236f4e275262cc37fd4e721a3.CountRequestBuilder) {
+    return i08e80caefa673bdebb63364e4101ef9d4980dc7236f4e275262cc37fd4e721a3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of troubleshooting events for the tenant.
 func (m *TroubleshootingEventsRequestBuilder) CreateGetRequestInformation(options *TroubleshootingEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *TroubleshootingEventsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of troubleshooting events for the tenant.
+// CreatePostRequestInformation create new navigation property to troubleshootingEvents for deviceManagement
 func (m *TroubleshootingEventsRequestBuilder) CreatePostRequestInformation(options *TroubleshootingEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *TroubleshootingEventsRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Get the list of troubleshooting events for the tenant.
-func (m *TroubleshootingEventsRequestBuilder) Get(options *TroubleshootingEventsRequestBuilderGetOptions)(*TroubleshootingEventsResponse, error) {
+func (m *TroubleshootingEventsRequestBuilder) Get(options *TroubleshootingEventsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTroubleshootingEventsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementTroubleshootingEventCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TroubleshootingEventsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEventCollectionResponseable), nil
 }
-// Post the list of troubleshooting events for the tenant.
-func (m *TroubleshootingEventsRequestBuilder) Post(options *TroubleshootingEventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEvent, error) {
+// Post create new navigation property to troubleshootingEvents for deviceManagement
+func (m *TroubleshootingEventsRequestBuilder) Post(options *TroubleshootingEventsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEventable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementTroubleshootingEvent() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEvent), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTroubleshootingEventable), nil
 }

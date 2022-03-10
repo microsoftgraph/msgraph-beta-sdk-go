@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the bulkRestoreCloudPc method.
 type RestoreTimeRange int
 
 const (

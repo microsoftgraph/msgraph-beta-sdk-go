@@ -2,15 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i320806353390e857ada703d281f49f7366fab658242ba8da4611db19d3857775 "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/plans/item/buckets/item/tasks/item/details"
     i8b9cf9f931b9af7f8800a299b504bc99fe3595b2271637b3a65f089e6306d42c "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/plans/item/buckets/item/tasks/item/buckettaskboardformat"
     i8cb42ef51b9f779124f72754b9d88626d6fb89e8c5c28f83350292c9ca83ccbe "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/plans/item/buckets/item/tasks/item/progresstaskboardformat"
     ia18bb506a6f334b77b17078b99f172bbb208738366487d5d6cfaec6186657698 "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/plans/item/buckets/item/tasks/item/assignedtotaskboardformat"
 )
 
-// PlannerTaskItemRequestBuilder builds and executes requests for operations under \planner\plans\{plannerPlan-id}\buckets\{plannerBucket-id}\tasks\{plannerTask-id}
+// PlannerTaskItemRequestBuilder provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 type PlannerTaskItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type PlannerTaskItemRequestBuilderGetQueryParameters struct {
 // PlannerTaskItemRequestBuilderPatchOptions options for Patch
 type PlannerTaskItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTask;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTaskable;
     // Request headers
     H map[string]string;
     // Request options
@@ -72,7 +72,7 @@ func NewPlannerTaskItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -82,7 +82,7 @@ func NewPlannerTaskItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable. The collection of tasks in the bucket.
+// CreateDeleteRequestInformation delete navigation property tasks for planner
 func (m *PlannerTaskItemRequestBuilder) CreateDeleteRequestInformation(options *PlannerTaskItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *PlannerTaskItemRequestBuilder) CreateGetRequestInformation(options *Pla
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable. The collection of tasks in the bucket.
+// CreatePatchRequestInformation update the navigation property tasks in planner
 func (m *PlannerTaskItemRequestBuilder) CreatePatchRequestInformation(options *PlannerTaskItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,13 +137,17 @@ func (m *PlannerTaskItemRequestBuilder) CreatePatchRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable. The collection of tasks in the bucket.
+// Delete delete navigation property tasks for planner
 func (m *PlannerTaskItemRequestBuilder) Delete(options *PlannerTaskItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -153,24 +157,32 @@ func (m *PlannerTaskItemRequestBuilder) Details()(*i320806353390e857ada703d281f4
     return i320806353390e857ada703d281f49f7366fab658242ba8da4611db19d3857775.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get read-only. Nullable. The collection of tasks in the bucket.
-func (m *PlannerTaskItemRequestBuilder) Get(options *PlannerTaskItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTask, error) {
+func (m *PlannerTaskItemRequestBuilder) Get(options *PlannerTaskItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTaskable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewPlannerTask() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePlannerTaskFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTask), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerTaskable), nil
 }
-// Patch read-only. Nullable. The collection of tasks in the bucket.
+// Patch update the navigation property tasks in planner
 func (m *PlannerTaskItemRequestBuilder) Patch(options *PlannerTaskItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

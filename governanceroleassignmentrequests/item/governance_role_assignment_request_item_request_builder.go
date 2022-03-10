@@ -2,16 +2,16 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i233cfcd85fda77bc7b8ed84ae3eab86225b54c43cf6b9995aec4e929ecae0d5f "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/roledefinition"
     i3c09d8808940e57cffe2a4b43ec6c03afed85c4d1b8c2a6b6f69170f1707c06e "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/cancel"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i781dea20c6497af5c00396ab4ab2df03f2c4e8031835bbd6dffd7f1eb7bc6bbd "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/updaterequest"
     i7a382583186c7a5d8b72c51d185f4589248347a161c9a5a7a7d8d885ab571893 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/resource"
     ia72138d764aac9bd3a352e3057f1578dd8230b4045684066c5c0d36a2be3badb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests/item/subject"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// GovernanceRoleAssignmentRequestItemRequestBuilder builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}
+// GovernanceRoleAssignmentRequestItemRequestBuilder provides operations to manage the collection of governanceRoleAssignmentRequest entities.
 type GovernanceRoleAssignmentRequestItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +50,7 @@ type GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters struct 
 // GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions options for Patch
 type GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable;
     // Request headers
     H map[string]string;
     // Request options
@@ -70,7 +70,7 @@ func NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -141,23 +141,31 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Delete(options *Gove
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get entity from governanceRoleAssignmentRequests by key
-func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Get(options *GovernanceRoleAssignmentRequestItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest, error) {
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Get(options *GovernanceRoleAssignmentRequestItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceRoleAssignmentRequest() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable), nil
 }
 // Patch update entity in governanceRoleAssignmentRequests
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Patch(options *GovernanceRoleAssignmentRequestItemRequestBuilderPatchOptions)(error) {
@@ -165,7 +173,11 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Patch(options *Gover
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

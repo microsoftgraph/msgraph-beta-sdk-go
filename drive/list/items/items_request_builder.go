@@ -2,13 +2,14 @@ package items
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4d0e8c02712821b066f1c75440d98068be310f77be2aa9acba5d93dee2a8a39c "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/delta"
     i5271f54a6f3b7719175a4923c62f7e585e8833fe0eeb68b47a0e9e0fdd833e09 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/deltawithtoken"
+    id6623d7886320813f3281c88d236f0b8ec675409db6cef6efdec14cc23e3877b "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/count"
 )
 
-// ItemsRequestBuilder builds and executes requests for operations under \drive\list\items
+// ItemsRequestBuilder provides operations to manage the items property of the microsoft.graph.list entity.
 type ItemsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -50,7 +51,7 @@ type ItemsRequestBuilderGetQueryParameters struct {
 // ItemsRequestBuilderPostOptions options for Post
 type ItemsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable;
     // Request headers
     H map[string]string;
     // Request options
@@ -67,7 +68,7 @@ func NewItemsRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,6 +77,9 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ItemsRequestBuilder) Count()(*id6623d7886320813f3281c88d236f0b8ec675409db6cef6efdec14cc23e3877b.CountRequestBuilder) {
+    return id6623d7886320813f3281c88d236f0b8ec675409db6cef6efdec14cc23e3877b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation all items contained in the list.
 func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -97,7 +101,7 @@ func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation all items contained in the list.
+// CreatePostRequestInformation create new navigation property to items for drive
 func (m *ItemsRequestBuilder) CreatePostRequestInformation(options *ItemsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,35 +119,43 @@ func (m *ItemsRequestBuilder) CreatePostRequestInformation(options *ItemsRequest
     }
     return requestInfo, nil
 }
-// Delta builds and executes requests for operations under \drive\list\items\microsoft.graph.delta()
+// Delta provides operations to call the delta method.
 func (m *ItemsRequestBuilder) Delta()(*i4d0e8c02712821b066f1c75440d98068be310f77be2aa9acba5d93dee2a8a39c.DeltaRequestBuilder) {
     return i4d0e8c02712821b066f1c75440d98068be310f77be2aa9acba5d93dee2a8a39c.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeltaWithToken builds and executes requests for operations under \drive\list\items\microsoft.graph.delta(token='{token}')
+// DeltaWithToken provides operations to call the delta method.
 func (m *ItemsRequestBuilder) DeltaWithToken(token *string)(*i5271f54a6f3b7719175a4923c62f7e585e8833fe0eeb68b47a0e9e0fdd833e09.DeltaWithTokenRequestBuilder) {
     return i5271f54a6f3b7719175a4923c62f7e585e8833fe0eeb68b47a0e9e0fdd833e09.NewDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
 }
 // Get all items contained in the list.
-func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(*ItemsResponse, error) {
+func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateListItemCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ItemsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemCollectionResponseable), nil
 }
-// Post all items contained in the list.
-func (m *ItemsRequestBuilder) Post(options *ItemsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem, error) {
+// Post create new navigation property to items for drive
+func (m *ItemsRequestBuilder) Post(options *ItemsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewListItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateListItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItemable), nil
 }

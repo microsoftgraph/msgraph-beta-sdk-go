@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetComplianceSettingsReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getComplianceSettingsReport
+// GetComplianceSettingsReportRequestBuilder provides operations to call the getComplianceSettingsReport method.
 type GetComplianceSettingsReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetComplianceSettingsReportRequestBuilder struct {
 // GetComplianceSettingsReportRequestBuilderPostOptions options for Post
 type GetComplianceSettingsReportRequestBuilderPostOptions struct {
     // 
-    Body *GetComplianceSettingsReportRequestBody;
+    Body GetComplianceSettingsReportRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetComplianceSettingsReportRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetComplianceSettingsReportRequestBuilder) CreatePostRequestInformation
     return requestInfo, nil
 }
 // Post invoke action getComplianceSettingsReport
-func (m *GetComplianceSettingsReportRequestBuilder) Post(options *GetComplianceSettingsReportRequestBuilderPostOptions)([]byte, error) {
+func (m *GetComplianceSettingsReportRequestBuilder) Post(options *GetComplianceSettingsReportRequestBuilderPostOptions)(GetComplianceSettingsReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetComplianceSettingsReportResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetComplianceSettingsReportResponseable), nil
 }

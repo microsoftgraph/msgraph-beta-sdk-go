@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyDefinitionValue 
+// GroupPolicyDefinitionValue provides operations to manage the deviceManagement singleton.
 type GroupPolicyDefinitionValue struct {
     Entity
     // Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
@@ -13,13 +13,13 @@ type GroupPolicyDefinitionValue struct {
     // The date and time the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The associated group policy definition with the value.
-    definition *GroupPolicyDefinition;
+    definition GroupPolicyDefinitionable;
     // Enables or disables the associated group policy definition.
     enabled *bool;
     // The date and time the entity was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The associated group policy presentation values with the definition value.
-    presentationValues []GroupPolicyPresentationValue;
+    presentationValues []GroupPolicyPresentationValueable;
 }
 // NewGroupPolicyDefinitionValue instantiates a new groupPolicyDefinitionValue and sets the default values.
 func NewGroupPolicyDefinitionValue()(*GroupPolicyDefinitionValue) {
@@ -27,6 +27,10 @@ func NewGroupPolicyDefinitionValue()(*GroupPolicyDefinitionValue) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateGroupPolicyDefinitionValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateGroupPolicyDefinitionValueFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGroupPolicyDefinitionValue(), nil
 }
 // GetConfigurationType gets the configurationType property value. Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
 func (m *GroupPolicyDefinitionValue) GetConfigurationType()(*GroupPolicyConfigurationType) {
@@ -45,7 +49,7 @@ func (m *GroupPolicyDefinitionValue) GetCreatedDateTime()(*i336074805fc853987abe
     }
 }
 // GetDefinition gets the definition property value. The associated group policy definition with the value.
-func (m *GroupPolicyDefinitionValue) GetDefinition()(*GroupPolicyDefinition) {
+func (m *GroupPolicyDefinitionValue) GetDefinition()(GroupPolicyDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -58,22 +62,6 @@ func (m *GroupPolicyDefinitionValue) GetEnabled()(*bool) {
         return nil
     } else {
         return m.enabled
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
-func (m *GroupPolicyDefinitionValue) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPresentationValues gets the presentationValues property value. The associated group policy presentation values with the definition value.
-func (m *GroupPolicyDefinitionValue) GetPresentationValues()([]GroupPolicyPresentationValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.presentationValues
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -100,12 +88,12 @@ func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["definition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyDefinition() })
+        val, err := n.GetObjectValue(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefinition(val.(*GroupPolicyDefinition))
+            m.SetDefinition(val.(GroupPolicyDefinitionable))
         }
         return nil
     }
@@ -130,20 +118,36 @@ func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["presentationValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyPresentationValue() })
+        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyPresentationValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GroupPolicyPresentationValue, len(val))
+            res := make([]GroupPolicyPresentationValueable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GroupPolicyPresentationValue))
+                res[i] = v.(GroupPolicyPresentationValueable)
             }
             m.SetPresentationValues(res)
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+func (m *GroupPolicyDefinitionValue) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPresentationValues gets the presentationValues property value. The associated group policy presentation values with the definition value.
+func (m *GroupPolicyDefinitionValue) GetPresentationValues()([]GroupPolicyPresentationValueable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.presentationValues
+    }
 }
 func (m *GroupPolicyDefinitionValue) IsNil()(bool) {
     return m == nil
@@ -188,8 +192,7 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i04eb5309aeaafadd28374d79c
     if m.GetPresentationValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPresentationValues()))
         for i, v := range m.GetPresentationValues() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("presentationValues", cast)
         if err != nil {
@@ -211,7 +214,7 @@ func (m *GroupPolicyDefinitionValue) SetCreatedDateTime(value *i336074805fc85398
     }
 }
 // SetDefinition sets the definition property value. The associated group policy definition with the value.
-func (m *GroupPolicyDefinitionValue) SetDefinition(value *GroupPolicyDefinition)() {
+func (m *GroupPolicyDefinitionValue) SetDefinition(value GroupPolicyDefinitionable)() {
     if m != nil {
         m.definition = value
     }
@@ -229,7 +232,7 @@ func (m *GroupPolicyDefinitionValue) SetLastModifiedDateTime(value *i336074805fc
     }
 }
 // SetPresentationValues sets the presentationValues property value. The associated group policy presentation values with the definition value.
-func (m *GroupPolicyDefinitionValue) SetPresentationValues(value []GroupPolicyPresentationValue)() {
+func (m *GroupPolicyDefinitionValue) SetPresentationValues(value []GroupPolicyPresentationValueable)() {
     if m != nil {
         m.presentationValues = value
     }

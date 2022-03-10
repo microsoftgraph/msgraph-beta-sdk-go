@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementExchangeOnPremisesPolicy 
+// DeviceManagementExchangeOnPremisesPolicy provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
     // The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
-    accessRules []DeviceManagementExchangeAccessRule;
+    accessRules []DeviceManagementExchangeAccessRuleable;
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-    conditionalAccessSettings *OnPremisesConditionalAccessSettings;
+    conditionalAccessSettings OnPremisesConditionalAccessSettingsable;
     // Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
     defaultAccessLevel *DeviceManagementExchangeAccessLevel;
     // The list of device classes known to Exchange
-    knownDeviceClasses []DeviceManagementExchangeDeviceClass;
+    knownDeviceClasses []DeviceManagementExchangeDeviceClassable;
     // Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
     notificationContent []byte;
 }
@@ -25,8 +25,12 @@ func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPr
     }
     return m
 }
+// CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementExchangeOnPremisesPolicy(), nil
+}
 // GetAccessRules gets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
-func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceManagementExchangeAccessRule) {
+func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceManagementExchangeAccessRuleable) {
     if m == nil {
         return nil
     } else {
@@ -34,7 +38,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceMana
     }
 }
 // GetConditionalAccessSettings gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
+func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings()(OnPremisesConditionalAccessSettingsable) {
     if m == nil {
         return nil
     } else {
@@ -49,46 +53,30 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*Devi
         return m.defaultAccessLevel
     }
 }
-// GetKnownDeviceClasses gets the knownDeviceClasses property value. The list of device classes known to Exchange
-func (m *DeviceManagementExchangeOnPremisesPolicy) GetKnownDeviceClasses()([]DeviceManagementExchangeDeviceClass) {
-    if m == nil {
-        return nil
-    } else {
-        return m.knownDeviceClasses
-    }
-}
-// GetNotificationContent gets the notificationContent property value. Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
-func (m *DeviceManagementExchangeOnPremisesPolicy) GetNotificationContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationContent
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementExchangeAccessRule() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementExchangeAccessRule, len(val))
+            res := make([]DeviceManagementExchangeAccessRuleable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementExchangeAccessRule))
+                res[i] = v.(DeviceManagementExchangeAccessRuleable)
             }
             m.SetAccessRules(res)
         }
         return nil
     }
     res["conditionalAccessSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOnPremisesConditionalAccessSettings() })
+        val, err := n.GetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessSettings(val.(*OnPremisesConditionalAccessSettings))
+            m.SetConditionalAccessSettings(val.(OnPremisesConditionalAccessSettingsable))
         }
         return nil
     }
@@ -103,14 +91,14 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         return nil
     }
     res["knownDeviceClasses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementExchangeDeviceClass() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementExchangeDeviceClass, len(val))
+            res := make([]DeviceManagementExchangeDeviceClassable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementExchangeDeviceClass))
+                res[i] = v.(DeviceManagementExchangeDeviceClassable)
             }
             m.SetKnownDeviceClasses(res)
         }
@@ -128,6 +116,22 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
     }
     return res
 }
+// GetKnownDeviceClasses gets the knownDeviceClasses property value. The list of device classes known to Exchange
+func (m *DeviceManagementExchangeOnPremisesPolicy) GetKnownDeviceClasses()([]DeviceManagementExchangeDeviceClassable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.knownDeviceClasses
+    }
+}
+// GetNotificationContent gets the notificationContent property value. Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
+func (m *DeviceManagementExchangeOnPremisesPolicy) GetNotificationContent()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationContent
+    }
+}
 func (m *DeviceManagementExchangeOnPremisesPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -140,8 +144,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
     if m.GetAccessRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessRules()))
         for i, v := range m.GetAccessRules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("accessRules", cast)
         if err != nil {
@@ -164,8 +167,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
     if m.GetKnownDeviceClasses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetKnownDeviceClasses()))
         for i, v := range m.GetKnownDeviceClasses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("knownDeviceClasses", cast)
         if err != nil {
@@ -181,13 +183,13 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
     return nil
 }
 // SetAccessRules sets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
-func (m *DeviceManagementExchangeOnPremisesPolicy) SetAccessRules(value []DeviceManagementExchangeAccessRule)() {
+func (m *DeviceManagementExchangeOnPremisesPolicy) SetAccessRules(value []DeviceManagementExchangeAccessRuleable)() {
     if m != nil {
         m.accessRules = value
     }
 }
 // SetConditionalAccessSettings sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-func (m *DeviceManagementExchangeOnPremisesPolicy) SetConditionalAccessSettings(value *OnPremisesConditionalAccessSettings)() {
+func (m *DeviceManagementExchangeOnPremisesPolicy) SetConditionalAccessSettings(value OnPremisesConditionalAccessSettingsable)() {
     if m != nil {
         m.conditionalAccessSettings = value
     }
@@ -199,7 +201,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) SetDefaultAccessLevel(value *
     }
 }
 // SetKnownDeviceClasses sets the knownDeviceClasses property value. The list of device classes known to Exchange
-func (m *DeviceManagementExchangeOnPremisesPolicy) SetKnownDeviceClasses(value []DeviceManagementExchangeDeviceClass)() {
+func (m *DeviceManagementExchangeOnPremisesPolicy) SetKnownDeviceClasses(value []DeviceManagementExchangeDeviceClassable)() {
     if m != nil {
         m.knownDeviceClasses = value
     }

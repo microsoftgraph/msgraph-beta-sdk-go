@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// DecryptBufferRequestBuilder builds and executes requests for operations under \informationProtection\microsoft.graph.decryptBuffer
+// DecryptBufferRequestBuilder provides operations to call the decryptBuffer method.
 type DecryptBufferRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DecryptBufferRequestBuilder struct {
 // DecryptBufferRequestBuilderPostOptions options for Post
 type DecryptBufferRequestBuilderPostOptions struct {
     // 
-    Body *DecryptBufferRequestBody;
+    Body DecryptBufferRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type DecryptBufferResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type bufferDecryptionResult
-    bufferDecryptionResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResult;
+    bufferDecryptionResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResultable;
 }
 // NewDecryptBufferResponse instantiates a new decryptBufferResponse and sets the default values.
 func NewDecryptBufferResponse()(*DecryptBufferResponse) {
@@ -39,6 +39,9 @@ func NewDecryptBufferResponse()(*DecryptBufferResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateDecryptBufferResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDecryptBufferResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DecryptBufferResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *DecryptBufferResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBufferDecryptionResult gets the bufferDecryptionResult property value. Union type representation for type bufferDecryptionResult
-func (m *DecryptBufferResponse) GetBufferDecryptionResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResult) {
+func (m *DecryptBufferResponse) GetBufferDecryptionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *DecryptBufferResponse) GetBufferDecryptionResult()(*i535684e11b5500196e
 func (m *DecryptBufferResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bufferDecryptionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBufferDecryptionResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBufferDecryptionResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBufferDecryptionResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResult))
+            m.SetBufferDecryptionResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResultable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *DecryptBufferResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetBufferDecryptionResult sets the bufferDecryptionResult property value. Union type representation for type bufferDecryptionResult
-func (m *DecryptBufferResponse) SetBufferDecryptionResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResult)() {
+func (m *DecryptBufferResponse) SetBufferDecryptionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResultable)() {
     if m != nil {
         m.bufferDecryptionResult = value
     }
+}
+// DecryptBufferResponseable 
+type DecryptBufferResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetBufferDecryptionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResultable)
+    SetBufferDecryptionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferDecryptionResultable)()
 }
 // NewDecryptBufferRequestBuilderInternal instantiates a new DecryptBufferRequestBuilder and sets the default values.
 func NewDecryptBufferRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DecryptBufferRequestBuilder) {
@@ -111,7 +121,7 @@ func NewDecryptBufferRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *DecryptBufferRequestBuilder) CreatePostRequestInformation(options *Decr
     return requestInfo, nil
 }
 // Post invoke action decryptBuffer
-func (m *DecryptBufferRequestBuilder) Post(options *DecryptBufferRequestBuilderPostOptions)(*DecryptBufferResponse, error) {
+func (m *DecryptBufferRequestBuilder) Post(options *DecryptBufferRequestBuilderPostOptions)(DecryptBufferResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDecryptBufferResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateDecryptBufferResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*DecryptBufferResponse), nil
+    return res.(DecryptBufferResponseable), nil
 }

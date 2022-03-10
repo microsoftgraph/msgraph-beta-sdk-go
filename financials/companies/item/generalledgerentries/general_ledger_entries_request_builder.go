@@ -2,11 +2,12 @@ package generalledgerentries
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    ief9ddd2fc7efc4229153d95747c96ebc6c5cfd3be461cb1403683c05e1d7634a "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/generalledgerentries/count"
 )
 
-// GeneralLedgerEntriesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries
+// GeneralLedgerEntriesRequestBuilder provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
 type GeneralLedgerEntriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type GeneralLedgerEntriesRequestBuilderGetQueryParameters struct {
 // GeneralLedgerEntriesRequestBuilderPostOptions options for Post
 type GeneralLedgerEntriesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntryable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewGeneralLedgerEntriesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewGeneralLedgerEntriesRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGeneralLedgerEntriesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *GeneralLedgerEntriesRequestBuilder) Count()(*ief9ddd2fc7efc4229153d95747c96ebc6c5cfd3be461cb1403683c05e1d7634a.CountRequestBuilder) {
+    return ief9ddd2fc7efc4229153d95747c96ebc6c5cfd3be461cb1403683c05e1d7634a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get generalLedgerEntries from financials
 func (m *GeneralLedgerEntriesRequestBuilder) CreateGetRequestInformation(options *GeneralLedgerEntriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *GeneralLedgerEntriesRequestBuilder) CreatePostRequestInformation(option
     return requestInfo, nil
 }
 // Get get generalLedgerEntries from financials
-func (m *GeneralLedgerEntriesRequestBuilder) Get(options *GeneralLedgerEntriesRequestBuilderGetOptions)(*GeneralLedgerEntriesResponse, error) {
+func (m *GeneralLedgerEntriesRequestBuilder) Get(options *GeneralLedgerEntriesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGeneralLedgerEntriesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGeneralLedgerEntryCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*GeneralLedgerEntriesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntryCollectionResponseable), nil
 }
 // Post create new navigation property to generalLedgerEntries for financials
-func (m *GeneralLedgerEntriesRequestBuilder) Post(options *GeneralLedgerEntriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry, error) {
+func (m *GeneralLedgerEntriesRequestBuilder) Post(options *GeneralLedgerEntriesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntryable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGeneralLedgerEntry() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGeneralLedgerEntryFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntryable), nil
 }

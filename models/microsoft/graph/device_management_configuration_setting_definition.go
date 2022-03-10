@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition 
+// DeviceManagementConfigurationSettingDefinition provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
     // Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
     accessTypes *DeviceManagementConfigurationSettingAccessTypes;
     // Details which device setting is applicable on
-    applicability *DeviceManagementConfigurationSettingApplicability;
+    applicability DeviceManagementConfigurationSettingApplicabilityable;
     // Base CSP Path
     baseUri *string;
     // Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
@@ -28,11 +28,11 @@ type DeviceManagementConfigurationSettingDefinition struct {
     // Name of the item
     name *string;
     // Indicates whether the setting is required or not
-    occurrence *DeviceManagementConfigurationSettingOccurrence;
+    occurrence DeviceManagementConfigurationSettingOccurrenceable;
     // Offset CSP Path from Base
     offsetUri *string;
     // List of referred setting information.
-    referredSettingInformationList []DeviceManagementConfigurationReferredSettingInformation;
+    referredSettingInformationList []DeviceManagementConfigurationReferredSettingInformationable;
     // Root setting definition if the setting is a child setting.
     rootDefinitionId *string;
     // Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
@@ -51,6 +51,10 @@ func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfig
     }
     return m
 }
+// CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementConfigurationSettingDefinition(), nil
+}
 // GetAccessTypes gets the accessTypes property value. Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
 func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*DeviceManagementConfigurationSettingAccessTypes) {
     if m == nil {
@@ -60,7 +64,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*Devic
     }
 }
 // GetApplicability gets the applicability property value. Details which device setting is applicable on
-func (m *DeviceManagementConfigurationSettingDefinition) GetApplicability()(*DeviceManagementConfigurationSettingApplicability) {
+func (m *DeviceManagementConfigurationSettingDefinition) GetApplicability()(DeviceManagementConfigurationSettingApplicabilityable) {
     if m == nil {
         return nil
     } else {
@@ -99,102 +103,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetDisplayName()(*strin
         return m.displayName
     }
 }
-// GetHelpText gets the helpText property value. Help text of the item
-func (m *DeviceManagementConfigurationSettingDefinition) GetHelpText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.helpText
-    }
-}
-// GetInfoUrls gets the infoUrls property value. List of links more info for the setting can be found at
-func (m *DeviceManagementConfigurationSettingDefinition) GetInfoUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.infoUrls
-    }
-}
-// GetKeywords gets the keywords property value. Tokens which to search settings on
-func (m *DeviceManagementConfigurationSettingDefinition) GetKeywords()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keywords
-    }
-}
-// GetName gets the name property value. Name of the item
-func (m *DeviceManagementConfigurationSettingDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOccurrence gets the occurrence property value. Indicates whether the setting is required or not
-func (m *DeviceManagementConfigurationSettingDefinition) GetOccurrence()(*DeviceManagementConfigurationSettingOccurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.occurrence
-    }
-}
-// GetOffsetUri gets the offsetUri property value. Offset CSP Path from Base
-func (m *DeviceManagementConfigurationSettingDefinition) GetOffsetUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offsetUri
-    }
-}
-// GetReferredSettingInformationList gets the referredSettingInformationList property value. List of referred setting information.
-func (m *DeviceManagementConfigurationSettingDefinition) GetReferredSettingInformationList()([]DeviceManagementConfigurationReferredSettingInformation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referredSettingInformationList
-    }
-}
-// GetRootDefinitionId gets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
-func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootDefinitionId
-    }
-}
-// GetSettingUsage gets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
-func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingUsage
-    }
-}
-// GetUxBehavior gets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
-func (m *DeviceManagementConfigurationSettingDefinition) GetUxBehavior()(*DeviceManagementConfigurationControlType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uxBehavior
-    }
-}
-// GetVersion gets the version property value. Item Version
-func (m *DeviceManagementConfigurationSettingDefinition) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
-}
-// GetVisibility gets the visibility property value. Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
-func (m *DeviceManagementConfigurationSettingDefinition) GetVisibility()(*DeviceManagementConfigurationSettingVisibility) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visibility
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -209,12 +117,12 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         return nil
     }
     res["applicability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConfigurationSettingApplicability() })
+        val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicability(val.(*DeviceManagementConfigurationSettingApplicability))
+            m.SetApplicability(val.(DeviceManagementConfigurationSettingApplicabilityable))
         }
         return nil
     }
@@ -307,12 +215,12 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         return nil
     }
     res["occurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConfigurationSettingOccurrence() })
+        val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOccurrence(val.(*DeviceManagementConfigurationSettingOccurrence))
+            m.SetOccurrence(val.(DeviceManagementConfigurationSettingOccurrenceable))
         }
         return nil
     }
@@ -327,14 +235,14 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         return nil
     }
     res["referredSettingInformationList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementConfigurationReferredSettingInformation() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationReferredSettingInformationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementConfigurationReferredSettingInformation, len(val))
+            res := make([]DeviceManagementConfigurationReferredSettingInformationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementConfigurationReferredSettingInformation))
+                res[i] = v.(DeviceManagementConfigurationReferredSettingInformationable)
             }
             m.SetReferredSettingInformationList(res)
         }
@@ -391,6 +299,102 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetHelpText gets the helpText property value. Help text of the item
+func (m *DeviceManagementConfigurationSettingDefinition) GetHelpText()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.helpText
+    }
+}
+// GetInfoUrls gets the infoUrls property value. List of links more info for the setting can be found at
+func (m *DeviceManagementConfigurationSettingDefinition) GetInfoUrls()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.infoUrls
+    }
+}
+// GetKeywords gets the keywords property value. Tokens which to search settings on
+func (m *DeviceManagementConfigurationSettingDefinition) GetKeywords()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.keywords
+    }
+}
+// GetName gets the name property value. Name of the item
+func (m *DeviceManagementConfigurationSettingDefinition) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOccurrence gets the occurrence property value. Indicates whether the setting is required or not
+func (m *DeviceManagementConfigurationSettingDefinition) GetOccurrence()(DeviceManagementConfigurationSettingOccurrenceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.occurrence
+    }
+}
+// GetOffsetUri gets the offsetUri property value. Offset CSP Path from Base
+func (m *DeviceManagementConfigurationSettingDefinition) GetOffsetUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.offsetUri
+    }
+}
+// GetReferredSettingInformationList gets the referredSettingInformationList property value. List of referred setting information.
+func (m *DeviceManagementConfigurationSettingDefinition) GetReferredSettingInformationList()([]DeviceManagementConfigurationReferredSettingInformationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.referredSettingInformationList
+    }
+}
+// GetRootDefinitionId gets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
+func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rootDefinitionId
+    }
+}
+// GetSettingUsage gets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
+func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingUsage
+    }
+}
+// GetUxBehavior gets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
+func (m *DeviceManagementConfigurationSettingDefinition) GetUxBehavior()(*DeviceManagementConfigurationControlType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uxBehavior
+    }
+}
+// GetVersion gets the version property value. Item Version
+func (m *DeviceManagementConfigurationSettingDefinition) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
+// GetVisibility gets the visibility property value. Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
+func (m *DeviceManagementConfigurationSettingDefinition) GetVisibility()(*DeviceManagementConfigurationSettingVisibility) {
+    if m == nil {
+        return nil
+    } else {
+        return m.visibility
+    }
 }
 func (m *DeviceManagementConfigurationSettingDefinition) IsNil()(bool) {
     return m == nil
@@ -477,8 +481,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i04eb5
     if m.GetReferredSettingInformationList() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReferredSettingInformationList()))
         for i, v := range m.GetReferredSettingInformationList() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("referredSettingInformationList", cast)
         if err != nil {
@@ -527,7 +530,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetAccessTypes(value *D
     }
 }
 // SetApplicability sets the applicability property value. Details which device setting is applicable on
-func (m *DeviceManagementConfigurationSettingDefinition) SetApplicability(value *DeviceManagementConfigurationSettingApplicability)() {
+func (m *DeviceManagementConfigurationSettingDefinition) SetApplicability(value DeviceManagementConfigurationSettingApplicabilityable)() {
     if m != nil {
         m.applicability = value
     }
@@ -581,7 +584,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetName(value *string)(
     }
 }
 // SetOccurrence sets the occurrence property value. Indicates whether the setting is required or not
-func (m *DeviceManagementConfigurationSettingDefinition) SetOccurrence(value *DeviceManagementConfigurationSettingOccurrence)() {
+func (m *DeviceManagementConfigurationSettingDefinition) SetOccurrence(value DeviceManagementConfigurationSettingOccurrenceable)() {
     if m != nil {
         m.occurrence = value
     }
@@ -593,7 +596,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetOffsetUri(value *str
     }
 }
 // SetReferredSettingInformationList sets the referredSettingInformationList property value. List of referred setting information.
-func (m *DeviceManagementConfigurationSettingDefinition) SetReferredSettingInformationList(value []DeviceManagementConfigurationReferredSettingInformation)() {
+func (m *DeviceManagementConfigurationSettingDefinition) SetReferredSettingInformationList(value []DeviceManagementConfigurationReferredSettingInformationable)() {
     if m != nil {
         m.referredSettingInformationList = value
     }

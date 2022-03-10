@@ -2,11 +2,12 @@ package calendars
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i1c185f64ecd42528c067e9badc7a6cf331e6c5c8d5acf31765c50b5768044e1b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendargroups/item/calendars/count"
 )
 
-// CalendarsRequestBuilder builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars
+// CalendarsRequestBuilder provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 type CalendarsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +45,7 @@ type CalendarsRequestBuilderGetQueryParameters struct {
 // CalendarsRequestBuilderPostOptions options for Post
 type CalendarsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendarable;
     // Request headers
     H map[string]string;
     // Request options
@@ -61,7 +62,7 @@ func NewCalendarsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -70,6 +71,9 @@ func NewCalendarsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *CalendarsRequestBuilder) Count()(*i1c185f64ecd42528c067e9badc7a6cf331e6c5c8d5acf31765c50b5768044e1b.CountRequestBuilder) {
+    return i1c185f64ecd42528c067e9badc7a6cf331e6c5c8d5acf31765c50b5768044e1b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarsRequestBuilder) CreateGetRequestInformation(options *CalendarsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -91,7 +95,7 @@ func (m *CalendarsRequestBuilder) CreateGetRequestInformation(options *Calendars
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.
+// CreatePostRequestInformation create new navigation property to calendars for me
 func (m *CalendarsRequestBuilder) CreatePostRequestInformation(options *CalendarsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,26 +114,34 @@ func (m *CalendarsRequestBuilder) CreatePostRequestInformation(options *Calendar
     return requestInfo, nil
 }
 // Get the calendars in the calendar group. Navigation property. Read-only. Nullable.
-func (m *CalendarsRequestBuilder) Get(options *CalendarsRequestBuilderGetOptions)(*CalendarsResponse, error) {
+func (m *CalendarsRequestBuilder) Get(options *CalendarsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendarsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCalendarCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*CalendarsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarCollectionResponseable), nil
 }
-// Post the calendars in the calendar group. Navigation property. Read-only. Nullable.
-func (m *CalendarsRequestBuilder) Post(options *CalendarsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar, error) {
+// Post create new navigation property to calendars for me
+func (m *CalendarsRequestBuilder) Post(options *CalendarsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendarable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCalendar() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCalendarFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendarable), nil
 }

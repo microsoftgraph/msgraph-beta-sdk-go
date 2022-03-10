@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContinuousAccessEvaluationPolicy 
+// ContinuousAccessEvaluationPolicy provides operations to manage the identityContainer singleton.
 type ContinuousAccessEvaluationPolicy struct {
     Entity
     // Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
@@ -27,6 +27,10 @@ func NewContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicy) {
     }
     return m
 }
+// CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewContinuousAccessEvaluationPolicy(), nil
+}
 // GetDescription gets the description property value. Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) GetDescription()(*string) {
     if m == nil {
@@ -41,38 +45,6 @@ func (m *ContinuousAccessEvaluationPolicy) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetGroups gets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
-func (m *ContinuousAccessEvaluationPolicy) GetGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groups
-    }
-}
-// GetIsEnabled gets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
-func (m *ContinuousAccessEvaluationPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
-}
-// GetMigrate gets the migrate property value. true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
-func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.migrate
-    }
-}
-// GetUsers gets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
-func (m *ContinuousAccessEvaluationPolicy) GetUsers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.users
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -147,6 +119,38 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetGroups gets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
+func (m *ContinuousAccessEvaluationPolicy) GetGroups()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groups
+    }
+}
+// GetIsEnabled gets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
+func (m *ContinuousAccessEvaluationPolicy) GetIsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEnabled
+    }
+}
+// GetMigrate gets the migrate property value. true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
+func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.migrate
+    }
+}
+// GetUsers gets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
+func (m *ContinuousAccessEvaluationPolicy) GetUsers()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.users
+    }
 }
 func (m *ContinuousAccessEvaluationPolicy) IsNil()(bool) {
     return m == nil

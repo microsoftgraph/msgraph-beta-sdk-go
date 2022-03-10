@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// SetUserPreferredPresenceRequestBuilder builds and executes requests for operations under \communications\presences\{presence-id}\microsoft.graph.setUserPreferredPresence
+// SetUserPreferredPresenceRequestBuilder provides operations to call the setUserPreferredPresence method.
 type SetUserPreferredPresenceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SetUserPreferredPresenceRequestBuilder struct {
 // SetUserPreferredPresenceRequestBuilderPostOptions options for Post
 type SetUserPreferredPresenceRequestBuilderPostOptions struct {
     // 
-    Body *SetUserPreferredPresenceRequestBody;
+    Body SetUserPreferredPresenceRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewSetUserPreferredPresenceRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *SetUserPreferredPresenceRequestBuilder) Post(options *SetUserPreferredP
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetConfigurationPoliciesReportForDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationPoliciesReportForDevice
+// GetConfigurationPoliciesReportForDeviceRequestBuilder provides operations to call the getConfigurationPoliciesReportForDevice method.
 type GetConfigurationPoliciesReportForDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GetConfigurationPoliciesReportForDeviceRequestBuilder struct {
 // GetConfigurationPoliciesReportForDeviceRequestBuilderPostOptions options for Post
 type GetConfigurationPoliciesReportForDeviceRequestBuilderPostOptions struct {
     // 
-    Body *GetConfigurationPoliciesReportForDeviceRequestBody;
+    Body GetConfigurationPoliciesReportForDeviceRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewGetConfigurationPoliciesReportForDeviceRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,14 +62,14 @@ func (m *GetConfigurationPoliciesReportForDeviceRequestBuilder) CreatePostReques
     return requestInfo, nil
 }
 // Post invoke action getConfigurationPoliciesReportForDevice
-func (m *GetConfigurationPoliciesReportForDeviceRequestBuilder) Post(options *GetConfigurationPoliciesReportForDeviceRequestBuilderPostOptions)([]byte, error) {
+func (m *GetConfigurationPoliciesReportForDeviceRequestBuilder) Post(options *GetConfigurationPoliciesReportForDeviceRequestBuilderPostOptions)(GetConfigurationPoliciesReportForDeviceResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigurationPoliciesReportForDeviceResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetConfigurationPoliciesReportForDeviceResponseable), nil
 }

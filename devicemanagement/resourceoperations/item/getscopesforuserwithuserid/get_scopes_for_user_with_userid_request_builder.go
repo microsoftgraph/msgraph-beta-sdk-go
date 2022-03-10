@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetScopesForUserWithUseridRequestBuilder builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}\microsoft.graph.getScopesForUser(userid='{userid}')
+// GetScopesForUserWithUseridRequestBuilder provides operations to call the getScopesForUser method.
 type GetScopesForUserWithUseridRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ func NewGetScopesForUserWithUseridRequestBuilderInternal(pathParameters map[stri
     if userid != nil {
         urlTplParams["userid"] = *userid
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -62,18 +62,14 @@ func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformation(o
     return requestInfo, nil
 }
 // Get invoke function getScopesForUser
-func (m *GetScopesForUserWithUseridRequestBuilder) Get(options *GetScopesForUserWithUseridRequestBuilderGetOptions)([]string, error) {
+func (m *GetScopesForUserWithUseridRequestBuilder) Get(options *GetScopesForUserWithUseridRequestBuilderGetOptions)(GetScopesForUserWithUseridResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetScopesForUserWithUseridResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]string, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*string))
-    }
-    return val, nil
+    return res.(GetScopesForUserWithUseridResponseable), nil
 }

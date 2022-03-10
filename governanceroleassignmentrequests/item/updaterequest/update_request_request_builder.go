@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UpdateRequestRequestBuilder builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}\microsoft.graph.updateRequest
+// UpdateRequestRequestBuilder provides operations to call the updateRequest method.
 type UpdateRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type UpdateRequestRequestBuilder struct {
 // UpdateRequestRequestBuilderPostOptions options for Post
 type UpdateRequestRequestBuilderPostOptions struct {
     // 
-    Body *UpdateRequestRequestBody;
+    Body UpdateRequestRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type UpdateRequestResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type governanceRoleAssignmentRequest
-    governanceRoleAssignmentRequest *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest;
+    governanceRoleAssignmentRequest i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable;
 }
 // NewUpdateRequestResponse instantiates a new updateRequestResponse and sets the default values.
 func NewUpdateRequestResponse()(*UpdateRequestResponse) {
@@ -39,6 +39,9 @@ func NewUpdateRequestResponse()(*UpdateRequestResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateUpdateRequestResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateRequestResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRequestResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *UpdateRequestResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *UpdateRequestResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["governanceRoleAssignmentRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGovernanceRoleAssignmentRequest(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable))
+        }
+        return nil
+    }
+    return res
+}
 // GetGovernanceRoleAssignmentRequest gets the governanceRoleAssignmentRequest property value. Union type representation for type governanceRoleAssignmentRequest
-func (m *UpdateRequestResponse) GetGovernanceRoleAssignmentRequest()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest) {
+func (m *UpdateRequestResponse) GetGovernanceRoleAssignmentRequest()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable) {
     if m == nil {
         return nil
     } else {
         return m.governanceRoleAssignmentRequest
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateRequestResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["governanceRoleAssignmentRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGovernanceRoleAssignmentRequest() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGovernanceRoleAssignmentRequest(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest))
-        }
-        return nil
-    }
-    return res
 }
 func (m *UpdateRequestResponse) IsNil()(bool) {
     return m == nil
@@ -97,10 +100,17 @@ func (m *UpdateRequestResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetGovernanceRoleAssignmentRequest sets the governanceRoleAssignmentRequest property value. Union type representation for type governanceRoleAssignmentRequest
-func (m *UpdateRequestResponse) SetGovernanceRoleAssignmentRequest(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequest)() {
+func (m *UpdateRequestResponse) SetGovernanceRoleAssignmentRequest(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable)() {
     if m != nil {
         m.governanceRoleAssignmentRequest = value
     }
+}
+// UpdateRequestResponseable 
+type UpdateRequestResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetGovernanceRoleAssignmentRequest()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable)
+    SetGovernanceRoleAssignmentRequest(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignmentRequestable)()
 }
 // NewUpdateRequestRequestBuilderInternal instantiates a new UpdateRequestRequestBuilder and sets the default values.
 func NewUpdateRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateRequestRequestBuilder) {
@@ -111,7 +121,7 @@ func NewUpdateRequestRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *UpdateRequestRequestBuilder) CreatePostRequestInformation(options *Upda
     return requestInfo, nil
 }
 // Post invoke action updateRequest
-func (m *UpdateRequestRequestBuilder) Post(options *UpdateRequestRequestBuilderPostOptions)(*UpdateRequestResponse, error) {
+func (m *UpdateRequestRequestBuilder) Post(options *UpdateRequestRequestBuilderPostOptions)(UpdateRequestResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUpdateRequestResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUpdateRequestResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*UpdateRequestResponse), nil
+    return res.(UpdateRequestResponseable), nil
 }

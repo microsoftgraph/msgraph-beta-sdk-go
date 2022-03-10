@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MoveDevicesToOURequestBody 
+// MoveDevicesToOURequestBody provides operations to call the moveDevicesToOU method.
 type MoveDevicesToOURequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,6 +20,10 @@ func NewMoveDevicesToOURequestBody()(*MoveDevicesToOURequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateMoveDevicesToOURequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMoveDevicesToOURequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMoveDevicesToOURequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MoveDevicesToOURequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -34,14 +38,6 @@ func (m *MoveDevicesToOURequestBody) GetDeviceIds()([]string) {
         return nil
     } else {
         return m.deviceIds
-    }
-}
-// GetOrganizationalUnitPath gets the organizationalUnitPath property value. 
-func (m *MoveDevicesToOURequestBody) GetOrganizationalUnitPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationalUnitPath
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -72,6 +68,14 @@ func (m *MoveDevicesToOURequestBody) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
+}
+// GetOrganizationalUnitPath gets the organizationalUnitPath property value. 
+func (m *MoveDevicesToOURequestBody) GetOrganizationalUnitPath()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationalUnitPath
+    }
 }
 func (m *MoveDevicesToOURequestBody) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmbeddedSIMDeviceState 
+// EmbeddedSIMDeviceState provides operations to manage the deviceManagement singleton.
 type EmbeddedSIMDeviceState struct {
     Entity
     // The time the embedded SIM device status was created. Generated service side.
@@ -32,6 +32,10 @@ func NewEmbeddedSIMDeviceState()(*EmbeddedSIMDeviceState) {
     }
     return m
 }
+// CreateEmbeddedSIMDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEmbeddedSIMDeviceStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEmbeddedSIMDeviceState(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The time the embedded SIM device status was created. Generated service side.
 func (m *EmbeddedSIMDeviceState) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -46,54 +50,6 @@ func (m *EmbeddedSIMDeviceState) GetDeviceName()(*string) {
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The time the embedded SIM device last checked in. Updated service side.
-func (m *EmbeddedSIMDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetModifiedDateTime gets the modifiedDateTime property value. The time the embedded SIM device status was last modified. Updated service side.
-func (m *EmbeddedSIMDeviceState) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
-}
-// GetState gets the state property value. The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
-func (m *EmbeddedSIMDeviceState) GetState()(*EmbeddedSIMDeviceStateValue) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetStateDetails gets the stateDetails property value. String description of the provisioning state.
-func (m *EmbeddedSIMDeviceState) GetStateDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stateDetails
-    }
-}
-// GetUniversalIntegratedCircuitCardIdentifier gets the universalIntegratedCircuitCardIdentifier property value. The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
-func (m *EmbeddedSIMDeviceState) GetUniversalIntegratedCircuitCardIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.universalIntegratedCircuitCardIdentifier
-    }
-}
-// GetUserName gets the userName property value. Username which the subscription was provisioned to e.g. joe@contoso.com
-func (m *EmbeddedSIMDeviceState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,6 +136,54 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. The time the embedded SIM device last checked in. Updated service side.
+func (m *EmbeddedSIMDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetModifiedDateTime gets the modifiedDateTime property value. The time the embedded SIM device status was last modified. Updated service side.
+func (m *EmbeddedSIMDeviceState) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modifiedDateTime
+    }
+}
+// GetState gets the state property value. The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
+func (m *EmbeddedSIMDeviceState) GetState()(*EmbeddedSIMDeviceStateValue) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetStateDetails gets the stateDetails property value. String description of the provisioning state.
+func (m *EmbeddedSIMDeviceState) GetStateDetails()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stateDetails
+    }
+}
+// GetUniversalIntegratedCircuitCardIdentifier gets the universalIntegratedCircuitCardIdentifier property value. The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
+func (m *EmbeddedSIMDeviceState) GetUniversalIntegratedCircuitCardIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.universalIntegratedCircuitCardIdentifier
+    }
+}
+// GetUserName gets the userName property value. Username which the subscription was provisioned to e.g. joe@contoso.com
+func (m *EmbeddedSIMDeviceState) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
 }
 func (m *EmbeddedSIMDeviceState) IsNil()(bool) {
     return m == nil

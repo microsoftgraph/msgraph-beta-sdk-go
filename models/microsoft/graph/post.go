@@ -5,39 +5,39 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Post 
+// Post provides operations to manage the compliance singleton.
 type Post struct {
     OutlookItem
     // Read-only. Nullable. Supports $expand.
-    attachments []Attachment;
+    attachments []Attachmentable;
     // The contents of the post. This is a default property. This property can be null.
-    body *ItemBody;
+    body ItemBodyable;
     // Unique ID of the conversation. Read-only.
     conversationId *string;
     // Unique ID of the conversation thread. Read-only.
     conversationThreadId *string;
     // The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    extensions []Extension;
+    extensions []Extensionable;
     // 
-    from *Recipient;
+    from Recipientable;
     // Indicates whether the post has at least one attachment. This is a default property.
     hasAttachments *bool;
     // The importance of a group post: low, normal, high.
     importance *Importance;
     // Read-only. Supports $expand.
-    inReplyTo *Post;
+    inReplyTo Postable;
     // 
-    mentions []Mention;
+    mentions []Mentionable;
     // The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // Conversation participants that were added to the thread as part of this post.
-    newParticipants []Recipient;
+    newParticipants []Recipientable;
     // Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
-    sender *Recipient;
+    sender Recipientable;
     // The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
 }
 // NewPost instantiates a new post and sets the default values.
 func NewPost()(*Post) {
@@ -46,8 +46,12 @@ func NewPost()(*Post) {
     }
     return m
 }
+// CreatePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePostFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPost(), nil
+}
 // GetAttachments gets the attachments property value. Read-only. Nullable. Supports $expand.
-func (m *Post) GetAttachments()([]Attachment) {
+func (m *Post) GetAttachments()([]Attachmentable) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +59,7 @@ func (m *Post) GetAttachments()([]Attachment) {
     }
 }
 // GetBody gets the body property value. The contents of the post. This is a default property. This property can be null.
-func (m *Post) GetBody()(*ItemBody) {
+func (m *Post) GetBody()(ItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -79,117 +83,37 @@ func (m *Post) GetConversationThreadId()(*string) {
     }
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-func (m *Post) GetExtensions()([]Extension) {
+func (m *Post) GetExtensions()([]Extensionable) {
     if m == nil {
         return nil
     } else {
         return m.extensions
     }
 }
-// GetFrom gets the from property value. 
-func (m *Post) GetFrom()(*Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
-}
-// GetHasAttachments gets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
-func (m *Post) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
-}
-// GetImportance gets the importance property value. The importance of a group post: low, normal, high.
-func (m *Post) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
-}
-// GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
-func (m *Post) GetInReplyTo()(*Post) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inReplyTo
-    }
-}
-// GetMentions gets the mentions property value. 
-func (m *Post) GetMentions()([]Mention) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentions
-    }
-}
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-func (m *Post) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetNewParticipants gets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
-func (m *Post) GetNewParticipants()([]Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newParticipants
-    }
-}
-// GetReceivedDateTime gets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-func (m *Post) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedDateTime
-    }
-}
-// GetSender gets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
-func (m *Post) GetSender()(*Recipient) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sender
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
-func (m *Post) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["attachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAttachment() })
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Attachment, len(val))
+            res := make([]Attachmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Attachment))
+                res[i] = v.(Attachmentable)
             }
             m.SetAttachments(res)
         }
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(*ItemBody))
+            m.SetBody(val.(ItemBodyable))
         }
         return nil
     }
@@ -214,26 +138,26 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtension() })
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Extension, len(val))
+            res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Extension))
+                res[i] = v.(Extensionable)
             }
             m.SetExtensions(res)
         }
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFrom(val.(*Recipient))
+            m.SetFrom(val.(Recipientable))
         }
         return nil
     }
@@ -258,52 +182,52 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["inReplyTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPost() })
+        val, err := n.GetObjectValue(CreatePostFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInReplyTo(val.(*Post))
+            m.SetInReplyTo(val.(Postable))
         }
         return nil
     }
     res["mentions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMention() })
+        val, err := n.GetCollectionOfObjectValues(CreateMentionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Mention, len(val))
+            res := make([]Mentionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Mention))
+                res[i] = v.(Mentionable)
             }
             m.SetMentions(res)
         }
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
         return nil
     }
     res["newParticipants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Recipient, len(val))
+            res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Recipient))
+                res[i] = v.(Recipientable)
             }
             m.SetNewParticipants(res)
         }
@@ -320,30 +244,110 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         return nil
     }
     res["sender"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecipient() })
+        val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSender(val.(*Recipient))
+            m.SetSender(val.(Recipientable))
         }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
         return nil
     }
     return res
+}
+// GetFrom gets the from property value. 
+func (m *Post) GetFrom()(Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.from
+    }
+}
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
+func (m *Post) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
+    }
+}
+// GetImportance gets the importance property value. The importance of a group post: low, normal, high.
+func (m *Post) GetImportance()(*Importance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.importance
+    }
+}
+// GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
+func (m *Post) GetInReplyTo()(Postable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inReplyTo
+    }
+}
+// GetMentions gets the mentions property value. 
+func (m *Post) GetMentions()([]Mentionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mentions
+    }
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
+func (m *Post) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetNewParticipants gets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
+func (m *Post) GetNewParticipants()([]Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newParticipants
+    }
+}
+// GetReceivedDateTime gets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *Post) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.receivedDateTime
+    }
+}
+// GetSender gets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
+func (m *Post) GetSender()(Recipientable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sender
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
+func (m *Post) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
 }
 func (m *Post) IsNil()(bool) {
     return m == nil
@@ -357,8 +361,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetAttachments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {
@@ -386,8 +389,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -422,8 +424,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMentions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMentions()))
         for i, v := range m.GetMentions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("mentions", cast)
         if err != nil {
@@ -433,8 +434,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -444,8 +444,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetNewParticipants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNewParticipants()))
         for i, v := range m.GetNewParticipants() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("newParticipants", cast)
         if err != nil {
@@ -467,8 +466,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -478,13 +476,13 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     return nil
 }
 // SetAttachments sets the attachments property value. Read-only. Nullable. Supports $expand.
-func (m *Post) SetAttachments(value []Attachment)() {
+func (m *Post) SetAttachments(value []Attachmentable)() {
     if m != nil {
         m.attachments = value
     }
 }
 // SetBody sets the body property value. The contents of the post. This is a default property. This property can be null.
-func (m *Post) SetBody(value *ItemBody)() {
+func (m *Post) SetBody(value ItemBodyable)() {
     if m != nil {
         m.body = value
     }
@@ -502,13 +500,13 @@ func (m *Post) SetConversationThreadId(value *string)() {
     }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-func (m *Post) SetExtensions(value []Extension)() {
+func (m *Post) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
     }
 }
 // SetFrom sets the from property value. 
-func (m *Post) SetFrom(value *Recipient)() {
+func (m *Post) SetFrom(value Recipientable)() {
     if m != nil {
         m.from = value
     }
@@ -526,25 +524,25 @@ func (m *Post) SetImportance(value *Importance)() {
     }
 }
 // SetInReplyTo sets the inReplyTo property value. Read-only. Supports $expand.
-func (m *Post) SetInReplyTo(value *Post)() {
+func (m *Post) SetInReplyTo(value Postable)() {
     if m != nil {
         m.inReplyTo = value
     }
 }
 // SetMentions sets the mentions property value. 
-func (m *Post) SetMentions(value []Mention)() {
+func (m *Post) SetMentions(value []Mentionable)() {
     if m != nil {
         m.mentions = value
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-func (m *Post) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *Post) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
 }
 // SetNewParticipants sets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
-func (m *Post) SetNewParticipants(value []Recipient)() {
+func (m *Post) SetNewParticipants(value []Recipientable)() {
     if m != nil {
         m.newParticipants = value
     }
@@ -556,13 +554,13 @@ func (m *Post) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
     }
 }
 // SetSender sets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
-func (m *Post) SetSender(value *Recipient)() {
+func (m *Post) SetSender(value Recipientable)() {
     if m != nil {
         m.sender = value
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
-func (m *Post) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *Post) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetOffice365ActivationsUserCountsRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActivationsUserCounts()
+// GetOffice365ActivationsUserCountsRequestBuilder provides operations to call the getOffice365ActivationsUserCounts method.
 type GetOffice365ActivationsUserCountsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetOffice365ActivationsUserCountsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *GetOffice365ActivationsUserCountsRequestBuilder) CreateGetRequestInform
     return requestInfo, nil
 }
 // Get invoke function getOffice365ActivationsUserCounts
-func (m *GetOffice365ActivationsUserCountsRequestBuilder) Get(options *GetOffice365ActivationsUserCountsRequestBuilderGetOptions)([]byte, error) {
+func (m *GetOffice365ActivationsUserCountsRequestBuilder) Get(options *GetOffice365ActivationsUserCountsRequestBuilderGetOptions)(GetOffice365ActivationsUserCountsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOffice365ActivationsUserCountsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.([]byte), nil
+    return res.(GetOffice365ActivationsUserCountsResponseable), nil
 }

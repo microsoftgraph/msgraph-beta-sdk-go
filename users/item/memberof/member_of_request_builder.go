@@ -2,11 +2,12 @@ package memberof
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ic50b37dff2a068b5d7a0f53cb7af1f631c0810d05792f5d395b988405e6ca4cf "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/memberof/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    ib4c7f7a18d56d667bf68eec3f5015bda0262fd6c5b0788331d4a87c1f63d09e3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/memberof/count"
 )
 
-// MemberOfRequestBuilder builds and executes requests for operations under \users\{user-id}\memberOf
+// MemberOfRequestBuilder provides operations to manage the memberOf property of the microsoft.graph.user entity.
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewMemberOfRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MemberOfRequestBuilder) Count()(*ib4c7f7a18d56d667bf68eec3f5015bda0262fd6c5b0788331d4a87c1f63d09e3.CountRequestBuilder) {
+    return ib4c7f7a18d56d667bf68eec3f5015bda0262fd6c5b0788331d4a87c1f63d09e3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRe
     return requestInfo, nil
 }
 // Get the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(*MemberOfResponse, error) {
+func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMemberOfResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MemberOfResponse), nil
-}
-func (m *MemberOfRequestBuilder) Ref()(*ic50b37dff2a068b5d7a0f53cb7af1f631c0810d05792f5d395b988405e6ca4cf.RefRequestBuilder) {
-    return ic50b37dff2a068b5d7a0f53cb7af1f631c0810d05792f5d395b988405e6ca4cf.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

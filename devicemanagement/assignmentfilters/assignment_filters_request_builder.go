@@ -2,15 +2,16 @@ package assignmentfilters
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i6320107e367b8c68fe46a4cf86ea24694ef25a7c0c2ed084170f433fab284667 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/getplatformsupportedpropertieswithplatform"
+    i6df941e8c158ac5060e667569031de0e8e647a89bff7ea10194884e75f1a0bfe "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/count"
     i971b9826d0cedaebe37e1b7dbc8d3baedb6c9f0866d25b684e1da32b17da33a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/enable"
     ia4a12d8e28e11df7e1cb2aab68059eb462d6a64bdaf33642330dcd51be6b4c91 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/getstate"
     ia52abb7c9a696d072bbdd617cc112d98fa0fc464bcc7a2b2808b711dc8fd7208 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/validatefilter"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// AssignmentFiltersRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters
+// AssignmentFiltersRequestBuilder provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
 type AssignmentFiltersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +53,7 @@ type AssignmentFiltersRequestBuilderGetQueryParameters struct {
 // AssignmentFiltersRequestBuilderPostOptions options for Post
 type AssignmentFiltersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable;
     // Request headers
     H map[string]string;
     // Request options
@@ -69,7 +70,7 @@ func NewAssignmentFiltersRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,6 +79,9 @@ func NewAssignmentFiltersRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentFiltersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AssignmentFiltersRequestBuilder) Count()(*i6df941e8c158ac5060e667569031de0e8e647a89bff7ea10194884e75f1a0bfe.CountRequestBuilder) {
+    return i6df941e8c158ac5060e667569031de0e8e647a89bff7ea10194884e75f1a0bfe.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of assignment filters
 func (m *AssignmentFiltersRequestBuilder) CreateGetRequestInformation(options *AssignmentFiltersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -99,7 +103,7 @@ func (m *AssignmentFiltersRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of assignment filters
+// CreatePostRequestInformation create new navigation property to assignmentFilters for deviceManagement
 func (m *AssignmentFiltersRequestBuilder) CreatePostRequestInformation(options *AssignmentFiltersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,36 +125,44 @@ func (m *AssignmentFiltersRequestBuilder) Enable()(*i971b9826d0cedaebe37e1b7dbc8
     return i971b9826d0cedaebe37e1b7dbc8d3baedb6c9f0866d25b684e1da32b17da33a6.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the list of assignment filters
-func (m *AssignmentFiltersRequestBuilder) Get(options *AssignmentFiltersRequestBuilderGetOptions)(*AssignmentFiltersResponse, error) {
+func (m *AssignmentFiltersRequestBuilder) Get(options *AssignmentFiltersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAssignmentFiltersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceAndAppManagementAssignmentFilterCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AssignmentFiltersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterCollectionResponseable), nil
 }
-// GetPlatformSupportedPropertiesWithPlatform builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getPlatformSupportedProperties(platform={platform})
+// GetPlatformSupportedPropertiesWithPlatform provides operations to call the getPlatformSupportedProperties method.
 func (m *AssignmentFiltersRequestBuilder) GetPlatformSupportedPropertiesWithPlatform(platform *string)(*i6320107e367b8c68fe46a4cf86ea24694ef25a7c0c2ed084170f433fab284667.GetPlatformSupportedPropertiesWithPlatformRequestBuilder) {
     return i6320107e367b8c68fe46a4cf86ea24694ef25a7c0c2ed084170f433fab284667.NewGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform);
 }
-// GetState builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()
+// GetState provides operations to call the getState method.
 func (m *AssignmentFiltersRequestBuilder) GetState()(*ia4a12d8e28e11df7e1cb2aab68059eb462d6a64bdaf33642330dcd51be6b4c91.GetStateRequestBuilder) {
     return ia4a12d8e28e11df7e1cb2aab68059eb462d6a64bdaf33642330dcd51be6b4c91.NewGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the list of assignment filters
-func (m *AssignmentFiltersRequestBuilder) Post(options *AssignmentFiltersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter, error) {
+// Post create new navigation property to assignmentFilters for deviceManagement
+func (m *AssignmentFiltersRequestBuilder) Post(options *AssignmentFiltersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceAndAppManagementAssignmentFilter() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilterable), nil
 }
 func (m *AssignmentFiltersRequestBuilder) ValidateFilter()(*ia52abb7c9a696d072bbdd617cc112d98fa0fc464bcc7a2b2808b711dc8fd7208.ValidateFilterRequestBuilder) {
     return ia52abb7c9a696d072bbdd617cc112d98fa0fc464bcc7a2b2808b711dc8fd7208.NewValidateFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);

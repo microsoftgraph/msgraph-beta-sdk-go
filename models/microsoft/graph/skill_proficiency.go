@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SkillProficiency 
+// SkillProficiency provides operations to manage the compliance singleton.
 type SkillProficiency struct {
     ItemFacet
     // Contains categories a user has associated with the skill (for example, personal, professional, hobby).
@@ -26,6 +26,10 @@ func NewSkillProficiency()(*SkillProficiency) {
         ItemFacet: *NewItemFacet(),
     }
     return m
+}
+// CreateSkillProficiencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSkillProficiencyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSkillProficiency(), nil
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the skill (for example, personal, professional, hobby).
 func (m *SkillProficiency) GetCategories()([]string) {
@@ -49,30 +53,6 @@ func (m *SkillProficiency) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetProficiency gets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
-func (m *SkillProficiency) GetProficiency()(*SkillProficiencyLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proficiency
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. 
-func (m *SkillProficiency) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
-}
-// GetWebUrl gets the webUrl property value. Contains a link to an information source about the skill.
-func (m *SkillProficiency) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -147,6 +127,30 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetProficiency gets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
+func (m *SkillProficiency) GetProficiency()(*SkillProficiencyLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.proficiency
+    }
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. 
+func (m *SkillProficiency) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
+}
+// GetWebUrl gets the webUrl property value. Contains a link to an information source about the skill.
+func (m *SkillProficiency) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *SkillProficiency) IsNil()(bool) {
     return m == nil

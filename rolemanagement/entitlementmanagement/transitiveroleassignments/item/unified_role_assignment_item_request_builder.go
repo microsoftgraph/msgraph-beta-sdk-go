@@ -2,15 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i6c02b96134cb31482d8ab10b4b9716a2c89120720c42ecff2b7982561a5bf3b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/transitiveroleassignments/item/directoryscope"
     i8ac09b512a4f0ba1fda4a512fae144d9d47f4f9020e018ef4421ace58f049965 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/transitiveroleassignments/item/principal"
     ic0aecaed6a7ead30f56200776b0fa62d9b8cf2152a33649541a083ae39abb087 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/transitiveroleassignments/item/appscope"
     if9f40a7478cf61c9e5c25b993d37ed8a4f922e1709f5c786e811ffcc950e219c "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/transitiveroleassignments/item/roledefinition"
 )
 
-// UnifiedRoleAssignmentItemRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\transitiveRoleAssignments\{unifiedRoleAssignment-id}
+// UnifiedRoleAssignmentItemRequestBuilder provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.
 type UnifiedRoleAssignmentItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
 // UnifiedRoleAssignmentItemRequestBuilderPatchOptions options for Patch
 type UnifiedRoleAssignmentItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -69,7 +69,7 @@ func NewUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,7 +140,11 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) Delete(options *UnifiedRoleAss
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -150,16 +154,20 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*i6c02b96134c
     return i6c02b96134cb31482d8ab10b4b9716a2c89120720c42ecff2b7982561a5bf3b5.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get transitiveRoleAssignments from roleManagement
-func (m *UnifiedRoleAssignmentItemRequestBuilder) Get(options *UnifiedRoleAssignmentItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignment, error) {
+func (m *UnifiedRoleAssignmentItemRequestBuilder) Get(options *UnifiedRoleAssignmentItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUnifiedRoleAssignment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUnifiedRoleAssignmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentable), nil
 }
 // Patch update the navigation property transitiveRoleAssignments in roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) Patch(options *UnifiedRoleAssignmentItemRequestBuilderPatchOptions)(error) {
@@ -167,7 +175,11 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) Patch(options *UnifiedRoleAssi
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

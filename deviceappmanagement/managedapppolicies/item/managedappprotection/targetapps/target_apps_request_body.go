@@ -5,12 +5,12 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// TargetAppsRequestBody 
+// TargetAppsRequestBody provides operations to call the targetApps method.
 type TargetAppsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    apps []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileApp;
+    apps []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileAppable;
 }
 // NewTargetAppsRequestBody instantiates a new targetAppsRequestBody and sets the default values.
 func NewTargetAppsRequestBody()(*TargetAppsRequestBody) {
@@ -18,6 +18,10 @@ func NewTargetAppsRequestBody()(*TargetAppsRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTargetAppsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTargetAppsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTargetAppsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetAppsRequestBody) GetAdditionalData()(map[string]interface{}) {
@@ -28,7 +32,7 @@ func (m *TargetAppsRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetApps gets the apps property value. 
-func (m *TargetAppsRequestBody) GetApps()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileApp) {
+func (m *TargetAppsRequestBody) GetApps()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileAppable) {
     if m == nil {
         return nil
     } else {
@@ -39,14 +43,14 @@ func (m *TargetAppsRequestBody) GetApps()([]i535684e11b5500196ecb4b5c6634e0651fe
 func (m *TargetAppsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["apps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagedMobileApp() })
+        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileApp, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileAppable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileApp))
+                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileAppable)
             }
             m.SetApps(res)
         }
@@ -62,8 +66,7 @@ func (m *TargetAppsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
@@ -85,7 +88,7 @@ func (m *TargetAppsRequestBody) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetApps sets the apps property value. 
-func (m *TargetAppsRequestBody) SetApps(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileApp)() {
+func (m *TargetAppsRequestBody) SetApps(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedMobileAppable)() {
     if m != nil {
         m.apps = value
     }

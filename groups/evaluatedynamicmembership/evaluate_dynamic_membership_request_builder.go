@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// EvaluateDynamicMembershipRequestBuilder builds and executes requests for operations under \groups\microsoft.graph.evaluateDynamicMembership
+// EvaluateDynamicMembershipRequestBuilder provides operations to call the evaluateDynamicMembership method.
 type EvaluateDynamicMembershipRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type EvaluateDynamicMembershipRequestBuilder struct {
 // EvaluateDynamicMembershipRequestBuilderPostOptions options for Post
 type EvaluateDynamicMembershipRequestBuilderPostOptions struct {
     // 
-    Body *EvaluateDynamicMembershipRequestBody;
+    Body EvaluateDynamicMembershipRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type EvaluateDynamicMembershipResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type evaluateDynamicMembershipResult
-    evaluateDynamicMembershipResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResult;
+    evaluateDynamicMembershipResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResultable;
 }
 // NewEvaluateDynamicMembershipResponse instantiates a new evaluateDynamicMembershipResponse and sets the default values.
 func NewEvaluateDynamicMembershipResponse()(*EvaluateDynamicMembershipResponse) {
@@ -39,6 +39,9 @@ func NewEvaluateDynamicMembershipResponse()(*EvaluateDynamicMembershipResponse) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateEvaluateDynamicMembershipResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEvaluateDynamicMembershipResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateDynamicMembershipResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *EvaluateDynamicMembershipResponse) GetAdditionalData()(map[string]inter
     }
 }
 // GetEvaluateDynamicMembershipResult gets the evaluateDynamicMembershipResult property value. Union type representation for type evaluateDynamicMembershipResult
-func (m *EvaluateDynamicMembershipResponse) GetEvaluateDynamicMembershipResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResult) {
+func (m *EvaluateDynamicMembershipResponse) GetEvaluateDynamicMembershipResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *EvaluateDynamicMembershipResponse) GetEvaluateDynamicMembershipResult()
 func (m *EvaluateDynamicMembershipResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["evaluateDynamicMembershipResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEvaluateDynamicMembershipResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEvaluateDynamicMembershipResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEvaluateDynamicMembershipResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResult))
+            m.SetEvaluateDynamicMembershipResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResultable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *EvaluateDynamicMembershipResponse) SetAdditionalData(value map[string]i
     }
 }
 // SetEvaluateDynamicMembershipResult sets the evaluateDynamicMembershipResult property value. Union type representation for type evaluateDynamicMembershipResult
-func (m *EvaluateDynamicMembershipResponse) SetEvaluateDynamicMembershipResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResult)() {
+func (m *EvaluateDynamicMembershipResponse) SetEvaluateDynamicMembershipResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResultable)() {
     if m != nil {
         m.evaluateDynamicMembershipResult = value
     }
+}
+// EvaluateDynamicMembershipResponseable 
+type EvaluateDynamicMembershipResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetEvaluateDynamicMembershipResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResultable)
+    SetEvaluateDynamicMembershipResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateDynamicMembershipResultable)()
 }
 // NewEvaluateDynamicMembershipRequestBuilderInternal instantiates a new EvaluateDynamicMembershipRequestBuilder and sets the default values.
 func NewEvaluateDynamicMembershipRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateDynamicMembershipRequestBuilder) {
@@ -111,7 +121,7 @@ func NewEvaluateDynamicMembershipRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *EvaluateDynamicMembershipRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Post invoke action evaluateDynamicMembership
-func (m *EvaluateDynamicMembershipRequestBuilder) Post(options *EvaluateDynamicMembershipRequestBuilderPostOptions)(*EvaluateDynamicMembershipResponse, error) {
+func (m *EvaluateDynamicMembershipRequestBuilder) Post(options *EvaluateDynamicMembershipRequestBuilderPostOptions)(EvaluateDynamicMembershipResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvaluateDynamicMembershipResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEvaluateDynamicMembershipResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*EvaluateDynamicMembershipResponse), nil
+    return res.(EvaluateDynamicMembershipResponseable), nil
 }

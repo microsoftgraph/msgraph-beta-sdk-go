@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// AnswerRequestBody 
+// AnswerRequestBody provides operations to call the answer method.
 type AnswerRequestBody struct {
     // 
     acceptedModalities []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Modality;
@@ -14,9 +14,9 @@ type AnswerRequestBody struct {
     // 
     callbackUri *string;
     // 
-    callOptions *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions;
+    callOptions i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptionsable;
     // 
-    mediaConfig *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfig;
+    mediaConfig i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfigable;
     // 
     participantCapacity *int32;
 }
@@ -26,6 +26,10 @@ func NewAnswerRequestBody()(*AnswerRequestBody) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAnswerRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAnswerRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAnswerRequestBody(), nil
 }
 // GetAcceptedModalities gets the acceptedModalities property value. 
 func (m *AnswerRequestBody) GetAcceptedModalities()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Modality) {
@@ -52,27 +56,11 @@ func (m *AnswerRequestBody) GetCallbackUri()(*string) {
     }
 }
 // GetCallOptions gets the callOptions property value. 
-func (m *AnswerRequestBody) GetCallOptions()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions) {
+func (m *AnswerRequestBody) GetCallOptions()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptionsable) {
     if m == nil {
         return nil
     } else {
         return m.callOptions
-    }
-}
-// GetMediaConfig gets the mediaConfig property value. 
-func (m *AnswerRequestBody) GetMediaConfig()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfig) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaConfig
-    }
-}
-// GetParticipantCapacity gets the participantCapacity property value. 
-func (m *AnswerRequestBody) GetParticipantCapacity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantCapacity
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -103,22 +91,22 @@ func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["callOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIncomingCallOptions() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateIncomingCallOptionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallOptions(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions))
+            m.SetCallOptions(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptionsable))
         }
         return nil
     }
     res["mediaConfig"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMediaConfig() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMediaConfigFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMediaConfig(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfig))
+            m.SetMediaConfig(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfigable))
         }
         return nil
     }
@@ -133,6 +121,22 @@ func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetMediaConfig gets the mediaConfig property value. 
+func (m *AnswerRequestBody) GetMediaConfig()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfigable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mediaConfig
+    }
+}
+// GetParticipantCapacity gets the participantCapacity property value. 
+func (m *AnswerRequestBody) GetParticipantCapacity()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participantCapacity
+    }
 }
 func (m *AnswerRequestBody) IsNil()(bool) {
     return m == nil
@@ -196,13 +200,13 @@ func (m *AnswerRequestBody) SetCallbackUri(value *string)() {
     }
 }
 // SetCallOptions sets the callOptions property value. 
-func (m *AnswerRequestBody) SetCallOptions(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions)() {
+func (m *AnswerRequestBody) SetCallOptions(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptionsable)() {
     if m != nil {
         m.callOptions = value
     }
 }
 // SetMediaConfig sets the mediaConfig property value. 
-func (m *AnswerRequestBody) SetMediaConfig(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfig)() {
+func (m *AnswerRequestBody) SetMediaConfig(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfigable)() {
     if m != nil {
         m.mediaConfig = value
     }

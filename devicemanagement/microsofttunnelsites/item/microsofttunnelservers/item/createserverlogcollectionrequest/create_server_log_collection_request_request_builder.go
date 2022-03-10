@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateServerLogCollectionRequestRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers\{microsoftTunnelServer-id}\microsoft.graph.createServerLogCollectionRequest
+// CreateServerLogCollectionRequestRequestBuilder provides operations to call the createServerLogCollectionRequest method.
 type CreateServerLogCollectionRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type CreateServerLogCollectionRequestRequestBuilder struct {
 // CreateServerLogCollectionRequestRequestBuilderPostOptions options for Post
 type CreateServerLogCollectionRequestRequestBuilderPostOptions struct {
     // 
-    Body *CreateServerLogCollectionRequestRequestBody;
+    Body CreateServerLogCollectionRequestRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type CreateServerLogCollectionRequestResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type microsoftTunnelServerLogCollectionResponse
-    microsoftTunnelServerLogCollectionResponse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse;
+    microsoftTunnelServerLogCollectionResponse i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable;
 }
 // NewCreateServerLogCollectionRequestResponse instantiates a new createServerLogCollectionRequestResponse and sets the default values.
 func NewCreateServerLogCollectionRequestResponse()(*CreateServerLogCollectionRequestResponse) {
@@ -39,6 +39,9 @@ func NewCreateServerLogCollectionRequestResponse()(*CreateServerLogCollectionReq
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCreateServerLogCollectionRequestResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateServerLogCollectionRequestResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateServerLogCollectionRequestResponse) GetAdditionalData()(map[string]interface{}) {
@@ -48,28 +51,28 @@ func (m *CreateServerLogCollectionRequestResponse) GetAdditionalData()(map[strin
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CreateServerLogCollectionRequestResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["microsoftTunnelServerLogCollectionResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrosoftTunnelServerLogCollectionResponse(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable))
+        }
+        return nil
+    }
+    return res
+}
 // GetMicrosoftTunnelServerLogCollectionResponse gets the microsoftTunnelServerLogCollectionResponse property value. Union type representation for type microsoftTunnelServerLogCollectionResponse
-func (m *CreateServerLogCollectionRequestResponse) GetMicrosoftTunnelServerLogCollectionResponse()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse) {
+func (m *CreateServerLogCollectionRequestResponse) GetMicrosoftTunnelServerLogCollectionResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable) {
     if m == nil {
         return nil
     } else {
         return m.microsoftTunnelServerLogCollectionResponse
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *CreateServerLogCollectionRequestResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["microsoftTunnelServerLogCollectionResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMicrosoftTunnelServerLogCollectionResponse() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftTunnelServerLogCollectionResponse(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse))
-        }
-        return nil
-    }
-    return res
 }
 func (m *CreateServerLogCollectionRequestResponse) IsNil()(bool) {
     return m == nil
@@ -97,10 +100,17 @@ func (m *CreateServerLogCollectionRequestResponse) SetAdditionalData(value map[s
     }
 }
 // SetMicrosoftTunnelServerLogCollectionResponse sets the microsoftTunnelServerLogCollectionResponse property value. Union type representation for type microsoftTunnelServerLogCollectionResponse
-func (m *CreateServerLogCollectionRequestResponse) SetMicrosoftTunnelServerLogCollectionResponse(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponse)() {
+func (m *CreateServerLogCollectionRequestResponse) SetMicrosoftTunnelServerLogCollectionResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable)() {
     if m != nil {
         m.microsoftTunnelServerLogCollectionResponse = value
     }
+}
+// CreateServerLogCollectionRequestResponseable 
+type CreateServerLogCollectionRequestResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetMicrosoftTunnelServerLogCollectionResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable)
+    SetMicrosoftTunnelServerLogCollectionResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServerLogCollectionResponseable)()
 }
 // NewCreateServerLogCollectionRequestRequestBuilderInternal instantiates a new CreateServerLogCollectionRequestRequestBuilder and sets the default values.
 func NewCreateServerLogCollectionRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateServerLogCollectionRequestRequestBuilder) {
@@ -111,7 +121,7 @@ func NewCreateServerLogCollectionRequestRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *CreateServerLogCollectionRequestRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Post invoke action createServerLogCollectionRequest
-func (m *CreateServerLogCollectionRequestRequestBuilder) Post(options *CreateServerLogCollectionRequestRequestBuilderPostOptions)(*CreateServerLogCollectionRequestResponse, error) {
+func (m *CreateServerLogCollectionRequestRequestBuilder) Post(options *CreateServerLogCollectionRequestRequestBuilderPostOptions)(CreateServerLogCollectionRequestResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreateServerLogCollectionRequestResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateServerLogCollectionRequestResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CreateServerLogCollectionRequestResponse), nil
+    return res.(CreateServerLogCollectionRequestResponseable), nil
 }

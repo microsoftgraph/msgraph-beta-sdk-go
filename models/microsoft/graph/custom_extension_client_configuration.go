@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomExtensionClientConfiguration 
+// CustomExtensionClientConfiguration provides operations to manage the identityGovernance singleton.
 type CustomExtensionClientConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,20 +18,16 @@ func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateCustomExtensionClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCustomExtensionClientConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCustomExtensionClientConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
-func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeoutInMilliseconds
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -48,6 +44,14 @@ func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeoutInMilliseconds
+    }
 }
 func (m *CustomExtensionClientConfiguration) IsNil()(bool) {
     return m == nil

@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonAnnotation 
+// PersonAnnotation provides operations to manage the compliance singleton.
 type PersonAnnotation struct {
     ItemFacet
     // Contains the detail of the note itself.
-    detail *ItemBody;
+    detail ItemBodyable;
     // Contains a friendly name for the note.
     displayName *string;
     // 
@@ -21,8 +21,12 @@ func NewPersonAnnotation()(*PersonAnnotation) {
     }
     return m
 }
+// CreatePersonAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonAnnotationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonAnnotation(), nil
+}
 // GetDetail gets the detail property value. Contains the detail of the note itself.
-func (m *PersonAnnotation) GetDetail()(*ItemBody) {
+func (m *PersonAnnotation) GetDetail()(ItemBodyable) {
     if m == nil {
         return nil
     } else {
@@ -37,24 +41,16 @@ func (m *PersonAnnotation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetThumbnailUrl gets the thumbnailUrl property value. 
-func (m *PersonAnnotation) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["detail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*ItemBody))
+            m.SetDetail(val.(ItemBodyable))
         }
         return nil
     }
@@ -79,6 +75,14 @@ func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. 
+func (m *PersonAnnotation) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
 }
 func (m *PersonAnnotation) IsNil()(bool) {
     return m == nil
@@ -110,7 +114,7 @@ func (m *PersonAnnotation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     return nil
 }
 // SetDetail sets the detail property value. Contains the detail of the note itself.
-func (m *PersonAnnotation) SetDetail(value *ItemBody)() {
+func (m *PersonAnnotation) SetDetail(value ItemBodyable)() {
     if m != nil {
         m.detail = value
     }

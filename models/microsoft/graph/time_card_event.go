@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeCardEvent 
+// TimeCardEvent provides operations to manage the compliance singleton.
 type TimeCardEvent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,7 +14,7 @@ type TimeCardEvent struct {
     // The time the entry is recorded.
     dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Notes about the timeCardEvent.
-    notes *ItemBody;
+    notes ItemBodyable;
 }
 // NewTimeCardEvent instantiates a new timeCardEvent and sets the default values.
 func NewTimeCardEvent()(*TimeCardEvent) {
@@ -22,6 +22,10 @@ func NewTimeCardEvent()(*TimeCardEvent) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTimeCardEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeCardEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeCardEvent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEvent) GetAdditionalData()(map[string]interface{}) {
@@ -45,14 +49,6 @@ func (m *TimeCardEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
         return nil
     } else {
         return m.dateTime
-    }
-}
-// GetNotes gets the notes property value. Notes about the timeCardEvent.
-func (m *TimeCardEvent) GetNotes()(*ItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,16 +75,24 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
+        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotes(val.(*ItemBody))
+            m.SetNotes(val.(ItemBodyable))
         }
         return nil
     }
     return res
+}
+// GetNotes gets the notes property value. Notes about the timeCardEvent.
+func (m *TimeCardEvent) GetNotes()(ItemBodyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notes
+    }
 }
 func (m *TimeCardEvent) IsNil()(bool) {
     return m == nil
@@ -140,7 +144,7 @@ func (m *TimeCardEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
     }
 }
 // SetNotes sets the notes property value. Notes about the timeCardEvent.
-func (m *TimeCardEvent) SetNotes(value *ItemBody)() {
+func (m *TimeCardEvent) SetNotes(value ItemBodyable)() {
     if m != nil {
         m.notes = value
     }

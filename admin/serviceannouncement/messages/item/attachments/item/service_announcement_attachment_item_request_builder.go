@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i45dad0032403d1cc9f0d6bbbbb315904e10035d4984958ff746b2665c985732c "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/item/attachments/item/content"
 )
 
-// ServiceAnnouncementAttachmentItemRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}\attachments\{serviceAnnouncementAttachment-id}
+// ServiceAnnouncementAttachmentItemRequestBuilder provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
 type ServiceAnnouncementAttachmentItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type ServiceAnnouncementAttachmentItemRequestBuilderGetQueryParameters struct {
 // ServiceAnnouncementAttachmentItemRequestBuilderPatchOptions options for Patch
 type ServiceAnnouncementAttachmentItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachment;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ func NewServiceAnnouncementAttachmentItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +76,7 @@ func NewServiceAnnouncementAttachmentItemRequestBuilder(rawUrl string, requestAd
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Content()(*i45dad0032403d1cc9f0d6bbbbb315904e10035d4984958ff746b2665c985732c.ContentRequestBuilder) {
     return i45dad0032403d1cc9f0d6bbbbb315904e10035d4984958ff746b2665c985732c.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation a collection of serviceAnnouncementAttachments.
+// CreateDeleteRequestInformation delete navigation property attachments for admin
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateDeleteRequestInformation(options *ServiceAnnouncementAttachmentItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of serviceAnnouncementAttachments.
+// CreatePatchRequestInformation update the navigation property attachments in admin
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreatePatchRequestInformation(options *ServiceAnnouncementAttachmentItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,37 +131,49 @@ func (m *ServiceAnnouncementAttachmentItemRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Delete a collection of serviceAnnouncementAttachments.
+// Delete delete navigation property attachments for admin
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Delete(options *ServiceAnnouncementAttachmentItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get a collection of serviceAnnouncementAttachments.
-func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Get(options *ServiceAnnouncementAttachmentItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachment, error) {
+func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Get(options *ServiceAnnouncementAttachmentItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachmentable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewServiceAnnouncementAttachment() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateServiceAnnouncementAttachmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachment), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachmentable), nil
 }
-// Patch a collection of serviceAnnouncementAttachments.
+// Patch update the navigation property attachments in admin
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Patch(options *ServiceAnnouncementAttachmentItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

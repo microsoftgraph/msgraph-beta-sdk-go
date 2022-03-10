@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TimeClockSettings 
+// TimeClockSettings provides operations to manage the compliance singleton.
 type TimeClockSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The aprroved location of the timeClock.
-    approvedLocation *GeoCoordinates;
+    approvedLocation GeoCoordinatesable;
 }
 // NewTimeClockSettings instantiates a new timeClockSettings and sets the default values.
 func NewTimeClockSettings()(*TimeClockSettings) {
@@ -17,6 +17,10 @@ func NewTimeClockSettings()(*TimeClockSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateTimeClockSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTimeClockSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTimeClockSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeClockSettings) GetAdditionalData()(map[string]interface{}) {
@@ -27,7 +31,7 @@ func (m *TimeClockSettings) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetApprovedLocation gets the approvedLocation property value. The aprroved location of the timeClock.
-func (m *TimeClockSettings) GetApprovedLocation()(*GeoCoordinates) {
+func (m *TimeClockSettings) GetApprovedLocation()(GeoCoordinatesable) {
     if m == nil {
         return nil
     } else {
@@ -38,12 +42,12 @@ func (m *TimeClockSettings) GetApprovedLocation()(*GeoCoordinates) {
 func (m *TimeClockSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["approvedLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGeoCoordinates() })
+        val, err := n.GetObjectValue(CreateGeoCoordinatesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApprovedLocation(val.(*GeoCoordinates))
+            m.SetApprovedLocation(val.(GeoCoordinatesable))
         }
         return nil
     }
@@ -75,7 +79,7 @@ func (m *TimeClockSettings) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetApprovedLocation sets the approvedLocation property value. The aprroved location of the timeClock.
-func (m *TimeClockSettings) SetApprovedLocation(value *GeoCoordinates)() {
+func (m *TimeClockSettings) SetApprovedLocation(value GeoCoordinatesable)() {
     if m != nil {
         m.approvedLocation = value
     }

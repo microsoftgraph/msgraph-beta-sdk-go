@@ -4,31 +4,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RbacApplication 
+// RbacApplication provides operations to manage the roleManagement singleton.
 type RbacApplication struct {
     Entity
     // 
-    resourceNamespaces []UnifiedRbacResourceNamespace;
+    resourceNamespaces []UnifiedRbacResourceNamespaceable;
     // 
-    roleAssignmentApprovals []Approval;
+    roleAssignmentApprovals []Approvalable;
     // Resource to grant access to users or groups.
-    roleAssignments []UnifiedRoleAssignment;
+    roleAssignments []UnifiedRoleAssignmentable;
     // 
-    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstance;
+    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable;
     // 
-    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequest;
+    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable;
     // 
-    roleAssignmentSchedules []UnifiedRoleAssignmentSchedule;
+    roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable;
     // Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-    roleDefinitions []UnifiedRoleDefinition;
+    roleDefinitions []UnifiedRoleDefinitionable;
     // 
-    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstance;
+    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable;
     // 
-    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequest;
+    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable;
     // 
-    roleEligibilitySchedules []UnifiedRoleEligibilitySchedule;
+    roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable;
     // 
-    transitiveRoleAssignments []UnifiedRoleAssignment;
+    transitiveRoleAssignments []UnifiedRoleAssignmentable;
 }
 // NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
@@ -37,8 +37,171 @@ func NewRbacApplication()(*RbacApplication) {
     }
     return m
 }
+// CreateRbacApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRbacApplicationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRbacApplication(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["resourceNamespaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRbacResourceNamespaceable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRbacResourceNamespaceable)
+            }
+            m.SetResourceNamespaces(res)
+        }
+        return nil
+    }
+    res["roleAssignmentApprovals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Approvalable, len(val))
+            for i, v := range val {
+                res[i] = v.(Approvalable)
+            }
+            m.SetRoleAssignmentApprovals(res)
+        }
+        return nil
+    }
+    res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleAssignmentable)
+            }
+            m.SetRoleAssignments(res)
+        }
+        return nil
+    }
+    res["roleAssignmentScheduleInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentScheduleInstanceable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleAssignmentScheduleInstanceable)
+            }
+            m.SetRoleAssignmentScheduleInstances(res)
+        }
+        return nil
+    }
+    res["roleAssignmentScheduleRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentScheduleRequestable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleAssignmentScheduleRequestable)
+            }
+            m.SetRoleAssignmentScheduleRequests(res)
+        }
+        return nil
+    }
+    res["roleAssignmentSchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentScheduleable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleAssignmentScheduleable)
+            }
+            m.SetRoleAssignmentSchedules(res)
+        }
+        return nil
+    }
+    res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleDefinitionable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleDefinitionable)
+            }
+            m.SetRoleDefinitions(res)
+        }
+        return nil
+    }
+    res["roleEligibilityScheduleInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleEligibilityScheduleInstanceable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleEligibilityScheduleInstanceable)
+            }
+            m.SetRoleEligibilityScheduleInstances(res)
+        }
+        return nil
+    }
+    res["roleEligibilityScheduleRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleEligibilityScheduleRequestable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleEligibilityScheduleRequestable)
+            }
+            m.SetRoleEligibilityScheduleRequests(res)
+        }
+        return nil
+    }
+    res["roleEligibilitySchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleEligibilityScheduleable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleEligibilityScheduleable)
+            }
+            m.SetRoleEligibilitySchedules(res)
+        }
+        return nil
+    }
+    res["transitiveRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignmentable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRoleAssignmentable)
+            }
+            m.SetTransitiveRoleAssignments(res)
+        }
+        return nil
+    }
+    return res
+}
 // GetResourceNamespaces gets the resourceNamespaces property value. 
-func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespace) {
+func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +209,7 @@ func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespace
     }
 }
 // GetRoleAssignmentApprovals gets the roleAssignmentApprovals property value. 
-func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approval) {
+func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approvalable) {
     if m == nil {
         return nil
     } else {
@@ -54,7 +217,7 @@ func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approval) {
     }
 }
 // GetRoleAssignments gets the roleAssignments property value. Resource to grant access to users or groups.
-func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignment) {
+func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -62,7 +225,7 @@ func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignment) {
     }
 }
 // GetRoleAssignmentScheduleInstances gets the roleAssignmentScheduleInstances property value. 
-func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstance) {
+func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstanceable) {
     if m == nil {
         return nil
     } else {
@@ -70,7 +233,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssi
     }
 }
 // GetRoleAssignmentScheduleRequests gets the roleAssignmentScheduleRequests property value. 
-func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequest) {
+func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequestable) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +241,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssig
     }
 }
 // GetRoleAssignmentSchedules gets the roleAssignmentSchedules property value. 
-func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentSchedule) {
+func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentScheduleable) {
     if m == nil {
         return nil
     } else {
@@ -86,7 +249,7 @@ func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentSc
     }
 }
 // GetRoleDefinitions gets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinition) {
+func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     if m == nil {
         return nil
     } else {
@@ -94,7 +257,7 @@ func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinition) {
     }
 }
 // GetRoleEligibilityScheduleInstances gets the roleEligibilityScheduleInstances property value. 
-func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstance) {
+func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstanceable) {
     if m == nil {
         return nil
     } else {
@@ -102,7 +265,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEli
     }
 }
 // GetRoleEligibilityScheduleRequests gets the roleEligibilityScheduleRequests property value. 
-func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequest) {
+func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequestable) {
     if m == nil {
         return nil
     } else {
@@ -110,7 +273,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleElig
     }
 }
 // GetRoleEligibilitySchedules gets the roleEligibilitySchedules property value. 
-func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibilitySchedule) {
+func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibilityScheduleable) {
     if m == nil {
         return nil
     } else {
@@ -118,171 +281,12 @@ func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibility
     }
 }
 // GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. 
-func (m *RbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignment) {
+func (m *RbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable) {
     if m == nil {
         return nil
     } else {
         return m.transitiveRoleAssignments
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["resourceNamespaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRbacResourceNamespace() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRbacResourceNamespace, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRbacResourceNamespace))
-            }
-            m.SetResourceNamespaces(res)
-        }
-        return nil
-    }
-    res["roleAssignmentApprovals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewApproval() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Approval, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*Approval))
-            }
-            m.SetRoleAssignmentApprovals(res)
-        }
-        return nil
-    }
-    res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignment() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignment, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleAssignment))
-            }
-            m.SetRoleAssignments(res)
-        }
-        return nil
-    }
-    res["roleAssignmentScheduleInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignmentScheduleInstance() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentScheduleInstance, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleAssignmentScheduleInstance))
-            }
-            m.SetRoleAssignmentScheduleInstances(res)
-        }
-        return nil
-    }
-    res["roleAssignmentScheduleRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignmentScheduleRequest() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentScheduleRequest, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleAssignmentScheduleRequest))
-            }
-            m.SetRoleAssignmentScheduleRequests(res)
-        }
-        return nil
-    }
-    res["roleAssignmentSchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignmentSchedule() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignmentSchedule, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleAssignmentSchedule))
-            }
-            m.SetRoleAssignmentSchedules(res)
-        }
-        return nil
-    }
-    res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleDefinition() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleDefinition, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleDefinition))
-            }
-            m.SetRoleDefinitions(res)
-        }
-        return nil
-    }
-    res["roleEligibilityScheduleInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleEligibilityScheduleInstance() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleEligibilityScheduleInstance, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleEligibilityScheduleInstance))
-            }
-            m.SetRoleEligibilityScheduleInstances(res)
-        }
-        return nil
-    }
-    res["roleEligibilityScheduleRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleEligibilityScheduleRequest() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleEligibilityScheduleRequest, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleEligibilityScheduleRequest))
-            }
-            m.SetRoleEligibilityScheduleRequests(res)
-        }
-        return nil
-    }
-    res["roleEligibilitySchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleEligibilitySchedule() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleEligibilitySchedule, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleEligibilitySchedule))
-            }
-            m.SetRoleEligibilitySchedules(res)
-        }
-        return nil
-    }
-    res["transitiveRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignment() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleAssignment, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleAssignment))
-            }
-            m.SetTransitiveRoleAssignments(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *RbacApplication) IsNil()(bool) {
     return m == nil
@@ -296,8 +300,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetResourceNamespaces() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceNamespaces()))
         for i, v := range m.GetResourceNamespaces() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resourceNamespaces", cast)
         if err != nil {
@@ -307,8 +310,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleAssignmentApprovals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentApprovals()))
         for i, v := range m.GetRoleAssignmentApprovals() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentApprovals", cast)
         if err != nil {
@@ -318,8 +320,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -329,8 +330,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleAssignmentScheduleInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentScheduleInstances()))
         for i, v := range m.GetRoleAssignmentScheduleInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentScheduleInstances", cast)
         if err != nil {
@@ -340,8 +340,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleAssignmentScheduleRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentScheduleRequests()))
         for i, v := range m.GetRoleAssignmentScheduleRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentScheduleRequests", cast)
         if err != nil {
@@ -351,8 +350,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleAssignmentSchedules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentSchedules()))
         for i, v := range m.GetRoleAssignmentSchedules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentSchedules", cast)
         if err != nil {
@@ -362,8 +360,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -373,8 +370,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleEligibilityScheduleInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleEligibilityScheduleInstances()))
         for i, v := range m.GetRoleEligibilityScheduleInstances() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleEligibilityScheduleInstances", cast)
         if err != nil {
@@ -384,8 +380,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleEligibilityScheduleRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleEligibilityScheduleRequests()))
         for i, v := range m.GetRoleEligibilityScheduleRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleEligibilityScheduleRequests", cast)
         if err != nil {
@@ -395,8 +390,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetRoleEligibilitySchedules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleEligibilitySchedules()))
         for i, v := range m.GetRoleEligibilitySchedules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleEligibilitySchedules", cast)
         if err != nil {
@@ -406,8 +400,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if m.GetTransitiveRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveRoleAssignments()))
         for i, v := range m.GetTransitiveRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("transitiveRoleAssignments", cast)
         if err != nil {
@@ -417,67 +410,67 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. 
-func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespace)() {
+func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
     if m != nil {
         m.resourceNamespaces = value
     }
 }
 // SetRoleAssignmentApprovals sets the roleAssignmentApprovals property value. 
-func (m *RbacApplication) SetRoleAssignmentApprovals(value []Approval)() {
+func (m *RbacApplication) SetRoleAssignmentApprovals(value []Approvalable)() {
     if m != nil {
         m.roleAssignmentApprovals = value
     }
 }
 // SetRoleAssignments sets the roleAssignments property value. Resource to grant access to users or groups.
-func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignment)() {
+func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignmentable)() {
     if m != nil {
         m.roleAssignments = value
     }
 }
 // SetRoleAssignmentScheduleInstances sets the roleAssignmentScheduleInstances property value. 
-func (m *RbacApplication) SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstance)() {
+func (m *RbacApplication) SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstanceable)() {
     if m != nil {
         m.roleAssignmentScheduleInstances = value
     }
 }
 // SetRoleAssignmentScheduleRequests sets the roleAssignmentScheduleRequests property value. 
-func (m *RbacApplication) SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequest)() {
+func (m *RbacApplication) SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequestable)() {
     if m != nil {
         m.roleAssignmentScheduleRequests = value
     }
 }
 // SetRoleAssignmentSchedules sets the roleAssignmentSchedules property value. 
-func (m *RbacApplication) SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentSchedule)() {
+func (m *RbacApplication) SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentScheduleable)() {
     if m != nil {
         m.roleAssignmentSchedules = value
     }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
+func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinitionable)() {
     if m != nil {
         m.roleDefinitions = value
     }
 }
 // SetRoleEligibilityScheduleInstances sets the roleEligibilityScheduleInstances property value. 
-func (m *RbacApplication) SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstance)() {
+func (m *RbacApplication) SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstanceable)() {
     if m != nil {
         m.roleEligibilityScheduleInstances = value
     }
 }
 // SetRoleEligibilityScheduleRequests sets the roleEligibilityScheduleRequests property value. 
-func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequest)() {
+func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequestable)() {
     if m != nil {
         m.roleEligibilityScheduleRequests = value
     }
 }
 // SetRoleEligibilitySchedules sets the roleEligibilitySchedules property value. 
-func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilitySchedule)() {
+func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilityScheduleable)() {
     if m != nil {
         m.roleEligibilitySchedules = value
     }
 }
 // SetTransitiveRoleAssignments sets the transitiveRoleAssignments property value. 
-func (m *RbacApplication) SetTransitiveRoleAssignments(value []UnifiedRoleAssignment)() {
+func (m *RbacApplication) SetTransitiveRoleAssignments(value []UnifiedRoleAssignmentable)() {
     if m != nil {
         m.transitiveRoleAssignments = value
     }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EnterpriseCodeSigningCertificate 
+// EnterpriseCodeSigningCertificate provides operations to manage the deviceAppManagement singleton.
 type EnterpriseCodeSigningCertificate struct {
     Entity
     // The Windows Enterprise Code-Signing Certificate in the raw data format.
@@ -32,6 +32,10 @@ func NewEnterpriseCodeSigningCertificate()(*EnterpriseCodeSigningCertificate) {
     }
     return m
 }
+// CreateEnterpriseCodeSigningCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateEnterpriseCodeSigningCertificateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEnterpriseCodeSigningCertificate(), nil
+}
 // GetContent gets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
 func (m *EnterpriseCodeSigningCertificate) GetContent()([]byte) {
     if m == nil {
@@ -46,54 +50,6 @@ func (m *EnterpriseCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetIssuer gets the issuer property value. The Issuer value for the cert.
-func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
-}
-// GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
-func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerName
-    }
-}
-// GetStatus gets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
-func (m *EnterpriseCodeSigningCertificate) GetStatus()(*CertificateStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetSubject gets the subject property value. The Subject Value for the cert.
-func (m *EnterpriseCodeSigningCertificate) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
-}
-// GetSubjectName gets the subjectName property value. The Subject Name for the cert.
-func (m *EnterpriseCodeSigningCertificate) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
-    }
-}
-// GetUploadDateTime gets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
-func (m *EnterpriseCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -180,6 +136,54 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetIssuer gets the issuer property value. The Issuer value for the cert.
+func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuer
+    }
+}
+// GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
+func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuerName
+    }
+}
+// GetStatus gets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+func (m *EnterpriseCodeSigningCertificate) GetStatus()(*CertificateStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetSubject gets the subject property value. The Subject Value for the cert.
+func (m *EnterpriseCodeSigningCertificate) GetSubject()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subject
+    }
+}
+// GetSubjectName gets the subjectName property value. The Subject Name for the cert.
+func (m *EnterpriseCodeSigningCertificate) GetSubjectName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjectName
+    }
+}
+// GetUploadDateTime gets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
+func (m *EnterpriseCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uploadDateTime
+    }
 }
 func (m *EnterpriseCodeSigningCertificate) IsNil()(bool) {
     return m == nil

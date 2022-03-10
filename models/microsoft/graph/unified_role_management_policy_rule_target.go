@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleManagementPolicyRuleTarget 
+// UnifiedRoleManagementPolicyRuleTarget provides operations to manage the policyRoot singleton.
 type UnifiedRoleManagementPolicyRuleTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,7 +19,7 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
     // The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
     operations []string;
     // 
-    targetObjects []DirectoryObject;
+    targetObjects []DirectoryObjectable;
 }
 // NewUnifiedRoleManagementPolicyRuleTarget instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
 func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRuleTarget) {
@@ -27,6 +27,10 @@ func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRule
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRoleManagementPolicyRuleTarget(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]interface{}) {
@@ -50,38 +54,6 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetEnforcedSettings()([]string) 
         return nil
     } else {
         return m.enforcedSettings
-    }
-}
-// GetInheritableSettings gets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inheritableSettings
-    }
-}
-// GetLevel gets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.level
-    }
-}
-// GetOperations gets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
-}
-// GetTargetObjects gets the targetObjects property value. 
-func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryObject) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetObjects
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,20 +122,52 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         return nil
     }
     res["targetObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = v.(DirectoryObjectable)
             }
             m.SetTargetObjects(res)
         }
         return nil
     }
     return res
+}
+// GetInheritableSettings gets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inheritableSettings
+    }
+}
+// GetLevel gets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.level
+    }
+}
+// GetOperations gets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
+    }
+}
+// GetTargetObjects gets the targetObjects property value. 
+func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryObjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetObjects
+    }
 }
 func (m *UnifiedRoleManagementPolicyRuleTarget) IsNil()(bool) {
     return m == nil
@@ -203,8 +207,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i04eb5309aeaafa
     if m.GetTargetObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargetObjects()))
         for i, v := range m.GetTargetObjects() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("targetObjects", cast)
         if err != nil {
@@ -256,7 +259,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []string)() 
     }
 }
 // SetTargetObjects sets the targetObjects property value. 
-func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []DirectoryObject)() {
+func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []DirectoryObjectable)() {
     if m != nil {
         m.targetObjects = value
     }

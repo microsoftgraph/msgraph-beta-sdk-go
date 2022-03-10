@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRbacResourceAction 
+// UnifiedRbacResourceAction provides operations to manage the roleManagement singleton.
 type UnifiedRbacResourceAction struct {
     Entity
     // HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
@@ -14,7 +14,7 @@ type UnifiedRbacResourceAction struct {
     // Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
     name *string;
     // 
-    resourceScope *UnifiedRbacResourceScope;
+    resourceScope UnifiedRbacResourceScopeable;
     // Not implemented.
     resourceScopeId *string;
 }
@@ -24,6 +24,10 @@ func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUnifiedRbacResourceActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUnifiedRbacResourceActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUnifiedRbacResourceAction(), nil
 }
 // GetActionVerb gets the actionVerb property value. HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
 func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
@@ -39,30 +43,6 @@ func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetName gets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
-func (m *UnifiedRbacResourceAction) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetResourceScope gets the resourceScope property value. 
-func (m *UnifiedRbacResourceAction) GetResourceScope()(*UnifiedRbacResourceScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceScope
-    }
-}
-// GetResourceScopeId gets the resourceScopeId property value. Not implemented.
-func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceScopeId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,12 +79,12 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["resourceScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRbacResourceScope() })
+        val, err := n.GetObjectValue(CreateUnifiedRbacResourceScopeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourceScope(val.(*UnifiedRbacResourceScope))
+            m.SetResourceScope(val.(UnifiedRbacResourceScopeable))
         }
         return nil
     }
@@ -119,6 +99,30 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetName gets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
+func (m *UnifiedRbacResourceAction) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetResourceScope gets the resourceScope property value. 
+func (m *UnifiedRbacResourceAction) GetResourceScope()(UnifiedRbacResourceScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceScope
+    }
+}
+// GetResourceScopeId gets the resourceScopeId property value. Not implemented.
+func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceScopeId
+    }
 }
 func (m *UnifiedRbacResourceAction) IsNil()(bool) {
     return m == nil
@@ -180,7 +184,7 @@ func (m *UnifiedRbacResourceAction) SetName(value *string)() {
     }
 }
 // SetResourceScope sets the resourceScope property value. 
-func (m *UnifiedRbacResourceAction) SetResourceScope(value *UnifiedRbacResourceScope)() {
+func (m *UnifiedRbacResourceAction) SetResourceScope(value UnifiedRbacResourceScopeable)() {
     if m != nil {
         m.resourceScope = value
     }

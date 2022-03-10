@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceEncryptionState 
+// ManagedDeviceEncryptionState provides operations to manage the deviceManagement singleton.
 type ManagedDeviceEncryptionState struct {
     Entity
     // Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
@@ -24,7 +24,7 @@ type ManagedDeviceEncryptionState struct {
     // Operating system version of the device
     osVersion *string;
     // Policy Details
-    policyDetails []EncryptionReportPolicyDetails;
+    policyDetails []EncryptionReportPolicyDetailsable;
     // Device TPM Version
     tpmSpecificationVersion *string;
     // User name
@@ -36,6 +36,10 @@ func NewManagedDeviceEncryptionState()(*ManagedDeviceEncryptionState) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateManagedDeviceEncryptionStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagedDeviceEncryptionStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDeviceEncryptionState(), nil
 }
 // GetAdvancedBitLockerStates gets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
 func (m *ManagedDeviceEncryptionState) GetAdvancedBitLockerStates()(*AdvancedBitLockerState) {
@@ -83,46 +87,6 @@ func (m *ManagedDeviceEncryptionState) GetEncryptionState()(*EncryptionState) {
         return nil
     } else {
         return m.encryptionState
-    }
-}
-// GetFileVaultStates gets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
-func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*FileVaultState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultStates
-    }
-}
-// GetOsVersion gets the osVersion property value. Operating system version of the device
-func (m *ManagedDeviceEncryptionState) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
-}
-// GetPolicyDetails gets the policyDetails property value. Policy Details
-func (m *ManagedDeviceEncryptionState) GetPolicyDetails()([]EncryptionReportPolicyDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyDetails
-    }
-}
-// GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. Device TPM Version
-func (m *ManagedDeviceEncryptionState) GetTpmSpecificationVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmSpecificationVersion
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User name
-func (m *ManagedDeviceEncryptionState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -209,14 +173,14 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["policyDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEncryptionReportPolicyDetails() })
+        val, err := n.GetCollectionOfObjectValues(CreateEncryptionReportPolicyDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]EncryptionReportPolicyDetails, len(val))
+            res := make([]EncryptionReportPolicyDetailsable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EncryptionReportPolicyDetails))
+                res[i] = v.(EncryptionReportPolicyDetailsable)
             }
             m.SetPolicyDetails(res)
         }
@@ -243,6 +207,46 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetFileVaultStates gets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
+func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*FileVaultState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileVaultStates
+    }
+}
+// GetOsVersion gets the osVersion property value. Operating system version of the device
+func (m *ManagedDeviceEncryptionState) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
+}
+// GetPolicyDetails gets the policyDetails property value. Policy Details
+func (m *ManagedDeviceEncryptionState) GetPolicyDetails()([]EncryptionReportPolicyDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyDetails
+    }
+}
+// GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. Device TPM Version
+func (m *ManagedDeviceEncryptionState) GetTpmSpecificationVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmSpecificationVersion
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User name
+func (m *ManagedDeviceEncryptionState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *ManagedDeviceEncryptionState) IsNil()(bool) {
     return m == nil
@@ -310,8 +314,7 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetPolicyDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPolicyDetails()))
         for i, v := range m.GetPolicyDetails() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("policyDetails", cast)
         if err != nil {
@@ -381,7 +384,7 @@ func (m *ManagedDeviceEncryptionState) SetOsVersion(value *string)() {
     }
 }
 // SetPolicyDetails sets the policyDetails property value. Policy Details
-func (m *ManagedDeviceEncryptionState) SetPolicyDetails(value []EncryptionReportPolicyDetails)() {
+func (m *ManagedDeviceEncryptionState) SetPolicyDetails(value []EncryptionReportPolicyDetailsable)() {
     if m != nil {
         m.policyDetails = value
     }

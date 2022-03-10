@@ -4,12 +4,13 @@ import (
     i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/getuserownedobjects"
     ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/validateproperties"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/count"
     if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/getbyids"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DirectoryObjectsRequestBuilder builds and executes requests for operations under \directoryObjects
+// DirectoryObjectsRequestBuilder provides operations to manage the collection of directoryObject entities.
 type DirectoryObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -51,7 +52,7 @@ type DirectoryObjectsRequestBuilderGetQueryParameters struct {
 // DirectoryObjectsRequestBuilderPostOptions options for Post
 type DirectoryObjectsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable;
     // Request headers
     H map[string]string;
     // Request options
@@ -68,7 +69,7 @@ func NewDirectoryObjectsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,6 +78,9 @@ func NewDirectoryObjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DirectoryObjectsRequestBuilder) Count()(*if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.CountRequestBuilder) {
+    return if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from directoryObjects
 func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformation(options *DirectoryObjectsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -117,16 +121,20 @@ func (m *DirectoryObjectsRequestBuilder) CreatePostRequestInformation(options *D
     return requestInfo, nil
 }
 // Get get entities from directoryObjects
-func (m *DirectoryObjectsRequestBuilder) Get(options *DirectoryObjectsRequestBuilderGetOptions)(*DirectoryObjectsResponse, error) {
+func (m *DirectoryObjectsRequestBuilder) Get(options *DirectoryObjectsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObjectsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DirectoryObjectsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }
 func (m *DirectoryObjectsRequestBuilder) GetByIds()(*if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.GetByIdsRequestBuilder) {
     return if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -135,16 +143,20 @@ func (m *DirectoryObjectsRequestBuilder) GetUserOwnedObjects()(*i2ef5ec242ba9486
     return i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to directoryObjects
-func (m *DirectoryObjectsRequestBuilder) Post(options *DirectoryObjectsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject, error) {
+func (m *DirectoryObjectsRequestBuilder) Post(options *DirectoryObjectsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDirectoryObject() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectable), nil
 }
 func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a.ValidatePropertiesRequestBuilder) {
     return ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

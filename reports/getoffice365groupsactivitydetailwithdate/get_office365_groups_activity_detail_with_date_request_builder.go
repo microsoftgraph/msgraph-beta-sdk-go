@@ -3,10 +3,9 @@ package getoffice365groupsactivitydetailwithdate
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetOffice365GroupsActivityDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityDetail(date={date})
+// GetOffice365GroupsActivityDetailWithDateRequestBuilder provides operations to call the getOffice365GroupsActivityDetail method.
 type GetOffice365GroupsActivityDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +35,7 @@ func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParam
     if date != nil {
         urlTplParams["date"] = (*date).String()
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,18 +63,14 @@ func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) CreateGetReques
     return requestInfo, nil
 }
 // Get invoke function getOffice365GroupsActivityDetail
-func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get(options *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityDetail, error) {
+func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get(options *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions)(GetOffice365GroupsActivityDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOffice365GroupsActivityDetail() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOffice365GroupsActivityDetailWithDateResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityDetail, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityDetail))
-    }
-    return val, nil
+    return res.(GetOffice365GroupsActivityDetailWithDateResponseable), nil
 }

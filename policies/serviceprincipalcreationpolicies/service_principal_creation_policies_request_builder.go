@@ -2,11 +2,12 @@ package serviceprincipalcreationpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i678c576971eb45a4aa289e30b9858af430b7126ee8fd4fc7c264c0245cb4e655 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/serviceprincipalcreationpolicies/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ServicePrincipalCreationPoliciesRequestBuilder builds and executes requests for operations under \policies\servicePrincipalCreationPolicies
+// ServicePrincipalCreationPoliciesRequestBuilder provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.
 type ServicePrincipalCreationPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type ServicePrincipalCreationPoliciesRequestBuilderGetQueryParameters struct {
 // ServicePrincipalCreationPoliciesRequestBuilderPostOptions options for Post
 type ServicePrincipalCreationPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewServicePrincipalCreationPoliciesRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewServicePrincipalCreationPoliciesRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalCreationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ServicePrincipalCreationPoliciesRequestBuilder) Count()(*i678c576971eb45a4aa289e30b9858af430b7126ee8fd4fc7c264c0245cb4e655.CountRequestBuilder) {
+    return i678c576971eb45a4aa289e30b9858af430b7126ee8fd4fc7c264c0245cb4e655.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get servicePrincipalCreationPolicies from policies
 func (m *ServicePrincipalCreationPoliciesRequestBuilder) CreateGetRequestInformation(options *ServicePrincipalCreationPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *ServicePrincipalCreationPoliciesRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get get servicePrincipalCreationPolicies from policies
-func (m *ServicePrincipalCreationPoliciesRequestBuilder) Get(options *ServicePrincipalCreationPoliciesRequestBuilderGetOptions)(*ServicePrincipalCreationPoliciesResponse, error) {
+func (m *ServicePrincipalCreationPoliciesRequestBuilder) Get(options *ServicePrincipalCreationPoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServicePrincipalCreationPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateServicePrincipalCreationPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ServicePrincipalCreationPoliciesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicyCollectionResponseable), nil
 }
 // Post create new navigation property to servicePrincipalCreationPolicies for policies
-func (m *ServicePrincipalCreationPoliciesRequestBuilder) Post(options *ServicePrincipalCreationPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicy, error) {
+func (m *ServicePrincipalCreationPoliciesRequestBuilder) Post(options *ServicePrincipalCreationPoliciesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewServicePrincipalCreationPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateServicePrincipalCreationPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationPolicyable), nil
 }

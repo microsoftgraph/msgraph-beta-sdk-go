@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Teamwork 
+// Teamwork provides operations to manage the teamwork singleton.
 type Teamwork struct {
     Entity
     // The Teams devices provisioned for the tenant.
-    devices []TeamworkDevice;
+    devices []TeamworkDeviceable;
     // A workforce integration with shifts.
-    workforceIntegrations []WorkforceIntegration;
+    workforceIntegrations []WorkforceIntegrationable;
 }
 // NewTeamwork instantiates a new teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
@@ -19,54 +19,58 @@ func NewTeamwork()(*Teamwork) {
     }
     return m
 }
+// CreateTeamworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamwork(), nil
+}
 // GetDevices gets the devices property value. The Teams devices provisioned for the tenant.
-func (m *Teamwork) GetDevices()([]TeamworkDevice) {
+func (m *Teamwork) GetDevices()([]TeamworkDeviceable) {
     if m == nil {
         return nil
     } else {
         return m.devices
     }
 }
-// GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
-func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workforceIntegrations
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["devices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkDevice() })
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]TeamworkDevice, len(val))
+            res := make([]TeamworkDeviceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*TeamworkDevice))
+                res[i] = v.(TeamworkDeviceable)
             }
             m.SetDevices(res)
         }
         return nil
     }
     res["workforceIntegrations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkforceIntegration() })
+        val, err := n.GetCollectionOfObjectValues(CreateWorkforceIntegrationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]WorkforceIntegration, len(val))
+            res := make([]WorkforceIntegrationable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*WorkforceIntegration))
+                res[i] = v.(WorkforceIntegrationable)
             }
             m.SetWorkforceIntegrations(res)
         }
         return nil
     }
     return res
+}
+// GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
+func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workforceIntegrations
+    }
 }
 func (m *Teamwork) IsNil()(bool) {
     return m == nil
@@ -80,8 +84,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDevices()))
         for i, v := range m.GetDevices() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("devices", cast)
         if err != nil {
@@ -91,8 +94,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetWorkforceIntegrations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("workforceIntegrations", cast)
         if err != nil {
@@ -102,13 +104,13 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetDevices sets the devices property value. The Teams devices provisioned for the tenant.
-func (m *Teamwork) SetDevices(value []TeamworkDevice)() {
+func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
     if m != nil {
         m.devices = value
     }
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.
-func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegration)() {
+func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
     if m != nil {
         m.workforceIntegrations = value
     }

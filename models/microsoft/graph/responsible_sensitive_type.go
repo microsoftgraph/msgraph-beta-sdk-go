@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ResponsibleSensitiveType 
+// ResponsibleSensitiveType provides operations to call the evaluate method.
 type ResponsibleSensitiveType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,6 +28,10 @@ func NewResponsibleSensitiveType()(*ResponsibleSensitiveType) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateResponsibleSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateResponsibleSensitiveTypeFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewResponsibleSensitiveType(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResponsibleSensitiveType) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -42,46 +46,6 @@ func (m *ResponsibleSensitiveType) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetId gets the id property value. 
-func (m *ResponsibleSensitiveType) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetName gets the name property value. 
-func (m *ResponsibleSensitiveType) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPublisherName gets the publisherName property value. 
-func (m *ResponsibleSensitiveType) GetPublisherName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisherName
-    }
-}
-// GetRulePackageId gets the rulePackageId property value. 
-func (m *ResponsibleSensitiveType) GetRulePackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rulePackageId
-    }
-}
-// GetRulePackageType gets the rulePackageType property value. 
-func (m *ResponsibleSensitiveType) GetRulePackageType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rulePackageType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -148,6 +112,46 @@ func (m *ResponsibleSensitiveType) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetId gets the id property value. 
+func (m *ResponsibleSensitiveType) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetName gets the name property value. 
+func (m *ResponsibleSensitiveType) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPublisherName gets the publisherName property value. 
+func (m *ResponsibleSensitiveType) GetPublisherName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.publisherName
+    }
+}
+// GetRulePackageId gets the rulePackageId property value. 
+func (m *ResponsibleSensitiveType) GetRulePackageId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rulePackageId
+    }
+}
+// GetRulePackageType gets the rulePackageType property value. 
+func (m *ResponsibleSensitiveType) GetRulePackageType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rulePackageType
+    }
 }
 func (m *ResponsibleSensitiveType) IsNil()(bool) {
     return m == nil

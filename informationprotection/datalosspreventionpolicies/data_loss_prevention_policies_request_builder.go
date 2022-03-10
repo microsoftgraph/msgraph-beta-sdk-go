@@ -2,12 +2,13 @@ package datalosspreventionpolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i707a393d8f4ffbfc616c3c9573536d6545ae9e807fb8373bdaeb652f4aa49af6 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/datalosspreventionpolicies/count"
     iadfdd2c94b77829e97dfd861211edb1169aeb2788bf74e13903e390a1d17b526 "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/datalosspreventionpolicies/evaluate"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DataLossPreventionPoliciesRequestBuilder builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies
+// DataLossPreventionPoliciesRequestBuilder provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
 type DataLossPreventionPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type DataLossPreventionPoliciesRequestBuilderGetQueryParameters struct {
 // DataLossPreventionPoliciesRequestBuilderPostOptions options for Post
 type DataLossPreventionPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewDataLossPreventionPoliciesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewDataLossPreventionPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDataLossPreventionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DataLossPreventionPoliciesRequestBuilder) Count()(*i707a393d8f4ffbfc616c3c9573536d6545ae9e807fb8373bdaeb652f4aa49af6.CountRequestBuilder) {
+    return i707a393d8f4ffbfc616c3c9573536d6545ae9e807fb8373bdaeb652f4aa49af6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get dataLossPreventionPolicies from informationProtection
 func (m *DataLossPreventionPoliciesRequestBuilder) CreateGetRequestInformation(options *DataLossPreventionPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -118,26 +122,34 @@ func (m *DataLossPreventionPoliciesRequestBuilder) Evaluate()(*iadfdd2c94b77829e
     return iadfdd2c94b77829e97dfd861211edb1169aeb2788bf74e13903e390a1d17b526.NewEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get dataLossPreventionPolicies from informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) Get(options *DataLossPreventionPoliciesRequestBuilderGetOptions)(*DataLossPreventionPoliciesResponse, error) {
+func (m *DataLossPreventionPoliciesRequestBuilder) Get(options *DataLossPreventionPoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDataLossPreventionPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDataLossPreventionPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DataLossPreventionPoliciesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicyCollectionResponseable), nil
 }
 // Post create new navigation property to dataLossPreventionPolicies for informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) Post(options *DataLossPreventionPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicy, error) {
+func (m *DataLossPreventionPoliciesRequestBuilder) Post(options *DataLossPreventionPoliciesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDataLossPreventionPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDataLossPreventionPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicyable), nil
 }

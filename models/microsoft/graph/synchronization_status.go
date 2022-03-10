@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationStatus 
+// SynchronizationStatus provides operations to manage the collection of application entities.
 type SynchronizationStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,21 +16,21 @@ type SynchronizationStatus struct {
     // true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
     escrowsPruned *bool;
     // Details of the last execution of the job.
-    lastExecution *SynchronizationTaskExecution;
+    lastExecution SynchronizationTaskExecutionable;
     // Details of the last execution of this job, which didn't have any errors.
-    lastSuccessfulExecution *SynchronizationTaskExecution;
+    lastSuccessfulExecution SynchronizationTaskExecutionable;
     // Details of the last execution of the job, which exported objects into the target directory.
-    lastSuccessfulExecutionWithExports *SynchronizationTaskExecution;
+    lastSuccessfulExecutionWithExports SynchronizationTaskExecutionable;
     // Details of the progress of a job toward completion.
-    progress []SynchronizationProgress;
+    progress []SynchronizationProgressable;
     // If job is in quarantine, quarantine details.
-    quarantine *SynchronizationQuarantine;
+    quarantine SynchronizationQuarantineable;
     // The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     steadyStateFirstAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     steadyStateLastAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Count of synchronized objects, listed by object type.
-    synchronizedEntryCountByType []StringKeyLongValuePair;
+    synchronizedEntryCountByType []StringKeyLongValuePairable;
     // In the event of an error, the URL with the troubleshooting steps for the issue.
     troubleshootingUrl *string;
 }
@@ -40,6 +40,10 @@ func NewSynchronizationStatus()(*SynchronizationStatus) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateSynchronizationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSynchronizationStatusFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSynchronizationStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationStatus) GetAdditionalData()(map[string]interface{}) {
@@ -71,78 +75,6 @@ func (m *SynchronizationStatus) GetEscrowsPruned()(*bool) {
         return nil
     } else {
         return m.escrowsPruned
-    }
-}
-// GetLastExecution gets the lastExecution property value. Details of the last execution of the job.
-func (m *SynchronizationStatus) GetLastExecution()(*SynchronizationTaskExecution) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastExecution
-    }
-}
-// GetLastSuccessfulExecution gets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
-func (m *SynchronizationStatus) GetLastSuccessfulExecution()(*SynchronizationTaskExecution) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSuccessfulExecution
-    }
-}
-// GetLastSuccessfulExecutionWithExports gets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
-func (m *SynchronizationStatus) GetLastSuccessfulExecutionWithExports()(*SynchronizationTaskExecution) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSuccessfulExecutionWithExports
-    }
-}
-// GetProgress gets the progress property value. Details of the progress of a job toward completion.
-func (m *SynchronizationStatus) GetProgress()([]SynchronizationProgress) {
-    if m == nil {
-        return nil
-    } else {
-        return m.progress
-    }
-}
-// GetQuarantine gets the quarantine property value. If job is in quarantine, quarantine details.
-func (m *SynchronizationStatus) GetQuarantine()(*SynchronizationQuarantine) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quarantine
-    }
-}
-// GetSteadyStateFirstAchievedTime gets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *SynchronizationStatus) GetSteadyStateFirstAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.steadyStateFirstAchievedTime
-    }
-}
-// GetSteadyStateLastAchievedTime gets the steadyStateLastAchievedTime property value. The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *SynchronizationStatus) GetSteadyStateLastAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.steadyStateLastAchievedTime
-    }
-}
-// GetSynchronizedEntryCountByType gets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
-func (m *SynchronizationStatus) GetSynchronizedEntryCountByType()([]StringKeyLongValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.synchronizedEntryCountByType
-    }
-}
-// GetTroubleshootingUrl gets the troubleshootingUrl property value. In the event of an error, the URL with the troubleshooting steps for the issue.
-func (m *SynchronizationStatus) GetTroubleshootingUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.troubleshootingUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -179,56 +111,56 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["lastExecution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationTaskExecution() })
+        val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastExecution(val.(*SynchronizationTaskExecution))
+            m.SetLastExecution(val.(SynchronizationTaskExecutionable))
         }
         return nil
     }
     res["lastSuccessfulExecution"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationTaskExecution() })
+        val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastSuccessfulExecution(val.(*SynchronizationTaskExecution))
+            m.SetLastSuccessfulExecution(val.(SynchronizationTaskExecutionable))
         }
         return nil
     }
     res["lastSuccessfulExecutionWithExports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationTaskExecution() })
+        val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLastSuccessfulExecutionWithExports(val.(*SynchronizationTaskExecution))
+            m.SetLastSuccessfulExecutionWithExports(val.(SynchronizationTaskExecutionable))
         }
         return nil
     }
     res["progress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationProgress() })
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationProgressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SynchronizationProgress, len(val))
+            res := make([]SynchronizationProgressable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SynchronizationProgress))
+                res[i] = v.(SynchronizationProgressable)
             }
             m.SetProgress(res)
         }
         return nil
     }
     res["quarantine"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSynchronizationQuarantine() })
+        val, err := n.GetObjectValue(CreateSynchronizationQuarantineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQuarantine(val.(*SynchronizationQuarantine))
+            m.SetQuarantine(val.(SynchronizationQuarantineable))
         }
         return nil
     }
@@ -253,14 +185,14 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["synchronizedEntryCountByType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewStringKeyLongValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateStringKeyLongValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]StringKeyLongValuePair, len(val))
+            res := make([]StringKeyLongValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*StringKeyLongValuePair))
+                res[i] = v.(StringKeyLongValuePairable)
             }
             m.SetSynchronizedEntryCountByType(res)
         }
@@ -277,6 +209,78 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     return res
+}
+// GetLastExecution gets the lastExecution property value. Details of the last execution of the job.
+func (m *SynchronizationStatus) GetLastExecution()(SynchronizationTaskExecutionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastExecution
+    }
+}
+// GetLastSuccessfulExecution gets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
+func (m *SynchronizationStatus) GetLastSuccessfulExecution()(SynchronizationTaskExecutionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSuccessfulExecution
+    }
+}
+// GetLastSuccessfulExecutionWithExports gets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
+func (m *SynchronizationStatus) GetLastSuccessfulExecutionWithExports()(SynchronizationTaskExecutionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSuccessfulExecutionWithExports
+    }
+}
+// GetProgress gets the progress property value. Details of the progress of a job toward completion.
+func (m *SynchronizationStatus) GetProgress()([]SynchronizationProgressable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.progress
+    }
+}
+// GetQuarantine gets the quarantine property value. If job is in quarantine, quarantine details.
+func (m *SynchronizationStatus) GetQuarantine()(SynchronizationQuarantineable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quarantine
+    }
+}
+// GetSteadyStateFirstAchievedTime gets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *SynchronizationStatus) GetSteadyStateFirstAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.steadyStateFirstAchievedTime
+    }
+}
+// GetSteadyStateLastAchievedTime gets the steadyStateLastAchievedTime property value. The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *SynchronizationStatus) GetSteadyStateLastAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.steadyStateLastAchievedTime
+    }
+}
+// GetSynchronizedEntryCountByType gets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
+func (m *SynchronizationStatus) GetSynchronizedEntryCountByType()([]StringKeyLongValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.synchronizedEntryCountByType
+    }
+}
+// GetTroubleshootingUrl gets the troubleshootingUrl property value. In the event of an error, the URL with the troubleshooting steps for the issue.
+func (m *SynchronizationStatus) GetTroubleshootingUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.troubleshootingUrl
+    }
 }
 func (m *SynchronizationStatus) IsNil()(bool) {
     return m == nil
@@ -323,8 +327,7 @@ func (m *SynchronizationStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetProgress() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProgress()))
         for i, v := range m.GetProgress() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("progress", cast)
         if err != nil {
@@ -352,8 +355,7 @@ func (m *SynchronizationStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if m.GetSynchronizedEntryCountByType() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSynchronizedEntryCountByType()))
         for i, v := range m.GetSynchronizedEntryCountByType() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("synchronizedEntryCountByType", cast)
         if err != nil {
@@ -399,31 +401,31 @@ func (m *SynchronizationStatus) SetEscrowsPruned(value *bool)() {
     }
 }
 // SetLastExecution sets the lastExecution property value. Details of the last execution of the job.
-func (m *SynchronizationStatus) SetLastExecution(value *SynchronizationTaskExecution)() {
+func (m *SynchronizationStatus) SetLastExecution(value SynchronizationTaskExecutionable)() {
     if m != nil {
         m.lastExecution = value
     }
 }
 // SetLastSuccessfulExecution sets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
-func (m *SynchronizationStatus) SetLastSuccessfulExecution(value *SynchronizationTaskExecution)() {
+func (m *SynchronizationStatus) SetLastSuccessfulExecution(value SynchronizationTaskExecutionable)() {
     if m != nil {
         m.lastSuccessfulExecution = value
     }
 }
 // SetLastSuccessfulExecutionWithExports sets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
-func (m *SynchronizationStatus) SetLastSuccessfulExecutionWithExports(value *SynchronizationTaskExecution)() {
+func (m *SynchronizationStatus) SetLastSuccessfulExecutionWithExports(value SynchronizationTaskExecutionable)() {
     if m != nil {
         m.lastSuccessfulExecutionWithExports = value
     }
 }
 // SetProgress sets the progress property value. Details of the progress of a job toward completion.
-func (m *SynchronizationStatus) SetProgress(value []SynchronizationProgress)() {
+func (m *SynchronizationStatus) SetProgress(value []SynchronizationProgressable)() {
     if m != nil {
         m.progress = value
     }
 }
 // SetQuarantine sets the quarantine property value. If job is in quarantine, quarantine details.
-func (m *SynchronizationStatus) SetQuarantine(value *SynchronizationQuarantine)() {
+func (m *SynchronizationStatus) SetQuarantine(value SynchronizationQuarantineable)() {
     if m != nil {
         m.quarantine = value
     }
@@ -441,7 +443,7 @@ func (m *SynchronizationStatus) SetSteadyStateLastAchievedTime(value *i336074805
     }
 }
 // SetSynchronizedEntryCountByType sets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
-func (m *SynchronizationStatus) SetSynchronizedEntryCountByType(value []StringKeyLongValuePair)() {
+func (m *SynchronizationStatus) SetSynchronizedEntryCountByType(value []StringKeyLongValuePairable)() {
     if m != nil {
         m.synchronizedEntryCountByType = value
     }

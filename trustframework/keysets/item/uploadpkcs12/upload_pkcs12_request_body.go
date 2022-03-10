@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UploadPkcs12RequestBody 
+// UploadPkcs12RequestBody provides operations to call the uploadPkcs12 method.
 type UploadPkcs12RequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewUploadPkcs12RequestBody()(*UploadPkcs12RequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateUploadPkcs12RequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUploadPkcs12RequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUploadPkcs12RequestBody(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadPkcs12RequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetKey gets the key property value. 
-func (m *UploadPkcs12RequestBody) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
-}
-// GetPassword gets the password property value. 
-func (m *UploadPkcs12RequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *UploadPkcs12RequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     return res
+}
+// GetKey gets the key property value. 
+func (m *UploadPkcs12RequestBody) GetKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.key
+    }
+}
+// GetPassword gets the password property value. 
+func (m *UploadPkcs12RequestBody) GetPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.password
+    }
 }
 func (m *UploadPkcs12RequestBody) IsNil()(bool) {
     return m == nil

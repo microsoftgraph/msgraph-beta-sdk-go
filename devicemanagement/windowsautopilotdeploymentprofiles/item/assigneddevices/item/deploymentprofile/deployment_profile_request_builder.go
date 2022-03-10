@@ -2,13 +2,11 @@ package deploymentprofile
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i066a8e225f70edab2dc513b20d9bb1294d2092b999baf4a17b5b871541849bec "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles/item/assigneddevices/item/deploymentprofile/ref"
-    ia825fe515b30ce26d3c1669bf73ce2fddc7f3cb094cf50ee484ee449aa99b2a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles/item/assigneddevices/item/deploymentprofile/assign"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DeploymentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices\{windowsAutopilotDeviceIdentity-id}\deploymentProfile
+// DeploymentProfileRequestBuilder provides operations to manage the deploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.
 type DeploymentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,9 +33,6 @@ type DeploymentProfileRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
 }
-func (m *DeploymentProfileRequestBuilder) Assign()(*ia825fe515b30ce26d3c1669bf73ce2fddc7f3cb094cf50ee484ee449aa99b2a3.AssignRequestBuilder) {
-    return ia825fe515b30ce26d3c1669bf73ce2fddc7f3cb094cf50ee484ee449aa99b2a3.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewDeploymentProfileRequestBuilderInternal instantiates a new DeploymentProfileRequestBuilder and sets the default values.
 func NewDeploymentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentProfileRequestBuilder) {
     m := &DeploymentProfileRequestBuilder{
@@ -47,7 +42,7 @@ func NewDeploymentProfileRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,17 +73,18 @@ func (m *DeploymentProfileRequestBuilder) CreateGetRequestInformation(options *D
     return requestInfo, nil
 }
 // Get deployment profile currently assigned to the Windows autopilot device.
-func (m *DeploymentProfileRequestBuilder) Get(options *DeploymentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile, error) {
+func (m *DeploymentProfileRequestBuilder) Get(options *DeploymentProfileRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewWindowsAutopilotDeploymentProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile), nil
-}
-func (m *DeploymentProfileRequestBuilder) Ref()(*i066a8e225f70edab2dc513b20d9bb1294d2092b999baf4a17b5b871541849bec.RefRequestBuilder) {
-    return i066a8e225f70edab2dc513b20d9bb1294d2092b999baf4a17b5b871541849bec.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfileable), nil
 }

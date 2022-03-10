@@ -2,11 +2,12 @@ package settingdefinitions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    ibc7d087eb2d2c74da1f522be513f40d6795e4a66c7fe0a8544bd8ac094138836 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationpolicies/item/settings/item/settingdefinitions/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    id614f3b044953f5288ac5dc6c559964809cecc3b2c83e281af6723211a9021b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationpolicies/item/settings/item/settingdefinitions/count"
 )
 
-// SettingDefinitionsRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicies\{deviceManagementConfigurationPolicy-id}\settings\{deviceManagementConfigurationSetting-id}\settingDefinitions
+// SettingDefinitionsRequestBuilder provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
 type SettingDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewSettingDefinitionsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewSettingDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSettingDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SettingDefinitionsRequestBuilder) Count()(*id614f3b044953f5288ac5dc6c559964809cecc3b2c83e281af6723211a9021b4.CountRequestBuilder) {
+    return id614f3b044953f5288ac5dc6c559964809cecc3b2c83e281af6723211a9021b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of related Setting Definitions. This property is read-only.
 func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(options *SettingDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get list of related Setting Definitions. This property is read-only.
-func (m *SettingDefinitionsRequestBuilder) Get(options *SettingDefinitionsRequestBuilderGetOptions)(*SettingDefinitionsResponse, error) {
+func (m *SettingDefinitionsRequestBuilder) Get(options *SettingDefinitionsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettingDefinitionsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementConfigurationSettingDefinitionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SettingDefinitionsResponse), nil
-}
-func (m *SettingDefinitionsRequestBuilder) Ref()(*ibc7d087eb2d2c74da1f522be513f40d6795e4a66c7fe0a8544bd8ac094138836.RefRequestBuilder) {
-    return ibc7d087eb2d2c74da1f522be513f40d6795e4a66c7fe0a8544bd8ac094138836.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinitionCollectionResponseable), nil
 }

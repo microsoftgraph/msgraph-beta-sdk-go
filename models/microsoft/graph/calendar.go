@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Calendar 
+// Calendar provides operations to manage the compliance singleton.
 type Calendar struct {
     Entity
     // Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
@@ -12,9 +12,9 @@ type Calendar struct {
     // The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.
     calendarGroupId *string;
     // The permissions of the users with whom the calendar is shared.
-    calendarPermissions []CalendarPermission;
+    calendarPermissions []CalendarPermissionable;
     // The calendar view for the calendar. Navigation property. Read-only.
-    calendarView []Event;
+    calendarView []Eventable;
     // true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
     canEdit *bool;
     // true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
@@ -28,7 +28,7 @@ type Calendar struct {
     // The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
     defaultOnlineMeetingProvider *OnlineMeetingProviderType;
     // The events in the calendar. Navigation property. Read-only.
-    events []Event;
+    events []Eventable;
     // The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
     hexColor *string;
     // true if this is the default calendar where new events are created by default, false otherwise.
@@ -42,13 +42,13 @@ type Calendar struct {
     // Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
     isTallyingResponses *bool;
     // The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
     // The calendar name.
     name *string;
     // If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
-    owner *EmailAddress;
+    owner EmailAddressable;
     // The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
 }
 // NewCalendar instantiates a new calendar and sets the default values.
 func NewCalendar()(*Calendar) {
@@ -56,6 +56,10 @@ func NewCalendar()(*Calendar) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateCalendarFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCalendarFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCalendar(), nil
 }
 // GetAllowedOnlineMeetingProviders gets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
 func (m *Calendar) GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderType) {
@@ -74,7 +78,7 @@ func (m *Calendar) GetCalendarGroupId()(*string) {
     }
 }
 // GetCalendarPermissions gets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
-func (m *Calendar) GetCalendarPermissions()([]CalendarPermission) {
+func (m *Calendar) GetCalendarPermissions()([]CalendarPermissionable) {
     if m == nil {
         return nil
     } else {
@@ -82,7 +86,7 @@ func (m *Calendar) GetCalendarPermissions()([]CalendarPermission) {
     }
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Navigation property. Read-only.
-func (m *Calendar) GetCalendarView()([]Event) {
+func (m *Calendar) GetCalendarView()([]Eventable) {
     if m == nil {
         return nil
     } else {
@@ -138,91 +142,11 @@ func (m *Calendar) GetDefaultOnlineMeetingProvider()(*OnlineMeetingProviderType)
     }
 }
 // GetEvents gets the events property value. The events in the calendar. Navigation property. Read-only.
-func (m *Calendar) GetEvents()([]Event) {
+func (m *Calendar) GetEvents()([]Eventable) {
     if m == nil {
         return nil
     } else {
         return m.events
-    }
-}
-// GetHexColor gets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
-func (m *Calendar) GetHexColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hexColor
-    }
-}
-// GetIsDefaultCalendar gets the isDefaultCalendar property value. true if this is the default calendar where new events are created by default, false otherwise.
-func (m *Calendar) GetIsDefaultCalendar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultCalendar
-    }
-}
-// GetIsRemovable gets the isRemovable property value. Indicates whether this user calendar can be deleted from the user mailbox.
-func (m *Calendar) GetIsRemovable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRemovable
-    }
-}
-// GetIsShared gets the isShared property value. true if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
-func (m *Calendar) GetIsShared()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isShared
-    }
-}
-// GetIsSharedWithMe gets the isSharedWithMe property value. true if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
-func (m *Calendar) GetIsSharedWithMe()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSharedWithMe
-    }
-}
-// GetIsTallyingResponses gets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
-func (m *Calendar) GetIsTallyingResponses()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTallyingResponses
-    }
-}
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-func (m *Calendar) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
-}
-// GetName gets the name property value. The calendar name.
-func (m *Calendar) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetOwner gets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
-func (m *Calendar) GetOwner()(*EmailAddress) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
-}
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-func (m *Calendar) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -253,28 +177,28 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["calendarPermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCalendarPermission() })
+        val, err := n.GetCollectionOfObjectValues(CreateCalendarPermissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CalendarPermission, len(val))
+            res := make([]CalendarPermissionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CalendarPermission))
+                res[i] = v.(CalendarPermissionable)
             }
             m.SetCalendarPermissions(res)
         }
         return nil
     }
     res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = v.(Eventable)
             }
             m.SetCalendarView(res)
         }
@@ -341,14 +265,14 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(CreateEventFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = v.(Eventable)
             }
             m.SetEvents(res)
         }
@@ -415,14 +339,14 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMultiValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+                res[i] = v.(MultiValueLegacyExtendedPropertyable)
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -439,30 +363,110 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEmailAddress() })
+        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOwner(val.(*EmailAddress))
+            m.SetOwner(val.(EmailAddressable))
         }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSingleValueLegacyExtendedProperty() })
+        val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+                res[i] = v.(SingleValueLegacyExtendedPropertyable)
             }
             m.SetSingleValueExtendedProperties(res)
         }
         return nil
     }
     return res
+}
+// GetHexColor gets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
+func (m *Calendar) GetHexColor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hexColor
+    }
+}
+// GetIsDefaultCalendar gets the isDefaultCalendar property value. true if this is the default calendar where new events are created by default, false otherwise.
+func (m *Calendar) GetIsDefaultCalendar()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isDefaultCalendar
+    }
+}
+// GetIsRemovable gets the isRemovable property value. Indicates whether this user calendar can be deleted from the user mailbox.
+func (m *Calendar) GetIsRemovable()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRemovable
+    }
+}
+// GetIsShared gets the isShared property value. true if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
+func (m *Calendar) GetIsShared()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isShared
+    }
+}
+// GetIsSharedWithMe gets the isSharedWithMe property value. true if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.
+func (m *Calendar) GetIsSharedWithMe()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSharedWithMe
+    }
+}
+// GetIsTallyingResponses gets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
+func (m *Calendar) GetIsTallyingResponses()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isTallyingResponses
+    }
+}
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
+func (m *Calendar) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.multiValueExtendedProperties
+    }
+}
+// GetName gets the name property value. The calendar name.
+func (m *Calendar) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetOwner gets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
+func (m *Calendar) GetOwner()(EmailAddressable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.owner
+    }
+}
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
+func (m *Calendar) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.singleValueExtendedProperties
+    }
 }
 func (m *Calendar) IsNil()(bool) {
     return m == nil
@@ -488,8 +492,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetCalendarPermissions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarPermissions()))
         for i, v := range m.GetCalendarPermissions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("calendarPermissions", cast)
         if err != nil {
@@ -499,8 +502,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetCalendarView() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
         if err != nil {
@@ -548,8 +550,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {
@@ -595,8 +596,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -618,8 +618,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -641,13 +640,13 @@ func (m *Calendar) SetCalendarGroupId(value *string)() {
     }
 }
 // SetCalendarPermissions sets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
-func (m *Calendar) SetCalendarPermissions(value []CalendarPermission)() {
+func (m *Calendar) SetCalendarPermissions(value []CalendarPermissionable)() {
     if m != nil {
         m.calendarPermissions = value
     }
 }
 // SetCalendarView sets the calendarView property value. The calendar view for the calendar. Navigation property. Read-only.
-func (m *Calendar) SetCalendarView(value []Event)() {
+func (m *Calendar) SetCalendarView(value []Eventable)() {
     if m != nil {
         m.calendarView = value
     }
@@ -689,7 +688,7 @@ func (m *Calendar) SetDefaultOnlineMeetingProvider(value *OnlineMeetingProviderT
     }
 }
 // SetEvents sets the events property value. The events in the calendar. Navigation property. Read-only.
-func (m *Calendar) SetEvents(value []Event)() {
+func (m *Calendar) SetEvents(value []Eventable)() {
     if m != nil {
         m.events = value
     }
@@ -731,7 +730,7 @@ func (m *Calendar) SetIsTallyingResponses(value *bool)() {
     }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-func (m *Calendar) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
+func (m *Calendar) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.multiValueExtendedProperties = value
     }
@@ -743,13 +742,13 @@ func (m *Calendar) SetName(value *string)() {
     }
 }
 // SetOwner sets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
-func (m *Calendar) SetOwner(value *EmailAddress)() {
+func (m *Calendar) SetOwner(value EmailAddressable)() {
     if m != nil {
         m.owner = value
     }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-func (m *Calendar) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
+func (m *Calendar) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     if m != nil {
         m.singleValueExtendedProperties = value
     }

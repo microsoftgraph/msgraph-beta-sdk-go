@@ -2,11 +2,16 @@ package nextversiondefinition
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i26cea1b628a9da082ff30062f4f11ed9cbd999596bbc99faa1213903e5f34d37 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/nextversiondefinition/presentations"
+    i640cd655474ac9b2a590aa46892b03be1d3fee33b81b859f57cd63017a17ffe8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/nextversiondefinition/definitionfile"
+    ib2ff762ff32474e301d90f37b46ab31571b5a05f779566ee07878e8081181c75 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/nextversiondefinition/previousversiondefinition"
+    id5b28d8da3b0080437018517a9e7c25762109b722c10c438d5d3ceabf215bff5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/nextversiondefinition/category"
+    ica1c1ab53345b0934afadc64800a3328e0c05a18bb3bf8722bfd4f522eabc4f3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions/item/nextversiondefinition/presentations/item"
 )
 
-// NextVersionDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\nextVersionDefinition
+// NextVersionDefinitionRequestBuilder provides operations to manage the nextVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 type NextVersionDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,13 +50,16 @@ type NextVersionDefinitionRequestBuilderGetQueryParameters struct {
 // NextVersionDefinitionRequestBuilderPatchOptions options for Patch
 type NextVersionDefinitionRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinition;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionable;
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *NextVersionDefinitionRequestBuilder) Category()(*id5b28d8da3b0080437018517a9e7c25762109b722c10c438d5d3ceabf215bff5.CategoryRequestBuilder) {
+    return id5b28d8da3b0080437018517a9e7c25762109b722c10c438d5d3ceabf215bff5.NewCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewNextVersionDefinitionRequestBuilderInternal instantiates a new NextVersionDefinitionRequestBuilder and sets the default values.
 func NewNextVersionDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NextVersionDefinitionRequestBuilder) {
@@ -62,7 +70,7 @@ func NewNextVersionDefinitionRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +80,7 @@ func NewNextVersionDefinitionRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewNextVersionDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation definition of the next version of this definition
+// CreateDeleteRequestInformation delete navigation property nextVersionDefinition for deviceManagement
 func (m *NextVersionDefinitionRequestBuilder) CreateDeleteRequestInformation(options *NextVersionDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +117,7 @@ func (m *NextVersionDefinitionRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation definition of the next version of this definition
+// CreatePatchRequestInformation update the navigation property nextVersionDefinition in deviceManagement
 func (m *NextVersionDefinitionRequestBuilder) CreatePatchRequestInformation(options *NextVersionDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,39 +135,71 @@ func (m *NextVersionDefinitionRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete definition of the next version of this definition
+func (m *NextVersionDefinitionRequestBuilder) DefinitionFile()(*i640cd655474ac9b2a590aa46892b03be1d3fee33b81b859f57cd63017a17ffe8.DefinitionFileRequestBuilder) {
+    return i640cd655474ac9b2a590aa46892b03be1d3fee33b81b859f57cd63017a17ffe8.NewDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Delete delete navigation property nextVersionDefinition for deviceManagement
 func (m *NextVersionDefinitionRequestBuilder) Delete(options *NextVersionDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get definition of the next version of this definition
-func (m *NextVersionDefinitionRequestBuilder) Get(options *NextVersionDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinition, error) {
+func (m *NextVersionDefinitionRequestBuilder) Get(options *NextVersionDefinitionRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewGroupPolicyDefinition() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupPolicyDefinitionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinition), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionable), nil
 }
-// Patch definition of the next version of this definition
+// Patch update the navigation property nextVersionDefinition in deviceManagement
 func (m *NextVersionDefinitionRequestBuilder) Patch(options *NextVersionDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
+}
+func (m *NextVersionDefinitionRequestBuilder) Presentations()(*i26cea1b628a9da082ff30062f4f11ed9cbd999596bbc99faa1213903e5f34d37.PresentationsRequestBuilder) {
+    return i26cea1b628a9da082ff30062f4f11ed9cbd999596bbc99faa1213903e5f34d37.NewPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// PresentationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitions.item.nextVersionDefinition.presentations.item collection
+func (m *NextVersionDefinitionRequestBuilder) PresentationsById(id string)(*ica1c1ab53345b0934afadc64800a3328e0c05a18bb3bf8722bfd4f522eabc4f3.GroupPolicyPresentationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["groupPolicyPresentation_id"] = id
+    }
+    return ica1c1ab53345b0934afadc64800a3328e0c05a18bb3bf8722bfd4f522eabc4f3.NewGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *NextVersionDefinitionRequestBuilder) PreviousVersionDefinition()(*ib2ff762ff32474e301d90f37b46ab31571b5a05f779566ee07878e8081181c75.PreviousVersionDefinitionRequestBuilder) {
+    return ib2ff762ff32474e301d90f37b46ab31571b5a05f779566ee07878e8081181c75.NewPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

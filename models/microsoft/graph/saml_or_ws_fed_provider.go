@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SamlOrWsFedProvider 
+// SamlOrWsFedProvider provides operations to manage the collection of domain entities.
 type SamlOrWsFedProvider struct {
     IdentityProviderBase
     // Issuer URI of the federation server.
@@ -25,45 +25,9 @@ func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
     }
     return m
 }
-// GetIssuerUri gets the issuerUri property value. Issuer URI of the federation server.
-func (m *SamlOrWsFedProvider) GetIssuerUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerUri
-    }
-}
-// GetMetadataExchangeUri gets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
-func (m *SamlOrWsFedProvider) GetMetadataExchangeUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadataExchangeUri
-    }
-}
-// GetPassiveSignInUri gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
-func (m *SamlOrWsFedProvider) GetPassiveSignInUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passiveSignInUri
-    }
-}
-// GetPreferredAuthenticationProtocol gets the preferredAuthenticationProtocol property value. Preferred authentication protocol. Supported values include saml or wsfed.
-func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*AuthenticationProtocol) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredAuthenticationProtocol
-    }
-}
-// GetSigningCertificate gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
-func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signingCertificate
-    }
+// CreateSamlOrWsFedProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSamlOrWsFedProviderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSamlOrWsFedProvider(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -119,6 +83,46 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetIssuerUri gets the issuerUri property value. Issuer URI of the federation server.
+func (m *SamlOrWsFedProvider) GetIssuerUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.issuerUri
+    }
+}
+// GetMetadataExchangeUri gets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
+func (m *SamlOrWsFedProvider) GetMetadataExchangeUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.metadataExchangeUri
+    }
+}
+// GetPassiveSignInUri gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+func (m *SamlOrWsFedProvider) GetPassiveSignInUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.passiveSignInUri
+    }
+}
+// GetPreferredAuthenticationProtocol gets the preferredAuthenticationProtocol property value. Preferred authentication protocol. Supported values include saml or wsfed.
+func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*AuthenticationProtocol) {
+    if m == nil {
+        return nil
+    } else {
+        return m.preferredAuthenticationProtocol
+    }
+}
+// GetSigningCertificate gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
+func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.signingCertificate
+    }
 }
 func (m *SamlOrWsFedProvider) IsNil()(bool) {
     return m == nil

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonWebsite 
+// PersonWebsite provides operations to manage the compliance singleton.
 type PersonWebsite struct {
     ItemFacet
     // Contains categories a user has associated with the website (for example, personal, recipes).
@@ -24,6 +24,10 @@ func NewPersonWebsite()(*PersonWebsite) {
         ItemFacet: *NewItemFacet(),
     }
     return m
+}
+// CreatePersonWebsiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonWebsiteFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonWebsite(), nil
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
 func (m *PersonWebsite) GetCategories()([]string) {
@@ -47,22 +51,6 @@ func (m *PersonWebsite) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetThumbnailUrl gets the thumbnailUrl property value. 
-func (m *PersonWebsite) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
-}
-// GetWebUrl gets the webUrl property value. Contains a link to the website itself.
-func (m *PersonWebsite) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -123,6 +111,22 @@ func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetThumbnailUrl gets the thumbnailUrl property value. 
+func (m *PersonWebsite) GetThumbnailUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.thumbnailUrl
+    }
+}
+// GetWebUrl gets the webUrl property value. Contains a link to the website itself.
+func (m *PersonWebsite) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
+    }
 }
 func (m *PersonWebsite) IsNil()(bool) {
     return m == nil

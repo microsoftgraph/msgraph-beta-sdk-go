@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthOsPerformance 
+// UserExperienceAnalyticsBatteryHealthOsPerformance provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     Entity
     // Number of active devices for that os version. Valid values -2147483648 to 2147483647
@@ -26,6 +26,10 @@ func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnaly
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBatteryHealthOsPerformance(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetActiveDevices()(*int32) {
@@ -57,22 +61,6 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageMaxCapacit
         return nil
     } else {
         return m.averageMaxCapacityPercentage
-    }
-}
-// GetOsBuildNumber gets the osBuildNumber property value. Build number of the operating system.
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osBuildNumber
-    }
-}
-// GetOsVersion gets the osVersion property value. Version of the operating system.
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +127,22 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
         return nil
     }
     return res
+}
+// GetOsBuildNumber gets the osBuildNumber property value. Build number of the operating system.
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBuildNumber()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osBuildNumber
+    }
+}
+// GetOsVersion gets the osVersion property value. Version of the operating system.
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osVersion
+    }
 }
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) IsNil()(bool) {
     return m == nil

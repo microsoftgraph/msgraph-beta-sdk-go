@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})
+// SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder provides operations to call the summarizeDeviceRegressionPerformance method.
 type SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type SummarizeDeviceRegressionPerformanceWithSummarizeByResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type userExperienceAnalyticsRegressionSummary
-    userExperienceAnalyticsRegressionSummary *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary;
+    userExperienceAnalyticsRegressionSummary i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummaryable;
 }
 // NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse instantiates a new summarizeDeviceRegressionPerformanceWithSummarizeByResponse and sets the default values.
 func NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse()(*SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) {
@@ -37,6 +37,9 @@ func NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse()(*Summarize
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateSummarizeDeviceRegressionPerformanceWithSummarizeByResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetAdditio
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["userExperienceAnalyticsRegressionSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsRegressionSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserExperienceAnalyticsRegressionSummary(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummaryable))
+        }
+        return nil
+    }
+    return res
+}
 // GetUserExperienceAnalyticsRegressionSummary gets the userExperienceAnalyticsRegressionSummary property value. Union type representation for type userExperienceAnalyticsRegressionSummary
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetUserExperienceAnalyticsRegressionSummary()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary) {
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetUserExperienceAnalyticsRegressionSummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummaryable) {
     if m == nil {
         return nil
     } else {
         return m.userExperienceAnalyticsRegressionSummary
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["userExperienceAnalyticsRegressionSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsRegressionSummary() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserExperienceAnalyticsRegressionSummary(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary))
-        }
-        return nil
-    }
-    return res
 }
 func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) IsNil()(bool) {
     return m == nil
@@ -95,16 +98,23 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) SetAdditio
     }
 }
 // SetUserExperienceAnalyticsRegressionSummary sets the userExperienceAnalyticsRegressionSummary property value. Union type representation for type userExperienceAnalyticsRegressionSummary
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) SetUserExperienceAnalyticsRegressionSummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummary)() {
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByResponse) SetUserExperienceAnalyticsRegressionSummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummaryable)() {
     if m != nil {
         m.userExperienceAnalyticsRegressionSummary = value
     }
+}
+// SummarizeDeviceRegressionPerformanceWithSummarizeByResponseable 
+type SummarizeDeviceRegressionPerformanceWithSummarizeByResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetUserExperienceAnalyticsRegressionSummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummaryable)
+    SetUserExperienceAnalyticsRegressionSummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRegressionSummaryable)()
 }
 // NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInternal instantiates a new SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder and sets the default values.
 func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, summarizeBy *string)(*SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) {
     m := &SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})";
+    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy='{summarizeBy}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -112,7 +122,7 @@ func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInterna
     if summarizeBy != nil {
         urlTplParams["summarizeBy"] = *summarizeBy
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Crea
     return requestInfo, nil
 }
 // Get invoke function summarizeDeviceRegressionPerformance
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Get(options *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions)(*SummarizeDeviceRegressionPerformanceWithSummarizeByResponse, error) {
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Get(options *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetOptions)(SummarizeDeviceRegressionPerformanceWithSummarizeByResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSummarizeDeviceRegressionPerformanceWithSummarizeByResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateSummarizeDeviceRegressionPerformanceWithSummarizeByResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*SummarizeDeviceRegressionPerformanceWithSummarizeByResponse), nil
+    return res.(SummarizeDeviceRegressionPerformanceWithSummarizeByResponseable), nil
 }

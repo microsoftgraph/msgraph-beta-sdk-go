@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDriverUpdateInventory 
+// WindowsDriverUpdateInventory provides operations to manage the deviceManagement singleton.
 type WindowsDriverUpdateInventory struct {
     Entity
     // The number of devices for which this driver is applicable.
@@ -33,6 +33,10 @@ func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWindowsDriverUpdateInventoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsDriverUpdateInventoryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsDriverUpdateInventory(), nil
 }
 // GetApplicableDeviceCount gets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
 func (m *WindowsDriverUpdateInventory) GetApplicableDeviceCount()(*int32) {
@@ -72,38 +76,6 @@ func (m *WindowsDriverUpdateInventory) GetDriverClass()(*string) {
         return nil
     } else {
         return m.driverClass
-    }
-}
-// GetManufacturer gets the manufacturer property value. The manufacturer of the driver.
-func (m *WindowsDriverUpdateInventory) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
-}
-// GetName gets the name property value. The name of the driver.
-func (m *WindowsDriverUpdateInventory) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetReleaseDateTime gets the releaseDateTime property value. The release date time of the driver.
-func (m *WindowsDriverUpdateInventory) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
-    }
-}
-// GetVersion gets the version property value. The version of the driver.
-func (m *WindowsDriverUpdateInventory) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -200,6 +172,38 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetManufacturer gets the manufacturer property value. The manufacturer of the driver.
+func (m *WindowsDriverUpdateInventory) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
+    }
+}
+// GetName gets the name property value. The name of the driver.
+func (m *WindowsDriverUpdateInventory) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetReleaseDateTime gets the releaseDateTime property value. The release date time of the driver.
+func (m *WindowsDriverUpdateInventory) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.releaseDateTime
+    }
+}
+// GetVersion gets the version property value. The version of the driver.
+func (m *WindowsDriverUpdateInventory) GetVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
 }
 func (m *WindowsDriverUpdateInventory) IsNil()(bool) {
     return m == nil

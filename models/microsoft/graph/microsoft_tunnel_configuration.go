@@ -5,17 +5,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelConfiguration 
+// MicrosoftTunnelConfiguration provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelConfiguration struct {
     Entity
     // Additional settings that may be applied to the server
-    advancedSettings []KeyValuePair;
+    advancedSettings []KeyValuePairable;
     // The Default Domain appendix that will be used by the clients
     defaultDomainSuffix *string;
     // The MicrosoftTunnelConfiguration's description
     description *string;
     // When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
-    disableUDPConnections *bool;
+    disableUdpConnections *bool;
     // The MicrosoftTunnelConfiguration's display name
     displayName *string;
     // The DNS servers that will be used by the clients
@@ -42,8 +42,12 @@ func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
     }
     return m
 }
+// CreateMicrosoftTunnelConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMicrosoftTunnelConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMicrosoftTunnelConfiguration(), nil
+}
 // GetAdvancedSettings gets the advancedSettings property value. Additional settings that may be applied to the server
-func (m *MicrosoftTunnelConfiguration) GetAdvancedSettings()([]KeyValuePair) {
+func (m *MicrosoftTunnelConfiguration) GetAdvancedSettings()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -66,12 +70,12 @@ func (m *MicrosoftTunnelConfiguration) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisableUDPConnections gets the disableUDPConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
-func (m *MicrosoftTunnelConfiguration) GetDisableUDPConnections()(*bool) {
+// GetDisableUdpConnections gets the disableUdpConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
+func (m *MicrosoftTunnelConfiguration) GetDisableUdpConnections()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.disableUDPConnections
+        return m.disableUdpConnections
     }
 }
 // GetDisplayName gets the displayName property value. The MicrosoftTunnelConfiguration's display name
@@ -90,74 +94,18 @@ func (m *MicrosoftTunnelConfiguration) GetDnsServers()([]string) {
         return m.dnsServers
     }
 }
-// GetLastUpdateDateTime gets the lastUpdateDateTime property value. When the MicrosoftTunnelConfiguration was last updated
-func (m *MicrosoftTunnelConfiguration) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdateDateTime
-    }
-}
-// GetListenPort gets the listenPort property value. The port that both TCP and UPD will listen over on the server
-func (m *MicrosoftTunnelConfiguration) GetListenPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listenPort
-    }
-}
-// GetNetwork gets the network property value. The subnet that will be used to allocate virtual address for the clients
-func (m *MicrosoftTunnelConfiguration) GetNetwork()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.network
-    }
-}
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
-func (m *MicrosoftTunnelConfiguration) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
-}
-// GetRoutesExclude gets the routesExclude property value. Subsets of the routes that will not be routed by the server
-func (m *MicrosoftTunnelConfiguration) GetRoutesExclude()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routesExclude
-    }
-}
-// GetRoutesInclude gets the routesInclude property value. The routs that will be routed by the server
-func (m *MicrosoftTunnelConfiguration) GetRoutesInclude()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routesInclude
-    }
-}
-// GetSplitDNS gets the splitDNS property value. The domains that will be resolved using the provided dns servers
-func (m *MicrosoftTunnelConfiguration) GetSplitDNS()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.splitDNS
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["advancedSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetAdvancedSettings(res)
         }
@@ -183,13 +131,13 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["disableUDPConnections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["disableUdpConnections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDisableUDPConnections(val)
+            m.SetDisableUdpConnections(val)
         }
         return nil
     }
@@ -305,6 +253,62 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetLastUpdateDateTime gets the lastUpdateDateTime property value. When the MicrosoftTunnelConfiguration was last updated
+func (m *MicrosoftTunnelConfiguration) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdateDateTime
+    }
+}
+// GetListenPort gets the listenPort property value. The port that both TCP and UPD will listen over on the server
+func (m *MicrosoftTunnelConfiguration) GetListenPort()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.listenPort
+    }
+}
+// GetNetwork gets the network property value. The subnet that will be used to allocate virtual address for the clients
+func (m *MicrosoftTunnelConfiguration) GetNetwork()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.network
+    }
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+func (m *MicrosoftTunnelConfiguration) GetRoleScopeTagIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleScopeTagIds
+    }
+}
+// GetRoutesExclude gets the routesExclude property value. Subsets of the routes that will not be routed by the server
+func (m *MicrosoftTunnelConfiguration) GetRoutesExclude()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.routesExclude
+    }
+}
+// GetRoutesInclude gets the routesInclude property value. The routs that will be routed by the server
+func (m *MicrosoftTunnelConfiguration) GetRoutesInclude()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.routesInclude
+    }
+}
+// GetSplitDNS gets the splitDNS property value. The domains that will be resolved using the provided dns servers
+func (m *MicrosoftTunnelConfiguration) GetSplitDNS()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.splitDNS
+    }
+}
 func (m *MicrosoftTunnelConfiguration) IsNil()(bool) {
     return m == nil
 }
@@ -317,8 +321,7 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
     if m.GetAdvancedSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdvancedSettings()))
         for i, v := range m.GetAdvancedSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("advancedSettings", cast)
         if err != nil {
@@ -338,7 +341,7 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
-        err = writer.WriteBoolValue("disableUDPConnections", m.GetDisableUDPConnections())
+        err = writer.WriteBoolValue("disableUdpConnections", m.GetDisableUdpConnections())
         if err != nil {
             return err
         }
@@ -400,7 +403,7 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
     return nil
 }
 // SetAdvancedSettings sets the advancedSettings property value. Additional settings that may be applied to the server
-func (m *MicrosoftTunnelConfiguration) SetAdvancedSettings(value []KeyValuePair)() {
+func (m *MicrosoftTunnelConfiguration) SetAdvancedSettings(value []KeyValuePairable)() {
     if m != nil {
         m.advancedSettings = value
     }
@@ -417,10 +420,10 @@ func (m *MicrosoftTunnelConfiguration) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisableUDPConnections sets the disableUDPConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
-func (m *MicrosoftTunnelConfiguration) SetDisableUDPConnections(value *bool)() {
+// SetDisableUdpConnections sets the disableUdpConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
+func (m *MicrosoftTunnelConfiguration) SetDisableUdpConnections(value *bool)() {
     if m != nil {
-        m.disableUDPConnections = value
+        m.disableUdpConnections = value
     }
 }
 // SetDisplayName sets the displayName property value. The MicrosoftTunnelConfiguration's display name

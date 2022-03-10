@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MentionAction 
+// MentionAction provides operations to manage the compliance singleton.
 type MentionAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The identities of the users mentioned in this action.
-    mentionees []IdentitySet;
+    mentionees []IdentitySetable;
 }
 // NewMentionAction instantiates a new mentionAction and sets the default values.
 func NewMentionAction()(*MentionAction) {
@@ -17,6 +17,10 @@ func NewMentionAction()(*MentionAction) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMentionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMentionActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMentionAction(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MentionAction) GetAdditionalData()(map[string]interface{}) {
@@ -26,32 +30,32 @@ func (m *MentionAction) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetMentionees gets the mentionees property value. The identities of the users mentioned in this action.
-func (m *MentionAction) GetMentionees()([]IdentitySet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mentionees
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MentionAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["mentionees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        val, err := n.GetCollectionOfObjectValues(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]IdentitySet, len(val))
+            res := make([]IdentitySetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*IdentitySet))
+                res[i] = v.(IdentitySetable)
             }
             m.SetMentionees(res)
         }
         return nil
     }
     return res
+}
+// GetMentionees gets the mentionees property value. The identities of the users mentioned in this action.
+func (m *MentionAction) GetMentionees()([]IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mentionees
+    }
 }
 func (m *MentionAction) IsNil()(bool) {
     return m == nil
@@ -61,8 +65,7 @@ func (m *MentionAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetMentionees() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMentionees()))
         for i, v := range m.GetMentionees() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("mentionees", cast)
         if err != nil {
@@ -84,7 +87,7 @@ func (m *MentionAction) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetMentionees sets the mentionees property value. The identities of the users mentioned in this action.
-func (m *MentionAction) SetMentionees(value []IdentitySet)() {
+func (m *MentionAction) SetMentionees(value []IdentitySetable)() {
     if m != nil {
         m.mentionees = value
     }

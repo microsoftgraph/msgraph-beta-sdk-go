@@ -2,12 +2,13 @@ package accesspackageassignmentapprovals
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i0ee2f6344954fc2c3a00b08c6f56973edda9ed5a515e8c3f1b65bec0231eee19 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentapprovals/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i86d3d1e53f1a7042ecc6ac8c941945cf6e8068a38e9c0ec96a68de122a96fdeb "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentapprovals/filterbycurrentuserwithon"
 )
 
-// AccessPackageAssignmentApprovalsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals
+// AccessPackageAssignmentApprovalsRequestBuilder provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
 type AccessPackageAssignmentApprovalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters struct {
 // AccessPackageAssignmentApprovalsRequestBuilderPostOptions options for Post
 type AccessPackageAssignmentApprovalsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approvalable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewAccessPackageAssignmentApprovalsRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewAccessPackageAssignmentApprovalsRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentApprovalsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) Count()(*i0ee2f6344954fc2c3a00b08c6f56973edda9ed5a515e8c3f1b65bec0231eee19.CountRequestBuilder) {
+    return i0ee2f6344954fc2c3a00b08c6f56973edda9ed5a515e8c3f1b65bec0231eee19.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get accessPackageAssignmentApprovals from identityGovernance
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentApprovalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,31 +118,39 @@ func (m *AccessPackageAssignmentApprovalsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals\microsoft.graph.filterByCurrentUser(on={on})
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i86d3d1e53f1a7042ecc6ac8c941945cf6e8068a38e9c0ec96a68de122a96fdeb.FilterByCurrentUserWithOnRequestBuilder) {
     return i86d3d1e53f1a7042ecc6ac8c941945cf6e8068a38e9c0ec96a68de122a96fdeb.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
 // Get get accessPackageAssignmentApprovals from identityGovernance
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) Get(options *AccessPackageAssignmentApprovalsRequestBuilderGetOptions)(*AccessPackageAssignmentApprovalsResponse, error) {
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) Get(options *AccessPackageAssignmentApprovalsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentApprovalsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApprovalCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AccessPackageAssignmentApprovalsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalCollectionResponseable), nil
 }
 // Post create new navigation property to accessPackageAssignmentApprovals for identityGovernance
-func (m *AccessPackageAssignmentApprovalsRequestBuilder) Post(options *AccessPackageAssignmentApprovalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval, error) {
+func (m *AccessPackageAssignmentApprovalsRequestBuilder) Post(options *AccessPackageAssignmentApprovalsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approvalable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewApproval() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApprovalFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approvalable), nil
 }

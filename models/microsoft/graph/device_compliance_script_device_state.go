@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceScriptDeviceState 
+// DeviceComplianceScriptDeviceState provides operations to manage the deviceManagement singleton.
 type DeviceComplianceScriptDeviceState struct {
     Entity
     // Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
@@ -17,7 +17,7 @@ type DeviceComplianceScriptDeviceState struct {
     // The last time that Intune Managment Extension synced with Intune
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The managed device on which the device compliance script executed
-    managedDevice *ManagedDevice;
+    managedDevice ManagedDeviceable;
     // Error from the detection script
     scriptError *string;
     // Output of the detection script
@@ -29,6 +29,10 @@ func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) 
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceScriptDeviceState(), nil
 }
 // GetDetectionState gets the detectionState property value. Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
 func (m *DeviceComplianceScriptDeviceState) GetDetectionState()(*RunState) {
@@ -44,46 +48,6 @@ func (m *DeviceComplianceScriptDeviceState) GetExpectedStateUpdateDateTime()(*i3
         return nil
     } else {
         return m.expectedStateUpdateDateTime
-    }
-}
-// GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device compliance script executed
-func (m *DeviceComplianceScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastStateUpdateDateTime
-    }
-}
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
-func (m *DeviceComplianceScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
-}
-// GetManagedDevice gets the managedDevice property value. The managed device on which the device compliance script executed
-func (m *DeviceComplianceScriptDeviceState) GetManagedDevice()(*ManagedDevice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevice
-    }
-}
-// GetScriptError gets the scriptError property value. Error from the detection script
-func (m *DeviceComplianceScriptDeviceState) GetScriptError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptError
-    }
-}
-// GetScriptOutput gets the scriptOutput property value. Output of the detection script
-func (m *DeviceComplianceScriptDeviceState) GetScriptOutput()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptOutput
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -130,12 +94,12 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["managedDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDevice() })
+        val, err := n.GetObjectValue(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManagedDevice(val.(*ManagedDevice))
+            m.SetManagedDevice(val.(ManagedDeviceable))
         }
         return nil
     }
@@ -160,6 +124,46 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device compliance script executed
+func (m *DeviceComplianceScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastStateUpdateDateTime
+    }
+}
+// GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
+func (m *DeviceComplianceScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastSyncDateTime
+    }
+}
+// GetManagedDevice gets the managedDevice property value. The managed device on which the device compliance script executed
+func (m *DeviceComplianceScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedDevice
+    }
+}
+// GetScriptError gets the scriptError property value. Error from the detection script
+func (m *DeviceComplianceScriptDeviceState) GetScriptError()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scriptError
+    }
+}
+// GetScriptOutput gets the scriptOutput property value. Output of the detection script
+func (m *DeviceComplianceScriptDeviceState) GetScriptOutput()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scriptOutput
+    }
 }
 func (m *DeviceComplianceScriptDeviceState) IsNil()(bool) {
     return m == nil
@@ -240,7 +244,7 @@ func (m *DeviceComplianceScriptDeviceState) SetLastSyncDateTime(value *i33607480
     }
 }
 // SetManagedDevice sets the managedDevice property value. The managed device on which the device compliance script executed
-func (m *DeviceComplianceScriptDeviceState) SetManagedDevice(value *ManagedDevice)() {
+func (m *DeviceComplianceScriptDeviceState) SetManagedDevice(value ManagedDeviceable)() {
     if m != nil {
         m.managedDevice = value
     }

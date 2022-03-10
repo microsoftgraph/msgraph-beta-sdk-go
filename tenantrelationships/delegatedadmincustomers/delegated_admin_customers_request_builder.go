@@ -2,11 +2,12 @@ package delegatedadmincustomers
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/delegatedadmincustomers/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// DelegatedAdminCustomersRequestBuilder builds and executes requests for operations under \tenantRelationships\delegatedAdminCustomers
+// DelegatedAdminCustomersRequestBuilder provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
 type DelegatedAdminCustomersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type DelegatedAdminCustomersRequestBuilderGetQueryParameters struct {
 // DelegatedAdminCustomersRequestBuilderPostOptions options for Post
 type DelegatedAdminCustomersRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomer;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomerable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewDelegatedAdminCustomersRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewDelegatedAdminCustomersRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminCustomersRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DelegatedAdminCustomersRequestBuilder) Count()(*i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7.CountRequestBuilder) {
+    return i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get delegatedAdminCustomers from tenantRelationships
 func (m *DelegatedAdminCustomersRequestBuilder) CreateGetRequestInformation(options *DelegatedAdminCustomersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *DelegatedAdminCustomersRequestBuilder) CreatePostRequestInformation(opt
     return requestInfo, nil
 }
 // Get get delegatedAdminCustomers from tenantRelationships
-func (m *DelegatedAdminCustomersRequestBuilder) Get(options *DelegatedAdminCustomersRequestBuilderGetOptions)(*DelegatedAdminCustomersResponse, error) {
+func (m *DelegatedAdminCustomersRequestBuilder) Get(options *DelegatedAdminCustomersRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelegatedAdminCustomersResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDelegatedAdminCustomerCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*DelegatedAdminCustomersResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomerCollectionResponseable), nil
 }
 // Post create new navigation property to delegatedAdminCustomers for tenantRelationships
-func (m *DelegatedAdminCustomersRequestBuilder) Post(options *DelegatedAdminCustomersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomer, error) {
+func (m *DelegatedAdminCustomersRequestBuilder) Post(options *DelegatedAdminCustomersRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomerable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDelegatedAdminCustomer() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDelegatedAdminCustomerFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomer), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DelegatedAdminCustomerable), nil
 }

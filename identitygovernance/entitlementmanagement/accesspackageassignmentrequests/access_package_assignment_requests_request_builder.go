@@ -2,12 +2,13 @@ package accesspackageassignmentrequests
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i5c62d42239fff774554ba64c434a51d53a1aad8041a26d1794ace0ef32bafbf8 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/count"
     icfc95ae58abf84399b1b56b45cd6fd6e5a60278d6839f0902e96c72d35925599 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/filterbycurrentuserwithon"
 )
 
-// AccessPackageAssignmentRequestsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests
+// AccessPackageAssignmentRequestsRequestBuilder provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.
 type AccessPackageAssignmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type AccessPackageAssignmentRequestsRequestBuilderGetQueryParameters struct {
 // AccessPackageAssignmentRequestsRequestBuilderPostOptions options for Post
 type AccessPackageAssignmentRequestsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequestable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +67,7 @@ func NewAccessPackageAssignmentRequestsRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -75,6 +76,9 @@ func NewAccessPackageAssignmentRequestsRequestBuilder(rawUrl string, requestAdap
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *AccessPackageAssignmentRequestsRequestBuilder) Count()(*i5c62d42239fff774554ba64c434a51d53a1aad8041a26d1794ace0ef32bafbf8.CountRequestBuilder) {
+    return i5c62d42239fff774554ba64c434a51d53a1aad8041a26d1794ace0ef32bafbf8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -96,7 +100,7 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents access package assignment requests created by or on behalf of a user.
+// CreatePostRequestInformation create new navigation property to accessPackageAssignmentRequests for identityGovernance
 func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInformation(options *AccessPackageAssignmentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,31 +118,39 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\microsoft.graph.filterByCurrentUser(on={on})
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *AccessPackageAssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*icfc95ae58abf84399b1b56b45cd6fd6e5a60278d6839f0902e96c72d35925599.FilterByCurrentUserWithOnRequestBuilder) {
     return icfc95ae58abf84399b1b56b45cd6fd6e5a60278d6839f0902e96c72d35925599.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
 // Get represents access package assignment requests created by or on behalf of a user.
-func (m *AccessPackageAssignmentRequestsRequestBuilder) Get(options *AccessPackageAssignmentRequestsRequestBuilderGetOptions)(*AccessPackageAssignmentRequestsResponse, error) {
+func (m *AccessPackageAssignmentRequestsRequestBuilder) Get(options *AccessPackageAssignmentRequestsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessPackageAssignmentRequestsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageAssignmentRequestCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AccessPackageAssignmentRequestsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequestCollectionResponseable), nil
 }
-// Post represents access package assignment requests created by or on behalf of a user.
-func (m *AccessPackageAssignmentRequestsRequestBuilder) Post(options *AccessPackageAssignmentRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest, error) {
+// Post create new navigation property to accessPackageAssignmentRequests for identityGovernance
+func (m *AccessPackageAssignmentRequestsRequestBuilder) Post(options *AccessPackageAssignmentRequestsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessPackageAssignmentRequest() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAccessPackageAssignmentRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequestable), nil
 }

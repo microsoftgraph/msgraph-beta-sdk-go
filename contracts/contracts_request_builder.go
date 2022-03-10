@@ -1,15 +1,16 @@
 package contracts
 
 import (
+    i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/count"
     i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/getbyids"
     i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/getuserownedobjects"
     id565fc293fb2551afc570c576145e318aeda2a244589d9a61a5c0321766491b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/validateproperties"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ContractsRequestBuilder builds and executes requests for operations under \contracts
+// ContractsRequestBuilder provides operations to manage the collection of contract entities.
 type ContractsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -51,7 +52,7 @@ type ContractsRequestBuilderGetQueryParameters struct {
 // ContractsRequestBuilderPostOptions options for Post
 type ContractsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contract;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contractable;
     // Request headers
     H map[string]string;
     // Request options
@@ -68,7 +69,7 @@ func NewContractsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -77,6 +78,9 @@ func NewContractsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContractsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ContractsRequestBuilder) Count()(*i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.CountRequestBuilder) {
+    return i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from contracts
 func (m *ContractsRequestBuilder) CreateGetRequestInformation(options *ContractsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -117,16 +121,20 @@ func (m *ContractsRequestBuilder) CreatePostRequestInformation(options *Contract
     return requestInfo, nil
 }
 // Get get entities from contracts
-func (m *ContractsRequestBuilder) Get(options *ContractsRequestBuilderGetOptions)(*ContractsResponse, error) {
+func (m *ContractsRequestBuilder) Get(options *ContractsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContractCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContractsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContractCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ContractsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContractCollectionResponseable), nil
 }
 func (m *ContractsRequestBuilder) GetByIds()(*i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6.GetByIdsRequestBuilder) {
     return i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -135,16 +143,20 @@ func (m *ContractsRequestBuilder) GetUserOwnedObjects()(*i53f54a5aa606f28fe09735
     return i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to contracts
-func (m *ContractsRequestBuilder) Post(options *ContractsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contract, error) {
+func (m *ContractsRequestBuilder) Post(options *ContractsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contractable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewContract() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContractFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contract), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Contractable), nil
 }
 func (m *ContractsRequestBuilder) ValidateProperties()(*id565fc293fb2551afc570c576145e318aeda2a244589d9a61a5c0321766491b8.ValidatePropertiesRequestBuilder) {
     return id565fc293fb2551afc570c576145e318aeda2a244589d9a61a5c0321766491b8.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

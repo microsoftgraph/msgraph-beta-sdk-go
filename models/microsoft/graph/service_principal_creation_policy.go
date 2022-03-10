@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServicePrincipalCreationPolicy 
+// ServicePrincipalCreationPolicy provides operations to manage the policyRoot singleton.
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
     // 
-    excludes []ServicePrincipalCreationConditionSet;
+    excludes []ServicePrincipalCreationConditionSetable;
     // 
-    includes []ServicePrincipalCreationConditionSet;
+    includes []ServicePrincipalCreationConditionSetable;
     // 
     isBuiltIn *bool;
 }
@@ -21,56 +21,44 @@ func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     }
     return m
 }
+// CreateServicePrincipalCreationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateServicePrincipalCreationPolicyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewServicePrincipalCreationPolicy(), nil
+}
 // GetExcludes gets the excludes property value. 
-func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreationConditionSet) {
+func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreationConditionSetable) {
     if m == nil {
         return nil
     } else {
         return m.excludes
     }
 }
-// GetIncludes gets the includes property value. 
-func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreationConditionSet) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includes
-    }
-}
-// GetIsBuiltIn gets the isBuiltIn property value. 
-func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["excludes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServicePrincipalCreationConditionSet() })
+        val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ServicePrincipalCreationConditionSet, len(val))
+            res := make([]ServicePrincipalCreationConditionSetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ServicePrincipalCreationConditionSet))
+                res[i] = v.(ServicePrincipalCreationConditionSetable)
             }
             m.SetExcludes(res)
         }
         return nil
     }
     res["includes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServicePrincipalCreationConditionSet() })
+        val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ServicePrincipalCreationConditionSet, len(val))
+            res := make([]ServicePrincipalCreationConditionSetable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ServicePrincipalCreationConditionSet))
+                res[i] = v.(ServicePrincipalCreationConditionSetable)
             }
             m.SetIncludes(res)
         }
@@ -88,6 +76,22 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetIncludes gets the includes property value. 
+func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreationConditionSetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.includes
+    }
+}
+// GetIsBuiltIn gets the isBuiltIn property value. 
+func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isBuiltIn
+    }
+}
 func (m *ServicePrincipalCreationPolicy) IsNil()(bool) {
     return m == nil
 }
@@ -100,8 +104,7 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i04eb5309aeaafadd28374
     if m.GetExcludes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExcludes()))
         for i, v := range m.GetExcludes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("excludes", cast)
         if err != nil {
@@ -111,8 +114,7 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i04eb5309aeaafadd28374
     if m.GetIncludes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncludes()))
         for i, v := range m.GetIncludes() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("includes", cast)
         if err != nil {
@@ -128,13 +130,13 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i04eb5309aeaafadd28374
     return nil
 }
 // SetExcludes sets the excludes property value. 
-func (m *ServicePrincipalCreationPolicy) SetExcludes(value []ServicePrincipalCreationConditionSet)() {
+func (m *ServicePrincipalCreationPolicy) SetExcludes(value []ServicePrincipalCreationConditionSetable)() {
     if m != nil {
         m.excludes = value
     }
 }
 // SetIncludes sets the includes property value. 
-func (m *ServicePrincipalCreationPolicy) SetIncludes(value []ServicePrincipalCreationConditionSet)() {
+func (m *ServicePrincipalCreationPolicy) SetIncludes(value []ServicePrincipalCreationConditionSetable)() {
     if m != nil {
         m.includes = value
     }

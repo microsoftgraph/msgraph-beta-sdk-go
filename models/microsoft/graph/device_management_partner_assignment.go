@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementPartnerAssignment 
+// DeviceManagementPartnerAssignment provides operations to manage the deviceManagement singleton.
 type DeviceManagementPartnerAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // User groups targeting for devices to be enrolled through partner.
-    target *DeviceAndAppManagementAssignmentTarget;
+    target DeviceAndAppManagementAssignmentTargetable;
 }
 // NewDeviceManagementPartnerAssignment instantiates a new deviceManagementPartnerAssignment and sets the default values.
 func NewDeviceManagementPartnerAssignment()(*DeviceManagementPartnerAssignment) {
@@ -17,6 +17,10 @@ func NewDeviceManagementPartnerAssignment()(*DeviceManagementPartnerAssignment) 
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementPartnerAssignment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementPartnerAssignment) GetAdditionalData()(map[string]interface{}) {
@@ -26,28 +30,28 @@ func (m *DeviceManagementPartnerAssignment) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *DeviceManagementPartnerAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTarget(val.(DeviceAndAppManagementAssignmentTargetable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTarget gets the target property value. User groups targeting for devices to be enrolled through partner.
-func (m *DeviceManagementPartnerAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
+func (m *DeviceManagementPartnerAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     if m == nil {
         return nil
     } else {
         return m.target
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementPartnerAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceAndAppManagementAssignmentTarget() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
-        }
-        return nil
-    }
-    return res
 }
 func (m *DeviceManagementPartnerAssignment) IsNil()(bool) {
     return m == nil
@@ -75,7 +79,7 @@ func (m *DeviceManagementPartnerAssignment) SetAdditionalData(value map[string]i
     }
 }
 // SetTarget sets the target property value. User groups targeting for devices to be enrolled through partner.
-func (m *DeviceManagementPartnerAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
+func (m *DeviceManagementPartnerAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
     if m != nil {
         m.target = value
     }

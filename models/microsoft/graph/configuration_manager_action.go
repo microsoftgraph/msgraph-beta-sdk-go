@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConfigurationManagerAction 
+// ConfigurationManagerAction provides operations to call the triggerConfigurationManagerAction method.
 type ConfigurationManagerAction struct {
     // The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
     action *ConfigurationManagerActionType;
@@ -17,6 +17,10 @@ func NewConfigurationManagerAction()(*ConfigurationManagerAction) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateConfigurationManagerActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConfigurationManagerActionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConfigurationManagerAction(), nil
 }
 // GetAction gets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
 func (m *ConfigurationManagerAction) GetAction()(*ConfigurationManagerActionType) {

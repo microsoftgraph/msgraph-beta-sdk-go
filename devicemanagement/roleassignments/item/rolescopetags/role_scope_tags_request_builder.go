@@ -2,13 +2,12 @@ package rolescopetags
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4edbe639b32662e436fc1a2df91f2c1f4f9b92866c08a7d5338db735db338052 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/roleassignments/item/rolescopetags/getrolescopetagsbyid"
-    i59b421f7e62c770e57ae33b84588a1af6e28a2f7b0dacd4d0f5e6d5590f30f65 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/roleassignments/item/rolescopetags/hascustomrolescopetag"
-    ie1c6af2bb765fdf2e7854c03f501167604144eaec4781e2148d60afb3225dd4f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/roleassignments/item/rolescopetags/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i139146da0492d764026e1a728824c5b2908fd1125d875f0b000bac6a21d3e305 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/roleassignments/item/rolescopetags/count"
 )
 
-// RoleScopeTagsRequestBuilder builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags
+// RoleScopeTagsRequestBuilder provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
 type RoleScopeTagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -56,7 +55,7 @@ func NewRoleScopeTagsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -65,6 +64,9 @@ func NewRoleScopeTagsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *RoleScopeTagsRequestBuilder) Count()(*i139146da0492d764026e1a728824c5b2908fd1125d875f0b000bac6a21d3e305.CountRequestBuilder) {
+    return i139146da0492d764026e1a728824c5b2908fd1125d875f0b000bac6a21d3e305.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the set of Role Scope Tags defined on the Role Assignment.
 func (m *RoleScopeTagsRequestBuilder) CreateGetRequestInformation(options *RoleScopeTagsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -87,24 +89,18 @@ func (m *RoleScopeTagsRequestBuilder) CreateGetRequestInformation(options *RoleS
     return requestInfo, nil
 }
 // Get the set of Role Scope Tags defined on the Role Assignment.
-func (m *RoleScopeTagsRequestBuilder) Get(options *RoleScopeTagsRequestBuilderGetOptions)(*RoleScopeTagsResponse, error) {
+func (m *RoleScopeTagsRequestBuilder) Get(options *RoleScopeTagsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRoleScopeTagsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateRoleScopeTagCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*RoleScopeTagsResponse), nil
-}
-func (m *RoleScopeTagsRequestBuilder) GetRoleScopeTagsById()(*i4edbe639b32662e436fc1a2df91f2c1f4f9b92866c08a7d5338db735db338052.GetRoleScopeTagsByIdRequestBuilder) {
-    return i4edbe639b32662e436fc1a2df91f2c1f4f9b92866c08a7d5338db735db338052.NewGetRoleScopeTagsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// HasCustomRoleScopeTag builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags\microsoft.graph.hasCustomRoleScopeTag()
-func (m *RoleScopeTagsRequestBuilder) HasCustomRoleScopeTag()(*i59b421f7e62c770e57ae33b84588a1af6e28a2f7b0dacd4d0f5e6d5590f30f65.HasCustomRoleScopeTagRequestBuilder) {
-    return i59b421f7e62c770e57ae33b84588a1af6e28a2f7b0dacd4d0f5e6d5590f30f65.NewHasCustomRoleScopeTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *RoleScopeTagsRequestBuilder) Ref()(*ie1c6af2bb765fdf2e7854c03f501167604144eaec4781e2148d60afb3225dd4f.RefRequestBuilder) {
-    return ie1c6af2bb765fdf2e7854c03f501167604144eaec4781e2148d60afb3225dd4f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTagCollectionResponseable), nil
 }

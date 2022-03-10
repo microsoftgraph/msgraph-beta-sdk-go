@@ -2,11 +2,12 @@ package exchangeonpremisespolicies
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i1105fa13edbeeb004a105470412ccbb8eb540897e5380a073239d6ad5930a726 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeonpremisespolicies/count"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ExchangeOnPremisesPoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicies
+// ExchangeOnPremisesPoliciesRequestBuilder provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
 type ExchangeOnPremisesPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type ExchangeOnPremisesPoliciesRequestBuilderGetQueryParameters struct {
 // ExchangeOnPremisesPoliciesRequestBuilderPostOptions options for Post
 type ExchangeOnPremisesPoliciesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewExchangeOnPremisesPoliciesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewExchangeOnPremisesPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeOnPremisesPoliciesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ExchangeOnPremisesPoliciesRequestBuilder) Count()(*i1105fa13edbeeb004a105470412ccbb8eb540897e5380a073239d6ad5930a726.CountRequestBuilder) {
+    return i1105fa13edbeeb004a105470412ccbb8eb540897e5380a073239d6ad5930a726.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the list of Exchange On Premisis policies configured by the tenant.
 func (m *ExchangeOnPremisesPoliciesRequestBuilder) CreateGetRequestInformation(options *ExchangeOnPremisesPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *ExchangeOnPremisesPoliciesRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of Exchange On Premisis policies configured by the tenant.
+// CreatePostRequestInformation create new navigation property to exchangeOnPremisesPolicies for deviceManagement
 func (m *ExchangeOnPremisesPoliciesRequestBuilder) CreatePostRequestInformation(options *ExchangeOnPremisesPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *ExchangeOnPremisesPoliciesRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Get the list of Exchange On Premisis policies configured by the tenant.
-func (m *ExchangeOnPremisesPoliciesRequestBuilder) Get(options *ExchangeOnPremisesPoliciesRequestBuilderGetOptions)(*ExchangeOnPremisesPoliciesResponse, error) {
+func (m *ExchangeOnPremisesPoliciesRequestBuilder) Get(options *ExchangeOnPremisesPoliciesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExchangeOnPremisesPoliciesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementExchangeOnPremisesPolicyCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ExchangeOnPremisesPoliciesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicyCollectionResponseable), nil
 }
-// Post the list of Exchange On Premisis policies configured by the tenant.
-func (m *ExchangeOnPremisesPoliciesRequestBuilder) Post(options *ExchangeOnPremisesPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy, error) {
+// Post create new navigation property to exchangeOnPremisesPolicies for deviceManagement
+func (m *ExchangeOnPremisesPoliciesRequestBuilder) Post(options *ExchangeOnPremisesPoliciesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementExchangeOnPremisesPolicy() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicyable), nil
 }

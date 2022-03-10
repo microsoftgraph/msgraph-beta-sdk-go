@@ -2,11 +2,12 @@ package microsoftauthenticatormethods
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i3a193cc8c4656344ebf6f5f9d2ba731c9cbd7bdad1b0936aebe8564171f74d3b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/count"
 )
 
-// MicrosoftAuthenticatorMethodsRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\microsoftAuthenticatorMethods
+// MicrosoftAuthenticatorMethodsRequestBuilder provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
 type MicrosoftAuthenticatorMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
 // MicrosoftAuthenticatorMethodsRequestBuilderPostOptions options for Post
 type MicrosoftAuthenticatorMethodsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethod;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, requestAdapte
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i3a193cc8c4656344ebf6f5f9d2ba731c9cbd7bdad1b0936aebe8564171f74d3b.CountRequestBuilder) {
+    return i3a193cc8c4656344ebf6f5f9d2ba731c9cbd7bdad1b0936aebe8564171f74d3b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get microsoftAuthenticatorMethods from users
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Get get microsoftAuthenticatorMethods from users
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Get(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*MicrosoftAuthenticatorMethodsResponse, error) {
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Get(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMicrosoftAuthenticatorMethodsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftAuthenticatorAuthenticationMethodCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MicrosoftAuthenticatorMethodsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable), nil
 }
 // Post create new navigation property to microsoftAuthenticatorMethods for users
-func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Post(options *MicrosoftAuthenticatorMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethod, error) {
+func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Post(options *MicrosoftAuthenticatorMethodsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMicrosoftAuthenticatorAuthenticationMethod() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethod), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodable), nil
 }

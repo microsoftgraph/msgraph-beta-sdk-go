@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidManagedStoreAppConfigurationSchemaItem 
+// AndroidManagedStoreAppConfigurationSchemaItem provides operations to manage the deviceManagement singleton.
 type AndroidManagedStoreAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,7 +29,7 @@ type AndroidManagedStoreAppConfigurationSchemaItem struct {
     // Unique key the application uses to identify the item
     schemaItemKey *string;
     // List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-    selections []KeyValuePair;
+    selections []KeyValuePairable;
 }
 // NewAndroidManagedStoreAppConfigurationSchemaItem instantiates a new androidManagedStoreAppConfigurationSchemaItem and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchemaItem()(*AndroidManagedStoreAppConfigurationSchemaItem) {
@@ -37,6 +37,10 @@ func NewAndroidManagedStoreAppConfigurationSchemaItem()(*AndroidManagedStoreAppC
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAndroidManagedStoreAppConfigurationSchemaItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[string]interface{}) {
@@ -100,38 +104,6 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDisplayName()(*string
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetIndex gets the index property value. Unique index the application uses to maintain nested schema items
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
-}
-// GetParentIndex gets the parentIndex property value. Index of parent schema item to track nested schema items
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetParentIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentIndex
-    }
-}
-// GetSchemaItemKey gets the schemaItemKey property value. Unique key the application uses to identify the item
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSchemaItemKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schemaItemKey
-    }
-}
-// GetSelections gets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSelections()([]KeyValuePair) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selections
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -242,20 +214,52 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(
         return nil
     }
     res["selections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetSelections(res)
         }
         return nil
     }
     return res
+}
+// GetIndex gets the index property value. Unique index the application uses to maintain nested schema items
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetIndex()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.index
+    }
+}
+// GetParentIndex gets the parentIndex property value. Index of parent schema item to track nested schema items
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetParentIndex()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parentIndex
+    }
+}
+// GetSchemaItemKey gets the schemaItemKey property value. Unique key the application uses to identify the item
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSchemaItemKey()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schemaItemKey
+    }
+}
+// GetSelections gets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSelections()([]KeyValuePairable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.selections
+    }
 }
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) IsNil()(bool) {
     return m == nil
@@ -326,8 +330,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) Serialize(writer i04eb53
     if m.GetSelections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSelections()))
         for i, v := range m.GetSelections() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("selections", cast)
         if err != nil {
@@ -409,7 +412,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetSchemaItemKey(value *
     }
 }
 // SetSelections sets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetSelections(value []KeyValuePair)() {
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetSelections(value []KeyValuePairable)() {
     if m != nil {
         m.selections = value
     }

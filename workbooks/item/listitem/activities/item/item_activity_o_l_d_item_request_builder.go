@@ -2,13 +2,13 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i37f268c37c929911162f777fd4787ee24d17639399dd58884f945211c0cadb57 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/listitem/activities/item/listitem"
     ic02522aa7998ab38f99cc008d4f9b853bcc4731d50e3d98f77f694fc51f81f86 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/listitem/activities/item/driveitem"
 )
 
-// ItemActivityOLDItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\activities\{itemActivityOLD-id}
+// ItemActivityOLDItemRequestBuilder provides operations to manage the activities property of the microsoft.graph.listItem entity.
 type ItemActivityOLDItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type ItemActivityOLDItemRequestBuilderGetQueryParameters struct {
 // ItemActivityOLDItemRequestBuilderPatchOptions options for Patch
 type ItemActivityOLDItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLDable;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,7 +64,7 @@ func NewItemActivityOLDItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +74,7 @@ func NewItemActivityOLDItemRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the list of recent activities that took place on this item.
+// CreateDeleteRequestInformation delete navigation property activities for workbooks
 func (m *ItemActivityOLDItemRequestBuilder) CreateDeleteRequestInformation(options *ItemActivityOLDItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list of recent activities that took place on this item.
+// CreatePatchRequestInformation update the navigation property activities in workbooks
 func (m *ItemActivityOLDItemRequestBuilder) CreatePatchRequestInformation(options *ItemActivityOLDItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,13 +129,17 @@ func (m *ItemActivityOLDItemRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete the list of recent activities that took place on this item.
+// Delete delete navigation property activities for workbooks
 func (m *ItemActivityOLDItemRequestBuilder) Delete(options *ItemActivityOLDItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -145,27 +149,35 @@ func (m *ItemActivityOLDItemRequestBuilder) DriveItem()(*ic02522aa7998ab38f99cc0
     return ic02522aa7998ab38f99cc008d4f9b853bcc4731d50e3d98f77f694fc51f81f86.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) Get(options *ItemActivityOLDItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD, error) {
+func (m *ItemActivityOLDItemRequestBuilder) Get(options *ItemActivityOLDItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLDable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewItemActivityOLD() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateItemActivityOLDFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLDable), nil
 }
 func (m *ItemActivityOLDItemRequestBuilder) ListItem()(*i37f268c37c929911162f777fd4787ee24d17639399dd58884f945211c0cadb57.ListItemRequestBuilder) {
     return i37f268c37c929911162f777fd4787ee24d17639399dd58884f945211c0cadb57.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the list of recent activities that took place on this item.
+// Patch update the navigation property activities in workbooks
 func (m *ItemActivityOLDItemRequestBuilder) Patch(options *ItemActivityOLDItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

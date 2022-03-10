@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LongRunningOperation 
+// LongRunningOperation provides operations to manage the compliance singleton.
 type LongRunningOperation struct {
     Entity
     // 
@@ -26,44 +26,16 @@ func NewLongRunningOperation()(*LongRunningOperation) {
     }
     return m
 }
+// CreateLongRunningOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateLongRunningOperationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewLongRunningOperation(), nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. 
 func (m *LongRunningOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.createdDateTime
-    }
-}
-// GetLastActionDateTime gets the lastActionDateTime property value. 
-func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
-}
-// GetResourceLocation gets the resourceLocation property value. 
-func (m *LongRunningOperation) GetResourceLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceLocation
-    }
-}
-// GetStatus gets the status property value. 
-func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
-// GetStatusDetail gets the statusDetail property value. 
-func (m *LongRunningOperation) GetStatusDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetail
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +92,38 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetLastActionDateTime gets the lastActionDateTime property value. 
+func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastActionDateTime
+    }
+}
+// GetResourceLocation gets the resourceLocation property value. 
+func (m *LongRunningOperation) GetResourceLocation()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceLocation
+    }
+}
+// GetStatus gets the status property value. 
+func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetStatusDetail gets the statusDetail property value. 
+func (m *LongRunningOperation) GetStatusDetail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.statusDetail
+    }
 }
 func (m *LongRunningOperation) IsNil()(bool) {
     return m == nil

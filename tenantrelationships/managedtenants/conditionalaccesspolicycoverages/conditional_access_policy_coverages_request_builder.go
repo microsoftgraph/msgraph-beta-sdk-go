@@ -2,11 +2,12 @@ package conditionalaccesspolicycoverages
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i48896f3f1a598ce5455314451ce135c4f8334a1b9af78f85490c9db333900f70 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/conditionalaccesspolicycoverages/count"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// ConditionalAccessPolicyCoveragesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\conditionalAccessPolicyCoverages
+// ConditionalAccessPolicyCoveragesRequestBuilder provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
 type ConditionalAccessPolicyCoveragesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters struct {
 // ConditionalAccessPolicyCoveragesRequestBuilderPostOptions options for Post
 type ConditionalAccessPolicyCoveragesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConditionalAccessPolicyCoverage;
+    Body i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ConditionalAccessPolicyCoverageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewConditionalAccessPolicyCoveragesRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewConditionalAccessPolicyCoveragesRequestBuilder(rawUrl string, requestAda
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPolicyCoveragesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Count()(*i48896f3f1a598ce5455314451ce135c4f8334a1b9af78f85490c9db333900f70.CountRequestBuilder) {
+    return i48896f3f1a598ce5455314451ce135c4f8334a1b9af78f85490c9db333900f70.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation aggregate view of conditional access policy coverage across managed tenants.
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInformation(options *ConditionalAccessPolicyCoveragesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation aggregate view of conditional access policy coverage across managed tenants.
+// CreatePostRequestInformation create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInformation(options *ConditionalAccessPolicyCoveragesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Get aggregate view of conditional access policy coverage across managed tenants.
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Get(options *ConditionalAccessPolicyCoveragesRequestBuilderGetOptions)(*ConditionalAccessPolicyCoveragesResponse, error) {
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Get(options *ConditionalAccessPolicyCoveragesRequestBuilderGetOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ConditionalAccessPolicyCoverageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConditionalAccessPolicyCoveragesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateConditionalAccessPolicyCoverageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ConditionalAccessPolicyCoveragesResponse), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ConditionalAccessPolicyCoverageCollectionResponseable), nil
 }
-// Post aggregate view of conditional access policy coverage across managed tenants.
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Post(options *ConditionalAccessPolicyCoveragesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConditionalAccessPolicyCoverage, error) {
+// Post create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Post(options *ConditionalAccessPolicyCoveragesRequestBuilderPostOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ConditionalAccessPolicyCoverageable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewConditionalAccessPolicyCoverage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateConditionalAccessPolicyCoverageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConditionalAccessPolicyCoverage), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ConditionalAccessPolicyCoverageable), nil
 }

@@ -2,14 +2,14 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i44234eb4e1f9cd47b539840bc18fbb166e3fabe51e7c344b8627004aa486ba33 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/item/apps"
     i4778d96774d9e2ccca7803ef9b1eb7081dc9a8d0975b583eb2aa707cc4c66855 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/item/deploymentsummary"
     i6fdd1eff96c393b127cac2aa1f215abb604a17faa6ac98f59cd063c3cb5f55c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/item/apps/item"
 )
 
-// AndroidManagedAppProtectionItemRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections\{androidManagedAppProtection-id}
+// AndroidManagedAppProtectionItemRequestBuilder provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
 type AndroidManagedAppProtectionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters struct {
 // AndroidManagedAppProtectionItemRequestBuilderPatchOptions options for Patch
 type AndroidManagedAppProtectionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtection;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtectionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -79,7 +79,7 @@ func NewAndroidManagedAppProtectionItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -89,7 +89,7 @@ func NewAndroidManagedAppProtectionItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation android managed app policies.
+// CreateDeleteRequestInformation delete navigation property androidManagedAppProtections for deviceAppManagement
 func (m *AndroidManagedAppProtectionItemRequestBuilder) CreateDeleteRequestInformation(options *AndroidManagedAppProtectionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,7 +126,7 @@ func (m *AndroidManagedAppProtectionItemRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation android managed app policies.
+// CreatePatchRequestInformation update the navigation property androidManagedAppProtections in deviceAppManagement
 func (m *AndroidManagedAppProtectionItemRequestBuilder) CreatePatchRequestInformation(options *AndroidManagedAppProtectionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,13 +144,17 @@ func (m *AndroidManagedAppProtectionItemRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete android managed app policies.
+// Delete delete navigation property androidManagedAppProtections for deviceAppManagement
 func (m *AndroidManagedAppProtectionItemRequestBuilder) Delete(options *AndroidManagedAppProtectionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -160,24 +164,32 @@ func (m *AndroidManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*i47
     return i4778d96774d9e2ccca7803ef9b1eb7081dc9a8d0975b583eb2aa707cc4c66855.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get android managed app policies.
-func (m *AndroidManagedAppProtectionItemRequestBuilder) Get(options *AndroidManagedAppProtectionItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtection, error) {
+func (m *AndroidManagedAppProtectionItemRequestBuilder) Get(options *AndroidManagedAppProtectionItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtectionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAndroidManagedAppProtection() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAndroidManagedAppProtectionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtection), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtectionable), nil
 }
-// Patch android managed app policies.
+// Patch update the navigation property androidManagedAppProtections in deviceAppManagement
 func (m *AndroidManagedAppProtectionItemRequestBuilder) Patch(options *AndroidManagedAppProtectionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

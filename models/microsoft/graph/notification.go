@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Notification 
+// Notification provides operations to manage the compliance singleton.
 type Notification struct {
     Entity
     // Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
@@ -15,13 +15,13 @@ type Notification struct {
     // The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
     groupName *string;
     // 
-    payload *PayloadTypes;
+    payload PayloadTypesable;
     // Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
     priority *Priority;
     // Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.
     targetHostName *string;
     // Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
-    targetPolicy *TargetPolicyEndpoints;
+    targetPolicy TargetPolicyEndpointsable;
 }
 // NewNotification instantiates a new notification and sets the default values.
 func NewNotification()(*Notification) {
@@ -29,6 +29,10 @@ func NewNotification()(*Notification) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNotificationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewNotification(), nil
 }
 // GetDisplayTimeToLive gets the displayTimeToLive property value. Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
 func (m *Notification) GetDisplayTimeToLive()(*int32) {
@@ -44,46 +48,6 @@ func (m *Notification) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return nil
     } else {
         return m.expirationDateTime
-    }
-}
-// GetGroupName gets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
-func (m *Notification) GetGroupName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupName
-    }
-}
-// GetPayload gets the payload property value. 
-func (m *Notification) GetPayload()(*PayloadTypes) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
-}
-// GetPriority gets the priority property value. Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
-func (m *Notification) GetPriority()(*Priority) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetTargetHostName gets the targetHostName property value. Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.
-func (m *Notification) GetTargetHostName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetHostName
-    }
-}
-// GetTargetPolicy gets the targetPolicy property value. Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
-func (m *Notification) GetTargetPolicy()(*TargetPolicyEndpoints) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetPolicy
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,12 +84,12 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["payload"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPayloadTypes() })
+        val, err := n.GetObjectValue(CreatePayloadTypesFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPayload(val.(*PayloadTypes))
+            m.SetPayload(val.(PayloadTypesable))
         }
         return nil
     }
@@ -150,16 +114,56 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["targetPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTargetPolicyEndpoints() })
+        val, err := n.GetObjectValue(CreateTargetPolicyEndpointsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetPolicy(val.(*TargetPolicyEndpoints))
+            m.SetTargetPolicy(val.(TargetPolicyEndpointsable))
         }
         return nil
     }
     return res
+}
+// GetGroupName gets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
+func (m *Notification) GetGroupName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupName
+    }
+}
+// GetPayload gets the payload property value. 
+func (m *Notification) GetPayload()(PayloadTypesable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payload
+    }
+}
+// GetPriority gets the priority property value. Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
+func (m *Notification) GetPriority()(*Priority) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetTargetHostName gets the targetHostName property value. Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.
+func (m *Notification) GetTargetHostName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetHostName
+    }
+}
+// GetTargetPolicy gets the targetPolicy property value. Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
+func (m *Notification) GetTargetPolicy()(TargetPolicyEndpointsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetPolicy
+    }
 }
 func (m *Notification) IsNil()(bool) {
     return m == nil
@@ -234,7 +238,7 @@ func (m *Notification) SetGroupName(value *string)() {
     }
 }
 // SetPayload sets the payload property value. 
-func (m *Notification) SetPayload(value *PayloadTypes)() {
+func (m *Notification) SetPayload(value PayloadTypesable)() {
     if m != nil {
         m.payload = value
     }
@@ -252,7 +256,7 @@ func (m *Notification) SetTargetHostName(value *string)() {
     }
 }
 // SetTargetPolicy sets the targetPolicy property value. Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
-func (m *Notification) SetTargetPolicy(value *TargetPolicyEndpoints)() {
+func (m *Notification) SetTargetPolicy(value TargetPolicyEndpointsable)() {
     if m != nil {
         m.targetPolicy = value
     }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// EncryptBufferRequestBuilder builds and executes requests for operations under \informationProtection\microsoft.graph.encryptBuffer
+// EncryptBufferRequestBuilder provides operations to call the encryptBuffer method.
 type EncryptBufferRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type EncryptBufferRequestBuilder struct {
 // EncryptBufferRequestBuilderPostOptions options for Post
 type EncryptBufferRequestBuilderPostOptions struct {
     // 
-    Body *EncryptBufferRequestBody;
+    Body EncryptBufferRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type EncryptBufferResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type bufferEncryptionResult
-    bufferEncryptionResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult;
+    bufferEncryptionResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResultable;
 }
 // NewEncryptBufferResponse instantiates a new encryptBufferResponse and sets the default values.
 func NewEncryptBufferResponse()(*EncryptBufferResponse) {
@@ -39,6 +39,9 @@ func NewEncryptBufferResponse()(*EncryptBufferResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateEncryptBufferResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewEncryptBufferResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptBufferResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *EncryptBufferResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBufferEncryptionResult gets the bufferEncryptionResult property value. Union type representation for type bufferEncryptionResult
-func (m *EncryptBufferResponse) GetBufferEncryptionResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult) {
+func (m *EncryptBufferResponse) GetBufferEncryptionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *EncryptBufferResponse) GetBufferEncryptionResult()(*i535684e11b5500196e
 func (m *EncryptBufferResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bufferEncryptionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBufferEncryptionResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBufferEncryptionResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBufferEncryptionResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult))
+            m.SetBufferEncryptionResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResultable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *EncryptBufferResponse) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetBufferEncryptionResult sets the bufferEncryptionResult property value. Union type representation for type bufferEncryptionResult
-func (m *EncryptBufferResponse) SetBufferEncryptionResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResult)() {
+func (m *EncryptBufferResponse) SetBufferEncryptionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResultable)() {
     if m != nil {
         m.bufferEncryptionResult = value
     }
+}
+// EncryptBufferResponseable 
+type EncryptBufferResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetBufferEncryptionResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResultable)
+    SetBufferEncryptionResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BufferEncryptionResultable)()
 }
 // NewEncryptBufferRequestBuilderInternal instantiates a new EncryptBufferRequestBuilder and sets the default values.
 func NewEncryptBufferRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EncryptBufferRequestBuilder) {
@@ -111,7 +121,7 @@ func NewEncryptBufferRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *EncryptBufferRequestBuilder) CreatePostRequestInformation(options *Encr
     return requestInfo, nil
 }
 // Post invoke action encryptBuffer
-func (m *EncryptBufferRequestBuilder) Post(options *EncryptBufferRequestBuilderPostOptions)(*EncryptBufferResponse, error) {
+func (m *EncryptBufferRequestBuilder) Post(options *EncryptBufferRequestBuilderPostOptions)(EncryptBufferResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEncryptBufferResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEncryptBufferResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*EncryptBufferResponse), nil
+    return res.(EncryptBufferResponseable), nil
 }

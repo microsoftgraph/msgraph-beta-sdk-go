@@ -2,12 +2,12 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     ia79dc29675f4521ddcee6a34425a0085d9bcf1456f675e8382494cb585621b8a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/photos/item/value"
 )
 
-// ProfilePhotoItemRequestBuilder builds and executes requests for operations under \users\{user-id}\photos\{profilePhoto-id}
+// ProfilePhotoItemRequestBuilder provides operations to manage the photos property of the microsoft.graph.user entity.
 type ProfilePhotoItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type ProfilePhotoItemRequestBuilderGetQueryParameters struct {
 // ProfilePhotoItemRequestBuilderPatchOptions options for Patch
 type ProfilePhotoItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhoto;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhotoable;
     // Request headers
     H map[string]string;
     // Request options
@@ -61,7 +61,7 @@ func NewProfilePhotoItemRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,7 +74,7 @@ func NewProfilePhotoItemRequestBuilder(rawUrl string, requestAdapter ida96af0f17
 func (m *ProfilePhotoItemRequestBuilder) Content()(*ia79dc29675f4521ddcee6a34425a0085d9bcf1456f675e8382494cb585621b8a.ContentRequestBuilder) {
     return ia79dc29675f4521ddcee6a34425a0085d9bcf1456f675e8382494cb585621b8a.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property photos for users
 func (m *ProfilePhotoItemRequestBuilder) CreateDeleteRequestInformation(options *ProfilePhotoItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *ProfilePhotoItemRequestBuilder) CreateGetRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property photos in users
 func (m *ProfilePhotoItemRequestBuilder) CreatePatchRequestInformation(options *ProfilePhotoItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,37 +129,49 @@ func (m *ProfilePhotoItemRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable.
+// Delete delete navigation property photos for users
 func (m *ProfilePhotoItemRequestBuilder) Delete(options *ProfilePhotoItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get read-only. Nullable.
-func (m *ProfilePhotoItemRequestBuilder) Get(options *ProfilePhotoItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhoto, error) {
+func (m *ProfilePhotoItemRequestBuilder) Get(options *ProfilePhotoItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhotoable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewProfilePhoto() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateProfilePhotoFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhoto), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhotoable), nil
 }
-// Patch read-only. Nullable.
+// Patch update the navigation property photos in users
 func (m *ProfilePhotoItemRequestBuilder) Patch(options *ProfilePhotoItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

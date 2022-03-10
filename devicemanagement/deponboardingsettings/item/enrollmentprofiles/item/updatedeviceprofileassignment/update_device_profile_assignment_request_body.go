@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UpdateDeviceProfileAssignmentRequestBody 
+// UpdateDeviceProfileAssignmentRequestBody provides operations to call the updateDeviceProfileAssignment method.
 type UpdateDeviceProfileAssignmentRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,6 +17,10 @@ func NewUpdateDeviceProfileAssignmentRequestBody()(*UpdateDeviceProfileAssignmen
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUpdateDeviceProfileAssignmentRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUpdateDeviceProfileAssignmentRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUpdateDeviceProfileAssignmentRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDeviceProfileAssignmentRequestBody) GetAdditionalData()(map[string]interface{}) {

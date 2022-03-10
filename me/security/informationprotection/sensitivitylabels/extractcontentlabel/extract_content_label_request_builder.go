@@ -3,10 +3,10 @@ package extractcontentlabel
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
 )
 
-// ExtractContentLabelRequestBuilder builds and executes requests for operations under \me\security\informationProtection\sensitivityLabels\microsoft.graph.security.extractContentLabel
+// ExtractContentLabelRequestBuilder provides operations to call the extractContentLabel method.
 type ExtractContentLabelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ExtractContentLabelRequestBuilder struct {
 // ExtractContentLabelRequestBuilderPostOptions options for Post
 type ExtractContentLabelRequestBuilderPostOptions struct {
     // 
-    Body *ExtractContentLabelRequestBody;
+    Body ExtractContentLabelRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type ExtractContentLabelResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type contentLabel
-    contentLabel *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentLabel;
+    contentLabel i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable;
 }
 // NewExtractContentLabelResponse instantiates a new extractContentLabelResponse and sets the default values.
 func NewExtractContentLabelResponse()(*ExtractContentLabelResponse) {
@@ -39,6 +39,9 @@ func NewExtractContentLabelResponse()(*ExtractContentLabelResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateExtractContentLabelResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExtractContentLabelResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExtractContentLabelResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *ExtractContentLabelResponse) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetContentLabel gets the contentLabel property value. Union type representation for type contentLabel
-func (m *ExtractContentLabelResponse) GetContentLabel()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentLabel) {
+func (m *ExtractContentLabelResponse) GetContentLabel()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *ExtractContentLabelResponse) GetContentLabel()(*i535684e11b5500196ecb4b
 func (m *ExtractContentLabelResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewContentLabel() })
+        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateContentLabelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentLabel(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentLabel))
+            m.SetContentLabel(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *ExtractContentLabelResponse) SetAdditionalData(value map[string]interfa
     }
 }
 // SetContentLabel sets the contentLabel property value. Union type representation for type contentLabel
-func (m *ExtractContentLabelResponse) SetContentLabel(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentLabel)() {
+func (m *ExtractContentLabelResponse) SetContentLabel(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable)() {
     if m != nil {
         m.contentLabel = value
     }
+}
+// ExtractContentLabelResponseable 
+type ExtractContentLabelResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetContentLabel()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable)
+    SetContentLabel(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable)()
 }
 // NewExtractContentLabelRequestBuilderInternal instantiates a new ExtractContentLabelRequestBuilder and sets the default values.
 func NewExtractContentLabelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtractContentLabelRequestBuilder) {
@@ -111,7 +121,7 @@ func NewExtractContentLabelRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformation(options
     return requestInfo, nil
 }
 // Post invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) Post(options *ExtractContentLabelRequestBuilderPostOptions)(*ExtractContentLabelResponse, error) {
+func (m *ExtractContentLabelRequestBuilder) Post(options *ExtractContentLabelRequestBuilderPostOptions)(ExtractContentLabelResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExtractContentLabelResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateExtractContentLabelResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ExtractContentLabelResponse), nil
+    return res.(ExtractContentLabelResponseable), nil
 }

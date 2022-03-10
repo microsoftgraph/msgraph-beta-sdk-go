@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ReassignRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.reassign
+// ReassignRequestBuilder provides operations to call the reassign method.
 type ReassignRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ReassignResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type educationSubmission
-    educationSubmission *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission;
+    educationSubmission i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable;
 }
 // NewReassignResponse instantiates a new reassignResponse and sets the default values.
 func NewReassignResponse()(*ReassignResponse) {
@@ -37,6 +37,9 @@ func NewReassignResponse()(*ReassignResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateReassignResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewReassignResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReassignResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *ReassignResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEducationSubmission gets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *ReassignResponse) GetEducationSubmission()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission) {
+func (m *ReassignResponse) GetEducationSubmission()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *ReassignResponse) GetEducationSubmission()(*i535684e11b5500196ecb4b5c66
 func (m *ReassignResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["educationSubmission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEducationSubmission() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateEducationSubmissionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEducationSubmission(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission))
+            m.SetEducationSubmission(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable))
         }
         return nil
     }
@@ -95,10 +98,17 @@ func (m *ReassignResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEducationSubmission sets the educationSubmission property value. Union type representation for type educationSubmission
-func (m *ReassignResponse) SetEducationSubmission(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission)() {
+func (m *ReassignResponse) SetEducationSubmission(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable)() {
     if m != nil {
         m.educationSubmission = value
     }
+}
+// ReassignResponseable 
+type ReassignResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetEducationSubmission()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable)
+    SetEducationSubmission(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmissionable)()
 }
 // NewReassignRequestBuilderInternal instantiates a new ReassignRequestBuilder and sets the default values.
 func NewReassignRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReassignRequestBuilder) {
@@ -109,7 +119,7 @@ func NewReassignRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *ReassignRequestBuilder) CreatePostRequestInformation(options *ReassignR
     return requestInfo, nil
 }
 // Post invoke action reassign
-func (m *ReassignRequestBuilder) Post(options *ReassignRequestBuilderPostOptions)(*ReassignResponse, error) {
+func (m *ReassignRequestBuilder) Post(options *ReassignRequestBuilderPostOptions)(ReassignResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReassignResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateReassignResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ReassignResponse), nil
+    return res.(ReassignResponseable), nil
 }

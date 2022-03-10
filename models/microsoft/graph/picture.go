@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Picture 
+// Picture provides operations to manage the financials singleton.
 type Picture struct {
     Entity
     // 
@@ -23,6 +23,10 @@ func NewPicture()(*Picture) {
     }
     return m
 }
+// CreatePictureFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePictureFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPicture(), nil
+}
 // GetContent gets the content property value. 
 func (m *Picture) GetContent()([]byte) {
     if m == nil {
@@ -37,22 +41,6 @@ func (m *Picture) GetContentType()(*string) {
         return nil
     } else {
         return m.contentType
-    }
-}
-// GetHeight gets the height property value. 
-func (m *Picture) GetHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.height
-    }
-}
-// GetWidth gets the width property value. 
-func (m *Picture) GetWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.width
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -99,6 +87,22 @@ func (m *Picture) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     return res
+}
+// GetHeight gets the height property value. 
+func (m *Picture) GetHeight()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.height
+    }
+}
+// GetWidth gets the width property value. 
+func (m *Picture) GetWidth()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.width
+    }
 }
 func (m *Picture) IsNil()(bool) {
     return m == nil

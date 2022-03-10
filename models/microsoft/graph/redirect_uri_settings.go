@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RedirectUriSettings 
+// RedirectUriSettings provides operations to manage the collection of application entities.
 type RedirectUriSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewRedirectUriSettings()(*RedirectUriSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateRedirectUriSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRedirectUriSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRedirectUriSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectUriSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIndex gets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
-func (m *RedirectUriSettings) GetIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
-}
-// GetUri gets the uri property value. Specifies the URI that tokens are sent to.
-func (m *RedirectUriSettings) GetUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uri
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *RedirectUriSettings) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetIndex gets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
+func (m *RedirectUriSettings) GetIndex()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.index
+    }
+}
+// GetUri gets the uri property value. Specifies the URI that tokens are sent to.
+func (m *RedirectUriSettings) GetUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.uri
+    }
 }
 func (m *RedirectUriSettings) IsNil()(bool) {
     return m == nil

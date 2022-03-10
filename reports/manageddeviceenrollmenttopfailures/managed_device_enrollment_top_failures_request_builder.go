@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ManagedDeviceEnrollmentTopFailuresRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.managedDeviceEnrollmentTopFailures()
+// ManagedDeviceEnrollmentTopFailuresRequestBuilder provides operations to call the managedDeviceEnrollmentTopFailures method.
 type ManagedDeviceEnrollmentTopFailuresRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ManagedDeviceEnrollmentTopFailuresResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type report
-    report *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report;
+    report i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reportable;
 }
 // NewManagedDeviceEnrollmentTopFailuresResponse instantiates a new managedDeviceEnrollmentTopFailuresResponse and sets the default values.
 func NewManagedDeviceEnrollmentTopFailuresResponse()(*ManagedDeviceEnrollmentTopFailuresResponse) {
@@ -37,6 +37,9 @@ func NewManagedDeviceEnrollmentTopFailuresResponse()(*ManagedDeviceEnrollmentTop
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateManagedDeviceEnrollmentTopFailuresResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewManagedDeviceEnrollmentTopFailuresResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceEnrollmentTopFailuresResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *ManagedDeviceEnrollmentTopFailuresResponse) GetAdditionalData()(map[str
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ManagedDeviceEnrollmentTopFailuresResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateReportFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReport(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reportable))
+        }
+        return nil
+    }
+    return res
+}
 // GetReport gets the report property value. Union type representation for type report
-func (m *ManagedDeviceEnrollmentTopFailuresResponse) GetReport()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report) {
+func (m *ManagedDeviceEnrollmentTopFailuresResponse) GetReport()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reportable) {
     if m == nil {
         return nil
     } else {
         return m.report
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedDeviceEnrollmentTopFailuresResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewReport() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReport(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report))
-        }
-        return nil
-    }
-    return res
 }
 func (m *ManagedDeviceEnrollmentTopFailuresResponse) IsNil()(bool) {
     return m == nil
@@ -95,10 +98,17 @@ func (m *ManagedDeviceEnrollmentTopFailuresResponse) SetAdditionalData(value map
     }
 }
 // SetReport sets the report property value. Union type representation for type report
-func (m *ManagedDeviceEnrollmentTopFailuresResponse) SetReport(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Report)() {
+func (m *ManagedDeviceEnrollmentTopFailuresResponse) SetReport(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reportable)() {
     if m != nil {
         m.report = value
     }
+}
+// ManagedDeviceEnrollmentTopFailuresResponseable 
+type ManagedDeviceEnrollmentTopFailuresResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetReport()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reportable)
+    SetReport(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Reportable)()
 }
 // NewManagedDeviceEnrollmentTopFailuresRequestBuilderInternal instantiates a new ManagedDeviceEnrollmentTopFailuresRequestBuilder and sets the default values.
 func NewManagedDeviceEnrollmentTopFailuresRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceEnrollmentTopFailuresRequestBuilder) {
@@ -109,7 +119,7 @@ func NewManagedDeviceEnrollmentTopFailuresRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) CreateGetRequestInfor
     return requestInfo, nil
 }
 // Get invoke function managedDeviceEnrollmentTopFailures
-func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) Get(options *ManagedDeviceEnrollmentTopFailuresRequestBuilderGetOptions)(*ManagedDeviceEnrollmentTopFailuresResponse, error) {
+func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) Get(options *ManagedDeviceEnrollmentTopFailuresRequestBuilderGetOptions)(ManagedDeviceEnrollmentTopFailuresResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagedDeviceEnrollmentTopFailuresResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateManagedDeviceEnrollmentTopFailuresResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagedDeviceEnrollmentTopFailuresResponse), nil
+    return res.(ManagedDeviceEnrollmentTopFailuresResponseable), nil
 }

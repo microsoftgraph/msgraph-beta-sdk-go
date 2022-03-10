@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceComplianceSettingState 
+// DeviceComplianceSettingState provides operations to manage the deviceManagement singleton.
 type DeviceComplianceSettingState struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -40,6 +40,10 @@ func NewDeviceComplianceSettingState()(*DeviceComplianceSettingState) {
     }
     return m
 }
+// CreateDeviceComplianceSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceComplianceSettingStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceComplianceSettingState(), nil
+}
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *DeviceComplianceSettingState) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -70,70 +74,6 @@ func (m *DeviceComplianceSettingState) GetDeviceName()(*string) {
         return nil
     } else {
         return m.deviceName
-    }
-}
-// GetPlatformType gets the platformType property value. Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
-func (m *DeviceComplianceSettingState) GetPlatformType()(*DeviceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
-}
-// GetSetting gets the setting property value. The setting class name and property name.
-func (m *DeviceComplianceSettingState) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
-}
-// GetSettingName gets the settingName property value. The Setting Name that is being reported
-func (m *DeviceComplianceSettingState) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
-}
-// GetState gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-func (m *DeviceComplianceSettingState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
-}
-// GetUserEmail gets the userEmail property value. The User email address that is being reported
-func (m *DeviceComplianceSettingState) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
-}
-// GetUserId gets the userId property value. The user Id that is being reported
-func (m *DeviceComplianceSettingState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
-}
-// GetUserName gets the userName property value. The User Name that is being reported
-func (m *DeviceComplianceSettingState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The User PrincipalName that is being reported
-func (m *DeviceComplianceSettingState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -260,6 +200,70 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetPlatformType gets the platformType property value. Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+func (m *DeviceComplianceSettingState) GetPlatformType()(*DeviceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platformType
+    }
+}
+// GetSetting gets the setting property value. The setting class name and property name.
+func (m *DeviceComplianceSettingState) GetSetting()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.setting
+    }
+}
+// GetSettingName gets the settingName property value. The Setting Name that is being reported
+func (m *DeviceComplianceSettingState) GetSettingName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settingName
+    }
+}
+// GetState gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+func (m *DeviceComplianceSettingState) GetState()(*ComplianceStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.state
+    }
+}
+// GetUserEmail gets the userEmail property value. The User email address that is being reported
+func (m *DeviceComplianceSettingState) GetUserEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userEmail
+    }
+}
+// GetUserId gets the userId property value. The user Id that is being reported
+func (m *DeviceComplianceSettingState) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
+}
+// GetUserName gets the userName property value. The User Name that is being reported
+func (m *DeviceComplianceSettingState) GetUserName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userName
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. The User PrincipalName that is being reported
+func (m *DeviceComplianceSettingState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
 }
 func (m *DeviceComplianceSettingState) IsNil()(bool) {
     return m == nil

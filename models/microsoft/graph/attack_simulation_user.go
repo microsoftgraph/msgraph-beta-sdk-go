@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttackSimulationUser 
+// AttackSimulationUser provides operations to call the getAttackSimulationRepeatOffenders method.
 type AttackSimulationUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewAttackSimulationUser()(*AttackSimulationUser) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateAttackSimulationUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttackSimulationUserFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttackSimulationUser(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationUser) GetAdditionalData()(map[string]interface{}) {
@@ -44,14 +48,6 @@ func (m *AttackSimulationUser) GetEmail()(*string) {
         return nil
     } else {
         return m.email
-    }
-}
-// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
-func (m *AttackSimulationUser) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +84,14 @@ func (m *AttackSimulationUser) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     return res
+}
+// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
+func (m *AttackSimulationUser) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *AttackSimulationUser) IsNil()(bool) {
     return m == nil

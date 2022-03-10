@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptUserState 
+// DeviceManagementScriptUserState provides operations to manage the deviceManagement singleton.
 type DeviceManagementScriptUserState struct {
     Entity
     // List of run states for this script across all devices of specific user.
-    deviceRunStates []DeviceManagementScriptDeviceState;
+    deviceRunStates []DeviceManagementScriptDeviceStateable;
     // Error device count for specific user.
     errorDeviceCount *int32;
     // Success device count for specific user.
@@ -23,8 +23,12 @@ func NewDeviceManagementScriptUserState()(*DeviceManagementScriptUserState) {
     }
     return m
 }
+// CreateDeviceManagementScriptUserStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementScriptUserStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementScriptUserState(), nil
+}
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices of specific user.
-func (m *DeviceManagementScriptUserState) GetDeviceRunStates()([]DeviceManagementScriptDeviceState) {
+func (m *DeviceManagementScriptUserState) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
     if m == nil {
         return nil
     } else {
@@ -39,34 +43,18 @@ func (m *DeviceManagementScriptUserState) GetErrorDeviceCount()(*int32) {
         return m.errorDeviceCount
     }
 }
-// GetSuccessDeviceCount gets the successDeviceCount property value. Success device count for specific user.
-func (m *DeviceManagementScriptUserState) GetSuccessDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successDeviceCount
-    }
-}
-// GetUserPrincipalName gets the userPrincipalName property value. User principle name of specific user.
-func (m *DeviceManagementScriptUserState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceRunStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementScriptDeviceState() })
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementScriptDeviceState, len(val))
+            res := make([]DeviceManagementScriptDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementScriptDeviceState))
+                res[i] = v.(DeviceManagementScriptDeviceStateable)
             }
             m.SetDeviceRunStates(res)
         }
@@ -104,6 +92,22 @@ func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
+// GetSuccessDeviceCount gets the successDeviceCount property value. Success device count for specific user.
+func (m *DeviceManagementScriptUserState) GetSuccessDeviceCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successDeviceCount
+    }
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User principle name of specific user.
+func (m *DeviceManagementScriptUserState) GetUserPrincipalName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPrincipalName
+    }
+}
 func (m *DeviceManagementScriptUserState) IsNil()(bool) {
     return m == nil
 }
@@ -116,8 +120,7 @@ func (m *DeviceManagementScriptUserState) Serialize(writer i04eb5309aeaafadd2837
     if m.GetDeviceRunStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {
@@ -145,7 +148,7 @@ func (m *DeviceManagementScriptUserState) Serialize(writer i04eb5309aeaafadd2837
     return nil
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for this script across all devices of specific user.
-func (m *DeviceManagementScriptUserState) SetDeviceRunStates(value []DeviceManagementScriptDeviceState)() {
+func (m *DeviceManagementScriptUserState) SetDeviceRunStates(value []DeviceManagementScriptDeviceStateable)() {
     if m != nil {
         m.deviceRunStates = value
     }

@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Recommendation 
+// Recommendation provides operations to manage the directory singleton.
 type Recommendation struct {
     Entity
     // 
-    actionSteps []ActionStep;
+    actionSteps []ActionStepable;
     // 
     benefits *string;
     // 
@@ -19,7 +19,7 @@ type Recommendation struct {
     // 
     displayName *string;
     // 
-    impactedResources []RecommendationResource;
+    impactedResources []RecommendationResourceable;
     // 
     impactStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -46,8 +46,12 @@ func NewRecommendation()(*Recommendation) {
     }
     return m
 }
+// CreateRecommendationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateRecommendationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewRecommendation(), nil
+}
 // GetActionSteps gets the actionSteps property value. 
-func (m *Recommendation) GetActionSteps()([]ActionStep) {
+func (m *Recommendation) GetActionSteps()([]ActionStepable) {
     if m == nil {
         return nil
     } else {
@@ -86,98 +90,18 @@ func (m *Recommendation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetImpactedResources gets the impactedResources property value. 
-func (m *Recommendation) GetImpactedResources()([]RecommendationResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactedResources
-    }
-}
-// GetImpactStartDateTime gets the impactStartDateTime property value. 
-func (m *Recommendation) GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactStartDateTime
-    }
-}
-// GetImpactType gets the impactType property value. 
-func (m *Recommendation) GetImpactType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactType
-    }
-}
-// GetInsights gets the insights property value. 
-func (m *Recommendation) GetInsights()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insights
-    }
-}
-// GetLastCheckedDateTime gets the lastCheckedDateTime property value. 
-func (m *Recommendation) GetLastCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckedDateTime
-    }
-}
-// GetLastModifiedBy gets the lastModifiedBy property value. 
-func (m *Recommendation) GetLastModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
-func (m *Recommendation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetPostponeUntilDateTime gets the postponeUntilDateTime property value. 
-func (m *Recommendation) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postponeUntilDateTime
-    }
-}
-// GetPriority gets the priority property value. 
-func (m *Recommendation) GetPriority()(*RecommendationPriority) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetStatus gets the status property value. 
-func (m *Recommendation) GetStatus()(*RecommendationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Recommendation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionSteps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActionStep() })
+        val, err := n.GetCollectionOfObjectValues(CreateActionStepFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ActionStep, len(val))
+            res := make([]ActionStepable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ActionStep))
+                res[i] = v.(ActionStepable)
             }
             m.SetActionSteps(res)
         }
@@ -224,14 +148,14 @@ func (m *Recommendation) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["impactedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecommendationResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateRecommendationResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RecommendationResource, len(val))
+            res := make([]RecommendationResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RecommendationResource))
+                res[i] = v.(RecommendationResourceable)
             }
             m.SetImpactedResources(res)
         }
@@ -329,6 +253,86 @@ func (m *Recommendation) GetFieldDeserializers()(map[string]func(interface{}, i0
     }
     return res
 }
+// GetImpactedResources gets the impactedResources property value. 
+func (m *Recommendation) GetImpactedResources()([]RecommendationResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.impactedResources
+    }
+}
+// GetImpactStartDateTime gets the impactStartDateTime property value. 
+func (m *Recommendation) GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.impactStartDateTime
+    }
+}
+// GetImpactType gets the impactType property value. 
+func (m *Recommendation) GetImpactType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.impactType
+    }
+}
+// GetInsights gets the insights property value. 
+func (m *Recommendation) GetInsights()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.insights
+    }
+}
+// GetLastCheckedDateTime gets the lastCheckedDateTime property value. 
+func (m *Recommendation) GetLastCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastCheckedDateTime
+    }
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. 
+func (m *Recommendation) GetLastModifiedBy()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedBy
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+func (m *Recommendation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetPostponeUntilDateTime gets the postponeUntilDateTime property value. 
+func (m *Recommendation) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postponeUntilDateTime
+    }
+}
+// GetPriority gets the priority property value. 
+func (m *Recommendation) GetPriority()(*RecommendationPriority) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetStatus gets the status property value. 
+func (m *Recommendation) GetStatus()(*RecommendationStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
 func (m *Recommendation) IsNil()(bool) {
     return m == nil
 }
@@ -341,8 +345,7 @@ func (m *Recommendation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetActionSteps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActionSteps()))
         for i, v := range m.GetActionSteps() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("actionSteps", cast)
         if err != nil {
@@ -377,8 +380,7 @@ func (m *Recommendation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if m.GetImpactedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImpactedResources()))
         for i, v := range m.GetImpactedResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("impactedResources", cast)
         if err != nil {
@@ -444,7 +446,7 @@ func (m *Recommendation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetActionSteps sets the actionSteps property value. 
-func (m *Recommendation) SetActionSteps(value []ActionStep)() {
+func (m *Recommendation) SetActionSteps(value []ActionStepable)() {
     if m != nil {
         m.actionSteps = value
     }
@@ -474,7 +476,7 @@ func (m *Recommendation) SetDisplayName(value *string)() {
     }
 }
 // SetImpactedResources sets the impactedResources property value. 
-func (m *Recommendation) SetImpactedResources(value []RecommendationResource)() {
+func (m *Recommendation) SetImpactedResources(value []RecommendationResourceable)() {
     if m != nil {
         m.impactedResources = value
     }

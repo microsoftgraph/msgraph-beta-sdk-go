@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DomainRegistrant 
+// DomainRegistrant provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
 type DomainRegistrant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewDomainRegistrant()(*DomainRegistrant) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDomainRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDomainRegistrantFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDomainRegistrant(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DomainRegistrant) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *DomainRegistrant) GetCountryOrRegionCode()(*string) {
         return nil
     } else {
         return m.countryOrRegionCode
-    }
-}
-// GetOrganization gets the organization property value. 
-func (m *DomainRegistrant) GetOrganization()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organization
-    }
-}
-// GetUrl gets the url property value. 
-func (m *DomainRegistrant) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
-}
-// GetVendor gets the vendor property value. 
-func (m *DomainRegistrant) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetOrganization gets the organization property value. 
+func (m *DomainRegistrant) GetOrganization()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organization
+    }
+}
+// GetUrl gets the url property value. 
+func (m *DomainRegistrant) GetUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.url
+    }
+}
+// GetVendor gets the vendor property value. 
+func (m *DomainRegistrant) GetVendor()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.vendor_escaped
+    }
 }
 func (m *DomainRegistrant) IsNil()(bool) {
     return m == nil

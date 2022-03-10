@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkConnection 
+// TeamworkConnection provides operations to manage the teamwork singleton.
 type TeamworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,6 +21,10 @@ func NewTeamworkConnection()(*TeamworkConnection) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkConnectionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkConnection(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkConnection) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnectionStatus) {
         return nil
     } else {
         return m.connectionStatus
-    }
-}
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
-func (m *TeamworkConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -69,6 +65,14 @@ func (m *TeamworkConnection) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
+func (m *TeamworkConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
 }
 func (m *TeamworkConnection) IsNil()(bool) {
     return m == nil

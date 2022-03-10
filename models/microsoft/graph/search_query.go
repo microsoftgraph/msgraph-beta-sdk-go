@@ -4,12 +4,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SearchQuery 
+// SearchQuery provides operations to call the query method.
 type SearchQuery struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    query_string *SearchQueryString;
+    query_string SearchQueryStringable;
     // The search query containing the search terms. Required.
     queryString *string;
     // 
@@ -22,6 +22,10 @@ func NewSearchQuery()(*SearchQuery) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSearchQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSearchQueryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSearchQuery(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchQuery) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -30,40 +34,16 @@ func (m *SearchQuery) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetQuery_string gets the query_string property value. 
-func (m *SearchQuery) GetQuery_string()(*SearchQueryString) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query_string
-    }
-}
-// GetQueryString gets the queryString property value. The search query containing the search terms. Required.
-func (m *SearchQuery) GetQueryString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryString
-    }
-}
-// GetQueryTemplate gets the queryTemplate property value. 
-func (m *SearchQuery) GetQueryTemplate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryTemplate
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchQuery) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["query_string"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchQueryString() })
+        val, err := n.GetObjectValue(CreateSearchQueryStringFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQuery_string(val.(*SearchQueryString))
+            m.SetQuery_string(val.(SearchQueryStringable))
         }
         return nil
     }
@@ -88,6 +68,30 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
+}
+// GetQuery_string gets the query_string property value. 
+func (m *SearchQuery) GetQuery_string()(SearchQueryStringable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.query_string
+    }
+}
+// GetQueryString gets the queryString property value. The search query containing the search terms. Required.
+func (m *SearchQuery) GetQueryString()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryString
+    }
+}
+// GetQueryTemplate gets the queryTemplate property value. 
+func (m *SearchQuery) GetQueryTemplate()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryTemplate
+    }
 }
 func (m *SearchQuery) IsNil()(bool) {
     return m == nil
@@ -127,7 +131,7 @@ func (m *SearchQuery) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetQuery_string sets the query_string property value. 
-func (m *SearchQuery) SetQuery_string(value *SearchQueryString)() {
+func (m *SearchQuery) SetQuery_string(value SearchQueryStringable)() {
     if m != nil {
         m.query_string = value
     }

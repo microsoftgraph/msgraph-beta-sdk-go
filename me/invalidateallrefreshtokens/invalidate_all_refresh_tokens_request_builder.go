@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// InvalidateAllRefreshTokensRequestBuilder builds and executes requests for operations under \me\microsoft.graph.invalidateAllRefreshTokens
+// InvalidateAllRefreshTokensRequestBuilder provides operations to call the invalidateAllRefreshTokens method.
 type InvalidateAllRefreshTokensRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewInvalidateAllRefreshTokensRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *InvalidateAllRefreshTokensRequestBuilder) CreatePostRequestInformation(
     return requestInfo, nil
 }
 // Post invoke action invalidateAllRefreshTokens
-func (m *InvalidateAllRefreshTokensRequestBuilder) Post(options *InvalidateAllRefreshTokensRequestBuilderPostOptions)(*bool, error) {
+func (m *InvalidateAllRefreshTokensRequestBuilder) Post(options *InvalidateAllRefreshTokensRequestBuilderPostOptions)(InvalidateAllRefreshTokensResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateInvalidateAllRefreshTokensResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*bool), nil
+    return res.(InvalidateAllRefreshTokensResponseable), nil
 }

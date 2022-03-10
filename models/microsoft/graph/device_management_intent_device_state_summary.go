@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentDeviceStateSummary 
+// DeviceManagementIntentDeviceStateSummary provides operations to manage the deviceManagement singleton.
 type DeviceManagementIntentDeviceStateSummary struct {
     Entity
     // Number of devices in conflict
@@ -26,6 +26,10 @@ func NewDeviceManagementIntentDeviceStateSummary()(*DeviceManagementIntentDevice
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementIntentDeviceStateSummary(), nil
 }
 // GetConflictCount gets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceStateSummary) GetConflictCount()(*int32) {
@@ -49,30 +53,6 @@ func (m *DeviceManagementIntentDeviceStateSummary) GetFailedCount()(*int32) {
         return nil
     } else {
         return m.failedCount
-    }
-}
-// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
-func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
-}
-// GetNotApplicablePlatformCount gets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
-func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicablePlatformCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicablePlatformCount
-    }
-}
-// GetSuccessCount gets the successCount property value. Number of succeeded devices
-func (m *DeviceManagementIntentDeviceStateSummary) GetSuccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successCount
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,6 +119,30 @@ func (m *DeviceManagementIntentDeviceStateSummary) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
+func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicableCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicableCount
+    }
+}
+// GetNotApplicablePlatformCount gets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
+func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicablePlatformCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notApplicablePlatformCount
+    }
+}
+// GetSuccessCount gets the successCount property value. Number of succeeded devices
+func (m *DeviceManagementIntentDeviceStateSummary) GetSuccessCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.successCount
+    }
 }
 func (m *DeviceManagementIntentDeviceStateSummary) IsNil()(bool) {
     return m == nil

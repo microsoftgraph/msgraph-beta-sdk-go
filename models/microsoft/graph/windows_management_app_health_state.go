@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsManagementAppHealthState 
+// WindowsManagementAppHealthState provides operations to manage the deviceAppManagement singleton.
 type WindowsManagementAppHealthState struct {
     Entity
     // Name of the device on which Windows management app is installed.
@@ -26,6 +26,10 @@ func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {
     }
     return m
 }
+// CreateWindowsManagementAppHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsManagementAppHealthStateFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsManagementAppHealthState(), nil
+}
 // GetDeviceName gets the deviceName property value. Name of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) GetDeviceName()(*string) {
     if m == nil {
@@ -40,30 +44,6 @@ func (m *WindowsManagementAppHealthState) GetDeviceOSVersion()(*string) {
         return nil
     } else {
         return m.deviceOSVersion
-    }
-}
-// GetHealthState gets the healthState property value. Windows management app health state. Possible values are: unknown, healthy, unhealthy.
-func (m *WindowsManagementAppHealthState) GetHealthState()(*HealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthState
-    }
-}
-// GetInstalledVersion gets the installedVersion property value. Windows management app installed version.
-func (m *WindowsManagementAppHealthState) GetInstalledVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedVersion
-    }
-}
-// GetLastCheckInDateTime gets the lastCheckInDateTime property value. Windows management app last check-in time.
-func (m *WindowsManagementAppHealthState) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckInDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -120,6 +100,30 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetHealthState gets the healthState property value. Windows management app health state. Possible values are: unknown, healthy, unhealthy.
+func (m *WindowsManagementAppHealthState) GetHealthState()(*HealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthState
+    }
+}
+// GetInstalledVersion gets the installedVersion property value. Windows management app installed version.
+func (m *WindowsManagementAppHealthState) GetInstalledVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installedVersion
+    }
+}
+// GetLastCheckInDateTime gets the lastCheckInDateTime property value. Windows management app last check-in time.
+func (m *WindowsManagementAppHealthState) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastCheckInDateTime
+    }
 }
 func (m *WindowsManagementAppHealthState) IsNil()(bool) {
     return m == nil

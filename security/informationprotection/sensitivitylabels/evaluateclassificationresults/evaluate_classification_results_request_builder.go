@@ -2,10 +2,9 @@ package evaluateclassificationresults
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EvaluateClassificationResultsRequestBuilder builds and executes requests for operations under \security\informationProtection\sensitivityLabels\microsoft.graph.security.evaluateClassificationResults
+// EvaluateClassificationResultsRequestBuilder provides operations to call the evaluateClassificationResults method.
 type EvaluateClassificationResultsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +16,7 @@ type EvaluateClassificationResultsRequestBuilder struct {
 // EvaluateClassificationResultsRequestBuilderPostOptions options for Post
 type EvaluateClassificationResultsRequestBuilderPostOptions struct {
     // 
-    Body *EvaluateClassificationResultsRequestBody;
+    Body EvaluateClassificationResultsRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -34,7 +33,7 @@ func NewEvaluateClassificationResultsRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,18 +62,14 @@ func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Post invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) Post(options *EvaluateClassificationResultsRequestBuilderPostOptions)([]EvaluateClassificationResults, error) {
+func (m *EvaluateClassificationResultsRequestBuilder) Post(options *EvaluateClassificationResultsRequestBuilderPostOptions)(EvaluateClassificationResultsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvaluateClassificationResults() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEvaluateClassificationResultsResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]EvaluateClassificationResults, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*EvaluateClassificationResults))
-    }
-    return val, nil
+    return res.(EvaluateClassificationResultsResponseable), nil
 }

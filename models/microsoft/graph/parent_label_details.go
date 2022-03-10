@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ParentLabelDetails 
+// ParentLabelDetails provides operations to manage the compliance singleton.
 type ParentLabelDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,7 +19,7 @@ type ParentLabelDetails struct {
     // The plaintext name of the label.
     name *string;
     // 
-    parent *ParentLabelDetails;
+    parent ParentLabelDetailsable;
     // The sensitivity value of the label, where lower is less sensitive.
     sensitivity *int32;
     // The tooltip that should be displayed for the label in a user interface.
@@ -31,6 +31,10 @@ func NewParentLabelDetails()(*ParentLabelDetails) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateParentLabelDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewParentLabelDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParentLabelDetails) GetAdditionalData()(map[string]interface{}) {
@@ -54,54 +58,6 @@ func (m *ParentLabelDetails) GetDescription()(*string) {
         return nil
     } else {
         return m.description
-    }
-}
-// GetId gets the id property value. The label ID is a globally unique identifier (GUID).
-func (m *ParentLabelDetails) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
-func (m *ParentLabelDetails) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
-}
-// GetName gets the name property value. The plaintext name of the label.
-func (m *ParentLabelDetails) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetParent gets the parent property value. 
-func (m *ParentLabelDetails) GetParent()(*ParentLabelDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parent
-    }
-}
-// GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
-func (m *ParentLabelDetails) GetSensitivity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivity
-    }
-}
-// GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a user interface.
-func (m *ParentLabelDetails) GetTooltip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tooltip
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -158,12 +114,12 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["parent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewParentLabelDetails() })
+        val, err := n.GetObjectValue(CreateParentLabelDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParent(val.(*ParentLabelDetails))
+            m.SetParent(val.(ParentLabelDetailsable))
         }
         return nil
     }
@@ -188,6 +144,54 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     return res
+}
+// GetId gets the id property value. The label ID is a globally unique identifier (GUID).
+func (m *ParentLabelDetails) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+func (m *ParentLabelDetails) GetIsActive()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isActive
+    }
+}
+// GetName gets the name property value. The plaintext name of the label.
+func (m *ParentLabelDetails) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetParent gets the parent property value. 
+func (m *ParentLabelDetails) GetParent()(ParentLabelDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.parent
+    }
+}
+// GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
+func (m *ParentLabelDetails) GetSensitivity()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sensitivity
+    }
+}
+// GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a user interface.
+func (m *ParentLabelDetails) GetTooltip()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tooltip
+    }
 }
 func (m *ParentLabelDetails) IsNil()(bool) {
     return m == nil
@@ -287,7 +291,7 @@ func (m *ParentLabelDetails) SetName(value *string)() {
     }
 }
 // SetParent sets the parent property value. 
-func (m *ParentLabelDetails) SetParent(value *ParentLabelDetails)() {
+func (m *ParentLabelDetails) SetParent(value ParentLabelDetailsable)() {
     if m != nil {
         m.parent = value
     }

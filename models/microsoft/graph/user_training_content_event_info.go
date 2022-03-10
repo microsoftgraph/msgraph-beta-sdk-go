@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserTrainingContentEventInfo 
+// UserTrainingContentEventInfo provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type UserTrainingContentEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewUserTrainingContentEventInfo()(*UserTrainingContentEventInfo) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateUserTrainingContentEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserTrainingContentEventInfoFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserTrainingContentEventInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingContentEventInfo) GetAdditionalData()(map[string]interface{}) {
@@ -49,30 +53,6 @@ func (m *UserTrainingContentEventInfo) GetContentDateTime()(*i336074805fc853987a
         return nil
     } else {
         return m.contentDateTime
-    }
-}
-// GetIpAddress gets the ipAddress property value. IP address of the user for the training event.
-func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
-}
-// GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
-func (m *UserTrainingContentEventInfo) GetOsPlatformDeviceDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osPlatformDeviceDetails
-    }
-}
-// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
-func (m *UserTrainingContentEventInfo) GetPotentialScoreImpact()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.potentialScoreImpact
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,6 +109,30 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIpAddress gets the ipAddress property value. IP address of the user for the training event.
+func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ipAddress
+    }
+}
+// GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
+func (m *UserTrainingContentEventInfo) GetOsPlatformDeviceDetails()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.osPlatformDeviceDetails
+    }
+}
+// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
+func (m *UserTrainingContentEventInfo) GetPotentialScoreImpact()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.potentialScoreImpact
+    }
 }
 func (m *UserTrainingContentEventInfo) IsNil()(bool) {
     return m == nil

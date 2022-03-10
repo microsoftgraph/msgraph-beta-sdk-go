@@ -2,8 +2,8 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i6134bfd82a5845c3cbcf51aafd42aa05cf25cdd21de9288e1f7e98c83ecce015 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/sections/item/copytosectiongroup"
     ia2a28eef9517080a27fdba6cdf2297394b92d5bdd6eea03a28f72103534666de "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/sections/item/parentnotebook"
     ib6e4496911981d2c616c293367df7514b94c5dedfc97f0c4800d55f3b3614ccd "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/sections/item/copytonotebook"
@@ -12,7 +12,7 @@ import (
     i32d6c9e9d72583563f92bdd276dcf00ed24f6b3ca7de6d676767ca888639c55e "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote/notebooks/item/sectiongroups/item/sections/item/pages/item"
 )
 
-// OnenoteSectionItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\{notebook-id}\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}
+// OnenoteSectionItemRequestBuilder provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 type OnenoteSectionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -51,7 +51,7 @@ type OnenoteSectionItemRequestBuilderGetQueryParameters struct {
 // OnenoteSectionItemRequestBuilderPatchOptions options for Patch
 type OnenoteSectionItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSectionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -68,7 +68,7 @@ func NewOnenoteSectionItemRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -84,7 +84,7 @@ func (m *OnenoteSectionItemRequestBuilder) CopyToNotebook()(*ib6e4496911981d2c61
 func (m *OnenoteSectionItemRequestBuilder) CopyToSectionGroup()(*i6134bfd82a5845c3cbcf51aafd42aa05cf25cdd21de9288e1f7e98c83ecce015.CopyToSectionGroupRequestBuilder) {
     return i6134bfd82a5845c3cbcf51aafd42aa05cf25cdd21de9288e1f7e98c83ecce015.NewCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the sections in the section group. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property sections for sites
 func (m *OnenoteSectionItemRequestBuilder) CreateDeleteRequestInformation(options *OnenoteSectionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,7 +121,7 @@ func (m *OnenoteSectionItemRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the sections in the section group. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property sections in sites
 func (m *OnenoteSectionItemRequestBuilder) CreatePatchRequestInformation(options *OnenoteSectionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,29 +139,37 @@ func (m *OnenoteSectionItemRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete the sections in the section group. Read-only. Nullable.
+// Delete delete navigation property sections for sites
 func (m *OnenoteSectionItemRequestBuilder) Delete(options *OnenoteSectionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the sections in the section group. Read-only. Nullable.
-func (m *OnenoteSectionItemRequestBuilder) Get(options *OnenoteSectionItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection, error) {
+func (m *OnenoteSectionItemRequestBuilder) Get(options *OnenoteSectionItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSectionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOnenoteSection() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOnenoteSectionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSectionable), nil
 }
 func (m *OnenoteSectionItemRequestBuilder) Pages()(*ic332c3f85a9a9de665a6f8ff3af5568e21109ccc94f2032d5e5bdfd793e03285.PagesRequestBuilder) {
     return ic332c3f85a9a9de665a6f8ff3af5568e21109ccc94f2032d5e5bdfd793e03285.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -183,13 +191,17 @@ func (m *OnenoteSectionItemRequestBuilder) ParentNotebook()(*ia2a28eef9517080a27
 func (m *OnenoteSectionItemRequestBuilder) ParentSectionGroup()(*iba6a5f5c5f2cf00dd0130756c8962da43c0d2f801cca1e0dd894795327bf0934.ParentSectionGroupRequestBuilder) {
     return iba6a5f5c5f2cf00dd0130756c8962da43c0d2f801cca1e0dd894795327bf0934.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch the sections in the section group. Read-only. Nullable.
+// Patch update the navigation property sections in sites
 func (m *OnenoteSectionItemRequestBuilder) Patch(options *OnenoteSectionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

@@ -2,12 +2,13 @@ package managementactiontenantdeploymentstatuses
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
     id50624c28ac1a98a4cd1cc6f61b4dc20c4a7524a54c2bbd7c8cbd10f86ded55f "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactiontenantdeploymentstatuses/changedeploymentstatus"
+    id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactiontenantdeploymentstatuses/count"
 )
 
-// ManagementActionTenantDeploymentStatusesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses
+// ManagementActionTenantDeploymentStatusesRequestBuilder provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
 type ManagementActionTenantDeploymentStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +50,7 @@ type ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters st
 // ManagementActionTenantDeploymentStatusesRequestBuilderPostOptions options for Post
 type ManagementActionTenantDeploymentStatusesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionTenantDeploymentStatus;
+    Body i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionTenantDeploymentStatusable;
     // Request headers
     H map[string]string;
     // Request options
@@ -69,7 +70,7 @@ func NewManagementActionTenantDeploymentStatusesRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -78,6 +79,9 @@ func NewManagementActionTenantDeploymentStatusesRequestBuilder(rawUrl string, re
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementActionTenantDeploymentStatusesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Count()(*id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.CountRequestBuilder) {
+    return id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetRequestInformation(options *ManagementActionTenantDeploymentStatusesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -99,7 +103,7 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the tenant level status of management actions across managed tenants.
+// CreatePostRequestInformation create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreatePostRequestInformation(options *ManagementActionTenantDeploymentStatusesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,26 +122,34 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreatePostReque
     return requestInfo, nil
 }
 // Get the tenant level status of management actions across managed tenants.
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Get(options *ManagementActionTenantDeploymentStatusesRequestBuilderGetOptions)(*ManagementActionTenantDeploymentStatusesResponse, error) {
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Get(options *ManagementActionTenantDeploymentStatusesRequestBuilderGetOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewManagementActionTenantDeploymentStatusesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateManagementActionTenantDeploymentStatusCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ManagementActionTenantDeploymentStatusesResponse), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionTenantDeploymentStatusCollectionResponseable), nil
 }
-// Post the tenant level status of management actions across managed tenants.
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Post(options *ManagementActionTenantDeploymentStatusesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionTenantDeploymentStatus, error) {
+// Post create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Post(options *ManagementActionTenantDeploymentStatusesRequestBuilderPostOptions)(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionTenantDeploymentStatusable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewManagementActionTenantDeploymentStatus() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionTenantDeploymentStatus), nil
+    return res.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionTenantDeploymentStatusable), nil
 }

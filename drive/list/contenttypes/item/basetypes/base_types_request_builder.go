@@ -2,14 +2,12 @@ package basetypes
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i7a4d66a397bda0a98fc6a006dd6af855dfbe2235b5de88b21c57e23b5db40bda "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/contenttypes/item/basetypes/getcompatiblehubcontenttypes"
-    i89b4240539243c923c9e17e1d8a7018574ed21085c273fdbb32b24996be44f66 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/contenttypes/item/basetypes/ref"
-    ic1281fad5e9c0c6bd0f84546975afaf8094ff6ce99db9feb709dc6cf43c44799 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/contenttypes/item/basetypes/addcopy"
-    ic4a09d4ee40b63294a3784f6fab1f9daa68eba54e38e447292036ee57d3342b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/contenttypes/item/basetypes/addcopyfromcontenttypehub"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i3691eac98c2331d37aacae336b11058f901cdc218e506e8e74b96c98173dd54c "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/contenttypes/item/basetypes/count"
 )
 
-// BaseTypesRequestBuilder builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\baseTypes
+// BaseTypesRequestBuilder provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
 type BaseTypesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,12 +46,6 @@ type BaseTypesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-func (m *BaseTypesRequestBuilder) AddCopy()(*ic1281fad5e9c0c6bd0f84546975afaf8094ff6ce99db9feb709dc6cf43c44799.AddCopyRequestBuilder) {
-    return ic1281fad5e9c0c6bd0f84546975afaf8094ff6ce99db9feb709dc6cf43c44799.NewAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *BaseTypesRequestBuilder) AddCopyFromContentTypeHub()(*ic4a09d4ee40b63294a3784f6fab1f9daa68eba54e38e447292036ee57d3342b4.AddCopyFromContentTypeHubRequestBuilder) {
-    return ic4a09d4ee40b63294a3784f6fab1f9daa68eba54e38e447292036ee57d3342b4.NewAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewBaseTypesRequestBuilderInternal instantiates a new BaseTypesRequestBuilder and sets the default values.
 func NewBaseTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseTypesRequestBuilder) {
     m := &BaseTypesRequestBuilder{
@@ -63,7 +55,7 @@ func NewBaseTypesRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,6 +64,9 @@ func NewBaseTypesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBaseTypesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *BaseTypesRequestBuilder) Count()(*i3691eac98c2331d37aacae336b11058f901cdc218e506e8e74b96c98173dd54c.CountRequestBuilder) {
+    return i3691eac98c2331d37aacae336b11058f901cdc218e506e8e74b96c98173dd54c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the collection of content types that are ancestors of this content type.
 func (m *BaseTypesRequestBuilder) CreateGetRequestInformation(options *BaseTypesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -94,21 +89,18 @@ func (m *BaseTypesRequestBuilder) CreateGetRequestInformation(options *BaseTypes
     return requestInfo, nil
 }
 // Get the collection of content types that are ancestors of this content type.
-func (m *BaseTypesRequestBuilder) Get(options *BaseTypesRequestBuilderGetOptions)(*BaseTypesResponse, error) {
+func (m *BaseTypesRequestBuilder) Get(options *BaseTypesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBaseTypesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentTypeCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*BaseTypesResponse), nil
-}
-// GetCompatibleHubContentTypes builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\baseTypes\microsoft.graph.getCompatibleHubContentTypes()
-func (m *BaseTypesRequestBuilder) GetCompatibleHubContentTypes()(*i7a4d66a397bda0a98fc6a006dd6af855dfbe2235b5de88b21c57e23b5db40bda.GetCompatibleHubContentTypesRequestBuilder) {
-    return i7a4d66a397bda0a98fc6a006dd6af855dfbe2235b5de88b21c57e23b5db40bda.NewGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *BaseTypesRequestBuilder) Ref()(*i89b4240539243c923c9e17e1d8a7018574ed21085c273fdbb32b24996be44f66.RefRequestBuilder) {
-    return i89b4240539243c923c9e17e1d8a7018574ed21085c273fdbb32b24996be44f66.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentTypeCollectionResponseable), nil
 }

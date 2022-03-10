@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MatchingLabel 
+// MatchingLabel provides operations to call the evaluate method.
 type MatchingLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,7 +19,7 @@ type MatchingLabel struct {
     // 
     isEndpointProtectionEnabled *bool;
     // 
-    labelActions []LabelActionBase;
+    labelActions []LabelActionBaseable;
     // 
     name *string;
     // 
@@ -35,6 +35,10 @@ func NewMatchingLabel()(*MatchingLabel) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMatchingLabelFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMatchingLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingLabel) GetAdditionalData()(map[string]interface{}) {
@@ -66,62 +70,6 @@ func (m *MatchingLabel) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetId gets the id property value. 
-func (m *MatchingLabel) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
-}
-// GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. 
-func (m *MatchingLabel) GetIsEndpointProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEndpointProtectionEnabled
-    }
-}
-// GetLabelActions gets the labelActions property value. 
-func (m *MatchingLabel) GetLabelActions()([]LabelActionBase) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelActions
-    }
-}
-// GetName gets the name property value. 
-func (m *MatchingLabel) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetPolicyTip gets the policyTip property value. 
-func (m *MatchingLabel) GetPolicyTip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTip
-    }
-}
-// GetPriority gets the priority property value. 
-func (m *MatchingLabel) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
-}
-// GetToolTip gets the toolTip property value. 
-func (m *MatchingLabel) GetToolTip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toolTip
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -178,14 +126,14 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["labelActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLabelActionBase() })
+        val, err := n.GetCollectionOfObjectValues(CreateLabelActionBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]LabelActionBase, len(val))
+            res := make([]LabelActionBaseable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LabelActionBase))
+                res[i] = v.(LabelActionBaseable)
             }
             m.SetLabelActions(res)
         }
@@ -233,6 +181,62 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
+// GetId gets the id property value. 
+func (m *MatchingLabel) GetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.id
+    }
+}
+// GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. 
+func (m *MatchingLabel) GetIsEndpointProtectionEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEndpointProtectionEnabled
+    }
+}
+// GetLabelActions gets the labelActions property value. 
+func (m *MatchingLabel) GetLabelActions()([]LabelActionBaseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.labelActions
+    }
+}
+// GetName gets the name property value. 
+func (m *MatchingLabel) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetPolicyTip gets the policyTip property value. 
+func (m *MatchingLabel) GetPolicyTip()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyTip
+    }
+}
+// GetPriority gets the priority property value. 
+func (m *MatchingLabel) GetPriority()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.priority
+    }
+}
+// GetToolTip gets the toolTip property value. 
+func (m *MatchingLabel) GetToolTip()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.toolTip
+    }
+}
 func (m *MatchingLabel) IsNil()(bool) {
     return m == nil
 }
@@ -272,8 +276,7 @@ func (m *MatchingLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetLabelActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLabelActions()))
         for i, v := range m.GetLabelActions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("labelActions", cast)
         if err != nil {
@@ -349,7 +352,7 @@ func (m *MatchingLabel) SetIsEndpointProtectionEnabled(value *bool)() {
     }
 }
 // SetLabelActions sets the labelActions property value. 
-func (m *MatchingLabel) SetLabelActions(value []LabelActionBase)() {
+func (m *MatchingLabel) SetLabelActions(value []LabelActionBaseable)() {
     if m != nil {
         m.labelActions = value
     }

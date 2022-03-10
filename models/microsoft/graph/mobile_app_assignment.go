@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppAssignment 
+// MobileAppAssignment provides operations to manage the deviceAppManagement singleton.
 type MobileAppAssignment struct {
     Entity
     // The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
     intent *InstallIntent;
     // The settings for target assignment defined by the admin.
-    settings *MobileAppAssignmentSettings;
+    settings MobileAppAssignmentSettingsable;
     // The resource type which is the source for the assignment. Possible values are: direct, policySets.
     source *DeviceAndAppManagementAssignmentSource;
     // The identifier of the source of the assignment.
     sourceId *string;
     // The target group assignment defined by the admin.
-    target *DeviceAndAppManagementAssignmentTarget;
+    target DeviceAndAppManagementAssignmentTargetable;
 }
 // NewMobileAppAssignment instantiates a new mobileAppAssignment and sets the default values.
 func NewMobileAppAssignment()(*MobileAppAssignment) {
@@ -25,45 +25,9 @@ func NewMobileAppAssignment()(*MobileAppAssignment) {
     }
     return m
 }
-// GetIntent gets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
-func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intent
-    }
-}
-// GetSettings gets the settings property value. The settings for target assignment defined by the admin.
-func (m *MobileAppAssignment) GetSettings()(*MobileAppAssignmentSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
-// GetSource gets the source property value. The resource type which is the source for the assignment. Possible values are: direct, policySets.
-func (m *MobileAppAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
-}
-// GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
-func (m *MobileAppAssignment) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
-}
-// GetTarget gets the target property value. The target group assignment defined by the admin.
-func (m *MobileAppAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+// CreateMobileAppAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMobileAppAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -79,12 +43,12 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMobileAppAssignmentSettings() })
+        val, err := n.GetObjectValue(CreateMobileAppAssignmentSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*MobileAppAssignmentSettings))
+            m.SetSettings(val.(MobileAppAssignmentSettingsable))
         }
         return nil
     }
@@ -109,16 +73,56 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceAndAppManagementAssignmentTarget() })
+        val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+            m.SetTarget(val.(DeviceAndAppManagementAssignmentTargetable))
         }
         return nil
     }
     return res
+}
+// GetIntent gets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
+    if m == nil {
+        return nil
+    } else {
+        return m.intent
+    }
+}
+// GetSettings gets the settings property value. The settings for target assignment defined by the admin.
+func (m *MobileAppAssignment) GetSettings()(MobileAppAssignmentSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
+// GetSource gets the source property value. The resource type which is the source for the assignment. Possible values are: direct, policySets.
+func (m *MobileAppAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
+    if m == nil {
+        return nil
+    } else {
+        return m.source
+    }
+}
+// GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
+func (m *MobileAppAssignment) GetSourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sourceId
+    }
+}
+// GetTarget gets the target property value. The target group assignment defined by the admin.
+func (m *MobileAppAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *MobileAppAssignment) IsNil()(bool) {
     return m == nil
@@ -170,7 +174,7 @@ func (m *MobileAppAssignment) SetIntent(value *InstallIntent)() {
     }
 }
 // SetSettings sets the settings property value. The settings for target assignment defined by the admin.
-func (m *MobileAppAssignment) SetSettings(value *MobileAppAssignmentSettings)() {
+func (m *MobileAppAssignment) SetSettings(value MobileAppAssignmentSettingsable)() {
     if m != nil {
         m.settings = value
     }
@@ -188,7 +192,7 @@ func (m *MobileAppAssignment) SetSourceId(value *string)() {
     }
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
-func (m *MobileAppAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
+func (m *MobileAppAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
     if m != nil {
         m.target = value
     }

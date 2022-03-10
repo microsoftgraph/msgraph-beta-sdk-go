@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuditProperty 
+// AuditProperty provides operations to manage the deviceManagement singleton.
 type AuditProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,6 +22,10 @@ func NewAuditProperty()(*AuditProperty) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAuditPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAuditPropertyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAuditProperty(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditProperty) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -36,22 +40,6 @@ func (m *AuditProperty) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetNewValue gets the newValue property value. New value.
-func (m *AuditProperty) GetNewValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newValue
-    }
-}
-// GetOldValue gets the oldValue property value. Old value.
-func (m *AuditProperty) GetOldValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oldValue
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +76,22 @@ func (m *AuditProperty) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
+}
+// GetNewValue gets the newValue property value. New value.
+func (m *AuditProperty) GetNewValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.newValue
+    }
+}
+// GetOldValue gets the oldValue property value. Old value.
+func (m *AuditProperty) GetOldValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oldValue
+    }
 }
 func (m *AuditProperty) IsNil()(bool) {
     return m == nil

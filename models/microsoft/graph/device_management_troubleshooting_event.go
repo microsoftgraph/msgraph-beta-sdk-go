@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementTroubleshootingEvent 
+// DeviceManagementTroubleshootingEvent provides operations to manage the deviceManagement singleton.
 type DeviceManagementTroubleshootingEvent struct {
     Entity
     // A set of string key and string value pairs which provides additional information on the Troubleshooting event
-    additionalInformation []KeyValuePair;
+    additionalInformation []KeyValuePairable;
     // Id used for tracing the failure in the service.
     correlationId *string;
     // Time when the event occurred .
@@ -17,7 +17,7 @@ type DeviceManagementTroubleshootingEvent struct {
     // Event Name corresponding to the Troubleshooting Event. It is an Optional field
     eventName *string;
     // Object containing detailed information about the error and its remediation.
-    troubleshootingErrorDetails *DeviceManagementTroubleshootingErrorDetails;
+    troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable;
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
@@ -26,8 +26,12 @@ func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingE
     }
     return m
 }
+// CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementTroubleshootingEvent(), nil
+}
 // GetAdditionalInformation gets the additionalInformation property value. A set of string key and string value pairs which provides additional information on the Troubleshooting event
-func (m *DeviceManagementTroubleshootingEvent) GetAdditionalInformation()([]KeyValuePair) {
+func (m *DeviceManagementTroubleshootingEvent) GetAdditionalInformation()([]KeyValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -58,26 +62,18 @@ func (m *DeviceManagementTroubleshootingEvent) GetEventName()(*string) {
         return m.eventName
     }
 }
-// GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
-func (m *DeviceManagementTroubleshootingEvent) GetTroubleshootingErrorDetails()(*DeviceManagementTroubleshootingErrorDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.troubleshootingErrorDetails
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewKeyValuePair() })
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]KeyValuePair, len(val))
+            res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*KeyValuePair))
+                res[i] = v.(KeyValuePairable)
             }
             m.SetAdditionalInformation(res)
         }
@@ -114,16 +110,24 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         return nil
     }
     res["troubleshootingErrorDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementTroubleshootingErrorDetails() })
+        val, err := n.GetObjectValue(CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTroubleshootingErrorDetails(val.(*DeviceManagementTroubleshootingErrorDetails))
+            m.SetTroubleshootingErrorDetails(val.(DeviceManagementTroubleshootingErrorDetailsable))
         }
         return nil
     }
     return res
+}
+// GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
+func (m *DeviceManagementTroubleshootingEvent) GetTroubleshootingErrorDetails()(DeviceManagementTroubleshootingErrorDetailsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.troubleshootingErrorDetails
+    }
 }
 func (m *DeviceManagementTroubleshootingEvent) IsNil()(bool) {
     return m == nil
@@ -137,8 +141,7 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i04eb5309aeaafad
     if m.GetAdditionalInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalInformation()))
         for i, v := range m.GetAdditionalInformation() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("additionalInformation", cast)
         if err != nil {
@@ -172,7 +175,7 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i04eb5309aeaafad
     return nil
 }
 // SetAdditionalInformation sets the additionalInformation property value. A set of string key and string value pairs which provides additional information on the Troubleshooting event
-func (m *DeviceManagementTroubleshootingEvent) SetAdditionalInformation(value []KeyValuePair)() {
+func (m *DeviceManagementTroubleshootingEvent) SetAdditionalInformation(value []KeyValuePairable)() {
     if m != nil {
         m.additionalInformation = value
     }
@@ -196,7 +199,7 @@ func (m *DeviceManagementTroubleshootingEvent) SetEventName(value *string)() {
     }
 }
 // SetTroubleshootingErrorDetails sets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
-func (m *DeviceManagementTroubleshootingEvent) SetTroubleshootingErrorDetails(value *DeviceManagementTroubleshootingErrorDetails)() {
+func (m *DeviceManagementTroubleshootingEvent) SetTroubleshootingErrorDetails(value DeviceManagementTroubleshootingErrorDetailsable)() {
     if m != nil {
         m.troubleshootingErrorDetails = value
     }

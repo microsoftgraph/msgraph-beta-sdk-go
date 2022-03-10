@@ -4,16 +4,16 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OfficeConfiguration 
+// OfficeConfiguration provides operations to manage the officeConfiguration singleton.
 type OfficeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // List of office Client configuration.
-    clientConfigurations []OfficeClientConfiguration;
+    clientConfigurations []OfficeClientConfigurationable;
     // List of office Client check-in status.
-    tenantCheckinStatuses []OfficeClientCheckinStatus;
+    tenantCheckinStatuses []OfficeClientCheckinStatusable;
     // Entity that describes tenant check-in statues
-    tenantUserCheckinSummary *OfficeUserCheckinSummary;
+    tenantUserCheckinSummary OfficeUserCheckinSummaryable;
 }
 // NewOfficeConfiguration instantiates a new OfficeConfiguration and sets the default values.
 func NewOfficeConfiguration()(*OfficeConfiguration) {
@@ -21,6 +21,10 @@ func NewOfficeConfiguration()(*OfficeConfiguration) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateOfficeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOfficeConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOfficeConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeConfiguration) GetAdditionalData()(map[string]interface{}) {
@@ -31,15 +35,58 @@ func (m *OfficeConfiguration) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetClientConfigurations gets the clientConfigurations property value. List of office Client configuration.
-func (m *OfficeConfiguration) GetClientConfigurations()([]OfficeClientConfiguration) {
+func (m *OfficeConfiguration) GetClientConfigurations()([]OfficeClientConfigurationable) {
     if m == nil {
         return nil
     } else {
         return m.clientConfigurations
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["clientConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOfficeClientConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OfficeClientConfigurationable, len(val))
+            for i, v := range val {
+                res[i] = v.(OfficeClientConfigurationable)
+            }
+            m.SetClientConfigurations(res)
+        }
+        return nil
+    }
+    res["tenantCheckinStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OfficeClientCheckinStatusable, len(val))
+            for i, v := range val {
+                res[i] = v.(OfficeClientCheckinStatusable)
+            }
+            m.SetTenantCheckinStatuses(res)
+        }
+        return nil
+    }
+    res["tenantUserCheckinSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantUserCheckinSummary(val.(OfficeUserCheckinSummaryable))
+        }
+        return nil
+    }
+    return res
+}
 // GetTenantCheckinStatuses gets the tenantCheckinStatuses property value. List of office Client check-in status.
-func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinStatus) {
+func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinStatusable) {
     if m == nil {
         return nil
     } else {
@@ -47,55 +94,12 @@ func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinSt
     }
 }
 // GetTenantUserCheckinSummary gets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
-func (m *OfficeConfiguration) GetTenantUserCheckinSummary()(*OfficeUserCheckinSummary) {
+func (m *OfficeConfiguration) GetTenantUserCheckinSummary()(OfficeUserCheckinSummaryable) {
     if m == nil {
         return nil
     } else {
         return m.tenantUserCheckinSummary
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["clientConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfficeClientConfiguration() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OfficeClientConfiguration, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OfficeClientConfiguration))
-            }
-            m.SetClientConfigurations(res)
-        }
-        return nil
-    }
-    res["tenantCheckinStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfficeClientCheckinStatus() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OfficeClientCheckinStatus, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*OfficeClientCheckinStatus))
-            }
-            m.SetTenantCheckinStatuses(res)
-        }
-        return nil
-    }
-    res["tenantUserCheckinSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOfficeUserCheckinSummary() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantUserCheckinSummary(val.(*OfficeUserCheckinSummary))
-        }
-        return nil
-    }
-    return res
 }
 func (m *OfficeConfiguration) IsNil()(bool) {
     return m == nil
@@ -105,8 +109,7 @@ func (m *OfficeConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetClientConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClientConfigurations()))
         for i, v := range m.GetClientConfigurations() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("clientConfigurations", cast)
         if err != nil {
@@ -116,8 +119,7 @@ func (m *OfficeConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetTenantCheckinStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantCheckinStatuses()))
         for i, v := range m.GetTenantCheckinStatuses() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("tenantCheckinStatuses", cast)
         if err != nil {
@@ -145,19 +147,19 @@ func (m *OfficeConfiguration) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetClientConfigurations sets the clientConfigurations property value. List of office Client configuration.
-func (m *OfficeConfiguration) SetClientConfigurations(value []OfficeClientConfiguration)() {
+func (m *OfficeConfiguration) SetClientConfigurations(value []OfficeClientConfigurationable)() {
     if m != nil {
         m.clientConfigurations = value
     }
 }
 // SetTenantCheckinStatuses sets the tenantCheckinStatuses property value. List of office Client check-in status.
-func (m *OfficeConfiguration) SetTenantCheckinStatuses(value []OfficeClientCheckinStatus)() {
+func (m *OfficeConfiguration) SetTenantCheckinStatuses(value []OfficeClientCheckinStatusable)() {
     if m != nil {
         m.tenantCheckinStatuses = value
     }
 }
 // SetTenantUserCheckinSummary sets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
-func (m *OfficeConfiguration) SetTenantUserCheckinSummary(value *OfficeUserCheckinSummary)() {
+func (m *OfficeConfiguration) SetTenantUserCheckinSummary(value OfficeUserCheckinSummaryable)() {
     if m != nil {
         m.tenantUserCheckinSummary = value
     }

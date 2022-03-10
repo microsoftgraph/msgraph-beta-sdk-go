@@ -2,10 +2,9 @@ package getrelatedappstateswithuserprincipalnamewithdeviceid
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')
+// GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder provides operations to call the getRelatedAppStates method.
 type GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,7 +23,7 @@ type GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOption
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.
-func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, userPrincipalName *string, deviceId *string)(*GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
+func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, deviceId *string, userPrincipalName *string)(*GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
     m := &GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')";
@@ -32,13 +31,13 @@ func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    if userPrincipalName != nil {
-        urlTplParams["userPrincipalName"] = *userPrincipalName
-    }
     if deviceId != nil {
         urlTplParams["deviceId"] = *deviceId
     }
-    m.pathParameters = pathParameters;
+    if userPrincipalName != nil {
+        urlTplParams["userPrincipalName"] = *userPrincipalName
+    }
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -66,18 +65,14 @@ func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Cre
     return requestInfo, nil
 }
 // Get invoke function getRelatedAppStates
-func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Get(options *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOptions)([]GetRelatedAppStatesWithUserPrincipalNameWithDeviceId, error) {
+func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Get(options *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOptions)(GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceId() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetRelatedAppStatesWithUserPrincipalNameWithDeviceId, len(res))
-    for i, v := range res {
-        val[i] = *(v.(*GetRelatedAppStatesWithUserPrincipalNameWithDeviceId))
-    }
-    return val, nil
+    return res.(GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseable), nil
 }

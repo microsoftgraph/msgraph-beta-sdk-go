@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// PingRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\microsoft.graph.Ping()
+// PingRequestBuilder provides operations to call the Ping method.
 type PingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewPingRequestBuilderInternal(pathParameters map[string]string, requestAdap
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *PingRequestBuilder) CreateGetRequestInformation(options *PingRequestBui
     return requestInfo, nil
 }
 // Get invoke function Ping
-func (m *PingRequestBuilder) Get(options *PingRequestBuilderGetOptions)(*string, error) {
+func (m *PingRequestBuilder) Get(options *PingRequestBuilderGetOptions)(PingResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreatePingResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(PingResponseable), nil
 }

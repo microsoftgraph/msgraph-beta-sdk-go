@@ -2,11 +2,12 @@ package reusablepolicysettings
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    idb7beacbd71a4cc5d11774ce70453e13dc7bf02d9d01c799e032a145f3ff81c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablepolicysettings/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// ReusablePolicySettingsRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings
+// ReusablePolicySettingsRequestBuilder provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.
 type ReusablePolicySettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type ReusablePolicySettingsRequestBuilderGetQueryParameters struct {
 // ReusablePolicySettingsRequestBuilderPostOptions options for Post
 type ReusablePolicySettingsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewReusablePolicySettingsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewReusablePolicySettingsRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReusablePolicySettingsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *ReusablePolicySettingsRequestBuilder) Count()(*idb7beacbd71a4cc5d11774ce70453e13dc7bf02d9d01c799e032a145f3ff81c3.CountRequestBuilder) {
+    return idb7beacbd71a4cc5d11774ce70453e13dc7bf02d9d01c799e032a145f3ff81c3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of all reusable settings that can be referred in a policy
 func (m *ReusablePolicySettingsRequestBuilder) CreateGetRequestInformation(options *ReusablePolicySettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *ReusablePolicySettingsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation list of all reusable settings that can be referred in a policy
+// CreatePostRequestInformation create new navigation property to reusablePolicySettings for deviceManagement
 func (m *ReusablePolicySettingsRequestBuilder) CreatePostRequestInformation(options *ReusablePolicySettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *ReusablePolicySettingsRequestBuilder) CreatePostRequestInformation(opti
     return requestInfo, nil
 }
 // Get list of all reusable settings that can be referred in a policy
-func (m *ReusablePolicySettingsRequestBuilder) Get(options *ReusablePolicySettingsRequestBuilderGetOptions)(*ReusablePolicySettingsResponse, error) {
+func (m *ReusablePolicySettingsRequestBuilder) Get(options *ReusablePolicySettingsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewReusablePolicySettingsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementReusablePolicySettingCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*ReusablePolicySettingsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingCollectionResponseable), nil
 }
-// Post list of all reusable settings that can be referred in a policy
-func (m *ReusablePolicySettingsRequestBuilder) Post(options *ReusablePolicySettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting, error) {
+// Post create new navigation property to reusablePolicySettings for deviceManagement
+func (m *ReusablePolicySettingsRequestBuilder) Post(options *ReusablePolicySettingsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementReusablePolicySetting() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementReusablePolicySettingFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable), nil
 }

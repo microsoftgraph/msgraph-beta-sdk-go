@@ -2,8 +2,8 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i52be5ec8508b6fa8d8f8557172cc0171c708d106947178250d59c1749dfacaae "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/categories"
     i5a180acaf78e7d5e370fefd58c8ff553c81e7bd7ac1752ed93ec3e207aa02b1b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/migratableto"
     i5a59489a0b9d17cfe0d7e3e92257f9c9b9345bb2389513e892ab06a210c7842d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/createinstance"
@@ -14,7 +14,7 @@ import (
     ibf9b83d9fefef8461c50c50942484eaf240cb4a55d3a43a374f84fcc1e8525c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/migratableto/item"
 )
 
-// DeviceManagementTemplateItemRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}
+// DeviceManagementTemplateItemRequestBuilder provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementTemplateItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -53,7 +53,7 @@ type DeviceManagementTemplateItemRequestBuilderGetQueryParameters struct {
 // DeviceManagementTemplateItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementTemplateItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplateable;
     // Request headers
     H map[string]string;
     // Request options
@@ -75,7 +75,7 @@ func (m *DeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*
     }
     return i17905e8ecb64c4ebfd26149dfc5a13403bbe9a01c3c4e539d54e3c0f880637b3.NewDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CompareWithTemplateId builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\microsoft.graph.compare(templateId='{templateId}')
+// CompareWithTemplateId provides operations to call the compare method.
 func (m *DeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*ife7ac7603ed6fc45bfdb4af24d907bc1d7f9ba26f799ed8fce9d24ce5ca62037.CompareWithTemplateIdRequestBuilder) {
     return ife7ac7603ed6fc45bfdb4af24d907bc1d7f9ba26f799ed8fce9d24ce5ca62037.NewCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId);
 }
@@ -88,7 +88,7 @@ func NewDeviceManagementTemplateItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -98,7 +98,7 @@ func NewDeviceManagementTemplateItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the available templates
+// CreateDeleteRequestInformation delete navigation property templates for deviceManagement
 func (m *DeviceManagementTemplateItemRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementTemplateItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,7 +138,7 @@ func (m *DeviceManagementTemplateItemRequestBuilder) CreateGetRequestInformation
 func (m *DeviceManagementTemplateItemRequestBuilder) CreateInstance()(*i5a59489a0b9d17cfe0d7e3e92257f9c9b9345bb2389513e892ab06a210c7842d.CreateInstanceRequestBuilder) {
     return i5a59489a0b9d17cfe0d7e3e92257f9c9b9345bb2389513e892ab06a210c7842d.NewCreateInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePatchRequestInformation the available templates
+// CreatePatchRequestInformation update the navigation property templates in deviceManagement
 func (m *DeviceManagementTemplateItemRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementTemplateItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,29 +156,37 @@ func (m *DeviceManagementTemplateItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Delete the available templates
+// Delete delete navigation property templates for deviceManagement
 func (m *DeviceManagementTemplateItemRequestBuilder) Delete(options *DeviceManagementTemplateItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the available templates
-func (m *DeviceManagementTemplateItemRequestBuilder) Get(options *DeviceManagementTemplateItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate, error) {
+func (m *DeviceManagementTemplateItemRequestBuilder) Get(options *DeviceManagementTemplateItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementTemplate() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementTemplateFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplateable), nil
 }
 func (m *DeviceManagementTemplateItemRequestBuilder) MigratableTo()(*i5a180acaf78e7d5e370fefd58c8ff553c81e7bd7ac1752ed93ec3e207aa02b1b.MigratableToRequestBuilder) {
     return i5a180acaf78e7d5e370fefd58c8ff553c81e7bd7ac1752ed93ec3e207aa02b1b.NewMigratableToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -194,13 +202,17 @@ func (m *DeviceManagementTemplateItemRequestBuilder) MigratableToById(id string)
     }
     return ibf9b83d9fefef8461c50c50942484eaf240cb4a55d3a43a374f84fcc1e8525c2.NewDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the available templates
+// Patch update the navigation property templates in deviceManagement
 func (m *DeviceManagementTemplateItemRequestBuilder) Patch(options *DeviceManagementTemplateItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

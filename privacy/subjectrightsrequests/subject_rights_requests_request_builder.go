@@ -2,11 +2,12 @@ package subjectrightsrequests
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    icc1a2c44fb780acafda5c290f02d126f5fc5a83bb87d84a3786e1296e8751177 "github.com/microsoftgraph/msgraph-beta-sdk-go/privacy/subjectrightsrequests/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// SubjectRightsRequestsRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests
+// SubjectRightsRequestsRequestBuilder provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 type SubjectRightsRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type SubjectRightsRequestsRequestBuilderGetQueryParameters struct {
 // SubjectRightsRequestsRequestBuilderPostOptions options for Post
 type SubjectRightsRequestsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequest;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequestable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewSubjectRightsRequestsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewSubjectRightsRequestsRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *SubjectRightsRequestsRequestBuilder) Count()(*icc1a2c44fb780acafda5c290f02d126f5fc5a83bb87d84a3786e1296e8751177.CountRequestBuilder) {
+    return icc1a2c44fb780acafda5c290f02d126f5fc5a83bb87d84a3786e1296e8751177.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get subjectRightsRequests from privacy
 func (m *SubjectRightsRequestsRequestBuilder) CreateGetRequestInformation(options *SubjectRightsRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *SubjectRightsRequestsRequestBuilder) CreatePostRequestInformation(optio
     return requestInfo, nil
 }
 // Get get subjectRightsRequests from privacy
-func (m *SubjectRightsRequestsRequestBuilder) Get(options *SubjectRightsRequestsRequestBuilderGetOptions)(*SubjectRightsRequestsResponse, error) {
+func (m *SubjectRightsRequestsRequestBuilder) Get(options *SubjectRightsRequestsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSubjectRightsRequestsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSubjectRightsRequestCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*SubjectRightsRequestsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequestCollectionResponseable), nil
 }
 // Post create new navigation property to subjectRightsRequests for privacy
-func (m *SubjectRightsRequestsRequestBuilder) Post(options *SubjectRightsRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequest, error) {
+func (m *SubjectRightsRequestsRequestBuilder) Post(options *SubjectRightsRequestsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSubjectRightsRequest() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSubjectRightsRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequest), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SubjectRightsRequestable), nil
 }

@@ -4,17 +4,17 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApprovalWorkflowProvider 
+// ApprovalWorkflowProvider provides operations to manage the collection of approvalWorkflowProvider entities.
 type ApprovalWorkflowProvider struct {
     Entity
     // 
-    businessFlows []BusinessFlow;
+    businessFlows []BusinessFlowable;
     // 
-    businessFlowsWithRequestsAwaitingMyDecision []BusinessFlow;
+    businessFlowsWithRequestsAwaitingMyDecision []BusinessFlowable;
     // 
     displayName *string;
     // 
-    policyTemplates []GovernancePolicyTemplate;
+    policyTemplates []GovernancePolicyTemplateable;
 }
 // NewApprovalWorkflowProvider instantiates a new approvalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
@@ -23,8 +23,12 @@ func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     }
     return m
 }
+// CreateApprovalWorkflowProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateApprovalWorkflowProviderFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewApprovalWorkflowProvider(), nil
+}
 // GetBusinessFlows gets the businessFlows property value. 
-func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlow) {
+func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlowable) {
     if m == nil {
         return nil
     } else {
@@ -32,7 +36,7 @@ func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlow) {
     }
 }
 // GetBusinessFlowsWithRequestsAwaitingMyDecision gets the businessFlowsWithRequestsAwaitingMyDecision property value. 
-func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecision()([]BusinessFlow) {
+func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecision()([]BusinessFlowable) {
     if m == nil {
         return nil
     } else {
@@ -47,40 +51,32 @@ func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetPolicyTemplates gets the policyTemplates property value. 
-func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTemplate) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTemplates
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["businessFlows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBusinessFlow() })
+        val, err := n.GetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BusinessFlow, len(val))
+            res := make([]BusinessFlowable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BusinessFlow))
+                res[i] = v.(BusinessFlowable)
             }
             m.SetBusinessFlows(res)
         }
         return nil
     }
     res["businessFlowsWithRequestsAwaitingMyDecision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBusinessFlow() })
+        val, err := n.GetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]BusinessFlow, len(val))
+            res := make([]BusinessFlowable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*BusinessFlow))
+                res[i] = v.(BusinessFlowable)
             }
             m.SetBusinessFlowsWithRequestsAwaitingMyDecision(res)
         }
@@ -97,20 +93,28 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["policyTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernancePolicyTemplate() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernancePolicyTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernancePolicyTemplate, len(val))
+            res := make([]GovernancePolicyTemplateable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernancePolicyTemplate))
+                res[i] = v.(GovernancePolicyTemplateable)
             }
             m.SetPolicyTemplates(res)
         }
         return nil
     }
     return res
+}
+// GetPolicyTemplates gets the policyTemplates property value. 
+func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyTemplates
+    }
 }
 func (m *ApprovalWorkflowProvider) IsNil()(bool) {
     return m == nil
@@ -124,8 +128,7 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetBusinessFlows() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBusinessFlows()))
         for i, v := range m.GetBusinessFlows() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("businessFlows", cast)
         if err != nil {
@@ -135,8 +138,7 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetBusinessFlowsWithRequestsAwaitingMyDecision() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBusinessFlowsWithRequestsAwaitingMyDecision()))
         for i, v := range m.GetBusinessFlowsWithRequestsAwaitingMyDecision() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("businessFlowsWithRequestsAwaitingMyDecision", cast)
         if err != nil {
@@ -152,8 +154,7 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
     if m.GetPolicyTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPolicyTemplates()))
         for i, v := range m.GetPolicyTemplates() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("policyTemplates", cast)
         if err != nil {
@@ -163,13 +164,13 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
     return nil
 }
 // SetBusinessFlows sets the businessFlows property value. 
-func (m *ApprovalWorkflowProvider) SetBusinessFlows(value []BusinessFlow)() {
+func (m *ApprovalWorkflowProvider) SetBusinessFlows(value []BusinessFlowable)() {
     if m != nil {
         m.businessFlows = value
     }
 }
 // SetBusinessFlowsWithRequestsAwaitingMyDecision sets the businessFlowsWithRequestsAwaitingMyDecision property value. 
-func (m *ApprovalWorkflowProvider) SetBusinessFlowsWithRequestsAwaitingMyDecision(value []BusinessFlow)() {
+func (m *ApprovalWorkflowProvider) SetBusinessFlowsWithRequestsAwaitingMyDecision(value []BusinessFlowable)() {
     if m != nil {
         m.businessFlowsWithRequestsAwaitingMyDecision = value
     }
@@ -181,7 +182,7 @@ func (m *ApprovalWorkflowProvider) SetDisplayName(value *string)() {
     }
 }
 // SetPolicyTemplates sets the policyTemplates property value. 
-func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTemplate)() {
+func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTemplateable)() {
     if m != nil {
         m.policyTemplates = value
     }

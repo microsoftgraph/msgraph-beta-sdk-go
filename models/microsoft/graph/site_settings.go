@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SiteSettings 
+// SiteSettings provides operations to manage the compliance singleton.
 type SiteSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewSiteSettings()(*SiteSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateSiteSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSiteSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSiteSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetLanguageTag gets the languageTag property value. 
-func (m *SiteSettings) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
-}
-// GetTimeZone gets the timeZone property value. 
-func (m *SiteSettings) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *SiteSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     return res
+}
+// GetLanguageTag gets the languageTag property value. 
+func (m *SiteSettings) GetLanguageTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTag
+    }
+}
+// GetTimeZone gets the timeZone property value. 
+func (m *SiteSettings) GetTimeZone()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.timeZone
+    }
 }
 func (m *SiteSettings) IsNil()(bool) {
     return m == nil

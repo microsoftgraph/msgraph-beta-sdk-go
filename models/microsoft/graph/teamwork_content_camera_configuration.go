@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkContentCameraConfiguration 
+// TeamworkContentCameraConfiguration provides operations to manage the teamwork singleton.
 type TeamworkContentCameraConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewTeamworkContentCameraConfiguration()(*TeamworkContentCameraConfiguration
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateTeamworkContentCameraConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkContentCameraConfigurationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkContentCameraConfiguration(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkContentCameraConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsContentCameraInverted gets the isContentCameraInverted property value. True if the content camera is inverted.
-func (m *TeamworkContentCameraConfiguration) GetIsContentCameraInverted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isContentCameraInverted
-    }
-}
-// GetIsContentCameraOptional gets the isContentCameraOptional property value. True if the content camera is optional.
-func (m *TeamworkContentCameraConfiguration) GetIsContentCameraOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isContentCameraOptional
-    }
-}
-// GetIsContentEnhancementEnabled gets the isContentEnhancementEnabled property value. True if the content enhancement is enabled.
-func (m *TeamworkContentCameraConfiguration) GetIsContentEnhancementEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isContentEnhancementEnabled
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *TeamworkContentCameraConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetIsContentCameraInverted gets the isContentCameraInverted property value. True if the content camera is inverted.
+func (m *TeamworkContentCameraConfiguration) GetIsContentCameraInverted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isContentCameraInverted
+    }
+}
+// GetIsContentCameraOptional gets the isContentCameraOptional property value. True if the content camera is optional.
+func (m *TeamworkContentCameraConfiguration) GetIsContentCameraOptional()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isContentCameraOptional
+    }
+}
+// GetIsContentEnhancementEnabled gets the isContentEnhancementEnabled property value. True if the content enhancement is enabled.
+func (m *TeamworkContentCameraConfiguration) GetIsContentEnhancementEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isContentEnhancementEnabled
+    }
 }
 func (m *TeamworkContentCameraConfiguration) IsNil()(bool) {
     return m == nil

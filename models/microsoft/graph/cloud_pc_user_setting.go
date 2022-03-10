@@ -5,11 +5,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcUserSetting 
+// CloudPcUserSetting provides operations to manage the deviceManagement singleton.
 type CloudPcUserSetting struct {
     Entity
     // Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-    assignments []CloudPcUserSettingAssignment;
+    assignments []CloudPcUserSettingAssignmentable;
     // The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The setting name displayed in the user interface.
@@ -19,7 +19,7 @@ type CloudPcUserSetting struct {
     // Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
     localAdminEnabled *bool;
     // Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
-    restorePointSetting *CloudPcRestorePointSetting;
+    restorePointSetting CloudPcRestorePointSettingable;
     // Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
     selfServiceEnabled *bool;
 }
@@ -30,8 +30,12 @@ func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     }
     return m
 }
+// CreateCloudPcUserSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcUserSettingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloudPcUserSetting(), nil
+}
 // GetAssignments gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignment) {
+func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable) {
     if m == nil {
         return nil
     } else {
@@ -54,50 +58,18 @@ func (m *CloudPcUserSetting) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
-func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetLocalAdminEnabled gets the localAdminEnabled property value. Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
-func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localAdminEnabled
-    }
-}
-// GetRestorePointSetting gets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
-func (m *CloudPcUserSetting) GetRestorePointSetting()(*CloudPcRestorePointSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restorePointSetting
-    }
-}
-// GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
-func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selfServiceEnabled
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcUserSettingAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserSettingAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CloudPcUserSettingAssignment, len(val))
+            res := make([]CloudPcUserSettingAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CloudPcUserSettingAssignment))
+                res[i] = v.(CloudPcUserSettingAssignmentable)
             }
             m.SetAssignments(res)
         }
@@ -144,12 +116,12 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["restorePointSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcRestorePointSetting() })
+        val, err := n.GetObjectValue(CreateCloudPcRestorePointSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRestorePointSetting(val.(*CloudPcRestorePointSetting))
+            m.SetRestorePointSetting(val.(CloudPcRestorePointSettingable))
         }
         return nil
     }
@@ -165,6 +137,38 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
     }
     return res
 }
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetLocalAdminEnabled gets the localAdminEnabled property value. Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
+func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.localAdminEnabled
+    }
+}
+// GetRestorePointSetting gets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
+func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restorePointSetting
+    }
+}
+// GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
+func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.selfServiceEnabled
+    }
+}
 func (m *CloudPcUserSetting) IsNil()(bool) {
     return m == nil
 }
@@ -177,8 +181,7 @@ func (m *CloudPcUserSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -224,7 +227,7 @@ func (m *CloudPcUserSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     return nil
 }
 // SetAssignments sets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-func (m *CloudPcUserSetting) SetAssignments(value []CloudPcUserSettingAssignment)() {
+func (m *CloudPcUserSetting) SetAssignments(value []CloudPcUserSettingAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
@@ -254,7 +257,7 @@ func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
     }
 }
 // SetRestorePointSetting sets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
-func (m *CloudPcUserSetting) SetRestorePointSetting(value *CloudPcRestorePointSetting)() {
+func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSettingable)() {
     if m != nil {
         m.restorePointSetting = value
     }

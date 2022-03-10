@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AzureADFeatureUsage 
+// AzureADFeatureUsage provides operations to call the getAzureADFeatureUsage method.
 type AzureADFeatureUsage struct {
     Entity
     // 
@@ -15,12 +15,16 @@ type AzureADFeatureUsage struct {
     // 
     usage *int32;
 }
-// NewAzureADFeatureUsage instantiates a new AzureADFeatureUsage and sets the default values.
+// NewAzureADFeatureUsage instantiates a new azureADFeatureUsage and sets the default values.
 func NewAzureADFeatureUsage()(*AzureADFeatureUsage) {
     m := &AzureADFeatureUsage{
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateAzureADFeatureUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAzureADFeatureUsageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAzureADFeatureUsage(), nil
 }
 // GetFeatureName gets the featureName property value. 
 func (m *AzureADFeatureUsage) GetFeatureName()(*string) {
@@ -28,22 +32,6 @@ func (m *AzureADFeatureUsage) GetFeatureName()(*string) {
         return nil
     } else {
         return m.featureName
-    }
-}
-// GetSnapshotDateTime gets the snapshotDateTime property value. 
-func (m *AzureADFeatureUsage) GetSnapshotDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snapshotDateTime
-    }
-}
-// GetUsage gets the usage property value. 
-func (m *AzureADFeatureUsage) GetUsage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usage
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +68,22 @@ func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetSnapshotDateTime gets the snapshotDateTime property value. 
+func (m *AzureADFeatureUsage) GetSnapshotDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.snapshotDateTime
+    }
+}
+// GetUsage gets the usage property value. 
+func (m *AzureADFeatureUsage) GetUsage()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.usage
+    }
 }
 func (m *AzureADFeatureUsage) IsNil()(bool) {
     return m == nil

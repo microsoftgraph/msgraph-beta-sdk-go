@@ -2,8 +2,8 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i74a32fabbfbde9205732b623e943f248ae1993d1dd3bd7ca652fe67e4b8aaf82 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks/alltasks/item/parentlist"
     i8f577f5802f3e0e15c989cddb25554bb5b50f43e79e58f4ffc257d28e636a543 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks/alltasks/item/linkedresources"
     i9c1618f121ae55105f68bdb7b5d0f4357960354111636ecc523efaeed30cf6d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks/alltasks/item/checklistitems"
@@ -14,7 +14,7 @@ import (
     ic1dc19df48522a0c8b54b952e537056a62a5f6c330e50338e3f20f5e81e3a64f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks/alltasks/item/linkedresources/item"
 )
 
-// BaseTaskItemRequestBuilder builds and executes requests for operations under \users\{user-id}\tasks\alltasks\{baseTask-id}
+// BaseTaskItemRequestBuilder provides operations to manage the alltasks property of the microsoft.graph.tasks entity.
 type BaseTaskItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -53,7 +53,7 @@ type BaseTaskItemRequestBuilderGetQueryParameters struct {
 // BaseTaskItemRequestBuilderPatchOptions options for Patch
 type BaseTaskItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTask;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskable;
     // Request headers
     H map[string]string;
     // Request options
@@ -84,7 +84,7 @@ func NewBaseTaskItemRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -94,7 +94,7 @@ func NewBaseTaskItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewBaseTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation all tasks in the users mailbox.
+// CreateDeleteRequestInformation delete navigation property alltasks for users
 func (m *BaseTaskItemRequestBuilder) CreateDeleteRequestInformation(options *BaseTaskItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *BaseTaskItemRequestBuilder) CreateGetRequestInformation(options *BaseTa
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation all tasks in the users mailbox.
+// CreatePatchRequestInformation update the navigation property alltasks in users
 func (m *BaseTaskItemRequestBuilder) CreatePatchRequestInformation(options *BaseTaskItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,13 +149,17 @@ func (m *BaseTaskItemRequestBuilder) CreatePatchRequestInformation(options *Base
     }
     return requestInfo, nil
 }
-// Delete all tasks in the users mailbox.
+// Delete delete navigation property alltasks for users
 func (m *BaseTaskItemRequestBuilder) Delete(options *BaseTaskItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -176,16 +180,20 @@ func (m *BaseTaskItemRequestBuilder) ExtensionsById(id string)(*i8aa5d29987d083c
     return i8aa5d29987d083cb64fee493022b81d976f48df901531ff3abc4b55339d9ae52.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get all tasks in the users mailbox.
-func (m *BaseTaskItemRequestBuilder) Get(options *BaseTaskItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTask, error) {
+func (m *BaseTaskItemRequestBuilder) Get(options *BaseTaskItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewBaseTask() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateBaseTaskFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTask), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskable), nil
 }
 func (m *BaseTaskItemRequestBuilder) LinkedResources()(*i8f577f5802f3e0e15c989cddb25554bb5b50f43e79e58f4ffc257d28e636a543.LinkedResourcesRequestBuilder) {
     return i8f577f5802f3e0e15c989cddb25554bb5b50f43e79e58f4ffc257d28e636a543.NewLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -207,13 +215,17 @@ func (m *BaseTaskItemRequestBuilder) Move()(*ib8c99b5c2cdc8e87f18e14d0083feae23e
 func (m *BaseTaskItemRequestBuilder) ParentList()(*i74a32fabbfbde9205732b623e943f248ae1993d1dd3bd7ca652fe67e4b8aaf82.ParentListRequestBuilder) {
     return i74a32fabbfbde9205732b623e943f248ae1993d1dd3bd7ca652fe67e4b8aaf82.NewParentListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch all tasks in the users mailbox.
+// Patch update the navigation property alltasks in users
 func (m *BaseTaskItemRequestBuilder) Patch(options *BaseTaskItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

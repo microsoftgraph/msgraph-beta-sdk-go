@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CreateDownloadUrlRequestBuilder builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests\{appLogCollectionRequest-id}\microsoft.graph.createDownloadUrl
+// CreateDownloadUrlRequestBuilder provides operations to call the createDownloadUrl method.
 type CreateDownloadUrlRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type CreateDownloadUrlResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type appLogCollectionDownloadDetails
-    appLogCollectionDownloadDetails *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails;
+    appLogCollectionDownloadDetails i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetailsable;
 }
 // NewCreateDownloadUrlResponse instantiates a new createDownloadUrlResponse and sets the default values.
 func NewCreateDownloadUrlResponse()(*CreateDownloadUrlResponse) {
@@ -37,6 +37,9 @@ func NewCreateDownloadUrlResponse()(*CreateDownloadUrlResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCreateDownloadUrlResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCreateDownloadUrlResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateDownloadUrlResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *CreateDownloadUrlResponse) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetAppLogCollectionDownloadDetails gets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
-func (m *CreateDownloadUrlResponse) GetAppLogCollectionDownloadDetails()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails) {
+func (m *CreateDownloadUrlResponse) GetAppLogCollectionDownloadDetails()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetailsable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *CreateDownloadUrlResponse) GetAppLogCollectionDownloadDetails()(*i53568
 func (m *CreateDownloadUrlResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["appLogCollectionDownloadDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAppLogCollectionDownloadDetails() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppLogCollectionDownloadDetails(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails))
+            m.SetAppLogCollectionDownloadDetails(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetailsable))
         }
         return nil
     }
@@ -95,10 +98,17 @@ func (m *CreateDownloadUrlResponse) SetAdditionalData(value map[string]interface
     }
 }
 // SetAppLogCollectionDownloadDetails sets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
-func (m *CreateDownloadUrlResponse) SetAppLogCollectionDownloadDetails(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails)() {
+func (m *CreateDownloadUrlResponse) SetAppLogCollectionDownloadDetails(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetailsable)() {
     if m != nil {
         m.appLogCollectionDownloadDetails = value
     }
+}
+// CreateDownloadUrlResponseable 
+type CreateDownloadUrlResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetAppLogCollectionDownloadDetails()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetailsable)
+    SetAppLogCollectionDownloadDetails(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetailsable)()
 }
 // NewCreateDownloadUrlRequestBuilderInternal instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
 func NewCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateDownloadUrlRequestBuilder) {
@@ -109,7 +119,7 @@ func NewCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformation(options *
     return requestInfo, nil
 }
 // Post invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) Post(options *CreateDownloadUrlRequestBuilderPostOptions)(*CreateDownloadUrlResponse, error) {
+func (m *CreateDownloadUrlRequestBuilder) Post(options *CreateDownloadUrlRequestBuilderPostOptions)(CreateDownloadUrlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCreateDownloadUrlResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateDownloadUrlResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CreateDownloadUrlResponse), nil
+    return res.(CreateDownloadUrlResponseable), nil
 }

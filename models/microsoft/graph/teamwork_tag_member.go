@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkTagMember 
+// TeamworkTagMember provides operations to manage the compliance singleton.
 type TeamworkTagMember struct {
     Entity
     // The member's display name.
@@ -21,28 +21,16 @@ func NewTeamworkTagMember()(*TeamworkTagMember) {
     }
     return m
 }
+// CreateTeamworkTagMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTeamworkTagMemberFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewTeamworkTagMember(), nil
+}
 // GetDisplayName gets the displayName property value. The member's display name.
 func (m *TeamworkTagMember) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetTenantId gets the tenantId property value. 
-func (m *TeamworkTagMember) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
-}
-// GetUserId gets the userId property value. 
-func (m *TeamworkTagMember) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +67,22 @@ func (m *TeamworkTagMember) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetTenantId gets the tenantId property value. 
+func (m *TeamworkTagMember) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
+// GetUserId gets the userId property value. 
+func (m *TeamworkTagMember) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *TeamworkTagMember) IsNil()(bool) {
     return m == nil

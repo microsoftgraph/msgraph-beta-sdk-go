@@ -2,11 +2,12 @@ package timeoffreasons
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i3a1a719bc246f4536b1b55bcee1b7a0cb188c4ac007783906935d82b4b6bf5e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/timeoffreasons/count"
 )
 
-// TimeOffReasonsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeOffReasons
+// TimeOffReasonsRequestBuilder provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 type TimeOffReasonsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +47,7 @@ type TimeOffReasonsRequestBuilderGetQueryParameters struct {
 // TimeOffReasonsRequestBuilderPostOptions options for Post
 type TimeOffReasonsRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReason;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReasonable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +64,7 @@ func NewTimeOffReasonsRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,6 +73,9 @@ func NewTimeOffReasonsRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTimeOffReasonsRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *TimeOffReasonsRequestBuilder) Count()(*i3a1a719bc246f4536b1b55bcee1b7a0cb188c4ac007783906935d82b4b6bf5e7.CountRequestBuilder) {
+    return i3a1a719bc246f4536b1b55bcee1b7a0cb188c4ac007783906935d82b4b6bf5e7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonsRequestBuilder) CreateGetRequestInformation(options *TimeOffReasonsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -93,7 +97,7 @@ func (m *TimeOffReasonsRequestBuilder) CreateGetRequestInformation(options *Time
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the set of reasons for a time off in the schedule.
+// CreatePostRequestInformation create new navigation property to timeOffReasons for teams
 func (m *TimeOffReasonsRequestBuilder) CreatePostRequestInformation(options *TimeOffReasonsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,26 +116,34 @@ func (m *TimeOffReasonsRequestBuilder) CreatePostRequestInformation(options *Tim
     return requestInfo, nil
 }
 // Get the set of reasons for a time off in the schedule.
-func (m *TimeOffReasonsRequestBuilder) Get(options *TimeOffReasonsRequestBuilderGetOptions)(*TimeOffReasonsResponse, error) {
+func (m *TimeOffReasonsRequestBuilder) Get(options *TimeOffReasonsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReasonCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeOffReasonsResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTimeOffReasonCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*TimeOffReasonsResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReasonCollectionResponseable), nil
 }
-// Post the set of reasons for a time off in the schedule.
-func (m *TimeOffReasonsRequestBuilder) Post(options *TimeOffReasonsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReason, error) {
+// Post create new navigation property to timeOffReasons for teams
+func (m *TimeOffReasonsRequestBuilder) Post(options *TimeOffReasonsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReasonable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTimeOffReason() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTimeOffReasonFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReason), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeOffReasonable), nil
 }

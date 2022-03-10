@@ -2,11 +2,12 @@ package memberof
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i90234953740583ebdea56c521da56d3febbda808d5078c44748b38363d012f4e "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/item/memberof/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i89c410331b71b4bb8781ecbcb25368ade1bba7682dd187ae70aa3cc9daa8faca "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/item/memberof/count"
 )
 
-// MemberOfRequestBuilder builds and executes requests for operations under \devices\{device-id}\memberOf
+// MemberOfRequestBuilder provides operations to manage the memberOf property of the microsoft.graph.device entity.
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +55,7 @@ func NewMemberOfRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -63,6 +64,9 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *MemberOfRequestBuilder) Count()(*i89c410331b71b4bb8781ecbcb25368ade1bba7682dd187ae70aa3cc9daa8faca.CountRequestBuilder) {
+    return i89c410331b71b4bb8781ecbcb25368ade1bba7682dd187ae70aa3cc9daa8faca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation groups that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -85,17 +89,18 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRe
     return requestInfo, nil
 }
 // Get groups that this device is a member of. Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(*MemberOfResponse, error) {
+func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMemberOfResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*MemberOfResponse), nil
-}
-func (m *MemberOfRequestBuilder) Ref()(*i90234953740583ebdea56c521da56d3febbda808d5078c44748b38363d012f4e.RefRequestBuilder) {
-    return i90234953740583ebdea56c521da56d3febbda808d5078c44748b38363d012f4e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

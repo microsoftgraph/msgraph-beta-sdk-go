@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// GetEncryptionPublicKeyRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.getEncryptionPublicKey()
+// GetEncryptionPublicKeyRequestBuilder provides operations to call the getEncryptionPublicKey method.
 type GetEncryptionPublicKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -31,7 +31,7 @@ func NewGetEncryptionPublicKeyRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -59,14 +59,14 @@ func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation(optio
     return requestInfo, nil
 }
 // Get get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) Get(options *GetEncryptionPublicKeyRequestBuilderGetOptions)(*string, error) {
+func (m *GetEncryptionPublicKeyRequestBuilder) Get(options *GetEncryptionPublicKeyRequestBuilderGetOptions)(GetEncryptionPublicKeyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEncryptionPublicKeyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*string), nil
+    return res.(GetEncryptionPublicKeyResponseable), nil
 }

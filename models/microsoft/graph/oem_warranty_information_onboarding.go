@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OemWarrantyInformationOnboarding 
+// OemWarrantyInformationOnboarding provides operations to manage the deviceManagement singleton.
 type OemWarrantyInformationOnboarding struct {
     Entity
     // Specifies whether warranty API is available. This property is read-only.
@@ -21,6 +21,10 @@ func NewOemWarrantyInformationOnboarding()(*OemWarrantyInformationOnboarding) {
     }
     return m
 }
+// CreateOemWarrantyInformationOnboardingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOemWarrantyInformationOnboardingFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOemWarrantyInformationOnboarding(), nil
+}
 // GetAvailable gets the available property value. Specifies whether warranty API is available. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) GetAvailable()(*bool) {
     if m == nil {
@@ -35,14 +39,6 @@ func (m *OemWarrantyInformationOnboarding) GetEnabled()(*bool) {
         return nil
     } else {
         return m.enabled
-    }
-}
-// GetOemName gets the oemName property value. OEM name. This property is read-only.
-func (m *OemWarrantyInformationOnboarding) GetOemName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oemName
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +75,14 @@ func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOemName gets the oemName property value. OEM name. This property is read-only.
+func (m *OemWarrantyInformationOnboarding) GetOemName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oemName
+    }
 }
 func (m *OemWarrantyInformationOnboarding) IsNil()(bool) {
     return m == nil

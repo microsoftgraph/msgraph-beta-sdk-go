@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonNamePronounciation 
+// PersonNamePronounciation provides operations to manage the compliance singleton.
 type PersonNamePronounciation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,6 +26,10 @@ func NewPersonNamePronounciation()(*PersonNamePronounciation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreatePersonNamePronounciationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonNamePronounciationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonNamePronounciation(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonNamePronounciation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -40,38 +44,6 @@ func (m *PersonNamePronounciation) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetFirst gets the first property value. 
-func (m *PersonNamePronounciation) GetFirst()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.first
-    }
-}
-// GetLast gets the last property value. 
-func (m *PersonNamePronounciation) GetLast()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.last
-    }
-}
-// GetMaiden gets the maiden property value. 
-func (m *PersonNamePronounciation) GetMaiden()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maiden
-    }
-}
-// GetMiddle gets the middle property value. 
-func (m *PersonNamePronounciation) GetMiddle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middle
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,6 +100,38 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
+}
+// GetFirst gets the first property value. 
+func (m *PersonNamePronounciation) GetFirst()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.first
+    }
+}
+// GetLast gets the last property value. 
+func (m *PersonNamePronounciation) GetLast()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.last
+    }
+}
+// GetMaiden gets the maiden property value. 
+func (m *PersonNamePronounciation) GetMaiden()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maiden
+    }
+}
+// GetMiddle gets the middle property value. 
+func (m *PersonNamePronounciation) GetMiddle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.middle
+    }
 }
 func (m *PersonNamePronounciation) IsNil()(bool) {
     return m == nil

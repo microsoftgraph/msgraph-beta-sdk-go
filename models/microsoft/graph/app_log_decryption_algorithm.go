@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// 
+// Provides operations to call the createDownloadUrl method.
 type AppLogDecryptionAlgorithm int
 
 const (

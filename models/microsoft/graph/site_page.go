@@ -4,19 +4,19 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SitePage 
+// SitePage provides operations to manage the compliance singleton.
 type SitePage struct {
     BaseItem
     // The content type of the page.
-    contentType *ContentTypeInfo;
+    contentType ContentTypeInfoable;
     // 
     pageLayoutType *string;
     // 
-    publishingState *PublicationFacet;
+    publishingState PublicationFacetable;
     // 
     title *string;
     // 
-    webParts []WebPart;
+    webParts []WebPartable;
 }
 // NewSitePage instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {
@@ -25,13 +25,76 @@ func NewSitePage()(*SitePage) {
     }
     return m
 }
+// CreateSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSitePageFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSitePage(), nil
+}
 // GetContentType gets the contentType property value. The content type of the page.
-func (m *SitePage) GetContentType()(*ContentTypeInfo) {
+func (m *SitePage) GetContentType()(ContentTypeInfoable) {
     if m == nil {
         return nil
     } else {
         return m.contentType
     }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := m.BaseItem.GetFieldDeserializers()
+    res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentType(val.(ContentTypeInfoable))
+        }
+        return nil
+    }
+    res["pageLayoutType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPageLayoutType(val)
+        }
+        return nil
+    }
+    res["publishingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePublicationFacetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublishingState(val.(PublicationFacetable))
+        }
+        return nil
+    }
+    res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTitle(val)
+        }
+        return nil
+    }
+    res["webParts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWebPartFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WebPartable, len(val))
+            for i, v := range val {
+                res[i] = v.(WebPartable)
+            }
+            m.SetWebParts(res)
+        }
+        return nil
+    }
+    return res
 }
 // GetPageLayoutType gets the pageLayoutType property value. 
 func (m *SitePage) GetPageLayoutType()(*string) {
@@ -42,7 +105,7 @@ func (m *SitePage) GetPageLayoutType()(*string) {
     }
 }
 // GetPublishingState gets the publishingState property value. 
-func (m *SitePage) GetPublishingState()(*PublicationFacet) {
+func (m *SitePage) GetPublishingState()(PublicationFacetable) {
     if m == nil {
         return nil
     } else {
@@ -58,71 +121,12 @@ func (m *SitePage) GetTitle()(*string) {
     }
 }
 // GetWebParts gets the webParts property value. 
-func (m *SitePage) GetWebParts()([]WebPart) {
+func (m *SitePage) GetWebParts()([]WebPartable) {
     if m == nil {
         return nil
     } else {
         return m.webParts
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := m.BaseItem.GetFieldDeserializers()
-    res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContentTypeInfo() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentType(val.(*ContentTypeInfo))
-        }
-        return nil
-    }
-    res["pageLayoutType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPageLayoutType(val)
-        }
-        return nil
-    }
-    res["publishingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPublicationFacet() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPublishingState(val.(*PublicationFacet))
-        }
-        return nil
-    }
-    res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTitle(val)
-        }
-        return nil
-    }
-    res["webParts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWebPart() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WebPart, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*WebPart))
-            }
-            m.SetWebParts(res)
-        }
-        return nil
-    }
-    return res
 }
 func (m *SitePage) IsNil()(bool) {
     return m == nil
@@ -160,8 +164,7 @@ func (m *SitePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if m.GetWebParts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWebParts()))
         for i, v := range m.GetWebParts() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("webParts", cast)
         if err != nil {
@@ -171,7 +174,7 @@ func (m *SitePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     return nil
 }
 // SetContentType sets the contentType property value. The content type of the page.
-func (m *SitePage) SetContentType(value *ContentTypeInfo)() {
+func (m *SitePage) SetContentType(value ContentTypeInfoable)() {
     if m != nil {
         m.contentType = value
     }
@@ -183,7 +186,7 @@ func (m *SitePage) SetPageLayoutType(value *string)() {
     }
 }
 // SetPublishingState sets the publishingState property value. 
-func (m *SitePage) SetPublishingState(value *PublicationFacet)() {
+func (m *SitePage) SetPublishingState(value PublicationFacetable)() {
     if m != nil {
         m.publishingState = value
     }
@@ -195,7 +198,7 @@ func (m *SitePage) SetTitle(value *string)() {
     }
 }
 // SetWebParts sets the webParts property value. 
-func (m *SitePage) SetWebParts(value []WebPart)() {
+func (m *SitePage) SetWebParts(value []WebPartable)() {
     if m != nil {
         m.webParts = value
     }

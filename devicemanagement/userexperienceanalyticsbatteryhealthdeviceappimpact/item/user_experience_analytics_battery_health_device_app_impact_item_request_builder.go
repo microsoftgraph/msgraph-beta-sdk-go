@@ -2,11 +2,11 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthDeviceAppImpact\{userExperienceAnalyticsBatteryHealthDeviceAppImpact-id}
+// UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderGetQue
 // UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceAppImpact;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceAppImpactable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +62,7 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +72,7 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation user Experience Analytics Battery Health Device App Impact
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsBatteryHealthDeviceAppImpact for deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation user Experience Analytics Battery Health Device App Impact
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsBatteryHealthDeviceAppImpact in deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +127,49 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// Delete user Experience Analytics Battery Health Device App Impact
+// Delete delete navigation property userExperienceAnalyticsBatteryHealthDeviceAppImpact for deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) Delete(options *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get user Experience Analytics Battery Health Device App Impact
-func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceAppImpact, error) {
+func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) Get(options *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceAppImpactable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceAppImpact), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsBatteryHealthDeviceAppImpactable), nil
 }
-// Patch user Experience Analytics Battery Health Device App Impact
+// Patch update the navigation property userExperienceAnalyticsBatteryHealthDeviceAppImpact in deviceManagement
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) Patch(options *UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

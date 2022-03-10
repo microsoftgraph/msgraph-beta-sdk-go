@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CloneRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\microsoft.graph.clone
+// CloneRequestBuilder provides operations to call the clone method.
 type CloneRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type CloneResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type deviceManagementReusablePolicySetting
-    deviceManagementReusablePolicySetting *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting;
+    deviceManagementReusablePolicySetting i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable;
 }
 // NewCloneResponse instantiates a new cloneResponse and sets the default values.
 func NewCloneResponse()(*CloneResponse) {
@@ -37,6 +37,9 @@ func NewCloneResponse()(*CloneResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateCloneResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewCloneResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloneResponse) GetAdditionalData()(map[string]interface{}) {
@@ -47,7 +50,7 @@ func (m *CloneResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDeviceManagementReusablePolicySetting gets the deviceManagementReusablePolicySetting property value. Union type representation for type deviceManagementReusablePolicySetting
-func (m *CloneResponse) GetDeviceManagementReusablePolicySetting()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting) {
+func (m *CloneResponse) GetDeviceManagementReusablePolicySetting()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable) {
     if m == nil {
         return nil
     } else {
@@ -58,12 +61,12 @@ func (m *CloneResponse) GetDeviceManagementReusablePolicySetting()(*i535684e11b5
 func (m *CloneResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceManagementReusablePolicySetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceManagementReusablePolicySetting() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementReusablePolicySettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceManagementReusablePolicySetting(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting))
+            m.SetDeviceManagementReusablePolicySetting(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable))
         }
         return nil
     }
@@ -95,10 +98,17 @@ func (m *CloneResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDeviceManagementReusablePolicySetting sets the deviceManagementReusablePolicySetting property value. Union type representation for type deviceManagementReusablePolicySetting
-func (m *CloneResponse) SetDeviceManagementReusablePolicySetting(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySetting)() {
+func (m *CloneResponse) SetDeviceManagementReusablePolicySetting(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable)() {
     if m != nil {
         m.deviceManagementReusablePolicySetting = value
     }
+}
+// CloneResponseable 
+type CloneResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetDeviceManagementReusablePolicySetting()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable)
+    SetDeviceManagementReusablePolicySetting(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReusablePolicySettingable)()
 }
 // NewCloneRequestBuilderInternal instantiates a new CloneRequestBuilder and sets the default values.
 func NewCloneRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloneRequestBuilder) {
@@ -109,7 +119,7 @@ func NewCloneRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *CloneRequestBuilder) CreatePostRequestInformation(options *CloneRequest
     return requestInfo, nil
 }
 // Post invoke action clone
-func (m *CloneRequestBuilder) Post(options *CloneRequestBuilderPostOptions)(*CloneResponse, error) {
+func (m *CloneRequestBuilder) Post(options *CloneRequestBuilderPostOptions)(CloneResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloneResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCloneResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*CloneResponse), nil
+    return res.(CloneResponseable), nil
 }

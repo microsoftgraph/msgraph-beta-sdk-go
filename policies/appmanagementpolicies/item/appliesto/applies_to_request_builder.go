@@ -2,11 +2,12 @@ package appliesto
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i30fcf565ab571e99343906fde05a71133283e9e8fd4f12bcae2d99d9262d3651 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/appmanagementpolicies/item/appliesto/ref"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/appmanagementpolicies/item/appliesto/count"
 )
 
-// AppliesToRequestBuilder builds and executes requests for operations under \policies\appManagementPolicies\{appManagementPolicy-id}\appliesTo
+// AppliesToRequestBuilder provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 type AppliesToRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +27,7 @@ type AppliesToRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AppliesToRequestBuilderGetQueryParameters collection of application and service principals to which a policy is applied.
+// AppliesToRequestBuilderGetQueryParameters get appliesTo from policies
 type AppliesToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -54,7 +55,7 @@ func NewAppliesToRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -64,7 +65,10 @@ func NewAppliesToRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewAppliesToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation collection of application and service principals to which a policy is applied.
+func (m *AppliesToRequestBuilder) Count()(*if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.CountRequestBuilder) {
+    return if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CreateGetRequestInformation get appliesTo from policies
 func (m *AppliesToRequestBuilder) CreateGetRequestInformation(options *AppliesToRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,18 +88,19 @@ func (m *AppliesToRequestBuilder) CreateGetRequestInformation(options *AppliesTo
     }
     return requestInfo, nil
 }
-// Get collection of application and service principals to which a policy is applied.
-func (m *AppliesToRequestBuilder) Get(options *AppliesToRequestBuilderGetOptions)(*AppliesToResponse, error) {
+// Get get appliesTo from policies
+func (m *AppliesToRequestBuilder) Get(options *AppliesToRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAppliesToResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*AppliesToResponse), nil
-}
-func (m *AppliesToRequestBuilder) Ref()(*i30fcf565ab571e99343906fde05a71133283e9e8fd4f12bcae2d99d9262d3651.RefRequestBuilder) {
-    return i30fcf565ab571e99343906fde05a71133283e9e8fd4f12bcae2d99d9262d3651.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObjectCollectionResponseable), nil
 }

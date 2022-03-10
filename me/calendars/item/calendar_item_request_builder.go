@@ -2,9 +2,9 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i1e3d1947b13aae3f970d296ef71a4efc9e040742b37371ed6c138c0e253b1bf4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars/item/calendarpermissions"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i472232d154eda28ab8efd7fd9d2cc15ad8f3f68df3d90d6a2763b48e0a0fb5d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars/item/getschedule"
     i583738b29cef42ce350c32e40b7980bf07bc18ac8bde87fb209297b7485e7533 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars/item/calendarview"
     ia34d5d2f8afdb98de85287585fbda3c10ce8763f60cf66a9c81a18f05aa37a17 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars/item/singlevalueextendedproperties"
@@ -18,7 +18,7 @@ import (
     id86c8a2a7201c8af159055ea250d6a414ff1975b2f7042526a50a2700d86486d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars/item/calendarpermissions/item"
 )
 
-// CalendarItemRequestBuilder builds and executes requests for operations under \me\calendars\{calendar-id}
+// CalendarItemRequestBuilder provides operations to manage the calendars property of the microsoft.graph.user entity.
 type CalendarItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -55,7 +55,7 @@ type CalendarItemRequestBuilderGetQueryParameters struct {
 // CalendarItemRequestBuilderPatchOptions options for Patch
 type CalendarItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendarable;
     // Request headers
     H map[string]string;
     // Request options
@@ -63,7 +63,7 @@ type CalendarItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AllowedCalendarSharingRolesWithUser builds and executes requests for operations under \me\calendars\{calendar-id}\microsoft.graph.allowedCalendarSharingRoles(User='{User}')
+// AllowedCalendarSharingRolesWithUser provides operations to call the allowedCalendarSharingRoles method.
 func (m *CalendarItemRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ife78aa1675e428b35acac9c3d51963dd3aa40c64cd0973840b3ba47dc64b5df6.AllowedCalendarSharingRolesWithUserRequestBuilder) {
     return ife78aa1675e428b35acac9c3d51963dd3aa40c64cd0973840b3ba47dc64b5df6.NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user);
 }
@@ -104,7 +104,7 @@ func NewCalendarItemRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -114,7 +114,7 @@ func NewCalendarItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the user's calendars. Read-only. Nullable.
+// CreateDeleteRequestInformation delete navigation property calendars for me
 func (m *CalendarItemRequestBuilder) CreateDeleteRequestInformation(options *CalendarItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,7 +151,7 @@ func (m *CalendarItemRequestBuilder) CreateGetRequestInformation(options *Calend
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the user's calendars. Read-only. Nullable.
+// CreatePatchRequestInformation update the navigation property calendars in me
 func (m *CalendarItemRequestBuilder) CreatePatchRequestInformation(options *CalendarItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -169,13 +169,17 @@ func (m *CalendarItemRequestBuilder) CreatePatchRequestInformation(options *Cale
     }
     return requestInfo, nil
 }
-// Delete the user's calendars. Read-only. Nullable.
+// Delete delete navigation property calendars for me
 func (m *CalendarItemRequestBuilder) Delete(options *CalendarItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
@@ -196,16 +200,20 @@ func (m *CalendarItemRequestBuilder) EventsById(id string)(*i00da9d0223281912e3c
     return i00da9d0223281912e3c155074179db42ccbaa07b1ce54f8636bc10641c22665f.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the user's calendars. Read-only. Nullable.
-func (m *CalendarItemRequestBuilder) Get(options *CalendarItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar, error) {
+func (m *CalendarItemRequestBuilder) Get(options *CalendarItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendarable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCalendar() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCalendarFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendarable), nil
 }
 func (m *CalendarItemRequestBuilder) GetSchedule()(*i472232d154eda28ab8efd7fd9d2cc15ad8f3f68df3d90d6a2763b48e0a0fb5d2.GetScheduleRequestBuilder) {
     return i472232d154eda28ab8efd7fd9d2cc15ad8f3f68df3d90d6a2763b48e0a0fb5d2.NewGetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -224,13 +232,17 @@ func (m *CalendarItemRequestBuilder) MultiValueExtendedPropertiesById(id string)
     }
     return i5a21f9744b199c1e3416254b970e7ad0211ea0e94c465251fdcf1915a650f97e.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the user's calendars. Read-only. Nullable.
+// Patch update the navigation property calendars in me
 func (m *CalendarItemRequestBuilder) Patch(options *CalendarItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

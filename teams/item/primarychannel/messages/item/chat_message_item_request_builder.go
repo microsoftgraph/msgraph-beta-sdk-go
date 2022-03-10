@@ -2,15 +2,15 @@ package item
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i2c260db421138b4b9d16bc781872e9b2bcc7212fcb3df78fccc27b29fa3afdd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/replies"
     i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/hostedcontents"
     i3bf93b00c9d8a64f21168607b55a5b671b8629d16d677ef881f8c67fc3d08c86 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/hostedcontents/item"
     i5b233e37d8baee4d7a51632cc955aa8905e1db9922a952b63423775c3a43570a "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/replies/item"
 )
 
-// ChatMessageItemRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}
+// ChatMessageItemRequestBuilder provides operations to manage the messages property of the microsoft.graph.channel entity.
 type ChatMessageItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type ChatMessageItemRequestBuilderGetQueryParameters struct {
 // ChatMessageItemRequestBuilderPatchOptions options for Patch
 type ChatMessageItemRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageable;
     // Request headers
     H map[string]string;
     // Request options
@@ -66,7 +66,7 @@ func NewChatMessageItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -76,7 +76,7 @@ func NewChatMessageItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams["request-raw-url"] = rawUrl
     return NewChatMessageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
+// CreateDeleteRequestInformation delete navigation property messages for teams
 func (m *ChatMessageItemRequestBuilder) CreateDeleteRequestInformation(options *ChatMessageItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ChatMessageItemRequestBuilder) CreateGetRequestInformation(options *Cha
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
+// CreatePatchRequestInformation update the navigation property messages in teams
 func (m *ChatMessageItemRequestBuilder) CreatePatchRequestInformation(options *ChatMessageItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,29 +131,37 @@ func (m *ChatMessageItemRequestBuilder) CreatePatchRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Delete a collection of all the messages in the channel. A navigation property. Nullable.
+// Delete delete navigation property messages for teams
 func (m *ChatMessageItemRequestBuilder) Delete(options *ChatMessageItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get a collection of all the messages in the channel. A navigation property. Nullable.
-func (m *ChatMessageItemRequestBuilder) Get(options *ChatMessageItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage, error) {
+func (m *ChatMessageItemRequestBuilder) Get(options *ChatMessageItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewChatMessage() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateChatMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessage), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChatMessageable), nil
 }
 func (m *ChatMessageItemRequestBuilder) HostedContents()(*i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433.HostedContentsRequestBuilder) {
     return i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433.NewHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -169,13 +177,17 @@ func (m *ChatMessageItemRequestBuilder) HostedContentsById(id string)(*i3bf93b00
     }
     return i3bf93b00c9d8a64f21168607b55a5b671b8629d16d677ef881f8c67fc3d08c86.NewChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch a collection of all the messages in the channel. A navigation property. Nullable.
+// Patch update the navigation property messages in teams
 func (m *ChatMessageItemRequestBuilder) Patch(options *ChatMessageItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

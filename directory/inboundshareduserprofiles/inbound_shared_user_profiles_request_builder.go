@@ -2,11 +2,12 @@ package inboundshareduserprofiles
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ib8a4c256fdbd8c9dd504e51ae24e7363f41b8cbad077fefcf96c659ec79c39b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/inboundshareduserprofiles/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// InboundSharedUserProfilesRequestBuilder builds and executes requests for operations under \directory\inboundSharedUserProfiles
+// InboundSharedUserProfilesRequestBuilder provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
 type InboundSharedUserProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type InboundSharedUserProfilesRequestBuilderGetQueryParameters struct {
 // InboundSharedUserProfilesRequestBuilderPostOptions options for Post
 type InboundSharedUserProfilesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfile;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfileable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewInboundSharedUserProfilesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewInboundSharedUserProfilesRequestBuilder(rawUrl string, requestAdapter id
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *InboundSharedUserProfilesRequestBuilder) Count()(*ib8a4c256fdbd8c9dd504e51ae24e7363f41b8cbad077fefcf96c659ec79c39b2.CountRequestBuilder) {
+    return ib8a4c256fdbd8c9dd504e51ae24e7363f41b8cbad077fefcf96c659ec79c39b2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get inboundSharedUserProfiles from directory
 func (m *InboundSharedUserProfilesRequestBuilder) CreateGetRequestInformation(options *InboundSharedUserProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -114,26 +118,34 @@ func (m *InboundSharedUserProfilesRequestBuilder) CreatePostRequestInformation(o
     return requestInfo, nil
 }
 // Get get inboundSharedUserProfiles from directory
-func (m *InboundSharedUserProfilesRequestBuilder) Get(options *InboundSharedUserProfilesRequestBuilderGetOptions)(*InboundSharedUserProfilesResponse, error) {
+func (m *InboundSharedUserProfilesRequestBuilder) Get(options *InboundSharedUserProfilesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInboundSharedUserProfilesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateInboundSharedUserProfileCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*InboundSharedUserProfilesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfileCollectionResponseable), nil
 }
 // Post create new navigation property to inboundSharedUserProfiles for directory
-func (m *InboundSharedUserProfilesRequestBuilder) Post(options *InboundSharedUserProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfile, error) {
+func (m *InboundSharedUserProfilesRequestBuilder) Post(options *InboundSharedUserProfilesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewInboundSharedUserProfile() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateInboundSharedUserProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfile), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfileable), nil
 }

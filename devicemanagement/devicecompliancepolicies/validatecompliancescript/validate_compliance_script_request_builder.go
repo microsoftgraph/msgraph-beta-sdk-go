@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ValidateComplianceScriptRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\microsoft.graph.validateComplianceScript
+// ValidateComplianceScriptRequestBuilder provides operations to call the validateComplianceScript method.
 type ValidateComplianceScriptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ValidateComplianceScriptRequestBuilder struct {
 // ValidateComplianceScriptRequestBuilderPostOptions options for Post
 type ValidateComplianceScriptRequestBuilderPostOptions struct {
     // 
-    Body *ValidateComplianceScriptRequestBody;
+    Body ValidateComplianceScriptRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -31,7 +31,7 @@ type ValidateComplianceScriptResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type deviceComplianceScriptValidationResult
-    deviceComplianceScriptValidationResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResult;
+    deviceComplianceScriptValidationResult i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResultable;
 }
 // NewValidateComplianceScriptResponse instantiates a new validateComplianceScriptResponse and sets the default values.
 func NewValidateComplianceScriptResponse()(*ValidateComplianceScriptResponse) {
@@ -39,6 +39,9 @@ func NewValidateComplianceScriptResponse()(*ValidateComplianceScriptResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateValidateComplianceScriptResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewValidateComplianceScriptResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateComplianceScriptResponse) GetAdditionalData()(map[string]interface{}) {
@@ -49,7 +52,7 @@ func (m *ValidateComplianceScriptResponse) GetAdditionalData()(map[string]interf
     }
 }
 // GetDeviceComplianceScriptValidationResult gets the deviceComplianceScriptValidationResult property value. Union type representation for type deviceComplianceScriptValidationResult
-func (m *ValidateComplianceScriptResponse) GetDeviceComplianceScriptValidationResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResult) {
+func (m *ValidateComplianceScriptResponse) GetDeviceComplianceScriptValidationResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResultable) {
     if m == nil {
         return nil
     } else {
@@ -60,12 +63,12 @@ func (m *ValidateComplianceScriptResponse) GetDeviceComplianceScriptValidationRe
 func (m *ValidateComplianceScriptResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceComplianceScriptValidationResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDeviceComplianceScriptValidationResult() })
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceComplianceScriptValidationResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceComplianceScriptValidationResult(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResult))
+            m.SetDeviceComplianceScriptValidationResult(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResultable))
         }
         return nil
     }
@@ -97,10 +100,17 @@ func (m *ValidateComplianceScriptResponse) SetAdditionalData(value map[string]in
     }
 }
 // SetDeviceComplianceScriptValidationResult sets the deviceComplianceScriptValidationResult property value. Union type representation for type deviceComplianceScriptValidationResult
-func (m *ValidateComplianceScriptResponse) SetDeviceComplianceScriptValidationResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResult)() {
+func (m *ValidateComplianceScriptResponse) SetDeviceComplianceScriptValidationResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResultable)() {
     if m != nil {
         m.deviceComplianceScriptValidationResult = value
     }
+}
+// ValidateComplianceScriptResponseable 
+type ValidateComplianceScriptResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetDeviceComplianceScriptValidationResult()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResultable)
+    SetDeviceComplianceScriptValidationResult(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptValidationResultable)()
 }
 // NewValidateComplianceScriptRequestBuilderInternal instantiates a new ValidateComplianceScriptRequestBuilder and sets the default values.
 func NewValidateComplianceScriptRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValidateComplianceScriptRequestBuilder) {
@@ -111,7 +121,7 @@ func NewValidateComplianceScriptRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -140,14 +150,14 @@ func (m *ValidateComplianceScriptRequestBuilder) CreatePostRequestInformation(op
     return requestInfo, nil
 }
 // Post invoke action validateComplianceScript
-func (m *ValidateComplianceScriptRequestBuilder) Post(options *ValidateComplianceScriptRequestBuilderPostOptions)(*ValidateComplianceScriptResponse, error) {
+func (m *ValidateComplianceScriptRequestBuilder) Post(options *ValidateComplianceScriptRequestBuilderPostOptions)(ValidateComplianceScriptResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewValidateComplianceScriptResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateValidateComplianceScriptResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ValidateComplianceScriptResponse), nil
+    return res.(ValidateComplianceScriptResponseable), nil
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeMappingParameterSchema 
+// AttributeMappingParameterSchema provides operations to call the functions method.
 type AttributeMappingParameterSchema struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,6 +24,10 @@ func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateAttributeMappingParameterSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAttributeMappingParameterSchemaFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewAttributeMappingParameterSchema(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
@@ -38,30 +42,6 @@ func (m *AttributeMappingParameterSchema) GetAllowMultipleOccurrences()(*bool) {
         return nil
     } else {
         return m.allowMultipleOccurrences
-    }
-}
-// GetName gets the name property value. Parameter name.
-func (m *AttributeMappingParameterSchema) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetRequired gets the required property value. true if the parameter is required; otherwise false.
-func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
-}
-// GetType gets the type property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
-func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +88,30 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetName gets the name property value. Parameter name.
+func (m *AttributeMappingParameterSchema) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetRequired gets the required property value. true if the parameter is required; otherwise false.
+func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.required
+    }
+}
+// GetType gets the type property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 func (m *AttributeMappingParameterSchema) IsNil()(bool) {
     return m == nil

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformanceDetails 
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetails provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetails struct {
     Entity
     // The friendly name of the application for which the event occurred.
@@ -29,6 +29,10 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperien
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateUserExperienceAnalyticsAppHealthDevicePerformanceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsAppHealthDevicePerformanceDetailsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application for which the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppDisplayName()(*string) {

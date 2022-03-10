@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ValidationResult 
+// ValidationResult provides operations to call the validatePassword method.
 type ValidationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,36 +22,16 @@ func NewValidationResult()(*ValidationResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateValidationResultFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewValidationResult(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidationResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMessage gets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
-func (m *ValidationResult) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
-}
-// GetRuleName gets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
-func (m *ValidationResult) GetRuleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleName
-    }
-}
-// GetValidationPassed gets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
-func (m *ValidationResult) GetValidationPassed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.validationPassed
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,6 +68,30 @@ func (m *ValidationResult) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     return res
+}
+// GetMessage gets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
+func (m *ValidationResult) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
+}
+// GetRuleName gets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
+func (m *ValidationResult) GetRuleName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleName
+    }
+}
+// GetValidationPassed gets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
+func (m *ValidationResult) GetValidationPassed()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.validationPassed
+    }
 }
 func (m *ValidationResult) IsNil()(bool) {
     return m == nil

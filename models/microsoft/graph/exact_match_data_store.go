@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchDataStore 
+// ExactMatchDataStore provides operations to manage the dataClassificationService singleton.
 type ExactMatchDataStore struct {
     ExactMatchDataStoreBase
     // 
-    sessions []ExactMatchSession;
+    sessions []ExactMatchSessionable;
 }
 // NewExactMatchDataStore instantiates a new exactMatchDataStore and sets the default values.
 func NewExactMatchDataStore()(*ExactMatchDataStore) {
@@ -17,32 +17,36 @@ func NewExactMatchDataStore()(*ExactMatchDataStore) {
     }
     return m
 }
-// GetSessions gets the sessions property value. 
-func (m *ExactMatchDataStore) GetSessions()([]ExactMatchSession) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessions
-    }
+// CreateExactMatchDataStoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactMatchDataStoreFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactMatchDataStore(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ExactMatchDataStoreBase.GetFieldDeserializers()
     res["sessions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExactMatchSession() })
+        val, err := n.GetCollectionOfObjectValues(CreateExactMatchSessionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExactMatchSession, len(val))
+            res := make([]ExactMatchSessionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExactMatchSession))
+                res[i] = v.(ExactMatchSessionable)
             }
             m.SetSessions(res)
         }
         return nil
     }
     return res
+}
+// GetSessions gets the sessions property value. 
+func (m *ExactMatchDataStore) GetSessions()([]ExactMatchSessionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessions
+    }
 }
 func (m *ExactMatchDataStore) IsNil()(bool) {
     return m == nil
@@ -56,8 +60,7 @@ func (m *ExactMatchDataStore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if m.GetSessions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSessions()))
         for i, v := range m.GetSessions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("sessions", cast)
         if err != nil {
@@ -67,7 +70,7 @@ func (m *ExactMatchDataStore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetSessions sets the sessions property value. 
-func (m *ExactMatchDataStore) SetSessions(value []ExactMatchSession)() {
+func (m *ExactMatchDataStore) SetSessions(value []ExactMatchSessionable)() {
     if m != nil {
         m.sessions = value
     }

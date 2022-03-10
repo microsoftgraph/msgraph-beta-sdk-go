@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsInformationProtectionDeviceRegistration 
+// WindowsInformationProtectionDeviceRegistration provides operations to manage the deviceAppManagement singleton.
 type WindowsInformationProtectionDeviceRegistration struct {
     Entity
     // Device Mac address.
@@ -27,6 +27,10 @@ func NewWindowsInformationProtectionDeviceRegistration()(*WindowsInformationProt
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewWindowsInformationProtectionDeviceRegistration(), nil
 }
 // GetDeviceMacAddress gets the deviceMacAddress property value. Device Mac address.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceMacAddress()(*string) {
@@ -58,22 +62,6 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceType()(*string
         return nil
     } else {
         return m.deviceType
-    }
-}
-// GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device.
-func (m *WindowsInformationProtectionDeviceRegistration) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckInDateTime
-    }
-}
-// GetUserId gets the userId property value. UserId associated with this device registration record.
-func (m *WindowsInformationProtectionDeviceRegistration) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -140,6 +128,22 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device.
+func (m *WindowsInformationProtectionDeviceRegistration) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastCheckInDateTime
+    }
+}
+// GetUserId gets the userId property value. UserId associated with this device registration record.
+func (m *WindowsInformationProtectionDeviceRegistration) GetUserId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userId
+    }
 }
 func (m *WindowsInformationProtectionDeviceRegistration) IsNil()(bool) {
     return m == nil

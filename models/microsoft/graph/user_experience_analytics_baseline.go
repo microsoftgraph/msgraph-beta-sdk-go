@@ -5,29 +5,29 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBaseline 
+// UserExperienceAnalyticsBaseline provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsBaseline struct {
     Entity
     // The user experience analytics app health metrics.
-    appHealthMetrics *UserExperienceAnalyticsCategory;
+    appHealthMetrics UserExperienceAnalyticsCategoryable;
     // The user experience analytics battery health metrics.
-    batteryHealthMetrics *UserExperienceAnalyticsCategory;
+    batteryHealthMetrics UserExperienceAnalyticsCategoryable;
     // The user experience analytics best practices metrics.
-    bestPracticesMetrics *UserExperienceAnalyticsCategory;
+    bestPracticesMetrics UserExperienceAnalyticsCategoryable;
     // The date the custom baseline was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The user experience analytics device boot performance metrics.
-    deviceBootPerformanceMetrics *UserExperienceAnalyticsCategory;
+    deviceBootPerformanceMetrics UserExperienceAnalyticsCategoryable;
     // The name of the user experience analytics baseline.
     displayName *string;
     // Signifies if the current baseline is the commercial median baseline or a custom baseline.
     isBuiltIn *bool;
     // The user experience analytics reboot analytics metrics.
-    rebootAnalyticsMetrics *UserExperienceAnalyticsCategory;
+    rebootAnalyticsMetrics UserExperienceAnalyticsCategoryable;
     // The user experience analytics resource performance metrics.
-    resourcePerformanceMetrics *UserExperienceAnalyticsCategory;
+    resourcePerformanceMetrics UserExperienceAnalyticsCategoryable;
     // The user experience analytics work from anywhere metrics.
-    workFromAnywhereMetrics *UserExperienceAnalyticsCategory;
+    workFromAnywhereMetrics UserExperienceAnalyticsCategoryable;
 }
 // NewUserExperienceAnalyticsBaseline instantiates a new userExperienceAnalyticsBaseline and sets the default values.
 func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
@@ -36,8 +36,12 @@ func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
     }
     return m
 }
+// CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserExperienceAnalyticsBaseline(), nil
+}
 // GetAppHealthMetrics gets the appHealthMetrics property value. The user experience analytics app health metrics.
-func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(*UserExperienceAnalyticsCategory) {
+func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(UserExperienceAnalyticsCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -45,7 +49,7 @@ func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(*UserExperienceA
     }
 }
 // GetBatteryHealthMetrics gets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
-func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(*UserExperienceAnalyticsCategory) {
+func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(UserExperienceAnalyticsCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -53,7 +57,7 @@ func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(*UserExperie
     }
 }
 // GetBestPracticesMetrics gets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
-func (m *UserExperienceAnalyticsBaseline) GetBestPracticesMetrics()(*UserExperienceAnalyticsCategory) {
+func (m *UserExperienceAnalyticsBaseline) GetBestPracticesMetrics()(UserExperienceAnalyticsCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +73,7 @@ func (m *UserExperienceAnalyticsBaseline) GetCreatedDateTime()(*i336074805fc8539
     }
 }
 // GetDeviceBootPerformanceMetrics gets the deviceBootPerformanceMetrics property value. The user experience analytics device boot performance metrics.
-func (m *UserExperienceAnalyticsBaseline) GetDeviceBootPerformanceMetrics()(*UserExperienceAnalyticsCategory) {
+func (m *UserExperienceAnalyticsBaseline) GetDeviceBootPerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
     if m == nil {
         return nil
     } else {
@@ -84,68 +88,36 @@ func (m *UserExperienceAnalyticsBaseline) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetIsBuiltIn gets the isBuiltIn property value. Signifies if the current baseline is the commercial median baseline or a custom baseline.
-func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
-}
-// GetRebootAnalyticsMetrics gets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
-func (m *UserExperienceAnalyticsBaseline) GetRebootAnalyticsMetrics()(*UserExperienceAnalyticsCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rebootAnalyticsMetrics
-    }
-}
-// GetResourcePerformanceMetrics gets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
-func (m *UserExperienceAnalyticsBaseline) GetResourcePerformanceMetrics()(*UserExperienceAnalyticsCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourcePerformanceMetrics
-    }
-}
-// GetWorkFromAnywhereMetrics gets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
-func (m *UserExperienceAnalyticsBaseline) GetWorkFromAnywhereMetrics()(*UserExperienceAnalyticsCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workFromAnywhereMetrics
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appHealthMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetAppHealthMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
     res["batteryHealthMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBatteryHealthMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetBatteryHealthMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
     res["bestPracticesMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBestPracticesMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetBestPracticesMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
@@ -160,12 +132,12 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["deviceBootPerformanceMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceBootPerformanceMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetDeviceBootPerformanceMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
@@ -190,36 +162,68 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["rebootAnalyticsMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRebootAnalyticsMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetRebootAnalyticsMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
     res["resourcePerformanceMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourcePerformanceMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetResourcePerformanceMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
     res["workFromAnywhereMetrics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsCategory() })
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetWorkFromAnywhereMetrics(val.(*UserExperienceAnalyticsCategory))
+            m.SetWorkFromAnywhereMetrics(val.(UserExperienceAnalyticsCategoryable))
         }
         return nil
     }
     return res
+}
+// GetIsBuiltIn gets the isBuiltIn property value. Signifies if the current baseline is the commercial median baseline or a custom baseline.
+func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isBuiltIn
+    }
+}
+// GetRebootAnalyticsMetrics gets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
+func (m *UserExperienceAnalyticsBaseline) GetRebootAnalyticsMetrics()(UserExperienceAnalyticsCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.rebootAnalyticsMetrics
+    }
+}
+// GetResourcePerformanceMetrics gets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
+func (m *UserExperienceAnalyticsBaseline) GetResourcePerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourcePerformanceMetrics
+    }
+}
+// GetWorkFromAnywhereMetrics gets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
+func (m *UserExperienceAnalyticsBaseline) GetWorkFromAnywhereMetrics()(UserExperienceAnalyticsCategoryable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workFromAnywhereMetrics
+    }
 }
 func (m *UserExperienceAnalyticsBaseline) IsNil()(bool) {
     return m == nil
@@ -293,19 +297,19 @@ func (m *UserExperienceAnalyticsBaseline) Serialize(writer i04eb5309aeaafadd2837
     return nil
 }
 // SetAppHealthMetrics sets the appHealthMetrics property value. The user experience analytics app health metrics.
-func (m *UserExperienceAnalyticsBaseline) SetAppHealthMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetAppHealthMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.appHealthMetrics = value
     }
 }
 // SetBatteryHealthMetrics sets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
-func (m *UserExperienceAnalyticsBaseline) SetBatteryHealthMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetBatteryHealthMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.batteryHealthMetrics = value
     }
 }
 // SetBestPracticesMetrics sets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
-func (m *UserExperienceAnalyticsBaseline) SetBestPracticesMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetBestPracticesMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.bestPracticesMetrics = value
     }
@@ -317,7 +321,7 @@ func (m *UserExperienceAnalyticsBaseline) SetCreatedDateTime(value *i336074805fc
     }
 }
 // SetDeviceBootPerformanceMetrics sets the deviceBootPerformanceMetrics property value. The user experience analytics device boot performance metrics.
-func (m *UserExperienceAnalyticsBaseline) SetDeviceBootPerformanceMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetDeviceBootPerformanceMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.deviceBootPerformanceMetrics = value
     }
@@ -335,19 +339,19 @@ func (m *UserExperienceAnalyticsBaseline) SetIsBuiltIn(value *bool)() {
     }
 }
 // SetRebootAnalyticsMetrics sets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
-func (m *UserExperienceAnalyticsBaseline) SetRebootAnalyticsMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetRebootAnalyticsMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.rebootAnalyticsMetrics = value
     }
 }
 // SetResourcePerformanceMetrics sets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
-func (m *UserExperienceAnalyticsBaseline) SetResourcePerformanceMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetResourcePerformanceMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.resourcePerformanceMetrics = value
     }
 }
 // SetWorkFromAnywhereMetrics sets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
-func (m *UserExperienceAnalyticsBaseline) SetWorkFromAnywhereMetrics(value *UserExperienceAnalyticsCategory)() {
+func (m *UserExperienceAnalyticsBaseline) SetWorkFromAnywhereMetrics(value UserExperienceAnalyticsCategoryable)() {
     if m != nil {
         m.workFromAnywhereMetrics = value
     }

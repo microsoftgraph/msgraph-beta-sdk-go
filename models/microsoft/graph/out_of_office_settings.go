@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutOfOfficeSettings 
+// OutOfOfficeSettings provides operations to manage the cloudCommunications singleton.
 type OutOfOfficeSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,28 +20,16 @@ func NewOutOfOfficeSettings()(*OutOfOfficeSettings) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateOutOfOfficeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateOutOfOfficeSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewOutOfOfficeSettings(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutOfOfficeSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetIsOutOfOffice gets the isOutOfOffice property value. True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
-func (m *OutOfOfficeSettings) GetIsOutOfOffice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOutOfOffice
-    }
-}
-// GetMessage gets the message property value. The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
-func (m *OutOfOfficeSettings) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,6 +56,22 @@ func (m *OutOfOfficeSettings) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     return res
+}
+// GetIsOutOfOffice gets the isOutOfOffice property value. True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
+func (m *OutOfOfficeSettings) GetIsOutOfOffice()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isOutOfOffice
+    }
+}
+// GetMessage gets the message property value. The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+func (m *OutOfOfficeSettings) GetMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.message
+    }
 }
 func (m *OutOfOfficeSettings) IsNil()(bool) {
     return m == nil

@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserAnalytics 
+// UserAnalytics provides operations to manage the compliance singleton.
 type UserAnalytics struct {
     Entity
     // The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-    activityStatistics []ActivityStatistics;
+    activityStatistics []ActivityStatisticsable;
     // The current settings for a user to use the analytics API.
-    settings *Settings;
+    settings Settingsable;
 }
 // NewUserAnalytics instantiates a new userAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
@@ -19,50 +19,54 @@ func NewUserAnalytics()(*UserAnalytics) {
     }
     return m
 }
+// CreateUserAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserAnalyticsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewUserAnalytics(), nil
+}
 // GetActivityStatistics gets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatistics) {
+func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatisticsable) {
     if m == nil {
         return nil
     } else {
         return m.activityStatistics
     }
 }
-// GetSettings gets the settings property value. The current settings for a user to use the analytics API.
-func (m *UserAnalytics) GetSettings()(*Settings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityStatistics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewActivityStatistics() })
+        val, err := n.GetCollectionOfObjectValues(CreateActivityStatisticsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ActivityStatistics, len(val))
+            res := make([]ActivityStatisticsable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ActivityStatistics))
+                res[i] = v.(ActivityStatisticsable)
             }
             m.SetActivityStatistics(res)
         }
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSettings() })
+        val, err := n.GetObjectValue(CreateSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*Settings))
+            m.SetSettings(val.(Settingsable))
         }
         return nil
     }
     return res
+}
+// GetSettings gets the settings property value. The current settings for a user to use the analytics API.
+func (m *UserAnalytics) GetSettings()(Settingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
 }
 func (m *UserAnalytics) IsNil()(bool) {
     return m == nil
@@ -76,8 +80,7 @@ func (m *UserAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if m.GetActivityStatistics() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivityStatistics()))
         for i, v := range m.GetActivityStatistics() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("activityStatistics", cast)
         if err != nil {
@@ -93,13 +96,13 @@ func (m *UserAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     return nil
 }
 // SetActivityStatistics sets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-func (m *UserAnalytics) SetActivityStatistics(value []ActivityStatistics)() {
+func (m *UserAnalytics) SetActivityStatistics(value []ActivityStatisticsable)() {
     if m != nil {
         m.activityStatistics = value
     }
 }
 // SetSettings sets the settings property value. The current settings for a user to use the analytics API.
-func (m *UserAnalytics) SetSettings(value *Settings)() {
+func (m *UserAnalytics) SetSettings(value Settingsable)() {
     if m != nil {
         m.settings = value
     }

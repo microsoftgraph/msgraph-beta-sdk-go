@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Connector 
+// Connector provides operations to manage the collection of application entities.
 type Connector struct {
     Entity
     // The external IP address as detected by the the connector server. Read-only.
@@ -12,7 +12,7 @@ type Connector struct {
     // The machine name the connector is installed and running on.
     machineName *string;
     // The connectorGroup that the connector is a member of. Read-only.
-    memberOf []ConnectorGroup;
+    memberOf []ConnectorGroupable;
     // Indicates the status of the connector. Possible values are: active, inactive. Read-only.
     status *ConnectorStatus;
 }
@@ -23,36 +23,16 @@ func NewConnector()(*Connector) {
     }
     return m
 }
+// CreateConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConnectorFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnector(), nil
+}
 // GetExternalIp gets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
 func (m *Connector) GetExternalIp()(*string) {
     if m == nil {
         return nil
     } else {
         return m.externalIp
-    }
-}
-// GetMachineName gets the machineName property value. The machine name the connector is installed and running on.
-func (m *Connector) GetMachineName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.machineName
-    }
-}
-// GetMemberOf gets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
-func (m *Connector) GetMemberOf()([]ConnectorGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
-}
-// GetStatus gets the status property value. Indicates the status of the connector. Possible values are: active, inactive. Read-only.
-func (m *Connector) GetStatus()(*ConnectorStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,14 +59,14 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectorGroup() })
+        val, err := n.GetCollectionOfObjectValues(CreateConnectorGroupFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConnectorGroup, len(val))
+            res := make([]ConnectorGroupable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConnectorGroup))
+                res[i] = v.(ConnectorGroupable)
             }
             m.SetMemberOf(res)
         }
@@ -103,6 +83,30 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     return res
+}
+// GetMachineName gets the machineName property value. The machine name the connector is installed and running on.
+func (m *Connector) GetMachineName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.machineName
+    }
+}
+// GetMemberOf gets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
+func (m *Connector) GetMemberOf()([]ConnectorGroupable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.memberOf
+    }
+}
+// GetStatus gets the status property value. Indicates the status of the connector. Possible values are: active, inactive. Read-only.
+func (m *Connector) GetStatus()(*ConnectorStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *Connector) IsNil()(bool) {
     return m == nil
@@ -128,8 +132,7 @@ func (m *Connector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if m.GetMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("memberOf", cast)
         if err != nil {
@@ -158,7 +161,7 @@ func (m *Connector) SetMachineName(value *string)() {
     }
 }
 // SetMemberOf sets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
-func (m *Connector) SetMemberOf(value []ConnectorGroup)() {
+func (m *Connector) SetMemberOf(value []ConnectorGroupable)() {
     if m != nil {
         m.memberOf = value
     }

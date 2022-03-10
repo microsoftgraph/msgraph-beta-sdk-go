@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedAccess 
+// PrivilegedAccess provides operations to manage the collection of privilegedAccess entities.
 type PrivilegedAccess struct {
     Entity
     // The display name of the provider managed by PIM.
     displayName *string;
     // A collection of resources for the provider.
-    resources []GovernanceResource;
+    resources []GovernanceResourceable;
     // A collection of role assignment requests for the provider.
-    roleAssignmentRequests []GovernanceRoleAssignmentRequest;
+    roleAssignmentRequests []GovernanceRoleAssignmentRequestable;
     // A collection of role assignments for the provider.
-    roleAssignments []GovernanceRoleAssignment;
+    roleAssignments []GovernanceRoleAssignmentable;
     // A collection of role defintions for the provider.
-    roleDefinitions []GovernanceRoleDefinition;
+    roleDefinitions []GovernanceRoleDefinitionable;
     // A collection of role settings for the provider.
-    roleSettings []GovernanceRoleSetting;
+    roleSettings []GovernanceRoleSettingable;
 }
 // NewPrivilegedAccess instantiates a new privilegedAccess and sets the default values.
 func NewPrivilegedAccess()(*PrivilegedAccess) {
@@ -27,52 +27,16 @@ func NewPrivilegedAccess()(*PrivilegedAccess) {
     }
     return m
 }
+// CreatePrivilegedAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePrivilegedAccessFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPrivilegedAccess(), nil
+}
 // GetDisplayName gets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetResources gets the resources property value. A collection of resources for the provider.
-func (m *PrivilegedAccess) GetResources()([]GovernanceResource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
-    }
-}
-// GetRoleAssignmentRequests gets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
-func (m *PrivilegedAccess) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequest) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentRequests
-    }
-}
-// GetRoleAssignments gets the roleAssignments property value. A collection of role assignments for the provider.
-func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignments
-    }
-}
-// GetRoleDefinitions gets the roleDefinitions property value. A collection of role defintions for the provider.
-func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitions
-    }
-}
-// GetRoleSettings gets the roleSettings property value. A collection of role settings for the provider.
-func (m *PrivilegedAccess) GetRoleSettings()([]GovernanceRoleSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleSettings
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,76 +53,116 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceResource() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceResource, len(val))
+            res := make([]GovernanceResourceable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceResource))
+                res[i] = v.(GovernanceResourceable)
             }
             m.SetResources(res)
         }
         return nil
     }
     res["roleAssignmentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleAssignmentRequest() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleAssignmentRequest, len(val))
+            res := make([]GovernanceRoleAssignmentRequestable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleAssignmentRequest))
+                res[i] = v.(GovernanceRoleAssignmentRequestable)
             }
             m.SetRoleAssignmentRequests(res)
         }
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleAssignment() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleAssignment, len(val))
+            res := make([]GovernanceRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleAssignment))
+                res[i] = v.(GovernanceRoleAssignmentable)
             }
             m.SetRoleAssignments(res)
         }
         return nil
     }
     res["roleDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleDefinition() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleDefinition, len(val))
+            res := make([]GovernanceRoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleDefinition))
+                res[i] = v.(GovernanceRoleDefinitionable)
             }
             m.SetRoleDefinitions(res)
         }
         return nil
     }
     res["roleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernanceRoleSetting() })
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleSettingFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GovernanceRoleSetting, len(val))
+            res := make([]GovernanceRoleSettingable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*GovernanceRoleSetting))
+                res[i] = v.(GovernanceRoleSettingable)
             }
             m.SetRoleSettings(res)
         }
         return nil
     }
     return res
+}
+// GetResources gets the resources property value. A collection of resources for the provider.
+func (m *PrivilegedAccess) GetResources()([]GovernanceResourceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resources
+    }
+}
+// GetRoleAssignmentRequests gets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
+func (m *PrivilegedAccess) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignmentRequests
+    }
+}
+// GetRoleAssignments gets the roleAssignments property value. A collection of role assignments for the provider.
+func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleAssignments
+    }
+}
+// GetRoleDefinitions gets the roleDefinitions property value. A collection of role defintions for the provider.
+func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleDefinitions
+    }
+}
+// GetRoleSettings gets the roleSettings property value. A collection of role settings for the provider.
+func (m *PrivilegedAccess) GetRoleSettings()([]GovernanceRoleSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.roleSettings
+    }
 }
 func (m *PrivilegedAccess) IsNil()(bool) {
     return m == nil
@@ -178,8 +182,7 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -189,8 +192,7 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRoleAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentRequests()))
         for i, v := range m.GetRoleAssignmentRequests() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentRequests", cast)
         if err != nil {
@@ -200,8 +202,7 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -211,8 +212,7 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -222,8 +222,7 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if m.GetRoleSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleSettings()))
         for i, v := range m.GetRoleSettings() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("roleSettings", cast)
         if err != nil {
@@ -239,31 +238,31 @@ func (m *PrivilegedAccess) SetDisplayName(value *string)() {
     }
 }
 // SetResources sets the resources property value. A collection of resources for the provider.
-func (m *PrivilegedAccess) SetResources(value []GovernanceResource)() {
+func (m *PrivilegedAccess) SetResources(value []GovernanceResourceable)() {
     if m != nil {
         m.resources = value
     }
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
-func (m *PrivilegedAccess) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequest)() {
+func (m *PrivilegedAccess) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)() {
     if m != nil {
         m.roleAssignmentRequests = value
     }
 }
 // SetRoleAssignments sets the roleAssignments property value. A collection of role assignments for the provider.
-func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignment)() {
+func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignmentable)() {
     if m != nil {
         m.roleAssignments = value
     }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. A collection of role defintions for the provider.
-func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinition)() {
+func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
     if m != nil {
         m.roleDefinitions = value
     }
 }
 // SetRoleSettings sets the roleSettings property value. A collection of role settings for the provider.
-func (m *PrivilegedAccess) SetRoleSettings(value []GovernanceRoleSetting)() {
+func (m *PrivilegedAccess) SetRoleSettings(value []GovernanceRoleSettingable)() {
     if m != nil {
         m.roleSettings = value
     }

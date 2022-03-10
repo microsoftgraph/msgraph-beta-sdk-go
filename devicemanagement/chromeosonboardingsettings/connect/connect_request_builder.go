@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// ConnectRequestBuilder builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings\microsoft.graph.connect
+// ConnectRequestBuilder provides operations to call the connect method.
 type ConnectRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ConnectRequestBuilder struct {
 // ConnectRequestBuilderPostOptions options for Post
 type ConnectRequestBuilderPostOptions struct {
     // 
-    Body *ConnectRequestBody;
+    Body ConnectRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -39,6 +39,9 @@ func NewConnectResponse()(*ConnectResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateConnectResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConnectResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConnectResponse) GetAdditionalData()(map[string]interface{}) {
@@ -103,6 +106,13 @@ func (m *ConnectResponse) SetChromeOSOnboardingStatus(value *i535684e11b5500196e
         m.chromeOSOnboardingStatus = value
     }
 }
+// ConnectResponseable 
+type ConnectResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetChromeOSOnboardingStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChromeOSOnboardingStatus)
+    SetChromeOSOnboardingStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChromeOSOnboardingStatus)()
+}
 // NewConnectRequestBuilderInternal instantiates a new ConnectRequestBuilder and sets the default values.
 func NewConnectRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectRequestBuilder) {
     m := &ConnectRequestBuilder{
@@ -112,7 +122,7 @@ func NewConnectRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -141,14 +151,14 @@ func (m *ConnectRequestBuilder) CreatePostRequestInformation(options *ConnectReq
     return requestInfo, nil
 }
 // Post invoke action connect
-func (m *ConnectRequestBuilder) Post(options *ConnectRequestBuilderPostOptions)(*ConnectResponse, error) {
+func (m *ConnectRequestBuilder) Post(options *ConnectRequestBuilderPostOptions)(ConnectResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateConnectResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*ConnectResponse), nil
+    return res.(ConnectResponseable), nil
 }

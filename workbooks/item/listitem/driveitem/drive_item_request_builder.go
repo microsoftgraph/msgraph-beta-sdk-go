@@ -2,12 +2,12 @@ package driveitem
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    ie183e13f8bda36884afa5031456648e5750e8326cc330955fd616d2b55787b82 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/listitem/driveitem/ref"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    ib157d4a97fc08b283d068adb698eb6e4483ae6bc1092d4bdbebc893f244845ad "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/listitem/driveitem/content"
 )
 
-// DriveItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\driveItem
+// DriveItemRequestBuilder provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -52,6 +52,9 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *DriveItemRequestBuilder) Content()(*ib157d4a97fc08b283d068adb698eb6e4483ae6bc1092d4bdbebc893f244845ad.ContentRequestBuilder) {
+    return ib157d4a97fc08b283d068adb698eb6e4483ae6bc1092d4bdbebc893f244845ad.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *DriveItemRequestBuilder) CreateGetRequestInformation(options *DriveItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -74,17 +77,18 @@ func (m *DriveItemRequestBuilder) CreateGetRequestInformation(options *DriveItem
     return requestInfo, nil
 }
 // Get for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-func (m *DriveItemRequestBuilder) Get(options *DriveItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem, error) {
+func (m *DriveItemRequestBuilder) Get(options *DriveItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDriveItem() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem), nil
-}
-func (m *DriveItemRequestBuilder) Ref()(*ie183e13f8bda36884afa5031456648e5750e8326cc330955fd616d2b55787b82.RefRequestBuilder) {
-    return ie183e13f8bda36884afa5031456648e5750e8326cc330955fd616d2b55787b82.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable), nil
 }

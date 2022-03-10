@@ -2,11 +2,13 @@ package program
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i645d855d59ccc0e8ada9a87334a42017aa4268a76497e609ef04a4dc4f7129f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols/item/program/controls"
+    ic77c811788760bb9fb79ad0b065a812bd7ba21bf9425a6ddbccf3d7eefeedeaa "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols/item/program/controls/item"
 )
 
-// ProgramRequestBuilder builds and executes requests for operations under \programControls\{programControl-id}\program
+// ProgramRequestBuilder provides operations to manage the program property of the microsoft.graph.programControl entity.
 type ProgramRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -45,7 +47,7 @@ type ProgramRequestBuilderGetQueryParameters struct {
 // ProgramRequestBuilderPatchOptions options for Patch
 type ProgramRequestBuilderPatchOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Program;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Programable;
     // Request headers
     H map[string]string;
     // Request options
@@ -62,7 +64,7 @@ func NewProgramRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -72,7 +74,21 @@ func NewProgramRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewProgramRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the program this control is part of.
+func (m *ProgramRequestBuilder) Controls()(*i645d855d59ccc0e8ada9a87334a42017aa4268a76497e609ef04a4dc4f7129f2.ControlsRequestBuilder) {
+    return i645d855d59ccc0e8ada9a87334a42017aa4268a76497e609ef04a4dc4f7129f2.NewControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ControlsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.programControls.item.program.controls.item collection
+func (m *ProgramRequestBuilder) ControlsById(id string)(*ic77c811788760bb9fb79ad0b065a812bd7ba21bf9425a6ddbccf3d7eefeedeaa.ProgramControlItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["programControl_id1"] = id
+    }
+    return ic77c811788760bb9fb79ad0b065a812bd7ba21bf9425a6ddbccf3d7eefeedeaa.NewProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// CreateDeleteRequestInformation delete navigation property program for programControls
 func (m *ProgramRequestBuilder) CreateDeleteRequestInformation(options *ProgramRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +125,7 @@ func (m *ProgramRequestBuilder) CreateGetRequestInformation(options *ProgramRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the program this control is part of.
+// CreatePatchRequestInformation update the navigation property program in programControls
 func (m *ProgramRequestBuilder) CreatePatchRequestInformation(options *ProgramRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +143,49 @@ func (m *ProgramRequestBuilder) CreatePatchRequestInformation(options *ProgramRe
     }
     return requestInfo, nil
 }
-// Delete the program this control is part of.
+// Delete delete navigation property program for programControls
 func (m *ProgramRequestBuilder) Delete(options *ProgramRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get the program this control is part of.
-func (m *ProgramRequestBuilder) Get(options *ProgramRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Program, error) {
+func (m *ProgramRequestBuilder) Get(options *ProgramRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Programable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewProgram() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateProgramFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Program), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Programable), nil
 }
-// Patch the program this control is part of.
+// Patch update the navigation property program in programControls
 func (m *ProgramRequestBuilder) Patch(options *ProgramRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
         return err
     }

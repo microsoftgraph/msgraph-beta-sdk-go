@@ -5,13 +5,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicySetAssignment 
+// PolicySetAssignment provides operations to manage the deviceAppManagement singleton.
 type PolicySetAssignment struct {
     Entity
     // Last modified time of the PolicySetAssignment.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The target group of PolicySetAssignment
-    target *DeviceAndAppManagementAssignmentTarget;
+    target DeviceAndAppManagementAssignmentTargetable;
 }
 // NewPolicySetAssignment instantiates a new policySetAssignment and sets the default values.
 func NewPolicySetAssignment()(*PolicySetAssignment) {
@@ -20,21 +20,9 @@ func NewPolicySetAssignment()(*PolicySetAssignment) {
     }
     return m
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySetAssignment.
-func (m *PolicySetAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
-}
-// GetTarget gets the target property value. The target group of PolicySetAssignment
-func (m *PolicySetAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+// CreatePolicySetAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePolicySetAssignmentFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPolicySetAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PolicySetAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
@@ -50,16 +38,32 @@ func (m *PolicySetAssignment) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceAndAppManagementAssignmentTarget() })
+        val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTarget(val.(*DeviceAndAppManagementAssignmentTarget))
+            m.SetTarget(val.(DeviceAndAppManagementAssignmentTargetable))
         }
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySetAssignment.
+func (m *PolicySetAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetTarget gets the target property value. The target group of PolicySetAssignment
+func (m *PolicySetAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.target
+    }
 }
 func (m *PolicySetAssignment) IsNil()(bool) {
     return m == nil
@@ -91,7 +95,7 @@ func (m *PolicySetAssignment) SetLastModifiedDateTime(value *i336074805fc853987a
     }
 }
 // SetTarget sets the target property value. The target group of PolicySetAssignment
-func (m *PolicySetAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
+func (m *PolicySetAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
     if m != nil {
         m.target = value
     }

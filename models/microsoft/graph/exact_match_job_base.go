@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchJobBase 
+// ExactMatchJobBase provides operations to manage the dataClassificationService singleton.
 type ExactMatchJobBase struct {
     Entity
     // 
@@ -13,7 +13,7 @@ type ExactMatchJobBase struct {
     // 
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    error *ClassificationError;
+    error ClassificationErrorable;
     // 
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -25,6 +25,10 @@ func NewExactMatchJobBase()(*ExactMatchJobBase) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateExactMatchJobBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateExactMatchJobBaseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewExactMatchJobBase(), nil
 }
 // GetCompletionDateTime gets the completionDateTime property value. 
 func (m *ExactMatchJobBase) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -43,27 +47,11 @@ func (m *ExactMatchJobBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad
     }
 }
 // GetError gets the error property value. 
-func (m *ExactMatchJobBase) GetError()(*ClassificationError) {
+func (m *ExactMatchJobBase) GetError()(ClassificationErrorable) {
     if m == nil {
         return nil
     } else {
         return m.error
-    }
-}
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. 
-func (m *ExactMatchJobBase) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
-}
-// GetStartDateTime gets the startDateTime property value. 
-func (m *ExactMatchJobBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -90,12 +78,12 @@ func (m *ExactMatchJobBase) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewClassificationError() })
+        val, err := n.GetObjectValue(CreateClassificationErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetError(val.(*ClassificationError))
+            m.SetError(val.(ClassificationErrorable))
         }
         return nil
     }
@@ -120,6 +108,22 @@ func (m *ExactMatchJobBase) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. 
+func (m *ExactMatchJobBase) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastUpdatedDateTime
+    }
+}
+// GetStartDateTime gets the startDateTime property value. 
+func (m *ExactMatchJobBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
 }
 func (m *ExactMatchJobBase) IsNil()(bool) {
     return m == nil
@@ -175,7 +179,7 @@ func (m *ExactMatchJobBase) SetCreationDateTime(value *i336074805fc853987abe6f7f
     }
 }
 // SetError sets the error property value. 
-func (m *ExactMatchJobBase) SetError(value *ClassificationError)() {
+func (m *ExactMatchJobBase) SetError(value ClassificationErrorable)() {
     if m != nil {
         m.error = value
     }

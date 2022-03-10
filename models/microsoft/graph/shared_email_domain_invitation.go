@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SharedEmailDomainInvitation 
+// SharedEmailDomainInvitation provides operations to manage the collection of domain entities.
 type SharedEmailDomainInvitation struct {
     Entity
     // 
@@ -22,28 +22,16 @@ func NewSharedEmailDomainInvitation()(*SharedEmailDomainInvitation) {
     }
     return m
 }
+// CreateSharedEmailDomainInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateSharedEmailDomainInvitationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewSharedEmailDomainInvitation(), nil
+}
 // GetExpiryTime gets the expiryTime property value. 
 func (m *SharedEmailDomainInvitation) GetExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
     } else {
         return m.expiryTime
-    }
-}
-// GetInvitationDomain gets the invitationDomain property value. 
-func (m *SharedEmailDomainInvitation) GetInvitationDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitationDomain
-    }
-}
-// GetInvitationStatus gets the invitationStatus property value. 
-func (m *SharedEmailDomainInvitation) GetInvitationStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitationStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -80,6 +68,22 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     return res
+}
+// GetInvitationDomain gets the invitationDomain property value. 
+func (m *SharedEmailDomainInvitation) GetInvitationDomain()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitationDomain
+    }
+}
+// GetInvitationStatus gets the invitationStatus property value. 
+func (m *SharedEmailDomainInvitation) GetInvitationStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.invitationStatus
+    }
 }
 func (m *SharedEmailDomainInvitation) IsNil()(bool) {
     return m == nil

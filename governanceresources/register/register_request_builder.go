@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// RegisterRequestBuilder builds and executes requests for operations under \governanceResources\microsoft.graph.register
+// RegisterRequestBuilder provides operations to call the register method.
 type RegisterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RegisterRequestBuilder struct {
 // RegisterRequestBuilderPostOptions options for Post
 type RegisterRequestBuilderPostOptions struct {
     // 
-    Body *RegisterRequestBody;
+    Body RegisterRequestBodyable;
     // Request headers
     H map[string]string;
     // Request options
@@ -33,7 +33,7 @@ func NewRegisterRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -67,7 +67,7 @@ func (m *RegisterRequestBuilder) Post(options *RegisterRequestBuilderPostOptions
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
     if err != nil {
         return err
     }

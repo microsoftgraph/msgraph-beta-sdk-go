@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChannelModerationSettings 
+// ChannelModerationSettings provides operations to manage the compliance singleton.
 type ChannelModerationSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,6 +23,10 @@ func NewChannelModerationSettings()(*ChannelModerationSettings) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateChannelModerationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateChannelModerationSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewChannelModerationSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelModerationSettings) GetAdditionalData()(map[string]interface{}) {
@@ -46,22 +50,6 @@ func (m *ChannelModerationSettings) GetAllowNewMessageFromConnectors()(*bool) {
         return nil
     } else {
         return m.allowNewMessageFromConnectors
-    }
-}
-// GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
-func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replyRestriction
-    }
-}
-// GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
-func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*UserNewMessageRestriction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userNewMessageRestriction
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +96,22 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     return res
+}
+// GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
+func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.replyRestriction
+    }
+}
+// GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
+func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*UserNewMessageRestriction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userNewMessageRestriction
+    }
 }
 func (m *ChannelModerationSettings) IsNil()(bool) {
     return m == nil

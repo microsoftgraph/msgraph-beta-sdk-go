@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BookingPerson 
+// BookingPerson provides operations to manage the collection of bookingBusiness entities.
 type BookingPerson struct {
     BookingNamedEntity
     // The email address of the person.
@@ -16,6 +16,10 @@ func NewBookingPerson()(*BookingPerson) {
         BookingNamedEntity: *NewBookingNamedEntity(),
     }
     return m
+}
+// CreateBookingPersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBookingPersonFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBookingPerson(), nil
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) GetEmailAddress()(*string) {

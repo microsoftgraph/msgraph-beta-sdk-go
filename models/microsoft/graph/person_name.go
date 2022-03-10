@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonName 
+// PersonName provides operations to manage the compliance singleton.
 type PersonName struct {
     ItemFacet
     // Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
@@ -24,7 +24,7 @@ type PersonName struct {
     // Nickname of the user.
     nickname *string;
     // Guidance on how to pronounce the users name.
-    pronunciation *PersonNamePronounciation;
+    pronunciation PersonNamePronounciationable;
     // Designators used after the users name (eg: PhD.)
     suffix *string;
     // Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
@@ -37,92 +37,16 @@ func NewPersonName()(*PersonName) {
     }
     return m
 }
+// CreatePersonNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePersonNameFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewPersonName(), nil
+}
 // GetDisplayName gets the displayName property value. Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
 func (m *PersonName) GetDisplayName()(*string) {
     if m == nil {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetFirst gets the first property value. First name of the user.
-func (m *PersonName) GetFirst()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.first
-    }
-}
-// GetInitials gets the initials property value. Initials of the user.
-func (m *PersonName) GetInitials()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initials
-    }
-}
-// GetLanguageTag gets the languageTag property value. Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.
-func (m *PersonName) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
-}
-// GetLast gets the last property value. Last name of the user.
-func (m *PersonName) GetLast()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.last
-    }
-}
-// GetMaiden gets the maiden property value. Maiden name of the user.
-func (m *PersonName) GetMaiden()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maiden
-    }
-}
-// GetMiddle gets the middle property value. Middle name of the user.
-func (m *PersonName) GetMiddle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middle
-    }
-}
-// GetNickname gets the nickname property value. Nickname of the user.
-func (m *PersonName) GetNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nickname
-    }
-}
-// GetPronunciation gets the pronunciation property value. Guidance on how to pronounce the users name.
-func (m *PersonName) GetPronunciation()(*PersonNamePronounciation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pronunciation
-    }
-}
-// GetSuffix gets the suffix property value. Designators used after the users name (eg: PhD.)
-func (m *PersonName) GetSuffix()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suffix
-    }
-}
-// GetTitle gets the title property value. Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
-func (m *PersonName) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -209,12 +133,12 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["pronunciation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPersonNamePronounciation() })
+        val, err := n.GetObjectValue(CreatePersonNamePronounciationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPronunciation(val.(*PersonNamePronounciation))
+            m.SetPronunciation(val.(PersonNamePronounciationable))
         }
         return nil
     }
@@ -239,6 +163,86 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     return res
+}
+// GetFirst gets the first property value. First name of the user.
+func (m *PersonName) GetFirst()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.first
+    }
+}
+// GetInitials gets the initials property value. Initials of the user.
+func (m *PersonName) GetInitials()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.initials
+    }
+}
+// GetLanguageTag gets the languageTag property value. Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.
+func (m *PersonName) GetLanguageTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTag
+    }
+}
+// GetLast gets the last property value. Last name of the user.
+func (m *PersonName) GetLast()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.last
+    }
+}
+// GetMaiden gets the maiden property value. Maiden name of the user.
+func (m *PersonName) GetMaiden()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maiden
+    }
+}
+// GetMiddle gets the middle property value. Middle name of the user.
+func (m *PersonName) GetMiddle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.middle
+    }
+}
+// GetNickname gets the nickname property value. Nickname of the user.
+func (m *PersonName) GetNickname()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nickname
+    }
+}
+// GetPronunciation gets the pronunciation property value. Guidance on how to pronounce the users name.
+func (m *PersonName) GetPronunciation()(PersonNamePronounciationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pronunciation
+    }
+}
+// GetSuffix gets the suffix property value. Designators used after the users name (eg: PhD.)
+func (m *PersonName) GetSuffix()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.suffix
+    }
+}
+// GetTitle gets the title property value. Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
+func (m *PersonName) GetTitle()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.title
+    }
 }
 func (m *PersonName) IsNil()(bool) {
     return m == nil
@@ -366,7 +370,7 @@ func (m *PersonName) SetNickname(value *string)() {
     }
 }
 // SetPronunciation sets the pronunciation property value. Guidance on how to pronounce the users name.
-func (m *PersonName) SetPronunciation(value *PersonNamePronounciation)() {
+func (m *PersonName) SetPronunciation(value PersonNamePronounciationable)() {
     if m != nil {
         m.pronunciation = value
     }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConfigurationManagerClientEnabledFeatures 
+// ConfigurationManagerClientEnabledFeatures provides operations to manage the deviceManagement singleton.
 type ConfigurationManagerClientEnabledFeatures struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -31,6 +31,10 @@ func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientE
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+// CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewConfigurationManagerClientEnabledFeatures(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientEnabledFeatures) GetAdditionalData()(map[string]interface{}) {
@@ -62,46 +66,6 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetEndpointProtection()(*boo
         return nil
     } else {
         return m.endpointProtection
-    }
-}
-// GetInventory gets the inventory property value. Whether inventory is managed by Intune
-func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventory
-    }
-}
-// GetModernApps gets the modernApps property value. Whether modern application is managed by Intune
-func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modernApps
-    }
-}
-// GetOfficeApps gets the officeApps property value. Whether Office application is managed by Intune
-func (m *ConfigurationManagerClientEnabledFeatures) GetOfficeApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeApps
-    }
-}
-// GetResourceAccess gets the resourceAccess property value. Whether resource access is managed by Intune
-func (m *ConfigurationManagerClientEnabledFeatures) GetResourceAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAccess
-    }
-}
-// GetWindowsUpdateForBusiness gets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
-func (m *ConfigurationManagerClientEnabledFeatures) GetWindowsUpdateForBusiness()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsUpdateForBusiness
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -188,6 +152,46 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         return nil
     }
     return res
+}
+// GetInventory gets the inventory property value. Whether inventory is managed by Intune
+func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.inventory
+    }
+}
+// GetModernApps gets the modernApps property value. Whether modern application is managed by Intune
+func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modernApps
+    }
+}
+// GetOfficeApps gets the officeApps property value. Whether Office application is managed by Intune
+func (m *ConfigurationManagerClientEnabledFeatures) GetOfficeApps()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeApps
+    }
+}
+// GetResourceAccess gets the resourceAccess property value. Whether resource access is managed by Intune
+func (m *ConfigurationManagerClientEnabledFeatures) GetResourceAccess()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceAccess
+    }
+}
+// GetWindowsUpdateForBusiness gets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
+func (m *ConfigurationManagerClientEnabledFeatures) GetWindowsUpdateForBusiness()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsUpdateForBusiness
+    }
 }
 func (m *ConfigurationManagerClientEnabledFeatures) IsNil()(bool) {
     return m == nil

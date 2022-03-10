@@ -2,11 +2,12 @@ package userexperienceanalyticsdevicestartupprocesses
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i62496476859b2ccdf3c3da324f0bcbc32103ee4c3af5e089c4a7cfa1928bd5f6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicestartupprocesses/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceStartupProcesses
+// UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
 type UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +49,7 @@ type UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderGetQueryParamete
 // UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcess;
+    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessable;
     // Request headers
     H map[string]string;
     // Request options
@@ -65,7 +66,7 @@ func NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -74,6 +75,9 @@ func NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilder(rawUrl strin
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) Count()(*i62496476859b2ccdf3c3da324f0bcbc32103ee4c3af5e089c4a7cfa1928bd5f6.CountRequestBuilder) {
+    return i62496476859b2ccdf3c3da324f0bcbc32103ee4c3af5e089c4a7cfa1928bd5f6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation user experience analytics device Startup Processes
 func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -95,7 +99,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation user experience analytics device Startup Processes
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
 func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,26 +118,34 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) CreatePost
     return requestInfo, nil
 }
 // Get user experience analytics device Startup Processes
-func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) Get(options *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderGetOptions)(*UserExperienceAnalyticsDeviceStartupProcessesResponse, error) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) Get(options *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsDeviceStartupProcessesResponse() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsDeviceStartupProcessCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*UserExperienceAnalyticsDeviceStartupProcessesResponse), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessCollectionResponseable), nil
 }
-// Post user experience analytics device Startup Processes
-func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) Post(options *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcess, error) {
+// Post create new navigation property to userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) Post(options *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewUserExperienceAnalyticsDeviceStartupProcess() }, nil, nil)
+    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserExperienceAnalyticsDeviceStartupProcessFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcess), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessable), nil
 }

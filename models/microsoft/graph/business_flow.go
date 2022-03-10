@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BusinessFlow 
+// BusinessFlow provides operations to manage the collection of approvalWorkflowProvider entities.
 type BusinessFlow struct {
     Entity
     // 
@@ -16,7 +16,7 @@ type BusinessFlow struct {
     // 
     displayName *string;
     // 
-    policy *GovernancePolicy;
+    policy GovernancePolicyable;
     // 
     policyTemplateId *string;
     // 
@@ -24,7 +24,7 @@ type BusinessFlow struct {
     // 
     schemaId *string;
     // 
-    settings *BusinessFlowSettings;
+    settings BusinessFlowSettingsable;
 }
 // NewBusinessFlow instantiates a new businessFlow and sets the default values.
 func NewBusinessFlow()(*BusinessFlow) {
@@ -32,6 +32,10 @@ func NewBusinessFlow()(*BusinessFlow) {
         Entity: *NewEntity(),
     }
     return m
+}
+// CreateBusinessFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateBusinessFlowFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewBusinessFlow(), nil
 }
 // GetCustomData gets the customData property value. 
 func (m *BusinessFlow) GetCustomData()(*string) {
@@ -63,46 +67,6 @@ func (m *BusinessFlow) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
-    }
-}
-// GetPolicy gets the policy property value. 
-func (m *BusinessFlow) GetPolicy()(*GovernancePolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policy
-    }
-}
-// GetPolicyTemplateId gets the policyTemplateId property value. 
-func (m *BusinessFlow) GetPolicyTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTemplateId
-    }
-}
-// GetRecordVersion gets the recordVersion property value. 
-func (m *BusinessFlow) GetRecordVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordVersion
-    }
-}
-// GetSchemaId gets the schemaId property value. 
-func (m *BusinessFlow) GetSchemaId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schemaId
-    }
-}
-// GetSettings gets the settings property value. 
-func (m *BusinessFlow) GetSettings()(*BusinessFlowSettings) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -149,12 +113,12 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["policy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGovernancePolicy() })
+        val, err := n.GetObjectValue(CreateGovernancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPolicy(val.(*GovernancePolicy))
+            m.SetPolicy(val.(GovernancePolicyable))
         }
         return nil
     }
@@ -189,16 +153,56 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBusinessFlowSettings() })
+        val, err := n.GetObjectValue(CreateBusinessFlowSettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettings(val.(*BusinessFlowSettings))
+            m.SetSettings(val.(BusinessFlowSettingsable))
         }
         return nil
     }
     return res
+}
+// GetPolicy gets the policy property value. 
+func (m *BusinessFlow) GetPolicy()(GovernancePolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policy
+    }
+}
+// GetPolicyTemplateId gets the policyTemplateId property value. 
+func (m *BusinessFlow) GetPolicyTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.policyTemplateId
+    }
+}
+// GetRecordVersion gets the recordVersion property value. 
+func (m *BusinessFlow) GetRecordVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recordVersion
+    }
+}
+// GetSchemaId gets the schemaId property value. 
+func (m *BusinessFlow) GetSchemaId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.schemaId
+    }
+}
+// GetSettings gets the settings property value. 
+func (m *BusinessFlow) GetSettings()(BusinessFlowSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
 }
 func (m *BusinessFlow) IsNil()(bool) {
     return m == nil
@@ -290,7 +294,7 @@ func (m *BusinessFlow) SetDisplayName(value *string)() {
     }
 }
 // SetPolicy sets the policy property value. 
-func (m *BusinessFlow) SetPolicy(value *GovernancePolicy)() {
+func (m *BusinessFlow) SetPolicy(value GovernancePolicyable)() {
     if m != nil {
         m.policy = value
     }
@@ -314,7 +318,7 @@ func (m *BusinessFlow) SetSchemaId(value *string)() {
     }
 }
 // SetSettings sets the settings property value. 
-func (m *BusinessFlow) SetSettings(value *BusinessFlowSettings)() {
+func (m *BusinessFlow) SetSettings(value BusinessFlowSettingsable)() {
     if m != nil {
         m.settings = value
     }

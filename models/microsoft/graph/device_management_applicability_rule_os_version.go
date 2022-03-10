@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementApplicabilityRuleOsVersion 
+// DeviceManagementApplicabilityRuleOsVersion provides operations to manage the deviceManagement singleton.
 type DeviceManagementApplicabilityRuleOsVersion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,44 +24,16 @@ func NewDeviceManagementApplicabilityRuleOsVersion()(*DeviceManagementApplicabil
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewDeviceManagementApplicabilityRuleOsVersion(), nil
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
-    }
-}
-// GetMaxOSVersion gets the maxOSVersion property value. Max OS version for Applicability Rule.
-func (m *DeviceManagementApplicabilityRuleOsVersion) GetMaxOSVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxOSVersion
-    }
-}
-// GetMinOSVersion gets the minOSVersion property value. Min OS version for Applicability Rule.
-func (m *DeviceManagementApplicabilityRuleOsVersion) GetMinOSVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minOSVersion
-    }
-}
-// GetName gets the name property value. Name for object.
-func (m *DeviceManagementApplicabilityRuleOsVersion) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
-}
-// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
-func (m *DeviceManagementApplicabilityRuleOsVersion) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleType
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,6 +80,38 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetMaxOSVersion gets the maxOSVersion property value. Max OS version for Applicability Rule.
+func (m *DeviceManagementApplicabilityRuleOsVersion) GetMaxOSVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maxOSVersion
+    }
+}
+// GetMinOSVersion gets the minOSVersion property value. Min OS version for Applicability Rule.
+func (m *DeviceManagementApplicabilityRuleOsVersion) GetMinOSVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.minOSVersion
+    }
+}
+// GetName gets the name property value. Name for object.
+func (m *DeviceManagementApplicabilityRuleOsVersion) GetName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.name
+    }
+}
+// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+func (m *DeviceManagementApplicabilityRuleOsVersion) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ruleType
+    }
 }
 func (m *DeviceManagementApplicabilityRuleOsVersion) IsNil()(bool) {
     return m == nil

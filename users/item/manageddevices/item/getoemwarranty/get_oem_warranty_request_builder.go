@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GetOemWarrantyRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.getOemWarranty()
+// GetOemWarrantyRequestBuilder provides operations to call the getOemWarranty method.
 type GetOemWarrantyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type GetOemWarrantyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type oemWarranty
-    oemWarranty *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarranty;
+    oemWarranty i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyable;
 }
 // NewGetOemWarrantyResponse instantiates a new getOemWarrantyResponse and sets the default values.
 func NewGetOemWarrantyResponse()(*GetOemWarrantyResponse) {
@@ -37,6 +37,9 @@ func NewGetOemWarrantyResponse()(*GetOemWarrantyResponse) {
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
+}
+func CreateGetOemWarrantyResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewGetOemWarrantyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetOemWarrantyResponse) GetAdditionalData()(map[string]interface{}) {
@@ -46,28 +49,28 @@ func (m *GetOemWarrantyResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetFieldDeserializers the deserialization information for the current model
+func (m *GetOemWarrantyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["oemWarranty"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOemWarrantyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOemWarranty(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyable))
+        }
+        return nil
+    }
+    return res
+}
 // GetOemWarranty gets the oemWarranty property value. Union type representation for type oemWarranty
-func (m *GetOemWarrantyResponse) GetOemWarranty()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarranty) {
+func (m *GetOemWarrantyResponse) GetOemWarranty()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyable) {
     if m == nil {
         return nil
     } else {
         return m.oemWarranty
     }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GetOemWarrantyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["oemWarranty"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOemWarranty() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOemWarranty(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarranty))
-        }
-        return nil
-    }
-    return res
 }
 func (m *GetOemWarrantyResponse) IsNil()(bool) {
     return m == nil
@@ -95,10 +98,17 @@ func (m *GetOemWarrantyResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetOemWarranty sets the oemWarranty property value. Union type representation for type oemWarranty
-func (m *GetOemWarrantyResponse) SetOemWarranty(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarranty)() {
+func (m *GetOemWarrantyResponse) SetOemWarranty(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyable)() {
     if m != nil {
         m.oemWarranty = value
     }
+}
+// GetOemWarrantyResponseable 
+type GetOemWarrantyResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetOemWarranty()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyable)
+    SetOemWarranty(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OemWarrantyable)()
 }
 // NewGetOemWarrantyRequestBuilderInternal instantiates a new GetOemWarrantyRequestBuilder and sets the default values.
 func NewGetOemWarrantyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOemWarrantyRequestBuilder) {
@@ -109,7 +119,7 @@ func NewGetOemWarrantyRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = pathParameters;
+    m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
     return m
 }
@@ -137,14 +147,14 @@ func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformation(options *GetO
     return requestInfo, nil
 }
 // Get invoke function getOemWarranty
-func (m *GetOemWarrantyRequestBuilder) Get(options *GetOemWarrantyRequestBuilderGetOptions)(*GetOemWarrantyResponse, error) {
+func (m *GetOemWarrantyRequestBuilder) Get(options *GetOemWarrantyRequestBuilderGetOptions)(GetOemWarrantyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetOemWarrantyResponse() }, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetOemWarrantyResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*GetOemWarrantyResponse), nil
+    return res.(GetOemWarrantyResponseable), nil
 }

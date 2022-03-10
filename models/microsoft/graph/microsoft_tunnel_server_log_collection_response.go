@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelServerLogCollectionResponse 
+// MicrosoftTunnelServerLogCollectionResponse provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelServerLogCollectionResponse struct {
     Entity
     // The end time of the logs collected
@@ -30,6 +30,10 @@ func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCo
     }
     return m
 }
+// CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+    return NewMicrosoftTunnelServerLogCollectionResponse(), nil
+}
 // GetEndDateTime gets the endDateTime property value. The end time of the logs collected
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -44,46 +48,6 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetExpiryDateTime()(*i33607
         return nil
     } else {
         return m.expiryDateTime
-    }
-}
-// GetRequestDateTime gets the requestDateTime property value. The time when the log collection was requested
-func (m *MicrosoftTunnelServerLogCollectionResponse) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestDateTime
-    }
-}
-// GetServerId gets the serverId property value. ID of the server the log collection is requested upon
-func (m *MicrosoftTunnelServerLogCollectionResponse) GetServerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverId
-    }
-}
-// GetSizeInBytes gets the sizeInBytes property value. The size of the logs in bytes
-func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sizeInBytes
-    }
-}
-// GetStartDateTime gets the startDateTime property value. The start time of the logs collected
-func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
-}
-// GetStatus gets the status property value. The status of log collection. Possible values are: pending, completed, failed.
-func (m *MicrosoftTunnelServerLogCollectionResponse) GetStatus()(*MicrosoftTunnelLogCollectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,6 +124,46 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetRequestDateTime gets the requestDateTime property value. The time when the log collection was requested
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestDateTime
+    }
+}
+// GetServerId gets the serverId property value. ID of the server the log collection is requested upon
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetServerId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.serverId
+    }
+}
+// GetSizeInBytes gets the sizeInBytes property value. The size of the logs in bytes
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sizeInBytes
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The start time of the logs collected
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetStatus gets the status property value. The status of log collection. Possible values are: pending, completed, failed.
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetStatus()(*MicrosoftTunnelLogCollectionStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
 }
 func (m *MicrosoftTunnelServerLogCollectionResponse) IsNil()(bool) {
     return m == nil
