@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Identity provides operations to manage the external singleton.
+// Identity provides operations to manage the collection of externalConnection entities.
 type Identity struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.

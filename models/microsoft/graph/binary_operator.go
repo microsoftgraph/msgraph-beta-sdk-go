@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the external singleton.
+// Provides operations to manage the collection of externalConnection entities.
 type BinaryOperator int
 
 const (
