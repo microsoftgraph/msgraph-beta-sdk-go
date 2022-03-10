@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the compliance singleton.
+// Provides operations to manage the deviceAppManagement singleton.
 type DeviceAndAppManagementAssignmentSource int
 
 const (

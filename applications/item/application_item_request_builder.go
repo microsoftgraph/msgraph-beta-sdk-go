@@ -28,6 +28,7 @@ import (
     i1057b90c33df1436be53367c28118eb82679541523cc8fa16bc6c17493049c8e "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/owners/item"
     i1558b361e5c510a31b1b33eb613e141d243c7a3c850eaad8bb24ad236cf98b57 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/tokenissuancepolicies/item"
     i17d74174c0c203a9690a594729795841599510ec1474d89665b17043a9e520da "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/extensionproperties/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4f78489d134c25005e63ce787c48d42f78dc8cac5bcb1050d310001e92e929de "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/appmanagementpolicies/item"
     i5c358ed7d22542209549181254d6ed489daa984f427bcb9904dccf894d25c561 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/homerealmdiscoverypolicies/item"
     icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/federatedidentitycredentials/item"
@@ -194,8 +195,8 @@ func (m *ApplicationItemRequestBuilder) Delete(options *ApplicationItemRequestBu
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -238,8 +239,8 @@ func (m *ApplicationItemRequestBuilder) Get(options *ApplicationItemRequestBuild
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateApplicationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -291,8 +292,8 @@ func (m *ApplicationItemRequestBuilder) Patch(options *ApplicationItemRequestBui
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

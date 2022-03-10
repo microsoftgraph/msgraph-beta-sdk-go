@@ -6,6 +6,7 @@ import (
     i26a7f8ef2723df7b554c727d88e4c0fade18dfb137078fee4bff0aaadde79d6b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/skills"
     i376a1c9fb041f9485ffc4b05d361c22c731bfc23b1f7d7bd1ee1ccab102bbec4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/websites"
     i3fa49a978d179839dbea3f8dd172662623ea0846568dc802484468eb4f5b89d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/notes"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i46891830191b8b241de7376dce57ac07cfd53ae6fd0013bd8e1e973a36e35d0a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/interests"
     i54063d6549cfffd18152df5918e18636c36e95ba53e40f0a76aab9477de26aa6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/phones"
     i624b8f0e161cffd6542ffd795e358c6db683b8120f9e592078e0ed9f8fed0eca "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/profile/patents"
@@ -241,8 +242,8 @@ func (m *ProfileRequestBuilder) Delete(options *ProfileRequestBuilderDeleteOptio
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -285,8 +286,8 @@ func (m *ProfileRequestBuilder) Get(options *ProfileRequestBuilderGetOptions)(i5
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateProfileFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -357,8 +358,8 @@ func (m *ProfileRequestBuilder) Patch(options *ProfileRequestBuilderPatchOptions
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

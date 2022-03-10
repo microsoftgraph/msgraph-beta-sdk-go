@@ -6,8 +6,8 @@ import (
 
 // ManagedAppProtectionable 
 type ManagedAppProtectionable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     ManagedAppPolicyable
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     GetAllowedDataIngestionLocations()([]ManagedAppDataIngestionLocation)
     GetAllowedDataStorageLocations()([]ManagedAppDataStorageLocation)
     GetAllowedInboundDataTransferSources()(*ManagedAppDataTransferLevel)

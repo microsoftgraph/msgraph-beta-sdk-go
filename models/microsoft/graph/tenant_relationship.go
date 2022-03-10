@@ -11,8 +11,6 @@ type TenantRelationship struct {
     delegatedAdminCustomers []DelegatedAdminCustomerable;
     // 
     delegatedAdminRelationships []DelegatedAdminRelationshipable;
-    // The operations available to interact with the multi-tenant management platform.
-    managedTenants ManagedTenantable;
 }
 // NewTenantRelationship instantiates a new tenantRelationship and sets the default values.
 func NewTenantRelationship()(*TenantRelationship) {
@@ -72,25 +70,7 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["managedTenants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateManagedTenantFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedTenants(val.(ManagedTenantable))
-        }
-        return nil
-    }
     return res
-}
-// GetManagedTenants gets the managedTenants property value. The operations available to interact with the multi-tenant management platform.
-func (m *TenantRelationship) GetManagedTenants()(ManagedTenantable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedTenants
-    }
 }
 func (m *TenantRelationship) IsNil()(bool) {
     return m == nil
@@ -121,12 +101,6 @@ func (m *TenantRelationship) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("managedTenants", m.GetManagedTenants())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDelegatedAdminCustomers sets the delegatedAdminCustomers property value. 
@@ -139,11 +113,5 @@ func (m *TenantRelationship) SetDelegatedAdminCustomers(value []DelegatedAdminCu
 func (m *TenantRelationship) SetDelegatedAdminRelationships(value []DelegatedAdminRelationshipable)() {
     if m != nil {
         m.delegatedAdminRelationships = value
-    }
-}
-// SetManagedTenants sets the managedTenants property value. The operations available to interact with the multi-tenant management platform.
-func (m *TenantRelationship) SetManagedTenants(value ManagedTenantable)() {
-    if m != nil {
-        m.managedTenants = value
     }
 }

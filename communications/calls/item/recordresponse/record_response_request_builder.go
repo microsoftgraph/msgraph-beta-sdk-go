@@ -105,6 +105,13 @@ func (m *RecordResponseResponse) SetRecordOperation(value i535684e11b5500196ecb4
         m.recordOperation = value
     }
 }
+// RecordResponseResponseable 
+type RecordResponseResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetRecordOperation()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordOperationable)
+    SetRecordOperation(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordOperationable)()
+}
 // NewRecordResponseRequestBuilderInternal instantiates a new RecordResponseRequestBuilder and sets the default values.
 func NewRecordResponseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecordResponseRequestBuilder) {
     m := &RecordResponseRequestBuilder{

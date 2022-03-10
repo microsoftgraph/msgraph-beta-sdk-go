@@ -103,6 +103,13 @@ func (m *GetComanagedDevicesSummaryResponse) SetComanagedDevicesSummary(value i5
         m.comanagedDevicesSummary = value
     }
 }
+// GetComanagedDevicesSummaryResponseable 
+type GetComanagedDevicesSummaryResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetComanagedDevicesSummary()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagedDevicesSummaryable)
+    SetComanagedDevicesSummary(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ComanagedDevicesSummaryable)()
+}
 // NewGetComanagedDevicesSummaryRequestBuilderInternal instantiates a new GetComanagedDevicesSummaryRequestBuilder and sets the default values.
 func NewGetComanagedDevicesSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetComanagedDevicesSummaryRequestBuilder) {
     m := &GetComanagedDevicesSummaryRequestBuilder{

@@ -2,7 +2,6 @@ package addtoreviewset
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
@@ -13,7 +12,7 @@ type AddToReviewSetRequestBody struct {
     // 
     additionalDataOptions *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.AdditionalDataOptions;
     // 
-    sourceCollection i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SourceCollectionable;
+    sourceCollection i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceCollectionable;
 }
 // NewAddToReviewSetRequestBody instantiates a new addToReviewSetRequestBody and sets the default values.
 func NewAddToReviewSetRequestBody()(*AddToReviewSetRequestBody) {
@@ -56,19 +55,19 @@ func (m *AddToReviewSetRequestBody) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["sourceCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSourceCollectionFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CreateSourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceCollection(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SourceCollectionable))
+            m.SetSourceCollection(val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceCollectionable))
         }
         return nil
     }
     return res
 }
 // GetSourceCollection gets the sourceCollection property value. 
-func (m *AddToReviewSetRequestBody) GetSourceCollection()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SourceCollectionable) {
+func (m *AddToReviewSetRequestBody) GetSourceCollection()(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceCollectionable) {
     if m == nil {
         return nil
     } else {
@@ -114,7 +113,7 @@ func (m *AddToReviewSetRequestBody) SetAdditionalDataOptions(value *i2756dc8c91c
     }
 }
 // SetSourceCollection sets the sourceCollection property value. 
-func (m *AddToReviewSetRequestBody) SetSourceCollection(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SourceCollectionable)() {
+func (m *AddToReviewSetRequestBody) SetSourceCollection(value i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceCollectionable)() {
     if m != nil {
         m.sourceCollection = value
     }

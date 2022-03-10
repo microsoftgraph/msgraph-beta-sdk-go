@@ -2,9 +2,10 @@ package sensitivitylabels
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i2166bc7b786fde2109d924f08f6296c65e77de9464021480f8892fbdf99b3f35 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection/sensitivitylabels/extractcontentlabel"
+    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
     i29fcfaae13ef83638781424dc061005bcd763ce8206749ffada5d6a890ec642d "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection/sensitivitylabels/evaluateclassificationresults"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i59437693d0d5b6e9457415ed26971e0b814d891ab580bef2e27a0da41fc85dc2 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection/sensitivitylabels/count"
     i957182eebe9c6b496009074d85aad428d49f0594ec0d6b6159474b3f4773707a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection/sensitivitylabels/evaluateapplication"
     ibcbf9e301f23628c55f07a925c00eab304609586bd89ac974cf3dc82de40422e "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection/sensitivitylabels/evaluateremoval"
@@ -52,7 +53,7 @@ type SensitivityLabelsRequestBuilderGetQueryParameters struct {
 // SensitivityLabelsRequestBuilderPostOptions options for Post
 type SensitivityLabelsRequestBuilderPostOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabelable;
+    Body i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.SensitivityLabelable;
     // Request headers
     H map[string]string;
     // Request options
@@ -133,34 +134,34 @@ func (m *SensitivityLabelsRequestBuilder) ExtractContentLabel()(*i2166bc7b786fde
     return i2166bc7b786fde2109d924f08f6296c65e77de9464021480f8892fbdf99b3f35.NewExtractContentLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get sensitivityLabels from security
-func (m *SensitivityLabelsRequestBuilder) Get(options *SensitivityLabelsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabelCollectionResponseable, error) {
+func (m *SensitivityLabelsRequestBuilder) Get(options *SensitivityLabelsRequestBuilderGetOptions)(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.SensitivityLabelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSensitivityLabelCollectionResponseFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateSensitivityLabelCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabelCollectionResponseable), nil
+    return res.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.SensitivityLabelCollectionResponseable), nil
 }
 // Post create new navigation property to sensitivityLabels for security
-func (m *SensitivityLabelsRequestBuilder) Post(options *SensitivityLabelsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabelable, error) {
+func (m *SensitivityLabelsRequestBuilder) Post(options *SensitivityLabelsRequestBuilderPostOptions)(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.SensitivityLabelable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSensitivityLabelFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateSensitivityLabelFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabelable), nil
+    return res.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.SensitivityLabelable), nil
 }

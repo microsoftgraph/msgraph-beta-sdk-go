@@ -45,8 +45,6 @@ type Site struct {
     siteCollection SiteCollectionable;
     // The collection of the sub-sites under this site.
     sites []Siteable;
-    // The default termStore under this site.
-    termStore Storeable;
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
@@ -356,16 +354,6 @@ func (m *Site) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
-    res["termStore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateStoreFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTermStore(val.(Storeable))
-        }
-        return nil
-    }
     return res
 }
 // GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
@@ -454,14 +442,6 @@ func (m *Site) GetSites()([]Siteable) {
         return nil
     } else {
         return m.sites
-    }
-}
-// GetTermStore gets the termStore property value. The default termStore under this site.
-func (m *Site) GetTermStore()(Storeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termStore
     }
 }
 func (m *Site) IsNil()(bool) {
@@ -627,12 +607,6 @@ func (m *Site) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("termStore", m.GetTermStore())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
@@ -747,11 +721,5 @@ func (m *Site) SetSiteCollection(value SiteCollectionable)() {
 func (m *Site) SetSites(value []Siteable)() {
     if m != nil {
         m.sites = value
-    }
-}
-// SetTermStore sets the termStore property value. The default termStore under this site.
-func (m *Site) SetTermStore(value Storeable)() {
-    if m != nil {
-        m.termStore = value
     }
 }

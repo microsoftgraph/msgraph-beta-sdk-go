@@ -34,6 +34,7 @@ import (
     i063566d8d9a1b83cc0d5fbfad4c9e22b520c41edfe64764f7ff8d275874b02a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/ownedobjects/item"
     i234e2b441eb6121a8af32a7bac5d32752edca00c3103fbe6cf51997a556c95a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/item"
     i30a88e502a1b36c0ef991fe606f7b7a5334452187e51f492fbbf02a9917ac38c "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/createdobjects/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i5955bca5a205363dbadc089d22ca39765ce0b01bb5f74231714bd9fd47f3f79b "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/tokenlifetimepolicies/item"
     i62a4342854a4da102701b12124cb86be14b4c17b8b8691f57c0ae992cd399674 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/endpoints/item"
     i6a015459333573414a123fba74a4d57f7c21b624c5b2e738ca971c7cebb05410 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/tokenissuancepolicies/item"
@@ -274,8 +275,8 @@ func (m *ServicePrincipalItemRequestBuilder) Delete(options *ServicePrincipalIte
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -321,8 +322,8 @@ func (m *ServicePrincipalItemRequestBuilder) Get(options *ServicePrincipalItemRe
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateServicePrincipalFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -430,8 +431,8 @@ func (m *ServicePrincipalItemRequestBuilder) Patch(options *ServicePrincipalItem
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

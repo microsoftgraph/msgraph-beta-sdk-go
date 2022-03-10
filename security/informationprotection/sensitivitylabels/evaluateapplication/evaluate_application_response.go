@@ -2,7 +2,7 @@ package evaluateapplication
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
 )
 
 // EvaluateApplicationResponse provides operations to call the evaluateApplication method.
@@ -10,7 +10,7 @@ type EvaluateApplicationResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionActionable;
+    value []i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.InformationProtectionActionable;
 }
 // NewEvaluateApplicationResponse instantiates a new evaluateApplicationResponse and sets the default values.
 func NewEvaluateApplicationResponse()(*EvaluateApplicationResponse) {
@@ -35,14 +35,14 @@ func (m *EvaluateApplicationResponse) GetAdditionalData()(map[string]interface{}
 func (m *EvaluateApplicationResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateInformationProtectionActionFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateInformationProtectionActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionActionable, len(val))
+            res := make([]i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.InformationProtectionActionable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionActionable)
+                res[i] = v.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.InformationProtectionActionable)
             }
             m.SetValue(res)
         }
@@ -51,7 +51,7 @@ func (m *EvaluateApplicationResponse) GetFieldDeserializers()(map[string]func(in
     return res
 }
 // GetValue gets the value property value. 
-func (m *EvaluateApplicationResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionActionable) {
+func (m *EvaluateApplicationResponse) GetValue()([]i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.InformationProtectionActionable) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +88,7 @@ func (m *EvaluateApplicationResponse) SetAdditionalData(value map[string]interfa
     }
 }
 // SetValue sets the value property value. 
-func (m *EvaluateApplicationResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionActionable)() {
+func (m *EvaluateApplicationResponse) SetValue(value []i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.InformationProtectionActionable)() {
     if m != nil {
         m.value = value
     }

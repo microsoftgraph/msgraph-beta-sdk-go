@@ -10,6 +10,7 @@ import (
     i332f46d9c7722cf45bd813ad625ff9365b88c83dacb95203737d7b2c420620d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoicelines"
     i39cfe575a2df965e199497b478ce23488c2f17f202a1ef77b208a12cad55f732 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/currencies"
     i4150f690ea3d8f1505214d237ce4d724022a2128b537709f0ee5446c49db5f18 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/companyinformation"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4daeb4853bc59f25aaa8ca4b3cb947d07e94af7f8f723a94381dab39c2e03c86 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/journals"
     i57a164edcc262a1e7d0cc54eccb32cb5b3aba7f6bc58654ca5407f5ea88e4560 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/customers"
     i5850b0e5e17f88c9d6f7fe7ed58df91a7a58ed68a07fe2e45383c1f95826ebb1 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemos"
@@ -329,8 +330,8 @@ func (m *CompanyItemRequestBuilder) Delete(options *CompanyItemRequestBuilderDel
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -401,8 +402,8 @@ func (m *CompanyItemRequestBuilder) Get(options *CompanyItemRequestBuilderGetOpt
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCompanyFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -473,8 +474,8 @@ func (m *CompanyItemRequestBuilder) Patch(options *CompanyItemRequestBuilderPatc
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

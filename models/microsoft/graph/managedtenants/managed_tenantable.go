@@ -1,0 +1,60 @@
+package managedtenants
+
+import (
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+)
+
+// ManagedTenantable 
+type ManagedTenantable interface {
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entityable
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetAggregatedPolicyCompliances()([]AggregatedPolicyComplianceable)
+    GetAuditEvents()([]AuditEventable)
+    GetCloudPcConnections()([]CloudPcConnectionable)
+    GetCloudPcDevices()([]CloudPcDeviceable)
+    GetCloudPcsOverview()([]CloudPcOverviewable)
+    GetConditionalAccessPolicyCoverages()([]ConditionalAccessPolicyCoverageable)
+    GetCredentialUserRegistrationsSummaries()([]CredentialUserRegistrationsSummaryable)
+    GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable)
+    GetManagedDeviceCompliances()([]ManagedDeviceComplianceable)
+    GetManagedDeviceComplianceTrends()([]ManagedDeviceComplianceTrendable)
+    GetManagementActions()([]ManagementActionable)
+    GetManagementActionTenantDeploymentStatuses()([]ManagementActionTenantDeploymentStatusable)
+    GetManagementIntents()([]ManagementIntentable)
+    GetManagementTemplateCollections()([]ManagementTemplateCollectionable)
+    GetManagementTemplates()([]ManagementTemplateable)
+    GetManagementTemplateSteps()([]ManagementTemplateStepable)
+    GetManagementTemplateStepVersions()([]ManagementTemplateStepVersionable)
+    GetTenantGroups()([]TenantGroupable)
+    GetTenants()([]Tenantable)
+    GetTenantsCustomizedInformation()([]TenantCustomizedInformationable)
+    GetTenantsDetailedInformation()([]TenantDetailedInformationable)
+    GetTenantTags()([]TenantTagable)
+    GetWindowsDeviceMalwareStates()([]WindowsDeviceMalwareStateable)
+    GetWindowsProtectionStates()([]WindowsProtectionStateable)
+    SetAggregatedPolicyCompliances(value []AggregatedPolicyComplianceable)()
+    SetAuditEvents(value []AuditEventable)()
+    SetCloudPcConnections(value []CloudPcConnectionable)()
+    SetCloudPcDevices(value []CloudPcDeviceable)()
+    SetCloudPcsOverview(value []CloudPcOverviewable)()
+    SetConditionalAccessPolicyCoverages(value []ConditionalAccessPolicyCoverageable)()
+    SetCredentialUserRegistrationsSummaries(value []CredentialUserRegistrationsSummaryable)()
+    SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummaryable)()
+    SetManagedDeviceCompliances(value []ManagedDeviceComplianceable)()
+    SetManagedDeviceComplianceTrends(value []ManagedDeviceComplianceTrendable)()
+    SetManagementActions(value []ManagementActionable)()
+    SetManagementActionTenantDeploymentStatuses(value []ManagementActionTenantDeploymentStatusable)()
+    SetManagementIntents(value []ManagementIntentable)()
+    SetManagementTemplateCollections(value []ManagementTemplateCollectionable)()
+    SetManagementTemplates(value []ManagementTemplateable)()
+    SetManagementTemplateSteps(value []ManagementTemplateStepable)()
+    SetManagementTemplateStepVersions(value []ManagementTemplateStepVersionable)()
+    SetTenantGroups(value []TenantGroupable)()
+    SetTenants(value []Tenantable)()
+    SetTenantsCustomizedInformation(value []TenantCustomizedInformationable)()
+    SetTenantsDetailedInformation(value []TenantDetailedInformationable)()
+    SetTenantTags(value []TenantTagable)()
+    SetWindowsDeviceMalwareStates(value []WindowsDeviceMalwareStateable)()
+    SetWindowsProtectionStates(value []WindowsProtectionStateable)()
+}

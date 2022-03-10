@@ -2,7 +2,7 @@ package ashierarchy
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
 // AsHierarchyResponse provides operations to call the asHierarchy method.
@@ -10,7 +10,7 @@ type AsHierarchyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable;
+    value []i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable;
 }
 // NewAsHierarchyResponse instantiates a new asHierarchyResponse and sets the default values.
 func NewAsHierarchyResponse()(*AsHierarchyResponse) {
@@ -35,14 +35,14 @@ func (m *AsHierarchyResponse) GetAdditionalData()(map[string]interface{}) {
 func (m *AsHierarchyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTagFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable, len(val))
+            res := make([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable)
+                res[i] = v.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable)
             }
             m.SetValue(res)
         }
@@ -51,7 +51,7 @@ func (m *AsHierarchyResponse) GetFieldDeserializers()(map[string]func(interface{
     return res
 }
 // GetValue gets the value property value. 
-func (m *AsHierarchyResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable) {
+func (m *AsHierarchyResponse) GetValue()([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +88,7 @@ func (m *AsHierarchyResponse) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetValue sets the value property value. 
-func (m *AsHierarchyResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable)() {
+func (m *AsHierarchyResponse) SetValue(value []i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable)() {
     if m != nil {
         m.value = value
     }

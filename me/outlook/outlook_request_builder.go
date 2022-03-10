@@ -10,6 +10,7 @@ import (
     ib55f78ab3053067f88ec9c133bd6a0d5d1ffdb2ab438361fe4ce817346e58c04 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/supportedtimezones"
     ibf3b7a436ea0ea400b8c6c0590a9be4465672faf619ae54e97e418017b25ef00 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/tasks"
     ic40f6d057fc54666d8fde145e03546b6c1c12cc293b9e830bbf8cba8197b79be "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/supportedlanguages"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i84930f2750a94ee2130f035e9c9bdbcfffcb068c52a806479d0964d9d2020e40 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/mastercategories/item"
     i984fa253a0580cb2d81d93e449a106836d455f23e065de8d03edfcc8dbf44acb "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/taskgroups/item"
     ic19e499d3e4541329156d6926f4f6db570dcce60051f4e1edd3f0b0db81cff9a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/outlook/taskfolders/item"
@@ -142,8 +143,8 @@ func (m *OutlookRequestBuilder) Delete(options *OutlookRequestBuilderDeleteOptio
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -158,8 +159,8 @@ func (m *OutlookRequestBuilder) Get(options *OutlookRequestBuilderGetOptions)(i5
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateOutlookUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -188,8 +189,8 @@ func (m *OutlookRequestBuilder) Patch(options *OutlookRequestBuilderPatchOptions
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

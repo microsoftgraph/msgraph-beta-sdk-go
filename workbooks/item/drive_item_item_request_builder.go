@@ -29,6 +29,7 @@ import (
     iea15fd2e4983cd4bc7f77c56f9e7d10b714e2d4c76c191417ae77f325254d1fd "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/versions"
     i07d08684839c1c52e4e2f97c0ac854b38d29ec3cfe7f59122208e108260cbb4d "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/children/item"
     i23745af441bc7e806a6ea374d93773d7f5b4d51f0b23dbfc2e289f9ed360c56f "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/versions/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i8af00cb19bae1d8d547aa285fc2e34cbe5c5c5096ff8de885009b1dcd3611d71 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/permissions/item"
     ib3b0b0b8db03e078a58d5fd2c684b9c2f06f5e77dde80b3c46359e8e3f0480ba "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/activities/item"
     ic2204a9b8bb31b272b46aa5d8e8e1802c6b262a7377a2425b7aeb9b634548a33 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/subscriptions/item"
@@ -212,8 +213,8 @@ func (m *DriveItemItemRequestBuilder) Delete(options *DriveItemItemRequestBuilde
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -239,8 +240,8 @@ func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGe
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -249,8 +250,8 @@ func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGe
     return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable), nil
 }
 // GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(interval *string, endDateTime *string, startDateTime *string)(*i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, interval, endDateTime, startDateTime);
+func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return i1dda96dcc6ca1d6bba90ca93c12a40d7bd6714ce98037fc360f32671277baa94.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
 func (m *DriveItemItemRequestBuilder) Invite()(*i710d1b03133218cf42db16a0f513411325c8307a829644968e565a02e56ae7f6.InviteRequestBuilder) {
     return i710d1b03133218cf42db16a0f513411325c8307a829644968e565a02e56ae7f6.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -265,8 +266,8 @@ func (m *DriveItemItemRequestBuilder) Patch(options *DriveItemItemRequestBuilder
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

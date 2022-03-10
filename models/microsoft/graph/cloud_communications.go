@@ -8,8 +8,6 @@ import (
 type CloudCommunications struct {
     Entity
     // 
-    callRecords []CallRecordable;
-    // 
     calls []Callable;
     // 
     onlineMeetings []OnlineMeetingable;
@@ -27,14 +25,6 @@ func NewCloudCommunications()(*CloudCommunications) {
 func CreateCloudCommunicationsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewCloudCommunications(), nil
 }
-// GetCallRecords gets the callRecords property value. 
-func (m *CloudCommunications) GetCallRecords()([]CallRecordable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callRecords
-    }
-}
 // GetCalls gets the calls property value. 
 func (m *CloudCommunications) GetCalls()([]Callable) {
     if m == nil {
@@ -46,20 +36,6 @@ func (m *CloudCommunications) GetCalls()([]Callable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["callRecords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCallRecordFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CallRecordable, len(val))
-            for i, v := range val {
-                res[i] = v.(CallRecordable)
-            }
-            m.SetCallRecords(res)
-        }
-        return nil
-    }
     res["calls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCallFromDiscriminatorValue)
         if err != nil {
@@ -129,16 +105,6 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    if m.GetCallRecords() != nil {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCallRecords()))
-        for i, v := range m.GetCallRecords() {
-            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("callRecords", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetCalls() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalls()))
         for i, v := range m.GetCalls() {
@@ -170,12 +136,6 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     return nil
-}
-// SetCallRecords sets the callRecords property value. 
-func (m *CloudCommunications) SetCallRecords(value []CallRecordable)() {
-    if m != nil {
-        m.callRecords = value
-    }
 }
 // SetCalls sets the calls property value. 
 func (m *CloudCommunications) SetCalls(value []Callable)() {

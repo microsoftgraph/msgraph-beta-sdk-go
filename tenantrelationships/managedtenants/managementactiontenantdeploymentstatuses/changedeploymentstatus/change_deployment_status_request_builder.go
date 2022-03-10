@@ -3,7 +3,7 @@ package changedeploymentstatus
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
 // ChangeDeploymentStatusRequestBuilder provides operations to call the changeDeploymentStatus method.
@@ -31,7 +31,7 @@ type ChangeDeploymentStatusResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type managementActionDeploymentStatus
-    managementActionDeploymentStatus i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable;
+    managementActionDeploymentStatus i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionDeploymentStatusable;
 }
 // NewChangeDeploymentStatusResponse instantiates a new changeDeploymentStatusResponse and sets the default values.
 func NewChangeDeploymentStatusResponse()(*ChangeDeploymentStatusResponse) {
@@ -55,19 +55,19 @@ func (m *ChangeDeploymentStatusResponse) GetAdditionalData()(map[string]interfac
 func (m *ChangeDeploymentStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["managementActionDeploymentStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagementActionDeploymentStatusFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateManagementActionDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetManagementActionDeploymentStatus(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable))
+            m.SetManagementActionDeploymentStatus(val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionDeploymentStatusable))
         }
         return nil
     }
     return res
 }
 // GetManagementActionDeploymentStatus gets the managementActionDeploymentStatus property value. Union type representation for type managementActionDeploymentStatus
-func (m *ChangeDeploymentStatusResponse) GetManagementActionDeploymentStatus()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable) {
+func (m *ChangeDeploymentStatusResponse) GetManagementActionDeploymentStatus()(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionDeploymentStatusable) {
     if m == nil {
         return nil
     } else {
@@ -100,10 +100,17 @@ func (m *ChangeDeploymentStatusResponse) SetAdditionalData(value map[string]inte
     }
 }
 // SetManagementActionDeploymentStatus sets the managementActionDeploymentStatus property value. Union type representation for type managementActionDeploymentStatus
-func (m *ChangeDeploymentStatusResponse) SetManagementActionDeploymentStatus(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionDeploymentStatusable)() {
+func (m *ChangeDeploymentStatusResponse) SetManagementActionDeploymentStatus(value i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionDeploymentStatusable)() {
     if m != nil {
         m.managementActionDeploymentStatus = value
     }
+}
+// ChangeDeploymentStatusResponseable 
+type ChangeDeploymentStatusResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetManagementActionDeploymentStatus()(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionDeploymentStatusable)
+    SetManagementActionDeploymentStatus(value i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionDeploymentStatusable)()
 }
 // NewChangeDeploymentStatusRequestBuilderInternal instantiates a new ChangeDeploymentStatusRequestBuilder and sets the default values.
 func NewChangeDeploymentStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChangeDeploymentStatusRequestBuilder) {

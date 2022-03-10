@@ -7,8 +7,8 @@ import (
 
 // Userable 
 type Userable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     DirectoryObjectable
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
     GetAboutMe()(*string)
     GetAccountEnabled()(*bool)
     GetActivities()([]UserActivityable)
@@ -128,7 +128,6 @@ type Userable interface {
     GetResponsibilities()([]string)
     GetSchools()([]string)
     GetScopedRoleMemberOf()([]ScopedRoleMembershipable)
-    GetSecurity()(Securityable)
     GetSettings()(UserSettingsable)
     GetShowInAddressList()(*bool)
     GetSignInActivity()(SignInActivityable)
@@ -266,7 +265,6 @@ type Userable interface {
     SetResponsibilities(value []string)()
     SetSchools(value []string)()
     SetScopedRoleMemberOf(value []ScopedRoleMembershipable)()
-    SetSecurity(value Securityable)()
     SetSettings(value UserSettingsable)()
     SetShowInAddressList(value *bool)()
     SetSignInActivity(value SignInActivityable)()

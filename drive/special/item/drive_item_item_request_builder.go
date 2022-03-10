@@ -6,6 +6,7 @@ import (
     i1607991deaac63c8e09452931980c50e39fb5d85b2b680303ed0c1b7aab85da5 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/special/item/permissions"
     i16fd79586d66666bfa8483655fc5dc83cf4de92d8b1e3c85ebfc086e49d7d133 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/special/item/subscriptions"
     i2d2ee0c5a0c48d2f214c4e9a399fa034f460da5d4eda36df2caa9ec57bcf47f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/special/item/versions"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i46db24c18b46dfc1bf7543645d33f81fef36caa59eea9ccc2a51be3f75996c43 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/special/item/children"
     i5538b7b5579294d6c2d50146537199cc5b579ef148e3dc8e4531242f60cf43f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/special/item/content"
     ib8c5dbc73d0798574164df708e94b8fe0c1273073a00188ebf4a54111e239047 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/special/item/thumbnails"
@@ -182,8 +183,8 @@ func (m *DriveItemItemRequestBuilder) Delete(options *DriveItemItemRequestBuilde
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -198,8 +199,8 @@ func (m *DriveItemItemRequestBuilder) Get(options *DriveItemItemRequestBuilderGe
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -217,8 +218,8 @@ func (m *DriveItemItemRequestBuilder) Patch(options *DriveItemItemRequestBuilder
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

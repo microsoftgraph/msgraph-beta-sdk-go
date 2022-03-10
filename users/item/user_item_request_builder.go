@@ -110,6 +110,7 @@ import (
     i322200ffec4334c71536e3a74319b0afb2071fae07124a70501b4a91e5d3efc2 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendargroups/item"
     i404e4499afbbdf92e8ee2c947bd2f30954ca765dc8d5deeda689c119c7e7eff7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices/item"
     i41bcf6e933152d51a0364a3166ccb57d9e6cc7316937216a235e9f7a7973b36c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/licensedetails/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4d1bb8d1a6e444b2e99d643949896393d13341c23c9e59170d7cf747778a84f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devicemanagementtroubleshootingevents/item"
     i532345ba6b7192bf733f1b4b3de662c47c1e7e0d3989701bcdc0d8f857dbe580 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/extensions/item"
     i53afa1534ef724ece2eabf4449fabc9c4904d986ecd4d6a0c11e3784f58eaab4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/directreports/item"
@@ -465,8 +466,8 @@ func (m *UserItemRequestBuilder) Delete(options *UserItemRequestBuilderDeleteOpt
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -566,8 +567,8 @@ func (m *UserItemRequestBuilder) ExportDeviceAndAppManagementData()(*i6c6abf877b
     return i6c6abf877b483e321abb71bac38e5c8c592f7ee6915c9ad28447c321b2979b4d.NewExportDeviceAndAppManagementDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExportDeviceAndAppManagementDataWithSkipWithTop provides operations to call the exportDeviceAndAppManagementData method.
-func (m *UserItemRequestBuilder) ExportDeviceAndAppManagementDataWithSkipWithTop(top *int32, skip *int32)(*i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
-    return i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, top, skip);
+func (m *UserItemRequestBuilder) ExportDeviceAndAppManagementDataWithSkipWithTop(skip *int32, top *int32)(*i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
+    return i9e9fd6de702827c484559c38e811567b4bfa805d681aca1a1d7d8d8ba07aae9c.NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, skip, top);
 }
 func (m *UserItemRequestBuilder) ExportPersonalData()(*i10209655736fb29f6fe332f57065da684a4bb7e75afca36c8b0cf9215d9600cf.ExportPersonalDataRequestBuilder) {
     return i10209655736fb29f6fe332f57065da684a4bb7e75afca36c8b0cf9215d9600cf.NewExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -622,8 +623,8 @@ func (m *UserItemRequestBuilder) Get(options *UserItemRequestBuilderGetOptions)(
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -895,8 +896,8 @@ func (m *UserItemRequestBuilder) Patch(options *UserItemRequestBuilderPatchOptio
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

@@ -10,6 +10,7 @@ import (
     i1dcc77e9871abeb934d55bc57c72c4ba35a7f03ea906a51875d763fa8fa5249c "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/cancelmediaprocessing"
     i22def5bc84ea78118759eb49e711824623c72f98f1ad008c2795e4e7b8843287 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/playprompt"
     i2b1770e190ed76efc5e53b7e27770c0cec2b19f628732fc7141dd7c047d710ce "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/updaterecordingstatus"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i540daaa499f2a1b3aa80d06d790d11b8789cb164f83994ac8ef2666aa88225bf "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/recordresponse"
     i6f1572cf2923d7161e932806b4455848280c38ad3685ab81f1a3301526b5e3c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/operations"
     i739635c91b9aae9a71009f21d3aabbd6c3cdbd84bf891707ccb7ad34ab9056a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/record"
@@ -176,8 +177,8 @@ func (m *CallItemRequestBuilder) Delete(options *CallItemRequestBuilderDeleteOpt
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -192,8 +193,8 @@ func (m *CallItemRequestBuilder) Get(options *CallItemRequestBuilderGetOptions)(
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCallFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -242,8 +243,8 @@ func (m *CallItemRequestBuilder) Patch(options *CallItemRequestBuilderPatchOptio
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

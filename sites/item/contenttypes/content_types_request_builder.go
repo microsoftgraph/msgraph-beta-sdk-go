@@ -6,6 +6,7 @@ import (
     i18b5532bacec8e0314abbbb7cfdf30166e188f4f2cf337f38aba0fe7cc0f5675 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/addcopyfromcontenttypehub"
     i1ad1af7f4a1d065d2cac49acc49b48004cd1871f10359fbeddbbf754469dc97d "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/addcopy"
     i39437a4b4700e8c7fa8e8dd8e355fe8dced80a1f7ede28af45c5a36d1ce4e09c "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/count"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i865eadbd753511bd7ea64409eac7502cc5d57d8ec89e3c48a5dcaffb7ed19190 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/getcompatiblehubcontenttypes"
 )
 
@@ -132,8 +133,8 @@ func (m *ContentTypesRequestBuilder) Get(options *ContentTypesRequestBuilderGetO
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentTypeCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -152,8 +153,8 @@ func (m *ContentTypesRequestBuilder) Post(options *ContentTypesRequestBuilderPos
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentTypeFromDiscriminatorValue, nil, errorMapping)
     if err != nil {

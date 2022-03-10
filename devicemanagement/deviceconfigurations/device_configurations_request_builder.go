@@ -7,6 +7,7 @@ import (
     i91812d422ff32b6087dbdb578859075772e6e50438228306a697e5aa7c00dc0a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/getiosavailableupdateversions"
     id4f8b95e9a4f408fff016b0499932369a6013687b3c089be2d425060978e03b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/count"
     ie1dbe7768034fc9acbabff177deec668725e3e1b963712ee72a4c861c0c6347f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/haspayloadlinks"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // DeviceConfigurationsRequestBuilder provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
@@ -126,8 +127,8 @@ func (m *DeviceConfigurationsRequestBuilder) Get(options *DeviceConfigurationsRe
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceConfigurationCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -152,8 +153,8 @@ func (m *DeviceConfigurationsRequestBuilder) Post(options *DeviceConfigurationsR
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceConfigurationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {

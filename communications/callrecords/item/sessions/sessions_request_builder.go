@@ -2,7 +2,8 @@ package sessions
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/callrecords"
     i03db32288dff4786466ea21139c9943bbb82e2f31095084678dc1d6e79d4bce0 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/callrecords/item/sessions/count"
 )
 
@@ -48,7 +49,7 @@ type SessionsRequestBuilderGetQueryParameters struct {
 // SessionsRequestBuilderPostOptions options for Post
 type SessionsRequestBuilderPostOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sessionable;
+    Body if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.Sessionable;
     // Request headers
     H map[string]string;
     // Request options
@@ -117,34 +118,34 @@ func (m *SessionsRequestBuilder) CreatePostRequestInformation(options *SessionsR
     return requestInfo, nil
 }
 // Get list of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
-func (m *SessionsRequestBuilder) Get(options *SessionsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SessionCollectionResponseable, error) {
+func (m *SessionsRequestBuilder) Get(options *SessionsRequestBuilderGetOptions)(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.SessionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSessionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CreateSessionCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SessionCollectionResponseable), nil
+    return res.(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.SessionCollectionResponseable), nil
 }
 // Post create new navigation property to sessions for communications
-func (m *SessionsRequestBuilder) Post(options *SessionsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sessionable, error) {
+func (m *SessionsRequestBuilder) Post(options *SessionsRequestBuilderPostOptions)(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.Sessionable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSessionFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CreateSessionFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sessionable), nil
+    return res.(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.Sessionable), nil
 }

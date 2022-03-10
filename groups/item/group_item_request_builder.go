@@ -52,6 +52,7 @@ import (
     i20ad8636c32bde1b97aa6dbe46a82bfcc7dec5240d558da351ccb4e7801c7cae "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/photos/item"
     i2a0b85f77a81e8f4f18cb792065ad27157bce3afd57f90f15a90fd83196308f8 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/permissiongrants/item"
     i40372e5830ab7b777e2a31cda4dd8ad81dac267969ff1e25f7608a8298cc1dad "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/events/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i608d9aacc6c4cf35e59e89c155e926bd9789e9ca3e6a2081ddd45db5c36cc760 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/owners/item"
     i6151bd928799b25e129a4dfec6b703211c3e9bf7515248a24b14f26bb40215af "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/memberswithlicenseerrors/item"
     i7d987f66a62915c3b7f44d0edad9deb15f79e59e58f2d9c5ad9b71bf48f15eec "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/conversations/item"
@@ -274,8 +275,8 @@ func (m *GroupItemRequestBuilder) Delete(options *GroupItemRequestBuilderDeleteO
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -352,8 +353,8 @@ func (m *GroupItemRequestBuilder) Get(options *GroupItemRequestBuilderGetOptions
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGroupFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -447,8 +448,8 @@ func (m *GroupItemRequestBuilder) Patch(options *GroupItemRequestBuilderPatchOpt
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

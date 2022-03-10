@@ -3,7 +3,7 @@ package offboardtenant
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
 // OffboardTenantRequestBuilder provides operations to call the offboardTenant method.
@@ -29,7 +29,7 @@ type OffboardTenantResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type tenant
-    tenant i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable;
+    tenant i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.Tenantable;
 }
 // NewOffboardTenantResponse instantiates a new offboardTenantResponse and sets the default values.
 func NewOffboardTenantResponse()(*OffboardTenantResponse) {
@@ -53,19 +53,19 @@ func (m *OffboardTenantResponse) GetAdditionalData()(map[string]interface{}) {
 func (m *OffboardTenantResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["tenant"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTenantFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateTenantFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTenant(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable))
+            m.SetTenant(val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.Tenantable))
         }
         return nil
     }
     return res
 }
 // GetTenant gets the tenant property value. Union type representation for type tenant
-func (m *OffboardTenantResponse) GetTenant()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable) {
+func (m *OffboardTenantResponse) GetTenant()(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.Tenantable) {
     if m == nil {
         return nil
     } else {
@@ -98,10 +98,17 @@ func (m *OffboardTenantResponse) SetAdditionalData(value map[string]interface{})
     }
 }
 // SetTenant sets the tenant property value. Union type representation for type tenant
-func (m *OffboardTenantResponse) SetTenant(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenantable)() {
+func (m *OffboardTenantResponse) SetTenant(value i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.Tenantable)() {
     if m != nil {
         m.tenant = value
     }
+}
+// OffboardTenantResponseable 
+type OffboardTenantResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetTenant()(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.Tenantable)
+    SetTenant(value i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.Tenantable)()
 }
 // NewOffboardTenantRequestBuilderInternal instantiates a new OffboardTenantRequestBuilder and sets the default values.
 func NewOffboardTenantRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OffboardTenantRequestBuilder) {

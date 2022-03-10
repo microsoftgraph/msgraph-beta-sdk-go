@@ -5,6 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i1aa791957161149aab4db21f948fcd8c8275c9ea7c5c4177f0e7d036e3a941c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/count"
     i205a7b20019ec5ab2d4fd32c699b4ba886d1261919e1a47f2ecae1252cd1a112 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/unfavorite"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i5f80f1e7991cbd0c6f9ff2d8c45c4858d507b7bba3f68978bb3fe6dc2af201eb "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/favorite"
     i7bd438807fb58b51e66ef1d0e2bdc47e74daeff3fe1a24ff3fe519435f47cf83 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/markunread"
     ib2da2e30bf0b9948932c34a14cde77af0959c19fa87f122e064fb88a21ea8e4e "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/messages/markread"
@@ -135,8 +136,8 @@ func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateServiceUpdateMessageCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -157,8 +158,8 @@ func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateServiceUpdateMessageFromDiscriminatorValue, nil, errorMapping)
     if err != nil {

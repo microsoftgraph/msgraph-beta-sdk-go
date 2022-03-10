@@ -143,6 +143,7 @@ import (
     if7c78154b39b2da1e1c12f7bf63ddd85b353b2d31d33f3ba11e1dfd43b13ad7a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/oauth2permissiongrants/item"
     if8b811d7fbecff009f6661aef902befaba11f32ccbaaa91de716f8c4b103c293 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendarview/item"
     ifd2db3d8aa0a0ec27c89cb2949e6936c2d3de139fb986c5773dfe17008496fc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // MeRequestBuilder provides operations to manage the user singleton.
@@ -524,8 +525,8 @@ func (m *MeRequestBuilder) ExportDeviceAndAppManagementData()(*i03229d0781e0f5cd
     return i03229d0781e0f5cd7e37b6bfd0cc1ec32a80065860d46ca6653e2824b55e7a9b.NewExportDeviceAndAppManagementDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExportDeviceAndAppManagementDataWithSkipWithTop provides operations to call the exportDeviceAndAppManagementData method.
-func (m *MeRequestBuilder) ExportDeviceAndAppManagementDataWithSkipWithTop(top *int32, skip *int32)(*i94ad8fd049d36ab89c2fcb747ee48bc3c2cc92a488cb7ccc4156b4f110bf708d.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
-    return i94ad8fd049d36ab89c2fcb747ee48bc3c2cc92a488cb7ccc4156b4f110bf708d.NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, top, skip);
+func (m *MeRequestBuilder) ExportDeviceAndAppManagementDataWithSkipWithTop(skip *int32, top *int32)(*i94ad8fd049d36ab89c2fcb747ee48bc3c2cc92a488cb7ccc4156b4f110bf708d.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
+    return i94ad8fd049d36ab89c2fcb747ee48bc3c2cc92a488cb7ccc4156b4f110bf708d.NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(m.pathParameters, m.requestAdapter, skip, top);
 }
 func (m *MeRequestBuilder) ExportPersonalData()(*i1fbcfb89922aa73b86452575a4cc9ab699fca4815a0e676f6034b57fd5d44b48.ExportPersonalDataRequestBuilder) {
     return i1fbcfb89922aa73b86452575a4cc9ab699fca4815a0e676f6034b57fd5d44b48.NewExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -580,8 +581,8 @@ func (m *MeRequestBuilder) Get(options *MeRequestBuilderGetOptions)(i535684e11b5
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUserFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -853,8 +854,8 @@ func (m *MeRequestBuilder) Patch(options *MeRequestBuilderPatchOptions)(error) {
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

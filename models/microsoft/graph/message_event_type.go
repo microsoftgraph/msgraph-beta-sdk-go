@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of messageEvent entities.
+// Provides operations to manage the collection of messageRecipient entities.
 type MessageEventType int
 
 const (

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to call the getAttackSimulationTrainingUserCoverage method.
+// Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type TrainingStatus int
 
 const (

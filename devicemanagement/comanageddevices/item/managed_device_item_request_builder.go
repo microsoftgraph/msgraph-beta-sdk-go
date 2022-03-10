@@ -19,6 +19,7 @@ import (
     i31eb74f02efdd35067936e3939c2d3f35c2731c77e2ba3e2916be25ef567d1db "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/rotatebitlockerkeys"
     i397317cd5c150ef73c8dbfe046b3a5a67e66696c131b64044418b32848f78b02 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/sendcustomnotificationtocompanyportal"
     i3eeb66f94f27e28ae758717375265f4c4a2b99c3b3ebf1d81e6148870d288958 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/wipe"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i474daedfd97083a2b70cfaaee5db2b7ac23cd62bfacff938adc2ec3734dca31a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/locatedevice"
     i4f5f8cca618fea6d5b5be4aaf673f53045f46c671985beb22ae0ab9f9e5532c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/deprovision"
     i523f2fe01a487001fe905fdd45d3f80a080ff6e83855beac7dba457c171312fd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/disablelostmode"
@@ -215,8 +216,8 @@ func (m *ManagedDeviceItemRequestBuilder) Delete(options *ManagedDeviceItemReque
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -291,8 +292,8 @@ func (m *ManagedDeviceItemRequestBuilder) Get(options *ManagedDeviceItemRequestB
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -360,8 +361,8 @@ func (m *ManagedDeviceItemRequestBuilder) Patch(options *ManagedDeviceItemReques
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

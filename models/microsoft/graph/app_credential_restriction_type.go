@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to call the instantiate method.
+// Provides operations to manage the collection of application entities.
 type AppCredentialRestrictionType int
 
 const (

@@ -2,21 +2,21 @@ package updateaudience
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/windowsupdates"
 )
 
 // UpdateAudienceRequestBody provides operations to call the updateAudience method.
 type UpdateAudienceRequestBody struct {
     // 
-    addExclusions []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable;
+    addExclusions []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    addMembers []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable;
+    addMembers []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable;
     // 
-    removeExclusions []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable;
+    removeExclusions []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable;
     // 
-    removeMembers []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable;
+    removeMembers []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable;
 }
 // NewUpdateAudienceRequestBody instantiates a new updateAudienceRequestBody and sets the default values.
 func NewUpdateAudienceRequestBody()(*UpdateAudienceRequestBody) {
@@ -30,7 +30,7 @@ func CreateUpdateAudienceRequestBodyFromDiscriminatorValue(parseNode i04eb5309ae
     return NewUpdateAudienceRequestBody(), nil
 }
 // GetAddExclusions gets the addExclusions property value. 
-func (m *UpdateAudienceRequestBody) GetAddExclusions()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable) {
+func (m *UpdateAudienceRequestBody) GetAddExclusions()([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable) {
     if m == nil {
         return nil
     } else {
@@ -46,7 +46,7 @@ func (m *UpdateAudienceRequestBody) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetAddMembers gets the addMembers property value. 
-func (m *UpdateAudienceRequestBody) GetAddMembers()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable) {
+func (m *UpdateAudienceRequestBody) GetAddMembers()([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable) {
     if m == nil {
         return nil
     } else {
@@ -57,56 +57,56 @@ func (m *UpdateAudienceRequestBody) GetAddMembers()([]i535684e11b5500196ecb4b5c6
 func (m *UpdateAudienceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["addExclusions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUpdatableAssetFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable, len(val))
+            res := make([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)
+                res[i] = v.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)
             }
             m.SetAddExclusions(res)
         }
         return nil
     }
     res["addMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUpdatableAssetFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable, len(val))
+            res := make([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)
+                res[i] = v.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)
             }
             m.SetAddMembers(res)
         }
         return nil
     }
     res["removeExclusions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUpdatableAssetFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable, len(val))
+            res := make([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)
+                res[i] = v.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)
             }
             m.SetRemoveExclusions(res)
         }
         return nil
     }
     res["removeMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateUpdatableAssetFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable, len(val))
+            res := make([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)
+                res[i] = v.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)
             }
             m.SetRemoveMembers(res)
         }
@@ -115,7 +115,7 @@ func (m *UpdateAudienceRequestBody) GetFieldDeserializers()(map[string]func(inte
     return res
 }
 // GetRemoveExclusions gets the removeExclusions property value. 
-func (m *UpdateAudienceRequestBody) GetRemoveExclusions()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable) {
+func (m *UpdateAudienceRequestBody) GetRemoveExclusions()([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable) {
     if m == nil {
         return nil
     } else {
@@ -123,7 +123,7 @@ func (m *UpdateAudienceRequestBody) GetRemoveExclusions()([]i535684e11b5500196ec
     }
 }
 // GetRemoveMembers gets the removeMembers property value. 
-func (m *UpdateAudienceRequestBody) GetRemoveMembers()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable) {
+func (m *UpdateAudienceRequestBody) GetRemoveMembers()([]ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable) {
     if m == nil {
         return nil
     } else {
@@ -184,7 +184,7 @@ func (m *UpdateAudienceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetAddExclusions sets the addExclusions property value. 
-func (m *UpdateAudienceRequestBody) SetAddExclusions(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)() {
+func (m *UpdateAudienceRequestBody) SetAddExclusions(value []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)() {
     if m != nil {
         m.addExclusions = value
     }
@@ -196,19 +196,19 @@ func (m *UpdateAudienceRequestBody) SetAdditionalData(value map[string]interface
     }
 }
 // SetAddMembers sets the addMembers property value. 
-func (m *UpdateAudienceRequestBody) SetAddMembers(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)() {
+func (m *UpdateAudienceRequestBody) SetAddMembers(value []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)() {
     if m != nil {
         m.addMembers = value
     }
 }
 // SetRemoveExclusions sets the removeExclusions property value. 
-func (m *UpdateAudienceRequestBody) SetRemoveExclusions(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)() {
+func (m *UpdateAudienceRequestBody) SetRemoveExclusions(value []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)() {
     if m != nil {
         m.removeExclusions = value
     }
 }
 // SetRemoveMembers sets the removeMembers property value. 
-func (m *UpdateAudienceRequestBody) SetRemoveMembers(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAssetable)() {
+func (m *UpdateAudienceRequestBody) SetRemoveMembers(value []ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdatableAssetable)() {
     if m != nil {
         m.removeMembers = value
     }

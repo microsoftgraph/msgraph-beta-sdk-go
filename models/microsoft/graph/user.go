@@ -246,8 +246,6 @@ type User struct {
     schools []string;
     // The scoped-role administrative unit memberships for this user. Read-only. Nullable.
     scopedRoleMemberOf []ScopedRoleMembershipable;
-    // 
-    security Securityable;
     // Read-only. Nullable.
     settings UserSettingsable;
     // true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).
@@ -2097,16 +2095,6 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
-    res["security"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSecurityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurity(val.(Securityable))
-        }
-        return nil
-    }
     res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserSettingsFromDiscriminatorValue)
         if err != nil {
@@ -2875,14 +2863,6 @@ func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
         return nil
     } else {
         return m.scopedRoleMemberOf
-    }
-}
-// GetSecurity gets the security property value. 
-func (m *User) GetSecurity()(Securityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.security
     }
 }
 // GetSettings gets the settings property value. Read-only. Nullable.
@@ -3941,12 +3921,6 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
-        err = writer.WriteObjectValue("security", m.GetSecurity())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
@@ -4784,12 +4758,6 @@ func (m *User) SetSchools(value []string)() {
 func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
     if m != nil {
         m.scopedRoleMemberOf = value
-    }
-}
-// SetSecurity sets the security property value. 
-func (m *User) SetSecurity(value Securityable)() {
-    if m != nil {
-        m.security = value
     }
 }
 // SetSettings sets the settings property value. Read-only. Nullable.

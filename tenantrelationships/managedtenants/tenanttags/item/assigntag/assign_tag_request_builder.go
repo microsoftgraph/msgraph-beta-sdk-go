@@ -3,7 +3,7 @@ package assigntag
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
 // AssignTagRequestBuilder provides operations to call the assignTag method.
@@ -31,7 +31,7 @@ type AssignTagResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type tenantTag
-    tenantTag i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable;
+    tenantTag i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable;
 }
 // NewAssignTagResponse instantiates a new assignTagResponse and sets the default values.
 func NewAssignTagResponse()(*AssignTagResponse) {
@@ -55,19 +55,19 @@ func (m *AssignTagResponse) GetAdditionalData()(map[string]interface{}) {
 func (m *AssignTagResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["tenantTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTenantTagFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.CreateTenantTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTenantTag(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable))
+            m.SetTenantTag(val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable))
         }
         return nil
     }
     return res
 }
 // GetTenantTag gets the tenantTag property value. Union type representation for type tenantTag
-func (m *AssignTagResponse) GetTenantTag()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable) {
+func (m *AssignTagResponse) GetTenantTag()(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable) {
     if m == nil {
         return nil
     } else {
@@ -100,10 +100,17 @@ func (m *AssignTagResponse) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetTenantTag sets the tenantTag property value. Union type representation for type tenantTag
-func (m *AssignTagResponse) SetTenantTag(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTagable)() {
+func (m *AssignTagResponse) SetTenantTag(value i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable)() {
     if m != nil {
         m.tenantTag = value
     }
+}
+// AssignTagResponseable 
+type AssignTagResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetTenantTag()(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable)
+    SetTenantTag(value i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantTagable)()
 }
 // NewAssignTagRequestBuilderInternal instantiates a new AssignTagRequestBuilder and sets the default values.
 func NewAssignTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignTagRequestBuilder) {

@@ -6,6 +6,7 @@ import (
     i039eec79a002c78fac8d396c29ad1d675afcebb55ccdd1292de00f1d563fa471 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/schedulinggroups"
     i199337207ee48c6878bdbfc09bf984d5d2e0a412f68bc573bf06fb43eb40ee05 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/openshiftchangerequests"
     i42830f0f1a1ed689e96387146a8377637687c5f28c5985adc329dac70ab51161 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/timesoff"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i6c650dcff368f3263028d9a1f3597fe942bb505ecb6a0bfe4d9a2f9c1cb050ec "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/share"
     i6f583c173999f95a06cd73ba38bd498d2605960a70ea7a68c0313911e664ca5a "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/swapshiftschangerequests"
     i8be04cc4d216312c0521147201b4ccd98887b3e052a903d1c9082dbfc5024f79 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/openshifts"
@@ -154,8 +155,8 @@ func (m *ScheduleRequestBuilder) Delete(options *ScheduleRequestBuilderDeleteOpt
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -170,8 +171,8 @@ func (m *ScheduleRequestBuilder) Get(options *ScheduleRequestBuilderGetOptions)(
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateScheduleFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -228,8 +229,8 @@ func (m *ScheduleRequestBuilder) Patch(options *ScheduleRequestBuilderPatchOptio
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

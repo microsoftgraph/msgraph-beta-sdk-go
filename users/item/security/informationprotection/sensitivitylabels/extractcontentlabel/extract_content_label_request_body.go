@@ -2,7 +2,7 @@ package extractcontentlabel
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
 )
 
 // ExtractContentLabelRequestBody provides operations to call the extractContentLabel method.
@@ -10,7 +10,7 @@ type ExtractContentLabelRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    contentInfo i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable;
+    contentInfo i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable;
 }
 // NewExtractContentLabelRequestBody instantiates a new extractContentLabelRequestBody and sets the default values.
 func NewExtractContentLabelRequestBody()(*ExtractContentLabelRequestBody) {
@@ -32,7 +32,7 @@ func (m *ExtractContentLabelRequestBody) GetAdditionalData()(map[string]interfac
     }
 }
 // GetContentInfo gets the contentInfo property value. 
-func (m *ExtractContentLabelRequestBody) GetContentInfo()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable) {
+func (m *ExtractContentLabelRequestBody) GetContentInfo()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable) {
     if m == nil {
         return nil
     } else {
@@ -43,12 +43,12 @@ func (m *ExtractContentLabelRequestBody) GetContentInfo()(i535684e11b5500196ecb4
 func (m *ExtractContentLabelRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateContentInfoFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateContentInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentInfo(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable))
+            m.SetContentInfo(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable))
         }
         return nil
     }
@@ -80,7 +80,7 @@ func (m *ExtractContentLabelRequestBody) SetAdditionalData(value map[string]inte
     }
 }
 // SetContentInfo sets the contentInfo property value. 
-func (m *ExtractContentLabelRequestBody) SetContentInfo(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfoable)() {
+func (m *ExtractContentLabelRequestBody) SetContentInfo(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable)() {
     if m != nil {
         m.contentInfo = value
     }

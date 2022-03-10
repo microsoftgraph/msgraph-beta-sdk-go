@@ -2,7 +2,8 @@ package segments
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/callrecords"
     i44a8d3dc56b49dc8898bc814be601e53137275d60cfdb60f57bb8bd6639ba98f "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/callrecords/item/sessions/item/segments/count"
 )
 
@@ -48,7 +49,7 @@ type SegmentsRequestBuilderGetQueryParameters struct {
 // SegmentsRequestBuilderPostOptions options for Post
 type SegmentsRequestBuilderPostOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Segmentable;
+    Body if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.Segmentable;
     // Request headers
     H map[string]string;
     // Request options
@@ -117,34 +118,34 @@ func (m *SegmentsRequestBuilder) CreatePostRequestInformation(options *SegmentsR
     return requestInfo, nil
 }
 // Get the list of segments involved in the session. Read-only. Nullable.
-func (m *SegmentsRequestBuilder) Get(options *SegmentsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SegmentCollectionResponseable, error) {
+func (m *SegmentsRequestBuilder) Get(options *SegmentsRequestBuilderGetOptions)(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.SegmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSegmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CreateSegmentCollectionResponseFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SegmentCollectionResponseable), nil
+    return res.(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.SegmentCollectionResponseable), nil
 }
 // Post create new navigation property to segments for communications
-func (m *SegmentsRequestBuilder) Post(options *SegmentsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Segmentable, error) {
+func (m *SegmentsRequestBuilder) Post(options *SegmentsRequestBuilderPostOptions)(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.Segmentable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSegmentFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.CreateSegmentFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Segmentable), nil
+    return res.(if9792b9f78e4933d4010103471e3a29a1979828da75ed72eb040984ee8d10c0f.Segmentable), nil
 }

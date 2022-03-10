@@ -103,6 +103,13 @@ func (m *RenewResponse) SetExactMatchSession(value i535684e11b5500196ecb4b5c6634
         m.exactMatchSession = value
     }
 }
+// RenewResponseable 
+type RenewResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetExactMatchSession()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSessionable)
+    SetExactMatchSession(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSessionable)()
+}
 // NewRenewRequestBuilderInternal instantiates a new RenewRequestBuilder and sets the default values.
 func NewRenewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RenewRequestBuilder) {
     m := &RenewRequestBuilder{

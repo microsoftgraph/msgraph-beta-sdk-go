@@ -10,8 +10,6 @@ type Admin struct {
     additionalData map[string]interface{};
     // A container for service communications resources. Read-only.
     serviceAnnouncement ServiceAnnouncementable;
-    // A container for all Windows Update for Business deployment service functionality. Read-only.
-    windows Windowsable;
 }
 // NewAdmin instantiates a new Admin and sets the default values.
 func NewAdmin()(*Admin) {
@@ -45,16 +43,6 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         return nil
     }
-    res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindows(val.(Windowsable))
-        }
-        return nil
-    }
     return res
 }
 // GetServiceAnnouncement gets the serviceAnnouncement property value. A container for service communications resources. Read-only.
@@ -65,14 +53,6 @@ func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
         return m.serviceAnnouncement
     }
 }
-// GetWindows gets the windows property value. A container for all Windows Update for Business deployment service functionality. Read-only.
-func (m *Admin) GetWindows()(Windowsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windows
-    }
-}
 func (m *Admin) IsNil()(bool) {
     return m == nil
 }
@@ -80,12 +60,6 @@ func (m *Admin) IsNil()(bool) {
 func (m *Admin) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("serviceAnnouncement", m.GetServiceAnnouncement())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("windows", m.GetWindows())
         if err != nil {
             return err
         }
@@ -108,11 +82,5 @@ func (m *Admin) SetAdditionalData(value map[string]interface{})() {
 func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable)() {
     if m != nil {
         m.serviceAnnouncement = value
-    }
-}
-// SetWindows sets the windows property value. A container for all Windows Update for Business deployment service functionality. Read-only.
-func (m *Admin) SetWindows(value Windowsable)() {
-    if m != nil {
-        m.windows = value
     }
 }

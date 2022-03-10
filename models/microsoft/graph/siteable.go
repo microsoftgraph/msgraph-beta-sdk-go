@@ -27,7 +27,6 @@ type Siteable interface {
     GetSharepointIds()(SharepointIdsable)
     GetSiteCollection()(SiteCollectionable)
     GetSites()([]Siteable)
-    GetTermStore()(Storeable)
     SetAnalytics(value ItemAnalyticsable)()
     SetColumns(value []ColumnDefinitionable)()
     SetContentTypes(value []ContentTypeable)()
@@ -47,5 +46,4 @@ type Siteable interface {
     SetSharepointIds(value SharepointIdsable)()
     SetSiteCollection(value SiteCollectionable)()
     SetSites(value []Siteable)()
-    SetTermStore(value Storeable)()
 }

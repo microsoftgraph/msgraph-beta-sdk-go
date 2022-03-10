@@ -22,6 +22,7 @@ import (
     i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/setdevicename"
     i3b897a8ccd665fdbe167f4e370c9723f97e54817cba754eb28388f5dd299a5c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/windowsdefenderupdatesignatures"
     i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/requestremoteassistance"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4ad2411bc4f698091cb4cddb8912e565be689d70f97726b35bf923595d409c66 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logoutsharedappledeviceactiveuser"
     i54c70818c0cf574dd041352a9ef88e3f0a2615f9d8e7d2f709c6d3799d3f777b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/locatedevice"
     i56c71bb28041877d99370b5914a9d176e4843c54d0bad29cd8a79268ef82dcf7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/disable"
@@ -215,8 +216,8 @@ func (m *ManagedDeviceItemRequestBuilder) Delete(options *ManagedDeviceItemReque
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -291,8 +292,8 @@ func (m *ManagedDeviceItemRequestBuilder) Get(options *ManagedDeviceItemRequestB
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -360,8 +361,8 @@ func (m *ManagedDeviceItemRequestBuilder) Patch(options *ManagedDeviceItemReques
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

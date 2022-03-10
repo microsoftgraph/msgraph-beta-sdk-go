@@ -5,6 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i06e33bb086cbb5f9333cc1c8bb09529f00623800d8f148e19c13fab399be0e21 "github.com/microsoftgraph/msgraph-beta-sdk-go/privacy/subjectrightsrequests/item/notes"
     i2bf59a4d763ab3355a4526b9ff2ddcae384f1210dd464ff5940ff3a054d5f26e "github.com/microsoftgraph/msgraph-beta-sdk-go/privacy/subjectrightsrequests/item/getfinalattachment"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i958489264196dd08f36dd719f907da913cf1a6b619228f3d6bc8da52997d8449 "github.com/microsoftgraph/msgraph-beta-sdk-go/privacy/subjectrightsrequests/item/getfinalreport"
     ia790ce0fe221c2e579ab27030d34081e5415f38f47af2263081eb369b2561ccd "github.com/microsoftgraph/msgraph-beta-sdk-go/privacy/subjectrightsrequests/item/team"
     ibe7a5a69eee3e39fd9fd52c318c683abd357fbe438629376f053fbf8dafee6d9 "github.com/microsoftgraph/msgraph-beta-sdk-go/privacy/subjectrightsrequests/item/notes/item"
@@ -138,8 +139,8 @@ func (m *SubjectRightsRequestItemRequestBuilder) Delete(options *SubjectRightsRe
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -154,8 +155,8 @@ func (m *SubjectRightsRequestItemRequestBuilder) Get(options *SubjectRightsReque
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSubjectRightsRequestFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -192,8 +193,8 @@ func (m *SubjectRightsRequestItemRequestBuilder) Patch(options *SubjectRightsReq
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {

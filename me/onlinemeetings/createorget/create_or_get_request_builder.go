@@ -105,6 +105,13 @@ func (m *CreateOrGetResponse) SetOnlineMeeting(value i535684e11b5500196ecb4b5c66
         m.onlineMeeting = value
     }
 }
+// CreateOrGetResponseable 
+type CreateOrGetResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetOnlineMeeting()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnlineMeetingable)
+    SetOnlineMeeting(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnlineMeetingable)()
+}
 // NewCreateOrGetRequestBuilderInternal instantiates a new CreateOrGetRequestBuilder and sets the default values.
 func NewCreateOrGetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateOrGetRequestBuilder) {
     m := &CreateOrGetRequestBuilder{

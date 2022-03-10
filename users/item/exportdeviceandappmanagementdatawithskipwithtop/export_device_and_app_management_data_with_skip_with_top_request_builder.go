@@ -104,8 +104,15 @@ func (m *ExportDeviceAndAppManagementDataWithSkipWithTopResponse) SetDeviceAndAp
         m.deviceAndAppManagementData = value
     }
 }
+// ExportDeviceAndAppManagementDataWithSkipWithTopResponseable 
+type ExportDeviceAndAppManagementDataWithSkipWithTopResponseable interface {
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
+    GetDeviceAndAppManagementData()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementDataable)
+    SetDeviceAndAppManagementData(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementDataable)()
+}
 // NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal instantiates a new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder and sets the default values.
-func NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, top *int32, skip *int32)(*ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
+func NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, skip *int32, top *int32)(*ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) {
     m := &ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user_id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
@@ -113,11 +120,11 @@ func NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    if top != nil {
-        urlTplParams["top"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*top), 10)
-    }
     if skip != nil {
         urlTplParams["skip"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*skip), 10)
+    }
+    if top != nil {
+        urlTplParams["top"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*top), 10)
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

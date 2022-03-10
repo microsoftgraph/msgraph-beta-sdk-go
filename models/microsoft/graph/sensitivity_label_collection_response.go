@@ -11,7 +11,7 @@ type SensitivityLabelCollectionResponse struct {
     // 
     nextLink *string;
     // 
-    value []SensitivityLabel;
+    value []SensitivityLabelable;
 }
 // NewSensitivityLabelCollectionResponse instantiates a new SensitivityLabelCollectionResponse and sets the default values.
 func NewSensitivityLabelCollectionResponse()(*SensitivityLabelCollectionResponse) {
@@ -51,9 +51,9 @@ func (m *SensitivityLabelCollectionResponse) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            res := make([]SensitivityLabel, len(val))
+            res := make([]SensitivityLabelable, len(val))
             for i, v := range val {
-                res[i] = *(v.(*SensitivityLabel))
+                res[i] = v.(SensitivityLabelable)
             }
             m.SetValue(res)
         }
@@ -70,7 +70,7 @@ func (m *SensitivityLabelCollectionResponse) GetNextLink()(*string) {
     }
 }
 // GetValue gets the value property value. 
-func (m *SensitivityLabelCollectionResponse) GetValue()([]SensitivityLabel) {
+func (m *SensitivityLabelCollectionResponse) GetValue()([]SensitivityLabelable) {
     if m == nil {
         return nil
     } else {
@@ -91,8 +91,7 @@ func (m *SensitivityLabelCollectionResponse) Serialize(writer i04eb5309aeaafadd2
     if m.GetValue() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {
@@ -120,7 +119,7 @@ func (m *SensitivityLabelCollectionResponse) SetNextLink(value *string)() {
     }
 }
 // SetValue sets the value property value. 
-func (m *SensitivityLabelCollectionResponse) SetValue(value []SensitivityLabel)() {
+func (m *SensitivityLabelCollectionResponse) SetValue(value []SensitivityLabelable)() {
     if m != nil {
         m.value = value
     }

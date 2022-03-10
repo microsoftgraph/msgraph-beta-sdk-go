@@ -19,6 +19,7 @@ import (
     i1094763ed645fa459b11fe2fd0dbbb4cd5b4e5abf8fb494633f130f88a198ab7 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedulerequests/item"
     i1f3fe61534b224c6fac2a1c5c69508f0db3518d4530ee88be6548eae659bb75a "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleeligibilityschedulerequests/item"
     i2e767808e39342c5e075a8c93310b2c0591c0c806546f5b58190d82a94993717 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignments/item"
+    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i6f70cfe1f611776ca2d5cdc9b36b624ba1b69dda981099ccaaf42d45453807a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentscheduleinstances/item"
     i94f6c4184f5f2637cb72ccacd72d05ca460673ced94157d6b941e79b19f921e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentapprovals/item"
     ib2c51c75dd96d44353372f4ec3d1bd31e89c02a24c89600c2d3fb288758d1bf3 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roledefinitions/item"
@@ -157,8 +158,8 @@ func (m *EntitlementManagementRequestBuilder) Delete(options *EntitlementManagem
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -173,8 +174,8 @@ func (m *EntitlementManagementRequestBuilder) Get(options *EntitlementManagement
         return nil, err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateRbacApplicationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
@@ -189,8 +190,8 @@ func (m *EntitlementManagementRequestBuilder) Patch(options *EntitlementManageme
         return err
     }
     errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "5XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
-        "4XX": i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateODataErrorFromDiscriminatorValue,
+        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -339,12 +340,12 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedulesById(id st
     return id9a0f06cc5af154fe717e7b85c2d5db50242eb2a5eb5b84cd9b6f2bfff25c1f4.NewUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId provides operations to call the roleScheduleInstances method.
-func (m *EntitlementManagementRequestBuilder) RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(directoryScopeId *string, roleDefinitionId *string, principalId *string, appScopeId *string)(*ic1ac1019e9fecf7777c6fabe94d5263065004cf3d093ea9a50afcb7544792459.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
-    return ic1ac1019e9fecf7777c6fabe94d5263065004cf3d093ea9a50afcb7544792459.NewRoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, directoryScopeId, roleDefinitionId, principalId, appScopeId);
+func (m *EntitlementManagementRequestBuilder) RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(appScopeId *string, directoryScopeId *string, principalId *string, roleDefinitionId *string)(*ic1ac1019e9fecf7777c6fabe94d5263065004cf3d093ea9a50afcb7544792459.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
+    return ic1ac1019e9fecf7777c6fabe94d5263065004cf3d093ea9a50afcb7544792459.NewRoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
 }
 // RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId provides operations to call the roleSchedules method.
-func (m *EntitlementManagementRequestBuilder) RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(directoryScopeId *string, roleDefinitionId *string, principalId *string, appScopeId *string)(*i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
-    return i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db.NewRoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, directoryScopeId, roleDefinitionId, principalId, appScopeId);
+func (m *EntitlementManagementRequestBuilder) RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(appScopeId *string, directoryScopeId *string, principalId *string, roleDefinitionId *string)(*i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
+    return i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db.NewRoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
 }
 func (m *EntitlementManagementRequestBuilder) TransitiveRoleAssignments()(*i3b3dd9d3bb14498220a703a0b62e7d53250e7202ee87f41c8d4aff4c9404d695.TransitiveRoleAssignmentsRequestBuilder) {
     return i3b3dd9d3bb14498220a703a0b62e7d53250e7202ee87f41c8d4aff4c9404d695.NewTransitiveRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -2,7 +2,7 @@ package applytags
 
 import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
 // ApplyTagsRequestBody provides operations to call the applyTags method.
@@ -10,9 +10,9 @@ type ApplyTagsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    tagsToAdd []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable;
+    tagsToAdd []i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable;
     // 
-    tagsToRemove []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable;
+    tagsToRemove []i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable;
 }
 // NewApplyTagsRequestBody instantiates a new applyTagsRequestBody and sets the default values.
 func NewApplyTagsRequestBody()(*ApplyTagsRequestBody) {
@@ -37,28 +37,28 @@ func (m *ApplyTagsRequestBody) GetAdditionalData()(map[string]interface{}) {
 func (m *ApplyTagsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["tagsToAdd"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTagFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable, len(val))
+            res := make([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable)
+                res[i] = v.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable)
             }
             m.SetTagsToAdd(res)
         }
         return nil
     }
     res["tagsToRemove"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTagFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable, len(val))
+            res := make([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable)
+                res[i] = v.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable)
             }
             m.SetTagsToRemove(res)
         }
@@ -67,7 +67,7 @@ func (m *ApplyTagsRequestBody) GetFieldDeserializers()(map[string]func(interface
     return res
 }
 // GetTagsToAdd gets the tagsToAdd property value. 
-func (m *ApplyTagsRequestBody) GetTagsToAdd()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable) {
+func (m *ApplyTagsRequestBody) GetTagsToAdd()([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +75,7 @@ func (m *ApplyTagsRequestBody) GetTagsToAdd()([]i535684e11b5500196ecb4b5c6634e06
     }
 }
 // GetTagsToRemove gets the tagsToRemove property value. 
-func (m *ApplyTagsRequestBody) GetTagsToRemove()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable) {
+func (m *ApplyTagsRequestBody) GetTagsToRemove()([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable) {
     if m == nil {
         return nil
     } else {
@@ -122,13 +122,13 @@ func (m *ApplyTagsRequestBody) SetAdditionalData(value map[string]interface{})()
     }
 }
 // SetTagsToAdd sets the tagsToAdd property value. 
-func (m *ApplyTagsRequestBody) SetTagsToAdd(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable)() {
+func (m *ApplyTagsRequestBody) SetTagsToAdd(value []i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable)() {
     if m != nil {
         m.tagsToAdd = value
     }
 }
 // SetTagsToRemove sets the tagsToRemove property value. 
-func (m *ApplyTagsRequestBody) SetTagsToRemove(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tagable)() {
+func (m *ApplyTagsRequestBody) SetTagsToRemove(value []i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.Tagable)() {
     if m != nil {
         m.tagsToRemove = value
     }
