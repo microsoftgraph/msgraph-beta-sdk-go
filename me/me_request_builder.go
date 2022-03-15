@@ -94,6 +94,7 @@ import (
     if3a811497f1bf492f3bbe053e28833b1140d2c90725fd72ed4cd2e0b4068fbf0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/security"
     if53d06a6944a15601fc9e0ecdcd8e010fb0ac38ce7857531732470170377fa9c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/activities"
     if54b727c8f82e94874a8380d8e6c910ef5f2b561abf736f53bd43812b1e23237 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars"
+    if6e3044a34bc88e3264e7687443bb1bb7614a36ae9afdf6f7b962a1086748067 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs"
     if9a235a81139ac366dce38caf3d59b07903735e656934a8208ee758d24cf000e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/checkmemberobjects"
     ifa6354c03b0a297cab93d13f8bc78708546aaeb1be40e137a7d07a262fce0ea9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/photo"
     ifae3a8927e14c995c44faea104b1594d3360d9fcbfabb3aba01f5da5671d0ba4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mobileappintentandstates"
@@ -108,6 +109,7 @@ import (
     i0feb3876f59829427e859bbade1e51c0d003a6a64ce67ad441b6d60c3087afce "github.com/microsoftgraph/msgraph-beta-sdk-go/me/memberof/item"
     i18a300ce18206c9aa35cc46abd9486be5d2faa2ceb82ea15418d59e63400891b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item"
     i2cc8c08facade07f4bb7f43d3d598d3e49ab04058fe12463d7fbae54f4163f48 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/transitivereports/item"
+    i311c4a65493f2e31d79a3e80ede9ce3128c8b2d5daa9d17e0c2524819eac5475 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item"
     i32120ccc8322d0ae4c79827cab0e21691e8b625292351396f2ee7ac9681caaed "github.com/microsoftgraph/msgraph-beta-sdk-go/me/windowsinformationprotectiondeviceregistrations/item"
     i35b6d595de33f1d461b0d50276e049227be20e321f99ec0e204fb7be2adcec52 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/photos/item"
     i36124d7f986d43728dd4e4ec2537be43e1bb06aafbfb36badf4c29a92469fb74 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/createdobjects/item"
@@ -333,6 +335,20 @@ func (m *MeRequestBuilder) CheckMemberGroups()(*i0eb8ecd1000d66dda1934d83eac5577
 }
 func (m *MeRequestBuilder) CheckMemberObjects()(*if9a235a81139ac366dce38caf3d59b07903735e656934a8208ee758d24cf000e.CheckMemberObjectsRequestBuilder) {
     return if9a235a81139ac366dce38caf3d59b07903735e656934a8208ee758d24cf000e.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *MeRequestBuilder) CloudPCs()(*if6e3044a34bc88e3264e7687443bb1bb7614a36ae9afdf6f7b962a1086748067.CloudPCsRequestBuilder) {
+    return if6e3044a34bc88e3264e7687443bb1bb7614a36ae9afdf6f7b962a1086748067.NewCloudPCsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CloudPCsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.cloudPCs.item collection
+func (m *MeRequestBuilder) CloudPCsById(id string)(*i311c4a65493f2e31d79a3e80ede9ce3128c8b2d5daa9d17e0c2524819eac5475.CloudPCItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["cloudPC_id"] = id
+    }
+    return i311c4a65493f2e31d79a3e80ede9ce3128c8b2d5daa9d17e0c2524819eac5475.NewCloudPCItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMeRequestBuilderInternal instantiates a new MeRequestBuilder and sets the default values.
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeRequestBuilder) {

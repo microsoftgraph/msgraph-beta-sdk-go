@@ -23,6 +23,8 @@ type Call struct {
     callRoutes []CallRouteable;
     // The chat information. Required information for joining a meeting.
     chatInfo ChatInfoable;
+    // 
+    contentSharingSessions []ContentSharingSessionable;
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection;
     // The context associated with an incoming call. Read-only. Server generated.
@@ -141,6 +143,14 @@ func (m *Call) GetChatInfo()(ChatInfoable) {
         return m.chatInfo
     }
 }
+// GetContentSharingSessions gets the contentSharingSessions property value. 
+func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.contentSharingSessions
+    }
+}
 // GetDirection gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
 func (m *Call) GetDirection()(*CallDirection) {
     if m == nil {
@@ -241,6 +251,20 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         if val != nil {
             m.SetChatInfo(val.(ChatInfoable))
+        }
+        return nil
+    }
+    res["contentSharingSessions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateContentSharingSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ContentSharingSessionable, len(val))
+            for i, v := range val {
+                res[i] = v.(ContentSharingSessionable)
+            }
+            m.SetContentSharingSessions(res)
         }
         return nil
     }
@@ -701,6 +725,16 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
+    if m.GetContentSharingSessions() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContentSharingSessions()))
+        for i, v := range m.GetContentSharingSessions() {
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("contentSharingSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDirection() != nil {
         cast := (*m.GetDirection()).String()
         err = writer.WriteStringValue("direction", &cast)
@@ -889,6 +923,12 @@ func (m *Call) SetCallRoutes(value []CallRouteable)() {
 func (m *Call) SetChatInfo(value ChatInfoable)() {
     if m != nil {
         m.chatInfo = value
+    }
+}
+// SetContentSharingSessions sets the contentSharingSessions property value. 
+func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
+    if m != nil {
+        m.contentSharingSessions = value
     }
 }
 // SetDirection sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.

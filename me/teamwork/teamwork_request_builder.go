@@ -3,10 +3,12 @@ package teamwork
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i1621e3eac6e3236524f354f9b5e3dcec4b2ac8b61604c4a81f7db4b934cd90c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/teamwork/sendactivitynotification"
+    i200af14bc8a01d318341d7ffd4bd69adb3b9b97703c97f7fd8c69b8f1dc415df "github.com/microsoftgraph/msgraph-beta-sdk-go/me/teamwork/associatedteams"
     i5352384a816a8116471b29a72d69ff38c387d8edbbac8d15cc0e43ef5d88cb0e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/teamwork/installedapps"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/teamwork/installedapps/item"
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i884fd4ffb36d199e7dec37be072607e2769510674770c99847363a2f72615545 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/teamwork/associatedteams/item"
 )
 
 // TeamworkRequestBuilder provides operations to manage the teamwork property of the microsoft.graph.user entity.
@@ -55,6 +57,20 @@ type TeamworkRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *TeamworkRequestBuilder) AssociatedTeams()(*i200af14bc8a01d318341d7ffd4bd69adb3b9b97703c97f7fd8c69b8f1dc415df.AssociatedTeamsRequestBuilder) {
+    return i200af14bc8a01d318341d7ffd4bd69adb3b9b97703c97f7fd8c69b8f1dc415df.NewAssociatedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssociatedTeamsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.teamwork.associatedTeams.item collection
+func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*i884fd4ffb36d199e7dec37be072607e2769510674770c99847363a2f72615545.AssociatedTeamInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["associatedTeamInfo_id"] = id
+    }
+    return i884fd4ffb36d199e7dec37be072607e2769510674770c99847363a2f72615545.NewAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTeamworkRequestBuilderInternal instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkRequestBuilder) {
