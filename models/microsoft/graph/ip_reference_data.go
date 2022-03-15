@@ -9,7 +9,7 @@ type IpReferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    asn *int64;
+    asn *int32;
     // 
     city *string;
     // 
@@ -41,7 +41,7 @@ func (m *IpReferenceData) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetAsn gets the asn property value. 
-func (m *IpReferenceData) GetAsn()(*int64) {
+func (m *IpReferenceData) GetAsn()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -68,7 +68,7 @@ func (m *IpReferenceData) GetCountryOrRegionCode()(*string) {
 func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["asn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -159,7 +159,7 @@ func (m *IpReferenceData) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *IpReferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("asn", m.GetAsn())
+        err := writer.WriteInt32Value("asn", m.GetAsn())
         if err != nil {
             return err
         }
@@ -209,7 +209,7 @@ func (m *IpReferenceData) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetAsn sets the asn property value. 
-func (m *IpReferenceData) SetAsn(value *int64)() {
+func (m *IpReferenceData) SetAsn(value *int32)() {
     if m != nil {
         m.asn = value
     }

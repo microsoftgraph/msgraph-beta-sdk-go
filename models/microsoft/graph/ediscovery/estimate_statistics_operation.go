@@ -8,9 +8,9 @@ import (
 type EstimateStatisticsOperation struct {
     CaseOperation
     // The estimated count of items for the sourceCollection that matched the content query.
-    indexedItemCount *int64;
+    indexedItemCount *int32;
     // The estimated size of items for the sourceCollection that matched the content query.
-    indexedItemsSize *int64;
+    indexedItemsSize *int32;
     // The number of mailboxes that had search hits.
     mailboxCount *int32;
     // The number of mailboxes that had search hits.
@@ -18,9 +18,9 @@ type EstimateStatisticsOperation struct {
     // eDiscovery collection, commonly known as a search.
     sourceCollection SourceCollectionable;
     // The estimated count of unindexed items for the collection.
-    unindexedItemCount *int64;
+    unindexedItemCount *int32;
     // The estimated size of unindexed items for the collection.
-    unindexedItemsSize *int64;
+    unindexedItemsSize *int32;
 }
 // NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
@@ -37,7 +37,7 @@ func CreateEstimateStatisticsOperationFromDiscriminatorValue(parseNode i04eb5309
 func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["indexedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -47,7 +47,7 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["indexedItemsSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -87,7 +87,7 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["unindexedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -97,7 +97,7 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["unindexedItemsSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -109,7 +109,7 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
     return res
 }
 // GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
-func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
+func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -117,7 +117,7 @@ func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
     }
 }
 // GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
-func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
+func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -149,7 +149,7 @@ func (m *EstimateStatisticsOperation) GetSourceCollection()(SourceCollectionable
     }
 }
 // GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
-func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
+func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -157,7 +157,7 @@ func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
     }
 }
 // GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
-func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
+func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -174,13 +174,13 @@ func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     {
-        err = writer.WriteInt64Value("indexedItemCount", m.GetIndexedItemCount())
+        err = writer.WriteInt32Value("indexedItemCount", m.GetIndexedItemCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("indexedItemsSize", m.GetIndexedItemsSize())
+        err = writer.WriteInt32Value("indexedItemsSize", m.GetIndexedItemsSize())
         if err != nil {
             return err
         }
@@ -204,13 +204,13 @@ func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     {
-        err = writer.WriteInt64Value("unindexedItemCount", m.GetUnindexedItemCount())
+        err = writer.WriteInt32Value("unindexedItemCount", m.GetUnindexedItemCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("unindexedItemsSize", m.GetUnindexedItemsSize())
+        err = writer.WriteInt32Value("unindexedItemsSize", m.GetUnindexedItemsSize())
         if err != nil {
             return err
         }
@@ -218,13 +218,13 @@ func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetIndexedItemCount sets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
-func (m *EstimateStatisticsOperation) SetIndexedItemCount(value *int64)() {
+func (m *EstimateStatisticsOperation) SetIndexedItemCount(value *int32)() {
     if m != nil {
         m.indexedItemCount = value
     }
 }
 // SetIndexedItemsSize sets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
-func (m *EstimateStatisticsOperation) SetIndexedItemsSize(value *int64)() {
+func (m *EstimateStatisticsOperation) SetIndexedItemsSize(value *int32)() {
     if m != nil {
         m.indexedItemsSize = value
     }
@@ -248,13 +248,13 @@ func (m *EstimateStatisticsOperation) SetSourceCollection(value SourceCollection
     }
 }
 // SetUnindexedItemCount sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
-func (m *EstimateStatisticsOperation) SetUnindexedItemCount(value *int64)() {
+func (m *EstimateStatisticsOperation) SetUnindexedItemCount(value *int32)() {
     if m != nil {
         m.unindexedItemCount = value
     }
 }
 // SetUnindexedItemsSize sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
-func (m *EstimateStatisticsOperation) SetUnindexedItemsSize(value *int64)() {
+func (m *EstimateStatisticsOperation) SetUnindexedItemsSize(value *int32)() {
     if m != nil {
         m.unindexedItemsSize = value
     }

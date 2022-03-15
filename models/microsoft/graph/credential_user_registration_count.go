@@ -8,7 +8,7 @@ import (
 type CredentialUserRegistrationCount struct {
     Entity
     // Provides the total user count in the tenant.
-    totalUserCount *int64;
+    totalUserCount *int32;
     // A collection of registration count and status information for users in your tenant.
     userRegistrationCounts []UserRegistrationCountable;
 }
@@ -27,7 +27,7 @@ func CreateCredentialUserRegistrationCountFromDiscriminatorValue(parseNode i04eb
 func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["totalUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -53,7 +53,7 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
-func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
+func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +78,7 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i04eb5309aeaafadd2837
         return err
     }
     {
-        err = writer.WriteInt64Value("totalUserCount", m.GetTotalUserCount())
+        err = writer.WriteInt32Value("totalUserCount", m.GetTotalUserCount())
         if err != nil {
             return err
         }
@@ -96,7 +96,7 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i04eb5309aeaafadd2837
     return nil
 }
 // SetTotalUserCount sets the totalUserCount property value. Provides the total user count in the tenant.
-func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
+func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int32)() {
     if m != nil {
         m.totalUserCount = value
     }

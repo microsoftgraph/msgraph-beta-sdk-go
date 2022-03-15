@@ -8,8 +8,8 @@ import (
 type UserRegistrationCountable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetRegistrationCount()(*int64)
+    GetRegistrationCount()(*int32)
     GetRegistrationStatus()(*RegistrationStatusType)
-    SetRegistrationCount(value *int64)()
+    SetRegistrationCount(value *int32)()
     SetRegistrationStatus(value *RegistrationStatusType)()
 }

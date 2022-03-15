@@ -9,23 +9,23 @@ type RoleSuccessStatistics struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    permanentFail *int64;
+    permanentFail *int32;
     // 
-    permanentSuccess *int64;
+    permanentSuccess *int32;
     // 
-    removeFail *int64;
+    removeFail *int32;
     // 
-    removeSuccess *int64;
+    removeSuccess *int32;
     // 
     roleId *string;
     // 
     roleName *string;
     // 
-    temporaryFail *int64;
+    temporaryFail *int32;
     // 
-    temporarySuccess *int64;
+    temporarySuccess *int32;
     // 
-    unknownFail *int64;
+    unknownFail *int32;
 }
 // NewRoleSuccessStatistics instantiates a new roleSuccessStatistics and sets the default values.
 func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
@@ -50,7 +50,7 @@ func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]interface{}) {
 func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["permanentFail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -60,7 +60,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["permanentSuccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -70,7 +70,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["removeFail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -80,7 +80,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["removeSuccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -110,7 +110,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["temporaryFail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -120,7 +120,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["temporarySuccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -130,7 +130,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["unknownFail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -142,7 +142,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
     return res
 }
 // GetPermanentFail gets the permanentFail property value. 
-func (m *RoleSuccessStatistics) GetPermanentFail()(*int64) {
+func (m *RoleSuccessStatistics) GetPermanentFail()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +150,7 @@ func (m *RoleSuccessStatistics) GetPermanentFail()(*int64) {
     }
 }
 // GetPermanentSuccess gets the permanentSuccess property value. 
-func (m *RoleSuccessStatistics) GetPermanentSuccess()(*int64) {
+func (m *RoleSuccessStatistics) GetPermanentSuccess()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -158,7 +158,7 @@ func (m *RoleSuccessStatistics) GetPermanentSuccess()(*int64) {
     }
 }
 // GetRemoveFail gets the removeFail property value. 
-func (m *RoleSuccessStatistics) GetRemoveFail()(*int64) {
+func (m *RoleSuccessStatistics) GetRemoveFail()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -166,7 +166,7 @@ func (m *RoleSuccessStatistics) GetRemoveFail()(*int64) {
     }
 }
 // GetRemoveSuccess gets the removeSuccess property value. 
-func (m *RoleSuccessStatistics) GetRemoveSuccess()(*int64) {
+func (m *RoleSuccessStatistics) GetRemoveSuccess()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -190,7 +190,7 @@ func (m *RoleSuccessStatistics) GetRoleName()(*string) {
     }
 }
 // GetTemporaryFail gets the temporaryFail property value. 
-func (m *RoleSuccessStatistics) GetTemporaryFail()(*int64) {
+func (m *RoleSuccessStatistics) GetTemporaryFail()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -198,7 +198,7 @@ func (m *RoleSuccessStatistics) GetTemporaryFail()(*int64) {
     }
 }
 // GetTemporarySuccess gets the temporarySuccess property value. 
-func (m *RoleSuccessStatistics) GetTemporarySuccess()(*int64) {
+func (m *RoleSuccessStatistics) GetTemporarySuccess()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -206,7 +206,7 @@ func (m *RoleSuccessStatistics) GetTemporarySuccess()(*int64) {
     }
 }
 // GetUnknownFail gets the unknownFail property value. 
-func (m *RoleSuccessStatistics) GetUnknownFail()(*int64) {
+func (m *RoleSuccessStatistics) GetUnknownFail()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -219,25 +219,25 @@ func (m *RoleSuccessStatistics) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *RoleSuccessStatistics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("permanentFail", m.GetPermanentFail())
+        err := writer.WriteInt32Value("permanentFail", m.GetPermanentFail())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("permanentSuccess", m.GetPermanentSuccess())
+        err := writer.WriteInt32Value("permanentSuccess", m.GetPermanentSuccess())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("removeFail", m.GetRemoveFail())
+        err := writer.WriteInt32Value("removeFail", m.GetRemoveFail())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("removeSuccess", m.GetRemoveSuccess())
+        err := writer.WriteInt32Value("removeSuccess", m.GetRemoveSuccess())
         if err != nil {
             return err
         }
@@ -255,19 +255,19 @@ func (m *RoleSuccessStatistics) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteInt64Value("temporaryFail", m.GetTemporaryFail())
+        err := writer.WriteInt32Value("temporaryFail", m.GetTemporaryFail())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("temporarySuccess", m.GetTemporarySuccess())
+        err := writer.WriteInt32Value("temporarySuccess", m.GetTemporarySuccess())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("unknownFail", m.GetUnknownFail())
+        err := writer.WriteInt32Value("unknownFail", m.GetUnknownFail())
         if err != nil {
             return err
         }
@@ -287,25 +287,25 @@ func (m *RoleSuccessStatistics) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetPermanentFail sets the permanentFail property value. 
-func (m *RoleSuccessStatistics) SetPermanentFail(value *int64)() {
+func (m *RoleSuccessStatistics) SetPermanentFail(value *int32)() {
     if m != nil {
         m.permanentFail = value
     }
 }
 // SetPermanentSuccess sets the permanentSuccess property value. 
-func (m *RoleSuccessStatistics) SetPermanentSuccess(value *int64)() {
+func (m *RoleSuccessStatistics) SetPermanentSuccess(value *int32)() {
     if m != nil {
         m.permanentSuccess = value
     }
 }
 // SetRemoveFail sets the removeFail property value. 
-func (m *RoleSuccessStatistics) SetRemoveFail(value *int64)() {
+func (m *RoleSuccessStatistics) SetRemoveFail(value *int32)() {
     if m != nil {
         m.removeFail = value
     }
 }
 // SetRemoveSuccess sets the removeSuccess property value. 
-func (m *RoleSuccessStatistics) SetRemoveSuccess(value *int64)() {
+func (m *RoleSuccessStatistics) SetRemoveSuccess(value *int32)() {
     if m != nil {
         m.removeSuccess = value
     }
@@ -323,19 +323,19 @@ func (m *RoleSuccessStatistics) SetRoleName(value *string)() {
     }
 }
 // SetTemporaryFail sets the temporaryFail property value. 
-func (m *RoleSuccessStatistics) SetTemporaryFail(value *int64)() {
+func (m *RoleSuccessStatistics) SetTemporaryFail(value *int32)() {
     if m != nil {
         m.temporaryFail = value
     }
 }
 // SetTemporarySuccess sets the temporarySuccess property value. 
-func (m *RoleSuccessStatistics) SetTemporarySuccess(value *int64)() {
+func (m *RoleSuccessStatistics) SetTemporarySuccess(value *int32)() {
     if m != nil {
         m.temporarySuccess = value
     }
 }
 // SetUnknownFail sets the unknownFail property value. 
-func (m *RoleSuccessStatistics) SetUnknownFail(value *int64)() {
+func (m *RoleSuccessStatistics) SetUnknownFail(value *int32)() {
     if m != nil {
         m.unknownFail = value
     }

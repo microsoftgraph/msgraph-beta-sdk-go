@@ -12,7 +12,7 @@ type SynchronizationStatus struct {
     // High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
     code *SynchronizationStatusCode;
     // Number of consecutive times this job failed.
-    countSuccessiveCompleteFailures *int64;
+    countSuccessiveCompleteFailures *int32;
     // true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
     escrowsPruned *bool;
     // Details of the last execution of the job.
@@ -62,7 +62,7 @@ func (m *SynchronizationStatus) GetCode()(*SynchronizationStatusCode) {
     }
 }
 // GetCountSuccessiveCompleteFailures gets the countSuccessiveCompleteFailures property value. Number of consecutive times this job failed.
-func (m *SynchronizationStatus) GetCountSuccessiveCompleteFailures()(*int64) {
+func (m *SynchronizationStatus) GetCountSuccessiveCompleteFailures()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -91,7 +91,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["countSuccessiveCompleteFailures"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -295,7 +295,7 @@ func (m *SynchronizationStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteInt64Value("countSuccessiveCompleteFailures", m.GetCountSuccessiveCompleteFailures())
+        err := writer.WriteInt32Value("countSuccessiveCompleteFailures", m.GetCountSuccessiveCompleteFailures())
         if err != nil {
             return err
         }
@@ -389,7 +389,7 @@ func (m *SynchronizationStatus) SetCode(value *SynchronizationStatusCode)() {
     }
 }
 // SetCountSuccessiveCompleteFailures sets the countSuccessiveCompleteFailures property value. Number of consecutive times this job failed.
-func (m *SynchronizationStatus) SetCountSuccessiveCompleteFailures(value *int64)() {
+func (m *SynchronizationStatus) SetCountSuccessiveCompleteFailures(value *int32)() {
     if m != nil {
         m.countSuccessiveCompleteFailures = value
     }

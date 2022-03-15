@@ -11,7 +11,7 @@ type UserRegistrationMethodCount struct {
     // Name of authentication method.
     authenticationMethod *string;
     // Number of users registered.
-    userCount *int64;
+    userCount *int32;
 }
 // NewUserRegistrationMethodCount instantiates a new userRegistrationMethodCount and sets the default values.
 func NewUserRegistrationMethodCount()(*UserRegistrationMethodCount) {
@@ -54,7 +54,7 @@ func (m *UserRegistrationMethodCount) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["userCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -66,7 +66,7 @@ func (m *UserRegistrationMethodCount) GetFieldDeserializers()(map[string]func(in
     return res
 }
 // GetUserCount gets the userCount property value. Number of users registered.
-func (m *UserRegistrationMethodCount) GetUserCount()(*int64) {
+func (m *UserRegistrationMethodCount) GetUserCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -85,7 +85,7 @@ func (m *UserRegistrationMethodCount) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     {
-        err := writer.WriteInt64Value("userCount", m.GetUserCount())
+        err := writer.WriteInt32Value("userCount", m.GetUserCount())
         if err != nil {
             return err
         }
@@ -111,7 +111,7 @@ func (m *UserRegistrationMethodCount) SetAuthenticationMethod(value *string)() {
     }
 }
 // SetUserCount sets the userCount property value. Number of users registered.
-func (m *UserRegistrationMethodCount) SetUserCount(value *int64)() {
+func (m *UserRegistrationMethodCount) SetUserCount(value *int32)() {
     if m != nil {
         m.userCount = value
     }

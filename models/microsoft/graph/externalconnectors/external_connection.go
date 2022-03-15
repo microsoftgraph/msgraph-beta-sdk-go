@@ -17,7 +17,7 @@ type ExternalConnection struct {
     // Read-only. Nullable.
     groups []ExternalGroupable;
     // 
-    ingestedItemsCount *int64;
+    ingestedItemsCount *int32;
     // Read-only. Nullable.
     items []ExternalItemable;
     // The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
@@ -116,7 +116,7 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["ingestedItemsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -214,7 +214,7 @@ func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
     }
 }
 // GetIngestedItemsCount gets the ingestedItemsCount property value. 
-func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
+func (m *ExternalConnection) GetIngestedItemsCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -315,7 +315,7 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteInt64Value("ingestedItemsCount", m.GetIngestedItemsCount())
+        err = writer.WriteInt32Value("ingestedItemsCount", m.GetIngestedItemsCount())
         if err != nil {
             return err
         }
@@ -398,7 +398,7 @@ func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
     }
 }
 // SetIngestedItemsCount sets the ingestedItemsCount property value. 
-func (m *ExternalConnection) SetIngestedItemsCount(value *int64)() {
+func (m *ExternalConnection) SetIngestedItemsCount(value *int32)() {
     if m != nil {
         m.ingestedItemsCount = value
     }

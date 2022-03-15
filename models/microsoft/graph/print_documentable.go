@@ -11,9 +11,9 @@ type PrintDocumentable interface {
     GetConfiguration()(PrinterDocumentConfigurationable)
     GetContentType()(*string)
     GetDisplayName()(*string)
-    GetSize()(*int64)
+    GetSize()(*int32)
     SetConfiguration(value PrinterDocumentConfigurationable)()
     SetContentType(value *string)()
     SetDisplayName(value *string)()
-    SetSize(value *int64)()
+    SetSize(value *int32)()
 }

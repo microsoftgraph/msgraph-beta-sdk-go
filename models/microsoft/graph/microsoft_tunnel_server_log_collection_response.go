@@ -17,7 +17,7 @@ type MicrosoftTunnelServerLogCollectionResponse struct {
     // ID of the server the log collection is requested upon
     serverId *string;
     // The size of the logs in bytes
-    sizeInBytes *int64;
+    sizeInBytes *int32;
     // The start time of the logs collected
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The status of log collection. Possible values are: pending, completed, failed.
@@ -94,7 +94,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         return nil
     }
     res["sizeInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -142,7 +142,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetServerId()(*string) {
     }
 }
 // GetSizeInBytes gets the sizeInBytes property value. The size of the logs in bytes
-func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -199,7 +199,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) Serialize(writer i04eb5309a
         }
     }
     {
-        err = writer.WriteInt64Value("sizeInBytes", m.GetSizeInBytes())
+        err = writer.WriteInt32Value("sizeInBytes", m.GetSizeInBytes())
         if err != nil {
             return err
         }
@@ -244,7 +244,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) SetServerId(value *string)(
     }
 }
 // SetSizeInBytes sets the sizeInBytes property value. The size of the logs in bytes
-func (m *MicrosoftTunnelServerLogCollectionResponse) SetSizeInBytes(value *int64)() {
+func (m *MicrosoftTunnelServerLogCollectionResponse) SetSizeInBytes(value *int32)() {
     if m != nil {
         m.sizeInBytes = value
     }

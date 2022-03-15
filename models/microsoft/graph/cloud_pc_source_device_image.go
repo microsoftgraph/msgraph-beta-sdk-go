@@ -12,6 +12,10 @@ type CloudPcSourceDeviceImage struct {
     displayName *string;
     // The ID of the source image.
     id *string;
+    // 
+    subscriptionDisplayName *string;
+    // 
+    subscriptionId *string;
 }
 // NewCloudPcSourceDeviceImage instantiates a new cloudPcSourceDeviceImage and sets the default values.
 func NewCloudPcSourceDeviceImage()(*CloudPcSourceDeviceImage) {
@@ -63,6 +67,26 @@ func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
+    res["subscriptionDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubscriptionDisplayName(val)
+        }
+        return nil
+    }
+    res["subscriptionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubscriptionId(val)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. The ID of the source image.
@@ -71,6 +95,22 @@ func (m *CloudPcSourceDeviceImage) GetId()(*string) {
         return nil
     } else {
         return m.id
+    }
+}
+// GetSubscriptionDisplayName gets the subscriptionDisplayName property value. 
+func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriptionDisplayName
+    }
+}
+// GetSubscriptionId gets the subscriptionId property value. 
+func (m *CloudPcSourceDeviceImage) GetSubscriptionId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subscriptionId
     }
 }
 func (m *CloudPcSourceDeviceImage) IsNil()(bool) {
@@ -86,6 +126,18 @@ func (m *CloudPcSourceDeviceImage) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("subscriptionDisplayName", m.GetSubscriptionDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("subscriptionId", m.GetSubscriptionId())
         if err != nil {
             return err
         }
@@ -114,5 +166,17 @@ func (m *CloudPcSourceDeviceImage) SetDisplayName(value *string)() {
 func (m *CloudPcSourceDeviceImage) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetSubscriptionDisplayName sets the subscriptionDisplayName property value. 
+func (m *CloudPcSourceDeviceImage) SetSubscriptionDisplayName(value *string)() {
+    if m != nil {
+        m.subscriptionDisplayName = value
+    }
+}
+// SetSubscriptionId sets the subscriptionId property value. 
+func (m *CloudPcSourceDeviceImage) SetSubscriptionId(value *string)() {
+    if m != nil {
+        m.subscriptionId = value
     }
 }

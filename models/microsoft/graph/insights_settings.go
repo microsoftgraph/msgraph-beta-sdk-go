@@ -7,7 +7,7 @@ import (
 // InsightsSettings provides operations to manage the collection of organization entities.
 type InsightsSettings struct {
     Entity
-    // The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+    // The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
     disabledForGroup *string;
     // true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
     isEnabledInOrganization *bool;
@@ -23,7 +23,7 @@ func NewInsightsSettings()(*InsightsSettings) {
 func CreateInsightsSettingsFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewInsightsSettings(), nil
 }
-// GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+// GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) GetDisabledForGroup()(*string) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *InsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+// SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
     if m != nil {
         m.disabledForGroup = value

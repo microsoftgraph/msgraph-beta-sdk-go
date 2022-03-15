@@ -9,7 +9,7 @@ type UserRegistrationCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Provides the registration count for your tenant.
-    registrationCount *int64;
+    registrationCount *int32;
     // Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
     registrationStatus *RegistrationStatusType;
 }
@@ -36,7 +36,7 @@ func (m *UserRegistrationCount) GetAdditionalData()(map[string]interface{}) {
 func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["registrationCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(interfac
     return res
 }
 // GetRegistrationCount gets the registrationCount property value. Provides the registration count for your tenant.
-func (m *UserRegistrationCount) GetRegistrationCount()(*int64) {
+func (m *UserRegistrationCount) GetRegistrationCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +79,7 @@ func (m *UserRegistrationCount) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *UserRegistrationCount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("registrationCount", m.GetRegistrationCount())
+        err := writer.WriteInt32Value("registrationCount", m.GetRegistrationCount())
         if err != nil {
             return err
         }
@@ -106,7 +106,7 @@ func (m *UserRegistrationCount) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetRegistrationCount sets the registrationCount property value. Provides the registration count for your tenant.
-func (m *UserRegistrationCount) SetRegistrationCount(value *int64)() {
+func (m *UserRegistrationCount) SetRegistrationCount(value *int32)() {
     if m != nil {
         m.registrationCount = value
     }

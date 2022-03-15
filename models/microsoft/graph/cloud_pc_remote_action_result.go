@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcRemoteActionResult provides operations to manage the deviceManagement singleton.
+// CloudPcRemoteActionResult provides operations to manage the compliance singleton.
 type CloudPcRemoteActionResult struct {
     // The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
     actionName *string;

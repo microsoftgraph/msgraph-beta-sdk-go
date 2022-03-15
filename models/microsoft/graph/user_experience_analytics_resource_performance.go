@@ -16,7 +16,7 @@ type UserExperienceAnalyticsResourcePerformance struct {
     // The user experience analytics device CPU spike time score. Valid values 0 to 100
     cpuSpikeTimeScore *int32;
     // User experience analytics summarized device count.
-    deviceCount *int64;
+    deviceCount *int32;
     // The id of the device.
     deviceId *string;
     // The name of the device.
@@ -78,7 +78,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimeScore()(*int
     }
 }
 // GetDeviceCount gets the deviceCount property value. User experience analytics summarized device count.
-func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceCount()(*int64) {
+func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -153,7 +153,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         return nil
     }
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -318,7 +318,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i04eb5309a
         }
     }
     {
-        err = writer.WriteInt64Value("deviceCount", m.GetDeviceCount())
+        err = writer.WriteInt32Value("deviceCount", m.GetDeviceCount())
         if err != nil {
             return err
         }
@@ -398,7 +398,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimeScore(value 
     }
 }
 // SetDeviceCount sets the deviceCount property value. User experience analytics summarized device count.
-func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceCount(value *int64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetDeviceCount(value *int32)() {
     if m != nil {
         m.deviceCount = value
     }

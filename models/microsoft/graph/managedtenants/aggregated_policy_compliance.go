@@ -20,11 +20,11 @@ type AggregatedPolicyCompliance struct {
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
     lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The number of devices that are in a compliant status. Optional. Read-only.
-    numberOfCompliantDevices *int64;
+    numberOfCompliantDevices *int32;
     // The number of devices that are in an error status. Optional. Read-only.
-    numberOfErrorDevices *int64;
+    numberOfErrorDevices *int32;
     // The number of device that are in a non-compliant status. Optional. Read-only.
-    numberOfNonCompliantDevices *int64;
+    numberOfNonCompliantDevices *int32;
     // The date and time the device policy was last modified. Optional. Read-only.
     policyModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The display name for the managed tenant. Optional. Read-only.
@@ -129,7 +129,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["numberOfCompliantDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -139,7 +139,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["numberOfErrorDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -149,7 +149,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["numberOfNonCompliantDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -199,7 +199,7 @@ func (m *AggregatedPolicyCompliance) GetLastRefreshedDateTime()(*i336074805fc853
     }
 }
 // GetNumberOfCompliantDevices gets the numberOfCompliantDevices property value. The number of devices that are in a compliant status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int64) {
+func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -207,7 +207,7 @@ func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int64) {
     }
 }
 // GetNumberOfErrorDevices gets the numberOfErrorDevices property value. The number of devices that are in an error status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int64) {
+func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -215,7 +215,7 @@ func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int64) {
     }
 }
 // GetNumberOfNonCompliantDevices gets the numberOfNonCompliantDevices property value. The number of device that are in a non-compliant status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int64) {
+func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -286,19 +286,19 @@ func (m *AggregatedPolicyCompliance) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     {
-        err = writer.WriteInt64Value("numberOfCompliantDevices", m.GetNumberOfCompliantDevices())
+        err = writer.WriteInt32Value("numberOfCompliantDevices", m.GetNumberOfCompliantDevices())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("numberOfErrorDevices", m.GetNumberOfErrorDevices())
+        err = writer.WriteInt32Value("numberOfErrorDevices", m.GetNumberOfErrorDevices())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("numberOfNonCompliantDevices", m.GetNumberOfNonCompliantDevices())
+        err = writer.WriteInt32Value("numberOfNonCompliantDevices", m.GetNumberOfNonCompliantDevices())
         if err != nil {
             return err
         }
@@ -354,19 +354,19 @@ func (m *AggregatedPolicyCompliance) SetLastRefreshedDateTime(value *i336074805f
     }
 }
 // SetNumberOfCompliantDevices sets the numberOfCompliantDevices property value. The number of devices that are in a compliant status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) SetNumberOfCompliantDevices(value *int64)() {
+func (m *AggregatedPolicyCompliance) SetNumberOfCompliantDevices(value *int32)() {
     if m != nil {
         m.numberOfCompliantDevices = value
     }
 }
 // SetNumberOfErrorDevices sets the numberOfErrorDevices property value. The number of devices that are in an error status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) SetNumberOfErrorDevices(value *int64)() {
+func (m *AggregatedPolicyCompliance) SetNumberOfErrorDevices(value *int32)() {
     if m != nil {
         m.numberOfErrorDevices = value
     }
 }
 // SetNumberOfNonCompliantDevices sets the numberOfNonCompliantDevices property value. The number of device that are in a non-compliant status. Optional. Read-only.
-func (m *AggregatedPolicyCompliance) SetNumberOfNonCompliantDevices(value *int64)() {
+func (m *AggregatedPolicyCompliance) SetNumberOfNonCompliantDevices(value *int32)() {
     if m != nil {
         m.numberOfNonCompliantDevices = value
     }

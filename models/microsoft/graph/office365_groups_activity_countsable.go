@@ -8,18 +8,18 @@ import (
 type Office365GroupsActivityCountsable interface {
     Entityable
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetExchangeEmailsReceived()(*int64)
+    GetExchangeEmailsReceived()(*int32)
     GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)
     GetReportPeriod()(*string)
     GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)
-    GetYammerMessagesLiked()(*int64)
-    GetYammerMessagesPosted()(*int64)
-    GetYammerMessagesRead()(*int64)
-    SetExchangeEmailsReceived(value *int64)()
+    GetYammerMessagesLiked()(*int32)
+    GetYammerMessagesPosted()(*int32)
+    GetYammerMessagesRead()(*int32)
+    SetExchangeEmailsReceived(value *int32)()
     SetReportDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)()
     SetReportPeriod(value *string)()
     SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)()
-    SetYammerMessagesLiked(value *int64)()
-    SetYammerMessagesPosted(value *int64)()
-    SetYammerMessagesRead(value *int64)()
+    SetYammerMessagesLiked(value *int32)()
+    SetYammerMessagesPosted(value *int32)()
+    SetYammerMessagesRead(value *int32)()
 }

@@ -20,7 +20,7 @@ type SynchronizationQuarantine struct {
     // Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     seriesBegan *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
-    seriesCount *int64;
+    seriesCount *int32;
 }
 // NewSynchronizationQuarantine instantiates a new synchronizationQuarantine and sets the default values.
 func NewSynchronizationQuarantine()(*SynchronizationQuarantine) {
@@ -111,7 +111,7 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["seriesCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -147,7 +147,7 @@ func (m *SynchronizationQuarantine) GetSeriesBegan()(*i336074805fc853987abe6f7fe
     }
 }
 // GetSeriesCount gets the seriesCount property value. Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
-func (m *SynchronizationQuarantine) GetSeriesCount()(*int64) {
+func (m *SynchronizationQuarantine) GetSeriesCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -191,7 +191,7 @@ func (m *SynchronizationQuarantine) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     {
-        err := writer.WriteInt64Value("seriesCount", m.GetSeriesCount())
+        err := writer.WriteInt32Value("seriesCount", m.GetSeriesCount())
         if err != nil {
             return err
         }
@@ -241,7 +241,7 @@ func (m *SynchronizationQuarantine) SetSeriesBegan(value *i336074805fc853987abe6
     }
 }
 // SetSeriesCount sets the seriesCount property value. Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
-func (m *SynchronizationQuarantine) SetSeriesCount(value *int64)() {
+func (m *SynchronizationQuarantine) SetSeriesCount(value *int32)() {
     if m != nil {
         m.seriesCount = value
     }

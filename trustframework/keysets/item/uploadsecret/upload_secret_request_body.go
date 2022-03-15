@@ -9,11 +9,11 @@ type UploadSecretRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    exp *int64;
+    exp *int32;
     // 
     k *string;
     // 
-    nbf *int64;
+    nbf *int32;
     // 
     use *string;
 }
@@ -37,7 +37,7 @@ func (m *UploadSecretRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetExp gets the exp property value. 
-func (m *UploadSecretRequestBody) GetExp()(*int64) {
+func (m *UploadSecretRequestBody) GetExp()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +48,7 @@ func (m *UploadSecretRequestBody) GetExp()(*int64) {
 func (m *UploadSecretRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["exp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -68,7 +68,7 @@ func (m *UploadSecretRequestBody) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["nbf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -98,7 +98,7 @@ func (m *UploadSecretRequestBody) GetK()(*string) {
     }
 }
 // GetNbf gets the nbf property value. 
-func (m *UploadSecretRequestBody) GetNbf()(*int64) {
+func (m *UploadSecretRequestBody) GetNbf()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -119,7 +119,7 @@ func (m *UploadSecretRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *UploadSecretRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("exp", m.GetExp())
+        err := writer.WriteInt32Value("exp", m.GetExp())
         if err != nil {
             return err
         }
@@ -131,7 +131,7 @@ func (m *UploadSecretRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err := writer.WriteInt64Value("nbf", m.GetNbf())
+        err := writer.WriteInt32Value("nbf", m.GetNbf())
         if err != nil {
             return err
         }
@@ -157,7 +157,7 @@ func (m *UploadSecretRequestBody) SetAdditionalData(value map[string]interface{}
     }
 }
 // SetExp sets the exp property value. 
-func (m *UploadSecretRequestBody) SetExp(value *int64)() {
+func (m *UploadSecretRequestBody) SetExp(value *int32)() {
     if m != nil {
         m.exp = value
     }
@@ -169,7 +169,7 @@ func (m *UploadSecretRequestBody) SetK(value *string)() {
     }
 }
 // SetNbf sets the nbf property value. 
-func (m *UploadSecretRequestBody) SetNbf(value *int64)() {
+func (m *UploadSecretRequestBody) SetNbf(value *int32)() {
     if m != nil {
         m.nbf = value
     }

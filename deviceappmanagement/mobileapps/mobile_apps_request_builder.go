@@ -142,7 +142,7 @@ func (m *MobileAppsRequestBuilder) GetMobileAppCountWithStatus(status *string)(*
     return i3f1ef83e5a3c636aadac73e14a41959080d06f3c1f972ef3fc82445c7fc94f98.NewGetMobileAppCountWithStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter, status);
 }
 // GetTopMobileAppsWithStatusWithCount provides operations to call the getTopMobileApps method.
-func (m *MobileAppsRequestBuilder) GetTopMobileAppsWithStatusWithCount(count *int64, status *string)(*i4125e00a7eb603812efbd75551680674e01278ff362db14d1fd91505cb275200.GetTopMobileAppsWithStatusWithCountRequestBuilder) {
+func (m *MobileAppsRequestBuilder) GetTopMobileAppsWithStatusWithCount(count *int32, status *string)(*i4125e00a7eb603812efbd75551680674e01278ff362db14d1fd91505cb275200.GetTopMobileAppsWithStatusWithCountRequestBuilder) {
     return i4125e00a7eb603812efbd75551680674e01278ff362db14d1fd91505cb275200.NewGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(m.pathParameters, m.requestAdapter, count, status);
 }
 func (m *MobileAppsRequestBuilder) HasPayloadLinks()(*i2f59ddb12d33939283eeb5185ecff0dbbce661e9e5c21c6508e809c2b051b944.HasPayloadLinksRequestBuilder) {

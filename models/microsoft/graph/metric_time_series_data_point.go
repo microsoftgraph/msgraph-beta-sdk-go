@@ -12,7 +12,7 @@ type MetricTimeSeriesDataPoint struct {
     // Time of the metric time series data point
     dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Value of the metric time series data point
-    value *int64;
+    value *int32;
 }
 // NewMetricTimeSeriesDataPoint instantiates a new metricTimeSeriesDataPoint and sets the default values.
 func NewMetricTimeSeriesDataPoint()(*MetricTimeSeriesDataPoint) {
@@ -55,7 +55,7 @@ func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(inte
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -67,7 +67,7 @@ func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(inte
     return res
 }
 // GetValue gets the value property value. Value of the metric time series data point
-func (m *MetricTimeSeriesDataPoint) GetValue()(*int64) {
+func (m *MetricTimeSeriesDataPoint) GetValue()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -86,7 +86,7 @@ func (m *MetricTimeSeriesDataPoint) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     {
-        err := writer.WriteInt64Value("value", m.GetValue())
+        err := writer.WriteInt32Value("value", m.GetValue())
         if err != nil {
             return err
         }
@@ -112,7 +112,7 @@ func (m *MetricTimeSeriesDataPoint) SetDateTime(value *i336074805fc853987abe6f7f
     }
 }
 // SetValue sets the value property value. Value of the metric time series data point
-func (m *MetricTimeSeriesDataPoint) SetValue(value *int64)() {
+func (m *MetricTimeSeriesDataPoint) SetValue(value *int32)() {
     if m != nil {
         m.value = value
     }

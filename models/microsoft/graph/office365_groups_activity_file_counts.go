@@ -8,7 +8,7 @@ import (
 type Office365GroupsActivityFileCounts struct {
     Entity
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
-    active *int64;
+    active *int32;
     // The date on which a number of files were active in the group's SharePoint site.
     reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
@@ -16,7 +16,7 @@ type Office365GroupsActivityFileCounts struct {
     // The latest date of the content.
     reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The total number of files in the group's SharePoint document library.
-    total *int64;
+    total *int32;
 }
 // NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
@@ -30,7 +30,7 @@ func CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue(parseNode i04
     return NewOffice365GroupsActivityFileCounts(), nil
 }
 // GetActive gets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
-func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
+func (m *Office365GroupsActivityFileCounts) GetActive()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +41,7 @@ func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
 func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["active"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -81,7 +81,7 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["total"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -117,7 +117,7 @@ func (m *Office365GroupsActivityFileCounts) GetReportRefreshDate()(*i04eb5309aea
     }
 }
 // GetTotal gets the total property value. The total number of files in the group's SharePoint document library.
-func (m *Office365GroupsActivityFileCounts) GetTotal()(*int64) {
+func (m *Office365GroupsActivityFileCounts) GetTotal()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -134,7 +134,7 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i04eb5309aeaafadd28
         return err
     }
     {
-        err = writer.WriteInt64Value("active", m.GetActive())
+        err = writer.WriteInt32Value("active", m.GetActive())
         if err != nil {
             return err
         }
@@ -158,7 +158,7 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i04eb5309aeaafadd28
         }
     }
     {
-        err = writer.WriteInt64Value("total", m.GetTotal())
+        err = writer.WriteInt32Value("total", m.GetTotal())
         if err != nil {
             return err
         }
@@ -166,7 +166,7 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i04eb5309aeaafadd28
     return nil
 }
 // SetActive sets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
-func (m *Office365GroupsActivityFileCounts) SetActive(value *int64)() {
+func (m *Office365GroupsActivityFileCounts) SetActive(value *int32)() {
     if m != nil {
         m.active = value
     }
@@ -190,7 +190,7 @@ func (m *Office365GroupsActivityFileCounts) SetReportRefreshDate(value *i04eb530
     }
 }
 // SetTotal sets the total property value. The total number of files in the group's SharePoint document library.
-func (m *Office365GroupsActivityFileCounts) SetTotal(value *int64)() {
+func (m *Office365GroupsActivityFileCounts) SetTotal(value *int32)() {
     if m != nil {
         m.total = value
     }

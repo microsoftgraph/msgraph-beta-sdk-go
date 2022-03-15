@@ -15,17 +15,21 @@ import (
     i6356c4272d892a6b1753bbed0e3b3f265f9d5630d86393549775b40b26fad406 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/group"
     i7c7aa71fa334e1234ebb2953457bb8a87886a5cc192ada64a17391c65db699d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/template"
     ia3d84312b941dc5c3aaa9a4a37bc36866b779989abc4a4a4acd33b1e65368bcd "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/members"
+    ia42fa4d97821d26378d9f7bee3d9af6325ce61b826e31042ce499fd11eed580f "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/allchannels"
     ib3d27e8197f598d7bf72f02ae854d33875306efb682c4984f7c88f1856aadd6d "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/unarchive"
     ib426e286e70724fac9bfa5fc5f23505db892b09653a2e444dddddd561a3ded1e "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/photo"
+    ibd507eb28e5ea81639c3f3209c96a828f71ad54ba353088076f57e6cb7e164f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/incomingchannels"
     icf541587ec6c05dc98eb683d6e0738a0265ce6e56b0857fe95939ba5cf9e730f "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel"
     iea95a35c2aecd362bfafe8dae609401aa9fd68c91737848de33cd6ecad21f51b "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/sendactivitynotification"
     iecf1ce1fbbc38cbe05b8bcd58d24b218680aef89fbf95142ed150a70e3ef887a "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants"
     i15093721720dbb1ad7a9823d9c98bb0b1b6afb6839ccc9b99d7f9f369fea596c "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/members/item"
+    i1abe3d3d937fd27f8c8c35d38ad858733332abc3e4fbd568ec7960fd205c0b87 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/allchannels/item"
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i75af39801867d39724f8d806372cf754dc48d3407d87f336daf7647dbed1347f "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/installedapps/item"
     i7b61bd390262c74ea942911c717d521b8d8938c0bc5a556ea5c1aa8faf593708 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/tags/item"
     i816caa6537457ad2108f6d14fc5f83f30b010c0f3ebaa1f99a81c44641b9d1e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item"
     ib1fa9341ce0e195b37a0fcac629719d660cd28ed736c3abf54fe54102868c36d "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/operations/item"
+    iba418f5dd9a4de62eac90abccb0188ef53c41d0492c29cceac1855283b8a7c57 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/incomingchannels/item"
     iba461bd7c348411b42a81c1813125516bec205337ca79a73172439185e9cd1c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/item"
     ifc8558814710963aeed18cad6c4a77609daafa95e19508c1be52d9732d135fc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/owners/item"
 )
@@ -76,6 +80,20 @@ type TeamItemRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *TeamItemRequestBuilder) AllChannels()(*ia42fa4d97821d26378d9f7bee3d9af6325ce61b826e31042ce499fd11eed580f.AllChannelsRequestBuilder) {
+    return ia42fa4d97821d26378d9f7bee3d9af6325ce61b826e31042ce499fd11eed580f.NewAllChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AllChannelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.allChannels.item collection
+func (m *TeamItemRequestBuilder) AllChannelsById(id string)(*i1abe3d3d937fd27f8c8c35d38ad858733332abc3e4fbd568ec7960fd205c0b87.ChannelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["channel_id"] = id
+    }
+    return i1abe3d3d937fd27f8c8c35d38ad858733332abc3e4fbd568ec7960fd205c0b87.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *TeamItemRequestBuilder) Archive()(*i39e1c08574131f72876adb29d6160e8debd9e80a5d56f6e5667bb4466e655518.ArchiveRequestBuilder) {
     return i39e1c08574131f72876adb29d6160e8debd9e80a5d56f6e5667bb4466e655518.NewArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -208,6 +226,20 @@ func (m *TeamItemRequestBuilder) Get(options *TeamItemRequestBuilderGetOptions)(
 }
 func (m *TeamItemRequestBuilder) Group()(*i6356c4272d892a6b1753bbed0e3b3f265f9d5630d86393549775b40b26fad406.GroupRequestBuilder) {
     return i6356c4272d892a6b1753bbed0e3b3f265f9d5630d86393549775b40b26fad406.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *TeamItemRequestBuilder) IncomingChannels()(*ibd507eb28e5ea81639c3f3209c96a828f71ad54ba353088076f57e6cb7e164f7.IncomingChannelsRequestBuilder) {
+    return ibd507eb28e5ea81639c3f3209c96a828f71ad54ba353088076f57e6cb7e164f7.NewIncomingChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// IncomingChannelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.incomingChannels.item collection
+func (m *TeamItemRequestBuilder) IncomingChannelsById(id string)(*iba418f5dd9a4de62eac90abccb0188ef53c41d0492c29cceac1855283b8a7c57.ChannelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["channel_id"] = id
+    }
+    return iba418f5dd9a4de62eac90abccb0188ef53c41d0492c29cceac1855283b8a7c57.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *TeamItemRequestBuilder) InstalledApps()(*i048dd3eda626b5c64ad8acc7d562355d6648e78b61cb9150e852218748576fca.InstalledAppsRequestBuilder) {
     return i048dd3eda626b5c64ad8acc7d562355d6648e78b61cb9150e852218748576fca.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -10,6 +10,8 @@ type CallOptions struct {
     additionalData map[string]interface{};
     // 
     hideBotAfterEscalation *bool;
+    // 
+    isContentSharingNotificationEnabled *bool;
 }
 // NewCallOptions instantiates a new callOptions and sets the default values.
 func NewCallOptions()(*CallOptions) {
@@ -43,6 +45,16 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         return nil
     }
+    res["isContentSharingNotificationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsContentSharingNotificationEnabled(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHideBotAfterEscalation gets the hideBotAfterEscalation property value. 
@@ -53,6 +65,14 @@ func (m *CallOptions) GetHideBotAfterEscalation()(*bool) {
         return m.hideBotAfterEscalation
     }
 }
+// GetIsContentSharingNotificationEnabled gets the isContentSharingNotificationEnabled property value. 
+func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isContentSharingNotificationEnabled
+    }
+}
 func (m *CallOptions) IsNil()(bool) {
     return m == nil
 }
@@ -60,6 +80,12 @@ func (m *CallOptions) IsNil()(bool) {
 func (m *CallOptions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("hideBotAfterEscalation", m.GetHideBotAfterEscalation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isContentSharingNotificationEnabled", m.GetIsContentSharingNotificationEnabled())
         if err != nil {
             return err
         }
@@ -82,5 +108,11 @@ func (m *CallOptions) SetAdditionalData(value map[string]interface{})() {
 func (m *CallOptions) SetHideBotAfterEscalation(value *bool)() {
     if m != nil {
         m.hideBotAfterEscalation = value
+    }
+}
+// SetIsContentSharingNotificationEnabled sets the isContentSharingNotificationEnabled property value. 
+func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
+    if m != nil {
+        m.isContentSharingNotificationEnabled = value
     }
 }

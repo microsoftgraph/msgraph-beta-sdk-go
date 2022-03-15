@@ -8,7 +8,7 @@ import (
 type Office365GroupsActivityCounts struct {
     Entity
     // The number of emails received by Group mailboxes.
-    exchangeEmailsReceived *int64;
+    exchangeEmailsReceived *int32;
     // The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
     reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
@@ -16,11 +16,11 @@ type Office365GroupsActivityCounts struct {
     // The latest date of the content.
     reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of messages liked in Yammer groups.
-    yammerMessagesLiked *int64;
+    yammerMessagesLiked *int32;
     // The number of messages posted to Yammer groups.
-    yammerMessagesPosted *int64;
+    yammerMessagesPosted *int32;
     // The number of messages read in Yammer groups.
-    yammerMessagesRead *int64;
+    yammerMessagesRead *int32;
 }
 // NewOffice365GroupsActivityCounts instantiates a new office365GroupsActivityCounts and sets the default values.
 func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
@@ -34,7 +34,7 @@ func CreateOffice365GroupsActivityCountsFromDiscriminatorValue(parseNode i04eb53
     return NewOffice365GroupsActivityCounts(), nil
 }
 // GetExchangeEmailsReceived gets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
-func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
+func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -45,7 +45,7 @@ func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
 func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exchangeEmailsReceived"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -85,7 +85,7 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["yammerMessagesLiked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -95,7 +95,7 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["yammerMessagesPosted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -105,7 +105,7 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["yammerMessagesRead"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -141,7 +141,7 @@ func (m *Office365GroupsActivityCounts) GetReportRefreshDate()(*i04eb5309aeaafad
     }
 }
 // GetYammerMessagesLiked gets the yammerMessagesLiked property value. The number of messages liked in Yammer groups.
-func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int64) {
+func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -149,7 +149,7 @@ func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int64) {
     }
 }
 // GetYammerMessagesPosted gets the yammerMessagesPosted property value. The number of messages posted to Yammer groups.
-func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int64) {
+func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -157,7 +157,7 @@ func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int64) {
     }
 }
 // GetYammerMessagesRead gets the yammerMessagesRead property value. The number of messages read in Yammer groups.
-func (m *Office365GroupsActivityCounts) GetYammerMessagesRead()(*int64) {
+func (m *Office365GroupsActivityCounts) GetYammerMessagesRead()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -174,7 +174,7 @@ func (m *Office365GroupsActivityCounts) Serialize(writer i04eb5309aeaafadd28374d
         return err
     }
     {
-        err = writer.WriteInt64Value("exchangeEmailsReceived", m.GetExchangeEmailsReceived())
+        err = writer.WriteInt32Value("exchangeEmailsReceived", m.GetExchangeEmailsReceived())
         if err != nil {
             return err
         }
@@ -198,19 +198,19 @@ func (m *Office365GroupsActivityCounts) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     {
-        err = writer.WriteInt64Value("yammerMessagesLiked", m.GetYammerMessagesLiked())
+        err = writer.WriteInt32Value("yammerMessagesLiked", m.GetYammerMessagesLiked())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("yammerMessagesPosted", m.GetYammerMessagesPosted())
+        err = writer.WriteInt32Value("yammerMessagesPosted", m.GetYammerMessagesPosted())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("yammerMessagesRead", m.GetYammerMessagesRead())
+        err = writer.WriteInt32Value("yammerMessagesRead", m.GetYammerMessagesRead())
         if err != nil {
             return err
         }
@@ -218,7 +218,7 @@ func (m *Office365GroupsActivityCounts) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetExchangeEmailsReceived sets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
-func (m *Office365GroupsActivityCounts) SetExchangeEmailsReceived(value *int64)() {
+func (m *Office365GroupsActivityCounts) SetExchangeEmailsReceived(value *int32)() {
     if m != nil {
         m.exchangeEmailsReceived = value
     }
@@ -242,19 +242,19 @@ func (m *Office365GroupsActivityCounts) SetReportRefreshDate(value *i04eb5309aea
     }
 }
 // SetYammerMessagesLiked sets the yammerMessagesLiked property value. The number of messages liked in Yammer groups.
-func (m *Office365GroupsActivityCounts) SetYammerMessagesLiked(value *int64)() {
+func (m *Office365GroupsActivityCounts) SetYammerMessagesLiked(value *int32)() {
     if m != nil {
         m.yammerMessagesLiked = value
     }
 }
 // SetYammerMessagesPosted sets the yammerMessagesPosted property value. The number of messages posted to Yammer groups.
-func (m *Office365GroupsActivityCounts) SetYammerMessagesPosted(value *int64)() {
+func (m *Office365GroupsActivityCounts) SetYammerMessagesPosted(value *int32)() {
     if m != nil {
         m.yammerMessagesPosted = value
     }
 }
 // SetYammerMessagesRead sets the yammerMessagesRead property value. The number of messages read in Yammer groups.
-func (m *Office365GroupsActivityCounts) SetYammerMessagesRead(value *int64)() {
+func (m *Office365GroupsActivityCounts) SetYammerMessagesRead(value *int32)() {
     if m != nil {
         m.yammerMessagesRead = value
     }

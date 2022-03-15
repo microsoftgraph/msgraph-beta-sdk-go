@@ -15,7 +15,7 @@ type ApplicationSignInDetailedSummary struct {
     // ID of the application that the user signed in to.
     appId *string;
     // Count of sign-ins made by the application.
-    signInCount *int64;
+    signInCount *int32;
     // Details of the sign-in status.
     status SignInStatusable;
 }
@@ -88,7 +88,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["signInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -110,7 +110,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetSignInCount gets the signInCount property value. Count of sign-ins made by the application.
-func (m *ApplicationSignInDetailedSummary) GetSignInCount()(*int64) {
+func (m *ApplicationSignInDetailedSummary) GetSignInCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -153,7 +153,7 @@ func (m *ApplicationSignInDetailedSummary) Serialize(writer i04eb5309aeaafadd283
         }
     }
     {
-        err = writer.WriteInt64Value("signInCount", m.GetSignInCount())
+        err = writer.WriteInt32Value("signInCount", m.GetSignInCount())
         if err != nil {
             return err
         }
@@ -185,7 +185,7 @@ func (m *ApplicationSignInDetailedSummary) SetAppId(value *string)() {
     }
 }
 // SetSignInCount sets the signInCount property value. Count of sign-ins made by the application.
-func (m *ApplicationSignInDetailedSummary) SetSignInCount(value *int64)() {
+func (m *ApplicationSignInDetailedSummary) SetSignInCount(value *int32)() {
     if m != nil {
         m.signInCount = value
     }

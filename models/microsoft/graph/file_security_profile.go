@@ -33,7 +33,7 @@ type FileSecurityProfile struct {
     // 
     riskScore *string;
     // 
-    size *int64;
+    size *int32;
     // 
     tags []string;
     // 
@@ -236,7 +236,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -342,7 +342,7 @@ func (m *FileSecurityProfile) GetRiskScore()(*string) {
     }
 }
 // GetSize gets the size property value. 
-func (m *FileSecurityProfile) GetSize()(*int64) {
+func (m *FileSecurityProfile) GetSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -463,7 +463,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteInt64Value("size", m.GetSize())
+        err = writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
         }
@@ -565,7 +565,7 @@ func (m *FileSecurityProfile) SetRiskScore(value *string)() {
     }
 }
 // SetSize sets the size property value. 
-func (m *FileSecurityProfile) SetSize(value *int64)() {
+func (m *FileSecurityProfile) SetSize(value *int32)() {
     if m != nil {
         m.size = value
     }
