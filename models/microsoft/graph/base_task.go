@@ -36,7 +36,7 @@ type BaseTask struct {
     startDateTime DateTimeTimeZoneable;
     // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
     status *TaskStatus_v2;
-    // 
+    // The task body in text format that typically contains information about the task.
     textBody *string;
     // 
     viewpoint TaskViewpointable;
@@ -341,7 +341,7 @@ func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
         return m.status
     }
 }
-// GetTextBody gets the textBody property value. 
+// GetTextBody gets the textBody property value. The task body in text format that typically contains information about the task.
 func (m *BaseTask) GetTextBody()(*string) {
     if m == nil {
         return nil
@@ -562,7 +562,7 @@ func (m *BaseTask) SetStatus(value *TaskStatus_v2)() {
         m.status = value
     }
 }
-// SetTextBody sets the textBody property value. 
+// SetTextBody sets the textBody property value. The task body in text format that typically contains information about the task.
 func (m *BaseTask) SetTextBody(value *string)() {
     if m != nil {
         m.textBody = value

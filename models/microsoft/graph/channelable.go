@@ -19,7 +19,9 @@ type Channelable interface {
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
     GetModerationSettings()(ChannelModerationSettingsable)
+    GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
     GetTabs()([]TeamsTabable)
+    GetTenantId()(*string)
     GetWebUrl()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -31,6 +33,8 @@ type Channelable interface {
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()
     SetModerationSettings(value ChannelModerationSettingsable)()
+    SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
     SetTabs(value []TeamsTabable)()
+    SetTenantId(value *string)()
     SetWebUrl(value *string)()
 }

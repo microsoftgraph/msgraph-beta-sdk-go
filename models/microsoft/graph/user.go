@@ -48,6 +48,8 @@ type User struct {
     chats []Chatable;
     // The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     city *string;
+    // 
+    cloudPCs []CloudPCable;
     // The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     companyName *string;
     // Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
@@ -452,6 +454,14 @@ func (m *User) GetCity()(*string) {
         return nil
     } else {
         return m.city
+    }
+}
+// GetCloudPCs gets the cloudPCs property value. 
+func (m *User) GetCloudPCs()([]CloudPCable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.cloudPCs
     }
 }
 // GetCompanyName gets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -926,6 +936,20 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         if val != nil {
             m.SetCity(val)
+        }
+        return nil
+    }
+    res["cloudPCs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPCFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPCable, len(val))
+            for i, v := range val {
+                res[i] = v.(CloudPCable)
+            }
+            m.SetCloudPCs(res)
         }
         return nil
     }
@@ -3182,6 +3206,16 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
+    if m.GetCloudPCs() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudPCs()))
+        for i, v := range m.GetCloudPCs() {
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudPCs", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("companyName", m.GetCompanyName())
         if err != nil {
@@ -4164,6 +4198,12 @@ func (m *User) SetChats(value []Chatable)() {
 func (m *User) SetCity(value *string)() {
     if m != nil {
         m.city = value
+    }
+}
+// SetCloudPCs sets the cloudPCs property value. 
+func (m *User) SetCloudPCs(value []CloudPCable)() {
+    if m != nil {
+        m.cloudPCs = value
     }
 }
 // SetCompanyName sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).

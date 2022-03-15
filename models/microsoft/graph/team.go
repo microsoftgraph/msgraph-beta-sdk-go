@@ -8,6 +8,8 @@ import (
 // Team provides operations to manage the compliance singleton.
 type Team struct {
     Entity
+    // 
+    allChannels []Channelable;
     // The collection of channels and messages associated with the team.
     channels []Channelable;
     // An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
@@ -26,6 +28,8 @@ type Team struct {
     group Groupable;
     // Settings to configure whether guests can create, update, or delete channels in the team.
     guestSettings TeamGuestSettingsable;
+    // 
+    incomingChannels []Channelable;
     // The apps installed in this team.
     installedApps []TeamsAppInstallationable;
     // A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
@@ -54,12 +58,14 @@ type Team struct {
     schedule Scheduleable;
     // Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
     specialization *TeamSpecialization;
-    // 
+    // Contains summary information about the team, including number of owners, members, and guests.
     summary TeamSummaryable;
     // The tags associated with the team.
     tags []TeamworkTagable;
     // The template this team was created from. See available templates.
     template TeamsTemplateable;
+    // 
+    tenantId *string;
     // The visibility of the group and team. Defaults to Public.
     visibility *TeamVisibilityType;
     // A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
@@ -75,6 +81,14 @@ func NewTeam()(*Team) {
 // CreateTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewTeam(), nil
+}
+// GetAllChannels gets the allChannels property value. 
+func (m *Team) GetAllChannels()([]Channelable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allChannels
+    }
 }
 // GetChannels gets the channels property value. The collection of channels and messages associated with the team.
 func (m *Team) GetChannels()([]Channelable) {
@@ -127,6 +141,20 @@ func (m *Team) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allChannels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Channelable, len(val))
+            for i, v := range val {
+                res[i] = v.(Channelable)
+            }
+            m.SetAllChannels(res)
+        }
+        return nil
+    }
     res["channels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
         if err != nil {
@@ -218,6 +246,20 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         if val != nil {
             m.SetGuestSettings(val.(TeamGuestSettingsable))
+        }
+        return nil
+    }
+    res["incomingChannels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Channelable, len(val))
+            for i, v := range val {
+                res[i] = v.(Channelable)
+            }
+            m.SetIncomingChannels(res)
         }
         return nil
     }
@@ -415,6 +457,16 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantId(val)
+        }
+        return nil
+    }
     res["visibility"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamVisibilityType)
         if err != nil {
@@ -459,6 +511,14 @@ func (m *Team) GetGuestSettings()(TeamGuestSettingsable) {
         return nil
     } else {
         return m.guestSettings
+    }
+}
+// GetIncomingChannels gets the incomingChannels property value. 
+func (m *Team) GetIncomingChannels()([]Channelable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.incomingChannels
     }
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in this team.
@@ -573,7 +633,7 @@ func (m *Team) GetSpecialization()(*TeamSpecialization) {
         return m.specialization
     }
 }
-// GetSummary gets the summary property value. 
+// GetSummary gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
 func (m *Team) GetSummary()(TeamSummaryable) {
     if m == nil {
         return nil
@@ -595,6 +655,14 @@ func (m *Team) GetTemplate()(TeamsTemplateable) {
         return nil
     } else {
         return m.template
+    }
+}
+// GetTenantId gets the tenantId property value. 
+func (m *Team) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
     }
 }
 // GetVisibility gets the visibility property value. The visibility of the group and team. Defaults to Public.
@@ -621,6 +689,16 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetAllChannels() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllChannels()))
+        for i, v := range m.GetAllChannels() {
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("allChannels", cast)
+        if err != nil {
+            return err
+        }
     }
     if m.GetChannels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChannels()))
@@ -676,6 +754,16 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     {
         err = writer.WriteObjectValue("guestSettings", m.GetGuestSettings())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetIncomingChannels() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncomingChannels()))
+        for i, v := range m.GetIncomingChannels() {
+            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("incomingChannels", cast)
         if err != nil {
             return err
         }
@@ -807,6 +895,12 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("tenantId", m.GetTenantId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetVisibility() != nil {
         cast := (*m.GetVisibility()).String()
         err = writer.WriteStringValue("visibility", &cast)
@@ -821,6 +915,12 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     return nil
+}
+// SetAllChannels sets the allChannels property value. 
+func (m *Team) SetAllChannels(value []Channelable)() {
+    if m != nil {
+        m.allChannels = value
+    }
 }
 // SetChannels sets the channels property value. The collection of channels and messages associated with the team.
 func (m *Team) SetChannels(value []Channelable)() {
@@ -874,6 +974,12 @@ func (m *Team) SetGroup(value Groupable)() {
 func (m *Team) SetGuestSettings(value TeamGuestSettingsable)() {
     if m != nil {
         m.guestSettings = value
+    }
+}
+// SetIncomingChannels sets the incomingChannels property value. 
+func (m *Team) SetIncomingChannels(value []Channelable)() {
+    if m != nil {
+        m.incomingChannels = value
     }
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in this team.
@@ -960,7 +1066,7 @@ func (m *Team) SetSpecialization(value *TeamSpecialization)() {
         m.specialization = value
     }
 }
-// SetSummary sets the summary property value. 
+// SetSummary sets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
 func (m *Team) SetSummary(value TeamSummaryable)() {
     if m != nil {
         m.summary = value
@@ -976,6 +1082,12 @@ func (m *Team) SetTags(value []TeamworkTagable)() {
 func (m *Team) SetTemplate(value TeamsTemplateable)() {
     if m != nil {
         m.template = value
+    }
+}
+// SetTenantId sets the tenantId property value. 
+func (m *Team) SetTenantId(value *string)() {
+    if m != nil {
+        m.tenantId = value
     }
 }
 // SetVisibility sets the visibility property value. The visibility of the group and team. Defaults to Public.

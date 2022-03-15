@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationMethodsRoot provides operations to manage the print singleton.
+// AuthenticationMethodsRoot provides operations to manage the reportRoot singleton.
 type AuthenticationMethodsRoot struct {
     Entity
     // Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
