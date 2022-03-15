@@ -8,7 +8,7 @@ import (
 type Office365GroupsActivityGroupCounts struct {
     Entity
     // The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-    active *int64;
+    active *int32;
     // The date on which a number of groups were active.
     reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
@@ -16,7 +16,7 @@ type Office365GroupsActivityGroupCounts struct {
     // The latest date of the content.
     reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The total number of groups.
-    total *int64;
+    total *int32;
 }
 // NewOffice365GroupsActivityGroupCounts instantiates a new office365GroupsActivityGroupCounts and sets the default values.
 func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts) {
@@ -30,7 +30,7 @@ func CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue(parseNode i0
     return NewOffice365GroupsActivityGroupCounts(), nil
 }
 // GetActive gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
+func (m *Office365GroupsActivityGroupCounts) GetActive()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -41,7 +41,7 @@ func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
 func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["active"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -81,7 +81,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
         return nil
     }
     res["total"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -117,7 +117,7 @@ func (m *Office365GroupsActivityGroupCounts) GetReportRefreshDate()(*i04eb5309ae
     }
 }
 // GetTotal gets the total property value. The total number of groups.
-func (m *Office365GroupsActivityGroupCounts) GetTotal()(*int64) {
+func (m *Office365GroupsActivityGroupCounts) GetTotal()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -134,7 +134,7 @@ func (m *Office365GroupsActivityGroupCounts) Serialize(writer i04eb5309aeaafadd2
         return err
     }
     {
-        err = writer.WriteInt64Value("active", m.GetActive())
+        err = writer.WriteInt32Value("active", m.GetActive())
         if err != nil {
             return err
         }
@@ -158,7 +158,7 @@ func (m *Office365GroupsActivityGroupCounts) Serialize(writer i04eb5309aeaafadd2
         }
     }
     {
-        err = writer.WriteInt64Value("total", m.GetTotal())
+        err = writer.WriteInt32Value("total", m.GetTotal())
         if err != nil {
             return err
         }
@@ -166,7 +166,7 @@ func (m *Office365GroupsActivityGroupCounts) Serialize(writer i04eb5309aeaafadd2
     return nil
 }
 // SetActive sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-func (m *Office365GroupsActivityGroupCounts) SetActive(value *int64)() {
+func (m *Office365GroupsActivityGroupCounts) SetActive(value *int32)() {
     if m != nil {
         m.active = value
     }
@@ -190,7 +190,7 @@ func (m *Office365GroupsActivityGroupCounts) SetReportRefreshDate(value *i04eb53
     }
 }
 // SetTotal sets the total property value. The total number of groups.
-func (m *Office365GroupsActivityGroupCounts) SetTotal(value *int64)() {
+func (m *Office365GroupsActivityGroupCounts) SetTotal(value *int32)() {
     if m != nil {
         m.total = value
     }

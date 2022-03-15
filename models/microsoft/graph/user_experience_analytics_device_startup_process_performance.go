@@ -8,11 +8,11 @@ import (
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
     // User experience analytics device startup process summarized count.
-    deviceCount *int64;
+    deviceCount *int32;
     // User experience analytics device startup process median impact in milliseconds.
     medianImpactInMs *int32;
     // User experience analytics device startup process median impact in milliseconds.
-    medianImpactInMs2 *int64;
+    medianImpactInMs2 *int32;
     // User experience analytics device startup process name.
     processName *string;
     // The user experience analytics device startup process product name.
@@ -22,7 +22,7 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     // User experience analytics device startup process total impact in milliseconds.
     totalImpactInMs *int32;
     // User experience analytics device startup process total impact in milliseconds.
-    totalImpactInMs2 *int64;
+    totalImpactInMs2 *int32;
 }
 // NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformance) {
@@ -36,7 +36,7 @@ func CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminat
     return NewUserExperienceAnalyticsDeviceStartupProcessPerformance(), nil
 }
 // GetDeviceCount gets the deviceCount property value. User experience analytics device startup process summarized count.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount()(*int64) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -47,7 +47,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount(
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -67,7 +67,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         return nil
     }
     res["medianImpactInMs2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -117,7 +117,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         return nil
     }
     res["totalImpactInMs2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -137,7 +137,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpact
     }
 }
 // GetMedianImpactInMs2 gets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int64) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -177,7 +177,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactI
     }
 }
 // GetTotalImpactInMs2 gets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int64) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -194,7 +194,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
         return err
     }
     {
-        err = writer.WriteInt64Value("deviceCount", m.GetDeviceCount())
+        err = writer.WriteInt32Value("deviceCount", m.GetDeviceCount())
         if err != nil {
             return err
         }
@@ -206,7 +206,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
         }
     }
     {
-        err = writer.WriteInt64Value("medianImpactInMs2", m.GetMedianImpactInMs2())
+        err = writer.WriteInt32Value("medianImpactInMs2", m.GetMedianImpactInMs2())
         if err != nil {
             return err
         }
@@ -236,7 +236,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
         }
     }
     {
-        err = writer.WriteInt64Value("totalImpactInMs2", m.GetTotalImpactInMs2())
+        err = writer.WriteInt32Value("totalImpactInMs2", m.GetTotalImpactInMs2())
         if err != nil {
             return err
         }
@@ -244,7 +244,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
     return nil
 }
 // SetDeviceCount sets the deviceCount property value. User experience analytics device startup process summarized count.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(value *int64)() {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(value *int32)() {
     if m != nil {
         m.deviceCount = value
     }
@@ -256,7 +256,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpact
     }
 }
 // SetMedianImpactInMs2 sets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs2(value *int64)() {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs2(value *int32)() {
     if m != nil {
         m.medianImpactInMs2 = value
     }
@@ -286,7 +286,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactI
     }
 }
 // SetTotalImpactInMs2 sets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs2(value *int64)() {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs2(value *int32)() {
     if m != nil {
         m.totalImpactInMs2 = value
     }

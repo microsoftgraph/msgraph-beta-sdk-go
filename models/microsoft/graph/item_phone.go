@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemPhone provides operations to manage the compliance singleton.
+// ItemPhone provides operations to manage the deviceManagement singleton.
 type ItemPhone struct {
     ItemFacet
     // Friendly name the user has assigned this phone number.

@@ -11,7 +11,7 @@ type ActionStep struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    stepNumber *int64;
+    stepNumber *int32;
     // 
     text *string;
 }
@@ -56,7 +56,7 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["stepNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -78,7 +78,7 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
     return res
 }
 // GetStepNumber gets the stepNumber property value. 
-func (m *ActionStep) GetStepNumber()(*int64) {
+func (m *ActionStep) GetStepNumber()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -105,7 +105,7 @@ func (m *ActionStep) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err := writer.WriteInt64Value("stepNumber", m.GetStepNumber())
+        err := writer.WriteInt32Value("stepNumber", m.GetStepNumber())
         if err != nil {
             return err
         }
@@ -137,7 +137,7 @@ func (m *ActionStep) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetStepNumber sets the stepNumber property value. 
-func (m *ActionStep) SetStepNumber(value *int64)() {
+func (m *ActionStep) SetStepNumber(value *int32)() {
     if m != nil {
         m.stepNumber = value
     }

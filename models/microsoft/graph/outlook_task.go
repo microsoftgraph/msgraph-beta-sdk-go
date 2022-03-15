@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OutlookTask provides operations to manage the compliance singleton.
+// OutlookTask provides operations to manage the deviceManagement singleton.
 type OutlookTask struct {
     OutlookItem
     // The name of the person who has been assigned the task in Outlook. Read-only.

@@ -21,6 +21,8 @@ type CloudPcOnPremisesConnection struct {
     healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable;
     // When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
     inUse *bool;
+    // 
+    managedBy *CloudPcManagementService;
     // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
     organizationalUnit *string;
     // The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
@@ -152,6 +154,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
+    res["managedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcManagementService)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagedBy(val.(*CloudPcManagementService))
+        }
+        return nil
+    }
     res["organizationalUnit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -246,6 +258,14 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
         return nil
     } else {
         return m.inUse
+    }
+}
+// GetManagedBy gets the managedBy property value. 
+func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
+    if m == nil {
+        return nil
+    } else {
+        return m.managedBy
     }
 }
 // GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
@@ -356,6 +376,13 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
+    if m.GetManagedBy() != nil {
+        cast := (*m.GetManagedBy()).String()
+        err = writer.WriteStringValue("managedBy", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("organizationalUnit", m.GetOrganizationalUnit())
         if err != nil {
@@ -441,6 +468,12 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcO
 func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
     if m != nil {
         m.inUse = value
+    }
+}
+// SetManagedBy sets the managedBy property value. 
+func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
+    if m != nil {
+        m.managedBy = value
     }
 }
 // SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.

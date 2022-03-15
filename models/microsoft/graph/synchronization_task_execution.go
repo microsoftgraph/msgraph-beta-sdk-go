@@ -12,23 +12,23 @@ type SynchronizationTaskExecution struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Count of processed entries that were assigned for this application.
-    countEntitled *int64;
+    countEntitled *int32;
     // Count of processed entries that were assigned for provisioning.
-    countEntitledForProvisioning *int64;
+    countEntitledForProvisioning *int32;
     // Count of entries that were escrowed (errors).
-    countEscrowed *int64;
+    countEscrowed *int32;
     // Count of entries that were escrowed, including system-generated escrows.
-    countEscrowedRaw *int64;
+    countEscrowedRaw *int32;
     // Count of exported entries.
-    countExported *int64;
+    countExported *int32;
     // Count of entries that were expected to be exported.
-    countExports *int64;
+    countExports *int32;
     // Count of imported entries.
-    countImported *int64;
+    countImported *int32;
     // Count of imported delta-changes.
-    countImportedDeltas *int64;
+    countImportedDeltas *int32;
     // Count of imported delta-changes pertaining to reference changes.
-    countImportedReferenceDeltas *int64;
+    countImportedReferenceDeltas *int32;
     // If an error was encountered, contains a synchronizationError object with details.
     error SynchronizationErrorable;
     // Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.
@@ -66,7 +66,7 @@ func (m *SynchronizationTaskExecution) GetAdditionalData()(map[string]interface{
     }
 }
 // GetCountEntitled gets the countEntitled property value. Count of processed entries that were assigned for this application.
-func (m *SynchronizationTaskExecution) GetCountEntitled()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountEntitled()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -74,7 +74,7 @@ func (m *SynchronizationTaskExecution) GetCountEntitled()(*int64) {
     }
 }
 // GetCountEntitledForProvisioning gets the countEntitledForProvisioning property value. Count of processed entries that were assigned for provisioning.
-func (m *SynchronizationTaskExecution) GetCountEntitledForProvisioning()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountEntitledForProvisioning()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -82,7 +82,7 @@ func (m *SynchronizationTaskExecution) GetCountEntitledForProvisioning()(*int64)
     }
 }
 // GetCountEscrowed gets the countEscrowed property value. Count of entries that were escrowed (errors).
-func (m *SynchronizationTaskExecution) GetCountEscrowed()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountEscrowed()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -90,7 +90,7 @@ func (m *SynchronizationTaskExecution) GetCountEscrowed()(*int64) {
     }
 }
 // GetCountEscrowedRaw gets the countEscrowedRaw property value. Count of entries that were escrowed, including system-generated escrows.
-func (m *SynchronizationTaskExecution) GetCountEscrowedRaw()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountEscrowedRaw()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -98,7 +98,7 @@ func (m *SynchronizationTaskExecution) GetCountEscrowedRaw()(*int64) {
     }
 }
 // GetCountExported gets the countExported property value. Count of exported entries.
-func (m *SynchronizationTaskExecution) GetCountExported()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountExported()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -106,7 +106,7 @@ func (m *SynchronizationTaskExecution) GetCountExported()(*int64) {
     }
 }
 // GetCountExports gets the countExports property value. Count of entries that were expected to be exported.
-func (m *SynchronizationTaskExecution) GetCountExports()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountExports()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -114,7 +114,7 @@ func (m *SynchronizationTaskExecution) GetCountExports()(*int64) {
     }
 }
 // GetCountImported gets the countImported property value. Count of imported entries.
-func (m *SynchronizationTaskExecution) GetCountImported()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountImported()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -122,7 +122,7 @@ func (m *SynchronizationTaskExecution) GetCountImported()(*int64) {
     }
 }
 // GetCountImportedDeltas gets the countImportedDeltas property value. Count of imported delta-changes.
-func (m *SynchronizationTaskExecution) GetCountImportedDeltas()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountImportedDeltas()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -130,7 +130,7 @@ func (m *SynchronizationTaskExecution) GetCountImportedDeltas()(*int64) {
     }
 }
 // GetCountImportedReferenceDeltas gets the countImportedReferenceDeltas property value. Count of imported delta-changes pertaining to reference changes.
-func (m *SynchronizationTaskExecution) GetCountImportedReferenceDeltas()(*int64) {
+func (m *SynchronizationTaskExecution) GetCountImportedReferenceDeltas()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -159,7 +159,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countEntitled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -169,7 +169,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countEntitledForProvisioning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -179,7 +179,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countEscrowed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -189,7 +189,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countEscrowedRaw"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -199,7 +199,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countExported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -209,7 +209,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countExports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -219,7 +219,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countImported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -229,7 +229,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countImportedDeltas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -239,7 +239,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["countImportedReferenceDeltas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -326,55 +326,55 @@ func (m *SynchronizationTaskExecution) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
-        err := writer.WriteInt64Value("countEntitled", m.GetCountEntitled())
+        err := writer.WriteInt32Value("countEntitled", m.GetCountEntitled())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countEntitledForProvisioning", m.GetCountEntitledForProvisioning())
+        err := writer.WriteInt32Value("countEntitledForProvisioning", m.GetCountEntitledForProvisioning())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countEscrowed", m.GetCountEscrowed())
+        err := writer.WriteInt32Value("countEscrowed", m.GetCountEscrowed())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countEscrowedRaw", m.GetCountEscrowedRaw())
+        err := writer.WriteInt32Value("countEscrowedRaw", m.GetCountEscrowedRaw())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countExported", m.GetCountExported())
+        err := writer.WriteInt32Value("countExported", m.GetCountExported())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countExports", m.GetCountExports())
+        err := writer.WriteInt32Value("countExports", m.GetCountExports())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countImported", m.GetCountImported())
+        err := writer.WriteInt32Value("countImported", m.GetCountImported())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countImportedDeltas", m.GetCountImportedDeltas())
+        err := writer.WriteInt32Value("countImportedDeltas", m.GetCountImportedDeltas())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("countImportedReferenceDeltas", m.GetCountImportedReferenceDeltas())
+        err := writer.WriteInt32Value("countImportedReferenceDeltas", m.GetCountImportedReferenceDeltas())
         if err != nil {
             return err
         }
@@ -425,55 +425,55 @@ func (m *SynchronizationTaskExecution) SetAdditionalData(value map[string]interf
     }
 }
 // SetCountEntitled sets the countEntitled property value. Count of processed entries that were assigned for this application.
-func (m *SynchronizationTaskExecution) SetCountEntitled(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountEntitled(value *int32)() {
     if m != nil {
         m.countEntitled = value
     }
 }
 // SetCountEntitledForProvisioning sets the countEntitledForProvisioning property value. Count of processed entries that were assigned for provisioning.
-func (m *SynchronizationTaskExecution) SetCountEntitledForProvisioning(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountEntitledForProvisioning(value *int32)() {
     if m != nil {
         m.countEntitledForProvisioning = value
     }
 }
 // SetCountEscrowed sets the countEscrowed property value. Count of entries that were escrowed (errors).
-func (m *SynchronizationTaskExecution) SetCountEscrowed(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountEscrowed(value *int32)() {
     if m != nil {
         m.countEscrowed = value
     }
 }
 // SetCountEscrowedRaw sets the countEscrowedRaw property value. Count of entries that were escrowed, including system-generated escrows.
-func (m *SynchronizationTaskExecution) SetCountEscrowedRaw(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountEscrowedRaw(value *int32)() {
     if m != nil {
         m.countEscrowedRaw = value
     }
 }
 // SetCountExported sets the countExported property value. Count of exported entries.
-func (m *SynchronizationTaskExecution) SetCountExported(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountExported(value *int32)() {
     if m != nil {
         m.countExported = value
     }
 }
 // SetCountExports sets the countExports property value. Count of entries that were expected to be exported.
-func (m *SynchronizationTaskExecution) SetCountExports(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountExports(value *int32)() {
     if m != nil {
         m.countExports = value
     }
 }
 // SetCountImported sets the countImported property value. Count of imported entries.
-func (m *SynchronizationTaskExecution) SetCountImported(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountImported(value *int32)() {
     if m != nil {
         m.countImported = value
     }
 }
 // SetCountImportedDeltas sets the countImportedDeltas property value. Count of imported delta-changes.
-func (m *SynchronizationTaskExecution) SetCountImportedDeltas(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountImportedDeltas(value *int32)() {
     if m != nil {
         m.countImportedDeltas = value
     }
 }
 // SetCountImportedReferenceDeltas sets the countImportedReferenceDeltas property value. Count of imported delta-changes pertaining to reference changes.
-func (m *SynchronizationTaskExecution) SetCountImportedReferenceDeltas(value *int64)() {
+func (m *SynchronizationTaskExecution) SetCountImportedReferenceDeltas(value *int32)() {
     if m != nil {
         m.countImportedReferenceDeltas = value
     }

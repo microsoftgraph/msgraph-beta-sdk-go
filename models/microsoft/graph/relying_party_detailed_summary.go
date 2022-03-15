@@ -8,7 +8,7 @@ import (
 type RelyingPartyDetailedSummary struct {
     Entity
     // Number of failed sign in on Active Directory Federation Service in the period specified.
-    failedSignInCount *int64;
+    failedSignInCount *int32;
     // Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
     migrationStatus *MigrationStatus;
     // Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
@@ -24,11 +24,11 @@ type RelyingPartyDetailedSummary struct {
     // Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
     signInSuccessRate *float64;
     // Number of successful sign ins on Active Directory Federation Service.
-    successfulSignInCount *int64;
+    successfulSignInCount *int32;
     // Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
-    totalSignInCount *int64;
+    totalSignInCount *int32;
     // Number of unique users that have signed into the application.
-    uniqueUserCount *int64;
+    uniqueUserCount *int32;
 }
 // NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
@@ -42,7 +42,7 @@ func CreateRelyingPartyDetailedSummaryFromDiscriminatorValue(parseNode i04eb5309
     return NewRelyingPartyDetailedSummary(), nil
 }
 // GetFailedSignInCount gets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
-func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
+func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -53,7 +53,7 @@ func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
 func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["failedSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -141,7 +141,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["successfulSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -151,7 +151,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["totalSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -161,7 +161,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["uniqueUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -229,7 +229,7 @@ func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
     }
 }
 // GetSuccessfulSignInCount gets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
-func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
+func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -237,7 +237,7 @@ func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
     }
 }
 // GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
-func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
+func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -245,7 +245,7 @@ func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
     }
 }
 // GetUniqueUserCount gets the uniqueUserCount property value. Number of unique users that have signed into the application.
-func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
+func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -262,7 +262,7 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     {
-        err = writer.WriteInt64Value("failedSignInCount", m.GetFailedSignInCount())
+        err = writer.WriteInt32Value("failedSignInCount", m.GetFailedSignInCount())
         if err != nil {
             return err
         }
@@ -315,19 +315,19 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     {
-        err = writer.WriteInt64Value("successfulSignInCount", m.GetSuccessfulSignInCount())
+        err = writer.WriteInt32Value("successfulSignInCount", m.GetSuccessfulSignInCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("totalSignInCount", m.GetTotalSignInCount())
+        err = writer.WriteInt32Value("totalSignInCount", m.GetTotalSignInCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("uniqueUserCount", m.GetUniqueUserCount())
+        err = writer.WriteInt32Value("uniqueUserCount", m.GetUniqueUserCount())
         if err != nil {
             return err
         }
@@ -335,7 +335,7 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i04eb5309aeaafadd28374d79
     return nil
 }
 // SetFailedSignInCount sets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
-func (m *RelyingPartyDetailedSummary) SetFailedSignInCount(value *int64)() {
+func (m *RelyingPartyDetailedSummary) SetFailedSignInCount(value *int32)() {
     if m != nil {
         m.failedSignInCount = value
     }
@@ -383,19 +383,19 @@ func (m *RelyingPartyDetailedSummary) SetSignInSuccessRate(value *float64)() {
     }
 }
 // SetSuccessfulSignInCount sets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
-func (m *RelyingPartyDetailedSummary) SetSuccessfulSignInCount(value *int64)() {
+func (m *RelyingPartyDetailedSummary) SetSuccessfulSignInCount(value *int32)() {
     if m != nil {
         m.successfulSignInCount = value
     }
 }
 // SetTotalSignInCount sets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
-func (m *RelyingPartyDetailedSummary) SetTotalSignInCount(value *int64)() {
+func (m *RelyingPartyDetailedSummary) SetTotalSignInCount(value *int32)() {
     if m != nil {
         m.totalSignInCount = value
     }
 }
 // SetUniqueUserCount sets the uniqueUserCount property value. Number of unique users that have signed into the application.
-func (m *RelyingPartyDetailedSummary) SetUniqueUserCount(value *int64)() {
+func (m *RelyingPartyDetailedSummary) SetUniqueUserCount(value *int32)() {
     if m != nil {
         m.uniqueUserCount = value
     }

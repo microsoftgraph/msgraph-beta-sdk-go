@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BaseTask provides operations to manage the compliance singleton.
+// BaseTask provides operations to manage the deviceManagement singleton.
 type BaseTask struct {
     Entity
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -36,7 +36,7 @@ type BaseTask struct {
     startDateTime DateTimeTimeZoneable;
     // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
     status *TaskStatus_v2;
-    // 
+    // The task body in text format that typically contains information about the task.
     textBody *string;
     // 
     viewpoint TaskViewpointable;
@@ -341,7 +341,7 @@ func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
         return m.status
     }
 }
-// GetTextBody gets the textBody property value. 
+// GetTextBody gets the textBody property value. The task body in text format that typically contains information about the task.
 func (m *BaseTask) GetTextBody()(*string) {
     if m == nil {
         return nil
@@ -562,7 +562,7 @@ func (m *BaseTask) SetStatus(value *TaskStatus_v2)() {
         m.status = value
     }
 }
-// SetTextBody sets the textBody property value. 
+// SetTextBody sets the textBody property value. The task body in text format that typically contains information about the task.
 func (m *BaseTask) SetTextBody(value *string)() {
     if m != nil {
         m.textBody = value

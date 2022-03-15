@@ -8,7 +8,7 @@ import (
 type Office365GroupsActivityStorage struct {
     Entity
     // The storage used in group mailbox.
-    mailboxStorageUsedInBytes *int64;
+    mailboxStorageUsedInBytes *int32;
     // The snapshot date for Exchange and SharePoint used storage.
     reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
@@ -16,7 +16,7 @@ type Office365GroupsActivityStorage struct {
     // The latest date of the content.
     reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The storage used in SharePoint document library.
-    siteStorageUsedInBytes *int64;
+    siteStorageUsedInBytes *int32;
 }
 // NewOffice365GroupsActivityStorage instantiates a new office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
@@ -33,7 +33,7 @@ func CreateOffice365GroupsActivityStorageFromDiscriminatorValue(parseNode i04eb5
 func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["mailboxStorageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -73,7 +73,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["siteStorageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -85,7 +85,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetMailboxStorageUsedInBytes gets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
-func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) {
+func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -117,7 +117,7 @@ func (m *Office365GroupsActivityStorage) GetReportRefreshDate()(*i04eb5309aeaafa
     }
 }
 // GetSiteStorageUsedInBytes gets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
-func (m *Office365GroupsActivityStorage) GetSiteStorageUsedInBytes()(*int64) {
+func (m *Office365GroupsActivityStorage) GetSiteStorageUsedInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -134,7 +134,7 @@ func (m *Office365GroupsActivityStorage) Serialize(writer i04eb5309aeaafadd28374
         return err
     }
     {
-        err = writer.WriteInt64Value("mailboxStorageUsedInBytes", m.GetMailboxStorageUsedInBytes())
+        err = writer.WriteInt32Value("mailboxStorageUsedInBytes", m.GetMailboxStorageUsedInBytes())
         if err != nil {
             return err
         }
@@ -158,7 +158,7 @@ func (m *Office365GroupsActivityStorage) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteInt64Value("siteStorageUsedInBytes", m.GetSiteStorageUsedInBytes())
+        err = writer.WriteInt32Value("siteStorageUsedInBytes", m.GetSiteStorageUsedInBytes())
         if err != nil {
             return err
         }
@@ -166,7 +166,7 @@ func (m *Office365GroupsActivityStorage) Serialize(writer i04eb5309aeaafadd28374
     return nil
 }
 // SetMailboxStorageUsedInBytes sets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
-func (m *Office365GroupsActivityStorage) SetMailboxStorageUsedInBytes(value *int64)() {
+func (m *Office365GroupsActivityStorage) SetMailboxStorageUsedInBytes(value *int32)() {
     if m != nil {
         m.mailboxStorageUsedInBytes = value
     }
@@ -190,7 +190,7 @@ func (m *Office365GroupsActivityStorage) SetReportRefreshDate(value *i04eb5309ae
     }
 }
 // SetSiteStorageUsedInBytes sets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
-func (m *Office365GroupsActivityStorage) SetSiteStorageUsedInBytes(value *int64)() {
+func (m *Office365GroupsActivityStorage) SetSiteStorageUsedInBytes(value *int32)() {
     if m != nil {
         m.siteStorageUsedInBytes = value
     }

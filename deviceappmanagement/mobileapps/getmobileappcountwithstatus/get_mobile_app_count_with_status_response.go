@@ -9,7 +9,7 @@ type GetMobileAppCountWithStatusResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    value *int64;
+    value *int32;
 }
 // NewGetMobileAppCountWithStatusResponse instantiates a new getMobileAppCountWithStatusResponse and sets the default values.
 func NewGetMobileAppCountWithStatusResponse()(*GetMobileAppCountWithStatusResponse) {
@@ -34,7 +34,7 @@ func (m *GetMobileAppCountWithStatusResponse) GetAdditionalData()(map[string]int
 func (m *GetMobileAppCountWithStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -46,7 +46,7 @@ func (m *GetMobileAppCountWithStatusResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. 
-func (m *GetMobileAppCountWithStatusResponse) GetValue()(*int64) {
+func (m *GetMobileAppCountWithStatusResponse) GetValue()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +59,7 @@ func (m *GetMobileAppCountWithStatusResponse) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *GetMobileAppCountWithStatusResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("value", m.GetValue())
+        err := writer.WriteInt32Value("value", m.GetValue())
         if err != nil {
             return err
         }
@@ -79,7 +79,7 @@ func (m *GetMobileAppCountWithStatusResponse) SetAdditionalData(value map[string
     }
 }
 // SetValue sets the value property value. 
-func (m *GetMobileAppCountWithStatusResponse) SetValue(value *int64)() {
+func (m *GetMobileAppCountWithStatusResponse) SetValue(value *int32)() {
     if m != nil {
         m.value = value
     }

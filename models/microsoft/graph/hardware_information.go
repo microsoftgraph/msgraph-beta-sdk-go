@@ -27,7 +27,7 @@ type HardwareInformation struct {
     // eSIM identifier
     esimIdentifier *string;
     // Free storage space of the device.
-    freeStorageSpace *int64;
+    freeStorageSpace *int32;
     // IMEI
     imei *string;
     // IPAddressV4
@@ -65,7 +65,7 @@ type HardwareInformation struct {
     // BIOS version as reported by SMBIOS
     systemManagementBIOSVersion *string;
     // Total storage space of the device.
-    totalStorageSpace *int64;
+    totalStorageSpace *int32;
     // The identifying information that uniquely names the TPM manufacturer
     tpmManufacturer *string;
     // String that specifies the specification version.
@@ -260,7 +260,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["freeStorageSpace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -454,7 +454,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["totalStorageSpace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -506,7 +506,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
     return res
 }
 // GetFreeStorageSpace gets the freeStorageSpace property value. Free storage space of the device.
-func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
+func (m *HardwareInformation) GetFreeStorageSpace()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -658,7 +658,7 @@ func (m *HardwareInformation) GetSystemManagementBIOSVersion()(*string) {
     }
 }
 // GetTotalStorageSpace gets the totalStorageSpace property value. Total storage space of the device.
-func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
+func (m *HardwareInformation) GetTotalStorageSpace()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -760,7 +760,7 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err := writer.WriteInt64Value("freeStorageSpace", m.GetFreeStorageSpace())
+        err := writer.WriteInt32Value("freeStorageSpace", m.GetFreeStorageSpace())
         if err != nil {
             return err
         }
@@ -878,7 +878,7 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err := writer.WriteInt64Value("totalStorageSpace", m.GetTotalStorageSpace())
+        err := writer.WriteInt32Value("totalStorageSpace", m.GetTotalStorageSpace())
         if err != nil {
             return err
         }
@@ -976,7 +976,7 @@ func (m *HardwareInformation) SetEsimIdentifier(value *string)() {
     }
 }
 // SetFreeStorageSpace sets the freeStorageSpace property value. Free storage space of the device.
-func (m *HardwareInformation) SetFreeStorageSpace(value *int64)() {
+func (m *HardwareInformation) SetFreeStorageSpace(value *int32)() {
     if m != nil {
         m.freeStorageSpace = value
     }
@@ -1090,7 +1090,7 @@ func (m *HardwareInformation) SetSystemManagementBIOSVersion(value *string)() {
     }
 }
 // SetTotalStorageSpace sets the totalStorageSpace property value. Total storage space of the device.
-func (m *HardwareInformation) SetTotalStorageSpace(value *int64)() {
+func (m *HardwareInformation) SetTotalStorageSpace(value *int32)() {
     if m != nil {
         m.totalStorageSpace = value
     }

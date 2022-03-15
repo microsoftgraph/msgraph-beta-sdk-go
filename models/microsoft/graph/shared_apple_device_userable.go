@@ -8,12 +8,12 @@ import (
 type SharedAppleDeviceUserable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetDataQuota()(*int64)
+    GetDataQuota()(*int32)
     GetDataToSync()(*bool)
-    GetDataUsed()(*int64)
+    GetDataUsed()(*int32)
     GetUserPrincipalName()(*string)
-    SetDataQuota(value *int64)()
+    SetDataQuota(value *int32)()
     SetDataToSync(value *bool)()
-    SetDataUsed(value *int64)()
+    SetDataUsed(value *int32)()
     SetUserPrincipalName(value *string)()
 }

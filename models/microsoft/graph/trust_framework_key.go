@@ -17,7 +17,7 @@ type TrustFrameworkKey struct {
     // RSA Key - public exponent
     e *string;
     // This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-    exp *int64;
+    exp *int32;
     // Symmetric Key for oct key type. Field cannot be read back.
     k *string;
     // The unique identifier for the key.
@@ -27,7 +27,7 @@ type TrustFrameworkKey struct {
     // RSA Key - modulus
     n *string;
     // This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-    nbf *int64;
+    nbf *int32;
     // RSA Key - first prime. Field cannot be read back.
     p *string;
     // RSA Key - second prime. Field cannot be read back.
@@ -93,7 +93,7 @@ func (m *TrustFrameworkKey) GetE()(*string) {
     }
 }
 // GetExp gets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-func (m *TrustFrameworkKey) GetExp()(*int64) {
+func (m *TrustFrameworkKey) GetExp()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -144,7 +144,7 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["exp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -194,7 +194,7 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["nbf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -302,7 +302,7 @@ func (m *TrustFrameworkKey) GetN()(*string) {
     }
 }
 // GetNbf gets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-func (m *TrustFrameworkKey) GetNbf()(*int64) {
+func (m *TrustFrameworkKey) GetNbf()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -387,7 +387,7 @@ func (m *TrustFrameworkKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
-        err := writer.WriteInt64Value("exp", m.GetExp())
+        err := writer.WriteInt32Value("exp", m.GetExp())
         if err != nil {
             return err
         }
@@ -417,7 +417,7 @@ func (m *TrustFrameworkKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
-        err := writer.WriteInt64Value("nbf", m.GetNbf())
+        err := writer.WriteInt32Value("nbf", m.GetNbf())
         if err != nil {
             return err
         }
@@ -497,7 +497,7 @@ func (m *TrustFrameworkKey) SetE(value *string)() {
     }
 }
 // SetExp sets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-func (m *TrustFrameworkKey) SetExp(value *int64)() {
+func (m *TrustFrameworkKey) SetExp(value *int32)() {
     if m != nil {
         m.exp = value
     }
@@ -527,7 +527,7 @@ func (m *TrustFrameworkKey) SetN(value *string)() {
     }
 }
 // SetNbf sets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-func (m *TrustFrameworkKey) SetNbf(value *int64)() {
+func (m *TrustFrameworkKey) SetNbf(value *int32)() {
     if m != nil {
         m.nbf = value
     }

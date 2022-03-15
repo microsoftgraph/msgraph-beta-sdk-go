@@ -11,7 +11,7 @@ type DeviceCompliancePolicySettingState struct {
     // Current value of setting on device
     currentValue *string;
     // Error code for the setting
-    errorCode *int64;
+    errorCode *int32;
     // Error description
     errorDescription *string;
     // Name of setting instance that is being reported.
@@ -63,7 +63,7 @@ func (m *DeviceCompliancePolicySettingState) GetCurrentValue()(*string) {
     }
 }
 // GetErrorCode gets the errorCode property value. Error code for the setting
-func (m *DeviceCompliancePolicySettingState) GetErrorCode()(*int64) {
+func (m *DeviceCompliancePolicySettingState) GetErrorCode()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -92,7 +92,7 @@ func (m *DeviceCompliancePolicySettingState) GetFieldDeserializers()(map[string]
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -309,7 +309,7 @@ func (m *DeviceCompliancePolicySettingState) Serialize(writer i04eb5309aeaafadd2
         }
     }
     {
-        err := writer.WriteInt64Value("errorCode", m.GetErrorCode())
+        err := writer.WriteInt32Value("errorCode", m.GetErrorCode())
         if err != nil {
             return err
         }
@@ -406,7 +406,7 @@ func (m *DeviceCompliancePolicySettingState) SetCurrentValue(value *string)() {
     }
 }
 // SetErrorCode sets the errorCode property value. Error code for the setting
-func (m *DeviceCompliancePolicySettingState) SetErrorCode(value *int64)() {
+func (m *DeviceCompliancePolicySettingState) SetErrorCode(value *int32)() {
     if m != nil {
         m.errorCode = value
     }

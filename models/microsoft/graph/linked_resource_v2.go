@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LinkedResource_v2 provides operations to manage the compliance singleton.
+// LinkedResource_v2 provides operations to manage the deviceManagement singleton.
 type LinkedResource_v2 struct {
     Entity
     // Field indicating the app name of the source that is sending the linkedResource.

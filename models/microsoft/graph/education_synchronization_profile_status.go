@@ -9,7 +9,7 @@ import (
 type EducationSynchronizationProfileStatus struct {
     Entity
     // Number of errors during synchronization.
-    errorCount *int64;
+    errorCount *int32;
     // Represents the time when most recent changes were observed in profile.
     lastActivityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Represents the time of the most recent successful  synchronization.
@@ -31,7 +31,7 @@ func CreateEducationSynchronizationProfileStatusFromDiscriminatorValue(parseNode
     return NewEducationSynchronizationProfileStatus(), nil
 }
 // GetErrorCount gets the errorCount property value. Number of errors during synchronization.
-func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
+func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -42,7 +42,7 @@ func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
 func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["errorCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -135,7 +135,7 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i04eb5309aeaafa
         return err
     }
     {
-        err = writer.WriteInt64Value("errorCount", m.GetErrorCount())
+        err = writer.WriteInt32Value("errorCount", m.GetErrorCount())
         if err != nil {
             return err
         }
@@ -168,7 +168,7 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i04eb5309aeaafa
     return nil
 }
 // SetErrorCount sets the errorCount property value. Number of errors during synchronization.
-func (m *EducationSynchronizationProfileStatus) SetErrorCount(value *int64)() {
+func (m *EducationSynchronizationProfileStatus) SetErrorCount(value *int32)() {
     if m != nil {
         m.errorCount = value
     }

@@ -18,7 +18,7 @@ type UserExperienceAnalyticsModelScores struct {
     // A unique identifier of the user experience analytics model scores: device model.
     model *string;
     // The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-    modelDeviceCount *int64;
+    modelDeviceCount *int32;
     // The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     startupPerformanceScore *float64;
     // The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -105,7 +105,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         return nil
     }
     res["modelDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -161,7 +161,7 @@ func (m *UserExperienceAnalyticsModelScores) GetModel()(*string) {
     }
 }
 // GetModelDeviceCount gets the modelDeviceCount property value. The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-func (m *UserExperienceAnalyticsModelScores) GetModelDeviceCount()(*int64) {
+func (m *UserExperienceAnalyticsModelScores) GetModelDeviceCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -225,7 +225,7 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i04eb5309aeaafadd2
         }
     }
     {
-        err = writer.WriteInt64Value("modelDeviceCount", m.GetModelDeviceCount())
+        err = writer.WriteInt32Value("modelDeviceCount", m.GetModelDeviceCount())
         if err != nil {
             return err
         }
@@ -275,7 +275,7 @@ func (m *UserExperienceAnalyticsModelScores) SetModel(value *string)() {
     }
 }
 // SetModelDeviceCount sets the modelDeviceCount property value. The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-func (m *UserExperienceAnalyticsModelScores) SetModelDeviceCount(value *int64)() {
+func (m *UserExperienceAnalyticsModelScores) SetModelDeviceCount(value *int32)() {
     if m != nil {
         m.modelDeviceCount = value
     }

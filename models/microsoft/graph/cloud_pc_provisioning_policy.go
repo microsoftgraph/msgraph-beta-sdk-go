@@ -25,6 +25,8 @@ type CloudPcProvisioningPolicy struct {
     microsoftManagedDesktop MicrosoftManagedDesktopable;
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
     onPremisesConnectionId *string;
+    // 
+    windowsSettings CloudPcWindowsSettingsable;
 }
 // NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
@@ -166,6 +168,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
+    res["windowsSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsSettings(val.(CloudPcWindowsSettingsable))
+        }
+        return nil
+    }
     return res
 }
 // GetImageDisplayName gets the imageDisplayName property value. The display name for the OS image you’re provisioning.
@@ -206,6 +218,14 @@ func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
         return nil
     } else {
         return m.onPremisesConnectionId
+    }
+}
+// GetWindowsSettings gets the windowsSettings property value. 
+func (m *CloudPcProvisioningPolicy) GetWindowsSettings()(CloudPcWindowsSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsSettings
     }
 }
 func (m *CloudPcProvisioningPolicy) IsNil()(bool) {
@@ -276,6 +296,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("windowsSettings", m.GetWindowsSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignments sets the assignments property value. A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
@@ -330,5 +356,11 @@ func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftMa
 func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
     if m != nil {
         m.onPremisesConnectionId = value
+    }
+}
+// SetWindowsSettings sets the windowsSettings property value. 
+func (m *CloudPcProvisioningPolicy) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
+    if m != nil {
+        m.windowsSettings = value
     }
 }

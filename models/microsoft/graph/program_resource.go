@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProgramResource provides operations to manage the collection of program entities.
+// ProgramResource provides operations to manage the collection of programControl entities.
 type ProgramResource struct {
     Identity
     // Type of the resource, indicating whether it is a group or an app.

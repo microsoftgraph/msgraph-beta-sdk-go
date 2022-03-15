@@ -11,7 +11,7 @@ type UserRegistrationFeatureCount struct {
     // Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.
     feature *AuthenticationMethodFeature;
     // Number of users.
-    userCount *int64;
+    userCount *int32;
 }
 // NewUserRegistrationFeatureCount instantiates a new userRegistrationFeatureCount and sets the default values.
 func NewUserRegistrationFeatureCount()(*UserRegistrationFeatureCount) {
@@ -54,7 +54,7 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["userCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -66,7 +66,7 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetUserCount gets the userCount property value. Number of users.
-func (m *UserRegistrationFeatureCount) GetUserCount()(*int64) {
+func (m *UserRegistrationFeatureCount) GetUserCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -86,7 +86,7 @@ func (m *UserRegistrationFeatureCount) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
-        err := writer.WriteInt64Value("userCount", m.GetUserCount())
+        err := writer.WriteInt32Value("userCount", m.GetUserCount())
         if err != nil {
             return err
         }
@@ -112,7 +112,7 @@ func (m *UserRegistrationFeatureCount) SetFeature(value *AuthenticationMethodFea
     }
 }
 // SetUserCount sets the userCount property value. Number of users.
-func (m *UserRegistrationFeatureCount) SetUserCount(value *int64)() {
+func (m *UserRegistrationFeatureCount) SetUserCount(value *int32)() {
     if m != nil {
         m.userCount = value
     }

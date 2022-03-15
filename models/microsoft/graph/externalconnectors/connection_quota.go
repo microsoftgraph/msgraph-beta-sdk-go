@@ -9,7 +9,7 @@ import (
 type ConnectionQuota struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
-    itemsRemaining *int64;
+    itemsRemaining *int32;
 }
 // NewConnectionQuota instantiates a new connectionQuota and sets the default values.
 func NewConnectionQuota()(*ConnectionQuota) {
@@ -26,7 +26,7 @@ func CreateConnectionQuotaFromDiscriminatorValue(parseNode i04eb5309aeaafadd2837
 func (m *ConnectionQuota) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["itemsRemaining"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -38,7 +38,7 @@ func (m *ConnectionQuota) GetFieldDeserializers()(map[string]func(interface{}, i
     return res
 }
 // GetItemsRemaining gets the itemsRemaining property value. 
-func (m *ConnectionQuota) GetItemsRemaining()(*int64) {
+func (m *ConnectionQuota) GetItemsRemaining()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +55,7 @@ func (m *ConnectionQuota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         return err
     }
     {
-        err = writer.WriteInt64Value("itemsRemaining", m.GetItemsRemaining())
+        err = writer.WriteInt32Value("itemsRemaining", m.GetItemsRemaining())
         if err != nil {
             return err
         }
@@ -63,7 +63,7 @@ func (m *ConnectionQuota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     return nil
 }
 // SetItemsRemaining sets the itemsRemaining property value. 
-func (m *ConnectionQuota) SetItemsRemaining(value *int64)() {
+func (m *ConnectionQuota) SetItemsRemaining(value *int32)() {
     if m != nil {
         m.itemsRemaining = value
     }

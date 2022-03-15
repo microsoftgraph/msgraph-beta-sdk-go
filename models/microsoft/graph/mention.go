@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Mention provides operations to manage the compliance singleton.
+// Mention provides operations to manage the deviceManagement singleton.
 type Mention struct {
     Entity
     // The name of the application where the mention is created. Optional. Not used and defaulted as null for message.

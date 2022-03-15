@@ -77,6 +77,7 @@ import (
     i9f79453a6cb43e9e5e68087f1d6e774414d8ba83449733d805265bf8cb3d0b5d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices"
     i9fa6f9d397d0318d3e3fc1137d90e8302a95a72c11d6237f67fc7bd8dc1625b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devicemanagementtroubleshootingevents"
     ia1e1519710e771d8df5e22da39eeb50d37180582bb2065916e5cd0703a4d1cce "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/transitivereports"
+    ia6d6def3248379e9169fe56c62736c8c3d2b618252c7aac3b61a8424fce68894 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs"
     iaf2011a15870df19ddf40701bc4ca449214192204d76149e38fd507c87344ec5 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activities"
     ib2e97a67ea231c420ac9fa60c240e9a1314dc844268c406a4c1600c693ad6811 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices"
     ib674e5ebc7e9a35ea83a7a23737e2e850d21d009460f455398f4235cd71eb2d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/oauth2permissiongrants"
@@ -128,6 +129,7 @@ import (
     i8c655ab8b24fc37660a4329441f6c9936205ed7192659a7b410b5c1b127f0ebd "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/activities/item"
     i8e9bfc4860807cf4727d9197394851201c63af67494fa725e469b158152f82c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item"
     i92f204ee1ec183e477ad6aae362cad151b598b7439eda0c58c4750c295bc84e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/messages/item"
+    i9b0b4ddaf41e0ea5ab6a02cd93c94b2fff19122c19dfa3cf7586e383ecd47e8f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item"
     i9bb18abda2da0890104c07ce4b11694592a3ff71b3436063a29752ff07e0f525 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/followedsites/item"
     i9e371fd6357698c3cd300fbb8012addd3ec298d5df1be3dfa58412fb63c3cae8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/mobileappintentandstates/item"
     i9ff5415484e41f91043b46ae2894ad1a1ddead74f139bbcb66a0ea970caba35b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams/item"
@@ -342,6 +344,20 @@ func (m *UserItemRequestBuilder) CheckMemberGroups()(*i25e2af6a5262c1ae60708cc14
 }
 func (m *UserItemRequestBuilder) CheckMemberObjects()(*i8df6ede5cb15274ffb3a3341b8e1b560c67d6eca03c4eafb47c23266ca7b8809.CheckMemberObjectsRequestBuilder) {
     return i8df6ede5cb15274ffb3a3341b8e1b560c67d6eca03c4eafb47c23266ca7b8809.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *UserItemRequestBuilder) CloudPCs()(*ia6d6def3248379e9169fe56c62736c8c3d2b618252c7aac3b61a8424fce68894.CloudPCsRequestBuilder) {
+    return ia6d6def3248379e9169fe56c62736c8c3d2b618252c7aac3b61a8424fce68894.NewCloudPCsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CloudPCsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.cloudPCs.item collection
+func (m *UserItemRequestBuilder) CloudPCsById(id string)(*i9b0b4ddaf41e0ea5ab6a02cd93c94b2fff19122c19dfa3cf7586e383ecd47e8f.CloudPCItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["cloudPC_id"] = id
+    }
+    return i9b0b4ddaf41e0ea5ab6a02cd93c94b2fff19122c19dfa3cf7586e383ecd47e8f.NewCloudPCItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewUserItemRequestBuilderInternal instantiates a new UserItemRequestBuilder and sets the default values.
 func NewUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserItemRequestBuilder) {

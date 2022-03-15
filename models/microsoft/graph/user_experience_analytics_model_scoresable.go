@@ -13,7 +13,7 @@ type UserExperienceAnalyticsModelScoresable interface {
     GetHealthStatus()(*UserExperienceAnalyticsHealthState)
     GetManufacturer()(*string)
     GetModel()(*string)
-    GetModelDeviceCount()(*int64)
+    GetModelDeviceCount()(*int32)
     GetStartupPerformanceScore()(*float64)
     GetWorkFromAnywhereScore()(*float64)
     SetAppReliabilityScore(value *float64)()
@@ -21,7 +21,7 @@ type UserExperienceAnalyticsModelScoresable interface {
     SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
-    SetModelDeviceCount(value *int64)()
+    SetModelDeviceCount(value *int32)()
     SetStartupPerformanceScore(value *float64)()
     SetWorkFromAnywhereScore(value *float64)()
 }

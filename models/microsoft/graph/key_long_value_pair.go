@@ -11,7 +11,7 @@ type KeyLongValuePair struct {
     // Name for this key long value pair
     name *string;
     // Value for this key long value pair
-    value *int64;
+    value *int32;
 }
 // NewKeyLongValuePair instantiates a new keyLongValuePair and sets the default values.
 func NewKeyLongValuePair()(*KeyLongValuePair) {
@@ -46,7 +46,7 @@ func (m *KeyLongValuePair) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -66,7 +66,7 @@ func (m *KeyLongValuePair) GetName()(*string) {
     }
 }
 // GetValue gets the value property value. Value for this key long value pair
-func (m *KeyLongValuePair) GetValue()(*int64) {
+func (m *KeyLongValuePair) GetValue()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -85,7 +85,7 @@ func (m *KeyLongValuePair) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
-        err := writer.WriteInt64Value("value", m.GetValue())
+        err := writer.WriteInt32Value("value", m.GetValue())
         if err != nil {
             return err
         }
@@ -111,7 +111,7 @@ func (m *KeyLongValuePair) SetName(value *string)() {
     }
 }
 // SetValue sets the value property value. Value for this key long value pair
-func (m *KeyLongValuePair) SetValue(value *int64)() {
+func (m *KeyLongValuePair) SetValue(value *int32)() {
     if m != nil {
         m.value = value
     }

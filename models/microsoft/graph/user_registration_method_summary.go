@@ -9,7 +9,7 @@ type UserRegistrationMethodSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Total number of users in the tenant.
-    totalUserCount *int64;
+    totalUserCount *int32;
     // Number of users registered for each authentication method.
     userRegistrationMethodCounts []UserRegistrationMethodCountable;
     // User role type. Possible values are: all, privilegedAdmin, admin, user.
@@ -40,7 +40,7 @@ func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]interface
 func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["totalUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -86,7 +86,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetTotalUserCount gets the totalUserCount property value. Total number of users in the tenant.
-func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
+func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -123,7 +123,7 @@ func (m *UserRegistrationMethodSummary) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *UserRegistrationMethodSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("totalUserCount", m.GetTotalUserCount())
+        err := writer.WriteInt32Value("totalUserCount", m.GetTotalUserCount())
         if err != nil {
             return err
         }
@@ -167,7 +167,7 @@ func (m *UserRegistrationMethodSummary) SetAdditionalData(value map[string]inter
     }
 }
 // SetTotalUserCount sets the totalUserCount property value. Total number of users in the tenant.
-func (m *UserRegistrationMethodSummary) SetTotalUserCount(value *int64)() {
+func (m *UserRegistrationMethodSummary) SetTotalUserCount(value *int32)() {
     if m != nil {
         m.totalUserCount = value
     }

@@ -7,7 +7,7 @@ import (
 // EntitlementManagement provides operations to manage the identityGovernance singleton.
 type EntitlementManagement struct {
     Entity
-    // 
+    // Approval stages for assignment requests.
     accessPackageAssignmentApprovals []Approvalable;
     // Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
     accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable;
@@ -45,7 +45,7 @@ func NewEntitlementManagement()(*EntitlementManagement) {
 func CreateEntitlementManagementFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewEntitlementManagement(), nil
 }
-// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. 
+// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. Approval stages for assignment requests.
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approvalable) {
     if m == nil {
         return nil
@@ -469,7 +469,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. 
+// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for assignment requests.
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approvalable)() {
     if m != nil {
         m.accessPackageAssignmentApprovals = value

@@ -4,15 +4,15 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamSummary provides operations to manage the compliance singleton.
+// TeamSummary provides operations to manage the deviceManagement singleton.
 type TeamSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Count of guests in a team.
     guestsCount *int32;
-    // 
+    // Count of members in a team.
     membersCount *int32;
-    // 
+    // Count of owners in a team.
     ownersCount *int32;
 }
 // NewTeamSummary instantiates a new teamSummary and sets the default values.
@@ -69,7 +69,7 @@ func (m *TeamSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb
     }
     return res
 }
-// GetGuestsCount gets the guestsCount property value. 
+// GetGuestsCount gets the guestsCount property value. Count of guests in a team.
 func (m *TeamSummary) GetGuestsCount()(*int32) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *TeamSummary) GetGuestsCount()(*int32) {
         return m.guestsCount
     }
 }
-// GetMembersCount gets the membersCount property value. 
+// GetMembersCount gets the membersCount property value. Count of members in a team.
 func (m *TeamSummary) GetMembersCount()(*int32) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *TeamSummary) GetMembersCount()(*int32) {
         return m.membersCount
     }
 }
-// GetOwnersCount gets the ownersCount property value. 
+// GetOwnersCount gets the ownersCount property value. Count of owners in a team.
 func (m *TeamSummary) GetOwnersCount()(*int32) {
     if m == nil {
         return nil
@@ -130,19 +130,19 @@ func (m *TeamSummary) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetGuestsCount sets the guestsCount property value. 
+// SetGuestsCount sets the guestsCount property value. Count of guests in a team.
 func (m *TeamSummary) SetGuestsCount(value *int32)() {
     if m != nil {
         m.guestsCount = value
     }
 }
-// SetMembersCount sets the membersCount property value. 
+// SetMembersCount sets the membersCount property value. Count of members in a team.
 func (m *TeamSummary) SetMembersCount(value *int32)() {
     if m != nil {
         m.membersCount = value
     }
 }
-// SetOwnersCount sets the ownersCount property value. 
+// SetOwnersCount sets the ownersCount property value. Count of owners in a team.
 func (m *TeamSummary) SetOwnersCount(value *int32)() {
     if m != nil {
         m.ownersCount = value

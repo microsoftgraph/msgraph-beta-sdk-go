@@ -20,7 +20,7 @@ type UserExperienceAnalyticsDevicePerformance struct {
     // The user experience analytics device core login time in milliseconds.
     coreLoginTimeInMs *int32;
     // User experience analytics summarized device count.
-    deviceCount *int64;
+    deviceCount *int32;
     // The user experience analytics device name.
     deviceName *string;
     // The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.
@@ -108,7 +108,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetCoreLoginTimeInMs()(*int32
     }
 }
 // GetDeviceCount gets the deviceCount property value. User experience analytics summarized device count.
-func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceCount()(*int64) {
+func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -195,7 +195,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         return nil
     }
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -470,7 +470,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i04eb5309aea
         }
     }
     {
-        err = writer.WriteInt64Value("deviceCount", m.GetDeviceCount())
+        err = writer.WriteInt32Value("deviceCount", m.GetDeviceCount())
         if err != nil {
             return err
         }
@@ -594,7 +594,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetCoreLoginTimeInMs(value *i
     }
 }
 // SetDeviceCount sets the deviceCount property value. User experience analytics summarized device count.
-func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceCount(value *int64)() {
+func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceCount(value *int32)() {
     if m != nil {
         m.deviceCount = value
     }

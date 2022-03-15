@@ -17,6 +17,7 @@ type CloudPcProvisioningPolicyable interface {
     GetImageType()(*CloudPcProvisioningPolicyImageType)
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
     GetOnPremisesConnectionId()(*string)
+    GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
@@ -26,4 +27,5 @@ type CloudPcProvisioningPolicyable interface {
     SetImageType(value *CloudPcProvisioningPolicyImageType)()
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
     SetOnPremisesConnectionId(value *string)()
+    SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

@@ -9,7 +9,7 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
     CrossTenantAccessPolicyConfigurationBase
     // Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
     isServiceProvider *bool;
-    // The tenant identifier for the partner Azure AD organization. Read-only.
+    // The tenant identifier for the partner Azure AD organization. Read-only. Key.
     tenantId *string;
 }
 // NewCrossTenantAccessPolicyConfigurationPartner instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.
@@ -56,7 +56,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bo
         return m.isServiceProvider
     }
 }
-// GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only.
+// GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value
         m.isServiceProvider = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only.
+// SetTenantId sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

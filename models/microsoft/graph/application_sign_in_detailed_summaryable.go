@@ -12,11 +12,11 @@ type ApplicationSignInDetailedSummaryable interface {
     GetAggregatedEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetAppDisplayName()(*string)
     GetAppId()(*string)
-    GetSignInCount()(*int64)
+    GetSignInCount()(*int32)
     GetStatus()(SignInStatusable)
     SetAggregatedEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAppDisplayName(value *string)()
     SetAppId(value *string)()
-    SetSignInCount(value *int64)()
+    SetSignInCount(value *int32)()
     SetStatus(value SignInStatusable)()
 }

@@ -14,11 +14,11 @@ type SynchronizationQuarantineable interface {
     GetNextAttempt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReason()(*QuarantineReason)
     GetSeriesBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSeriesCount()(*int64)
+    GetSeriesCount()(*int32)
     SetCurrentBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetError(value SynchronizationErrorable)()
     SetNextAttempt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReason(value *QuarantineReason)()
     SetSeriesBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSeriesCount(value *int64)()
+    SetSeriesCount(value *int32)()
 }

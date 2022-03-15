@@ -8,12 +8,12 @@ import (
 type IntegerRangeable interface {
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetEnd()(*int64)
-    GetMaximum()(*int64)
-    GetMinimum()(*int64)
-    GetStart()(*int64)
-    SetEnd(value *int64)()
-    SetMaximum(value *int64)()
-    SetMinimum(value *int64)()
-    SetStart(value *int64)()
+    GetEnd()(*int32)
+    GetMaximum()(*int32)
+    GetMinimum()(*int32)
+    GetStart()(*int32)
+    SetEnd(value *int32)()
+    SetMaximum(value *int32)()
+    SetMinimum(value *int32)()
+    SetStart(value *int32)()
 }

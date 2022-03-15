@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerPlan provides operations to manage the compliance singleton.
+// PlannerPlan provides operations to manage the deviceManagement singleton.
 type PlannerPlan struct {
     PlannerDelta
     // Read-only. Nullable. Collection of buckets in the plan.

@@ -10,11 +10,11 @@ type CredentialUsageSummary struct {
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
     authMethod *UsageAuthMethod;
     // Provides the count of failed resets or registration data.
-    failureActivityCount *int64;
+    failureActivityCount *int32;
     // Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
     feature *FeatureType;
     // Provides the count of successful registrations or resets.
-    successfulActivityCount *int64;
+    successfulActivityCount *int32;
 }
 // NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
@@ -36,7 +36,7 @@ func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
     }
 }
 // GetFailureActivityCount gets the failureActivityCount property value. Provides the count of failed resets or registration data.
-func (m *CredentialUsageSummary) GetFailureActivityCount()(*int64) {
+func (m *CredentialUsageSummary) GetFailureActivityCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -65,7 +65,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["failureActivityCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -85,7 +85,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["successfulActivityCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -97,7 +97,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
     return res
 }
 // GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.
-func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
+func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -121,7 +121,7 @@ func (m *CredentialUsageSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteInt64Value("failureActivityCount", m.GetFailureActivityCount())
+        err = writer.WriteInt32Value("failureActivityCount", m.GetFailureActivityCount())
         if err != nil {
             return err
         }
@@ -134,7 +134,7 @@ func (m *CredentialUsageSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteInt64Value("successfulActivityCount", m.GetSuccessfulActivityCount())
+        err = writer.WriteInt32Value("successfulActivityCount", m.GetSuccessfulActivityCount())
         if err != nil {
             return err
         }
@@ -148,7 +148,7 @@ func (m *CredentialUsageSummary) SetAuthMethod(value *UsageAuthMethod)() {
     }
 }
 // SetFailureActivityCount sets the failureActivityCount property value. Provides the count of failed resets or registration data.
-func (m *CredentialUsageSummary) SetFailureActivityCount(value *int64)() {
+func (m *CredentialUsageSummary) SetFailureActivityCount(value *int32)() {
     if m != nil {
         m.failureActivityCount = value
     }
@@ -160,7 +160,7 @@ func (m *CredentialUsageSummary) SetFeature(value *FeatureType)() {
     }
 }
 // SetSuccessfulActivityCount sets the successfulActivityCount property value. Provides the count of successful registrations or resets.
-func (m *CredentialUsageSummary) SetSuccessfulActivityCount(value *int64)() {
+func (m *CredentialUsageSummary) SetSuccessfulActivityCount(value *int32)() {
     if m != nil {
         m.successfulActivityCount = value
     }

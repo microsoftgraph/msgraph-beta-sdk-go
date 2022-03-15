@@ -9,11 +9,11 @@ type SharedAppleDeviceUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Data quota
-    dataQuota *int64;
+    dataQuota *int32;
     // Data to sync
     dataToSync *bool;
     // Data quota
-    dataUsed *int64;
+    dataUsed *int32;
     // User name
     userPrincipalName *string;
 }
@@ -37,7 +37,7 @@ func (m *SharedAppleDeviceUser) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDataQuota gets the dataQuota property value. Data quota
-func (m *SharedAppleDeviceUser) GetDataQuota()(*int64) {
+func (m *SharedAppleDeviceUser) GetDataQuota()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -53,7 +53,7 @@ func (m *SharedAppleDeviceUser) GetDataToSync()(*bool) {
     }
 }
 // GetDataUsed gets the dataUsed property value. Data quota
-func (m *SharedAppleDeviceUser) GetDataUsed()(*int64) {
+func (m *SharedAppleDeviceUser) GetDataUsed()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -64,7 +64,7 @@ func (m *SharedAppleDeviceUser) GetDataUsed()(*int64) {
 func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["dataQuota"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -84,7 +84,7 @@ func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["dataUsed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -119,7 +119,7 @@ func (m *SharedAppleDeviceUser) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *SharedAppleDeviceUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("dataQuota", m.GetDataQuota())
+        err := writer.WriteInt32Value("dataQuota", m.GetDataQuota())
         if err != nil {
             return err
         }
@@ -131,7 +131,7 @@ func (m *SharedAppleDeviceUser) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteInt64Value("dataUsed", m.GetDataUsed())
+        err := writer.WriteInt32Value("dataUsed", m.GetDataUsed())
         if err != nil {
             return err
         }
@@ -157,7 +157,7 @@ func (m *SharedAppleDeviceUser) SetAdditionalData(value map[string]interface{})(
     }
 }
 // SetDataQuota sets the dataQuota property value. Data quota
-func (m *SharedAppleDeviceUser) SetDataQuota(value *int64)() {
+func (m *SharedAppleDeviceUser) SetDataQuota(value *int32)() {
     if m != nil {
         m.dataQuota = value
     }
@@ -169,7 +169,7 @@ func (m *SharedAppleDeviceUser) SetDataToSync(value *bool)() {
     }
 }
 // SetDataUsed sets the dataUsed property value. Data quota
-func (m *SharedAppleDeviceUser) SetDataUsed(value *int64)() {
+func (m *SharedAppleDeviceUser) SetDataUsed(value *int32)() {
     if m != nil {
         m.dataUsed = value
     }

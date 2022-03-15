@@ -10,9 +10,9 @@ type ApplicationSignInSummary struct {
     // Name of the application that the user signed into.
     appDisplayName *string;
     // Count of failed sign-ins made by the application.
-    failedSignInCount *int64;
+    failedSignInCount *int32;
     // Count of successful sign-ins made by the application.
-    successfulSignInCount *int64;
+    successfulSignInCount *int32;
     // Percentage of successful sign-ins made by the application.
     successPercentage *float64;
 }
@@ -36,7 +36,7 @@ func (m *ApplicationSignInSummary) GetAppDisplayName()(*string) {
     }
 }
 // GetFailedSignInCount gets the failedSignInCount property value. Count of failed sign-ins made by the application.
-func (m *ApplicationSignInSummary) GetFailedSignInCount()(*int64) {
+func (m *ApplicationSignInSummary) GetFailedSignInCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -57,7 +57,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["failedSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -67,7 +67,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     res["successfulSignInCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -89,7 +89,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
     return res
 }
 // GetSuccessfulSignInCount gets the successfulSignInCount property value. Count of successful sign-ins made by the application.
-func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int64) {
+func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -120,13 +120,13 @@ func (m *ApplicationSignInSummary) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     {
-        err = writer.WriteInt64Value("failedSignInCount", m.GetFailedSignInCount())
+        err = writer.WriteInt32Value("failedSignInCount", m.GetFailedSignInCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("successfulSignInCount", m.GetSuccessfulSignInCount())
+        err = writer.WriteInt32Value("successfulSignInCount", m.GetSuccessfulSignInCount())
         if err != nil {
             return err
         }
@@ -146,13 +146,13 @@ func (m *ApplicationSignInSummary) SetAppDisplayName(value *string)() {
     }
 }
 // SetFailedSignInCount sets the failedSignInCount property value. Count of failed sign-ins made by the application.
-func (m *ApplicationSignInSummary) SetFailedSignInCount(value *int64)() {
+func (m *ApplicationSignInSummary) SetFailedSignInCount(value *int32)() {
     if m != nil {
         m.failedSignInCount = value
     }
 }
 // SetSuccessfulSignInCount sets the successfulSignInCount property value. Count of successful sign-ins made by the application.
-func (m *ApplicationSignInSummary) SetSuccessfulSignInCount(value *int64)() {
+func (m *ApplicationSignInSummary) SetSuccessfulSignInCount(value *int32)() {
     if m != nil {
         m.successfulSignInCount = value
     }

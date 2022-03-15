@@ -8,13 +8,13 @@ import (
 type Office365GroupsActivityDetail struct {
     Entity
     // The storage used of the group mailbox.
-    exchangeMailboxStorageUsedInBytes *int64;
+    exchangeMailboxStorageUsedInBytes *int32;
     // The number of items in the group mailbox.
-    exchangeMailboxTotalItemCount *int64;
+    exchangeMailboxTotalItemCount *int32;
     // The number of email that the group mailbox received.
-    exchangeReceivedEmailCount *int64;
+    exchangeReceivedEmailCount *int32;
     // The group external member count.
-    externalMemberCount *int64;
+    externalMemberCount *int32;
     // The display name of the group.
     groupDisplayName *string;
     // The group id.
@@ -26,7 +26,7 @@ type Office365GroupsActivityDetail struct {
     // The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
     lastActivityDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The group member count.
-    memberCount *int64;
+    memberCount *int32;
     // The group owner principal name.
     ownerPrincipalName *string;
     // The number of days the report covers.
@@ -34,17 +34,17 @@ type Office365GroupsActivityDetail struct {
     // The latest date of the content.
     reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of active files in SharePoint Group site.
-    sharePointActiveFileCount *int64;
+    sharePointActiveFileCount *int32;
     // The storage used by SharePoint Group site.
-    sharePointSiteStorageUsedInBytes *int64;
+    sharePointSiteStorageUsedInBytes *int32;
     // The total number of files in SharePoint Group site.
-    sharePointTotalFileCount *int64;
+    sharePointTotalFileCount *int32;
     // The number of messages liked in Yammer groups.
-    yammerLikedMessageCount *int64;
+    yammerLikedMessageCount *int32;
     // The number of messages posted to Yammer groups.
-    yammerPostedMessageCount *int64;
+    yammerPostedMessageCount *int32;
     // The number of messages read in Yammer groups.
-    yammerReadMessageCount *int64;
+    yammerReadMessageCount *int32;
 }
 // NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
@@ -58,7 +58,7 @@ func CreateOffice365GroupsActivityDetailFromDiscriminatorValue(parseNode i04eb53
     return NewOffice365GroupsActivityDetail(), nil
 }
 // GetExchangeMailboxStorageUsedInBytes gets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
-func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*int64) {
+func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -66,7 +66,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*
     }
 }
 // GetExchangeMailboxTotalItemCount gets the exchangeMailboxTotalItemCount property value. The number of items in the group mailbox.
-func (m *Office365GroupsActivityDetail) GetExchangeMailboxTotalItemCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetExchangeMailboxTotalItemCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -74,7 +74,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeMailboxTotalItemCount()(*int6
     }
 }
 // GetExchangeReceivedEmailCount gets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
-func (m *Office365GroupsActivityDetail) GetExchangeReceivedEmailCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetExchangeReceivedEmailCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -82,7 +82,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeReceivedEmailCount()(*int64) 
     }
 }
 // GetExternalMemberCount gets the externalMemberCount property value. The group external member count.
-func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -93,7 +93,7 @@ func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int64) {
 func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exchangeMailboxStorageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -103,7 +103,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["exchangeMailboxTotalItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -113,7 +113,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["exchangeReceivedEmailCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -123,7 +123,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["externalMemberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -183,7 +183,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["memberCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -223,7 +223,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["sharePointActiveFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -233,7 +233,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["sharePointSiteStorageUsedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -243,7 +243,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["sharePointTotalFileCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -253,7 +253,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["yammerLikedMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -263,7 +263,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["yammerPostedMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -273,7 +273,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["yammerReadMessageCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -325,7 +325,7 @@ func (m *Office365GroupsActivityDetail) GetLastActivityDate()(*i04eb5309aeaafadd
     }
 }
 // GetMemberCount gets the memberCount property value. The group member count.
-func (m *Office365GroupsActivityDetail) GetMemberCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetMemberCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -357,7 +357,7 @@ func (m *Office365GroupsActivityDetail) GetReportRefreshDate()(*i04eb5309aeaafad
     }
 }
 // GetSharePointActiveFileCount gets the sharePointActiveFileCount property value. The number of active files in SharePoint Group site.
-func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -365,7 +365,7 @@ func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int64) {
     }
 }
 // GetSharePointSiteStorageUsedInBytes gets the sharePointSiteStorageUsedInBytes property value. The storage used by SharePoint Group site.
-func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*int64) {
+func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -373,7 +373,7 @@ func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*i
     }
 }
 // GetSharePointTotalFileCount gets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
-func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -381,7 +381,7 @@ func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
     }
 }
 // GetYammerLikedMessageCount gets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
-func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -389,7 +389,7 @@ func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
     }
 }
 // GetYammerPostedMessageCount gets the yammerPostedMessageCount property value. The number of messages posted to Yammer groups.
-func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -397,7 +397,7 @@ func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int64) {
     }
 }
 // GetYammerReadMessageCount gets the yammerReadMessageCount property value. The number of messages read in Yammer groups.
-func (m *Office365GroupsActivityDetail) GetYammerReadMessageCount()(*int64) {
+func (m *Office365GroupsActivityDetail) GetYammerReadMessageCount()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -414,25 +414,25 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i04eb5309aeaafadd28374d
         return err
     }
     {
-        err = writer.WriteInt64Value("exchangeMailboxStorageUsedInBytes", m.GetExchangeMailboxStorageUsedInBytes())
+        err = writer.WriteInt32Value("exchangeMailboxStorageUsedInBytes", m.GetExchangeMailboxStorageUsedInBytes())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("exchangeMailboxTotalItemCount", m.GetExchangeMailboxTotalItemCount())
+        err = writer.WriteInt32Value("exchangeMailboxTotalItemCount", m.GetExchangeMailboxTotalItemCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("exchangeReceivedEmailCount", m.GetExchangeReceivedEmailCount())
+        err = writer.WriteInt32Value("exchangeReceivedEmailCount", m.GetExchangeReceivedEmailCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("externalMemberCount", m.GetExternalMemberCount())
+        err = writer.WriteInt32Value("externalMemberCount", m.GetExternalMemberCount())
         if err != nil {
             return err
         }
@@ -468,7 +468,7 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     {
-        err = writer.WriteInt64Value("memberCount", m.GetMemberCount())
+        err = writer.WriteInt32Value("memberCount", m.GetMemberCount())
         if err != nil {
             return err
         }
@@ -492,37 +492,37 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     {
-        err = writer.WriteInt64Value("sharePointActiveFileCount", m.GetSharePointActiveFileCount())
+        err = writer.WriteInt32Value("sharePointActiveFileCount", m.GetSharePointActiveFileCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("sharePointSiteStorageUsedInBytes", m.GetSharePointSiteStorageUsedInBytes())
+        err = writer.WriteInt32Value("sharePointSiteStorageUsedInBytes", m.GetSharePointSiteStorageUsedInBytes())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("sharePointTotalFileCount", m.GetSharePointTotalFileCount())
+        err = writer.WriteInt32Value("sharePointTotalFileCount", m.GetSharePointTotalFileCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("yammerLikedMessageCount", m.GetYammerLikedMessageCount())
+        err = writer.WriteInt32Value("yammerLikedMessageCount", m.GetYammerLikedMessageCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("yammerPostedMessageCount", m.GetYammerPostedMessageCount())
+        err = writer.WriteInt32Value("yammerPostedMessageCount", m.GetYammerPostedMessageCount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt64Value("yammerReadMessageCount", m.GetYammerReadMessageCount())
+        err = writer.WriteInt32Value("yammerReadMessageCount", m.GetYammerReadMessageCount())
         if err != nil {
             return err
         }
@@ -530,25 +530,25 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetExchangeMailboxStorageUsedInBytes sets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
-func (m *Office365GroupsActivityDetail) SetExchangeMailboxStorageUsedInBytes(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetExchangeMailboxStorageUsedInBytes(value *int32)() {
     if m != nil {
         m.exchangeMailboxStorageUsedInBytes = value
     }
 }
 // SetExchangeMailboxTotalItemCount sets the exchangeMailboxTotalItemCount property value. The number of items in the group mailbox.
-func (m *Office365GroupsActivityDetail) SetExchangeMailboxTotalItemCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetExchangeMailboxTotalItemCount(value *int32)() {
     if m != nil {
         m.exchangeMailboxTotalItemCount = value
     }
 }
 // SetExchangeReceivedEmailCount sets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
-func (m *Office365GroupsActivityDetail) SetExchangeReceivedEmailCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetExchangeReceivedEmailCount(value *int32)() {
     if m != nil {
         m.exchangeReceivedEmailCount = value
     }
 }
 // SetExternalMemberCount sets the externalMemberCount property value. The group external member count.
-func (m *Office365GroupsActivityDetail) SetExternalMemberCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetExternalMemberCount(value *int32)() {
     if m != nil {
         m.externalMemberCount = value
     }
@@ -584,7 +584,7 @@ func (m *Office365GroupsActivityDetail) SetLastActivityDate(value *i04eb5309aeaa
     }
 }
 // SetMemberCount sets the memberCount property value. The group member count.
-func (m *Office365GroupsActivityDetail) SetMemberCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetMemberCount(value *int32)() {
     if m != nil {
         m.memberCount = value
     }
@@ -608,37 +608,37 @@ func (m *Office365GroupsActivityDetail) SetReportRefreshDate(value *i04eb5309aea
     }
 }
 // SetSharePointActiveFileCount sets the sharePointActiveFileCount property value. The number of active files in SharePoint Group site.
-func (m *Office365GroupsActivityDetail) SetSharePointActiveFileCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetSharePointActiveFileCount(value *int32)() {
     if m != nil {
         m.sharePointActiveFileCount = value
     }
 }
 // SetSharePointSiteStorageUsedInBytes sets the sharePointSiteStorageUsedInBytes property value. The storage used by SharePoint Group site.
-func (m *Office365GroupsActivityDetail) SetSharePointSiteStorageUsedInBytes(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetSharePointSiteStorageUsedInBytes(value *int32)() {
     if m != nil {
         m.sharePointSiteStorageUsedInBytes = value
     }
 }
 // SetSharePointTotalFileCount sets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
-func (m *Office365GroupsActivityDetail) SetSharePointTotalFileCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetSharePointTotalFileCount(value *int32)() {
     if m != nil {
         m.sharePointTotalFileCount = value
     }
 }
 // SetYammerLikedMessageCount sets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
-func (m *Office365GroupsActivityDetail) SetYammerLikedMessageCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetYammerLikedMessageCount(value *int32)() {
     if m != nil {
         m.yammerLikedMessageCount = value
     }
 }
 // SetYammerPostedMessageCount sets the yammerPostedMessageCount property value. The number of messages posted to Yammer groups.
-func (m *Office365GroupsActivityDetail) SetYammerPostedMessageCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetYammerPostedMessageCount(value *int32)() {
     if m != nil {
         m.yammerPostedMessageCount = value
     }
 }
 // SetYammerReadMessageCount sets the yammerReadMessageCount property value. The number of messages read in Yammer groups.
-func (m *Office365GroupsActivityDetail) SetYammerReadMessageCount(value *int64)() {
+func (m *Office365GroupsActivityDetail) SetYammerReadMessageCount(value *int32)() {
     if m != nil {
         m.yammerReadMessageCount = value
     }

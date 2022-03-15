@@ -9,13 +9,13 @@ type IntegerRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The inclusive upper bound of the integer range.
-    end *int64;
+    end *int32;
     // 
-    maximum *int64;
+    maximum *int32;
     // 
-    minimum *int64;
+    minimum *int32;
     // The inclusive lower bound of the integer range.
-    start *int64;
+    start *int32;
 }
 // NewIntegerRange instantiates a new integerRange and sets the default values.
 func NewIntegerRange()(*IntegerRange) {
@@ -37,7 +37,7 @@ func (m *IntegerRange) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEnd gets the end property value. The inclusive upper bound of the integer range.
-func (m *IntegerRange) GetEnd()(*int64) {
+func (m *IntegerRange) GetEnd()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +48,7 @@ func (m *IntegerRange) GetEnd()(*int64) {
 func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["end"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["maximum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -68,7 +68,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["minimum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -78,7 +78,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["start"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -90,7 +90,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i04e
     return res
 }
 // GetMaximum gets the maximum property value. 
-func (m *IntegerRange) GetMaximum()(*int64) {
+func (m *IntegerRange) GetMaximum()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -98,7 +98,7 @@ func (m *IntegerRange) GetMaximum()(*int64) {
     }
 }
 // GetMinimum gets the minimum property value. 
-func (m *IntegerRange) GetMinimum()(*int64) {
+func (m *IntegerRange) GetMinimum()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -106,7 +106,7 @@ func (m *IntegerRange) GetMinimum()(*int64) {
     }
 }
 // GetStart gets the start property value. The inclusive lower bound of the integer range.
-func (m *IntegerRange) GetStart()(*int64) {
+func (m *IntegerRange) GetStart()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -119,25 +119,25 @@ func (m *IntegerRange) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *IntegerRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteInt64Value("end", m.GetEnd())
+        err := writer.WriteInt32Value("end", m.GetEnd())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("maximum", m.GetMaximum())
+        err := writer.WriteInt32Value("maximum", m.GetMaximum())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("minimum", m.GetMinimum())
+        err := writer.WriteInt32Value("minimum", m.GetMinimum())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt64Value("start", m.GetStart())
+        err := writer.WriteInt32Value("start", m.GetStart())
         if err != nil {
             return err
         }
@@ -157,25 +157,25 @@ func (m *IntegerRange) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEnd sets the end property value. The inclusive upper bound of the integer range.
-func (m *IntegerRange) SetEnd(value *int64)() {
+func (m *IntegerRange) SetEnd(value *int32)() {
     if m != nil {
         m.end = value
     }
 }
 // SetMaximum sets the maximum property value. 
-func (m *IntegerRange) SetMaximum(value *int64)() {
+func (m *IntegerRange) SetMaximum(value *int32)() {
     if m != nil {
         m.maximum = value
     }
 }
 // SetMinimum sets the minimum property value. 
-func (m *IntegerRange) SetMinimum(value *int64)() {
+func (m *IntegerRange) SetMinimum(value *int32)() {
     if m != nil {
         m.minimum = value
     }
 }
 // SetStart sets the start property value. The inclusive lower bound of the integer range.
-func (m *IntegerRange) SetStart(value *int64)() {
+func (m *IntegerRange) SetStart(value *int32)() {
     if m != nil {
         m.start = value
     }

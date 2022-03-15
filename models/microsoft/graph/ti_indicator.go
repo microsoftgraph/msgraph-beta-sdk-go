@@ -63,7 +63,7 @@ type TiIndicator struct {
     // 
     filePath *string;
     // 
-    fileSize *int64;
+    fileSize *int32;
     // 
     fileType *string;
     // Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -81,7 +81,7 @@ type TiIndicator struct {
     // 
     networkCidrBlock *string;
     // 
-    networkDestinationAsn *int64;
+    networkDestinationAsn *int32;
     // 
     networkDestinationCidrBlock *string;
     // 
@@ -99,7 +99,7 @@ type TiIndicator struct {
     // 
     networkProtocol *int32;
     // 
-    networkSourceAsn *int64;
+    networkSourceAsn *int32;
     // 
     networkSourceCidrBlock *string;
     // 
@@ -566,7 +566,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["fileSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -664,7 +664,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["networkDestinationAsn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -754,7 +754,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["networkSourceAsn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetInt64Value()
+        val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
@@ -954,7 +954,7 @@ func (m *TiIndicator) GetFilePath()(*string) {
     }
 }
 // GetFileSize gets the fileSize property value. 
-func (m *TiIndicator) GetFileSize()(*int64) {
+func (m *TiIndicator) GetFileSize()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -1026,7 +1026,7 @@ func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
     }
 }
 // GetNetworkDestinationAsn gets the networkDestinationAsn property value. 
-func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
+func (m *TiIndicator) GetNetworkDestinationAsn()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -1098,7 +1098,7 @@ func (m *TiIndicator) GetNetworkProtocol()(*int32) {
     }
 }
 // GetNetworkSourceAsn gets the networkSourceAsn property value. 
-func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
+func (m *TiIndicator) GetNetworkSourceAsn()(*int32) {
     if m == nil {
         return nil
     } else {
@@ -1376,7 +1376,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err = writer.WriteInt64Value("fileSize", m.GetFileSize())
+        err = writer.WriteInt32Value("fileSize", m.GetFileSize())
         if err != nil {
             return err
         }
@@ -1430,7 +1430,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err = writer.WriteInt64Value("networkDestinationAsn", m.GetNetworkDestinationAsn())
+        err = writer.WriteInt32Value("networkDestinationAsn", m.GetNetworkDestinationAsn())
         if err != nil {
             return err
         }
@@ -1484,7 +1484,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err = writer.WriteInt64Value("networkSourceAsn", m.GetNetworkSourceAsn())
+        err = writer.WriteInt32Value("networkSourceAsn", m.GetNetworkSourceAsn())
         if err != nil {
             return err
         }
@@ -1727,7 +1727,7 @@ func (m *TiIndicator) SetFilePath(value *string)() {
     }
 }
 // SetFileSize sets the fileSize property value. 
-func (m *TiIndicator) SetFileSize(value *int64)() {
+func (m *TiIndicator) SetFileSize(value *int32)() {
     if m != nil {
         m.fileSize = value
     }
@@ -1781,7 +1781,7 @@ func (m *TiIndicator) SetNetworkCidrBlock(value *string)() {
     }
 }
 // SetNetworkDestinationAsn sets the networkDestinationAsn property value. 
-func (m *TiIndicator) SetNetworkDestinationAsn(value *int64)() {
+func (m *TiIndicator) SetNetworkDestinationAsn(value *int32)() {
     if m != nil {
         m.networkDestinationAsn = value
     }
@@ -1835,7 +1835,7 @@ func (m *TiIndicator) SetNetworkProtocol(value *int32)() {
     }
 }
 // SetNetworkSourceAsn sets the networkSourceAsn property value. 
-func (m *TiIndicator) SetNetworkSourceAsn(value *int64)() {
+func (m *TiIndicator) SetNetworkSourceAsn(value *int32)() {
     if m != nil {
         m.networkSourceAsn = value
     }

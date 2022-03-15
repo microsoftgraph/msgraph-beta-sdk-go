@@ -4,13 +4,13 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TaskViewpoint provides operations to manage the compliance singleton.
+// TaskViewpoint provides operations to manage the deviceManagement singleton.
 type TaskViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
     categories []string;
-    // 
+    // The date and time for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable;
 }
 // NewTaskViewpoint instantiates a new taskViewpoint and sets the default values.
@@ -32,7 +32,7 @@ func (m *TaskViewpoint) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCategories gets the categories property value. 
+// GetCategories gets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TaskViewpoint) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *TaskViewpoint) GetFieldDeserializers()(map[string]func(interface{}, i04
     }
     return res
 }
-// GetReminderDateTime gets the reminderDateTime property value. 
+// GetReminderDateTime gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
 func (m *TaskViewpoint) GetReminderDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -108,13 +108,13 @@ func (m *TaskViewpoint) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetCategories sets the categories property value. 
+// SetCategories sets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TaskViewpoint) SetCategories(value []string)() {
     if m != nil {
         m.categories = value
     }
 }
-// SetReminderDateTime sets the reminderDateTime property value. 
+// SetReminderDateTime sets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
 func (m *TaskViewpoint) SetReminderDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.reminderDateTime = value
