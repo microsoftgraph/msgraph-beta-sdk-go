@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleManagementPolicyRule provides operations to manage the policyRoot singleton.
+// UnifiedRoleManagementPolicyRule 
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // The target for the policy rule.
@@ -43,9 +43,6 @@ func (m *UnifiedRoleManagementPolicyRule) GetTarget()(UnifiedRoleManagementPolic
     } else {
         return m.target
     }
-}
-func (m *UnifiedRoleManagementPolicyRule) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

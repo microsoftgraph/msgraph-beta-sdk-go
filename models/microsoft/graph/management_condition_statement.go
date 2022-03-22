@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementConditionStatement provides operations to manage the deviceManagement singleton.
+// ManagementConditionStatement 
 type ManagementConditionStatement struct {
     Entity
     // The applicable platforms for this management condition statement.
@@ -192,9 +192,6 @@ func (m *ManagementConditionStatement) GetModifiedDateTime()(*i336074805fc853987
     } else {
         return m.modifiedDateTime
     }
-}
-func (m *ManagementConditionStatement) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ManagementConditionStatement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

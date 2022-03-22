@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TrustFrameworkKeySet provides operations to manage the trustFramework singleton.
+// TrustFrameworkKeySet 
 type TrustFrameworkKeySet struct {
     Entity
     // A collection of the keys.
@@ -47,9 +47,6 @@ func (m *TrustFrameworkKeySet) GetKeys()([]TrustFrameworkKeyable) {
     } else {
         return m.keys
     }
-}
-func (m *TrustFrameworkKeySet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TrustFrameworkKeySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

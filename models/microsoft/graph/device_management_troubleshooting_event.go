@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementTroubleshootingEvent provides operations to manage the compliance singleton.
+// DeviceManagementTroubleshootingEvent 
 type DeviceManagementTroubleshootingEvent struct {
     Entity
     // A set of string key and string value pairs which provides additional information on the Troubleshooting event
@@ -128,9 +128,6 @@ func (m *DeviceManagementTroubleshootingEvent) GetTroubleshootingErrorDetails()(
     } else {
         return m.troubleshootingErrorDetails
     }
-}
-func (m *DeviceManagementTroubleshootingEvent) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

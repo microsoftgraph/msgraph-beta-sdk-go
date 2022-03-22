@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewSettings provides operations to manage the collection of accessReview entities.
+// AccessReviewSettings 
 type AccessReviewSettings struct {
     // Indicates whether showing recommendations to reviewers is enabled.
     accessRecommendationsEnabled *bool;
@@ -212,9 +212,6 @@ func (m *AccessReviewSettings) GetRemindersEnabled()(*bool) {
     } else {
         return m.remindersEnabled
     }
-}
-func (m *AccessReviewSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

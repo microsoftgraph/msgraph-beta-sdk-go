@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementTroubleshootingErrorDetails provides operations to manage the compliance singleton.
+// DeviceManagementTroubleshootingErrorDetails object containing detailed information about the error and its remediation.
 type DeviceManagementTroubleshootingErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -136,9 +136,6 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceMan
     } else {
         return m.resources
     }
-}
-func (m *DeviceManagementTroubleshootingErrorDetails) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

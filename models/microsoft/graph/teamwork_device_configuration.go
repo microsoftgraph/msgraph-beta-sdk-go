@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDeviceConfiguration provides operations to manage the teamwork singleton.
+// TeamworkDeviceConfiguration 
 type TeamworkDeviceConfiguration struct {
     Entity
     // The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
@@ -264,9 +264,6 @@ func (m *TeamworkDeviceConfiguration) GetTeamsClientConfiguration()(TeamworkTeam
     } else {
         return m.teamsClientConfiguration
     }
-}
-func (m *TeamworkDeviceConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

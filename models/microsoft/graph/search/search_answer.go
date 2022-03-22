@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SearchAnswer provides operations to manage the searchEntity singleton.
+// SearchAnswer 
 type SearchAnswer struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // Search answer description shown on search results page.
@@ -125,9 +125,6 @@ func (m *SearchAnswer) GetWebUrl()(*string) {
     } else {
         return m.webUrl
     }
-}
-func (m *SearchAnswer) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SearchAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

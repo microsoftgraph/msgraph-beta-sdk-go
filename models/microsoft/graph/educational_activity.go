@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationalActivity provides operations to manage the compliance singleton.
+// EducationalActivity 
 type EducationalActivity struct {
     ItemFacet
     // The month and year the user graduated or completed the activity.
@@ -123,9 +123,6 @@ func (m *EducationalActivity) GetStartMonthYear()(*i04eb5309aeaafadd28374d79c847
     } else {
         return m.startMonthYear
     }
-}
-func (m *EducationalActivity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationalActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

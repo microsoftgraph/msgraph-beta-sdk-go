@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCustomAttributeShellScript provides operations to manage the deviceManagement singleton.
+// DeviceCustomAttributeShellScript 
 type DeviceCustomAttributeShellScript struct {
     Entity
     // The list of group assignments for the device management script.
@@ -344,9 +344,6 @@ func (m *DeviceCustomAttributeShellScript) GetUserRunStates()([]DeviceManagement
     } else {
         return m.userRunStates
     }
-}
-func (m *DeviceCustomAttributeShellScript) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCustomAttributeShellScript) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

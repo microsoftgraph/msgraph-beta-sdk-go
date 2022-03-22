@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyConfigurationDefault provides operations to manage the policyRoot singleton.
+// CrossTenantAccessPolicyConfigurationDefault 
 type CrossTenantAccessPolicyConfigurationDefault struct {
     CrossTenantAccessPolicyConfigurationBase
     // If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
@@ -43,9 +43,6 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*boo
     } else {
         return m.isServiceDefault
     }
-}
-func (m *CrossTenantAccessPolicyConfigurationDefault) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

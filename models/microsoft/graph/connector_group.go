@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConnectorGroup provides operations to manage the collection of application entities.
+// ConnectorGroup 
 type ConnectorGroup struct {
     Entity
     // Read-only. Nullable.
@@ -151,9 +151,6 @@ func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
     } else {
         return m.region
     }
-}
-func (m *ConnectorGroup) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

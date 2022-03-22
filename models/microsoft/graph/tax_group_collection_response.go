@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TaxGroupCollectionResponse provides operations to manage the taxGroups property of the microsoft.graph.company entity.
+// TaxGroupCollectionResponse 
 type TaxGroupCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *TaxGroupCollectionResponse) GetValue()([]TaxGroupable) {
     } else {
         return m.value
     }
-}
-func (m *TaxGroupCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TaxGroupCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

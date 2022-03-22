@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsAutopilotDeploymentProfileAssignment provides operations to manage the deviceManagement singleton.
+// WindowsAutopilotDeploymentProfileAssignment 
 type WindowsAutopilotDeploymentProfileAssignment struct {
     Entity
     // Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
@@ -83,9 +83,6 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetTarget()(DeviceAndAppMa
     } else {
         return m.target
     }
-}
-func (m *WindowsAutopilotDeploymentProfileAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeploymentProfileAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

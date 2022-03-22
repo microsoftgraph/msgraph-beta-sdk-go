@@ -58,9 +58,6 @@ func (m *EvaluateRemovalResponse) GetValue()([]i2263de81f518180fb490a1c688534af1
         return m.value
     }
 }
-func (m *EvaluateRemovalResponse) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *EvaluateRemovalResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetValue() != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeSet provides operations to manage the directory singleton.
+// AttributeSet 
 type AttributeSet struct {
     Entity
     // Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -63,9 +63,6 @@ func (m *AttributeSet) GetMaxAttributesPerSet()(*int32) {
     } else {
         return m.maxAttributesPerSet
     }
-}
-func (m *AttributeSet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AttributeSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

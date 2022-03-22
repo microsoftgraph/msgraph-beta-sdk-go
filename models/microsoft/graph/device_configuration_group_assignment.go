@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationGroupAssignment provides operations to manage the deviceManagement singleton.
+// DeviceConfigurationGroupAssignment 
 type DeviceConfigurationGroupAssignment struct {
     Entity
     // The navigation link to the Device Configuration being targeted.
@@ -83,9 +83,6 @@ func (m *DeviceConfigurationGroupAssignment) GetTargetGroupId()(*string) {
     } else {
         return m.targetGroupId
     }
-}
-func (m *DeviceConfigurationGroupAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationGroupAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

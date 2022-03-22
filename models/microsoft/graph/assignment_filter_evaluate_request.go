@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterEvaluateRequest provides operations to call the evaluateAssignmentFilter method.
+// AssignmentFilterEvaluateRequest request for assignment filter evaluation for devices.
 type AssignmentFilterEvaluateRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -136,9 +136,6 @@ func (m *AssignmentFilterEvaluateRequest) GetTop()(*int32) {
     } else {
         return m.top
     }
-}
-func (m *AssignmentFilterEvaluateRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluateRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

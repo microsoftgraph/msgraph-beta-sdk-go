@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuditResource provides operations to manage the deviceManagement singleton.
+// AuditResource a class containing the properties for Audit Resource.
 type AuditResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -116,9 +116,6 @@ func (m *AuditResource) GetType()(*string) {
     } else {
         return m.type_escaped
     }
-}
-func (m *AuditResource) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AuditResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

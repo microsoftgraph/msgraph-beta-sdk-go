@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityAction provides operations to manage the securityActions property of the microsoft.graph.security entity.
+// SecurityAction 
 type SecurityAction struct {
     Entity
     // Reason for invoking this action.
@@ -312,9 +312,6 @@ func (m *SecurityAction) GetVendorInformation()(SecurityVendorInformationable) {
     } else {
         return m.vendorInformation
     }
-}
-func (m *SecurityAction) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SecurityAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

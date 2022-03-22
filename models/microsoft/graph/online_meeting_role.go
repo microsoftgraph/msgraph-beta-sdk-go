@@ -11,10 +11,11 @@ const (
     PRESENTER_ONLINEMEETINGROLE
     UNKNOWNFUTUREVALUE_ONLINEMEETINGROLE
     PRODUCER_ONLINEMEETINGROLE
+    COORGANIZER_ONLINEMEETINGROLE
 )
 
 func (i OnlineMeetingRole) String() string {
-    return []string{"ATTENDEE", "PRESENTER", "UNKNOWNFUTUREVALUE", "PRODUCER"}[i]
+    return []string{"ATTENDEE", "PRESENTER", "UNKNOWNFUTUREVALUE", "PRODUCER", "COORGANIZER"}[i]
 }
 func ParseOnlineMeetingRole(v string) (interface{}, error) {
     result := ATTENDEE_ONLINEMEETINGROLE
@@ -27,6 +28,8 @@ func ParseOnlineMeetingRole(v string) (interface{}, error) {
             result = UNKNOWNFUTUREVALUE_ONLINEMEETINGROLE
         case "PRODUCER":
             result = PRODUCER_ONLINEMEETINGROLE
+        case "COORGANIZER":
+            result = COORGANIZER_ONLINEMEETINGROLE
         default:
             return 0, errors.New("Unknown OnlineMeetingRole value: " + v)
     }

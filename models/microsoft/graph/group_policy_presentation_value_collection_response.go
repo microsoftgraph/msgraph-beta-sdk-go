@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyPresentationValueCollectionResponse provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
+// GroupPolicyPresentationValueCollectionResponse 
 type GroupPolicyPresentationValueCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *GroupPolicyPresentationValueCollectionResponse) GetValue()([]GroupPolic
     } else {
         return m.value
     }
-}
-func (m *GroupPolicyPresentationValueCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

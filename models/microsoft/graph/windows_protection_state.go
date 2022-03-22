@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsProtectionState provides operations to manage the compliance singleton.
+// WindowsProtectionState 
 type WindowsProtectionState struct {
     Entity
     // Current anti malware version
@@ -448,9 +448,6 @@ func (m *WindowsProtectionState) GetTamperProtectionEnabled()(*bool) {
     } else {
         return m.tamperProtectionEnabled
     }
-}
-func (m *WindowsProtectionState) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

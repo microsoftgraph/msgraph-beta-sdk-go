@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EncryptionReportPolicyDetails provides operations to manage the deviceManagement singleton.
+// EncryptionReportPolicyDetails policy Details for Encryption Report
 type EncryptionReportPolicyDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -72,9 +72,6 @@ func (m *EncryptionReportPolicyDetails) GetPolicyName()(*string) {
     } else {
         return m.policyName
     }
-}
-func (m *EncryptionReportPolicyDetails) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EncryptionReportPolicyDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

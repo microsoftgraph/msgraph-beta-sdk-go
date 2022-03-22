@@ -27,7 +27,7 @@ type HistoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// HistoryRequestBuilderGetQueryParameters get history from identityProtection
+// HistoryRequestBuilderGetQueryParameters represents the risk history of Azure AD service principals.
 type HistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewHistoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
 func (m *HistoryRequestBuilder) Count()(*i644c50d9e7a80c9671908e38e958f2f0ee5666754e92c06a3b41ed04670319ee.CountRequestBuilder) {
     return i644c50d9e7a80c9671908e38e958f2f0ee5666754e92c06a3b41ed04670319ee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get history from identityProtection
+// CreateGetRequestInformation represents the risk history of Azure AD service principals.
 func (m *HistoryRequestBuilder) CreateGetRequestInformation(options *HistoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *HistoryRequestBuilder) CreatePostRequestInformation(options *HistoryReq
     }
     return requestInfo, nil
 }
-// Get get history from identityProtection
+// Get represents the risk history of Azure AD service principals.
 func (m *HistoryRequestBuilder) Get(options *HistoryRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyServicePrincipalHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

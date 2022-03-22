@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkAccountConfiguration provides operations to manage the teamwork singleton.
+// TeamworkAccountConfiguration 
 type TeamworkAccountConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -72,9 +72,6 @@ func (m *TeamworkAccountConfiguration) GetSupportedClient()(*TeamworkSupportedCl
     } else {
         return m.supportedClient
     }
-}
-func (m *TeamworkAccountConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkAccountConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

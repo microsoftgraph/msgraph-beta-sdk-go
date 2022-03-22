@@ -46,17 +46,6 @@ type FollowingRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// FollowingRequestBuilderPostOptions options for Post
-type FollowingRequestBuilderPostOptions struct {
-    // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable;
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
 // NewFollowingRequestBuilderInternal instantiates a new FollowingRequestBuilder and sets the default values.
 func NewFollowingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowingRequestBuilder) {
     m := &FollowingRequestBuilder{
@@ -99,24 +88,6 @@ func (m *FollowingRequestBuilder) CreateGetRequestInformation(options *Following
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to following for drive
-func (m *FollowingRequestBuilder) CreatePostRequestInformation(options *FollowingRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // Get the list of items the user is following. Only in OneDrive for Business.
 func (m *FollowingRequestBuilder) Get(options *FollowingRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
@@ -132,20 +103,4 @@ func (m *FollowingRequestBuilder) Get(options *FollowingRequestBuilderGetOptions
         return nil, err
     }
     return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemCollectionResponseable), nil
-}
-// Post create new navigation property to following for drive
-func (m *FollowingRequestBuilder) Post(options *FollowingRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDriveItemFromDiscriminatorValue, nil, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItemable), nil
 }

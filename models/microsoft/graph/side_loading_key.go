@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SideLoadingKey provides operations to manage the deviceAppManagement singleton.
+// SideLoadingKey 
 type SideLoadingKey struct {
     Entity
     // Side Loading Key description displayed to the ITPro Admins..
@@ -123,9 +123,6 @@ func (m *SideLoadingKey) GetValue()(*string) {
     } else {
         return m.value
     }
-}
-func (m *SideLoadingKey) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SideLoadingKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

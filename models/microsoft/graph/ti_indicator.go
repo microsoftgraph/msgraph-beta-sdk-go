@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TiIndicator provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+// TiIndicator 
 type TiIndicator struct {
     Entity
     // The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
@@ -1200,9 +1200,6 @@ func (m *TiIndicator) GetUserAgent()(*string) {
     } else {
         return m.userAgent
     }
-}
-func (m *TiIndicator) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

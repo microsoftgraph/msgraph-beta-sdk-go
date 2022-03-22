@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcOrganizationSettings provides operations to manage the deviceManagement singleton.
+// CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
     // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
@@ -63,9 +63,6 @@ func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountTy
     } else {
         return m.userAccountType
     }
-}
-func (m *CloudPcOrganizationSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcOrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

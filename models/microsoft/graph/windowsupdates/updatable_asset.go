@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// UpdatableAsset provides operations to manage the admin singleton.
+// UpdatableAsset 
 type UpdatableAsset struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
 }
@@ -24,9 +24,6 @@ func CreateUpdatableAssetFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374
 func (m *UpdatableAsset) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
-}
-func (m *UpdatableAsset) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UpdatableAsset) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

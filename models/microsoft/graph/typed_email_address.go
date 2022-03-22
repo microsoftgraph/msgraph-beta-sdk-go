@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TypedEmailAddress provides operations to manage the compliance singleton.
+// TypedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
     // To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
@@ -63,9 +63,6 @@ func (m *TypedEmailAddress) GetType()(*EmailType) {
     } else {
         return m.type_escaped
     }
-}
-func (m *TypedEmailAddress) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TypedEmailAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

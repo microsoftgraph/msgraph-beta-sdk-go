@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OnPremisesAgentGroupCollectionResponse provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
+// OnPremisesAgentGroupCollectionResponse 
 type OnPremisesAgentGroupCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *OnPremisesAgentGroupCollectionResponse) GetValue()([]OnPremisesAgentGro
     } else {
         return m.value
     }
-}
-func (m *OnPremisesAgentGroupCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesAgentGroupCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ServicePrincipalRiskDetection provides operations to manage the identityProtectionRoot singleton.
+// ServicePrincipalRiskDetection 
 type ServicePrincipalRiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
@@ -428,9 +428,6 @@ func (m *ServicePrincipalRiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
     } else {
         return m.tokenIssuerType
     }
-}
-func (m *ServicePrincipalRiskDetection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipalRiskDetection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

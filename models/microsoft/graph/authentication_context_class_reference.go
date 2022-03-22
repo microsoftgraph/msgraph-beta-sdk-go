@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AuthenticationContextClassReference provides operations to manage the identityContainer singleton.
+// AuthenticationContextClassReference 
 type AuthenticationContextClassReference struct {
     Entity
     // A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
@@ -83,9 +83,6 @@ func (m *AuthenticationContextClassReference) GetIsAvailable()(*bool) {
     } else {
         return m.isAvailable
     }
-}
-func (m *AuthenticationContextClassReference) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationContextClassReference) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementDerivedCredentialSettings provides operations to manage the deviceManagement singleton.
+// DeviceManagementDerivedCredentialSettings 
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
     // The display name for the profile.
@@ -103,9 +103,6 @@ func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*Devic
     } else {
         return m.notificationType
     }
-}
-func (m *DeviceManagementDerivedCredentialSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

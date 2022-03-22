@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ClassificationInnerError provides operations to manage the dataClassificationService singleton.
+// ClassificationInnerError 
 type ClassificationInnerError struct {
     // 
     activityId *string;
@@ -113,9 +113,6 @@ func (m *ClassificationInnerError) GetFieldDeserializers()(map[string]func(inter
         return nil
     }
     return res
-}
-func (m *ClassificationInnerError) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ClassificationInnerError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

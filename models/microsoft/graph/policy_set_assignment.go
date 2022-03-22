@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicySetAssignment provides operations to manage the deviceAppManagement singleton.
+// PolicySetAssignment 
 type PolicySetAssignment struct {
     Entity
     // Last modified time of the PolicySetAssignment.
@@ -64,9 +64,6 @@ func (m *PolicySetAssignment) GetTarget()(DeviceAndAppManagementAssignmentTarget
     } else {
         return m.target
     }
-}
-func (m *PolicySetAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PolicySetAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

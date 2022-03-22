@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Customer provides operations to manage the financials singleton.
+// Customer 
 type Customer struct {
     Entity
     // 
@@ -488,9 +488,6 @@ func (m *Customer) GetWebsite()(*string) {
     } else {
         return m.website
     }
-}
-func (m *Customer) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Customer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

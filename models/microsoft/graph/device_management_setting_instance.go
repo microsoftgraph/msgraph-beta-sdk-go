@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementSettingInstance provides operations to manage the deviceManagement singleton.
+// DeviceManagementSettingInstance 
 type DeviceManagementSettingInstance struct {
     Entity
     // The ID of the setting definition for this instance
@@ -63,9 +63,6 @@ func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
     } else {
         return m.valueJson
     }
-}
-func (m *DeviceManagementSettingInstance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

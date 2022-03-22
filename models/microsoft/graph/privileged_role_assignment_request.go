@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedRoleAssignmentRequest provides operations to manage the collection of privilegedApproval entities.
+// PrivilegedRoleAssignmentRequest 
 type PrivilegedRoleAssignmentRequest struct {
     Entity
     // The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
@@ -264,9 +264,6 @@ func (m *PrivilegedRoleAssignmentRequest) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *PrivilegedRoleAssignmentRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedRoleAssignmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

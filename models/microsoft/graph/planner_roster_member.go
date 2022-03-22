@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PlannerRosterMember provides operations to manage the planner singleton.
+// PlannerRosterMember 
 type PlannerRosterMember struct {
     Entity
     // Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
@@ -87,9 +87,6 @@ func (m *PlannerRosterMember) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *PlannerRosterMember) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PlannerRosterMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

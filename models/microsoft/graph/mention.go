@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Mention provides operations to manage the compliance singleton.
+// Mention 
 type Mention struct {
     Entity
     // The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
@@ -184,9 +184,6 @@ func (m *Mention) GetServerCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     } else {
         return m.serverCreatedDateTime
     }
-}
-func (m *Mention) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Mention) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

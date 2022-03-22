@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TenantAppManagementPolicy provides operations to manage the policyRoot singleton.
+// TenantAppManagementPolicy 
 type TenantAppManagementPolicy struct {
     PolicyBase
     // Restrictions that apply as default to all application objects in the tenant.
@@ -83,9 +83,6 @@ func (m *TenantAppManagementPolicy) GetServicePrincipalRestrictions()(AppManagem
     } else {
         return m.servicePrincipalRestrictions
     }
-}
-func (m *TenantAppManagementPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TenantAppManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

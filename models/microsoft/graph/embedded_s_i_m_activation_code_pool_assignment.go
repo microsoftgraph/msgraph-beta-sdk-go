@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmbeddedSIMActivationCodePoolAssignment provides operations to manage the deviceManagement singleton.
+// EmbeddedSIMActivationCodePoolAssignment 
 type EmbeddedSIMActivationCodePoolAssignment struct {
     Entity
     // Base type for assignment targets.
@@ -43,9 +43,6 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) GetTarget()(DeviceAndAppManage
     } else {
         return m.target
     }
-}
-func (m *EmbeddedSIMActivationCodePoolAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCodePoolAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

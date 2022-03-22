@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CallRecord provides operations to manage the cloudCommunications singleton.
+// CallRecord 
 type CallRecord struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -237,9 +237,6 @@ func (m *CallRecord) GetVersion()(*int64) {
     } else {
         return m.version
     }
-}
-func (m *CallRecord) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

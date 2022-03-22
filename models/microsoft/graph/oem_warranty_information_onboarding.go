@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OemWarrantyInformationOnboarding provides operations to manage the deviceManagement singleton.
+// OemWarrantyInformationOnboarding 
 type OemWarrantyInformationOnboarding struct {
     Entity
     // Specifies whether warranty API is available. This property is read-only.
@@ -83,9 +83,6 @@ func (m *OemWarrantyInformationOnboarding) GetOemName()(*string) {
     } else {
         return m.oemName
     }
-}
-func (m *OemWarrantyInformationOnboarding) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OemWarrantyInformationOnboarding) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

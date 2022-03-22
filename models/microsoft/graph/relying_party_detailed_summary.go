@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RelyingPartyDetailedSummary provides operations to call the getRelyingPartyDetailedSummary method.
+// RelyingPartyDetailedSummary 
 type RelyingPartyDetailedSummary struct {
     Entity
     // Number of failed sign in on Active Directory Federation Service in the period specified.
@@ -251,9 +251,6 @@ func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
     } else {
         return m.uniqueUserCount
     }
-}
-func (m *RelyingPartyDetailedSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RelyingPartyDetailedSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

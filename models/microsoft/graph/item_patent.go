@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemPatent provides operations to manage the compliance singleton.
+// ItemPatent 
 type ItemPatent struct {
     ItemFacet
     // Descpription of the patent or filing.
@@ -163,9 +163,6 @@ func (m *ItemPatent) GetWebUrl()(*string) {
     } else {
         return m.webUrl
     }
-}
-func (m *ItemPatent) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ItemPatent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

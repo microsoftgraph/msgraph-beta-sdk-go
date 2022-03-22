@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LoginPageTextVisibilitySettings provides operations to manage the organizationalBranding singleton.
+// LoginPageTextVisibilitySettings 
 type LoginPageTextVisibilitySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -132,9 +132,6 @@ func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
     } else {
         return m.hideTermsOfUse
     }
-}
-func (m *LoginPageTextVisibilitySettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *LoginPageTextVisibilitySettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

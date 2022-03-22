@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomAccessPackageWorkflowExtension provides operations to manage the identityGovernance singleton.
+// CustomAccessPackageWorkflowExtension 
 type CustomAccessPackageWorkflowExtension struct {
     CustomCalloutExtension
     // Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -64,9 +64,6 @@ func (m *CustomAccessPackageWorkflowExtension) GetLastModifiedDateTime()(*i33607
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *CustomAccessPackageWorkflowExtension) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CustomAccessPackageWorkflowExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

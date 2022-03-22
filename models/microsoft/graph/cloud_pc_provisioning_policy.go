@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcProvisioningPolicy provides operations to manage the deviceManagement singleton.
+// CloudPcProvisioningPolicy 
 type CloudPcProvisioningPolicy struct {
     Entity
     // A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
@@ -25,7 +25,7 @@ type CloudPcProvisioningPolicy struct {
     microsoftManagedDesktop MicrosoftManagedDesktopable;
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
     onPremisesConnectionId *string;
-    // 
+    // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
     windowsSettings CloudPcWindowsSettingsable;
 }
 // NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
@@ -220,16 +220,13 @@ func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
         return m.onPremisesConnectionId
     }
 }
-// GetWindowsSettings gets the windowsSettings property value. 
+// GetWindowsSettings gets the windowsSettings property value. Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
 func (m *CloudPcProvisioningPolicy) GetWindowsSettings()(CloudPcWindowsSettingsable) {
     if m == nil {
         return nil
     } else {
         return m.windowsSettings
     }
-}
-func (m *CloudPcProvisioningPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -358,7 +355,7 @@ func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
         m.onPremisesConnectionId = value
     }
 }
-// SetWindowsSettings sets the windowsSettings property value. 
+// SetWindowsSettings sets the windowsSettings property value. Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
 func (m *CloudPcProvisioningPolicy) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
     if m != nil {
         m.windowsSettings = value

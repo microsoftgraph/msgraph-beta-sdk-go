@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the reportRoot singleton.
+// Provides operations to manage the print singleton.
 type UsageAuthMethod int
 
 const (

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDriverUpdateProfile provides operations to manage the deviceManagement singleton.
+// WindowsDriverUpdateProfile 
 type WindowsDriverUpdateProfile struct {
     Entity
     // Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
@@ -256,9 +256,6 @@ func (m *WindowsDriverUpdateProfile) GetRoleScopeTagIds()([]string) {
     } else {
         return m.roleScopeTagIds
     }
-}
-func (m *WindowsDriverUpdateProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDriverUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

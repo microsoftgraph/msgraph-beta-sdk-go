@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentDeviceState provides operations to manage the deviceManagement singleton.
+// DeviceManagementIntentDeviceState 
 type DeviceManagementIntentDeviceState struct {
     Entity
     // Device name that is being reported
@@ -144,9 +144,6 @@ func (m *DeviceManagementIntentDeviceState) GetUserPrincipalName()(*string) {
     } else {
         return m.userPrincipalName
     }
-}
-func (m *DeviceManagementIntentDeviceState) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

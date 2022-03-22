@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptUserStateCollectionResponse provides operations to manage the userRunStates property of the microsoft.graph.deviceCustomAttributeShellScript entity.
+// DeviceManagementScriptUserStateCollectionResponse 
 type DeviceManagementScriptUserStateCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *DeviceManagementScriptUserStateCollectionResponse) GetValue()([]DeviceM
     } else {
         return m.value
     }
-}
-func (m *DeviceManagementScriptUserStateCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptUserStateCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

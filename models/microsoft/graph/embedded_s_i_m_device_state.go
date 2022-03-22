@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmbeddedSIMDeviceState provides operations to manage the deviceManagement singleton.
+// EmbeddedSIMDeviceState 
 type EmbeddedSIMDeviceState struct {
     Entity
     // The time the embedded SIM device status was created. Generated service side.
@@ -184,9 +184,6 @@ func (m *EmbeddedSIMDeviceState) GetUserName()(*string) {
     } else {
         return m.userName
     }
-}
-func (m *EmbeddedSIMDeviceState) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMDeviceState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

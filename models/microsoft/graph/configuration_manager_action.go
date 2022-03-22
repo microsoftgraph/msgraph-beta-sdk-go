@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ConfigurationManagerAction provides operations to call the triggerConfigurationManagerAction method.
+// ConfigurationManagerAction parameter for action triggerConfigurationManagerAction
 type ConfigurationManagerAction struct {
     // The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
     action *ConfigurationManagerActionType;
@@ -52,9 +52,6 @@ func (m *ConfigurationManagerAction) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     return res
-}
-func (m *ConfigurationManagerAction) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ConfigurationManagerAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceProtectionOverview provides operations to manage the deviceManagement singleton.
+// DeviceProtectionOverview hardware information of a given device.
 type DeviceProtectionOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -252,9 +252,6 @@ func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int3
     } else {
         return m.unknownStateThreatAgentDeviceCount
     }
-}
-func (m *DeviceProtectionOverview) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceProtectionOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

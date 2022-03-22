@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnsupportedGroupPolicyExtension provides operations to manage the deviceManagement singleton.
+// UnsupportedGroupPolicyExtension 
 type UnsupportedGroupPolicyExtension struct {
     Entity
     // ExtensionType of the unsupported extension.
@@ -103,9 +103,6 @@ func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingS
     } else {
         return m.settingScope
     }
-}
-func (m *UnsupportedGroupPolicyExtension) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UnsupportedGroupPolicyExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

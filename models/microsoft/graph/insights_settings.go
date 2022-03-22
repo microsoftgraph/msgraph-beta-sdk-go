@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// InsightsSettings provides operations to manage the collection of organization entities.
+// InsightsSettings 
 type InsightsSettings struct {
     Entity
     // The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
@@ -63,9 +63,6 @@ func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
     } else {
         return m.isEnabledInOrganization
     }
-}
-func (m *InsightsSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *InsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

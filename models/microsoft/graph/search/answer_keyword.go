@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AnswerKeyword provides operations to manage the searchEntity singleton.
+// AnswerKeyword 
 type AnswerKeyword struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -100,9 +100,6 @@ func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     } else {
         return m.reservedKeywords
     }
-}
-func (m *AnswerKeyword) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AnswerKeyword) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

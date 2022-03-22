@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProfileCardPropertyCollectionResponse provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
+// ProfileCardPropertyCollectionResponse 
 type ProfileCardPropertyCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *ProfileCardPropertyCollectionResponse) GetValue()([]ProfileCardProperty
     } else {
         return m.value
     }
-}
-func (m *ProfileCardPropertyCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ProfileCardPropertyCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

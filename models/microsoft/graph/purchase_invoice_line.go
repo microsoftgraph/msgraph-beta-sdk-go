@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PurchaseInvoiceLine provides operations to manage the financials singleton.
+// PurchaseInvoiceLine 
 type PurchaseInvoiceLine struct {
     Entity
     // 
@@ -483,9 +483,6 @@ func (m *PurchaseInvoiceLine) GetUnitCost()(*float64) {
     } else {
         return m.unitCost
     }
-}
-func (m *PurchaseInvoiceLine) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PurchaseInvoiceLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

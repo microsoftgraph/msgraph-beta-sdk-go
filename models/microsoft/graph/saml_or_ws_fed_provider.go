@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SamlOrWsFedProvider provides operations to manage the collection of domain entities.
+// SamlOrWsFedProvider 
 type SamlOrWsFedProvider struct {
     IdentityProviderBase
     // Issuer URI of the federation server.
@@ -123,9 +123,6 @@ func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
     } else {
         return m.signingCertificate
     }
-}
-func (m *SamlOrWsFedProvider) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SamlOrWsFedProvider) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

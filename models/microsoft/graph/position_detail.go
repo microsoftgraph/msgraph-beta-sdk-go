@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PositionDetail provides operations to manage the compliance singleton.
+// PositionDetail 
 type PositionDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -172,9 +172,6 @@ func (m *PositionDetail) GetSummary()(*string) {
     } else {
         return m.summary
     }
-}
-func (m *PositionDetail) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PositionDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

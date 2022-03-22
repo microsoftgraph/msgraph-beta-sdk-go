@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse 
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionRespo
     } else {
         return m.value
     }
-}
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

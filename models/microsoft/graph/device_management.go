@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagement provides operations to manage the deviceManagement singleton.
+// DeviceManagement singleton entity that acts as a container for all device management functionality.
 type DeviceManagement struct {
     Entity
     // The date & time when tenant data moved between scaleunits.
@@ -172,7 +172,7 @@ type DeviceManagement struct {
     managementConditions []ManagementConditionable;
     // The management condition statements associated with device management of the company.
     managementConditionStatements []ManagementConditionStatementable;
-    // Maximum number of DEP tokens allowed per-tenant.
+    // Maximum number of dep tokens allowed per-tenant.
     maximumDepTokens *int32;
     // Collection of MicrosoftTunnelConfiguration settings associated with account.
     microsoftTunnelConfigurations []MicrosoftTunnelConfigurationable;
@@ -220,7 +220,7 @@ type DeviceManagement struct {
     settings DeviceManagementSettingsable;
     // The software update status summary.
     softwareUpdateStatusSummary SoftwareUpdateStatusSummaryable;
-    // Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+    // Tenant's Subscription.
     subscriptions *DeviceManagementSubscriptions;
     // Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
     subscriptionState *DeviceManagementSubscriptionState;
@@ -3205,7 +3205,7 @@ func (m *DeviceManagement) GetManagementConditionStatements()([]ManagementCondit
         return m.managementConditionStatements
     }
 }
-// GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
+// GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of dep tokens allowed per-tenant.
 func (m *DeviceManagement) GetMaximumDepTokens()(*int32) {
     if m == nil {
         return nil
@@ -3397,7 +3397,7 @@ func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatus
         return m.softwareUpdateStatusSummary
     }
 }
-// GetSubscriptions gets the subscriptions property value. Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+// GetSubscriptions gets the subscriptions property value. Tenant's Subscription.
 func (m *DeviceManagement) GetSubscriptions()(*DeviceManagementSubscriptions) {
     if m == nil {
         return nil
@@ -3884,9 +3884,6 @@ func (m *DeviceManagement) GetWindowsUpdateCatalogItems()([]WindowsUpdateCatalog
     } else {
         return m.windowsUpdateCatalogItems
     }
-}
-func (m *DeviceManagement) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -5912,7 +5909,7 @@ func (m *DeviceManagement) SetManagementConditionStatements(value []ManagementCo
         m.managementConditionStatements = value
     }
 }
-// SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
+// SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of dep tokens allowed per-tenant.
 func (m *DeviceManagement) SetMaximumDepTokens(value *int32)() {
     if m != nil {
         m.maximumDepTokens = value
@@ -6056,7 +6053,7 @@ func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value SoftwareUpdateSt
         m.softwareUpdateStatusSummary = value
     }
 }
-// SetSubscriptions sets the subscriptions property value. Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+// SetSubscriptions sets the subscriptions property value. Tenant's Subscription.
 func (m *DeviceManagement) SetSubscriptions(value *DeviceManagementSubscriptions)() {
     if m != nil {
         m.subscriptions = value

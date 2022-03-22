@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcess provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsDeviceStartupProcess 
 type UserExperienceAnalyticsDeviceStartupProcess struct {
     Entity
     // The user experience analytics device id.
@@ -123,9 +123,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*in
     } else {
         return m.startupImpactInMs
     }
-}
-func (m *UserExperienceAnalyticsDeviceStartupProcess) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

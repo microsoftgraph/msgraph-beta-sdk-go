@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcLoginResult provides operations to manage the compliance singleton.
+// CloudPcLoginResult 
 type CloudPcLoginResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -53,9 +53,6 @@ func (m *CloudPcLoginResult) GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     } else {
         return m.time
     }
-}
-func (m *CloudPcLoginResult) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcLoginResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

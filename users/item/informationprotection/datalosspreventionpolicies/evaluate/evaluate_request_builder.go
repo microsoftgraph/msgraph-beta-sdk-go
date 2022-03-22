@@ -2,7 +2,6 @@ package evaluate
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
@@ -25,92 +24,6 @@ type EvaluateRequestBuilderPostOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
-// EvaluateResponse union type wrapper for classes dlpEvaluatePoliciesJobResponse
-type EvaluateResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
-    // Union type representation for type dlpEvaluatePoliciesJobResponse
-    dlpEvaluatePoliciesJobResponse i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable;
-}
-// NewEvaluateResponse instantiates a new evaluateResponse and sets the default values.
-func NewEvaluateResponse()(*EvaluateResponse) {
-    m := &EvaluateResponse{
-    }
-    m.SetAdditionalData(make(map[string]interface{}));
-    return m
-}
-func CreateEvaluateResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
-    return NewEvaluateResponse(), nil
-}
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EvaluateResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
-}
-// GetDlpEvaluatePoliciesJobResponse gets the dlpEvaluatePoliciesJobResponse property value. Union type representation for type dlpEvaluatePoliciesJobResponse
-func (m *EvaluateResponse) GetDlpEvaluatePoliciesJobResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dlpEvaluatePoliciesJobResponse
-    }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["dlpEvaluatePoliciesJobResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDlpEvaluatePoliciesJobResponse(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable))
-        }
-        return nil
-    }
-    return res
-}
-func (m *EvaluateResponse) IsNil()(bool) {
-    return m == nil
-}
-// Serialize serializes information the current object
-func (m *EvaluateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("dlpEvaluatePoliciesJobResponse", m.GetDlpEvaluatePoliciesJobResponse())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EvaluateResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
-}
-// SetDlpEvaluatePoliciesJobResponse sets the dlpEvaluatePoliciesJobResponse property value. Union type representation for type dlpEvaluatePoliciesJobResponse
-func (m *EvaluateResponse) SetDlpEvaluatePoliciesJobResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable)() {
-    if m != nil {
-        m.dlpEvaluatePoliciesJobResponse = value
-    }
-}
-// EvaluateResponseable 
-type EvaluateResponseable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetDlpEvaluatePoliciesJobResponse()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable)
-    SetDlpEvaluatePoliciesJobResponse(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable)()
 }
 // NewEvaluateRequestBuilderInternal instantiates a new EvaluateRequestBuilder and sets the default values.
 func NewEvaluateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRequestBuilder) {
@@ -150,14 +63,14 @@ func (m *EvaluateRequestBuilder) CreatePostRequestInformation(options *EvaluateR
     return requestInfo, nil
 }
 // Post invoke action evaluate
-func (m *EvaluateRequestBuilder) Post(options *EvaluateRequestBuilderPostOptions)(EvaluateResponseable, error) {
+func (m *EvaluateRequestBuilder) Post(options *EvaluateRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEvaluateResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(EvaluateResponseable), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluatePoliciesJobResponseable), nil
 }

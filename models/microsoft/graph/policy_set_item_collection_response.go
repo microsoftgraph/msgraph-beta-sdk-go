@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicySetItemCollectionResponse provides operations to manage the items property of the microsoft.graph.policySet entity.
+// PolicySetItemCollectionResponse 
 type PolicySetItemCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *PolicySetItemCollectionResponse) GetValue()([]PolicySetItemable) {
     } else {
         return m.value
     }
-}
-func (m *PolicySetItemCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PolicySetItemCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicyMigrationReport provides operations to manage the deviceManagement singleton.
+// GroupPolicyMigrationReport 
 type GroupPolicyMigrationReport struct {
     Entity
     // The date and time at which the GroupPolicyMigrationReport was created.
@@ -312,9 +312,6 @@ func (m *GroupPolicyMigrationReport) GetUnsupportedGroupPolicyExtensions()([]Uns
     } else {
         return m.unsupportedGroupPolicyExtensions
     }
-}
-func (m *GroupPolicyMigrationReport) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyMigrationReport) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

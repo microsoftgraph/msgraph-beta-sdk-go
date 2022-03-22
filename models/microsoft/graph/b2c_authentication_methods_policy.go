@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// B2cAuthenticationMethodsPolicy provides operations to manage the policyRoot singleton.
+// B2cAuthenticationMethodsPolicy 
 type B2cAuthenticationMethodsPolicy struct {
     Entity
     // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
@@ -83,9 +83,6 @@ func (m *B2cAuthenticationMethodsPolicy) GetIsUserNameAuthenticationEnabled()(*b
     } else {
         return m.isUserNameAuthenticationEnabled
     }
-}
-func (m *B2cAuthenticationMethodsPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

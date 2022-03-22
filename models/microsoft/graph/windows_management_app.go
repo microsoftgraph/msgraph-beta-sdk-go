@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsManagementApp provides operations to manage the deviceAppManagement singleton.
+// WindowsManagementApp 
 type WindowsManagementApp struct {
     Entity
     // Windows management app available version.
@@ -107,9 +107,6 @@ func (m *WindowsManagementApp) GetManagedInstallerConfiguredDateTime()(*string) 
     } else {
         return m.managedInstallerConfiguredDateTime
     }
-}
-func (m *WindowsManagementApp) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsManagementApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -11,7 +11,6 @@ import (
     i8857dde88d0f1b1bcab36ac86f53cdf1cf5c8b4e4ce3497f1447b17884b4432f "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/drive"
     ib8242e278d08beecc8437de78cdbd8c65c699b45068fd7140d7cabf2c945f558 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/items"
     iff76d0e8c7b3b7caff43b18695744b55ff20d7bdd54fb63bb6332cc1ae912a40 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/subscriptions"
-    i310254797e5d342cdb1f2d5ff07a899b7c9adeb765730d80690cdbb88a73e453 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/activities/item"
     i3b9fc89ed20f5bc6ee2709cbea9da1d72a73e1a237c50904ede0b8286e254701 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/operations/item"
     i574bb51b011ae57be83ae4c1378131adfd141ea2f28ea8d6fb084a7c2a316f9e "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/subscriptions/item"
     i84a6362366aa96a7cf24a63ec6fc8d616b93a84df4ef10a2dba84a08f8fae66c "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item/columns/item"
@@ -68,17 +67,6 @@ type ListItemRequestBuilderPatchOptions struct {
 }
 func (m *ListItemRequestBuilder) Activities()(*i03a20b5598fd1386b590353696f1734de0fd085772d233356819dfacb48398d3.ActivitiesRequestBuilder) {
     return i03a20b5598fd1386b590353696f1734de0fd085772d233356819dfacb48398d3.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.sites.item.lists.item.activities.item collection
-func (m *ListItemRequestBuilder) ActivitiesById(id string)(*i310254797e5d342cdb1f2d5ff07a899b7c9adeb765730d80690cdbb88a73e453.ItemActivityOLDItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["itemActivityOLD_id"] = id
-    }
-    return i310254797e5d342cdb1f2d5ff07a899b7c9adeb765730d80690cdbb88a73e453.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ListItemRequestBuilder) Columns()(*i56769840e4943569ca7939554b4fb3706451d9fbe4e7f5691fd1542fe0b67462.ColumnsRequestBuilder) {
     return i56769840e4943569ca7939554b4fb3706451d9fbe4e7f5691fd1542fe0b67462.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

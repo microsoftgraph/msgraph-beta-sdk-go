@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidForWorkAppConfigurationSchemaItem provides operations to manage the deviceManagement singleton.
+// AndroidForWorkAppConfigurationSchemaItem single configuration item inside an Android for Work application's custom configuration schema.
 type AndroidForWorkAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -220,9 +220,6 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetSelections()([]KeyValuePai
     } else {
         return m.selections
     }
-}
-func (m *AndroidForWorkAppConfigurationSchemaItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkAppConfigurationSchemaItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

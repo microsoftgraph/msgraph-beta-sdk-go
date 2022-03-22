@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SoftwareOathAuthenticationMethod provides operations to manage the compliance singleton.
+// SoftwareOathAuthenticationMethod 
 type SoftwareOathAuthenticationMethod struct {
     AuthenticationMethod
     // The secret key of the method. Always returns null.
@@ -43,9 +43,6 @@ func (m *SoftwareOathAuthenticationMethod) GetSecretKey()(*string) {
     } else {
         return m.secretKey
     }
-}
-func (m *SoftwareOathAuthenticationMethod) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SoftwareOathAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

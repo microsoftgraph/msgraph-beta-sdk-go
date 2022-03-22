@@ -4,11 +4,11 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcWindowsSettings provides operations to manage the deviceManagement singleton.
+// CloudPcWindowsSettings 
 type CloudPcWindowsSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
     language *string;
 }
 // NewCloudPcWindowsSettings instantiates a new cloudPcWindowsSettings and sets the default values.
@@ -45,16 +45,13 @@ func (m *CloudPcWindowsSettings) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
-// GetLanguage gets the language property value. 
+// GetLanguage gets the language property value. The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 func (m *CloudPcWindowsSettings) GetLanguage()(*string) {
     if m == nil {
         return nil
     } else {
         return m.language
     }
-}
-func (m *CloudPcWindowsSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcWindowsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -78,7 +75,7 @@ func (m *CloudPcWindowsSettings) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetLanguage sets the language property value. 
+// SetLanguage sets the language property value. The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 func (m *CloudPcWindowsSettings) SetLanguage(value *string)() {
     if m != nil {
         m.language = value

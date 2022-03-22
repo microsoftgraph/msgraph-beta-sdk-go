@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppInstallSummary provides operations to manage the deviceAppManagement singleton.
+// MobileAppInstallSummary 
 type MobileAppInstallSummary struct {
     Entity
     // Number of Devices that have failed to install this app.
@@ -223,9 +223,6 @@ func (m *MobileAppInstallSummary) GetPendingInstallUserCount()(*int32) {
     } else {
         return m.pendingInstallUserCount
     }
-}
-func (m *MobileAppInstallSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppInstallSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

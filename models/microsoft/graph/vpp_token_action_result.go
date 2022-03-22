@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VppTokenActionResult provides operations to manage the deviceAppManagement singleton.
+// VppTokenActionResult the status of the action performed with an Apple Volume Purchase Program token.
 type VppTokenActionResult struct {
     // Action name
     actionName *string;
@@ -113,9 +113,6 @@ func (m *VppTokenActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad
     } else {
         return m.startDateTime
     }
-}
-func (m *VppTokenActionResult) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *VppTokenActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

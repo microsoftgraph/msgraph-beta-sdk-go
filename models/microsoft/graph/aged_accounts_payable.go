@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AgedAccountsPayable provides operations to manage the financials singleton.
+// AgedAccountsPayable 
 type AgedAccountsPayable struct {
     Entity
     // 
@@ -223,9 +223,6 @@ func (m *AgedAccountsPayable) GetVendorNumber()(*string) {
     } else {
         return m.vendorNumber
     }
-}
-func (m *AgedAccountsPayable) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AgedAccountsPayable) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

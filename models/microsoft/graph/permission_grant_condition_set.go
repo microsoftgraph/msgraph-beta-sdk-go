@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PermissionGrantConditionSet provides operations to manage the policyRoot singleton.
+// PermissionGrantConditionSet 
 type PermissionGrantConditionSet struct {
     Entity
     // Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
@@ -219,9 +219,6 @@ func (m *PermissionGrantConditionSet) GetResourceApplication()(*string) {
     } else {
         return m.resourceApplication
     }
-}
-func (m *PermissionGrantConditionSet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// BulkDriverActionResult provides operations to call the executeAction method.
+// BulkDriverActionResult a complex type to represent the result of bulk driver action.
 type BulkDriverActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -104,9 +104,6 @@ func (m *BulkDriverActionResult) GetSuccessfulDriverIds()([]string) {
     } else {
         return m.successfulDriverIds
     }
-}
-func (m *BulkDriverActionResult) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *BulkDriverActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

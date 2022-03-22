@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// FilterOperatorSchema provides operations to call the filterOperators method.
+// FilterOperatorSchema 
 type FilterOperatorSchema struct {
     Entity
     // Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
@@ -87,9 +87,6 @@ func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]AttributeType) {
     } else {
         return m.supportedAttributeTypes
     }
-}
-func (m *FilterOperatorSchema) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *FilterOperatorSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

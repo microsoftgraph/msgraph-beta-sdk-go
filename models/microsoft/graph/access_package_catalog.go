@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageCatalog provides operations to manage the identityGovernance singleton.
+// AccessPackageCatalog 
 type AccessPackageCatalog struct {
     Entity
     // The roles in each resource in a catalog. Read-only.
@@ -324,9 +324,6 @@ func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe
     } else {
         return m.modifiedDateTime
     }
-}
-func (m *AccessPackageCatalog) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

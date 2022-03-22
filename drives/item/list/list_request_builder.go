@@ -15,7 +15,6 @@ import (
     i6d9fa267ba65ffc69588b5404ba4f8366dc0856106861fc7605e3228178bafa8 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/items/item"
     i8848c51df74f0989f6c22e145c2ee13b413f255dbd7be95258420ca5d687fd44 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes/item"
     ia59fbfe37a44fd2bc2fa238f5b2ad8db05da0c21b1f29efe1fb2808d1a63369e "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/subscriptions/item"
-    ic6aa6f1d9d4cfd6e95be88447503f291b59998d7a6197a071f773049847458a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/activities/item"
     ie87ccd3eba7b0417efc69f4a54be8884c4561c36556493ab22601c51306deac1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/operations/item"
 )
 
@@ -68,17 +67,6 @@ type ListRequestBuilderPatchOptions struct {
 }
 func (m *ListRequestBuilder) Activities()(*ic7ac1062584b45359ea2ca21560d1896ce081d0787c5ad76e8810dd7d12f47a6.ActivitiesRequestBuilder) {
     return ic7ac1062584b45359ea2ca21560d1896ce081d0787c5ad76e8810dd7d12f47a6.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drives.item.list.activities.item collection
-func (m *ListRequestBuilder) ActivitiesById(id string)(*ic6aa6f1d9d4cfd6e95be88447503f291b59998d7a6197a071f773049847458a8.ItemActivityOLDItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["itemActivityOLD_id"] = id
-    }
-    return ic6aa6f1d9d4cfd6e95be88447503f291b59998d7a6197a071f773049847458a8.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ListRequestBuilder) Columns()(*ic2ffaaa4c45cb050337e17bffa8e9e570c425d2bdbc32ffa3f4f20174d8584f4.ColumnsRequestBuilder) {
     return ic2ffaaa4c45cb050337e17bffa8e9e570c425d2bdbc32ffa3f4f20174d8584f4.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

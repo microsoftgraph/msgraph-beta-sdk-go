@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DelegatedAdminRelationshipRequest provides operations to manage the tenantRelationship singleton.
+// DelegatedAdminRelationshipRequest 
 type DelegatedAdminRelationshipRequest struct {
     Entity
     // 
@@ -104,9 +104,6 @@ func (m *DelegatedAdminRelationshipRequest) GetStatus()(*DelegatedAdminRelations
     } else {
         return m.status
     }
-}
-func (m *DelegatedAdminRelationshipRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminRelationshipRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

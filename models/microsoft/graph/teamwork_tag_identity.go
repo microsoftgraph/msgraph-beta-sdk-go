@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkTagIdentity provides operations to manage the collection of chat entities.
+// TeamworkTagIdentity 
 type TeamworkTagIdentity struct {
     Identity
 }
@@ -23,9 +23,6 @@ func CreateTeamworkTagIdentityFromDiscriminatorValue(parseNode i04eb5309aeaafadd
 func (m *TeamworkTagIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     return res
-}
-func (m *TeamworkTagIdentity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkTagIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

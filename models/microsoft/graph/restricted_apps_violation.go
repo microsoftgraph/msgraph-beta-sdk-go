@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RestrictedAppsViolation provides operations to manage the deviceManagement singleton.
+// RestrictedAppsViolation 
 type RestrictedAppsViolation struct {
     Entity
     // Device configuration profile unique identifier, must be Guid
@@ -207,9 +207,6 @@ func (m *RestrictedAppsViolation) GetUserName()(*string) {
     } else {
         return m.userName
     }
-}
-func (m *RestrictedAppsViolation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RestrictedAppsViolation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

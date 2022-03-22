@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkTeamsClientConfiguration provides operations to manage the teamwork singleton.
+// TeamworkTeamsClientConfiguration 
 type TeamworkTeamsClientConfiguration struct {
     // The configuration of the Microsoft Teams client user account for a device.
     accountConfiguration TeamworkAccountConfigurationable;
@@ -72,9 +72,6 @@ func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
-}
-func (m *TeamworkTeamsClientConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkTeamsClientConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

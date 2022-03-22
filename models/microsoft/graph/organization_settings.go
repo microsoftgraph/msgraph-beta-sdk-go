@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OrganizationSettings provides operations to manage the collection of organization entities.
+// OrganizationSettings 
 type OrganizationSettings struct {
     Entity
     // Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
@@ -87,9 +87,6 @@ func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertya
     } else {
         return m.profileCardProperties
     }
-}
-func (m *OrganizationSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ImportedAppleDeviceIdentity provides operations to manage the deviceManagement singleton.
+// ImportedAppleDeviceIdentity 
 type ImportedAppleDeviceIdentity struct {
     Entity
     // Created Date Time of the device
@@ -244,9 +244,6 @@ func (m *ImportedAppleDeviceIdentity) GetSerialNumber()(*string) {
     } else {
         return m.serialNumber
     }
-}
-func (m *ImportedAppleDeviceIdentity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ImportedAppleDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

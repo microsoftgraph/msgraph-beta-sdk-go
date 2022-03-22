@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttendanceRecord provides operations to manage the commsApplication singleton.
+// AttendanceRecord 
 type AttendanceRecord struct {
     Entity
     // List of time periods between joining and leaving a meeting.
@@ -13,6 +13,8 @@ type AttendanceRecord struct {
     emailAddress *string;
     // Identity of the user associated with this atttendance record.
     identity Identityable;
+    // Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+    registrantId *string;
     // Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
     role *string;
     // Total duration of the attendances in seconds.
@@ -82,6 +84,16 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
+    res["registrantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrantId(val)
+        }
+        return nil
+    }
     res["role"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -112,6 +124,14 @@ func (m *AttendanceRecord) GetIdentity()(Identityable) {
         return m.identity
     }
 }
+// GetRegistrantId gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+func (m *AttendanceRecord) GetRegistrantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrantId
+    }
+}
 // GetRole gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) GetRole()(*string) {
     if m == nil {
@@ -127,9 +147,6 @@ func (m *AttendanceRecord) GetTotalAttendanceInSeconds()(*int32) {
     } else {
         return m.totalAttendanceInSeconds
     }
-}
-func (m *AttendanceRecord) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AttendanceRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -155,6 +172,12 @@ func (m *AttendanceRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     {
         err = writer.WriteObjectValue("identity", m.GetIdentity())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("registrantId", m.GetRegistrantId())
         if err != nil {
             return err
         }
@@ -189,6 +212,12 @@ func (m *AttendanceRecord) SetEmailAddress(value *string)() {
 func (m *AttendanceRecord) SetIdentity(value Identityable)() {
     if m != nil {
         m.identity = value
+    }
+}
+// SetRegistrantId sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+func (m *AttendanceRecord) SetRegistrantId(value *string)() {
+    if m != nil {
+        m.registrantId = value
     }
 }
 // SetRole sets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.

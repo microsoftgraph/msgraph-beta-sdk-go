@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ItemEmail provides operations to manage the compliance singleton.
+// ItemEmail 
 type ItemEmail struct {
     ItemFacet
     // The email address itself.
@@ -83,9 +83,6 @@ func (m *ItemEmail) GetType()(*EmailType) {
     } else {
         return m.type_escaped
     }
-}
-func (m *ItemEmail) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ItemEmail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

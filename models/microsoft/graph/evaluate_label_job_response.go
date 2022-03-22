@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EvaluateLabelJobResponse provides operations to call the evaluate method.
+// EvaluateLabelJobResponse 
 type EvaluateLabelJobResponse struct {
     JobResponseBase
     // 
@@ -43,9 +43,6 @@ func (m *EvaluateLabelJobResponse) GetResult()(EvaluateLabelJobResultGroupable) 
     } else {
         return m.result
     }
-}
-func (m *EvaluateLabelJobResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EvaluateLabelJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

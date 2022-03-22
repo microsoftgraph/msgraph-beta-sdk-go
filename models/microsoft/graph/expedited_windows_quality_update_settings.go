@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExpeditedWindowsQualityUpdateSettings provides operations to manage the deviceManagement singleton.
+// ExpeditedWindowsQualityUpdateSettings a complex type to store the expedited quality update settings such as release date and days until forced reboot.
 type ExpeditedWindowsQualityUpdateSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -72,9 +72,6 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetQualityUpdateRelease()(*strin
     } else {
         return m.qualityUpdateRelease
     }
-}
-func (m *ExpeditedWindowsQualityUpdateSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ExpeditedWindowsQualityUpdateSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

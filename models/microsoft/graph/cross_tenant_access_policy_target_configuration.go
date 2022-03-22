@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyTargetConfiguration provides operations to manage the policyRoot singleton.
+// CrossTenantAccessPolicyTargetConfiguration 
 type CrossTenantAccessPolicyTargetConfiguration struct {
     // Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
     accessType *CrossTenantAccessPolicyTargetConfigurationAccessType;
@@ -76,9 +76,6 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetTargets()([]CrossTenantA
     } else {
         return m.targets
     }
-}
-func (m *CrossTenantAccessPolicyTargetConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyTargetConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

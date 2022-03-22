@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationTaskExecution provides operations to manage the collection of application entities.
+// SynchronizationTaskExecution 
 type SynchronizationTaskExecution struct {
     // Identifier of the job run.
     activityIdentifier *string;
@@ -313,9 +313,6 @@ func (m *SynchronizationTaskExecution) GetTimeEnded()(*i336074805fc853987abe6f7f
     } else {
         return m.timeEnded
     }
-}
-func (m *SynchronizationTaskExecution) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SynchronizationTaskExecution) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

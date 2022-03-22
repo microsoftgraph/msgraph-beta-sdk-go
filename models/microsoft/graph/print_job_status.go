@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrintJobStatus provides operations to manage the print singleton.
+// PrintJobStatus 
 type PrintJobStatus struct {
     // 
     acquiredByPrinter *bool;
@@ -176,9 +176,6 @@ func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
     } else {
         return m.state
     }
-}
-func (m *PrintJobStatus) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

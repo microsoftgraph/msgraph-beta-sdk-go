@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// IpSecurityProfile provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
+// IpSecurityProfile 
 type IpSecurityProfile struct {
     Entity
     // 
@@ -300,9 +300,6 @@ func (m *IpSecurityProfile) GetVendorInformation()(SecurityVendorInformationable
     } else {
         return m.vendorInformation
     }
-}
-func (m *IpSecurityProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

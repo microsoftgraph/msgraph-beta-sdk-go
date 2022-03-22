@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcProvisioningPolicyAssignment provides operations to manage the deviceManagement singleton.
+// CloudPcProvisioningPolicyAssignment 
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
     // The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
@@ -43,9 +43,6 @@ func (m *CloudPcProvisioningPolicyAssignment) GetTarget()(CloudPcManagementAssig
     } else {
         return m.target
     }
-}
-func (m *CloudPcProvisioningPolicyAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

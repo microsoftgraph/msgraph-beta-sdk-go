@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DataSharingConsent provides operations to manage the deviceManagement singleton.
+// DataSharingConsent 
 type DataSharingConsent struct {
     Entity
     // The time consent was granted for this account
@@ -144,9 +144,6 @@ func (m *DataSharingConsent) GetTermsUrl()(*string) {
     } else {
         return m.termsUrl
     }
-}
-func (m *DataSharingConsent) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DataSharingConsent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

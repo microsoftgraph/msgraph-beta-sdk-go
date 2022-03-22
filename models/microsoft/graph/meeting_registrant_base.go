@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingRegistrantBase provides operations to manage the commsApplication singleton.
+// MeetingRegistrantBase 
 type MeetingRegistrantBase struct {
     Entity
     // A unique web URL for the registrant to join the meeting. Read-only.
@@ -43,9 +43,6 @@ func (m *MeetingRegistrantBase) GetJoinWebUrl()(*string) {
     } else {
         return m.joinWebUrl
     }
-}
-func (m *MeetingRegistrantBase) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrantBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

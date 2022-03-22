@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// LegalHold provides operations to manage the compliance singleton.
+// LegalHold 
 type LegalHold struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
@@ -301,9 +301,6 @@ func (m *LegalHold) GetUserSources()([]UserSourceable) {
     } else {
         return m.userSources
     }
-}
-func (m *LegalHold) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

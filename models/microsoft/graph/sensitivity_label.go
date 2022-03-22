@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SensitivityLabel provides operations to manage the compliance singleton.
+// SensitivityLabel 
 type SensitivityLabel struct {
     Entity
     // 
@@ -295,9 +295,6 @@ func (m *SensitivityLabel) GetToolTip()(*string) {
     } else {
         return m.toolTip
     }
-}
-func (m *SensitivityLabel) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterEvaluationSummary provides operations to call the getAssignmentFiltersStatusDetails method.
+// AssignmentFilterEvaluationSummary represent result summary for assignment filter evaluation
 type AssignmentFilterEvaluationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -197,9 +197,6 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
-}
-func (m *AssignmentFilterEvaluationSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

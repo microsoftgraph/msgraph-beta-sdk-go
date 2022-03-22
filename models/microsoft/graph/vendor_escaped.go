@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Vendor_escaped provides operations to manage the financials singleton.
+// Vendor_escaped 
 type Vendor_escaped struct {
     Entity
     // 
@@ -408,9 +408,6 @@ func (m *Vendor_escaped) GetWebsite()(*string) {
     } else {
         return m.website
     }
-}
-func (m *Vendor_escaped) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Vendor_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

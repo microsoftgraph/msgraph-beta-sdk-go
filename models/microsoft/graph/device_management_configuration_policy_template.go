@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationPolicyTemplate provides operations to manage the deviceManagement singleton.
+// DeviceManagementConfigurationPolicyTemplate 
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
     // Allow unmanaged setting templates
@@ -267,9 +267,6 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetVersion()(*int32) {
     } else {
         return m.version
     }
-}
-func (m *DeviceManagementConfigurationPolicyTemplate) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

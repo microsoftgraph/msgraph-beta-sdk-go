@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Segment provides operations to manage the cloudCommunications singleton.
+// Segment 
 type Segment struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // Endpoint that answered this segment.
@@ -149,9 +149,6 @@ func (m *Segment) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     } else {
         return m.startDateTime
     }
-}
-func (m *Segment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Segment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

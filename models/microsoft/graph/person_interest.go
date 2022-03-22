@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonInterest provides operations to manage the compliance singleton.
+// PersonInterest 
 type PersonInterest struct {
     ItemFacet
     // Contains categories a user has associated with the interest (for example, personal, recipies).
@@ -151,9 +151,6 @@ func (m *PersonInterest) GetWebUrl()(*string) {
     } else {
         return m.webUrl
     }
-}
-func (m *PersonInterest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PersonInterest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

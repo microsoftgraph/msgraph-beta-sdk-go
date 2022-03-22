@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CredentialUserRegistrationDetailsCollectionResponse provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
+// CredentialUserRegistrationDetailsCollectionResponse 
 type CredentialUserRegistrationDetailsCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *CredentialUserRegistrationDetailsCollectionResponse) GetValue()([]Crede
     } else {
         return m.value
     }
-}
-func (m *CredentialUserRegistrationDetailsCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CredentialUserRegistrationDetailsCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

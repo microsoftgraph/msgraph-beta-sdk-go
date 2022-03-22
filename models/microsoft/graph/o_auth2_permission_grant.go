@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OAuth2PermissionGrant provides operations to call the instantiate method.
+// OAuth2PermissionGrant 
 type OAuth2PermissionGrant struct {
     Entity
     // The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -18,7 +18,7 @@ type OAuth2PermissionGrant struct {
     principalId *string;
     // The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
     resourceId *string;
-    // A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+    // A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
     scope *string;
     // Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     startTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -149,7 +149,7 @@ func (m *OAuth2PermissionGrant) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// GetScope gets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+// GetScope gets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
 func (m *OAuth2PermissionGrant) GetScope()(*string) {
     if m == nil {
         return nil
@@ -164,9 +164,6 @@ func (m *OAuth2PermissionGrant) GetStartTime()(*i336074805fc853987abe6f7fe3ad97a
     } else {
         return m.startTime
     }
-}
-func (m *OAuth2PermissionGrant) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OAuth2PermissionGrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -248,7 +245,7 @@ func (m *OAuth2PermissionGrant) SetResourceId(value *string)() {
         m.resourceId = value
     }
 }
-// SetScope sets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+// SetScope sets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
 func (m *OAuth2PermissionGrant) SetScope(value *string)() {
     if m != nil {
         m.scope = value

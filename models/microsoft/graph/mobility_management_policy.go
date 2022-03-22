@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobilityManagementPolicy provides operations to manage the collection of mobilityManagementPolicy entities.
+// MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
     // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
@@ -187,9 +187,6 @@ func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
     } else {
         return m.termsOfUseUrl
     }
-}
-func (m *MobilityManagementPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobilityManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

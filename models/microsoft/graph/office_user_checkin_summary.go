@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OfficeUserCheckinSummary provides operations to manage the officeConfiguration singleton.
+// OfficeUserCheckinSummary 
 type OfficeUserCheckinSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -72,9 +72,6 @@ func (m *OfficeUserCheckinSummary) GetSucceededUserCount()(*int32) {
     } else {
         return m.succeededUserCount
     }
-}
-func (m *OfficeUserCheckinSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OfficeUserCheckinSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

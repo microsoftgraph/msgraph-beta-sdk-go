@@ -74,9 +74,6 @@ func (m *AddToReviewSetRequestBody) GetSourceCollection()(i2756dc8c91c60abdde0aa
         return m.sourceCollection
     }
 }
-func (m *AddToReviewSetRequestBody) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *AddToReviewSetRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAdditionalDataOptions() != nil {

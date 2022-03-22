@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsRegressionSummary provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsRegressionSummary 
 type UserExperienceAnalyticsRegressionSummary struct {
     Entity
     // The metric values for the user experience analytics Manufacturer regression.
@@ -95,9 +95,6 @@ func (m *UserExperienceAnalyticsRegressionSummary) GetOperatingSystemRegression(
     } else {
         return m.operatingSystemRegression
     }
-}
-func (m *UserExperienceAnalyticsRegressionSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

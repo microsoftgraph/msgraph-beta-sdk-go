@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidManagedStoreAccountEnterpriseSettings provides operations to manage the deviceManagement singleton.
+// AndroidManagedStoreAccountEnterpriseSettings 
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
     // Company codes for AndroidManagedStoreAccountEnterpriseSettings
@@ -276,9 +276,6 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetTargetGroupIds()([]str
     } else {
         return m.targetGroupIds
     }
-}
-func (m *AndroidManagedStoreAccountEnterpriseSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

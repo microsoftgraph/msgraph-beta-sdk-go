@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserPFXCertificate provides operations to manage the deviceManagement singleton.
+// UserPFXCertificate 
 type UserPFXCertificate struct {
     Entity
     // Date/time when this PFX certificate was imported.
@@ -264,9 +264,6 @@ func (m *UserPFXCertificate) GetUserPrincipalName()(*string) {
     } else {
         return m.userPrincipalName
     }
-}
-func (m *UserPFXCertificate) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserPFXCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

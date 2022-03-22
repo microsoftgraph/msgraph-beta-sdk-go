@@ -18,6 +18,7 @@ import (
     i748993866d3c287419aae52c6b71e09769323e7c5f317345f259e426bc3d9af2 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/subscribetotone"
     i874a580791117a3b7d274c118410fe2d9225cceaca52e78051f9cb4b1a453662 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/redirect"
     i8ba5b1d1710189d6fbeadcc3c0d5040fd10a40b9f9cb675742fafb85918a74e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/mute"
+    ia617450ea6a6c55b69e3406d78900114c4a839be32a64fbf47520d45899eab0b "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/addlargegalleryview"
     iaf15ceb43d09ee52ea76cf06a8a2800ffa9e17af30581ca61badb5604676ace8 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/keepalive"
     icbe1c65482be5ba77560b0854bb72eb2fce823cdda74fb44a06b72364da1f6a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/changescreensharingrole"
     iea07e291a46b990a979a038612645323fe7180f50eb887d4daf5d74572112a37 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/calls/item/answer"
@@ -74,6 +75,9 @@ type CallItemRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *CallItemRequestBuilder) AddLargeGalleryView()(*ia617450ea6a6c55b69e3406d78900114c4a839be32a64fbf47520d45899eab0b.AddLargeGalleryViewRequestBuilder) {
+    return ia617450ea6a6c55b69e3406d78900114c4a839be32a64fbf47520d45899eab0b.NewAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *CallItemRequestBuilder) Answer()(*iea07e291a46b990a979a038612645323fe7180f50eb887d4daf5d74572112a37.AnswerRequestBuilder) {
     return iea07e291a46b990a979a038612645323fe7180f50eb887d4daf5d74572112a37.NewAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter);

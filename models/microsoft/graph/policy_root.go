@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicyRoot provides operations to manage the policyRoot singleton.
+// PolicyRoot 
 type PolicyRoot struct {
     // The policy that contains directory-level access review settings.
     accessReviewPolicy AccessReviewPolicyable;
@@ -592,9 +592,6 @@ func (m *PolicyRoot) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     } else {
         return m.tokenLifetimePolicies
     }
-}
-func (m *PolicyRoot) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PolicyRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

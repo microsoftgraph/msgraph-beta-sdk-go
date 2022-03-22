@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DirectoryDefinition provides operations to manage the collection of application entities.
+// DirectoryDefinition 
 type DirectoryDefinition struct {
     Entity
     // Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
@@ -148,9 +148,6 @@ func (m *DirectoryDefinition) GetVersion()(*string) {
     } else {
         return m.version
     }
-}
-func (m *DirectoryDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

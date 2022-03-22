@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthAppImpact provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsBatteryHealthAppImpact 
 type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     Entity
     // Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
@@ -143,9 +143,6 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetIsForegroundApp()(*bo
     } else {
         return m.isForegroundApp
     }
-}
-func (m *UserExperienceAnalyticsBatteryHealthAppImpact) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

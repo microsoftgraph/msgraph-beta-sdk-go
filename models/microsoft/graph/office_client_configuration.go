@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// OfficeClientConfiguration provides operations to manage the officeConfiguration singleton.
+// OfficeClientConfiguration 
 type OfficeClientConfiguration struct {
     Entity
     // The list of group assignments for the policy.
@@ -191,9 +191,6 @@ func (m *OfficeClientConfiguration) GetUserPreferencePayload()([]byte) {
     } else {
         return m.userPreferencePayload
     }
-}
-func (m *OfficeClientConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *OfficeClientConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

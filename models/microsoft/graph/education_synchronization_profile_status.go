@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EducationSynchronizationProfileStatus provides operations to manage the educationRoot singleton.
+// EducationSynchronizationProfileStatus 
 type EducationSynchronizationProfileStatus struct {
     Entity
     // Number of errors during synchronization.
@@ -124,9 +124,6 @@ func (m *EducationSynchronizationProfileStatus) GetStatusMessage()(*string) {
     } else {
         return m.statusMessage
     }
-}
-func (m *EducationSynchronizationProfileStatus) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationProfileStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

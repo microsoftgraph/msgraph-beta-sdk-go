@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RbacApplicationMultiple provides operations to manage the roleManagement singleton.
+// RbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
     // 
@@ -95,9 +95,6 @@ func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinitionab
     } else {
         return m.roleDefinitions
     }
-}
-func (m *RbacApplicationMultiple) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

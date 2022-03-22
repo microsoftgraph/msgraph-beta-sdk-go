@@ -2,7 +2,6 @@ package extractcontentlabel
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
 )
 
@@ -25,92 +24,6 @@ type ExtractContentLabelRequestBuilderPostOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
-// ExtractContentLabelResponse union type wrapper for classes contentLabel
-type ExtractContentLabelResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
-    // Union type representation for type contentLabel
-    contentLabel i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable;
-}
-// NewExtractContentLabelResponse instantiates a new extractContentLabelResponse and sets the default values.
-func NewExtractContentLabelResponse()(*ExtractContentLabelResponse) {
-    m := &ExtractContentLabelResponse{
-    }
-    m.SetAdditionalData(make(map[string]interface{}));
-    return m
-}
-func CreateExtractContentLabelResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
-    return NewExtractContentLabelResponse(), nil
-}
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExtractContentLabelResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
-}
-// GetContentLabel gets the contentLabel property value. Union type representation for type contentLabel
-func (m *ExtractContentLabelResponse) GetContentLabel()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentLabel
-    }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ExtractContentLabelResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["contentLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateContentLabelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentLabel(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable))
-        }
-        return nil
-    }
-    return res
-}
-func (m *ExtractContentLabelResponse) IsNil()(bool) {
-    return m == nil
-}
-// Serialize serializes information the current object
-func (m *ExtractContentLabelResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("contentLabel", m.GetContentLabel())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExtractContentLabelResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
-}
-// SetContentLabel sets the contentLabel property value. Union type representation for type contentLabel
-func (m *ExtractContentLabelResponse) SetContentLabel(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable)() {
-    if m != nil {
-        m.contentLabel = value
-    }
-}
-// ExtractContentLabelResponseable 
-type ExtractContentLabelResponseable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetContentLabel()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable)
-    SetContentLabel(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable)()
 }
 // NewExtractContentLabelRequestBuilderInternal instantiates a new ExtractContentLabelRequestBuilder and sets the default values.
 func NewExtractContentLabelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtractContentLabelRequestBuilder) {
@@ -150,14 +63,14 @@ func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformation(options
     return requestInfo, nil
 }
 // Post invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) Post(options *ExtractContentLabelRequestBuilderPostOptions)(ExtractContentLabelResponseable, error) {
+func (m *ExtractContentLabelRequestBuilder) Post(options *ExtractContentLabelRequestBuilderPostOptions)(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateExtractContentLabelResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateContentLabelFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(ExtractContentLabelResponseable), nil
+    return res.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentLabelable), nil
 }

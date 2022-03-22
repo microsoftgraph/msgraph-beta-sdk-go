@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsDevicePerformance provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsDevicePerformance 
 type UserExperienceAnalyticsDevicePerformance struct {
     Entity
     // Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
@@ -423,9 +423,6 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetStartupPerformanceScore()(
     } else {
         return m.startupPerformanceScore
     }
-}
-func (m *UserExperienceAnalyticsDevicePerformance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSettings provides operations to manage the compliance singleton.
+// UserSettings 
 type UserSettings struct {
     Entity
     // The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
@@ -143,9 +143,6 @@ func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     } else {
         return m.shiftPreferences
     }
-}
-func (m *UserSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

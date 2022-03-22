@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidForWorkSettings provides operations to manage the deviceManagement singleton.
+// AndroidForWorkSettings 
 type AndroidForWorkSettings struct {
     Entity
     // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
@@ -208,9 +208,6 @@ func (m *AndroidForWorkSettings) GetTargetGroupIds()([]string) {
     } else {
         return m.targetGroupIds
     }
-}
-func (m *AndroidForWorkSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

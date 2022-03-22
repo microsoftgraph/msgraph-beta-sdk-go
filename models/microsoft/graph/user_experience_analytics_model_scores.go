@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsModelScores provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsModelScores 
 type UserExperienceAnalyticsModelScores struct {
     Entity
     // The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -183,9 +183,6 @@ func (m *UserExperienceAnalyticsModelScores) GetWorkFromAnywhereScore()(*float64
     } else {
         return m.workFromAnywhereScore
     }
-}
-func (m *UserExperienceAnalyticsModelScores) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsModelScores) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

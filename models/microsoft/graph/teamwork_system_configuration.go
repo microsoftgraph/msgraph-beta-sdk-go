@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkSystemConfiguration provides operations to manage the teamwork singleton.
+// TeamworkSystemConfiguration 
 type TeamworkSystemConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -272,9 +272,6 @@ func (m *TeamworkSystemConfiguration) GetNetworkConfiguration()(TeamworkNetworkC
     } else {
         return m.networkConfiguration
     }
-}
-func (m *TeamworkSystemConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkSystemConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsNotAutopilotReadyDevice provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsNotAutopilotReadyDevice 
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
     // The intune device's autopilotProfileAssigned.
@@ -203,9 +203,6 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetSerialNumber()(*stri
     } else {
         return m.serialNumber
     }
-}
-func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ContinuousAccessEvaluationPolicy provides operations to manage the identityContainer singleton.
+// ContinuousAccessEvaluationPolicy 
 type ContinuousAccessEvaluationPolicy struct {
     Entity
     // Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
@@ -151,9 +151,6 @@ func (m *ContinuousAccessEvaluationPolicy) GetUsers()([]string) {
     } else {
         return m.users
     }
-}
-func (m *ContinuousAccessEvaluationPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ContinuousAccessEvaluationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

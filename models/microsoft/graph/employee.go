@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Employee provides operations to manage the financials singleton.
+// Employee 
 type Employee struct {
     Entity
     // 
@@ -388,9 +388,6 @@ func (m *Employee) GetTerminationDate()(*i04eb5309aeaafadd28374d79c8471df9b26751
     } else {
         return m.terminationDate
     }
-}
-func (m *Employee) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SharedEmailDomain provides operations to manage the directory singleton.
+// SharedEmailDomain 
 type SharedEmailDomain struct {
     Entity
     // 
@@ -43,9 +43,6 @@ func (m *SharedEmailDomain) GetProvisioningStatus()(*string) {
     } else {
         return m.provisioningStatus
     }
-}
-func (m *SharedEmailDomain) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SharedEmailDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

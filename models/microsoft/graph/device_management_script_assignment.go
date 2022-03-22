@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptAssignment provides operations to manage the deviceManagement singleton.
+// DeviceManagementScriptAssignment 
 type DeviceManagementScriptAssignment struct {
     Entity
     // The Id of the Azure Active Directory group we are targeting the script to.
@@ -43,9 +43,6 @@ func (m *DeviceManagementScriptAssignment) GetTarget()(DeviceAndAppManagementAss
     } else {
         return m.target
     }
-}
-func (m *DeviceManagementScriptAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

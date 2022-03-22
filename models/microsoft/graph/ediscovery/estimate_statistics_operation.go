@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EstimateStatisticsOperation provides operations to manage the compliance singleton.
+// EstimateStatisticsOperation 
 type EstimateStatisticsOperation struct {
     CaseOperation
     // The estimated count of items for the sourceCollection that matched the content query.
@@ -163,9 +163,6 @@ func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
     } else {
         return m.unindexedItemsSize
     }
-}
-func (m *EstimateStatisticsOperation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

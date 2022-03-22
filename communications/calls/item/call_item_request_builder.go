@@ -18,6 +18,7 @@ import (
     i6a96c1601820e25e2c11e319760d663fd67b6cdb677b5d599e7f4560698143e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/changescreensharingrole"
     i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/answer"
     i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/operations"
+    ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/addlargegalleryview"
     ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/audioroutinggroups"
     id1e985c21267b30b9212f7e3d69af1960754fba433a529ab9f2819e92d7804e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/cancelmediaprocessing"
     idaf0ca56e2f68098afebd431de7c548ac38196c36423e844dd58942eb2a4ee85 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/reject"
@@ -74,6 +75,9 @@ type CallItemRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *CallItemRequestBuilder) AddLargeGalleryView()(*ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957.AddLargeGalleryViewRequestBuilder) {
+    return ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957.NewAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *CallItemRequestBuilder) Answer()(*i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.AnswerRequestBuilder) {
     return i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.NewAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
