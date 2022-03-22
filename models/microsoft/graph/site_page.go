@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SitePage provides operations to manage the compliance singleton.
+// SitePage 
 type SitePage struct {
     BaseItem
     // The content type of the page.
@@ -127,9 +127,6 @@ func (m *SitePage) GetWebParts()([]WebPartable) {
     } else {
         return m.webParts
     }
-}
-func (m *SitePage) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SitePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

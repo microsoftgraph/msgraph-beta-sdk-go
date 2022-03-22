@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagementTemplateDetailedInfo provides operations to manage the tenantRelationship singleton.
+// ManagementTemplateDetailedInfo 
 type ManagementTemplateDetailedInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -112,9 +112,6 @@ func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
     } else {
         return m.version
     }
-}
-func (m *ManagementTemplateDetailedInfo) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateDetailedInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

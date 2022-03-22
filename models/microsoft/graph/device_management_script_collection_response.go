@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptCollectionResponse provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
+// DeviceManagementScriptCollectionResponse 
 type DeviceManagementScriptCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *DeviceManagementScriptCollectionResponse) GetValue()([]DeviceManagement
     } else {
         return m.value
     }
-}
-func (m *DeviceManagementScriptCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

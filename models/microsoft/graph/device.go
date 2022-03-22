@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Device provides operations to manage the compliance singleton.
+// Device 
 type Device struct {
     DirectoryObject
     // true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
@@ -908,9 +908,6 @@ func (m *Device) GetUsageRights()([]UsageRightable) {
     } else {
         return m.usageRights
     }
-}
-func (m *Device) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

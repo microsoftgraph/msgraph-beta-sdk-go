@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSet provides operations to manage the identityGovernance singleton.
+// UserSet 
 type UserSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -52,9 +52,6 @@ func (m *UserSet) GetIsBackup()(*bool) {
     } else {
         return m.isBackup
     }
-}
-func (m *UserSet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

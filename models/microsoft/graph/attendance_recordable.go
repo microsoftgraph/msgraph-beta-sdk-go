@@ -11,11 +11,13 @@ type AttendanceRecordable interface {
     GetAttendanceIntervals()([]AttendanceIntervalable)
     GetEmailAddress()(*string)
     GetIdentity()(Identityable)
+    GetRegistrantId()(*string)
     GetRole()(*string)
     GetTotalAttendanceInSeconds()(*int32)
     SetAttendanceIntervals(value []AttendanceIntervalable)()
     SetEmailAddress(value *string)()
     SetIdentity(value Identityable)()
+    SetRegistrantId(value *string)()
     SetRole(value *string)()
     SetTotalAttendanceInSeconds(value *int32)()
 }

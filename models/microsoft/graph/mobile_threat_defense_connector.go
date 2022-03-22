@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileThreatDefenseConnector provides operations to manage the deviceManagement singleton.
+// MobileThreatDefenseConnector 
 type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
@@ -364,9 +364,6 @@ func (m *MobileThreatDefenseConnector) GetWindowsEnabled()(*bool) {
     } else {
         return m.windowsEnabled
     }
-}
-func (m *MobileThreatDefenseConnector) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobileThreatDefenseConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

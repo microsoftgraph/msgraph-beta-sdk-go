@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the roleManagement singleton.
+// Provides operations to manage the identityGovernance singleton.
 type ExpirationPatternType int
 
 const (

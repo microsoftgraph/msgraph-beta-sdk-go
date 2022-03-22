@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WorkPosition provides operations to manage the compliance singleton.
+// WorkPosition 
 type WorkPosition struct {
     ItemFacet
     // Categories that the user has associated with this position.
@@ -131,9 +131,6 @@ func (m *WorkPosition) GetManager()(RelatedPersonable) {
     } else {
         return m.manager
     }
-}
-func (m *WorkPosition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WorkPosition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

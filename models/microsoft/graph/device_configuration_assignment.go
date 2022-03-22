@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationAssignment provides operations to manage the deviceManagement singleton.
+// DeviceConfigurationAssignment 
 type DeviceConfigurationAssignment struct {
     Entity
     // The admin intent to apply or remove the profile. Possible values are: apply, remove.
@@ -103,9 +103,6 @@ func (m *DeviceConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssign
     } else {
         return m.target
     }
-}
-func (m *DeviceConfigurationAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RoleDefinition provides operations to manage the deviceManagement singleton.
+// RoleDefinition 
 type RoleDefinition struct {
     Entity
     // Description of the Role definition.
@@ -199,9 +199,6 @@ func (m *RoleDefinition) GetRoleScopeTagIds()([]string) {
     } else {
         return m.roleScopeTagIds
     }
-}
-func (m *RoleDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

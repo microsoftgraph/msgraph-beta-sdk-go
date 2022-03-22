@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Simulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
+// Simulation 
 type Simulation struct {
     Entity
     // The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
@@ -324,9 +324,6 @@ func (m *Simulation) GetStatus()(*SimulationStatus) {
     } else {
         return m.status
     }
-}
-func (m *Simulation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -58,9 +58,6 @@ func (m *SearchExistingIdentitiesRequestBody) GetImportedDeviceIdentities()([]i5
         return m.importedDeviceIdentities
     }
 }
-func (m *SearchExistingIdentitiesRequestBody) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *SearchExistingIdentitiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetImportedDeviceIdentities() != nil {

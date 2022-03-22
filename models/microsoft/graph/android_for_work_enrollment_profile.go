@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidForWorkEnrollmentProfile provides operations to manage the deviceManagement singleton.
+// AndroidForWorkEnrollmentProfile 
 type AndroidForWorkEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
@@ -224,9 +224,6 @@ func (m *AndroidForWorkEnrollmentProfile) GetTokenValue()(*string) {
     } else {
         return m.tokenValue
     }
-}
-func (m *AndroidForWorkEnrollmentProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

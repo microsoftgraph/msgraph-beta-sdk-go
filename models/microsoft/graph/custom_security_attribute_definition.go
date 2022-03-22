@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CustomSecurityAttributeDefinition provides operations to manage the directory singleton.
+// CustomSecurityAttributeDefinition 
 type CustomSecurityAttributeDefinition struct {
     Entity
     // Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
@@ -207,9 +207,6 @@ func (m *CustomSecurityAttributeDefinition) GetUsePreDefinedValuesOnly()(*bool) 
     } else {
         return m.usePreDefinedValuesOnly
     }
-}
-func (m *CustomSecurityAttributeDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

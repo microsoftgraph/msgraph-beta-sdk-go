@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Custodian provides operations to manage the compliance singleton.
+// Custodian 
 type Custodian struct {
     DataSourceContainer
     // Date and time the custodian acknowledged a hold notification.
@@ -156,9 +156,6 @@ func (m *Custodian) GetUserSources()([]UserSourceable) {
     } else {
         return m.userSources
     }
-}
-func (m *Custodian) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Custodian) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

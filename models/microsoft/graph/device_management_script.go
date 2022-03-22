@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScript provides operations to manage the deviceManagement singleton.
+// DeviceManagementScript 
 type DeviceManagementScript struct {
     Entity
     // The list of group assignments for the device management script.
@@ -344,9 +344,6 @@ func (m *DeviceManagementScript) GetUserRunStates()([]DeviceManagementScriptUser
     } else {
         return m.userRunStates
     }
-}
-func (m *DeviceManagementScript) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -2,7 +2,6 @@ package getassignmentfiltersstatusdetails
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
@@ -25,92 +24,6 @@ type GetAssignmentFiltersStatusDetailsRequestBuilderPostOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
-// GetAssignmentFiltersStatusDetailsResponse union type wrapper for classes assignmentFilterStatusDetails
-type GetAssignmentFiltersStatusDetailsResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
-    // Union type representation for type assignmentFilterStatusDetails
-    assignmentFilterStatusDetails i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable;
-}
-// NewGetAssignmentFiltersStatusDetailsResponse instantiates a new getAssignmentFiltersStatusDetailsResponse and sets the default values.
-func NewGetAssignmentFiltersStatusDetailsResponse()(*GetAssignmentFiltersStatusDetailsResponse) {
-    m := &GetAssignmentFiltersStatusDetailsResponse{
-    }
-    m.SetAdditionalData(make(map[string]interface{}));
-    return m
-}
-func CreateGetAssignmentFiltersStatusDetailsResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
-    return NewGetAssignmentFiltersStatusDetailsResponse(), nil
-}
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetAssignmentFiltersStatusDetailsResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
-}
-// GetAssignmentFilterStatusDetails gets the assignmentFilterStatusDetails property value. Union type representation for type assignmentFilterStatusDetails
-func (m *GetAssignmentFiltersStatusDetailsResponse) GetAssignmentFilterStatusDetails()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentFilterStatusDetails
-    }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GetAssignmentFiltersStatusDetailsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["assignmentFilterStatusDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAssignmentFilterStatusDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAssignmentFilterStatusDetails(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable))
-        }
-        return nil
-    }
-    return res
-}
-func (m *GetAssignmentFiltersStatusDetailsResponse) IsNil()(bool) {
-    return m == nil
-}
-// Serialize serializes information the current object
-func (m *GetAssignmentFiltersStatusDetailsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("assignmentFilterStatusDetails", m.GetAssignmentFilterStatusDetails())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetAssignmentFiltersStatusDetailsResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
-}
-// SetAssignmentFilterStatusDetails sets the assignmentFilterStatusDetails property value. Union type representation for type assignmentFilterStatusDetails
-func (m *GetAssignmentFiltersStatusDetailsResponse) SetAssignmentFilterStatusDetails(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable)() {
-    if m != nil {
-        m.assignmentFilterStatusDetails = value
-    }
-}
-// GetAssignmentFiltersStatusDetailsResponseable 
-type GetAssignmentFiltersStatusDetailsResponseable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetAssignmentFilterStatusDetails()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable)
-    SetAssignmentFilterStatusDetails(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable)()
 }
 // NewGetAssignmentFiltersStatusDetailsRequestBuilderInternal instantiates a new GetAssignmentFiltersStatusDetailsRequestBuilder and sets the default values.
 func NewGetAssignmentFiltersStatusDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetAssignmentFiltersStatusDetailsRequestBuilder) {
@@ -150,14 +63,14 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) CreatePostRequestInfor
     return requestInfo, nil
 }
 // Post invoke action getAssignmentFiltersStatusDetails
-func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) Post(options *GetAssignmentFiltersStatusDetailsRequestBuilderPostOptions)(GetAssignmentFiltersStatusDetailsResponseable, error) {
+func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) Post(options *GetAssignmentFiltersStatusDetailsRequestBuilderPostOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAssignmentFiltersStatusDetailsResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAssignmentFilterStatusDetailsFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetAssignmentFiltersStatusDetailsResponseable), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterStatusDetailsable), nil
 }

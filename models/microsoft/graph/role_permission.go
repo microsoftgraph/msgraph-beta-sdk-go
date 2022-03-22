@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RolePermission provides operations to manage the deviceManagement singleton.
+// RolePermission contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
 type RolePermission struct {
     // Allowed Actions - Deprecated
     actions []string;
@@ -80,9 +80,6 @@ func (m *RolePermission) GetResourceActions()([]ResourceActionable) {
     } else {
         return m.resourceActions
     }
-}
-func (m *RolePermission) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RolePermission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

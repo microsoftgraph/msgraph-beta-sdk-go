@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PolicySet provides operations to manage the deviceAppManagement singleton.
+// PolicySet 
 type PolicySet struct {
     Entity
     // Assignments of the PolicySet.
@@ -240,9 +240,6 @@ func (m *PolicySet) GetStatus()(*PolicySetStatus) {
     } else {
         return m.status
     }
-}
-func (m *PolicySet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PolicySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

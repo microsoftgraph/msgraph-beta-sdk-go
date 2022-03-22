@@ -27,7 +27,7 @@ type RulesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RulesRequestBuilderGetQueryParameters the collection of rules like approval rule, expiration rule, etc.
+// RulesRequestBuilderGetQueryParameters the collection of rules like approval rules and expiration rules.
 type RulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewRulesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *RulesRequestBuilder) Count()(*i019984caa7c646b90649fc3e00d4ba9e6842d921ceb9e34fb82fd7a8d967d792.CountRequestBuilder) {
     return i019984caa7c646b90649fc3e00d4ba9e6842d921ceb9e34fb82fd7a8d967d792.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of rules like approval rule, expiration rule, etc.
+// CreateGetRequestInformation the collection of rules like approval rules and expiration rules.
 func (m *RulesRequestBuilder) CreateGetRequestInformation(options *RulesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *RulesRequestBuilder) CreatePostRequestInformation(options *RulesRequest
     }
     return requestInfo, nil
 }
-// Get the collection of rules like approval rule, expiration rule, etc.
+// Get the collection of rules like approval rules and expiration rules.
 func (m *RulesRequestBuilder) Get(options *RulesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyRuleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

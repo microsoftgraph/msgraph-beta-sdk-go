@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformance provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsAppHealthDevicePerformance 
 type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     Entity
     // The number of app crashes for the device. Valid values -2147483648 to 2147483647
@@ -264,9 +264,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetProcessedDateTime
     } else {
         return m.processedDateTime
     }
-}
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

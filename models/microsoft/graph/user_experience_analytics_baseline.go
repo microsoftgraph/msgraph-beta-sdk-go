@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBaseline provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsBaseline 
 type UserExperienceAnalyticsBaseline struct {
     Entity
     // The user experience analytics app health metrics.
@@ -224,9 +224,6 @@ func (m *UserExperienceAnalyticsBaseline) GetWorkFromAnywhereMetrics()(UserExper
     } else {
         return m.workFromAnywhereMetrics
     }
-}
-func (m *UserExperienceAnalyticsBaseline) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBaseline) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

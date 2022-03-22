@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SynchronizationJobApplicationParameters provides operations to call the provisionOnDemand method.
+// SynchronizationJobApplicationParameters 
 type SynchronizationJobApplicationParameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *SynchronizationJobApplicationParameters) GetSubjects()([]Synchronizatio
     } else {
         return m.subjects
     }
-}
-func (m *SynchronizationJobApplicationParameters) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SynchronizationJobApplicationParameters) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

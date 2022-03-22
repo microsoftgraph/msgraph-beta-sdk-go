@@ -58,9 +58,6 @@ func (m *AsHierarchyResponse) GetValue()([]i2756dc8c91c60abdde0aa43bf23ca1c0a6ac
         return m.value
     }
 }
-func (m *AsHierarchyResponse) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *AsHierarchyResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetValue() != nil {

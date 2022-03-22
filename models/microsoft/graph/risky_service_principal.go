@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RiskyServicePrincipal provides operations to manage the identityProtectionRoot singleton.
+// RiskyServicePrincipal 
 type RiskyServicePrincipal struct {
     Entity
     // true if the service principal account is enabled; otherwise, false.
@@ -14,7 +14,7 @@ type RiskyServicePrincipal struct {
     appId *string;
     // The display name for the service principal.
     displayName *string;
-    // 
+    // Represents the risk history of Azure AD service principals.
     history []RiskyServicePrincipalHistoryItemable;
     // Indicates whether Azure AD is currently processing the service principal's risky state.
     isProcessing *bool;
@@ -173,7 +173,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
-// GetHistory gets the history property value. 
+// GetHistory gets the history property value. Represents the risk history of Azure AD service principals.
 func (m *RiskyServicePrincipal) GetHistory()([]RiskyServicePrincipalHistoryItemable) {
     if m == nil {
         return nil
@@ -228,9 +228,6 @@ func (m *RiskyServicePrincipal) GetServicePrincipalType()(*string) {
     } else {
         return m.servicePrincipalType
     }
-}
-func (m *RiskyServicePrincipal) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RiskyServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -325,7 +322,7 @@ func (m *RiskyServicePrincipal) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetHistory sets the history property value. 
+// SetHistory sets the history property value. Represents the risk history of Azure AD service principals.
 func (m *RiskyServicePrincipal) SetHistory(value []RiskyServicePrincipalHistoryItemable)() {
     if m != nil {
         m.history = value

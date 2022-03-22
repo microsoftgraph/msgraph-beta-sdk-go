@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcSnapshot provides operations to manage the deviceManagement singleton.
+// CloudPcSnapshot 
 type CloudPcSnapshot struct {
     Entity
     // The unique identifier for the Cloud PC.
@@ -104,9 +104,6 @@ func (m *CloudPcSnapshot) GetStatus()(*CloudPcSnapshotStatus) {
     } else {
         return m.status
     }
-}
-func (m *CloudPcSnapshot) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcSnapshot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

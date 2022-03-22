@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365ServicesUserCounts provides operations to call the getOffice365ServicesUserCounts method.
+// Office365ServicesUserCounts 
 type Office365ServicesUserCounts struct {
     Entity
     // The number of active users on Exchange. Any user who can read and send email is considered an active user.
@@ -343,9 +343,6 @@ func (m *Office365ServicesUserCounts) GetYammerInactive()(*int64) {
     } else {
         return m.yammerInactive
     }
-}
-func (m *Office365ServicesUserCounts) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Office365ServicesUserCounts) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

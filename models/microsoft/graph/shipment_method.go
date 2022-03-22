@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ShipmentMethod provides operations to manage the financials singleton.
+// ShipmentMethod 
 type ShipmentMethod struct {
     Entity
     // 
@@ -84,9 +84,6 @@ func (m *ShipmentMethod) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *ShipmentMethod) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ShipmentMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

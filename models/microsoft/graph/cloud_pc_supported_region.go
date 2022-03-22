@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcSupportedRegion provides operations to manage the deviceManagement singleton.
+// CloudPcSupportedRegion 
 type CloudPcSupportedRegion struct {
     Entity
     // The name for the supported region. Read-only.
@@ -43,9 +43,6 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     return res
-}
-func (m *CloudPcSupportedRegion) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcSupportedRegion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

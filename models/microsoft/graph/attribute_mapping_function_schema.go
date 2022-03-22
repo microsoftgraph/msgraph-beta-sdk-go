@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AttributeMappingFunctionSchema provides operations to call the functions method.
+// AttributeMappingFunctionSchema 
 type AttributeMappingFunctionSchema struct {
     Entity
     // Collection of function parameters.
@@ -47,9 +47,6 @@ func (m *AttributeMappingFunctionSchema) GetParameters()([]AttributeMappingParam
     } else {
         return m.parameters
     }
-}
-func (m *AttributeMappingFunctionSchema) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AttributeMappingFunctionSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

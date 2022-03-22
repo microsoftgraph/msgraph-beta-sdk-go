@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppInstallStatusCollectionResponse provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.
+// MobileAppInstallStatusCollectionResponse 
 type MobileAppInstallStatusCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *MobileAppInstallStatusCollectionResponse) GetValue()([]MobileAppInstall
     } else {
         return m.value
     }
-}
-func (m *MobileAppInstallStatusCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppInstallStatusCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

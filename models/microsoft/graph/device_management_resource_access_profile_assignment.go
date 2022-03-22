@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileAssignment provides operations to manage the deviceManagement singleton.
+// DeviceManagementResourceAccessProfileAssignment 
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
     // The assignment intent for the resource access profile. Possible values are: apply, remove.
@@ -83,9 +83,6 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetTarget()(DeviceAndA
     } else {
         return m.target
     }
-}
-func (m *DeviceManagementResourceAccessProfileAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

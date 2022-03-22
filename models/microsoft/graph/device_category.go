@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceCategory provides operations to manage the compliance singleton.
+// DeviceCategory 
 type DeviceCategory struct {
     Entity
     // Optional description for the device category.
@@ -87,9 +87,6 @@ func (m *DeviceCategory) GetRoleScopeTagIds()([]string) {
     } else {
         return m.roleScopeTagIds
     }
-}
-func (m *DeviceCategory) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

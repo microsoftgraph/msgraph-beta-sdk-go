@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SecurityBaselineSettingState provides operations to manage the compliance singleton.
+// SecurityBaselineSettingState 
 type SecurityBaselineSettingState struct {
     Entity
     // The policies that contribute to this setting instance
@@ -191,9 +191,6 @@ func (m *SecurityBaselineSettingState) GetState()(*SecurityBaselineComplianceSta
     } else {
         return m.state
     }
-}
-func (m *SecurityBaselineSettingState) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineSettingState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

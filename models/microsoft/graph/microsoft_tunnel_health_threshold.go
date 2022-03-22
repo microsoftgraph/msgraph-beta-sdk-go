@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelHealthThreshold provides operations to manage the deviceManagement singleton.
+// MicrosoftTunnelHealthThreshold 
 type MicrosoftTunnelHealthThreshold struct {
     Entity
     // The default threshold for being healthy
@@ -103,9 +103,6 @@ func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
     } else {
         return m.unhealthyThreshold
     }
-}
-func (m *MicrosoftTunnelHealthThreshold) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

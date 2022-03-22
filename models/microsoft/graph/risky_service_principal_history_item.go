@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RiskyServicePrincipalHistoryItem provides operations to manage the identityProtectionRoot singleton.
+// RiskyServicePrincipalHistoryItem 
 type RiskyServicePrincipalHistoryItem struct {
     RiskyServicePrincipal
     // The activity related to service principal risk level change.
@@ -83,9 +83,6 @@ func (m *RiskyServicePrincipalHistoryItem) GetServicePrincipalId()(*string) {
     } else {
         return m.servicePrincipalId
     }
-}
-func (m *RiskyServicePrincipalHistoryItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RiskyServicePrincipalHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

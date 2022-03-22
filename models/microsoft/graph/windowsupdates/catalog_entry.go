@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CatalogEntry provides operations to manage the admin singleton.
+// CatalogEntry 
 type CatalogEntry struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The date on which the content is no longer available to deploy using the service. Read-only.
@@ -85,9 +85,6 @@ func (m *CatalogEntry) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     } else {
         return m.releaseDateTime
     }
-}
-func (m *CatalogEntry) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CatalogEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

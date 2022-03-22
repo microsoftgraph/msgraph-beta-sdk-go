@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcUserSetting provides operations to manage the deviceManagement singleton.
+// CloudPcUserSetting 
 type CloudPcUserSetting struct {
     Entity
     // Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
@@ -168,9 +168,6 @@ func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
     } else {
         return m.selfServiceEnabled
     }
-}
-func (m *CloudPcUserSetting) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcUserSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

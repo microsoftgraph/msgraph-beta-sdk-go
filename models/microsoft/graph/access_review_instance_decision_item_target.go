@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewInstanceDecisionItemTarget provides operations to manage the compliance singleton.
+// AccessReviewInstanceDecisionItemTarget 
 type AccessReviewInstanceDecisionItemTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -32,9 +32,6 @@ func (m *AccessReviewInstanceDecisionItemTarget) GetAdditionalData()(map[string]
 func (m *AccessReviewInstanceDecisionItemTarget) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     return res
-}
-func (m *AccessReviewInstanceDecisionItemTarget) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemTarget) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

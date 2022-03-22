@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentAssignment provides operations to manage the deviceManagement singleton.
+// DeviceManagementIntentAssignment 
 type DeviceManagementIntentAssignment struct {
     Entity
     // The assignment target
@@ -43,9 +43,6 @@ func (m *DeviceManagementIntentAssignment) GetTarget()(DeviceAndAppManagementAss
     } else {
         return m.target
     }
-}
-func (m *DeviceManagementIntentAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

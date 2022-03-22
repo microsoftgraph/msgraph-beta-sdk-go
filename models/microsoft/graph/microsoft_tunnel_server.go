@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MicrosoftTunnelServer provides operations to manage the deviceManagement singleton.
+// MicrosoftTunnelServer 
 type MicrosoftTunnelServer struct {
     Entity
     // The digest of the current agent image running on this server
@@ -124,9 +124,6 @@ func (m *MicrosoftTunnelServer) GetTunnelServerHealthStatus()(*MicrosoftTunnelSe
     } else {
         return m.tunnelServerHealthStatus
     }
-}
-func (m *MicrosoftTunnelServer) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelServer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

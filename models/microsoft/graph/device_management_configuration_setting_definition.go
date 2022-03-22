@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition provides operations to manage the deviceManagement singleton.
+// DeviceManagementConfigurationSettingDefinition 
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
     // Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
@@ -395,9 +395,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetVisibility()(*Device
     } else {
         return m.visibility
     }
-}
-func (m *DeviceManagementConfigurationSettingDefinition) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

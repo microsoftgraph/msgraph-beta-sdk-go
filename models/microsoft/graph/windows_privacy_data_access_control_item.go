@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsPrivacyDataAccessControlItem provides operations to call the windowsPrivacyAccessControls method.
+// WindowsPrivacyDataAccessControlItem 
 type WindowsPrivacyDataAccessControlItem struct {
     Entity
     // This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
@@ -103,9 +103,6 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         return nil
     }
     return res
-}
-func (m *WindowsPrivacyDataAccessControlItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Term provides operations to manage the compliance singleton.
+// Term 
 type Term struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // Children of current term.
@@ -205,9 +205,6 @@ func (m *Term) GetSet()(Setable) {
     } else {
         return m.set
     }
-}
-func (m *Term) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthScript provides operations to manage the deviceManagement singleton.
+// DeviceHealthScript 
 type DeviceHealthScript struct {
     Entity
     // The list of group assignments for the device health script
@@ -424,9 +424,6 @@ func (m *DeviceHealthScript) GetVersion()(*string) {
     } else {
         return m.version
     }
-}
-func (m *DeviceHealthScript) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScript) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

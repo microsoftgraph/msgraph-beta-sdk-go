@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementIntentSettingCategory provides operations to manage the deviceManagement singleton.
+// DeviceManagementIntentSettingCategory 
 type DeviceManagementIntentSettingCategory struct {
     DeviceManagementSettingCategory
     // The settings this category contains
@@ -47,9 +47,6 @@ func (m *DeviceManagementIntentSettingCategory) GetSettings()([]DeviceManagement
     } else {
         return m.settings
     }
-}
-func (m *DeviceManagementIntentSettingCategory) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentSettingCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Synchronization provides operations to manage the collection of application entities.
+// Synchronization 
 type Synchronization struct {
     Entity
     // Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
@@ -95,9 +95,6 @@ func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
     } else {
         return m.templates
     }
-}
-func (m *Synchronization) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

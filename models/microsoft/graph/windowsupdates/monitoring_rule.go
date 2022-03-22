@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MonitoringRule provides operations to manage the admin singleton.
+// MonitoringRule 
 type MonitoringRule struct {
     // The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
     action *MonitoringAction;
@@ -92,9 +92,6 @@ func (m *MonitoringRule) GetThreshold()(*int32) {
     } else {
         return m.threshold
     }
-}
-func (m *MonitoringRule) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MonitoringRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

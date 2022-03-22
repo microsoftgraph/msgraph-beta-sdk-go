@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ParseExpressionResponse provides operations to call the parseExpression method.
+// ParseExpressionResponse 
 type ParseExpressionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -136,9 +136,6 @@ func (m *ParseExpressionResponse) GetParsingSucceeded()(*bool) {
     } else {
         return m.parsingSucceeded
     }
-}
-func (m *ParseExpressionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ParseExpressionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityDetail provides operations to call the getOffice365GroupsActivityDetail method.
+// Office365GroupsActivityDetail 
 type Office365GroupsActivityDetail struct {
     Entity
     // The storage used of the group mailbox.
@@ -403,9 +403,6 @@ func (m *Office365GroupsActivityDetail) GetYammerReadMessageCount()(*int64) {
     } else {
         return m.yammerReadMessageCount
     }
-}
-func (m *Office365GroupsActivityDetail) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Office365GroupsActivityDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsAssignedAccessProfile provides operations to call the assignedAccessMultiModeProfiles method.
+// WindowsAssignedAccessProfile 
 type WindowsAssignedAccessProfile struct {
     Entity
     // These are the only Windows Store Apps that will be available to launch from the Start menu.
@@ -155,9 +155,6 @@ func (m *WindowsAssignedAccessProfile) GetUserAccounts()([]string) {
     } else {
         return m.userAccounts
     }
-}
-func (m *WindowsAssignedAccessProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAssignedAccessProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

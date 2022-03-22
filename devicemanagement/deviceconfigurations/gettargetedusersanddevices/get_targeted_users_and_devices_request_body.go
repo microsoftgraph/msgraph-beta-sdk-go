@@ -57,9 +57,6 @@ func (m *GetTargetedUsersAndDevicesRequestBody) GetFieldDeserializers()(map[stri
     }
     return res
 }
-func (m *GetTargetedUsersAndDevicesRequestBody) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *GetTargetedUsersAndDevicesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDeviceConfigurationIds() != nil {

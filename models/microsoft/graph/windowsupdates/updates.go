@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Updates provides operations to manage the admin singleton.
+// Updates 
 type Updates struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // Catalog of content that can be approved for deployment by the deployment service. Read-only.
@@ -92,9 +92,6 @@ func (m *Updates) GetUpdatableAssets()([]UpdatableAssetable) {
     } else {
         return m.updatableAssets
     }
-}
-func (m *Updates) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Updates) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

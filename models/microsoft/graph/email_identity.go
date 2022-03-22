@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmailIdentity provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
+// EmailIdentity 
 type EmailIdentity struct {
     Identity
     // Email address of the user.
@@ -43,9 +43,6 @@ func (m *EmailIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     return res
-}
-func (m *EmailIdentity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EmailIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// CaseOperation provides operations to manage the compliance singleton.
+// CaseOperation 
 type CaseOperation struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics
@@ -165,9 +165,6 @@ func (m *CaseOperation) GetStatus()(*CaseOperationStatus) {
     } else {
         return m.status
     }
-}
-func (m *CaseOperation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CaseOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

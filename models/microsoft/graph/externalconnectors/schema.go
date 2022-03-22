@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Schema provides operations to manage the collection of externalConnection entities.
+// Schema 
 type Schema struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // Must be set to microsoft.graph.externalConnector.externalItem. Required.
@@ -68,9 +68,6 @@ func (m *Schema) GetProperties()([]Propertyable) {
     } else {
         return m.properties
     }
-}
-func (m *Schema) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Schema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

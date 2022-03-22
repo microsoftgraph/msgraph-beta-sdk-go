@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsResourcePerformance provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsResourcePerformance 
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
     // AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
@@ -283,9 +283,6 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimeScore()(*int
     } else {
         return m.ramSpikeTimeScore
     }
-}
-func (m *UserExperienceAnalyticsResourcePerformance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

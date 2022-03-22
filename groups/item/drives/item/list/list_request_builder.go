@@ -15,7 +15,6 @@ import (
     i998c00f0ec1e2b40c5518299a0453c926896385255ff91e4bf3d2b7234a467a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/list/contenttypes/item"
     ia7e7318eb558bf8bfc7b2e73993fafd19e3292f1d7b06c2efa414823b5a839db "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/list/subscriptions/item"
     iae2fd07cb5857ac5712f84db0ed1eab2184e2ab848fee6addbad50e8b44d0302 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/list/operations/item"
-    ib48fcf8c239e744cfc9fe4f1cd3da6fd77f080fc2f12a3108a7c772bb44e64bd "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/list/activities/item"
     iba31399dc8f34e424c8ebc1f280f4f9e3e58432f001227720cab229ef435deaa "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/list/items/item"
 )
 
@@ -68,17 +67,6 @@ type ListRequestBuilderPatchOptions struct {
 }
 func (m *ListRequestBuilder) Activities()(*ia7fc35da0de2bd686f2aa5a8a1fdfc88ac3a5bbd57126d8a1bd0644eceb39752.ActivitiesRequestBuilder) {
     return ia7fc35da0de2bd686f2aa5a8a1fdfc88ac3a5bbd57126d8a1bd0644eceb39752.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.activities.item collection
-func (m *ListRequestBuilder) ActivitiesById(id string)(*ib48fcf8c239e744cfc9fe4f1cd3da6fd77f080fc2f12a3108a7c772bb44e64bd.ItemActivityOLDItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["itemActivityOLD_id"] = id
-    }
-    return ib48fcf8c239e744cfc9fe4f1cd3da6fd77f080fc2f12a3108a7c772bb44e64bd.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ListRequestBuilder) Columns()(*i1271f32d5f7d3b0586f8de93a5b0535ce223cbfd2b48e6f411f71c399da18327.ColumnsRequestBuilder) {
     return i1271f32d5f7d3b0586f8de93a5b0535ce223cbfd2b48e6f411f71c399da18327.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

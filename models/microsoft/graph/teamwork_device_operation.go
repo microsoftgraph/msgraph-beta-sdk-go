@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDeviceOperation provides operations to manage the teamwork singleton.
+// TeamworkDeviceOperation 
 type TeamworkDeviceOperation struct {
     Entity
     // Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
@@ -204,9 +204,6 @@ func (m *TeamworkDeviceOperation) GetStatus()(*string) {
     } else {
         return m.status
     }
-}
-func (m *TeamworkDeviceOperation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

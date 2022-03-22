@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MeetingRegistration provides operations to manage the commsApplication singleton.
+// MeetingRegistration 
 type MeetingRegistration struct {
     MeetingRegistrationBase
     // Custom registration questions.
@@ -192,9 +192,6 @@ func (m *MeetingRegistration) GetSubject()(*string) {
     } else {
         return m.subject
     }
-}
-func (m *MeetingRegistration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

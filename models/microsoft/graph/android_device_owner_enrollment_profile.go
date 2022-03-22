@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AndroidDeviceOwnerEnrollmentProfile provides operations to manage the deviceManagement singleton.
+// AndroidDeviceOwnerEnrollmentProfile 
 type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
@@ -408,9 +408,6 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiSsid()(*string) {
     } else {
         return m.wifiSsid
     }
-}
-func (m *AndroidDeviceOwnerEnrollmentProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

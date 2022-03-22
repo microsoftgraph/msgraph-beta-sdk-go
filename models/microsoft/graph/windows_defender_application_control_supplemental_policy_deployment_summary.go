@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary provides operations to manage the deviceAppManagement singleton.
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
     // Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
@@ -63,9 +63,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) G
         return nil
     }
     return res
-}
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

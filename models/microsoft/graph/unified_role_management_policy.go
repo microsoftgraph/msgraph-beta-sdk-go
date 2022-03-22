@@ -5,14 +5,14 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleManagementPolicy provides operations to manage the policyRoot singleton.
+// UnifiedRoleManagementPolicy 
 type UnifiedRoleManagementPolicy struct {
     Entity
     // Description for the policy.
     description *string;
     // Display name for the policy.
     displayName *string;
-    // The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+    // Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
     effectiveRules []UnifiedRoleManagementPolicyRuleable;
     // This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
     isOrganizationDefault *bool;
@@ -20,11 +20,11 @@ type UnifiedRoleManagementPolicy struct {
     lastModifiedBy Identityable;
     // The time when the role setting was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The collection of rules like approval rule, expiration rule, etc.
+    // The collection of rules like approval rules and expiration rules.
     rules []UnifiedRoleManagementPolicyRuleable;
-    // The id of the scope where the policy is created. E.g. '/', groupId, etc.
+    // The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
     scopeId *string;
-    // The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
+    // The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
     scopeType *string;
 }
 // NewUnifiedRoleManagementPolicy instantiates a new unifiedRoleManagementPolicy and sets the default values.
@@ -54,7 +54,7 @@ func (m *UnifiedRoleManagementPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEffectiveRules gets the effectiveRules property value. The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+// GetEffectiveRules gets the effectiveRules property value. Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 func (m *UnifiedRoleManagementPolicy) GetEffectiveRules()([]UnifiedRoleManagementPolicyRuleable) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *UnifiedRoleManagementPolicy) GetLastModifiedDateTime()(*i336074805fc853
         return m.lastModifiedDateTime
     }
 }
-// GetRules gets the rules property value. The collection of rules like approval rule, expiration rule, etc.
+// GetRules gets the rules property value. The collection of rules like approval rules and expiration rules.
 func (m *UnifiedRoleManagementPolicy) GetRules()([]UnifiedRoleManagementPolicyRuleable) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *UnifiedRoleManagementPolicy) GetRules()([]UnifiedRoleManagementPolicyRu
         return m.rules
     }
 }
-// GetScopeId gets the scopeId property value. The id of the scope where the policy is created. E.g. '/', groupId, etc.
+// GetScopeId gets the scopeId property value. The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
 func (m *UnifiedRoleManagementPolicy) GetScopeId()(*string) {
     if m == nil {
         return nil
@@ -205,16 +205,13 @@ func (m *UnifiedRoleManagementPolicy) GetScopeId()(*string) {
         return m.scopeId
     }
 }
-// GetScopeType gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
+// GetScopeType gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
 func (m *UnifiedRoleManagementPolicy) GetScopeType()(*string) {
     if m == nil {
         return nil
     } else {
         return m.scopeType
     }
-}
-func (m *UnifiedRoleManagementPolicy) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -298,7 +295,7 @@ func (m *UnifiedRoleManagementPolicy) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEffectiveRules sets the effectiveRules property value. The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+// SetEffectiveRules sets the effectiveRules property value. Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 func (m *UnifiedRoleManagementPolicy) SetEffectiveRules(value []UnifiedRoleManagementPolicyRuleable)() {
     if m != nil {
         m.effectiveRules = value
@@ -322,19 +319,19 @@ func (m *UnifiedRoleManagementPolicy) SetLastModifiedDateTime(value *i336074805f
         m.lastModifiedDateTime = value
     }
 }
-// SetRules sets the rules property value. The collection of rules like approval rule, expiration rule, etc.
+// SetRules sets the rules property value. The collection of rules like approval rules and expiration rules.
 func (m *UnifiedRoleManagementPolicy) SetRules(value []UnifiedRoleManagementPolicyRuleable)() {
     if m != nil {
         m.rules = value
     }
 }
-// SetScopeId sets the scopeId property value. The id of the scope where the policy is created. E.g. '/', groupId, etc.
+// SetScopeId sets the scopeId property value. The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
 func (m *UnifiedRoleManagementPolicy) SetScopeId(value *string)() {
     if m != nil {
         m.scopeId = value
     }
 }
-// SetScopeType sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
+// SetScopeType sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
 func (m *UnifiedRoleManagementPolicy) SetScopeType(value *string)() {
     if m != nil {
         m.scopeType = value

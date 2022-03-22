@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ImportedDeviceIdentity provides operations to manage the deviceManagement singleton.
+// ImportedDeviceIdentity 
 type ImportedDeviceIdentity struct {
     Entity
     // Created Date Time of the device
@@ -184,9 +184,6 @@ func (m *ImportedDeviceIdentity) GetPlatform()(*Platform) {
     } else {
         return m.platform
     }
-}
-func (m *ImportedDeviceIdentity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ImportedDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

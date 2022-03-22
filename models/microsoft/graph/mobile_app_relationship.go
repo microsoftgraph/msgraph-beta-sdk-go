@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MobileAppRelationship provides operations to manage the deviceAppManagement singleton.
+// MobileAppRelationship 
 type MobileAppRelationship struct {
     Entity
     // The target mobile app's display name.
@@ -123,9 +123,6 @@ func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
     } else {
         return m.targetType
     }
-}
-func (m *MobileAppRelationship) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppRelationship) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

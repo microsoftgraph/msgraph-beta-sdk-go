@@ -90,7 +90,6 @@ import (
     ia0822ab92389697fe0392482a489e7576f172e2b499906e62bb3393cc7c11dbb "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getteamsuseractivitytotaldistributioncountswithperiod"
     ia4a439ad585549ca6a264d3c659884bde60cd44ba79a5d03f941ef02cc50b09d "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getattacksimulationtrainingusercoverage"
     ia54f5885db60032a888c2668e50091452912a071e528a3da9eba97c6d431fa42 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getyammerdeviceusagedistributionusercountswithperiod"
-    ia83b8d65117b3e838e53c360304a89995009d10e47e5dce012a0e8c0406b67e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/gettenantsecurescoreswithperiod"
     ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getsharepointsiteusagedetailwithdate"
     ia983902699c45d63b5babc13320daacdb1564e3d45458d3d6153bc2112fd2eb6 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getoffice365activationsusercounts"
     iab64d32b308e755b9724f53342c4489cd12c811324ffcfc1eebaeb1f6d63937f "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getskypeforbusinesspeertopeeractivitycountswithperiod"
@@ -764,10 +763,6 @@ func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithDate(date *i04
 // GetTeamsUserActivityUserDetailWithPeriod provides operations to call the getTeamsUserActivityUserDetail method.
 func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithPeriod(period *string)(*iee0f7f8db82d7bf47fa5eff92350ac6235e7af4d5a35bf22f0c190f09903fd62.GetTeamsUserActivityUserDetailWithPeriodRequestBuilder) {
     return iee0f7f8db82d7bf47fa5eff92350ac6235e7af4d5a35bf22f0c190f09903fd62.NewGetTeamsUserActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetTenantSecureScoresWithPeriod provides operations to call the getTenantSecureScores method.
-func (m *ReportsRequestBuilder) GetTenantSecureScoresWithPeriod(period *int32)(*ia83b8d65117b3e838e53c360304a89995009d10e47e5dce012a0e8c0406b67e2.GetTenantSecureScoresWithPeriodRequestBuilder) {
-    return ia83b8d65117b3e838e53c360304a89995009d10e47e5dce012a0e8c0406b67e2.NewGetTenantSecureScoresWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime provides operations to call the getUserArchivedPrintJobs method.
 func (m *ReportsRequestBuilder) GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*i50d831cff0d03367e9939eb5f21f0a71e577dce8e1e220d3877edf21418cf620.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SalesInvoice provides operations to manage the financials singleton.
+// SalesInvoice 
 type SalesInvoice struct {
     Entity
     // 
@@ -788,9 +788,6 @@ func (m *SalesInvoice) GetTotalTaxAmount()(*float64) {
     } else {
         return m.totalTaxAmount
     }
-}
-func (m *SalesInvoice) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SalesInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

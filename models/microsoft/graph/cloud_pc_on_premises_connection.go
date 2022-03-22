@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcOnPremisesConnection provides operations to manage the deviceManagement singleton.
+// CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
     // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -21,7 +21,7 @@ type CloudPcOnPremisesConnection struct {
     healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable;
     // When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
     inUse *bool;
-    // 
+    // Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
     managedBy *CloudPcManagementService;
     // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
     organizationalUnit *string;
@@ -260,7 +260,7 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
         return m.inUse
     }
 }
-// GetManagedBy gets the managedBy property value. 
+// GetManagedBy gets the managedBy property value. Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
     if m == nil {
         return nil
@@ -323,9 +323,6 @@ func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
     } else {
         return m.virtualNetworkId
     }
-}
-func (m *CloudPcOnPremisesConnection) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -470,7 +467,7 @@ func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
         m.inUse = value
     }
 }
-// SetManagedBy sets the managedBy property value. 
+// SetManagedBy sets the managedBy property value. Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
     if m != nil {
         m.managedBy = value

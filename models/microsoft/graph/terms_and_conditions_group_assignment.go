@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TermsAndConditionsGroupAssignment provides operations to manage the deviceManagement singleton.
+// TermsAndConditionsGroupAssignment 
 type TermsAndConditionsGroupAssignment struct {
     Entity
     // Unique identifier of a group that the T&C policy is assigned to.
@@ -63,9 +63,6 @@ func (m *TermsAndConditionsGroupAssignment) GetTermsAndConditions()(TermsAndCond
     } else {
         return m.termsAndConditions
     }
-}
-func (m *TermsAndConditionsGroupAssignment) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsGroupAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

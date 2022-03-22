@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// EmbeddedSIMActivationCode provides operations to manage the deviceManagement singleton.
+// EmbeddedSIMActivationCode the embedded SIM activation code as provided by the mobile operator.
 type EmbeddedSIMActivationCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -92,9 +92,6 @@ func (m *EmbeddedSIMActivationCode) GetSmdpPlusServerAddress()(*string) {
     } else {
         return m.smdpPlusServerAddress
     }
-}
-func (m *EmbeddedSIMActivationCode) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCode) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

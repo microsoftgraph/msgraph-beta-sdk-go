@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsImpactingProcess provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsImpactingProcess 
 type UserExperienceAnalyticsImpactingProcess struct {
     Entity
     // The category of impacting process.
@@ -143,9 +143,6 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetPublisher()(*string) {
     } else {
         return m.publisher
     }
-}
-func (m *UserExperienceAnalyticsImpactingProcess) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsImpactingProcess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

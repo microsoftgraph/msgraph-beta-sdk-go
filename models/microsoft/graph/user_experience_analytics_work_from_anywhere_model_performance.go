@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereModelPerformance provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformance 
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     Entity
     // The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -203,9 +203,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWorkFromAny
     } else {
         return m.workFromAnywhereScore
     }
-}
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDeviceActivity provides operations to manage the teamwork singleton.
+// TeamworkDeviceActivity 
 type TeamworkDeviceActivity struct {
     Entity
     // The active peripheral devices attached to the device.
@@ -124,9 +124,6 @@ func (m *TeamworkDeviceActivity) GetLastModifiedDateTime()(*i336074805fc853987ab
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *TeamworkDeviceActivity) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

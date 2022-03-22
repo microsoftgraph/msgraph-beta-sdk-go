@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AssignmentFilterStatusDetails provides operations to call the getAssignmentFiltersStatusDetails method.
+// AssignmentFilterStatusDetails represent status details for device and payload and all associated applied filters.
 type AssignmentFilterStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -140,9 +140,6 @@ func (m *AssignmentFilterStatusDetails) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *AssignmentFilterStatusDetails) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterStatusDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ManagedDeviceCleanupSettings provides operations to manage the deviceManagement singleton.
+// ManagedDeviceCleanupSettings define the rule when the admin wants the devices to be cleaned up.
 type ManagedDeviceCleanupSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -52,9 +52,6 @@ func (m *ManagedDeviceCleanupSettings) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
-}
-func (m *ManagedDeviceCleanupSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceCleanupSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus provides operations to manage the deviceAppManagement singleton.
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
     // The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
@@ -224,9 +224,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     } else {
         return m.userPrincipalName
     }
-}
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

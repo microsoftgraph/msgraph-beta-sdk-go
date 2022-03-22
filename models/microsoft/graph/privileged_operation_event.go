@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PrivilegedOperationEvent provides operations to manage the collection of privilegedOperationEvent entities.
+// PrivilegedOperationEvent 
 type PrivilegedOperationEvent struct {
     Entity
     // Detailed human readable information for the event.
@@ -304,9 +304,6 @@ func (m *PrivilegedOperationEvent) GetUserName()(*string) {
     } else {
         return m.userName
     }
-}
-func (m *PrivilegedOperationEvent) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedOperationEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

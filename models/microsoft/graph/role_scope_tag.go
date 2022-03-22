@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RoleScopeTag provides operations to manage the deviceManagement singleton.
+// RoleScopeTag 
 type RoleScopeTag struct {
     Entity
     // The list of assignments for this Role Scope Tag.
@@ -107,9 +107,6 @@ func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
     } else {
         return m.isBuiltIn
     }
-}
-func (m *RoleScopeTag) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RoleScopeTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

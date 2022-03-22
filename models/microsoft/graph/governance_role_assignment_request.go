@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GovernanceRoleAssignmentRequest provides operations to manage the collection of governanceResource entities.
+// GovernanceRoleAssignmentRequest 
 type GovernanceRoleAssignmentRequest struct {
     Entity
     // Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
@@ -284,9 +284,6 @@ func (m *GovernanceRoleAssignmentRequest) GetType()(*string) {
     } else {
         return m.type_escaped
     }
-}
-func (m *GovernanceRoleAssignmentRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *GovernanceRoleAssignmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

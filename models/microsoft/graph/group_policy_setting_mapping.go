@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// GroupPolicySettingMapping provides operations to manage the deviceManagement singleton.
+// GroupPolicySettingMapping 
 type GroupPolicySettingMapping struct {
     Entity
     // Admx Group Policy Id
@@ -431,9 +431,6 @@ func (m *GroupPolicySettingMapping) GetSettingValueType()(*string) {
     } else {
         return m.settingValueType
     }
-}
-func (m *GroupPolicySettingMapping) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicySettingMapping) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// MediaSource provides operations to manage the compliance singleton.
+// MediaSource 
 type MediaSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -52,9 +52,6 @@ func (m *MediaSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     return res
-}
-func (m *MediaSource) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *MediaSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ChromeOSOnboardingSettings provides operations to manage the deviceManagement singleton.
+// ChromeOSOnboardingSettings 
 type ChromeOSOnboardingSettings struct {
     Entity
     // The ChromebookTenant's LastDirectorySyncDateTime
@@ -104,9 +104,6 @@ func (m *ChromeOSOnboardingSettings) GetOwnerUserPrincipalName()(*string) {
     } else {
         return m.ownerUserPrincipalName
     }
-}
-func (m *ChromeOSOnboardingSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ChromeOSOnboardingSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

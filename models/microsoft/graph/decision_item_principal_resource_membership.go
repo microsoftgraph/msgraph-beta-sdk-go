@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DecisionItemPrincipalResourceMembership provides operations to manage the compliance singleton.
+// DecisionItemPrincipalResourceMembership 
 type DecisionItemPrincipalResourceMembership struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -52,9 +52,6 @@ func (m *DecisionItemPrincipalResourceMembership) GetMembershipType()(*DecisionI
     } else {
         return m.membershipType
     }
-}
-func (m *DecisionItemPrincipalResourceMembership) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DecisionItemPrincipalResourceMembership) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

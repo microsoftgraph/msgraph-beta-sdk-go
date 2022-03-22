@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Notification provides operations to manage the compliance singleton.
+// Notification 
 type Notification struct {
     Entity
     // Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
@@ -164,9 +164,6 @@ func (m *Notification) GetTargetPolicy()(TargetPolicyEndpointsable) {
     } else {
         return m.targetPolicy
     }
-}
-func (m *Notification) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Notification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

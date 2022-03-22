@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserSecurityProfile provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
+// UserSecurityProfile 
 type UserSecurityProfile struct {
     Entity
     // 
@@ -232,9 +232,6 @@ func (m *UserSecurityProfile) GetVendorInformation()(SecurityVendorInformationab
     } else {
         return m.vendorInformation
     }
-}
-func (m *UserSecurityProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

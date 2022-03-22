@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityCounts provides operations to call the getOffice365GroupsActivityCounts method.
+// Office365GroupsActivityCounts 
 type Office365GroupsActivityCounts struct {
     Entity
     // The number of emails received by Group mailboxes.
@@ -163,9 +163,6 @@ func (m *Office365GroupsActivityCounts) GetYammerMessagesRead()(*int64) {
     } else {
         return m.yammerMessagesRead
     }
-}
-func (m *Office365GroupsActivityCounts) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Office365GroupsActivityCounts) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

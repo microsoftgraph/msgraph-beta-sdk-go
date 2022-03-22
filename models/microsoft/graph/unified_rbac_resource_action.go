@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRbacResourceAction provides operations to manage the roleManagement singleton.
+// UnifiedRbacResourceAction 
 type UnifiedRbacResourceAction struct {
     Entity
     // HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
@@ -123,9 +123,6 @@ func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
     } else {
         return m.resourceScopeId
     }
-}
-func (m *UnifiedRbacResourceAction) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRbacResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

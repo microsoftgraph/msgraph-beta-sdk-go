@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsCloudIdentityDevicesSummary provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
+// UserExperienceAnalyticsCloudIdentityDevicesSummary the user experience analytics work from anywhere cloud identity devices summary.
 type UserExperienceAnalyticsCloudIdentityDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -52,9 +52,6 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetFieldDeserialize
         return nil
     }
     return res
-}
-func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CrossTenantAccessPolicyConfigurationPartner provides operations to manage the policyRoot singleton.
+// CrossTenantAccessPolicyConfigurationPartner 
 type CrossTenantAccessPolicyConfigurationPartner struct {
     CrossTenantAccessPolicyConfigurationBase
     // Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
@@ -63,9 +63,6 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
     } else {
         return m.tenantId
     }
-}
-func (m *CrossTenantAccessPolicyConfigurationPartner) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

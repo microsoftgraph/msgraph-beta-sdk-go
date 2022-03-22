@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DlpEvaluatePoliciesJobResponse provides operations to call the evaluate method.
+// DlpEvaluatePoliciesJobResponse 
 type DlpEvaluatePoliciesJobResponse struct {
     JobResponseBase
     // 
@@ -43,9 +43,6 @@ func (m *DlpEvaluatePoliciesJobResponse) GetResult()(DlpPoliciesJobResultable) {
     } else {
         return m.result
     }
-}
-func (m *DlpEvaluatePoliciesJobResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DlpEvaluatePoliciesJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

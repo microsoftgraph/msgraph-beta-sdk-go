@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceHealthScriptRemediationHistory provides operations to call the getRemediationHistory method.
+// DeviceHealthScriptRemediationHistory the number of devices remediated by a device health script on a given date with the last modified time.
 type DeviceHealthScriptRemediationHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -77,9 +77,6 @@ func (m *DeviceHealthScriptRemediationHistory) GetLastModifiedDateTime()(*i33607
     } else {
         return m.lastModifiedDateTime
     }
-}
-func (m *DeviceHealthScriptRemediationHistory) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptRemediationHistory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

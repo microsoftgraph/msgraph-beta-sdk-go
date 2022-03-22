@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365GroupsActivityGroupCounts provides operations to call the getOffice365GroupsActivityGroupCounts method.
+// Office365GroupsActivityGroupCounts 
 type Office365GroupsActivityGroupCounts struct {
     Entity
     // The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
@@ -123,9 +123,6 @@ func (m *Office365GroupsActivityGroupCounts) GetTotal()(*int64) {
     } else {
         return m.total
     }
-}
-func (m *Office365GroupsActivityGroupCounts) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Office365GroupsActivityGroupCounts) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewSet provides operations to manage the identityGovernance singleton.
+// AccessReviewSet 
 type AccessReviewSet struct {
     Entity
     // Represents an Azure AD access review decision on an instance of a review.
@@ -115,9 +115,6 @@ func (m *AccessReviewSet) GetPolicy()(AccessReviewPolicyable) {
     } else {
         return m.policy
     }
-}
-func (m *AccessReviewSet) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

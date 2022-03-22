@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessReviewDecision provides operations to manage the collection of accessReviewDecision entities.
+// AccessReviewDecision 
 type AccessReviewDecision struct {
     Entity
     // The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
@@ -204,9 +204,6 @@ func (m *AccessReviewDecision) GetReviewResult()(*string) {
     } else {
         return m.reviewResult
     }
-}
-func (m *AccessReviewDecision) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewDecision) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

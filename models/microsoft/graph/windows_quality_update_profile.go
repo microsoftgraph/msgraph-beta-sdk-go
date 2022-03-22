@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsQualityUpdateProfile provides operations to manage the deviceManagement singleton.
+// WindowsQualityUpdateProfile 
 type WindowsQualityUpdateProfile struct {
     Entity
     // The list of group assignments of the profile.
@@ -212,9 +212,6 @@ func (m *WindowsQualityUpdateProfile) GetRoleScopeTagIds()([]string) {
     } else {
         return m.roleScopeTagIds
     }
-}
-func (m *WindowsQualityUpdateProfile) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

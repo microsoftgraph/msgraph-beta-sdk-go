@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LongRunningOperation provides operations to manage the compliance singleton.
+// LongRunningOperation 
 type LongRunningOperation struct {
     Entity
     // 
@@ -124,9 +124,6 @@ func (m *LongRunningOperation) GetStatusDetail()(*string) {
     } else {
         return m.statusDetail
     }
-}
-func (m *LongRunningOperation) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *LongRunningOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

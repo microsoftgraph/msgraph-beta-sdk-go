@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SymantecCodeSigningCertificate provides operations to manage the deviceAppManagement singleton.
+// SymantecCodeSigningCertificate 
 type SymantecCodeSigningCertificate struct {
     Entity
     // The Windows Symantec Code-Signing Certificate in the raw data format.
@@ -204,9 +204,6 @@ func (m *SymantecCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987
     } else {
         return m.uploadDateTime
     }
-}
-func (m *SymantecCodeSigningCertificate) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SymantecCodeSigningCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

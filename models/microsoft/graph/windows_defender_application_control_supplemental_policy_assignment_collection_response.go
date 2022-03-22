@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse provides operations to manage the assignments property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
+// WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse 
 type WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollection
     } else {
         return m.value
     }
-}
-func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TeamworkDateTimeConfiguration provides operations to manage the teamwork singleton.
+// TeamworkDateTimeConfiguration 
 type TeamworkDateTimeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -132,9 +132,6 @@ func (m *TeamworkDateTimeConfiguration) GetTimeZone()(*string) {
     } else {
         return m.timeZone
     }
-}
-func (m *TeamworkDateTimeConfiguration) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDateTimeConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

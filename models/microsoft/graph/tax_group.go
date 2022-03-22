@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// TaxGroup provides operations to manage the financials singleton.
+// TaxGroup 
 type TaxGroup struct {
     Entity
     // 
@@ -104,9 +104,6 @@ func (m *TaxGroup) GetTaxType()(*string) {
     } else {
         return m.taxType
     }
-}
-func (m *TaxGroup) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *TaxGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

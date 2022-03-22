@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Application provides operations to manage the collection of application entities.
+// Application 
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -916,9 +916,6 @@ func (m *Application) GetWindows()(WindowsApplicationable) {
     } else {
         return m.windows
     }
-}
-func (m *Application) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// LanguageProficiency provides operations to manage the compliance singleton.
+// LanguageProficiency 
 type LanguageProficiency struct {
     ItemFacet
     // Contains the long-form name for the language.
@@ -163,9 +163,6 @@ func (m *LanguageProficiency) GetWritten()(*LanguageProficiencyLevel) {
     } else {
         return m.written
     }
-}
-func (m *LanguageProficiency) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *LanguageProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

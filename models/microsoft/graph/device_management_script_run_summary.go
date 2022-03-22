@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementScriptRunSummary provides operations to manage the deviceManagement singleton.
+// DeviceManagementScriptRunSummary 
 type DeviceManagementScriptRunSummary struct {
     Entity
     // Error device count.
@@ -103,9 +103,6 @@ func (m *DeviceManagementScriptRunSummary) GetSuccessUserCount()(*int32) {
     } else {
         return m.successUserCount
     }
-}
-func (m *DeviceManagementScriptRunSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptRunSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

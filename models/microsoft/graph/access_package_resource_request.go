@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// AccessPackageResourceRequest provides operations to manage the identityGovernance singleton.
+// AccessPackageResourceRequest 
 type AccessPackageResourceRequest struct {
     Entity
     // Nullable.
@@ -224,9 +224,6 @@ func (m *AccessPackageResourceRequest) GetRequestType()(*string) {
     } else {
         return m.requestType
     }
-}
-func (m *AccessPackageResourceRequest) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ExactMatchSession provides operations to manage the dataClassificationService singleton.
+// ExactMatchSession 
 type ExactMatchSession struct {
     ExactMatchSessionBase
     // 
@@ -187,9 +187,6 @@ func (m *ExactMatchSession) GetUploadAgentId()(*string) {
     } else {
         return m.uploadAgentId
     }
-}
-func (m *ExactMatchSession) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ExactMatchSession) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

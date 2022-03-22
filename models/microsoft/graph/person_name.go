@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// PersonName provides operations to manage the compliance singleton.
+// PersonName 
 type PersonName struct {
     ItemFacet
     // Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
@@ -243,9 +243,6 @@ func (m *PersonName) GetTitle()(*string) {
     } else {
         return m.title
     }
-}
-func (m *PersonName) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *PersonName) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

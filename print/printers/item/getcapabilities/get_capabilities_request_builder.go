@@ -2,7 +2,6 @@ package getcapabilities
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
@@ -23,92 +22,6 @@ type GetCapabilitiesRequestBuilderGetOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
-// GetCapabilitiesResponse union type wrapper for classes printerCapabilities
-type GetCapabilitiesResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
-    // Union type representation for type printerCapabilities
-    printerCapabilities i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable;
-}
-// NewGetCapabilitiesResponse instantiates a new getCapabilitiesResponse and sets the default values.
-func NewGetCapabilitiesResponse()(*GetCapabilitiesResponse) {
-    m := &GetCapabilitiesResponse{
-    }
-    m.SetAdditionalData(make(map[string]interface{}));
-    return m
-}
-func CreateGetCapabilitiesResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
-    return NewGetCapabilitiesResponse(), nil
-}
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetCapabilitiesResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *GetCapabilitiesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["printerCapabilities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterCapabilitiesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrinterCapabilities(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable))
-        }
-        return nil
-    }
-    return res
-}
-// GetPrinterCapabilities gets the printerCapabilities property value. Union type representation for type printerCapabilities
-func (m *GetCapabilitiesResponse) GetPrinterCapabilities()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printerCapabilities
-    }
-}
-func (m *GetCapabilitiesResponse) IsNil()(bool) {
-    return m == nil
-}
-// Serialize serializes information the current object
-func (m *GetCapabilitiesResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("printerCapabilities", m.GetPrinterCapabilities())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetCapabilitiesResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
-}
-// SetPrinterCapabilities sets the printerCapabilities property value. Union type representation for type printerCapabilities
-func (m *GetCapabilitiesResponse) SetPrinterCapabilities(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable)() {
-    if m != nil {
-        m.printerCapabilities = value
-    }
-}
-// GetCapabilitiesResponseable 
-type GetCapabilitiesResponseable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetPrinterCapabilities()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable)
-    SetPrinterCapabilities(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable)()
 }
 // NewGetCapabilitiesRequestBuilderInternal instantiates a new GetCapabilitiesRequestBuilder and sets the default values.
 func NewGetCapabilitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCapabilitiesRequestBuilder) {
@@ -147,14 +60,14 @@ func (m *GetCapabilitiesRequestBuilder) CreateGetRequestInformation(options *Get
     return requestInfo, nil
 }
 // Get invoke function getCapabilities
-func (m *GetCapabilitiesRequestBuilder) Get(options *GetCapabilitiesRequestBuilderGetOptions)(GetCapabilitiesResponseable, error) {
+func (m *GetCapabilitiesRequestBuilder) Get(options *GetCapabilitiesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCapabilitiesResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreatePrinterCapabilitiesFromDiscriminatorValue, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetCapabilitiesResponseable), nil
+    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrinterCapabilitiesable), nil
 }

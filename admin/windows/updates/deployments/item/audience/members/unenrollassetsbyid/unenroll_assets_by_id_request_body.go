@@ -98,9 +98,6 @@ func (m *UnenrollAssetsByIdRequestBody) GetUpdateCategory()(*ifded49a845bbaa9057
         return m.updateCategory
     }
 }
-func (m *UnenrollAssetsByIdRequestBody) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *UnenrollAssetsByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetIds() != nil {

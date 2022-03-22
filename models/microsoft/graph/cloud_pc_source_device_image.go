@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPcSourceDeviceImage provides operations to call the getSourceImages method.
+// CloudPcSourceDeviceImage 
 type CloudPcSourceDeviceImage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -12,9 +12,9 @@ type CloudPcSourceDeviceImage struct {
     displayName *string;
     // The ID of the source image.
     id *string;
-    // 
+    // The display name of subscription that hosts the source image.
     subscriptionDisplayName *string;
-    // 
+    // The ID of subscription that hosts the source image.
     subscriptionId *string;
 }
 // NewCloudPcSourceDeviceImage instantiates a new cloudPcSourceDeviceImage and sets the default values.
@@ -97,7 +97,7 @@ func (m *CloudPcSourceDeviceImage) GetId()(*string) {
         return m.id
     }
 }
-// GetSubscriptionDisplayName gets the subscriptionDisplayName property value. 
+// GetSubscriptionDisplayName gets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
     if m == nil {
         return nil
@@ -105,16 +105,13 @@ func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
         return m.subscriptionDisplayName
     }
 }
-// GetSubscriptionId gets the subscriptionId property value. 
+// GetSubscriptionId gets the subscriptionId property value. The ID of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.subscriptionId
     }
-}
-func (m *CloudPcSourceDeviceImage) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcSourceDeviceImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
@@ -168,13 +165,13 @@ func (m *CloudPcSourceDeviceImage) SetId(value *string)() {
         m.id = value
     }
 }
-// SetSubscriptionDisplayName sets the subscriptionDisplayName property value. 
+// SetSubscriptionDisplayName sets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionDisplayName(value *string)() {
     if m != nil {
         m.subscriptionDisplayName = value
     }
 }
-// SetSubscriptionId sets the subscriptionId property value. 
+// SetSubscriptionId sets the subscriptionId property value. The ID of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionId(value *string)() {
     if m != nil {
         m.subscriptionId = value

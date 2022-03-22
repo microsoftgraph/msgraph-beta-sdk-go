@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CredentialUsageSummary provides operations to call the getCredentialUsageSummary method.
+// CredentialUsageSummary 
 type CredentialUsageSummary struct {
     Entity
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
@@ -103,9 +103,6 @@ func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
     } else {
         return m.successfulActivityCount
     }
-}
-func (m *CredentialUsageSummary) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CredentialUsageSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

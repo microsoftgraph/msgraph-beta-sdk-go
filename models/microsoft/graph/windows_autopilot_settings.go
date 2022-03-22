@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsAutopilotSettings provides operations to manage the deviceManagement singleton.
+// WindowsAutopilotSettings 
 type WindowsAutopilotSettings struct {
     Entity
     // Last data sync date time with DDS service.
@@ -84,9 +84,6 @@ func (m *WindowsAutopilotSettings) GetSyncStatus()(*WindowsAutopilotSyncStatus) 
     } else {
         return m.syncStatus
     }
-}
-func (m *WindowsAutopilotSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

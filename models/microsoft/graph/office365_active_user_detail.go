@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Office365ActiveUserDetail provides operations to call the getOffice365ActiveUserDetail method.
+// Office365ActiveUserDetail 
 type Office365ActiveUserDetail struct {
     Entity
     // All the products assigned for the user.
@@ -507,9 +507,6 @@ func (m *Office365ActiveUserDetail) GetYammerLicenseAssignDate()(*i04eb5309aeaaf
     } else {
         return m.yammerLicenseAssignDate
     }
-}
-func (m *Office365ActiveUserDetail) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *Office365ActiveUserDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

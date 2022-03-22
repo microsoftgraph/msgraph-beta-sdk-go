@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ProviderTenantSetting provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
+// ProviderTenantSetting 
 type ProviderTenantSetting struct {
     Entity
     // 
@@ -124,9 +124,6 @@ func (m *ProviderTenantSetting) GetVendor()(*string) {
     } else {
         return m.vendor_escaped
     }
-}
-func (m *ProviderTenantSetting) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ProviderTenantSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

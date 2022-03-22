@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SensitivityLabelCollectionResponse provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.
+// SensitivityLabelCollectionResponse 
 type SensitivityLabelCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -76,9 +76,6 @@ func (m *SensitivityLabelCollectionResponse) GetValue()([]SensitivityLabelable) 
     } else {
         return m.value
     }
-}
-func (m *SensitivityLabelCollectionResponse) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabelCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

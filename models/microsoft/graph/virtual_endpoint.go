@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// VirtualEndpoint provides operations to manage the deviceManagement singleton.
+// VirtualEndpoint 
 type VirtualEndpoint struct {
     Entity
     // Cloud PC audit event.
@@ -283,9 +283,6 @@ func (m *VirtualEndpoint) GetUserSettings()([]CloudPcUserSettingable) {
     } else {
         return m.userSettings
     }
-}
-func (m *VirtualEndpoint) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

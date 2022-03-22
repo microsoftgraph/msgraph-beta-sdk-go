@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RegionalAndLanguageSettings provides operations to manage the compliance singleton.
+// RegionalAndLanguageSettings 
 type RegionalAndLanguageSettings struct {
     Entity
     // Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
@@ -167,9 +167,6 @@ func (m *RegionalAndLanguageSettings) GetTranslationPreferences()(TranslationPre
     } else {
         return m.translationPreferences
     }
-}
-func (m *RegionalAndLanguageSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RegionalAndLanguageSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

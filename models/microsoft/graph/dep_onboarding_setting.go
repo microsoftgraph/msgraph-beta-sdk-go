@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DepOnboardingSetting provides operations to manage the deviceManagement singleton.
+// DepOnboardingSetting 
 type DepOnboardingSetting struct {
     Entity
     // The Apple ID used to obtain the current token.
@@ -356,9 +356,6 @@ func (m *DepOnboardingSetting) GetTokenType()(*DepTokenType) {
     } else {
         return m.tokenType
     }
-}
-func (m *DepOnboardingSetting) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DepOnboardingSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

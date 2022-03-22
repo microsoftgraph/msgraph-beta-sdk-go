@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CloudPCConnectivityIssue provides operations to manage the deviceManagement singleton.
+// CloudPCConnectivityIssue 
 type CloudPCConnectivityIssue struct {
     Entity
     // The Intune DeviceId of the device the connection is associated with.
@@ -144,9 +144,6 @@ func (m *CloudPCConnectivityIssue) GetUserId()(*string) {
     } else {
         return m.userId
     }
-}
-func (m *CloudPCConnectivityIssue) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CloudPCConnectivityIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

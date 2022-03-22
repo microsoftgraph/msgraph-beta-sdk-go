@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UnifiedRoleAssignmentSchedule provides operations to manage the roleManagement singleton.
+// UnifiedRoleAssignmentSchedule 
 type UnifiedRoleAssignmentSchedule struct {
     UnifiedRoleScheduleBase
     // If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
@@ -103,9 +103,6 @@ func (m *UnifiedRoleAssignmentSchedule) GetScheduleInfo()(RequestScheduleable) {
     } else {
         return m.scheduleInfo
     }
-}
-func (m *UnifiedRoleAssignmentSchedule) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentSchedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

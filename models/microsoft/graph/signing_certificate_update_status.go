@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// SigningCertificateUpdateStatus provides operations to manage the collection of domain entities.
+// SigningCertificateUpdateStatus 
 type SigningCertificateUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -73,9 +73,6 @@ func (m *SigningCertificateUpdateStatus) GetLastRunDateTime()(*i336074805fc85398
     } else {
         return m.lastRunDateTime
     }
-}
-func (m *SigningCertificateUpdateStatus) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *SigningCertificateUpdateStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

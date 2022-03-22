@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// ApprovalSettings provides operations to manage the identityGovernance singleton.
+// ApprovalSettings 
 type ApprovalSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -136,9 +136,6 @@ func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
     } else {
         return m.isRequestorJustificationRequired
     }
-}
-func (m *ApprovalSettings) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *ApprovalSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

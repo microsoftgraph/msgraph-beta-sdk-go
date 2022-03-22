@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthOsPerformance provides operations to manage the deviceManagement singleton.
+// UserExperienceAnalyticsBatteryHealthOsPerformance 
 type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     Entity
     // Number of active devices for that os version. Valid values -2147483648 to 2147483647
@@ -143,9 +143,6 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsVersion()(*stri
     } else {
         return m.osVersion
     }
-}
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

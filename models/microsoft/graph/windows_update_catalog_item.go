@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// WindowsUpdateCatalogItem provides operations to manage the deviceManagement singleton.
+// WindowsUpdateCatalogItem 
 type WindowsUpdateCatalogItem struct {
     Entity
     // The display name for the catalog item.
@@ -84,9 +84,6 @@ func (m *WindowsUpdateCatalogItem) GetReleaseDateTime()(*i336074805fc853987abe6f
     } else {
         return m.releaseDateTime
     }
-}
-func (m *WindowsUpdateCatalogItem) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateCatalogItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

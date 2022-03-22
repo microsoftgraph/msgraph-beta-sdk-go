@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceConfigurationState provides operations to manage the compliance singleton.
+// DeviceConfigurationState 
 type DeviceConfigurationState struct {
     Entity
     // The name of the policy for this policyBase
@@ -187,9 +187,6 @@ func (m *DeviceConfigurationState) GetVersion()(*int32) {
     } else {
         return m.version
     }
-}
-func (m *DeviceConfigurationState) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

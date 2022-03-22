@@ -82,9 +82,6 @@ func (m *ApplyTagsRequestBody) GetTagsToRemove()([]i2756dc8c91c60abdde0aa43bf23c
         return m.tagsToRemove
     }
 }
-func (m *ApplyTagsRequestBody) IsNil()(bool) {
-    return m == nil
-}
 // Serialize serializes information the current object
 func (m *ApplyTagsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetTagsToAdd() != nil {

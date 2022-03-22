@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// CertificateConnectorHealthMetricValue provides operations to call the getHealthMetricTimeSeries method.
+// CertificateConnectorHealthMetricValue metric snapshot value returned in response to a GetHealthMetricTimeSeries request.
 type CertificateConnectorHealthMetricValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -93,9 +93,6 @@ func (m *CertificateConnectorHealthMetricValue) GetSuccessCount()(*int64) {
     } else {
         return m.successCount
     }
-}
-func (m *CertificateConnectorHealthMetricValue) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *CertificateConnectorHealthMetricValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

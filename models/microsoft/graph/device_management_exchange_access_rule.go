@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// DeviceManagementExchangeAccessRule provides operations to manage the deviceManagement singleton.
+// DeviceManagementExchangeAccessRule device Access Rules in Exchange.
 type DeviceManagementExchangeAccessRule struct {
     // Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
     accessLevel *DeviceManagementExchangeAccessLevel;
@@ -72,9 +72,6 @@ func (m *DeviceManagementExchangeAccessRule) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
-}
-func (m *DeviceManagementExchangeAccessRule) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeAccessRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

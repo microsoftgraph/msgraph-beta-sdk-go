@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// RemoteActionAudit provides operations to manage the deviceManagement singleton.
+// RemoteActionAudit 
 type RemoteActionAudit struct {
     Entity
     // The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
@@ -204,9 +204,6 @@ func (m *RemoteActionAudit) GetUserName()(*string) {
     } else {
         return m.userName
     }
-}
-func (m *RemoteActionAudit) IsNil()(bool) {
-    return m == nil
 }
 // Serialize serializes information the current object
 func (m *RemoteActionAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {

@@ -27,7 +27,7 @@ type EffectiveRulesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EffectiveRulesRequestBuilderGetQueryParameters the list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+// EffectiveRulesRequestBuilderGetQueryParameters not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 type EffectiveRulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewEffectiveRulesRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
 func (m *EffectiveRulesRequestBuilder) Count()(*i23a0bf033719de754456841e0312e6aaddaba72b270b5c699f76e1b0ef770e93.CountRequestBuilder) {
     return i23a0bf033719de754456841e0312e6aaddaba72b270b5c699f76e1b0ef770e93.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+// CreateGetRequestInformation not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 func (m *EffectiveRulesRequestBuilder) CreateGetRequestInformation(options *EffectiveRulesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *EffectiveRulesRequestBuilder) CreatePostRequestInformation(options *Eff
     }
     return requestInfo, nil
 }
-// Get the list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+// Get not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 func (m *EffectiveRulesRequestBuilder) Get(options *EffectiveRulesRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyRuleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
