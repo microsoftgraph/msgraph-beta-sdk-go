@@ -35,7 +35,7 @@ type PhoneAuthenticationMethodItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters get phoneMethods from me
+// PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters represents the phone registered to a user for authentication.
 type PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get phoneMethods from me
+// CreateGetRequestInformation represents the phone registered to a user for authentication.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *PhoneAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) Delete(options *PhoneAuthe
     }
     return nil
 }
-// Get get phoneMethods from me
+// Get represents the phone registered to a user for authentication.
 func (m *PhoneAuthenticationMethodItemRequestBuilder) Get(options *PhoneAuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PhoneAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

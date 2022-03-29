@@ -7,9 +7,9 @@ import (
 // AttackSimulationRoot provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 type AttackSimulationRoot struct {
     Entity
-    // 
+    // Represents simulation automations created to run on a tenant.
     simulationAutomations []SimulationAutomationable;
-    // Represent attack simulation and training campaign of a tenant.
+    // Represents an attack simulation training campaign in a tenant.
     simulations []Simulationable;
 }
 // NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
@@ -56,7 +56,7 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(interface
     }
     return res
 }
-// GetSimulationAutomations gets the simulationAutomations property value. 
+// GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomation
         return m.simulationAutomations
     }
 }
-// GetSimulations gets the simulations property value. Represent attack simulation and training campaign of a tenant.
+// GetSimulations gets the simulations property value. Represents an attack simulation training campaign in a tenant.
 func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *AttackSimulationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetSimulationAutomations sets the simulationAutomations property value. 
+// SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {
     if m != nil {
         m.simulationAutomations = value
     }
 }
-// SetSimulations sets the simulations property value. Represent attack simulation and training campaign of a tenant.
+// SetSimulations sets the simulations property value. Represents an attack simulation training campaign in a tenant.
 func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
     if m != nil {
         m.simulations = value

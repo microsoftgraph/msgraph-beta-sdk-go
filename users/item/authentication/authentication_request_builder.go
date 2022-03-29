@@ -57,7 +57,7 @@ type AuthenticationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AuthenticationRequestBuilderGetQueryParameters get authentication from users
+// AuthenticationRequestBuilderGetQueryParameters the authentication methods that are supported for the user.
 type AuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -111,7 +111,7 @@ func (m *AuthenticationRequestBuilder) CreateDeleteRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get authentication from users
+// CreateGetRequestInformation the authentication methods that are supported for the user.
 func (m *AuthenticationRequestBuilder) CreateGetRequestInformation(options *AuthenticationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -193,7 +193,7 @@ func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*i467ded3a453
     }
     return i467ded3a4537cbf8edac7f6b51c34bc6260059e41501cb558b59f959687f3ead.NewFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get authentication from users
+// Get the authentication methods that are supported for the user.
 func (m *AuthenticationRequestBuilder) Get(options *AuthenticationRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

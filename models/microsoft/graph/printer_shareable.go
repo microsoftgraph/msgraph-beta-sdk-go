@@ -14,9 +14,11 @@ type PrinterShareable interface {
     GetAllowedUsers()([]Userable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPrinter()(Printerable)
+    GetViewPoint()(PrinterShareViewpointable)
     SetAllowAllUsers(value *bool)()
     SetAllowedGroups(value []Groupable)()
     SetAllowedUsers(value []Userable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPrinter(value Printerable)()
+    SetViewPoint(value PrinterShareViewpointable)()
 }

@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of mobilityManagementPolicy entities.
+// Provides operations to manage the policyRoot singleton.
 type PolicyScope int
 
 const (

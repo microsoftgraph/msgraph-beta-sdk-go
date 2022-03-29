@@ -7,27 +7,27 @@ import (
 // Authentication 
 type Authentication struct {
     Entity
-    // 
+    // Represents the email addresses registered to a user for authentication.
     emailMethods []EmailAuthenticationMethodable;
-    // 
+    // Represents the FIDO2 security keys registered to a user for authentication.
     fido2Methods []Fido2AuthenticationMethodable;
-    // 
+    // Represents all authentication methods registered to a user.
     methods []AuthenticationMethodable;
-    // 
+    // The details of the Microsoft Authenticator app registered to a user for authentication.
     microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable;
     // 
     operations []LongRunningOperationable;
-    // 
+    // Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
     passwordlessMicrosoftAuthenticatorMethods []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable;
-    // 
+    // Represents the details of the password authentication method registered to a user for authentication.
     passwordMethods []PasswordAuthenticationMethodable;
-    // 
+    // Represents the phone registered to a user for authentication.
     phoneMethods []PhoneAuthenticationMethodable;
     // 
     softwareOathMethods []SoftwareOathAuthenticationMethodable;
-    // 
+    // Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
     temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethodable;
-    // 
+    // Represents the Windows Hello for Business authentication method registered to a user for authentication.
     windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable;
 }
 // NewAuthentication instantiates a new authentication and sets the default values.
@@ -41,7 +41,7 @@ func NewAuthentication()(*Authentication) {
 func CreateAuthenticationFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
     return NewAuthentication(), nil
 }
-// GetEmailMethods gets the emailMethods property value. 
+// GetEmailMethods gets the emailMethods property value. Represents the email addresses registered to a user for authentication.
 func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
         return m.emailMethods
     }
 }
-// GetFido2Methods gets the fido2Methods property value. 
+// GetFido2Methods gets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
 func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
     }
     return res
 }
-// GetMethods gets the methods property value. 
+// GetMethods gets the methods property value. Represents all authentication methods registered to a user.
 func (m *Authentication) GetMethods()([]AuthenticationMethodable) {
     if m == nil {
         return nil
@@ -224,7 +224,7 @@ func (m *Authentication) GetMethods()([]AuthenticationMethodable) {
         return m.methods
     }
 }
-// GetMicrosoftAuthenticatorMethods gets the microsoftAuthenticatorMethods property value. 
+// GetMicrosoftAuthenticatorMethods gets the microsoftAuthenticatorMethods property value. The details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *Authentication) GetOperations()([]LongRunningOperationable) {
         return m.operations
     }
 }
-// GetPasswordlessMicrosoftAuthenticatorMethods gets the passwordlessMicrosoftAuthenticatorMethods property value. 
+// GetPasswordlessMicrosoftAuthenticatorMethods gets the passwordlessMicrosoftAuthenticatorMethods property value. Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 func (m *Authentication) GetPasswordlessMicrosoftAuthenticatorMethods()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *Authentication) GetPasswordlessMicrosoftAuthenticatorMethods()([]Passwo
         return m.passwordlessMicrosoftAuthenticatorMethods
     }
 }
-// GetPasswordMethods gets the passwordMethods property value. 
+// GetPasswordMethods gets the passwordMethods property value. Represents the details of the password authentication method registered to a user for authentication.
 func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable
         return m.passwordMethods
     }
 }
-// GetPhoneMethods gets the phoneMethods property value. 
+// GetPhoneMethods gets the phoneMethods property value. Represents the phone registered to a user for authentication.
 func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -272,7 +272,7 @@ func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMe
         return m.softwareOathMethods
     }
 }
-// GetTemporaryAccessPassMethods gets the temporaryAccessPassMethods property value. 
+// GetTemporaryAccessPassMethods gets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -280,7 +280,7 @@ func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAu
         return m.temporaryAccessPassMethods
     }
 }
-// GetWindowsHelloForBusinessMethods gets the windowsHelloForBusinessMethods property value. 
+// GetWindowsHelloForBusinessMethods gets the windowsHelloForBusinessMethods property value. Represents the Windows Hello for Business authentication method registered to a user for authentication.
 func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable) {
     if m == nil {
         return nil
@@ -406,25 +406,25 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// SetEmailMethods sets the emailMethods property value. 
+// SetEmailMethods sets the emailMethods property value. Represents the email addresses registered to a user for authentication.
 func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethodable)() {
     if m != nil {
         m.emailMethods = value
     }
 }
-// SetFido2Methods sets the fido2Methods property value. 
+// SetFido2Methods sets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethodable)() {
     if m != nil {
         m.fido2Methods = value
     }
 }
-// SetMethods sets the methods property value. 
+// SetMethods sets the methods property value. Represents all authentication methods registered to a user.
 func (m *Authentication) SetMethods(value []AuthenticationMethodable)() {
     if m != nil {
         m.methods = value
     }
 }
-// SetMicrosoftAuthenticatorMethods sets the microsoftAuthenticatorMethods property value. 
+// SetMicrosoftAuthenticatorMethods sets the microsoftAuthenticatorMethods property value. The details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)() {
     if m != nil {
         m.microsoftAuthenticatorMethods = value
@@ -436,19 +436,19 @@ func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
         m.operations = value
     }
 }
-// SetPasswordlessMicrosoftAuthenticatorMethods sets the passwordlessMicrosoftAuthenticatorMethods property value. 
+// SetPasswordlessMicrosoftAuthenticatorMethods sets the passwordlessMicrosoftAuthenticatorMethods property value. Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 func (m *Authentication) SetPasswordlessMicrosoftAuthenticatorMethods(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)() {
     if m != nil {
         m.passwordlessMicrosoftAuthenticatorMethods = value
     }
 }
-// SetPasswordMethods sets the passwordMethods property value. 
+// SetPasswordMethods sets the passwordMethods property value. Represents the details of the password authentication method registered to a user for authentication.
 func (m *Authentication) SetPasswordMethods(value []PasswordAuthenticationMethodable)() {
     if m != nil {
         m.passwordMethods = value
     }
 }
-// SetPhoneMethods sets the phoneMethods property value. 
+// SetPhoneMethods sets the phoneMethods property value. Represents the phone registered to a user for authentication.
 func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)() {
     if m != nil {
         m.phoneMethods = value
@@ -460,13 +460,13 @@ func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticati
         m.softwareOathMethods = value
     }
 }
-// SetTemporaryAccessPassMethods sets the temporaryAccessPassMethods property value. 
+// SetTemporaryAccessPassMethods sets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *Authentication) SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)() {
     if m != nil {
         m.temporaryAccessPassMethods = value
     }
 }
-// SetWindowsHelloForBusinessMethods sets the windowsHelloForBusinessMethods property value. 
+// SetWindowsHelloForBusinessMethods sets the windowsHelloForBusinessMethods property value. Represents the Windows Hello for Business authentication method registered to a user for authentication.
 func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethodable)() {
     if m != nil {
         m.windowsHelloForBusinessMethods = value

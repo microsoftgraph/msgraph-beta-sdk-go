@@ -36,7 +36,7 @@ type MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from me
+// MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters the details of the Microsoft Authenticator app registered to a user for authentication.
 type MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -90,7 +90,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get microsoftAuthenticatorMethods from me
+// CreateGetRequestInformation the details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Delete(op
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Device()(*i3a868f9dbfed4c57d058675ee4a7249a023d2400743fa593c978ba0e1973b394.DeviceRequestBuilder) {
     return i3a868f9dbfed4c57d058675ee4a7249a023d2400743fa593c978ba0e1973b394.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get microsoftAuthenticatorMethods from me
+// Get the details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Get(options *MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

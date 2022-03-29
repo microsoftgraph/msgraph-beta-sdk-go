@@ -10,7 +10,7 @@ type UserTrainingEventInfo struct {
     additionalData map[string]interface{};
     // Display name of the training.
     displayName *string;
-    // Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+    // Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     latestTrainingStatus *TrainingStatus;
     // Event details of the training when it was assigned to the user.
     trainingAssignedProperties UserTrainingContentEventInfoable;
@@ -101,7 +101,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
-// GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+// GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
     if m == nil {
         return nil
@@ -186,7 +186,7 @@ func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+// SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
     if m != nil {
         m.latestTrainingStatus = value

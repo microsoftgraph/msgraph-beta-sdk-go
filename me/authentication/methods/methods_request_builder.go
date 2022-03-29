@@ -27,7 +27,7 @@ type MethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// MethodsRequestBuilderGetQueryParameters get methods from me
+// MethodsRequestBuilderGetQueryParameters represents all authentication methods registered to a user.
 type MethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
 func (m *MethodsRequestBuilder) Count()(*ie484ea146daa78626f07b6ba7bf33ab7276cc52fa292dc5ce61b23d8d49506a1.CountRequestBuilder) {
     return ie484ea146daa78626f07b6ba7bf33ab7276cc52fa292dc5ce61b23d8d49506a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get methods from me
+// CreateGetRequestInformation represents all authentication methods registered to a user.
 func (m *MethodsRequestBuilder) CreateGetRequestInformation(options *MethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *MethodsRequestBuilder) CreatePostRequestInformation(options *MethodsReq
     }
     return requestInfo, nil
 }
-// Get get methods from me
+// Get represents all authentication methods registered to a user.
 func (m *MethodsRequestBuilder) Get(options *MethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

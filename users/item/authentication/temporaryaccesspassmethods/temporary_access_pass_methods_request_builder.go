@@ -27,7 +27,7 @@ type TemporaryAccessPassMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TemporaryAccessPassMethodsRequestBuilderGetQueryParameters get temporaryAccessPassMethods from users
+// TemporaryAccessPassMethodsRequestBuilderGetQueryParameters represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 type TemporaryAccessPassMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewTemporaryAccessPassMethodsRequestBuilder(rawUrl string, requestAdapter i
 func (m *TemporaryAccessPassMethodsRequestBuilder) Count()(*ia464409b023dbe60ad922813b3fbe041a5b8409f804a4459ada18f141603d777.CountRequestBuilder) {
     return ia464409b023dbe60ad922813b3fbe041a5b8409f804a4459ada18f141603d777.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get temporaryAccessPassMethods from users
+// CreateGetRequestInformation represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *TemporaryAccessPassMethodsRequestBuilder) CreateGetRequestInformation(options *TemporaryAccessPassMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *TemporaryAccessPassMethodsRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get get temporaryAccessPassMethods from users
+// Get represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *TemporaryAccessPassMethodsRequestBuilder) Get(options *TemporaryAccessPassMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TemporaryAccessPassAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

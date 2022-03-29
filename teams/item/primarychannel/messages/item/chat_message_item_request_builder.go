@@ -4,8 +4,10 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i0576c0f39898532fc04e6824bf28aa7cff8ea81dbbab73b73eefcea817d16a7e "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/softdelete"
     i2c260db421138b4b9d16bc781872e9b2bcc7212fcb3df78fccc27b29fa3afdd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/replies"
     i58f2982db5184e602b87372e05e45b924a186cb16c2823dc58e2e0d4aefc9433 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/hostedcontents"
+    id0944412a69a3f355253d839fae1747dfa15fc71c4f32c0625c32ab3087cb973 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/undosoftdelete"
     i3bf93b00c9d8a64f21168607b55a5b671b8629d16d677ef881f8c67fc3d08c86 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/hostedcontents/item"
     i5b233e37d8baee4d7a51632cc955aa8905e1db9922a952b63423775c3a43570a "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/primarychannel/messages/item/replies/item"
 )
@@ -206,4 +208,10 @@ func (m *ChatMessageItemRequestBuilder) RepliesById(id string)(*i5b233e37d8baee4
         urlTplParams["chatMessage_id1"] = id
     }
     return i5b233e37d8baee4d7a51632cc955aa8905e1db9922a952b63423775c3a43570a.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) SoftDelete()(*i0576c0f39898532fc04e6824bf28aa7cff8ea81dbbab73b73eefcea817d16a7e.SoftDeleteRequestBuilder) {
+    return i0576c0f39898532fc04e6824bf28aa7cff8ea81dbbab73b73eefcea817d16a7e.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*id0944412a69a3f355253d839fae1747dfa15fc71c4f32c0625c32ab3087cb973.UndoSoftDeleteRequestBuilder) {
+    return id0944412a69a3f355253d839fae1747dfa15fc71c4f32c0625c32ab3087cb973.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

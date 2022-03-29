@@ -4,6 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
+    i49cab4a847ee77f1af4a10d78856836b015a94d8c91a83b166ed473a6ba07494 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item/messages/item/replies/item/undosoftdelete"
+    i87f6ce31e849dc850c91509cd949d82d5d14278aaac884b8cba8fa1c1d5e8162 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item/messages/item/replies/item/softdelete"
     iebfc8d1186805e4475367b082da754f57332bd49f42054e885702c10dd9d3143 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item/messages/item/replies/item/hostedcontents"
     i9833d6864d4b6d8f2b15342dc1adc423d2be7ab429f0f98988eaf58d3cac3fd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/item/messages/item/replies/item/hostedcontents/item"
 )
@@ -190,4 +192,10 @@ func (m *ChatMessageItemRequestBuilder) Patch(options *ChatMessageItemRequestBui
         return err
     }
     return nil
+}
+func (m *ChatMessageItemRequestBuilder) SoftDelete()(*i87f6ce31e849dc850c91509cd949d82d5d14278aaac884b8cba8fa1c1d5e8162.SoftDeleteRequestBuilder) {
+    return i87f6ce31e849dc850c91509cd949d82d5d14278aaac884b8cba8fa1c1d5e8162.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*i49cab4a847ee77f1af4a10d78856836b015a94d8c91a83b166ed473a6ba07494.UndoSoftDeleteRequestBuilder) {
+    return i49cab4a847ee77f1af4a10d78856836b015a94d8c91a83b166ed473a6ba07494.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -27,7 +27,7 @@ type SimulationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SimulationsRequestBuilderGetQueryParameters represent attack simulation and training campaign of a tenant.
+// SimulationsRequestBuilderGetQueryParameters represents an attack simulation training campaign in a tenant.
 type SimulationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewSimulationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
 func (m *SimulationsRequestBuilder) Count()(*i29767bef2bf55b79c70b2020c9e89db0bb28f2a4dd8583f1554f25678760279f.CountRequestBuilder) {
     return i29767bef2bf55b79c70b2020c9e89db0bb28f2a4dd8583f1554f25678760279f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represent attack simulation and training campaign of a tenant.
+// CreateGetRequestInformation represents an attack simulation training campaign in a tenant.
 func (m *SimulationsRequestBuilder) CreateGetRequestInformation(options *SimulationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *SimulationsRequestBuilder) CreatePostRequestInformation(options *Simula
     }
     return requestInfo, nil
 }
-// Get represent attack simulation and training campaign of a tenant.
+// Get represents an attack simulation training campaign in a tenant.
 func (m *SimulationsRequestBuilder) Get(options *SimulationsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SimulationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

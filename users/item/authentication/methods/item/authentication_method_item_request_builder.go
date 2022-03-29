@@ -38,7 +38,7 @@ type AuthenticationMethodItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AuthenticationMethodItemRequestBuilderGetQueryParameters get methods from users
+// AuthenticationMethodItemRequestBuilderGetQueryParameters represents all authentication methods registered to a user.
 type AuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -92,7 +92,7 @@ func (m *AuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get methods from users
+// CreateGetRequestInformation represents all authentication methods registered to a user.
 func (m *AuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -152,7 +152,7 @@ func (m *AuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*i08cd5f6d2a
 func (m *AuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*i6be5096e68eb6930981cc451db948a4e546dbf716a6d9ce5edf1a0b87c64a4cd.EnableSmsSignInRequestBuilder) {
     return i6be5096e68eb6930981cc451db948a4e546dbf716a6d9ce5edf1a0b87c64a4cd.NewEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get methods from users
+// Get represents all authentication methods registered to a user.
 func (m *AuthenticationMethodItemRequestBuilder) Get(options *AuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

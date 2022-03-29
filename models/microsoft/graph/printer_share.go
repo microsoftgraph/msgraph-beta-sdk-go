@@ -18,6 +18,8 @@ type PrinterShare struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The printer that this printer share is related to.
     printer Printerable;
+    // 
+    viewPoint PrinterShareViewpointable;
 }
 // NewPrinterShare instantiates a new printerShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
@@ -123,6 +125,16 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         return nil
     }
+    res["viewPoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePrinterShareViewpointFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetViewPoint(val.(PrinterShareViewpointable))
+        }
+        return nil
+    }
     return res
 }
 // GetPrinter gets the printer property value. The printer that this printer share is related to.
@@ -131,6 +143,14 @@ func (m *PrinterShare) GetPrinter()(Printerable) {
         return nil
     } else {
         return m.printer
+    }
+}
+// GetViewPoint gets the viewPoint property value. 
+func (m *PrinterShare) GetViewPoint()(PrinterShareViewpointable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.viewPoint
     }
 }
 // Serialize serializes information the current object
@@ -177,6 +197,12 @@ func (m *PrinterShare) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("viewPoint", m.GetViewPoint())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowAllUsers sets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
@@ -207,5 +233,11 @@ func (m *PrinterShare) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97
 func (m *PrinterShare) SetPrinter(value Printerable)() {
     if m != nil {
         m.printer = value
+    }
+}
+// SetViewPoint sets the viewPoint property value. 
+func (m *PrinterShare) SetViewPoint(value PrinterShareViewpointable)() {
+    if m != nil {
+        m.viewPoint = value
     }
 }
