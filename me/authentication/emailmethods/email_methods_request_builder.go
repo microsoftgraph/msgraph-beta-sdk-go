@@ -27,7 +27,7 @@ type EmailMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EmailMethodsRequestBuilderGetQueryParameters get emailMethods from me
+// EmailMethodsRequestBuilderGetQueryParameters represents the email addresses registered to a user for authentication.
 type EmailMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewEmailMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *EmailMethodsRequestBuilder) Count()(*ibab53cf2815868102ae0462175847b4bf9204d2da61d1276bb9fd9a075b705ae.CountRequestBuilder) {
     return ibab53cf2815868102ae0462175847b4bf9204d2da61d1276bb9fd9a075b705ae.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get emailMethods from me
+// CreateGetRequestInformation represents the email addresses registered to a user for authentication.
 func (m *EmailMethodsRequestBuilder) CreateGetRequestInformation(options *EmailMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *EmailMethodsRequestBuilder) CreatePostRequestInformation(options *Email
     }
     return requestInfo, nil
 }
-// Get get emailMethods from me
+// Get represents the email addresses registered to a user for authentication.
 func (m *EmailMethodsRequestBuilder) Get(options *EmailMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmailAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

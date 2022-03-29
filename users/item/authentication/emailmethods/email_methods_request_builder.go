@@ -27,7 +27,7 @@ type EmailMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EmailMethodsRequestBuilderGetQueryParameters get emailMethods from users
+// EmailMethodsRequestBuilderGetQueryParameters represents the email addresses registered to a user for authentication.
 type EmailMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewEmailMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *EmailMethodsRequestBuilder) Count()(*i049306f98623a0220358f9040dac7e8cc1fbe216b4b76f01f60ae90323aa4a22.CountRequestBuilder) {
     return i049306f98623a0220358f9040dac7e8cc1fbe216b4b76f01f60ae90323aa4a22.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get emailMethods from users
+// CreateGetRequestInformation represents the email addresses registered to a user for authentication.
 func (m *EmailMethodsRequestBuilder) CreateGetRequestInformation(options *EmailMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *EmailMethodsRequestBuilder) CreatePostRequestInformation(options *Email
     }
     return requestInfo, nil
 }
-// Get get emailMethods from users
+// Get represents the email addresses registered to a user for authentication.
 func (m *EmailMethodsRequestBuilder) Get(options *EmailMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmailAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

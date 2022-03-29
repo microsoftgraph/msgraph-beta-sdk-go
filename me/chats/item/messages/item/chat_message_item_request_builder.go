@@ -5,6 +5,8 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i43ca2d478fd8d0c13a1e40866838b59480e161915793db1bc9b8f186fafe966b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/hostedcontents"
+    i4cc99e3bb3eca7b191b592fb411b58b665ec62f59f863310967fddcda939f753 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/softdelete"
+    i5d9f63d54fd491adf4d5dcc502464707c1447d44452ece8a476719fed0e7d4e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/undosoftdelete"
     i83b530ab58fd2e86db39073f225e00e20c06a8b1febf4dc19211b1d5e8f13f01 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/replies"
     i4f8a42a2a0b2ae782a5a5dccdca1b7a4b5cda360e48e4d2a7fc38be40a22e1df "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/replies/item"
     i64eda43b61ebd8abf184713d19fb8592f07da0b8d76264c2a08b2b2a773a9bb7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/hostedcontents/item"
@@ -206,4 +208,10 @@ func (m *ChatMessageItemRequestBuilder) RepliesById(id string)(*i4f8a42a2a0b2ae7
         urlTplParams["chatMessage_id1"] = id
     }
     return i4f8a42a2a0b2ae782a5a5dccdca1b7a4b5cda360e48e4d2a7fc38be40a22e1df.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) SoftDelete()(*i4cc99e3bb3eca7b191b592fb411b58b665ec62f59f863310967fddcda939f753.SoftDeleteRequestBuilder) {
+    return i4cc99e3bb3eca7b191b592fb411b58b665ec62f59f863310967fddcda939f753.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*i5d9f63d54fd491adf4d5dcc502464707c1447d44452ece8a476719fed0e7d4e5.UndoSoftDeleteRequestBuilder) {
+    return i5d9f63d54fd491adf4d5dcc502464707c1447d44452ece8a476719fed0e7d4e5.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

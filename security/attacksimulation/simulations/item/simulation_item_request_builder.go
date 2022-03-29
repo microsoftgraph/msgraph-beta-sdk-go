@@ -35,7 +35,7 @@ type SimulationItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SimulationItemRequestBuilderGetQueryParameters represent attack simulation and training campaign of a tenant.
+// SimulationItemRequestBuilderGetQueryParameters represents an attack simulation training campaign in a tenant.
 type SimulationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *SimulationItemRequestBuilder) CreateDeleteRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represent attack simulation and training campaign of a tenant.
+// CreateGetRequestInformation represents an attack simulation training campaign in a tenant.
 func (m *SimulationItemRequestBuilder) CreateGetRequestInformation(options *SimulationItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *SimulationItemRequestBuilder) Delete(options *SimulationItemRequestBuil
     }
     return nil
 }
-// Get represent attack simulation and training campaign of a tenant.
+// Get represents an attack simulation training campaign in a tenant.
 func (m *SimulationItemRequestBuilder) Get(options *SimulationItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Simulationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

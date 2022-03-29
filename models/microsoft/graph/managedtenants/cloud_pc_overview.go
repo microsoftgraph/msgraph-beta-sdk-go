@@ -41,10 +41,14 @@ type CloudPcOverview struct {
     tenantDisplayName *string;
     // 
     tenantId *string;
+    // 
+    totalBusinessLicenses *int32;
     // The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
     totalCloudPcConnectionStatus *int32;
     // The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
     totalCloudPcStatus *int32;
+    // 
+    totalEnterpriseLicenses *int32;
 }
 // NewCloudPcOverview instantiates a new cloudPcOverview and sets the default values.
 func NewCloudPcOverview()(*CloudPcOverview) {
@@ -220,6 +224,16 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
+    res["totalBusinessLicenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalBusinessLicenses(val)
+        }
+        return nil
+    }
     res["totalCloudPcConnectionStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -237,6 +251,16 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         if val != nil {
             m.SetTotalCloudPcStatus(val)
+        }
+        return nil
+    }
+    res["totalEnterpriseLicenses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalEnterpriseLicenses(val)
         }
         return nil
     }
@@ -370,6 +394,14 @@ func (m *CloudPcOverview) GetTenantId()(*string) {
         return m.tenantId
     }
 }
+// GetTotalBusinessLicenses gets the totalBusinessLicenses property value. 
+func (m *CloudPcOverview) GetTotalBusinessLicenses()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalBusinessLicenses
+    }
+}
 // GetTotalCloudPcConnectionStatus gets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) GetTotalCloudPcConnectionStatus()(*int32) {
     if m == nil {
@@ -384,6 +416,14 @@ func (m *CloudPcOverview) GetTotalCloudPcStatus()(*int32) {
         return nil
     } else {
         return m.totalCloudPcStatus
+    }
+}
+// GetTotalEnterpriseLicenses gets the totalEnterpriseLicenses property value. 
+func (m *CloudPcOverview) GetTotalEnterpriseLicenses()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.totalEnterpriseLicenses
     }
 }
 // Serialize serializes information the current object
@@ -489,6 +529,12 @@ func (m *CloudPcOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
+        err = writer.WriteInt32Value("totalBusinessLicenses", m.GetTotalBusinessLicenses())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("totalCloudPcConnectionStatus", m.GetTotalCloudPcConnectionStatus())
         if err != nil {
             return err
@@ -496,6 +542,12 @@ func (m *CloudPcOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     {
         err = writer.WriteInt32Value("totalCloudPcStatus", m.GetTotalCloudPcStatus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("totalEnterpriseLicenses", m.GetTotalEnterpriseLicenses())
         if err != nil {
             return err
         }
@@ -598,6 +650,12 @@ func (m *CloudPcOverview) SetTenantId(value *string)() {
         m.tenantId = value
     }
 }
+// SetTotalBusinessLicenses sets the totalBusinessLicenses property value. 
+func (m *CloudPcOverview) SetTotalBusinessLicenses(value *int32)() {
+    if m != nil {
+        m.totalBusinessLicenses = value
+    }
+}
 // SetTotalCloudPcConnectionStatus sets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) SetTotalCloudPcConnectionStatus(value *int32)() {
     if m != nil {
@@ -608,5 +666,11 @@ func (m *CloudPcOverview) SetTotalCloudPcConnectionStatus(value *int32)() {
 func (m *CloudPcOverview) SetTotalCloudPcStatus(value *int32)() {
     if m != nil {
         m.totalCloudPcStatus = value
+    }
+}
+// SetTotalEnterpriseLicenses sets the totalEnterpriseLicenses property value. 
+func (m *CloudPcOverview) SetTotalEnterpriseLicenses(value *int32)() {
+    if m != nil {
+        m.totalEnterpriseLicenses = value
     }
 }

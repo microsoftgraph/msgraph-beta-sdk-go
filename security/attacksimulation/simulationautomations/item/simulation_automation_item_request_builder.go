@@ -37,7 +37,7 @@ type SimulationAutomationItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SimulationAutomationItemRequestBuilderGetQueryParameters get simulationAutomations from security
+// SimulationAutomationItemRequestBuilderGetQueryParameters represents simulation automations created to run on a tenant.
 type SimulationAutomationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -91,7 +91,7 @@ func (m *SimulationAutomationItemRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get simulationAutomations from security
+// CreateGetRequestInformation represents simulation automations created to run on a tenant.
 func (m *SimulationAutomationItemRequestBuilder) CreateGetRequestInformation(options *SimulationAutomationItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,7 +145,7 @@ func (m *SimulationAutomationItemRequestBuilder) Delete(options *SimulationAutom
     }
     return nil
 }
-// Get get simulationAutomations from security
+// Get represents simulation automations created to run on a tenant.
 func (m *SimulationAutomationItemRequestBuilder) Get(options *SimulationAutomationItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SimulationAutomationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

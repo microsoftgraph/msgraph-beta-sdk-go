@@ -27,7 +27,7 @@ type RunsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RunsRequestBuilderGetQueryParameters get runs from security
+// RunsRequestBuilderGetQueryParameters a collection of simulation automation runs.
 type RunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewRunsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *RunsRequestBuilder) Count()(*i9c2b7d34d3c11ca0899ee8bdb7dcff0cd35421c8f52f6f156ec0866085a32b8d.CountRequestBuilder) {
     return i9c2b7d34d3c11ca0899ee8bdb7dcff0cd35421c8f52f6f156ec0866085a32b8d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get runs from security
+// CreateGetRequestInformation a collection of simulation automation runs.
 func (m *RunsRequestBuilder) CreateGetRequestInformation(options *RunsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *RunsRequestBuilder) CreatePostRequestInformation(options *RunsRequestBu
     }
     return requestInfo, nil
 }
-// Get get runs from security
+// Get a collection of simulation automation runs.
 func (m *RunsRequestBuilder) Get(options *RunsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SimulationAutomationRunCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

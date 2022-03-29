@@ -11,6 +11,8 @@ type CloudPcDevice struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
     cloudPcStatus *string;
+    // 
+    deviceSpecification *string;
     // The display name for the cloud PC. Required. Read-only.
     displayName *string;
     // Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
@@ -23,6 +25,8 @@ type CloudPcDevice struct {
     provisioningPolicyId *string;
     // The service plan name for the cloud PC. Required. Read-only.
     servicePlanName *string;
+    // 
+    servicePlanType *string;
     // The display name for the managed tenant. Required. Read-only.
     tenantDisplayName *string;
     // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
@@ -49,6 +53,14 @@ func (m *CloudPcDevice) GetCloudPcStatus()(*string) {
         return m.cloudPcStatus
     }
 }
+// GetDeviceSpecification gets the deviceSpecification property value. 
+func (m *CloudPcDevice) GetDeviceSpecification()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceSpecification
+    }
+}
 // GetDisplayName gets the displayName property value. The display name for the cloud PC. Required. Read-only.
 func (m *CloudPcDevice) GetDisplayName()(*string) {
     if m == nil {
@@ -67,6 +79,16 @@ func (m *CloudPcDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         if val != nil {
             m.SetCloudPcStatus(val)
+        }
+        return nil
+    }
+    res["deviceSpecification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceSpecification(val)
         }
         return nil
     }
@@ -127,6 +149,16 @@ func (m *CloudPcDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         if val != nil {
             m.SetServicePlanName(val)
+        }
+        return nil
+    }
+    res["servicePlanType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePlanType(val)
         }
         return nil
     }
@@ -202,6 +234,14 @@ func (m *CloudPcDevice) GetServicePlanName()(*string) {
         return m.servicePlanName
     }
 }
+// GetServicePlanType gets the servicePlanType property value. 
+func (m *CloudPcDevice) GetServicePlanType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePlanType
+    }
+}
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *CloudPcDevice) GetTenantDisplayName()(*string) {
     if m == nil {
@@ -234,6 +274,12 @@ func (m *CloudPcDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     {
         err = writer.WriteStringValue("cloudPcStatus", m.GetCloudPcStatus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("deviceSpecification", m.GetDeviceSpecification())
         if err != nil {
             return err
         }
@@ -275,6 +321,12 @@ func (m *CloudPcDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        err = writer.WriteStringValue("servicePlanType", m.GetServicePlanType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantDisplayName", m.GetTenantDisplayName())
         if err != nil {
             return err
@@ -298,6 +350,12 @@ func (m *CloudPcDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 func (m *CloudPcDevice) SetCloudPcStatus(value *string)() {
     if m != nil {
         m.cloudPcStatus = value
+    }
+}
+// SetDeviceSpecification sets the deviceSpecification property value. 
+func (m *CloudPcDevice) SetDeviceSpecification(value *string)() {
+    if m != nil {
+        m.deviceSpecification = value
     }
 }
 // SetDisplayName sets the displayName property value. The display name for the cloud PC. Required. Read-only.
@@ -334,6 +392,12 @@ func (m *CloudPcDevice) SetProvisioningPolicyId(value *string)() {
 func (m *CloudPcDevice) SetServicePlanName(value *string)() {
     if m != nil {
         m.servicePlanName = value
+    }
+}
+// SetServicePlanType sets the servicePlanType property value. 
+func (m *CloudPcDevice) SetServicePlanType(value *string)() {
+    if m != nil {
+        m.servicePlanType = value
     }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.

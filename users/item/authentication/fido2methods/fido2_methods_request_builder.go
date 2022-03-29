@@ -27,7 +27,7 @@ type Fido2MethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Fido2MethodsRequestBuilderGetQueryParameters get fido2Methods from users
+// Fido2MethodsRequestBuilderGetQueryParameters represents the FIDO2 security keys registered to a user for authentication.
 type Fido2MethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewFido2MethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *Fido2MethodsRequestBuilder) Count()(*i24d8d042c34e6c85fd6d9165b1a6f89bcb1c0adbd2b3e47c9b6fa49a5377c685.CountRequestBuilder) {
     return i24d8d042c34e6c85fd6d9165b1a6f89bcb1c0adbd2b3e47c9b6fa49a5377c685.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get fido2Methods from users
+// CreateGetRequestInformation represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformation(options *Fido2MethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *Fido2MethodsRequestBuilder) CreatePostRequestInformation(options *Fido2
     }
     return requestInfo, nil
 }
-// Get get fido2Methods from users
+// Get represents the FIDO2 security keys registered to a user for authentication.
 func (m *Fido2MethodsRequestBuilder) Get(options *Fido2MethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Fido2AuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

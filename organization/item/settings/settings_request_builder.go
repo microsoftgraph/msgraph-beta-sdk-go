@@ -7,6 +7,7 @@ import (
     i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/profilecardproperties"
     ib5d9323a069790a40d8250ed97dce0595a704227bc01a0ff026952b59c07b6fa "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/peopleinsights"
     ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/iteminsights"
+    idad8116dcf0f508f2d5648089e624f18e9c892a32da2f4cd31cf8dfbb2acefad "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/microsoftapplicationdataaccess"
     i164665736586dec4189f70a600626997bf7f7b32e1d5debbea1adff37d4860df "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/profilecardproperties/item"
 )
 
@@ -165,6 +166,9 @@ func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(
 }
 func (m *SettingsRequestBuilder) ItemInsights()(*ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7.ItemInsightsRequestBuilder) {
     return ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7.NewItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *SettingsRequestBuilder) MicrosoftApplicationDataAccess()(*idad8116dcf0f508f2d5648089e624f18e9c892a32da2f4cd31cf8dfbb2acefad.MicrosoftApplicationDataAccessRequestBuilder) {
+    return idad8116dcf0f508f2d5648089e624f18e9c892a32da2f4cd31cf8dfbb2acefad.NewMicrosoftApplicationDataAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property settings in organization
 func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptions)(error) {

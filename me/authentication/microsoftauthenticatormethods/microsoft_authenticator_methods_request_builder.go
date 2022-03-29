@@ -27,7 +27,7 @@ type MicrosoftAuthenticatorMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from me
+// MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters the details of the Microsoft Authenticator app registered to a user for authentication.
 type MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, requestAdapte
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i7a2ffe1e99abadc8d382ec7ba85e86227f9987d7d4c72118bfee422c83fe33ba.CountRequestBuilder) {
     return i7a2ffe1e99abadc8d382ec7ba85e86227f9987d7d4c72118bfee422c83fe33ba.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get microsoftAuthenticatorMethods from me
+// CreateGetRequestInformation the details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Get get microsoftAuthenticatorMethods from me
+// Get the details of the Microsoft Authenticator app registered to a user for authentication.
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Get(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

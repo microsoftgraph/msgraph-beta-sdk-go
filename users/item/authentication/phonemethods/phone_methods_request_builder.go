@@ -27,7 +27,7 @@ type PhoneMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PhoneMethodsRequestBuilderGetQueryParameters get phoneMethods from users
+// PhoneMethodsRequestBuilderGetQueryParameters represents the phone registered to a user for authentication.
 type PhoneMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewPhoneMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *PhoneMethodsRequestBuilder) Count()(*i96e48cd5d3eecc8545b4329a91956d778616a5a0bea2327670f71e7ed998713a.CountRequestBuilder) {
     return i96e48cd5d3eecc8545b4329a91956d778616a5a0bea2327670f71e7ed998713a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get phoneMethods from users
+// CreateGetRequestInformation represents the phone registered to a user for authentication.
 func (m *PhoneMethodsRequestBuilder) CreateGetRequestInformation(options *PhoneMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *PhoneMethodsRequestBuilder) CreatePostRequestInformation(options *Phone
     }
     return requestInfo, nil
 }
-// Get get phoneMethods from users
+// Get represents the phone registered to a user for authentication.
 func (m *PhoneMethodsRequestBuilder) Get(options *PhoneMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PhoneAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

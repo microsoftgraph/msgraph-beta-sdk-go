@@ -27,7 +27,7 @@ type WindowsHelloForBusinessMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters get windowsHelloForBusinessMethods from me
+// WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters represents the Windows Hello for Business authentication method registered to a user for authentication.
 type WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewWindowsHelloForBusinessMethodsRequestBuilder(rawUrl string, requestAdapt
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Count()(*ie11455112354981d03b7819172c214663e4ba8de7c5cf9c62aae3900e3444ee3.CountRequestBuilder) {
     return ie11455112354981d03b7819172c214663e4ba8de7c5cf9c62aae3900e3444ee3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get windowsHelloForBusinessMethods from me
+// CreateGetRequestInformation represents the Windows Hello for Business authentication method registered to a user for authentication.
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformation(options *WindowsHelloForBusinessMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get get windowsHelloForBusinessMethods from me
+// Get represents the Windows Hello for Business authentication method registered to a user for authentication.
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Get(options *WindowsHelloForBusinessMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

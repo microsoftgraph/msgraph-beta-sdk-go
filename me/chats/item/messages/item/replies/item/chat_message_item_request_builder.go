@@ -5,6 +5,8 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i995c2183abffc12a9c115fc8199d3baed936295faac43b2a925a4307513ca117 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/replies/item/hostedcontents"
+    if8cc4e93fd8242fee2c6905b54e959e088061d4afb3964dac71a9c7356b365bc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/replies/item/softdelete"
+    iff2b9686a59421e4c20fc67669234156886d6047745cbbdff216e5e8fd0c78cd "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/replies/item/undosoftdelete"
     i29a6d5a1a0fdbbc23302be7ea4e79d5e9238be13e0064c5a2adb6cef48c47500 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item/replies/item/hostedcontents/item"
 )
 
@@ -190,4 +192,10 @@ func (m *ChatMessageItemRequestBuilder) Patch(options *ChatMessageItemRequestBui
         return err
     }
     return nil
+}
+func (m *ChatMessageItemRequestBuilder) SoftDelete()(*if8cc4e93fd8242fee2c6905b54e959e088061d4afb3964dac71a9c7356b365bc.SoftDeleteRequestBuilder) {
+    return if8cc4e93fd8242fee2c6905b54e959e088061d4afb3964dac71a9c7356b365bc.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*iff2b9686a59421e4c20fc67669234156886d6047745cbbdff216e5e8fd0c78cd.UndoSoftDeleteRequestBuilder) {
+    return iff2b9686a59421e4c20fc67669234156886d6047745cbbdff216e5e8fd0c78cd.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -30,7 +30,7 @@ type User struct {
     assignedLicenses []AssignedLicenseable;
     // The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
     assignedPlans []AssignedPlanable;
-    // 
+    // The authentication methods that are supported for the user.
     authentication Authenticationable;
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -232,6 +232,8 @@ type User struct {
     preferredName *string;
     // 
     presence Presenceable;
+    // 
+    print UserPrintable;
     // Represents properties that are descriptive of a user in a tenant.
     profile Profileable;
     // The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
@@ -384,7 +386,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
         return m.assignedPlans
     }
 }
-// GetAuthentication gets the authentication property value. 
+// GetAuthentication gets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) GetAuthentication()(Authenticationable) {
     if m == nil {
         return nil
@@ -2015,6 +2017,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["print"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserPrintFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrint(val.(UserPrintable))
+        }
+        return nil
+    }
     res["profile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(CreateProfileFromDiscriminatorValue)
         if err != nil {
@@ -2823,6 +2835,14 @@ func (m *User) GetPresence()(Presenceable) {
         return nil
     } else {
         return m.presence
+    }
+}
+// GetPrint gets the print property value. 
+func (m *User) GetPrint()(UserPrintable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.print
     }
 }
 // GetProfile gets the profile property value. Represents properties that are descriptive of a user in a tenant.
@@ -3892,6 +3912,12 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
+        err = writer.WriteObjectValue("print", m.GetPrint())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("profile", m.GetProfile())
         if err != nil {
             return err
@@ -4143,7 +4169,7 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
         m.assignedPlans = value
     }
 }
-// SetAuthentication sets the authentication property value. 
+// SetAuthentication sets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) SetAuthentication(value Authenticationable)() {
     if m != nil {
         m.authentication = value
@@ -4747,6 +4773,12 @@ func (m *User) SetPreferredName(value *string)() {
 func (m *User) SetPresence(value Presenceable)() {
     if m != nil {
         m.presence = value
+    }
+}
+// SetPrint sets the print property value. 
+func (m *User) SetPrint(value UserPrintable)() {
+    if m != nil {
+        m.print = value
     }
 }
 // SetProfile sets the profile property value. Represents properties that are descriptive of a user in a tenant.

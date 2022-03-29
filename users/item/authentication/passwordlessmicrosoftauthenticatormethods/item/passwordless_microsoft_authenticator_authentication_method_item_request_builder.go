@@ -36,7 +36,7 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGet
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters get passwordlessMicrosoftAuthenticatorMethods from users
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -90,7 +90,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilde
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get passwordlessMicrosoftAuthenticatorMethods from users
+// CreateGetRequestInformation represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +147,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilde
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Device()(*i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796.DeviceRequestBuilder) {
     return i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get passwordlessMicrosoftAuthenticatorMethods from users
+// Get represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Get(options *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

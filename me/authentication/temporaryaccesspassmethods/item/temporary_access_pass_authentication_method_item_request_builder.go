@@ -35,7 +35,7 @@ type TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters get temporaryAccessPassMethods from me
+// TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 type TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get temporaryAccessPassMethods from me
+// CreateGetRequestInformation represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) Delete(optio
     }
     return nil
 }
-// Get get temporaryAccessPassMethods from me
+// Get represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) Get(options *TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TemporaryAccessPassAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

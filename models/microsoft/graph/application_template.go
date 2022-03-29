@@ -15,6 +15,8 @@ type ApplicationTemplate struct {
     displayName *string;
     // The home page URL of the application.
     homePageUrl *string;
+    // 
+    informationalUrls InformationalUrlsable;
     // The URL to get the logo for this application.
     logoUrl *string;
     // The name of the publisher for this application.
@@ -106,6 +108,16 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
+    res["informationalUrls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInformationalUrlsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInformationalUrls(val.(InformationalUrlsable))
+        }
+        return nil
+    }
     res["logoUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -162,6 +174,14 @@ func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
         return nil
     } else {
         return m.homePageUrl
+    }
+}
+// GetInformationalUrls gets the informationalUrls property value. 
+func (m *ApplicationTemplate) GetInformationalUrls()(InformationalUrlsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.informationalUrls
     }
 }
 // GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
@@ -227,6 +247,12 @@ func (m *ApplicationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
+        err = writer.WriteObjectValue("informationalUrls", m.GetInformationalUrls())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("logoUrl", m.GetLogoUrl())
         if err != nil {
             return err
@@ -274,6 +300,12 @@ func (m *ApplicationTemplate) SetDisplayName(value *string)() {
 func (m *ApplicationTemplate) SetHomePageUrl(value *string)() {
     if m != nil {
         m.homePageUrl = value
+    }
+}
+// SetInformationalUrls sets the informationalUrls property value. 
+func (m *ApplicationTemplate) SetInformationalUrls(value InformationalUrlsable)() {
+    if m != nil {
+        m.informationalUrls = value
     }
 }
 // SetLogoUrl sets the logoUrl property value. The URL to get the logo for this application.

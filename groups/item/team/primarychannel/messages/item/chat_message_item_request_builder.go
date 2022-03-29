@@ -6,6 +6,8 @@ import (
     i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i1116cb75b3b19b63ebdf83290c5f2d0dc714ded480993f05ae66ddc3e89ea7bb "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/primarychannel/messages/item/replies"
     i1c1f5fbe272fa1c738549e9157d354c583ef934606eb2190c560935f04840e85 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/primarychannel/messages/item/hostedcontents"
+    i1e73773c260988fade62dcb5c74ddb0cc504e4d92e8f884a55026ab8922e095d "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/primarychannel/messages/item/softdelete"
+    ib309877ab98304e089976c2e129245da83e9b970b36af023c3608bbdc5a085fc "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/primarychannel/messages/item/undosoftdelete"
     i292147d75cc9923ea31645e51a77438564dc9e43815ef2055c3ad8fd93593d26 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/primarychannel/messages/item/hostedcontents/item"
     i3643651607504c63b366c9aed384268471c72775a1105691fb5b7977fa27cc47 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/primarychannel/messages/item/replies/item"
 )
@@ -206,4 +208,10 @@ func (m *ChatMessageItemRequestBuilder) RepliesById(id string)(*i3643651607504c6
         urlTplParams["chatMessage_id1"] = id
     }
     return i3643651607504c63b366c9aed384268471c72775a1105691fb5b7977fa27cc47.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) SoftDelete()(*i1e73773c260988fade62dcb5c74ddb0cc504e4d92e8f884a55026ab8922e095d.SoftDeleteRequestBuilder) {
+    return i1e73773c260988fade62dcb5c74ddb0cc504e4d92e8f884a55026ab8922e095d.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*ib309877ab98304e089976c2e129245da83e9b970b36af023c3608bbdc5a085fc.UndoSoftDeleteRequestBuilder) {
+    return ib309877ab98304e089976c2e129245da83e9b970b36af023c3608bbdc5a085fc.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

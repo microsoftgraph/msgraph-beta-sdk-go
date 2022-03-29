@@ -27,7 +27,7 @@ type PasswordMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PasswordMethodsRequestBuilderGetQueryParameters get passwordMethods from users
+// PasswordMethodsRequestBuilderGetQueryParameters represents the details of the password authentication method registered to a user for authentication.
 type PasswordMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -79,7 +79,7 @@ func NewPasswordMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171
 func (m *PasswordMethodsRequestBuilder) Count()(*i59d7e57028bdf31de9352f5d236261018335a164876777101da63c318d8c723d.CountRequestBuilder) {
     return i59d7e57028bdf31de9352f5d236261018335a164876777101da63c318d8c723d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get passwordMethods from users
+// CreateGetRequestInformation represents the details of the password authentication method registered to a user for authentication.
 func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformation(options *PasswordMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *PasswordMethodsRequestBuilder) CreatePostRequestInformation(options *Pa
     }
     return requestInfo, nil
 }
-// Get get passwordMethods from users
+// Get represents the details of the password authentication method registered to a user for authentication.
 func (m *PasswordMethodsRequestBuilder) Get(options *PasswordMethodsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

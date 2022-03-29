@@ -35,7 +35,7 @@ type PasswordAuthenticationMethodItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters get passwordMethods from me
+// PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters represents the details of the password authentication method registered to a user for authentication.
 type PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -89,7 +89,7 @@ func (m *PasswordAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get passwordMethods from me
+// CreateGetRequestInformation represents the details of the password authentication method registered to a user for authentication.
 func (m *PasswordAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation(options *PasswordAuthenticationMethodItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *PasswordAuthenticationMethodItemRequestBuilder) Delete(options *Passwor
     }
     return nil
 }
-// Get get passwordMethods from me
+// Get represents the details of the password authentication method registered to a user for authentication.
 func (m *PasswordAuthenticationMethodItemRequestBuilder) Get(options *PasswordAuthenticationMethodItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

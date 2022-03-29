@@ -9,6 +9,8 @@ type OrganizationSettings struct {
     Entity
     // Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
     itemInsights InsightsSettingsable;
+    // 
+    microsoftApplicationDataAccess MicrosoftApplicationDataAccessSettingsable;
     // Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
     peopleInsights InsightsSettingsable;
     // Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
@@ -35,6 +37,16 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(interface
         }
         if val != nil {
             m.SetItemInsights(val.(InsightsSettingsable))
+        }
+        return nil
+    }
+    res["microsoftApplicationDataAccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrosoftApplicationDataAccess(val.(MicrosoftApplicationDataAccessSettingsable))
         }
         return nil
     }
@@ -72,6 +84,14 @@ func (m *OrganizationSettings) GetItemInsights()(InsightsSettingsable) {
         return m.itemInsights
     }
 }
+// GetMicrosoftApplicationDataAccess gets the microsoftApplicationDataAccess property value. 
+func (m *OrganizationSettings) GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.microsoftApplicationDataAccess
+    }
+}
 // GetPeopleInsights gets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
     if m == nil {
@@ -101,6 +121,12 @@ func (m *OrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
+        err = writer.WriteObjectValue("microsoftApplicationDataAccess", m.GetMicrosoftApplicationDataAccess())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("peopleInsights", m.GetPeopleInsights())
         if err != nil {
             return err
@@ -122,6 +148,12 @@ func (m *OrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 func (m *OrganizationSettings) SetItemInsights(value InsightsSettingsable)() {
     if m != nil {
         m.itemInsights = value
+    }
+}
+// SetMicrosoftApplicationDataAccess sets the microsoftApplicationDataAccess property value. 
+func (m *OrganizationSettings) SetMicrosoftApplicationDataAccess(value MicrosoftApplicationDataAccessSettingsable)() {
+    if m != nil {
+        m.microsoftApplicationDataAccess = value
     }
 }
 // SetPeopleInsights sets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.

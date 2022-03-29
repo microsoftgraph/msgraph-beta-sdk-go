@@ -15,7 +15,7 @@ type UserTrainingStatusInfo struct {
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Display name of the assigned training.
     displayName *string;
-    // Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+    // Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     trainingStatus *TrainingStatus;
 }
 // NewUserTrainingStatusInfo instantiates a new userTrainingStatusInfo and sets the default values.
@@ -106,7 +106,7 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
-// GetTrainingStatus gets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+// GetTrainingStatus gets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *UserTrainingStatusInfo) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetTrainingStatus sets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+// SetTrainingStatus sets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
     if m != nil {
         m.trainingStatus = value

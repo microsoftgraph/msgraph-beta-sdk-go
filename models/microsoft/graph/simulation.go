@@ -12,7 +12,7 @@ type Simulation struct {
     attackTechnique *SimulationAttackTechnique;
     // Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
     attackType *SimulationAttackType;
-    // 
+    // Unique identifier for the attack simulation automation.
     automationId *string;
     // Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -36,7 +36,7 @@ type Simulation struct {
     payloadDeliveryPlatform *PayloadDeliveryPlatform;
     // Report of the attack simulation and training campaign.
     report SimulationReportable;
-    // Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
+    // Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
     status *SimulationStatus;
 }
 // NewSimulation instantiates a new simulation and sets the default values.
@@ -66,7 +66,7 @@ func (m *Simulation) GetAttackType()(*SimulationAttackType) {
         return m.attackType
     }
 }
-// GetAutomationId gets the automationId property value. 
+// GetAutomationId gets the automationId property value. Unique identifier for the attack simulation automation.
 func (m *Simulation) GetAutomationId()(*string) {
     if m == nil {
         return nil
@@ -317,7 +317,7 @@ func (m *Simulation) GetReport()(SimulationReportable) {
         return m.report
     }
 }
-// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
+// GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
 func (m *Simulation) GetStatus()(*SimulationStatus) {
     if m == nil {
         return nil
@@ -439,7 +439,7 @@ func (m *Simulation) SetAttackType(value *SimulationAttackType)() {
         m.attackType = value
     }
 }
-// SetAutomationId sets the automationId property value. 
+// SetAutomationId sets the automationId property value. Unique identifier for the attack simulation automation.
 func (m *Simulation) SetAutomationId(value *string)() {
     if m != nil {
         m.automationId = value
@@ -511,7 +511,7 @@ func (m *Simulation) SetReport(value SimulationReportable)() {
         m.report = value
     }
 }
-// SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
+// SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
 func (m *Simulation) SetStatus(value *SimulationStatus)() {
     if m != nil {
         m.status = value
