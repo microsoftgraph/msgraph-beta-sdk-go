@@ -1,0 +1,55 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// SalesQuoteLineable 
+type SalesQuoteLineable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccount()(Accountable)
+    GetAccountId()(*string)
+    GetAmountExcludingTax()(*float64)
+    GetAmountIncludingTax()(*float64)
+    GetDescription()(*string)
+    GetDiscountAmount()(*float64)
+    GetDiscountAppliedBeforeTax()(*bool)
+    GetDiscountPercent()(*float64)
+    GetDocumentId()(*string)
+    GetItem()(Itemable)
+    GetItemId()(*string)
+    GetLineType()(*string)
+    GetNetAmount()(*float64)
+    GetNetAmountIncludingTax()(*float64)
+    GetNetTaxAmount()(*float64)
+    GetQuantity()(*float64)
+    GetSequence()(*int32)
+    GetTaxCode()(*string)
+    GetTaxPercent()(*float64)
+    GetTotalTaxAmount()(*float64)
+    GetUnitOfMeasureId()(*string)
+    GetUnitPrice()(*float64)
+    SetAccount(value Accountable)()
+    SetAccountId(value *string)()
+    SetAmountExcludingTax(value *float64)()
+    SetAmountIncludingTax(value *float64)()
+    SetDescription(value *string)()
+    SetDiscountAmount(value *float64)()
+    SetDiscountAppliedBeforeTax(value *bool)()
+    SetDiscountPercent(value *float64)()
+    SetDocumentId(value *string)()
+    SetItem(value Itemable)()
+    SetItemId(value *string)()
+    SetLineType(value *string)()
+    SetNetAmount(value *float64)()
+    SetNetAmountIncludingTax(value *float64)()
+    SetNetTaxAmount(value *float64)()
+    SetQuantity(value *float64)()
+    SetSequence(value *int32)()
+    SetTaxCode(value *string)()
+    SetTaxPercent(value *float64)()
+    SetTotalTaxAmount(value *float64)()
+    SetUnitOfMeasureId(value *string)()
+    SetUnitPrice(value *float64)()
+}

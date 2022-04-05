@@ -1,0 +1,66 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// ManagementConditionExpressionString 
+type ManagementConditionExpressionString struct {
+    ManagementConditionExpression
+    // The management condition statement expression string value.
+    value *string;
+}
+// NewManagementConditionExpressionString instantiates a new managementConditionExpressionString and sets the default values.
+func NewManagementConditionExpressionString()(*ManagementConditionExpressionString) {
+    m := &ManagementConditionExpressionString{
+        ManagementConditionExpression: *NewManagementConditionExpression(),
+    }
+    return m
+}
+// CreateManagementConditionExpressionStringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateManagementConditionExpressionStringFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewManagementConditionExpressionString(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ManagementConditionExpressionString) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.ManagementConditionExpression.GetFieldDeserializers()
+    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetValue(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetValue gets the value property value. The management condition statement expression string value.
+func (m *ManagementConditionExpressionString) GetValue()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.value
+    }
+}
+// Serialize serializes information the current object
+func (m *ManagementConditionExpressionString) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.ManagementConditionExpression.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("value", m.GetValue())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetValue sets the value property value. The management condition statement expression string value.
+func (m *ManagementConditionExpressionString) SetValue(value *string)() {
+    if m != nil {
+        m.value = value
+    }
+}

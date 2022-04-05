@@ -1,10 +1,11 @@
 package entitlementmanagement
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1baa975bee8bc1fcf62ee7c7d05b837d65d8d022e7556de9e284932ea41c5624 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedules"
     i3b3dd9d3bb14498220a703a0b62e7d53250e7202ee87f41c8d4aff4c9404d695 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/transitiveroleassignments"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5e09c2b6a4bc955be405d7fbb453204f96818f8aae7508864d080577c5491cd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleeligibilityschedulerequests"
     i75ab2bc44492a09208082e3507fb5b1add85563cc4e6f15226038f431107cc36 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/resourcenamespaces"
     i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/rolescheduleswithdirectoryscopeidwithappscopeidwithprincipalidwithroledefinitionid"
@@ -19,7 +20,6 @@ import (
     i1094763ed645fa459b11fe2fd0dbbb4cd5b4e5abf8fb494633f130f88a198ab7 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedulerequests/item"
     i1f3fe61534b224c6fac2a1c5c69508f0db3518d4530ee88be6548eae659bb75a "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleeligibilityschedulerequests/item"
     i2e767808e39342c5e075a8c93310b2c0591c0c806546f5b58190d82a94993717 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignments/item"
-    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i6f70cfe1f611776ca2d5cdc9b36b624ba1b69dda981099ccaaf42d45453807a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentscheduleinstances/item"
     i94f6c4184f5f2637cb72ccacd72d05ca460673ced94157d6b941e79b19f921e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentapprovals/item"
     ib2c51c75dd96d44353372f4ec3d1bd31e89c02a24c89600c2d3fb288758d1bf3 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roledefinitions/item"
@@ -35,29 +35,29 @@ type EntitlementManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // EntitlementManagementRequestBuilderDeleteOptions options for Delete
 type EntitlementManagementRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EntitlementManagementRequestBuilderGetOptions options for Get
 type EntitlementManagementRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *EntitlementManagementRequestBuilderGetQueryParameters;
+    QueryParameters *EntitlementManagementRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // EntitlementManagementRequestBuilderGetQueryParameters container for roles and assignments for entitlement management resources.
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
@@ -69,16 +69,16 @@ type EntitlementManagementRequestBuilderGetQueryParameters struct {
 // EntitlementManagementRequestBuilderPatchOptions options for Patch
 type EntitlementManagementRequestBuilderPatchOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RbacApplicationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // NewEntitlementManagementRequestBuilderInternal instantiates a new EntitlementManagementRequestBuilder and sets the default values.
-func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EntitlementManagementRequestBuilder) {
+func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     m := &EntitlementManagementRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?select,expand}";
@@ -91,22 +91,22 @@ func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]st
     return m
 }
 // NewEntitlementManagementRequestBuilder instantiates a new EntitlementManagementRequestBuilder and sets the default values.
-func NewEntitlementManagementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EntitlementManagementRequestBuilder) {
+func NewEntitlementManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property entitlementManagement for roleManagement
-func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformation(options *EntitlementManagementRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformation(options *EntitlementManagementRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -114,19 +114,19 @@ func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformation(opt
     return requestInfo, nil
 }
 // CreateGetRequestInformation container for roles and assignments for entitlement management resources.
-func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation(options *EntitlementManagementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation(options *EntitlementManagementRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -134,17 +134,17 @@ func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation(option
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property entitlementManagement in roleManagement
-func (m *EntitlementManagementRequestBuilder) CreatePatchRequestInformation(options *EntitlementManagementRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *EntitlementManagementRequestBuilder) CreatePatchRequestInformation(options *EntitlementManagementRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -157,9 +157,9 @@ func (m *EntitlementManagementRequestBuilder) Delete(options *EntitlementManagem
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -168,20 +168,20 @@ func (m *EntitlementManagementRequestBuilder) Delete(options *EntitlementManagem
     return nil
 }
 // Get container for roles and assignments for entitlement management resources.
-func (m *EntitlementManagementRequestBuilder) Get(options *EntitlementManagementRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RbacApplicationable, error) {
+func (m *EntitlementManagementRequestBuilder) Get(options *EntitlementManagementRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateRbacApplicationFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRbacApplicationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RbacApplicationable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationable), nil
 }
 // Patch update the navigation property entitlementManagement in roleManagement
 func (m *EntitlementManagementRequestBuilder) Patch(options *EntitlementManagementRequestBuilderPatchOptions)(error) {
@@ -189,9 +189,9 @@ func (m *EntitlementManagementRequestBuilder) Patch(options *EntitlementManageme
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -199,6 +199,7 @@ func (m *EntitlementManagementRequestBuilder) Patch(options *EntitlementManageme
     }
     return nil
 }
+// ResourceNamespaces the resourceNamespaces property
 func (m *EntitlementManagementRequestBuilder) ResourceNamespaces()(*i75ab2bc44492a09208082e3507fb5b1add85563cc4e6f15226038f431107cc36.ResourceNamespacesRequestBuilder) {
     return i75ab2bc44492a09208082e3507fb5b1add85563cc4e6f15226038f431107cc36.NewResourceNamespacesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -213,6 +214,7 @@ func (m *EntitlementManagementRequestBuilder) ResourceNamespacesById(id string)(
     }
     return ie58dbe4c0951e87ffefa6af6faabb1e4ad0651b2ea404363bfd8a2d38cc97a53.NewUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleAssignmentApprovals the roleAssignmentApprovals property
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentApprovals()(*idaef4275a9c6a8af3da51ed597b3772552b76155312fa2174e893913ec186b9e.RoleAssignmentApprovalsRequestBuilder) {
     return idaef4275a9c6a8af3da51ed597b3772552b76155312fa2174e893913ec186b9e.NewRoleAssignmentApprovalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -227,6 +229,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentApprovalsById(id str
     }
     return i94f6c4184f5f2637cb72ccacd72d05ca460673ced94157d6b941e79b19f921e8.NewApprovalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleAssignments the roleAssignments property
 func (m *EntitlementManagementRequestBuilder) RoleAssignments()(*if94439b0eb19f66d0fe98bc2e50b7664597fad69cfac1e1132b6b13d328ae667.RoleAssignmentsRequestBuilder) {
     return if94439b0eb19f66d0fe98bc2e50b7664597fad69cfac1e1132b6b13d328ae667.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -241,6 +244,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i2
     }
     return i2e767808e39342c5e075a8c93310b2c0591c0c806546f5b58190d82a94993717.NewUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleAssignmentScheduleInstances the roleAssignmentScheduleInstances property
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstances()(*ie577e072e7edde2d3f423e1ceb296400868e7f5e7bddbe2ee934c71bd8d1d637.RoleAssignmentScheduleInstancesRequestBuilder) {
     return ie577e072e7edde2d3f423e1ceb296400868e7f5e7bddbe2ee934c71bd8d1d637.NewRoleAssignmentScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -255,6 +259,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesByI
     }
     return i6f70cfe1f611776ca2d5cdc9b36b624ba1b69dda981099ccaaf42d45453807a7.NewUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleAssignmentScheduleRequests the roleAssignmentScheduleRequests property
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequests()(*i8efb8a53874fa360f1b73def8f68e4e407323fb5958457abad962b8900d25355.RoleAssignmentScheduleRequestsRequestBuilder) {
     return i8efb8a53874fa360f1b73def8f68e4e407323fb5958457abad962b8900d25355.NewRoleAssignmentScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -269,6 +274,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById
     }
     return i1094763ed645fa459b11fe2fd0dbbb4cd5b4e5abf8fb494633f130f88a198ab7.NewUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleAssignmentSchedules the roleAssignmentSchedules property
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedules()(*i1baa975bee8bc1fcf62ee7c7d05b837d65d8d022e7556de9e284932ea41c5624.RoleAssignmentSchedulesRequestBuilder) {
     return i1baa975bee8bc1fcf62ee7c7d05b837d65d8d022e7556de9e284932ea41c5624.NewRoleAssignmentSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -283,6 +289,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id str
     }
     return ib97806c66498b497946ee83f7bb51d300c1952475468eabbe9d487576ab31775.NewUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleDefinitions the roleDefinitions property
 func (m *EntitlementManagementRequestBuilder) RoleDefinitions()(*icfcbd750b986c89f05029c8a1c38ed5d1e850b098c1de07332c9c8f4dba9e621.RoleDefinitionsRequestBuilder) {
     return icfcbd750b986c89f05029c8a1c38ed5d1e850b098c1de07332c9c8f4dba9e621.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -297,6 +304,7 @@ func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*ib
     }
     return ib2c51c75dd96d44353372f4ec3d1bd31e89c02a24c89600c2d3fb288758d1bf3.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleEligibilityScheduleInstances the roleEligibilityScheduleInstances property
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstances()(*ic74edb001b0ce5f97639bc39b485bc37fc8d4b308c0e093fb317822e211e74ab.RoleEligibilityScheduleInstancesRequestBuilder) {
     return ic74edb001b0ce5f97639bc39b485bc37fc8d4b308c0e093fb317822e211e74ab.NewRoleEligibilityScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -311,6 +319,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesBy
     }
     return icf1ccc36301949ddd8b0254d07f44b375f6f95d7adb58a22b17ccfc55ae25abc.NewUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleEligibilityScheduleRequests the roleEligibilityScheduleRequests property
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequests()(*i5e09c2b6a4bc955be405d7fbb453204f96818f8aae7508864d080577c5491cd0.RoleEligibilityScheduleRequestsRequestBuilder) {
     return i5e09c2b6a4bc955be405d7fbb453204f96818f8aae7508864d080577c5491cd0.NewRoleEligibilityScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -325,6 +334,7 @@ func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsByI
     }
     return i1f3fe61534b224c6fac2a1c5c69508f0db3518d4530ee88be6548eae659bb75a.NewUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleEligibilitySchedules the roleEligibilitySchedules property
 func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedules()(*ia143a4210940ae95c6f24da8e1def30da0952553539019a9c5e037acaae6d536.RoleEligibilitySchedulesRequestBuilder) {
     return ia143a4210940ae95c6f24da8e1def30da0952553539019a9c5e037acaae6d536.NewRoleEligibilitySchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -347,6 +357,7 @@ func (m *EntitlementManagementRequestBuilder) RoleScheduleInstancesWithDirectory
 func (m *EntitlementManagementRequestBuilder) RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(appScopeId *string, directoryScopeId *string, principalId *string, roleDefinitionId *string)(*i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
     return i7f3b8558d0a039f46114bbef7c414667ed2c5dd0d28b58faa7b09850032d46db.NewRoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
 }
+// TransitiveRoleAssignments the transitiveRoleAssignments property
 func (m *EntitlementManagementRequestBuilder) TransitiveRoleAssignments()(*i3b3dd9d3bb14498220a703a0b62e7d53250e7202ee87f41c8d4aff4c9404d695.TransitiveRoleAssignmentsRequestBuilder) {
     return i3b3dd9d3bb14498220a703a0b62e7d53250e7202ee87f41c8d4aff4c9404d695.NewTransitiveRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

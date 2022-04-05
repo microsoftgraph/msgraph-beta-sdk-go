@@ -1,18 +1,18 @@
 package activateservice
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ActivateServiceRequestBody provides operations to call the activateService method.
 type ActivateServiceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The service property
     service *string;
-    // 
+    // The servicePlanId property
     servicePlanId *string;
-    // 
+    // The skuId property
     skuId *string;
 }
 // NewActivateServiceRequestBody instantiates a new activateServiceRequestBody and sets the default values.
@@ -23,7 +23,7 @@ func NewActivateServiceRequestBody()(*ActivateServiceRequestBody) {
     return m
 }
 // CreateActivateServiceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateActivateServiceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateActivateServiceRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActivateServiceRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -35,9 +35,9 @@ func (m *ActivateServiceRequestBody) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["service"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["service"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["servicePlanId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["servicePlanId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["skuId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["skuId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ActivateServiceRequestBody) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
-// GetService gets the service property value. 
+// GetService gets the service property value. The service property
 func (m *ActivateServiceRequestBody) GetService()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *ActivateServiceRequestBody) GetService()(*string) {
         return m.service
     }
 }
-// GetServicePlanId gets the servicePlanId property value. 
+// GetServicePlanId gets the servicePlanId property value. The servicePlanId property
 func (m *ActivateServiceRequestBody) GetServicePlanId()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *ActivateServiceRequestBody) GetServicePlanId()(*string) {
         return m.servicePlanId
     }
 }
-// GetSkuId gets the skuId property value. 
+// GetSkuId gets the skuId property value. The skuId property
 func (m *ActivateServiceRequestBody) GetSkuId()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *ActivateServiceRequestBody) GetSkuId()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ActivateServiceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ActivateServiceRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("service", m.GetService())
         if err != nil {
@@ -127,19 +127,19 @@ func (m *ActivateServiceRequestBody) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetService sets the service property value. 
+// SetService sets the service property value. The service property
 func (m *ActivateServiceRequestBody) SetService(value *string)() {
     if m != nil {
         m.service = value
     }
 }
-// SetServicePlanId sets the servicePlanId property value. 
+// SetServicePlanId sets the servicePlanId property value. The servicePlanId property
 func (m *ActivateServiceRequestBody) SetServicePlanId(value *string)() {
     if m != nil {
         m.servicePlanId = value
     }
 }
-// SetSkuId sets the skuId property value. 
+// SetSkuId sets the skuId property value. The skuId property
 func (m *ActivateServiceRequestBody) SetSkuId(value *string)() {
     if m != nil {
         m.skuId = value

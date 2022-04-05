@@ -1,19 +1,19 @@
 package clockin
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // ClockInRequestBody provides operations to call the clockIn method.
 type ClockInRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The atApprovedLocation property
     atApprovedLocation *bool;
-    // 
-    notes i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable;
-    // 
+    // The notes property
+    notes ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable;
+    // The onBehalfOfUserId property
     onBehalfOfUserId *string;
 }
 // NewClockInRequestBody instantiates a new clockInRequestBody and sets the default values.
@@ -24,7 +24,7 @@ func NewClockInRequestBody()(*ClockInRequestBody) {
     return m
 }
 // CreateClockInRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateClockInRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateClockInRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClockInRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -35,7 +35,7 @@ func (m *ClockInRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAtApprovedLocation gets the atApprovedLocation property value. 
+// GetAtApprovedLocation gets the atApprovedLocation property value. The atApprovedLocation property
 func (m *ClockInRequestBody) GetAtApprovedLocation()(*bool) {
     if m == nil {
         return nil
@@ -44,9 +44,9 @@ func (m *ClockInRequestBody) GetAtApprovedLocation()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["atApprovedLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["atApprovedLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -56,17 +56,17 @@ func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateItemBodyFromDiscriminatorValue)
+    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotes(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable))
+            m.SetNotes(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable))
         }
         return nil
     }
-    res["onBehalfOfUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["onBehalfOfUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,15 +78,15 @@ func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}
     }
     return res
 }
-// GetNotes gets the notes property value. 
-func (m *ClockInRequestBody) GetNotes()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable) {
+// GetNotes gets the notes property value. The notes property
+func (m *ClockInRequestBody) GetNotes()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable) {
     if m == nil {
         return nil
     } else {
         return m.notes
     }
 }
-// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. 
+// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ClockInRequestBody) GetOnBehalfOfUserId()(*string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *ClockInRequestBody) GetOnBehalfOfUserId()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ClockInRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ClockInRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("atApprovedLocation", m.GetAtApprovedLocation())
         if err != nil {
@@ -128,19 +128,19 @@ func (m *ClockInRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAtApprovedLocation sets the atApprovedLocation property value. 
+// SetAtApprovedLocation sets the atApprovedLocation property value. The atApprovedLocation property
 func (m *ClockInRequestBody) SetAtApprovedLocation(value *bool)() {
     if m != nil {
         m.atApprovedLocation = value
     }
 }
-// SetNotes sets the notes property value. 
-func (m *ClockInRequestBody) SetNotes(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBodyable)() {
+// SetNotes sets the notes property value. The notes property
+func (m *ClockInRequestBody) SetNotes(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)() {
     if m != nil {
         m.notes = value
     }
 }
-// SetOnBehalfOfUserId sets the onBehalfOfUserId property value. 
+// SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ClockInRequestBody) SetOnBehalfOfUserId(value *string)() {
     if m != nil {
         m.onBehalfOfUserId = value

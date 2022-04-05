@@ -1,18 +1,18 @@
 package changedeploymentstatus
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ChangeDeploymentStatusRequestBody provides operations to call the changeDeploymentStatus method.
 type ChangeDeploymentStatusRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The managementTemplateStepId property
     managementTemplateStepId *string;
-    // 
+    // The status property
     status *string;
-    // 
+    // The tenantId property
     tenantId *string;
 }
 // NewChangeDeploymentStatusRequestBody instantiates a new changeDeploymentStatusRequestBody and sets the default values.
@@ -23,7 +23,7 @@ func NewChangeDeploymentStatusRequestBody()(*ChangeDeploymentStatusRequestBody) 
     return m
 }
 // CreateChangeDeploymentStatusRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateChangeDeploymentStatusRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateChangeDeploymentStatusRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChangeDeploymentStatusRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -35,9 +35,9 @@ func (m *ChangeDeploymentStatusRequestBody) GetAdditionalData()(map[string]inter
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["managementTemplateStepId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["managementTemplateStepId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetManagementTemplateStepId gets the managementTemplateStepId property value. 
+// GetManagementTemplateStepId gets the managementTemplateStepId property value. The managementTemplateStepId property
 func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateStepId()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateStepId()(*strin
         return m.managementTemplateStepId
     }
 }
-// GetStatus gets the status property value. 
+// GetStatus gets the status property value. The status property
 func (m *ChangeDeploymentStatusRequestBody) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetStatus()(*string) {
         return m.status
     }
 }
-// GetTenantId gets the tenantId property value. 
+// GetTenantId gets the tenantId property value. The tenantId property
 func (m *ChangeDeploymentStatusRequestBody) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetTenantId()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ChangeDeploymentStatusRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ChangeDeploymentStatusRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("managementTemplateStepId", m.GetManagementTemplateStepId())
         if err != nil {
@@ -127,19 +127,19 @@ func (m *ChangeDeploymentStatusRequestBody) SetAdditionalData(value map[string]i
         m.additionalData = value
     }
 }
-// SetManagementTemplateStepId sets the managementTemplateStepId property value. 
+// SetManagementTemplateStepId sets the managementTemplateStepId property value. The managementTemplateStepId property
 func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateStepId(value *string)() {
     if m != nil {
         m.managementTemplateStepId = value
     }
 }
-// SetStatus sets the status property value. 
+// SetStatus sets the status property value. The status property
 func (m *ChangeDeploymentStatusRequestBody) SetStatus(value *string)() {
     if m != nil {
         m.status = value
     }
 }
-// SetTenantId sets the tenantId property value. 
+// SetTenantId sets the tenantId property value. The tenantId property
 func (m *ChangeDeploymentStatusRequestBody) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

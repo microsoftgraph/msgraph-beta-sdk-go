@@ -1,21 +1,21 @@
 package validatecredentials
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // ValidateCredentialsRequestBody provides operations to call the validateCredentials method.
 type ValidateCredentialsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The applicationIdentifier property
     applicationIdentifier *string;
-    // 
-    credentials []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable;
-    // 
+    // The credentials property
+    credentials []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable;
+    // The templateId property
     templateId *string;
-    // 
+    // The useSavedCredentials property
     useSavedCredentials *bool;
 }
 // NewValidateCredentialsRequestBody instantiates a new validateCredentialsRequestBody and sets the default values.
@@ -26,7 +26,7 @@ func NewValidateCredentialsRequestBody()(*ValidateCredentialsRequestBody) {
     return m
 }
 // CreateValidateCredentialsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateValidateCredentialsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateValidateCredentialsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewValidateCredentialsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -37,7 +37,7 @@ func (m *ValidateCredentialsRequestBody) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetApplicationIdentifier gets the applicationIdentifier property value. 
+// GetApplicationIdentifier gets the applicationIdentifier property value. The applicationIdentifier property
 func (m *ValidateCredentialsRequestBody) GetApplicationIdentifier()(*string) {
     if m == nil {
         return nil
@@ -45,8 +45,8 @@ func (m *ValidateCredentialsRequestBody) GetApplicationIdentifier()(*string) {
         return m.applicationIdentifier
     }
 }
-// GetCredentials gets the credentials property value. 
-func (m *ValidateCredentialsRequestBody) GetCredentials()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable) {
+// GetCredentials gets the credentials property value. The credentials property
+func (m *ValidateCredentialsRequestBody) GetCredentials()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable) {
     if m == nil {
         return nil
     } else {
@@ -54,9 +54,9 @@ func (m *ValidateCredentialsRequestBody) GetCredentials()([]i535684e11b5500196ec
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["applicationIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,21 +66,21 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["credentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue)
+    res["credentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable, len(val))
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable)
+                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)
             }
             m.SetCredentials(res)
         }
         return nil
     }
-    res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["templateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["useSavedCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["useSavedCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *ValidateCredentialsRequestBody) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetTemplateId gets the templateId property value. 
+// GetTemplateId gets the templateId property value. The templateId property
 func (m *ValidateCredentialsRequestBody) GetTemplateId()(*string) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *ValidateCredentialsRequestBody) GetTemplateId()(*string) {
         return m.templateId
     }
 }
-// GetUseSavedCredentials gets the useSavedCredentials property value. 
+// GetUseSavedCredentials gets the useSavedCredentials property value. The useSavedCredentials property
 func (m *ValidateCredentialsRequestBody) GetUseSavedCredentials()(*bool) {
     if m == nil {
         return nil
@@ -119,7 +119,7 @@ func (m *ValidateCredentialsRequestBody) GetUseSavedCredentials()(*bool) {
     }
 }
 // Serialize serializes information the current object
-func (m *ValidateCredentialsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ValidateCredentialsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("applicationIdentifier", m.GetApplicationIdentifier())
         if err != nil {
@@ -127,9 +127,9 @@ func (m *ValidateCredentialsRequestBody) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetCredentials() != nil {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCredentials()))
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCredentials()))
         for i, v := range m.GetCredentials() {
-            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("credentials", cast)
         if err != nil {
@@ -162,25 +162,25 @@ func (m *ValidateCredentialsRequestBody) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetApplicationIdentifier sets the applicationIdentifier property value. 
+// SetApplicationIdentifier sets the applicationIdentifier property value. The applicationIdentifier property
 func (m *ValidateCredentialsRequestBody) SetApplicationIdentifier(value *string)() {
     if m != nil {
         m.applicationIdentifier = value
     }
 }
-// SetCredentials sets the credentials property value. 
-func (m *ValidateCredentialsRequestBody) SetCredentials(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePairable)() {
+// SetCredentials sets the credentials property value. The credentials property
+func (m *ValidateCredentialsRequestBody) SetCredentials(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)() {
     if m != nil {
         m.credentials = value
     }
 }
-// SetTemplateId sets the templateId property value. 
+// SetTemplateId sets the templateId property value. The templateId property
 func (m *ValidateCredentialsRequestBody) SetTemplateId(value *string)() {
     if m != nil {
         m.templateId = value
     }
 }
-// SetUseSavedCredentials sets the useSavedCredentials property value. 
+// SetUseSavedCredentials sets the useSavedCredentials property value. The useSavedCredentials property
 func (m *ValidateCredentialsRequestBody) SetUseSavedCredentials(value *bool)() {
     if m != nil {
         m.useSavedCredentials = value

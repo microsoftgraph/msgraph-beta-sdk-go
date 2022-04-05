@@ -1,16 +1,16 @@
 package sendcustomnotificationtocompanyportal
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // SendCustomNotificationToCompanyPortalRequestBody provides operations to call the sendCustomNotificationToCompanyPortal method.
 type SendCustomNotificationToCompanyPortalRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The notificationBody property
     notificationBody *string;
-    // 
+    // The notificationTitle property
     notificationTitle *string;
 }
 // NewSendCustomNotificationToCompanyPortalRequestBody instantiates a new sendCustomNotificationToCompanyPortalRequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewSendCustomNotificationToCompanyPortalRequestBody()(*SendCustomNotificati
     return m
 }
 // CreateSendCustomNotificationToCompanyPortalRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateSendCustomNotificationToCompanyPortalRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateSendCustomNotificationToCompanyPortalRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSendCustomNotificationToCompanyPortalRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,9 +33,9 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetAdditionalData()(m
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SendCustomNotificationToCompanyPortalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["notificationBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *SendCustomNotificationToCompanyPortalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["notificationBody"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetFieldDeserializers
         }
         return nil
     }
-    res["notificationTitle"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["notificationTitle"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetFieldDeserializers
     }
     return res
 }
-// GetNotificationBody gets the notificationBody property value. 
+// GetNotificationBody gets the notificationBody property value. The notificationBody property
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationBody()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationBody()
         return m.notificationBody
     }
 }
-// GetNotificationTitle gets the notificationTitle property value. 
+// GetNotificationTitle gets the notificationTitle property value. The notificationTitle property
 func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationTitle()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) GetNotificationTitle(
     }
 }
 // Serialize serializes information the current object
-func (m *SendCustomNotificationToCompanyPortalRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *SendCustomNotificationToCompanyPortalRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("notificationBody", m.GetNotificationBody())
         if err != nil {
@@ -101,13 +101,13 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) SetAdditionalData(val
         m.additionalData = value
     }
 }
-// SetNotificationBody sets the notificationBody property value. 
+// SetNotificationBody sets the notificationBody property value. The notificationBody property
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetNotificationBody(value *string)() {
     if m != nil {
         m.notificationBody = value
     }
 }
-// SetNotificationTitle sets the notificationTitle property value. 
+// SetNotificationTitle sets the notificationTitle property value. The notificationTitle property
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetNotificationTitle(value *string)() {
     if m != nil {
         m.notificationTitle = value

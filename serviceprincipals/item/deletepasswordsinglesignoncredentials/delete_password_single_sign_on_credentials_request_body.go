@@ -1,14 +1,14 @@
 package deletepasswordsinglesignoncredentials
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // DeletePasswordSingleSignOnCredentialsRequestBody provides operations to call the deletePasswordSingleSignOnCredentials method.
 type DeletePasswordSingleSignOnCredentialsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The id property
     id *string;
 }
 // NewDeletePasswordSingleSignOnCredentialsRequestBody instantiates a new deletePasswordSingleSignOnCredentialsRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewDeletePasswordSingleSignOnCredentialsRequestBody()(*DeletePasswordSingle
     return m
 }
 // CreateDeletePasswordSingleSignOnCredentialsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateDeletePasswordSingleSignOnCredentialsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateDeletePasswordSingleSignOnCredentialsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeletePasswordSingleSignOnCredentialsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *DeletePasswordSingleSignOnCredentialsRequestBody) GetAdditionalData()(m
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeletePasswordSingleSignOnCredentialsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *DeletePasswordSingleSignOnCredentialsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *DeletePasswordSingleSignOnCredentialsRequestBody) GetFieldDeserializers
     }
     return res
 }
-// GetId gets the id property value. 
+// GetId gets the id property value. The id property
 func (m *DeletePasswordSingleSignOnCredentialsRequestBody) GetId()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeletePasswordSingleSignOnCredentialsRequestBody) GetId()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *DeletePasswordSingleSignOnCredentialsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *DeletePasswordSingleSignOnCredentialsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *DeletePasswordSingleSignOnCredentialsRequestBody) SetAdditionalData(val
         m.additionalData = value
     }
 }
-// SetId sets the id property value. 
+// SetId sets the id property value. The id property
 func (m *DeletePasswordSingleSignOnCredentialsRequestBody) SetId(value *string)() {
     if m != nil {
         m.id = value

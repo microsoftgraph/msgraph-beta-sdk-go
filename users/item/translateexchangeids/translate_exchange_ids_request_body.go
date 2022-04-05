@@ -1,20 +1,20 @@
 package translateexchangeids
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // TranslateExchangeIdsRequestBody provides operations to call the translateExchangeIds method.
 type TranslateExchangeIdsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The InputIds property
     inputIds []string;
-    // 
-    sourceIdType *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat;
-    // 
-    targetIdType *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat;
+    // The SourceIdType property
+    sourceIdType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat;
+    // The TargetIdType property
+    targetIdType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat;
 }
 // NewTranslateExchangeIdsRequestBody instantiates a new translateExchangeIdsRequestBody and sets the default values.
 func NewTranslateExchangeIdsRequestBody()(*TranslateExchangeIdsRequestBody) {
@@ -24,7 +24,7 @@ func NewTranslateExchangeIdsRequestBody()(*TranslateExchangeIdsRequestBody) {
     return m
 }
 // CreateTranslateExchangeIdsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateTranslateExchangeIdsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateTranslateExchangeIdsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTranslateExchangeIdsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -36,9 +36,9 @@ func (m *TranslateExchangeIdsRequestBody) GetAdditionalData()(map[string]interfa
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["inputIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["inputIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -52,29 +52,29 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["sourceIdType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseExchangeIdFormat)
+    res["sourceIdType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseExchangeIdFormat)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceIdType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat))
+            m.SetSourceIdType(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat))
         }
         return nil
     }
-    res["targetIdType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseExchangeIdFormat)
+    res["targetIdType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseExchangeIdFormat)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetIdType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat))
+            m.SetTargetIdType(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat))
         }
         return nil
     }
     return res
 }
-// GetInputIds gets the inputIds property value. 
+// GetInputIds gets the inputIds property value. The InputIds property
 func (m *TranslateExchangeIdsRequestBody) GetInputIds()([]string) {
     if m == nil {
         return nil
@@ -82,16 +82,16 @@ func (m *TranslateExchangeIdsRequestBody) GetInputIds()([]string) {
         return m.inputIds
     }
 }
-// GetSourceIdType gets the sourceIdType property value. 
-func (m *TranslateExchangeIdsRequestBody) GetSourceIdType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat) {
+// GetSourceIdType gets the sourceIdType property value. The SourceIdType property
+func (m *TranslateExchangeIdsRequestBody) GetSourceIdType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat) {
     if m == nil {
         return nil
     } else {
         return m.sourceIdType
     }
 }
-// GetTargetIdType gets the targetIdType property value. 
-func (m *TranslateExchangeIdsRequestBody) GetTargetIdType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat) {
+// GetTargetIdType gets the targetIdType property value. The TargetIdType property
+func (m *TranslateExchangeIdsRequestBody) GetTargetIdType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat) {
     if m == nil {
         return nil
     } else {
@@ -99,7 +99,7 @@ func (m *TranslateExchangeIdsRequestBody) GetTargetIdType()(*i535684e11b5500196e
     }
 }
 // Serialize serializes information the current object
-func (m *TranslateExchangeIdsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *TranslateExchangeIdsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetInputIds() != nil {
         err := writer.WriteCollectionOfStringValues("inputIds", m.GetInputIds())
         if err != nil {
@@ -134,20 +134,20 @@ func (m *TranslateExchangeIdsRequestBody) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetInputIds sets the inputIds property value. 
+// SetInputIds sets the inputIds property value. The InputIds property
 func (m *TranslateExchangeIdsRequestBody) SetInputIds(value []string)() {
     if m != nil {
         m.inputIds = value
     }
 }
-// SetSourceIdType sets the sourceIdType property value. 
-func (m *TranslateExchangeIdsRequestBody) SetSourceIdType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat)() {
+// SetSourceIdType sets the sourceIdType property value. The SourceIdType property
+func (m *TranslateExchangeIdsRequestBody) SetSourceIdType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat)() {
     if m != nil {
         m.sourceIdType = value
     }
 }
-// SetTargetIdType sets the targetIdType property value. 
-func (m *TranslateExchangeIdsRequestBody) SetTargetIdType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat)() {
+// SetTargetIdType sets the targetIdType property value. The TargetIdType property
+func (m *TranslateExchangeIdsRequestBody) SetTargetIdType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeIdFormat)() {
     if m != nil {
         m.targetIdType = value
     }

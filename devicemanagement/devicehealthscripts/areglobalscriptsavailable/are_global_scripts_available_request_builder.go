@@ -1,9 +1,9 @@
 package areglobalscriptsavailable
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // AreGlobalScriptsAvailableRequestBuilder provides operations to call the areGlobalScriptsAvailable method.
@@ -11,25 +11,25 @@ type AreGlobalScriptsAvailableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // AreGlobalScriptsAvailableRequestBuilderGetOptions options for Get
 type AreGlobalScriptsAvailableRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // AreGlobalScriptsAvailableResponse union type wrapper for classes globalDeviceHealthScriptState
 type AreGlobalScriptsAvailableResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type globalDeviceHealthScriptState
-    globalDeviceHealthScriptState *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState;
+    globalDeviceHealthScriptState *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GlobalDeviceHealthScriptState;
 }
 // NewAreGlobalScriptsAvailableResponse instantiates a new areGlobalScriptsAvailableResponse and sets the default values.
 func NewAreGlobalScriptsAvailableResponse()(*AreGlobalScriptsAvailableResponse) {
@@ -38,7 +38,7 @@ func NewAreGlobalScriptsAvailableResponse()(*AreGlobalScriptsAvailableResponse) 
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-func CreateAreGlobalScriptsAvailableResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateAreGlobalScriptsAvailableResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAreGlobalScriptsAvailableResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -50,22 +50,22 @@ func (m *AreGlobalScriptsAvailableResponse) GetAdditionalData()(map[string]inter
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AreGlobalScriptsAvailableResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["globalDeviceHealthScriptState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseGlobalDeviceHealthScriptState)
+func (m *AreGlobalScriptsAvailableResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["globalDeviceHealthScriptState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseGlobalDeviceHealthScriptState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGlobalDeviceHealthScriptState(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState))
+            m.SetGlobalDeviceHealthScriptState(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GlobalDeviceHealthScriptState))
         }
         return nil
     }
     return res
 }
 // GetGlobalDeviceHealthScriptState gets the globalDeviceHealthScriptState property value. Union type representation for type globalDeviceHealthScriptState
-func (m *AreGlobalScriptsAvailableResponse) GetGlobalDeviceHealthScriptState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState) {
+func (m *AreGlobalScriptsAvailableResponse) GetGlobalDeviceHealthScriptState()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GlobalDeviceHealthScriptState) {
     if m == nil {
         return nil
     } else {
@@ -73,7 +73,7 @@ func (m *AreGlobalScriptsAvailableResponse) GetGlobalDeviceHealthScriptState()(*
     }
 }
 // Serialize serializes information the current object
-func (m *AreGlobalScriptsAvailableResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *AreGlobalScriptsAvailableResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetGlobalDeviceHealthScriptState() != nil {
         cast := (*m.GetGlobalDeviceHealthScriptState()).String()
         err := writer.WriteStringValue("globalDeviceHealthScriptState", &cast)
@@ -96,20 +96,20 @@ func (m *AreGlobalScriptsAvailableResponse) SetAdditionalData(value map[string]i
     }
 }
 // SetGlobalDeviceHealthScriptState sets the globalDeviceHealthScriptState property value. Union type representation for type globalDeviceHealthScriptState
-func (m *AreGlobalScriptsAvailableResponse) SetGlobalDeviceHealthScriptState(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState)() {
+func (m *AreGlobalScriptsAvailableResponse) SetGlobalDeviceHealthScriptState(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GlobalDeviceHealthScriptState)() {
     if m != nil {
         m.globalDeviceHealthScriptState = value
     }
 }
 // AreGlobalScriptsAvailableResponseable 
 type AreGlobalScriptsAvailableResponseable interface {
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.AdditionalDataHolder
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable
-    GetGlobalDeviceHealthScriptState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState)
-    SetGlobalDeviceHealthScriptState(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GlobalDeviceHealthScriptState)()
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGlobalDeviceHealthScriptState()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GlobalDeviceHealthScriptState)
+    SetGlobalDeviceHealthScriptState(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GlobalDeviceHealthScriptState)()
 }
 // NewAreGlobalScriptsAvailableRequestBuilderInternal instantiates a new AreGlobalScriptsAvailableRequestBuilder and sets the default values.
-func NewAreGlobalScriptsAvailableRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AreGlobalScriptsAvailableRequestBuilder) {
+func NewAreGlobalScriptsAvailableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AreGlobalScriptsAvailableRequestBuilder) {
     m := &AreGlobalScriptsAvailableRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/microsoft.graph.areGlobalScriptsAvailable()";
@@ -122,22 +122,22 @@ func NewAreGlobalScriptsAvailableRequestBuilderInternal(pathParameters map[strin
     return m
 }
 // NewAreGlobalScriptsAvailableRequestBuilder instantiates a new AreGlobalScriptsAvailableRequestBuilder and sets the default values.
-func NewAreGlobalScriptsAvailableRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AreGlobalScriptsAvailableRequestBuilder) {
+func NewAreGlobalScriptsAvailableRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AreGlobalScriptsAvailableRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAreGlobalScriptsAvailableRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function areGlobalScriptsAvailable
-func (m *AreGlobalScriptsAvailableRequestBuilder) CreateGetRequestInformation(options *AreGlobalScriptsAvailableRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *AreGlobalScriptsAvailableRequestBuilder) CreateGetRequestInformation(options *AreGlobalScriptsAvailableRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }

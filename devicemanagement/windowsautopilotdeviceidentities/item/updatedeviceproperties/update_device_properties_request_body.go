@@ -1,20 +1,26 @@
 package updatedeviceproperties
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // UpdateDevicePropertiesRequestBody provides operations to call the updateDeviceProperties method.
 type UpdateDevicePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The addressableUserName property
     addressableUserName *string;
-    // 
+    // The deviceAccountPassword property
+    deviceAccountPassword *string;
+    // The deviceAccountUpn property
+    deviceAccountUpn *string;
+    // The deviceFriendlyName property
+    deviceFriendlyName *string;
+    // The displayName property
     displayName *string;
-    // 
+    // The groupTag property
     groupTag *string;
-    // 
+    // The userPrincipalName property
     userPrincipalName *string;
 }
 // NewUpdateDevicePropertiesRequestBody instantiates a new updateDevicePropertiesRequestBody and sets the default values.
@@ -25,7 +31,7 @@ func NewUpdateDevicePropertiesRequestBody()(*UpdateDevicePropertiesRequestBody) 
     return m
 }
 // CreateUpdateDevicePropertiesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateUpdateDevicePropertiesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateUpdateDevicePropertiesRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateDevicePropertiesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -36,7 +42,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// GetAddressableUserName gets the addressableUserName property value. 
+// GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
 func (m *UpdateDevicePropertiesRequestBody) GetAddressableUserName()(*string) {
     if m == nil {
         return nil
@@ -44,7 +50,31 @@ func (m *UpdateDevicePropertiesRequestBody) GetAddressableUserName()(*string) {
         return m.addressableUserName
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDeviceAccountPassword gets the deviceAccountPassword property value. The deviceAccountPassword property
+func (m *UpdateDevicePropertiesRequestBody) GetDeviceAccountPassword()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceAccountPassword
+    }
+}
+// GetDeviceAccountUpn gets the deviceAccountUpn property value. The deviceAccountUpn property
+func (m *UpdateDevicePropertiesRequestBody) GetDeviceAccountUpn()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceAccountUpn
+    }
+}
+// GetDeviceFriendlyName gets the deviceFriendlyName property value. The deviceFriendlyName property
+func (m *UpdateDevicePropertiesRequestBody) GetDeviceFriendlyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceFriendlyName
+    }
+}
+// GetDisplayName gets the displayName property value. The displayName property
 func (m *UpdateDevicePropertiesRequestBody) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -53,9 +83,9 @@ func (m *UpdateDevicePropertiesRequestBody) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["addressableUserName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addressableUserName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +95,37 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["deviceAccountPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceAccountPassword(val)
+        }
+        return nil
+    }
+    res["deviceAccountUpn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceAccountUpn(val)
+        }
+        return nil
+    }
+    res["deviceFriendlyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceFriendlyName(val)
+        }
+        return nil
+    }
+    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +135,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["groupTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["groupTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +145,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +157,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetGroupTag gets the groupTag property value. 
+// GetGroupTag gets the groupTag property value. The groupTag property
 func (m *UpdateDevicePropertiesRequestBody) GetGroupTag()(*string) {
     if m == nil {
         return nil
@@ -105,7 +165,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetGroupTag()(*string) {
         return m.groupTag
     }
 }
-// GetUserPrincipalName gets the userPrincipalName property value. 
+// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *UpdateDevicePropertiesRequestBody) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -114,9 +174,27 @@ func (m *UpdateDevicePropertiesRequestBody) GetUserPrincipalName()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *UpdateDevicePropertiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *UpdateDevicePropertiesRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("addressableUserName", m.GetAddressableUserName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("deviceAccountPassword", m.GetDeviceAccountPassword())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("deviceAccountUpn", m.GetDeviceAccountUpn())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("deviceFriendlyName", m.GetDeviceFriendlyName())
         if err != nil {
             return err
         }
@@ -153,25 +231,43 @@ func (m *UpdateDevicePropertiesRequestBody) SetAdditionalData(value map[string]i
         m.additionalData = value
     }
 }
-// SetAddressableUserName sets the addressableUserName property value. 
+// SetAddressableUserName sets the addressableUserName property value. The addressableUserName property
 func (m *UpdateDevicePropertiesRequestBody) SetAddressableUserName(value *string)() {
     if m != nil {
         m.addressableUserName = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDeviceAccountPassword sets the deviceAccountPassword property value. The deviceAccountPassword property
+func (m *UpdateDevicePropertiesRequestBody) SetDeviceAccountPassword(value *string)() {
+    if m != nil {
+        m.deviceAccountPassword = value
+    }
+}
+// SetDeviceAccountUpn sets the deviceAccountUpn property value. The deviceAccountUpn property
+func (m *UpdateDevicePropertiesRequestBody) SetDeviceAccountUpn(value *string)() {
+    if m != nil {
+        m.deviceAccountUpn = value
+    }
+}
+// SetDeviceFriendlyName sets the deviceFriendlyName property value. The deviceFriendlyName property
+func (m *UpdateDevicePropertiesRequestBody) SetDeviceFriendlyName(value *string)() {
+    if m != nil {
+        m.deviceFriendlyName = value
+    }
+}
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *UpdateDevicePropertiesRequestBody) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetGroupTag sets the groupTag property value. 
+// SetGroupTag sets the groupTag property value. The groupTag property
 func (m *UpdateDevicePropertiesRequestBody) SetGroupTag(value *string)() {
     if m != nil {
         m.groupTag = value
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. 
+// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *UpdateDevicePropertiesRequestBody) SetUserPrincipalName(value *string)() {
     if m != nil {
         m.userPrincipalName = value

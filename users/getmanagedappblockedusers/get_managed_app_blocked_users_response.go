@@ -1,14 +1,14 @@
 package getmanagedappblockedusers
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetManagedAppBlockedUsersResponse provides operations to call the getManagedAppBlockedUsers method.
 type GetManagedAppBlockedUsersResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The value property
     value []string;
 }
 // NewGetManagedAppBlockedUsersResponse instantiates a new getManagedAppBlockedUsersResponse and sets the default values.
@@ -19,7 +19,7 @@ func NewGetManagedAppBlockedUsersResponse()(*GetManagedAppBlockedUsersResponse) 
     return m
 }
 // CreateGetManagedAppBlockedUsersResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetManagedAppBlockedUsersResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetManagedAppBlockedUsersResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetManagedAppBlockedUsersResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *GetManagedAppBlockedUsersResponse) GetAdditionalData()(map[string]inter
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetManagedAppBlockedUsersResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetManagedAppBlockedUsersResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *GetManagedAppBlockedUsersResponse) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValue gets the value property value. 
+// GetValue gets the value property value. The value property
 func (m *GetManagedAppBlockedUsersResponse) GetValue()([]string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetManagedAppBlockedUsersResponse) GetValue()([]string) {
     }
 }
 // Serialize serializes information the current object
-func (m *GetManagedAppBlockedUsersResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetManagedAppBlockedUsersResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetValue() != nil {
         err := writer.WriteCollectionOfStringValues("value", m.GetValue())
         if err != nil {
@@ -79,7 +79,7 @@ func (m *GetManagedAppBlockedUsersResponse) SetAdditionalData(value map[string]i
         m.additionalData = value
     }
 }
-// SetValue sets the value property value. 
+// SetValue sets the value property value. The value property
 func (m *GetManagedAppBlockedUsersResponse) SetValue(value []string)() {
     if m != nil {
         m.value = value

@@ -1,18 +1,18 @@
 package lookup
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // LookupRequestBody provides operations to call the lookup method.
 type LookupRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The key property
     key *string;
-    // 
+    // The resultColumnNames property
     resultColumnNames []string;
-    // 
+    // The values property
     values []string;
 }
 // NewLookupRequestBody instantiates a new lookupRequestBody and sets the default values.
@@ -23,7 +23,7 @@ func NewLookupRequestBody()(*LookupRequestBody) {
     return m
 }
 // CreateLookupRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateLookupRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateLookupRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLookupRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -35,9 +35,9 @@ func (m *LookupRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LookupRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *LookupRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["key"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *LookupRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["resultColumnNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["resultColumnNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *LookupRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["values"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *LookupRequestBody) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
-// GetKey gets the key property value. 
+// GetKey gets the key property value. The key property
 func (m *LookupRequestBody) GetKey()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *LookupRequestBody) GetKey()(*string) {
         return m.key
     }
 }
-// GetResultColumnNames gets the resultColumnNames property value. 
+// GetResultColumnNames gets the resultColumnNames property value. The resultColumnNames property
 func (m *LookupRequestBody) GetResultColumnNames()([]string) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *LookupRequestBody) GetResultColumnNames()([]string) {
         return m.resultColumnNames
     }
 }
-// GetValues gets the values property value. 
+// GetValues gets the values property value. The values property
 func (m *LookupRequestBody) GetValues()([]string) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *LookupRequestBody) GetValues()([]string) {
     }
 }
 // Serialize serializes information the current object
-func (m *LookupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *LookupRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("key", m.GetKey())
         if err != nil {
@@ -135,19 +135,19 @@ func (m *LookupRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetKey sets the key property value. 
+// SetKey sets the key property value. The key property
 func (m *LookupRequestBody) SetKey(value *string)() {
     if m != nil {
         m.key = value
     }
 }
-// SetResultColumnNames sets the resultColumnNames property value. 
+// SetResultColumnNames sets the resultColumnNames property value. The resultColumnNames property
 func (m *LookupRequestBody) SetResultColumnNames(value []string)() {
     if m != nil {
         m.resultColumnNames = value
     }
 }
-// SetValues sets the values property value. 
+// SetValues sets the values property value. The values property
 func (m *LookupRequestBody) SetValues(value []string)() {
     if m != nil {
         m.values = value

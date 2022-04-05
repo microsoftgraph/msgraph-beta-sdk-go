@@ -1,17 +1,17 @@
 package updatesoftware
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // UpdateSoftwareRequestBody provides operations to call the updateSoftware method.
 type UpdateSoftwareRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    softwareType *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkSoftwareType;
-    // 
+    // The softwareType property
+    softwareType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSoftwareType;
+    // The softwareVersion property
     softwareVersion *string;
 }
 // NewUpdateSoftwareRequestBody instantiates a new updateSoftwareRequestBody and sets the default values.
@@ -22,7 +22,7 @@ func NewUpdateSoftwareRequestBody()(*UpdateSoftwareRequestBody) {
     return m
 }
 // CreateUpdateSoftwareRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateUpdateSoftwareRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateUpdateSoftwareRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateSoftwareRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -34,19 +34,19 @@ func (m *UpdateSoftwareRequestBody) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateSoftwareRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["softwareType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseTeamworkSoftwareType)
+func (m *UpdateSoftwareRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["softwareType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseTeamworkSoftwareType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSoftwareType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkSoftwareType))
+            m.SetSoftwareType(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSoftwareType))
         }
         return nil
     }
-    res["softwareVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["softwareVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,15 +58,15 @@ func (m *UpdateSoftwareRequestBody) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
-// GetSoftwareType gets the softwareType property value. 
-func (m *UpdateSoftwareRequestBody) GetSoftwareType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkSoftwareType) {
+// GetSoftwareType gets the softwareType property value. The softwareType property
+func (m *UpdateSoftwareRequestBody) GetSoftwareType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSoftwareType) {
     if m == nil {
         return nil
     } else {
         return m.softwareType
     }
 }
-// GetSoftwareVersion gets the softwareVersion property value. 
+// GetSoftwareVersion gets the softwareVersion property value. The softwareVersion property
 func (m *UpdateSoftwareRequestBody) GetSoftwareVersion()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *UpdateSoftwareRequestBody) GetSoftwareVersion()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *UpdateSoftwareRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *UpdateSoftwareRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetSoftwareType() != nil {
         cast := (*m.GetSoftwareType()).String()
         err := writer.WriteStringValue("softwareType", &cast)
@@ -103,13 +103,13 @@ func (m *UpdateSoftwareRequestBody) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetSoftwareType sets the softwareType property value. 
-func (m *UpdateSoftwareRequestBody) SetSoftwareType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkSoftwareType)() {
+// SetSoftwareType sets the softwareType property value. The softwareType property
+func (m *UpdateSoftwareRequestBody) SetSoftwareType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSoftwareType)() {
     if m != nil {
         m.softwareType = value
     }
 }
-// SetSoftwareVersion sets the softwareVersion property value. 
+// SetSoftwareVersion sets the softwareVersion property value. The softwareVersion property
 func (m *UpdateSoftwareRequestBody) SetSoftwareVersion(value *string)() {
     if m != nil {
         m.softwareVersion = value

@@ -1,15 +1,15 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i08e66c5d7bd1abccfebd8fb93bd3824b29263d4a78a8e0619b6492ed8f3fad49 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/playprompt"
     i0c63fde205100ca16ab7a423f47cbdbde7db96e5bfd78a3f404e33371a9a304c "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/record"
     i18782668e274df0b14fede1b2d0b04b9dfad365a601b91cb1ae1236333912f77 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/recordresponse"
     i2ad07b1a9d626a23f6fb4c6980016bdfa91427506827a8183fe0ab85ccea7297 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/mute"
     i2e0863e08fc93d954484ce570f9308574c3c610b9cbf1e2c9d07876c640463ac "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/updaterecordingstatus"
     i3af510b639a3bfd33b6d77bb52f8d92c7f9e25367174bdfa6142903edc74995c "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/keepalive"
-    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4cae3b1a69ba2254d74646c3ba02c22835c51e378675f8f86fa207a4bf13fbb9 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/unmute"
     i4ffb8669c93d0b11c0238e80369824011ea5e33bda9395560f9abe880eb8acc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/transfer"
     i51c2a09e4f41fd4c07a21a333066d7d9b5683f48919e40d555e43eeedc2d2b0f "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/calls/item/redirect"
@@ -34,29 +34,29 @@ type CallItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // CallItemRequestBuilderDeleteOptions options for Delete
 type CallItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // CallItemRequestBuilderGetOptions options for Get
 type CallItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *CallItemRequestBuilderGetQueryParameters;
+    QueryParameters *CallItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // CallItemRequestBuilderGetQueryParameters get calls from communications
 type CallItemRequestBuilderGetQueryParameters struct {
@@ -68,20 +68,23 @@ type CallItemRequestBuilderGetQueryParameters struct {
 // CallItemRequestBuilderPatchOptions options for Patch
 type CallItemRequestBuilderPatchOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Callable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// AddLargeGalleryView the addLargeGalleryView property
 func (m *CallItemRequestBuilder) AddLargeGalleryView()(*ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957.AddLargeGalleryViewRequestBuilder) {
     return ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957.NewAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Answer the answer property
 func (m *CallItemRequestBuilder) Answer()(*i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.AnswerRequestBuilder) {
     return i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.NewAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AudioRoutingGroups the audioRoutingGroups property
 func (m *CallItemRequestBuilder) AudioRoutingGroups()(*ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da.AudioRoutingGroupsRequestBuilder) {
     return ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da.NewAudioRoutingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -96,14 +99,16 @@ func (m *CallItemRequestBuilder) AudioRoutingGroupsById(id string)(*i151a479d162
     }
     return i151a479d1626e685450cad3f10b2ae807a5841c52441c261bfec932663c91e9f.NewAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// CancelMediaProcessing the cancelMediaProcessing property
 func (m *CallItemRequestBuilder) CancelMediaProcessing()(*id1e985c21267b30b9212f7e3d69af1960754fba433a529ab9f2819e92d7804e6.CancelMediaProcessingRequestBuilder) {
     return id1e985c21267b30b9212f7e3d69af1960754fba433a529ab9f2819e92d7804e6.NewCancelMediaProcessingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ChangeScreenSharingRole the changeScreenSharingRole property
 func (m *CallItemRequestBuilder) ChangeScreenSharingRole()(*i6a96c1601820e25e2c11e319760d663fd67b6cdb677b5d599e7f4560698143e1.ChangeScreenSharingRoleRequestBuilder) {
     return i6a96c1601820e25e2c11e319760d663fd67b6cdb677b5d599e7f4560698143e1.NewChangeScreenSharingRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewCallItemRequestBuilderInternal instantiates a new CallItemRequestBuilder and sets the default values.
-func NewCallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallItemRequestBuilder) {
+func NewCallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallItemRequestBuilder) {
     m := &CallItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/calls/{call_id}{?select,expand}";
@@ -116,11 +121,12 @@ func NewCallItemRequestBuilderInternal(pathParameters map[string]string, request
     return m
 }
 // NewCallItemRequestBuilder instantiates a new CallItemRequestBuilder and sets the default values.
-func NewCallItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallItemRequestBuilder) {
+func NewCallItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// ContentSharingSessions the contentSharingSessions property
 func (m *CallItemRequestBuilder) ContentSharingSessions()(*i6a956e9da3a6e7a50695a94bcd7dd16f04667e628762662e2a562dbb513808d4.ContentSharingSessionsRequestBuilder) {
     return i6a956e9da3a6e7a50695a94bcd7dd16f04667e628762662e2a562dbb513808d4.NewContentSharingSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,16 +142,16 @@ func (m *CallItemRequestBuilder) ContentSharingSessionsById(id string)(*ie37e4f3
     return ie37e4f36986bce11c7045e81e2c2f02722145373c94ed229df4e1f757aa12a44.NewContentSharingSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property calls for communications
-func (m *CallItemRequestBuilder) CreateDeleteRequestInformation(options *CallItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *CallItemRequestBuilder) CreateDeleteRequestInformation(options *CallItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -153,19 +159,19 @@ func (m *CallItemRequestBuilder) CreateDeleteRequestInformation(options *CallIte
     return requestInfo, nil
 }
 // CreateGetRequestInformation get calls from communications
-func (m *CallItemRequestBuilder) CreateGetRequestInformation(options *CallItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *CallItemRequestBuilder) CreateGetRequestInformation(options *CallItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -173,17 +179,17 @@ func (m *CallItemRequestBuilder) CreateGetRequestInformation(options *CallItemRe
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property calls in communications
-func (m *CallItemRequestBuilder) CreatePatchRequestInformation(options *CallItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *CallItemRequestBuilder) CreatePatchRequestInformation(options *CallItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -196,9 +202,9 @@ func (m *CallItemRequestBuilder) Delete(options *CallItemRequestBuilderDeleteOpt
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -207,27 +213,30 @@ func (m *CallItemRequestBuilder) Delete(options *CallItemRequestBuilderDeleteOpt
     return nil
 }
 // Get get calls from communications
-func (m *CallItemRequestBuilder) Get(options *CallItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Callable, error) {
+func (m *CallItemRequestBuilder) Get(options *CallItemRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateCallFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCallFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Callable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable), nil
 }
+// KeepAlive the keepAlive property
 func (m *CallItemRequestBuilder) KeepAlive()(*i3af510b639a3bfd33b6d77bb52f8d92c7f9e25367174bdfa6142903edc74995c.KeepAliveRequestBuilder) {
     return i3af510b639a3bfd33b6d77bb52f8d92c7f9e25367174bdfa6142903edc74995c.NewKeepAliveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Mute the mute property
 func (m *CallItemRequestBuilder) Mute()(*i2ad07b1a9d626a23f6fb4c6980016bdfa91427506827a8183fe0ab85ccea7297.MuteRequestBuilder) {
     return i2ad07b1a9d626a23f6fb4c6980016bdfa91427506827a8183fe0ab85ccea7297.NewMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Operations the operations property
 func (m *CallItemRequestBuilder) Operations()(*i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2.OperationsRequestBuilder) {
     return i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -242,6 +251,7 @@ func (m *CallItemRequestBuilder) OperationsById(id string)(*ifc54b1625a5ef155b18
     }
     return ifc54b1625a5ef155b182402b189053da9800796fb7507ed629f84919426791d1.NewCommsOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Participants the participants property
 func (m *CallItemRequestBuilder) Participants()(*if78246d1256eb5bc7db2b2c1dcd3d9daaa6de508f121f6f0bb97fcc022fe09f5.ParticipantsRequestBuilder) {
     return if78246d1256eb5bc7db2b2c1dcd3d9daaa6de508f121f6f0bb97fcc022fe09f5.NewParticipantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -262,9 +272,9 @@ func (m *CallItemRequestBuilder) Patch(options *CallItemRequestBuilderPatchOptio
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -272,30 +282,39 @@ func (m *CallItemRequestBuilder) Patch(options *CallItemRequestBuilderPatchOptio
     }
     return nil
 }
+// PlayPrompt the playPrompt property
 func (m *CallItemRequestBuilder) PlayPrompt()(*i08e66c5d7bd1abccfebd8fb93bd3824b29263d4a78a8e0619b6492ed8f3fad49.PlayPromptRequestBuilder) {
     return i08e66c5d7bd1abccfebd8fb93bd3824b29263d4a78a8e0619b6492ed8f3fad49.NewPlayPromptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Record the record property
 func (m *CallItemRequestBuilder) Record()(*i0c63fde205100ca16ab7a423f47cbdbde7db96e5bfd78a3f404e33371a9a304c.RecordRequestBuilder) {
     return i0c63fde205100ca16ab7a423f47cbdbde7db96e5bfd78a3f404e33371a9a304c.NewRecordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RecordResponse the recordResponse property
 func (m *CallItemRequestBuilder) RecordResponse()(*i18782668e274df0b14fede1b2d0b04b9dfad365a601b91cb1ae1236333912f77.RecordResponseRequestBuilder) {
     return i18782668e274df0b14fede1b2d0b04b9dfad365a601b91cb1ae1236333912f77.NewRecordResponseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Redirect the redirect property
 func (m *CallItemRequestBuilder) Redirect()(*i51c2a09e4f41fd4c07a21a333066d7d9b5683f48919e40d555e43eeedc2d2b0f.RedirectRequestBuilder) {
     return i51c2a09e4f41fd4c07a21a333066d7d9b5683f48919e40d555e43eeedc2d2b0f.NewRedirectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Reject the reject property
 func (m *CallItemRequestBuilder) Reject()(*idaf0ca56e2f68098afebd431de7c548ac38196c36423e844dd58942eb2a4ee85.RejectRequestBuilder) {
     return idaf0ca56e2f68098afebd431de7c548ac38196c36423e844dd58942eb2a4ee85.NewRejectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SubscribeToTone the subscribeToTone property
 func (m *CallItemRequestBuilder) SubscribeToTone()(*i59f1af4a71937287f9a647acee47040de638eb6d16981d2dc3f1c22d63d3d210.SubscribeToToneRequestBuilder) {
     return i59f1af4a71937287f9a647acee47040de638eb6d16981d2dc3f1c22d63d3d210.NewSubscribeToToneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Transfer the transfer property
 func (m *CallItemRequestBuilder) Transfer()(*i4ffb8669c93d0b11c0238e80369824011ea5e33bda9395560f9abe880eb8acc0.TransferRequestBuilder) {
     return i4ffb8669c93d0b11c0238e80369824011ea5e33bda9395560f9abe880eb8acc0.NewTransferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Unmute the unmute property
 func (m *CallItemRequestBuilder) Unmute()(*i4cae3b1a69ba2254d74646c3ba02c22835c51e378675f8f86fa207a4bf13fbb9.UnmuteRequestBuilder) {
     return i4cae3b1a69ba2254d74646c3ba02c22835c51e378675f8f86fa207a4bf13fbb9.NewUnmuteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UpdateRecordingStatus the updateRecordingStatus property
 func (m *CallItemRequestBuilder) UpdateRecordingStatus()(*i2e0863e08fc93d954484ce570f9308574c3c610b9cbf1e2c9d07876c640463ac.UpdateRecordingStatusRequestBuilder) {
     return i2e0863e08fc93d954484ce570f9308574c3c610b9cbf1e2c9d07876c640463ac.NewUpdateRecordingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

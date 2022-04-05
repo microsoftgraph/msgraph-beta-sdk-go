@@ -1,18 +1,18 @@
 package evaluateapplication
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
 )
 
 // EvaluateApplicationRequestBody provides operations to call the evaluateApplication method.
 type EvaluateApplicationRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    contentInfo i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable;
-    // 
-    labelingOptions i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.LabelingOptionsable;
+    // The contentInfo property
+    contentInfo i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable;
+    // The labelingOptions property
+    labelingOptions i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.LabelingOptionsable;
 }
 // NewEvaluateApplicationRequestBody instantiates a new evaluateApplicationRequestBody and sets the default values.
 func NewEvaluateApplicationRequestBody()(*EvaluateApplicationRequestBody) {
@@ -22,7 +22,7 @@ func NewEvaluateApplicationRequestBody()(*EvaluateApplicationRequestBody) {
     return m
 }
 // CreateEvaluateApplicationRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateEvaluateApplicationRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateEvaluateApplicationRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvaluateApplicationRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,8 +33,8 @@ func (m *EvaluateApplicationRequestBody) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetContentInfo gets the contentInfo property value. 
-func (m *EvaluateApplicationRequestBody) GetContentInfo()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable) {
+// GetContentInfo gets the contentInfo property value. The contentInfo property
+func (m *EvaluateApplicationRequestBody) GetContentInfo()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable) {
     if m == nil {
         return nil
     } else {
@@ -42,32 +42,32 @@ func (m *EvaluateApplicationRequestBody) GetContentInfo()(i2263de81f518180fb490a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateApplicationRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["contentInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateContentInfoFromDiscriminatorValue)
+func (m *EvaluateApplicationRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["contentInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateContentInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentInfo(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable))
+            m.SetContentInfo(val.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable))
         }
         return nil
     }
-    res["labelingOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateLabelingOptionsFromDiscriminatorValue)
+    res["labelingOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateLabelingOptionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLabelingOptions(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.LabelingOptionsable))
+            m.SetLabelingOptions(val.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.LabelingOptionsable))
         }
         return nil
     }
     return res
 }
-// GetLabelingOptions gets the labelingOptions property value. 
-func (m *EvaluateApplicationRequestBody) GetLabelingOptions()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.LabelingOptionsable) {
+// GetLabelingOptions gets the labelingOptions property value. The labelingOptions property
+func (m *EvaluateApplicationRequestBody) GetLabelingOptions()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.LabelingOptionsable) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +75,7 @@ func (m *EvaluateApplicationRequestBody) GetLabelingOptions()(i2263de81f518180fb
     }
 }
 // Serialize serializes information the current object
-func (m *EvaluateApplicationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *EvaluateApplicationRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("contentInfo", m.GetContentInfo())
         if err != nil {
@@ -102,14 +102,14 @@ func (m *EvaluateApplicationRequestBody) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetContentInfo sets the contentInfo property value. 
-func (m *EvaluateApplicationRequestBody) SetContentInfo(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable)() {
+// SetContentInfo sets the contentInfo property value. The contentInfo property
+func (m *EvaluateApplicationRequestBody) SetContentInfo(value i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable)() {
     if m != nil {
         m.contentInfo = value
     }
 }
-// SetLabelingOptions sets the labelingOptions property value. 
-func (m *EvaluateApplicationRequestBody) SetLabelingOptions(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.LabelingOptionsable)() {
+// SetLabelingOptions sets the labelingOptions property value. The labelingOptions property
+func (m *EvaluateApplicationRequestBody) SetLabelingOptions(value i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.LabelingOptionsable)() {
     if m != nil {
         m.labelingOptions = value
     }

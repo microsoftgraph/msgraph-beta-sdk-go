@@ -1,19 +1,19 @@
 package setuserpreferredpresence
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // SetUserPreferredPresenceRequestBody provides operations to call the setUserPreferredPresence method.
 type SetUserPreferredPresenceRequestBody struct {
-    // 
+    // The activity property
     activity *string;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The availability property
     availability *string;
-    // 
-    expirationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
+    // The expirationDuration property
+    expirationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
 }
 // NewSetUserPreferredPresenceRequestBody instantiates a new setUserPreferredPresenceRequestBody and sets the default values.
 func NewSetUserPreferredPresenceRequestBody()(*SetUserPreferredPresenceRequestBody) {
@@ -23,10 +23,10 @@ func NewSetUserPreferredPresenceRequestBody()(*SetUserPreferredPresenceRequestBo
     return m
 }
 // CreateSetUserPreferredPresenceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateSetUserPreferredPresenceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateSetUserPreferredPresenceRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSetUserPreferredPresenceRequestBody(), nil
 }
-// GetActivity gets the activity property value. 
+// GetActivity gets the activity property value. The activity property
 func (m *SetUserPreferredPresenceRequestBody) GetActivity()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
-// GetAvailability gets the availability property value. 
+// GetAvailability gets the availability property value. The availability property
 func (m *SetUserPreferredPresenceRequestBody) GetAvailability()(*string) {
     if m == nil {
         return nil
@@ -50,8 +50,8 @@ func (m *SetUserPreferredPresenceRequestBody) GetAvailability()(*string) {
         return m.availability
     }
 }
-// GetExpirationDuration gets the expirationDuration property value. 
-func (m *SetUserPreferredPresenceRequestBody) GetExpirationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+// GetExpirationDuration gets the expirationDuration property value. The expirationDuration property
+func (m *SetUserPreferredPresenceRequestBody) GetExpirationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -59,9 +59,9 @@ func (m *SetUserPreferredPresenceRequestBody) GetExpirationDuration()(*i04eb5309
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["activity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["availability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["availability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["expirationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["expirationDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string
     return res
 }
 // Serialize serializes information the current object
-func (m *SetUserPreferredPresenceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *SetUserPreferredPresenceRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("activity", m.GetActivity())
         if err != nil {
@@ -121,7 +121,7 @@ func (m *SetUserPreferredPresenceRequestBody) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
-// SetActivity sets the activity property value. 
+// SetActivity sets the activity property value. The activity property
 func (m *SetUserPreferredPresenceRequestBody) SetActivity(value *string)() {
     if m != nil {
         m.activity = value
@@ -133,14 +133,14 @@ func (m *SetUserPreferredPresenceRequestBody) SetAdditionalData(value map[string
         m.additionalData = value
     }
 }
-// SetAvailability sets the availability property value. 
+// SetAvailability sets the availability property value. The availability property
 func (m *SetUserPreferredPresenceRequestBody) SetAvailability(value *string)() {
     if m != nil {
         m.availability = value
     }
 }
-// SetExpirationDuration sets the expirationDuration property value. 
-func (m *SetUserPreferredPresenceRequestBody) SetExpirationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
+// SetExpirationDuration sets the expirationDuration property value. The expirationDuration property
+func (m *SetUserPreferredPresenceRequestBody) SetExpirationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.expirationDuration = value
     }

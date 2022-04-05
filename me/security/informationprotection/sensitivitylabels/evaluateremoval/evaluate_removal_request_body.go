@@ -1,18 +1,18 @@
 package evaluateremoval
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
 )
 
 // EvaluateRemovalRequestBody provides operations to call the evaluateRemoval method.
 type EvaluateRemovalRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    contentInfo i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable;
-    // 
-    downgradeJustification i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.DowngradeJustificationable;
+    // The contentInfo property
+    contentInfo i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable;
+    // The downgradeJustification property
+    downgradeJustification i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DowngradeJustificationable;
 }
 // NewEvaluateRemovalRequestBody instantiates a new evaluateRemovalRequestBody and sets the default values.
 func NewEvaluateRemovalRequestBody()(*EvaluateRemovalRequestBody) {
@@ -22,7 +22,7 @@ func NewEvaluateRemovalRequestBody()(*EvaluateRemovalRequestBody) {
     return m
 }
 // CreateEvaluateRemovalRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateEvaluateRemovalRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateEvaluateRemovalRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvaluateRemovalRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,16 +33,16 @@ func (m *EvaluateRemovalRequestBody) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// GetContentInfo gets the contentInfo property value. 
-func (m *EvaluateRemovalRequestBody) GetContentInfo()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable) {
+// GetContentInfo gets the contentInfo property value. The contentInfo property
+func (m *EvaluateRemovalRequestBody) GetContentInfo()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable) {
     if m == nil {
         return nil
     } else {
         return m.contentInfo
     }
 }
-// GetDowngradeJustification gets the downgradeJustification property value. 
-func (m *EvaluateRemovalRequestBody) GetDowngradeJustification()(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.DowngradeJustificationable) {
+// GetDowngradeJustification gets the downgradeJustification property value. The downgradeJustification property
+func (m *EvaluateRemovalRequestBody) GetDowngradeJustification()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DowngradeJustificationable) {
     if m == nil {
         return nil
     } else {
@@ -50,32 +50,32 @@ func (m *EvaluateRemovalRequestBody) GetDowngradeJustification()(i2263de81f51818
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateRemovalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["contentInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateContentInfoFromDiscriminatorValue)
+func (m *EvaluateRemovalRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["contentInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateContentInfoFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentInfo(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable))
+            m.SetContentInfo(val.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable))
         }
         return nil
     }
-    res["downgradeJustification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.CreateDowngradeJustificationFromDiscriminatorValue)
+    res["downgradeJustification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateDowngradeJustificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDowngradeJustification(val.(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.DowngradeJustificationable))
+            m.SetDowngradeJustification(val.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DowngradeJustificationable))
         }
         return nil
     }
     return res
 }
 // Serialize serializes information the current object
-func (m *EvaluateRemovalRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *EvaluateRemovalRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("contentInfo", m.GetContentInfo())
         if err != nil {
@@ -102,14 +102,14 @@ func (m *EvaluateRemovalRequestBody) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetContentInfo sets the contentInfo property value. 
-func (m *EvaluateRemovalRequestBody) SetContentInfo(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ContentInfoable)() {
+// SetContentInfo sets the contentInfo property value. The contentInfo property
+func (m *EvaluateRemovalRequestBody) SetContentInfo(value i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable)() {
     if m != nil {
         m.contentInfo = value
     }
 }
-// SetDowngradeJustification sets the downgradeJustification property value. 
-func (m *EvaluateRemovalRequestBody) SetDowngradeJustification(value i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.DowngradeJustificationable)() {
+// SetDowngradeJustification sets the downgradeJustification property value. The downgradeJustification property
+func (m *EvaluateRemovalRequestBody) SetDowngradeJustification(value i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DowngradeJustificationable)() {
     if m != nil {
         m.downgradeJustification = value
     }

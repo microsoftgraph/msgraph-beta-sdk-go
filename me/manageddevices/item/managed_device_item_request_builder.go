@@ -1,8 +1,9 @@
 package item
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0427fba48e94d62efa005dbfd923b9591f370d1812fc3f9f73ebbdd681128cc2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/detectedapps"
     i0630fe5357f055c4a869c7fec5dac47d8109b185d3e70c56c5c5d602d0bf2b49 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/activatedeviceesim"
     i06cb710667f52f42d44fc7648cda823b35f4f00e9af1e891bde61f0cdab9ea57 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/disablelostmode"
@@ -22,7 +23,6 @@ import (
     i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/setdevicename"
     i3b897a8ccd665fdbe167f4e370c9723f97e54817cba754eb28388f5dd299a5c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/windowsdefenderupdatesignatures"
     i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/requestremoteassistance"
-    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i4ad2411bc4f698091cb4cddb8912e565be689d70f97726b35bf923595d409c66 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logoutsharedappledeviceactiveuser"
     i54c70818c0cf574dd041352a9ef88e3f0a2615f9d8e7d2f709c6d3799d3f777b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/locatedevice"
     i56c71bb28041877d99370b5914a9d176e4843c54d0bad29cd8a79268ef82dcf7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/disable"
@@ -67,29 +67,29 @@ type ManagedDeviceItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // ManagedDeviceItemRequestBuilderDeleteOptions options for Delete
 type ManagedDeviceItemRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // ManagedDeviceItemRequestBuilderGetOptions options for Get
 type ManagedDeviceItemRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *ManagedDeviceItemRequestBuilderGetQueryParameters;
+    QueryParameters *ManagedDeviceItemRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // ManagedDeviceItemRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDeviceItemRequestBuilderGetQueryParameters struct {
@@ -101,17 +101,19 @@ type ManagedDeviceItemRequestBuilderGetQueryParameters struct {
 // ManagedDeviceItemRequestBuilderPatchOptions options for Patch
 type ManagedDeviceItemRequestBuilderPatchOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// ActivateDeviceEsim the activateDeviceEsim property
 func (m *ManagedDeviceItemRequestBuilder) ActivateDeviceEsim()(*i0630fe5357f055c4a869c7fec5dac47d8109b185d3e70c56c5c5d602d0bf2b49.ActivateDeviceEsimRequestBuilder) {
     return i0630fe5357f055c4a869c7fec5dac47d8109b185d3e70c56c5c5d602d0bf2b49.NewActivateDeviceEsimRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AssignmentFilterEvaluationStatusDetails the assignmentFilterEvaluationStatusDetails property
 func (m *ManagedDeviceItemRequestBuilder) AssignmentFilterEvaluationStatusDetails()(*ie9b83a46344e78ccf7acd52e88cae665fee20e8bed3246165738e5094dc39421.AssignmentFilterEvaluationStatusDetailsRequestBuilder) {
     return ie9b83a46344e78ccf7acd52e88cae665fee20e8bed3246165738e5094dc39421.NewAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,14 +128,16 @@ func (m *ManagedDeviceItemRequestBuilder) AssignmentFilterEvaluationStatusDetail
     }
     return idad2f9d4b430a211b97b2722dfb0a947f9cbdee6e03d60f419b691db67fec1d7.NewAssignmentFilterEvaluationStatusDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// BypassActivationLock the bypassActivationLock property
 func (m *ManagedDeviceItemRequestBuilder) BypassActivationLock()(*i16de495ce65b087460ba21136c9b72e3b2ff9a664a0756760685c434e52936ab.BypassActivationLockRequestBuilder) {
     return i16de495ce65b087460ba21136c9b72e3b2ff9a664a0756760685c434e52936ab.NewBypassActivationLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// CleanWindowsDevice the cleanWindowsDevice property
 func (m *ManagedDeviceItemRequestBuilder) CleanWindowsDevice()(*ie9117b0fbaf882b6a5c75879c83237b22998bbf1a1fd4b0542ac3ad863d25751.CleanWindowsDeviceRequestBuilder) {
     return ie9117b0fbaf882b6a5c75879c83237b22998bbf1a1fd4b0542ac3ad863d25751.NewCleanWindowsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewManagedDeviceItemRequestBuilderInternal instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
-func NewManagedDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceItemRequestBuilder) {
+func NewManagedDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceItemRequestBuilder) {
     m := &ManagedDeviceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/managedDevices/{managedDevice_id}{?select,expand}";
@@ -146,45 +150,46 @@ func NewManagedDeviceItemRequestBuilderInternal(pathParameters map[string]string
     return m
 }
 // NewManagedDeviceItemRequestBuilder instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
-func NewManagedDeviceItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceItemRequestBuilder) {
+func NewManagedDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property managedDevices for me
-func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceItemRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
+// CreateDeviceLogCollectionRequest the createDeviceLogCollectionRequest property
 func (m *ManagedDeviceItemRequestBuilder) CreateDeviceLogCollectionRequest()(*i3776f24495e66930f2a43cb3ea8f98452ba8e71357481f30e1f01270eaebd89f.CreateDeviceLogCollectionRequestRequestBuilder) {
     return i3776f24495e66930f2a43cb3ea8f98452ba8e71357481f30e1f01270eaebd89f.NewCreateDeviceLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -192,17 +197,17 @@ func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformation(options *M
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property managedDevices in me
-func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceItemRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -215,9 +220,9 @@ func (m *ManagedDeviceItemRequestBuilder) Delete(options *ManagedDeviceItemReque
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -225,12 +230,15 @@ func (m *ManagedDeviceItemRequestBuilder) Delete(options *ManagedDeviceItemReque
     }
     return nil
 }
+// DeleteUserFromSharedAppleDevice the deleteUserFromSharedAppleDevice property
 func (m *ManagedDeviceItemRequestBuilder) DeleteUserFromSharedAppleDevice()(*i584451cba1485854ec39deb63934f106cfbee88649f118d333314d1bb41ed15f.DeleteUserFromSharedAppleDeviceRequestBuilder) {
     return i584451cba1485854ec39deb63934f106cfbee88649f118d333314d1bb41ed15f.NewDeleteUserFromSharedAppleDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Deprovision the deprovision property
 func (m *ManagedDeviceItemRequestBuilder) Deprovision()(*i582affabda78deb10f5f0232aca6f8fa5d5bdd13a972a8227a2fca5cd056c147.DeprovisionRequestBuilder) {
     return i582affabda78deb10f5f0232aca6f8fa5d5bdd13a972a8227a2fca5cd056c147.NewDeprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DetectedApps the detectedApps property
 func (m *ManagedDeviceItemRequestBuilder) DetectedApps()(*i0427fba48e94d62efa005dbfd923b9591f370d1812fc3f9f73ebbdd681128cc2.DetectedAppsRequestBuilder) {
     return i0427fba48e94d62efa005dbfd923b9591f370d1812fc3f9f73ebbdd681128cc2.NewDetectedAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -245,9 +253,11 @@ func (m *ManagedDeviceItemRequestBuilder) DetectedAppsById(id string)(*i578db475
     }
     return i578db475d536dd6c248552b1ff9b6a95b1348d7941cff6a6948c720fdab0b754.NewDetectedAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceCategory the deviceCategory property
 func (m *ManagedDeviceItemRequestBuilder) DeviceCategory()(*ibe1a8097ef4c4f880f68b7002449a07a962687a3a6b20d416b08587f9959968a.DeviceCategoryRequestBuilder) {
     return ibe1a8097ef4c4f880f68b7002449a07a962687a3a6b20d416b08587f9959968a.NewDeviceCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DeviceCompliancePolicyStates the deviceCompliancePolicyStates property
 func (m *ManagedDeviceItemRequestBuilder) DeviceCompliancePolicyStates()(*iea52b437c1dc7016742d797ac45ae1410bba0259df3e4fa40788171f8006769f.DeviceCompliancePolicyStatesRequestBuilder) {
     return iea52b437c1dc7016742d797ac45ae1410bba0259df3e4fa40788171f8006769f.NewDeviceCompliancePolicyStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -262,6 +272,7 @@ func (m *ManagedDeviceItemRequestBuilder) DeviceCompliancePolicyStatesById(id st
     }
     return i3b81ded3502653dd3172717ded2cc7fa51f906ee50a26f3fe4b8e0dad9677e3a.NewDeviceCompliancePolicyStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceConfigurationStates the deviceConfigurationStates property
 func (m *ManagedDeviceItemRequestBuilder) DeviceConfigurationStates()(*i0a7666943ca9e25dae81c945031c9324a6104c6661fd7c2ec7e6f0f7398a82ff.DeviceConfigurationStatesRequestBuilder) {
     return i0a7666943ca9e25dae81c945031c9324a6104c6661fd7c2ec7e6f0f7398a82ff.NewDeviceConfigurationStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -276,30 +287,33 @@ func (m *ManagedDeviceItemRequestBuilder) DeviceConfigurationStatesById(id strin
     }
     return i66e1a9a592cf352f3ff5264cb51be3f84dee6770b52c256db783a3766f23fd2c.NewDeviceConfigurationStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Disable the disable property
 func (m *ManagedDeviceItemRequestBuilder) Disable()(*i56c71bb28041877d99370b5914a9d176e4843c54d0bad29cd8a79268ef82dcf7.DisableRequestBuilder) {
     return i56c71bb28041877d99370b5914a9d176e4843c54d0bad29cd8a79268ef82dcf7.NewDisableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DisableLostMode the disableLostMode property
 func (m *ManagedDeviceItemRequestBuilder) DisableLostMode()(*i06cb710667f52f42d44fc7648cda823b35f4f00e9af1e891bde61f0cdab9ea57.DisableLostModeRequestBuilder) {
     return i06cb710667f52f42d44fc7648cda823b35f4f00e9af1e891bde61f0cdab9ea57.NewDisableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// EnableLostMode the enableLostMode property
 func (m *ManagedDeviceItemRequestBuilder) EnableLostMode()(*if450a7b981b5463dc312f04522c7033d72d19492fa65aa3ae61e295d24e6b43f.EnableLostModeRequestBuilder) {
     return if450a7b981b5463dc312f04522c7033d72d19492fa65aa3ae61e295d24e6b43f.NewEnableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) Get(options *ManagedDeviceItemRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceable, error) {
+func (m *ManagedDeviceItemRequestBuilder) Get(options *ManagedDeviceItemRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateManagedDeviceFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedDeviceFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable), nil
 }
 // GetCloudPcRemoteActionResults provides operations to call the getCloudPcRemoteActionResults method.
 func (m *ManagedDeviceItemRequestBuilder) GetCloudPcRemoteActionResults()(*id8bc634ccb989ff6228ca3386217960759b949d6d7a4a6dcaef53ec645ce0bb1.GetCloudPcRemoteActionResultsRequestBuilder) {
@@ -317,9 +331,11 @@ func (m *ManagedDeviceItemRequestBuilder) GetNonCompliantSettings()(*i8f3dd0f376
 func (m *ManagedDeviceItemRequestBuilder) GetOemWarranty()(*i943f0e8246505776fb92732c1b8002c02a1a683900dc017b18fa61b9a8c55865.GetOemWarrantyRequestBuilder) {
     return i943f0e8246505776fb92732c1b8002c02a1a683900dc017b18fa61b9a8c55865.NewGetOemWarrantyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// LocateDevice the locateDevice property
 func (m *ManagedDeviceItemRequestBuilder) LocateDevice()(*i54c70818c0cf574dd041352a9ef88e3f0a2615f9d8e7d2f709c6d3799d3f777b.LocateDeviceRequestBuilder) {
     return i54c70818c0cf574dd041352a9ef88e3f0a2615f9d8e7d2f709c6d3799d3f777b.NewLocateDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// LogCollectionRequests the logCollectionRequests property
 func (m *ManagedDeviceItemRequestBuilder) LogCollectionRequests()(*i1f766465498501463348486d49874ef974c6aa6e056820a5caf1c3a5e2690c21.LogCollectionRequestsRequestBuilder) {
     return i1f766465498501463348486d49874ef974c6aa6e056820a5caf1c3a5e2690c21.NewLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -334,9 +350,11 @@ func (m *ManagedDeviceItemRequestBuilder) LogCollectionRequestsById(id string)(*
     }
     return ia1c10427ec26c5213d3cb81c564d2ac164554b68fb635b97827129a4960420f1.NewDeviceLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// LogoutSharedAppleDeviceActiveUser the logoutSharedAppleDeviceActiveUser property
 func (m *ManagedDeviceItemRequestBuilder) LogoutSharedAppleDeviceActiveUser()(*i4ad2411bc4f698091cb4cddb8912e565be689d70f97726b35bf923595d409c66.LogoutSharedAppleDeviceActiveUserRequestBuilder) {
     return i4ad2411bc4f698091cb4cddb8912e565be689d70f97726b35bf923595d409c66.NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ManagedDeviceMobileAppConfigurationStates the managedDeviceMobileAppConfigurationStates property
 func (m *ManagedDeviceItemRequestBuilder) ManagedDeviceMobileAppConfigurationStates()(*i64cf356dab9c672515b0f94125c4d954263b127208bfbb9d3bf44d33c02c57d4.ManagedDeviceMobileAppConfigurationStatesRequestBuilder) {
     return i64cf356dab9c672515b0f94125c4d954263b127208bfbb9d3bf44d33c02c57d4.NewManagedDeviceMobileAppConfigurationStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -351,6 +369,7 @@ func (m *ManagedDeviceItemRequestBuilder) ManagedDeviceMobileAppConfigurationSta
     }
     return i96054b50b70fc586b43b9fdad370e6044740fbb719443c11c6ce4fbb73f65207.NewManagedDeviceMobileAppConfigurationStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// OverrideComplianceState the overrideComplianceState property
 func (m *ManagedDeviceItemRequestBuilder) OverrideComplianceState()(*ic7c5a2e2eaab60e96d43ceb51da74be9c7ac1bcacdb964857d2c4d2331784c70.OverrideComplianceStateRequestBuilder) {
     return ic7c5a2e2eaab60e96d43ceb51da74be9c7ac1bcacdb964857d2c4d2331784c70.NewOverrideComplianceStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -360,9 +379,9 @@ func (m *ManagedDeviceItemRequestBuilder) Patch(options *ManagedDeviceItemReques
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -370,48 +389,63 @@ func (m *ManagedDeviceItemRequestBuilder) Patch(options *ManagedDeviceItemReques
     }
     return nil
 }
+// PlayLostModeSound the playLostModeSound property
 func (m *ManagedDeviceItemRequestBuilder) PlayLostModeSound()(*ia6866ca41722c5c1a3bb8d2a63452764f310f9bedb206627fbff9b413170d311.PlayLostModeSoundRequestBuilder) {
     return ia6866ca41722c5c1a3bb8d2a63452764f310f9bedb206627fbff9b413170d311.NewPlayLostModeSoundRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RebootNow the rebootNow property
 func (m *ManagedDeviceItemRequestBuilder) RebootNow()(*i2895d06145d6f77d60b53e7a17c29b5b08ec73440e1edd1592e6b4e58dfd3bcc.RebootNowRequestBuilder) {
     return i2895d06145d6f77d60b53e7a17c29b5b08ec73440e1edd1592e6b4e58dfd3bcc.NewRebootNowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RecoverPasscode the recoverPasscode property
 func (m *ManagedDeviceItemRequestBuilder) RecoverPasscode()(*i10e987396d980603fb74cb7a5c275ec758d4ee291025714cf5320202523b1649.RecoverPasscodeRequestBuilder) {
     return i10e987396d980603fb74cb7a5c275ec758d4ee291025714cf5320202523b1649.NewRecoverPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Reenable the reenable property
 func (m *ManagedDeviceItemRequestBuilder) Reenable()(*i0a5aa6fcc00963be9687eacfad1f376ed54f197caf08fe68554c92823d951533.ReenableRequestBuilder) {
     return i0a5aa6fcc00963be9687eacfad1f376ed54f197caf08fe68554c92823d951533.NewReenableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RemoteLock the remoteLock property
 func (m *ManagedDeviceItemRequestBuilder) RemoteLock()(*i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa.RemoteLockRequestBuilder) {
     return i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa.NewRemoteLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ReprovisionCloudPc the reprovisionCloudPc property
 func (m *ManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*iaac25517cf1038417a09bf97f681ffe842dcbe5678bf131e589ee9fbac0c73b9.ReprovisionCloudPcRequestBuilder) {
     return iaac25517cf1038417a09bf97f681ffe842dcbe5678bf131e589ee9fbac0c73b9.NewReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RequestRemoteAssistance the requestRemoteAssistance property
 func (m *ManagedDeviceItemRequestBuilder) RequestRemoteAssistance()(*i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f.RequestRemoteAssistanceRequestBuilder) {
     return i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f.NewRequestRemoteAssistanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ResetPasscode the resetPasscode property
 func (m *ManagedDeviceItemRequestBuilder) ResetPasscode()(*i76321fab1e28309a28c2fd699420e10a6d9d27fecba21c5f5ff3c89eb5e9417e.ResetPasscodeRequestBuilder) {
     return i76321fab1e28309a28c2fd699420e10a6d9d27fecba21c5f5ff3c89eb5e9417e.NewResetPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ResizeCloudPc the resizeCloudPc property
 func (m *ManagedDeviceItemRequestBuilder) ResizeCloudPc()(*i0e96e9d7fcd789b68a4e2dc1614a66232476f904c43a89f7562d22f94f9f34f5.ResizeCloudPcRequestBuilder) {
     return i0e96e9d7fcd789b68a4e2dc1614a66232476f904c43a89f7562d22f94f9f34f5.NewResizeCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RestoreCloudPc the restoreCloudPc property
 func (m *ManagedDeviceItemRequestBuilder) RestoreCloudPc()(*i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76.RestoreCloudPcRequestBuilder) {
     return i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76.NewRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Retire the retire property
 func (m *ManagedDeviceItemRequestBuilder) Retire()(*i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e.RetireRequestBuilder) {
     return i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RevokeAppleVppLicenses the revokeAppleVppLicenses property
 func (m *ManagedDeviceItemRequestBuilder) RevokeAppleVppLicenses()(*ic31f6e50541d7a1a2cbdcc9661762fe7f00d68f3a4b2953edee9b926748ded33.RevokeAppleVppLicensesRequestBuilder) {
     return ic31f6e50541d7a1a2cbdcc9661762fe7f00d68f3a4b2953edee9b926748ded33.NewRevokeAppleVppLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RotateBitLockerKeys the rotateBitLockerKeys property
 func (m *ManagedDeviceItemRequestBuilder) RotateBitLockerKeys()(*ief4557c513ab3bc198596f3b818d3711d27cece1311420a8546b241b3ba7df10.RotateBitLockerKeysRequestBuilder) {
     return ief4557c513ab3bc198596f3b818d3711d27cece1311420a8546b241b3ba7df10.NewRotateBitLockerKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RotateFileVaultKey the rotateFileVaultKey property
 func (m *ManagedDeviceItemRequestBuilder) RotateFileVaultKey()(*ib181475d5b174fd0c21f46c5adfa4e4cd596823a4ea13c19d41a46320ddd9753.RotateFileVaultKeyRequestBuilder) {
     return ib181475d5b174fd0c21f46c5adfa4e4cd596823a4ea13c19d41a46320ddd9753.NewRotateFileVaultKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SecurityBaselineStates the securityBaselineStates property
 func (m *ManagedDeviceItemRequestBuilder) SecurityBaselineStates()(*i13639623e2dbbc8263977fb93102819219d2c34ab64843715747f7af29c46bab.SecurityBaselineStatesRequestBuilder) {
     return i13639623e2dbbc8263977fb93102819219d2c34ab64843715747f7af29c46bab.NewSecurityBaselineStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -426,36 +460,47 @@ func (m *ManagedDeviceItemRequestBuilder) SecurityBaselineStatesById(id string)(
     }
     return i7aec23a974d5a99eded144b4d6e593437866486632b1be4e531e0cbabb55685e.NewSecurityBaselineStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SendCustomNotificationToCompanyPortal the sendCustomNotificationToCompanyPortal property
 func (m *ManagedDeviceItemRequestBuilder) SendCustomNotificationToCompanyPortal()(*ib9ddea00f470a770676c6891549ef1977895ac0cb688021e1e7ca6525a2bd30e.SendCustomNotificationToCompanyPortalRequestBuilder) {
     return ib9ddea00f470a770676c6891549ef1977895ac0cb688021e1e7ca6525a2bd30e.NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SetDeviceName the setDeviceName property
 func (m *ManagedDeviceItemRequestBuilder) SetDeviceName()(*i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d.SetDeviceNameRequestBuilder) {
     return i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d.NewSetDeviceNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ShutDown the shutDown property
 func (m *ManagedDeviceItemRequestBuilder) ShutDown()(*i0e163ea29ba2a15db04b12fee3b41564a2a8159ed31ba0bfa3acb04215135a47.ShutDownRequestBuilder) {
     return i0e163ea29ba2a15db04b12fee3b41564a2a8159ed31ba0bfa3acb04215135a47.NewShutDownRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SyncDevice the syncDevice property
 func (m *ManagedDeviceItemRequestBuilder) SyncDevice()(*i89c236eb4c587fbb0a24528cb0e513d10719fb9adcb5a8f1c90cbd0e5f6b6c4b.SyncDeviceRequestBuilder) {
     return i89c236eb4c587fbb0a24528cb0e513d10719fb9adcb5a8f1c90cbd0e5f6b6c4b.NewSyncDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// TriggerConfigurationManagerAction the triggerConfigurationManagerAction property
 func (m *ManagedDeviceItemRequestBuilder) TriggerConfigurationManagerAction()(*ia4ee316c6c9eb7161a71f047d40762643af93b348a3b2896f494e510a93632b1.TriggerConfigurationManagerActionRequestBuilder) {
     return ia4ee316c6c9eb7161a71f047d40762643af93b348a3b2896f494e510a93632b1.NewTriggerConfigurationManagerActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UpdateWindowsDeviceAccount the updateWindowsDeviceAccount property
 func (m *ManagedDeviceItemRequestBuilder) UpdateWindowsDeviceAccount()(*id2f34cb54ddaeb8cd225320949858738929421d17f72c94883305d6139b502e5.UpdateWindowsDeviceAccountRequestBuilder) {
     return id2f34cb54ddaeb8cd225320949858738929421d17f72c94883305d6139b502e5.NewUpdateWindowsDeviceAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Users the users property
 func (m *ManagedDeviceItemRequestBuilder) Users()(*i89669e1da9ff42fe3d04becaf5b4a01bd3cf18efa328f7b9f7c83e42074b1417.UsersRequestBuilder) {
     return i89669e1da9ff42fe3d04becaf5b4a01bd3cf18efa328f7b9f7c83e42074b1417.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// WindowsDefenderScan the windowsDefenderScan property
 func (m *ManagedDeviceItemRequestBuilder) WindowsDefenderScan()(*i7f6406f0c90d2dcc9852f30f4ca6b1df88a331683c598d8de380eaafb75271d4.WindowsDefenderScanRequestBuilder) {
     return i7f6406f0c90d2dcc9852f30f4ca6b1df88a331683c598d8de380eaafb75271d4.NewWindowsDefenderScanRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// WindowsDefenderUpdateSignatures the windowsDefenderUpdateSignatures property
 func (m *ManagedDeviceItemRequestBuilder) WindowsDefenderUpdateSignatures()(*i3b897a8ccd665fdbe167f4e370c9723f97e54817cba754eb28388f5dd299a5c3.WindowsDefenderUpdateSignaturesRequestBuilder) {
     return i3b897a8ccd665fdbe167f4e370c9723f97e54817cba754eb28388f5dd299a5c3.NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// WindowsProtectionState the windowsProtectionState property
 func (m *ManagedDeviceItemRequestBuilder) WindowsProtectionState()(*ib1b899a4faefda1522c1f9a788dfd573c30299883bae2917a797c86c3aab83b0.WindowsProtectionStateRequestBuilder) {
     return ib1b899a4faefda1522c1f9a788dfd573c30299883bae2917a797c86c3aab83b0.NewWindowsProtectionStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Wipe the wipe property
 func (m *ManagedDeviceItemRequestBuilder) Wipe()(*ic3d46fe96eb7d3c0bbb5b76d1ae4693f9bdb9b5675396fff7df26f117611b089.WipeRequestBuilder) {
     return ic3d46fe96eb7d3c0bbb5b76d1ae4693f9bdb9b5675396fff7df26f117611b089.NewWipeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
