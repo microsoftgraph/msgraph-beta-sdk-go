@@ -1,16 +1,16 @@
 package createdevicelogcollectionrequest
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // CreateDeviceLogCollectionRequestRequestBody provides operations to call the createDeviceLogCollectionRequest method.
 type CreateDeviceLogCollectionRequestRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    templateType i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable;
+    // The templateType property
+    templateType ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionRequestable;
 }
 // NewCreateDeviceLogCollectionRequestRequestBody instantiates a new createDeviceLogCollectionRequestRequestBody and sets the default values.
 func NewCreateDeviceLogCollectionRequestRequestBody()(*CreateDeviceLogCollectionRequestRequestBody) {
@@ -20,7 +20,7 @@ func NewCreateDeviceLogCollectionRequestRequestBody()(*CreateDeviceLogCollection
     return m
 }
 // CreateCreateDeviceLogCollectionRequestRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCreateDeviceLogCollectionRequestRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCreateDeviceLogCollectionRequestRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCreateDeviceLogCollectionRequestRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -32,22 +32,22 @@ func (m *CreateDeviceLogCollectionRequestRequestBody) GetAdditionalData()(map[st
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CreateDeviceLogCollectionRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["templateType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceLogCollectionRequestFromDiscriminatorValue)
+func (m *CreateDeviceLogCollectionRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["templateType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceLogCollectionRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTemplateType(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable))
+            m.SetTemplateType(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionRequestable))
         }
         return nil
     }
     return res
 }
-// GetTemplateType gets the templateType property value. 
-func (m *CreateDeviceLogCollectionRequestRequestBody) GetTemplateType()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable) {
+// GetTemplateType gets the templateType property value. The templateType property
+func (m *CreateDeviceLogCollectionRequestRequestBody) GetTemplateType()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionRequestable) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +55,7 @@ func (m *CreateDeviceLogCollectionRequestRequestBody) GetTemplateType()(i535684e
     }
 }
 // Serialize serializes information the current object
-func (m *CreateDeviceLogCollectionRequestRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CreateDeviceLogCollectionRequestRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("templateType", m.GetTemplateType())
         if err != nil {
@@ -76,8 +76,8 @@ func (m *CreateDeviceLogCollectionRequestRequestBody) SetAdditionalData(value ma
         m.additionalData = value
     }
 }
-// SetTemplateType sets the templateType property value. 
-func (m *CreateDeviceLogCollectionRequestRequestBody) SetTemplateType(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionRequestable)() {
+// SetTemplateType sets the templateType property value. The templateType property
+func (m *CreateDeviceLogCollectionRequestRequestBody) SetTemplateType(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionRequestable)() {
     if m != nil {
         m.templateType = value
     }

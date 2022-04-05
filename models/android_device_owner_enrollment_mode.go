@@ -1,0 +1,44 @@
+package models
+import (
+    "strings"
+    "errors"
+)
+// Provides operations to manage the deviceManagement singleton.
+type AndroidDeviceOwnerEnrollmentMode int
+
+const (
+    CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE AndroidDeviceOwnerEnrollmentMode = iota
+    CORPORATEOWNEDFULLYMANAGED_ANDROIDDEVICEOWNERENROLLMENTMODE
+    CORPORATEOWNEDWORKPROFILE_ANDROIDDEVICEOWNERENROLLMENTMODE
+    CORPORATEOWNEDAOSPUSERLESSDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+    CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+)
+
+func (i AndroidDeviceOwnerEnrollmentMode) String() string {
+    return []string{"CORPORATEOWNEDDEDICATEDDEVICE", "CORPORATEOWNEDFULLYMANAGED", "CORPORATEOWNEDWORKPROFILE", "CORPORATEOWNEDAOSPUSERLESSDEVICE", "CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE"}[i]
+}
+func ParseAndroidDeviceOwnerEnrollmentMode(v string) (interface{}, error) {
+    result := CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+    switch strings.ToUpper(v) {
+        case "CORPORATEOWNEDDEDICATEDDEVICE":
+            result = CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+        case "CORPORATEOWNEDFULLYMANAGED":
+            result = CORPORATEOWNEDFULLYMANAGED_ANDROIDDEVICEOWNERENROLLMENTMODE
+        case "CORPORATEOWNEDWORKPROFILE":
+            result = CORPORATEOWNEDWORKPROFILE_ANDROIDDEVICEOWNERENROLLMENTMODE
+        case "CORPORATEOWNEDAOSPUSERLESSDEVICE":
+            result = CORPORATEOWNEDAOSPUSERLESSDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+        case "CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE":
+            result = CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+        default:
+            return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentMode value: " + v)
+    }
+    return &result, nil
+}
+func SerializeAndroidDeviceOwnerEnrollmentMode(values []AndroidDeviceOwnerEnrollmentMode) []string {
+    result := make([]string, len(values))
+    for i, v := range values {
+        result[i] = v.String()
+    }
+    return result
+}

@@ -1,35 +1,35 @@
 package executeaction
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // ExecuteActionRequestBody provides operations to call the executeAction method.
 type ExecuteActionRequestBody struct {
-    // 
-    actionName *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction;
+    // The actionName property
+    actionName *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The carrierUrl property
     carrierUrl *string;
-    // 
+    // The deprovisionReason property
     deprovisionReason *string;
-    // 
+    // The deviceIds property
     deviceIds []string;
-    // 
+    // The deviceName property
     deviceName *string;
-    // 
+    // The keepEnrollmentData property
     keepEnrollmentData *bool;
-    // 
+    // The keepUserData property
     keepUserData *bool;
-    // 
+    // The notificationBody property
     notificationBody *string;
-    // 
+    // The notificationTitle property
     notificationTitle *string;
-    // 
+    // The organizationalUnitPath property
     organizationalUnitPath *string;
-    // 
+    // The persistEsimDataPlan property
     persistEsimDataPlan *bool;
 }
 // NewExecuteActionRequestBody instantiates a new executeActionRequestBody and sets the default values.
@@ -40,11 +40,11 @@ func NewExecuteActionRequestBody()(*ExecuteActionRequestBody) {
     return m
 }
 // CreateExecuteActionRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateExecuteActionRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateExecuteActionRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExecuteActionRequestBody(), nil
 }
-// GetActionName gets the actionName property value. 
-func (m *ExecuteActionRequestBody) GetActionName()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction) {
+// GetActionName gets the actionName property value. The actionName property
+func (m *ExecuteActionRequestBody) GetActionName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +59,7 @@ func (m *ExecuteActionRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCarrierUrl gets the carrierUrl property value. 
+// GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
 func (m *ExecuteActionRequestBody) GetCarrierUrl()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *ExecuteActionRequestBody) GetCarrierUrl()(*string) {
         return m.carrierUrl
     }
 }
-// GetDeprovisionReason gets the deprovisionReason property value. 
+// GetDeprovisionReason gets the deprovisionReason property value. The deprovisionReason property
 func (m *ExecuteActionRequestBody) GetDeprovisionReason()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *ExecuteActionRequestBody) GetDeprovisionReason()(*string) {
         return m.deprovisionReason
     }
 }
-// GetDeviceIds gets the deviceIds property value. 
+// GetDeviceIds gets the deviceIds property value. The deviceIds property
 func (m *ExecuteActionRequestBody) GetDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *ExecuteActionRequestBody) GetDeviceIds()([]string) {
         return m.deviceIds
     }
 }
-// GetDeviceName gets the deviceName property value. 
+// GetDeviceName gets the deviceName property value. The deviceName property
 func (m *ExecuteActionRequestBody) GetDeviceName()(*string) {
     if m == nil {
         return nil
@@ -92,19 +92,19 @@ func (m *ExecuteActionRequestBody) GetDeviceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["actionName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseManagedDeviceRemoteAction)
+func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["actionName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseManagedDeviceRemoteAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActionName(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction))
+            m.SetActionName(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction))
         }
         return nil
     }
-    res["carrierUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["carrierUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["deprovisionReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["deprovisionReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["deviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["deviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["keepEnrollmentData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["keepEnrollmentData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["keepUserData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["keepUserData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["notificationBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["notificationBody"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["notificationTitle"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["notificationTitle"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["organizationalUnitPath"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["organizationalUnitPath"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["persistEsimDataPlan"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["persistEsimDataPlan"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -210,7 +210,7 @@ func (m *ExecuteActionRequestBody) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
-// GetKeepEnrollmentData gets the keepEnrollmentData property value. 
+// GetKeepEnrollmentData gets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ExecuteActionRequestBody) GetKeepEnrollmentData()(*bool) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *ExecuteActionRequestBody) GetKeepEnrollmentData()(*bool) {
         return m.keepEnrollmentData
     }
 }
-// GetKeepUserData gets the keepUserData property value. 
+// GetKeepUserData gets the keepUserData property value. The keepUserData property
 func (m *ExecuteActionRequestBody) GetKeepUserData()(*bool) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *ExecuteActionRequestBody) GetKeepUserData()(*bool) {
         return m.keepUserData
     }
 }
-// GetNotificationBody gets the notificationBody property value. 
+// GetNotificationBody gets the notificationBody property value. The notificationBody property
 func (m *ExecuteActionRequestBody) GetNotificationBody()(*string) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *ExecuteActionRequestBody) GetNotificationBody()(*string) {
         return m.notificationBody
     }
 }
-// GetNotificationTitle gets the notificationTitle property value. 
+// GetNotificationTitle gets the notificationTitle property value. The notificationTitle property
 func (m *ExecuteActionRequestBody) GetNotificationTitle()(*string) {
     if m == nil {
         return nil
@@ -242,7 +242,7 @@ func (m *ExecuteActionRequestBody) GetNotificationTitle()(*string) {
         return m.notificationTitle
     }
 }
-// GetOrganizationalUnitPath gets the organizationalUnitPath property value. 
+// GetOrganizationalUnitPath gets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *ExecuteActionRequestBody) GetOrganizationalUnitPath()(*string) {
     if m == nil {
         return nil
@@ -250,7 +250,7 @@ func (m *ExecuteActionRequestBody) GetOrganizationalUnitPath()(*string) {
         return m.organizationalUnitPath
     }
 }
-// GetPersistEsimDataPlan gets the persistEsimDataPlan property value. 
+// GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ExecuteActionRequestBody) GetPersistEsimDataPlan()(*bool) {
     if m == nil {
         return nil
@@ -259,7 +259,7 @@ func (m *ExecuteActionRequestBody) GetPersistEsimDataPlan()(*bool) {
     }
 }
 // Serialize serializes information the current object
-func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ExecuteActionRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetActionName() != nil {
         cast := (*m.GetActionName()).String()
         err := writer.WriteStringValue("actionName", &cast)
@@ -335,8 +335,8 @@ func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// SetActionName sets the actionName property value. 
-func (m *ExecuteActionRequestBody) SetActionName(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction)() {
+// SetActionName sets the actionName property value. The actionName property
+func (m *ExecuteActionRequestBody) SetActionName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction)() {
     if m != nil {
         m.actionName = value
     }
@@ -347,61 +347,61 @@ func (m *ExecuteActionRequestBody) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetCarrierUrl sets the carrierUrl property value. 
+// SetCarrierUrl sets the carrierUrl property value. The carrierUrl property
 func (m *ExecuteActionRequestBody) SetCarrierUrl(value *string)() {
     if m != nil {
         m.carrierUrl = value
     }
 }
-// SetDeprovisionReason sets the deprovisionReason property value. 
+// SetDeprovisionReason sets the deprovisionReason property value. The deprovisionReason property
 func (m *ExecuteActionRequestBody) SetDeprovisionReason(value *string)() {
     if m != nil {
         m.deprovisionReason = value
     }
 }
-// SetDeviceIds sets the deviceIds property value. 
+// SetDeviceIds sets the deviceIds property value. The deviceIds property
 func (m *ExecuteActionRequestBody) SetDeviceIds(value []string)() {
     if m != nil {
         m.deviceIds = value
     }
 }
-// SetDeviceName sets the deviceName property value. 
+// SetDeviceName sets the deviceName property value. The deviceName property
 func (m *ExecuteActionRequestBody) SetDeviceName(value *string)() {
     if m != nil {
         m.deviceName = value
     }
 }
-// SetKeepEnrollmentData sets the keepEnrollmentData property value. 
+// SetKeepEnrollmentData sets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ExecuteActionRequestBody) SetKeepEnrollmentData(value *bool)() {
     if m != nil {
         m.keepEnrollmentData = value
     }
 }
-// SetKeepUserData sets the keepUserData property value. 
+// SetKeepUserData sets the keepUserData property value. The keepUserData property
 func (m *ExecuteActionRequestBody) SetKeepUserData(value *bool)() {
     if m != nil {
         m.keepUserData = value
     }
 }
-// SetNotificationBody sets the notificationBody property value. 
+// SetNotificationBody sets the notificationBody property value. The notificationBody property
 func (m *ExecuteActionRequestBody) SetNotificationBody(value *string)() {
     if m != nil {
         m.notificationBody = value
     }
 }
-// SetNotificationTitle sets the notificationTitle property value. 
+// SetNotificationTitle sets the notificationTitle property value. The notificationTitle property
 func (m *ExecuteActionRequestBody) SetNotificationTitle(value *string)() {
     if m != nil {
         m.notificationTitle = value
     }
 }
-// SetOrganizationalUnitPath sets the organizationalUnitPath property value. 
+// SetOrganizationalUnitPath sets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *ExecuteActionRequestBody) SetOrganizationalUnitPath(value *string)() {
     if m != nil {
         m.organizationalUnitPath = value
     }
 }
-// SetPersistEsimDataPlan sets the persistEsimDataPlan property value. 
+// SetPersistEsimDataPlan sets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ExecuteActionRequestBody) SetPersistEsimDataPlan(value *bool)() {
     if m != nil {
         m.persistEsimDataPlan = value

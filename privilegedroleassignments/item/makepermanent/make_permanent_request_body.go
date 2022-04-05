@@ -1,18 +1,18 @@
 package makepermanent
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // MakePermanentRequestBody provides operations to call the makePermanent method.
 type MakePermanentRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The reason property
     reason *string;
-    // 
+    // The ticketNumber property
     ticketNumber *string;
-    // 
+    // The ticketSystem property
     ticketSystem *string;
 }
 // NewMakePermanentRequestBody instantiates a new makePermanentRequestBody and sets the default values.
@@ -23,7 +23,7 @@ func NewMakePermanentRequestBody()(*MakePermanentRequestBody) {
     return m
 }
 // CreateMakePermanentRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateMakePermanentRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateMakePermanentRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMakePermanentRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -35,9 +35,9 @@ func (m *MakePermanentRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MakePermanentRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["reason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *MakePermanentRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["reason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *MakePermanentRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["ticketNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["ticketNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *MakePermanentRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["ticketSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["ticketSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *MakePermanentRequestBody) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
-// GetReason gets the reason property value. 
+// GetReason gets the reason property value. The reason property
 func (m *MakePermanentRequestBody) GetReason()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *MakePermanentRequestBody) GetReason()(*string) {
         return m.reason
     }
 }
-// GetTicketNumber gets the ticketNumber property value. 
+// GetTicketNumber gets the ticketNumber property value. The ticketNumber property
 func (m *MakePermanentRequestBody) GetTicketNumber()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *MakePermanentRequestBody) GetTicketNumber()(*string) {
         return m.ticketNumber
     }
 }
-// GetTicketSystem gets the ticketSystem property value. 
+// GetTicketSystem gets the ticketSystem property value. The ticketSystem property
 func (m *MakePermanentRequestBody) GetTicketSystem()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *MakePermanentRequestBody) GetTicketSystem()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *MakePermanentRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *MakePermanentRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("reason", m.GetReason())
         if err != nil {
@@ -127,19 +127,19 @@ func (m *MakePermanentRequestBody) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetReason sets the reason property value. 
+// SetReason sets the reason property value. The reason property
 func (m *MakePermanentRequestBody) SetReason(value *string)() {
     if m != nil {
         m.reason = value
     }
 }
-// SetTicketNumber sets the ticketNumber property value. 
+// SetTicketNumber sets the ticketNumber property value. The ticketNumber property
 func (m *MakePermanentRequestBody) SetTicketNumber(value *string)() {
     if m != nil {
         m.ticketNumber = value
     }
 }
-// SetTicketSystem sets the ticketSystem property value. 
+// SetTicketSystem sets the ticketSystem property value. The ticketSystem property
 func (m *MakePermanentRequestBody) SetTicketSystem(value *string)() {
     if m != nil {
         m.ticketSystem = value

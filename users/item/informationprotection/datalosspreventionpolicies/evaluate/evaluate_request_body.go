@@ -1,19 +1,19 @@
 package evaluate
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // EvaluateRequestBody provides operations to call the evaluate method.
 type EvaluateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    evaluationInput i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluationInputable;
-    // 
-    notificationInfo i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpNotificationable;
-    // 
+    // The evaluationInput property
+    evaluationInput ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable;
+    // The notificationInfo property
+    notificationInfo ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpNotificationable;
+    // The target property
     target *string;
 }
 // NewEvaluateRequestBody instantiates a new evaluateRequestBody and sets the default values.
@@ -24,7 +24,7 @@ func NewEvaluateRequestBody()(*EvaluateRequestBody) {
     return m
 }
 // CreateEvaluateRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateEvaluateRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateEvaluateRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvaluateRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -35,8 +35,8 @@ func (m *EvaluateRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetEvaluationInput gets the evaluationInput property value. 
-func (m *EvaluateRequestBody) GetEvaluationInput()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluationInputable) {
+// GetEvaluationInput gets the evaluationInput property value. The evaluationInput property
+func (m *EvaluateRequestBody) GetEvaluationInput()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable) {
     if m == nil {
         return nil
     } else {
@@ -44,29 +44,29 @@ func (m *EvaluateRequestBody) GetEvaluationInput()(i535684e11b5500196ecb4b5c6634
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["evaluationInput"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDlpEvaluationInputFromDiscriminatorValue)
+func (m *EvaluateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["evaluationInput"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDlpEvaluationInputFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEvaluationInput(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluationInputable))
+            m.SetEvaluationInput(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable))
         }
         return nil
     }
-    res["notificationInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDlpNotificationFromDiscriminatorValue)
+    res["notificationInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDlpNotificationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotificationInfo(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpNotificationable))
+            m.SetNotificationInfo(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpNotificationable))
         }
         return nil
     }
-    res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,15 +78,15 @@ func (m *EvaluateRequestBody) GetFieldDeserializers()(map[string]func(interface{
     }
     return res
 }
-// GetNotificationInfo gets the notificationInfo property value. 
-func (m *EvaluateRequestBody) GetNotificationInfo()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpNotificationable) {
+// GetNotificationInfo gets the notificationInfo property value. The notificationInfo property
+func (m *EvaluateRequestBody) GetNotificationInfo()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpNotificationable) {
     if m == nil {
         return nil
     } else {
         return m.notificationInfo
     }
 }
-// GetTarget gets the target property value. 
+// GetTarget gets the target property value. The target property
 func (m *EvaluateRequestBody) GetTarget()(*string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *EvaluateRequestBody) GetTarget()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *EvaluateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *EvaluateRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("evaluationInput", m.GetEvaluationInput())
         if err != nil {
@@ -128,19 +128,19 @@ func (m *EvaluateRequestBody) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetEvaluationInput sets the evaluationInput property value. 
-func (m *EvaluateRequestBody) SetEvaluationInput(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpEvaluationInputable)() {
+// SetEvaluationInput sets the evaluationInput property value. The evaluationInput property
+func (m *EvaluateRequestBody) SetEvaluationInput(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable)() {
     if m != nil {
         m.evaluationInput = value
     }
 }
-// SetNotificationInfo sets the notificationInfo property value. 
-func (m *EvaluateRequestBody) SetNotificationInfo(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DlpNotificationable)() {
+// SetNotificationInfo sets the notificationInfo property value. The notificationInfo property
+func (m *EvaluateRequestBody) SetNotificationInfo(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpNotificationable)() {
     if m != nil {
         m.notificationInfo = value
     }
 }
-// SetTarget sets the target property value. 
+// SetTarget sets the target property value. The target property
 func (m *EvaluateRequestBody) SetTarget(value *string)() {
     if m != nil {
         m.target = value

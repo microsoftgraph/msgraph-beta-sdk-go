@@ -1,23 +1,23 @@
 package classifytext
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // ClassifyTextRequestBody provides operations to call the classifyText method.
 type ClassifyTextRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The fileExtension property
     fileExtension *string;
-    // 
-    matchTolerancesToInclude *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance;
-    // 
-    scopesToRun *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope;
-    // 
+    // The matchTolerancesToInclude property
+    matchTolerancesToInclude *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MlClassificationMatchTolerance;
+    // The scopesToRun property
+    scopesToRun *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitiveTypeScope;
+    // The sensitiveTypeIds property
     sensitiveTypeIds []string;
-    // 
+    // The text property
     text *string;
 }
 // NewClassifyTextRequestBody instantiates a new classifyTextRequestBody and sets the default values.
@@ -28,7 +28,7 @@ func NewClassifyTextRequestBody()(*ClassifyTextRequestBody) {
     return m
 }
 // CreateClassifyTextRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateClassifyTextRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateClassifyTextRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassifyTextRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -40,9 +40,9 @@ func (m *ClassifyTextRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["fileExtension"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["fileExtension"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,27 +52,27 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["matchTolerancesToInclude"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseMlClassificationMatchTolerance)
+    res["matchTolerancesToInclude"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseMlClassificationMatchTolerance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMatchTolerancesToInclude(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance))
+            m.SetMatchTolerancesToInclude(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MlClassificationMatchTolerance))
         }
         return nil
     }
-    res["scopesToRun"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseSensitiveTypeScope)
+    res["scopesToRun"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseSensitiveTypeScope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScopesToRun(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope))
+            m.SetScopesToRun(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitiveTypeScope))
         }
         return nil
     }
-    res["sensitiveTypeIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["sensitiveTypeIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
     }
     return res
 }
-// GetFileExtension gets the fileExtension property value. 
+// GetFileExtension gets the fileExtension property value. The fileExtension property
 func (m *ClassifyTextRequestBody) GetFileExtension()(*string) {
     if m == nil {
         return nil
@@ -106,23 +106,23 @@ func (m *ClassifyTextRequestBody) GetFileExtension()(*string) {
         return m.fileExtension
     }
 }
-// GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. 
-func (m *ClassifyTextRequestBody) GetMatchTolerancesToInclude()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance) {
+// GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
+func (m *ClassifyTextRequestBody) GetMatchTolerancesToInclude()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MlClassificationMatchTolerance) {
     if m == nil {
         return nil
     } else {
         return m.matchTolerancesToInclude
     }
 }
-// GetScopesToRun gets the scopesToRun property value. 
-func (m *ClassifyTextRequestBody) GetScopesToRun()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope) {
+// GetScopesToRun gets the scopesToRun property value. The scopesToRun property
+func (m *ClassifyTextRequestBody) GetScopesToRun()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitiveTypeScope) {
     if m == nil {
         return nil
     } else {
         return m.scopesToRun
     }
 }
-// GetSensitiveTypeIds gets the sensitiveTypeIds property value. 
+// GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyTextRequestBody) GetSensitiveTypeIds()([]string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *ClassifyTextRequestBody) GetSensitiveTypeIds()([]string) {
         return m.sensitiveTypeIds
     }
 }
-// GetText gets the text property value. 
+// GetText gets the text property value. The text property
 func (m *ClassifyTextRequestBody) GetText()(*string) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *ClassifyTextRequestBody) GetText()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ClassifyTextRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ClassifyTextRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("fileExtension", m.GetFileExtension())
         if err != nil {
@@ -186,31 +186,31 @@ func (m *ClassifyTextRequestBody) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetFileExtension sets the fileExtension property value. 
+// SetFileExtension sets the fileExtension property value. The fileExtension property
 func (m *ClassifyTextRequestBody) SetFileExtension(value *string)() {
     if m != nil {
         m.fileExtension = value
     }
 }
-// SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. 
-func (m *ClassifyTextRequestBody) SetMatchTolerancesToInclude(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance)() {
+// SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
+func (m *ClassifyTextRequestBody) SetMatchTolerancesToInclude(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MlClassificationMatchTolerance)() {
     if m != nil {
         m.matchTolerancesToInclude = value
     }
 }
-// SetScopesToRun sets the scopesToRun property value. 
-func (m *ClassifyTextRequestBody) SetScopesToRun(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope)() {
+// SetScopesToRun sets the scopesToRun property value. The scopesToRun property
+func (m *ClassifyTextRequestBody) SetScopesToRun(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitiveTypeScope)() {
     if m != nil {
         m.scopesToRun = value
     }
 }
-// SetSensitiveTypeIds sets the sensitiveTypeIds property value. 
+// SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyTextRequestBody) SetSensitiveTypeIds(value []string)() {
     if m != nil {
         m.sensitiveTypeIds = value
     }
 }
-// SetText sets the text property value. 
+// SetText sets the text property value. The text property
 func (m *ClassifyTextRequestBody) SetText(value *string)() {
     if m != nil {
         m.text = value

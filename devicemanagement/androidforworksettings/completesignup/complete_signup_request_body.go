@@ -1,14 +1,14 @@
 package completesignup
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CompleteSignupRequestBody provides operations to call the completeSignup method.
 type CompleteSignupRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The enterpriseToken property
     enterpriseToken *string;
 }
 // NewCompleteSignupRequestBody instantiates a new completeSignupRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewCompleteSignupRequestBody()(*CompleteSignupRequestBody) {
     return m
 }
 // CreateCompleteSignupRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCompleteSignupRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCompleteSignupRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompleteSignupRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -30,7 +30,7 @@ func (m *CompleteSignupRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetEnterpriseToken gets the enterpriseToken property value. 
+// GetEnterpriseToken gets the enterpriseToken property value. The enterpriseToken property
 func (m *CompleteSignupRequestBody) GetEnterpriseToken()(*string) {
     if m == nil {
         return nil
@@ -39,9 +39,9 @@ func (m *CompleteSignupRequestBody) GetEnterpriseToken()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CompleteSignupRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["enterpriseToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CompleteSignupRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["enterpriseToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *CompleteSignupRequestBody) GetFieldDeserializers()(map[string]func(inte
     return res
 }
 // Serialize serializes information the current object
-func (m *CompleteSignupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CompleteSignupRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("enterpriseToken", m.GetEnterpriseToken())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *CompleteSignupRequestBody) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetEnterpriseToken sets the enterpriseToken property value. 
+// SetEnterpriseToken sets the enterpriseToken property value. The enterpriseToken property
 func (m *CompleteSignupRequestBody) SetEnterpriseToken(value *string)() {
     if m != nil {
         m.enterpriseToken = value

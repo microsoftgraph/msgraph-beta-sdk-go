@@ -1,22 +1,22 @@
 package updateaudiencebyid
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // UpdateAudienceByIdRequestBody provides operations to call the updateAudienceById method.
 type UpdateAudienceByIdRequestBody struct {
-    // 
+    // The addExclusions property
     addExclusions []string;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The addMembers property
     addMembers []string;
-    // 
+    // The memberEntityType property
     memberEntityType *string;
-    // 
+    // The removeExclusions property
     removeExclusions []string;
-    // 
+    // The removeMembers property
     removeMembers []string;
 }
 // NewUpdateAudienceByIdRequestBody instantiates a new updateAudienceByIdRequestBody and sets the default values.
@@ -27,10 +27,10 @@ func NewUpdateAudienceByIdRequestBody()(*UpdateAudienceByIdRequestBody) {
     return m
 }
 // CreateUpdateAudienceByIdRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateUpdateAudienceByIdRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateUpdateAudienceByIdRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateAudienceByIdRequestBody(), nil
 }
-// GetAddExclusions gets the addExclusions property value. 
+// GetAddExclusions gets the addExclusions property value. The addExclusions property
 func (m *UpdateAudienceByIdRequestBody) GetAddExclusions()([]string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *UpdateAudienceByIdRequestBody) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetAddMembers gets the addMembers property value. 
+// GetAddMembers gets the addMembers property value. The addMembers property
 func (m *UpdateAudienceByIdRequestBody) GetAddMembers()([]string) {
     if m == nil {
         return nil
@@ -55,9 +55,9 @@ func (m *UpdateAudienceByIdRequestBody) GetAddMembers()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["addExclusions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addExclusions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["addMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["addMembers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["memberEntityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["memberEntityType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["removeExclusions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["removeExclusions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["removeMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["removeMembers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetMemberEntityType gets the memberEntityType property value. 
+// GetMemberEntityType gets the memberEntityType property value. The memberEntityType property
 func (m *UpdateAudienceByIdRequestBody) GetMemberEntityType()(*string) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *UpdateAudienceByIdRequestBody) GetMemberEntityType()(*string) {
         return m.memberEntityType
     }
 }
-// GetRemoveExclusions gets the removeExclusions property value. 
+// GetRemoveExclusions gets the removeExclusions property value. The removeExclusions property
 func (m *UpdateAudienceByIdRequestBody) GetRemoveExclusions()([]string) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *UpdateAudienceByIdRequestBody) GetRemoveExclusions()([]string) {
         return m.removeExclusions
     }
 }
-// GetRemoveMembers gets the removeMembers property value. 
+// GetRemoveMembers gets the removeMembers property value. The removeMembers property
 func (m *UpdateAudienceByIdRequestBody) GetRemoveMembers()([]string) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *UpdateAudienceByIdRequestBody) GetRemoveMembers()([]string) {
     }
 }
 // Serialize serializes information the current object
-func (m *UpdateAudienceByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *UpdateAudienceByIdRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAddExclusions() != nil {
         err := writer.WriteCollectionOfStringValues("addExclusions", m.GetAddExclusions())
         if err != nil {
@@ -189,7 +189,7 @@ func (m *UpdateAudienceByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// SetAddExclusions sets the addExclusions property value. 
+// SetAddExclusions sets the addExclusions property value. The addExclusions property
 func (m *UpdateAudienceByIdRequestBody) SetAddExclusions(value []string)() {
     if m != nil {
         m.addExclusions = value
@@ -201,25 +201,25 @@ func (m *UpdateAudienceByIdRequestBody) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetAddMembers sets the addMembers property value. 
+// SetAddMembers sets the addMembers property value. The addMembers property
 func (m *UpdateAudienceByIdRequestBody) SetAddMembers(value []string)() {
     if m != nil {
         m.addMembers = value
     }
 }
-// SetMemberEntityType sets the memberEntityType property value. 
+// SetMemberEntityType sets the memberEntityType property value. The memberEntityType property
 func (m *UpdateAudienceByIdRequestBody) SetMemberEntityType(value *string)() {
     if m != nil {
         m.memberEntityType = value
     }
 }
-// SetRemoveExclusions sets the removeExclusions property value. 
+// SetRemoveExclusions sets the removeExclusions property value. The removeExclusions property
 func (m *UpdateAudienceByIdRequestBody) SetRemoveExclusions(value []string)() {
     if m != nil {
         m.removeExclusions = value
     }
 }
-// SetRemoveMembers sets the removeMembers property value. 
+// SetRemoveMembers sets the removeMembers property value. The removeMembers property
 func (m *UpdateAudienceByIdRequestBody) SetRemoveMembers(value []string)() {
     if m != nil {
         m.removeMembers = value

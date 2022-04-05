@@ -1,14 +1,14 @@
 package getdownloadurl
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetDownloadUrlResponse provides operations to call the getDownloadUrl method.
 type GetDownloadUrlResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The value property
     value *string;
 }
 // NewGetDownloadUrlResponse instantiates a new getDownloadUrlResponse and sets the default values.
@@ -19,7 +19,7 @@ func NewGetDownloadUrlResponse()(*GetDownloadUrlResponse) {
     return m
 }
 // CreateGetDownloadUrlResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetDownloadUrlResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetDownloadUrlResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetDownloadUrlResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *GetDownloadUrlResponse) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetDownloadUrlResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetDownloadUrlResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *GetDownloadUrlResponse) GetFieldDeserializers()(map[string]func(interfa
     }
     return res
 }
-// GetValue gets the value property value. 
+// GetValue gets the value property value. The value property
 func (m *GetDownloadUrlResponse) GetValue()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetDownloadUrlResponse) GetValue()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *GetDownloadUrlResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetDownloadUrlResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("value", m.GetValue())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *GetDownloadUrlResponse) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetValue sets the value property value. 
+// SetValue sets the value property value. The value property
 func (m *GetDownloadUrlResponse) SetValue(value *string)() {
     if m != nil {
         m.value = value

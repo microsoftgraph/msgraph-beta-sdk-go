@@ -1,14 +1,14 @@
 package getpolicysets
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetPolicySetsRequestBody provides operations to call the getPolicySets method.
 type GetPolicySetsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The policySetIds property
     policySetIds []string;
 }
 // NewGetPolicySetsRequestBody instantiates a new getPolicySetsRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewGetPolicySetsRequestBody()(*GetPolicySetsRequestBody) {
     return m
 }
 // CreateGetPolicySetsRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetPolicySetsRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetPolicySetsRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetPolicySetsRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *GetPolicySetsRequestBody) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetPolicySetsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["policySetIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetPolicySetsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["policySetIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *GetPolicySetsRequestBody) GetFieldDeserializers()(map[string]func(inter
     }
     return res
 }
-// GetPolicySetIds gets the policySetIds property value. 
+// GetPolicySetIds gets the policySetIds property value. The policySetIds property
 func (m *GetPolicySetsRequestBody) GetPolicySetIds()([]string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetPolicySetsRequestBody) GetPolicySetIds()([]string) {
     }
 }
 // Serialize serializes information the current object
-func (m *GetPolicySetsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetPolicySetsRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetPolicySetIds() != nil {
         err := writer.WriteCollectionOfStringValues("policySetIds", m.GetPolicySetIds())
         if err != nil {
@@ -79,7 +79,7 @@ func (m *GetPolicySetsRequestBody) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetPolicySetIds sets the policySetIds property value. 
+// SetPolicySetIds sets the policySetIds property value. The policySetIds property
 func (m *GetPolicySetsRequestBody) SetPolicySetIds(value []string)() {
     if m != nil {
         m.policySetIds = value

@@ -1,0 +1,322 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Command 
+type Command struct {
+    Entity
+    // The appServiceName property
+    appServiceName *string;
+    // The error property
+    error *string;
+    // The packageFamilyName property
+    packageFamilyName *string;
+    // The payload property
+    payload PayloadRequestable;
+    // The permissionTicket property
+    permissionTicket *string;
+    // The postBackUri property
+    postBackUri *string;
+    // The responsepayload property
+    responsepayload PayloadResponseable;
+    // The status property
+    status *string;
+    // The type property
+    type_escaped *string;
+}
+// NewCommand instantiates a new command and sets the default values.
+func NewCommand()(*Command) {
+    m := &Command{
+        Entity: *NewEntity(),
+    }
+    return m
+}
+// CreateCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCommandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewCommand(), nil
+}
+// GetAppServiceName gets the appServiceName property value. The appServiceName property
+func (m *Command) GetAppServiceName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.appServiceName
+    }
+}
+// GetError gets the error property value. The error property
+func (m *Command) GetError()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.error
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Command) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["appServiceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppServiceName(val)
+        }
+        return nil
+    }
+    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetError(val)
+        }
+        return nil
+    }
+    res["packageFamilyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPackageFamilyName(val)
+        }
+        return nil
+    }
+    res["payload"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePayloadRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPayload(val.(PayloadRequestable))
+        }
+        return nil
+    }
+    res["permissionTicket"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPermissionTicket(val)
+        }
+        return nil
+    }
+    res["postBackUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPostBackUri(val)
+        }
+        return nil
+    }
+    res["responsepayload"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePayloadResponseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResponsepayload(val.(PayloadResponseable))
+        }
+        return nil
+    }
+    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatus(val)
+        }
+        return nil
+    }
+    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetPackageFamilyName gets the packageFamilyName property value. The packageFamilyName property
+func (m *Command) GetPackageFamilyName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.packageFamilyName
+    }
+}
+// GetPayload gets the payload property value. The payload property
+func (m *Command) GetPayload()(PayloadRequestable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.payload
+    }
+}
+// GetPermissionTicket gets the permissionTicket property value. The permissionTicket property
+func (m *Command) GetPermissionTicket()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.permissionTicket
+    }
+}
+// GetPostBackUri gets the postBackUri property value. The postBackUri property
+func (m *Command) GetPostBackUri()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.postBackUri
+    }
+}
+// GetResponsepayload gets the responsepayload property value. The responsepayload property
+func (m *Command) GetResponsepayload()(PayloadResponseable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.responsepayload
+    }
+}
+// GetStatus gets the status property value. The status property
+func (m *Command) GetStatus()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Command) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
+// Serialize serializes information the current object
+func (m *Command) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("appServiceName", m.GetAppServiceName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("error", m.GetError())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("packageFamilyName", m.GetPackageFamilyName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("payload", m.GetPayload())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("permissionTicket", m.GetPermissionTicket())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("postBackUri", m.GetPostBackUri())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("responsepayload", m.GetResponsepayload())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("status", m.GetStatus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAppServiceName sets the appServiceName property value. The appServiceName property
+func (m *Command) SetAppServiceName(value *string)() {
+    if m != nil {
+        m.appServiceName = value
+    }
+}
+// SetError sets the error property value. The error property
+func (m *Command) SetError(value *string)() {
+    if m != nil {
+        m.error = value
+    }
+}
+// SetPackageFamilyName sets the packageFamilyName property value. The packageFamilyName property
+func (m *Command) SetPackageFamilyName(value *string)() {
+    if m != nil {
+        m.packageFamilyName = value
+    }
+}
+// SetPayload sets the payload property value. The payload property
+func (m *Command) SetPayload(value PayloadRequestable)() {
+    if m != nil {
+        m.payload = value
+    }
+}
+// SetPermissionTicket sets the permissionTicket property value. The permissionTicket property
+func (m *Command) SetPermissionTicket(value *string)() {
+    if m != nil {
+        m.permissionTicket = value
+    }
+}
+// SetPostBackUri sets the postBackUri property value. The postBackUri property
+func (m *Command) SetPostBackUri(value *string)() {
+    if m != nil {
+        m.postBackUri = value
+    }
+}
+// SetResponsepayload sets the responsepayload property value. The responsepayload property
+func (m *Command) SetResponsepayload(value PayloadResponseable)() {
+    if m != nil {
+        m.responsepayload = value
+    }
+}
+// SetStatus sets the status property value. The status property
+func (m *Command) SetStatus(value *string)() {
+    if m != nil {
+        m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Command) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
+    }
+}

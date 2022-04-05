@@ -1,0 +1,195 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// MobileAppRelationship 
+type MobileAppRelationship struct {
+    Entity
+    // The target mobile app's display name.
+    targetDisplayName *string;
+    // The target mobile app's display version.
+    targetDisplayVersion *string;
+    // The target mobile app's app id.
+    targetId *string;
+    // The target mobile app's publisher.
+    targetPublisher *string;
+    // The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+    targetType *MobileAppRelationshipType;
+}
+// NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
+func NewMobileAppRelationship()(*MobileAppRelationship) {
+    m := &MobileAppRelationship{
+        Entity: *NewEntity(),
+    }
+    return m
+}
+// CreateMobileAppRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateMobileAppRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewMobileAppRelationship(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["targetDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetDisplayName(val)
+        }
+        return nil
+    }
+    res["targetDisplayVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetDisplayVersion(val)
+        }
+        return nil
+    }
+    res["targetId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetId(val)
+        }
+        return nil
+    }
+    res["targetPublisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetPublisher(val)
+        }
+        return nil
+    }
+    res["targetType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMobileAppRelationshipType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetType(val.(*MobileAppRelationshipType))
+        }
+        return nil
+    }
+    return res
+}
+// GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
+func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetDisplayName
+    }
+}
+// GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version.
+func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetDisplayVersion
+    }
+}
+// GetTargetId gets the targetId property value. The target mobile app's app id.
+func (m *MobileAppRelationship) GetTargetId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetId
+    }
+}
+// GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher.
+func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetPublisher
+    }
+}
+// GetTargetType gets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.targetType
+    }
+}
+// Serialize serializes information the current object
+func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("targetDisplayName", m.GetTargetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("targetDisplayVersion", m.GetTargetDisplayVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("targetId", m.GetTargetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("targetPublisher", m.GetTargetPublisher())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTargetType() != nil {
+        cast := (*m.GetTargetType()).String()
+        err = writer.WriteStringValue("targetType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name.
+func (m *MobileAppRelationship) SetTargetDisplayName(value *string)() {
+    if m != nil {
+        m.targetDisplayName = value
+    }
+}
+// SetTargetDisplayVersion sets the targetDisplayVersion property value. The target mobile app's display version.
+func (m *MobileAppRelationship) SetTargetDisplayVersion(value *string)() {
+    if m != nil {
+        m.targetDisplayVersion = value
+    }
+}
+// SetTargetId sets the targetId property value. The target mobile app's app id.
+func (m *MobileAppRelationship) SetTargetId(value *string)() {
+    if m != nil {
+        m.targetId = value
+    }
+}
+// SetTargetPublisher sets the targetPublisher property value. The target mobile app's publisher.
+func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
+    if m != nil {
+        m.targetPublisher = value
+    }
+}
+// SetTargetType sets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+func (m *MobileAppRelationship) SetTargetType(value *MobileAppRelationshipType)() {
+    if m != nil {
+        m.targetType = value
+    }
+}

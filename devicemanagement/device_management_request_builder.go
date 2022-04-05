@@ -1,6 +1,8 @@
 package devicemanagement
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i005a2443c6ebd6edec9907aacffd1e6acd51caafefcf6fc9d0557935fd3a0c2b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformance"
     i0471118b0053885405a49034a025010dbd75b4df16100f8050ee9f30934aac02 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationsettings"
     i04e8f3384b8235f952abe2d2fea9ebefec0cdc2b72fea81fdd18796edc52667e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/derivedcredentials"
@@ -25,7 +27,9 @@ import (
     i1bc6896cb08fc7f56435274501a3a76a1099e291e44546e88c2bce91101b8b2f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/appleuserinitiatedenrollmentprofiles"
     i1ca99785037f2e43fa39d2e7c4e6664ba22567b6b45157790153760ec86814d1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts"
     i1d5f4d22867e26a8c778cb008d3e2e08b28fa156314980e96948ddf22fc773b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicemetrichistory"
+    i1d68e4e9e8ff41ffd42793189d4eb8e57e7e912e22788b57799280d4ccdb8d3c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/tenantattachrbac"
     i1d87a3a584aae1fabd51d5ae96cf69a6f863220a5e422c3ce7503d671a16fb5a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/certificateconnectordetails"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i21e64abb63355ddda113d965f4e4a0e1f9cb50b810afdefda17a9342eb6a7920 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/enableandroiddeviceadministratorenrollment"
     i23ce9f2660cd560209239fcd06f39ba1803005a6ddd865ba272b5925d9dce388 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories"
     i25ab0a4486fc49777b565638e4b845f168d71787f0693dfabede8f4254978cc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/importedwindowsautopilotdeviceidentities"
@@ -142,7 +146,6 @@ import (
     id96351ec964b6d521cfadf892721f0936c7bbafe8e49f74eed57714356f61059 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotsettings"
     ida02017e81fab8cb7fdbc26dd41903047556371b16523bbb0a9c0eaa338cee0d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanagementeligibledevices"
     ida6e5d5d42f79af26c60ef013b6ed96c70c6a6bc2f945a534cef50bd3a19e691 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceenrollmentconfigurations"
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     idbc91ce045321902f6398eb8cb8dc37a4220868083092caa3c8a905f587490b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitionfiles"
     idc1167457cf42053a65c78bf687c3c251bf9a20748b41407e35d9bdb3f00e722 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters"
     ide134990d0992074fdecf4e1b824a973440ed1fbb169350f01924aa28bea54b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsimpactingprocess"
@@ -213,7 +216,6 @@ import (
     i49e489ceeacd033b4eac89ebc26ed550aa22b454be5ab19d8cd50479afef2f71 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablesettings/item"
     i4d3c2eebcde4697ba8cab0ae6a9eaf92e376956d0d519b688aa4f984a09b703a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections/item"
     i513d8d8b74c87b48fc53b5b81415678490500a8a5edc7915f7f4248e0c1935d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/embeddedsimactivationcodepools/item"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i54e65d93ef820122e89e6a29edbe82bf7f240dd7ea821ef8e67e1ae5f80ebb88 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item"
     i56bc149ad6993ba047897a1c8c1431979f381d0fcc715b60c2384b165dd578fd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item"
     i5a9df32f03feecaa0c953174fcd18381b26be2d3cb4e5f0c407cf4926db7f232 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/appleuserinitiatedenrollmentprofiles/item"
@@ -301,7 +303,6 @@ import (
     if86324ca3d3b4becbe0d3c731f15fe0b5ae685109fc73527f165452606f75fa9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurationsallmanageddevicecertificatestates/item"
     if892e5a2640903bf869aa649d0e67cb55f625fa06d99799db8c4b5369628a55a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androiddeviceownerenrollmentprofiles/item"
     ifb0586ae8b6e18f17029a64d29eef03b6ab94fa47b8fb1b4e58af7b4233fc994 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/derivedcredentials/item"
-    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // DeviceManagementRequestBuilder provides operations to manage the deviceManagement singleton.
@@ -309,20 +310,20 @@ type DeviceManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // DeviceManagementRequestBuilderGetOptions options for Get
 type DeviceManagementRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *DeviceManagementRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceManagementRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // DeviceManagementRequestBuilderGetQueryParameters get deviceManagement
 type DeviceManagementRequestBuilderGetQueryParameters struct {
@@ -334,17 +335,19 @@ type DeviceManagementRequestBuilderGetQueryParameters struct {
 // DeviceManagementRequestBuilderPatchOptions options for Patch
 type DeviceManagementRequestBuilderPatchOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// AdvancedThreatProtectionOnboardingStateSummary the advancedThreatProtectionOnboardingStateSummary property
 func (m *DeviceManagementRequestBuilder) AdvancedThreatProtectionOnboardingStateSummary()(*i3fe987324a6f52269c1192e32d6ec0f12410e6c6a2ed63c186118a915711286a.AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) {
     return i3fe987324a6f52269c1192e32d6ec0f12410e6c6a2ed63c186118a915711286a.NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AndroidDeviceOwnerEnrollmentProfiles the androidDeviceOwnerEnrollmentProfiles property
 func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfiles()(*i2ab586119f087d614141b2f047795882e5c3f497db07b3e73654784057c5de00.AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) {
     return i2ab586119f087d614141b2f047795882e5c3f497db07b3e73654784057c5de00.NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -359,6 +362,7 @@ func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfilesByI
     }
     return if892e5a2640903bf869aa649d0e67cb55f625fa06d99799db8c4b5369628a55a.NewAndroidDeviceOwnerEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AndroidForWorkAppConfigurationSchemas the androidForWorkAppConfigurationSchemas property
 func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemas()(*i1899f273cb7d75c805f92a61a8b5d3418a24b0929c342114483a4e2cd0f53f47.AndroidForWorkAppConfigurationSchemasRequestBuilder) {
     return i1899f273cb7d75c805f92a61a8b5d3418a24b0929c342114483a4e2cd0f53f47.NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -373,6 +377,7 @@ func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemasBy
     }
     return i02dd7655ef39ba36ce138d77c2c8c397525439bbce2b78c95317c7fd7d331438.NewAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AndroidForWorkEnrollmentProfiles the androidForWorkEnrollmentProfiles property
 func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfiles()(*i9a2e165b703011f518b95c3d30e23d94f063f3895d69b4c103293ba9019680a1.AndroidForWorkEnrollmentProfilesRequestBuilder) {
     return i9a2e165b703011f518b95c3d30e23d94f063f3895d69b4c103293ba9019680a1.NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -387,12 +392,15 @@ func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfilesById(id
     }
     return ia03637e30b7398dd2b66cc4089a2b973fbbe15afa5a861397f98d0d6c66badfb.NewAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AndroidForWorkSettings the androidForWorkSettings property
 func (m *DeviceManagementRequestBuilder) AndroidForWorkSettings()(*ief5a78b77c4318683c9519cdb963b9938f0f6fe88c93a0644b54a84a29db4709.AndroidForWorkSettingsRequestBuilder) {
     return ief5a78b77c4318683c9519cdb963b9938f0f6fe88c93a0644b54a84a29db4709.NewAndroidForWorkSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AndroidManagedStoreAccountEnterpriseSettings the androidManagedStoreAccountEnterpriseSettings property
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAccountEnterpriseSettings()(*icdc7c59e5f3bfb4e13d92ce14030df1b80a845c93bb0132d5b563c3c52a45bc1.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
     return icdc7c59e5f3bfb4e13d92ce14030df1b80a845c93bb0132d5b563c3c52a45bc1.NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AndroidManagedStoreAppConfigurationSchemas the androidManagedStoreAppConfigurationSchemas property
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSchemas()(*ica6064af0424b6b8862e69568c28ebf7b5b34ee7f807a05d1e641c71bb4b027a.AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
     return ica6064af0424b6b8862e69568c28ebf7b5b34ee7f807a05d1e641c71bb4b027a.NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -407,9 +415,11 @@ func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSche
     }
     return i1cdc7cc84d917a6052b880686d5d011e52cd661d539d40056fcee49a0e1e65d2.NewAndroidManagedStoreAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ApplePushNotificationCertificate the applePushNotificationCertificate property
 func (m *DeviceManagementRequestBuilder) ApplePushNotificationCertificate()(*ie773f83fece9c703e3412c58e1afa19262ce0d0822fa67d1f4cfddc1f29bf775.ApplePushNotificationCertificateRequestBuilder) {
     return ie773f83fece9c703e3412c58e1afa19262ce0d0822fa67d1f4cfddc1f29bf775.NewApplePushNotificationCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// AppleUserInitiatedEnrollmentProfiles the appleUserInitiatedEnrollmentProfiles property
 func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfiles()(*i1bc6896cb08fc7f56435274501a3a76a1099e291e44546e88c2bce91101b8b2f.AppleUserInitiatedEnrollmentProfilesRequestBuilder) {
     return i1bc6896cb08fc7f56435274501a3a76a1099e291e44546e88c2bce91101b8b2f.NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -424,6 +434,7 @@ func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfilesByI
     }
     return i5a9df32f03feecaa0c953174fcd18381b26be2d3cb4e5f0c407cf4926db7f232.NewAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AssignmentFilters the assignmentFilters property
 func (m *DeviceManagementRequestBuilder) AssignmentFilters()(*idc1167457cf42053a65c78bf687c3c251bf9a20748b41407e35d9bdb3f00e722.AssignmentFiltersRequestBuilder) {
     return idc1167457cf42053a65c78bf687c3c251bf9a20748b41407e35d9bdb3f00e722.NewAssignmentFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -438,6 +449,7 @@ func (m *DeviceManagementRequestBuilder) AssignmentFiltersById(id string)(*i4921
     }
     return i4921766653fb6d6581315a6bac40ace23d4fa67112682337afd4f4d80daa8e6e.NewDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AuditEvents the auditEvents property
 func (m *DeviceManagementRequestBuilder) AuditEvents()(*i2963a1d6ad23ef25227a6aed40cc3841e34b4be45ea659c2cf058bd677824517.AuditEventsRequestBuilder) {
     return i2963a1d6ad23ef25227a6aed40cc3841e34b4be45ea659c2cf058bd677824517.NewAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -452,6 +464,7 @@ func (m *DeviceManagementRequestBuilder) AuditEventsById(id string)(*i83297487e5
     }
     return i83297487e58de6085c4e92098dab9b4ceff489f0d35618539853cb8dd47a1e2b.NewAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AutopilotEvents the autopilotEvents property
 func (m *DeviceManagementRequestBuilder) AutopilotEvents()(*i8f1b9cb53250cc6f80b90b1773e988f7fd6c9be2f104ced70a79bd26b7f2636d.AutopilotEventsRequestBuilder) {
     return i8f1b9cb53250cc6f80b90b1773e988f7fd6c9be2f104ced70a79bd26b7f2636d.NewAutopilotEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -466,6 +479,7 @@ func (m *DeviceManagementRequestBuilder) AutopilotEventsById(id string)(*i938055
     }
     return i938055cbc53dfa55bdbcaf12d8411c6b106c31f811751e39169825a02c14a9bc.NewDeviceManagementAutopilotEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// CartToClassAssociations the cartToClassAssociations property
 func (m *DeviceManagementRequestBuilder) CartToClassAssociations()(*i706c92efe09bc616b81eca179b4ec8eb88868a1e24fb7cf3ef8fa2ac7876d92c.CartToClassAssociationsRequestBuilder) {
     return i706c92efe09bc616b81eca179b4ec8eb88868a1e24fb7cf3ef8fa2ac7876d92c.NewCartToClassAssociationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -480,6 +494,7 @@ func (m *DeviceManagementRequestBuilder) CartToClassAssociationsById(id string)(
     }
     return i311dcf32af87f69b13484f8d3ae407e9dbcff9569e7c4f65fa908cb7a969f827.NewCartToClassAssociationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Categories the categories property
 func (m *DeviceManagementRequestBuilder) Categories()(*i698fc1acac03b10c8e5911642e806c706c487dac204b59138f67b7fff1edfb33.CategoriesRequestBuilder) {
     return i698fc1acac03b10c8e5911642e806c706c487dac204b59138f67b7fff1edfb33.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -494,6 +509,7 @@ func (m *DeviceManagementRequestBuilder) CategoriesById(id string)(*i42ae1105b02
     }
     return i42ae1105b0246e9a456e6d0afec5cf6528d55be977e44bb09accd8e34610ddcf.NewDeviceManagementSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// CertificateConnectorDetails the certificateConnectorDetails property
 func (m *DeviceManagementRequestBuilder) CertificateConnectorDetails()(*i1d87a3a584aae1fabd51d5ae96cf69a6f863220a5e422c3ce7503d671a16fb5a.CertificateConnectorDetailsRequestBuilder) {
     return i1d87a3a584aae1fabd51d5ae96cf69a6f863220a5e422c3ce7503d671a16fb5a.NewCertificateConnectorDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -508,6 +524,7 @@ func (m *DeviceManagementRequestBuilder) CertificateConnectorDetailsById(id stri
     }
     return ib23d1e55b895893141866237ae0eabe9751a0fa9fd5dbaeebfa53645a3879947.NewCertificateConnectorDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ChromeOSOnboardingSettings the chromeOSOnboardingSettings property
 func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettings()(*ib4068623404324166e6f8ef567c5e371cae71c3137885b44d28d9c362b1dae01.ChromeOSOnboardingSettingsRequestBuilder) {
     return ib4068623404324166e6f8ef567c5e371cae71c3137885b44d28d9c362b1dae01.NewChromeOSOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -522,6 +539,7 @@ func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettingsById(id strin
     }
     return ie6ada197ab6f772f96177844615befc613858a10ad10fb8278ab7f3979670058.NewChromeOSOnboardingSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// CloudPCConnectivityIssues the cloudPCConnectivityIssues property
 func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssues()(*i786b0e3095c151f06daf164c0a83a8047e041917775b7735ef061fff3fe4474c.CloudPCConnectivityIssuesRequestBuilder) {
     return i786b0e3095c151f06daf164c0a83a8047e041917775b7735ef061fff3fe4474c.NewCloudPCConnectivityIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -536,6 +554,7 @@ func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssuesById(id string
     }
     return i6632c96399c63889476408e3c5af2a212bb2964cf4b03d596c256eca9bc9faf8.NewCloudPCConnectivityIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ComanagedDevices the comanagedDevices property
 func (m *DeviceManagementRequestBuilder) ComanagedDevices()(*ia0d27d3c7fc06a1a6f2eef19ca5ef71eaede4d6af6cb97b957223a2c7c5ec4ce.ComanagedDevicesRequestBuilder) {
     return ia0d27d3c7fc06a1a6f2eef19ca5ef71eaede4d6af6cb97b957223a2c7c5ec4ce.NewComanagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -550,6 +569,7 @@ func (m *DeviceManagementRequestBuilder) ComanagedDevicesById(id string)(*i56bc1
     }
     return i56bc149ad6993ba047897a1c8c1431979f381d0fcc715b60c2384b165dd578fd.NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ComanagementEligibleDevices the comanagementEligibleDevices property
 func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevices()(*ida02017e81fab8cb7fdbc26dd41903047556371b16523bbb0a9c0eaa338cee0d.ComanagementEligibleDevicesRequestBuilder) {
     return ida02017e81fab8cb7fdbc26dd41903047556371b16523bbb0a9c0eaa338cee0d.NewComanagementEligibleDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -564,6 +584,7 @@ func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevicesById(id stri
     }
     return i358b32d4a242e0819a5b42f92a95b9871da36353d1ebee4731a493fe022829fa.NewComanagementEligibleDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ComplianceCategories the complianceCategories property
 func (m *DeviceManagementRequestBuilder) ComplianceCategories()(*i547e75c3751220b84b6d826399c69087ddca96b6bb141becda2daa5187b1f251.ComplianceCategoriesRequestBuilder) {
     return i547e75c3751220b84b6d826399c69087ddca96b6bb141becda2daa5187b1f251.NewComplianceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -578,6 +599,7 @@ func (m *DeviceManagementRequestBuilder) ComplianceCategoriesById(id string)(*i6
     }
     return i6af9f4ccfa0ca999a3babfd0053df361c89160bea2ecc7a6c21a97ef172aa80c.NewDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ComplianceManagementPartners the complianceManagementPartners property
 func (m *DeviceManagementRequestBuilder) ComplianceManagementPartners()(*ia6061502aa932ed88947fe6cae607fca4f325b2073303661045e6c8dbdbdc406.ComplianceManagementPartnersRequestBuilder) {
     return ia6061502aa932ed88947fe6cae607fca4f325b2073303661045e6c8dbdbdc406.NewComplianceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -592,6 +614,7 @@ func (m *DeviceManagementRequestBuilder) ComplianceManagementPartnersById(id str
     }
     return ic6fdd851c4655d49f63a57983f59dcf3ee5726ee6644e86e726fc382d34da937.NewComplianceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// CompliancePolicies the compliancePolicies property
 func (m *DeviceManagementRequestBuilder) CompliancePolicies()(*i08923e6cb04538143ef467f61d1f68f42feb51236dd85ea051561286101056b9.CompliancePoliciesRequestBuilder) {
     return i08923e6cb04538143ef467f61d1f68f42feb51236dd85ea051561286101056b9.NewCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -606,6 +629,7 @@ func (m *DeviceManagementRequestBuilder) CompliancePoliciesById(id string)(*icf9
     }
     return icf9aa82ba4af98edfe8da4424a420a69cbf1dd00ff51a90ea83a275bf404d3c8.NewDeviceManagementCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ComplianceSettings the complianceSettings property
 func (m *DeviceManagementRequestBuilder) ComplianceSettings()(*i07f3d961099ef67a3461c2a7c22256a9a4e212a860280569ab7520faa618a475.ComplianceSettingsRequestBuilder) {
     return i07f3d961099ef67a3461c2a7c22256a9a4e212a860280569ab7520faa618a475.NewComplianceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -620,9 +644,11 @@ func (m *DeviceManagementRequestBuilder) ComplianceSettingsById(id string)(*i685
     }
     return i685c41ff74921eae05dae3a218808fa3c8f795bf0abae174ec2e122c83132113.NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ConditionalAccessSettings the conditionalAccessSettings property
 func (m *DeviceManagementRequestBuilder) ConditionalAccessSettings()(*i141145e1060f029069f273dddbb1a492048af9e65ce2a8acf3b06cdbe343c227.ConditionalAccessSettingsRequestBuilder) {
     return i141145e1060f029069f273dddbb1a492048af9e65ce2a8acf3b06cdbe343c227.NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ConfigManagerCollections the configManagerCollections property
 func (m *DeviceManagementRequestBuilder) ConfigManagerCollections()(*i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19.ConfigManagerCollectionsRequestBuilder) {
     return i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19.NewConfigManagerCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -637,6 +663,7 @@ func (m *DeviceManagementRequestBuilder) ConfigManagerCollectionsById(id string)
     }
     return i4d3c2eebcde4697ba8cab0ae6a9eaf92e376956d0d519b688aa4f984a09b703a.NewConfigManagerCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ConfigurationCategories the configurationCategories property
 func (m *DeviceManagementRequestBuilder) ConfigurationCategories()(*id32196fc55917b457bbd1871bdc6d139c27ae935705e050ba07ad3cbe488fddc.ConfigurationCategoriesRequestBuilder) {
     return id32196fc55917b457bbd1871bdc6d139c27ae935705e050ba07ad3cbe488fddc.NewConfigurationCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -651,6 +678,7 @@ func (m *DeviceManagementRequestBuilder) ConfigurationCategoriesById(id string)(
     }
     return i7938e16bfba1522415a3ea97a96b0116bb7d6dff7b9cbdf07276804d44fbe1e2.NewDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ConfigurationPolicies the configurationPolicies property
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicies()(*ia507901fb898abb6b3ff4522b6115017a17f9faf692a44f363ee4f76f532df10.ConfigurationPoliciesRequestBuilder) {
     return ia507901fb898abb6b3ff4522b6115017a17f9faf692a44f363ee4f76f532df10.NewConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -665,6 +693,7 @@ func (m *DeviceManagementRequestBuilder) ConfigurationPoliciesById(id string)(*i
     }
     return ic2bd65e0c7afcdf7f604db4f873328a2a71809652f3c7ce01a16054fef075e83.NewDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ConfigurationPolicyTemplates the configurationPolicyTemplates property
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplates()(*ife41ee09faee61fde4d6cac54db01aec08db7b9b350611c1c88a35757ca68e80.ConfigurationPolicyTemplatesRequestBuilder) {
     return ife41ee09faee61fde4d6cac54db01aec08db7b9b350611c1c88a35757ca68e80.NewConfigurationPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -679,6 +708,7 @@ func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplatesById(id str
     }
     return i650800eb43decec3395554b3c6a3e78cf0a1345893a4b7d62cc6263a5a90a5e5.NewDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ConfigurationSettings the configurationSettings property
 func (m *DeviceManagementRequestBuilder) ConfigurationSettings()(*i0471118b0053885405a49034a025010dbd75b4df16100f8050ee9f30934aac02.ConfigurationSettingsRequestBuilder) {
     return i0471118b0053885405a49034a025010dbd75b4df16100f8050ee9f30934aac02.NewConfigurationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -694,7 +724,7 @@ func (m *DeviceManagementRequestBuilder) ConfigurationSettingsById(id string)(*i
     return i64146fca9a2847630c4761f640949451e336dc823487a48f4fa6b80f975bfefe.NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDeviceManagementRequestBuilderInternal instantiates a new DeviceManagementRequestBuilder and sets the default values.
-func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementRequestBuilder) {
+func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRequestBuilder) {
     m := &DeviceManagementRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement{?select,expand}";
@@ -707,25 +737,25 @@ func NewDeviceManagementRequestBuilderInternal(pathParameters map[string]string,
     return m
 }
 // NewDeviceManagementRequestBuilder instantiates a new DeviceManagementRequestBuilder and sets the default values.
-func NewDeviceManagementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementRequestBuilder) {
+func NewDeviceManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get deviceManagement
-func (m *DeviceManagementRequestBuilder) CreateGetRequestInformation(options *DeviceManagementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DeviceManagementRequestBuilder) CreateGetRequestInformation(options *DeviceManagementRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -733,23 +763,24 @@ func (m *DeviceManagementRequestBuilder) CreateGetRequestInformation(options *De
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update deviceManagement
-func (m *DeviceManagementRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *DeviceManagementRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
+// DataSharingConsents the dataSharingConsents property
 func (m *DeviceManagementRequestBuilder) DataSharingConsents()(*icdd9231cfbc83a787e832dea344b20291cf7410fe49d42d0eecb5b8bd5acc410.DataSharingConsentsRequestBuilder) {
     return icdd9231cfbc83a787e832dea344b20291cf7410fe49d42d0eecb5b8bd5acc410.NewDataSharingConsentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -764,6 +795,7 @@ func (m *DeviceManagementRequestBuilder) DataSharingConsentsById(id string)(*i26
     }
     return i26fb1c650b48073e6ced464ef92267c0a24a7434e6d374d8d672ab39dd6c708f.NewDataSharingConsentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DepOnboardingSettings the depOnboardingSettings property
 func (m *DeviceManagementRequestBuilder) DepOnboardingSettings()(*iebd87e7fafff068f7241a403fed246afef869694db39a83cfa732d873fa08c26.DepOnboardingSettingsRequestBuilder) {
     return iebd87e7fafff068f7241a403fed246afef869694db39a83cfa732d873fa08c26.NewDepOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -778,6 +810,7 @@ func (m *DeviceManagementRequestBuilder) DepOnboardingSettingsById(id string)(*i
     }
     return i6569cecd86fb68f7127a908d5e8001a4c12b86452145fcea8ce16b6b8f582654.NewDepOnboardingSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DerivedCredentials the derivedCredentials property
 func (m *DeviceManagementRequestBuilder) DerivedCredentials()(*i04e8f3384b8235f952abe2d2fea9ebefec0cdc2b72fea81fdd18796edc52667e.DerivedCredentialsRequestBuilder) {
     return i04e8f3384b8235f952abe2d2fea9ebefec0cdc2b72fea81fdd18796edc52667e.NewDerivedCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -792,6 +825,7 @@ func (m *DeviceManagementRequestBuilder) DerivedCredentialsById(id string)(*ifb0
     }
     return ifb0586ae8b6e18f17029a64d29eef03b6ab94fa47b8fb1b4e58af7b4233fc994.NewDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DetectedApps the detectedApps property
 func (m *DeviceManagementRequestBuilder) DetectedApps()(*i9e479031ba8de6e85dc52ac8315cd8522b7b5745abc2e95384031836737a5b1d.DetectedAppsRequestBuilder) {
     return i9e479031ba8de6e85dc52ac8315cd8522b7b5745abc2e95384031836737a5b1d.NewDetectedAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -806,6 +840,7 @@ func (m *DeviceManagementRequestBuilder) DetectedAppsById(id string)(*i42adcf0c2
     }
     return i42adcf0c28b9ddb5710ccc9cf37285fad0c9bebdfd34a084e76ef7bf4091bf94.NewDetectedAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceCategories the deviceCategories property
 func (m *DeviceManagementRequestBuilder) DeviceCategories()(*ia735362824371466084214bc1d31147aaf70b3bb7b4bc5ae69ee755cdb3cb15c.DeviceCategoriesRequestBuilder) {
     return ia735362824371466084214bc1d31147aaf70b3bb7b4bc5ae69ee755cdb3cb15c.NewDeviceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -820,6 +855,7 @@ func (m *DeviceManagementRequestBuilder) DeviceCategoriesById(id string)(*i67798
     }
     return i67798682632afd49e37198586f074e784896d33251808177eab84fd5327b76ae.NewDeviceCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceCompliancePolicies the deviceCompliancePolicies property
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicies()(*i358b7a34135f775242bdf4c2e565d2d6445c815cd929fbf919e431687e5d64e0.DeviceCompliancePoliciesRequestBuilder) {
     return i358b7a34135f775242bdf4c2e565d2d6445c815cd929fbf919e431687e5d64e0.NewDeviceCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -834,9 +870,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCompliancePoliciesById(id string)
     }
     return i752354ce069b29d0876274bd20462829bfea6c92b9d8e3ee13594ac32ac5c8dd.NewDeviceCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceCompliancePolicyDeviceStateSummary the deviceCompliancePolicyDeviceStateSummary property
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicyDeviceStateSummary()(*iec5b8ff86b39d93b2c6f8e449985c4815dafb423ada830e104e0759f744fbcbc.DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
     return iec5b8ff86b39d93b2c6f8e449985c4815dafb423ada830e104e0759f744fbcbc.NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DeviceCompliancePolicySettingStateSummaries the deviceCompliancePolicySettingStateSummaries property
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummaries()(*ibaab16768160eaca07721cc64b8bd73ede4d7960679fb60dc1eeb325bac8ed70.DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
     return ibaab16768160eaca07721cc64b8bd73ede4d7960679fb60dc1eeb325bac8ed70.NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -851,6 +889,7 @@ func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSumma
     }
     return i21d5ff7c7bad73fe610934541fdd0b62baddc6b6bfb19642899dbba4768af420.NewDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceComplianceScripts the deviceComplianceScripts property
 func (m *DeviceManagementRequestBuilder) DeviceComplianceScripts()(*i66cca6d16d49c190b84ca9bc191f2843f0d6e2701ee2b71abaee7d9132a568a4.DeviceComplianceScriptsRequestBuilder) {
     return i66cca6d16d49c190b84ca9bc191f2843f0d6e2701ee2b71abaee7d9132a568a4.NewDeviceComplianceScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -865,6 +904,7 @@ func (m *DeviceManagementRequestBuilder) DeviceComplianceScriptsById(id string)(
     }
     return i059fe0722303e2163a73df0ed3da319b1dc79b1b40e5cc14b3199d5c9ecac9ae.NewDeviceComplianceScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceConfigurationConflictSummary the deviceConfigurationConflictSummary property
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummary()(*i057ddf0bfa04bffff1e0442afdc9f2dc27fe87304de9e6654fa745aa0b7b3e12.DeviceConfigurationConflictSummaryRequestBuilder) {
     return i057ddf0bfa04bffff1e0442afdc9f2dc27fe87304de9e6654fa745aa0b7b3e12.NewDeviceConfigurationConflictSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -879,9 +919,11 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummaryById(
     }
     return i35043c49d020f1939577baa4a50b58daf6bcd2adceabe7083a737bc49d79c75f.NewDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceConfigurationDeviceStateSummaries the deviceConfigurationDeviceStateSummaries property
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*i2fc81b484971cb158984563ba7651a3c44994cb966235ce8a8b443af9e4ed631.DeviceConfigurationDeviceStateSummariesRequestBuilder) {
     return i2fc81b484971cb158984563ba7651a3c44994cb966235ce8a8b443af9e4ed631.NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DeviceConfigurationRestrictedAppsViolations the deviceConfigurationRestrictedAppsViolations property
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolations()(*i8b59cbe498bdd43bba238c8505dc901d4f1eab37af0f92a99abc825f62c5cedb.DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
     return i8b59cbe498bdd43bba238c8505dc901d4f1eab37af0f92a99abc825f62c5cedb.NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -896,9 +938,11 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolat
     }
     return idd2e945546b6cc6c9e0ebeab70d17ee4bbac78f43174a9dc3ca71ec4db18e183.NewRestrictedAppsViolationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceConfigurations the deviceConfigurations property
 func (m *DeviceManagementRequestBuilder) DeviceConfigurations()(*i06897cd84592b50e6e76477755f51f0fc302e5664c3a9d4325a123deb6d935d4.DeviceConfigurationsRequestBuilder) {
     return i06897cd84592b50e6e76477755f51f0fc302e5664c3a9d4325a123deb6d935d4.NewDeviceConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DeviceConfigurationsAllManagedDeviceCertificateStates the deviceConfigurationsAllManagedDeviceCertificateStates property
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCertificateStates()(*if5846307d7d49aff39a1b63a1e8c86d98714534c39b3fb728c1926d50fb78704.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) {
     return if5846307d7d49aff39a1b63a1e8c86d98714534c39b3fb728c1926d50fb78704.NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -924,9 +968,11 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationsById(id string)(*i3
     }
     return i3578df72a1a39a50951f61e4b4d4ca5b19e9513d991d3717b1c739923f72fa16.NewDeviceConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceConfigurationUserStateSummaries the deviceConfigurationUserStateSummaries property
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationUserStateSummaries()(*i698892c0bf624db7b153330d1ec842bf28b7db8abe6c42fef0ccf570150ecd69.DeviceConfigurationUserStateSummariesRequestBuilder) {
     return i698892c0bf624db7b153330d1ec842bf28b7db8abe6c42fef0ccf570150ecd69.NewDeviceConfigurationUserStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// DeviceCustomAttributeShellScripts the deviceCustomAttributeShellScripts property
 func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScripts()(*i2cd5bda9f593950fe63bb43c4377eb5e5ea12c83e98664b3bd72fe310af4990e.DeviceCustomAttributeShellScriptsRequestBuilder) {
     return i2cd5bda9f593950fe63bb43c4377eb5e5ea12c83e98664b3bd72fe310af4990e.NewDeviceCustomAttributeShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -941,6 +987,7 @@ func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScriptsById(i
     }
     return i74f61baefc416a9f37b7bccbfc205a62a42b7ef4061740884ead0cd986f59afe.NewDeviceCustomAttributeShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceEnrollmentConfigurations the deviceEnrollmentConfigurations property
 func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations()(*ida6e5d5d42f79af26c60ef013b6ed96c70c6a6bc2f945a534cef50bd3a19e691.DeviceEnrollmentConfigurationsRequestBuilder) {
     return ida6e5d5d42f79af26c60ef013b6ed96c70c6a6bc2f945a534cef50bd3a19e691.NewDeviceEnrollmentConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -955,6 +1002,7 @@ func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurationsById(id s
     }
     return ib6f585dc104c01583057b54d76b1fb0c1eafc958e07969fbf56c880f993d8ccb.NewDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceHealthScripts the deviceHealthScripts property
 func (m *DeviceManagementRequestBuilder) DeviceHealthScripts()(*iba07522ba7ac900bd7bfa7623d939c51b081efec89f93308c93f97f59526c931.DeviceHealthScriptsRequestBuilder) {
     return iba07522ba7ac900bd7bfa7623d939c51b081efec89f93308c93f97f59526c931.NewDeviceHealthScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -969,6 +1017,7 @@ func (m *DeviceManagementRequestBuilder) DeviceHealthScriptsById(id string)(*i09
     }
     return i09f560f65de5a27707a35a1c085f8d385cb5513db1a04caa0933d28fffe1a4ee.NewDeviceHealthScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceManagementPartners the deviceManagementPartners property
 func (m *DeviceManagementRequestBuilder) DeviceManagementPartners()(*i66b975d6894f1203db9ffb8c9762fa16d80c6baa183597bc8820e565f9c9c96b.DeviceManagementPartnersRequestBuilder) {
     return i66b975d6894f1203db9ffb8c9762fa16d80c6baa183597bc8820e565f9c9c96b.NewDeviceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -983,6 +1032,7 @@ func (m *DeviceManagementRequestBuilder) DeviceManagementPartnersById(id string)
     }
     return i8cd70c374d8ba6b42e7bdb457ead4ef276229cd65860fa55a7ba0bcde7c13f5c.NewDeviceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceManagementScripts the deviceManagementScripts property
 func (m *DeviceManagementRequestBuilder) DeviceManagementScripts()(*i1ca99785037f2e43fa39d2e7c4e6664ba22567b6b45157790153760ec86814d1.DeviceManagementScriptsRequestBuilder) {
     return i1ca99785037f2e43fa39d2e7c4e6664ba22567b6b45157790153760ec86814d1.NewDeviceManagementScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -997,6 +1047,7 @@ func (m *DeviceManagementRequestBuilder) DeviceManagementScriptsById(id string)(
     }
     return i54e65d93ef820122e89e6a29edbe82bf7f240dd7ea821ef8e67e1ae5f80ebb88.NewDeviceManagementScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DeviceShellScripts the deviceShellScripts property
 func (m *DeviceManagementRequestBuilder) DeviceShellScripts()(*ia683a5a1665e6a223f3a0118037431de973ec4fa7d7b97390e84dfec5548718a.DeviceShellScriptsRequestBuilder) {
     return ia683a5a1665e6a223f3a0118037431de973ec4fa7d7b97390e84dfec5548718a.NewDeviceShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1011,6 +1062,7 @@ func (m *DeviceManagementRequestBuilder) DeviceShellScriptsById(id string)(*iba2
     }
     return iba229db39ae603170e2b51b246613530e06cbd7649ed03f8be88cc4d02410dd1.NewDeviceShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DomainJoinConnectors the domainJoinConnectors property
 func (m *DeviceManagementRequestBuilder) DomainJoinConnectors()(*i9936a8568039e56943f066cd2897ee9e81bb175bc3caaae1539aa34d424a4157.DomainJoinConnectorsRequestBuilder) {
     return i9936a8568039e56943f066cd2897ee9e81bb175bc3caaae1539aa34d424a4157.NewDomainJoinConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1025,6 +1077,7 @@ func (m *DeviceManagementRequestBuilder) DomainJoinConnectorsById(id string)(*i0
     }
     return i011d0c683ef6ee764268ded23d58414d3cee7a93c2c1525d2bb5656af411f1e1.NewDeviceManagementDomainJoinConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// EmbeddedSIMActivationCodePools the embeddedSIMActivationCodePools property
 func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePools()(*ia5898a2f7be2217b80eb1d0f163a5e92140876048e060332cfd148379f0a3fe4.EmbeddedSIMActivationCodePoolsRequestBuilder) {
     return ia5898a2f7be2217b80eb1d0f163a5e92140876048e060332cfd148379f0a3fe4.NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1039,18 +1092,23 @@ func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePoolsById(id s
     }
     return i513d8d8b74c87b48fc53b5b81415678490500a8a5edc7915f7f4248e0c1935d3.NewEmbeddedSIMActivationCodePoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// EnableAndroidDeviceAdministratorEnrollment the enableAndroidDeviceAdministratorEnrollment property
 func (m *DeviceManagementRequestBuilder) EnableAndroidDeviceAdministratorEnrollment()(*i21e64abb63355ddda113d965f4e4a0e1f9cb50b810afdefda17a9342eb6a7920.EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) {
     return i21e64abb63355ddda113d965f4e4a0e1f9cb50b810afdefda17a9342eb6a7920.NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// EnableLegacyPcManagement the enableLegacyPcManagement property
 func (m *DeviceManagementRequestBuilder) EnableLegacyPcManagement()(*i669feef35963a9c2d23562bc2c60c4e6542a5845da77448eeffe024b2202b51e.EnableLegacyPcManagementRequestBuilder) {
     return i669feef35963a9c2d23562bc2c60c4e6542a5845da77448eeffe024b2202b51e.NewEnableLegacyPcManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// EnableUnlicensedAdminstrators the enableUnlicensedAdminstrators property
 func (m *DeviceManagementRequestBuilder) EnableUnlicensedAdminstrators()(*i8b68ddcfc0e1b786a9ceec8a51661bd858daecd6cf9d82c16f0af0eaefe928be.EnableUnlicensedAdminstratorsRequestBuilder) {
     return i8b68ddcfc0e1b786a9ceec8a51661bd858daecd6cf9d82c16f0af0eaefe928be.NewEnableUnlicensedAdminstratorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// EvaluateAssignmentFilter the evaluateAssignmentFilter property
 func (m *DeviceManagementRequestBuilder) EvaluateAssignmentFilter()(*ia3e27b292c0794cd177af4a54db973a93eaa9a8afe86542fc52027f735f56297.EvaluateAssignmentFilterRequestBuilder) {
     return ia3e27b292c0794cd177af4a54db973a93eaa9a8afe86542fc52027f735f56297.NewEvaluateAssignmentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ExchangeConnectors the exchangeConnectors property
 func (m *DeviceManagementRequestBuilder) ExchangeConnectors()(*iefe3cca68aed1d1ec30796fdd2d77f7d0b8bde4259781e012141d0373e31d616.ExchangeConnectorsRequestBuilder) {
     return iefe3cca68aed1d1ec30796fdd2d77f7d0b8bde4259781e012141d0373e31d616.NewExchangeConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1065,6 +1123,7 @@ func (m *DeviceManagementRequestBuilder) ExchangeConnectorsById(id string)(*i92c
     }
     return i92cafcbae1c2bd55e3321444e20d514e2652e647f736e4345e83750865d58bb3.NewDeviceManagementExchangeConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ExchangeOnPremisesPolicies the exchangeOnPremisesPolicies property
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicies()(*i3477ec0e76a581d4c30110fa035b62cdfaf7304bf2c7242a35a889d5b631eb32.ExchangeOnPremisesPoliciesRequestBuilder) {
     return i3477ec0e76a581d4c30110fa035b62cdfaf7304bf2c7242a35a889d5b631eb32.NewExchangeOnPremisesPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1079,29 +1138,31 @@ func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPoliciesById(id strin
     }
     return i0a4269d340e42f686956c6802292256a70927b8c2df685cd18d18969d78b7fca.NewDeviceManagementExchangeOnPremisesPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ExchangeOnPremisesPolicy the exchangeOnPremisesPolicy property
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicy()(*i72062f459a5fffec8b646ec5ea269d8a517e5d4fa6a037393a75e9112866c452.ExchangeOnPremisesPolicyRequestBuilder) {
     return i72062f459a5fffec8b646ec5ea269d8a517e5d4fa6a037393a75e9112866c452.NewExchangeOnPremisesPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get deviceManagement
-func (m *DeviceManagementRequestBuilder) Get(options *DeviceManagementRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementable, error) {
+func (m *DeviceManagementRequestBuilder) Get(options *DeviceManagementRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateDeviceManagementFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable), nil
 }
 // GetAssignedRoleDetails provides operations to call the getAssignedRoleDetails method.
 func (m *DeviceManagementRequestBuilder) GetAssignedRoleDetails()(*ia423f658cb319455d87fcb906fc804761708cbfe9d8d576706c9865bd798e1af.GetAssignedRoleDetailsRequestBuilder) {
     return ia423f658cb319455d87fcb906fc804761708cbfe9d8d576706c9865bd798e1af.NewGetAssignedRoleDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// GetAssignmentFiltersStatusDetails the getAssignmentFiltersStatusDetails property
 func (m *DeviceManagementRequestBuilder) GetAssignmentFiltersStatusDetails()(*i998652e1299f15a8b348de562e778ef7d149b6c22767a912ce84a6ee3c2fe2d7.GetAssignmentFiltersStatusDetailsRequestBuilder) {
     return i998652e1299f15a8b348de562e778ef7d149b6c22767a912ce84a6ee3c2fe2d7.NewGetAssignmentFiltersStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1133,6 +1194,7 @@ func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByResourceWithResource(
 func (m *DeviceManagementRequestBuilder) GetSuggestedEnrollmentLimitWithEnrollmentType(enrollmentType *string)(*iee128a1b58b9f16a8f86d9f376dec81441a4724fc18ba05eb5abfbb94eed4de1.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) {
     return iee128a1b58b9f16a8f86d9f376dec81441a4724fc18ba05eb5abfbb94eed4de1.NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter, enrollmentType);
 }
+// GroupPolicyCategories the groupPolicyCategories property
 func (m *DeviceManagementRequestBuilder) GroupPolicyCategories()(*i23ce9f2660cd560209239fcd06f39ba1803005a6ddd865ba272b5925d9dce388.GroupPolicyCategoriesRequestBuilder) {
     return i23ce9f2660cd560209239fcd06f39ba1803005a6ddd865ba272b5925d9dce388.NewGroupPolicyCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1147,6 +1209,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyCategoriesById(id string)(*i
     }
     return ie185d0523ca3014f4ddef802e5b3757ba8676e9f188b1b9a221b93e30ba9bc61.NewGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// GroupPolicyConfigurations the groupPolicyConfigurations property
 func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurations()(*icf53a42b6998fa85b218ab9a7bcd5021f3693e05c259bbef02cf451f2a77a4c6.GroupPolicyConfigurationsRequestBuilder) {
     return icf53a42b6998fa85b218ab9a7bcd5021f3693e05c259bbef02cf451f2a77a4c6.NewGroupPolicyConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1161,6 +1224,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurationsById(id string
     }
     return i343535e26f659fa35a174f3349c7b727e1a65ded28c76b221ed6438ddcf5eadd.NewGroupPolicyConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// GroupPolicyDefinitionFiles the groupPolicyDefinitionFiles property
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFiles()(*idbc91ce045321902f6398eb8cb8dc37a4220868083092caa3c8a905f587490b7.GroupPolicyDefinitionFilesRequestBuilder) {
     return idbc91ce045321902f6398eb8cb8dc37a4220868083092caa3c8a905f587490b7.NewGroupPolicyDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1175,6 +1239,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFilesById(id strin
     }
     return ia0852800b0fb3f6f37f8bc0b3fdf0580fb1c740f41fb98716ac863309674ae78.NewGroupPolicyDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// GroupPolicyDefinitions the groupPolicyDefinitions property
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitions()(*i7f539b5d0a42468004c84b364a2ae5e678aacaf1e6cef8edbceb6f9720bc91c6.GroupPolicyDefinitionsRequestBuilder) {
     return i7f539b5d0a42468004c84b364a2ae5e678aacaf1e6cef8edbceb6f9720bc91c6.NewGroupPolicyDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1189,6 +1254,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionsById(id string)(*
     }
     return i8096fa81f64bd2e8d8d73dc78a80f0c42bcae0d8f23714f193e9500016ba6523.NewGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// GroupPolicyMigrationReports the groupPolicyMigrationReports property
 func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReports()(*i9688a6a8de4b7a1cc66f3dfea67a44477381c1db41be85044fa90db8861b66bd.GroupPolicyMigrationReportsRequestBuilder) {
     return i9688a6a8de4b7a1cc66f3dfea67a44477381c1db41be85044fa90db8861b66bd.NewGroupPolicyMigrationReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1203,6 +1269,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReportsById(id stri
     }
     return i0fa4fe7e52bd9e6fe61758ccb28bd98616000dc0773a966cd7b7a09fdade9a76.NewGroupPolicyMigrationReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// GroupPolicyObjectFiles the groupPolicyObjectFiles property
 func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFiles()(*ie1b1de81a1614997b824f9a0658929c9d101e059bb7946472d00e70061999956.GroupPolicyObjectFilesRequestBuilder) {
     return ie1b1de81a1614997b824f9a0658929c9d101e059bb7946472d00e70061999956.NewGroupPolicyObjectFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1217,6 +1284,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFilesById(id string)(*
     }
     return ief6fb3ba84c0620c2b1d62c5d6fc1cd50f96bd78f9f15cbccf4ec4c72d2fb95a.NewGroupPolicyObjectFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// GroupPolicyUploadedDefinitionFiles the groupPolicyUploadedDefinitionFiles property
 func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFiles()(*ic655b111c74ee435976a382d33c4b527c9041ef54a599f854975c7652a4a82b4.GroupPolicyUploadedDefinitionFilesRequestBuilder) {
     return ic655b111c74ee435976a382d33c4b527c9041ef54a599f854975c7652a4a82b4.NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1231,6 +1299,7 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFilesById(
     }
     return i0688f8f1b8b0e207ef4f894254d945a8088df78859fd09b3901a0852b9ada6bb.NewGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ImportedDeviceIdentities the importedDeviceIdentities property
 func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentities()(*i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86.ImportedDeviceIdentitiesRequestBuilder) {
     return i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86.NewImportedDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1245,6 +1314,7 @@ func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentitiesById(id string)
     }
     return i9ee6d9daa2455c3c10cbaad69605a08c5cdcca7ebb48e0f8876dca6c26d5df36.NewImportedDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ImportedWindowsAutopilotDeviceIdentities the importedWindowsAutopilotDeviceIdentities property
 func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentities()(*i25ab0a4486fc49777b565638e4b845f168d71787f0693dfabede8f4254978cc7.ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) {
     return i25ab0a4486fc49777b565638e4b845f168d71787f0693dfabede8f4254978cc7.NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1259,6 +1329,7 @@ func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentitie
     }
     return id3982f36e4008f81f23380f3c05f6efc5f2c5671d99bbcc4a0828db5a9c238f1.NewImportedWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Intents the intents property
 func (m *DeviceManagementRequestBuilder) Intents()(*id09e73ff6b4820eda2a801f7e76fec9f2893e9140b8174be0f0374f276e83bb0.IntentsRequestBuilder) {
     return id09e73ff6b4820eda2a801f7e76fec9f2893e9140b8174be0f0374f276e83bb0.NewIntentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1273,6 +1344,7 @@ func (m *DeviceManagementRequestBuilder) IntentsById(id string)(*ideae1e60e5b2c9
     }
     return ideae1e60e5b2c9161ec0b83bf721f666d688923d959356fca07160059aa4ea4e.NewDeviceManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// IntuneBrandingProfiles the intuneBrandingProfiles property
 func (m *DeviceManagementRequestBuilder) IntuneBrandingProfiles()(*i3f8b52c2608fe61191b0e4ac47b8157d99050ef8c7c169853c0ac0458b38b7f9.IntuneBrandingProfilesRequestBuilder) {
     return i3f8b52c2608fe61191b0e4ac47b8157d99050ef8c7c169853c0ac0458b38b7f9.NewIntuneBrandingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1287,6 +1359,7 @@ func (m *DeviceManagementRequestBuilder) IntuneBrandingProfilesById(id string)(*
     }
     return i7bfe6a450b7d51e7e437f6cbabb6df38ec13aeca06b07cbb7f02329be8e9d0b6.NewIntuneBrandingProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// IosUpdateStatuses the iosUpdateStatuses property
 func (m *DeviceManagementRequestBuilder) IosUpdateStatuses()(*i1139b32380c25d76d1f7979a554c41b83234dd62c3aaf7e0c39d3286ad87e5e5.IosUpdateStatusesRequestBuilder) {
     return i1139b32380c25d76d1f7979a554c41b83234dd62c3aaf7e0c39d3286ad87e5e5.NewIosUpdateStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1301,6 +1374,7 @@ func (m *DeviceManagementRequestBuilder) IosUpdateStatusesById(id string)(*i6f8f
     }
     return i6f8f101cc298e3cd873d1c9d266e782c40b2432b9fdbcb9091d14702e771e748.NewIosUpdateDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MacOSSoftwareUpdateAccountSummaries the macOSSoftwareUpdateAccountSummaries property
 func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummaries()(*i6a993aa4c8af26efdbdc4b49b6bfafb240dc6d232dbe4a861229994ce0abb295.MacOSSoftwareUpdateAccountSummariesRequestBuilder) {
     return i6a993aa4c8af26efdbdc4b49b6bfafb240dc6d232dbe4a861229994ce0abb295.NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1315,6 +1389,7 @@ func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummariesById
     }
     return i9cec176902fc1992e8cde893d4430fbbd6ea6a339fc52521ab6adce1806d75f1.NewMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ManagedDeviceEncryptionStates the managedDeviceEncryptionStates property
 func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStates()(*i779a52aae2a2de32c6d22a901113cb0229d88da876d6c4dbe0af7284691cad65.ManagedDeviceEncryptionStatesRequestBuilder) {
     return i779a52aae2a2de32c6d22a901113cb0229d88da876d6c4dbe0af7284691cad65.NewManagedDeviceEncryptionStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1329,9 +1404,11 @@ func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStatesById(id st
     }
     return i5d8d3d68e99a3b659b85753837fbb9b6148adb3f7d3a84c58ae6fbe4e9060c0e.NewManagedDeviceEncryptionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ManagedDeviceOverview the managedDeviceOverview property
 func (m *DeviceManagementRequestBuilder) ManagedDeviceOverview()(*i391c94feaa932fa1995271175690d35002a53d781469bfdf895e28bf9e948888.ManagedDeviceOverviewRequestBuilder) {
     return i391c94feaa932fa1995271175690d35002a53d781469bfdf895e28bf9e948888.NewManagedDeviceOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ManagedDevices the managedDevices property
 func (m *DeviceManagementRequestBuilder) ManagedDevices()(*i78d574d6ad855ae77519cccb2b0ab9ecc25166c9fa35758769bc3033f5d54976.ManagedDevicesRequestBuilder) {
     return i78d574d6ad855ae77519cccb2b0ab9ecc25166c9fa35758769bc3033f5d54976.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1346,6 +1423,7 @@ func (m *DeviceManagementRequestBuilder) ManagedDevicesById(id string)(*i2084299
     }
     return i20842993f5395d21b68b1f55e71ad61952c23901f82261b1d7bff168473eb97c.NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ManagementConditions the managementConditions property
 func (m *DeviceManagementRequestBuilder) ManagementConditions()(*ia8731f33d7ce8e7a9f0a6c1b7ccae5f56c2132162f45da0b41a2750fab793c56.ManagementConditionsRequestBuilder) {
     return ia8731f33d7ce8e7a9f0a6c1b7ccae5f56c2132162f45da0b41a2750fab793c56.NewManagementConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1360,6 +1438,7 @@ func (m *DeviceManagementRequestBuilder) ManagementConditionsById(id string)(*id
     }
     return id7848aca33fb7ba5123b12072f7b3dbf35aee9080cec565cfb9ca7672c992462.NewManagementConditionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ManagementConditionStatements the managementConditionStatements property
 func (m *DeviceManagementRequestBuilder) ManagementConditionStatements()(*i9e537e31441132cb7071c801a87106bf1da3fd41ee765f30fed3966d954c024f.ManagementConditionStatementsRequestBuilder) {
     return i9e537e31441132cb7071c801a87106bf1da3fd41ee765f30fed3966d954c024f.NewManagementConditionStatementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1374,6 +1453,7 @@ func (m *DeviceManagementRequestBuilder) ManagementConditionStatementsById(id st
     }
     return i3f43afa8af059cec229aa183e2f2f03938d1ba900f2a014e35e30e8b6ae55b3a.NewManagementConditionStatementItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftTunnelConfigurations the microsoftTunnelConfigurations property
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurations()(*i70320bb8d336a98e48fc7169f597db2c4af8a822c2233182a324fe499d962e28.MicrosoftTunnelConfigurationsRequestBuilder) {
     return i70320bb8d336a98e48fc7169f597db2c4af8a822c2233182a324fe499d962e28.NewMicrosoftTunnelConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1388,6 +1468,7 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurationsById(id st
     }
     return iea47555c3b65ec64f1a627feff966e2819acb89ab04ca98b4a01385e1d6706c6.NewMicrosoftTunnelConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftTunnelHealthThresholds the microsoftTunnelHealthThresholds property
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholds()(*i7bbe59add940b047fb4915bc2d373a95d5f636a1c3a60312ac7d01bddbc4ee42.MicrosoftTunnelHealthThresholdsRequestBuilder) {
     return i7bbe59add940b047fb4915bc2d373a95d5f636a1c3a60312ac7d01bddbc4ee42.NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1402,6 +1483,7 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholdsById(id 
     }
     return i9b18c9645f9d681df092617fff14294781fb482951f57324320a246094841610.NewMicrosoftTunnelHealthThresholdItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftTunnelServerLogCollectionResponses the microsoftTunnelServerLogCollectionResponses property
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionResponses()(*i17fe4d69bfad61b41aff6c2c49601096d76256458d558fbb6127cf84732f87f8.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) {
     return i17fe4d69bfad61b41aff6c2c49601096d76256458d558fbb6127cf84732f87f8.NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1416,6 +1498,7 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionRespo
     }
     return ie0f0a9a809653b148b4637bea8da711d438e885cd1711f01e852225bb441f177.NewMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftTunnelSites the microsoftTunnelSites property
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSites()(*i9454c3ec04f2c7df3ea0d011686892dbd5605be5b323336d457c9746de64b58b.MicrosoftTunnelSitesRequestBuilder) {
     return i9454c3ec04f2c7df3ea0d011686892dbd5605be5b323336d457c9746de64b58b.NewMicrosoftTunnelSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1430,6 +1513,7 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSitesById(id string)(*i1
     }
     return i1005756f6f557eed7bb1626c7031fedcb67d61eb9653f994789e7535183b7213.NewMicrosoftTunnelSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MobileAppTroubleshootingEvents the mobileAppTroubleshootingEvents property
 func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEvents()(*i40a8e00e460bc3f161887071f058de9d337d7e495f1a3d7661c7d8bc98dcb6ae.MobileAppTroubleshootingEventsRequestBuilder) {
     return i40a8e00e460bc3f161887071f058de9d337d7e495f1a3d7661c7d8bc98dcb6ae.NewMobileAppTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1444,6 +1528,7 @@ func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEventsById(id s
     }
     return i3db6175567512b577a023447df3b0627296f2e723c8444cb0274aeb95aba06c0.NewMobileAppTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MobileThreatDefenseConnectors the mobileThreatDefenseConnectors property
 func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors()(*i074e42283e69f4dfb04fd66a65aa8dfa39fbf2fd5c5d611197e2e87679a760cc.MobileThreatDefenseConnectorsRequestBuilder) {
     return i074e42283e69f4dfb04fd66a65aa8dfa39fbf2fd5c5d611197e2e87679a760cc.NewMobileThreatDefenseConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1458,6 +1543,7 @@ func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectorsById(id st
     }
     return i60ad998c7dc9950655aee52ac45bca7b49a3b1860f7bb1443ad29a3fe43c5500.NewMobileThreatDefenseConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// NdesConnectors the ndesConnectors property
 func (m *DeviceManagementRequestBuilder) NdesConnectors()(*ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec.NdesConnectorsRequestBuilder) {
     return ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec.NewNdesConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1472,6 +1558,7 @@ func (m *DeviceManagementRequestBuilder) NdesConnectorsById(id string)(*ide87771
     }
     return ide87771b8a086be907d4533d5354e05d66d55a6342cb7f9663ecff1af7174fd6.NewNdesConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// NotificationMessageTemplates the notificationMessageTemplates property
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*ic54aa06ba42909b1d71447297b34dd206aa75bcdd954e9b6c63c1d081ae8e712.NotificationMessageTemplatesRequestBuilder) {
     return ic54aa06ba42909b1d71447297b34dd206aa75bcdd954e9b6c63c1d081ae8e712.NewNotificationMessageTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1486,6 +1573,7 @@ func (m *DeviceManagementRequestBuilder) NotificationMessageTemplatesById(id str
     }
     return i816c10ea42c24b57eeababf5be54d8e9dccb9d2153ae348d4cfcc0648299f316.NewNotificationMessageTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// OemWarrantyInformationOnboarding the oemWarrantyInformationOnboarding property
 func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboarding()(*i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.OemWarrantyInformationOnboardingRequestBuilder) {
     return i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.NewOemWarrantyInformationOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1506,9 +1594,9 @@ func (m *DeviceManagementRequestBuilder) Patch(options *DeviceManagementRequestB
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -1516,6 +1604,7 @@ func (m *DeviceManagementRequestBuilder) Patch(options *DeviceManagementRequestB
     }
     return nil
 }
+// RemoteActionAudits the remoteActionAudits property
 func (m *DeviceManagementRequestBuilder) RemoteActionAudits()(*icc453491aa85e95c9367a8608bae36cdb55e1bd1c0061d126c9a65e366a9ff28.RemoteActionAuditsRequestBuilder) {
     return icc453491aa85e95c9367a8608bae36cdb55e1bd1c0061d126c9a65e366a9ff28.NewRemoteActionAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1530,6 +1619,7 @@ func (m *DeviceManagementRequestBuilder) RemoteActionAuditsById(id string)(*id06
     }
     return id0684d655473f1428899e83132845fe3a90481fafc7e7a0451925f623c49b89f.NewRemoteActionAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RemoteAssistancePartners the remoteAssistancePartners property
 func (m *DeviceManagementRequestBuilder) RemoteAssistancePartners()(*i7068cdc544aff5d979972dad3d7ea36fa9f9d06f4c09c377aa58a2567cc6c58a.RemoteAssistancePartnersRequestBuilder) {
     return i7068cdc544aff5d979972dad3d7ea36fa9f9d06f4c09c377aa58a2567cc6c58a.NewRemoteAssistancePartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1544,12 +1634,15 @@ func (m *DeviceManagementRequestBuilder) RemoteAssistancePartnersById(id string)
     }
     return i94a2aa2930d99f4e1d9a1e857ad4d34b3859eb482d570fd78fe8f603baf61888.NewRemoteAssistancePartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RemoteAssistanceSettings the remoteAssistanceSettings property
 func (m *DeviceManagementRequestBuilder) RemoteAssistanceSettings()(*ie61007dbf129f4db83e56bbd1d942a8ae248b7a0dee7650f8b895353ee9a7a37.RemoteAssistanceSettingsRequestBuilder) {
     return ie61007dbf129f4db83e56bbd1d942a8ae248b7a0dee7650f8b895353ee9a7a37.NewRemoteAssistanceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Reports the reports property
 func (m *DeviceManagementRequestBuilder) Reports()(*i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c.ReportsRequestBuilder) {
     return i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c.NewReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// ResourceAccessProfiles the resourceAccessProfiles property
 func (m *DeviceManagementRequestBuilder) ResourceAccessProfiles()(*i76dbec3f4277cf99054b4e577f9e55b4178cdb6999a54fdbea51b39bd33ae365.ResourceAccessProfilesRequestBuilder) {
     return i76dbec3f4277cf99054b4e577f9e55b4178cdb6999a54fdbea51b39bd33ae365.NewResourceAccessProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1564,6 +1657,7 @@ func (m *DeviceManagementRequestBuilder) ResourceAccessProfilesById(id string)(*
     }
     return ic5d558eaada98180598cc19a99bfac93aa6f720f6dbc364a9d4349cee7beb577.NewDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ResourceOperations the resourceOperations property
 func (m *DeviceManagementRequestBuilder) ResourceOperations()(*i7a555a75335cb9d717ad246494b3cccf65d4ba988b41e42e9cb8c2fee3bfd31f.ResourceOperationsRequestBuilder) {
     return i7a555a75335cb9d717ad246494b3cccf65d4ba988b41e42e9cb8c2fee3bfd31f.NewResourceOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1578,6 +1672,7 @@ func (m *DeviceManagementRequestBuilder) ResourceOperationsById(id string)(*i7a9
     }
     return i7a916bd254b4ebec7e09208366ac0d8bc249f87e51b0729d076cca602354faa9.NewResourceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ReusablePolicySettings the reusablePolicySettings property
 func (m *DeviceManagementRequestBuilder) ReusablePolicySettings()(*ia7a47c45e2cbb20312fb519a815309845605a55db5dd0509cea519b3789b543c.ReusablePolicySettingsRequestBuilder) {
     return ia7a47c45e2cbb20312fb519a815309845605a55db5dd0509cea519b3789b543c.NewReusablePolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1592,6 +1687,7 @@ func (m *DeviceManagementRequestBuilder) ReusablePolicySettingsById(id string)(*
     }
     return i8913f08779f89ec0b601afb3c99274b756e55a6bbf38aaac52a61eb933363b22.NewDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ReusableSettings the reusableSettings property
 func (m *DeviceManagementRequestBuilder) ReusableSettings()(*i3f9e02dc418faa1121caa625af488a2db2444f528d0dd315716c1fb4c073311a.ReusableSettingsRequestBuilder) {
     return i3f9e02dc418faa1121caa625af488a2db2444f528d0dd315716c1fb4c073311a.NewReusableSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1606,6 +1702,7 @@ func (m *DeviceManagementRequestBuilder) ReusableSettingsById(id string)(*i49e48
     }
     return i49e489ceeacd033b4eac89ebc26ed550aa22b454be5ab19d8cd50479afef2f71.NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleAssignments the roleAssignments property
 func (m *DeviceManagementRequestBuilder) RoleAssignments()(*ie514a3c6a6dee151e51633f6e85205018f5596a0ceacc746dfa2540bd2105860.RoleAssignmentsRequestBuilder) {
     return ie514a3c6a6dee151e51633f6e85205018f5596a0ceacc746dfa2540bd2105860.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1620,6 +1717,7 @@ func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*i997761
     }
     return i997761497b5362f904a17cff0f2cd69ad57cbb67ef752069a8da2ff3ac752dc0.NewDeviceAndAppManagementRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleDefinitions the roleDefinitions property
 func (m *DeviceManagementRequestBuilder) RoleDefinitions()(*ia1fd4ff5ac64fc3e7a6285c3c1f9fee6d35f33dadb2227eb95c3bb8ca75ce2ec.RoleDefinitionsRequestBuilder) {
     return ia1fd4ff5ac64fc3e7a6285c3c1f9fee6d35f33dadb2227eb95c3bb8ca75ce2ec.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1634,6 +1732,7 @@ func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*i708f38
     }
     return i708f38592cff2201d730d1293a99cf6b5dc50c9a7d224cf7dbfacdf0e0502028.NewRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// RoleScopeTags the roleScopeTags property
 func (m *DeviceManagementRequestBuilder) RoleScopeTags()(*i8ce752b735630d1938ba83b1413f1f2a6b47900296c801c0885117449dcdfb03.RoleScopeTagsRequestBuilder) {
     return i8ce752b735630d1938ba83b1413f1f2a6b47900296c801c0885117449dcdfb03.NewRoleScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1652,9 +1751,11 @@ func (m *DeviceManagementRequestBuilder) RoleScopeTagsById(id string)(*i4873b8a2
 func (m *DeviceManagementRequestBuilder) ScopedForResourceWithResource(resource *string)(*iffaf3f46b35aac55cff21b2949d7664cdbef11bed233ff2d8daebd301bd7e927.ScopedForResourceWithResourceRequestBuilder) {
     return iffaf3f46b35aac55cff21b2949d7664cdbef11bed233ff2d8daebd301bd7e927.NewScopedForResourceWithResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter, resource);
 }
+// SendCustomNotificationToCompanyPortal the sendCustomNotificationToCompanyPortal property
 func (m *DeviceManagementRequestBuilder) SendCustomNotificationToCompanyPortal()(*i06d1ae011e8e39ef827ff40796abc9d2030d40c8a2af4e27558dea50075ecb2e.SendCustomNotificationToCompanyPortalRequestBuilder) {
     return i06d1ae011e8e39ef827ff40796abc9d2030d40c8a2af4e27558dea50075ecb2e.NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SettingDefinitions the settingDefinitions property
 func (m *DeviceManagementRequestBuilder) SettingDefinitions()(*id6a0a568a8b5391c0978e1306dd4c8009bb845bd12cae55656dc3ef30d881a4b.SettingDefinitionsRequestBuilder) {
     return id6a0a568a8b5391c0978e1306dd4c8009bb845bd12cae55656dc3ef30d881a4b.NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1669,9 +1770,11 @@ func (m *DeviceManagementRequestBuilder) SettingDefinitionsById(id string)(*i1ae
     }
     return i1ae262e31358d7f73d23c13161259bab72a81c3b1794b4550b8e336ebf4d6ae5.NewDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SoftwareUpdateStatusSummary the softwareUpdateStatusSummary property
 func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*ie42b4206943697b25f90a4c473d00d5095b8af03a1d4a4008fb82a68e1703b2c.SoftwareUpdateStatusSummaryRequestBuilder) {
     return ie42b4206943697b25f90a4c473d00d5095b8af03a1d4a4008fb82a68e1703b2c.NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// TelecomExpenseManagementPartners the telecomExpenseManagementPartners property
 func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*i19482298e1fb0466e1115e7de1e415ed26381c37f318904d30585e948b2d23f5.TelecomExpenseManagementPartnersRequestBuilder) {
     return i19482298e1fb0466e1115e7de1e415ed26381c37f318904d30585e948b2d23f5.NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1686,6 +1789,7 @@ func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartnersById(id
     }
     return i22df34f1d011439270aa80f1c0df83a47bfccd829bdadb118ad00be372bcbacd.NewTelecomExpenseManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Templates the templates property
 func (m *DeviceManagementRequestBuilder) Templates()(*iff02fa8bd4683ed01f2fb946cf0925254fba094e60a47d198b5dcd279ddc17a8.TemplatesRequestBuilder) {
     return iff02fa8bd4683ed01f2fb946cf0925254fba094e60a47d198b5dcd279ddc17a8.NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1700,6 +1804,7 @@ func (m *DeviceManagementRequestBuilder) TemplatesById(id string)(*i310459afa8c1
     }
     return i310459afa8c1ac6a51b3e2b55399ba8a3dac3f0c14498726435f4b85589295c8.NewDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// TemplateSettings the templateSettings property
 func (m *DeviceManagementRequestBuilder) TemplateSettings()(*i6d947c2e3ece03962617b317b5a0dd34938e44e9f2974f07df300974388a10e4.TemplateSettingsRequestBuilder) {
     return i6d947c2e3ece03962617b317b5a0dd34938e44e9f2974f07df300974388a10e4.NewTemplateSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1714,6 +1819,11 @@ func (m *DeviceManagementRequestBuilder) TemplateSettingsById(id string)(*i10af5
     }
     return i10af5fa01c92472f6e866e9250270e127760d60e918527fe49cc649a2ad4c3c4.NewDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// TenantAttachRBAC the tenantAttachRBAC property
+func (m *DeviceManagementRequestBuilder) TenantAttachRBAC()(*i1d68e4e9e8ff41ffd42793189d4eb8e57e7e912e22788b57799280d4ccdb8d3c.TenantAttachRBACRequestBuilder) {
+    return i1d68e4e9e8ff41ffd42793189d4eb8e57e7e912e22788b57799280d4ccdb8d3c.NewTenantAttachRBACRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TermsAndConditions the termsAndConditions property
 func (m *DeviceManagementRequestBuilder) TermsAndConditions()(*i99d9a524d7a8704a79b86768e95d94ab558ba2c422105dc823147c9ce9c3c9e1.TermsAndConditionsRequestBuilder) {
     return i99d9a524d7a8704a79b86768e95d94ab558ba2c422105dc823147c9ce9c3c9e1.NewTermsAndConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1728,6 +1838,7 @@ func (m *DeviceManagementRequestBuilder) TermsAndConditionsById(id string)(*ic14
     }
     return ic14886561878f11e91ced382b17c086323a017287f722a50db11012f73d5b9f6.NewTermsAndConditionsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// TroubleshootingEvents the troubleshootingEvents property
 func (m *DeviceManagementRequestBuilder) TroubleshootingEvents()(*i66c458cf61ce1962fc3b708fdff3d0e8454c4648d6d491d496c7e7757ae559f9.TroubleshootingEventsRequestBuilder) {
     return i66c458cf61ce1962fc3b708fdff3d0e8454c4648d6d491d496c7e7757ae559f9.NewTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1742,9 +1853,11 @@ func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*i
     }
     return i3f73ae7f42ec4e4c711aefe6d686e5f4cff1343578a3d57e140420be1212f1f2.NewDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthApplicationPerformance the userExperienceAnalyticsAppHealthApplicationPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformance()(*i005a2443c6ebd6edec9907aacffd1e6acd51caafefcf6fc9d0557935fd3a0c2b.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) {
     return i005a2443c6ebd6edec9907aacffd1e6acd51caafefcf6fc9d0557935fd3a0c2b.NewUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion()(*i5f58ba6045ddf9c581c89a15216e6de9c93354bea6dff2f3826b7bb2a3a51626.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) {
     return i5f58ba6045ddf9c581c89a15216e6de9c93354bea6dff2f3826b7bb2a3a51626.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1759,6 +1872,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return i42c4a6403e9673e97bfc4422ae03c403e61a7a38b2c72b9c76b6abcfcb6e6a4c.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails()(*ie67a9444a8c40718f8bebb0b99ff567e6f7868e49be0666982b979fa5bc464e1.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) {
     return ie67a9444a8c40718f8bebb0b99ff567e6f7868e49be0666982b979fa5bc464e1.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1773,6 +1887,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return if273c669f062bb735089008c1ed4cf0d7173c4ce20f6a17f95e6d16614f258a0.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId()(*i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder) {
     return i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1798,6 +1913,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return i3d07a1f6100ed36c14d2a9afa7264f0e89c09496ae196019939d092988af9317.NewUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion()(*i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder) {
     return i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1812,6 +1928,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return i2e815a5c6e9dfc246f309684f9aef8108854d113d200832548b4785f6611a26d.NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance the userExperienceAnalyticsAppHealthDeviceModelPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformance()(*iac85fdc4d4c5a6facf25c261f53927b57dd41212b70608740b7429daec51ff9a.UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
     return iac85fdc4d4c5a6facf25c261f53927b57dd41212b70608740b7429daec51ff9a.NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1826,6 +1943,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceM
     }
     return i73dab6f6e887b9d34b84afcebc35c6e7506bc402e5cafe3b10c6f1f156d29978.NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthDevicePerformance the userExperienceAnalyticsAppHealthDevicePerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformance()(*ieaf224c013e93a8608f8e8b726a70b0e09c491c50acf61b9dab5266e4ffe4044.UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) {
     return ieaf224c013e93a8608f8e8b726a70b0e09c491c50acf61b9dab5266e4ffe4044.NewUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1840,6 +1958,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceP
     }
     return i3783802133ccf9e7e6d97b637992b7d774a508c396aec38c6e5f063b6eca6035.NewUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetails the userExperienceAnalyticsAppHealthDevicePerformanceDetails property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*i80f0984d215fdad0cad56f17f7310410074df5f310ffe9a468a9b8493c29990b.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
     return i80f0984d215fdad0cad56f17f7310410074df5f310ffe9a468a9b8493c29990b.NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1854,6 +1973,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceP
     }
     return i2b74d96ff84d5fe2d4dd32bbda034d0939a6963d72ec6bdc6385dbd2c7be7399.NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthOSVersionPerformance the userExperienceAnalyticsAppHealthOSVersionPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformance()(*id3e0876e40cd48ccf5e9a480b8e8697ba244031b08e7cdbb1deab6a8c19e09b3.UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
     return id3e0876e40cd48ccf5e9a480b8e8697ba244031b08e7cdbb1deab6a8c19e09b3.NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1868,9 +1988,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersi
     }
     return ib1e4c4046564be8827bfafc9e379a1703afbd70eb2578fac07ef96f73ea86ac0.NewUserExperienceAnalyticsAppHealthOSVersionPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsAppHealthOverview the userExperienceAnalyticsAppHealthOverview property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOverview()(*ibfc8a5ec1c711335082cb03eef0eb2f54be6f6d4cff933fd5bffc10e8c7ea600.UserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
     return ibfc8a5ec1c711335082cb03eef0eb2f54be6f6d4cff933fd5bffc10e8c7ea600.NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsBaselines the userExperienceAnalyticsBaselines property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselines()(*ia291617a9649be4f230468b1c89a252ce7b942f02b7e37628224eccdaca2a415.UserExperienceAnalyticsBaselinesRequestBuilder) {
     return ia291617a9649be4f230468b1c89a252ce7b942f02b7e37628224eccdaca2a415.NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1885,6 +2007,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselinesById(id
     }
     return i1b77b48454aa415d7ce0b5f4928deafee62200e8985d414410b6088a9de9c043.NewUserExperienceAnalyticsBaselineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthAppImpact the userExperienceAnalyticsBatteryHealthAppImpact property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthAppImpact()(*ibaf75e6ff925ba6893ac5d3039caefb7154e02b28d12b7c348ece101ee2484f7.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) {
     return ibaf75e6ff925ba6893ac5d3039caefb7154e02b28d12b7c348ece101ee2484f7.NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1899,9 +2022,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthApp
     }
     return iea2136c9efe9f595fda9dd774b5a528113d691185aad21c67cdf4eddb31b0323.NewUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthCapacityDetails the userExperienceAnalyticsBatteryHealthCapacityDetails property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthCapacityDetails()(*i3b366af3ede4dca5403c504832feec65350dc7178e1b13c3b775552a8b7741a8.UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) {
     return i3b366af3ede4dca5403c504832feec65350dc7178e1b13c3b775552a8b7741a8.NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthDeviceAppImpact the userExperienceAnalyticsBatteryHealthDeviceAppImpact property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*i7e94b13ab484d489531e932fa60a1fc8593394421fb0573d41f489216a4d1881.UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder) {
     return i7e94b13ab484d489531e932fa60a1fc8593394421fb0573d41f489216a4d1881.NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1916,6 +2041,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     }
     return i60952b68325201881256adae46e8a26a404fa5ed91c10522ce53875fab613126.NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthDevicePerformance the userExperienceAnalyticsBatteryHealthDevicePerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDevicePerformance()(*i3cda4e7781037fa799025466b994cb6f2e65ff75bcde886167cef1f8939ac4f2.UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) {
     return i3cda4e7781037fa799025466b994cb6f2e65ff75bcde886167cef1f8939ac4f2.NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1930,6 +2056,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     }
     return ie8027474a6306436a4328d9118a1b9b47c55f35ac05021de286e70864a83a95e.NewUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*i123f7e3613b14bdb6583793a8d2b8201841844975e8b2a4040cf377652ad4f4f.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) {
     return i123f7e3613b14bdb6583793a8d2b8201841844975e8b2a4040cf377652ad4f4f.NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1944,6 +2071,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     }
     return i88e6712a7daac143364eead4daa3edb15ba31bd1e9d81eb435c31339a5a17482.NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthModelPerformance the userExperienceAnalyticsBatteryHealthModelPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthModelPerformance()(*i08aace5d722a25be94c3870519ce5be0f606f406a71f189a8969a6c597840d66.UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) {
     return i08aace5d722a25be94c3870519ce5be0f606f406a71f189a8969a6c597840d66.NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1958,6 +2086,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthMod
     }
     return i76c7c23049a1948c3f35e8b1ed0746cdb1c9b0dbdf6eb1f3a858fe7ba9e76f33.NewUserExperienceAnalyticsBatteryHealthModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthOsPerformance the userExperienceAnalyticsBatteryHealthOsPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsPerformance()(*ic2a9ed500673be487b8503728b91d88bb4b21222bd95eb0b51677dc15f5ff4bf.UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) {
     return ic2a9ed500673be487b8503728b91d88bb4b21222bd95eb0b51677dc15f5ff4bf.NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1972,9 +2101,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsP
     }
     return id9eb3b7184b68f007634fca6e0f02f641b4f01952d369cdc9fc3e187f02369a5.NewUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsBatteryHealthRuntimeDetails the userExperienceAnalyticsBatteryHealthRuntimeDetails property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthRuntimeDetails()(*i88a41d6a6b9d6f5d95b1375089cd36d4423cd8f3f1ccf1b08a32ace2e08042f3.UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) {
     return i88a41d6a6b9d6f5d95b1375089cd36d4423cd8f3f1ccf1b08a32ace2e08042f3.NewUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsCategories the userExperienceAnalyticsCategories property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategories()(*iaffbe7a37a661d4aff2a2d2cfec2efb8f5ffd10bed0192adc2b30fa8af7fdcf1.UserExperienceAnalyticsCategoriesRequestBuilder) {
     return iaffbe7a37a661d4aff2a2d2cfec2efb8f5ffd10bed0192adc2b30fa8af7fdcf1.NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1989,6 +2120,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategoriesById(i
     }
     return i99b191e1c40d19f35ca989940dd30ccb07115e86ad020a9720208a71e030bb29.NewUserExperienceAnalyticsCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDeviceMetricHistory the userExperienceAnalyticsDeviceMetricHistory property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHistory()(*i1d5f4d22867e26a8c778cb008d3e2e08b28fa156314980e96948ddf22fc773b1.UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) {
     return i1d5f4d22867e26a8c778cb008d3e2e08b28fa156314980e96948ddf22fc773b1.NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2003,6 +2135,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHist
     }
     return i43aefb3f489ba3c5dcc2b7dd3a9e2f011bab28f04c4334a661b7edf59a8a0e47.NewUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDevicePerformance the userExperienceAnalyticsDevicePerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformance()(*i924450e3357285a481d60a94f9399519371e2c7764359c292ad23e2af5dfe4c0.UserExperienceAnalyticsDevicePerformanceRequestBuilder) {
     return i924450e3357285a481d60a94f9399519371e2c7764359c292ad23e2af5dfe4c0.NewUserExperienceAnalyticsDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2017,6 +2150,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformanc
     }
     return i170fcfb6f7df141f639f83b57290340c6a4b7ce5c5502e6850f8fa3b399c2ebd.NewUserExperienceAnalyticsDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDeviceScores the userExperienceAnalyticsDeviceScores property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScores()(*iffb6c289f1dbf81ac71519e67c8e1b400ec95920a29536122e64e611965d51ba.UserExperienceAnalyticsDeviceScoresRequestBuilder) {
     return iffb6c289f1dbf81ac71519e67c8e1b400ec95920a29536122e64e611965d51ba.NewUserExperienceAnalyticsDeviceScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2031,6 +2165,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScoresById
     }
     return i6189b9e96af0214aefb0f87a16fee2c22ba3b32e425ae7da1bd110e8180772bd.NewUserExperienceAnalyticsDeviceScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDeviceStartupHistory the userExperienceAnalyticsDeviceStartupHistory property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistory()(*i7f61c70ea2f2f7b8282c6bc875f49be5553df3b84a88282940a6d7d632dc0455.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
     return i7f61c70ea2f2f7b8282c6bc875f49be5553df3b84a88282940a6d7d632dc0455.NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2045,6 +2180,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHis
     }
     return ie2bb3b598459cc9e02091728ea6868c1992a63da4c0bcfc6ec9e9365109402fe.NewUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDeviceStartupProcesses the userExperienceAnalyticsDeviceStartupProcesses property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcesses()(*i2805040d499995de0b089fa419b3a8f1e060a4a0981fabc5e22ebd9fbf34f6a9.UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) {
     return i2805040d499995de0b089fa419b3a8f1e060a4a0981fabc5e22ebd9fbf34f6a9.NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2059,6 +2195,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupPro
     }
     return ia9ccf093ea8278fac25e51450e7d500826599c72ee56d7375264a7d6960e0e66.NewUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDeviceStartupProcessPerformance the userExperienceAnalyticsDeviceStartupProcessPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformance()(*if8c065baddf282e16f72f4cb0dc067e98a5ad4e3790ee2a13bd13297a87ade01.UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
     return if8c065baddf282e16f72f4cb0dc067e98a5ad4e3790ee2a13bd13297a87ade01.NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2073,6 +2210,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupPro
     }
     return ib6ecebd18f42dfff4e5bd05df1fedf0983279f8d4b59244f6fe0cd703dedbc76.NewUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsDevicesWithoutCloudIdentity the userExperienceAnalyticsDevicesWithoutCloudIdentity property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCloudIdentity()(*ib5a74b4478a9f9735a8136b94a542ebbc851d3bf41a306abf71f2f76beb95cbb.UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) {
     return ib5a74b4478a9f9735a8136b94a542ebbc851d3bf41a306abf71f2f76beb95cbb.NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2087,6 +2225,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCl
     }
     return ib84454323961957bca882a92bc1df9bfe130cfbf80c192479ef8f5d2e2518e82.NewUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsImpactingProcess the userExperienceAnalyticsImpactingProcess property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess()(*ide134990d0992074fdecf4e1b824a973440ed1fbb169350f01924aa28bea54b6.UserExperienceAnalyticsImpactingProcessRequestBuilder) {
     return ide134990d0992074fdecf4e1b824a973440ed1fbb169350f01924aa28bea54b6.NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2101,6 +2240,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess
     }
     return i97a01509585cdcc3cc5a5d6e3ec225ca1450d7462986164a654e7ea51b4f5c31.NewUserExperienceAnalyticsImpactingProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsMetricHistory the userExperienceAnalyticsMetricHistory property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistory()(*i7d2a149d9d011731691dd153f225979e19f163bf4360e1259693e20d7bccfaf0.UserExperienceAnalyticsMetricHistoryRequestBuilder) {
     return i7d2a149d9d011731691dd153f225979e19f163bf4360e1259693e20d7bccfaf0.NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2115,6 +2255,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistoryByI
     }
     return ic8d8483197953e41c857cec1dd8f8b035af76fd8ccee3730a059e905b38d5a80.NewUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsModelScores the userExperienceAnalyticsModelScores property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScores()(*i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364.UserExperienceAnalyticsModelScoresRequestBuilder) {
     return i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364.NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2129,6 +2270,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScoresById(
     }
     return i750e09f48b802b2daf28cbb36de8b53f2675b4a113be3d3058e98f90c352006e.NewUserExperienceAnalyticsModelScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsNotAutopilotReadyDevice the userExperienceAnalyticsNotAutopilotReadyDevice property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotReadyDevice()(*ie065e034c29738dd8c2db58c7cbbd58629bea34129384672c22dbb57a33c96bf.UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) {
     return ie065e034c29738dd8c2db58c7cbbd58629bea34129384672c22dbb57a33c96bf.NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2143,12 +2285,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotRead
     }
     return i9876096e88a5102e6ca754291f1f5979c7d516d6d8f326149313812a1b1a60e7.NewUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsOverview the userExperienceAnalyticsOverview property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsOverview()(*i88c5051d5413e2a50dfc8d7dad02241a69e5952b2a13f0ee5c43d5d21fb1e17c.UserExperienceAnalyticsOverviewRequestBuilder) {
     return i88c5051d5413e2a50dfc8d7dad02241a69e5952b2a13f0ee5c43d5d21fb1e17c.NewUserExperienceAnalyticsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsRegressionSummary the userExperienceAnalyticsRegressionSummary property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRegressionSummary()(*ic537cdf04b5e2518221f4cd689a053d604afdaa8d926facb50651e9f867ff848.UserExperienceAnalyticsRegressionSummaryRequestBuilder) {
     return ic537cdf04b5e2518221f4cd689a053d604afdaa8d926facb50651e9f867ff848.NewUserExperienceAnalyticsRegressionSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsRemoteConnection the userExperienceAnalyticsRemoteConnection property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnection()(*ib92c5abb71bfd48dd94b0aef1b0c3ea5734c010e8c73844aff32a102983e43b6.UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
     return ib92c5abb71bfd48dd94b0aef1b0c3ea5734c010e8c73844aff32a102983e43b6.NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2163,6 +2308,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnection
     }
     return if07623a60cc32688627bebcfbd9fc01df226641a673d8d5d80b5291ba743eed8.NewUserExperienceAnalyticsRemoteConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsResourcePerformance the userExperienceAnalyticsResourcePerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerformance()(*i883482678f2a2f0423c5c68caf5a82bf8337f568b3cd6468d6cc2d5e6c084235.UserExperienceAnalyticsResourcePerformanceRequestBuilder) {
     return i883482678f2a2f0423c5c68caf5a82bf8337f568b3cd6468d6cc2d5e6c084235.NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2177,6 +2323,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerforma
     }
     return ib5d8d2120b4ba3bdecb682bdcb5e643a407d462be2c1c5c08a2fc656b8a940b5.NewUserExperienceAnalyticsResourcePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsScoreHistory the userExperienceAnalyticsScoreHistory property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistory()(*ia0518852643bc25bf19cbf9f4ba1a5ab4719edff23d1b4078b12da2dd71c52ed.UserExperienceAnalyticsScoreHistoryRequestBuilder) {
     return ia0518852643bc25bf19cbf9f4ba1a5ab4719edff23d1b4078b12da2dd71c52ed.NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2195,9 +2342,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistoryById
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()(*i701ebc156b671df9db9ac0d0f0cc0f8fdedc7d64d3dd3c6382ee057a3e1cfa29.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
     return i701ebc156b671df9db9ac0d0f0cc0f8fdedc7d64d3dd3c6382ee057a3e1cfa29.NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*i68822963724651cf63f8e09f4865a7f9aacea28985fbf25998411c496de6dd94.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
     return i68822963724651cf63f8e09f4865a7f9aacea28985fbf25998411c496de6dd94.NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// UserExperienceAnalyticsWorkFromAnywhereMetrics the userExperienceAnalyticsWorkFromAnywhereMetrics property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetrics()(*i71ff36cd3fe036185279652e52cb108c1a3c3c5f76cd4cd5292950202f3a6912.UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) {
     return i71ff36cd3fe036185279652e52cb108c1a3c3c5f76cd4cd5292950202f3a6912.NewUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2212,6 +2361,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
     }
     return i83698992c166b55c29828f0c880624c4406162edc2b708a75dc2b64eb808d8d4.NewUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformance the userExperienceAnalyticsWorkFromAnywhereModelPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
     return i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2226,6 +2376,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
     }
     return i07aa9b8f1e0739e976f5b2fa8e4495ed75267a0d7be8e534032fff7e0056b6ab.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserPfxCertificates the userPfxCertificates property
 func (m *DeviceManagementRequestBuilder) UserPfxCertificates()(*i16f8591309ff56925b8c7d68d14f1ef47ac78cbb7093a9c87ff620425ef7ac1b.UserPfxCertificatesRequestBuilder) {
     return i16f8591309ff56925b8c7d68d14f1ef47ac78cbb7093a9c87ff620425ef7ac1b.NewUserPfxCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2244,9 +2395,11 @@ func (m *DeviceManagementRequestBuilder) UserPfxCertificatesById(id string)(*i9d
 func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*ia0d432f78d4b88e8d5a1d4adc3e4e1d507a43f158f59b5d3fb750a6ad385f6ed.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
     return ia0d432f78d4b88e8d5a1d4adc3e4e1d507a43f158f59b5d3fb750a6ad385f6ed.NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName);
 }
+// VirtualEndpoint the virtualEndpoint property
 func (m *DeviceManagementRequestBuilder) VirtualEndpoint()(*i13b9baa49d0e8746e4238e0061c041ff26ae5c60d1b2d029831f0eb6c44f74ea.VirtualEndpointRequestBuilder) {
     return i13b9baa49d0e8746e4238e0061c041ff26ae5c60d1b2d029831f0eb6c44f74ea.NewVirtualEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// WindowsAutopilotDeploymentProfiles the windowsAutopilotDeploymentProfiles property
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfiles()(*i1026eee1563c445d573818d7c0ee3bbb4f859572fbfce275bbc01b981ffe3d67.WindowsAutopilotDeploymentProfilesRequestBuilder) {
     return i1026eee1563c445d573818d7c0ee3bbb4f859572fbfce275bbc01b981ffe3d67.NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2261,6 +2414,7 @@ func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfilesById(
     }
     return icef6ad391dc2eba32bcd0eb933cdf8cd2784b454089f2f7a14031cdde0fe996a.NewWindowsAutopilotDeploymentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsAutopilotDeviceIdentities the windowsAutopilotDeviceIdentities property
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities()(*i716688e32793efd9093ce1bb4d9a2c0e4932dc15b533f0d66d867386aacffcee.WindowsAutopilotDeviceIdentitiesRequestBuilder) {
     return i716688e32793efd9093ce1bb4d9a2c0e4932dc15b533f0d66d867386aacffcee.NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2275,9 +2429,11 @@ func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentitiesById(id
     }
     return i6703c39a9ba8d06a5d33a39d503dad3c54df8d819238c0f8925adc538ca705b8.NewWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsAutopilotSettings the windowsAutopilotSettings property
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotSettings()(*id96351ec964b6d521cfadf892721f0936c7bbafe8e49f74eed57714356f61059.WindowsAutopilotSettingsRequestBuilder) {
     return id96351ec964b6d521cfadf892721f0936c7bbafe8e49f74eed57714356f61059.NewWindowsAutopilotSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// WindowsDriverUpdateProfiles the windowsDriverUpdateProfiles property
 func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfiles()(*i1a0da0de16255e8cfe707c10ba94297d7b7a3951b6f7f8221d6b0a18c4421c63.WindowsDriverUpdateProfilesRequestBuilder) {
     return i1a0da0de16255e8cfe707c10ba94297d7b7a3951b6f7f8221d6b0a18c4421c63.NewWindowsDriverUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2292,6 +2448,7 @@ func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfilesById(id stri
     }
     return ia0faa57714111dca934e9fb5cb1eb0eefb49912efe5d080c1de048d44cfef081.NewWindowsDriverUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsFeatureUpdateProfiles the windowsFeatureUpdateProfiles property
 func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfiles()(*ib77564790275cb6c43c3756dcf004a1738785be1da3e9b51500ed8cc7cb56b90.WindowsFeatureUpdateProfilesRequestBuilder) {
     return ib77564790275cb6c43c3756dcf004a1738785be1da3e9b51500ed8cc7cb56b90.NewWindowsFeatureUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2306,6 +2463,7 @@ func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfilesById(id str
     }
     return i617d0423710f2537b3635ba9d53c1bd7a9157220202f3a8e4fbca2c861c1e258.NewWindowsFeatureUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsInformationProtectionAppLearningSummaries the windowsInformationProtectionAppLearningSummaries property
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummaries()(*i189f99dec91abd82aef7848751c57e839d6d6fc5a62d539edbf6e8c791f6a740.WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
     return i189f99dec91abd82aef7848751c57e839d6d6fc5a62d539edbf6e8c791f6a740.NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2320,6 +2478,7 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearning
     }
     return i27102a1f55f0e4f532da32f9fd084200fff4b915619203ac19778e277550113e.NewWindowsInformationProtectionAppLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsInformationProtectionNetworkLearningSummaries the windowsInformationProtectionNetworkLearningSummaries property
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummaries()(*i33d688df93b8c70495fe850caf189c38e5e988f24a6766129fade55ddca65b6f.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) {
     return i33d688df93b8c70495fe850caf189c38e5e988f24a6766129fade55ddca65b6f.NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2334,6 +2493,7 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLear
     }
     return if620c3d79780bcb3c46f105b7213e737a29325f8a189f61bb06c0c5ee15a87d5.NewWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsMalwareInformation the windowsMalwareInformation property
 func (m *DeviceManagementRequestBuilder) WindowsMalwareInformation()(*if5272bcac44fcff2621a3e47727572ede92654ccd7e61f5b25dd0d9d4006ed3d.WindowsMalwareInformationRequestBuilder) {
     return if5272bcac44fcff2621a3e47727572ede92654ccd7e61f5b25dd0d9d4006ed3d.NewWindowsMalwareInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2348,6 +2508,7 @@ func (m *DeviceManagementRequestBuilder) WindowsMalwareInformationById(id string
     }
     return i24abb123826461a00a90764243200f8c9d00edda2d377fe0fd0c2b0f81719f76.NewWindowsMalwareInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsQualityUpdateProfiles the windowsQualityUpdateProfiles property
 func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfiles()(*i6b90776fc7713600e69140028c329b70cbfb9d6ccf5ee1aef5e3cf636d655332.WindowsQualityUpdateProfilesRequestBuilder) {
     return i6b90776fc7713600e69140028c329b70cbfb9d6ccf5ee1aef5e3cf636d655332.NewWindowsQualityUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -2362,6 +2523,7 @@ func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfilesById(id str
     }
     return ib050cd86e0741e99e937a8678c13a85350f5fec6c1269c9670b260d7a23da5c1.NewWindowsQualityUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsUpdateCatalogItems the windowsUpdateCatalogItems property
 func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItems()(*i3b162052a75fef65f13882f1eeccb1550a198abef19a1b5d84b7ae75bb995385.WindowsUpdateCatalogItemsRequestBuilder) {
     return i3b162052a75fef65f13882f1eeccb1550a198abef19a1b5d84b7ae75bb995385.NewWindowsUpdateCatalogItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

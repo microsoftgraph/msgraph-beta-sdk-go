@@ -1,14 +1,14 @@
 package activatedeviceesim
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ActivateDeviceEsimRequestBody provides operations to call the activateDeviceEsim method.
 type ActivateDeviceEsimRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The carrierUrl property
     carrierUrl *string;
 }
 // NewActivateDeviceEsimRequestBody instantiates a new activateDeviceEsimRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewActivateDeviceEsimRequestBody()(*ActivateDeviceEsimRequestBody) {
     return m
 }
 // CreateActivateDeviceEsimRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateActivateDeviceEsimRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateActivateDeviceEsimRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActivateDeviceEsimRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -30,7 +30,7 @@ func (m *ActivateDeviceEsimRequestBody) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetCarrierUrl gets the carrierUrl property value. 
+// GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
 func (m *ActivateDeviceEsimRequestBody) GetCarrierUrl()(*string) {
     if m == nil {
         return nil
@@ -39,9 +39,9 @@ func (m *ActivateDeviceEsimRequestBody) GetCarrierUrl()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ActivateDeviceEsimRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["carrierUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ActivateDeviceEsimRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["carrierUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *ActivateDeviceEsimRequestBody) GetFieldDeserializers()(map[string]func(
     return res
 }
 // Serialize serializes information the current object
-func (m *ActivateDeviceEsimRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ActivateDeviceEsimRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("carrierUrl", m.GetCarrierUrl())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *ActivateDeviceEsimRequestBody) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetCarrierUrl sets the carrierUrl property value. 
+// SetCarrierUrl sets the carrierUrl property value. The carrierUrl property
 func (m *ActivateDeviceEsimRequestBody) SetCarrierUrl(value *string)() {
     if m != nil {
         m.carrierUrl = value

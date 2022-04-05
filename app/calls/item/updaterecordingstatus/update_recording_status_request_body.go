@@ -1,18 +1,18 @@
 package updaterecordingstatus
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // UpdateRecordingStatusRequestBody provides operations to call the updateRecordingStatus method.
 type UpdateRecordingStatusRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The clientContext property
     clientContext *string;
-    // 
-    status *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordingStatus;
+    // The status property
+    status *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecordingStatus;
 }
 // NewUpdateRecordingStatusRequestBody instantiates a new updateRecordingStatusRequestBody and sets the default values.
 func NewUpdateRecordingStatusRequestBody()(*UpdateRecordingStatusRequestBody) {
@@ -22,7 +22,7 @@ func NewUpdateRecordingStatusRequestBody()(*UpdateRecordingStatusRequestBody) {
     return m
 }
 // CreateUpdateRecordingStatusRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateUpdateRecordingStatusRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateUpdateRecordingStatusRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateRecordingStatusRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,7 +33,7 @@ func (m *UpdateRecordingStatusRequestBody) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// GetClientContext gets the clientContext property value. 
+// GetClientContext gets the clientContext property value. The clientContext property
 func (m *UpdateRecordingStatusRequestBody) GetClientContext()(*string) {
     if m == nil {
         return nil
@@ -42,9 +42,9 @@ func (m *UpdateRecordingStatusRequestBody) GetClientContext()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["clientContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["clientContext"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,20 +54,20 @@ func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseRecordingStatus)
+    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseRecordingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordingStatus))
+            m.SetStatus(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecordingStatus))
         }
         return nil
     }
     return res
 }
-// GetStatus gets the status property value. 
-func (m *UpdateRecordingStatusRequestBody) GetStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordingStatus) {
+// GetStatus gets the status property value. The status property
+func (m *UpdateRecordingStatusRequestBody) GetStatus()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecordingStatus) {
     if m == nil {
         return nil
     } else {
@@ -75,7 +75,7 @@ func (m *UpdateRecordingStatusRequestBody) GetStatus()(*i535684e11b5500196ecb4b5
     }
 }
 // Serialize serializes information the current object
-func (m *UpdateRecordingStatusRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *UpdateRecordingStatusRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("clientContext", m.GetClientContext())
         if err != nil {
@@ -103,14 +103,14 @@ func (m *UpdateRecordingStatusRequestBody) SetAdditionalData(value map[string]in
         m.additionalData = value
     }
 }
-// SetClientContext sets the clientContext property value. 
+// SetClientContext sets the clientContext property value. The clientContext property
 func (m *UpdateRecordingStatusRequestBody) SetClientContext(value *string)() {
     if m != nil {
         m.clientContext = value
     }
 }
-// SetStatus sets the status property value. 
-func (m *UpdateRecordingStatusRequestBody) SetStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecordingStatus)() {
+// SetStatus sets the status property value. The status property
+func (m *UpdateRecordingStatusRequestBody) SetStatus(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecordingStatus)() {
     if m != nil {
         m.status = value
     }

@@ -1,30 +1,30 @@
 package getcompliancepoliciesreportfordevice
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetCompliancePoliciesReportForDeviceRequestBody provides operations to call the getCompliancePoliciesReportForDevice method.
 type GetCompliancePoliciesReportForDeviceRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The filter property
     filter *string;
-    // 
+    // The groupBy property
     groupBy []string;
-    // 
+    // The name property
     name *string;
-    // 
+    // The orderBy property
     orderBy []string;
-    // 
+    // The search property
     search *string;
-    // 
+    // The select property
     select_escaped []string;
-    // 
+    // The sessionId property
     sessionId *string;
-    // 
+    // The skip property
     skip *int32;
-    // 
+    // The top property
     top *int32;
 }
 // NewGetCompliancePoliciesReportForDeviceRequestBody instantiates a new getCompliancePoliciesReportForDeviceRequestBody and sets the default values.
@@ -35,7 +35,7 @@ func NewGetCompliancePoliciesReportForDeviceRequestBody()(*GetCompliancePolicies
     return m
 }
 // CreateGetCompliancePoliciesReportForDeviceRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetCompliancePoliciesReportForDeviceRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetCompliancePoliciesReportForDeviceRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetCompliancePoliciesReportForDeviceRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -47,9 +47,9 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetAdditionalData()(ma
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["filter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["groupBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["groupBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["orderBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["orderBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["search"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["search"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["sessionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["sessionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["skip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["skip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
         }
         return nil
     }
-    res["top"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["top"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFieldDeserializers(
     }
     return res
 }
-// GetFilter gets the filter property value. 
+// GetFilter gets the filter property value. The filter property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFilter()(*string) {
     if m == nil {
         return nil
@@ -161,7 +161,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetFilter()(*string) {
         return m.filter
     }
 }
-// GetGroupBy gets the groupBy property value. 
+// GetGroupBy gets the groupBy property value. The groupBy property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetGroupBy()([]string) {
     if m == nil {
         return nil
@@ -169,7 +169,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetGroupBy()([]string)
         return m.groupBy
     }
 }
-// GetName gets the name property value. 
+// GetName gets the name property value. The name property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetName()(*string) {
     if m == nil {
         return nil
@@ -177,7 +177,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetName()(*string) {
         return m.name
     }
 }
-// GetOrderBy gets the orderBy property value. 
+// GetOrderBy gets the orderBy property value. The orderBy property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetOrderBy()([]string) {
     if m == nil {
         return nil
@@ -185,7 +185,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetOrderBy()([]string)
         return m.orderBy
     }
 }
-// GetSearch gets the search property value. 
+// GetSearch gets the search property value. The search property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSearch()(*string) {
     if m == nil {
         return nil
@@ -193,7 +193,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-// GetSelect gets the select property value. 
+// GetSelect gets the select property value. The select property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSelect()([]string) {
     if m == nil {
         return nil
@@ -201,7 +201,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSelect()([]string) 
         return m.select_escaped
     }
 }
-// GetSessionId gets the sessionId property value. 
+// GetSessionId gets the sessionId property value. The sessionId property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSessionId()(*string) {
     if m == nil {
         return nil
@@ -209,7 +209,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSessionId()(*string
         return m.sessionId
     }
 }
-// GetSkip gets the skip property value. 
+// GetSkip gets the skip property value. The skip property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSkip()(*int32) {
     if m == nil {
         return nil
@@ -217,7 +217,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetSkip()(*int32) {
         return m.skip
     }
 }
-// GetTop gets the top property value. 
+// GetTop gets the top property value. The top property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetTop()(*int32) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) GetTop()(*int32) {
     }
 }
 // Serialize serializes information the current object
-func (m *GetCompliancePoliciesReportForDeviceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetCompliancePoliciesReportForDeviceRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
         if err != nil {
@@ -295,55 +295,55 @@ func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetAdditionalData(valu
         m.additionalData = value
     }
 }
-// SetFilter sets the filter property value. 
+// SetFilter sets the filter property value. The filter property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetFilter(value *string)() {
     if m != nil {
         m.filter = value
     }
 }
-// SetGroupBy sets the groupBy property value. 
+// SetGroupBy sets the groupBy property value. The groupBy property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetGroupBy(value []string)() {
     if m != nil {
         m.groupBy = value
     }
 }
-// SetName sets the name property value. 
+// SetName sets the name property value. The name property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetOrderBy sets the orderBy property value. 
+// SetOrderBy sets the orderBy property value. The orderBy property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetOrderBy(value []string)() {
     if m != nil {
         m.orderBy = value
     }
 }
-// SetSearch sets the search property value. 
+// SetSearch sets the search property value. The search property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetSearch(value *string)() {
     if m != nil {
         m.search = value
     }
 }
-// SetSelect sets the select property value. 
+// SetSelect sets the select property value. The select property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetSelect(value []string)() {
     if m != nil {
         m.select_escaped = value
     }
 }
-// SetSessionId sets the sessionId property value. 
+// SetSessionId sets the sessionId property value. The sessionId property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetSessionId(value *string)() {
     if m != nil {
         m.sessionId = value
     }
 }
-// SetSkip sets the skip property value. 
+// SetSkip sets the skip property value. The skip property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetSkip(value *int32)() {
     if m != nil {
         m.skip = value
     }
 }
-// SetTop sets the top property value. 
+// SetTop sets the top property value. The top property
 func (m *GetCompliancePoliciesReportForDeviceRequestBody) SetTop(value *int32)() {
     if m != nil {
         m.top = value

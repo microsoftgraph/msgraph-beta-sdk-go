@@ -1,13 +1,13 @@
 package authentication
 
 import (
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i28848822f3980fdce6726498e9fc09d751b8a59cf5da6b8c082377a9dd61fa94 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/operations"
     i2a0e0508cb5dac8c4a5ff74321688dfcdaa826e9faa19bdc6a70268c36ac402f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordmethods"
     i3c82d3c069d877192717ae253184fedace9ae2e72f03648dc1e909f4a3085727 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/emailmethods"
     i3de92ba094c6412eaa07dac178f38f33e50162805f2531cf1357ebe544a96d18 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/windowshelloforbusinessmethods"
-    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
     i553aa88228c73bfaaeeef34824d8c3229b6b7db8227c301e41c771b57001dd1f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods"
     i81c2901312c57f1ce22103393de382e2806a19bfa6c163ef15b5a2c5aaefc745 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/softwareoathmethods"
     ia55b6dd6613f097e6d74a8806a220afcb427d9a8f6bffc469027552b9486b552 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/temporaryaccesspassmethods"
@@ -33,29 +33,29 @@ type AuthenticationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // AuthenticationRequestBuilderDeleteOptions options for Delete
 type AuthenticationRequestBuilderDeleteOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // AuthenticationRequestBuilderGetOptions options for Get
 type AuthenticationRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *AuthenticationRequestBuilderGetQueryParameters;
+    QueryParameters *AuthenticationRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // AuthenticationRequestBuilderGetQueryParameters the authentication methods that are supported for the user.
 type AuthenticationRequestBuilderGetQueryParameters struct {
@@ -67,16 +67,16 @@ type AuthenticationRequestBuilderGetQueryParameters struct {
 // AuthenticationRequestBuilderPatchOptions options for Patch
 type AuthenticationRequestBuilderPatchOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // NewAuthenticationRequestBuilderInternal instantiates a new AuthenticationRequestBuilder and sets the default values.
-func NewAuthenticationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationRequestBuilder) {
+func NewAuthenticationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationRequestBuilder) {
     m := &AuthenticationRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user_id}/authentication{?select,expand}";
@@ -89,22 +89,22 @@ func NewAuthenticationRequestBuilderInternal(pathParameters map[string]string, r
     return m
 }
 // NewAuthenticationRequestBuilder instantiates a new AuthenticationRequestBuilder and sets the default values.
-func NewAuthenticationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationRequestBuilder) {
+func NewAuthenticationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property authentication for users
-func (m *AuthenticationRequestBuilder) CreateDeleteRequestInformation(options *AuthenticationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *AuthenticationRequestBuilder) CreateDeleteRequestInformation(options *AuthenticationRequestBuilderDeleteOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -112,19 +112,19 @@ func (m *AuthenticationRequestBuilder) CreateDeleteRequestInformation(options *A
     return requestInfo, nil
 }
 // CreateGetRequestInformation the authentication methods that are supported for the user.
-func (m *AuthenticationRequestBuilder) CreateGetRequestInformation(options *AuthenticationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *AuthenticationRequestBuilder) CreateGetRequestInformation(options *AuthenticationRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -132,17 +132,17 @@ func (m *AuthenticationRequestBuilder) CreateGetRequestInformation(options *Auth
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property authentication in users
-func (m *AuthenticationRequestBuilder) CreatePatchRequestInformation(options *AuthenticationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *AuthenticationRequestBuilder) CreatePatchRequestInformation(options *AuthenticationRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -155,9 +155,9 @@ func (m *AuthenticationRequestBuilder) Delete(options *AuthenticationRequestBuil
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -165,6 +165,7 @@ func (m *AuthenticationRequestBuilder) Delete(options *AuthenticationRequestBuil
     }
     return nil
 }
+// EmailMethods the emailMethods property
 func (m *AuthenticationRequestBuilder) EmailMethods()(*i3c82d3c069d877192717ae253184fedace9ae2e72f03648dc1e909f4a3085727.EmailMethodsRequestBuilder) {
     return i3c82d3c069d877192717ae253184fedace9ae2e72f03648dc1e909f4a3085727.NewEmailMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -179,6 +180,7 @@ func (m *AuthenticationRequestBuilder) EmailMethodsById(id string)(*i8e4613fe9be
     }
     return i8e4613fe9beae47166d3199e35bebd1eacc7b9fb65d987f75b5d6cf3fa8be437.NewEmailAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Fido2Methods the fido2Methods property
 func (m *AuthenticationRequestBuilder) Fido2Methods()(*ib8d8d8244d3eb013f4bc094ce5af2285946de30a3abcfc827de92ab9d365368b.Fido2MethodsRequestBuilder) {
     return ib8d8d8244d3eb013f4bc094ce5af2285946de30a3abcfc827de92ab9d365368b.NewFido2MethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -194,21 +196,22 @@ func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*i467ded3a453
     return i467ded3a4537cbf8edac7f6b51c34bc6260059e41501cb558b59f959687f3ead.NewFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the authentication methods that are supported for the user.
-func (m *AuthenticationRequestBuilder) Get(options *AuthenticationRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable, error) {
+func (m *AuthenticationRequestBuilder) Get(options *AuthenticationRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAuthenticationFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Authenticationable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable), nil
 }
+// Methods the methods property
 func (m *AuthenticationRequestBuilder) Methods()(*ibbe313e164cc65dcee7e84b36906cd6535ea52eb5ee5e2be453de2cd747ca472.MethodsRequestBuilder) {
     return ibbe313e164cc65dcee7e84b36906cd6535ea52eb5ee5e2be453de2cd747ca472.NewMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -223,6 +226,7 @@ func (m *AuthenticationRequestBuilder) MethodsById(id string)(*ia0ffdc8f006fc6f1
     }
     return ia0ffdc8f006fc6f17388d1138910ea760bda5327cb7954a36443dafdd3d6fbfa.NewAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MicrosoftAuthenticatorMethods the microsoftAuthenticatorMethods property
 func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethods()(*ida0d057327dcf5ae8936c3ca5f5443bcab41b07f01cc7dc59b58c500be7c9f87.MicrosoftAuthenticatorMethodsRequestBuilder) {
     return ida0d057327dcf5ae8936c3ca5f5443bcab41b07f01cc7dc59b58c500be7c9f87.NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -237,6 +241,7 @@ func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethodsById(id stri
     }
     return ib3cdab32f2c2a8097f7c565b3cb7cb087b04b57f65b7f9c169711dc829cef01c.NewMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Operations the operations property
 func (m *AuthenticationRequestBuilder) Operations()(*i28848822f3980fdce6726498e9fc09d751b8a59cf5da6b8c082377a9dd61fa94.OperationsRequestBuilder) {
     return i28848822f3980fdce6726498e9fc09d751b8a59cf5da6b8c082377a9dd61fa94.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -251,6 +256,7 @@ func (m *AuthenticationRequestBuilder) OperationsById(id string)(*ib16a6b42b7b0f
     }
     return ib16a6b42b7b0fb91aacf9e83541f6f5c6a5266c8492af0c9840118f0f8230fda.NewLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// PasswordlessMicrosoftAuthenticatorMethods the passwordlessMicrosoftAuthenticatorMethods property
 func (m *AuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethods()(*i553aa88228c73bfaaeeef34824d8c3229b6b7db8227c301e41c771b57001dd1f.PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
     return i553aa88228c73bfaaeeef34824d8c3229b6b7db8227c301e41c771b57001dd1f.NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -265,6 +271,7 @@ func (m *AuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethods
     }
     return i8b94c7ec519f49a4ce821818ba1007cd615cbf88b35e60111f6243e2381a0a30.NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// PasswordMethods the passwordMethods property
 func (m *AuthenticationRequestBuilder) PasswordMethods()(*i2a0e0508cb5dac8c4a5ff74321688dfcdaa826e9faa19bdc6a70268c36ac402f.PasswordMethodsRequestBuilder) {
     return i2a0e0508cb5dac8c4a5ff74321688dfcdaa826e9faa19bdc6a70268c36ac402f.NewPasswordMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -285,9 +292,9 @@ func (m *AuthenticationRequestBuilder) Patch(options *AuthenticationRequestBuild
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -295,6 +302,7 @@ func (m *AuthenticationRequestBuilder) Patch(options *AuthenticationRequestBuild
     }
     return nil
 }
+// PhoneMethods the phoneMethods property
 func (m *AuthenticationRequestBuilder) PhoneMethods()(*if78b7f6c376cc85f14bbf69cb183a8aaa85ded820418b3fdcd6a32b685c875c6.PhoneMethodsRequestBuilder) {
     return if78b7f6c376cc85f14bbf69cb183a8aaa85ded820418b3fdcd6a32b685c875c6.NewPhoneMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -309,6 +317,7 @@ func (m *AuthenticationRequestBuilder) PhoneMethodsById(id string)(*i2fa2bed3b2b
     }
     return i2fa2bed3b2bf85fb6d420cebcc1e3022721013a245e0c8e9488904d31b8c82cf.NewPhoneAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SoftwareOathMethods the softwareOathMethods property
 func (m *AuthenticationRequestBuilder) SoftwareOathMethods()(*i81c2901312c57f1ce22103393de382e2806a19bfa6c163ef15b5a2c5aaefc745.SoftwareOathMethodsRequestBuilder) {
     return i81c2901312c57f1ce22103393de382e2806a19bfa6c163ef15b5a2c5aaefc745.NewSoftwareOathMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -323,6 +332,7 @@ func (m *AuthenticationRequestBuilder) SoftwareOathMethodsById(id string)(*i11e9
     }
     return i11e9821a8e25762609e9e981c9f33988dac6988220959b859b3acf5016e24454.NewSoftwareOathAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// TemporaryAccessPassMethods the temporaryAccessPassMethods property
 func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethods()(*ia55b6dd6613f097e6d74a8806a220afcb427d9a8f6bffc469027552b9486b552.TemporaryAccessPassMethodsRequestBuilder) {
     return ia55b6dd6613f097e6d74a8806a220afcb427d9a8f6bffc469027552b9486b552.NewTemporaryAccessPassMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -337,6 +347,7 @@ func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethodsById(id string)
     }
     return i5959cb956fb6583f70d31a45fd1df7ec1f6063d4908ec79970275f6476e0c9c4.NewTemporaryAccessPassAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// WindowsHelloForBusinessMethods the windowsHelloForBusinessMethods property
 func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethods()(*i3de92ba094c6412eaa07dac178f38f33e50162805f2531cf1357ebe544a96d18.WindowsHelloForBusinessMethodsRequestBuilder) {
     return i3de92ba094c6412eaa07dac178f38f33e50162805f2531cf1357ebe544a96d18.NewWindowsHelloForBusinessMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

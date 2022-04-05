@@ -2,6 +2,9 @@ package reports
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i0075784d86aaab84840c6dfaee5d8126c33aad7617cd0b1b92b629aec8f8834e "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getprinterarchivedprintjobswithprinteridwithstartdatetimewithenddatetime"
     i02290aae39c6d9344aa34fcba0783a063f860b4fcf84f34c4a01b0e2b489dd4e "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getemailactivityuserdetailwithperiod"
     i02b366b70fc1ec373b8983375e316d896baf6faad4edf2a4121986b8230d5a84 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getm365appusercountswithperiod"
@@ -18,6 +21,7 @@ import (
     i1c97679a2593f53f0d56c8ca04b6129e80fb9633559094ab0a4b44e77ab52bba "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getteamsuseractivityusercountswithperiod"
     i1db07755998954593b7fa5949e7cf86000be094a324a5936d567e29944523e34 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getmailboxusagedetailwithperiod"
     i1f6b0d46fc4b338b7b612e7abff7bb8e48704a3d9c51a3b2122ebc3e77b54fab "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getoffice365groupsactivitystoragewithperiod"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i23ae3dadc25e31a369068a3ac3cd7ff57c8b4823dcea9650bd4b312d6f57e7e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getyammeractivityusercountswithperiod"
     i24783836c67f3cbffe50d47dcbcb2588e9de66ffd8f9a5c8da53fa898e5e9446 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/manageddeviceenrollmentabandonmentdetailswithskipwithtopwithfilterwithskiptoken"
     i250edbdb590c4bab056109a11a6cf515b7193da960e757e0325976fb00e6b7ef "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getrelyingpartydetailedsummarywithperiod"
@@ -114,7 +118,6 @@ import (
     id1b5f80bb654118e8428176f73bc7413eb087dc72b5acfe75aa4b6d09d7405b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getonedriveactivityuserdetailwithperiod"
     id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getteamsdeviceusageuserdetailwithdate"
     id819e13d5d8b37a469ab265d456430d17b707e1443609d80dec1be87354e1230 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getmailboxusagemailboxcountswithperiod"
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getsharepointactivityuserdetailwithdate"
     ie14903a7ed9a3dee9cbc3334e7ce7a1476f522c78051624951404accb2167f9e "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getm365appplatformusercountswithperiod"
     ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/usercredentialusagedetails"
@@ -138,8 +141,6 @@ import (
     ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagebyuser"
     ifd317ad9016a7541a0ad611c0d46387984fd5c9e4b06f7fce9718fc0b5c0e52f "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getemailappusageuserdetailwithperiod"
     iff7cc4e7a992aa4c240079c5a2255ed095f68878fb58b3ad449dc4ad2229a76c "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getazureaduserfeatureusage"
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagebyuser/item"
     i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusagebyuser/item"
     i6e7800f96429fcd3abddac192866febcab6b2f74bee1f02470e717ea53e849df "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/usercredentialusagedetails/item"
@@ -151,7 +152,6 @@ import (
     ie40751cac1559213f1bbd658ede6043abd8ffd3463aa7abc8847eea9e36a36f8 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagesummariesbyuser/item"
     ie8dfbe0f2a10d928f186e8a85be8a433fa4f6ef763d02998cd4f197b915e90ce "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/credentialuserregistrationdetails/item"
     if50f0dbd8a90dfcd7816cc16a43a257b56afed52876190fb217ae57a9d4679e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusagesummariesbyuser/item"
-    i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/odataerrors"
 )
 
 // ReportsRequestBuilder provides operations to manage the reportRoot singleton.
@@ -159,20 +159,20 @@ type ReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
-    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 // ReportsRequestBuilderGetOptions options for Get
 type ReportsRequestBuilderGetOptions struct {
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Request query parameters
-    Q *ReportsRequestBuilderGetQueryParameters;
+    QueryParameters *ReportsRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
 // ReportsRequestBuilderGetQueryParameters get reports
 type ReportsRequestBuilderGetQueryParameters struct {
@@ -184,14 +184,15 @@ type ReportsRequestBuilderGetQueryParameters struct {
 // ReportsRequestBuilderPatchOptions options for Patch
 type ReportsRequestBuilderPatchOptions struct {
     // 
-    Body i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ReportRootable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable;
     // Request headers
-    H map[string]string;
+    Headers map[string]string;
     // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
 }
+// ApplicationSignInDetailedSummary the applicationSignInDetailedSummary property
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
     return i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.NewApplicationSignInDetailedSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -206,11 +207,12 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(
     }
     return ib41269879aaaaafe023559bee72eced006e67c0981359cdf0e53448af198f4bc.NewApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// AuthenticationMethods the authenticationMethods property
 func (m *ReportsRequestBuilder) AuthenticationMethods()(*ib278d65ffeb85ab37242d833ae021cc70a1c1347099b6536ec196e9a7db3128c.AuthenticationMethodsRequestBuilder) {
     return ib278d65ffeb85ab37242d833ae021cc70a1c1347099b6536ec196e9a7db3128c.NewAuthenticationMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewReportsRequestBuilderInternal instantiates a new ReportsRequestBuilder and sets the default values.
-func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
+func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports{?select,expand}";
@@ -223,25 +225,25 @@ func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestA
     return m
 }
 // NewReportsRequestBuilder instantiates a new ReportsRequestBuilder and sets the default values.
-func NewReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
+func NewReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get reports
-func (m *ReportsRequestBuilder) CreateGetRequestInformation(options *ReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ReportsRequestBuilder) CreateGetRequestInformation(options *ReportsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(*(options.Q))
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if options != nil && options.QueryParameters != nil {
+        requestInfo.AddQueryParameters(*(options.QueryParameters))
     }
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
@@ -249,23 +251,24 @@ func (m *ReportsRequestBuilder) CreateGetRequestInformation(options *ReportsRequ
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update reports
-func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRequestBuilderPatchOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
+    if options != nil && options.Headers != nil {
+        requestInfo.Headers = options.Headers
     }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
+    if options != nil && len(options.Options) != 0 {
+        err := requestInfo.AddRequestOptions(options.Options...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
+// CredentialUserRegistrationDetails the credentialUserRegistrationDetails property
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetails()(*i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.CredentialUserRegistrationDetailsRequestBuilder) {
     return i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.NewCredentialUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -280,6 +283,7 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
     }
     return ie8dfbe0f2a10d928f186e8a85be8a433fa4f6ef763d02998cd4f197b915e90ce.NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DailyPrintUsageByPrinter the dailyPrintUsageByPrinter property
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.DailyPrintUsageByPrinterRequestBuilder) {
     return i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -294,6 +298,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618
     }
     return id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DailyPrintUsageByUser the dailyPrintUsageByUser property
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i2993fd51754851864ba7c1a8dfc4c807b19f8200be6ce2e4964d2b687966d694.DailyPrintUsageByUserRequestBuilder) {
     return i2993fd51754851864ba7c1a8dfc4c807b19f8200be6ce2e4964d2b687966d694.NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -308,6 +313,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796
     }
     return i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DailyPrintUsageSummariesByPrinter the dailyPrintUsageSummariesByPrinter property
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinter()(*i51d8f12ca8bef3b5a605ad76c9d75dc8e73de7c0bb0b203ff61c881d868d0391.DailyPrintUsageSummariesByPrinterRequestBuilder) {
     return i51d8f12ca8bef3b5a605ad76c9d75dc8e73de7c0bb0b203ff61c881d868d0391.NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -322,6 +328,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)
     }
     return i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DailyPrintUsageSummariesByUser the dailyPrintUsageSummariesByUser property
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUser()(*i6858d47e90b1334353133cd0114055d1772fbe2294c3c8b1f87448025955a7f9.DailyPrintUsageSummariesByUserRequestBuilder) {
     return i6858d47e90b1334353133cd0114055d1772fbe2294c3c8b1f87448025955a7f9.NewDailyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -345,20 +352,20 @@ func (m *ReportsRequestBuilder) DeviceConfigurationUserActivity()(*ieda57b6fe3b5
     return ieda57b6fe3b5918581e568356ba76f653b708c99154876060bace124d82a1bad.NewDeviceConfigurationUserActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get reports
-func (m *ReportsRequestBuilder) Get(options *ReportsRequestBuilderGetOptions)(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ReportRootable, error) {
+func (m *ReportsRequestBuilder) Get(options *ReportsRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateReportRootFromDiscriminatorValue, nil, errorMapping)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateReportRootFromDiscriminatorValue, nil, errorMapping)
     if err != nil {
         return nil, err
     }
-    return res.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ReportRootable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable), nil
 }
 // GetAttackSimulationRepeatOffenders provides operations to call the getAttackSimulationRepeatOffenders method.
 func (m *ReportsRequestBuilder) GetAttackSimulationRepeatOffenders()(*i94b276da4083eda748c10c94dfe16c6d4742c5a65341271d9d71d7381dae0214.GetAttackSimulationRepeatOffendersRequestBuilder) {
@@ -417,7 +424,7 @@ func (m *ReportsRequestBuilder) GetEmailActivityUserCountsWithPeriod(period *str
     return i7217ecce10bb1170c5d1635128247d30624546692ebc20935f655e3ce4b68c47.NewGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetEmailActivityUserDetailWithDate provides operations to call the getEmailActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetEmailActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ic8f641d2b8a763b7b6f48c7c85bdce9e87996fdd746bbaa9d7af7769245c71bd.GetEmailActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetEmailActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ic8f641d2b8a763b7b6f48c7c85bdce9e87996fdd746bbaa9d7af7769245c71bd.GetEmailActivityUserDetailWithDateRequestBuilder) {
     return ic8f641d2b8a763b7b6f48c7c85bdce9e87996fdd746bbaa9d7af7769245c71bd.NewGetEmailActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetEmailActivityUserDetailWithPeriod provides operations to call the getEmailActivityUserDetail method.
@@ -433,7 +440,7 @@ func (m *ReportsRequestBuilder) GetEmailAppUsageUserCountsWithPeriod(period *str
     return id16f9ce1d99f7d1c50c8c3911b7b3317fd937252ea9673d1e38cedfec41b08e8.NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetEmailAppUsageUserDetailWithDate provides operations to call the getEmailAppUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetEmailAppUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i4a720b5f345e91b0bf967bf525d76d5febe85151037aa8327de70f7fd0aea25a.GetEmailAppUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetEmailAppUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i4a720b5f345e91b0bf967bf525d76d5febe85151037aa8327de70f7fd0aea25a.GetEmailAppUsageUserDetailWithDateRequestBuilder) {
     return i4a720b5f345e91b0bf967bf525d76d5febe85151037aa8327de70f7fd0aea25a.NewGetEmailAppUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetEmailAppUsageUserDetailWithPeriod provides operations to call the getEmailAppUsageUserDetail method.
@@ -457,7 +464,7 @@ func (m *ReportsRequestBuilder) GetM365AppUserCountsWithPeriod(period *string)(*
     return i02b366b70fc1ec373b8983375e316d896baf6faad4edf2a4121986b8230d5a84.NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetM365AppUserDetailWithDate provides operations to call the getM365AppUserDetail method.
-func (m *ReportsRequestBuilder) GetM365AppUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i95b1164d20aad2d39c57c4b38fd44a5d2f2d05bf631cb13a075f37b71a7ac5b4.GetM365AppUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetM365AppUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i95b1164d20aad2d39c57c4b38fd44a5d2f2d05bf631cb13a075f37b71a7ac5b4.GetM365AppUserDetailWithDateRequestBuilder) {
     return i95b1164d20aad2d39c57c4b38fd44a5d2f2d05bf631cb13a075f37b71a7ac5b4.NewGetM365AppUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetM365AppUserDetailWithPeriod provides operations to call the getM365AppUserDetail method.
@@ -497,7 +504,7 @@ func (m *ReportsRequestBuilder) GetOffice365ActiveUserCountsWithPeriod(period *s
     return if08b0f6462c0374cc04d6591fd00c6f903d80cb1aa4bcf0269bf16987dcf17a2.NewGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOffice365ActiveUserDetailWithDate provides operations to call the getOffice365ActiveUserDetail method.
-func (m *ReportsRequestBuilder) GetOffice365ActiveUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*if261b2578ae42789e9c954041da7ecdc03603a05edf6ba0be09893dbe05b3142.GetOffice365ActiveUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOffice365ActiveUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*if261b2578ae42789e9c954041da7ecdc03603a05edf6ba0be09893dbe05b3142.GetOffice365ActiveUserDetailWithDateRequestBuilder) {
     return if261b2578ae42789e9c954041da7ecdc03603a05edf6ba0be09893dbe05b3142.NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOffice365ActiveUserDetailWithPeriod provides operations to call the getOffice365ActiveUserDetail method.
@@ -509,7 +516,7 @@ func (m *ReportsRequestBuilder) GetOffice365GroupsActivityCountsWithPeriod(perio
     return if587a78dac698fac07fde7dbafd659ec926b72e5abce7d5081eac704ddb5fc12.NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOffice365GroupsActivityDetailWithDate provides operations to call the getOffice365GroupsActivityDetail method.
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i5542a4e920cc301f9fd5b6d010166452a3ec1b96b595f0b1f8869da5b984d4ff.GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOffice365GroupsActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i5542a4e920cc301f9fd5b6d010166452a3ec1b96b595f0b1f8869da5b984d4ff.GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
     return i5542a4e920cc301f9fd5b6d010166452a3ec1b96b595f0b1f8869da5b984d4ff.NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOffice365GroupsActivityDetailWithPeriod provides operations to call the getOffice365GroupsActivityDetail method.
@@ -541,7 +548,7 @@ func (m *ReportsRequestBuilder) GetOneDriveActivityUserCountsWithPeriod(period *
     return ic3f682e7cc9725074cc23ecc64d8d813b5f6c39a93bcdd47f5b04e1e36e31a8c.NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOneDriveActivityUserDetailWithDate provides operations to call the getOneDriveActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetOneDriveActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ic5da14e3ff43c5e6fd44a093a284bd0d470c3a9d4b65d5e2bce503b45cd374fd.GetOneDriveActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOneDriveActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ic5da14e3ff43c5e6fd44a093a284bd0d470c3a9d4b65d5e2bce503b45cd374fd.GetOneDriveActivityUserDetailWithDateRequestBuilder) {
     return ic5da14e3ff43c5e6fd44a093a284bd0d470c3a9d4b65d5e2bce503b45cd374fd.NewGetOneDriveActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOneDriveActivityUserDetailWithPeriod provides operations to call the getOneDriveActivityUserDetail method.
@@ -553,7 +560,7 @@ func (m *ReportsRequestBuilder) GetOneDriveUsageAccountCountsWithPeriod(period *
     return i7ad76340f4a0f8d49588345643b23f3a29ec1fd2161c87b7866114a35eda410a.NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOneDriveUsageAccountDetailWithDate provides operations to call the getOneDriveUsageAccountDetail method.
-func (m *ReportsRequestBuilder) GetOneDriveUsageAccountDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i48a44087adc49827c59b599bc3e9c1ea8e284030a4416856821ea71b09310ed5.GetOneDriveUsageAccountDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOneDriveUsageAccountDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i48a44087adc49827c59b599bc3e9c1ea8e284030a4416856821ea71b09310ed5.GetOneDriveUsageAccountDetailWithDateRequestBuilder) {
     return i48a44087adc49827c59b599bc3e9c1ea8e284030a4416856821ea71b09310ed5.NewGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOneDriveUsageAccountDetailWithPeriod provides operations to call the getOneDriveUsageAccountDetail method.
@@ -589,7 +596,7 @@ func (m *ReportsRequestBuilder) GetSharePointActivityUserCountsWithPeriod(period
     return i826cac8af5755c1771dcf21902dcbe7a8c861f3d2cc2659b97318fa6ca801927.NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSharePointActivityUserDetailWithDate provides operations to call the getSharePointActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512.GetSharePointActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512.GetSharePointActivityUserDetailWithDateRequestBuilder) {
     return ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512.NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSharePointActivityUserDetailWithPeriod provides operations to call the getSharePointActivityUserDetail method.
@@ -597,7 +604,7 @@ func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithPeriod(period
     return id0a1a6564efba17eb292c6d47fa074ac2b98c19c12c1a1495d8b7813b7b74420.NewGetSharePointActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSharePointSiteUsageDetailWithDate provides operations to call the getSharePointSiteUsageDetail method.
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678.GetSharePointSiteUsageDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSharePointSiteUsageDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678.GetSharePointSiteUsageDetailWithDateRequestBuilder) {
     return ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678.NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSharePointSiteUsageDetailWithPeriod provides operations to call the getSharePointSiteUsageDetail method.
@@ -629,7 +636,7 @@ func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserCountsWithPeriod(
     return i35fab8ead83b7a35b3fc3dff29cb309b459f147de1727e7671b1e3ea1085f7a2.NewGetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSkypeForBusinessActivityUserDetailWithDate provides operations to call the getSkypeForBusinessActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ic2bba236674645b7dd61f3f93d935e166db2806a283ce92ca066bb178547b2b8.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ic2bba236674645b7dd61f3f93d935e166db2806a283ce92ca066bb178547b2b8.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
     return ic2bba236674645b7dd61f3f93d935e166db2806a283ce92ca066bb178547b2b8.NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSkypeForBusinessActivityUserDetailWithPeriod provides operations to call the getSkypeForBusinessActivityUserDetail method.
@@ -645,7 +652,7 @@ func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserCountsWithPeri
     return if220cda8a33cfb0dc18bc5f4b4ed4f3787a1bb1f4392a8c67322dae2cf9910ce.NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSkypeForBusinessDeviceUsageUserDetailWithDate provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i7026ee7cc69ab0c0a76cfd363e6e41a9e764f78dfc9fc6b226788e43010b3585.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i7026ee7cc69ab0c0a76cfd363e6e41a9e764f78dfc9fc6b226788e43010b3585.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder) {
     return i7026ee7cc69ab0c0a76cfd363e6e41a9e764f78dfc9fc6b226788e43010b3585.NewGetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSkypeForBusinessDeviceUsageUserDetailWithPeriod provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
@@ -705,7 +712,7 @@ func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserCountsWithPeriod(period *
     return i98b74c2f146a48ff844d3021737827fcc82215b40e873605b5b930c294e36b6b.NewGetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetTeamsDeviceUsageUserDetailWithDate provides operations to call the getTeamsDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder) {
     return id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3.NewGetTeamsDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetTeamsDeviceUsageUserDetailWithPeriod provides operations to call the getTeamsDeviceUsageUserDetail method.
@@ -717,7 +724,7 @@ func (m *ReportsRequestBuilder) GetTeamsTeamActivityCountsWithPeriod(period *str
     return i14dceb42fdafcb299797921a57bd593b62efdccf10e177a8f72ba7b11efd7b91.NewGetTeamsTeamActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetTeamsTeamActivityDetailWithDate provides operations to call the getTeamsTeamActivityDetail method.
-func (m *ReportsRequestBuilder) GetTeamsTeamActivityDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i11672b5de3bc9d06bd8a600a8e1330f9218b2d50afdd893bb96da285d6b3eea5.GetTeamsTeamActivityDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetTeamsTeamActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i11672b5de3bc9d06bd8a600a8e1330f9218b2d50afdd893bb96da285d6b3eea5.GetTeamsTeamActivityDetailWithDateRequestBuilder) {
     return i11672b5de3bc9d06bd8a600a8e1330f9218b2d50afdd893bb96da285d6b3eea5.NewGetTeamsTeamActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetTeamsTeamActivityDetailWithPeriod provides operations to call the getTeamsTeamActivityDetail method.
@@ -757,7 +764,7 @@ func (m *ReportsRequestBuilder) GetTeamsUserActivityUserCountsWithPeriod(period 
     return i1c97679a2593f53f0d56c8ca04b6129e80fb9633559094ab0a4b44e77ab52bba.NewGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetTeamsUserActivityUserDetailWithDate provides operations to call the getTeamsUserActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*iedafbd1ed73588865f6b43d238dd6c81c00b86c2c48d2ba9ecb1e727bf24afe8.GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*iedafbd1ed73588865f6b43d238dd6c81c00b86c2c48d2ba9ecb1e727bf24afe8.GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
     return iedafbd1ed73588865f6b43d238dd6c81c00b86c2c48d2ba9ecb1e727bf24afe8.NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetTeamsUserActivityUserDetailWithPeriod provides operations to call the getTeamsUserActivityUserDetail method.
@@ -777,7 +784,7 @@ func (m *ReportsRequestBuilder) GetYammerActivityUserCountsWithPeriod(period *st
     return i23ae3dadc25e31a369068a3ac3cd7ff57c8b4823dcea9650bd4b312d6f57e7e4.NewGetYammerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetYammerActivityUserDetailWithDate provides operations to call the getYammerActivityUserDetail method.
-func (m *ReportsRequestBuilder) GetYammerActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ica598676eb8a952415f863c021b34052e8169be21d16ff5ea2e1e76d21584e0b.GetYammerActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetYammerActivityUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ica598676eb8a952415f863c021b34052e8169be21d16ff5ea2e1e76d21584e0b.GetYammerActivityUserDetailWithDateRequestBuilder) {
     return ica598676eb8a952415f863c021b34052e8169be21d16ff5ea2e1e76d21584e0b.NewGetYammerActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetYammerActivityUserDetailWithPeriod provides operations to call the getYammerActivityUserDetail method.
@@ -793,7 +800,7 @@ func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserCountsWithPeriod(period 
     return i943fdce89c1d1ccca5b0f3b2db4cfc85447eafff319d6137111ed073b10c023e.NewGetYammerDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetYammerDeviceUsageUserDetailWithDate provides operations to call the getYammerDeviceUsageUserDetail method.
-func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i1b46d4e69ba1b93deaf785955d5b648a3c2c33ff773c7f59b4f4318c1b70fd45.GetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*i1b46d4e69ba1b93deaf785955d5b648a3c2c33ff773c7f59b4f4318c1b70fd45.GetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
     return i1b46d4e69ba1b93deaf785955d5b648a3c2c33ff773c7f59b4f4318c1b70fd45.NewGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetYammerDeviceUsageUserDetailWithPeriod provides operations to call the getYammerDeviceUsageUserDetail method.
@@ -805,7 +812,7 @@ func (m *ReportsRequestBuilder) GetYammerGroupsActivityCountsWithPeriod(period *
     return i85af9b00ffe076a423eb5fd31460ced62f5ace48b1303f5ddde47a395bc696aa.NewGetYammerGroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetYammerGroupsActivityDetailWithDate provides operations to call the getYammerGroupsActivityDetail method.
-func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ibaf7d6c4cd3e8f19279c8ea66be35293ecddff285916af2302dad085654fb7a4.GetYammerGroupsActivityDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*ibaf7d6c4cd3e8f19279c8ea66be35293ecddff285916af2302dad085654fb7a4.GetYammerGroupsActivityDetailWithDateRequestBuilder) {
     return ibaf7d6c4cd3e8f19279c8ea66be35293ecddff285916af2302dad085654fb7a4.NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetYammerGroupsActivityDetailWithPeriod provides operations to call the getYammerGroupsActivityDetail method.
@@ -844,6 +851,7 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailures()(*i492793d89
 func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(period *string)(*i03f4f94b2b9e3fb286bbe022526518bbd7fc8be03e1497a413610d279818c361.ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder) {
     return i03f4f94b2b9e3fb286bbe022526518bbd7fc8be03e1497a413610d279818c361.NewManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
+// MonthlyPrintUsageByPrinter the monthlyPrintUsageByPrinter property
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*i37eb861166f6d0555df75cb64e973d22d9bb9c2a8c03ca2f6c29444c37e3649f.MonthlyPrintUsageByPrinterRequestBuilder) {
     return i37eb861166f6d0555df75cb64e973d22d9bb9c2a8c03ca2f6c29444c37e3649f.NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -858,6 +866,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d33
     }
     return i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MonthlyPrintUsageByUser the monthlyPrintUsageByUser property
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b.MonthlyPrintUsageByUserRequestBuilder) {
     return ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b.NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -872,6 +881,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a96
     }
     return i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MonthlyPrintUsageSummariesByPrinter the monthlyPrintUsageSummariesByPrinter property
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinter()(*i59460f776b2ba7ec0487cd235a89ad5d26f27c3ec165f0790954cfc2a01b9637.MonthlyPrintUsageSummariesByPrinterRequestBuilder) {
     return i59460f776b2ba7ec0487cd235a89ad5d26f27c3ec165f0790954cfc2a01b9637.NewMonthlyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -886,6 +896,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id strin
     }
     return i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// MonthlyPrintUsageSummariesByUser the monthlyPrintUsageSummariesByUser property
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUser()(*i700648709215c245e3f56a9bb592458abcaa4d198b5956df2836a08af3f74be4.MonthlyPrintUsageSummariesByUserRequestBuilder) {
     return i700648709215c245e3f56a9bb592458abcaa4d198b5956df2836a08af3f74be4.NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -906,9 +917,9 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
     if err != nil {
         return err
     }
-    errorMapping := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ErrorMappings {
-        "4XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i428a28d14ab585560ab266716b214a45f45f18468b52fdb0f932c81a7f9706e4.CreateODataErrorFromDiscriminatorValue,
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
     if err != nil {
@@ -916,6 +927,7 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
     }
     return nil
 }
+// UserCredentialUsageDetails the userCredentialUsageDetails property
 func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.UserCredentialUsageDetailsRequestBuilder) {
     return ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.NewUserCredentialUsageDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

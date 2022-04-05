@@ -1,14 +1,14 @@
 package getskypeforbusinessorganizeractivityusercountswithperiod
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse provides operations to call the getSkypeForBusinessOrganizerActivityUserCounts method.
 type GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The value property
     value []byte;
 }
 // NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse instantiates a new getSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse and sets the default values.
@@ -19,7 +19,7 @@ func NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse()(*GetS
     return m
 }
 // CreateGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) GetAd
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) GetFi
     }
     return res
 }
-// GetValue gets the value property value. 
+// GetValue gets the value property value. The value property
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) GetValue()([]byte) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) GetVa
     }
 }
 // Serialize serializes information the current object
-func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("value", m.GetValue())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) SetAd
         m.additionalData = value
     }
 }
-// SetValue sets the value property value. 
+// SetValue sets the value property value. The value property
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponse) SetValue(value []byte)() {
     if m != nil {
         m.value = value

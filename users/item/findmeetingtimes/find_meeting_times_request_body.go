@@ -1,30 +1,30 @@
 package findmeetingtimes
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // FindMeetingTimesRequestBody provides operations to call the findMeetingTimes method.
 type FindMeetingTimesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    attendees []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBaseable;
-    // 
+    // The attendees property
+    attendees []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable;
+    // The isOrganizerOptional property
     isOrganizerOptional *bool;
-    // 
-    locationConstraint i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LocationConstraintable;
-    // 
+    // The locationConstraint property
+    locationConstraint ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocationConstraintable;
+    // The maxCandidates property
     maxCandidates *int32;
-    // 
-    meetingDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
-    // 
+    // The meetingDuration property
+    meetingDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    // The minimumAttendeePercentage property
     minimumAttendeePercentage *float64;
-    // 
+    // The returnSuggestionReasons property
     returnSuggestionReasons *bool;
-    // 
-    timeConstraint i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeConstraintable;
+    // The timeConstraint property
+    timeConstraint ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeConstraintable;
 }
 // NewFindMeetingTimesRequestBody instantiates a new findMeetingTimesRequestBody and sets the default values.
 func NewFindMeetingTimesRequestBody()(*FindMeetingTimesRequestBody) {
@@ -34,7 +34,7 @@ func NewFindMeetingTimesRequestBody()(*FindMeetingTimesRequestBody) {
     return m
 }
 // CreateFindMeetingTimesRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateFindMeetingTimesRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateFindMeetingTimesRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFindMeetingTimesRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -45,8 +45,8 @@ func (m *FindMeetingTimesRequestBody) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// GetAttendees gets the attendees property value. 
-func (m *FindMeetingTimesRequestBody) GetAttendees()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBaseable) {
+// GetAttendees gets the attendees property value. The attendees property
+func (m *FindMeetingTimesRequestBody) GetAttendees()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable) {
     if m == nil {
         return nil
     } else {
@@ -54,23 +54,23 @@ func (m *FindMeetingTimesRequestBody) GetAttendees()([]i535684e11b5500196ecb4b5c
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["attendees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAttendeeBaseFromDiscriminatorValue)
+func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attendees"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendeeBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBaseable, len(val))
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBaseable)
+                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable)
             }
             m.SetAttendees(res)
         }
         return nil
     }
-    res["isOrganizerOptional"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["isOrganizerOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -80,17 +80,17 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["locationConstraint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateLocationConstraintFromDiscriminatorValue)
+    res["locationConstraint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateLocationConstraintFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocationConstraint(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LocationConstraintable))
+            m.SetLocationConstraint(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocationConstraintable))
         }
         return nil
     }
-    res["maxCandidates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["maxCandidates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["meetingDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["meetingDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumAttendeePercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["minimumAttendeePercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["returnSuggestionReasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["returnSuggestionReasons"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -130,19 +130,19 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["timeConstraint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateTimeConstraintFromDiscriminatorValue)
+    res["timeConstraint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTimeConstraintFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTimeConstraint(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeConstraintable))
+            m.SetTimeConstraint(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeConstraintable))
         }
         return nil
     }
     return res
 }
-// GetIsOrganizerOptional gets the isOrganizerOptional property value. 
+// GetIsOrganizerOptional gets the isOrganizerOptional property value. The isOrganizerOptional property
 func (m *FindMeetingTimesRequestBody) GetIsOrganizerOptional()(*bool) {
     if m == nil {
         return nil
@@ -150,15 +150,15 @@ func (m *FindMeetingTimesRequestBody) GetIsOrganizerOptional()(*bool) {
         return m.isOrganizerOptional
     }
 }
-// GetLocationConstraint gets the locationConstraint property value. 
-func (m *FindMeetingTimesRequestBody) GetLocationConstraint()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LocationConstraintable) {
+// GetLocationConstraint gets the locationConstraint property value. The locationConstraint property
+func (m *FindMeetingTimesRequestBody) GetLocationConstraint()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocationConstraintable) {
     if m == nil {
         return nil
     } else {
         return m.locationConstraint
     }
 }
-// GetMaxCandidates gets the maxCandidates property value. 
+// GetMaxCandidates gets the maxCandidates property value. The maxCandidates property
 func (m *FindMeetingTimesRequestBody) GetMaxCandidates()(*int32) {
     if m == nil {
         return nil
@@ -166,15 +166,15 @@ func (m *FindMeetingTimesRequestBody) GetMaxCandidates()(*int32) {
         return m.maxCandidates
     }
 }
-// GetMeetingDuration gets the meetingDuration property value. 
-func (m *FindMeetingTimesRequestBody) GetMeetingDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
+// GetMeetingDuration gets the meetingDuration property value. The meetingDuration property
+func (m *FindMeetingTimesRequestBody) GetMeetingDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     if m == nil {
         return nil
     } else {
         return m.meetingDuration
     }
 }
-// GetMinimumAttendeePercentage gets the minimumAttendeePercentage property value. 
+// GetMinimumAttendeePercentage gets the minimumAttendeePercentage property value. The minimumAttendeePercentage property
 func (m *FindMeetingTimesRequestBody) GetMinimumAttendeePercentage()(*float64) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *FindMeetingTimesRequestBody) GetMinimumAttendeePercentage()(*float64) {
         return m.minimumAttendeePercentage
     }
 }
-// GetReturnSuggestionReasons gets the returnSuggestionReasons property value. 
+// GetReturnSuggestionReasons gets the returnSuggestionReasons property value. The returnSuggestionReasons property
 func (m *FindMeetingTimesRequestBody) GetReturnSuggestionReasons()(*bool) {
     if m == nil {
         return nil
@@ -190,8 +190,8 @@ func (m *FindMeetingTimesRequestBody) GetReturnSuggestionReasons()(*bool) {
         return m.returnSuggestionReasons
     }
 }
-// GetTimeConstraint gets the timeConstraint property value. 
-func (m *FindMeetingTimesRequestBody) GetTimeConstraint()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeConstraintable) {
+// GetTimeConstraint gets the timeConstraint property value. The timeConstraint property
+func (m *FindMeetingTimesRequestBody) GetTimeConstraint()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeConstraintable) {
     if m == nil {
         return nil
     } else {
@@ -199,11 +199,11 @@ func (m *FindMeetingTimesRequestBody) GetTimeConstraint()(i535684e11b5500196ecb4
     }
 }
 // Serialize serializes information the current object
-func (m *FindMeetingTimesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *FindMeetingTimesRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAttendees() != nil {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendees()))
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendees()))
         for i, v := range m.GetAttendees() {
-            cast[i] = v.(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable)
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("attendees", cast)
         if err != nil {
@@ -266,50 +266,50 @@ func (m *FindMeetingTimesRequestBody) SetAdditionalData(value map[string]interfa
         m.additionalData = value
     }
 }
-// SetAttendees sets the attendees property value. 
-func (m *FindMeetingTimesRequestBody) SetAttendees(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttendeeBaseable)() {
+// SetAttendees sets the attendees property value. The attendees property
+func (m *FindMeetingTimesRequestBody) SetAttendees(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable)() {
     if m != nil {
         m.attendees = value
     }
 }
-// SetIsOrganizerOptional sets the isOrganizerOptional property value. 
+// SetIsOrganizerOptional sets the isOrganizerOptional property value. The isOrganizerOptional property
 func (m *FindMeetingTimesRequestBody) SetIsOrganizerOptional(value *bool)() {
     if m != nil {
         m.isOrganizerOptional = value
     }
 }
-// SetLocationConstraint sets the locationConstraint property value. 
-func (m *FindMeetingTimesRequestBody) SetLocationConstraint(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LocationConstraintable)() {
+// SetLocationConstraint sets the locationConstraint property value. The locationConstraint property
+func (m *FindMeetingTimesRequestBody) SetLocationConstraint(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocationConstraintable)() {
     if m != nil {
         m.locationConstraint = value
     }
 }
-// SetMaxCandidates sets the maxCandidates property value. 
+// SetMaxCandidates sets the maxCandidates property value. The maxCandidates property
 func (m *FindMeetingTimesRequestBody) SetMaxCandidates(value *int32)() {
     if m != nil {
         m.maxCandidates = value
     }
 }
-// SetMeetingDuration sets the meetingDuration property value. 
-func (m *FindMeetingTimesRequestBody) SetMeetingDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
+// SetMeetingDuration sets the meetingDuration property value. The meetingDuration property
+func (m *FindMeetingTimesRequestBody) SetMeetingDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.meetingDuration = value
     }
 }
-// SetMinimumAttendeePercentage sets the minimumAttendeePercentage property value. 
+// SetMinimumAttendeePercentage sets the minimumAttendeePercentage property value. The minimumAttendeePercentage property
 func (m *FindMeetingTimesRequestBody) SetMinimumAttendeePercentage(value *float64)() {
     if m != nil {
         m.minimumAttendeePercentage = value
     }
 }
-// SetReturnSuggestionReasons sets the returnSuggestionReasons property value. 
+// SetReturnSuggestionReasons sets the returnSuggestionReasons property value. The returnSuggestionReasons property
 func (m *FindMeetingTimesRequestBody) SetReturnSuggestionReasons(value *bool)() {
     if m != nil {
         m.returnSuggestionReasons = value
     }
 }
-// SetTimeConstraint sets the timeConstraint property value. 
-func (m *FindMeetingTimesRequestBody) SetTimeConstraint(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeConstraintable)() {
+// SetTimeConstraint sets the timeConstraint property value. The timeConstraint property
+func (m *FindMeetingTimesRequestBody) SetTimeConstraint(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeConstraintable)() {
     if m != nil {
         m.timeConstraint = value
     }

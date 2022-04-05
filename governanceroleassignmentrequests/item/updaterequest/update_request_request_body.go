@@ -1,22 +1,22 @@
 package updaterequest
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // UpdateRequestRequestBody provides operations to call the updateRequest method.
 type UpdateRequestRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The assignmentState property
     assignmentState *string;
-    // 
+    // The decision property
     decision *string;
-    // 
+    // The reason property
     reason *string;
-    // 
-    schedule i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable;
+    // The schedule property
+    schedule ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceScheduleable;
 }
 // NewUpdateRequestRequestBody instantiates a new updateRequestRequestBody and sets the default values.
 func NewUpdateRequestRequestBody()(*UpdateRequestRequestBody) {
@@ -26,7 +26,7 @@ func NewUpdateRequestRequestBody()(*UpdateRequestRequestBody) {
     return m
 }
 // CreateUpdateRequestRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateUpdateRequestRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateUpdateRequestRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateRequestRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -37,7 +37,7 @@ func (m *UpdateRequestRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAssignmentState gets the assignmentState property value. 
+// GetAssignmentState gets the assignmentState property value. The assignmentState property
 func (m *UpdateRequestRequestBody) GetAssignmentState()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *UpdateRequestRequestBody) GetAssignmentState()(*string) {
         return m.assignmentState
     }
 }
-// GetDecision gets the decision property value. 
+// GetDecision gets the decision property value. The decision property
 func (m *UpdateRequestRequestBody) GetDecision()(*string) {
     if m == nil {
         return nil
@@ -54,9 +54,9 @@ func (m *UpdateRequestRequestBody) GetDecision()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["assignmentState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *UpdateRequestRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignmentState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *UpdateRequestRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["decision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["decision"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *UpdateRequestRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["reason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["reason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,19 +86,19 @@ func (m *UpdateRequestRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["schedule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateGovernanceScheduleFromDiscriminatorValue)
+    res["schedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceScheduleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSchedule(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable))
+            m.SetSchedule(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceScheduleable))
         }
         return nil
     }
     return res
 }
-// GetReason gets the reason property value. 
+// GetReason gets the reason property value. The reason property
 func (m *UpdateRequestRequestBody) GetReason()(*string) {
     if m == nil {
         return nil
@@ -106,8 +106,8 @@ func (m *UpdateRequestRequestBody) GetReason()(*string) {
         return m.reason
     }
 }
-// GetSchedule gets the schedule property value. 
-func (m *UpdateRequestRequestBody) GetSchedule()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable) {
+// GetSchedule gets the schedule property value. The schedule property
+func (m *UpdateRequestRequestBody) GetSchedule()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceScheduleable) {
     if m == nil {
         return nil
     } else {
@@ -115,7 +115,7 @@ func (m *UpdateRequestRequestBody) GetSchedule()(i535684e11b5500196ecb4b5c6634e0
     }
 }
 // Serialize serializes information the current object
-func (m *UpdateRequestRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *UpdateRequestRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("assignmentState", m.GetAssignmentState())
         if err != nil {
@@ -154,26 +154,26 @@ func (m *UpdateRequestRequestBody) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetAssignmentState sets the assignmentState property value. 
+// SetAssignmentState sets the assignmentState property value. The assignmentState property
 func (m *UpdateRequestRequestBody) SetAssignmentState(value *string)() {
     if m != nil {
         m.assignmentState = value
     }
 }
-// SetDecision sets the decision property value. 
+// SetDecision sets the decision property value. The decision property
 func (m *UpdateRequestRequestBody) SetDecision(value *string)() {
     if m != nil {
         m.decision = value
     }
 }
-// SetReason sets the reason property value. 
+// SetReason sets the reason property value. The reason property
 func (m *UpdateRequestRequestBody) SetReason(value *string)() {
     if m != nil {
         m.reason = value
     }
 }
-// SetSchedule sets the schedule property value. 
-func (m *UpdateRequestRequestBody) SetSchedule(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceScheduleable)() {
+// SetSchedule sets the schedule property value. The schedule property
+func (m *UpdateRequestRequestBody) SetSchedule(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceScheduleable)() {
     if m != nil {
         m.schedule = value
     }

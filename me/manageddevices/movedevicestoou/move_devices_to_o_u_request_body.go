@@ -1,16 +1,16 @@
 package movedevicestoou
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // MoveDevicesToOURequestBody provides operations to call the moveDevicesToOU method.
 type MoveDevicesToOURequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The deviceIds property
     deviceIds []string;
-    // 
+    // The organizationalUnitPath property
     organizationalUnitPath *string;
 }
 // NewMoveDevicesToOURequestBody instantiates a new moveDevicesToOURequestBody and sets the default values.
@@ -21,7 +21,7 @@ func NewMoveDevicesToOURequestBody()(*MoveDevicesToOURequestBody) {
     return m
 }
 // CreateMoveDevicesToOURequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateMoveDevicesToOURequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateMoveDevicesToOURequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMoveDevicesToOURequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -32,7 +32,7 @@ func (m *MoveDevicesToOURequestBody) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// GetDeviceIds gets the deviceIds property value. 
+// GetDeviceIds gets the deviceIds property value. The deviceIds property
 func (m *MoveDevicesToOURequestBody) GetDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -41,9 +41,9 @@ func (m *MoveDevicesToOURequestBody) GetDeviceIds()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MoveDevicesToOURequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["deviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *MoveDevicesToOURequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *MoveDevicesToOURequestBody) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["organizationalUnitPath"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["organizationalUnitPath"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *MoveDevicesToOURequestBody) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
-// GetOrganizationalUnitPath gets the organizationalUnitPath property value. 
+// GetOrganizationalUnitPath gets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *MoveDevicesToOURequestBody) GetOrganizationalUnitPath()(*string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *MoveDevicesToOURequestBody) GetOrganizationalUnitPath()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *MoveDevicesToOURequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *MoveDevicesToOURequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("deviceIds", m.GetDeviceIds())
         if err != nil {
@@ -105,13 +105,13 @@ func (m *MoveDevicesToOURequestBody) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetDeviceIds sets the deviceIds property value. 
+// SetDeviceIds sets the deviceIds property value. The deviceIds property
 func (m *MoveDevicesToOURequestBody) SetDeviceIds(value []string)() {
     if m != nil {
         m.deviceIds = value
     }
 }
-// SetOrganizationalUnitPath sets the organizationalUnitPath property value. 
+// SetOrganizationalUnitPath sets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *MoveDevicesToOURequestBody) SetOrganizationalUnitPath(value *string)() {
     if m != nil {
         m.organizationalUnitPath = value

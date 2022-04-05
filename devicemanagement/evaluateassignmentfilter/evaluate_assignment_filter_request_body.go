@@ -1,16 +1,16 @@
 package evaluateassignmentfilter
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // EvaluateAssignmentFilterRequestBody provides operations to call the evaluateAssignmentFilter method.
 type EvaluateAssignmentFilterRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
-    data i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequestable;
+    // The data property
+    data ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluateRequestable;
 }
 // NewEvaluateAssignmentFilterRequestBody instantiates a new evaluateAssignmentFilterRequestBody and sets the default values.
 func NewEvaluateAssignmentFilterRequestBody()(*EvaluateAssignmentFilterRequestBody) {
@@ -20,7 +20,7 @@ func NewEvaluateAssignmentFilterRequestBody()(*EvaluateAssignmentFilterRequestBo
     return m
 }
 // CreateEvaluateAssignmentFilterRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateEvaluateAssignmentFilterRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateEvaluateAssignmentFilterRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvaluateAssignmentFilterRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,8 +31,8 @@ func (m *EvaluateAssignmentFilterRequestBody) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
-// GetData gets the data property value. 
-func (m *EvaluateAssignmentFilterRequestBody) GetData()(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequestable) {
+// GetData gets the data property value. The data property
+func (m *EvaluateAssignmentFilterRequestBody) GetData()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluateRequestable) {
     if m == nil {
         return nil
     } else {
@@ -40,22 +40,22 @@ func (m *EvaluateAssignmentFilterRequestBody) GetData()(i535684e11b5500196ecb4b5
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateAssignmentFilterRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["data"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CreateAssignmentFilterEvaluateRequestFromDiscriminatorValue)
+func (m *EvaluateAssignmentFilterRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["data"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAssignmentFilterEvaluateRequestFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetData(val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequestable))
+            m.SetData(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluateRequestable))
         }
         return nil
     }
     return res
 }
 // Serialize serializes information the current object
-func (m *EvaluateAssignmentFilterRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *EvaluateAssignmentFilterRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("data", m.GetData())
         if err != nil {
@@ -76,8 +76,8 @@ func (m *EvaluateAssignmentFilterRequestBody) SetAdditionalData(value map[string
         m.additionalData = value
     }
 }
-// SetData sets the data property value. 
-func (m *EvaluateAssignmentFilterRequestBody) SetData(value i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequestable)() {
+// SetData sets the data property value. The data property
+func (m *EvaluateAssignmentFilterRequestBody) SetData(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluateRequestable)() {
     if m != nil {
         m.data = value
     }

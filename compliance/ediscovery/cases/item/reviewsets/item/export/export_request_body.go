@@ -1,25 +1,25 @@
 package export
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/ediscovery"
 )
 
 // ExportRequestBody provides operations to call the export method.
 type ExportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The azureBlobContainer property
     azureBlobContainer *string;
-    // 
+    // The azureBlobToken property
     azureBlobToken *string;
-    // 
+    // The description property
     description *string;
-    // 
-    exportOptions *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions;
-    // 
-    exportStructure *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure;
-    // 
+    // The exportOptions property
+    exportOptions *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions;
+    // The exportStructure property
+    exportStructure *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure;
+    // The outputName property
     outputName *string;
 }
 // NewExportRequestBody instantiates a new exportRequestBody and sets the default values.
@@ -30,7 +30,7 @@ func NewExportRequestBody()(*ExportRequestBody) {
     return m
 }
 // CreateExportRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateExportRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateExportRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExportRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -41,7 +41,7 @@ func (m *ExportRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAzureBlobContainer gets the azureBlobContainer property value. 
+// GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
 func (m *ExportRequestBody) GetAzureBlobContainer()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ExportRequestBody) GetAzureBlobContainer()(*string) {
         return m.azureBlobContainer
     }
 }
-// GetAzureBlobToken gets the azureBlobToken property value. 
+// GetAzureBlobToken gets the azureBlobToken property value. The azureBlobToken property
 func (m *ExportRequestBody) GetAzureBlobToken()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ExportRequestBody) GetAzureBlobToken()(*string) {
         return m.azureBlobToken
     }
 }
-// GetDescription gets the description property value. 
+// GetDescription gets the description property value. The description property
 func (m *ExportRequestBody) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -65,16 +65,16 @@ func (m *ExportRequestBody) GetDescription()(*string) {
         return m.description
     }
 }
-// GetExportOptions gets the exportOptions property value. 
-func (m *ExportRequestBody) GetExportOptions()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions) {
+// GetExportOptions gets the exportOptions property value. The exportOptions property
+func (m *ExportRequestBody) GetExportOptions()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions) {
     if m == nil {
         return nil
     } else {
         return m.exportOptions
     }
 }
-// GetExportStructure gets the exportStructure property value. 
-func (m *ExportRequestBody) GetExportStructure()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure) {
+// GetExportStructure gets the exportStructure property value. The exportStructure property
+func (m *ExportRequestBody) GetExportStructure()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure) {
     if m == nil {
         return nil
     } else {
@@ -82,9 +82,9 @@ func (m *ExportRequestBody) GetExportStructure()(*i2756dc8c91c60abdde0aa43bf23ca
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["azureBlobContainer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["azureBlobContainer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["azureBlobToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["azureBlobToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,27 +114,27 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["exportOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ParseExportOptions)
+    res["exportOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ParseExportOptions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportOptions(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions))
+            m.SetExportOptions(val.(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions))
         }
         return nil
     }
-    res["exportStructure"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ParseExportFileStructure)
+    res["exportStructure"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ParseExportFileStructure)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExportStructure(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure))
+            m.SetExportStructure(val.(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure))
         }
         return nil
     }
-    res["outputName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["outputName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
     }
     return res
 }
-// GetOutputName gets the outputName property value. 
+// GetOutputName gets the outputName property value. The outputName property
 func (m *ExportRequestBody) GetOutputName()(*string) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *ExportRequestBody) GetOutputName()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *ExportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *ExportRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("azureBlobContainer", m.GetAzureBlobContainer())
         if err != nil {
@@ -208,37 +208,37 @@ func (m *ExportRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAzureBlobContainer sets the azureBlobContainer property value. 
+// SetAzureBlobContainer sets the azureBlobContainer property value. The azureBlobContainer property
 func (m *ExportRequestBody) SetAzureBlobContainer(value *string)() {
     if m != nil {
         m.azureBlobContainer = value
     }
 }
-// SetAzureBlobToken sets the azureBlobToken property value. 
+// SetAzureBlobToken sets the azureBlobToken property value. The azureBlobToken property
 func (m *ExportRequestBody) SetAzureBlobToken(value *string)() {
     if m != nil {
         m.azureBlobToken = value
     }
 }
-// SetDescription sets the description property value. 
+// SetDescription sets the description property value. The description property
 func (m *ExportRequestBody) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetExportOptions sets the exportOptions property value. 
-func (m *ExportRequestBody) SetExportOptions(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions)() {
+// SetExportOptions sets the exportOptions property value. The exportOptions property
+func (m *ExportRequestBody) SetExportOptions(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions)() {
     if m != nil {
         m.exportOptions = value
     }
 }
-// SetExportStructure sets the exportStructure property value. 
-func (m *ExportRequestBody) SetExportStructure(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure)() {
+// SetExportStructure sets the exportStructure property value. The exportStructure property
+func (m *ExportRequestBody) SetExportStructure(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure)() {
     if m != nil {
         m.exportStructure = value
     }
 }
-// SetOutputName sets the outputName property value. 
+// SetOutputName sets the outputName property value. The outputName property
 func (m *ExportRequestBody) SetOutputName(value *string)() {
     if m != nil {
         m.outputName = value

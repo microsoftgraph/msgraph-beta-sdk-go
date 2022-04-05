@@ -1,14 +1,14 @@
 package haspayloadlinks
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // HasPayloadLinksRequestBody provides operations to call the hasPayloadLinks method.
 type HasPayloadLinksRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The payloadIds property
     payloadIds []string;
 }
 // NewHasPayloadLinksRequestBody instantiates a new hasPayloadLinksRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewHasPayloadLinksRequestBody()(*HasPayloadLinksRequestBody) {
     return m
 }
 // CreateHasPayloadLinksRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateHasPayloadLinksRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateHasPayloadLinksRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHasPayloadLinksRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *HasPayloadLinksRequestBody) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *HasPayloadLinksRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["payloadIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *HasPayloadLinksRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["payloadIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *HasPayloadLinksRequestBody) GetFieldDeserializers()(map[string]func(int
     }
     return res
 }
-// GetPayloadIds gets the payloadIds property value. 
+// GetPayloadIds gets the payloadIds property value. The payloadIds property
 func (m *HasPayloadLinksRequestBody) GetPayloadIds()([]string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *HasPayloadLinksRequestBody) GetPayloadIds()([]string) {
     }
 }
 // Serialize serializes information the current object
-func (m *HasPayloadLinksRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *HasPayloadLinksRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetPayloadIds() != nil {
         err := writer.WriteCollectionOfStringValues("payloadIds", m.GetPayloadIds())
         if err != nil {
@@ -79,7 +79,7 @@ func (m *HasPayloadLinksRequestBody) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetPayloadIds sets the payloadIds property value. 
+// SetPayloadIds sets the payloadIds property value. The payloadIds property
 func (m *HasPayloadLinksRequestBody) SetPayloadIds(value []string)() {
     if m != nil {
         m.payloadIds = value

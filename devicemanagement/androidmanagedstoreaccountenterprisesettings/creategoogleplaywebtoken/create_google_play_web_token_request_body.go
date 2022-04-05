@@ -1,14 +1,14 @@
 package creategoogleplaywebtoken
 
 import (
-    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // CreateGooglePlayWebTokenRequestBody provides operations to call the createGooglePlayWebToken method.
 type CreateGooglePlayWebTokenRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The parentUri property
     parentUri *string;
 }
 // NewCreateGooglePlayWebTokenRequestBody instantiates a new createGooglePlayWebTokenRequestBody and sets the default values.
@@ -19,7 +19,7 @@ func NewCreateGooglePlayWebTokenRequestBody()(*CreateGooglePlayWebTokenRequestBo
     return m
 }
 // CreateCreateGooglePlayWebTokenRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCreateGooglePlayWebTokenRequestBodyFromDiscriminatorValue(parseNode i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, error) {
+func CreateCreateGooglePlayWebTokenRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCreateGooglePlayWebTokenRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,9 +31,9 @@ func (m *CreateGooglePlayWebTokenRequestBody) GetAdditionalData()(map[string]int
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CreateGooglePlayWebTokenRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["parentUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+func (m *CreateGooglePlayWebTokenRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["parentUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *CreateGooglePlayWebTokenRequestBody) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetParentUri gets the parentUri property value. 
+// GetParentUri gets the parentUri property value. The parentUri property
 func (m *CreateGooglePlayWebTokenRequestBody) GetParentUri()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *CreateGooglePlayWebTokenRequestBody) GetParentUri()(*string) {
     }
 }
 // Serialize serializes information the current object
-func (m *CreateGooglePlayWebTokenRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+func (m *CreateGooglePlayWebTokenRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("parentUri", m.GetParentUri())
         if err != nil {
@@ -75,7 +75,7 @@ func (m *CreateGooglePlayWebTokenRequestBody) SetAdditionalData(value map[string
         m.additionalData = value
     }
 }
-// SetParentUri sets the parentUri property value. 
+// SetParentUri sets the parentUri property value. The parentUri property
 func (m *CreateGooglePlayWebTokenRequestBody) SetParentUri(value *string)() {
     if m != nil {
         m.parentUri = value
