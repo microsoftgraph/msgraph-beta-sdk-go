@@ -8,9 +8,9 @@ import (
 type InsightsSettings struct {
     Entity
     // The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
-    disabledForGroup *string;
+    disabledForGroup *string
     // true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
-    isEnabledInOrganization *bool;
+    isEnabledInOrganization *bool
 }
 // NewInsightsSettings instantiates a new insightsSettings and sets the default values.
 func NewInsightsSettings()(*InsightsSettings) {
@@ -32,9 +32,9 @@ func (m *InsightsSettings) GetDisabledForGroup()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["disabledForGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disabledForGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isEnabledInOrganization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabledInOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

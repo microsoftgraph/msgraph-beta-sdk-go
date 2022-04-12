@@ -8,21 +8,21 @@ import (
 type ExactMatchSession struct {
     ExactMatchSessionBase
     // The checksum property
-    checksum *string;
+    checksum *string
     // The dataUploadURI property
-    dataUploadURI *string;
+    dataUploadURI *string
     // The fields property
-    fields []string;
+    fields []string
     // The fileName property
-    fileName *string;
+    fileName *string
     // The rowsPerBlock property
-    rowsPerBlock *int32;
+    rowsPerBlock *int32
     // The salt property
-    salt *string;
+    salt *string
     // The uploadAgent property
-    uploadAgent ExactMatchUploadAgentable;
+    uploadAgent ExactMatchUploadAgentable
     // The uploadAgentId property
-    uploadAgentId *string;
+    uploadAgentId *string
 }
 // NewExactMatchSession instantiates a new exactMatchSession and sets the default values.
 func NewExactMatchSession()(*ExactMatchSession) {
@@ -52,9 +52,9 @@ func (m *ExactMatchSession) GetDataUploadURI()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchSessionBase.GetFieldDeserializers()
-    res["checksum"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["checksum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["dataUploadURI"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataUploadURI"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["fileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["rowsPerBlock"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rowsPerBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["salt"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["salt"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["uploadAgent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uploadAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateExactMatchUploadAgentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["uploadAgentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uploadAgentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

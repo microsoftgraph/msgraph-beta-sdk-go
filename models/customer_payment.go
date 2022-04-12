@@ -9,35 +9,35 @@ import (
 type CustomerPayment struct {
     Entity
     // The amount property
-    amount *float64;
+    amount *float64
     // The appliesToInvoiceId property
-    appliesToInvoiceId *string;
+    appliesToInvoiceId *string
     // The appliesToInvoiceNumber property
-    appliesToInvoiceNumber *string;
+    appliesToInvoiceNumber *string
     // The comment property
-    comment *string;
+    comment *string
     // The contactId property
-    contactId *string;
+    contactId *string
     // The customer property
-    customer Customerable;
+    customer Customerable
     // The customerId property
-    customerId *string;
+    customerId *string
     // The customerNumber property
-    customerNumber *string;
+    customerNumber *string
     // The description property
-    description *string;
+    description *string
     // The documentNumber property
-    documentNumber *string;
+    documentNumber *string
     // The externalDocumentNumber property
-    externalDocumentNumber *string;
+    externalDocumentNumber *string
     // The journalDisplayName property
-    journalDisplayName *string;
+    journalDisplayName *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The lineNumber property
-    lineNumber *int32;
+    lineNumber *int32
     // The postingDate property
-    postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewCustomerPayment instantiates a new customerPayment and sets the default values.
 func NewCustomerPayment()(*CustomerPayment) {
@@ -139,9 +139,9 @@ func (m *CustomerPayment) GetExternalDocumentNumber()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["amount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["appliesToInvoiceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appliesToInvoiceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["appliesToInvoiceNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appliesToInvoiceNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["comment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["contactId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contactId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["customer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["customerId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["customerNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -231,7 +231,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["documentNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["documentNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["externalDocumentNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalDocumentNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -251,7 +251,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["journalDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["journalDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -261,7 +261,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -271,7 +271,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["lineNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lineNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -281,7 +281,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["postingDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postingDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err

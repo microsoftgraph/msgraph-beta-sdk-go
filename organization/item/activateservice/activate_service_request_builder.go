@@ -7,28 +7,28 @@ import (
 // ActivateServiceRequestBuilder provides operations to call the activateService method.
 type ActivateServiceRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ActivateServiceRequestBuilderPostOptions options for Post
 type ActivateServiceRequestBuilderPostOptions struct {
     // 
-    Body ActivateServiceRequestBodyable;
+    Body ActivateServiceRequestBodyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewActivateServiceRequestBuilderInternal instantiates a new ActivateServiceRequestBuilder and sets the default values.
 func NewActivateServiceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivateServiceRequestBuilder) {
     m := &ActivateServiceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/organization/{organization_id}/microsoft.graph.activateService";
+    m.urlTemplate = "{+baseurl}/organization/{organization%2Did}/microsoft.graph.activateService";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

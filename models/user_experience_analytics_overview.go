@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsOverview struct {
     Entity
     // The user experience analytics insights.
-    insights []UserExperienceAnalyticsInsightable;
+    insights []UserExperienceAnalyticsInsightable
 }
 // NewUserExperienceAnalyticsOverview instantiates a new userExperienceAnalyticsOverview and sets the default values.
 func NewUserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverview) {
@@ -22,9 +22,9 @@ func CreateUserExperienceAnalyticsOverviewFromDiscriminatorValue(parseNode i878a
     return NewUserExperienceAnalyticsOverview(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["insights"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsInsightFromDiscriminatorValue)
         if err != nil {
             return err

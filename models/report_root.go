@@ -8,29 +8,29 @@ import (
 type ReportRoot struct {
     Entity
     // Represents a detailed summary of an application sign-in.
-    applicationSignInDetailedSummary []ApplicationSignInDetailedSummaryable;
+    applicationSignInDetailedSummary []ApplicationSignInDetailedSummaryable
     // Container for navigation properties for Azure AD authentication methods resources.
-    authenticationMethods AuthenticationMethodsRootable;
+    authenticationMethods AuthenticationMethodsRootable
     // Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-    credentialUserRegistrationDetails []CredentialUserRegistrationDetailsable;
+    credentialUserRegistrationDetails []CredentialUserRegistrationDetailsable
     // The dailyPrintUsageByPrinter property
-    dailyPrintUsageByPrinter []PrintUsageByPrinterable;
+    dailyPrintUsageByPrinter []PrintUsageByPrinterable
     // The dailyPrintUsageByUser property
-    dailyPrintUsageByUser []PrintUsageByUserable;
+    dailyPrintUsageByUser []PrintUsageByUserable
     // The dailyPrintUsageSummariesByPrinter property
-    dailyPrintUsageSummariesByPrinter []PrintUsageByPrinterable;
+    dailyPrintUsageSummariesByPrinter []PrintUsageByPrinterable
     // The dailyPrintUsageSummariesByUser property
-    dailyPrintUsageSummariesByUser []PrintUsageByUserable;
+    dailyPrintUsageSummariesByUser []PrintUsageByUserable
     // The monthlyPrintUsageByPrinter property
-    monthlyPrintUsageByPrinter []PrintUsageByPrinterable;
+    monthlyPrintUsageByPrinter []PrintUsageByPrinterable
     // The monthlyPrintUsageByUser property
-    monthlyPrintUsageByUser []PrintUsageByUserable;
+    monthlyPrintUsageByUser []PrintUsageByUserable
     // The monthlyPrintUsageSummariesByPrinter property
-    monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinterable;
+    monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinterable
     // The monthlyPrintUsageSummariesByUser property
-    monthlyPrintUsageSummariesByUser []PrintUsageByUserable;
+    monthlyPrintUsageSummariesByUser []PrintUsageByUserable
     // Represents the self-service password reset (SSPR) usage for a given tenant.
-    userCredentialUsageDetails []UserCredentialUsageDetailsable;
+    userCredentialUsageDetails []UserCredentialUsageDetailsable
 }
 // NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
@@ -100,9 +100,9 @@ func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicationSignInDetailedSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationSignInDetailedSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApplicationSignInDetailedSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["authenticationMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthenticationMethodsRootFromDiscriminatorValue)
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["credentialUserRegistrationDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["credentialUserRegistrationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCredentialUserRegistrationDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["dailyPrintUsageByPrinter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dailyPrintUsageByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["dailyPrintUsageByUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dailyPrintUsageByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["dailyPrintUsageSummariesByPrinter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dailyPrintUsageSummariesByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["dailyPrintUsageSummariesByUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dailyPrintUsageSummariesByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["monthlyPrintUsageByPrinter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["monthlyPrintUsageByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -210,7 +210,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["monthlyPrintUsageByUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["monthlyPrintUsageByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["monthlyPrintUsageSummariesByPrinter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["monthlyPrintUsageSummariesByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -238,7 +238,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["monthlyPrintUsageSummariesByUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["monthlyPrintUsageSummariesByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -252,7 +252,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["userCredentialUsageDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userCredentialUsageDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserCredentialUsageDetailsFromDiscriminatorValue)
         if err != nil {
             return err

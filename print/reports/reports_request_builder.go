@@ -32,49 +32,49 @@ import (
 // ReportsRequestBuilder provides operations to manage the reports property of the microsoft.graph.print entity.
 type ReportsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ReportsRequestBuilderDeleteOptions options for Delete
 type ReportsRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ReportsRequestBuilderGetOptions options for Get
 type ReportsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ReportsRequestBuilderGetQueryParameters;
+    QueryParameters *ReportsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ReportsRequestBuilderGetQueryParameters get reports from print
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ReportsRequestBuilderPatchOptions options for Patch
 type ReportsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ApplicationSignInDetailedSummary the applicationSignInDetailedSummary property
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*icddea0ed347960de17929a877880af4ac0bf296fb68f5c0e35eebd457fc0734f.ApplicationSignInDetailedSummaryRequestBuilder) {
@@ -87,7 +87,7 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["applicationSignInDetailedSummary_id"] = id
+        urlTplParams["applicationSignInDetailedSummary%2Did"] = id
     }
     return i6581ea85ca9063d302a537e4fdb5af97c20fd90311aa357f5482935e84bcd517.NewApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -99,7 +99,7 @@ func (m *ReportsRequestBuilder) AuthenticationMethods()(*ia74d4f7cd8fb70eb99b3c9
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports{?select,expand}";
+    m.urlTemplate = "{+baseurl}/print/reports{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -180,7 +180,7 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["credentialUserRegistrationDetails_id"] = id
+        urlTplParams["credentialUserRegistrationDetails%2Did"] = id
     }
     return i22a3d34b6ea91c582f9826d88dc039aae3e5f8f62146be9df6713c324659e396.NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -195,7 +195,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i3808d9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return i3808d92a196a8e86ccfe0455bb6aaf56bf5956b11460f112fbc1dbcd8375551d.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -210,7 +210,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i4ca23ea1f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return i4ca23ea1fafc22df57a5d1150889ab294f6d1582a79d145b961145b60dbf4c5b.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -225,7 +225,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return i1453ad3549b1a27e47913c2d4a29d5625c5b5e04deb3a2a6f264f5cd24a2e8da.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -240,7 +240,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return iffede79819a5c0828784daecd91c1db9829729eb545a0c3b1948096142482a96.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -287,7 +287,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i55a1
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return i55a12b578425084e14afca840f9f8ad56ad8296a76d84139beb67b9619a01ae2.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -302,7 +302,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i1702ca3
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return i1702ca3f0c998e29512738841125456c0b4e81357e5f7ca9f4176443002d28d5.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -317,7 +317,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return ic1e71dc755b571267687f63b13312b758bc574de61144bfa50cd81af3b6d3626.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -332,7 +332,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return i2268eb94e47ea5d81b666c3310292b49733c18b0196efe2957b868503a9da7ff.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -363,7 +363,7 @@ func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*i4f1c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userCredentialUsageDetails_id"] = id
+        urlTplParams["userCredentialUsageDetails%2Did"] = id
     }
     return i4f1c6062b781770b431d75b41deb0a2ac227468563ebac0623bef14f3efe351d.NewUserCredentialUsageDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -7,11 +7,11 @@ import (
 // AttackSimulationTrainingUserCoverage 
 type AttackSimulationTrainingUserCoverage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // User in an attack simulation and training campaign.
-    attackSimulationUser AttackSimulationUserable;
+    attackSimulationUser AttackSimulationUserable
     // List of assigned trainings' and their statuses for the user.
-    userTrainings []UserTrainingStatusInfoable;
+    userTrainings []UserTrainingStatusInfoable
 }
 // NewAttackSimulationTrainingUserCoverage instantiates a new attackSimulationTrainingUserCoverage and sets the default values.
 func NewAttackSimulationTrainingUserCoverage()(*AttackSimulationTrainingUserCoverage) {
@@ -41,9 +41,9 @@ func (m *AttackSimulationTrainingUserCoverage) GetAttackSimulationUser()(AttackS
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attackSimulationUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attackSimulationUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttackSimulationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["userTrainings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userTrainings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserTrainingStatusInfoFromDiscriminatorValue)
         if err != nil {
             return err

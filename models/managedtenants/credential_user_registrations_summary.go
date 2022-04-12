@@ -10,25 +10,25 @@ import (
 type CredentialUserRegistrationsSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.
-    mfaAndSsprCapableUserCount *int32;
+    mfaAndSsprCapableUserCount *int32
     // The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
-    mfaConditionalAccessPolicyState *string;
+    mfaConditionalAccessPolicyState *string
     // The number of users registered for multi-factor authentication. Optional. Read-only.
-    mfaRegisteredUserCount *int32;
+    mfaRegisteredUserCount *int32
     // A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.
-    securityDefaultsEnabled *bool;
+    securityDefaultsEnabled *bool
     // The number of users enabled for self service password reset. Optional. Read-only.
-    ssprEnabledUserCount *int32;
+    ssprEnabledUserCount *int32
     // The number of users registered for self service password reset. Optional. Read-only.
-    ssprRegisteredUserCount *int32;
+    ssprRegisteredUserCount *int32
     // The display name for the managed tenant. Required. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
     // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-    tenantId *string;
+    tenantId *string
     // The total number of users in the given managed tenant. Optional. Read-only.
-    totalUserCount *int32;
+    totalUserCount *int32
 }
 // NewCredentialUserRegistrationsSummary instantiates a new credentialUserRegistrationsSummary and sets the default values.
 func NewCredentialUserRegistrationsSummary()(*CredentialUserRegistrationsSummary) {
@@ -42,9 +42,9 @@ func CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue(parseNode i8
     return NewCredentialUserRegistrationsSummary(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastRefreshedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["mfaAndSsprCapableUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mfaAndSsprCapableUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["mfaConditionalAccessPolicyState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mfaConditionalAccessPolicyState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["mfaRegisteredUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mfaRegisteredUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["securityDefaultsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["securityDefaultsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["ssprEnabledUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ssprEnabledUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["ssprRegisteredUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ssprRegisteredUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["totalUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,15 +8,15 @@ import (
 type CrossTenantAccessPolicyConfigurationBase struct {
     Entity
     // Defines your configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
-    b2bCollaborationInbound CrossTenantAccessPolicyB2BSettingable;
+    b2bCollaborationInbound CrossTenantAccessPolicyB2BSettingable
     // Defines your configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
-    b2bCollaborationOutbound CrossTenantAccessPolicyB2BSettingable;
+    b2bCollaborationOutbound CrossTenantAccessPolicyB2BSettingable
     // Defines your configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
-    b2bDirectConnectInbound CrossTenantAccessPolicyB2BSettingable;
+    b2bDirectConnectInbound CrossTenantAccessPolicyB2BSettingable
     // Defines your configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
-    b2bDirectConnectOutbound CrossTenantAccessPolicyB2BSettingable;
+    b2bDirectConnectOutbound CrossTenantAccessPolicyB2BSettingable
     // Determines the configuration for trusting other Conditional Access claims from external Azure AD organizations.
-    inboundTrust CrossTenantAccessPolicyInboundTrustable;
+    inboundTrust CrossTenantAccessPolicyInboundTrustable
 }
 // NewCrossTenantAccessPolicyConfigurationBase instantiates a new crossTenantAccessPolicyConfigurationBase and sets the default values.
 func NewCrossTenantAccessPolicyConfigurationBase()(*CrossTenantAccessPolicyConfigurationBase) {
@@ -62,9 +62,9 @@ func (m *CrossTenantAccessPolicyConfigurationBase) GetB2bDirectConnectOutbound()
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CrossTenantAccessPolicyConfigurationBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CrossTenantAccessPolicyConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["b2bCollaborationInbound"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["b2bCollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *CrossTenantAccessPolicyConfigurationBase) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["b2bCollaborationOutbound"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["b2bCollaborationOutbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *CrossTenantAccessPolicyConfigurationBase) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["b2bDirectConnectInbound"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["b2bDirectConnectInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *CrossTenantAccessPolicyConfigurationBase) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["b2bDirectConnectOutbound"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["b2bDirectConnectOutbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *CrossTenantAccessPolicyConfigurationBase) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["inboundTrust"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inboundTrust"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue)
         if err != nil {
             return err

@@ -7,19 +7,19 @@ import (
 // DeviceComplianceScriptRule 
 type DeviceComplianceScriptRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
-    dataType *DataType;
+    dataType *DataType
     // Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
-    deviceComplianceScriptRuleDataType *DeviceComplianceScriptRuleDataType;
+    deviceComplianceScriptRuleDataType *DeviceComplianceScriptRuleDataType
     // Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
-    deviceComplianceScriptRulOperator *DeviceComplianceScriptRulOperator;
+    deviceComplianceScriptRulOperator *DeviceComplianceScriptRulOperator
     // Operand specified in the rule.
-    operand *string;
+    operand *string
     // Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
-    operator *Operator;
+    operator *Operator
     // Setting name specified in the rule.
-    settingName *string;
+    settingName *string
 }
 // NewDeviceComplianceScriptRule instantiates a new deviceComplianceScriptRule and sets the default values.
 func NewDeviceComplianceScriptRule()(*DeviceComplianceScriptRule) {
@@ -65,9 +65,9 @@ func (m *DeviceComplianceScriptRule) GetDeviceComplianceScriptRulOperator()(*Dev
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dataType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDataType)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["deviceComplianceScriptRuleDataType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceComplianceScriptRuleDataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceComplianceScriptRuleDataType)
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["deviceComplianceScriptRulOperator"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceComplianceScriptRulOperator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceComplianceScriptRulOperator)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["operand"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["operator"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOperator)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["settingName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

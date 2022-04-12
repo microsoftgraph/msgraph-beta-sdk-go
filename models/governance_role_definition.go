@@ -8,17 +8,17 @@ import (
 type GovernanceRoleDefinition struct {
     Entity
     // The display name of the role definition.
-    displayName *string;
+    displayName *string
     // The external id of the role definition.
-    externalId *string;
+    externalId *string
     // Read-only. The associated resource for the role definition.
-    resource GovernanceResourceable;
+    resource GovernanceResourceable
     // Required. The id of the resource associated with the role definition.
-    resourceId *string;
+    resourceId *string
     // The associated role setting for the role definition.
-    roleSetting GovernanceRoleSettingable;
+    roleSetting GovernanceRoleSettingable
     // The templateId property
-    templateId *string;
+    templateId *string
 }
 // NewGovernanceRoleDefinition instantiates a new governanceRoleDefinition and sets the default values.
 func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {
@@ -48,9 +48,9 @@ func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["roleSetting"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceRoleSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["templateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,17 +8,17 @@ import (
 type ConnectorGroup struct {
     Entity
     // Read-only. Nullable.
-    applications []Applicationable;
+    applications []Applicationable
     // Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
-    connectorGroupType *ConnectorGroupType;
+    connectorGroupType *ConnectorGroupType
     // Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
-    isDefault *bool;
+    isDefault *bool
     // Read-only. Nullable.
-    members []Connectorable;
+    members []Connectorable
     // The name associated with the connectorGroup.
-    name *string;
+    name *string
     // The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
-    region *ConnectorGroupRegion;
+    region *ConnectorGroupRegion
 }
 // NewConnectorGroup instantiates a new connectorGroup and sets the default values.
 func NewConnectorGroup()(*ConnectorGroup) {
@@ -48,9 +48,9 @@ func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["connectorGroupType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectorGroupType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectorGroupType)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["region"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectorGroupRegion)
         if err != nil {
             return err

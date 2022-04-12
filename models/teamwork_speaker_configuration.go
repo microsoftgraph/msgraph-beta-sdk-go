@@ -7,17 +7,17 @@ import (
 // TeamworkSpeakerConfiguration 
 type TeamworkSpeakerConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The defaultCommunicationSpeaker property
-    defaultCommunicationSpeaker TeamworkPeripheralable;
+    defaultCommunicationSpeaker TeamworkPeripheralable
     // The defaultSpeaker property
-    defaultSpeaker TeamworkPeripheralable;
+    defaultSpeaker TeamworkPeripheralable
     // True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
-    isCommunicationSpeakerOptional *bool;
+    isCommunicationSpeakerOptional *bool
     // True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
-    isSpeakerOptional *bool;
+    isSpeakerOptional *bool
     // The speakers property
-    speakers []TeamworkPeripheralable;
+    speakers []TeamworkPeripheralable
 }
 // NewTeamworkSpeakerConfiguration instantiates a new teamworkSpeakerConfiguration and sets the default values.
 func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
@@ -55,9 +55,9 @@ func (m *TeamworkSpeakerConfiguration) GetDefaultSpeaker()(TeamworkPeripheralabl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["defaultCommunicationSpeaker"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["defaultCommunicationSpeaker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["defaultSpeaker"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultSpeaker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isCommunicationSpeakerOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCommunicationSpeakerOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isSpeakerOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSpeakerOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["speakers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["speakers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err

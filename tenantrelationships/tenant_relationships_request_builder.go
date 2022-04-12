@@ -14,46 +14,46 @@ import (
 // TenantRelationshipsRequestBuilder provides operations to manage the tenantRelationship singleton.
 type TenantRelationshipsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TenantRelationshipsRequestBuilderGetOptions options for Get
 type TenantRelationshipsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TenantRelationshipsRequestBuilderGetQueryParameters;
+    QueryParameters *TenantRelationshipsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TenantRelationshipsRequestBuilderGetQueryParameters get tenantRelationships
 type TenantRelationshipsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TenantRelationshipsRequestBuilderPatchOptions options for Patch
 type TenantRelationshipsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewTenantRelationshipsRequestBuilderInternal instantiates a new TenantRelationshipsRequestBuilder and sets the default values.
 func NewTenantRelationshipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantRelationshipsRequestBuilder) {
     m := &TenantRelationshipsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships{?select,expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -117,7 +117,7 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["delegatedAdminCustomer_id"] = id
+        urlTplParams["delegatedAdminCustomer%2Did"] = id
     }
     return i794f862ecc921099af0c35b23c015b58bfdfa8b986158639b5bbfb2aacaea17e.NewDelegatedAdminCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -132,7 +132,7 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id s
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["delegatedAdminRelationship_id"] = id
+        urlTplParams["delegatedAdminRelationship%2Did"] = id
     }
     return ia7f4fac9af2719d5ab9e4339a8b2f55b843d5b618e4117c5460ccbfca8c2f196.NewDelegatedAdminRelationshipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

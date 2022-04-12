@@ -7,19 +7,19 @@ import (
 // OnlineMeetingInfo 
 type OnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ID of the conference.
-    conferenceId *string;
+    conferenceId *string
     // The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-    joinUrl *string;
+    joinUrl *string
     // All of the phone numbers associated with this conference.
-    phones []Phoneable;
+    phones []Phoneable
     // The pre-formatted quickdial for this call.
-    quickDial *string;
+    quickDial *string
     // The toll free numbers that can be used to join the conference.
-    tollFreeNumbers []string;
+    tollFreeNumbers []string
     // The toll number that can be used to join the conference.
-    tollNumber *string;
+    tollNumber *string
 }
 // NewOnlineMeetingInfo instantiates a new onlineMeetingInfo and sets the default values.
 func NewOnlineMeetingInfo()(*OnlineMeetingInfo) {
@@ -49,9 +49,9 @@ func (m *OnlineMeetingInfo) GetConferenceId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["conferenceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["conferenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["joinUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joinUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["phones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["quickDial"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["quickDial"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["tollFreeNumbers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tollFreeNumbers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["tollNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tollNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

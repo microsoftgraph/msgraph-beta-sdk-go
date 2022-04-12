@@ -8,7 +8,7 @@ import (
 type EvaluateLabelJobResponse struct {
     JobResponseBase
     // The result property
-    result EvaluateLabelJobResultGroupable;
+    result EvaluateLabelJobResultGroupable
 }
 // NewEvaluateLabelJobResponse instantiates a new evaluateLabelJobResponse and sets the default values.
 func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
@@ -22,9 +22,9 @@ func CreateEvaluateLabelJobResponseFromDiscriminatorValue(parseNode i878a80d2330
     return NewEvaluateLabelJobResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EvaluateLabelJobResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.JobResponseBase.GetFieldDeserializers()
-    res["result"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEvaluateLabelJobResultGroupFromDiscriminatorValue)
         if err != nil {
             return err

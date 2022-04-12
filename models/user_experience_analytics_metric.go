@@ -8,9 +8,9 @@ import (
 type UserExperienceAnalyticsMetric struct {
     Entity
     // The unit of the user experience analytics metric.
-    unit *string;
+    unit *string
     // The value of the user experience analytics metric.
-    value *float64;
+    value *float64
 }
 // NewUserExperienceAnalyticsMetric instantiates a new userExperienceAnalyticsMetric and sets the default values.
 func NewUserExperienceAnalyticsMetric()(*UserExperienceAnalyticsMetric) {
@@ -24,9 +24,9 @@ func CreateUserExperienceAnalyticsMetricFromDiscriminatorValue(parseNode i878a80
     return NewUserExperienceAnalyticsMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["unit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

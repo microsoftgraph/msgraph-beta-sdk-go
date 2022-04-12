@@ -8,31 +8,31 @@ import (
 type EntitlementManagement struct {
     Entity
     // Approval stages for assignment requests.
-    accessPackageAssignmentApprovals []Approvalable;
+    accessPackageAssignmentApprovals []Approvalable
     // Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
-    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable;
+    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable
     // Represents access package assignment requests created by or on behalf of a user.
-    accessPackageAssignmentRequests []AccessPackageAssignmentRequestable;
+    accessPackageAssignmentRequests []AccessPackageAssignmentRequestable
     // Represents the resource-specific role which a subject has been assigned through an access package assignment.
-    accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable;
+    accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable
     // Represents the grant of an access package to a subject (user or group).
-    accessPackageAssignments []AccessPackageAssignmentable;
+    accessPackageAssignments []AccessPackageAssignmentable
     // Represents a group of access packages.
-    accessPackageCatalogs []AccessPackageCatalogable;
+    accessPackageCatalogs []AccessPackageCatalogable
     // A reference to the geolocation environment in which a resource is located.
-    accessPackageResourceEnvironments []AccessPackageResourceEnvironmentable;
+    accessPackageResourceEnvironments []AccessPackageResourceEnvironmentable
     // Represents a request to add or remove a resource to or from a catalog respectively.
-    accessPackageResourceRequests []AccessPackageResourceRequestable;
+    accessPackageResourceRequests []AccessPackageResourceRequestable
     // A reference to both a scope within a resource, and a role in that resource for that scope.
-    accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable;
+    accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable
     // A reference to a resource associated with an access package catalog.
-    accessPackageResources []AccessPackageResourceable;
+    accessPackageResources []AccessPackageResourceable
     // Represents access package objects.
-    accessPackages []AccessPackageable;
+    accessPackages []AccessPackageable
     // Represents references to a directory or domain of another organization whose users can request access.
-    connectedOrganizations []ConnectedOrganizationable;
+    connectedOrganizations []ConnectedOrganizationable
     // Represents the settings that control the behavior of Azure AD entitlement management.
-    settings EntitlementManagementSettingsable;
+    settings EntitlementManagementSettingsable
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
@@ -142,9 +142,9 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageAssignmentApprovals"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageAssignmentPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageAssignmentRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageAssignmentResourceRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentResourceRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageCatalogs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageCatalogs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageResourceEnvironments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceEnvironments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageResourceRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageResourceRoleScopes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceRoleScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -270,7 +270,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["connectedOrganizations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectedOrganizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConnectedOrganizationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -312,7 +312,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntitlementManagementSettingsFromDiscriminatorValue)
         if err != nil {
             return err

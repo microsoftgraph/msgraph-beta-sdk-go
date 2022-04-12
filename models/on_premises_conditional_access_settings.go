@@ -8,13 +8,13 @@ import (
 type OnPremisesConditionalAccessSettings struct {
     Entity
     // Indicates if on premises conditional access is enabled for this organization
-    enabled *bool;
+    enabled *bool
     // User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
-    excludedGroups []string;
+    excludedGroups []string
     // User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-    includedGroups []string;
+    includedGroups []string
     // Override the default access rule when allowing a device to ensure access is granted.
-    overrideDefaultRule *bool;
+    overrideDefaultRule *bool
 }
 // NewOnPremisesConditionalAccessSettings instantiates a new onPremisesConditionalAccessSettings and sets the default values.
 func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
@@ -44,9 +44,9 @@ func (m *OnPremisesConditionalAccessSettings) GetExcludedGroups()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["enabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["excludedGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludedGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["includedGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includedGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["overrideDefaultRule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["overrideDefaultRule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

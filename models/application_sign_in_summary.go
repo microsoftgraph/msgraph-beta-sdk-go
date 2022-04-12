@@ -8,13 +8,13 @@ import (
 type ApplicationSignInSummary struct {
     Entity
     // Name of the application that the user signed into.
-    appDisplayName *string;
+    appDisplayName *string
     // Count of failed sign-ins made by the application.
-    failedSignInCount *int64;
+    failedSignInCount *int64
     // Count of successful sign-ins made by the application.
-    successfulSignInCount *int64;
+    successfulSignInCount *int64
     // Percentage of successful sign-ins made by the application.
-    successPercentage *float64;
+    successPercentage *float64
 }
 // NewApplicationSignInSummary instantiates a new applicationSignInSummary and sets the default values.
 func NewApplicationSignInSummary()(*ApplicationSignInSummary) {
@@ -44,9 +44,9 @@ func (m *ApplicationSignInSummary) GetFailedSignInCount()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["failedSignInCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["successfulSignInCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successfulSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["successPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

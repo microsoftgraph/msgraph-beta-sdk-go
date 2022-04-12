@@ -8,11 +8,11 @@ import (
 type DeviceCompliancePolicyAssignment struct {
     Entity
     // The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
-    source *DeviceAndAppManagementAssignmentSource;
+    source *DeviceAndAppManagementAssignmentSource
     // The identifier of the source of the assignment.
-    sourceId *string;
+    sourceId *string
     // Target for the compliance policy assignment.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceCompliancePolicyAssignment instantiates a new deviceCompliancePolicyAssignment and sets the default values.
 func NewDeviceCompliancePolicyAssignment()(*DeviceCompliancePolicyAssignment) {
@@ -26,9 +26,9 @@ func CreateDeviceCompliancePolicyAssignmentFromDiscriminatorValue(parseNode i878
     return NewDeviceCompliancePolicyAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceCompliancePolicyAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceCompliancePolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAndAppManagementAssignmentSource)
         if err != nil {
             return err
@@ -38,7 +38,7 @@ func (m *DeviceCompliancePolicyAssignment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["sourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *DeviceCompliancePolicyAssignment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

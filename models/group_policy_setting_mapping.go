@@ -8,45 +8,45 @@ import (
 type GroupPolicySettingMapping struct {
     Entity
     // Admx Group Policy Id
-    admxSettingDefinitionId *string;
+    admxSettingDefinitionId *string
     // List of Child Ids of the group policy setting.
-    childIdList []string;
+    childIdList []string
     // The Intune Setting Definition Id
-    intuneSettingDefinitionId *string;
+    intuneSettingDefinitionId *string
     // The list of Intune Setting URIs this group policy setting maps to
-    intuneSettingUriList []string;
+    intuneSettingUriList []string
     // Indicates if the setting is supported by Intune or not
-    isMdmSupported *bool;
+    isMdmSupported *bool
     // The CSP name this group policy setting maps to.
-    mdmCspName *string;
+    mdmCspName *string
     // The minimum OS version this mdm setting supports.
-    mdmMinimumOSVersion *int32;
+    mdmMinimumOSVersion *int32
     // The MDM CSP URI this group policy setting maps to.
-    mdmSettingUri *string;
+    mdmSettingUri *string
     // Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
-    mdmSupportedState *MdmSupportedState;
+    mdmSupportedState *MdmSupportedState
     // Parent Id of the group policy setting.
-    parentId *string;
+    parentId *string
     // The category the group policy setting is in.
-    settingCategory *string;
+    settingCategory *string
     // The display name of this group policy setting.
-    settingDisplayName *string;
+    settingDisplayName *string
     // The display value of this group policy setting.
-    settingDisplayValue *string;
+    settingDisplayValue *string
     // The display value type of this group policy setting.
-    settingDisplayValueType *string;
+    settingDisplayValueType *string
     // The name of this group policy setting.
-    settingName *string;
+    settingName *string
     // The scope of the setting. Possible values are: unknown, device, user.
-    settingScope *GroupPolicySettingScope;
+    settingScope *GroupPolicySettingScope
     // The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
-    settingType *GroupPolicySettingType;
+    settingType *GroupPolicySettingType
     // The value of this group policy setting.
-    settingValue *string;
+    settingValue *string
     // The display units of this group policy setting value
-    settingValueDisplayUnits *string;
+    settingValueDisplayUnits *string
     // The value type of this group policy setting.
-    settingValueType *string;
+    settingValueType *string
 }
 // NewGroupPolicySettingMapping instantiates a new groupPolicySettingMapping and sets the default values.
 func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {
@@ -76,9 +76,9 @@ func (m *GroupPolicySettingMapping) GetChildIdList()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["admxSettingDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["admxSettingDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["childIdList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childIdList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["intuneSettingDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneSettingDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["intuneSettingUriList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneSettingUriList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["isMdmSupported"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMdmSupported"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["mdmCspName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmCspName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["mdmMinimumOSVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmMinimumOSVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["mdmSettingUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmSettingUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["mdmSupportedState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmSupportedState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMdmSupportedState)
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["parentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingDisplayValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDisplayValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingDisplayValueType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDisplayValueType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseGroupPolicySettingScope)
         if err != nil {
             return err
@@ -246,7 +246,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseGroupPolicySettingType)
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -266,7 +266,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingValueDisplayUnits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingValueDisplayUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -276,7 +276,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["settingValueType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingValueType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

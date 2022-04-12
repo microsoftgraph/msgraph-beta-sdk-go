@@ -7,11 +7,11 @@ import (
 // UserRegistrationMethodCount 
 type UserRegistrationMethodCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of authentication method.
-    authenticationMethod *string;
+    authenticationMethod *string
     // Number of users registered.
-    userCount *int64;
+    userCount *int64
 }
 // NewUserRegistrationMethodCount instantiates a new userRegistrationMethodCount and sets the default values.
 func NewUserRegistrationMethodCount()(*UserRegistrationMethodCount) {
@@ -41,9 +41,9 @@ func (m *UserRegistrationMethodCount) GetAuthenticationMethod()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserRegistrationMethodCount) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["authenticationMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserRegistrationMethodCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *UserRegistrationMethodCount) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["userCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

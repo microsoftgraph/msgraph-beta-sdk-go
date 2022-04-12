@@ -8,23 +8,23 @@ import (
 type DepMacOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
     // Indicates if Accessibility screen is disabled
-    accessibilityScreenDisabled *bool;
+    accessibilityScreenDisabled *bool
     // Indicates if UnlockWithWatch screen is disabled
-    autoUnlockWithWatchDisabled *bool;
+    autoUnlockWithWatchDisabled *bool
     // Indicates if iCloud Documents and Desktop screen is disabled
-    chooseYourLockScreenDisabled *bool;
+    chooseYourLockScreenDisabled *bool
     // Indicates if file vault is disabled
-    fileVaultDisabled *bool;
+    fileVaultDisabled *bool
     // Indicates if iCloud Analytics screen is disabled
-    iCloudDiagnosticsDisabled *bool;
+    iCloudDiagnosticsDisabled *bool
     // Indicates if iCloud Documents and Desktop screen is disabled
-    iCloudStorageDisabled *bool;
+    iCloudStorageDisabled *bool
     // Indicates if Passcode setup pane is disabled
-    passCodeDisabled *bool;
+    passCodeDisabled *bool
     // Indicates if registration is disabled
-    registrationDisabled *bool;
+    registrationDisabled *bool
     // Indicates if zoom setup pane is disabled
-    zoomDisabled *bool;
+    zoomDisabled *bool
 }
 // NewDepMacOSEnrollmentProfile instantiates a new depMacOSEnrollmentProfile and sets the default values.
 func NewDepMacOSEnrollmentProfile()(*DepMacOSEnrollmentProfile) {
@@ -62,9 +62,9 @@ func (m *DepMacOSEnrollmentProfile) GetChooseYourLockScreenDisabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DepEnrollmentBaseProfile.GetFieldDeserializers()
-    res["accessibilityScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessibilityScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["autoUnlockWithWatchDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["autoUnlockWithWatchDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["chooseYourLockScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["chooseYourLockScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["fileVaultDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileVaultDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["iCloudDiagnosticsDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iCloudDiagnosticsDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["iCloudStorageDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iCloudStorageDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["passCodeDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passCodeDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["registrationDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registrationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["zoomDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["zoomDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

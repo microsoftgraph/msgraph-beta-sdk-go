@@ -31,55 +31,55 @@ import (
 // AuthenticationRequestBuilder provides operations to manage the authentication property of the microsoft.graph.user entity.
 type AuthenticationRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AuthenticationRequestBuilderDeleteOptions options for Delete
 type AuthenticationRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthenticationRequestBuilderGetOptions options for Get
 type AuthenticationRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AuthenticationRequestBuilderGetQueryParameters;
+    QueryParameters *AuthenticationRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthenticationRequestBuilderGetQueryParameters the authentication methods that are supported for the user.
 type AuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AuthenticationRequestBuilderPatchOptions options for Patch
 type AuthenticationRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAuthenticationRequestBuilderInternal instantiates a new AuthenticationRequestBuilder and sets the default values.
 func NewAuthenticationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationRequestBuilder) {
     m := &AuthenticationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/authentication{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -176,7 +176,7 @@ func (m *AuthenticationRequestBuilder) EmailMethodsById(id string)(*i8e4613fe9be
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["emailAuthenticationMethod_id"] = id
+        urlTplParams["emailAuthenticationMethod%2Did"] = id
     }
     return i8e4613fe9beae47166d3199e35bebd1eacc7b9fb65d987f75b5d6cf3fa8be437.NewEmailAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -191,7 +191,7 @@ func (m *AuthenticationRequestBuilder) Fido2MethodsById(id string)(*i467ded3a453
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["fido2AuthenticationMethod_id"] = id
+        urlTplParams["fido2AuthenticationMethod%2Did"] = id
     }
     return i467ded3a4537cbf8edac7f6b51c34bc6260059e41501cb558b59f959687f3ead.NewFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -222,7 +222,7 @@ func (m *AuthenticationRequestBuilder) MethodsById(id string)(*ia0ffdc8f006fc6f1
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["authenticationMethod_id"] = id
+        urlTplParams["authenticationMethod%2Did"] = id
     }
     return ia0ffdc8f006fc6f17388d1138910ea760bda5327cb7954a36443dafdd3d6fbfa.NewAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -237,7 +237,7 @@ func (m *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethodsById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["microsoftAuthenticatorAuthenticationMethod_id"] = id
+        urlTplParams["microsoftAuthenticatorAuthenticationMethod%2Did"] = id
     }
     return ib3cdab32f2c2a8097f7c565b3cb7cb087b04b57f65b7f9c169711dc829cef01c.NewMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -252,7 +252,7 @@ func (m *AuthenticationRequestBuilder) OperationsById(id string)(*ib16a6b42b7b0f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["longRunningOperation_id"] = id
+        urlTplParams["longRunningOperation%2Did"] = id
     }
     return ib16a6b42b7b0fb91aacf9e83541f6f5c6a5266c8492af0c9840118f0f8230fda.NewLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -267,7 +267,7 @@ func (m *AuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethods
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["passwordlessMicrosoftAuthenticatorAuthenticationMethod_id"] = id
+        urlTplParams["passwordlessMicrosoftAuthenticatorAuthenticationMethod%2Did"] = id
     }
     return i8b94c7ec519f49a4ce821818ba1007cd615cbf88b35e60111f6243e2381a0a30.NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -282,7 +282,7 @@ func (m *AuthenticationRequestBuilder) PasswordMethodsById(id string)(*i0199bdc7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["passwordAuthenticationMethod_id"] = id
+        urlTplParams["passwordAuthenticationMethod%2Did"] = id
     }
     return i0199bdc7d0e31ba40e9079a671271952b6c664dd52228e453e3aa4029592e679.NewPasswordAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -313,7 +313,7 @@ func (m *AuthenticationRequestBuilder) PhoneMethodsById(id string)(*i2fa2bed3b2b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["phoneAuthenticationMethod_id"] = id
+        urlTplParams["phoneAuthenticationMethod%2Did"] = id
     }
     return i2fa2bed3b2bf85fb6d420cebcc1e3022721013a245e0c8e9488904d31b8c82cf.NewPhoneAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -328,7 +328,7 @@ func (m *AuthenticationRequestBuilder) SoftwareOathMethodsById(id string)(*i11e9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["softwareOathAuthenticationMethod_id"] = id
+        urlTplParams["softwareOathAuthenticationMethod%2Did"] = id
     }
     return i11e9821a8e25762609e9e981c9f33988dac6988220959b859b3acf5016e24454.NewSoftwareOathAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -343,7 +343,7 @@ func (m *AuthenticationRequestBuilder) TemporaryAccessPassMethodsById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["temporaryAccessPassAuthenticationMethod_id"] = id
+        urlTplParams["temporaryAccessPassAuthenticationMethod%2Did"] = id
     }
     return i5959cb956fb6583f70d31a45fd1df7ec1f6063d4908ec79970275f6476e0c9c4.NewTemporaryAccessPassAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -358,7 +358,7 @@ func (m *AuthenticationRequestBuilder) WindowsHelloForBusinessMethodsById(id str
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsHelloForBusinessAuthenticationMethod_id"] = id
+        urlTplParams["windowsHelloForBusinessAuthenticationMethod%2Did"] = id
     }
     return ief9d84a1c52ab385faa5763ce3c89c06416ddd2ebf7f8093933c9cb404554238.NewWindowsHelloForBusinessAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

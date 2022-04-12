@@ -8,9 +8,9 @@ import (
 type CrossTenantAccessPolicy struct {
     TenantRelationshipAccessPolicyBase
     // Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-    default_escaped CrossTenantAccessPolicyConfigurationDefaultable;
+    default_escaped CrossTenantAccessPolicyConfigurationDefaultable
     // Defines partner-specific configurations for external Azure Active Directory organizations.
-    partners []CrossTenantAccessPolicyConfigurationPartnerable;
+    partners []CrossTenantAccessPolicyConfigurationPartnerable
 }
 // NewCrossTenantAccessPolicy instantiates a new crossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
@@ -32,9 +32,9 @@ func (m *CrossTenantAccessPolicy) GetDefault()(CrossTenantAccessPolicyConfigurat
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TenantRelationshipAccessPolicyBase.GetFieldDeserializers()
-    res["default"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["default"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue)
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["partners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCrossTenantAccessPolicyConfigurationPartnerFromDiscriminatorValue)
         if err != nil {
             return err

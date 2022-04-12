@@ -8,9 +8,9 @@ import (
 type AuditUserIdentity struct {
     UserIdentity
     // For user sign ins, the identifier of the tenant that the user is a member of.
-    homeTenantId *string;
+    homeTenantId *string
     // For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
-    homeTenantName *string;
+    homeTenantName *string
 }
 // NewAuditUserIdentity instantiates a new auditUserIdentity and sets the default values.
 func NewAuditUserIdentity()(*AuditUserIdentity) {
@@ -24,9 +24,9 @@ func CreateAuditUserIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewAuditUserIdentity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserIdentity.GetFieldDeserializers()
-    res["homeTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homeTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["homeTenantName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homeTenantName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,7 +8,7 @@ import (
 type OpenShiftItem struct {
     ShiftItem
     // Count of the number of slots for the given open shift.
-    openSlotCount *int32;
+    openSlotCount *int32
 }
 // NewOpenShiftItem instantiates a new openShiftItem and sets the default values.
 func NewOpenShiftItem()(*OpenShiftItem) {
@@ -22,9 +22,9 @@ func CreateOpenShiftItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewOpenShiftItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OpenShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OpenShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ShiftItem.GetFieldDeserializers()
-    res["openSlotCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["openSlotCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,74 +8,66 @@ import (
 // OnlineMeeting 
 type OnlineMeeting struct {
     Entity
-    // The accessLevel property
-    accessLevel *AccessLevel;
     // Indicates whether attendees can turn on their camera.
-    allowAttendeeToEnableCamera *bool;
+    allowAttendeeToEnableCamera *bool
     // Indicates whether attendees can turn on their microphone.
-    allowAttendeeToEnableMic *bool;
+    allowAttendeeToEnableMic *bool
     // Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-    allowedPresenters *OnlineMeetingPresenters;
+    allowedPresenters *OnlineMeetingPresenters
     // Specifies the mode of meeting chat.
-    allowMeetingChat *MeetingChatMode;
+    allowMeetingChat *MeetingChatMode
     // Indicates whether Teams reactions are enabled for the meeting.
-    allowTeamworkReactions *bool;
+    allowTeamworkReactions *bool
     // The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-    alternativeRecording []byte;
+    alternativeRecording []byte
     // The attendance reports of an online meeting. Read-only.
-    attendanceReports []MeetingAttendanceReportable;
+    attendanceReports []MeetingAttendanceReportable
     // The content stream of the attendee report of a Microsoft Teams live event. Read-only.
-    attendeeReport []byte;
+    attendeeReport []byte
     // The phone access (dial-in) information for an online meeting. Read-only.
-    audioConferencing AudioConferencingable;
+    audioConferencing AudioConferencingable
     // Settings related to a live event.
-    broadcastSettings BroadcastMeetingSettingsable;
-    // The canceledDateTime property
-    canceledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    broadcastSettings BroadcastMeetingSettingsable
     // The capabilities property
-    capabilities []MeetingCapabilities;
+    capabilities []MeetingCapabilities
     // The chat information associated with this online meeting.
-    chatInfo ChatInfoable;
+    chatInfo ChatInfoable
     // The meeting creation time in UTC. Read-only.
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The meeting end time in UTC.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The entryExitAnnouncement property
-    entryExitAnnouncement *bool;
-    // The expirationDateTime property
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The external ID. A custom ID. Optional.
-    externalId *string;
+    externalId *string
     // Indicates if this is a Teams live event.
-    isBroadcast *bool;
-    // The isCancelled property
-    isCancelled *bool;
+    isBroadcast *bool
     // Indicates whether to announce when callers join or leave.
-    isEntryExitAnnounced *bool;
+    isEntryExitAnnounced *bool
     // The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
-    joinInformation ItemBodyable;
+    joinInformation ItemBodyable
     // The joinMeetingIdSettings property
-    joinMeetingIdSettings JoinMeetingIdSettingsable;
+    joinMeetingIdSettings JoinMeetingIdSettingsable
     // The joinUrl property
-    joinUrl *string;
+    joinUrl *string
+    // The join URL of the online meeting. Read-only.
+    joinWebUrl *string
     // Specifies which participants can bypass the meeting   lobby.
-    lobbyBypassSettings LobbyBypassSettingsable;
+    lobbyBypassSettings LobbyBypassSettingsable
     // The meetingAttendanceReport property
-    meetingAttendanceReport MeetingAttendanceReportable;
+    meetingAttendanceReport MeetingAttendanceReportable
     // The participants associated with the online meeting.  This includes the organizer and the attendees.
-    participants MeetingParticipantsable;
+    participants MeetingParticipantsable
     // Indicates whether to record the meeting automatically.
-    recordAutomatically *bool;
+    recordAutomatically *bool
     // The content stream of the recording of a Teams live event. Read-only.
-    recording []byte;
+    recording []byte
     // The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-    registration MeetingRegistrationable;
+    registration MeetingRegistrationable
     // The meeting start time in UTC.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject of the online meeting.
-    subject *string;
+    subject *string
     // The video teleconferencing ID. Read-only.
-    videoTeleconferenceId *string;
+    videoTeleconferenceId *string
 }
 // NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
@@ -87,14 +79,6 @@ func NewOnlineMeeting()(*OnlineMeeting) {
 // CreateOnlineMeetingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnlineMeeting(), nil
-}
-// GetAccessLevel gets the accessLevel property value. The accessLevel property
-func (m *OnlineMeeting) GetAccessLevel()(*AccessLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessLevel
-    }
 }
 // GetAllowAttendeeToEnableCamera gets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
 func (m *OnlineMeeting) GetAllowAttendeeToEnableCamera()(*bool) {
@@ -176,14 +160,6 @@ func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
         return m.broadcastSettings
     }
 }
-// GetCanceledDateTime gets the canceledDateTime property value. The canceledDateTime property
-func (m *OnlineMeeting) GetCanceledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canceledDateTime
-    }
-}
 // GetCapabilities gets the capabilities property value. The capabilities property
 func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
     if m == nil {
@@ -216,22 +192,6 @@ func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.endDateTime
     }
 }
-// GetEntryExitAnnouncement gets the entryExitAnnouncement property value. The entryExitAnnouncement property
-func (m *OnlineMeeting) GetEntryExitAnnouncement()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.entryExitAnnouncement
-    }
-}
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
-func (m *OnlineMeeting) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
-}
 // GetExternalId gets the externalId property value. The external ID. A custom ID. Optional.
 func (m *OnlineMeeting) GetExternalId()(*string) {
     if m == nil {
@@ -241,19 +201,9 @@ func (m *OnlineMeeting) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessLevel)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccessLevel(val.(*AccessLevel))
-        }
-        return nil
-    }
-    res["allowAttendeeToEnableCamera"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowAttendeeToEnableCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -263,7 +213,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["allowAttendeeToEnableMic"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowAttendeeToEnableMic"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -273,7 +223,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["allowedPresenters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedPresenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnlineMeetingPresenters)
         if err != nil {
             return err
@@ -283,7 +233,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["allowMeetingChat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowMeetingChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMeetingChatMode)
         if err != nil {
             return err
@@ -293,7 +243,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["allowTeamworkReactions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowTeamworkReactions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -303,7 +253,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["alternativeRecording"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["alternativeRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -313,7 +263,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["attendanceReports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attendanceReports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingAttendanceReportFromDiscriminatorValue)
         if err != nil {
             return err
@@ -327,7 +277,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["attendeeReport"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attendeeReport"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -337,7 +287,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["audioConferencing"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["audioConferencing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAudioConferencingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -347,7 +297,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["broadcastSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["broadcastSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBroadcastMeetingSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -357,17 +307,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["canceledDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCanceledDateTime(val)
-        }
-        return nil
-    }
-    res["capabilities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseMeetingCapabilities)
         if err != nil {
             return err
@@ -381,7 +321,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["chatInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["chatInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -391,7 +331,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["creationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -401,7 +341,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -411,27 +351,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["entryExitAnnouncement"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEntryExitAnnouncement(val)
-        }
-        return nil
-    }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExpirationDateTime(val)
-        }
-        return nil
-    }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -441,7 +361,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isBroadcast"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isBroadcast"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -451,17 +371,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isCancelled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsCancelled(val)
-        }
-        return nil
-    }
-    res["isEntryExitAnnounced"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEntryExitAnnounced"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -471,7 +381,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["joinInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joinInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -481,7 +391,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["joinMeetingIdSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joinMeetingIdSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJoinMeetingIdSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -491,7 +401,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["joinUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joinUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -501,7 +411,17 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["lobbyBypassSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetJoinWebUrl(val)
+        }
+        return nil
+    }
+    res["lobbyBypassSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLobbyBypassSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -511,7 +431,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["meetingAttendanceReport"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingAttendanceReport"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingAttendanceReportFromDiscriminatorValue)
         if err != nil {
             return err
@@ -521,7 +441,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["participants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingParticipantsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -531,7 +451,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["recordAutomatically"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recordAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -541,7 +461,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["recording"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -551,7 +471,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["registration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingRegistrationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -561,7 +481,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -571,7 +491,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -581,7 +501,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["videoTeleconferenceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["videoTeleconferenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -599,14 +519,6 @@ func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
         return nil
     } else {
         return m.isBroadcast
-    }
-}
-// GetIsCancelled gets the isCancelled property value. The isCancelled property
-func (m *OnlineMeeting) GetIsCancelled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCancelled
     }
 }
 // GetIsEntryExitAnnounced gets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
@@ -639,6 +551,14 @@ func (m *OnlineMeeting) GetJoinUrl()(*string) {
         return nil
     } else {
         return m.joinUrl
+    }
+}
+// GetJoinWebUrl gets the joinWebUrl property value. The join URL of the online meeting. Read-only.
+func (m *OnlineMeeting) GetJoinWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinWebUrl
     }
 }
 // GetLobbyBypassSettings gets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting   lobby.
@@ -719,13 +639,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
-    if m.GetAccessLevel() != nil {
-        cast := (*m.GetAccessLevel()).String()
-        err = writer.WriteStringValue("accessLevel", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteBoolValue("allowAttendeeToEnableCamera", m.GetAllowAttendeeToEnableCamera())
         if err != nil {
@@ -792,12 +705,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("canceledDateTime", m.GetCanceledDateTime())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetCapabilities() != nil {
         err = writer.WriteCollectionOfStringValues("capabilities", SerializeMeetingCapabilities(m.GetCapabilities()))
         if err != nil {
@@ -823,18 +730,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteBoolValue("entryExitAnnouncement", m.GetEntryExitAnnouncement())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("externalId", m.GetExternalId())
         if err != nil {
             return err
@@ -842,12 +737,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteBoolValue("isBroadcast", m.GetIsBroadcast())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isCancelled", m.GetIsCancelled())
         if err != nil {
             return err
         }
@@ -872,6 +761,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteStringValue("joinUrl", m.GetJoinUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("joinWebUrl", m.GetJoinWebUrl())
         if err != nil {
             return err
         }
@@ -931,12 +826,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     return nil
-}
-// SetAccessLevel sets the accessLevel property value. The accessLevel property
-func (m *OnlineMeeting) SetAccessLevel(value *AccessLevel)() {
-    if m != nil {
-        m.accessLevel = value
-    }
 }
 // SetAllowAttendeeToEnableCamera sets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
 func (m *OnlineMeeting) SetAllowAttendeeToEnableCamera(value *bool)() {
@@ -998,12 +887,6 @@ func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)
         m.broadcastSettings = value
     }
 }
-// SetCanceledDateTime sets the canceledDateTime property value. The canceledDateTime property
-func (m *OnlineMeeting) SetCanceledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.canceledDateTime = value
-    }
-}
 // SetCapabilities sets the capabilities property value. The capabilities property
 func (m *OnlineMeeting) SetCapabilities(value []MeetingCapabilities)() {
     if m != nil {
@@ -1028,18 +911,6 @@ func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         m.endDateTime = value
     }
 }
-// SetEntryExitAnnouncement sets the entryExitAnnouncement property value. The entryExitAnnouncement property
-func (m *OnlineMeeting) SetEntryExitAnnouncement(value *bool)() {
-    if m != nil {
-        m.entryExitAnnouncement = value
-    }
-}
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
-func (m *OnlineMeeting) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
-}
 // SetExternalId sets the externalId property value. The external ID. A custom ID. Optional.
 func (m *OnlineMeeting) SetExternalId(value *string)() {
     if m != nil {
@@ -1050,12 +921,6 @@ func (m *OnlineMeeting) SetExternalId(value *string)() {
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
     if m != nil {
         m.isBroadcast = value
-    }
-}
-// SetIsCancelled sets the isCancelled property value. The isCancelled property
-func (m *OnlineMeeting) SetIsCancelled(value *bool)() {
-    if m != nil {
-        m.isCancelled = value
     }
 }
 // SetIsEntryExitAnnounced sets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
@@ -1080,6 +945,12 @@ func (m *OnlineMeeting) SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable
 func (m *OnlineMeeting) SetJoinUrl(value *string)() {
     if m != nil {
         m.joinUrl = value
+    }
+}
+// SetJoinWebUrl sets the joinWebUrl property value. The join URL of the online meeting. Read-only.
+func (m *OnlineMeeting) SetJoinWebUrl(value *string)() {
+    if m != nil {
+        m.joinWebUrl = value
     }
 }
 // SetLobbyBypassSettings sets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting   lobby.

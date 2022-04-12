@@ -7,23 +7,23 @@ import (
 // IdentityContainer 
 type IdentityContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents entry point for API connectors.
-    apiConnectors []IdentityApiConnectorable;
+    apiConnectors []IdentityApiConnectorable
     // Represents entry point for B2C identity userflows.
-    b2cUserFlows []B2cIdentityUserFlowable;
+    b2cUserFlows []B2cIdentityUserFlowable
     // Represents entry point for B2X/self-service sign-up identity userflows.
-    b2xUserFlows []B2xIdentityUserFlowable;
+    b2xUserFlows []B2xIdentityUserFlowable
     // the entry point for the Conditional Access (CA) object model.
-    conditionalAccess ConditionalAccessRootable;
+    conditionalAccess ConditionalAccessRootable
     // Represents entry point for continuous access evaluation policy.
-    continuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicyable;
+    continuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicyable
     // Represents entry point for identity provider base.
-    identityProviders []IdentityProviderBaseable;
+    identityProviders []IdentityProviderBaseable
     // Represents entry point for identity userflow attributes.
-    userFlowAttributes []IdentityUserFlowAttributeable;
+    userFlowAttributes []IdentityUserFlowAttributeable
     // The userFlows property
-    userFlows []IdentityUserFlowable;
+    userFlows []IdentityUserFlowable
 }
 // NewIdentityContainer instantiates a new IdentityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {
@@ -85,9 +85,9 @@ func (m *IdentityContainer) GetContinuousAccessEvaluationPolicy()(ContinuousAcce
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["apiConnectors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["apiConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityApiConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["b2cUserFlows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["b2cUserFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateB2cIdentityUserFlowFromDiscriminatorValue)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["b2xUserFlows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["b2xUserFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateB2xIdentityUserFlowFromDiscriminatorValue)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["conditionalAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionalAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessRootFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["continuousAccessEvaluationPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["continuousAccessEvaluationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["identityProviders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["identityProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userFlowAttributes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userFlowAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userFlows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowFromDiscriminatorValue)
         if err != nil {
             return err

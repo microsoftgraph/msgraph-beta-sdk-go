@@ -9,21 +9,21 @@ import (
 type ManagementConditionStatement struct {
     Entity
     // The applicable platforms for this management condition statement.
-    applicablePlatforms []DevicePlatformType;
+    applicablePlatforms []DevicePlatformType
     // The time the management condition statement was created. Generated service side.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The admin defined description of the management condition statement.
-    description *string;
+    description *string
     // The admin defined name of the management condition statement.
-    displayName *string;
+    displayName *string
     // ETag of the management condition statement. Updated service side.
-    eTag *string;
+    eTag *string
     // The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
-    expression ManagementConditionExpressionable;
+    expression ManagementConditionExpressionable
     // The management conditions associated to the management condition statement.
-    managementConditions []ManagementConditionable;
+    managementConditions []ManagementConditionable
     // The time the management condition statement was last modified. Updated service side.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewManagementConditionStatement instantiates a new managementConditionStatement and sets the default values.
 func NewManagementConditionStatement()(*ManagementConditionStatement) {
@@ -85,9 +85,9 @@ func (m *ManagementConditionStatement) GetExpression()(ManagementConditionExpres
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicablePlatforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicablePlatforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseDevicePlatformType)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["eTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["expression"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagementConditionExpressionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["managementConditions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementConditionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *ManagementConditionStatement) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["modifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementPolicyRule struct {
     Entity
     // The target for the policy rule.
-    target UnifiedRoleManagementPolicyRuleTargetable;
+    target UnifiedRoleManagementPolicyRuleTargetable
 }
 // NewUnifiedRoleManagementPolicyRule instantiates a new unifiedRoleManagementPolicyRule and sets the default values.
 func NewUnifiedRoleManagementPolicyRule()(*UnifiedRoleManagementPolicyRule) {
@@ -22,9 +22,9 @@ func CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue(parseNode i878a
     return NewUnifiedRoleManagementPolicyRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleManagementPolicyRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleManagementPolicyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue)
         if err != nil {
             return err

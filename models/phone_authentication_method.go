@@ -8,11 +8,11 @@ import (
 type PhoneAuthenticationMethod struct {
     AuthenticationMethod
     // The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
-    phoneNumber *string;
+    phoneNumber *string
     // The type of this phone. Possible values are: mobile, alternateMobile, or office.
-    phoneType *AuthenticationPhoneType;
+    phoneType *AuthenticationPhoneType
     // Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
-    smsSignInState *AuthenticationMethodSignInState;
+    smsSignInState *AuthenticationMethodSignInState
 }
 // NewPhoneAuthenticationMethod instantiates a new phoneAuthenticationMethod and sets the default values.
 func NewPhoneAuthenticationMethod()(*PhoneAuthenticationMethod) {
@@ -26,9 +26,9 @@ func CreatePhoneAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d233
     return NewPhoneAuthenticationMethod(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
-    res["phoneNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -38,7 +38,7 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["phoneType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phoneType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationPhoneType)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["smsSignInState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["smsSignInState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodSignInState)
         if err != nil {
             return err

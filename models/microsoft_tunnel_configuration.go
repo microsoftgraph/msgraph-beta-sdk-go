@@ -9,31 +9,31 @@ import (
 type MicrosoftTunnelConfiguration struct {
     Entity
     // Additional settings that may be applied to the server
-    advancedSettings []KeyValuePairable;
+    advancedSettings []KeyValuePairable
     // The Default Domain appendix that will be used by the clients
-    defaultDomainSuffix *string;
+    defaultDomainSuffix *string
     // The MicrosoftTunnelConfiguration's description
-    description *string;
+    description *string
     // When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
-    disableUdpConnections *bool;
+    disableUdpConnections *bool
     // The MicrosoftTunnelConfiguration's display name
-    displayName *string;
+    displayName *string
     // The DNS servers that will be used by the clients
-    dnsServers []string;
+    dnsServers []string
     // When the MicrosoftTunnelConfiguration was last updated
-    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The port that both TCP and UPD will listen over on the server
-    listenPort *int32;
+    listenPort *int32
     // The subnet that will be used to allocate virtual address for the clients
-    network *string;
+    network *string
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Subsets of the routes that will not be routed by the server
-    routesExclude []string;
+    routesExclude []string
     // The routs that will be routed by the server
-    routesInclude []string;
+    routesInclude []string
     // The domains that will be resolved using the provided dns servers
-    splitDNS []string;
+    splitDNS []string
 }
 // NewMicrosoftTunnelConfiguration instantiates a new microsoftTunnelConfiguration and sets the default values.
 func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
@@ -95,9 +95,9 @@ func (m *MicrosoftTunnelConfiguration) GetDnsServers()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["advancedSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["advancedSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["defaultDomainSuffix"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultDomainSuffix"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["disableUdpConnections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disableUdpConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["dnsServers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dnsServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["lastUpdateDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["listenPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["listenPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["network"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["network"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["routesExclude"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["routesExclude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -223,7 +223,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["routesInclude"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["routesInclude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["splitDNS"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["splitDNS"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

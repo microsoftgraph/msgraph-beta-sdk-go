@@ -8,17 +8,17 @@ import (
 // UserSimulationEventInfo 
 type UserSimulationEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
-    browser *string;
+    browser *string
     // Date and time of the simulation event by a user in an attack simulation and training campaign.
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of the simulation event by a user in an attack simulation and training campaign.
-    eventName *string;
+    eventName *string
     // IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
-    ipAddress *string;
+    ipAddress *string
     // The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
-    osPlatformDeviceDetails *string;
+    osPlatformDeviceDetails *string
 }
 // NewUserSimulationEventInfo instantiates a new userSimulationEventInfo and sets the default values.
 func NewUserSimulationEventInfo()(*UserSimulationEventInfo) {
@@ -64,9 +64,9 @@ func (m *UserSimulationEventInfo) GetEventName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["browser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["browser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["eventDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["eventName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["osPlatformDeviceDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osPlatformDeviceDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

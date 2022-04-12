@@ -7,15 +7,15 @@ import (
 // IdentityProtectionRoot 
 type IdentityProtectionRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Risk detection in Azure AD Identity Protection and the associated information about the detection.
-    riskDetections []RiskDetectionable;
+    riskDetections []RiskDetectionable
     // Azure AD service principals that are at risk.
-    riskyServicePrincipals []RiskyServicePrincipalable;
+    riskyServicePrincipals []RiskyServicePrincipalable
     // Users that are flagged as at-risk by Azure AD Identity Protection.
-    riskyUsers []RiskyUserable;
+    riskyUsers []RiskyUserable
     // Represents information about detected at-risk service principals in an Azure AD tenant.
-    servicePrincipalRiskDetections []ServicePrincipalRiskDetectionable;
+    servicePrincipalRiskDetections []ServicePrincipalRiskDetectionable
 }
 // NewIdentityProtectionRoot instantiates a new IdentityProtectionRoot and sets the default values.
 func NewIdentityProtectionRoot()(*IdentityProtectionRoot) {
@@ -37,9 +37,9 @@ func (m *IdentityProtectionRoot) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["riskDetections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["riskDetections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRiskDetectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["riskyServicePrincipals"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskyServicePrincipals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRiskyServicePrincipalFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["riskyUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskyUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRiskyUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["servicePrincipalRiskDetections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalRiskDetections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalRiskDetectionFromDiscriminatorValue)
         if err != nil {
             return err

@@ -7,11 +7,11 @@ import (
 // DeviceManagementConfigurationSettingOccurrence 
 type DeviceManagementConfigurationSettingOccurrence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Maximum times setting can be set on device.
-    maxDeviceOccurrence *int32;
+    maxDeviceOccurrence *int32
     // Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
-    minDeviceOccurrence *int32;
+    minDeviceOccurrence *int32
 }
 // NewDeviceManagementConfigurationSettingOccurrence instantiates a new deviceManagementConfigurationSettingOccurrence and sets the default values.
 func NewDeviceManagementConfigurationSettingOccurrence()(*DeviceManagementConfigurationSettingOccurrence) {
@@ -33,9 +33,9 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetAdditionalData()(map
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["maxDeviceOccurrence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["maxDeviceOccurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()
         }
         return nil
     }
-    res["minDeviceOccurrence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minDeviceOccurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

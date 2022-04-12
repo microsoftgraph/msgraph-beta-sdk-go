@@ -7,17 +7,17 @@ import (
 // OutlookGeoCoordinates 
 type OutlookGeoCoordinates struct {
     // The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-    accuracy *float64;
+    accuracy *float64
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The altitude of the location.
-    altitude *float64;
+    altitude *float64
     // The accuracy of the altitude.
-    altitudeAccuracy *float64;
+    altitudeAccuracy *float64
     // The latitude of the location.
-    latitude *float64;
+    latitude *float64
     // The longitude of the location.
-    longitude *float64;
+    longitude *float64
 }
 // NewOutlookGeoCoordinates instantiates a new outlookGeoCoordinates and sets the default values.
 func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
@@ -63,9 +63,9 @@ func (m *OutlookGeoCoordinates) GetAltitudeAccuracy()(*float64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accuracy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accuracy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["altitude"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["altitude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["altitudeAccuracy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["altitudeAccuracy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["latitude"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["latitude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["longitude"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["longitude"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

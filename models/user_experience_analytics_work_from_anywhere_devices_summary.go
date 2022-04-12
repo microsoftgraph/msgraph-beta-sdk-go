@@ -7,35 +7,35 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereDevicesSummary the user experience analytics Work From Anywhere metrics devices summary.
 type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value of work from anywhere autopilot devices summary.
-    autopilotDevicesSummary UserExperienceAnalyticsAutopilotDevicesSummaryable;
+    autopilotDevicesSummary UserExperienceAnalyticsAutopilotDevicesSummaryable
     // The user experience analytics work from anywhere Cloud Identity devices summary.
-    cloudIdentityDevicesSummary UserExperienceAnalyticsCloudIdentityDevicesSummaryable;
+    cloudIdentityDevicesSummary UserExperienceAnalyticsCloudIdentityDevicesSummaryable
     // The user experience work from anywhere Cloud management devices summary.
-    cloudManagementDevicesSummary UserExperienceAnalyticsCloudManagementDevicesSummaryable;
+    cloudManagementDevicesSummary UserExperienceAnalyticsCloudManagementDevicesSummaryable
     // Total number of co-managed devices. Valid values -2147483648 to 2147483647
-    coManagedDevices *int32;
+    coManagedDevices *int32
     // The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
-    devicesNotAutopilotRegistered *int32;
+    devicesNotAutopilotRegistered *int32
     // The count of intune devices not autopilot profile assigned. Valid values -2147483648 to 2147483647
-    devicesWithoutAutopilotProfileAssigned *int32;
+    devicesWithoutAutopilotProfileAssigned *int32
     // The count of devices that are not cloud identity. Valid values -2147483648 to 2147483647
-    devicesWithoutCloudIdentity *int32;
+    devicesWithoutCloudIdentity *int32
     // The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
-    intuneDevices *int32;
+    intuneDevices *int32
     // Total count of tenant attach devices. Valid values -2147483648 to 2147483647
-    tenantAttachDevices *int32;
+    tenantAttachDevices *int32
     // The total count of devices. Valid values -2147483648 to 2147483647
-    totalDevices *int32;
+    totalDevices *int32
     // The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647
-    unsupportedOSversionDevices *int32;
+    unsupportedOSversionDevices *int32
     // The count of windows 10 devices. Valid values -2147483648 to 2147483647
-    windows10Devices *int32;
+    windows10Devices *int32
     // The user experience analytics work from anywhere Windows 10 devices summary.
-    windows10DevicesSummary UserExperienceAnalyticsWindows10DevicesSummaryable;
+    windows10DevicesSummary UserExperienceAnalyticsWindows10DevicesSummaryable
     // The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
-    windows10DevicesWithoutTenantAttach *int32;
+    windows10DevicesWithoutTenantAttach *int32
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary instantiates a new userExperienceAnalyticsWorkFromAnywhereDevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) {
@@ -113,9 +113,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetDevicesWithou
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["autopilotDevicesSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["autopilotDevicesSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["cloudIdentityDevicesSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudIdentityDevicesSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["cloudManagementDevicesSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudManagementDevicesSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["coManagedDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["coManagedDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["devicesNotAutopilotRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["devicesNotAutopilotRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["devicesWithoutAutopilotProfileAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["devicesWithoutAutopilotProfileAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["devicesWithoutCloudIdentity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["devicesWithoutCloudIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["intuneDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["tenantAttachDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantAttachDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["totalDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["unsupportedOSversionDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unsupportedOSversionDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["windows10Devices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windows10Devices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["windows10DevicesSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windows10DevicesSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
-    res["windows10DevicesWithoutTenantAttach"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windows10DevicesWithoutTenantAttach"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

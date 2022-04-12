@@ -7,15 +7,15 @@ import (
 // RoleManagement 
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The cloudPC property
-    cloudPC RbacApplicationMultipleable;
+    cloudPC RbacApplicationMultipleable
     // The RbacApplication for Device Management
-    deviceManagement RbacApplicationMultipleable;
+    deviceManagement RbacApplicationMultipleable
     // Read-only. Nullable.
-    directory RbacApplicationable;
+    directory RbacApplicationable
     // Container for roles and assignments for entitlement management resources.
-    entitlementManagement RbacApplicationable;
+    entitlementManagement RbacApplicationable
 }
 // NewRoleManagement instantiates a new RoleManagement and sets the default values.
 func NewRoleManagement()(*RoleManagement) {
@@ -69,9 +69,9 @@ func (m *RoleManagement) GetEntitlementManagement()(RbacApplicationable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["cloudPC"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RoleManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["cloudPC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRbacApplicationMultipleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["deviceManagement"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceManagement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRbacApplicationMultipleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["directory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRbacApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["entitlementManagement"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["entitlementManagement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRbacApplicationFromDiscriminatorValue)
         if err != nil {
             return err

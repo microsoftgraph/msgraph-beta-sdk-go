@@ -7,19 +7,19 @@ import (
 // CertificateAuthority 
 type CertificateAuthority struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Required. The base64 encoded string representing the public certificate.
-    certificate []byte;
+    certificate []byte
     // The URL of the certificate revocation list.
-    certificateRevocationListUrl *string;
+    certificateRevocationListUrl *string
     // The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
-    deltaCertificateRevocationListUrl *string;
+    deltaCertificateRevocationListUrl *string
     // Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
-    isRootAuthority *bool;
+    isRootAuthority *bool
     // The issuer of the certificate, calculated from the certificate value. Read-only.
-    issuer *string;
+    issuer *string
     // The subject key identifier of the certificate, calculated from the certificate value. Read-only.
-    issuerSki *string;
+    issuerSki *string
 }
 // NewCertificateAuthority instantiates a new certificateAuthority and sets the default values.
 func NewCertificateAuthority()(*CertificateAuthority) {
@@ -65,9 +65,9 @@ func (m *CertificateAuthority) GetDeltaCertificateRevocationListUrl()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["certificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["certificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["certificateRevocationListUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateRevocationListUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["deltaCertificateRevocationListUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deltaCertificateRevocationListUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isRootAuthority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRootAuthority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["issuer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["issuerSki"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuerSki"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

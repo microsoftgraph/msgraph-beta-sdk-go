@@ -8,9 +8,9 @@ import (
 type UnifiedRbacResourceNamespace struct {
     Entity
     // Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    name *string;
+    name *string
     // Operations that an authorized principal are allowed to perform.
-    resourceActions []UnifiedRbacResourceActionable;
+    resourceActions []UnifiedRbacResourceActionable
 }
 // NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
 func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
@@ -24,9 +24,9 @@ func CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue(parseNode i878a80d
     return NewUnifiedRbacResourceNamespace(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["resourceActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceActionFromDiscriminatorValue)
         if err != nil {
             return err

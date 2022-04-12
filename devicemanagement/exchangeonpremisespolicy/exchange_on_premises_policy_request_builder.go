@@ -10,49 +10,49 @@ import (
 // ExchangeOnPremisesPolicyRequestBuilder provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.
 type ExchangeOnPremisesPolicyRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ExchangeOnPremisesPolicyRequestBuilderDeleteOptions options for Delete
 type ExchangeOnPremisesPolicyRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ExchangeOnPremisesPolicyRequestBuilderGetOptions options for Get
 type ExchangeOnPremisesPolicyRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters;
+    QueryParameters *ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters the policy which controls mobile device access to Exchange On Premises
 type ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ExchangeOnPremisesPolicyRequestBuilderPatchOptions options for Patch
 type ExchangeOnPremisesPolicyRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementExchangeOnPremisesPolicyable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementExchangeOnPremisesPolicyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ConditionalAccessSettings the conditionalAccessSettings property
 func (m *ExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.ConditionalAccessSettingsRequestBuilder) {
@@ -62,7 +62,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*i7
 func NewExchangeOnPremisesPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeOnPremisesPolicyRequestBuilder) {
     m := &ExchangeOnPremisesPolicyRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

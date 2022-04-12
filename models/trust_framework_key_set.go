@@ -8,7 +8,7 @@ import (
 type TrustFrameworkKeySet struct {
     Entity
     // A collection of the keys.
-    keys []TrustFrameworkKeyable;
+    keys []TrustFrameworkKeyable
 }
 // NewTrustFrameworkKeySet instantiates a new trustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
@@ -22,9 +22,9 @@ func CreateTrustFrameworkKeySetFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewTrustFrameworkKeySet(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["keys"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTrustFrameworkKeyFromDiscriminatorValue)
         if err != nil {
             return err

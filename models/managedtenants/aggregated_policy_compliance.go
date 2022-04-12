@@ -10,27 +10,27 @@ import (
 type AggregatedPolicyCompliance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Identifier for the device compliance policy. Optional. Read-only.
-    compliancePolicyId *string;
+    compliancePolicyId *string
     // Name of the device compliance policy. Optional. Read-only.
-    compliancePolicyName *string;
+    compliancePolicyName *string
     // Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
-    compliancePolicyPlatform *string;
+    compliancePolicyPlatform *string
     // The type of compliance policy. Optional. Read-only.
-    compliancePolicyType *string;
+    compliancePolicyType *string
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of devices that are in a compliant status. Optional. Read-only.
-    numberOfCompliantDevices *int64;
+    numberOfCompliantDevices *int64
     // The number of devices that are in an error status. Optional. Read-only.
-    numberOfErrorDevices *int64;
+    numberOfErrorDevices *int64
     // The number of device that are in a non-compliant status. Optional. Read-only.
-    numberOfNonCompliantDevices *int64;
+    numberOfNonCompliantDevices *int64
     // The date and time the device policy was last modified. Optional. Read-only.
-    policyModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    policyModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name for the managed tenant. Optional. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-    tenantId *string;
+    tenantId *string
 }
 // NewAggregatedPolicyCompliance instantiates a new aggregatedPolicyCompliance and sets the default values.
 func NewAggregatedPolicyCompliance()(*AggregatedPolicyCompliance) {
@@ -76,9 +76,9 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyType()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["compliancePolicyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliancePolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["compliancePolicyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliancePolicyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["compliancePolicyPlatform"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliancePolicyPlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["compliancePolicyType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliancePolicyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["lastRefreshedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["numberOfCompliantDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCompliantDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["numberOfErrorDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfErrorDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["numberOfNonCompliantDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfNonCompliantDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["policyModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

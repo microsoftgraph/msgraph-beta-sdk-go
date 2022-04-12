@@ -8,19 +8,19 @@ import (
 type InformationProtectionLabel struct {
     Entity
     // The color that the UI should display for the label, if configured.
-    color *string;
+    color *string
     // The admin-defined description for the label.
-    description *string;
+    description *string
     // Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
-    isActive *bool;
+    isActive *bool
     // The plaintext name of the label.
-    name *string;
+    name *string
     // The parent label associated with a child label. Null if label has no parent.
-    parent ParentLabelDetailsable;
+    parent ParentLabelDetailsable
     // The sensitivity value of the label, where lower is less sensitive.
-    sensitivity *int32;
+    sensitivity *int32
     // The tooltip that should be displayed for the label in a UI.
-    tooltip *string;
+    tooltip *string
 }
 // NewInformationProtectionLabel instantiates a new informationProtectionLabel and sets the default values.
 func NewInformationProtectionLabel()(*InformationProtectionLabel) {
@@ -50,9 +50,9 @@ func (m *InformationProtectionLabel) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["color"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["isActive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isActive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["parent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateParentLabelDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["sensitivity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["tooltip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tooltip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

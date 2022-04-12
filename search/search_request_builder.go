@@ -16,40 +16,40 @@ import (
 // SearchRequestBuilder provides operations to manage the searchEntity singleton.
 type SearchRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SearchRequestBuilderGetOptions options for Get
 type SearchRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SearchRequestBuilderGetQueryParameters;
+    QueryParameters *SearchRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SearchRequestBuilderGetQueryParameters get search
 type SearchRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SearchRequestBuilderPatchOptions options for Patch
 type SearchRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SearchEntityable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SearchEntityable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Acronyms the acronyms property
 func (m *SearchRequestBuilder) Acronyms()(*ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072.AcronymsRequestBuilder) {
@@ -62,7 +62,7 @@ func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["acronym_id"] = id
+        urlTplParams["acronym%2Did"] = id
     }
     return i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.NewAcronymItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -77,7 +77,7 @@ func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["bookmark_id"] = id
+        urlTplParams["bookmark%2Did"] = id
     }
     return i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.NewBookmarkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -85,7 +85,7 @@ func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SearchRequestBuilder) {
     m := &SearchRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/search{?select,expand}";
+    m.urlTemplate = "{+baseurl}/search{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *SearchRequestBuilder) QnasById(id string)(*i5a7b1d161e5927fae4776d21687
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["qna_id"] = id
+        urlTplParams["qna%2Did"] = id
     }
     return i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.NewQnaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

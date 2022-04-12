@@ -8,21 +8,21 @@ import (
 type ProjectParticipation struct {
     ItemFacet
     // Contains categories a user has associated with the project (for example, digital transformation, oil rig).
-    categories []string;
+    categories []string
     // Contains detailed information about the client the project was for.
-    client CompanyDetailable;
+    client CompanyDetailable
     // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-    collaborationTags []string;
+    collaborationTags []string
     // Lists people that also worked on the project.
-    colleagues []RelatedPersonable;
+    colleagues []RelatedPersonable
     // Contains detail about the user's role on the project.
-    detail PositionDetailable;
+    detail PositionDetailable
     // Contains a friendly name for the project.
-    displayName *string;
+    displayName *string
     // The Person or people who sponsored the project.
-    sponsors []RelatedPersonable;
+    sponsors []RelatedPersonable
     // The thumbnailUrl property
-    thumbnailUrl *string;
+    thumbnailUrl *string
 }
 // NewProjectParticipation instantiates a new projectParticipation and sets the default values.
 func NewProjectParticipation()(*ProjectParticipation) {
@@ -84,9 +84,9 @@ func (m *ProjectParticipation) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["client"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["client"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCompanyDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["collaborationTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["collaborationTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["colleagues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["colleagues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRelatedPersonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["detail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePositionDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["sponsors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRelatedPersonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

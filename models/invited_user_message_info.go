@@ -7,13 +7,13 @@ import (
 // InvitedUserMessageInfo 
 type InvitedUserMessageInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
-    ccRecipients []Recipientable;
+    ccRecipients []Recipientable
     // Customized message body you want to send if you don't want the default message.
-    customizedMessageBody *string;
+    customizedMessageBody *string
     // The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
-    messageLanguage *string;
+    messageLanguage *string
 }
 // NewInvitedUserMessageInfo instantiates a new invitedUserMessageInfo and sets the default values.
 func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
@@ -51,9 +51,9 @@ func (m *InvitedUserMessageInfo) GetCustomizedMessageBody()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["ccRecipients"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["ccRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["customizedMessageBody"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customizedMessageBody"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["messageLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messageLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

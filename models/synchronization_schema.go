@@ -8,11 +8,11 @@ import (
 type SynchronizationSchema struct {
     Entity
     // Contains the collection of directories and all of their objects.
-    directories []DirectoryDefinitionable;
+    directories []DirectoryDefinitionable
     // A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
-    synchronizationRules []SynchronizationRuleable;
+    synchronizationRules []SynchronizationRuleable
     // The version of the schema, updated automatically with every schema change.
-    version *string;
+    version *string
 }
 // NewSynchronizationSchema instantiates a new synchronizationSchema and sets the default values.
 func NewSynchronizationSchema()(*SynchronizationSchema) {
@@ -34,9 +34,9 @@ func (m *SynchronizationSchema) GetDirectories()([]DirectoryDefinitionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["directories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["synchronizationRules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["synchronizationRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationRuleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

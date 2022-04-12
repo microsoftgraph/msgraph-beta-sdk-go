@@ -12,10 +12,11 @@ const (
     SAML11_INCOMINGTOKENTYPE
     SAML20_INCOMINGTOKENTYPE
     UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE
+    REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE
 )
 
 func (i IncomingTokenType) String() string {
-    return []string{"NONE", "PRIMARYREFRESHTOKEN", "SAML11", "SAML20", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"NONE", "PRIMARYREFRESHTOKEN", "SAML11", "SAML20", "UNKNOWNFUTUREVALUE", "REMOTEDESKTOPTOKEN"}[i]
 }
 func ParseIncomingTokenType(v string) (interface{}, error) {
     result := NONE_INCOMINGTOKENTYPE
@@ -30,6 +31,8 @@ func ParseIncomingTokenType(v string) (interface{}, error) {
             result = SAML20_INCOMINGTOKENTYPE
         case "UNKNOWNFUTUREVALUE":
             result = UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE
+        case "REMOTEDESKTOPTOKEN":
+            result = REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE
         default:
             return 0, errors.New("Unknown IncomingTokenType value: " + v)
     }

@@ -9,43 +9,43 @@ import (
 type SecureScoreControlProfile struct {
     Entity
     // Control action type (Config, Review, Behavior).
-    actionType *string;
+    actionType *string
     // URL to where the control can be actioned.
-    actionUrl *string;
+    actionUrl *string
     // GUID string for tenant ID.
-    azureTenantId *string;
+    azureTenantId *string
     // The collection of compliance information associated with secure score control
-    complianceInformation []ComplianceInformationable;
+    complianceInformation []ComplianceInformationable
     // Control action category (Identity, Data, Device, Apps, Infrastructure).
-    controlCategory *string;
+    controlCategory *string
     // Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
-    controlStateUpdates []SecureScoreControlStateUpdateable;
+    controlStateUpdates []SecureScoreControlStateUpdateable
     // Flag to indicate if a control is depreciated.
-    deprecated *bool;
+    deprecated *bool
     // Resource cost of implemmentating control (low, moderate, high).
-    implementationCost *string;
+    implementationCost *string
     // Time at which the control profile entity was last modified. The Timestamp type represents date and time
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // max attainable score for the control.
-    maxScore *float64;
+    maxScore *float64
     // Microsoft's stack ranking of control.
-    rank *int32;
+    rank *int32
     // Description of what the control will help remediate.
-    remediation *string;
+    remediation *string
     // Description of the impact on users of the remediation.
-    remediationImpact *string;
+    remediationImpact *string
     // Service that owns the control (Exchange, Sharepoint, Azure AD).
-    service *string;
+    service *string
     // List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
-    threats []string;
+    threats []string
     // Control tier (Core, Defense in Depth, Advanced.)
-    tier *string;
+    tier *string
     // Title of the control.
-    title *string;
+    title *string
     // User impact of implementing control (low, moderate, high).
-    userImpact *string;
+    userImpact *string
     // The vendorInformation property
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewSecureScoreControlProfile instantiates a new secureScoreControlProfile and sets the default values.
 func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {
@@ -115,9 +115,9 @@ func (m *SecureScoreControlProfile) GetDeprecated()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["actionUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["complianceInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["complianceInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["controlCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["controlCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["controlStateUpdates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["controlStateUpdates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSecureScoreControlStateUpdateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["deprecated"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deprecated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["implementationCost"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["implementationCost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["maxScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["rank"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rank"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["remediation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["remediationImpact"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediationImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -255,7 +255,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["service"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -265,7 +265,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["threats"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["threats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["tier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["title"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["userImpact"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err

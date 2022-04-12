@@ -8,43 +8,43 @@ import (
 type Profile struct {
     Entity
     // The account property
-    account []UserAccountInformationable;
+    account []UserAccountInformationable
     // Represents details of addresses associated with the user.
-    addresses []ItemAddressable;
+    addresses []ItemAddressable
     // Represents the details of meaningful dates associated with a person.
-    anniversaries []PersonAnnualEventable;
+    anniversaries []PersonAnnualEventable
     // Represents the details of awards or honors associated with a person.
-    awards []PersonAwardable;
+    awards []PersonAwardable
     // Represents the details of certifications associated with a person.
-    certifications []PersonCertificationable;
+    certifications []PersonCertificationable
     // Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-    educationalActivities []EducationalActivityable;
+    educationalActivities []EducationalActivityable
     // Represents detailed information about email addresses associated with the user.
-    emails []ItemEmailable;
+    emails []ItemEmailable
     // Provides detailed information about interests the user has associated with themselves in various services.
-    interests []PersonInterestable;
+    interests []PersonInterestable
     // Represents detailed information about languages that a user has added to their profile.
-    languages []LanguageProficiencyable;
+    languages []LanguageProficiencyable
     // Represents the names a user has added to their profile.
-    names []PersonNameable;
+    names []PersonNameable
     // Represents notes that a user has added to their profile.
-    notes []PersonAnnotationable;
+    notes []PersonAnnotationable
     // Represents patents that a user has added to their profile.
-    patents []ItemPatentable;
+    patents []ItemPatentable
     // Represents detailed information about phone numbers associated with a user in various services.
-    phones []ItemPhoneable;
+    phones []ItemPhoneable
     // Represents detailed information about work positions associated with a user's profile.
-    positions []WorkPositionable;
+    positions []WorkPositionable
     // Represents detailed information about projects associated with a user.
-    projects []ProjectParticipationable;
+    projects []ProjectParticipationable
     // Represents details of any publications a user has added to their profile.
-    publications []ItemPublicationable;
+    publications []ItemPublicationable
     // Represents detailed information about skills associated with a user in various services.
-    skills []SkillProficiencyable;
+    skills []SkillProficiencyable
     // Represents web accounts the user has indicated they use or has added to their user profile.
-    webAccounts []WebAccountable;
+    webAccounts []WebAccountable
     // Represents detailed information about websites associated with a user in various services.
-    websites []PersonWebsiteable;
+    websites []PersonWebsiteable
 }
 // NewProfile instantiates a new profile and sets the default values.
 func NewProfile()(*Profile) {
@@ -114,9 +114,9 @@ func (m *Profile) GetEmails()([]ItemEmailable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["account"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserAccountInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["addresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["anniversaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["anniversaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonAnnualEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["awards"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["awards"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonAwardFromDiscriminatorValue)
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["certifications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonCertificationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["educationalActivities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["educationalActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationalActivityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["emails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemEmailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["interests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["interests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonInterestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["languages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["languages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLanguageProficiencyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["names"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["names"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonNameFromDiscriminatorValue)
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonAnnotationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -270,7 +270,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["patents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["patents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemPatentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["phones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemPhoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["positions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["positions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkPositionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -312,7 +312,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["projects"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["projects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProjectParticipationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -326,7 +326,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["publications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemPublicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -340,7 +340,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["skills"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skills"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSkillProficiencyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -354,7 +354,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["webAccounts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webAccounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWebAccountFromDiscriminatorValue)
         if err != nil {
             return err
@@ -368,7 +368,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["websites"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["websites"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonWebsiteFromDiscriminatorValue)
         if err != nil {
             return err

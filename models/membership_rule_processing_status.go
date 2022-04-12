@@ -8,13 +8,13 @@ import (
 // MembershipRuleProcessingStatus 
 type MembershipRuleProcessingStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
-    errorMessage *string;
+    errorMessage *string
     // Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
-    lastMembershipUpdated *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastMembershipUpdated *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
-    status *MembershipRuleProcessingStatusDetails;
+    status *MembershipRuleProcessingStatusDetails
 }
 // NewMembershipRuleProcessingStatus instantiates a new membershipRuleProcessingStatus and sets the default values.
 func NewMembershipRuleProcessingStatus()(*MembershipRuleProcessingStatus) {
@@ -44,9 +44,9 @@ func (m *MembershipRuleProcessingStatus) GetErrorMessage()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["errorMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["errorMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["lastMembershipUpdated"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastMembershipUpdated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMembershipRuleProcessingStatusDetails)
         if err != nil {
             return err

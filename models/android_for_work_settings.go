@@ -9,23 +9,23 @@ import (
 type AndroidForWorkSettings struct {
     Entity
     // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
-    bindStatus *AndroidForWorkBindStatus;
+    bindStatus *AndroidForWorkBindStatus
     // Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
-    deviceOwnerManagementEnabled *bool;
+    deviceOwnerManagementEnabled *bool
     // Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
-    enrollmentTarget *AndroidForWorkEnrollmentTarget;
+    enrollmentTarget *AndroidForWorkEnrollmentTarget
     // Last completion time for app sync
-    lastAppSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastAppSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
-    lastAppSyncStatus *AndroidForWorkSyncStatus;
+    lastAppSyncStatus *AndroidForWorkSyncStatus
     // Last modification time for Android for Work settings
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Organization name used when onboarding Android for Work
-    ownerOrganizationName *string;
+    ownerOrganizationName *string
     // Owner UPN that created the enterprise
-    ownerUserPrincipalName *string;
+    ownerUserPrincipalName *string
     // Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
-    targetGroupIds []string;
+    targetGroupIds []string
 }
 // NewAndroidForWorkSettings instantiates a new androidForWorkSettings and sets the default values.
 func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
@@ -63,9 +63,9 @@ func (m *AndroidForWorkSettings) GetEnrollmentTarget()(*AndroidForWorkEnrollment
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["bindStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bindStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidForWorkBindStatus)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceOwnerManagementEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceOwnerManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["enrollmentTarget"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidForWorkEnrollmentTarget)
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastAppSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastAppSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastAppSyncStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastAppSyncStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidForWorkSyncStatus)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["ownerOrganizationName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerOrganizationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["ownerUserPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["targetGroupIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetGroupIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

@@ -7,11 +7,11 @@ import (
 // ChangePasswordRequestBody provides operations to call the changePassword method.
 type ChangePasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The currentPassword property
-    currentPassword *string;
+    currentPassword *string
     // The newPassword property
-    newPassword *string;
+    newPassword *string
 }
 // NewChangePasswordRequestBody instantiates a new changePasswordRequestBody and sets the default values.
 func NewChangePasswordRequestBody()(*ChangePasswordRequestBody) {
@@ -41,9 +41,9 @@ func (m *ChangePasswordRequestBody) GetCurrentPassword()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChangePasswordRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["currentPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ChangePasswordRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["currentPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ChangePasswordRequestBody) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["newPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["newPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

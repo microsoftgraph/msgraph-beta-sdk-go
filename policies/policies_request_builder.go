@@ -49,40 +49,40 @@ import (
 // PoliciesRequestBuilder provides operations to manage the policyRoot singleton.
 type PoliciesRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // PoliciesRequestBuilderGetOptions options for Get
 type PoliciesRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *PoliciesRequestBuilderGetQueryParameters;
+    QueryParameters *PoliciesRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PoliciesRequestBuilderGetQueryParameters get policies
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // PoliciesRequestBuilderPatchOptions options for Patch
 type PoliciesRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyRootable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyRootable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessReviewPolicy the accessReviewPolicy property
 func (m *PoliciesRequestBuilder) AccessReviewPolicy()(*i8ab23dd53a7ba192025fbd1c53f22ecde4f5853cf55f14dadae7c3d54bfe6ecc.AccessReviewPolicyRequestBuilder) {
@@ -99,7 +99,7 @@ func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*ie
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["activityBasedTimeoutPolicy_id"] = id
+        urlTplParams["activityBasedTimeoutPolicy%2Did"] = id
     }
     return ie2aa8a198ac4cb5a2a1216675a0ebc84eb1ccb50965ba209e1e87acfa29f6a87.NewActivityBasedTimeoutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -118,7 +118,7 @@ func (m *PoliciesRequestBuilder) AppManagementPoliciesById(id string)(*iadb7d5b1
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["appManagementPolicy_id"] = id
+        urlTplParams["appManagementPolicy%2Did"] = id
     }
     return iadb7d5b1d89c4738d0e9ddc6026962b7c676342a12ca09eb194e68257d3c7eae.NewAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -141,7 +141,7 @@ func (m *PoliciesRequestBuilder) AuthorizationPolicyById(id string)(*i5059ef490c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["authorizationPolicy_id"] = id
+        urlTplParams["authorizationPolicy%2Did"] = id
     }
     return i5059ef490cc51ecd77364347b98e03ea1c34501de1dede44e9b212932f620cbc.NewAuthorizationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -160,7 +160,7 @@ func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*i3d72a8d0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["claimsMappingPolicy_id"] = id
+        urlTplParams["claimsMappingPolicy%2Did"] = id
     }
     return i3d72a8d05a1bc29e49b08e440b0f124e60a0a17cca39da307f0fc359f9ba8100.NewClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -175,7 +175,7 @@ func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*if5c9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conditionalAccessPolicy_id"] = id
+        urlTplParams["conditionalAccessPolicy%2Did"] = id
     }
     return if5c99775547db21eee7a16da27e1a94c2a2912f7796bc11e4a67761a02798bdb.NewConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -183,7 +183,7 @@ func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*if5c9
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PoliciesRequestBuilder) {
     m := &PoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies{?select,expand}";
+    m.urlTemplate = "{+baseurl}/policies{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -263,7 +263,7 @@ func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*i5632bf9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["featureRolloutPolicy_id"] = id
+        urlTplParams["featureRolloutPolicy%2Did"] = id
     }
     return i5632bf91798252c9bca8fa6eadd95db82f90a142d927c3c26e684ab6f2d90a28.NewFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -294,7 +294,7 @@ func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*ic2c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["homeRealmDiscoveryPolicy_id"] = id
+        urlTplParams["homeRealmDiscoveryPolicy%2Did"] = id
     }
     return ic2c067f4697fa94bc77e049a3cf157ed99ce46ed86b0a4e4b688d09062795945.NewHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -313,7 +313,7 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*ic8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobilityManagementPolicy_id"] = id
+        urlTplParams["mobilityManagementPolicy%2Did"] = id
     }
     return ic80fa25ff11a44e63435e8a7ab079ccac6e26dd9dc32f6b7a64be90be2f58011.NewMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -328,7 +328,7 @@ func (m *PoliciesRequestBuilder) MobileDeviceManagementPoliciesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobilityManagementPolicy_id"] = id
+        urlTplParams["mobilityManagementPolicy%2Did"] = id
     }
     return i987e92fec12c74acd600441b6cc0e2c18b324562d146333edb4272ddc51cc302.NewMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -359,7 +359,7 @@ func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*i2e9aca
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["permissionGrantPolicy_id"] = id
+        urlTplParams["permissionGrantPolicy%2Did"] = id
     }
     return i2e9acaa79a19f61068a524155872974e6a98a1692e31a3056613d7fadf7058aa.NewPermissionGrantPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -374,7 +374,7 @@ func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*if796ee5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleManagementPolicy_id"] = id
+        urlTplParams["unifiedRoleManagementPolicy%2Did"] = id
     }
     return if796ee537abe837147e4bdf42134467182183733786146dccb3e3c9dd5e93b54.NewUnifiedRoleManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -389,7 +389,7 @@ func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleManagementPolicyAssignment_id"] = id
+        urlTplParams["unifiedRoleManagementPolicyAssignment%2Did"] = id
     }
     return i3718ba1ac7c6b6b07b29bbaa42dc50cc122da4f510e54af905f2c63f5fba5585.NewUnifiedRoleManagementPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -404,7 +404,7 @@ func (m *PoliciesRequestBuilder) ServicePrincipalCreationPoliciesById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["servicePrincipalCreationPolicy_id"] = id
+        urlTplParams["servicePrincipalCreationPolicy%2Did"] = id
     }
     return ib3f60717aa9a4ac09e9bb8a247a048202cb7a0c0e5abad3e0036a87c95f673ae.NewServicePrincipalCreationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -419,7 +419,7 @@ func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*i45b1afd0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tokenIssuancePolicy_id"] = id
+        urlTplParams["tokenIssuancePolicy%2Did"] = id
     }
     return i45b1afd0d7bc9158e4c62ccf7aeb399e7aef62431980207f6b6df372b62073b9.NewTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -434,7 +434,7 @@ func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*i1e975520
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tokenLifetimePolicy_id"] = id
+        urlTplParams["tokenLifetimePolicy%2Did"] = id
     }
     return i1e97552013b3bffa16b2d23c422d3b88e120ef118f30ef817760eb98fdf1c32e.NewTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

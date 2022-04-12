@@ -8,31 +8,31 @@ import (
 // SynchronizationStatus 
 type SynchronizationStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
-    code *SynchronizationStatusCode;
+    code *SynchronizationStatusCode
     // Number of consecutive times this job failed.
-    countSuccessiveCompleteFailures *int64;
+    countSuccessiveCompleteFailures *int64
     // true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
-    escrowsPruned *bool;
+    escrowsPruned *bool
     // Details of the last execution of the job.
-    lastExecution SynchronizationTaskExecutionable;
+    lastExecution SynchronizationTaskExecutionable
     // Details of the last execution of this job, which didn't have any errors.
-    lastSuccessfulExecution SynchronizationTaskExecutionable;
+    lastSuccessfulExecution SynchronizationTaskExecutionable
     // Details of the last execution of the job, which exported objects into the target directory.
-    lastSuccessfulExecutionWithExports SynchronizationTaskExecutionable;
+    lastSuccessfulExecutionWithExports SynchronizationTaskExecutionable
     // Details of the progress of a job toward completion.
-    progress []SynchronizationProgressable;
+    progress []SynchronizationProgressable
     // If job is in quarantine, quarantine details.
-    quarantine SynchronizationQuarantineable;
+    quarantine SynchronizationQuarantineable
     // The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    steadyStateFirstAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    steadyStateFirstAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    steadyStateLastAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    steadyStateLastAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Count of synchronized objects, listed by object type.
-    synchronizedEntryCountByType []StringKeyLongValuePairable;
+    synchronizedEntryCountByType []StringKeyLongValuePairable
     // In the event of an error, the URL with the troubleshooting steps for the issue.
-    troubleshootingUrl *string;
+    troubleshootingUrl *string
 }
 // NewSynchronizationStatus instantiates a new synchronizationStatus and sets the default values.
 func NewSynchronizationStatus()(*SynchronizationStatus) {
@@ -78,9 +78,9 @@ func (m *SynchronizationStatus) GetEscrowsPruned()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["code"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSynchronizationStatusCode)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["countSuccessiveCompleteFailures"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countSuccessiveCompleteFailures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["escrowsPruned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["escrowsPruned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastExecution"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastExecution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastSuccessfulExecution"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSuccessfulExecution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastSuccessfulExecutionWithExports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSuccessfulExecutionWithExports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["progress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["progress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationProgressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["quarantine"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["quarantine"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationQuarantineFromDiscriminatorValue)
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["steadyStateFirstAchievedTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["steadyStateFirstAchievedTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["steadyStateLastAchievedTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["steadyStateLastAchievedTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["synchronizedEntryCountByType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["synchronizedEntryCountByType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateStringKeyLongValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["troubleshootingUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["troubleshootingUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

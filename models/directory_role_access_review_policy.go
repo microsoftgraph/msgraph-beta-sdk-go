@@ -8,7 +8,7 @@ import (
 type DirectoryRoleAccessReviewPolicy struct {
     Entity
     // The settings property
-    settings AccessReviewScheduleSettingsable;
+    settings AccessReviewScheduleSettingsable
 }
 // NewDirectoryRoleAccessReviewPolicy instantiates a new directoryRoleAccessReviewPolicy and sets the default values.
 func NewDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessReviewPolicy) {
@@ -22,9 +22,9 @@ func CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue(parseNode i878a
     return NewDirectoryRoleAccessReviewPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewScheduleSettingsFromDiscriminatorValue)
         if err != nil {
             return err

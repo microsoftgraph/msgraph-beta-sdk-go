@@ -9,35 +9,35 @@ import (
 type DeviceManagementScript struct {
     Entity
     // The list of group assignments for the device management script.
-    assignments []DeviceManagementScriptAssignmentable;
+    assignments []DeviceManagementScriptAssignmentable
     // The date and time the device management script was created. This property is read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional description for the device management script.
-    description *string;
+    description *string
     // List of run states for this script across all devices.
-    deviceRunStates []DeviceManagementScriptDeviceStateable;
+    deviceRunStates []DeviceManagementScriptDeviceStateable
     // Name of the device management script.
-    displayName *string;
+    displayName *string
     // Indicate whether the script signature needs be checked.
-    enforceSignatureCheck *bool;
+    enforceSignatureCheck *bool
     // Script file name.
-    fileName *string;
+    fileName *string
     // The list of group assignments for the device management script.
-    groupAssignments []DeviceManagementScriptGroupAssignmentable;
+    groupAssignments []DeviceManagementScriptGroupAssignmentable
     // The date and time the device management script was last modified. This property is read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tag IDs for this PowerShellScript instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // A value indicating whether the PowerShell script should run as 32-bit
-    runAs32Bit *bool;
+    runAs32Bit *bool
     // Indicates the type of execution context. Possible values are: system, user.
-    runAsAccount *RunAsAccountType;
+    runAsAccount *RunAsAccountType
     // Run summary for device management script.
-    runSummary DeviceManagementScriptRunSummaryable;
+    runSummary DeviceManagementScriptRunSummaryable
     // The script content.
-    scriptContent []byte;
+    scriptContent []byte
     // List of run states for this script across all users.
-    userRunStates []DeviceManagementScriptUserStateable;
+    userRunStates []DeviceManagementScriptUserStateable
 }
 // NewDeviceManagementScript instantiates a new deviceManagementScript and sets the default values.
 func NewDeviceManagementScript()(*DeviceManagementScript) {
@@ -99,9 +99,9 @@ func (m *DeviceManagementScript) GetEnforceSignatureCheck()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceRunStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["enforceSignatureCheck"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforceSignatureCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["fileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["groupAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -193,7 +193,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -203,7 +203,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["runAs32Bit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runAs32Bit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["runAsAccount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runAsAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRunAsAccountType)
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["runSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["scriptContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scriptContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["userRunStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptUserStateFromDiscriminatorValue)
         if err != nil {
             return err

@@ -9,29 +9,29 @@ import (
 type DeviceManagementTemplate struct {
     Entity
     // Collection of setting categories within the template
-    categories []DeviceManagementTemplateSettingCategoryable;
+    categories []DeviceManagementTemplateSettingCategoryable
     // The template's description
-    description *string;
+    description *string
     // The template's display name
-    displayName *string;
+    displayName *string
     // Number of Intents created from this template.
-    intentCount *int32;
+    intentCount *int32
     // The template is deprecated or not. Intents cannot be created from a deprecated template.
-    isDeprecated *bool;
+    isDeprecated *bool
     // Collection of templates this template can migrate to
-    migratableTo []DeviceManagementTemplateable;
+    migratableTo []DeviceManagementTemplateable
     // The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
-    platformType *PolicyPlatformType;
+    platformType *PolicyPlatformType
     // When the template was published
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Collection of all settings this template has
-    settings []DeviceManagementSettingInstanceable;
+    settings []DeviceManagementSettingInstanceable
     // The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
-    templateSubtype *DeviceManagementTemplateSubtype;
+    templateSubtype *DeviceManagementTemplateSubtype
     // The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
-    templateType *DeviceManagementTemplateType;
+    templateType *DeviceManagementTemplateType
     // The template's version information
-    versionInfo *string;
+    versionInfo *string
 }
 // NewDeviceManagementTemplate instantiates a new deviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
@@ -69,9 +69,9 @@ func (m *DeviceManagementTemplate) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTemplateSettingCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["intentCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intentCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isDeprecated"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeprecated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["migratableTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["migratableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTemplateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["platformType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platformType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePolicyPlatformType)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["publishedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["templateSubtype"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateSubtype"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementTemplateSubtype)
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["templateType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementTemplateType)
         if err != nil {
             return err
@@ -193,7 +193,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["versionInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["versionInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

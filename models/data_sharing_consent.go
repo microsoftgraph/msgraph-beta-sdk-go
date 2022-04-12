@@ -9,17 +9,17 @@ import (
 type DataSharingConsent struct {
     Entity
     // The time consent was granted for this account
-    grantDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    grantDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The granted state for the data sharing consent
-    granted *bool;
+    granted *bool
     // The Upn of the user that granted consent for this account
-    grantedByUpn *string;
+    grantedByUpn *string
     // The UserId of the user that granted consent for this account
-    grantedByUserId *string;
+    grantedByUserId *string
     // The display name of the service work flow
-    serviceDisplayName *string;
+    serviceDisplayName *string
     // The TermsUrl for the data sharing consent
-    termsUrl *string;
+    termsUrl *string
 }
 // NewDataSharingConsent instantiates a new dataSharingConsent and sets the default values.
 func NewDataSharingConsent()(*DataSharingConsent) {
@@ -33,9 +33,9 @@ func CreateDataSharingConsentFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewDataSharingConsent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["grantDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["granted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["granted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["grantedByUpn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantedByUpn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["grantedByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantedByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["serviceDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["termsUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["termsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

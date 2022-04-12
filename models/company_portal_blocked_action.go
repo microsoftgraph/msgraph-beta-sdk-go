@@ -7,13 +7,13 @@ import (
 // CompanyPortalBlockedAction blocked actions on the company portal as per platform and device ownership types
 type CompanyPortalBlockedAction struct {
     // Device Action. Possible values are: unknown, remove, reset.
-    action *CompanyPortalAction;
+    action *CompanyPortalAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Device ownership type. Possible values are: unknown, company, personal.
-    ownerType *OwnerType;
+    ownerType *OwnerType
     // Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
-    platform *DevicePlatformType;
+    platform *DevicePlatformType
 }
 // NewCompanyPortalBlockedAction instantiates a new companyPortalBlockedAction and sets the default values.
 func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
@@ -43,9 +43,9 @@ func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCompanyPortalAction)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["ownerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOwnerType)
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["platform"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDevicePlatformType)
         if err != nil {
             return err

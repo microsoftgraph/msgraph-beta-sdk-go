@@ -8,19 +8,19 @@ import (
 type DeviceConfigurationUserStateSummary struct {
     Entity
     // Number of compliant users
-    compliantUserCount *int32;
+    compliantUserCount *int32
     // Number of conflict users
-    conflictUserCount *int32;
+    conflictUserCount *int32
     // Number of error users
-    errorUserCount *int32;
+    errorUserCount *int32
     // Number of NonCompliant users
-    nonCompliantUserCount *int32;
+    nonCompliantUserCount *int32
     // Number of not applicable users
-    notApplicableUserCount *int32;
+    notApplicableUserCount *int32
     // Number of remediated users
-    remediatedUserCount *int32;
+    remediatedUserCount *int32
     // Number of unknown users
-    unknownUserCount *int32;
+    unknownUserCount *int32
 }
 // NewDeviceConfigurationUserStateSummary instantiates a new deviceConfigurationUserStateSummary and sets the default values.
 func NewDeviceConfigurationUserStateSummary()(*DeviceConfigurationUserStateSummary) {
@@ -58,9 +58,9 @@ func (m *DeviceConfigurationUserStateSummary) GetErrorUserCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["compliantUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliantUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["conflictUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["errorUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["nonCompliantUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nonCompliantUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["notApplicableUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notApplicableUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["remediatedUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediatedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["unknownUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

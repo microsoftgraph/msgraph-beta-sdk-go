@@ -8,13 +8,13 @@ import (
 type SensitivityPolicySettings struct {
     Entity
     // The applicableTo property
-    applicableTo *SensitivityLabelTarget;
+    applicableTo *SensitivityLabelTarget
     // The downgradeSensitivityRequiresJustification property
-    downgradeSensitivityRequiresJustification *bool;
+    downgradeSensitivityRequiresJustification *bool
     // The helpWebUrl property
-    helpWebUrl *string;
+    helpWebUrl *string
     // The isMandatory property
-    isMandatory *bool;
+    isMandatory *bool
 }
 // NewSensitivityPolicySettings instantiates a new sensitivityPolicySettings and sets the default values.
 func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {
@@ -44,9 +44,9 @@ func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicableTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitivityLabelTarget)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["downgradeSensitivityRequiresJustification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["downgradeSensitivityRequiresJustification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["helpWebUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["helpWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["isMandatory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMandatory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

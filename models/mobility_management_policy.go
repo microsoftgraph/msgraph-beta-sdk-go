@@ -8,21 +8,21 @@ import (
 type MobilityManagementPolicy struct {
     Entity
     // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
-    appliesTo *PolicyScope;
+    appliesTo *PolicyScope
     // Compliance URL of the mobility management application.
-    complianceUrl *string;
+    complianceUrl *string
     // Description of the mobility management application.
-    description *string;
+    description *string
     // Discovery URL of the mobility management application.
-    discoveryUrl *string;
+    discoveryUrl *string
     // Display name of the mobility management application.
-    displayName *string;
+    displayName *string
     // Azure AD groups under the scope of the mobility management application if appliesTo is selected
-    includedGroups []Groupable;
+    includedGroups []Groupable
     // Whether policy is valid. Invalid policies may not be updated and should be deleted.
-    isValid *bool;
+    isValid *bool
     // Terms of Use URL of the mobility management application.
-    termsOfUseUrl *string;
+    termsOfUseUrl *string
 }
 // NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
@@ -76,9 +76,9 @@ func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appliesTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePolicyScope)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["complianceUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["complianceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["discoveryUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discoveryUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["includedGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includedGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isValid"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isValid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["termsOfUseUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["termsOfUseUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,21 +7,21 @@ import (
 // RecurrencePattern 
 type RecurrencePattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-    dayOfMonth *int32;
+    dayOfMonth *int32
     // A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-    daysOfWeek []DayOfWeek;
+    daysOfWeek []DayOfWeek
     // The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
-    firstDayOfWeek *DayOfWeek;
+    firstDayOfWeek *DayOfWeek
     // Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
-    index *WeekIndex;
+    index *WeekIndex
     // The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
-    interval *int32;
+    interval *int32
     // The month in which the event occurs.  This is a number from 1 to 12.
-    month *int32;
+    month *int32
     // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
-    type_escaped *RecurrencePatternType;
+    type_escaped *RecurrencePatternType
 }
 // NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
 func NewRecurrencePattern()(*RecurrencePattern) {
@@ -59,9 +59,9 @@ func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dayOfMonth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dayOfMonth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["daysOfWeek"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["daysOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["firstDayOfWeek"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firstDayOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDayOfWeek)
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["index"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["index"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWeekIndex)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["interval"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["interval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["month"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["month"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrencePatternType)
         if err != nil {
             return err

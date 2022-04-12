@@ -8,13 +8,13 @@ import (
 // EnrollAssetsByIdRequestBody provides operations to call the enrollAssetsById method.
 type EnrollAssetsByIdRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ids property
-    ids []string;
+    ids []string
     // The memberEntityType property
-    memberEntityType *string;
+    memberEntityType *string
     // The updateCategory property
-    updateCategory *i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdateCategory;
+    updateCategory *i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdateCategory
 }
 // NewEnrollAssetsByIdRequestBody instantiates a new enrollAssetsByIdRequestBody and sets the default values.
 func NewEnrollAssetsByIdRequestBody()(*EnrollAssetsByIdRequestBody) {
@@ -36,9 +36,9 @@ func (m *EnrollAssetsByIdRequestBody) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EnrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["ids"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *EnrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["ids"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *EnrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["memberEntityType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberEntityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *EnrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["updateCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ParseUpdateCategory)
         if err != nil {
             return err

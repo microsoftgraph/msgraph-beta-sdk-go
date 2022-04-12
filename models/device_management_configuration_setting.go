@@ -8,9 +8,9 @@ import (
 type DeviceManagementConfigurationSetting struct {
     Entity
     // List of related Setting Definitions. This property is read-only.
-    settingDefinitions []DeviceManagementConfigurationSettingDefinitionable;
+    settingDefinitions []DeviceManagementConfigurationSettingDefinitionable
     // Setting instance within policy
-    settingInstance DeviceManagementConfigurationSettingInstanceable;
+    settingInstance DeviceManagementConfigurationSettingInstanceable
 }
 // NewDeviceManagementConfigurationSetting instantiates a new deviceManagementConfigurationSetting and sets the default values.
 func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSetting) {
@@ -24,9 +24,9 @@ func CreateDeviceManagementConfigurationSettingFromDiscriminatorValue(parseNode 
     return NewDeviceManagementConfigurationSetting(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["settingDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["settingInstance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingInstance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue)
         if err != nil {
             return err

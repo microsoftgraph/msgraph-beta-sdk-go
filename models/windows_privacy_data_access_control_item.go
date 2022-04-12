@@ -8,13 +8,13 @@ import (
 type WindowsPrivacyDataAccessControlItem struct {
     Entity
     // This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
-    accessLevel *WindowsPrivacyDataAccessLevel;
+    accessLevel *WindowsPrivacyDataAccessLevel
     // The Package Family Name of a Windows app. When set, the access level applies to the specified application.
-    appDisplayName *string;
+    appDisplayName *string
     // The Package Family Name of a Windows app. When set, the access level applies to the specified application.
-    appPackageFamilyName *string;
+    appPackageFamilyName *string
     // This indicates a privacy data category to which the specific access control will apply. Possible values are: notConfigured, accountInfo, appsRunInBackground, calendar, callHistory, camera, contacts, diagnosticsInfo, email, location, messaging, microphone, motion, notifications, phone, radios, tasks, syncWithDevices, trustedDevices.
-    dataCategory *WindowsPrivacyDataCategory;
+    dataCategory *WindowsPrivacyDataCategory
 }
 // NewWindowsPrivacyDataAccessControlItem instantiates a new windowsPrivacyDataAccessControlItem and sets the default values.
 func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlItem) {
@@ -60,9 +60,9 @@ func (m *WindowsPrivacyDataAccessControlItem) GetDataCategory()(*WindowsPrivacyD
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsPrivacyDataAccessLevel)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["appPackageFamilyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appPackageFamilyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["dataCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsPrivacyDataCategory)
         if err != nil {
             return err

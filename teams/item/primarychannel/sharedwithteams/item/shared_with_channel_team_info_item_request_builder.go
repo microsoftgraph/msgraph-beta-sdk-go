@@ -11,49 +11,49 @@ import (
 // SharedWithChannelTeamInfoItemRequestBuilder provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 type SharedWithChannelTeamInfoItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SharedWithChannelTeamInfoItemRequestBuilderDeleteOptions options for Delete
 type SharedWithChannelTeamInfoItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SharedWithChannelTeamInfoItemRequestBuilderGetOptions options for Get
 type SharedWithChannelTeamInfoItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters;
+    QueryParameters *SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters get sharedWithTeams from teams
+// SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters a collection of teams shared with the channel.
 type SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SharedWithChannelTeamInfoItemRequestBuilderPatchOptions options for Patch
 type SharedWithChannelTeamInfoItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedWithChannelTeamInfoable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedWithChannelTeamInfoable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AllowedMembers the allowedMembers property
 func (m *SharedWithChannelTeamInfoItemRequestBuilder) AllowedMembers()(*i898623a0cb83375add7a3c4a495361c6d58de884e01848135af7088f6f2550bb.AllowedMembersRequestBuilder) {
@@ -66,7 +66,7 @@ func (m *SharedWithChannelTeamInfoItemRequestBuilder) AllowedMembersById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conversationMember_id"] = id
+        urlTplParams["conversationMember%2Did"] = id
     }
     return i3d662ddb1ded98393a62765983978f7d110bab072bf7af4a74059d8ec5f44b98.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -74,7 +74,7 @@ func (m *SharedWithChannelTeamInfoItemRequestBuilder) AllowedMembersById(id stri
 func NewSharedWithChannelTeamInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharedWithChannelTeamInfoItemRequestBuilder) {
     m := &SharedWithChannelTeamInfoItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team_id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -106,7 +106,7 @@ func (m *SharedWithChannelTeamInfoItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get sharedWithTeams from teams
+// CreateGetRequestInformation a collection of teams shared with the channel.
 func (m *SharedWithChannelTeamInfoItemRequestBuilder) CreateGetRequestInformation(options *SharedWithChannelTeamInfoItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,7 +160,7 @@ func (m *SharedWithChannelTeamInfoItemRequestBuilder) Delete(options *SharedWith
     }
     return nil
 }
-// Get get sharedWithTeams from teams
+// Get a collection of teams shared with the channel.
 func (m *SharedWithChannelTeamInfoItemRequestBuilder) Get(options *SharedWithChannelTeamInfoItemRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedWithChannelTeamInfoable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -7,19 +7,19 @@ import (
 // TeamworkPeripheralsHealth 
 type TeamworkPeripheralsHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The health details about the communication speaker.
-    communicationSpeakerHealth TeamworkPeripheralHealthable;
+    communicationSpeakerHealth TeamworkPeripheralHealthable
     // The health details about the content camera.
-    contentCameraHealth TeamworkPeripheralHealthable;
+    contentCameraHealth TeamworkPeripheralHealthable
     // The health details about displays.
-    displayHealthCollection []TeamworkPeripheralHealthable;
+    displayHealthCollection []TeamworkPeripheralHealthable
     // The health details about the microphone.
-    microphoneHealth TeamworkPeripheralHealthable;
+    microphoneHealth TeamworkPeripheralHealthable
     // The health details about the room camera.
-    roomCameraHealth TeamworkPeripheralHealthable;
+    roomCameraHealth TeamworkPeripheralHealthable
     // The health details about the speaker.
-    speakerHealth TeamworkPeripheralHealthable;
+    speakerHealth TeamworkPeripheralHealthable
 }
 // NewTeamworkPeripheralsHealth instantiates a new teamworkPeripheralsHealth and sets the default values.
 func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
@@ -65,9 +65,9 @@ func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPerip
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["communicationSpeakerHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["communicationSpeakerHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["contentCameraHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentCameraHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["displayHealthCollection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayHealthCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["microphoneHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microphoneHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["roomCameraHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roomCameraHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["speakerHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["speakerHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err

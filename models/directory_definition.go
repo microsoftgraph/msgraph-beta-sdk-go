@@ -9,17 +9,17 @@ import (
 type DirectoryDefinition struct {
     Entity
     // Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
-    discoverabilities *DirectoryDefinitionDiscoverabilities;
+    discoverabilities *DirectoryDefinitionDiscoverabilities
     // Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    discoveryDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    discoveryDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of the directory. Must be unique within the synchronization schema. Not nullable.
-    name *string;
+    name *string
     // Collection of objects supported by the directory.
-    objects []ObjectDefinitionable;
+    objects []ObjectDefinitionable
     // The readOnly property
-    readOnly *bool;
+    readOnly *bool
     // Read only value that indicates version discovered. null if discovery has not yet occurred.
-    version *string;
+    version *string
 }
 // NewDirectoryDefinition instantiates a new directoryDefinition and sets the default values.
 func NewDirectoryDefinition()(*DirectoryDefinition) {
@@ -49,9 +49,9 @@ func (m *DirectoryDefinition) GetDiscoveryDateTime()(*i336074805fc853987abe6f7fe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["discoverabilities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discoverabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDirectoryDefinitionDiscoverabilities)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["discoveryDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discoveryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["objects"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["objects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateObjectDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["readOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["readOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

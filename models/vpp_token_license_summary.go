@@ -7,17 +7,17 @@ import (
 // VppTokenLicenseSummary license summary of a given app in a token.
 type VppTokenLicenseSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Apple Id associated with the given Apple Volume Purchase Program Token.
-    appleId *string;
+    appleId *string
     // The number of VPP licenses available.
-    availableLicenseCount *int32;
+    availableLicenseCount *int32
     // The organization associated with the Apple Volume Purchase Program Token.
-    organizationName *string;
+    organizationName *string
     // The number of VPP licenses in use.
-    usedLicenseCount *int32;
+    usedLicenseCount *int32
     // Identifier of the VPP token.
-    vppTokenId *string;
+    vppTokenId *string
 }
 // NewVppTokenLicenseSummary instantiates a new vppTokenLicenseSummary and sets the default values.
 func NewVppTokenLicenseSummary()(*VppTokenLicenseSummary) {
@@ -55,9 +55,9 @@ func (m *VppTokenLicenseSummary) GetAvailableLicenseCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["appleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["appleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["availableLicenseCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availableLicenseCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["organizationName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organizationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["usedLicenseCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usedLicenseCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["vppTokenId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vppTokenId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

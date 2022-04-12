@@ -7,13 +7,13 @@ import (
 // ManagementIntentInfo 
 type ManagementIntentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The display name for the management intent. Optional. Read-only.
-    managementIntentDisplayName *string;
+    managementIntentDisplayName *string
     // The identifier for the management intent. Required. Read-only.
-    managementIntentId *string;
+    managementIntentId *string
     // The collection of management template information associated with the management intent. Optional. Read-only.
-    managementTemplates []ManagementTemplateDetailedInfoable;
+    managementTemplates []ManagementTemplateDetailedInfoable
 }
 // NewManagementIntentInfo instantiates a new managementIntentInfo and sets the default values.
 func NewManagementIntentInfo()(*ManagementIntentInfo) {
@@ -35,9 +35,9 @@ func (m *ManagementIntentInfo) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["managementIntentDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["managementIntentDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["managementIntentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementIntentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["managementTemplates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateDetailedInfoFromDiscriminatorValue)
         if err != nil {
             return err

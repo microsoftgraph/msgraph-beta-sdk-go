@@ -7,13 +7,13 @@ import (
 // UserExperienceAnalyticsCloudManagementDevicesSummary the user experience work from anywhere Cloud management devices summary.
 type UserExperienceAnalyticsCloudManagementDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Total number of  co-managed devices.
-    coManagedDeviceCount *int32;
+    coManagedDeviceCount *int32
     // The count of intune devices that are not autopilot registerd.
-    intuneDeviceCount *int32;
+    intuneDeviceCount *int32
     // Total count of tenant attach devices.
-    tenantAttachDeviceCount *int32;
+    tenantAttachDeviceCount *int32
 }
 // NewUserExperienceAnalyticsCloudManagementDevicesSummary instantiates a new userExperienceAnalyticsCloudManagementDevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsCloudManagementDevicesSummary()(*UserExperienceAnalyticsCloudManagementDevicesSummary) {
@@ -43,9 +43,9 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetCoManagedDevic
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["coManagedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["coManagedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeseriali
         }
         return nil
     }
-    res["intuneDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeseriali
         }
         return nil
     }
-    res["tenantAttachDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantAttachDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

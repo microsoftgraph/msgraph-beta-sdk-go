@@ -8,7 +8,7 @@ import (
 type TenantRelationshipAccessPolicyBase struct {
     PolicyBase
     // The definition property
-    definition []string;
+    definition []string
 }
 // NewTenantRelationshipAccessPolicyBase instantiates a new tenantRelationshipAccessPolicyBase and sets the default values.
 func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase) {
@@ -30,9 +30,9 @@ func (m *TenantRelationshipAccessPolicyBase) GetDefinition()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TenantRelationshipAccessPolicyBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TenantRelationshipAccessPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["definition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

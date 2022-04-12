@@ -8,27 +8,27 @@ import (
 type RelyingPartyDetailedSummary struct {
     Entity
     // Number of failed sign in on Active Directory Federation Service in the period specified.
-    failedSignInCount *int64;
+    failedSignInCount *int64
     // Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
-    migrationStatus *MigrationStatus;
+    migrationStatus *MigrationStatus
     // Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
-    migrationValidationDetails []KeyValuePairable;
+    migrationValidationDetails []KeyValuePairable
     // This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
-    relyingPartyId *string;
+    relyingPartyId *string
     // Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
-    relyingPartyName *string;
+    relyingPartyName *string
     // Specifies where the relying party expects to receive the token.
-    replyUrls []string;
+    replyUrls []string
     // Uniquely identifies the Active Directory forest.
-    serviceId *string;
+    serviceId *string
     // Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
-    signInSuccessRate *float64;
+    signInSuccessRate *float64
     // Number of successful sign ins on Active Directory Federation Service.
-    successfulSignInCount *int64;
+    successfulSignInCount *int64
     // Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
-    totalSignInCount *int64;
+    totalSignInCount *int64
     // Number of unique users that have signed into the application.
-    uniqueUserCount *int64;
+    uniqueUserCount *int64
 }
 // NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
@@ -50,9 +50,9 @@ func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["failedSignInCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["migrationStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["migrationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMigrationStatus)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["migrationValidationDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["migrationValidationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["relyingPartyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relyingPartyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["relyingPartyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relyingPartyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["replyUrls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["replyUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["serviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["signInSuccessRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInSuccessRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["successfulSignInCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successfulSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["totalSignInCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["uniqueUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uniqueUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

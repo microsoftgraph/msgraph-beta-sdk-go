@@ -8,9 +8,9 @@ import (
 type ExternalIdentitiesPolicy struct {
     PolicyBase
     // The allowDeletedIdentitiesDataRemoval property
-    allowDeletedIdentitiesDataRemoval *bool;
+    allowDeletedIdentitiesDataRemoval *bool
     // The allowExternalIdentitiesToLeave property
-    allowExternalIdentitiesToLeave *bool;
+    allowExternalIdentitiesToLeave *bool
 }
 // NewExternalIdentitiesPolicy instantiates a new externalIdentitiesPolicy and sets the default values.
 func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
@@ -40,9 +40,9 @@ func (m *ExternalIdentitiesPolicy) GetAllowExternalIdentitiesToLeave()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExternalIdentitiesPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExternalIdentitiesPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["allowDeletedIdentitiesDataRemoval"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowDeletedIdentitiesDataRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *ExternalIdentitiesPolicy) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["allowExternalIdentitiesToLeave"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowExternalIdentitiesToLeave"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

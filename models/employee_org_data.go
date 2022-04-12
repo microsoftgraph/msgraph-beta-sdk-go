@@ -7,11 +7,11 @@ import (
 // EmployeeOrgData 
 type EmployeeOrgData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The cost center associated with the user. Returned only on $select. Supports $filter.
-    costCenter *string;
+    costCenter *string
     // The name of the division in which the user works. Returned only on $select. Supports $filter.
-    division *string;
+    division *string
 }
 // NewEmployeeOrgData instantiates a new employeeOrgData and sets the default values.
 func NewEmployeeOrgData()(*EmployeeOrgData) {
@@ -49,9 +49,9 @@ func (m *EmployeeOrgData) GetDivision()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EmployeeOrgData) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["costCenter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *EmployeeOrgData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["costCenter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *EmployeeOrgData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["division"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["division"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

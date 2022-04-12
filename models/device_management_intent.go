@@ -9,33 +9,33 @@ import (
 type DeviceManagementIntent struct {
     Entity
     // Collection of assignments
-    assignments []DeviceManagementIntentAssignmentable;
+    assignments []DeviceManagementIntentAssignmentable
     // Collection of setting categories within the intent
-    categories []DeviceManagementIntentSettingCategoryable;
+    categories []DeviceManagementIntentSettingCategoryable
     // The user given description
-    description *string;
+    description *string
     // Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-    deviceSettingStateSummaries []DeviceManagementIntentDeviceSettingStateSummaryable;
+    deviceSettingStateSummaries []DeviceManagementIntentDeviceSettingStateSummaryable
     // Collection of states of all devices that the intent is applied to
-    deviceStates []DeviceManagementIntentDeviceStateable;
+    deviceStates []DeviceManagementIntentDeviceStateable
     // A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
-    deviceStateSummary DeviceManagementIntentDeviceStateSummaryable;
+    deviceStateSummary DeviceManagementIntentDeviceStateSummaryable
     // The user given display name
-    displayName *string;
+    displayName *string
     // Signifies whether or not the intent is assigned to users
-    isAssigned *bool;
+    isAssigned *bool
     // When the intent was last modified
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Collection of all settings to be applied
-    settings []DeviceManagementSettingInstanceable;
+    settings []DeviceManagementSettingInstanceable
     // The ID of the template this intent was created from (if any)
-    templateId *string;
+    templateId *string
     // Collection of states of all users that the intent is applied to
-    userStates []DeviceManagementIntentUserStateable;
+    userStates []DeviceManagementIntentUserStateable
     // A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-    userStateSummary DeviceManagementIntentUserStateSummaryable;
+    userStateSummary DeviceManagementIntentUserStateSummaryable
 }
 // NewDeviceManagementIntent instantiates a new deviceManagementIntent and sets the default values.
 func NewDeviceManagementIntent()(*DeviceManagementIntent) {
@@ -105,9 +105,9 @@ func (m *DeviceManagementIntent) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementIntentAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementIntentSettingCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceSettingStateSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceSettingStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementIntentDeviceSettingStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementIntentDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceStateSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -193,7 +193,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["isAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -203,7 +203,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -213,7 +213,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["templateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -251,7 +251,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["userStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementIntentUserStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -265,7 +265,7 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["userStateSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err

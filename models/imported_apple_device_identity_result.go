@@ -8,7 +8,7 @@ import (
 type ImportedAppleDeviceIdentityResult struct {
     ImportedAppleDeviceIdentity
     // Status of imported device identity
-    status *bool;
+    status *bool
 }
 // NewImportedAppleDeviceIdentityResult instantiates a new importedAppleDeviceIdentityResult and sets the default values.
 func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) {
@@ -22,9 +22,9 @@ func CreateImportedAppleDeviceIdentityResultFromDiscriminatorValue(parseNode i87
     return NewImportedAppleDeviceIdentityResult(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ImportedAppleDeviceIdentityResult) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ImportedAppleDeviceIdentityResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ImportedAppleDeviceIdentity.GetFieldDeserializers()
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

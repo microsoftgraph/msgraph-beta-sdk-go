@@ -7,33 +7,33 @@ import (
 // DeviceManagementSettings 
 type DeviceManagementSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The property to determine if Android device administrator enrollment is enabled for this account.
-    androidDeviceAdministratorEnrollmentEnabled *bool;
+    androidDeviceAdministratorEnrollmentEnabled *bool
     // The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.
-    derivedCredentialProvider *DerivedCredentialProviderType;
+    derivedCredentialProvider *DerivedCredentialProviderType
     // The Derived Credential Provider self-service URI.
-    derivedCredentialUrl *string;
+    derivedCredentialUrl *string
     // The number of days a device is allowed to go without checking in to remain compliant.
-    deviceComplianceCheckinThresholdDays *int32;
+    deviceComplianceCheckinThresholdDays *int32
     // When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
-    deviceInactivityBeforeRetirementInDay *int32;
+    deviceInactivityBeforeRetirementInDay *int32
     // Determines whether the autopilot diagnostic feature is enabled or not.
-    enableAutopilotDiagnostics *bool;
+    enableAutopilotDiagnostics *bool
     // Determines whether the device group membership report feature is enabled or not.
-    enableDeviceGroupMembershipReport *bool;
+    enableDeviceGroupMembershipReport *bool
     // Determines whether the enhanced troubleshooting UX is enabled or not.
-    enableEnhancedTroubleshootingExperience *bool;
+    enableEnhancedTroubleshootingExperience *bool
     // Determines whether the log collection feature should be available for use.
-    enableLogCollection *bool;
+    enableLogCollection *bool
     // Is feature enabled or not for enhanced jailbreak detection.
-    enhancedJailBreak *bool;
+    enhancedJailBreak *bool
     // The property to determine whether to ignore unsupported compliance settings on certian models of devices.
-    ignoreDevicesForUnsupportedSettingsEnabled *bool;
+    ignoreDevicesForUnsupportedSettingsEnabled *bool
     // Is feature enabled or not for scheduled action for rule.
-    isScheduledActionEnabled *bool;
+    isScheduledActionEnabled *bool
     // Device should be noncompliant when there is no compliance policy targeted when this is true
-    secureByDefault *bool;
+    secureByDefault *bool
 }
 // NewDeviceManagementSettings instantiates a new deviceManagementSettings and sets the default values.
 func NewDeviceManagementSettings()(*DeviceManagementSettings) {
@@ -135,9 +135,9 @@ func (m *DeviceManagementSettings) GetEnhancedJailBreak()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["androidDeviceAdministratorEnrollmentEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["androidDeviceAdministratorEnrollmentEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["derivedCredentialProvider"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["derivedCredentialProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDerivedCredentialProviderType)
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["derivedCredentialUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["derivedCredentialUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["deviceComplianceCheckinThresholdDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceComplianceCheckinThresholdDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["deviceInactivityBeforeRetirementInDay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceInactivityBeforeRetirementInDay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["enableAutopilotDiagnostics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableAutopilotDiagnostics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["enableDeviceGroupMembershipReport"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableDeviceGroupMembershipReport"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["enableEnhancedTroubleshootingExperience"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableEnhancedTroubleshootingExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["enableLogCollection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableLogCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["enhancedJailBreak"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enhancedJailBreak"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["ignoreDevicesForUnsupportedSettingsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ignoreDevicesForUnsupportedSettingsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isScheduledActionEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isScheduledActionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["secureByDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["secureByDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

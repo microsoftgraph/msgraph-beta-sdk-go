@@ -9,11 +9,11 @@ import (
 type AzureADFeatureUsage struct {
     Entity
     // The featureName property
-    featureName *string;
+    featureName *string
     // The snapshotDateTime property
-    snapshotDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    snapshotDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The usage property
-    usage *int32;
+    usage *int32
 }
 // NewAzureADFeatureUsage instantiates a new azureADFeatureUsage and sets the default values.
 func NewAzureADFeatureUsage()(*AzureADFeatureUsage) {
@@ -35,9 +35,9 @@ func (m *AzureADFeatureUsage) GetFeatureName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["featureName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featureName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["snapshotDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["snapshotDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["usage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

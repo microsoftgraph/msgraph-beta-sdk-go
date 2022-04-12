@@ -8,13 +8,13 @@ import (
 type PrintTask struct {
     Entity
     // The definition property
-    definition PrintTaskDefinitionable;
+    definition PrintTaskDefinitionable
     // The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
-    parentUrl *string;
+    parentUrl *string
     // The status property
-    status PrintTaskStatusable;
+    status PrintTaskStatusable
     // The trigger property
-    trigger PrintTaskTriggerable;
+    trigger PrintTaskTriggerable
 }
 // NewPrintTask instantiates a new printTask and sets the default values.
 func NewPrintTask()(*PrintTask) {
@@ -36,9 +36,9 @@ func (m *PrintTask) GetDefinition()(PrintTaskDefinitionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["definition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrintTaskDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["parentUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrintTaskStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["trigger"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trigger"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrintTaskTriggerFromDiscriminatorValue)
         if err != nil {
             return err

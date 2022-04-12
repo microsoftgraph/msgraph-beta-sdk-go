@@ -7,17 +7,17 @@ import (
 // VerifiedDomain 
 type VerifiedDomain struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // For example, 'Email', 'OfficeCommunicationsOnline'.
-    capabilities *string;
+    capabilities *string
     // true if this is the default domain associated with the tenant; otherwise, false.
-    isDefault *bool;
+    isDefault *bool
     // true if this is the initial domain associated with the tenant; otherwise, false
-    isInitial *bool;
+    isInitial *bool
     // The domain name; for example, 'contoso.onmicrosoft.com'
-    name *string;
+    name *string
     // For example, 'Managed'.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewVerifiedDomain instantiates a new verifiedDomain and sets the default values.
 func NewVerifiedDomain()(*VerifiedDomain) {
@@ -47,9 +47,9 @@ func (m *VerifiedDomain) GetCapabilities()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["capabilities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["isInitial"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isInitial"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

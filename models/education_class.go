@@ -7,46 +7,46 @@ import (
 // EducationClass 
 type EducationClass struct {
     Entity
-    // The assignmentCategories property
-    assignmentCategories []EducationCategoryable;
-    // The assignmentDefaults property
-    assignmentDefaults EducationAssignmentDefaultsable;
+    // All categories associated with this class. Nullable.
+    assignmentCategories []EducationCategoryable
+    // Specifies class-level defaults respected by new assignments created in the class.
+    assignmentDefaults EducationAssignmentDefaultsable
     // All assignments associated with this class. Nullable.
-    assignments []EducationAssignmentable;
-    // The assignmentSettings property
-    assignmentSettings EducationAssignmentSettingsable;
+    assignments []EducationAssignmentable
+    // Specifies class-level assignments settings.
+    assignmentSettings EducationAssignmentSettingsable
     // Class code used by the school to identify the class.
-    classCode *string;
+    classCode *string
     // Course information for the class.
-    course EducationCourseable;
+    course EducationCourseable
     // Entity who created the class
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Description of the class.
-    description *string;
+    description *string
     // Name of the class.
-    displayName *string;
+    displayName *string
     // ID of the class from the syncing system.
-    externalId *string;
+    externalId *string
     // Name of the class in the syncing system.
-    externalName *string;
+    externalName *string
     // How this class was created. Possible values are: sis, manual.
-    externalSource *EducationExternalSource;
+    externalSource *EducationExternalSource
     // The name of the external source this resources was generated from.
-    externalSourceDetail *string;
+    externalSourceDetail *string
     // Grade level of the class.
-    grade *string;
+    grade *string
     // The underlying Microsoft 365 group object.
-    group Groupable;
+    group Groupable
     // Mail name for sending email to all members, if this is enabled.
-    mailNickname *string;
+    mailNickname *string
     // All users in the class. Nullable.
-    members []EducationUserable;
+    members []EducationUserable
     // All schools that this class is associated with. Nullable.
-    schools []EducationSchoolable;
+    schools []EducationSchoolable
     // All teachers in the class. Nullable.
-    teachers []EducationUserable;
+    teachers []EducationUserable
     // Term for this class.
-    term EducationTermable;
+    term EducationTermable
 }
 // NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
@@ -59,7 +59,7 @@ func NewEducationClass()(*EducationClass) {
 func CreateEducationClassFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationClass(), nil
 }
-// GetAssignmentCategories gets the assignmentCategories property value. The assignmentCategories property
+// GetAssignmentCategories gets the assignmentCategories property value. All categories associated with this class. Nullable.
 func (m *EducationClass) GetAssignmentCategories()([]EducationCategoryable) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *EducationClass) GetAssignmentCategories()([]EducationCategoryable) {
         return m.assignmentCategories
     }
 }
-// GetAssignmentDefaults gets the assignmentDefaults property value. The assignmentDefaults property
+// GetAssignmentDefaults gets the assignmentDefaults property value. Specifies class-level defaults respected by new assignments created in the class.
 func (m *EducationClass) GetAssignmentDefaults()(EducationAssignmentDefaultsable) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *EducationClass) GetAssignments()([]EducationAssignmentable) {
         return m.assignments
     }
 }
-// GetAssignmentSettings gets the assignmentSettings property value. The assignmentSettings property
+// GetAssignmentSettings gets the assignmentSettings property value. Specifies class-level assignments settings.
 func (m *EducationClass) GetAssignmentSettings()(EducationAssignmentSettingsable) {
     if m == nil {
         return nil
@@ -164,9 +164,9 @@ func (m *EducationClass) GetExternalSourceDetail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignmentCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["assignmentDefaults"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentDefaults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationAssignmentDefaultsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -190,7 +190,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["assignmentSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationAssignmentSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["classCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["course"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["course"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationCourseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["externalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["externalSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationExternalSource)
         if err != nil {
             return err
@@ -294,7 +294,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["externalSourceDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalSourceDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["grade"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grade"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -314,7 +314,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["group"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["group"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -324,7 +324,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["mailNickname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailNickname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -334,7 +334,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -348,7 +348,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["schools"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
             return err
@@ -362,7 +362,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["teachers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teachers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -376,7 +376,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["term"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["term"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationTermFromDiscriminatorValue)
         if err != nil {
             return err
@@ -593,13 +593,13 @@ func (m *EducationClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetAssignmentCategories sets the assignmentCategories property value. The assignmentCategories property
+// SetAssignmentCategories sets the assignmentCategories property value. All categories associated with this class. Nullable.
 func (m *EducationClass) SetAssignmentCategories(value []EducationCategoryable)() {
     if m != nil {
         m.assignmentCategories = value
     }
 }
-// SetAssignmentDefaults sets the assignmentDefaults property value. The assignmentDefaults property
+// SetAssignmentDefaults sets the assignmentDefaults property value. Specifies class-level defaults respected by new assignments created in the class.
 func (m *EducationClass) SetAssignmentDefaults(value EducationAssignmentDefaultsable)() {
     if m != nil {
         m.assignmentDefaults = value
@@ -611,7 +611,7 @@ func (m *EducationClass) SetAssignments(value []EducationAssignmentable)() {
         m.assignments = value
     }
 }
-// SetAssignmentSettings sets the assignmentSettings property value. The assignmentSettings property
+// SetAssignmentSettings sets the assignmentSettings property value. Specifies class-level assignments settings.
 func (m *EducationClass) SetAssignmentSettings(value EducationAssignmentSettingsable)() {
     if m != nil {
         m.assignmentSettings = value

@@ -7,17 +7,17 @@ import (
 // BucketAggregationDefinition 
 type BucketAggregationDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
-    isDescending *bool;
+    isDescending *bool
     // The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
-    minimumCount *int32;
+    minimumCount *int32
     // A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
-    prefixFilter *string;
+    prefixFilter *string
     // Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
-    ranges []BucketAggregationRangeable;
+    ranges []BucketAggregationRangeable
     // The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
-    sortBy *BucketAggregationSortProperty;
+    sortBy *BucketAggregationSortProperty
 }
 // NewBucketAggregationDefinition instantiates a new bucketAggregationDefinition and sets the default values.
 func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {
@@ -39,9 +39,9 @@ func (m *BucketAggregationDefinition) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["isDescending"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isDescending"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["prefixFilter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["prefixFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["ranges"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ranges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBucketAggregationRangeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["sortBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sortBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBucketAggregationSortProperty)
         if err != nil {
             return err

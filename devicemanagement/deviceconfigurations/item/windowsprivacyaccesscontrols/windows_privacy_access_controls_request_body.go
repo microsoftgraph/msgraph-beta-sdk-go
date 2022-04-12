@@ -8,9 +8,9 @@ import (
 // WindowsPrivacyAccessControlsRequestBody provides operations to call the windowsPrivacyAccessControls method.
 type WindowsPrivacyAccessControlsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The windowsPrivacyAccessControls property
-    windowsPrivacyAccessControls []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsPrivacyDataAccessControlItemable;
+    windowsPrivacyAccessControls []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsPrivacyDataAccessControlItemable
 }
 // NewWindowsPrivacyAccessControlsRequestBody instantiates a new windowsPrivacyAccessControlsRequestBody and sets the default values.
 func NewWindowsPrivacyAccessControlsRequestBody()(*WindowsPrivacyAccessControlsRequestBody) {
@@ -32,9 +32,9 @@ func (m *WindowsPrivacyAccessControlsRequestBody) GetAdditionalData()(map[string
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsPrivacyAccessControlsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["windowsPrivacyAccessControls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *WindowsPrivacyAccessControlsRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["windowsPrivacyAccessControls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue)
         if err != nil {
             return err

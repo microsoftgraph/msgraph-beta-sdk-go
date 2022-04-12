@@ -7,13 +7,13 @@ import (
 // CrossTenantAccessPolicyInboundTrust 
 type CrossTenantAccessPolicyInboundTrust struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies whether compliant devices from external Azure AD organizations are trusted.
-    isCompliantDeviceAccepted *bool;
+    isCompliantDeviceAccepted *bool
     // Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
-    isHybridAzureADJoinedDeviceAccepted *bool;
+    isHybridAzureADJoinedDeviceAccepted *bool
     // Specifies whether MFA from external Azure AD organizations is trusted.
-    isMfaAccepted *bool;
+    isMfaAccepted *bool
 }
 // NewCrossTenantAccessPolicyInboundTrust instantiates a new crossTenantAccessPolicyInboundTrust and sets the default values.
 func NewCrossTenantAccessPolicyInboundTrust()(*CrossTenantAccessPolicyInboundTrust) {
@@ -35,9 +35,9 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetAdditionalData()(map[string]int
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["isCompliantDeviceAccepted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isCompliantDeviceAccepted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["isHybridAzureADJoinedDeviceAccepted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHybridAzureADJoinedDeviceAccepted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["isMfaAccepted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMfaAccepted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

@@ -8,9 +8,9 @@ import (
 type OutlookCategory struct {
     Entity
     // A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
-    color *CategoryColor;
+    color *CategoryColor
     // A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
-    displayName *string;
+    displayName *string
 }
 // NewOutlookCategory instantiates a new outlookCategory and sets the default values.
 func NewOutlookCategory()(*OutlookCategory) {
@@ -40,9 +40,9 @@ func (m *OutlookCategory) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["color"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCategoryColor)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -9,23 +9,23 @@ import (
 type TeamworkDeviceHealth struct {
     Entity
     // The connection property
-    connection TeamworkConnectionable;
+    connection TeamworkConnectionable
     // Identity of the user who created the device health document.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The UTC date and time when the device health document was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Health details about the device hardware.
-    hardwareHealth TeamworkHardwareHealthable;
+    hardwareHealth TeamworkHardwareHealthable
     // Identity of the user who last modified the device health details.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // The UTC date and time when the device health detail was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The login status of Microsoft Teams, Skype for Business, and Exchange.
-    loginStatus TeamworkLoginStatusable;
+    loginStatus TeamworkLoginStatusable
     // Health details about all peripherals (for example, speaker and microphone) attached to a device.
-    peripheralsHealth TeamworkPeripheralsHealthable;
+    peripheralsHealth TeamworkPeripheralsHealthable
     // Software updates available for the device.
-    softwareUpdateHealth TeamworkSoftwareUpdateHealthable;
+    softwareUpdateHealth TeamworkSoftwareUpdateHealthable
 }
 // NewTeamworkDeviceHealth instantiates a new teamworkDeviceHealth and sets the default values.
 func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
@@ -63,9 +63,9 @@ func (m *TeamworkDeviceHealth) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["connection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["hardwareHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hardwareHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkHardwareHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["lastModifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["loginStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["loginStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkLoginStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["peripheralsHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["peripheralsHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralsHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["softwareUpdateHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["softwareUpdateHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue)
         if err != nil {
             return err

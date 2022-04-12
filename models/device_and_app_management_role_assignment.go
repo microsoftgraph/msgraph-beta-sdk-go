@@ -8,9 +8,9 @@ import (
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
     // The list of ids of role member security groups. These are IDs from Azure Active Directory.
-    members []string;
+    members []string
     // The set of Role Scope Tags defined on the Role Assignment.
-    roleScopeTags []RoleScopeTagable;
+    roleScopeTags []RoleScopeTagable
 }
 // NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {
@@ -24,9 +24,9 @@ func CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue(parseNode 
     return NewDeviceAndAppManagementRoleAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RoleAssignment.GetFieldDeserializers()
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["roleScopeTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRoleScopeTagFromDiscriminatorValue)
         if err != nil {
             return err

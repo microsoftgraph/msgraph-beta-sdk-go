@@ -8,9 +8,9 @@ import (
 type RemoteAssistanceSettings struct {
     Entity
     // Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
-    allowSessionsToUnenrolledDevices *bool;
+    allowSessionsToUnenrolledDevices *bool
     // The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
-    remoteAssistanceState *RemoteAssistanceState;
+    remoteAssistanceState *RemoteAssistanceState
 }
 // NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
@@ -32,9 +32,9 @@ func (m *RemoteAssistanceSettings) GetAllowSessionsToUnenrolledDevices()(*bool) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowSessionsToUnenrolledDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowSessionsToUnenrolledDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["remoteAssistanceState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteAssistanceState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRemoteAssistanceState)
         if err != nil {
             return err

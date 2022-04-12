@@ -8,9 +8,9 @@ import (
 type NoncustodialDataSource struct {
     DataSourceContainer
     // Indicates if hold is applied to non-custodial data source (such as mailbox or site).
-    applyHoldToSource *bool;
+    applyHoldToSource *bool
     // User source or SharePoint site data source as non-custodial data source.
-    dataSource DataSourceable;
+    dataSource DataSourceable
 }
 // NewNoncustodialDataSource instantiates a new noncustodialDataSource and sets the default values.
 func NewNoncustodialDataSource()(*NoncustodialDataSource) {
@@ -40,9 +40,9 @@ func (m *NoncustodialDataSource) GetDataSource()(DataSourceable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
-    res["applyHoldToSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applyHoldToSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["dataSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDataSourceFromDiscriminatorValue)
         if err != nil {
             return err

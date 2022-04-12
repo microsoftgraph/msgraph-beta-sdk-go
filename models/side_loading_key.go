@@ -8,15 +8,15 @@ import (
 type SideLoadingKey struct {
     Entity
     // Side Loading Key description displayed to the ITPro Admins..
-    description *string;
+    description *string
     // Side Loading Key Name displayed to the ITPro Admins.
-    displayName *string;
+    displayName *string
     // Side Loading Key Last Updated Date displayed to the ITPro Admins.
-    lastUpdatedDateTime *string;
+    lastUpdatedDateTime *string
     // Side Loading Key Total Activation displayed to the ITPro Admins.
-    totalActivation *int32;
+    totalActivation *int32
     // Side Loading Key Value, it is 5x5 value, seperated by hiphens.
-    value *string;
+    value *string
 }
 // NewSideLoadingKey instantiates a new sideLoadingKey and sets the default values.
 func NewSideLoadingKey()(*SideLoadingKey) {
@@ -46,9 +46,9 @@ func (m *SideLoadingKey) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["totalActivation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalActivation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *SideLoadingKey) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

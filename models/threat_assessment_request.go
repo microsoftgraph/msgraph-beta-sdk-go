@@ -9,21 +9,21 @@ import (
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
-    category *ThreatCategory;
+    category *ThreatCategory
     // The content type of threat assessment. Possible values are: mail, url, file.
-    contentType *ThreatAssessmentContentType;
+    contentType *ThreatAssessmentContentType
     // The threat assessment request creator.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The expected assessment from submitter. Possible values are: block, unblock.
-    expectedAssessment *ThreatExpectedAssessment;
+    expectedAssessment *ThreatExpectedAssessment
     // The source of the threat assessment request. Possible values are: administrator.
-    requestSource *ThreatAssessmentRequestSource;
+    requestSource *ThreatAssessmentRequestSource
     // A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    results []ThreatAssessmentResultable;
+    results []ThreatAssessmentResultable
     // The assessment process status. Possible values are: pending, completed.
-    status *ThreatAssessmentStatus;
+    status *ThreatAssessmentStatus
 }
 // NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
@@ -77,9 +77,9 @@ func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessm
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatCategory)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["contentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatAssessmentContentType)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["expectedAssessment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expectedAssessment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatExpectedAssessment)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["requestSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatAssessmentRequestSource)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["results"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["results"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateThreatAssessmentResultFromDiscriminatorValue)
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatAssessmentStatus)
         if err != nil {
             return err

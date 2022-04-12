@@ -8,11 +8,11 @@ import (
 type RecordOperation struct {
     CommsOperation
     // Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
-    completionReason *RecordCompletionReason;
+    completionReason *RecordCompletionReason
     // The access token required to retrieve the recording.
-    recordingAccessToken *string;
+    recordingAccessToken *string
     // The location where the recording is located.
-    recordingLocation *string;
+    recordingLocation *string
 }
 // NewRecordOperation instantiates a new recordOperation and sets the default values.
 func NewRecordOperation()(*RecordOperation) {
@@ -34,9 +34,9 @@ func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RecordOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
-    res["completionReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecordCompletionReason)
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["recordingAccessToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recordingAccessToken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["recordingLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recordingLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

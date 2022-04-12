@@ -8,7 +8,7 @@ import (
 type DeviceManagementScriptAssignment struct {
     Entity
     // The Id of the Azure Active Directory group we are targeting the script to.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceManagementScriptAssignment instantiates a new deviceManagementScriptAssignment and sets the default values.
 func NewDeviceManagementScriptAssignment()(*DeviceManagementScriptAssignment) {
@@ -22,9 +22,9 @@ func CreateDeviceManagementScriptAssignmentFromDiscriminatorValue(parseNode i878
     return NewDeviceManagementScriptAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

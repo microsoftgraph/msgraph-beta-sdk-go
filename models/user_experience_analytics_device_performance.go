@@ -8,45 +8,45 @@ import (
 type UserExperienceAnalyticsDevicePerformance struct {
     Entity
     // Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
-    averageBlueScreens *float64;
+    averageBlueScreens *float64
     // Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
-    averageRestarts *float64;
+    averageRestarts *float64
     // Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
-    blueScreenCount *int32;
+    blueScreenCount *int32
     // The user experience analytics device boot score.
-    bootScore *int32;
+    bootScore *int32
     // The user experience analytics device core boot time in milliseconds.
-    coreBootTimeInMs *int32;
+    coreBootTimeInMs *int32
     // The user experience analytics device core login time in milliseconds.
-    coreLoginTimeInMs *int32;
+    coreLoginTimeInMs *int32
     // User experience analytics summarized device count.
-    deviceCount *int64;
+    deviceCount *int64
     // The user experience analytics device name.
-    deviceName *string;
+    deviceName *string
     // The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.
-    diskType *DiskType;
+    diskType *DiskType
     // The user experience analytics device group policy boot time in milliseconds.
-    groupPolicyBootTimeInMs *int32;
+    groupPolicyBootTimeInMs *int32
     // The user experience analytics device group policy login time in milliseconds.
-    groupPolicyLoginTimeInMs *int32;
+    groupPolicyLoginTimeInMs *int32
     // The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *UserExperienceAnalyticsHealthState;
+    healthStatus *UserExperienceAnalyticsHealthState
     // The user experience analytics device login score.
-    loginScore *int32;
+    loginScore *int32
     // The user experience analytics device manufacturer.
-    manufacturer *string;
+    manufacturer *string
     // The user experience analytics device model.
-    model *string;
+    model *string
     // The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    modelStartupPerformanceScore *float64;
+    modelStartupPerformanceScore *float64
     // The user experience analytics device Operating System version.
-    operatingSystemVersion *string;
+    operatingSystemVersion *string
     // The user experience analytics responsive desktop time in milliseconds.
-    responsiveDesktopTimeInMs *int32;
+    responsiveDesktopTimeInMs *int32
     // Number of Restarts in the last 14 days. Valid values 0 to 9999999
-    restartCount *int32;
+    restartCount *int32
     // The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    startupPerformanceScore *float64;
+    startupPerformanceScore *float64
 }
 // NewUserExperienceAnalyticsDevicePerformance instantiates a new userExperienceAnalyticsDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsDevicePerformance()(*UserExperienceAnalyticsDevicePerformance) {
@@ -132,9 +132,9 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetDiskType()(*DiskType) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["averageBlueScreens"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageBlueScreens"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["averageRestarts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageRestarts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["blueScreenCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["blueScreenCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["bootScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bootScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["coreBootTimeInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["coreBootTimeInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["coreLoginTimeInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["coreLoginTimeInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["deviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["diskType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["diskType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDiskType)
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["groupPolicyBootTimeInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyBootTimeInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["groupPolicyLoginTimeInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyLoginTimeInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["healthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["loginScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["loginScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["modelStartupPerformanceScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modelStartupPerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -294,7 +294,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["operatingSystemVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["responsiveDesktopTimeInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["responsiveDesktopTimeInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -314,7 +314,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["restartCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restartCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -324,7 +324,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["startupPerformanceScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startupPerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

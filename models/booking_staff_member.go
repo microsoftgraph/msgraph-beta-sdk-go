@@ -8,17 +8,17 @@ import (
 type BookingStaffMember struct {
     BookingPerson
     // True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
-    availabilityIsAffectedByPersonalCalendar *bool;
+    availabilityIsAffectedByPersonalCalendar *bool
     // Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
-    colorIndex *int32;
+    colorIndex *int32
     // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
-    role *BookingStaffRole;
+    role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
-    timeZone *string;
+    timeZone *string
     // True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
-    useBusinessHours *bool;
+    useBusinessHours *bool
     // The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
-    workingHours []BookingWorkHoursable;
+    workingHours []BookingWorkHoursable
 }
 // NewBookingStaffMember instantiates a new bookingStaffMember and sets the default values.
 func NewBookingStaffMember()(*BookingStaffMember) {
@@ -48,9 +48,9 @@ func (m *BookingStaffMember) GetColorIndex()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingPerson.GetFieldDeserializers()
-    res["availabilityIsAffectedByPersonalCalendar"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availabilityIsAffectedByPersonalCalendar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["colorIndex"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["colorIndex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["role"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingStaffRole)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["timeZone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["useBusinessHours"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["useBusinessHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["workingHours"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workingHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingWorkHoursFromDiscriminatorValue)
         if err != nil {
             return err

@@ -7,25 +7,25 @@ import (
 // TeamworkNetworkConfiguration 
 type TeamworkNetworkConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The default gateway is the path used to pass information when the destination is unknown to the device.
-    defaultGateway *string;
+    defaultGateway *string
     // The network domain of the device, for example, contoso.com.
-    domainName *string;
+    domainName *string
     // The device name on a network.
-    hostName *string;
+    hostName *string
     // The IP address is a numerical label that uniquely identifies every device connected to the internet.
-    ipAddress *string;
+    ipAddress *string
     // True if DHCP is enabled.
-    isDhcpEnabled *bool;
+    isDhcpEnabled *bool
     // True if the PC port is enabled.
-    isPCPortEnabled *bool;
+    isPCPortEnabled *bool
     // A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
-    primaryDns *string;
+    primaryDns *string
     // A secondary DNS is used when the primary DNS is not available.
-    secondaryDns *string;
+    secondaryDns *string
     // A subnet mask is a number that distinguishes the network address and the host address within an IP address.
-    subnetMask *string;
+    subnetMask *string
 }
 // NewTeamworkNetworkConfiguration instantiates a new teamworkNetworkConfiguration and sets the default values.
 func NewTeamworkNetworkConfiguration()(*TeamworkNetworkConfiguration) {
@@ -63,9 +63,9 @@ func (m *TeamworkNetworkConfiguration) GetDomainName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["defaultGateway"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["defaultGateway"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["domainName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["hostName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hostName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isDhcpEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDhcpEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isPCPortEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPCPortEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["primaryDns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["primaryDns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["secondaryDns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["secondaryDns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["subnetMask"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subnetMask"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

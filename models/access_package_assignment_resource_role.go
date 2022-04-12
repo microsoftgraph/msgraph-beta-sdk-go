@@ -8,19 +8,19 @@ import (
 type AccessPackageAssignmentResourceRole struct {
     Entity
     // The access package assignments resulting in this role assignment. Read-only. Nullable.
-    accessPackageAssignments []AccessPackageAssignmentable;
+    accessPackageAssignments []AccessPackageAssignmentable
     // Read-only. Nullable.
-    accessPackageResourceRole AccessPackageResourceRoleable;
+    accessPackageResourceRole AccessPackageResourceRoleable
     // Read-only. Nullable.
-    accessPackageResourceScope AccessPackageResourceScopeable;
+    accessPackageResourceScope AccessPackageResourceScopeable
     // Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
-    accessPackageSubject AccessPackageSubjectable;
+    accessPackageSubject AccessPackageSubjectable
     // A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
-    originId *string;
+    originId *string
     // The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
-    originSystem *string;
+    originSystem *string
     // The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
-    status *string;
+    status *string
 }
 // NewAccessPackageAssignmentResourceRole instantiates a new accessPackageAssignmentResourceRole and sets the default values.
 func NewAccessPackageAssignmentResourceRole()(*AccessPackageAssignmentResourceRole) {
@@ -66,9 +66,9 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageSubject()(AccessPa
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["accessPackageResourceRole"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["accessPackageResourceScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["accessPackageSubject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageSubject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["originId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["originSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

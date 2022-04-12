@@ -7,31 +7,31 @@ import (
 // TeamworkSystemConfiguration 
 type TeamworkSystemConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The date and time configurations for a device.
-    dateTimeConfiguration TeamworkDateTimeConfigurationable;
+    dateTimeConfiguration TeamworkDateTimeConfigurationable
     // The default password for the device. Write-Only.
-    defaultPassword *string;
+    defaultPassword *string
     // The device lock timeout in seconds.
-    deviceLockTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    deviceLockTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // True if the device lock is enabled.
-    isDeviceLockEnabled *bool;
+    isDeviceLockEnabled *bool
     // True if logging is enabled.
-    isLoggingEnabled *bool;
+    isLoggingEnabled *bool
     // True if power saving is enabled.
-    isPowerSavingEnabled *bool;
+    isPowerSavingEnabled *bool
     // True if screen capture is enabled.
-    isScreenCaptureEnabled *bool;
+    isScreenCaptureEnabled *bool
     // True if silent mode is enabled.
-    isSilentModeEnabled *bool;
+    isSilentModeEnabled *bool
     // The language option for the device.
-    language *string;
+    language *string
     // The pin that unlocks the device. Write-Only.
-    lockPin *string;
+    lockPin *string
     // The logging level for the device.
-    loggingLevel *string;
+    loggingLevel *string
     // The network configuration for the device.
-    networkConfiguration TeamworkNetworkConfigurationable;
+    networkConfiguration TeamworkNetworkConfigurationable
 }
 // NewTeamworkSystemConfiguration instantiates a new teamworkSystemConfiguration and sets the default values.
 func NewTeamworkSystemConfiguration()(*TeamworkSystemConfiguration) {
@@ -77,9 +77,9 @@ func (m *TeamworkSystemConfiguration) GetDeviceLockTimeout()(*i878a80d2330e89d26
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dateTimeConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dateTimeConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkDateTimeConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["defaultPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deviceLockTimeout"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceLockTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isDeviceLockEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeviceLockEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isLoggingEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isLoggingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isPowerSavingEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPowerSavingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isScreenCaptureEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isScreenCaptureEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isSilentModeEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSilentModeEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["language"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["language"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lockPin"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lockPin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["loggingLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["loggingLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["networkConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkNetworkConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

@@ -8,35 +8,35 @@ import (
 type CloudPcOnPremisesConnection struct {
     Entity
     // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
-    adDomainName *string;
+    adDomainName *string
     // The password associated with adDomainUsername.
-    adDomainPassword *string;
+    adDomainPassword *string
     // The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
-    adDomainUsername *string;
+    adDomainUsername *string
     // The display name for the Azure network connection.
-    displayName *string;
+    displayName *string
     // The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
-    healthCheckStatus *CloudPcOnPremisesConnectionStatus;
+    healthCheckStatus *CloudPcOnPremisesConnectionStatus
     // The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
-    healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable;
+    healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable
     // When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
-    inUse *bool;
-    // Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
-    managedBy *CloudPcManagementService;
+    inUse *bool
+    // Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+    managedBy *CloudPcManagementService
     // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
-    organizationalUnit *string;
+    organizationalUnit *string
     // The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
-    resourceGroupId *string;
+    resourceGroupId *string
     // The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
-    subnetId *string;
+    subnetId *string
     // The ID of the target Azure subscription that’s associated with your tenant.
-    subscriptionId *string;
+    subscriptionId *string
     // The name of the target Azure subscription. Read-only.
-    subscriptionName *string;
+    subscriptionName *string
     // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    type_escaped *CloudPcOnPremisesConnectionType;
+    type_escaped *CloudPcOnPremisesConnectionType
     // The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
-    virtualNetworkId *string;
+    virtualNetworkId *string
 }
 // NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
@@ -82,9 +82,9 @@ func (m *CloudPcOnPremisesConnection) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["adDomainName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["adDomainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["adDomainPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["adDomainPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["adDomainUsername"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["adDomainUsername"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["healthCheckStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthCheckStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionStatus)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["healthCheckStatusDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthCheckStatusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["inUse"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["managedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcManagementService)
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["organizationalUnit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organizationalUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["resourceGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["subnetId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subnetId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["subscriptionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["subscriptionName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subscriptionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionType)
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["virtualNetworkId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["virtualNetworkId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -260,7 +260,7 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
         return m.inUse
     }
 }
-// GetManagedBy gets the managedBy property value. Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+// GetManagedBy gets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
     if m == nil {
         return nil
@@ -467,7 +467,7 @@ func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
         m.inUse = value
     }
 }
-// SetManagedBy sets the managedBy property value. Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+// SetManagedBy sets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
     if m != nil {
         m.managedBy = value

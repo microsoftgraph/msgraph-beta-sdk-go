@@ -7,11 +7,11 @@ import (
 // ApplicationServicePrincipal 
 type ApplicationServicePrincipal struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The application property
-    application Applicationable;
+    application Applicationable
     // The servicePrincipal property
-    servicePrincipal ServicePrincipalable;
+    servicePrincipal ServicePrincipalable
 }
 // NewApplicationServicePrincipal instantiates a new applicationServicePrincipal and sets the default values.
 func NewApplicationServicePrincipal()(*ApplicationServicePrincipal) {
@@ -41,9 +41,9 @@ func (m *ApplicationServicePrincipal) GetApplication()(Applicationable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["application"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["servicePrincipal"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateServicePrincipalFromDiscriminatorValue)
         if err != nil {
             return err

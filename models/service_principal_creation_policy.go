@@ -8,11 +8,11 @@ import (
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
     // The excludes property
-    excludes []ServicePrincipalCreationConditionSetable;
+    excludes []ServicePrincipalCreationConditionSetable
     // The includes property
-    includes []ServicePrincipalCreationConditionSetable;
+    includes []ServicePrincipalCreationConditionSetable
     // The isBuiltIn property
-    isBuiltIn *bool;
+    isBuiltIn *bool
 }
 // NewServicePrincipalCreationPolicy instantiates a new servicePrincipalCreationPolicy and sets the default values.
 func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
@@ -34,9 +34,9 @@ func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreatio
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["excludes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["includes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["isBuiltIn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isBuiltIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

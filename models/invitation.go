@@ -8,25 +8,25 @@ import (
 type Invitation struct {
     Entity
     // The user created as part of the invitation creation. Read-Only
-    invitedUser Userable;
+    invitedUser Userable
     // The display name of the user being invited.
-    invitedUserDisplayName *string;
+    invitedUserDisplayName *string
     // The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
-    invitedUserEmailAddress *string;
+    invitedUserEmailAddress *string
     // Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
-    invitedUserMessageInfo InvitedUserMessageInfoable;
+    invitedUserMessageInfo InvitedUserMessageInfoable
     // The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
-    invitedUserType *string;
+    invitedUserType *string
     // The URL the user can use to redeem their invitation. Read-only.
-    inviteRedeemUrl *string;
+    inviteRedeemUrl *string
     // The URL the user should be redirected to once the invitation is redeemed. Required.
-    inviteRedirectUrl *string;
+    inviteRedirectUrl *string
     // Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user (Preview).
-    resetRedemption *bool;
+    resetRedemption *bool
     // Indicates whether an email should be sent to the user being invited. The default is false.
-    sendInvitationMessage *bool;
+    sendInvitationMessage *bool
     // The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
-    status *string;
+    status *string
 }
 // NewInvitation instantiates a new invitation and sets the default values.
 func NewInvitation()(*Invitation) {
@@ -40,9 +40,9 @@ func CreateInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewInvitation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Invitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["invitedUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserEmailAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserMessageInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserMessageInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInvitedUserMessageInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitedUserType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedUserType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["inviteRedeemUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inviteRedeemUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["inviteRedirectUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inviteRedirectUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["resetRedemption"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resetRedemption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["sendInvitationMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sendInvitationMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

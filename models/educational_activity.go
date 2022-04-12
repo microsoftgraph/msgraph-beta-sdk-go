@@ -8,15 +8,15 @@ import (
 type EducationalActivity struct {
     ItemFacet
     // The month and year the user graduated or completed the activity.
-    completionMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    completionMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The month and year the user completed the educational activity referenced.
-    endMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    endMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The institution property
-    institution InstitutionDataable;
+    institution InstitutionDataable
     // The program property
-    program EducationalActivityDetailable;
+    program EducationalActivityDetailable
     // The month and year the user commenced the activity referenced.
-    startMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    startMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewEducationalActivity instantiates a new educationalActivity and sets the default values.
 func NewEducationalActivity()(*EducationalActivity) {
@@ -46,9 +46,9 @@ func (m *EducationalActivity) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487e
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["completionMonthYear"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completionMonthYear"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["endMonthYear"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endMonthYear"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["institution"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["institution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInstitutionDataFromDiscriminatorValue)
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["program"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["program"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationalActivityDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["startMonthYear"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startMonthYear"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err

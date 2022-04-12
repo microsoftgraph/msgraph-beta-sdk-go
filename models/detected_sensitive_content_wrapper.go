@@ -7,9 +7,9 @@ import (
 // DetectedSensitiveContentWrapper 
 type DetectedSensitiveContentWrapper struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The classification property
-    classification []DetectedSensitiveContentable;
+    classification []DetectedSensitiveContentable
 }
 // NewDetectedSensitiveContentWrapper instantiates a new detectedSensitiveContentWrapper and sets the default values.
 func NewDetectedSensitiveContentWrapper()(*DetectedSensitiveContentWrapper) {
@@ -39,9 +39,9 @@ func (m *DetectedSensitiveContentWrapper) GetClassification()([]DetectedSensitiv
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DetectedSensitiveContentWrapper) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["classification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DetectedSensitiveContentWrapper) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDetectedSensitiveContentFromDiscriminatorValue)
         if err != nil {
             return err

@@ -8,21 +8,21 @@ import (
 type PlannerUser struct {
     PlannerDelta
     // The all property
-    all []PlannerDeltaable;
+    all []PlannerDeltaable
     // A collection containing the references to the plans that the user has marked as favorites.
-    favoritePlanReferences PlannerFavoritePlanReferenceCollectionable;
+    favoritePlanReferences PlannerFavoritePlanReferenceCollectionable
     // Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-    favoritePlans []PlannerPlanable;
+    favoritePlans []PlannerPlanable
     // Read-only. Nullable. Returns the plannerTasks assigned to the user.
-    plans []PlannerPlanable;
+    plans []PlannerPlanable
     // A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
-    recentPlanReferences PlannerRecentPlanReferenceCollectionable;
+    recentPlanReferences PlannerRecentPlanReferenceCollectionable
     // Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-    recentPlans []PlannerPlanable;
+    recentPlans []PlannerPlanable
     // Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
-    rosterPlans []PlannerPlanable;
+    rosterPlans []PlannerPlanable
     // Read-only. Nullable. Returns the plannerPlans shared with the user.
-    tasks []PlannerTaskable;
+    tasks []PlannerTaskable
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {
@@ -60,9 +60,9 @@ func (m *PlannerUser) GetFavoritePlans()([]PlannerPlanable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
-    res["all"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["all"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerDeltaFromDiscriminatorValue)
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["favoritePlanReferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["favoritePlanReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerFavoritePlanReferenceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["favoritePlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["favoritePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["plans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["recentPlanReferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recentPlanReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerRecentPlanReferenceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["recentPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recentPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["rosterPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rosterPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tasks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
         if err != nil {
             return err

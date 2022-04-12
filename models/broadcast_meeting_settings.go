@@ -7,19 +7,19 @@ import (
 // BroadcastMeetingSettings 
 type BroadcastMeetingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Defines who can join the Teams live event. Possible values are listed in the following table.
-    allowedAudience *BroadcastMeetingAudience;
+    allowedAudience *BroadcastMeetingAudience
     // Caption settings of a Teams live event.
-    captions BroadcastMeetingCaptionSettingsable;
+    captions BroadcastMeetingCaptionSettingsable
     // Indicates whether attendee report is enabled for this Teams live event. Default value is false.
-    isAttendeeReportEnabled *bool;
+    isAttendeeReportEnabled *bool
     // Indicates whether Q&A is enabled for this Teams live event. Default value is false.
-    isQuestionAndAnswerEnabled *bool;
+    isQuestionAndAnswerEnabled *bool
     // Indicates whether recording is enabled for this Teams live event. Default value is false.
-    isRecordingEnabled *bool;
+    isRecordingEnabled *bool
     // Indicates whether video on demand is enabled for this Teams live event. Default value is false.
-    isVideoOnDemandEnabled *bool;
+    isVideoOnDemandEnabled *bool
 }
 // NewBroadcastMeetingSettings instantiates a new broadcastMeetingSettings and sets the default values.
 func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {
@@ -57,9 +57,9 @@ func (m *BroadcastMeetingSettings) GetCaptions()(BroadcastMeetingCaptionSettings
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowedAudience"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowedAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBroadcastMeetingAudience)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["captions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["captions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isAttendeeReportEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAttendeeReportEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isQuestionAndAnswerEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isQuestionAndAnswerEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isRecordingEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRecordingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isVideoOnDemandEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isVideoOnDemandEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

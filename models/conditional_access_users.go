@@ -7,19 +7,19 @@ import (
 // ConditionalAccessUsers 
 type ConditionalAccessUsers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Group IDs excluded from scope of policy.
-    excludeGroups []string;
+    excludeGroups []string
     // Role IDs excluded from scope of policy.
-    excludeRoles []string;
+    excludeRoles []string
     // User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-    excludeUsers []string;
+    excludeUsers []string
     // Group IDs in scope of policy unless explicitly excluded, or All.
-    includeGroups []string;
+    includeGroups []string
     // Role IDs in scope of policy unless explicitly excluded, or All.
-    includeRoles []string;
+    includeRoles []string
     // User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
-    includeUsers []string;
+    includeUsers []string
 }
 // NewConditionalAccessUsers instantiates a new conditionalAccessUsers and sets the default values.
 func NewConditionalAccessUsers()(*ConditionalAccessUsers) {
@@ -65,9 +65,9 @@ func (m *ConditionalAccessUsers) GetExcludeUsers()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["excludeGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["excludeGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["excludeRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludeRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["excludeUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludeUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["includeGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["includeRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["includeUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

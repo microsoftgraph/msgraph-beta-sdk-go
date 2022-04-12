@@ -8,13 +8,13 @@ import (
 type WindowsInformationProtectionAppLockerFile struct {
     Entity
     // The friendly name
-    displayName *string;
+    displayName *string
     // File as a byte array
-    file []byte;
+    file []byte
     // SHA256 hash of the file
-    fileHash *string;
+    fileHash *string
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewWindowsInformationProtectionAppLockerFile instantiates a new windowsInformationProtectionAppLockerFile and sets the default values.
 func NewWindowsInformationProtectionAppLockerFile()(*WindowsInformationProtectionAppLockerFile) {
@@ -36,9 +36,9 @@ func (m *WindowsInformationProtectionAppLockerFile) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["file"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["file"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["fileHash"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileHash"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

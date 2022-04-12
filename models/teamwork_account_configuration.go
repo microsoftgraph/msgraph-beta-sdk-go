@@ -7,11 +7,11 @@ import (
 // TeamworkAccountConfiguration 
 type TeamworkAccountConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The account used to sync the calendar.
-    onPremisesCalendarSyncConfiguration TeamworkOnPremisesCalendarSyncConfigurationable;
+    onPremisesCalendarSyncConfiguration TeamworkOnPremisesCalendarSyncConfigurationable
     // The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
-    supportedClient *TeamworkSupportedClient;
+    supportedClient *TeamworkSupportedClient
 }
 // NewTeamworkAccountConfiguration instantiates a new teamworkAccountConfiguration and sets the default values.
 func NewTeamworkAccountConfiguration()(*TeamworkAccountConfiguration) {
@@ -33,9 +33,9 @@ func (m *TeamworkAccountConfiguration) GetAdditionalData()(map[string]interface{
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkAccountConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["onPremisesCalendarSyncConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkAccountConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["onPremisesCalendarSyncConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *TeamworkAccountConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["supportedClient"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamworkSupportedClient)
         if err != nil {
             return err

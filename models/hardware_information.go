@@ -7,73 +7,73 @@ import (
 // HardwareInformation hardware information of a given device.
 type HardwareInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
-    batteryChargeCycles *int32;
+    batteryChargeCycles *int32
     // The device’s current battery’s health percentage. Valid values 0 to 100
-    batteryHealthPercentage *int32;
+    batteryHealthPercentage *int32
     // The serial number of the device’s current battery
-    batterySerialNumber *string;
+    batterySerialNumber *string
     // Cellular technology of the device
-    cellularTechnology *string;
+    cellularTechnology *string
     // Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
-    deviceFullQualifiedDomainName *string;
+    deviceFullQualifiedDomainName *string
     // Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.
-    deviceGuardLocalSystemAuthorityCredentialGuardState *DeviceGuardLocalSystemAuthorityCredentialGuardState;
+    deviceGuardLocalSystemAuthorityCredentialGuardState *DeviceGuardLocalSystemAuthorityCredentialGuardState
     // Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.
-    deviceGuardVirtualizationBasedSecurityHardwareRequirementState *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState;
+    deviceGuardVirtualizationBasedSecurityHardwareRequirementState *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState
     // Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
-    deviceGuardVirtualizationBasedSecurityState *DeviceGuardVirtualizationBasedSecurityState;
+    deviceGuardVirtualizationBasedSecurityState *DeviceGuardVirtualizationBasedSecurityState
     // eSIM identifier
-    esimIdentifier *string;
+    esimIdentifier *string
     // Free storage space of the device.
-    freeStorageSpace *int64;
+    freeStorageSpace *int64
     // IMEI
-    imei *string;
+    imei *string
     // IPAddressV4
-    ipAddressV4 *string;
+    ipAddressV4 *string
     // Encryption status of the device
-    isEncrypted *bool;
+    isEncrypted *bool
     // Shared iPad
-    isSharedDevice *bool;
+    isSharedDevice *bool
     // Supervised mode of the device
-    isSupervised *bool;
+    isSupervised *bool
     // Manufacturer of the device
-    manufacturer *string;
+    manufacturer *string
     // MEID
-    meid *string;
+    meid *string
     // Model of the device
-    model *string;
+    model *string
     // String that specifies the OS edition.
-    operatingSystemEdition *string;
+    operatingSystemEdition *string
     // Operating system language of the device
-    operatingSystemLanguage *string;
+    operatingSystemLanguage *string
     // Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
-    operatingSystemProductType *int32;
+    operatingSystemProductType *int32
     // Operating System Build Number on Android device
-    osBuildNumber *string;
+    osBuildNumber *string
     // Phone number of the device
-    phoneNumber *string;
+    phoneNumber *string
     // Serial number.
-    serialNumber *string;
+    serialNumber *string
     // All users on the shared Apple device
-    sharedDeviceCachedUsers []SharedAppleDeviceUserable;
+    sharedDeviceCachedUsers []SharedAppleDeviceUserable
     // SubnetAddress
-    subnetAddress *string;
+    subnetAddress *string
     // Subscriber carrier of the device
-    subscriberCarrier *string;
+    subscriberCarrier *string
     // BIOS version as reported by SMBIOS
-    systemManagementBIOSVersion *string;
+    systemManagementBIOSVersion *string
     // Total storage space of the device.
-    totalStorageSpace *int64;
+    totalStorageSpace *int64
     // The identifying information that uniquely names the TPM manufacturer
-    tpmManufacturer *string;
+    tpmManufacturer *string
     // String that specifies the specification version.
-    tpmSpecificationVersion *string;
+    tpmSpecificationVersion *string
     // The version of the TPM, as specified by the manufacturer
-    tpmVersion *string;
+    tpmVersion *string
     // WiFi MAC address of the device
-    wifiMac *string;
+    wifiMac *string
 }
 // NewHardwareInformation instantiates a new hardwareInformation and sets the default values.
 func NewHardwareInformation()(*HardwareInformation) {
@@ -167,9 +167,9 @@ func (m *HardwareInformation) GetEsimIdentifier()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["batteryChargeCycles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["batteryChargeCycles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["batteryHealthPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryHealthPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["batterySerialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batterySerialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["cellularTechnology"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cellularTechnology"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceFullQualifiedDomainName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceFullQualifiedDomainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceGuardLocalSystemAuthorityCredentialGuardState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceGuardLocalSystemAuthorityCredentialGuardState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceGuardLocalSystemAuthorityCredentialGuardState)
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceGuardVirtualizationBasedSecurityHardwareRequirementState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceGuardVirtualizationBasedSecurityHardwareRequirementState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceGuardVirtualizationBasedSecurityHardwareRequirementState)
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceGuardVirtualizationBasedSecurityState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceGuardVirtualizationBasedSecurityState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceGuardVirtualizationBasedSecurityState)
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["esimIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["esimIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["freeStorageSpace"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["freeStorageSpace"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["imei"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["imei"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["ipAddressV4"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddressV4"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isEncrypted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEncrypted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isSharedDevice"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSharedDevice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isSupervised"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSupervised"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -319,7 +319,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -329,7 +329,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["meid"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -339,7 +339,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -349,7 +349,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["operatingSystemEdition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemEdition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -359,7 +359,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["operatingSystemLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -369,7 +369,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["operatingSystemProductType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemProductType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -379,7 +379,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["osBuildNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osBuildNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -389,7 +389,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["phoneNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -399,7 +399,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["serialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -409,7 +409,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["sharedDeviceCachedUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedDeviceCachedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedAppleDeviceUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -423,7 +423,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["subnetAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subnetAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -433,7 +433,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["subscriberCarrier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subscriberCarrier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -443,7 +443,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["systemManagementBIOSVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["systemManagementBIOSVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -453,7 +453,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["totalStorageSpace"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalStorageSpace"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -463,7 +463,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tpmManufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tpmManufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -473,7 +473,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tpmSpecificationVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tpmSpecificationVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -483,7 +483,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tpmVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tpmVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -493,7 +493,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["wifiMac"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiMac"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

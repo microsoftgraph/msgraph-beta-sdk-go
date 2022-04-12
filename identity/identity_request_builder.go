@@ -23,40 +23,40 @@ import (
 // IdentityRequestBuilder provides operations to manage the identityContainer singleton.
 type IdentityRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // IdentityRequestBuilderGetOptions options for Get
 type IdentityRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *IdentityRequestBuilderGetQueryParameters;
+    QueryParameters *IdentityRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // IdentityRequestBuilderGetQueryParameters get identity
 type IdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // IdentityRequestBuilderPatchOptions options for Patch
 type IdentityRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ApiConnectors the apiConnectors property
 func (m *IdentityRequestBuilder) ApiConnectors()(*i11f22886c33eed99dd85e4d242bbf0976ec471e9e441cfa6a58b5864040bd094.ApiConnectorsRequestBuilder) {
@@ -69,7 +69,7 @@ func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*id9b7138b09b41c16
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityApiConnector_id"] = id
+        urlTplParams["identityApiConnector%2Did"] = id
     }
     return id9b7138b09b41c1638c96829912584afe356128a86a38484a5041a342124094b.NewIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -84,7 +84,7 @@ func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*i66a685596e55f332f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["b2cIdentityUserFlow_id"] = id
+        urlTplParams["b2cIdentityUserFlow%2Did"] = id
     }
     return i66a685596e55f332f9dea7615db3653de9c5945d4f7b70187e76b70ed8344761.NewB2cIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -99,7 +99,7 @@ func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*i056de954ae8d2bd3c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["b2xIdentityUserFlow_id"] = id
+        urlTplParams["b2xIdentityUserFlow%2Did"] = id
     }
     return i056de954ae8d2bd3c37cd62ab74e2a653c76cc631e79df2abe7d5423b433ad7f.NewB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -111,7 +111,7 @@ func (m *IdentityRequestBuilder) ConditionalAccess()(*ic34e66a722321196953b295f6
 func NewIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityRequestBuilder) {
     m := &IdentityRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identity{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -195,7 +195,7 @@ func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*i4064b0ed26ff
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityProviderBase_id"] = id
+        urlTplParams["identityProviderBase%2Did"] = id
     }
     return i4064b0ed26ff7ac321cce776d8d90a08dbeca0d51fec9f75ba0ee4621fd09ffa.NewIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -226,7 +226,7 @@ func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*i96fbb19ece7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityUserFlowAttribute_id"] = id
+        urlTplParams["identityUserFlowAttribute%2Did"] = id
     }
     return i96fbb19ece75424f3a1291715def826b0b7091a7b004df122cb970e740300385.NewIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -241,7 +241,7 @@ func (m *IdentityRequestBuilder) UserFlowsById(id string)(*i80b7576b721756e8211e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityUserFlow_id"] = id
+        urlTplParams["identityUserFlow%2Did"] = id
     }
     return i80b7576b721756e8211e557cb66927cff088fae6e30a6b5990e694f8c8938b4d.NewIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

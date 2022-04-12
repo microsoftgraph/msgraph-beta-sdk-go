@@ -7,11 +7,11 @@ import (
 // AttackSimulationRepeatOffender 
 type AttackSimulationRepeatOffender struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // User in an attack simulation and training campaign.
-    attackSimulationUser AttackSimulationUserable;
+    attackSimulationUser AttackSimulationUserable
     // Number of repeat offences of the user in attack simulation and training campaigns.
-    repeatOffenceCount *int32;
+    repeatOffenceCount *int32
 }
 // NewAttackSimulationRepeatOffender instantiates a new attackSimulationRepeatOffender and sets the default values.
 func NewAttackSimulationRepeatOffender()(*AttackSimulationRepeatOffender) {
@@ -41,9 +41,9 @@ func (m *AttackSimulationRepeatOffender) GetAttackSimulationUser()(AttackSimulat
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attackSimulationUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attackSimulationUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttackSimulationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["repeatOffenceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["repeatOffenceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

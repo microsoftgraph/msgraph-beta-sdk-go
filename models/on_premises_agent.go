@@ -8,15 +8,15 @@ import (
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-    agentGroups []OnPremisesAgentGroupable;
+    agentGroups []OnPremisesAgentGroupable
     // The external IP address as detected by the service for the agent machine. Read-only
-    externalIp *string;
+    externalIp *string
     // The name of the machine that the aggent is running on. Read-only
-    machineName *string;
+    machineName *string
     // Possible values are: active, inactive.
-    status *AgentStatus;
+    status *AgentStatus
     // The supportedPublishingTypes property
-    supportedPublishingTypes []OnPremisesPublishingType;
+    supportedPublishingTypes []OnPremisesPublishingType
 }
 // NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
@@ -46,9 +46,9 @@ func (m *OnPremisesAgent) GetExternalIp()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agentGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agentGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["externalIp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["machineName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["machineName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAgentStatus)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["supportedPublishingTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedPublishingTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseOnPremisesPublishingType)
         if err != nil {
             return err

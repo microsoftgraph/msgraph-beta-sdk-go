@@ -8,9 +8,9 @@ import (
 type PrintTaskTrigger struct {
     Entity
     // The definition property
-    definition PrintTaskDefinitionable;
+    definition PrintTaskDefinitionable
     // The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
-    event *PrintEvent;
+    event *PrintEvent
 }
 // NewPrintTaskTrigger instantiates a new printTaskTrigger and sets the default values.
 func NewPrintTaskTrigger()(*PrintTaskTrigger) {
@@ -40,9 +40,9 @@ func (m *PrintTaskTrigger) GetEvent()(*PrintEvent) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["definition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrintTaskDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["event"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["event"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrintEvent)
         if err != nil {
             return err

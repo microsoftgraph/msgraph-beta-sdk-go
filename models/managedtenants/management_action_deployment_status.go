@@ -7,17 +7,17 @@ import (
 // ManagementActionDeploymentStatus 
 type ManagementActionDeploymentStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The identifier for the management action. Required. Read-only.
-    managementActionId *string;
+    managementActionId *string
     // The management template identifier that was used to generate the management action. Required. Read-only.
-    managementTemplateId *string;
+    managementTemplateId *string
     // The managementTemplateVersion property
-    managementTemplateVersion *int32;
+    managementTemplateVersion *int32
     // The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
-    status *ManagementActionStatus;
+    status *ManagementActionStatus
     // The collection of workload action deployment statues for the given management action. Optional.
-    workloadActionDeploymentStatuses []WorkloadActionDeploymentStatusable;
+    workloadActionDeploymentStatuses []WorkloadActionDeploymentStatusable
 }
 // NewManagementActionDeploymentStatus instantiates a new managementActionDeploymentStatus and sets the default values.
 func NewManagementActionDeploymentStatus()(*ManagementActionDeploymentStatus) {
@@ -39,9 +39,9 @@ func (m *ManagementActionDeploymentStatus) GetAdditionalData()(map[string]interf
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["managementActionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["managementActionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["managementTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["managementTemplateVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementActionStatus)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["workloadActionDeploymentStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workloadActionDeploymentStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkloadActionDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err

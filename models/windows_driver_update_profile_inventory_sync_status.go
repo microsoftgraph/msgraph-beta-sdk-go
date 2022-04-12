@@ -8,11 +8,11 @@ import (
 // WindowsDriverUpdateProfileInventorySyncStatus a complex type to store the status of a driver and firmware profile inventory sync. The status includes the last successful sync date time and the state of the last sync.
 type WindowsDriverUpdateProfileInventorySyncStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The state of the latest sync. Possible values are: pending, success, failure.
-    driverInventorySyncState *WindowsDriverUpdateProfileInventorySyncState;
+    driverInventorySyncState *WindowsDriverUpdateProfileInventorySyncState
     // The last successful sync date and time in UTC.
-    lastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewWindowsDriverUpdateProfileInventorySyncStatus instantiates a new windowsDriverUpdateProfileInventorySyncStatus and sets the default values.
 func NewWindowsDriverUpdateProfileInventorySyncStatus()(*WindowsDriverUpdateProfileInventorySyncStatus) {
@@ -42,9 +42,9 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetDriverInventorySyncSt
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["driverInventorySyncState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["driverInventorySyncState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsDriverUpdateProfileInventorySyncState)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(
         }
         return nil
     }
-    res["lastSuccessfulSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSuccessfulSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

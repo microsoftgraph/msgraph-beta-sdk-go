@@ -10,37 +10,37 @@ import (
 type ManagementTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-    category *ManagementCategory;
+    category *ManagementCategory
     // The createdByUserId property
-    createdByUserId *string;
+    createdByUserId *string
     // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description for the management template. Optional. Read-only.
-    description *string;
+    description *string
     // The display name for the management template. Required. Read-only.
-    displayName *string;
+    displayName *string
     // The informationLinks property
-    informationLinks []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable;
+    informationLinks []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable
     // The lastActionByUserId property
-    lastActionByUserId *string;
+    lastActionByUserId *string
     // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The managementTemplateCollections property
-    managementTemplateCollections []ManagementTemplateCollectionable;
+    managementTemplateCollections []ManagementTemplateCollectionable
     // The managementTemplateSteps property
-    managementTemplateSteps []ManagementTemplateStepable;
+    managementTemplateSteps []ManagementTemplateStepable
     // The collection of parameters used by the management template. Optional. Read-only.
-    parameters []TemplateParameterable;
+    parameters []TemplateParameterable
     // The priority property
-    priority *int32;
+    priority *int32
     // The provider property
-    provider *ManagementProvider;
+    provider *ManagementProvider
     // The userImpact property
-    userImpact *string;
+    userImpact *string
     // The version property
-    version *int32;
+    version *int32
     // The collection of workload actions associated with the management template. Optional. Read-only.
-    workloadActions []WorkloadActionable;
+    workloadActions []WorkloadActionable
 }
 // NewManagementTemplate instantiates a new managementTemplate and sets the default values.
 func NewManagementTemplate()(*ManagementTemplate) {
@@ -94,9 +94,9 @@ func (m *ManagementTemplate) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementCategory)
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["createdByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["informationLinks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["informationLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateActionUrlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastActionByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -170,7 +170,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastActionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["managementTemplateCollections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateCollections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["managementTemplateSteps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateSteps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepFromDiscriminatorValue)
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["parameters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTemplateParameterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["provider"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementProvider)
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["userImpact"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -252,7 +252,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -262,7 +262,7 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["workloadActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workloadActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkloadActionFromDiscriminatorValue)
         if err != nil {
             return err

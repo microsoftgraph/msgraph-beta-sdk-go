@@ -7,23 +7,23 @@ import (
 // ConfigurationManagerClientEnabledFeatures configuration Manager client enabled features
 type ConfigurationManagerClientEnabledFeatures struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether compliance policy is managed by Intune
-    compliancePolicy *bool;
+    compliancePolicy *bool
     // Whether device configuration is managed by Intune
-    deviceConfiguration *bool;
+    deviceConfiguration *bool
     // Whether Endpoint Protection is managed by Intune
-    endpointProtection *bool;
+    endpointProtection *bool
     // Whether inventory is managed by Intune
-    inventory *bool;
+    inventory *bool
     // Whether modern application is managed by Intune
-    modernApps *bool;
+    modernApps *bool
     // Whether Office application is managed by Intune
-    officeApps *bool;
+    officeApps *bool
     // Whether resource access is managed by Intune
-    resourceAccess *bool;
+    resourceAccess *bool
     // Whether Windows Update for Business is managed by Intune
-    windowsUpdateForBusiness *bool;
+    windowsUpdateForBusiness *bool
 }
 // NewConfigurationManagerClientEnabledFeatures instantiates a new configurationManagerClientEnabledFeatures and sets the default values.
 func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientEnabledFeatures) {
@@ -69,9 +69,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetEndpointProtection()(*boo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["compliancePolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["compliancePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["deviceConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["endpointProtection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endpointProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["inventory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inventory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["modernApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modernApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["officeApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["officeApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["resourceAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["windowsUpdateForBusiness"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsUpdateForBusiness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

@@ -8,13 +8,13 @@ import (
 type OutlookUser struct {
     Entity
     // A list of categories defined for the user.
-    masterCategories []OutlookCategoryable;
+    masterCategories []OutlookCategoryable
     // The taskFolders property
-    taskFolders []OutlookTaskFolderable;
+    taskFolders []OutlookTaskFolderable
     // The taskGroups property
-    taskGroups []OutlookTaskGroupable;
+    taskGroups []OutlookTaskGroupable
     // The tasks property
-    tasks []OutlookTaskable;
+    tasks []OutlookTaskable
 }
 // NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
@@ -28,9 +28,9 @@ func CreateOutlookUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewOutlookUser(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["masterCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["masterCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["taskFolders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taskFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskFolderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["taskGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taskGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tasks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskFromDiscriminatorValue)
         if err != nil {
             return err

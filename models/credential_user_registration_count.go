@@ -8,9 +8,9 @@ import (
 type CredentialUserRegistrationCount struct {
     Entity
     // Provides the total user count in the tenant.
-    totalUserCount *int64;
+    totalUserCount *int64
     // A collection of registration count and status information for users in your tenant.
-    userRegistrationCounts []UserRegistrationCountable;
+    userRegistrationCounts []UserRegistrationCountable
 }
 // NewCredentialUserRegistrationCount instantiates a new credentialUserRegistrationCount and sets the default values.
 func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
@@ -24,9 +24,9 @@ func CreateCredentialUserRegistrationCountFromDiscriminatorValue(parseNode i878a
     return NewCredentialUserRegistrationCount(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["totalUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["userRegistrationCounts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRegistrationCounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationCountFromDiscriminatorValue)
         if err != nil {
             return err

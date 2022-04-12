@@ -8,23 +8,23 @@ import (
 type RestrictedAppsViolation struct {
     Entity
     // Device configuration profile unique identifier, must be Guid
-    deviceConfigurationId *string;
+    deviceConfigurationId *string
     // Device configuration profile name
-    deviceConfigurationName *string;
+    deviceConfigurationName *string
     // Device name
-    deviceName *string;
+    deviceName *string
     // Managed device unique identifier, must be Guid
-    managedDeviceId *string;
+    managedDeviceId *string
     // Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
-    platformType *PolicyPlatformType;
+    platformType *PolicyPlatformType
     // List of violated restricted apps
-    restrictedApps []ManagedDeviceReportedAppable;
+    restrictedApps []ManagedDeviceReportedAppable
     // Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
-    restrictedAppsState *RestrictedAppsState;
+    restrictedAppsState *RestrictedAppsState
     // User unique identifier, must be Guid
-    userId *string;
+    userId *string
     // User name
-    userName *string;
+    userName *string
 }
 // NewRestrictedAppsViolation instantiates a new restrictedAppsViolation and sets the default values.
 func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {
@@ -62,9 +62,9 @@ func (m *RestrictedAppsViolation) GetDeviceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceConfigurationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deviceConfigurationName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceConfigurationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["managedDeviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["platformType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platformType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePolicyPlatformType)
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["restrictedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restrictedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceReportedAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["restrictedAppsState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restrictedAppsState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRestrictedAppsState)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

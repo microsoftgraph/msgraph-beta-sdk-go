@@ -8,13 +8,13 @@ import (
 type MicrosoftTunnelHealthThreshold struct {
     Entity
     // The default threshold for being healthy
-    defaultHealthyThreshold *int64;
+    defaultHealthyThreshold *int64
     // The default threshold for being unhealthy
-    defaultUnhealthyThreshold *int64;
+    defaultUnhealthyThreshold *int64
     // The threshold for being healthy
-    healthyThreshold *int64;
+    healthyThreshold *int64
     // The threshold for being unhealthy
-    unhealthyThreshold *int64;
+    unhealthyThreshold *int64
 }
 // NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
 func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
@@ -44,9 +44,9 @@ func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["defaultHealthyThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultHealthyThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["defaultUnhealthyThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultUnhealthyThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["healthyThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthyThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["unhealthyThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unhealthyThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

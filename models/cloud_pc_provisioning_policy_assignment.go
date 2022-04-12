@@ -8,7 +8,7 @@ import (
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
     // The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
-    target CloudPcManagementAssignmentTargetable;
+    target CloudPcManagementAssignmentTargetable
 }
 // NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {
@@ -22,9 +22,9 @@ func CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue(parseNode i
     return NewCloudPcProvisioningPolicyAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

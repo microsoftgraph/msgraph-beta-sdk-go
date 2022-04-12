@@ -9,43 +9,43 @@ import (
 type DeviceHealthScript struct {
     Entity
     // The list of group assignments for the device health script
-    assignments []DeviceHealthScriptAssignmentable;
+    assignments []DeviceHealthScriptAssignmentable
     // The timestamp of when the device health script was created. This property is read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description of the device health script
-    description *string;
+    description *string
     // The entire content of the detection powershell script
-    detectionScriptContent []byte;
+    detectionScriptContent []byte
     // List of ComplexType DetectionScriptParameters objects.
-    detectionScriptParameters []DeviceHealthScriptParameterable;
+    detectionScriptParameters []DeviceHealthScriptParameterable
     // List of run states for the device health script across all devices
-    deviceRunStates []DeviceHealthScriptDeviceStateable;
+    deviceRunStates []DeviceHealthScriptDeviceStateable
     // Name of the device health script
-    displayName *string;
+    displayName *string
     // Indicate whether the script signature needs be checked
-    enforceSignatureCheck *bool;
+    enforceSignatureCheck *bool
     // Highest available version for a Microsoft Proprietary script
-    highestAvailableVersion *string;
+    highestAvailableVersion *string
     // Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
-    isGlobalScript *bool;
+    isGlobalScript *bool
     // The timestamp of when the device health script was modified. This property is read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of the device health script publisher
-    publisher *string;
+    publisher *string
     // The entire content of the remediation powershell script
-    remediationScriptContent []byte;
+    remediationScriptContent []byte
     // List of ComplexType RemediationScriptParameters objects.
-    remediationScriptParameters []DeviceHealthScriptParameterable;
+    remediationScriptParameters []DeviceHealthScriptParameterable
     // List of Scope Tag IDs for the device health script
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Indicate whether PowerShell script(s) should run as 32-bit
-    runAs32Bit *bool;
+    runAs32Bit *bool
     // Indicates the type of execution context. Possible values are: system, user.
-    runAsAccount *RunAsAccountType;
+    runAsAccount *RunAsAccountType
     // High level run summary for device health script.
-    runSummary DeviceHealthScriptRunSummaryable;
+    runSummary DeviceHealthScriptRunSummaryable
     // Version of the device health script
-    version *string;
+    version *string
 }
 // NewDeviceHealthScript instantiates a new deviceHealthScript and sets the default values.
 func NewDeviceHealthScript()(*DeviceHealthScript) {
@@ -123,9 +123,9 @@ func (m *DeviceHealthScript) GetEnforceSignatureCheck()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthScriptAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["detectionScriptContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectionScriptContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["detectionScriptParameters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectionScriptParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthScriptParameterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["deviceRunStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthScriptDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["enforceSignatureCheck"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforceSignatureCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["highestAvailableVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["highestAvailableVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isGlobalScript"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isGlobalScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["remediationScriptContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediationScriptContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["remediationScriptParameters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediationScriptParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthScriptParameterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -281,7 +281,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -295,7 +295,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["runAs32Bit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runAs32Bit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -305,7 +305,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["runAsAccount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runAsAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRunAsAccountType)
         if err != nil {
             return err
@@ -315,7 +315,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["runSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceHealthScriptRunSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -325,7 +325,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

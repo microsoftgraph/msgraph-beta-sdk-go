@@ -8,25 +8,25 @@ import (
 type AuthorizationPolicy struct {
     PolicyBase
     // Indicates whether users can sign up for email based subscriptions.
-    allowedToSignUpEmailBasedSubscriptions *bool;
+    allowedToSignUpEmailBasedSubscriptions *bool
     // Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
-    allowedToUseSSPR *bool;
+    allowedToUseSSPR *bool
     // Indicates whether a user can join the tenant by email validation.
-    allowEmailVerifiedUsersToJoinOrganization *bool;
+    allowEmailVerifiedUsersToJoinOrganization *bool
     // Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
-    allowInvitesFrom *AllowInvitesFrom;
+    allowInvitesFrom *AllowInvitesFrom
     // To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
-    blockMsolPowerShell *bool;
+    blockMsolPowerShell *bool
     // The defaultUserRoleOverrides property
-    defaultUserRoleOverrides []DefaultUserRoleOverrideable;
+    defaultUserRoleOverrides []DefaultUserRoleOverrideable
     // The defaultUserRolePermissions property
-    defaultUserRolePermissions DefaultUserRolePermissionsable;
+    defaultUserRolePermissions DefaultUserRolePermissionsable
     // List of features enabled for private preview on the tenant.
-    enabledPreviewFeatures []string;
+    enabledPreviewFeatures []string
     // Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-    guestUserRoleId *string;
+    guestUserRoleId *string
     // Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
-    permissionGrantPolicyIdsAssignedToDefaultUserRole []string;
+    permissionGrantPolicyIdsAssignedToDefaultUserRole []string
 }
 // NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {
@@ -104,9 +104,9 @@ func (m *AuthorizationPolicy) GetEnabledPreviewFeatures()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["allowedToSignUpEmailBasedSubscriptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedToSignUpEmailBasedSubscriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["allowedToUseSSPR"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedToUseSSPR"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["allowEmailVerifiedUsersToJoinOrganization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowEmailVerifiedUsersToJoinOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["allowInvitesFrom"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowInvitesFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAllowInvitesFrom)
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["blockMsolPowerShell"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["blockMsolPowerShell"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["defaultUserRoleOverrides"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultUserRoleOverrides"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDefaultUserRoleOverrideFromDiscriminatorValue)
         if err != nil {
             return err
@@ -170,7 +170,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["defaultUserRolePermissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultUserRolePermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDefaultUserRolePermissionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["enabledPreviewFeatures"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabledPreviewFeatures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["guestUserRoleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["guestUserRoleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["permissionGrantPolicyIdsAssignedToDefaultUserRole"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionGrantPolicyIdsAssignedToDefaultUserRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

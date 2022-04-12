@@ -9,25 +9,25 @@ import (
 type CloudPcDeviceImage struct {
     Entity
     // The image's display name.
-    displayName *string;
+    displayName *string
     // The date the image became unavailable.
-    expirationDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    expirationDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The image's operating system. For example: Windows 10 Enterprise.
-    operatingSystem *string;
+    operatingSystem *string
     // The image's OS build version. For example: 1909.
-    osBuildNumber *string;
+    osBuildNumber *string
     // The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
-    osStatus *CloudPcDeviceImageOsStatus;
+    osStatus *CloudPcDeviceImageOsStatus
     // The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
-    sourceImageResourceId *string;
+    sourceImageResourceId *string
     // The status of the image on Cloud PC. Possible values are: pending, ready, failed.
-    status *CloudPcDeviceImageStatus;
+    status *CloudPcDeviceImageStatus
     // The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
-    statusDetails *CloudPcDeviceImageStatusDetails;
+    statusDetails *CloudPcDeviceImageStatusDetails
     // The image version. For example: 0.0.1, 1.5.13.
-    version *string;
+    version *string
 }
 // NewCloudPcDeviceImage instantiates a new cloudPcDeviceImage and sets the default values.
 func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
@@ -57,9 +57,9 @@ func (m *CloudPcDeviceImage) GetExpirationDate()(*i878a80d2330e89d26896388a3f487
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["expirationDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["operatingSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["osBuildNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osBuildNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["osStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcDeviceImageOsStatus)
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["sourceImageResourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceImageResourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcDeviceImageStatus)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["statusDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["statusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcDeviceImageStatusDetails)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

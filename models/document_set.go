@@ -7,21 +7,21 @@ import (
 // DocumentSet 
 type DocumentSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Content types allowed in document set.
-    allowedContentTypes []ContentTypeInfoable;
+    allowedContentTypes []ContentTypeInfoable
     // Default contents of document set.
-    defaultContents []DocumentSetContentable;
+    defaultContents []DocumentSetContentable
     // Specifies whether to push welcome page changes to inherited content types.
-    propagateWelcomePageChanges *bool;
+    propagateWelcomePageChanges *bool
     // The sharedColumns property
-    sharedColumns []ColumnDefinitionable;
+    sharedColumns []ColumnDefinitionable
     // Indicates whether to add the name of the document set to each file name.
-    shouldPrefixNameToFile *bool;
+    shouldPrefixNameToFile *bool
     // The welcomePageColumns property
-    welcomePageColumns []ColumnDefinitionable;
+    welcomePageColumns []ColumnDefinitionable
     // Welcome page absolute URL.
-    welcomePageUrl *string;
+    welcomePageUrl *string
 }
 // NewDocumentSet instantiates a new documentSet and sets the default values.
 func NewDocumentSet()(*DocumentSet) {
@@ -59,9 +59,9 @@ func (m *DocumentSet) GetDefaultContents()([]DocumentSetContentable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowedContentTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DocumentSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowedContentTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateContentTypeInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["defaultContents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultContents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDocumentSetContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["propagateWelcomePageChanges"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["propagateWelcomePageChanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["sharedColumns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedColumns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["shouldPrefixNameToFile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shouldPrefixNameToFile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["welcomePageColumns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["welcomePageColumns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateColumnDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["welcomePageUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["welcomePageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

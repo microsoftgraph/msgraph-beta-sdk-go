@@ -9,17 +9,17 @@ import (
 type ManagementAction struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
-    category *ManagementCategory;
+    category *ManagementCategory
     // The description for the management action. Optional. Read-only.
-    description *string;
+    description *string
     // The display name for the management action. Optional. Read-only.
-    displayName *string;
+    displayName *string
     // The reference for the management template used to generate the management action. Required. Read-only.
-    referenceTemplateId *string;
+    referenceTemplateId *string
     // The referenceTemplateVersion property
-    referenceTemplateVersion *int32;
+    referenceTemplateVersion *int32
     // The collection of workload actions associated with the management action. Required. Read-only.
-    workloadActions []WorkloadActionable;
+    workloadActions []WorkloadActionable
 }
 // NewManagementAction instantiates a new managementAction and sets the default values.
 func NewManagementAction()(*ManagementAction) {
@@ -57,9 +57,9 @@ func (m *ManagementAction) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagementAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementCategory)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["referenceTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["referenceTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["referenceTemplateVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["referenceTemplateVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["workloadActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workloadActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkloadActionFromDiscriminatorValue)
         if err != nil {
             return err
